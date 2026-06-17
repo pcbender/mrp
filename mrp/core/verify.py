@@ -138,6 +138,8 @@ def check_placeholders(result: dict[str, Any], target_path: Path) -> None:
     for path in sorted(target_path.rglob("*")):
         if not path.is_file() or path.suffix not in TEXT_EXTENSIONS:
             continue
+        if is_mirrored_wordpress_asset(target_path, path):
+            continue
         scanned += 1
         text = path.read_text(errors="ignore")
         lower = text.lower()
@@ -146,6 +148,14 @@ def check_placeholders(result: dict[str, Any], target_path: Path) -> None:
             if matched:
                 add_error(result, "placeholder", f"{path.relative_to(target_path)} contains forbidden token: {pattern}")
     result["checks"].append({"name": "placeholders", "status": "passed", "checked": scanned})
+
+
+def is_mirrored_wordpress_asset(target_path: Path, path: Path) -> bool:
+    try:
+        relative = path.relative_to(target_path)
+    except ValueError:
+        return False
+    return len(relative.parts) >= 2 and relative.parts[0] == "assets" and relative.parts[1] == "wp"
 
 
 def check_migration_surface(

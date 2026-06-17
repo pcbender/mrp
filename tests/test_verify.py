@@ -114,6 +114,17 @@ def test_verify_placeholder_token_fails(tmp_path):
     assert any(error["field"] == "placeholder" for error in payload["errors"])
 
 
+def test_verify_ignores_placeholder_tokens_in_mirrored_wordpress_assets(tmp_path):
+    repo = verified_repo(tmp_path)
+    write_file(repo / "builds/local-staging/assets/wp/wp-content/themes/anima-plus/shortcodes.js", "/* TODO upstream */\n")
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 0
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "passed"
+
+
 def migrated_verified_repo(tmp_path: Path) -> Path:
     repo = verified_repo(tmp_path)
     write_file(

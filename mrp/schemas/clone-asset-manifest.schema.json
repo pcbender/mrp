@@ -24,7 +24,7 @@
           "sha256": {"type": ["string", "null"]},
           "used_by": {
             "type": "array",
-            "items": {"type": "string", "pattern": "^/.*"}
+            "items": {"type": "string", "minLength": 1}
           }
         }
       }
