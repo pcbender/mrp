@@ -1330,8 +1330,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1781731313.0358248,
-    "ast_hash": "6380bc22d2102dcae7178016ad767cbd",
+    "mtime": 1781736046.2645843,
+    "ast_hash": "ff27b4dc0e941d24ba4193fb7b334038",
     "semantic_hash": ""
   },
   "builds/archive/production-20260617T195554Z/about-us/index.html": {
@@ -30557,6 +30557,16 @@
   "docs/MRP-v0.1.1-REVIEW.md": {
     "mtime": 1781731308.383647,
     "ast_hash": "465da15c637d0092539b2b67a53e32a2",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T224056Z.json": {
+    "mtime": 1781736056.9149354,
+    "ast_hash": "50b678d80803dc31a5cf27e4679328bc",
+    "semantic_hash": ""
+  },
+  "docs/MRP-v0.1.2-WXR-STATIC-CLONE-PLAN.md": {
+    "mtime": 1781736428.3269565,
+    "ast_hash": "f06421850365fe6ff5c76cd6f35bb714",
     "semantic_hash": ""
   }
 }

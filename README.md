@@ -84,6 +84,7 @@ v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.m
 - [Remote deployment v0.2 candidate](docs/REMOTE-DEPLOYMENT-v0.2.md)
 - [MRP v0.1.1 full site staging plan](docs/MRP-v0.1.1-FULL-SITE-STAGING-PLAN.md)
 - [MRP v0.1.1 migration review](docs/MRP-v0.1.1-REVIEW.md)
+- [MRP v0.1.2 WXR static clone plan](docs/MRP-v0.1.2-WXR-STATIC-CLONE-PLAN.md)
 
 ## End-to-End Test
 
