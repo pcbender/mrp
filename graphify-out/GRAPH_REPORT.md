@@ -1,16 +1,16 @@
 # Graph Report - mrp  (2026-06-17)
 
 ## Corpus Check
-- 1282 files · ~625,500,890 words
+- 1415 files · ~724,207,747 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 4480 nodes · 6197 edges · 725 communities (634 shown, 91 thin omitted)
+- 5587 nodes · 7747 edges · 897 communities (776 shown, 121 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c0175197`
+- Built from commit: `39b2880c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -300,6 +300,82 @@
 - [[_COMMUNITY_Community 492|Community 492]]
 - [[_COMMUNITY_Community 495|Community 495]]
 - [[_COMMUNITY_Community 498|Community 498]]
+- [[_COMMUNITY_Community 725|Community 725]]
+- [[_COMMUNITY_Community 726|Community 726]]
+- [[_COMMUNITY_Community 727|Community 727]]
+- [[_COMMUNITY_Community 728|Community 728]]
+- [[_COMMUNITY_Community 729|Community 729]]
+- [[_COMMUNITY_Community 730|Community 730]]
+- [[_COMMUNITY_Community 731|Community 731]]
+- [[_COMMUNITY_Community 732|Community 732]]
+- [[_COMMUNITY_Community 733|Community 733]]
+- [[_COMMUNITY_Community 734|Community 734]]
+- [[_COMMUNITY_Community 735|Community 735]]
+- [[_COMMUNITY_Community 736|Community 736]]
+- [[_COMMUNITY_Community 737|Community 737]]
+- [[_COMMUNITY_Community 738|Community 738]]
+- [[_COMMUNITY_Community 739|Community 739]]
+- [[_COMMUNITY_Community 740|Community 740]]
+- [[_COMMUNITY_Community 741|Community 741]]
+- [[_COMMUNITY_Community 742|Community 742]]
+- [[_COMMUNITY_Community 743|Community 743]]
+- [[_COMMUNITY_Community 744|Community 744]]
+- [[_COMMUNITY_Community 745|Community 745]]
+- [[_COMMUNITY_Community 746|Community 746]]
+- [[_COMMUNITY_Community 747|Community 747]]
+- [[_COMMUNITY_Community 748|Community 748]]
+- [[_COMMUNITY_Community 749|Community 749]]
+- [[_COMMUNITY_Community 750|Community 750]]
+- [[_COMMUNITY_Community 751|Community 751]]
+- [[_COMMUNITY_Community 752|Community 752]]
+- [[_COMMUNITY_Community 753|Community 753]]
+- [[_COMMUNITY_Community 754|Community 754]]
+- [[_COMMUNITY_Community 755|Community 755]]
+- [[_COMMUNITY_Community 756|Community 756]]
+- [[_COMMUNITY_Community 757|Community 757]]
+- [[_COMMUNITY_Community 758|Community 758]]
+- [[_COMMUNITY_Community 759|Community 759]]
+- [[_COMMUNITY_Community 760|Community 760]]
+- [[_COMMUNITY_Community 761|Community 761]]
+- [[_COMMUNITY_Community 762|Community 762]]
+- [[_COMMUNITY_Community 763|Community 763]]
+- [[_COMMUNITY_Community 764|Community 764]]
+- [[_COMMUNITY_Community 765|Community 765]]
+- [[_COMMUNITY_Community 766|Community 766]]
+- [[_COMMUNITY_Community 767|Community 767]]
+- [[_COMMUNITY_Community 768|Community 768]]
+- [[_COMMUNITY_Community 769|Community 769]]
+- [[_COMMUNITY_Community 770|Community 770]]
+- [[_COMMUNITY_Community 771|Community 771]]
+- [[_COMMUNITY_Community 772|Community 772]]
+- [[_COMMUNITY_Community 773|Community 773]]
+- [[_COMMUNITY_Community 774|Community 774]]
+- [[_COMMUNITY_Community 775|Community 775]]
+- [[_COMMUNITY_Community 776|Community 776]]
+- [[_COMMUNITY_Community 777|Community 777]]
+- [[_COMMUNITY_Community 778|Community 778]]
+- [[_COMMUNITY_Community 779|Community 779]]
+- [[_COMMUNITY_Community 780|Community 780]]
+- [[_COMMUNITY_Community 781|Community 781]]
+- [[_COMMUNITY_Community 782|Community 782]]
+- [[_COMMUNITY_Community 783|Community 783]]
+- [[_COMMUNITY_Community 784|Community 784]]
+- [[_COMMUNITY_Community 785|Community 785]]
+- [[_COMMUNITY_Community 786|Community 786]]
+- [[_COMMUNITY_Community 787|Community 787]]
+- [[_COMMUNITY_Community 788|Community 788]]
+- [[_COMMUNITY_Community 789|Community 789]]
+- [[_COMMUNITY_Community 790|Community 790]]
+- [[_COMMUNITY_Community 791|Community 791]]
+- [[_COMMUNITY_Community 792|Community 792]]
+- [[_COMMUNITY_Community 793|Community 793]]
+- [[_COMMUNITY_Community 799|Community 799]]
+- [[_COMMUNITY_Community 801|Community 801]]
+- [[_COMMUNITY_Community 804|Community 804]]
+- [[_COMMUNITY_Community 807|Community 807]]
+- [[_COMMUNITY_Community 810|Community 810]]
+- [[_COMMUNITY_Community 813|Community 813]]
+- [[_COMMUNITY_Community 815|Community 815]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `$()` - 54 edges
@@ -328,19 +404,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (725 total, 91 thin omitted)
+## Communities (897 total, 121 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (88): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), add_error() (+80 more)
+Cohesion: 0.33
+Nodes (14): artist_url(), candidate_assets(), candidates_from_pages(), date_part(), format_import(), import_site(), load_json(), path_parts() (+6 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.15
 Nodes (12): additionalProperties, $id, properties, release, additionalProperties, allOf, required, type (+4 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.04
-Nodes (45): 10.1 Deploy Marker, 10.2 No Blind Delete, 10.3 Production Archive, 10.4 Machine-Readable Reports, 10. Safety Requirements, 11. Verification Policy, 12. Auto-Approval Policy, 13. Downstream Hooks (+37 more)
+Cohesion: 0.09
+Nodes (21): 11. Verification Policy, 12. Auto-Approval Policy, 13. Downstream Hooks, 14. Agentic Operation Requirements, 15. Initial Import Requirements, 16. Acceptance Definition for MRP v0.1, 18. Suggested Build Order, 19. CP Operating Instructions (+13 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.06
@@ -415,8 +491,8 @@ Cohesion: 0.44
 Nodes (10): publishable_repo(), CompletedProcess, Path, run_mrp(), test_publish_deploys_verifies_and_marks_release_live(), test_publish_refuses_missing_production_marker(), test_publish_refuses_unapproved_build(), write_file() (+2 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.12
-Nodes (37): add_references(), asset_manifest_record(), asset_type(), clone_assets(), collect_asset_references(), file_sha256(), format_clone_assets(), is_wordpress_asset_path() (+29 more)
+Cohesion: 0.31
+Nodes (16): add_references(), asset_manifest_record(), asset_type(), clone_assets(), collect_asset_references(), file_sha256(), is_wordpress_asset_path(), normalize_asset_url() (+8 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.44
@@ -487,8 +563,8 @@ Cohesion: 0.40
 Nodes (5): $ref, tracks, items, minItems, type
 
 ### Community 40 - "Community 40"
-Cohesion: 0.50
-Nodes (4): Acceptance Criteria, MRP-001 — Repository Survey and Implementation Plan, Objective, Tasks
+Cohesion: 0.15
+Nodes (13): 17. Work Packets, Acceptance Criteria, Acceptance Criteria, Acceptance Criteria, MRP-001 — Repository Survey and Implementation Plan, MRP-010 — Implement `mrp build`, MRP-015 — Implement Rollback, Objective (+5 more)
 
 ### Community 41 - "Community 41"
 Cohesion: 0.50
@@ -519,12 +595,12 @@ Cohesion: 0.50
 Nodes (4): Acceptance Criteria, MRP-009 — Generate Pages from Content, Objective, Tasks
 
 ### Community 48 - "Community 48"
-Cohesion: 0.50
-Nodes (4): Acceptance Criteria, MRP-010 — Implement `mrp build`, Objective, Tasks
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 49 - "Community 49"
-Cohesion: 0.40
-Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-011 — Add Local Deployment Adapter, Objective, Tasks
+Cohesion: 0.50
+Nodes (4): Acceptance Criteria, MRP-011 — Add Local Deployment Adapter, Objective, Tasks
 
 ### Community 50 - "Community 50"
 Cohesion: 0.50
@@ -539,8 +615,8 @@ Cohesion: 0.50
 Nodes (4): Acceptance Criteria, MRP-014 — Implement Production Publish, Objective, Tasks
 
 ### Community 53 - "Community 53"
-Cohesion: 0.50
-Nodes (4): Acceptance Criteria, MRP-015 — Implement Rollback, Objective, Tasks
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 54 - "Community 54"
 Cohesion: 0.50
@@ -575,8 +651,8 @@ Cohesion: 0.07
 Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 65 - "Community 65"
-Cohesion: 0.67
-Nodes (3): release_date, format, type
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 66 - "Community 66"
 Cohesion: 0.67
@@ -663,12 +739,12 @@ Cohesion: 0.67
 Nodes (3): status, enum, type
 
 ### Community 155 - "Community 155"
-Cohesion: 0.13
-Nodes (37): title_from_slug(), artist_record(), asset_references_from_html(), capture_assets_by_url(), copy_referenced_assets(), date_part(), extract_content_asset_references(), manifest_asset_type() (+29 more)
+Cohesion: 0.08
+Nodes (57): title_from_slug(), artist_record(), asset_references_from_html(), capture_assets_by_url(), copy_referenced_assets(), date_part(), extract_content_asset_references(), manifest_asset_type() (+49 more)
 
 ### Community 205 - "Community 205"
-Cohesion: 0.11
-Nodes (43): aliases_for_path(), canonical_path(), capture_routes(), clone_id(), clone_record(), clone_site(), format_clone_site(), load_json() (+35 more)
+Cohesion: 0.12
+Nodes (42): aliases_for_path(), canonical_path(), capture_routes(), clone_id(), clone_record(), clone_site(), format_clone_site(), load_json() (+34 more)
 
 ### Community 206 - "Community 206"
 Cohesion: 0.24
@@ -1106,25 +1182,209 @@ Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_
 Cohesion: 0.47
 Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
 
+### Community 725 - "Community 725"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 726 - "Community 726"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 732 - "Community 732"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 733 - "Community 733"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 734 - "Community 734"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 735 - "Community 735"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 736 - "Community 736"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 737 - "Community 737"
+Cohesion: 0.32
+Nodes (16): clone_head(), inline_styles(), local_asset_path(), normalize_asset_url(), now_utc(), page_head_record(), rewrite_dependency(), route_from_capture_path() (+8 more)
+
+### Community 738 - "Community 738"
+Cohesion: 0.24
+Nodes (15): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), format_clone_assets() (+7 more)
+
+### Community 739 - "Community 739"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 740 - "Community 740"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 741 - "Community 741"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 742 - "Community 742"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 743 - "Community 743"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 744 - "Community 744"
+Cohesion: 0.49
+Nodes (14): error_record(), load_content(), load_records(), load_schema(), report_path(), validate_artist_references(), validate_asset_manifest(), validate_duplicates() (+6 more)
+
+### Community 745 - "Community 745"
+Cohesion: 0.36
+Nodes (12): ContentCounts, count_assets(), count_content(), count_record_files(), detect_site_framework(), format_inspection(), inspect_deploy(), inspect_repository() (+4 more)
+
+### Community 746 - "Community 746"
+Cohesion: 0.15
+Nodes (13): 8.1 Required CLI Commands, 8. MRP CLI, `mrp approve`, `mrp build`, `mrp init`, `mrp inspect`, `mrp publish`, `mrp release create` (+5 more)
+
+### Community 752 - "Community 752"
+Cohesion: 0.49
+Nodes (10): add_error(), approval_id(), approve(), finish(), format_approval(), latest_verification(), now_utc(), write_approval() (+2 more)
+
+### Community 753 - "Community 753"
+Cohesion: 0.49
+Nodes (9): base_result(), build_repository(), format_build(), inventory_files(), next_build_id(), now_utc(), write_build_report(), Any (+1 more)
+
+### Community 754 - "Community 754"
+Cohesion: 0.51
+Nodes (9): find_release(), format_status(), latest_report(), release_summary(), report_summary(), rollback_available(), status(), Any (+1 more)
+
+### Community 755 - "Community 755"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 756 - "Community 756"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 757 - "Community 757"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 758 - "Community 758"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 759 - "Community 759"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 760 - "Community 760"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 761 - "Community 761"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 762 - "Community 762"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 763 - "Community 763"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 764 - "Community 764"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 765 - "Community 765"
+Cohesion: 0.31
+Nodes (3): HeadParser, is_excluded_external(), HTMLParser
+
+### Community 766 - "Community 766"
+Cohesion: 0.42
+Nodes (8): create_release(), failed(), format_release_create(), release_record(), slugify(), track(), Any, Path
+
+### Community 767 - "Community 767"
+Cohesion: 0.44
+Nodes (8): content_repo(), fake_source(), page_html(), CompletedProcess, Path, run_mrp(), test_clone_head_extracts_and_rewrites_dependencies(), test_clone_head_missing_source_fails_cleanly()
+
+### Community 769 - "Community 769"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 771 - "Community 771"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 773 - "Community 773"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 775 - "Community 775"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 777 - "Community 777"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 778 - "Community 778"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 781 - "Community 781"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 784 - "Community 784"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 787 - "Community 787"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 790 - "Community 790"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 793 - "Community 793"
+Cohesion: 0.33
+Nodes (6): 6.1 Site Metadata, 6.2 Artist Record, 6.3 Release Record, 6.4 Release Status Values, 6.5 Asset Manifest, 6. Content Model
+
+### Community 799 - "Community 799"
+Cohesion: 0.40
+Nodes (5): 10.1 Deploy Marker, 10.2 No Blind Delete, 10.3 Production Archive, 10.4 Machine-Readable Reports, 10. Safety Requirements
+
+### Community 815 - "Community 815"
+Cohesion: 0.67
+Nodes (3): status, enum, type
+
 ## Knowledge Gaps
-- **543 isolated node(s):** `codeToStatusMap`, `manifest`, `Namespace`, `Path`, `$schema` (+538 more)
+- **544 isolated node(s):** `codeToStatusMap`, `manifest`, `Namespace`, `Path`, `$schema` (+539 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **91 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **121 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `migrate_site()` connect `Community 155` to `Community 0`, `Community 22`?**
-  _High betweenness centrality (0.002) - this node is a cross-community bridge._
-- **Why does `migration_inventory()` connect `Community 22` to `Community 155`?**
+- **Why does `validate_schema()` connect `Community 744` to `Community 18`?**
   _High betweenness centrality (0.001) - this node is a cross-community bridge._
-- **Why does `main()` connect `Community 0` to `Community 9`, `Community 155`, `Community 205`, `Community 22`?**
+- **Why does `Draft202012Validator` connect `Community 18` to `Community 744`?**
   _High betweenness centrality (0.001) - this node is a cross-community bridge._
 - **What connects `codeToStatusMap`, `manifest`, `Maricopa Release Publisher.` to the rest of the system?**
-  _545 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.05605670103092784 - nodes in this community are weakly interconnected._
+  _546 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.06180733162830349 - nodes in this community are weakly interconnected._
+- **Should `Community 4` be split into smaller, more focused modules?**
+  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
+- **Should `Community 5` be split into smaller, more focused modules?**
+  _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._

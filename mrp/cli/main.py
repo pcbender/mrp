@@ -9,6 +9,7 @@ from typing import Any, Sequence
 from mrp.core.approve import approve, format_approval
 from mrp.core.build import build_repository, format_build
 from mrp.core.clone_assets import clone_assets, format_clone_assets
+from mrp.core.clone_head import clone_head, format_clone_head
 from mrp.core.clone_site import clone_site, format_clone_site
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
@@ -113,6 +114,10 @@ def build_parser() -> argparse.ArgumentParser:
     clone_assets_parser = subparsers.add_parser("clone-assets", help="Mirror captured WordPress clone assets.")
     add_global_options(clone_assets_parser, suppress_defaults=True)
     clone_assets_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
+
+    clone_head_parser = subparsers.add_parser("clone-head", help="Extract captured WordPress head dependencies.")
+    add_global_options(clone_head_parser, suppress_defaults=True)
+    clone_head_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
 
     return parser
 
@@ -224,6 +229,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "clone-assets":
         print(format_clone_assets(result))
         return
+    if result["command"] == "clone-head":
+        print(format_clone_head(result))
+        return
 
     print(result["message"])
 
@@ -275,6 +283,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = clone_site(args.repo, source=args.source, regenerate=args.regenerate)
     elif args.command == "clone-assets":
         result = clone_assets(args.repo, source=args.source)
+    elif args.command == "clone-head":
+        result = clone_head(args.repo, source=args.source)
     else:
         result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))
@@ -312,6 +322,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "clone-site" and result["status"] == "failed":
         return EXIT_CONFIG
     if args.command == "clone-assets" and result["status"] == "failed":
+        return EXIT_CONFIG
+    if args.command == "clone-head" and result["status"] == "failed":
         return EXIT_CONFIG
     return EXIT_SUCCESS
 
