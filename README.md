@@ -76,3 +76,11 @@ v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.m
 - [Deployment](docs/DEPLOYMENT.md)
 - [Agent usage](docs/AGENT-USAGE.md)
 - [Remote deployment v0.2 candidate](docs/REMOTE-DEPLOYMENT-v0.2.md)
+
+## End-to-End Test
+
+Run the v0.1 local flow regression:
+
+```bash
+python3 -m pytest tests/test_e2e_v01.py
+```
