@@ -125,6 +125,17 @@ def test_verify_ignores_placeholder_tokens_in_mirrored_wordpress_assets(tmp_path
     assert payload["status"] == "passed"
 
 
+def test_verify_ignores_protocol_relative_external_links(tmp_path):
+    repo = verified_repo(tmp_path)
+    write_file(repo / "builds/local-staging/about-us/index.html", '<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway">')
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 0
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "passed"
+
+
 def migrated_verified_repo(tmp_path: Path) -> Path:
     repo = verified_repo(tmp_path)
     write_file(

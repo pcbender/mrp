@@ -308,6 +308,8 @@ def should_skip_link(href: str) -> bool:
     if href.startswith(("#", "mailto:", "tel:", "javascript:")):
         return True
     parsed = urlparse(href)
+    if parsed.netloc:
+        return True
     return bool(parsed.scheme and parsed.scheme not in {"", "file"})
 
 

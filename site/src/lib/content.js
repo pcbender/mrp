@@ -93,6 +93,74 @@ export function getMigratedRoutes() {
     .sort((left, right) => left.normalized_path.localeCompare(right.normalized_path));
 }
 
+export function getClonePages() {
+  return readRecords("content/clone/pages", "clone").filter((entry) => entry.route?.canonical_path);
+}
+
+export function getClonePosts() {
+  return readRecords("content/clone/posts", "clone").filter((entry) => entry.route?.canonical_path);
+}
+
+export function getCloneRoutes() {
+  const explicitRoutes = new Set([
+    "/",
+    "/about-us/",
+    "/artists/",
+    "/contact/",
+    "/posts/",
+    ...getArtists().map((artist) => `/artists/${artist.id}/`)
+  ]);
+  return [...getClonePages(), ...getClonePosts()]
+    .map((entry) => ({
+      ...entry,
+      normalized_path: normalizePath(entry.route.canonical_path)
+    }))
+    .filter((entry) => !explicitRoutes.has(entry.normalized_path))
+    .sort((left, right) => left.normalized_path.localeCompare(right.normalized_path));
+}
+
+export function getCloneByPath(path) {
+  const normalized = normalizePath(path);
+  return [...getClonePages(), ...getClonePosts()].find((entry) => normalizePath(entry.route.canonical_path) === normalized);
+}
+
+export function getCloneHeadManifest() {
+  const path = resolve(repoRoot, "content/clone/head-manifest.yaml");
+  if (!existsSync(path)) {
+    return { shared: { stylesheets: [], scripts: [], preloads: [], inline_styles: [] }, pages: [] };
+  }
+  return yaml.load(readFileSync(path, "utf8"))?.clone_head || {
+    shared: { stylesheets: [], scripts: [], preloads: [], inline_styles: [] },
+    pages: []
+  };
+}
+
+export function getCloneHeadForPath(path) {
+  const manifest = getCloneHeadManifest();
+  const normalized = normalizePath(path);
+  return {
+    shared: manifest.shared || { stylesheets: [], scripts: [], preloads: [], inline_styles: [] },
+    page: (manifest.pages || []).find((entry) => normalizePath(entry.canonical_path) === normalized) || {
+      stylesheets: [],
+      scripts: [],
+      preloads: [],
+      inline_styles: []
+    }
+  };
+}
+
+export function clonePathParam(entry) {
+  return entry.normalized_path.replace(/^\/|\/$/g, "");
+}
+
+export function cloneDescription(entry) {
+  return entry.seo?.description || entry.excerpt || `${entry.title} on Maricopa Records.`;
+}
+
+export function renderCloneHtml(html) {
+  return rewriteWordPressAssetReferences(rewriteInternalLinks(String(html || "")));
+}
+
 function migratedPostRouteEntries() {
   return getMigratedPosts().flatMap((post) => {
     const primaryPath = normalizePath(post.normalized_path || `/${post.slug}/`);
@@ -182,6 +250,21 @@ function rewriteMediaReferences(html) {
   return html.replace(/(?:https?:\/\/(?:www\.)?maricoparecords\.com)?\/wp-content\/[^\s"'<>),\\]+/g, (url) => {
     const localPath = localMigratedAssetPath(url);
     return localPath || url;
+  });
+}
+
+function rewriteWordPressAssetReferences(html) {
+  return html.replace(/(?:https?:\/\/(?:www\.)?maricoparecords\.com)?\/(?:wp-content|wp-includes)\/[^\s"'<>),\\]+/g, (url) => {
+    let parsed;
+    try {
+      parsed = new URL(url, "https://www.maricoparecords.com");
+    } catch {
+      return url;
+    }
+    if (!localHosts.has(parsed.hostname)) {
+      return url;
+    }
+    return `/assets/wp${decodeURIComponent(parsed.pathname)}`;
   });
 }
 

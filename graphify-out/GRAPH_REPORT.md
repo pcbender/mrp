@@ -1,16 +1,16 @@
 # Graph Report - mrp  (2026-06-17)
 
 ## Corpus Check
-- 1415 files · ~724,207,747 words
+- 1993 files · ~1,207,018,287 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 5587 nodes · 7747 edges · 897 communities (776 shown, 121 thin omitted)
+- 10745 nodes · 14831 edges · 1672 communities (1407 shown, 265 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `39b2880c`
+- Built from commit: `6f1ccc11`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -376,6 +376,323 @@
 - [[_COMMUNITY_Community 810|Community 810]]
 - [[_COMMUNITY_Community 813|Community 813]]
 - [[_COMMUNITY_Community 815|Community 815]]
+- [[_COMMUNITY_Community 897|Community 897]]
+- [[_COMMUNITY_Community 898|Community 898]]
+- [[_COMMUNITY_Community 899|Community 899]]
+- [[_COMMUNITY_Community 900|Community 900]]
+- [[_COMMUNITY_Community 901|Community 901]]
+- [[_COMMUNITY_Community 902|Community 902]]
+- [[_COMMUNITY_Community 903|Community 903]]
+- [[_COMMUNITY_Community 904|Community 904]]
+- [[_COMMUNITY_Community 905|Community 905]]
+- [[_COMMUNITY_Community 906|Community 906]]
+- [[_COMMUNITY_Community 907|Community 907]]
+- [[_COMMUNITY_Community 908|Community 908]]
+- [[_COMMUNITY_Community 909|Community 909]]
+- [[_COMMUNITY_Community 910|Community 910]]
+- [[_COMMUNITY_Community 911|Community 911]]
+- [[_COMMUNITY_Community 912|Community 912]]
+- [[_COMMUNITY_Community 913|Community 913]]
+- [[_COMMUNITY_Community 914|Community 914]]
+- [[_COMMUNITY_Community 915|Community 915]]
+- [[_COMMUNITY_Community 916|Community 916]]
+- [[_COMMUNITY_Community 917|Community 917]]
+- [[_COMMUNITY_Community 918|Community 918]]
+- [[_COMMUNITY_Community 919|Community 919]]
+- [[_COMMUNITY_Community 920|Community 920]]
+- [[_COMMUNITY_Community 921|Community 921]]
+- [[_COMMUNITY_Community 922|Community 922]]
+- [[_COMMUNITY_Community 923|Community 923]]
+- [[_COMMUNITY_Community 924|Community 924]]
+- [[_COMMUNITY_Community 925|Community 925]]
+- [[_COMMUNITY_Community 926|Community 926]]
+- [[_COMMUNITY_Community 927|Community 927]]
+- [[_COMMUNITY_Community 928|Community 928]]
+- [[_COMMUNITY_Community 929|Community 929]]
+- [[_COMMUNITY_Community 930|Community 930]]
+- [[_COMMUNITY_Community 931|Community 931]]
+- [[_COMMUNITY_Community 932|Community 932]]
+- [[_COMMUNITY_Community 933|Community 933]]
+- [[_COMMUNITY_Community 934|Community 934]]
+- [[_COMMUNITY_Community 935|Community 935]]
+- [[_COMMUNITY_Community 936|Community 936]]
+- [[_COMMUNITY_Community 937|Community 937]]
+- [[_COMMUNITY_Community 938|Community 938]]
+- [[_COMMUNITY_Community 939|Community 939]]
+- [[_COMMUNITY_Community 940|Community 940]]
+- [[_COMMUNITY_Community 941|Community 941]]
+- [[_COMMUNITY_Community 942|Community 942]]
+- [[_COMMUNITY_Community 943|Community 943]]
+- [[_COMMUNITY_Community 944|Community 944]]
+- [[_COMMUNITY_Community 945|Community 945]]
+- [[_COMMUNITY_Community 946|Community 946]]
+- [[_COMMUNITY_Community 947|Community 947]]
+- [[_COMMUNITY_Community 948|Community 948]]
+- [[_COMMUNITY_Community 949|Community 949]]
+- [[_COMMUNITY_Community 950|Community 950]]
+- [[_COMMUNITY_Community 951|Community 951]]
+- [[_COMMUNITY_Community 952|Community 952]]
+- [[_COMMUNITY_Community 953|Community 953]]
+- [[_COMMUNITY_Community 954|Community 954]]
+- [[_COMMUNITY_Community 955|Community 955]]
+- [[_COMMUNITY_Community 956|Community 956]]
+- [[_COMMUNITY_Community 957|Community 957]]
+- [[_COMMUNITY_Community 958|Community 958]]
+- [[_COMMUNITY_Community 959|Community 959]]
+- [[_COMMUNITY_Community 960|Community 960]]
+- [[_COMMUNITY_Community 961|Community 961]]
+- [[_COMMUNITY_Community 962|Community 962]]
+- [[_COMMUNITY_Community 963|Community 963]]
+- [[_COMMUNITY_Community 964|Community 964]]
+- [[_COMMUNITY_Community 965|Community 965]]
+- [[_COMMUNITY_Community 966|Community 966]]
+- [[_COMMUNITY_Community 967|Community 967]]
+- [[_COMMUNITY_Community 968|Community 968]]
+- [[_COMMUNITY_Community 969|Community 969]]
+- [[_COMMUNITY_Community 970|Community 970]]
+- [[_COMMUNITY_Community 971|Community 971]]
+- [[_COMMUNITY_Community 972|Community 972]]
+- [[_COMMUNITY_Community 973|Community 973]]
+- [[_COMMUNITY_Community 974|Community 974]]
+- [[_COMMUNITY_Community 975|Community 975]]
+- [[_COMMUNITY_Community 976|Community 976]]
+- [[_COMMUNITY_Community 977|Community 977]]
+- [[_COMMUNITY_Community 978|Community 978]]
+- [[_COMMUNITY_Community 979|Community 979]]
+- [[_COMMUNITY_Community 980|Community 980]]
+- [[_COMMUNITY_Community 981|Community 981]]
+- [[_COMMUNITY_Community 982|Community 982]]
+- [[_COMMUNITY_Community 983|Community 983]]
+- [[_COMMUNITY_Community 984|Community 984]]
+- [[_COMMUNITY_Community 985|Community 985]]
+- [[_COMMUNITY_Community 986|Community 986]]
+- [[_COMMUNITY_Community 987|Community 987]]
+- [[_COMMUNITY_Community 988|Community 988]]
+- [[_COMMUNITY_Community 989|Community 989]]
+- [[_COMMUNITY_Community 990|Community 990]]
+- [[_COMMUNITY_Community 991|Community 991]]
+- [[_COMMUNITY_Community 992|Community 992]]
+- [[_COMMUNITY_Community 993|Community 993]]
+- [[_COMMUNITY_Community 994|Community 994]]
+- [[_COMMUNITY_Community 995|Community 995]]
+- [[_COMMUNITY_Community 996|Community 996]]
+- [[_COMMUNITY_Community 997|Community 997]]
+- [[_COMMUNITY_Community 998|Community 998]]
+- [[_COMMUNITY_Community 999|Community 999]]
+- [[_COMMUNITY_Community 1000|Community 1000]]
+- [[_COMMUNITY_Community 1001|Community 1001]]
+- [[_COMMUNITY_Community 1002|Community 1002]]
+- [[_COMMUNITY_Community 1003|Community 1003]]
+- [[_COMMUNITY_Community 1004|Community 1004]]
+- [[_COMMUNITY_Community 1005|Community 1005]]
+- [[_COMMUNITY_Community 1006|Community 1006]]
+- [[_COMMUNITY_Community 1007|Community 1007]]
+- [[_COMMUNITY_Community 1008|Community 1008]]
+- [[_COMMUNITY_Community 1009|Community 1009]]
+- [[_COMMUNITY_Community 1010|Community 1010]]
+- [[_COMMUNITY_Community 1011|Community 1011]]
+- [[_COMMUNITY_Community 1012|Community 1012]]
+- [[_COMMUNITY_Community 1013|Community 1013]]
+- [[_COMMUNITY_Community 1014|Community 1014]]
+- [[_COMMUNITY_Community 1015|Community 1015]]
+- [[_COMMUNITY_Community 1016|Community 1016]]
+- [[_COMMUNITY_Community 1017|Community 1017]]
+- [[_COMMUNITY_Community 1018|Community 1018]]
+- [[_COMMUNITY_Community 1019|Community 1019]]
+- [[_COMMUNITY_Community 1020|Community 1020]]
+- [[_COMMUNITY_Community 1021|Community 1021]]
+- [[_COMMUNITY_Community 1022|Community 1022]]
+- [[_COMMUNITY_Community 1023|Community 1023]]
+- [[_COMMUNITY_Community 1024|Community 1024]]
+- [[_COMMUNITY_Community 1025|Community 1025]]
+- [[_COMMUNITY_Community 1026|Community 1026]]
+- [[_COMMUNITY_Community 1027|Community 1027]]
+- [[_COMMUNITY_Community 1028|Community 1028]]
+- [[_COMMUNITY_Community 1029|Community 1029]]
+- [[_COMMUNITY_Community 1030|Community 1030]]
+- [[_COMMUNITY_Community 1031|Community 1031]]
+- [[_COMMUNITY_Community 1032|Community 1032]]
+- [[_COMMUNITY_Community 1033|Community 1033]]
+- [[_COMMUNITY_Community 1034|Community 1034]]
+- [[_COMMUNITY_Community 1035|Community 1035]]
+- [[_COMMUNITY_Community 1036|Community 1036]]
+- [[_COMMUNITY_Community 1037|Community 1037]]
+- [[_COMMUNITY_Community 1038|Community 1038]]
+- [[_COMMUNITY_Community 1039|Community 1039]]
+- [[_COMMUNITY_Community 1040|Community 1040]]
+- [[_COMMUNITY_Community 1041|Community 1041]]
+- [[_COMMUNITY_Community 1042|Community 1042]]
+- [[_COMMUNITY_Community 1043|Community 1043]]
+- [[_COMMUNITY_Community 1044|Community 1044]]
+- [[_COMMUNITY_Community 1045|Community 1045]]
+- [[_COMMUNITY_Community 1046|Community 1046]]
+- [[_COMMUNITY_Community 1047|Community 1047]]
+- [[_COMMUNITY_Community 1048|Community 1048]]
+- [[_COMMUNITY_Community 1049|Community 1049]]
+- [[_COMMUNITY_Community 1050|Community 1050]]
+- [[_COMMUNITY_Community 1051|Community 1051]]
+- [[_COMMUNITY_Community 1052|Community 1052]]
+- [[_COMMUNITY_Community 1053|Community 1053]]
+- [[_COMMUNITY_Community 1054|Community 1054]]
+- [[_COMMUNITY_Community 1055|Community 1055]]
+- [[_COMMUNITY_Community 1056|Community 1056]]
+- [[_COMMUNITY_Community 1057|Community 1057]]
+- [[_COMMUNITY_Community 1058|Community 1058]]
+- [[_COMMUNITY_Community 1059|Community 1059]]
+- [[_COMMUNITY_Community 1060|Community 1060]]
+- [[_COMMUNITY_Community 1061|Community 1061]]
+- [[_COMMUNITY_Community 1062|Community 1062]]
+- [[_COMMUNITY_Community 1063|Community 1063]]
+- [[_COMMUNITY_Community 1064|Community 1064]]
+- [[_COMMUNITY_Community 1065|Community 1065]]
+- [[_COMMUNITY_Community 1066|Community 1066]]
+- [[_COMMUNITY_Community 1067|Community 1067]]
+- [[_COMMUNITY_Community 1068|Community 1068]]
+- [[_COMMUNITY_Community 1069|Community 1069]]
+- [[_COMMUNITY_Community 1070|Community 1070]]
+- [[_COMMUNITY_Community 1071|Community 1071]]
+- [[_COMMUNITY_Community 1072|Community 1072]]
+- [[_COMMUNITY_Community 1073|Community 1073]]
+- [[_COMMUNITY_Community 1074|Community 1074]]
+- [[_COMMUNITY_Community 1075|Community 1075]]
+- [[_COMMUNITY_Community 1076|Community 1076]]
+- [[_COMMUNITY_Community 1077|Community 1077]]
+- [[_COMMUNITY_Community 1078|Community 1078]]
+- [[_COMMUNITY_Community 1079|Community 1079]]
+- [[_COMMUNITY_Community 1080|Community 1080]]
+- [[_COMMUNITY_Community 1081|Community 1081]]
+- [[_COMMUNITY_Community 1082|Community 1082]]
+- [[_COMMUNITY_Community 1083|Community 1083]]
+- [[_COMMUNITY_Community 1084|Community 1084]]
+- [[_COMMUNITY_Community 1085|Community 1085]]
+- [[_COMMUNITY_Community 1086|Community 1086]]
+- [[_COMMUNITY_Community 1087|Community 1087]]
+- [[_COMMUNITY_Community 1088|Community 1088]]
+- [[_COMMUNITY_Community 1089|Community 1089]]
+- [[_COMMUNITY_Community 1090|Community 1090]]
+- [[_COMMUNITY_Community 1091|Community 1091]]
+- [[_COMMUNITY_Community 1092|Community 1092]]
+- [[_COMMUNITY_Community 1093|Community 1093]]
+- [[_COMMUNITY_Community 1094|Community 1094]]
+- [[_COMMUNITY_Community 1095|Community 1095]]
+- [[_COMMUNITY_Community 1096|Community 1096]]
+- [[_COMMUNITY_Community 1097|Community 1097]]
+- [[_COMMUNITY_Community 1098|Community 1098]]
+- [[_COMMUNITY_Community 1099|Community 1099]]
+- [[_COMMUNITY_Community 1100|Community 1100]]
+- [[_COMMUNITY_Community 1101|Community 1101]]
+- [[_COMMUNITY_Community 1102|Community 1102]]
+- [[_COMMUNITY_Community 1103|Community 1103]]
+- [[_COMMUNITY_Community 1104|Community 1104]]
+- [[_COMMUNITY_Community 1105|Community 1105]]
+- [[_COMMUNITY_Community 1106|Community 1106]]
+- [[_COMMUNITY_Community 1107|Community 1107]]
+- [[_COMMUNITY_Community 1108|Community 1108]]
+- [[_COMMUNITY_Community 1109|Community 1109]]
+- [[_COMMUNITY_Community 1110|Community 1110]]
+- [[_COMMUNITY_Community 1111|Community 1111]]
+- [[_COMMUNITY_Community 1112|Community 1112]]
+- [[_COMMUNITY_Community 1113|Community 1113]]
+- [[_COMMUNITY_Community 1114|Community 1114]]
+- [[_COMMUNITY_Community 1115|Community 1115]]
+- [[_COMMUNITY_Community 1116|Community 1116]]
+- [[_COMMUNITY_Community 1117|Community 1117]]
+- [[_COMMUNITY_Community 1118|Community 1118]]
+- [[_COMMUNITY_Community 1119|Community 1119]]
+- [[_COMMUNITY_Community 1120|Community 1120]]
+- [[_COMMUNITY_Community 1121|Community 1121]]
+- [[_COMMUNITY_Community 1122|Community 1122]]
+- [[_COMMUNITY_Community 1123|Community 1123]]
+- [[_COMMUNITY_Community 1124|Community 1124]]
+- [[_COMMUNITY_Community 1125|Community 1125]]
+- [[_COMMUNITY_Community 1126|Community 1126]]
+- [[_COMMUNITY_Community 1127|Community 1127]]
+- [[_COMMUNITY_Community 1128|Community 1128]]
+- [[_COMMUNITY_Community 1129|Community 1129]]
+- [[_COMMUNITY_Community 1130|Community 1130]]
+- [[_COMMUNITY_Community 1131|Community 1131]]
+- [[_COMMUNITY_Community 1132|Community 1132]]
+- [[_COMMUNITY_Community 1133|Community 1133]]
+- [[_COMMUNITY_Community 1134|Community 1134]]
+- [[_COMMUNITY_Community 1135|Community 1135]]
+- [[_COMMUNITY_Community 1136|Community 1136]]
+- [[_COMMUNITY_Community 1137|Community 1137]]
+- [[_COMMUNITY_Community 1138|Community 1138]]
+- [[_COMMUNITY_Community 1139|Community 1139]]
+- [[_COMMUNITY_Community 1140|Community 1140]]
+- [[_COMMUNITY_Community 1141|Community 1141]]
+- [[_COMMUNITY_Community 1142|Community 1142]]
+- [[_COMMUNITY_Community 1143|Community 1143]]
+- [[_COMMUNITY_Community 1144|Community 1144]]
+- [[_COMMUNITY_Community 1145|Community 1145]]
+- [[_COMMUNITY_Community 1146|Community 1146]]
+- [[_COMMUNITY_Community 1147|Community 1147]]
+- [[_COMMUNITY_Community 1148|Community 1148]]
+- [[_COMMUNITY_Community 1149|Community 1149]]
+- [[_COMMUNITY_Community 1150|Community 1150]]
+- [[_COMMUNITY_Community 1151|Community 1151]]
+- [[_COMMUNITY_Community 1152|Community 1152]]
+- [[_COMMUNITY_Community 1153|Community 1153]]
+- [[_COMMUNITY_Community 1154|Community 1154]]
+- [[_COMMUNITY_Community 1155|Community 1155]]
+- [[_COMMUNITY_Community 1156|Community 1156]]
+- [[_COMMUNITY_Community 1157|Community 1157]]
+- [[_COMMUNITY_Community 1158|Community 1158]]
+- [[_COMMUNITY_Community 1159|Community 1159]]
+- [[_COMMUNITY_Community 1160|Community 1160]]
+- [[_COMMUNITY_Community 1161|Community 1161]]
+- [[_COMMUNITY_Community 1162|Community 1162]]
+- [[_COMMUNITY_Community 1163|Community 1163]]
+- [[_COMMUNITY_Community 1164|Community 1164]]
+- [[_COMMUNITY_Community 1165|Community 1165]]
+- [[_COMMUNITY_Community 1166|Community 1166]]
+- [[_COMMUNITY_Community 1167|Community 1167]]
+- [[_COMMUNITY_Community 1168|Community 1168]]
+- [[_COMMUNITY_Community 1169|Community 1169]]
+- [[_COMMUNITY_Community 1170|Community 1170]]
+- [[_COMMUNITY_Community 1171|Community 1171]]
+- [[_COMMUNITY_Community 1172|Community 1172]]
+- [[_COMMUNITY_Community 1173|Community 1173]]
+- [[_COMMUNITY_Community 1174|Community 1174]]
+- [[_COMMUNITY_Community 1175|Community 1175]]
+- [[_COMMUNITY_Community 1176|Community 1176]]
+- [[_COMMUNITY_Community 1177|Community 1177]]
+- [[_COMMUNITY_Community 1178|Community 1178]]
+- [[_COMMUNITY_Community 1179|Community 1179]]
+- [[_COMMUNITY_Community 1180|Community 1180]]
+- [[_COMMUNITY_Community 1181|Community 1181]]
+- [[_COMMUNITY_Community 1182|Community 1182]]
+- [[_COMMUNITY_Community 1183|Community 1183]]
+- [[_COMMUNITY_Community 1184|Community 1184]]
+- [[_COMMUNITY_Community 1185|Community 1185]]
+- [[_COMMUNITY_Community 1186|Community 1186]]
+- [[_COMMUNITY_Community 1187|Community 1187]]
+- [[_COMMUNITY_Community 1212|Community 1212]]
+- [[_COMMUNITY_Community 1214|Community 1214]]
+- [[_COMMUNITY_Community 1217|Community 1217]]
+- [[_COMMUNITY_Community 1220|Community 1220]]
+- [[_COMMUNITY_Community 1223|Community 1223]]
+- [[_COMMUNITY_Community 1226|Community 1226]]
+- [[_COMMUNITY_Community 1229|Community 1229]]
+- [[_COMMUNITY_Community 1232|Community 1232]]
+- [[_COMMUNITY_Community 1235|Community 1235]]
+- [[_COMMUNITY_Community 1238|Community 1238]]
+- [[_COMMUNITY_Community 1241|Community 1241]]
+- [[_COMMUNITY_Community 1244|Community 1244]]
+- [[_COMMUNITY_Community 1247|Community 1247]]
+- [[_COMMUNITY_Community 1250|Community 1250]]
+- [[_COMMUNITY_Community 1253|Community 1253]]
+- [[_COMMUNITY_Community 1256|Community 1256]]
+- [[_COMMUNITY_Community 1259|Community 1259]]
+- [[_COMMUNITY_Community 1262|Community 1262]]
+- [[_COMMUNITY_Community 1265|Community 1265]]
+- [[_COMMUNITY_Community 1268|Community 1268]]
+- [[_COMMUNITY_Community 1271|Community 1271]]
+- [[_COMMUNITY_Community 1274|Community 1274]]
+- [[_COMMUNITY_Community 1277|Community 1277]]
+- [[_COMMUNITY_Community 1280|Community 1280]]
+- [[_COMMUNITY_Community 1283|Community 1283]]
+- [[_COMMUNITY_Community 1285|Community 1285]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `$()` - 54 edges
@@ -404,7 +721,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (897 total, 121 thin omitted)
+## Communities (1672 total, 265 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.33
@@ -419,8 +736,8 @@ Cohesion: 0.09
 Nodes (21): 11. Verification Policy, 12. Auto-Approval Policy, 13. Downstream Hooks, 14. Agentic Operation Requirements, 15. Initial Import Requirements, 16. Acceptance Definition for MRP v0.1, 18. Suggested Build Order, 19. CP Operating Instructions (+13 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.06
-Nodes (53): artists, artist, getStaticPaths(), releases, ../components/ArtistCard.astro, ../components/Footer.astro, ../components/Header.astro, ../../components/ReleaseCard.astro (+45 more)
+Cohesion: 0.05
+Nodes (68): artists, artist, clone, getStaticPaths(), releases, ../components/ArtistCard.astro, ../components/Footer.astro, ../components/Header.astro (+60 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.05
@@ -443,8 +760,8 @@ Cohesion: 0.06
 Nodes (31): type, minLength, type, $ref, type, pattern, type, type (+23 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.09
-Nodes (68): copy_build(), copy_plan(), failed(), failed_build(), format_deployment(), load_targets(), now_utc(), resolve_build() (+60 more)
+Cohesion: 0.22
+Nodes (32): add_error(), check_artist_pages(), check_cover_images(), check_excluded_migration_paths(), check_file(), check_internal_links(), check_migrated_assets(), check_migrated_routes() (+24 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.10
@@ -503,8 +820,8 @@ Cohesion: 0.34
 Nodes (16): clone_asset_manifest(), clone_record(), minimal_repo(), CompletedProcess, Path, run_mrp(), test_duplicate_clone_ids_fail_across_clone_pages_and_posts(), test_invalid_clone_record_fails_independent_validation() (+8 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.35
-Nodes (15): migrated_verified_repo(), CompletedProcess, Path, run_mrp(), test_verify_excluded_migration_path_fails(), test_verify_ignores_placeholder_tokens_in_mirrored_wordpress_assets(), test_verify_migration_surface_passes_for_routes_assets_and_aliases(), test_verify_missing_cover_image_fails() (+7 more)
+Cohesion: 0.34
+Nodes (16): migrated_verified_repo(), CompletedProcess, Path, run_mrp(), test_verify_excluded_migration_path_fails(), test_verify_ignores_placeholder_tokens_in_mirrored_wordpress_assets(), test_verify_ignores_protocol_relative_external_links(), test_verify_migration_surface_passes_for_routes_assets_and_aliases() (+8 more)
 
 ### Community 26 - "Community 26"
 Cohesion: 0.44
@@ -739,12 +1056,12 @@ Cohesion: 0.67
 Nodes (3): status, enum, type
 
 ### Community 155 - "Community 155"
-Cohesion: 0.08
-Nodes (57): title_from_slug(), artist_record(), asset_references_from_html(), capture_assets_by_url(), copy_referenced_assets(), date_part(), extract_content_asset_references(), manifest_asset_type() (+49 more)
+Cohesion: 0.19
+Nodes (28): title_from_slug(), artist_record(), asset_references_from_html(), capture_assets_by_url(), copy_referenced_assets(), date_part(), extract_content_asset_references(), manifest_asset_type() (+20 more)
 
 ### Community 205 - "Community 205"
-Cohesion: 0.12
-Nodes (42): aliases_for_path(), canonical_path(), capture_routes(), clone_id(), clone_record(), clone_site(), format_clone_site(), load_json() (+34 more)
+Cohesion: 0.16
+Nodes (28): classify_wxr_item(), exclusion_summary(), format_wxr_inventory(), integer_text(), inventory_summary(), load_json(), normalize_capture_route(), now_utc() (+20 more)
 
 ### Community 206 - "Community 206"
 Cohesion: 0.24
@@ -763,12 +1080,12 @@ Cohesion: 0.05
 Nodes (42): additionalProperties, minimum, type, items, type, type, $id, pattern (+34 more)
 
 ### Community 251 - "Community 251"
-Cohesion: 0.11
-Nodes (19): type, type, format, type, minLength, type, minLength, type (+11 more)
+Cohesion: 0.10
+Nodes (20): type, type, minLength, pattern, type, format, type, minLength (+12 more)
 
 ### Community 252 - "Community 252"
-Cohesion: 0.11
-Nodes (18): properties, type, type, minLength, pattern, type, enum, type (+10 more)
+Cohesion: 0.12
+Nodes (17): properties, type, type, enum, type, content_html, excerpt, kind (+9 more)
 
 ### Community 253 - "Community 253"
 Cohesion: 0.17
@@ -795,8 +1112,8 @@ Cohesion: 0.33
 Nodes (6): type, description, title, properties, minLength, type
 
 ### Community 259 - "Community 259"
-Cohesion: 0.67
-Nodes (3): status, enum, type
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 266 - "Community 266"
 Cohesion: 0.44
@@ -1211,12 +1528,12 @@ Cohesion: 0.29
 Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
 
 ### Community 737 - "Community 737"
-Cohesion: 0.32
-Nodes (16): clone_head(), inline_styles(), local_asset_path(), normalize_asset_url(), now_utc(), page_head_record(), rewrite_dependency(), route_from_capture_path() (+8 more)
+Cohesion: 0.29
+Nodes (17): clone_head(), format_clone_head(), inline_styles(), local_asset_path(), normalize_asset_url(), now_utc(), page_head_record(), rewrite_dependency() (+9 more)
 
 ### Community 738 - "Community 738"
-Cohesion: 0.24
-Nodes (15): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), format_clone_assets() (+7 more)
+Cohesion: 0.17
+Nodes (22): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), format_clone_assets() (+14 more)
 
 ### Community 739 - "Community 739"
 Cohesion: 0.13
@@ -1307,8 +1624,8 @@ Cohesion: 0.31
 Nodes (3): HeadParser, is_excluded_external(), HTMLParser
 
 ### Community 766 - "Community 766"
-Cohesion: 0.42
-Nodes (8): create_release(), failed(), format_release_create(), release_record(), slugify(), track(), Any, Path
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 767 - "Community 767"
 Cohesion: 0.44
@@ -1366,25 +1683,717 @@ Nodes (5): 10.1 Deploy Marker, 10.2 No Blind Delete, 10.3 Production Archive, 10
 Cohesion: 0.67
 Nodes (3): status, enum, type
 
+### Community 897 - "Community 897"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 898 - "Community 898"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 899 - "Community 899"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 900 - "Community 900"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 901 - "Community 901"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 902 - "Community 902"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 903 - "Community 903"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 904 - "Community 904"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 905 - "Community 905"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 906 - "Community 906"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 907 - "Community 907"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 908 - "Community 908"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 909 - "Community 909"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 910 - "Community 910"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 911 - "Community 911"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 912 - "Community 912"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 913 - "Community 913"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 914 - "Community 914"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 915 - "Community 915"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 916 - "Community 916"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 917 - "Community 917"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 918 - "Community 918"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 943 - "Community 943"
+Cohesion: 0.23
+Nodes (24): copy_build(), copy_plan(), failed(), failed_build(), load_targets(), now_utc(), resolve_build(), stage_build() (+16 more)
+
+### Community 944 - "Community 944"
+Cohesion: 0.22
+Nodes (20): classify_artist_release_routes(), classify_asset(), classify_post(), exclusion_summary(), format_migration_inventory(), load_json(), migration_inventory(), normalize_route() (+12 more)
+
+### Community 945 - "Community 945"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 946 - "Community 946"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 947 - "Community 947"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 948 - "Community 948"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 949 - "Community 949"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 950 - "Community 950"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 951 - "Community 951"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 952 - "Community 952"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 953 - "Community 953"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 954 - "Community 954"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 955 - "Community 955"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 956 - "Community 956"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 957 - "Community 957"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 958 - "Community 958"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 959 - "Community 959"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 960 - "Community 960"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 961 - "Community 961"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 962 - "Community 962"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 963 - "Community 963"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 964 - "Community 964"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 965 - "Community 965"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 966 - "Community 966"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 967 - "Community 967"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 968 - "Community 968"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 969 - "Community 969"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 970 - "Community 970"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 971 - "Community 971"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 972 - "Community 972"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 973 - "Community 973"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 974 - "Community 974"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 975 - "Community 975"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 976 - "Community 976"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 977 - "Community 977"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 978 - "Community 978"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 979 - "Community 979"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 980 - "Community 980"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 981 - "Community 981"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 982 - "Community 982"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 983 - "Community 983"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 984 - "Community 984"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 985 - "Community 985"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 986 - "Community 986"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 987 - "Community 987"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 988 - "Community 988"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 989 - "Community 989"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 990 - "Community 990"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 991 - "Community 991"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 992 - "Community 992"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 993 - "Community 993"
+Cohesion: 0.35
+Nodes (15): aliases_for_path(), canonical_path(), capture_routes(), clone_id(), clone_record(), clone_site(), format_clone_site(), load_json() (+7 more)
+
+### Community 1018 - "Community 1018"
+Cohesion: 0.44
+Nodes (11): add_error(), clear_target(), copy_tree(), finish(), format_rollback(), now_utc(), rollback(), rollback_candidate() (+3 more)
+
+### Community 1019 - "Community 1019"
+Cohesion: 0.36
+Nodes (9): content_repo(), CompletedProcess, Path, run_mrp(), test_copy_referenced_assets_reports_missing_source_with_page_reference(), test_migrate_site_dry_run_reports_planned_writes_without_content_mutation(), test_migrate_site_generates_staging_content_records(), test_migrate_site_is_idempotent_and_does_not_overwrite() (+1 more)
+
+### Community 1020 - "Community 1020"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1021 - "Community 1021"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1022 - "Community 1022"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1023 - "Community 1023"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1024 - "Community 1024"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1025 - "Community 1025"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1026 - "Community 1026"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1027 - "Community 1027"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1028 - "Community 1028"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1029 - "Community 1029"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1030 - "Community 1030"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1031 - "Community 1031"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1032 - "Community 1032"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1033 - "Community 1033"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1034 - "Community 1034"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1035 - "Community 1035"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1036 - "Community 1036"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1037 - "Community 1037"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1038 - "Community 1038"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1039 - "Community 1039"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1040 - "Community 1040"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1041 - "Community 1041"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1042 - "Community 1042"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1043 - "Community 1043"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1044 - "Community 1044"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1045 - "Community 1045"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1046 - "Community 1046"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1047 - "Community 1047"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1048 - "Community 1048"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1049 - "Community 1049"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1050 - "Community 1050"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1051 - "Community 1051"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1052 - "Community 1052"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1053 - "Community 1053"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1054 - "Community 1054"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1055 - "Community 1055"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1056 - "Community 1056"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1057 - "Community 1057"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1058 - "Community 1058"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1059 - "Community 1059"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1060 - "Community 1060"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1061 - "Community 1061"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1062 - "Community 1062"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1063 - "Community 1063"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1064 - "Community 1064"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1065 - "Community 1065"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1066 - "Community 1066"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 1067 - "Community 1067"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 1069 - "Community 1069"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1071 - "Community 1071"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1073 - "Community 1073"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1075 - "Community 1075"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1077 - "Community 1077"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1079 - "Community 1079"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1081 - "Community 1081"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1083 - "Community 1083"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1085 - "Community 1085"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1087 - "Community 1087"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1089 - "Community 1089"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1091 - "Community 1091"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1093 - "Community 1093"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1095 - "Community 1095"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1097 - "Community 1097"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1099 - "Community 1099"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1101 - "Community 1101"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1103 - "Community 1103"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1105 - "Community 1105"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1107 - "Community 1107"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1109 - "Community 1109"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1111 - "Community 1111"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1113 - "Community 1113"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1115 - "Community 1115"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 1116 - "Community 1116"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1119 - "Community 1119"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1122 - "Community 1122"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1125 - "Community 1125"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1128 - "Community 1128"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1131 - "Community 1131"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1134 - "Community 1134"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1137 - "Community 1137"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1140 - "Community 1140"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1143 - "Community 1143"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1146 - "Community 1146"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1149 - "Community 1149"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1152 - "Community 1152"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1155 - "Community 1155"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1158 - "Community 1158"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1161 - "Community 1161"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1164 - "Community 1164"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1167 - "Community 1167"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1170 - "Community 1170"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1173 - "Community 1173"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1176 - "Community 1176"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1179 - "Community 1179"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1182 - "Community 1182"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1185 - "Community 1185"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 1212 - "Community 1212"
+Cohesion: 0.67
+Nodes (3): CompletedProcess, run_mrp(), test_build_renders_wxr_clone_artist_release_and_blog_pages()
+
+### Community 1285 - "Community 1285"
+Cohesion: 0.67
+Nodes (3): minLength, type, post_type
+
 ## Knowledge Gaps
-- **544 isolated node(s):** `codeToStatusMap`, `manifest`, `Namespace`, `Path`, `$schema` (+539 more)
+- **546 isolated node(s):** `codeToStatusMap`, `manifest`, `Namespace`, `Path`, `$schema` (+541 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **121 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **265 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `validate_schema()` connect `Community 744` to `Community 18`?**
-  _High betweenness centrality (0.001) - this node is a cross-community bridge._
-- **Why does `Draft202012Validator` connect `Community 18` to `Community 744`?**
-  _High betweenness centrality (0.001) - this node is a cross-community bridge._
+- **Why does `main()` connect `Community 738` to `Community 0`, `Community 993`, `Community 737`, `Community 744`, `Community 745`, `Community 9`, `Community 205`, `Community 943`, `Community 752`, `Community 753`, `Community 754`, `Community 22`, `Community 1018`, `Community 155`?**
+  _High betweenness centrality (0.000) - this node is a cross-community bridge._
+- **Why does `copy_referenced_assets()` connect `Community 155` to `Community 1019`?**
+  _High betweenness centrality (0.000) - this node is a cross-community bridge._
+- **Why does `approve()` connect `Community 752` to `Community 738`?**
+  _High betweenness centrality (0.000) - this node is a cross-community bridge._
 - **What connects `codeToStatusMap`, `manifest`, `Maricopa Release Publisher.` to the rest of the system?**
-  _546 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _548 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.06180733162830349 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05421686746987952 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
   _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
-- **Should `Community 5` be split into smaller, more focused modules?**
-  _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._

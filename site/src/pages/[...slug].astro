@@ -1,26 +1,58 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getMigratedRoutes, migratedDescription, migratedPathParam, renderMigratedHtml } from "../lib/content.js";
+import CloneLayout from "../layouts/CloneLayout.astro";
+import {
+  cloneDescription,
+  clonePathParam,
+  getCloneRoutes,
+  getMigratedRoutes,
+  migratedDescription,
+  migratedPathParam,
+  renderCloneHtml,
+  renderMigratedHtml
+} from "../lib/content.js";
 
 export function getStaticPaths() {
-  return getMigratedRoutes().map((entry) => ({
-    params: { slug: migratedPathParam(entry) },
-    props: { entry }
-  }));
+  const paths = new Map();
+  for (const entry of getCloneRoutes()) {
+    paths.set(entry.normalized_path, {
+      params: { slug: clonePathParam(entry) },
+      props: { entry, source: "clone" }
+    });
+  }
+  for (const entry of getMigratedRoutes()) {
+    if (!paths.has(entry.normalized_path)) {
+      paths.set(entry.normalized_path, {
+        params: { slug: migratedPathParam(entry) },
+        props: { entry, source: "migrated" }
+      });
+    }
+  }
+  return [...paths.values()];
 }
 
-const { entry } = Astro.props;
+const { entry, source } = Astro.props;
 const title = entry.seo?.title || entry.title;
-const description = migratedDescription(entry);
-const html = renderMigratedHtml(entry.content_html);
+const isClone = source === "clone";
+const path = isClone ? entry.normalized_path : entry.normalized_path;
+const description = isClone ? cloneDescription(entry) : migratedDescription(entry);
+const html = isClone ? renderCloneHtml(entry.content_html) : renderMigratedHtml(entry.content_html);
 ---
-<BaseLayout title={`${title} | Maricopa Records`} description={description}>
-  <article class="migrated-content">
-    <header class="page-heading">
-      <p class="eyebrow">{entry.published_at ? "News" : "Page"}</p>
-      <h1>{entry.title}</h1>
-      {entry.excerpt && <p>{entry.excerpt}</p>}
-    </header>
-    <div class="wp-content" set:html={html} />
-  </article>
-</BaseLayout>
+{isClone ? (
+  <CloneLayout title={`${title} | Maricopa Records`} description={description} path={path}>
+    <article class="wp-clone-content" data-clone-kind={entry.kind}>
+      <div class="wp-content" set:html={html} />
+    </article>
+  </CloneLayout>
+) : (
+  <BaseLayout title={`${title} | Maricopa Records`} description={description}>
+    <article class="migrated-content">
+      <header class="page-heading">
+        <p class="eyebrow">{entry.published_at ? "News" : "Page"}</p>
+        <h1>{entry.title}</h1>
+        {entry.excerpt && <p>{entry.excerpt}</p>}
+      </header>
+      <div class="wp-content" set:html={html} />
+    </article>
+  </BaseLayout>
+)}

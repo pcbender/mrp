@@ -1,7 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import CloneLayout from "../../layouts/CloneLayout.astro";
 import ReleaseCard from "../../components/ReleaseCard.astro";
-import { getArtistById, getArtists, getVisibleReleases, releaseCoverUrl } from "../../lib/content.js";
+import {
+  cloneDescription,
+  getArtistById,
+  getArtists,
+  getCloneByPath,
+  getVisibleReleases,
+  releaseCoverUrl,
+  renderCloneHtml
+} from "../../lib/content.js";
 
 export function getStaticPaths() {
   return getArtists().map((artist) => ({ params: { slug: artist.id } }));
@@ -9,23 +18,34 @@ export function getStaticPaths() {
 
 const artist = getArtistById(Astro.params.slug);
 const releases = getVisibleReleases().filter((release) => release.artist_id === artist.id);
+const clonePath = `/artists/${artist.id}/`;
+const clone = getCloneByPath(clonePath);
+const cloneHtml = clone ? renderCloneHtml(clone.content_html) : "";
 ---
-<BaseLayout title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
-  <section class="page-heading artist-heading">
-    <img src={artist.image || "/assets/maricopa-mark.svg"} alt="" width="96" height="96" />
-    <p class="eyebrow">Artist</p>
-    <h1>{artist.name}</h1>
-    <p>{artist.bio_short}</p>
-  </section>
-  <section class="card-grid page-grid">
-    {releases.map((release) => (
-      <ReleaseCard
-        title={release.title}
-        artist={artist.name}
-        href={`/releases/${release.slug}/`}
-        type={release.release_type}
-        coverImage={releaseCoverUrl(release)}
-      />
-    ))}
-  </section>
-</BaseLayout>
+{clone ? (
+  <CloneLayout title={`${clone.title} | Maricopa Records`} description={cloneDescription(clone)} path={clonePath}>
+    <article class="wp-clone-content" data-clone-kind={clone.kind}>
+      <div class="wp-content" set:html={cloneHtml} />
+    </article>
+  </CloneLayout>
+) : (
+  <BaseLayout title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
+    <section class="page-heading artist-heading">
+      <img src={artist.image || "/assets/maricopa-mark.svg"} alt="" width="96" height="96" />
+      <p class="eyebrow">Artist</p>
+      <h1>{artist.name}</h1>
+      <p>{artist.bio_short}</p>
+    </section>
+    <section class="card-grid page-grid">
+      {releases.map((release) => (
+        <ReleaseCard
+          title={release.title}
+          artist={artist.name}
+          href={`/releases/${release.slug}/`}
+          type={release.release_type}
+          coverImage={releaseCoverUrl(release)}
+        />
+      ))}
+    </section>
+  </BaseLayout>
+)}
