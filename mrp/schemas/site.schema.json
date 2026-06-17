@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maricoparecords.local/mrp/site.schema.json",
+  "title": "MRP Site Metadata",
+  "type": "object",
+  "required": ["site"],
+  "additionalProperties": false,
+  "properties": {
+    "site": {
+      "type": "object",
+      "required": ["name", "canonical_url", "label_name", "publisher_name", "contact_email", "timezone"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "tagline": {"type": ["string", "null"]},
+        "secondary_tagline": {"type": ["string", "null"]},
+        "canonical_url": {"type": "string", "format": "uri"},
+        "default_artist": {"type": ["string", "null"], "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "label_name": {"type": "string", "minLength": 1},
+        "publisher_name": {"type": "string", "minLength": 1},
+        "contact_email": {"type": "string", "format": "email"},
+        "timezone": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

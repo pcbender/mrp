@@ -1,0 +1,9 @@
+assets:
+  - id: circuiting-cover
+    path: assets/releases/circuiting/cover.jpg
+    type: image
+    usage:
+      - release_cover
+      - social_preview
+    required: true
+    alt: Circuiting cover art by PCBender

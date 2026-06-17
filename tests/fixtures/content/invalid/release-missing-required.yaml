@@ -1,0 +1,16 @@
+release:
+  id: missing-release-type
+  slug: missing-release-type
+  title: Missing Release Type
+  artist_id: pcbender
+  model: album
+  status: draft
+  release_date: "2025-02-01"
+  cover_image: assets/releases/missing/cover.jpg
+  seo:
+    title: Missing Release Type
+    description: Missing release type example.
+  tracks:
+    - title: Track One
+      slug: track-one
+      explicit: false

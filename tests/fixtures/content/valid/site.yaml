@@ -1,0 +1,10 @@
+site:
+  name: Maricopa Records
+  tagline: Moving Music Forward
+  secondary_tagline: "If You Feel, It's Real"
+  canonical_url: https://www.maricoparecords.com
+  default_artist: pcbender
+  label_name: Maricopa Records
+  publisher_name: Maricopa Publishing
+  contact_email: contact@maricoparecords.com
+  timezone: America/Phoenix

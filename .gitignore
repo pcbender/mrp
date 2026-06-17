@@ -1,6 +1,8 @@
 .env
 .env.*
 deploy/targets.local.yaml
+__pycache__/
+*.py[cod]
 
 builds/**
 !builds/**/

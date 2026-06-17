@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maricoparecords.local/mrp/artist.schema.json",
+  "title": "MRP Artist Record",
+  "type": "object",
+  "required": ["artist"],
+  "additionalProperties": false,
+  "properties": {
+    "artist": {
+      "type": "object",
+      "required": ["id", "name", "visibility"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "name": {"type": "string", "minLength": 1},
+        "sort_name": {"type": ["string", "null"]},
+        "type": {"type": ["string", "null"], "enum": ["solo", "band", "project", null]},
+        "label": {"type": ["string", "null"]},
+        "default_publisher": {"type": ["string", "null"]},
+        "bio_short": {"type": ["string", "null"]},
+        "bio_long": {"type": ["string", "null"]},
+        "image": {"type": ["string", "null"]},
+        "links": {
+          "type": "object",
+          "additionalProperties": {"type": ["string", "null"]}
+        },
+        "visibility": {"type": "string", "enum": ["public", "draft", "hidden", "archived"]}
+      }
+    }
+  }
+}

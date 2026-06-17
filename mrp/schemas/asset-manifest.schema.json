@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maricoparecords.local/mrp/asset-manifest.schema.json",
+  "title": "MRP Asset Manifest",
+  "type": "object",
+  "required": ["assets"],
+  "additionalProperties": false,
+  "properties": {
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "path", "type", "usage", "required", "alt"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+          "path": {"type": "string", "minLength": 1},
+          "type": {"type": "string", "enum": ["image", "audio", "video", "document", "other"]},
+          "usage": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          },
+          "required": {"type": "boolean"},
+          "alt": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

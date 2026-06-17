@@ -1,0 +1,29 @@
+release:
+  id: circuiting
+  slug: circuiting
+  title: Circuiting
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: draft
+  release_date: "2025-02-01"
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  cover_image: assets/releases/circuiting/cover.jpg
+  summary: ""
+  description: ""
+  credits:
+    primary_artist: PCBender
+    songwriter: Michael Anthony Rose
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    landing_page:
+  seo:
+    title: Circuiting by PCBender
+    description: Circuiting by PCBender on Maricopa Records.
+  song:
+    title: Circuiting
+    slug: circuiting
+    explicit: false

@@ -1,0 +1,16 @@
+artist:
+  id: pcbender
+  name: PCBender
+  sort_name: PCBender
+  type: solo
+  label: Maricopa Records
+  default_publisher: Maricopa Publishing
+  bio_short: ""
+  bio_long: ""
+  image: assets/artists/pcbender/profile.jpg
+  links:
+    spotify:
+    apple_music:
+    youtube:
+    instagram:
+  visibility: public

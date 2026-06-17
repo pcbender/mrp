@@ -1,0 +1,34 @@
+release:
+  id: triati
+  slug: triati
+  title: Triati
+  artist_id: pcbender
+  model: album
+  release_type: album
+  status: draft
+  release_date: "2026-06-21"
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  cover_image: assets/releases/triati/cover.jpg
+  summary: ""
+  description: ""
+  credits:
+    primary_artist: PCBender
+    songwriter: Michael Anthony Rose
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    landing_page:
+  seo:
+    title: Triati by PCBender
+    description: New album from PCBender on Maricopa Records.
+  tracks:
+    - number: 1
+      title: Apa
+      slug: apa
+      explicit: false
+    - number: 2
+      title: Aiteo
+      slug: aiteo
+      explicit: false

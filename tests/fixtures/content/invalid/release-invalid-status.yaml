@@ -1,0 +1,17 @@
+release:
+  id: bad-release
+  slug: bad-release
+  title: Bad Release
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: published
+  release_date: "2025-02-01"
+  cover_image: assets/releases/bad-release/cover.jpg
+  seo:
+    title: Bad Release
+    description: Invalid status example.
+  song:
+    title: Bad Release
+    slug: bad-release
+    explicit: false
