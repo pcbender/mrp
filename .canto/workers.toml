@@ -2,13 +2,15 @@ version = 1
 
 [selection]
 priority = "balanced"
-cloud_allowed = false
-cloud_fallback_allowed = false
-local_first = true
+cloud_allowed = true
+cloud_fallback_allowed = true
+local_first = false
 allowed_endpoints = []
 allowed_providers = []
 allowed_models = []
-preferred_models = []
+preferred_models = [
+  "google-primary:gemini-2.5-flash",
+]
 required_classification = "implementation"
 
 [selection.budget]
