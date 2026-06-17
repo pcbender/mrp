@@ -47,6 +47,16 @@ def test_build_creates_staging_artifact_and_report():
     assert "https://www.maricoparecords.com/the-future-of-ai-in-music/" in sitemap
     feed = (ROOT / payload["build_path"] / "feed.xml").read_text()
     assert "The Future of AI in Music" in feed
+    conversation = (ROOT / payload["build_path"] / "a-conversation-with-echo/index.html").read_text()
+    assert 'href="/the-future-of-ai-in-music/"' in conversation
+    assert "/2025/02/26/the-future-of-ai-in-music/" not in conversation
+    licensing = (ROOT / payload["build_path"] / "licensing-custom-songs/music-licensing/index.html").read_text()
+    assert "/assets/migrated/" in licensing
+    assert "https://www.maricoparecords.com/wp-content/uploads" not in licensing
+    streaming = (ROOT / payload["build_path"] / "artists/pcbender/too-blue-to-lose/index.html").read_text()
+    assert "https://open.spotify.com" in streaming
+    assert "https://music.apple.com" in streaming
+    assert "https://music.youtube.com" in streaming
     assert (ROOT / payload["manifest_path"]).is_file()
     assert (ROOT / payload["report_path"]).is_file()
 

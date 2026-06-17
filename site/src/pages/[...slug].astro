@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { getMigratedRoutes, migratedDescription, migratedPathParam } from "../lib/content.js";
+import { getMigratedRoutes, migratedDescription, migratedPathParam, renderMigratedHtml } from "../lib/content.js";
 
 export function getStaticPaths() {
   return getMigratedRoutes().map((entry) => ({
@@ -12,6 +12,7 @@ export function getStaticPaths() {
 const { entry } = Astro.props;
 const title = entry.seo?.title || entry.title;
 const description = migratedDescription(entry);
+const html = renderMigratedHtml(entry.content_html);
 ---
 <BaseLayout title={`${title} | Maricopa Records`} description={description}>
   <article class="migrated-content">
@@ -20,6 +21,6 @@ const description = migratedDescription(entry);
       <h1>{entry.title}</h1>
       {entry.excerpt && <p>{entry.excerpt}</p>}
     </header>
-    <div class="wp-content" set:html={entry.content_html} />
+    <div class="wp-content" set:html={html} />
   </article>
 </BaseLayout>

@@ -1,11 +1,14 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
+const publicRoot = resolve(repoRoot, "site/public");
 const publicStatuses = new Set(["staged", "verified", "approved", "live"]);
 const reservedMigratedPaths = new Set(["/", "/about-us/", "/artists/", "/catalog/", "/contact/", "/posts/", "/releases/"]);
+const localHosts = new Set(["maricoparecords.com", "www.maricoparecords.com"]);
 
 function readRecords(relativeDir, rootKey) {
   const dir = resolve(repoRoot, relativeDir);
@@ -118,4 +121,88 @@ export function migratedDescription(entry) {
 export function normalizePath(path) {
   const value = `/${String(path || "").replace(/^\/|\/$/g, "")}/`;
   return value === "//" ? "/" : value;
+}
+
+export function renderMigratedHtml(html) {
+  return rewriteMediaReferences(rewriteInternalLinks(String(html || "")));
+}
+
+function rewriteInternalLinks(html) {
+  const routes = migratedRouteMap();
+  return html.replace(/href=(["'])([^"']+)\1/g, (match, quote, href) => {
+    const rewritten = rewriteInternalHref(href, routes);
+    return `href=${quote}${rewritten}${quote}`;
+  });
+}
+
+function rewriteInternalHref(href, routes) {
+  if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) {
+    return href;
+  }
+  let parsed;
+  try {
+    parsed = new URL(href, "https://www.maricoparecords.com");
+  } catch {
+    return href;
+  }
+  if (!localHosts.has(parsed.hostname)) {
+    return href;
+  }
+  const normalized = normalizePath(parsed.pathname);
+  const rewritten = routes.get(normalized);
+  if (!rewritten) {
+    return href;
+  }
+  return `${rewritten}${parsed.search}${parsed.hash}`;
+}
+
+function migratedRouteMap() {
+  const routes = new Map([
+    ["/", "/"],
+    ["/about-us/", "/about-us/"],
+    ["/artists/", "/artists/"],
+    ["/catalog/", "/catalog/"],
+    ["/contact/", "/contact/"],
+    ["/posts/", "/posts/"],
+    ["/releases/", "/releases/"]
+  ]);
+  for (const artist of getArtists()) {
+    routes.set(`/artists/${artist.id}/`, `/artists/${artist.id}/`);
+  }
+  for (const release of getVisibleReleases()) {
+    routes.set(`/releases/${release.slug}/`, `/releases/${release.slug}/`);
+  }
+  for (const entry of getMigratedRoutes()) {
+    routes.set(entry.normalized_path, entry.canonical_path || entry.normalized_path);
+  }
+  return routes;
+}
+
+function rewriteMediaReferences(html) {
+  return html.replace(/(?:https?:\/\/(?:www\.)?maricoparecords\.com)?\/wp-content\/[^\s"'<>),\\]+/g, (url) => {
+    const localPath = localMigratedAssetPath(url);
+    return localPath || url;
+  });
+}
+
+function localMigratedAssetPath(url) {
+  let parsed;
+  try {
+    parsed = new URL(url, "https://www.maricoparecords.com");
+  } catch {
+    return null;
+  }
+  if (!localHosts.has(parsed.hostname) || !parsed.pathname.startsWith("/wp-content/")) {
+    return null;
+  }
+  const normalizedUrl = `https://www.maricoparecords.com${decodeURIComponent(parsed.pathname)}`;
+  const digest = createHash("sha256").update(normalizedUrl).digest("hex").slice(0, 12);
+  const basename = safeFilename(decodeURIComponent(parsed.pathname.split("/").pop() || "asset"));
+  const publicPath = `/assets/migrated/${digest}-${basename}`;
+  return existsSync(resolve(publicRoot, publicPath.replace(/^\//, ""))) ? publicPath : null;
+}
+
+function safeFilename(value) {
+  const normalized = value.normalize("NFKD").replace(/[^\x00-\x7F]/g, "");
+  return normalized.replace(/[^A-Za-z0-9._-]+/g, "-").replace(/^[.-]+|[.-]+$/g, "") || "asset";
 }
