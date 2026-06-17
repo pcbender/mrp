@@ -100,11 +100,21 @@ The preferred stack is:
 Static site generator: Astro
 Content format: YAML or JSON
 MRP CLI: Python or Node
-Deployment: local copy, rsync, or SFTP
-Contact form: optional tiny PHP endpoint or external form service
+Deployment: local copy for v0.1; rsync or SFTP later
+Contact form: tiny PHP endpoint
 ```
 
-If the repository already contains a working static site framework, CP may preserve it. Otherwise, CP should create a clean Astro-based site shell around the imported Maricopa Records content and assets.
+For this repository, CP should create a clean Astro-based site shell in
+`/home/mrose/mrp`. The source files in `~/website-migration` are source inputs,
+not the target implementation repository.
+
+The initial source of truth is a combination of the WordPress WXR export and the
+captured downloaded assets:
+
+* WXR content is authoritative for imported content records.
+* Downloaded assets under `~/website-migration` may be referenced and reused.
+* Large imported assets should not be copied into this repository by default.
+* MRP v0.1 should build a simple redesigned site, not reproduce the full export.
 
 ---
 
@@ -168,8 +178,12 @@ repo/
 
   reports/
     validation/
+    build/
     verification/
     deployment/
+    approval/
+    rollback/
+    import/
 
   scripts/
     mrp
@@ -178,12 +192,13 @@ repo/
 The exact layout may be adjusted, but the separation should remain:
 
 * `content/` = source content
-* `assets/` = source/processed media
+* `assets/` = repo-local source/processed media for new releases
 * `site/` = static website implementation
 * `mrp/` = publisher logic
 * `builds/` = generated artifacts
 * `reports/` = machine-readable reports
 * `deploy/` = deployment configuration
+* `~/website-migration` = read-only imported website source and asset cache
 
 ---
 
@@ -241,7 +256,14 @@ artist.visibility
 
 ## 6.3 Release Record
 
-Example: `content/releases/triati.yaml`
+MRP uses two release content models in v0.1:
+
+* `song`: one song/single. This is also published as an album object by Spotify
+  and similar services, but MRP treats it as the single-song model.
+* `album`: a multi-track release. `release.release_type` distinguishes `ep`
+  from `album`; an EP normally contains 2 to 6 songs.
+
+Example album/EP record: `content/releases/triati.yaml`
 
 ```yaml
 release:
@@ -294,6 +316,44 @@ release:
       lyrics_excerpt:
 ```
 
+Example song/single record: `content/releases/circuiting.yaml`
+
+```yaml
+release:
+  id: circuiting
+  slug: circuiting
+  title: Circuiting
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: draft
+  release_date:
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  cover_image: assets/releases/circuiting/cover.jpg
+  summary: ""
+  description: ""
+  credits:
+    primary_artist: PCBender
+    songwriter: Michael Anthony Rose
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+    landing_page:
+  seo:
+    title: Circuiting by PCBender
+    description: Circuiting by PCBender on Maricopa Records.
+  song:
+    title: Circuiting
+    slug: circuiting
+    isrc:
+    duration:
+    explicit: false
+    preview_audio:
+    lyrics_excerpt:
+```
+
 Required fields for publishable releases:
 
 ```text
@@ -301,12 +361,21 @@ release.id
 release.slug
 release.title
 release.artist_id
+release.model
 release.release_type
 release.status
 release.release_date
 release.cover_image
 release.seo.title
 release.seo.description
+```
+
+Valid release model/type combinations:
+
+```text
+model=song, release_type=single
+model=album, release_type=ep
+model=album, release_type=album
 ```
 
 ## 6.4 Release Status Values
@@ -332,6 +401,10 @@ Meaning:
 * `live`: deployed to production
 * `failed`: attempted operation failed
 * `archived`: intentionally retired or hidden from primary listings
+
+Release status is persisted in the content record. Commands that change publish
+state, such as `stage`, `approve`, `publish`, and `rollback`, should mutate the
+structured content record only after their required checks pass.
 
 ## 6.5 Asset Manifest
 
@@ -361,13 +434,15 @@ MRP/site build should generate at minimum:
 /artists/{artist-slug}/
 /releases/
 /releases/{release-slug}/
-/songs/{song-slug}/       optional for v0.1
 /contact/
-/about/
+/about-us/
 /catalog/
 /sitemap.xml
 /feed.xml or /rss.xml
 ```
+
+The contact page should include a simple PHP form submission endpoint. It should
+not require WordPress, WooCommerce, a database, or a dynamic application server.
 
 Homepage requirements:
 
@@ -692,28 +767,21 @@ targets:
     path: builds/local-staging
     require_marker: true
 
-  dreamhost-staging:
-    type: rsync
-    host: example.dreamhost.com
-    user: USERNAME
-    path: /home/USERNAME/dev.maricoparecords.com/
-    require_marker: true
-
-  dreamhost-production:
-    type: rsync
-    host: example.dreamhost.com
-    user: USERNAME
-    path: /home/USERNAME/maricoparecords.com/
+  local-production:
+    type: local
+    path: builds/local-production
     require_marker: true
 ```
+
+MRP v0.1 deploys only to local staging and local production targets. Remote
+DreamHost-style rsync/SFTP deployment is deferred until after the local flow is
+working end to end.
 
 No secrets should be committed.
 
 Credentials should be provided by:
 
 ```text
-SSH config
-environment variables
 local ignored config
 agent runtime
 ```
@@ -756,7 +824,7 @@ MRP must verify that the marker target matches the intended target.
 
 ## 10.2 No Blind Delete
 
-If using `rsync --delete`, MRP must:
+For future remote adapters, if using `rsync --delete`, MRP must:
 
 1. verify marker exists
 2. verify destination path is not empty root or home
@@ -791,6 +859,7 @@ reports/deployment/
 reports/verification/
 reports/approval/
 reports/rollback/
+reports/import/
 ```
 
 Agents must be able to parse success/failure without scraping terminal prose.
@@ -942,7 +1011,8 @@ Exit code convention:
 
 # 15. Initial Import Requirements
 
-The repo already contains imported assets and content from the current Maricopa Records website.
+The source import files live in `~/website-migration`. MRP itself is implemented
+in `/home/mrose/mrp`.
 
 MRP should include an import normalization step.
 
@@ -954,10 +1024,14 @@ mrp import-site
 
 Expected behavior:
 
-* scan imported HTML/content/assets
+* scan WXR content, normalized import artifacts, captured HTML, and captured assets
 * identify pages, images, audio, and metadata
-* copy or map assets into the new layout
+* treat WXR content as authoritative when sources disagree
+* map assets from `~/website-migration` without copying large media into this repo
 * generate starter artist/release records when obvious
+* generate a simple curated v0.1 site, not a full clone of the WordPress export
+* exclude WooCommerce products, cart, checkout, account pages, and payment logic
+* exclude imported form submissions and feedback records
 * produce an import report
 * do not delete original imported source
 
@@ -1393,27 +1467,26 @@ Restore previous production build.
 
 ---
 
-## MRP-016 — Add Rsync Deployment Adapter
+## MRP-016 — Deferred Remote Deployment Adapter
 
 ### Objective
 
-Support DreamHost-style SSH/rsync deployment.
+Reserve the post-v0.1 work required to support DreamHost-style SSH/rsync
+deployment after local staging, local production, verification, and rollback are
+working end to end.
 
 ### Tasks
 
-1. Implement rsync adapter.
-2. Support configured host/user/path.
-3. Support dry-run.
-4. Verify remote marker before deploy.
-5. Refuse deploy if remote marker missing or mismatched.
-6. Log rsync command and result safely without secrets.
+1. Do not implement rsync/SFTP deployment in v0.1.
+2. Keep deploy configuration shaped so a future remote adapter can be added.
+3. Document remote deployment as a v0.2 candidate.
+4. Preserve marker validation requirements for future remote targets.
 
 ### Acceptance Criteria
 
-* Adapter can dry-run without modifying remote.
-* Missing remote marker blocks deploy.
-* Failed rsync returns deployment failure.
-* Successful rsync writes report.
+* v0.1 remains local-only.
+* Remote deployment requirements are documented but not required for v0.1 acceptance.
+* Local deploy code does not assume remote credentials or network access.
 
 ---
 
@@ -1559,12 +1632,13 @@ MRP-012  Verify
 MRP-013  Approve
 MRP-014  Publish
 MRP-015  Rollback
-MRP-016  Rsync deploy
 MRP-017  Release create
 MRP-018  Status
 MRP-019  Docs
 MRP-020  End-to-end test
 ```
+
+MRP-016 remote deployment is deferred until after v0.1 local publishing works.
 
 Stop after each packet and report:
 
@@ -1593,6 +1667,9 @@ CP should follow these rules:
 8. Do not require GitHub Actions for v0.1.
 9. Do not require a web admin UI.
 10. Optimize for safe repeatable release publishing.
+11. Use Canto delegation for bounded work packets where practical.
+12. Keep `/home/mrose/mrp` as the implementation repository.
+13. Treat `~/website-migration` as read-only source input and asset cache.
 
 ---
 
@@ -1601,15 +1678,14 @@ CP should follow these rules:
 After v0.1 works, consider:
 
 1. Remote DreamHost staging/production deployment.
-2. Contact form endpoint.
-3. Social post generation.
-4. Streaming-link enrichment.
-5. YouTube/video embed enrichment.
-6. LANDR/Amuse metadata import.
-7. Open Graph image generation.
-8. JSON feed for agents.
-9. Public catalog API.
-10. Integration with Canto as a reusable capability.
+2. Social post generation.
+3. Streaming-link enrichment.
+4. YouTube/video embed enrichment.
+5. LANDR/Amuse metadata import.
+6. Open Graph image generation.
+7. JSON feed for agents.
+8. Public catalog API.
+9. Integration with Canto as a reusable capability.
 
 ---
 

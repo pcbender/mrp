@@ -10,3 +10,16 @@ Rules:
 - If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
+
+<!-- canto-agent-instructions:start -->
+## Canto Agent Instructions
+
+This repository is Canto-enabled. Before working, read
+`.canto/agents/shared.md`. Developer sessions supervising governed work must
+also read `.canto/agents/orchestrator.md`; delegated Worker sessions must also
+read `.canto/agents/executor.md`. The filenames retain internal compatibility
+terms while the manuals define the public roles.
+
+Do not bypass Canto assignment, Guardrail, review, Result, Approval, or Apply
+rules.
+<!-- canto-agent-instructions:end -->

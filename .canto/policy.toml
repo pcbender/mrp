@@ -1,0 +1,36 @@
+version = 1
+allowed_paths = [
+  "AGENTS.md",
+  "README.md",
+  ".gitignore",
+  "docs",
+  "mrp",
+  "site",
+  "content",
+  "assets",
+  "deploy",
+  "reports",
+  "builds",
+  "scripts",
+  "tests",
+  "package.json",
+  "package-lock.json",
+  "astro.config.mjs",
+  "pyproject.toml",
+  ".canto",
+]
+denied_paths = [
+  ".env",
+  ".env.*",
+  "deploy/targets.local.yaml",
+  "reports/**/*.secret",
+  "builds/local-production",
+]
+allowed_commands = [
+  "git diff --check",
+]
+required_commands = [
+  "git diff --check",
+]
+allow_network = false
+allow_secrets = false

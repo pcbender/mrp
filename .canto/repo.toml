@@ -1,0 +1,8 @@
+version = 1
+repo_id = "repo_385d525a06a44b5dbd0183faa70d6569"
+canonical_path = "/home/mrose/mrp"
+git_common_dir = "/home/mrose/mrp/.git"
+initial_head = "a9da108ecce03345c8b704916143d977751bda7f"
+
+[remotes]
+"origin" = "https://github.com/pcbender/mrp.git"

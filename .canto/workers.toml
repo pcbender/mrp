@@ -1,0 +1,16 @@
+version = 1
+
+[selection]
+priority = "balanced"
+cloud_allowed = false
+cloud_fallback_allowed = false
+local_first = true
+allowed_endpoints = []
+allowed_providers = []
+allowed_models = []
+preferred_models = []
+required_classification = "implementation"
+
+[selection.budget]
+enabled = false
+allow_unknown_pricing = false

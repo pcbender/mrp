@@ -1,0 +1,5 @@
+version = 1
+instruction_root = ".canto/agents"
+shared_instructions = ".canto/agents/shared.md"
+orchestrator_instructions = ".canto/agents/orchestrator.md"
+executor_instructions = ".canto/agents/executor.md"
