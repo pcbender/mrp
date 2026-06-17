@@ -112,3 +112,126 @@ def test_verify_placeholder_token_fails(tmp_path):
     payload = json.loads(result.stdout)
     assert payload["status"] == "failed"
     assert any(error["field"] == "placeholder" for error in payload["errors"])
+
+
+def migrated_verified_repo(tmp_path: Path) -> Path:
+    repo = verified_repo(tmp_path)
+    write_file(
+        repo / "content/pages/music.yaml",
+        yaml.safe_dump(
+            {
+                "page": {
+                    "id": "music",
+                    "slug": "music",
+                    "title": "Music",
+                    "normalized_path": "/music/",
+                    "content_html": "<p>Music</p>",
+                }
+            },
+            sort_keys=False,
+        ),
+    )
+    write_file(
+        repo / "content/posts/news.yaml",
+        yaml.safe_dump(
+            {
+                "post": {
+                    "id": "news",
+                    "slug": "news",
+                    "title": "News",
+                    "normalized_path": "/news/",
+                    "content_html": "<p>News</p>",
+                }
+            },
+            sort_keys=False,
+        ),
+    )
+    write_file(
+        repo / "content/redirects.yaml",
+        yaml.safe_dump(
+            {
+                "redirects": [
+                    {
+                        "source_path": "/2025/02/26/news/",
+                        "normalized_path": "/2025/02/26/news/",
+                        "status": "normalized",
+                    }
+                ]
+            },
+            sort_keys=False,
+        ),
+    )
+    write_file(
+        repo / "content/assets/manifest.yaml",
+        yaml.safe_dump(
+            {
+                "assets": [
+                    {
+                        "id": "migrated-cover",
+                        "path": "site/public/assets/migrated/cover.jpg",
+                        "type": "image",
+                        "usage": ["migrated_content"],
+                        "required": True,
+                        "alt": None,
+                    }
+                ]
+            },
+            sort_keys=False,
+        ),
+    )
+    write_file(repo / "builds/local-staging/music/index.html", "<p>Music</p>\n")
+    write_file(repo / "builds/local-staging/news/index.html", "<p>News</p>\n")
+    write_file(repo / "builds/local-staging/2025/02/26/news/index.html", "<p>News alias</p>\n")
+    write_file(repo / "builds/local-staging/assets/migrated/cover.jpg", "image\n")
+    return repo
+
+
+def test_verify_migration_surface_passes_for_routes_assets_and_aliases(tmp_path):
+    repo = migrated_verified_repo(tmp_path)
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 0
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "passed"
+    assert payload["migration"]["enabled"] is True
+    assert payload["migration"]["pages"] == 1
+    assert payload["migration"]["posts"] == 1
+    assert payload["migration"]["routes_checked"] == 3
+    assert payload["migration"]["asset_records_checked"] == 1
+
+
+def test_verify_missing_migrated_route_fails(tmp_path):
+    repo = migrated_verified_repo(tmp_path)
+    (repo / "builds/local-staging/music/index.html").unlink()
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "failed"
+    assert any("music/index.html" in error["message"] for error in payload["errors"])
+
+
+def test_verify_missing_migrated_asset_fails(tmp_path):
+    repo = migrated_verified_repo(tmp_path)
+    (repo / "builds/local-staging/assets/migrated/cover.jpg").unlink()
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "failed"
+    assert any("assets/migrated/cover.jpg" in error["message"] for error in payload["errors"])
+
+
+def test_verify_excluded_migration_path_fails(tmp_path):
+    repo = migrated_verified_repo(tmp_path)
+    write_file(repo / "builds/local-staging/cart/index.html", "<p>Cart</p>\n")
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "failed"
+    assert any(error["field"] == "migration.excluded_path" for error in payload["errors"])

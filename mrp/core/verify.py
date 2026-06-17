@@ -15,6 +15,8 @@ from mrp.core.deploy import load_targets, validate_target
 CONTENT_EXTENSIONS = {".yaml", ".yml", ".json"}
 PLACEHOLDER_PATTERNS = ["TODO", "TBD", "FIXME", "lorem ipsum", "example.com", "INSERT_", "PLACEHOLDER"]
 TEXT_EXTENSIONS = {".html", ".css", ".js", ".json", ".xml", ".txt", ".php"}
+EXCLUDED_MIGRATION_PATHS = ["cart", "checkout", "my-account", "account", "payment", "shop"]
+BASELINE_V01_ROUTES = {"/", "/about-us/", "/artists/", "/catalog/", "/contact/", "/posts/", "/releases/"}
 
 
 def verify_target(repo: str | Path, target: str | None = None, release: str | None = None) -> dict[str, Any]:
@@ -54,6 +56,8 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
     result["deployment_report_path"] = deployment.get("report_path")
     releases = load_records(root / "content" / "releases", "release")
     artists = load_records(root / "content" / "artists", "artist")
+    pages = load_records(root / "content" / "pages", "page")
+    posts = load_records(root / "content" / "posts", "post")
     if release:
         releases = [item for item in releases if item.get("id") == release]
         if not releases:
@@ -67,6 +71,7 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
     check_cover_images(result, target_path, releases)
     check_internal_links(result, target_path)
     check_placeholders(result, target_path)
+    check_migration_surface(result, root, target_path, pages, posts, artists, releases)
 
     return finish(root, generated_at, result)
 
@@ -141,6 +146,145 @@ def check_placeholders(result: dict[str, Any], target_path: Path) -> None:
             if matched:
                 add_error(result, "placeholder", f"{path.relative_to(target_path)} contains forbidden token: {pattern}")
     result["checks"].append({"name": "placeholders", "status": "passed", "checked": scanned})
+
+
+def check_migration_surface(
+    result: dict[str, Any],
+    root: Path,
+    target_path: Path,
+    pages: list[dict[str, Any]],
+    posts: list[dict[str, Any]],
+    artists: list[dict[str, Any]],
+    releases: list[dict[str, Any]],
+) -> None:
+    pages = [page for page in pages if page.get("content_html")]
+    posts = [post for post in posts if post.get("content_html")]
+    routes = migrated_route_paths(root, pages, posts)
+    enabled = bool(pages or posts) and target_has_migration_surface(target_path, routes, artists, releases)
+    migration = {
+        "enabled": enabled,
+        "pages": len(pages),
+        "posts": len(posts),
+        "routes_checked": 0,
+        "asset_records_checked": 0,
+        "excluded_paths_checked": EXCLUDED_MIGRATION_PATHS,
+    }
+    result["migration"] = migration
+    if not enabled:
+        return
+    migration["routes_checked"] = check_migrated_routes(result, target_path, routes)
+    migration["asset_records_checked"] = check_migrated_assets(result, root, target_path)
+    check_excluded_migration_paths(result, target_path)
+
+
+def check_migrated_routes(
+    result: dict[str, Any],
+    target_path: Path,
+    routes: set[str],
+) -> int:
+    for route in sorted(routes):
+        relative = route_to_html_relative(route)
+        check_file(result, target_path / relative, relative)
+    result["checks"].append({"name": "migrated_routes", "status": "passed", "checked": len(routes)})
+    return len(routes)
+
+
+def migrated_route_paths(root: Path, pages: list[dict[str, Any]], posts: list[dict[str, Any]]) -> set[str]:
+    routes = {normalized_route_path(item) for item in [*pages, *posts] if item.get("slug")}
+    routes.update(migrated_post_aliases(root, posts))
+    return routes
+
+
+def target_has_migration_surface(
+    target_path: Path,
+    routes: set[str],
+    artists: list[dict[str, Any]],
+    releases: list[dict[str, Any]],
+) -> bool:
+    baseline = {
+        *BASELINE_V01_ROUTES,
+        *(
+            f"/artists/{artist.get('slug') or artist.get('id')}/"
+            for artist in artists
+            if artist.get("visibility") == "public"
+        ),
+        *(
+            f"/releases/{release.get('slug')}/"
+            for release in releases
+            if release.get("status") != "draft" and release.get("slug")
+        ),
+    }
+    for route in routes:
+        if route in baseline:
+            continue
+        if (target_path / route_to_html_relative(route)).is_file():
+            return True
+    return False
+
+
+def migrated_post_aliases(root: Path, posts: list[dict[str, Any]]) -> set[str]:
+    aliases: set[str] = set()
+    slugs = {post.get("slug") for post in posts if post.get("slug")}
+    redirects = load_redirects(root)
+    for redirect in redirects:
+        source = normalize_route_path(redirect.get("source_path") or "")
+        if any(source.endswith(f"/{slug}/") for slug in slugs):
+            aliases.add(source)
+    return aliases
+
+
+def check_migrated_assets(result: dict[str, Any], root: Path, target_path: Path) -> int:
+    manifest = load_asset_manifest(root)
+    assets = [
+        asset
+        for asset in manifest.get("assets", [])
+        if asset.get("required") and "migrated_content" in set(asset.get("usage") or [])
+    ]
+    for asset in assets:
+        relative = str(asset.get("path", "")).removeprefix("site/public/")
+        check_file(result, target_path / relative, relative)
+    result["checks"].append({"name": "migrated_assets", "status": "passed", "checked": len(assets)})
+    return len(assets)
+
+
+def check_excluded_migration_paths(result: dict[str, Any], target_path: Path) -> None:
+    for path in EXCLUDED_MIGRATION_PATHS:
+        html_path = target_path / path / "index.html"
+        if html_path.exists():
+            add_error(result, "migration.excluded_path", f"Excluded migration path was rendered: /{path}/")
+    result["checks"].append(
+        {"name": "migration_exclusions", "status": "passed", "checked": len(EXCLUDED_MIGRATION_PATHS)}
+    )
+
+
+def normalized_route_path(record: dict[str, Any]) -> str:
+    return normalize_route_path(record.get("normalized_path") or f"/{record.get('slug', '')}/")
+
+
+def normalize_route_path(path: str) -> str:
+    value = f"/{str(path).strip('/')}/"
+    return "/" if value == "//" else value
+
+
+def route_to_html_relative(route: str) -> str:
+    if route == "/":
+        return "index.html"
+    return f"{route.strip('/')}/index.html"
+
+
+def load_redirects(root: Path) -> list[dict[str, Any]]:
+    path = root / "content" / "redirects.yaml"
+    if not path.is_file():
+        return []
+    data = yaml.safe_load(path.read_text()) or {}
+    return data.get("redirects", [])
+
+
+def load_asset_manifest(root: Path) -> dict[str, Any]:
+    path = root / "content" / "assets" / "manifest.yaml"
+    if not path.is_file():
+        return {"assets": []}
+    return yaml.safe_load(path.read_text()) or {"assets": []}
 
 
 def check_file(result: dict[str, Any], path: Path, relative: str) -> None:

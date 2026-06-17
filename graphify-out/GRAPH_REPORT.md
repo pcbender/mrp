@@ -1,16 +1,16 @@
 # Graph Report - mrp  (2026-06-17)
 
 ## Corpus Check
-- 609 files · ~162,127,444 words
+- 729 files · ~224,587,367 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1161 nodes · 1618 edges · 215 communities (208 shown, 7 thin omitted)
+- 1197 nodes · 1683 edges · 234 communities (227 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8039e2d5`
+- Built from commit: `edd50528`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -110,7 +110,7 @@
 - [[_COMMUNITY_Community 206|Community 206]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `verify_target()` - 23 edges
+1. `verify_target()` - 24 edges
 2. `migration_inventory()` - 22 edges
 3. `17. Work Packets` - 21 edges
 4. `validate_repository()` - 19 edges
@@ -136,7 +136,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (215 total, 7 thin omitted)
+## Communities (234 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.10
@@ -175,8 +175,8 @@ Cohesion: 0.09
 Nodes (22): type, $ref, type, pattern, type, type, $ref, catalog_number (+14 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.35
-Nodes (19): add_error(), check_artist_pages(), check_cover_images(), check_file(), check_internal_links(), check_placeholders(), check_release_pages(), check_required_files() (+11 more)
+Cohesion: 0.23
+Nodes (31): add_error(), check_artist_pages(), check_cover_images(), check_excluded_migration_paths(), check_file(), check_internal_links(), check_migrated_assets(), check_migrated_routes() (+23 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.10
@@ -235,8 +235,8 @@ Cohesion: 0.42
 Nodes (11): minimal_repo(), CompletedProcess, Path, run_mrp(), test_invalid_migrated_page_fails_validation(), test_missing_artist_reference_fails(), test_missing_cover_image_fails_for_publishable_release(), test_validate_current_repo_writes_json_report() (+3 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.47
-Nodes (9): CompletedProcess, Path, run_mrp(), test_verify_missing_cover_image_fails(), test_verify_missing_release_page_fails(), test_verify_placeholder_token_fails(), test_verify_staging_passes_for_valid_local_target(), verified_repo() (+1 more)
+Cohesion: 0.36
+Nodes (14): migrated_verified_repo(), CompletedProcess, Path, run_mrp(), test_verify_excluded_migration_path_fails(), test_verify_migration_surface_passes_for_routes_assets_and_aliases(), test_verify_missing_cover_image_fails(), test_verify_missing_migrated_asset_fails() (+6 more)
 
 ### Community 26 - "Community 26"
 Cohesion: 0.44
@@ -335,16 +335,16 @@ Cohesion: 0.50
 Nodes (4): Acceptance Criteria, MRP-011 — Add Local Deployment Adapter, Objective, Tasks
 
 ### Community 50 - "Community 50"
-Cohesion: 0.50
-Nodes (4): Acceptance Criteria, MRP-012 — Implement Staging Verification, Objective, Tasks
+Cohesion: 0.40
+Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-012 — Implement Staging Verification, Objective, Tasks
 
 ### Community 51 - "Community 51"
 Cohesion: 0.50
 Nodes (4): Acceptance Criteria, MRP-013 — Implement Approval Records, Objective, Tasks
 
 ### Community 52 - "Community 52"
-Cohesion: 0.40
-Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-014 — Implement Production Publish, Objective, Tasks
+Cohesion: 0.50
+Nodes (4): Acceptance Criteria, MRP-014 — Implement Production Publish, Objective, Tasks
 
 ### Community 53 - "Community 53"
 Cohesion: 0.50
@@ -491,10 +491,8 @@ Nodes (5): codeToStatusMap, deserializeManifest(), deserializeRouteData(), getRo
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `main()` connect `Community 0` to `Community 7`, `Community 9`, `Community 12`, `Community 13`, `Community 205`, `Community 16`, `Community 155`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `migrate_site()` connect `Community 155` to `Community 0`, `Community 22`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `verify_target()` connect `Community 9` to `Community 0`, `Community 16`, `Community 7`?**
+- **Why does `migrate_site()` connect `Community 155` to `Community 0`, `Community 22`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `codeToStatusMap`, `manifest`, `Maricopa Release Publisher.` to the rest of the system?**
   _442 weakly-connected nodes found - possible documentation gaps or missing edges._
@@ -504,3 +502,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.06180733162830349 - nodes in this community are weakly interconnected._
