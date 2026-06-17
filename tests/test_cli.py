@@ -21,17 +21,30 @@ def test_cli_runs_from_repo_root():
     result = run_mrp("inspect")
 
     assert result.returncode == 0
-    assert "mrp inspect is registered" in result.stdout
+    assert "MRP repository inspection" in result.stdout
+    assert "Warnings:" in result.stdout
 
 
-def test_json_output_is_valid_for_placeholder_command():
+def test_inspect_json_output_is_valid():
     result = run_mrp("--json", "inspect")
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
     assert payload["command"] == "inspect"
-    assert payload["status"] == "not_implemented"
+    assert payload["status"] == "ok"
     assert payload["repo"] == str(ROOT)
+    assert payload["content"]["site"] == 1
+    assert payload["content"]["artists"] == 0
+    assert payload["site_framework"]["detected"] is False
+
+
+def test_json_output_is_valid_for_placeholder_command():
+    result = run_mrp("--json", "validate")
+
+    assert result.returncode == 0
+    payload = json.loads(result.stdout)
+    assert payload["command"] == "validate"
+    assert payload["status"] == "not_implemented"
 
 
 def test_unknown_command_fails_cleanly():

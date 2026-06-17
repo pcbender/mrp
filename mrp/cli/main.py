@@ -6,6 +6,8 @@ import sys
 from pathlib import Path
 from typing import Any, Sequence
 
+from mrp.core.inspect import format_inspection, inspect_repository
+
 
 EXIT_SUCCESS = 0
 EXIT_FAILURE = 1
@@ -16,7 +18,6 @@ EXIT_RUNTIME = 5
 
 PLACEHOLDER_COMMANDS = {
     "init",
-    "inspect",
     "validate",
     "build",
     "stage",
@@ -36,6 +37,10 @@ def build_parser() -> argparse.ArgumentParser:
     add_global_options(parser)
 
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    inspect_parser = subparsers.add_parser("inspect", help="Inspect repository state.")
+    add_global_options(inspect_parser, suppress_defaults=True)
+
     for command in sorted(PLACEHOLDER_COMMANDS):
         command_parser = subparsers.add_parser(command, help=f"{command} command placeholder.")
         add_global_options(command_parser, suppress_defaults=True)
@@ -119,6 +124,10 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
         print(json.dumps(result, indent=2, sort_keys=True))
         return
 
+    if result["command"] == "inspect" and result["status"] == "ok":
+        print(format_inspection(result))
+        return
+
     print(result["message"])
 
 
@@ -129,7 +138,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     except SystemExit as exc:
         return int(exc.code)
 
-    result = placeholder_result(args)
+    if args.command == "inspect":
+        result = inspect_repository(args.repo)
+    else:
+        result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))
     return EXIT_SUCCESS
 
