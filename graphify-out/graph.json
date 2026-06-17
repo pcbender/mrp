@@ -206,6 +206,16 @@
     {
       "label": "contact-submit.php",
       "file_type": "code",
+      "source_file": "builds/archive/production-20260617T211842Z/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "production_20260617t211842z_contact_submit",
+      "community": 241,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
       "source_file": "builds/local-production/contact-submit.php",
       "source_location": "L1",
       "_origin": "ast",
@@ -1484,6 +1494,66 @@
       "norm_label": "contact-submit.php"
     },
     {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T211810503586Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t211810503586z_site_contact_submit",
+      "community": 235,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T211821458005Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t211821458005z_site_contact_submit",
+      "community": 236,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T211825287601Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t211825287601z_circuiting_contact_submit",
+      "community": 237,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T211830569003Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t211830569003z_site_contact_submit",
+      "community": 238,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T211837342004Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t211837342004z_circuiting_contact_submit",
+      "community": 239,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T211849333054Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t211849333054z_site_contact_submit",
+      "community": 240,
+      "norm_label": "contact-submit.php"
+    },
+    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "mrp/__init__.py",
@@ -1750,7 +1820,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_build",
-      "community": 0,
+      "community": 13,
       "norm_label": "build.py"
     },
     {
@@ -1760,7 +1830,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "core_build_build_repository",
-      "community": 0,
+      "community": 13,
       "norm_label": "build_repository()"
     },
     {
@@ -1770,7 +1840,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mrp_core_build_py_path",
-      "community": 0,
+      "community": 13,
       "norm_label": "path"
     },
     {
@@ -1780,7 +1850,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mrp_core_build_py_any",
-      "community": 0,
+      "community": 13,
       "norm_label": "any"
     },
     {
@@ -1790,7 +1860,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "core_build_base_result",
-      "community": 0,
+      "community": 13,
       "norm_label": "base_result()"
     },
     {
@@ -1800,7 +1870,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "core_build_now_utc",
-      "community": 0,
+      "community": 13,
       "norm_label": "now_utc()"
     },
     {
@@ -1810,7 +1880,7 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "core_build_next_build_id",
-      "community": 0,
+      "community": 13,
       "norm_label": "next_build_id()"
     },
     {
@@ -1820,7 +1890,7 @@
       "source_location": "L156",
       "_origin": "ast",
       "id": "core_build_inventory_files",
-      "community": 0,
+      "community": 13,
       "norm_label": "inventory_files()"
     },
     {
@@ -1830,7 +1900,7 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "core_build_write_build_report",
-      "community": 0,
+      "community": 13,
       "norm_label": "write_build_report()"
     },
     {
@@ -1840,7 +1910,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "core_build_format_build",
-      "community": 0,
+      "community": 13,
       "norm_label": "format_build()"
     },
     {
@@ -2150,7 +2220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_inspect",
-      "community": 13,
+      "community": 0,
       "norm_label": "inspect.py"
     },
     {
@@ -2160,7 +2230,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "core_inspect_contentcounts",
-      "community": 13,
+      "community": 0,
       "norm_label": "contentcounts"
     },
     {
@@ -2170,7 +2240,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "core_inspect_contentcounts_total",
-      "community": 13,
+      "community": 0,
       "norm_label": ".total()"
     },
     {
@@ -2180,7 +2250,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "core_inspect_inspect_repository",
-      "community": 13,
+      "community": 0,
       "norm_label": "inspect_repository()"
     },
     {
@@ -2190,7 +2260,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "mrp_core_inspect_py_path",
-      "community": 13,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -2200,7 +2270,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "mrp_core_inspect_py_any",
-      "community": 13,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -2210,7 +2280,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "core_inspect_count_content",
-      "community": 13,
+      "community": 0,
       "norm_label": "count_content()"
     },
     {
@@ -2220,7 +2290,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "core_inspect_count_record_files",
-      "community": 13,
+      "community": 0,
       "norm_label": "count_record_files()"
     },
     {
@@ -2230,7 +2300,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "core_inspect_count_assets",
-      "community": 13,
+      "community": 0,
       "norm_label": "count_assets()"
     },
     {
@@ -2240,7 +2310,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "core_inspect_detect_site_framework",
-      "community": 13,
+      "community": 0,
       "norm_label": "detect_site_framework()"
     },
     {
@@ -2250,7 +2320,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "core_inspect_inspect_deploy",
-      "community": 13,
+      "community": 0,
       "norm_label": "inspect_deploy()"
     },
     {
@@ -2260,7 +2330,7 @@
       "source_location": "L110",
       "_origin": "ast",
       "id": "core_inspect_latest_reports",
-      "community": 13,
+      "community": 0,
       "norm_label": "latest_reports()"
     },
     {
@@ -2270,7 +2340,7 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "core_inspect_inspect_warnings",
-      "community": 13,
+      "community": 0,
       "norm_label": "inspect_warnings()"
     },
     {
@@ -2280,7 +2350,7 @@
       "source_location": "L142",
       "_origin": "ast",
       "id": "core_inspect_format_inspection",
-      "community": 13,
+      "community": 0,
       "norm_label": "format_inspection()"
     },
     {
@@ -3190,7 +3260,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_validate",
-      "community": 0,
+      "community": 13,
       "norm_label": "validate.py"
     },
     {
@@ -3200,7 +3270,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "core_validate_validate_repository",
-      "community": 0,
+      "community": 13,
       "norm_label": "validate_repository()"
     },
     {
@@ -3210,7 +3280,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "mrp_core_validate_py_path",
-      "community": 0,
+      "community": 13,
       "norm_label": "path"
     },
     {
@@ -3220,7 +3290,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "mrp_core_validate_py_any",
-      "community": 0,
+      "community": 13,
       "norm_label": "any"
     },
     {
@@ -3230,7 +3300,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "core_validate_load_records",
-      "community": 0,
+      "community": 13,
       "norm_label": "load_records()"
     },
     {
@@ -3240,7 +3310,7 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "core_validate_load_content",
-      "community": 0,
+      "community": 13,
       "norm_label": "load_content()"
     },
     {
@@ -3250,7 +3320,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "core_validate_load_schema",
-      "community": 0,
+      "community": 13,
       "norm_label": "load_schema()"
     },
     {
@@ -3260,7 +3330,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "core_validate_validate_schema",
-      "community": 0,
+      "community": 13,
       "norm_label": "validate_schema()"
     },
     {
@@ -3270,7 +3340,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "core_validate_validate_duplicates",
-      "community": 0,
+      "community": 13,
       "norm_label": "validate_duplicates()"
     },
     {
@@ -3280,7 +3350,7 @@
       "source_location": "L160",
       "_origin": "ast",
       "id": "core_validate_validate_artist_references",
-      "community": 0,
+      "community": 13,
       "norm_label": "validate_artist_references()"
     },
     {
@@ -3290,7 +3360,7 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "core_validate_validate_asset_manifest",
-      "community": 0,
+      "community": 13,
       "norm_label": "validate_asset_manifest()"
     },
     {
@@ -3300,7 +3370,7 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "core_validate_validate_release_assets",
-      "community": 0,
+      "community": 13,
       "norm_label": "validate_release_assets()"
     },
     {
@@ -3310,7 +3380,7 @@
       "source_location": "L209",
       "_origin": "ast",
       "id": "core_validate_report_path",
-      "community": 0,
+      "community": 13,
       "norm_label": "report_path()"
     },
     {
@@ -3320,7 +3390,7 @@
       "source_location": "L215",
       "_origin": "ast",
       "id": "core_validate_write_report",
-      "community": 0,
+      "community": 13,
       "norm_label": "write_report()"
     },
     {
@@ -3330,7 +3400,7 @@
       "source_location": "L221",
       "_origin": "ast",
       "id": "core_validate_error_record",
-      "community": 0,
+      "community": 13,
       "norm_label": "error_record()"
     },
     {
@@ -9021,6 +9091,66 @@
       "norm_label": "test_v01_local_release_flow_end_to_end()"
     },
     {
+      "label": "test_e2e_v011.py",
+      "file_type": "code",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_e2e_v011",
+      "community": 234,
+      "norm_label": "test_e2e_v011.py"
+    },
+    {
+      "label": "run_mrp()",
+      "file_type": "code",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "tests_test_e2e_v011_run_mrp",
+      "community": 234,
+      "norm_label": "run_mrp()"
+    },
+    {
+      "label": "CompletedProcess",
+      "file_type": "code",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "tests_test_e2e_v011_py_completedprocess",
+      "community": 234,
+      "norm_label": "completedprocess"
+    },
+    {
+      "label": "json_command()",
+      "file_type": "code",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "tests_test_e2e_v011_json_command",
+      "community": 234,
+      "norm_label": "json_command()"
+    },
+    {
+      "label": "ensure_staging_marker()",
+      "file_type": "code",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "tests_test_e2e_v011_ensure_staging_marker",
+      "community": 234,
+      "norm_label": "ensure_staging_marker()"
+    },
+    {
+      "label": "test_v011_full_site_staging_migration_end_to_end()",
+      "file_type": "code",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "tests_test_e2e_v011_test_v011_full_site_staging_migration_end_to_end",
+      "community": 234,
+      "norm_label": "test_v011_full_site_staging_migration_end_to_end()"
+    },
+    {
       "label": "test_import_site.py",
       "file_type": "code",
       "source_file": "tests/test_import_site.py",
@@ -10787,7 +10917,7 @@
       "source_location": "L1070",
       "_origin": "ast",
       "id": "docs_mrp_v0_1_specification_17_work_packets",
-      "community": 50,
+      "community": 37,
       "norm_label": "17. work packets"
     },
     {
@@ -17817,9 +17947,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L250",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_check_excluded_migration_paths",
-      "confidence_score": 1.0
+      "target": "core_verify_check_excluded_migration_paths"
     },
     {
       "relation": "contains",
@@ -17847,9 +17977,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L236",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_check_migrated_assets",
-      "confidence_score": 1.0
+      "target": "core_verify_check_migrated_assets"
     },
     {
       "relation": "contains",
@@ -17857,9 +17987,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_check_migrated_routes",
-      "confidence_score": 1.0
+      "target": "core_verify_check_migrated_routes"
     },
     {
       "relation": "contains",
@@ -17867,9 +17997,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_check_migration_surface",
-      "confidence_score": 1.0
+      "target": "core_verify_check_migration_surface"
     },
     {
       "relation": "contains",
@@ -17947,9 +18077,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L283",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_load_asset_manifest",
-      "confidence_score": 1.0
+      "target": "core_verify_load_asset_manifest"
     },
     {
       "relation": "contains",
@@ -17967,9 +18097,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_load_redirects",
-      "confidence_score": 1.0
+      "target": "core_verify_load_redirects"
     },
     {
       "relation": "contains",
@@ -17977,9 +18107,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_migrated_post_aliases",
-      "confidence_score": 1.0
+      "target": "core_verify_migrated_post_aliases"
     },
     {
       "relation": "contains",
@@ -17987,9 +18117,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L192",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_migrated_route_paths",
-      "confidence_score": 1.0
+      "target": "core_verify_migrated_route_paths"
     },
     {
       "relation": "contains",
@@ -17997,9 +18127,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L264",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_normalize_route_path",
-      "confidence_score": 1.0
+      "target": "core_verify_normalize_route_path"
     },
     {
       "relation": "contains",
@@ -18017,9 +18147,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L260",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_normalized_route_path",
-      "confidence_score": 1.0
+      "target": "core_verify_normalized_route_path"
     },
     {
       "relation": "contains",
@@ -18037,9 +18167,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L269",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_route_to_html_relative",
-      "confidence_score": 1.0
+      "target": "core_verify_route_to_html_relative"
     },
     {
       "relation": "contains",
@@ -18057,9 +18187,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify",
-      "target": "core_verify_target_has_migration_surface",
-      "confidence_score": 1.0
+      "target": "core_verify_target_has_migration_surface"
     },
     {
       "relation": "contains",
@@ -18132,9 +18262,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_verify_target",
-      "target": "core_verify_check_migration_surface",
-      "confidence_score": 1.0
+      "target": "core_verify_check_migration_surface"
     },
     {
       "relation": "calls",
@@ -18275,9 +18405,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L250",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_excluded_migration_paths",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18308,9 +18438,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L236",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migrated_assets",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18319,9 +18449,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migrated_routes",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18330,9 +18460,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migration_surface",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18407,9 +18537,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L283",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_load_asset_manifest",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18429,9 +18559,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_load_redirects",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18440,9 +18570,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_migrated_post_aliases",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18451,9 +18581,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L192",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_migrated_route_paths",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18462,9 +18592,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_target_has_migration_surface",
-      "target": "mrp_core_verify_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_path"
     },
     {
       "relation": "references",
@@ -18517,9 +18647,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L250",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_excluded_migration_paths",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18550,9 +18680,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L236",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migrated_assets",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18561,9 +18691,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L180",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migrated_routes",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18572,9 +18702,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migration_surface",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18649,9 +18779,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L283",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_load_asset_manifest",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18671,9 +18801,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L275",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_load_redirects",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18682,9 +18812,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_migrated_post_aliases",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18693,9 +18823,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L192",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_migrated_route_paths",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18704,9 +18834,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L260",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_normalized_route_path",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18715,9 +18845,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_target_has_migration_surface",
-      "target": "mrp_core_verify_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_verify_py_any"
     },
     {
       "relation": "references",
@@ -18836,9 +18966,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L177",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migration_surface",
-      "target": "core_verify_check_excluded_migration_paths",
-      "confidence_score": 1.0
+      "target": "core_verify_check_excluded_migration_paths"
     },
     {
       "relation": "calls",
@@ -18847,9 +18977,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migration_surface",
-      "target": "core_verify_check_migrated_assets",
-      "confidence_score": 1.0
+      "target": "core_verify_check_migrated_assets"
     },
     {
       "relation": "calls",
@@ -18858,9 +18988,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migration_surface",
-      "target": "core_verify_check_migrated_routes",
-      "confidence_score": 1.0
+      "target": "core_verify_check_migrated_routes"
     },
     {
       "relation": "calls",
@@ -18869,9 +18999,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L162",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migration_surface",
-      "target": "core_verify_migrated_route_paths",
-      "confidence_score": 1.0
+      "target": "core_verify_migrated_route_paths"
     },
     {
       "relation": "calls",
@@ -18880,9 +19010,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L163",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migration_surface",
-      "target": "core_verify_target_has_migration_surface",
-      "confidence_score": 1.0
+      "target": "core_verify_target_has_migration_surface"
     },
     {
       "relation": "calls",
@@ -18891,9 +19021,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L187",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migrated_routes",
-      "target": "core_verify_check_file",
-      "confidence_score": 1.0
+      "target": "core_verify_check_file"
     },
     {
       "relation": "calls",
@@ -18902,9 +19032,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L186",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migrated_routes",
-      "target": "core_verify_route_to_html_relative",
-      "confidence_score": 1.0
+      "target": "core_verify_route_to_html_relative"
     },
     {
       "relation": "calls",
@@ -18913,9 +19043,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L194",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_migrated_route_paths",
-      "target": "core_verify_migrated_post_aliases",
-      "confidence_score": 1.0
+      "target": "core_verify_migrated_post_aliases"
     },
     {
       "relation": "calls",
@@ -18924,9 +19054,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L193",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_migrated_route_paths",
-      "target": "core_verify_normalized_route_path",
-      "confidence_score": 1.0
+      "target": "core_verify_normalized_route_path"
     },
     {
       "relation": "calls",
@@ -18935,9 +19065,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L220",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_target_has_migration_surface",
-      "target": "core_verify_route_to_html_relative",
-      "confidence_score": 1.0
+      "target": "core_verify_route_to_html_relative"
     },
     {
       "relation": "calls",
@@ -18946,9 +19076,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_migrated_post_aliases",
-      "target": "core_verify_load_redirects",
-      "confidence_score": 1.0
+      "target": "core_verify_load_redirects"
     },
     {
       "relation": "calls",
@@ -18957,9 +19087,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_migrated_post_aliases",
-      "target": "core_verify_normalize_route_path",
-      "confidence_score": 1.0
+      "target": "core_verify_normalize_route_path"
     },
     {
       "relation": "calls",
@@ -18968,9 +19098,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L245",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migrated_assets",
-      "target": "core_verify_check_file",
-      "confidence_score": 1.0
+      "target": "core_verify_check_file"
     },
     {
       "relation": "calls",
@@ -18979,9 +19109,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L237",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_migrated_assets",
-      "target": "core_verify_load_asset_manifest",
-      "confidence_score": 1.0
+      "target": "core_verify_load_asset_manifest"
     },
     {
       "relation": "calls",
@@ -18990,9 +19120,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L254",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_check_excluded_migration_paths",
-      "target": "core_verify_add_error",
-      "confidence_score": 1.0
+      "target": "core_verify_add_error"
     },
     {
       "relation": "calls",
@@ -19001,9 +19131,9 @@
       "source_file": "mrp/core/verify.py",
       "source_location": "L261",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_verify_normalized_route_path",
-      "target": "core_verify_normalize_route_path",
-      "confidence_score": 1.0
+      "target": "core_verify_normalize_route_path"
     },
     {
       "relation": "calls",
@@ -25515,6 +25645,90 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "tests_test_e2e_v011",
+      "target": "tests_test_e2e_v011_ensure_staging_marker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "tests_test_e2e_v011",
+      "target": "tests_test_e2e_v011_json_command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tests_test_e2e_v011",
+      "target": "tests_test_e2e_v011_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "tests_test_e2e_v011",
+      "target": "tests_test_e2e_v011_test_v011_full_site_staging_migration_end_to_end",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "tests_test_e2e_v011_json_command",
+      "target": "tests_test_e2e_v011_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "tests_test_e2e_v011_run_mrp",
+      "target": "tests_test_e2e_v011_py_completedprocess",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "tests_test_e2e_v011_test_v011_full_site_staging_migration_end_to_end",
+      "target": "tests_test_e2e_v011_json_command",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_e2e_v011.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "tests_test_e2e_v011_test_v011_full_site_staging_migration_end_to_end",
+      "target": "tests_test_e2e_v011_ensure_staging_marker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/test_import_site.py",
       "source_location": "L24",
       "weight": 1.0,
@@ -27282,9 +27496,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify",
-      "target": "tests_test_verify_migrated_verified_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_migrated_verified_repo"
     },
     {
       "relation": "contains",
@@ -27302,9 +27516,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify",
-      "target": "tests_test_verify_test_verify_excluded_migration_path_fails",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_test_verify_excluded_migration_path_fails"
     },
     {
       "relation": "contains",
@@ -27312,9 +27526,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L189",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify",
-      "target": "tests_test_verify_test_verify_migration_surface_passes_for_routes_assets_and_aliases",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_test_verify_migration_surface_passes_for_routes_assets_and_aliases"
     },
     {
       "relation": "contains",
@@ -27332,9 +27546,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L216",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify",
-      "target": "tests_test_verify_test_verify_missing_migrated_asset_fails",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_test_verify_missing_migrated_asset_fails"
     },
     {
       "relation": "contains",
@@ -27342,9 +27556,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L204",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify",
-      "target": "tests_test_verify_test_verify_missing_migrated_route_fails",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_test_verify_missing_migrated_route_fails"
     },
     {
       "relation": "contains",
@@ -27425,9 +27639,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L232",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_excluded_migration_path_fails",
-      "target": "tests_test_verify_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_run_mrp"
     },
     {
       "relation": "calls",
@@ -27436,9 +27650,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L192",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_migration_surface_passes_for_routes_assets_and_aliases",
-      "target": "tests_test_verify_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_run_mrp"
     },
     {
       "relation": "calls",
@@ -27458,9 +27672,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L220",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_missing_migrated_asset_fails",
-      "target": "tests_test_verify_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_run_mrp"
     },
     {
       "relation": "calls",
@@ -27469,9 +27683,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_missing_migrated_route_fails",
-      "target": "tests_test_verify_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_run_mrp"
     },
     {
       "relation": "calls",
@@ -27513,9 +27727,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_migrated_verified_repo",
-      "target": "tests_test_verify_py_path",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_py_path"
     },
     {
       "relation": "references",
@@ -27546,9 +27760,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_migrated_verified_repo",
-      "target": "tests_test_verify_verified_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_verified_repo"
     },
     {
       "relation": "calls",
@@ -27612,9 +27826,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L119",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_migrated_verified_repo",
-      "target": "tests_test_verify_write_file",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_write_file"
     },
     {
       "relation": "calls",
@@ -27623,9 +27837,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_excluded_migration_path_fails",
-      "target": "tests_test_verify_write_file",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_write_file"
     },
     {
       "relation": "calls",
@@ -27645,9 +27859,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L229",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_excluded_migration_path_fails",
-      "target": "tests_test_verify_migrated_verified_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_migrated_verified_repo"
     },
     {
       "relation": "calls",
@@ -27656,9 +27870,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L190",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_migration_surface_passes_for_routes_assets_and_aliases",
-      "target": "tests_test_verify_migrated_verified_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_migrated_verified_repo"
     },
     {
       "relation": "calls",
@@ -27667,9 +27881,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L217",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_missing_migrated_asset_fails",
-      "target": "tests_test_verify_migrated_verified_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_migrated_verified_repo"
     },
     {
       "relation": "calls",
@@ -27678,9 +27892,9 @@
       "source_file": "tests/test_verify.py",
       "source_location": "L205",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_verify_test_verify_missing_migrated_route_fails",
-      "target": "tests_test_verify_migrated_verified_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_verify_migrated_verified_repo"
     },
     {
       "relation": "contains",
@@ -29504,5 +29718,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "edd50528be05cc18eee06369dd250c6b01ad4599"
+  "built_at_commit": "df9a2e44252720f75c8000b41ace73679cbbbc48"
 }
