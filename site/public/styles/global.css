@@ -143,6 +143,7 @@ main {
 .page-heading,
 .page-grid,
 .prose,
+.content-list,
 .contact-form {
   padding: clamp(36px, 6vw, 72px) clamp(20px, 4vw, 56px);
 }
@@ -227,6 +228,66 @@ main {
 .prose p {
   margin: 0;
   color: var(--muted);
+}
+
+.content-list {
+  display: grid;
+  gap: 20px;
+  max-width: 980px;
+}
+
+.content-list article {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.content-list h2 {
+  margin: 4px 0 8px;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  letter-spacing: 0;
+}
+
+.content-list h2 a {
+  text-decoration: none;
+}
+
+.content-list p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.migrated-content .page-heading {
+  padding-bottom: 24px;
+}
+
+.wp-content {
+  width: min(1080px, calc(100% - clamp(40px, 8vw, 112px)));
+  margin: 0 auto;
+  padding: 0 0 clamp(48px, 7vw, 88px);
+}
+
+.wp-content :where(h1, h2, h3, h4, h5, h6) {
+  margin: 1.4em 0 0.45em;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.wp-content :where(p, ul, ol, figure, blockquote) {
+  margin: 0 0 1rem;
+}
+
+.wp-content :where(img) {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.wp-content :where(.wp-block-image, figure) {
+  max-width: 100%;
+}
+
+.wp-content :where(.has-text-align-center, .stk-block-heading__text.has-text-align-center) {
+  text-align: center;
 }
 
 .contact-form {

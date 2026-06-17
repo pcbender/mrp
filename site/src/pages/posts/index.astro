@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getMigratedPosts, migratedDescription } from "../../lib/content.js";
+
+const posts = getMigratedPosts().sort((left, right) =>
+  String(right.published_at || "").localeCompare(String(left.published_at || ""))
+);
+---
+<BaseLayout title="Posts | Maricopa Records" description="News and posts from Maricopa Records.">
+  <section class="page-heading">
+    <p class="eyebrow">Posts</p>
+    <h1>News and notes</h1>
+  </section>
+  <section class="content-list">
+    {posts.map((post) => (
+      <article>
+        <p class="eyebrow">{post.published_at}</p>
+        <h2><a href={`/${post.slug}/`}>{post.title}</a></h2>
+        <p>{migratedDescription(post)}</p>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

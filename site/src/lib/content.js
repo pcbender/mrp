@@ -1,25 +1,32 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import yaml from "js-yaml";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
 const publicStatuses = new Set(["staged", "verified", "approved", "live"]);
+const reservedMigratedPaths = new Set(["/", "/about-us/", "/artists/", "/catalog/", "/contact/", "/posts/", "/releases/"]);
 
-function readJsonRecords(relativeDir, rootKey) {
+function readRecords(relativeDir, rootKey) {
   const dir = resolve(repoRoot, relativeDir);
   if (!existsSync(dir)) return [];
   return readdirSync(dir)
-    .filter((name) => name.endsWith(".json"))
+    .filter((name) => name.endsWith(".json") || name.endsWith(".yaml") || name.endsWith(".yml"))
     .sort()
-    .map((name) => JSON.parse(readFileSync(resolve(dir, name), "utf8"))[rootKey]);
+    .map((name) => {
+      const text = readFileSync(resolve(dir, name), "utf8");
+      const data = name.endsWith(".json") ? JSON.parse(text) : yaml.load(text);
+      return data[rootKey];
+    })
+    .filter(Boolean);
 }
 
 export function getArtists() {
-  return readJsonRecords("content/artists", "artist").filter((artist) => artist.visibility === "public");
+  return readRecords("content/artists", "artist").filter((artist) => artist.visibility === "public");
 }
 
 export function getAllReleases() {
-  return readJsonRecords("content/releases", "release");
+  return readRecords("content/releases", "release");
 }
 
 export function getVisibleReleases() {
@@ -58,4 +65,57 @@ export function streamingLinks(release) {
   return Object.entries(release?.links || {})
     .filter(([, value]) => Boolean(value))
     .map(([key, href]) => ({ label: key.replaceAll("_", " "), href }));
+}
+
+export function getMigratedPages() {
+  return readRecords("content/pages", "page").filter((page) => page.slug && page.content_html);
+}
+
+export function getMigratedPosts() {
+  return readRecords("content/posts", "post").filter((post) => post.slug && post.content_html);
+}
+
+export function getMigratedRoutes() {
+  const currentRoutes = new Set([
+    ...getArtists().map((artist) => `/artists/${artist.id}/`),
+    ...getVisibleReleases().map((release) => `/releases/${release.slug}/`)
+  ]);
+  return [...getMigratedPages(), ...migratedPostRouteEntries()]
+    .map((entry) => ({
+      ...entry,
+      normalized_path: normalizePath(entry.normalized_path || `/${entry.slug}/`)
+    }))
+    .filter((entry) => !reservedMigratedPaths.has(entry.normalized_path))
+    .filter((entry) => !currentRoutes.has(entry.normalized_path))
+    .sort((left, right) => left.normalized_path.localeCompare(right.normalized_path));
+}
+
+function migratedPostRouteEntries() {
+  return getMigratedPosts().flatMap((post) => {
+    const primaryPath = normalizePath(post.normalized_path || `/${post.slug}/`);
+    const aliases = getRedirects()
+      .map((redirect) => normalizePath(redirect.source_path))
+      .filter((path) => path.endsWith(`/${post.slug}/`) && path !== primaryPath)
+      .map((path) => ({ ...post, normalized_path: path, canonical_path: primaryPath }));
+    return [{ ...post, normalized_path: primaryPath }, ...aliases];
+  });
+}
+
+function getRedirects() {
+  const path = resolve(repoRoot, "content/redirects.yaml");
+  if (!existsSync(path)) return [];
+  return yaml.load(readFileSync(path, "utf8"))?.redirects || [];
+}
+
+export function migratedPathParam(entry) {
+  return entry.normalized_path.replace(/^\/|\/$/g, "");
+}
+
+export function migratedDescription(entry) {
+  return entry.seo?.description || entry.excerpt || `${entry.title} on Maricopa Records.`;
+}
+
+export function normalizePath(path) {
+  const value = `/${String(path || "").replace(/^\/|\/$/g, "")}/`;
+  return value === "//" ? "/" : value;
 }

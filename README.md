@@ -70,6 +70,8 @@ existing release.
 
 `migrate-site --dry-run` plans the v0.1.1 full-site staging migration from the
 read-only `~/website-migration` source without writing content records or assets.
+The staging RSS feed includes current release entries and migrated blog/news
+posts; migrated static pages are listed in the sitemap but are not feed items.
 
 MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
 v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).

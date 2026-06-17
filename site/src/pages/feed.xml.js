@@ -1,8 +1,8 @@
-import { getArtistById, getVisibleReleases } from "../lib/content.js";
+import { getArtistById, getMigratedPosts, getVisibleReleases, migratedDescription } from "../lib/content.js";
 
 export async function GET() {
   const base = "https://www.maricoparecords.com";
-  const items = getVisibleReleases()
+  const releaseItems = getVisibleReleases()
     .map((release) => {
       const artist = getArtistById(release.artist_id);
       return [
@@ -11,11 +11,27 @@ export async function GET() {
         `      <link>${base}/releases/${release.slug}/</link>`,
         `      <guid>${base}/releases/${release.slug}/</guid>`,
         `      <description>${escapeXml(release.summary || release.seo.description)}</description>`,
+        release.release_date ? `      <pubDate>${rssDate(release.release_date)}</pubDate>` : "",
         "    </item>"
-      ].join("\n");
+      ].filter(Boolean).join("\n");
     })
     .join("\n");
-  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>Maricopa Records Releases</title>\n    <link>${base}/releases/</link>\n    <description>Latest releases from Maricopa Records.</description>\n${items}\n  </channel>\n</rss>\n`;
+  const postItems = getMigratedPosts()
+    .sort((left, right) => String(right.published_at || "").localeCompare(String(left.published_at || "")))
+    .map((post) =>
+      [
+        "    <item>",
+        `      <title>${escapeXml(post.title)}</title>`,
+        `      <link>${base}/${post.slug}/</link>`,
+        `      <guid>${base}/${post.slug}/</guid>`,
+        `      <description>${escapeXml(migratedDescription(post))}</description>`,
+        post.published_at ? `      <pubDate>${rssDate(post.published_at)}</pubDate>` : "",
+        "    </item>"
+      ].filter(Boolean).join("\n")
+    )
+    .join("\n");
+  const items = [releaseItems, postItems].filter(Boolean).join("\n");
+  const body = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n  <channel>\n    <title>Maricopa Records</title>\n    <link>${base}/</link>\n    <description>Latest releases and posts from Maricopa Records.</description>\n${items}\n  </channel>\n</rss>\n`;
 
   return new Response(body, {
     headers: { "Content-Type": "application/rss+xml; charset=utf-8" }
@@ -28,4 +44,9 @@ function escapeXml(value) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
+}
+
+function rssDate(value) {
+  const date = new Date(value);
+  return Number.isNaN(date.valueOf()) ? "" : date.toUTCString();
 }

@@ -38,6 +38,15 @@ def test_build_creates_staging_artifact_and_report():
     assert payload["validation_report_path"].startswith("reports/validation/")
     assert payload["file_count"] > 0
     assert (ROOT / payload["build_path"] / "index.html").is_file()
+    assert (ROOT / payload["build_path"] / "licensing-custom-songs/music-licensing/index.html").is_file()
+    assert (ROOT / payload["build_path"] / "the-future-of-ai-in-music/index.html").is_file()
+    assert (ROOT / payload["build_path"] / "posts/index.html").is_file()
+    assert (ROOT / payload["build_path"] / "releases/circuiting/index.html").is_file()
+    sitemap = (ROOT / payload["build_path"] / "sitemap.xml").read_text()
+    assert "https://www.maricoparecords.com/licensing-custom-songs/music-licensing/" in sitemap
+    assert "https://www.maricoparecords.com/the-future-of-ai-in-music/" in sitemap
+    feed = (ROOT / payload["build_path"] / "feed.xml").read_text()
+    assert "The Future of AI in Music" in feed
     assert (ROOT / payload["manifest_path"]).is_file()
     assert (ROOT / payload["report_path"]).is_file()
 
