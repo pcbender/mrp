@@ -37,7 +37,7 @@ def test_inspect_json_output_is_valid():
     assert payload["content"]["site"] == 1
     assert payload["content"]["artists"] >= 4
     assert payload["content"]["releases"] >= 32
-    assert payload["content"]["assets"] == 1
+    assert payload["content"]["assets"] >= 38
     assert payload["content"]["records"] >= 38
     assert payload["site_framework"]["detected"] is True
     assert payload["site_framework"]["name"] == "astro"

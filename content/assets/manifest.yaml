@@ -1,9 +1,268 @@
 assets:
-  - id: circuiting-cover
-    path: site/public/assets/releases/circuiting-cover.svg
-    type: image
-    usage:
-      - release_cover
-      - social_preview
-    required: true
-    alt: Circuiting cover art by PCBender
+- id: circuiting-cover
+  path: site/public/assets/releases/circuiting-cover.svg
+  type: image
+  usage:
+  - release_cover
+  - social_preview
+  required: true
+  alt: Circuiting cover art by PCBender
+- id: migrated-07172daf6dd0
+  path: site/public/assets/migrated/07172daf6dd0-Sawmill_Pond.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-078e2b862c5f
+  path: site/public/assets/migrated/078e2b862c5f-Burn_Me.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-19c7200e89eb
+  path: site/public/assets/migrated/19c7200e89eb-Riders-and-runners.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-1c2f916bb6b5
+  path: site/public/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-25d5c9e5d9d6
+  path: site/public/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-36b8e37ecd24
+  path: site/public/assets/migrated/36b8e37ecd24-TU2.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-3a6784f3a471
+  path: site/public/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-52a0570c6494
+  path: site/public/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-52b5e1e6089d
+  path: site/public/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-567968e1ddfa
+  path: site/public/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-5dba5aca51d0
+  path: site/public/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-631c1ce81182
+  path: site/public/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-640c69717d01
+  path: site/public/assets/migrated/640c69717d01-Tits-Up.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-65929518683d
+  path: site/public/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-7253ce3268b5
+  path: site/public/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-76195be631e4
+  path: site/public/assets/migrated/76195be631e4-Umbra_Ala.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-7af9531aa926
+  path: site/public/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-8744705d2da3
+  path: site/public/assets/migrated/8744705d2da3-Have-A-Heart.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-8ba23fe44ba8
+  path: site/public/assets/migrated/8ba23fe44ba8-scattershot.jpg
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-90aec637524d
+  path: site/public/assets/migrated/90aec637524d-LA_Profile_square.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-94bf49f0e408
+  path: site/public/assets/migrated/94bf49f0e408-Elemental_Fundamental.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-9738fd064754
+  path: site/public/assets/migrated/9738fd064754-PCBender.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-a07742867a4f
+  path: site/public/assets/migrated/a07742867a4f-Specter.jpg
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-a4753b0ddd52
+  path: site/public/assets/migrated/a4753b0ddd52-Circuiting.jpg
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-a86cd61722ea
+  path: site/public/assets/migrated/a86cd61722ea-WindsOfChange.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-a8959fff44c8
+  path: site/public/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-b95b541b1109
+  path: site/public/assets/migrated/b95b541b1109-Nancy.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-bd5efa2769be
+  path: site/public/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-cdcab312e822
+  path: site/public/assets/migrated/cdcab312e822-Two-Tree-Road.jpg
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-d14a68295208
+  path: site/public/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-d19e2a3a5f05
+  path: site/public/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-d4a7e8d1e1a5
+  path: site/public/assets/migrated/d4a7e8d1e1a5-GeminiRising.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-d70397e2d7a1
+  path: site/public/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-e1810c0d73f1
+  path: site/public/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-f38a42a461ad
+  path: site/public/assets/migrated/f38a42a461ad-AboutUsImage.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-fc6fd813f1e6
+  path: site/public/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null
+- id: migrated-fe64a9a28d3f
+  path: site/public/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png
+  type: image
+  usage:
+  - migrated_content
+  required: true
+  alt: null

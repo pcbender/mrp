@@ -2,17 +2,31 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import unicodedata
+from hashlib import sha256
 from html import unescape
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
+from urllib.parse import unquote, urlparse, urlunparse
 
 import yaml
 
 from mrp.core.import_site import title_from_slug
 from mrp.core.migration_inventory import DEFAULT_MIGRATION_SOURCE, migration_inventory
+
+MIGRATED_ASSET_USAGE = "migrated_content"
+OVERSIZED_ASSET_BYTES = 5_000_000
+SUPPORTED_ASSET_TYPES = {
+    "image": ("image/",),
+    "audio": ("audio/",),
+    "video": ("video/",),
+    "document": ("application/pdf",),
+}
+ASSET_REFERENCE_RE = re.compile(
+    r"""(?:src|href|srcset)=["']([^"']+)["']|url\(([^)]+)\)|(https?://[^\s"'<>]+/wp-content/[^\s"'<>]+|/wp-content/[^\s"'<>]+)"""
+)
 
 
 def migrate_site(
@@ -141,17 +155,21 @@ def run_migration(root: Path, source: str | Path) -> dict[str, Any]:
     redirects_path.parent.mkdir(parents=True, exist_ok=True)
     redirects_path.write_text(yaml.safe_dump(redirects, sort_keys=False, allow_unicode=False))
     created.append(str(redirects_path.relative_to(root)))
+    asset_result = copy_referenced_assets(root, inventory)
+    if asset_result.get("manifest_updated"):
+        created.append("content/assets/manifest.yaml")
 
     return {
         "status": "completed",
         "stage": "content_generation",
         "summary": inventory["summary"],
         "planned_writes": planned_writes(inventory),
+        "assets": asset_result,
         "created": sorted(created),
         "skipped": sorted(skipped, key=lambda item: item["path"]),
         "review_needed": sorted(review_needed, key=lambda item: item["path"]),
         "notes": [
-            "Generated staging content records only; migrated media copy is reserved for MRP-105.",
+            "Generated staging content records and copied referenced migrated assets.",
             "Existing content records were not overwritten.",
         ],
     }
@@ -338,6 +356,222 @@ def release_record(release: dict[str, Any], source_post: dict[str, Any]) -> dict
             },
         }
     }
+
+
+def copy_referenced_assets(root: Path, inventory: dict[str, Any]) -> dict[str, Any]:
+    capture_manifest = Path(inventory["source_files"]["capture_manifest"])
+    capture_root = capture_manifest.parent
+    assets_by_url = capture_assets_by_url(inventory["assets"])
+    references = extract_content_asset_references(root)
+    copied: list[dict[str, Any]] = []
+    skipped_existing: list[dict[str, Any]] = []
+    missing: list[dict[str, Any]] = []
+    oversized: list[dict[str, Any]] = []
+    unsupported: list[dict[str, Any]] = []
+    duplicate_destinations: list[dict[str, Any]] = []
+    manifest_records: list[dict[str, Any]] = []
+    destination_paths: dict[str, str] = {}
+    total_bytes = 0
+
+    for source_url, page_references in sorted(references.items()):
+        normalized_url = normalize_asset_url(source_url)
+        if not normalized_url:
+            continue
+        asset = assets_by_url.get(normalized_url)
+        if asset is None:
+            missing.append(
+                {
+                    "source_url": source_url,
+                    "page_references": sorted(page_references),
+                    "reason": "Referenced asset was not found in the capture manifest.",
+                }
+            )
+            continue
+        asset_type = manifest_asset_type(asset.get("content_type") or "")
+        if asset_type is None or "woocommerce" in (asset.get("path") or ""):
+            unsupported.append(
+                {
+                    "source_url": asset.get("url") or source_url,
+                    "page_references": sorted(page_references),
+                    "content_type": asset.get("content_type"),
+                    "reason": "Asset type or source path is excluded from migrated staging copy.",
+                }
+            )
+            continue
+        source_path = capture_root / (asset.get("path") or "")
+        if not source_path.is_file():
+            missing.append(
+                {
+                    "source_url": asset.get("url") or source_url,
+                    "page_references": sorted(page_references),
+                    "reason": f"Captured asset file is missing: {asset.get('path')}",
+                }
+            )
+            continue
+
+        dest_rel = migrated_asset_path(normalized_url)
+        previous_url = destination_paths.get(dest_rel)
+        if previous_url and previous_url != normalized_url:
+            duplicate_destinations.append(
+                {
+                    "path": dest_rel,
+                    "source_url": normalized_url,
+                    "duplicate_of": previous_url,
+                }
+            )
+            continue
+        destination_paths[dest_rel] = normalized_url
+        dest_path = root / dest_rel
+        asset_bytes = int(asset.get("bytes") or source_path.stat().st_size)
+        if asset_bytes > OVERSIZED_ASSET_BYTES:
+            oversized.append(
+                {
+                    "path": dest_rel,
+                    "source_url": asset.get("url") or source_url,
+                    "page_references": sorted(page_references),
+                    "bytes": asset_bytes,
+                    "threshold": OVERSIZED_ASSET_BYTES,
+                }
+            )
+        if dest_path.exists():
+            skipped_existing.append({"path": dest_rel, "source_url": asset.get("url") or source_url})
+        else:
+            dest_path.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source_path, dest_path)
+            copied.append(
+                {
+                    "path": dest_rel,
+                    "source_url": asset.get("url") or source_url,
+                    "page_references": sorted(page_references),
+                    "bytes": asset_bytes,
+                }
+            )
+            total_bytes += asset_bytes
+        manifest_records.append(
+            {
+                "id": f"migrated-{sha256(normalized_url.encode()).hexdigest()[:12]}",
+                "path": dest_rel,
+                "type": asset_type,
+                "usage": [MIGRATED_ASSET_USAGE],
+                "required": True,
+                "alt": None,
+            }
+        )
+
+    manifest_updated = merge_asset_manifest(root, manifest_records)
+    return {
+        "referenced": len(references),
+        "copied": len(copied),
+        "skipped_existing": len(skipped_existing),
+        "missing": missing,
+        "oversized": oversized,
+        "unsupported": unsupported,
+        "duplicates": duplicate_destinations,
+        "total_bytes": total_bytes,
+        "manifest_records": len(manifest_records),
+        "manifest_updated": manifest_updated,
+        "copied_files": copied,
+    }
+
+
+def capture_assets_by_url(assets: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    by_url: dict[str, dict[str, Any]] = {}
+    for asset in assets:
+        normalized = normalize_asset_url(asset.get("url") or "")
+        if normalized:
+            by_url[normalized] = asset
+    return by_url
+
+
+def extract_content_asset_references(root: Path) -> dict[str, set[str]]:
+    references: dict[str, set[str]] = {}
+    for directory, key in ((root / "content" / "pages", "page"), (root / "content" / "posts", "post")):
+        if not directory.is_dir():
+            continue
+        for path in sorted(directory.glob("*.yaml")):
+            data = yaml.safe_load(path.read_text()) or {}
+            html = ((data.get(key) or {}).get("content_html") or "")
+            for raw_reference in asset_references_from_html(html):
+                normalized = normalize_asset_url(raw_reference)
+                if normalized:
+                    references.setdefault(normalized, set()).add(str(path.relative_to(root)))
+    return references
+
+
+def asset_references_from_html(html: str) -> set[str]:
+    references: set[str] = set()
+    for match in ASSET_REFERENCE_RE.findall(html):
+        raw = next((part for part in match if part), "")
+        for reference in split_asset_reference(raw):
+            if "/wp-content/" in reference:
+                references.add(reference)
+    return references
+
+
+def split_asset_reference(raw: str) -> list[str]:
+    value = unescape(raw).strip().strip("\"'")
+    if not value:
+        return []
+    if "," in value and " " in value:
+        return [part.split()[0] for part in value.split(",") if part.strip()]
+    return [value]
+
+
+def normalize_asset_url(value: str) -> str | None:
+    value = unescape(value).strip().strip("\"'").rstrip(".,")
+    if not value:
+        return None
+    if value.startswith("//"):
+        value = f"https:{value}"
+    elif value.startswith("/"):
+        value = f"https://www.maricoparecords.com{value}"
+    parsed = urlparse(value)
+    if not parsed.scheme or not parsed.netloc or not parsed.path:
+        return None
+    return urlunparse((parsed.scheme, parsed.netloc.lower(), unquote(parsed.path), "", "", ""))
+
+
+def manifest_asset_type(content_type: str) -> str | None:
+    for asset_type, prefixes in SUPPORTED_ASSET_TYPES.items():
+        if content_type.startswith(prefixes):
+            return asset_type
+    return None
+
+
+def migrated_asset_path(source_url: str) -> str:
+    parsed = urlparse(source_url)
+    basename = safe_filename(Path(unquote(parsed.path)).name or "asset")
+    digest = sha256(source_url.encode()).hexdigest()[:12]
+    return f"site/public/assets/migrated/{digest}-{basename}"
+
+
+def safe_filename(value: str) -> str:
+    stem = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
+    stem = re.sub(r"[^A-Za-z0-9._-]+", "-", stem).strip(".-")
+    return stem or "asset"
+
+
+def merge_asset_manifest(root: Path, generated_records: list[dict[str, Any]]) -> bool:
+    if not generated_records:
+        return False
+    manifest_path = root / "content" / "assets" / "manifest.yaml"
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    if manifest_path.exists():
+        manifest = yaml.safe_load(manifest_path.read_text()) or {}
+    else:
+        manifest = {"assets": []}
+    assets = manifest.setdefault("assets", [])
+    existing_ids = {asset.get("id") for asset in assets if isinstance(asset, dict)}
+    updated = False
+    for record in sorted(generated_records, key=lambda item: item["id"]):
+        if record["id"] in existing_ids:
+            continue
+        assets.append(record)
+        existing_ids.add(record["id"])
+        updated = True
+    if updated:
+        manifest_path.write_text(yaml.safe_dump(manifest, sort_keys=False, allow_unicode=False))
+    return updated
 
 
 def slug_from_path(path: str) -> str:

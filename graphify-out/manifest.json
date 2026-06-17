@@ -35,12 +35,12 @@
     "semantic_hash": ""
   },
   "builds/local-staging/build-manifest.json": {
-    "mtime": 1781729252.5444877,
-    "ast_hash": "19263955516afbad32d3644d940a0eba",
+    "mtime": 1781729795.633223,
+    "ast_hash": "dde92476cf85edd376a0228566c67d54",
     "semantic_hash": ""
   },
   "builds/local-staging/contact-submit.php": {
-    "mtime": 1781729252.4444878,
+    "mtime": 1781729795.413223,
     "ast_hash": "4925692a8a695e2923aed9a437a08561",
     "semantic_hash": ""
   },
@@ -520,7 +520,7 @@
     "semantic_hash": ""
   },
   "content/releases/circuiting.json": {
-    "mtime": 1781729253.0344877,
+    "mtime": 1781729796.4032228,
     "ast_hash": "7dd5f36a2bb04412a983ce9bf216cd72",
     "semantic_hash": ""
   },
@@ -1255,8 +1255,8 @@
     "semantic_hash": ""
   },
   "tests/test_cli.py": {
-    "mtime": 1781729098.6133587,
-    "ast_hash": "f9dd4239236526f5678b7524ec2071c2",
+    "mtime": 1781729644.2881103,
+    "ast_hash": "10dc05233b298333255ca2e3ae8c67f4",
     "semantic_hash": ""
   },
   "tests/test_deploy.py": {
@@ -1455,42 +1455,42 @@
     "semantic_hash": ""
   },
   "builds/local-staging/about-us/index.html": {
-    "mtime": 1781729252.5044878,
+    "mtime": 1781729795.473223,
     "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/index.html": {
-    "mtime": 1781729252.5044878,
+    "mtime": 1781729795.483223,
     "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/index.html": {
-    "mtime": 1781729252.5044878,
+    "mtime": 1781729795.483223,
     "ast_hash": "ac7d6cca100e33635490d243c89ff962",
     "semantic_hash": ""
   },
   "builds/local-staging/catalog/index.html": {
-    "mtime": 1781729252.5144877,
+    "mtime": 1781729795.483223,
     "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
     "semantic_hash": ""
   },
   "builds/local-staging/contact/index.html": {
-    "mtime": 1781729252.5144877,
+    "mtime": 1781729795.483223,
     "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
     "semantic_hash": ""
   },
   "builds/local-staging/index.html": {
-    "mtime": 1781729252.5144877,
+    "mtime": 1781729795.493223,
     "ast_hash": "0e7cc6103537c581402dffa32e75555c",
     "semantic_hash": ""
   },
   "builds/local-staging/releases/circuiting/index.html": {
-    "mtime": 1781729252.5144877,
+    "mtime": 1781729795.493223,
     "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
     "semantic_hash": ""
   },
   "builds/local-staging/releases/index.html": {
-    "mtime": 1781729252.5244877,
+    "mtime": 1781729795.493223,
     "ast_hash": "260f424773527685cdf3cf9af9f922c8",
     "semantic_hash": ""
   },
@@ -3375,8 +3375,8 @@
     "semantic_hash": ""
   },
   "content/assets/manifest.yaml": {
-    "mtime": 1781724384.8511312,
-    "ast_hash": "8d1e02d904f4dfb165bba717533c0411",
+    "mtime": 1781729550.018091,
+    "ast_hash": "dc520fff76f5ae1c68a09150c1ca17ab",
     "semantic_hash": ""
   },
   "content/import-review/artists.yaml": {
@@ -3500,12 +3500,12 @@
     "semantic_hash": ""
   },
   "builds/local-staging/assets/maricopa-mark.svg": {
-    "mtime": 1781729252.4444878,
+    "mtime": 1781729795.253223,
     "ast_hash": "4209d0f2f2acc716b627e818210daff6",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/releases/circuiting-cover.svg": {
-    "mtime": 1781729252.4444878,
+    "mtime": 1781729795.413223,
     "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
     "semantic_hash": ""
   },
@@ -4705,7 +4705,7 @@
     "semantic_hash": ""
   },
   "content/redirects.yaml": {
-    "mtime": 1781729065.8983004,
+    "mtime": 1781729771.5372918,
     "ast_hash": "9e986edbfe1f0a7583338f11057c8426",
     "semantic_hash": ""
   },
@@ -4835,8 +4835,8 @@
     "semantic_hash": ""
   },
   "mrp/core/migrate_site.py": {
-    "mtime": 1781729041.9755974,
-    "ast_hash": "45f84225238527c82c1cbcf46641ef95",
+    "mtime": 1781729762.6390407,
+    "ast_hash": "436b9ce6422968fcbab85af36df45ee4",
     "semantic_hash": ""
   },
   "reports/approval/circuiting-20260617T204002Z.json": {
@@ -4905,8 +4905,8 @@
     "semantic_hash": ""
   },
   "tests/test_migrate_site.py": {
-    "mtime": 1781729002.9627018,
-    "ast_hash": "66d548d91c0aeeb4e1332e638090ea73",
+    "mtime": 1781729768.3651736,
+    "ast_hash": "8625d4ed60c83d9c18773c2614d11701",
     "semantic_hash": ""
   },
   "builds/archive/production-20260617T204002Z/about-us/index.html": {
@@ -6726,6 +6726,3721 @@
   },
   "builds/staging/20260617T204730229305Z-circuiting/assets/releases/circuiting-cover.svg": {
     "mtime": 1781729252.4444878,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/build-manifest.json": {
+    "mtime": 1781724868.8251379,
+    "ast_hash": "ebca03e1ac46c2e1981b93a25c96174a",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/contact-submit.php": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/build-manifest.json": {
+    "mtime": 1781724868.8251379,
+    "ast_hash": "ebca03e1ac46c2e1981b93a25c96174a",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/contact-submit.php": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/build-manifest.json": {
+    "mtime": 1781729578.1904292,
+    "ast_hash": "31ef151ba41d422654e2bb9d247d4055",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/contact-submit.php": {
+    "mtime": 1781729577.9604294,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/build-manifest.json": {
+    "mtime": 1781729580.9527361,
+    "ast_hash": "07b6a883e6523256a495a2a7187dd9f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/contact-submit.php": {
+    "mtime": 1781729580.742736,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/build-manifest.json": {
+    "mtime": 1781729585.2925797,
+    "ast_hash": "2ff91081b478dda719a82ea40e39eb79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/contact-submit.php": {
+    "mtime": 1781729585.0625799,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/build-manifest.json": {
+    "mtime": 1781729591.0127327,
+    "ast_hash": "edd5501f16cef885b95466992cf054c7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/contact-submit.php": {
+    "mtime": 1781729590.802733,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/build-manifest.json": {
+    "mtime": 1781729665.922342,
+    "ast_hash": "e05afb8ef9cbbf38cd2794fa665846c3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/contact-submit.php": {
+    "mtime": 1781729665.7123423,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/build-manifest.json": {
+    "mtime": 1781729668.6623416,
+    "ast_hash": "d3d62aad03d1254b473bf8ce11c27544",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/contact-submit.php": {
+    "mtime": 1781729668.4423416,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/build-manifest.json": {
+    "mtime": 1781729672.830092,
+    "ast_hash": "b011287ded30556681c46f44187da299",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/contact-submit.php": {
+    "mtime": 1781729672.610092,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/build-manifest.json": {
+    "mtime": 1781729678.5918908,
+    "ast_hash": "5ce9b5dabe25b978134636879cb96417",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/contact-submit.php": {
+    "mtime": 1781729678.3618908,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "reports/approval/circuiting-20260617T205311Z.json": {
+    "mtime": 1781729591.4827328,
+    "ast_hash": "4c524971f53074f8ce109f07af5541fb",
+    "semantic_hash": ""
+  },
+  "reports/approval/circuiting-20260617T205439Z.json": {
+    "mtime": 1781729679.0518906,
+    "ast_hash": "01496f5048b71f7d582267614414abf2",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205311Z-local-production-20260617T205308359762Z-circuiting.json": {
+    "mtime": 1781729591.7327328,
+    "ast_hash": "58818624006b6ce47ecbe6760e1a4ae9",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205311Z-local-staging-20260617T205308359762Z-circuiting.json": {
+    "mtime": 1781729591.2427328,
+    "ast_hash": "a45b9f3cbe99b53fbf06ef896e25a2bc",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205311Z-publish-20260617T205308359762Z-circuiting.json": {
+    "mtime": 1781729591.8027327,
+    "ast_hash": "2080725c0f585831be61097d63332f87",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205438Z-local-staging-20260617T205435952040Z-circuiting.json": {
+    "mtime": 1781729678.8218906,
+    "ast_hash": "bb14daefe179b53f125faedb8e1014eb",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205439Z-local-production-20260617T205435952040Z-circuiting.json": {
+    "mtime": 1781729679.2918906,
+    "ast_hash": "4d81348a8b479565175c463447010252",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205439Z-publish-20260617T205435952040Z-circuiting.json": {
+    "mtime": 1781729679.3618906,
+    "ast_hash": "f86f8fd796508b8fe3ba37ef71477020",
+    "semantic_hash": ""
+  },
+  "reports/migration/20260617T205228Z-content-generation.json": {
+    "mtime": 1781729550.018091,
+    "ast_hash": "983cfb0c28a9a63c61ccc0ce1f76349c",
+    "semantic_hash": ""
+  },
+  "reports/rollback/20260617T205312Z.json": {
+    "mtime": 1781729592.1227326,
+    "ast_hash": "b66587495fe250d41112a6b5a7b43359",
+    "semantic_hash": ""
+  },
+  "reports/rollback/20260617T205439Z.json": {
+    "mtime": 1781729691.746806,
+    "ast_hash": "d8ae330cc4642bcafcc5cc8f430e4ee5",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205237Z.json": {
+    "mtime": 1781729557.9502497,
+    "ast_hash": "10259406b7e6bf6c3cd06a935cd48b4e",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205256Z.json": {
+    "mtime": 1781729576.5604296,
+    "ast_hash": "615c507fa30d6294028edbf6e5687599",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205259Z.json": {
+    "mtime": 1781729579.310429,
+    "ast_hash": "c71532c380a7a6563fb3e21713762759",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205303Z.json": {
+    "mtime": 1781729583.6427357,
+    "ast_hash": "a77dbc9c794efc05d6ad5c92df56a447",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205308Z.json": {
+    "mtime": 1781729588.2625792,
+    "ast_hash": "adb5ead7af4f776a30033a85b77701cb",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205309Z.json": {
+    "mtime": 1781729589.372579,
+    "ast_hash": "d2401daa1b829bb1b7e49a5c1113eb08",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205322Z.json": {
+    "mtime": 1781729602.8396468,
+    "ast_hash": "73e29e0e38f8daca7ccc89c6bfdcd3bb",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205424Z.json": {
+    "mtime": 1781729664.3062494,
+    "ast_hash": "faa4fe4cc72332519be2380d0a44126f",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205427Z.json": {
+    "mtime": 1781729667.052342,
+    "ast_hash": "9e69cd8103b449e113df93dca474c6b0",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205431Z.json": {
+    "mtime": 1781729671.190092,
+    "ast_hash": "572a089c70f99e198f2fbe84b7987fef",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205435Z.json": {
+    "mtime": 1781729675.8518913,
+    "ast_hash": "d9830a58045d4b27ad8b719df08dd90e",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205436Z.json": {
+    "mtime": 1781729676.961891,
+    "ast_hash": "e62ab12e82da846b26562216bf7cdbe3",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205451Z.json": {
+    "mtime": 1781729691.6635392,
+    "ast_hash": "7aebd0d382e79eb9f4902ce19e72a9e1",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T205311Z-local-production.json": {
+    "mtime": 1781729591.9527326,
+    "ast_hash": "fd2955a73a9d6b5c16bbd0cadd51bf77",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T205311Z-local-staging.json": {
+    "mtime": 1781729591.3927329,
+    "ast_hash": "3dfef98d4b698ee80ac866fa940abcc8",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T205312Z-local-production.json": {
+    "mtime": 1781729592.2627325,
+    "ast_hash": "a3f208e5718a23a0dc6cef83240aea93",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T205438Z-local-staging.json": {
+    "mtime": 1781729678.9618907,
+    "ast_hash": "349102d893e7533549f9bbcdb939cdcf",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T205439Z-local-production.json": {
+    "mtime": 1781729691.746806,
+    "ast_hash": "3509df3c06cd35087225074bbac89cdb",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T205451Z-local-production.json": {
+    "mtime": 1781729679.8180268,
+    "ast_hash": "76a9c7b485160411eab1f2aab84568c5",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/about-us/index.html": {
+    "mtime": 1781724868.775138,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/artists/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/artists/pcbender/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/catalog/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/contact/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/releases/circuiting/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/releases/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/about-us/index.html": {
+    "mtime": 1781724868.775138,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/artists/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/artists/pcbender/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/catalog/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/contact/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/releases/circuiting/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/releases/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/about-us/index.html": {
+    "mtime": 1781729578.0304294,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/artists/index.html": {
+    "mtime": 1781729578.0404294,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/artists/pcbender/index.html": {
+    "mtime": 1781729578.0304294,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/catalog/index.html": {
+    "mtime": 1781729578.0404294,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/contact/index.html": {
+    "mtime": 1781729578.0404294,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/index.html": {
+    "mtime": 1781729578.0504293,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/releases/circuiting/index.html": {
+    "mtime": 1781729578.0504293,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/releases/index.html": {
+    "mtime": 1781729578.0504293,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/about-us/index.html": {
+    "mtime": 1781729580.792736,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/artists/index.html": {
+    "mtime": 1781729580.802736,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781729580.802736,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/catalog/index.html": {
+    "mtime": 1781729580.802736,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/contact/index.html": {
+    "mtime": 1781729580.802736,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/index.html": {
+    "mtime": 1781729580.812736,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781729580.812736,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/releases/index.html": {
+    "mtime": 1781729580.812736,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/about-us/index.html": {
+    "mtime": 1781729585.1325798,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/artists/index.html": {
+    "mtime": 1781729585.1325798,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/artists/pcbender/index.html": {
+    "mtime": 1781729585.1325798,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/catalog/index.html": {
+    "mtime": 1781729585.1425798,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/contact/index.html": {
+    "mtime": 1781729585.1425798,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/index.html": {
+    "mtime": 1781729585.1425798,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/releases/circuiting/index.html": {
+    "mtime": 1781729585.1525798,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/releases/index.html": {
+    "mtime": 1781729585.1525798,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/about-us/index.html": {
+    "mtime": 1781729590.852733,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/artists/index.html": {
+    "mtime": 1781729590.862733,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781729590.862733,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/catalog/index.html": {
+    "mtime": 1781729590.862733,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/contact/index.html": {
+    "mtime": 1781729590.862733,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/index.html": {
+    "mtime": 1781729590.8727329,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781729590.8727329,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/releases/index.html": {
+    "mtime": 1781729590.8727329,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/about-us/index.html": {
+    "mtime": 1781729665.7623422,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/artists/index.html": {
+    "mtime": 1781729665.7723422,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/artists/pcbender/index.html": {
+    "mtime": 1781729665.7723422,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/catalog/index.html": {
+    "mtime": 1781729665.7723422,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/contact/index.html": {
+    "mtime": 1781729665.7823422,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/index.html": {
+    "mtime": 1781729665.7823422,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/releases/circuiting/index.html": {
+    "mtime": 1781729665.7823422,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/releases/index.html": {
+    "mtime": 1781729665.7823422,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/about-us/index.html": {
+    "mtime": 1781729668.5023417,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/artists/index.html": {
+    "mtime": 1781729668.5123417,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781729668.5123417,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/catalog/index.html": {
+    "mtime": 1781729668.5123417,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/contact/index.html": {
+    "mtime": 1781729668.5123417,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/index.html": {
+    "mtime": 1781729668.5223417,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781729668.5223417,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/releases/index.html": {
+    "mtime": 1781729668.5223417,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/about-us/index.html": {
+    "mtime": 1781729672.6700919,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/artists/index.html": {
+    "mtime": 1781729672.6800919,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/artists/pcbender/index.html": {
+    "mtime": 1781729672.6800919,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/catalog/index.html": {
+    "mtime": 1781729672.6800919,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/contact/index.html": {
+    "mtime": 1781729672.6800919,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/index.html": {
+    "mtime": 1781729672.6900918,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/releases/circuiting/index.html": {
+    "mtime": 1781729672.6900918,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/releases/index.html": {
+    "mtime": 1781729672.6900918,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/about-us/index.html": {
+    "mtime": 1781729678.4318907,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/artists/index.html": {
+    "mtime": 1781729678.4418907,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781729678.4318907,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/catalog/index.html": {
+    "mtime": 1781729678.4418907,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/contact/index.html": {
+    "mtime": 1781729678.4418907,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/index.html": {
+    "mtime": 1781729678.4418907,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781729678.4418907,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/releases/index.html": {
+    "mtime": 1781729678.4518907,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/assets/maricopa-mark.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205311Z/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/assets/maricopa-mark.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205439Z/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729795.253223,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729795.263223,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729795.263223,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729795.2732232,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729795.2732232,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729795.2832232,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729795.2832232,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729795.2832232,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729795.2932231,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729795.3032231,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729795.3032231,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729795.3032231,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729795.3132231,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729795.3132231,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729795.323223,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729795.333223,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729795.333223,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729795.333223,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729795.333223,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729795.343223,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729795.343223,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729795.353223,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729795.353223,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729795.353223,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729795.363223,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729795.363223,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729795.373223,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729795.373223,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729795.373223,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729795.373223,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729795.383223,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729795.383223,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729795.393223,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729795.403223,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729795.403223,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729795.403223,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/local-staging/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729795.413223,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781729577.8004293,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729577.8104293,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729577.8104293,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729577.8204293,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729577.8204293,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729577.8304293,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729577.8304293,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729577.8404293,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729577.8404293,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729577.8404293,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729577.8504293,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729577.8504293,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729577.8504293,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729577.8604293,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729577.8704293,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729577.8804293,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729577.8804293,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729577.8804293,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729577.8904293,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729577.8904293,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729577.8904293,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729577.9004292,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729577.9004292,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729577.9004292,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729577.9004292,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729577.9104292,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729577.9204292,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729577.9204292,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729577.9204292,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729577.9204292,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729577.9304292,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729577.9304292,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729577.9304292,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729577.9404294,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729577.9504294,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729577.9504294,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729577.9604294,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729577.9604294,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205255399947Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729577.9604294,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781729580.5827363,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729580.5927362,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729580.5927362,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729580.6027362,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729580.6027362,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729580.6127362,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729580.6127362,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729580.6127362,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729580.6127362,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729580.6227362,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729580.6227362,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729580.6227362,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729580.6327362,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729580.6327362,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729580.6427362,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729580.6527362,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729580.6527362,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729580.6527362,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729580.6627362,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729580.6627362,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729580.6627362,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729580.6727362,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729580.6727362,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729580.6727362,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729580.6727362,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729580.6827362,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729580.6927361,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729580.6927361,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729580.7027361,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729580.7027361,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729580.7027361,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729580.7027361,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729580.7127361,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729580.7127361,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729580.7227361,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729580.732736,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729580.732736,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729580.732736,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205258296488Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729580.742736,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781729584.9125798,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729584.9125798,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729584.9225798,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729584.9225798,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729584.9225798,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729584.9325798,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729584.9325798,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729584.9425797,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729584.9425797,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729584.9425797,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729584.9525797,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729584.9525797,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729584.9625797,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729584.9625797,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729584.9725797,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729584.9825797,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729584.9825797,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729584.9825797,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729584.9925797,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729584.9925797,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729584.9925797,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729585.0025797,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729585.0025797,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729585.0025797,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729585.0125797,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729585.02258,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729585.02258,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729585.02258,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729585.02258,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729585.03258,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729585.03258,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729585.03258,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729585.04258,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729585.04258,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729585.0525799,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729585.0525799,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729585.0625799,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729585.0625799,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205302623854Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729585.0625799,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781729590.6427329,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729590.6427329,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729590.6527328,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729590.6527328,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729590.6627328,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729590.6627328,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729590.6727328,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729590.6727328,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729590.6727328,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729590.6727328,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729590.6827328,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729590.6827328,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729590.6927328,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729590.6927328,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729590.7027328,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729590.7127328,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729590.7127328,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729590.7127328,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729590.7227328,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729590.7227328,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729590.7227328,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729590.7327328,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729590.7327328,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729590.7327328,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729590.7327328,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729590.7427328,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729590.752733,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729590.752733,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729590.762733,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729590.762733,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729590.762733,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729590.762733,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729590.772733,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729590.772733,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729590.782733,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729590.792733,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729590.792733,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729590.802733,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205308359762Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729590.802733,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781729665.5723422,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729665.5823421,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729665.5823421,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729665.5923421,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729665.6023421,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729665.6023421,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729665.6123421,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729665.6123421,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729665.6123421,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729665.622342,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729665.632342,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729665.632342,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729665.632342,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729665.642342,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729665.642342,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729665.642342,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729665.652342,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729665.652342,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729665.652342,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729665.652342,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729665.652342,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729665.662342,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729665.662342,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729665.662342,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729665.662342,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729665.672342,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729665.672342,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729665.682342,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729665.682342,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729665.682342,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729665.682342,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729665.682342,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729665.692342,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729665.692342,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729665.7023423,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729665.7023423,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729665.7023423,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729665.7123423,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205423286781Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729665.7123423,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781729668.2823417,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729668.2823417,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729668.2923417,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729668.3023417,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729668.3023417,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729668.3023417,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729668.3123417,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729668.3123417,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729668.3123417,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729668.3223417,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729668.3223417,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729668.3323417,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729668.3323417,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729668.3423417,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729668.3423417,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729668.3523417,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729668.3623416,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729668.3623416,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729668.3623416,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729668.3623416,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729668.3623416,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729668.3723416,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729668.3823416,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729668.3823416,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729668.3823416,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729668.3923416,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729668.3923416,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729668.3923416,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729668.4023416,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729668.4023416,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729668.4023416,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729668.4123416,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729668.4123416,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729668.4223416,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729668.4223416,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729668.4323416,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729668.4323416,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729668.4423416,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205426025175Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729668.4423416,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781729672.440092,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729672.450092,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729672.450092,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729672.460092,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729672.460092,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729672.470092,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729672.480092,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729672.480092,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729672.480092,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729672.490092,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729672.490092,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729672.500092,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729672.500092,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729672.510092,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729672.510092,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729672.520092,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729672.530092,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729672.530092,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729672.530092,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729672.530092,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729672.530092,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729672.540092,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729672.550092,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729672.550092,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729672.550092,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729672.560092,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729672.560092,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729672.560092,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729672.570092,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729672.570092,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729672.570092,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729672.580092,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729672.580092,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729672.590092,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729672.600092,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729672.600092,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729672.600092,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729672.610092,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205430176005Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729672.610092,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781729678.2118907,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729678.2118907,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729678.221891,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729678.221891,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729678.231891,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729678.231891,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729678.241891,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729678.241891,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729678.241891,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729678.241891,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729678.251891,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729678.251891,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729678.261891,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729678.261891,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729678.2718909,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729678.2818909,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729678.2818909,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729678.2818909,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729678.2918909,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729678.2918909,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729678.2918909,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729678.3018909,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729678.3018909,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729678.3018909,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729678.3018909,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729678.3118908,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729678.3118908,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729678.3218908,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729678.3218908,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729678.3218908,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729678.3318908,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729678.3318908,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729678.3318908,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729678.3418908,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729678.3518908,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729678.3518908,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729678.3618908,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729678.3618908,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205435952040Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729678.3618908,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781715687.0829995,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781715698.8209434,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781715741.198909,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781715668.2164195,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781715723.8933985,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781715718.6427503,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781715752.6325252,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781715823.5409048,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781715682.8124912,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781715739.8789241,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781715736.1979487,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781716156.1233635,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781715707.7035453,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781715694.880786,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781715697.2607584,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781715701.1609163,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781716150.6810176,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781716243.6541216,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781715675.7589197,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781715732.6886957,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781715704.5035822,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781715678.252544,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781715746.0842905,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781715715.4012084,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781715749.532561,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781716222.7878973,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781716227.0424654,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781715693.5208015,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781715703.1735976,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781715818.077943,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781715738.4989402,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781715673.153931,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781716267.8776014,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781715735.0879614,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781715984.485963,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781715692.0964537,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "site/public/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781715681.4625068,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/build-manifest.json": {
+    "mtime": 1781724868.8251379,
+    "ast_hash": "ebca03e1ac46c2e1981b93a25c96174a",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/contact-submit.php": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/build-manifest.json": {
+    "mtime": 1781729782.785249,
+    "ast_hash": "61161c0aaf7dc17f5fb0308be0522e11",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/contact-submit.php": {
+    "mtime": 1781729782.5552492,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/build-manifest.json": {
+    "mtime": 1781729785.552891,
+    "ast_hash": "bb5ea96770ef31fcb609e99ab5137063",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/contact-submit.php": {
+    "mtime": 1781729785.332891,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/build-manifest.json": {
+    "mtime": 1781729789.7728903,
+    "ast_hash": "4a3106f8b58560da46148fef9d6fc0e8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/contact-submit.php": {
+    "mtime": 1781729789.5528903,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/build-manifest.json": {
+    "mtime": 1781729795.633223,
+    "ast_hash": "dde92476cf85edd376a0228566c67d54",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/contact-submit.php": {
+    "mtime": 1781729795.413223,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "reports/approval/circuiting-20260617T205636Z.json": {
+    "mtime": 1781729796.1032228,
+    "ast_hash": "5b948ec205b0af840059962c4aadc284",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205635Z-local-staging-20260617T205632978064Z-circuiting.json": {
+    "mtime": 1781729795.8632228,
+    "ast_hash": "97fa55e3e7c82a2bf2f793c5a1d051bf",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205636Z-local-production-20260617T205632978064Z-circuiting.json": {
+    "mtime": 1781729796.3332229,
+    "ast_hash": "fe4dabfa97a934f74c3e5dee9d643e3a",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T205636Z-publish-20260617T205632978064Z-circuiting.json": {
+    "mtime": 1781729796.4032228,
+    "ast_hash": "b4a2ad4550abf45e862b46c3d624cec2",
+    "semantic_hash": ""
+  },
+  "reports/migration/20260617T205611Z-content-generation.json": {
+    "mtime": 1781729772.5372918,
+    "ast_hash": "a6ae48d0631cbcbf6bca650be90d3741",
+    "semantic_hash": ""
+  },
+  "reports/rollback/20260617T205636Z.json": {
+    "mtime": 1781729796.7232227,
+    "ast_hash": "0a6140fd6926d3b4041c77bf826481a8",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205620Z.json": {
+    "mtime": 1781729780.1152496,
+    "ast_hash": "073dcfc0aa7d417775794750184bbf2f",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205621Z.json": {
+    "mtime": 1781729781.1852493,
+    "ast_hash": "d1e1739335316447fda1c8aba86390e7",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205623Z.json": {
+    "mtime": 1781729783.9152489,
+    "ast_hash": "3a4cda72c47f05d05fa55feed38d5ecd",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205628Z.json": {
+    "mtime": 1781729788.1128905,
+    "ast_hash": "698c53f38a383281f53f2eebeaaf96e5",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205632Z.json": {
+    "mtime": 1781729792.8839023,
+    "ast_hash": "642e0240c797c7654987d24bc70d511b",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205634Z.json": {
+    "mtime": 1781729793.993902,
+    "ast_hash": "7816b9363a038597a05c97ff47f28c7c",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T205648Z.json": {
+    "mtime": 1781729808.6327064,
+    "ast_hash": "128e91fb23a0f80f2fc27cb2ec54348f",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T205635Z-local-staging.json": {
+    "mtime": 1781729796.023223,
+    "ast_hash": "ffea8c3a23af59462b172d48102aa5d4",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T205636Z-local-production.json": {
+    "mtime": 1781729796.8632228,
+    "ast_hash": "c7431dc669f781f73283c3ff967f5f51",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/about-us/index.html": {
+    "mtime": 1781724868.775138,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/artists/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/artists/pcbender/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/catalog/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/contact/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/releases/circuiting/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/releases/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/about-us/index.html": {
+    "mtime": 1781729782.6152492,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/artists/index.html": {
+    "mtime": 1781729782.6252491,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/artists/pcbender/index.html": {
+    "mtime": 1781729782.6252491,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/catalog/index.html": {
+    "mtime": 1781729782.6252491,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/contact/index.html": {
+    "mtime": 1781729782.6252491,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/index.html": {
+    "mtime": 1781729782.6352491,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/releases/circuiting/index.html": {
+    "mtime": 1781729782.6352491,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/releases/index.html": {
+    "mtime": 1781729782.6352491,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/about-us/index.html": {
+    "mtime": 1781729785.392891,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/artists/index.html": {
+    "mtime": 1781729785.402891,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781729785.402891,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/catalog/index.html": {
+    "mtime": 1781729785.402891,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/contact/index.html": {
+    "mtime": 1781729785.412891,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/index.html": {
+    "mtime": 1781729785.412891,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781729785.412891,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/releases/index.html": {
+    "mtime": 1781729785.412891,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/about-us/index.html": {
+    "mtime": 1781729789.6128902,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/artists/index.html": {
+    "mtime": 1781729789.6128902,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/artists/pcbender/index.html": {
+    "mtime": 1781729789.6128902,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/catalog/index.html": {
+    "mtime": 1781729789.6228902,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/contact/index.html": {
+    "mtime": 1781729789.6228902,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/index.html": {
+    "mtime": 1781729789.6228902,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/releases/circuiting/index.html": {
+    "mtime": 1781729789.6228902,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/releases/index.html": {
+    "mtime": 1781729789.6328902,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/about-us/index.html": {
+    "mtime": 1781729795.473223,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/artists/index.html": {
+    "mtime": 1781729795.483223,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781729795.483223,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/catalog/index.html": {
+    "mtime": 1781729795.483223,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/contact/index.html": {
+    "mtime": 1781729795.483223,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/index.html": {
+    "mtime": 1781729795.493223,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781729795.493223,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/releases/index.html": {
+    "mtime": 1781729795.493223,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/assets/maricopa-mark.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T205636Z/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781729782.425249,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729782.425249,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729782.435249,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729782.445249,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729782.445249,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729782.455249,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729782.455249,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729782.465249,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729782.465249,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729782.465249,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729782.475249,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729782.475249,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729782.475249,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729782.485249,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729782.485249,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729782.495249,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729782.495249,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729782.495249,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729782.505249,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729782.505249,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729782.505249,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729782.505249,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729782.515249,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729782.515249,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729782.515249,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729782.515249,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729782.525249,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729782.525249,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729782.525249,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729782.525249,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729782.525249,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729782.535249,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729782.535249,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729782.535249,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729782.545249,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729782.545249,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729782.545249,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729782.5552492,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205620149145Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729782.5552492,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781729785.1528912,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729785.1628911,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729785.1628911,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729785.1728911,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729785.1828911,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729785.1928911,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729785.202891,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729785.202891,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729785.202891,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729785.212891,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729785.222891,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729785.222891,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729785.222891,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729785.232891,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729785.242891,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729785.242891,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729785.252891,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729785.252891,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729785.262891,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729785.262891,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729785.262891,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729785.262891,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729785.272891,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729785.272891,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729785.272891,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729785.282891,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729785.282891,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729785.292891,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729785.292891,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729785.292891,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729785.292891,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729785.302891,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729785.302891,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729785.312891,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729785.322891,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729785.322891,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729785.332891,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729785.332891,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205622882656Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729785.332891,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781729789.3928902,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729789.3928902,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729789.4028902,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729789.4128902,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729789.4128902,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729789.4128902,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729789.4228902,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729789.4228902,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729789.4228902,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729789.4328902,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729789.4328902,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729789.4328902,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729789.4428902,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729789.4528902,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729789.4528902,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729789.4628904,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729789.4728904,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729789.4728904,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729789.4728904,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729789.4728904,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729789.4728904,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729789.4828904,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729789.4928904,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729789.4928904,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729789.4928904,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729789.5028903,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729789.5028903,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729789.5028903,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729789.5128903,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729789.5128903,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729789.5128903,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729789.5228903,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729789.5228903,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729789.5328903,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729789.5428903,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729789.5428903,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729789.5428903,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729789.5528903,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205627077682Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729789.5528903,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781729795.253223,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781729795.253223,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781729795.263223,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781729795.263223,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781729795.2732232,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781729795.2732232,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781729795.2832232,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781729795.2832232,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781729795.2832232,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781729795.2932231,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781729795.3032231,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781729795.3032231,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781729795.3032231,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781729795.3132231,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781729795.3132231,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781729795.323223,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781729795.333223,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781729795.333223,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781729795.333223,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781729795.333223,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781729795.343223,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781729795.343223,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781729795.353223,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781729795.353223,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781729795.353223,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781729795.363223,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781729795.363223,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781729795.373223,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781729795.373223,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781729795.373223,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781729795.373223,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781729795.383223,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781729795.383223,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781729795.393223,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781729795.403223,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781729795.403223,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781729795.403223,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781729795.413223,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T205632978064Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781729795.413223,
     "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
     "semantic_hash": ""
   }

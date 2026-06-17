@@ -1,16 +1,16 @@
 # Graph Report - mrp  (2026-06-17)
 
 ## Corpus Check
-- 431 files · ~278,004 words
+- 506 files · ~66,018,735 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1076 nodes · 1518 edges · 177 communities (170 shown, 7 thin omitted)
+- 1102 nodes · 1550 edges · 192 communities (185 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f7937938`
+- Built from commit: `d1a391db`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -115,32 +115,32 @@
 3. `17. Work Packets` - 21 edges
 4. `validate_repository()` - 19 edges
 5. `main()` - 16 edges
-6. `emit()` - 15 edges
-7. `stage_build()` - 15 edges
-8. `run_migration()` - 15 edges
+6. `run_migration()` - 16 edges
+7. `emit()` - 15 edges
+8. `stage_build()` - 15 edges
 9. `publish()` - 15 edges
 10. `rollback()` - 14 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `validate_schema()` --calls--> `Draft202012Validator`  [INFERRED]
   mrp/core/validate.py → tests/test_schemas.py
+- `test_copy_referenced_assets_reports_missing_source_with_page_reference()` --calls--> `copy_referenced_assets()`  [EXTRACTED]
+  tests/test_migrate_site.py → mrp/core/migrate_site.py
 - `test_migration_inventory_accepts_artifact_root()` --calls--> `migration_inventory()`  [EXTRACTED]
   tests/test_migration_inventory.py → mrp/core/migration_inventory.py
 - `test_migration_inventory_does_not_modify_source_files()` --calls--> `migration_inventory()`  [EXTRACTED]
   tests/test_migration_inventory.py → mrp/core/migration_inventory.py
 - `test_migration_inventory_exclusions_are_explicit()` --calls--> `migration_inventory()`  [EXTRACTED]
   tests/test_migration_inventory.py → mrp/core/migration_inventory.py
-- `test_migration_inventory_writes_report_and_known_counts()` --calls--> `migration_inventory()`  [EXTRACTED]
-  tests/test_migration_inventory.py → mrp/core/migration_inventory.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (177 total, 7 thin omitted)
+## Communities (192 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.11
-Nodes (42): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), add_error() (+34 more)
+Cohesion: 0.12
+Nodes (43): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), base_result() (+35 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.04
@@ -191,8 +191,8 @@ Cohesion: 0.33
 Nodes (14): artist_url(), candidate_assets(), candidates_from_pages(), date_part(), format_import(), import_site(), load_json(), path_parts() (+6 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.40
-Nodes (11): ContentCounts, count_assets(), count_content(), count_record_files(), detect_site_framework(), inspect_deploy(), inspect_repository(), inspect_warnings() (+3 more)
+Cohesion: 0.36
+Nodes (12): ContentCounts, count_assets(), count_content(), count_record_files(), detect_site_framework(), format_inspection(), inspect_deploy(), inspect_repository() (+4 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.15
@@ -207,8 +207,8 @@ Cohesion: 0.44
 Nodes (11): add_error(), clear_target(), copy_tree(), finish(), format_rollback(), now_utc(), rollback(), rollback_candidate() (+3 more)
 
 ### Community 17 - "Community 17"
-Cohesion: 0.26
-Nodes (21): create_release(), failed(), release_record(), slugify(), track(), error_record(), load_content(), load_records() (+13 more)
+Cohesion: 0.49
+Nodes (10): add_error(), approval_id(), approve(), finish(), format_approval(), latest_verification(), now_utc(), write_approval() (+2 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.35
@@ -287,8 +287,8 @@ Cohesion: 0.40
 Nodes (4): Artists, Content Model, Releases, Site
 
 ### Community 37 - "Community 37"
-Cohesion: 0.40
-Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-004 — Implement MRP CLI Skeleton, Objective, Tasks
+Cohesion: 0.50
+Nodes (4): Acceptance Criteria, MRP-004 — Implement MRP CLI Skeleton, Objective, Tasks
 
 ### Community 38 - "Community 38"
 Cohesion: 0.40
@@ -343,8 +343,8 @@ Cohesion: 0.50
 Nodes (4): Acceptance Criteria, MRP-012 — Implement Staging Verification, Objective, Tasks
 
 ### Community 51 - "Community 51"
-Cohesion: 0.50
-Nodes (4): Acceptance Criteria, MRP-013 — Implement Approval Records, Objective, Tasks
+Cohesion: 0.40
+Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-013 — Implement Approval Records, Objective, Tasks
 
 ### Community 52 - "Community 52"
 Cohesion: 0.50
@@ -475,12 +475,12 @@ Cohesion: 0.67
 Nodes (3): status, enum, type
 
 ### Community 155 - "Community 155"
-Cohesion: 0.29
-Nodes (18): title_from_slug(), artist_record(), date_part(), migrate_site(), now_utc(), page_record(), planned_writes(), post_record() (+10 more)
+Cohesion: 0.13
+Nodes (37): title_from_slug(), artist_record(), asset_references_from_html(), capture_assets_by_url(), copy_referenced_assets(), date_part(), extract_content_asset_references(), manifest_asset_type() (+29 more)
 
 ### Community 156 - "Community 156"
-Cohesion: 0.42
-Nodes (8): content_repo(), CompletedProcess, Path, run_mrp(), test_migrate_site_dry_run_reports_planned_writes_without_content_mutation(), test_migrate_site_generates_staging_content_records(), test_migrate_site_is_idempotent_and_does_not_overwrite(), test_migrate_site_missing_source_fails_cleanly()
+Cohesion: 0.51
+Nodes (9): find_release(), format_status(), latest_report(), release_summary(), report_summary(), rollback_available(), status(), Any (+1 more)
 
 ## Knowledge Gaps
 - **431 isolated node(s):** `Namespace`, `Path`, `$schema`, `$id`, `title` (+426 more)
@@ -491,15 +491,15 @@ Nodes (8): content_repo(), CompletedProcess, Path, run_mrp(), test_migrate_site_
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `migrate_site()` connect `Community 155` to `Community 0`, `Community 22`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `main()` connect `Community 0` to `Community 7`, `Community 9`, `Community 12`, `Community 13`, `Community 16`, `Community 17`, `Community 155`, `Community 156`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **Why does `properties` connect `Community 8` to `Community 64`, `Community 1`, `Community 33`, `Community 65`, `Community 66`, `Community 67`, `Community 39`, `Community 11`, `Community 19`, `Community 62`, `Community 63`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `main()` connect `Community 0` to `Community 7`, `Community 9`, `Community 12`, `Community 13`, `Community 16`, `Community 17`, `Community 155`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `Maricopa Release Publisher.`, `MRP command-line interface.`, `Namespace` to the rest of the system?**
   _433 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.1072463768115942 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11748381128584644 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**

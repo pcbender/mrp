@@ -86,6 +86,36 @@
     {
       "label": "contact-submit.php",
       "file_type": "code",
+      "source_file": "builds/archive/production-20260617T205311Z/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "production_20260617t205311z_contact_submit",
+      "community": 185,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/archive/production-20260617T205439Z/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "production_20260617t205439z_contact_submit",
+      "community": 186,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/archive/production-20260617T205636Z/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "production_20260617t205636z_contact_submit",
+      "community": 191,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
       "source_file": "builds/local-production/contact-submit.php",
       "source_location": "L1",
       "_origin": "ast",
@@ -814,6 +844,126 @@
       "norm_label": "contact-submit.php"
     },
     {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205255399947Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205255399947z_site_contact_submit",
+      "community": 177,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205258296488Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205258296488z_circuiting_contact_submit",
+      "community": 178,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205302623854Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205302623854z_site_contact_submit",
+      "community": 179,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205308359762Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205308359762z_circuiting_contact_submit",
+      "community": 180,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205423286781Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205423286781z_site_contact_submit",
+      "community": 181,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205426025175Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205426025175z_circuiting_contact_submit",
+      "community": 182,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205430176005Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205430176005z_site_contact_submit",
+      "community": 183,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205435952040Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205435952040z_circuiting_contact_submit",
+      "community": 184,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205620149145Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205620149145z_site_contact_submit",
+      "community": 187,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205622882656Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205622882656z_circuiting_contact_submit",
+      "community": 188,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205627077682Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205627077682z_site_contact_submit",
+      "community": 189,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T205632978064Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t205632978064z_circuiting_contact_submit",
+      "community": 190,
+      "norm_label": "contact-submit.php"
+    },
+    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "mrp/__init__.py",
@@ -970,7 +1120,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_approve",
-      "community": 0,
+      "community": 17,
       "norm_label": "approve.py"
     },
     {
@@ -980,7 +1130,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "core_approve_approve",
-      "community": 0,
+      "community": 17,
       "norm_label": "approve()"
     },
     {
@@ -990,7 +1140,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mrp_core_approve_py_path",
-      "community": 0,
+      "community": 17,
       "norm_label": "path"
     },
     {
@@ -1000,7 +1150,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mrp_core_approve_py_any",
-      "community": 0,
+      "community": 17,
       "norm_label": "any"
     },
     {
@@ -1010,7 +1160,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "core_approve_latest_verification",
-      "community": 0,
+      "community": 17,
       "norm_label": "latest_verification()"
     },
     {
@@ -1020,7 +1170,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "core_approve_add_error",
-      "community": 0,
+      "community": 17,
       "norm_label": "add_error()"
     },
     {
@@ -1030,7 +1180,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "core_approve_finish",
-      "community": 0,
+      "community": 17,
       "norm_label": "finish()"
     },
     {
@@ -1040,7 +1190,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "core_approve_approval_id",
-      "community": 0,
+      "community": 17,
       "norm_label": "approval_id()"
     },
     {
@@ -1050,7 +1200,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "core_approve_write_approval",
-      "community": 0,
+      "community": 17,
       "norm_label": "write_approval()"
     },
     {
@@ -1060,7 +1210,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "core_approve_now_utc",
-      "community": 0,
+      "community": 17,
       "norm_label": "now_utc()"
     },
     {
@@ -1070,7 +1220,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "core_approve_format_approval",
-      "community": 0,
+      "community": 17,
       "norm_label": "format_approval()"
     },
     {
@@ -1610,7 +1760,7 @@
       "source_location": "L142",
       "_origin": "ast",
       "id": "core_inspect_format_inspection",
-      "community": 0,
+      "community": 13,
       "norm_label": "format_inspection()"
     },
     {
@@ -1627,7 +1777,7 @@
       "label": "migrate_site()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L18",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "core_migrate_site_migrate_site",
       "community": 155,
@@ -1637,7 +1787,7 @@
       "label": "Path",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L18",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "mrp_core_migrate_site_py_path",
       "community": 155,
@@ -1647,7 +1797,7 @@
       "label": "Any",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L18",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "mrp_core_migrate_site_py_any",
       "community": 155,
@@ -1657,7 +1807,7 @@
       "label": "run_migration()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L72",
+      "source_location": "L86",
       "_origin": "ast",
       "id": "core_migrate_site_run_migration",
       "community": 155,
@@ -1667,7 +1817,7 @@
       "label": "planned_writes()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L160",
+      "source_location": "L178",
       "_origin": "ast",
       "id": "core_migrate_site_planned_writes",
       "community": 155,
@@ -1677,7 +1827,7 @@
       "label": "posts_by_slug_from_inventory_source()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L173",
+      "source_location": "L191",
       "_origin": "ast",
       "id": "core_migrate_site_posts_by_slug_from_inventory_source",
       "community": 155,
@@ -1687,7 +1837,7 @@
       "label": "write_generated_yaml()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L179",
+      "source_location": "L197",
       "_origin": "ast",
       "id": "core_migrate_site_write_generated_yaml",
       "community": 155,
@@ -1697,7 +1847,7 @@
       "label": "page_record()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L199",
+      "source_location": "L217",
       "_origin": "ast",
       "id": "core_migrate_site_page_record",
       "community": 155,
@@ -1707,7 +1857,7 @@
       "label": "post_record()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L232",
+      "source_location": "L250",
       "_origin": "ast",
       "id": "core_migrate_site_post_record",
       "community": 155,
@@ -1717,7 +1867,7 @@
       "label": "artist_record()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L265",
+      "source_location": "L283",
       "_origin": "ast",
       "id": "core_migrate_site_artist_record",
       "community": 155,
@@ -1727,17 +1877,117 @@
       "label": "release_record()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L290",
+      "source_location": "L308",
       "_origin": "ast",
       "id": "core_migrate_site_release_record",
       "community": 155,
       "norm_label": "release_record()"
     },
     {
+      "label": "copy_referenced_assets()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L361",
+      "_origin": "ast",
+      "id": "core_migrate_site_copy_referenced_assets",
+      "community": 155,
+      "norm_label": "copy_referenced_assets()"
+    },
+    {
+      "label": "capture_assets_by_url()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L477",
+      "_origin": "ast",
+      "id": "core_migrate_site_capture_assets_by_url",
+      "community": 155,
+      "norm_label": "capture_assets_by_url()"
+    },
+    {
+      "label": "extract_content_asset_references()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L486",
+      "_origin": "ast",
+      "id": "core_migrate_site_extract_content_asset_references",
+      "community": 155,
+      "norm_label": "extract_content_asset_references()"
+    },
+    {
+      "label": "asset_references_from_html()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L501",
+      "_origin": "ast",
+      "id": "core_migrate_site_asset_references_from_html",
+      "community": 155,
+      "norm_label": "asset_references_from_html()"
+    },
+    {
+      "label": "split_asset_reference()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L511",
+      "_origin": "ast",
+      "id": "core_migrate_site_split_asset_reference",
+      "community": 155,
+      "norm_label": "split_asset_reference()"
+    },
+    {
+      "label": "normalize_asset_url()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L520",
+      "_origin": "ast",
+      "id": "core_migrate_site_normalize_asset_url",
+      "community": 155,
+      "norm_label": "normalize_asset_url()"
+    },
+    {
+      "label": "manifest_asset_type()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L534",
+      "_origin": "ast",
+      "id": "core_migrate_site_manifest_asset_type",
+      "community": 155,
+      "norm_label": "manifest_asset_type()"
+    },
+    {
+      "label": "migrated_asset_path()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L541",
+      "_origin": "ast",
+      "id": "core_migrate_site_migrated_asset_path",
+      "community": 155,
+      "norm_label": "migrated_asset_path()"
+    },
+    {
+      "label": "safe_filename()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L548",
+      "_origin": "ast",
+      "id": "core_migrate_site_safe_filename",
+      "community": 155,
+      "norm_label": "safe_filename()"
+    },
+    {
+      "label": "merge_asset_manifest()",
+      "file_type": "code",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L554",
+      "_origin": "ast",
+      "id": "core_migrate_site_merge_asset_manifest",
+      "community": 155,
+      "norm_label": "merge_asset_manifest()"
+    },
+    {
       "label": "slug_from_path()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L343",
+      "source_location": "L577",
       "_origin": "ast",
       "id": "core_migrate_site_slug_from_path",
       "community": 155,
@@ -1747,7 +1997,7 @@
       "label": "safe_slug()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L348",
+      "source_location": "L582",
       "_origin": "ast",
       "id": "core_migrate_site_safe_slug",
       "community": 155,
@@ -1757,7 +2007,7 @@
       "label": "source_path()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L353",
+      "source_location": "L587",
       "_origin": "ast",
       "id": "core_migrate_site_source_path",
       "community": 155,
@@ -1767,7 +2017,7 @@
       "label": "date_part()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L358",
+      "source_location": "L592",
       "_origin": "ast",
       "id": "core_migrate_site_date_part",
       "community": 155,
@@ -1777,7 +2027,7 @@
       "label": "write_migration_report()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L364",
+      "source_location": "L598",
       "_origin": "ast",
       "id": "core_migrate_site_write_migration_report",
       "community": 155,
@@ -1787,7 +2037,7 @@
       "label": "now_utc()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L373",
+      "source_location": "L607",
       "_origin": "ast",
       "id": "core_migrate_site_now_utc",
       "community": 155,
@@ -1797,7 +2047,7 @@
       "label": "format_migrate_site()",
       "file_type": "code",
       "source_file": "mrp/core/migrate_site.py",
-      "source_location": "L377",
+      "source_location": "L611",
       "_origin": "ast",
       "id": "core_migrate_site_format_migrate_site",
       "community": 0,
@@ -2110,7 +2360,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_release",
-      "community": 17,
+      "community": 0,
       "norm_label": "release.py"
     },
     {
@@ -2120,7 +2370,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "core_release_create_release",
-      "community": 17,
+      "community": 0,
       "norm_label": "create_release()"
     },
     {
@@ -2130,7 +2380,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mrp_core_release_py_path",
-      "community": 17,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -2140,7 +2390,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mrp_core_release_py_any",
-      "community": 17,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -2150,7 +2400,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "core_release_release_record",
-      "community": 17,
+      "community": 0,
       "norm_label": "release_record()"
     },
     {
@@ -2160,7 +2410,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "core_release_track",
-      "community": 17,
+      "community": 0,
       "norm_label": "track()"
     },
     {
@@ -2170,7 +2420,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "core_release_slugify",
-      "community": 17,
+      "community": 0,
       "norm_label": "slugify()"
     },
     {
@@ -2180,7 +2430,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "core_release_failed",
-      "community": 17,
+      "community": 0,
       "norm_label": "failed()"
     },
     {
@@ -2320,7 +2570,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_status",
-      "community": 0,
+      "community": 156,
       "norm_label": "status.py"
     },
     {
@@ -2330,7 +2580,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "core_status_status",
-      "community": 0,
+      "community": 156,
       "norm_label": "status()"
     },
     {
@@ -2340,7 +2590,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mrp_core_status_py_path",
-      "community": 0,
+      "community": 156,
       "norm_label": "path"
     },
     {
@@ -2350,7 +2600,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mrp_core_status_py_any",
-      "community": 0,
+      "community": 156,
       "norm_label": "any"
     },
     {
@@ -2360,7 +2610,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "core_status_latest_report",
-      "community": 0,
+      "community": 156,
       "norm_label": "latest_report()"
     },
     {
@@ -2370,7 +2620,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "core_status_report_summary",
-      "community": 0,
+      "community": 156,
       "norm_label": "report_summary()"
     },
     {
@@ -2380,7 +2630,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "core_status_find_release",
-      "community": 0,
+      "community": 156,
       "norm_label": "find_release()"
     },
     {
@@ -2390,7 +2640,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "core_status_release_summary",
-      "community": 0,
+      "community": 156,
       "norm_label": "release_summary()"
     },
     {
@@ -2400,7 +2650,7 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "core_status_rollback_available",
-      "community": 0,
+      "community": 156,
       "norm_label": "rollback_available()"
     },
     {
@@ -2410,7 +2660,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "core_status_format_status",
-      "community": 0,
+      "community": 156,
       "norm_label": "format_status()"
     },
     {
@@ -2420,7 +2670,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_validate",
-      "community": 17,
+      "community": 0,
       "norm_label": "validate.py"
     },
     {
@@ -2430,7 +2680,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "core_validate_validate_repository",
-      "community": 17,
+      "community": 0,
       "norm_label": "validate_repository()"
     },
     {
@@ -2440,7 +2690,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "mrp_core_validate_py_path",
-      "community": 17,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -2450,7 +2700,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "mrp_core_validate_py_any",
-      "community": 17,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -2460,7 +2710,7 @@
       "source_location": "L97",
       "_origin": "ast",
       "id": "core_validate_load_records",
-      "community": 17,
+      "community": 0,
       "norm_label": "load_records()"
     },
     {
@@ -2470,7 +2720,7 @@
       "source_location": "L118",
       "_origin": "ast",
       "id": "core_validate_load_content",
-      "community": 17,
+      "community": 0,
       "norm_label": "load_content()"
     },
     {
@@ -2480,7 +2730,7 @@
       "source_location": "L128",
       "_origin": "ast",
       "id": "core_validate_load_schema",
-      "community": 17,
+      "community": 0,
       "norm_label": "load_schema()"
     },
     {
@@ -2490,7 +2740,7 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "core_validate_validate_schema",
-      "community": 17,
+      "community": 0,
       "norm_label": "validate_schema()"
     },
     {
@@ -2500,7 +2750,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "core_validate_validate_duplicates",
-      "community": 17,
+      "community": 0,
       "norm_label": "validate_duplicates()"
     },
     {
@@ -2510,7 +2760,7 @@
       "source_location": "L160",
       "_origin": "ast",
       "id": "core_validate_validate_artist_references",
-      "community": 17,
+      "community": 0,
       "norm_label": "validate_artist_references()"
     },
     {
@@ -2520,7 +2770,7 @@
       "source_location": "L179",
       "_origin": "ast",
       "id": "core_validate_validate_asset_manifest",
-      "community": 17,
+      "community": 0,
       "norm_label": "validate_asset_manifest()"
     },
     {
@@ -2530,7 +2780,7 @@
       "source_location": "L195",
       "_origin": "ast",
       "id": "core_validate_validate_release_assets",
-      "community": 17,
+      "community": 0,
       "norm_label": "validate_release_assets()"
     },
     {
@@ -2540,7 +2790,7 @@
       "source_location": "L209",
       "_origin": "ast",
       "id": "core_validate_report_path",
-      "community": 17,
+      "community": 0,
       "norm_label": "report_path()"
     },
     {
@@ -2550,7 +2800,7 @@
       "source_location": "L215",
       "_origin": "ast",
       "id": "core_validate_write_report",
-      "community": 17,
+      "community": 0,
       "norm_label": "write_report()"
     },
     {
@@ -2560,7 +2810,7 @@
       "source_location": "L221",
       "_origin": "ast",
       "id": "core_validate_error_record",
-      "community": 17,
+      "community": 0,
       "norm_label": "error_record()"
     },
     {
@@ -7947,88 +8197,98 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "tests_test_migrate_site",
-      "community": 156,
+      "community": 155,
       "norm_label": "test_migrate_site.py"
     },
     {
       "label": "run_mrp()",
       "file_type": "code",
       "source_file": "tests/test_migrate_site.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_migrate_site_run_mrp",
-      "community": 156,
+      "community": 155,
       "norm_label": "run_mrp()"
     },
     {
       "label": "Path",
       "file_type": "code",
       "source_file": "tests/test_migrate_site.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_migrate_site_py_path",
-      "community": 156,
+      "community": 155,
       "norm_label": "path"
     },
     {
       "label": "CompletedProcess",
       "file_type": "code",
       "source_file": "tests/test_migrate_site.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "tests_test_migrate_site_py_completedprocess",
-      "community": 156,
+      "community": 155,
       "norm_label": "completedprocess"
     },
     {
       "label": "content_repo()",
       "file_type": "code",
       "source_file": "tests/test_migrate_site.py",
-      "source_location": "L24",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "tests_test_migrate_site_content_repo",
-      "community": 156,
+      "community": 155,
       "norm_label": "content_repo()"
     },
     {
       "label": "test_migrate_site_dry_run_reports_planned_writes_without_content_mutation()",
       "file_type": "code",
       "source_file": "tests/test_migrate_site.py",
-      "source_location": "L33",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "tests_test_migrate_site_test_migrate_site_dry_run_reports_planned_writes_without_content_mutation",
-      "community": 156,
+      "community": 155,
       "norm_label": "test_migrate_site_dry_run_reports_planned_writes_without_content_mutation()"
     },
     {
       "label": "test_migrate_site_missing_source_fails_cleanly()",
       "file_type": "code",
       "source_file": "tests/test_migrate_site.py",
-      "source_location": "L55",
+      "source_location": "L58",
       "_origin": "ast",
       "id": "tests_test_migrate_site_test_migrate_site_missing_source_fails_cleanly",
-      "community": 156,
+      "community": 155,
       "norm_label": "test_migrate_site_missing_source_fails_cleanly()"
     },
     {
       "label": "test_migrate_site_generates_staging_content_records()",
       "file_type": "code",
       "source_file": "tests/test_migrate_site.py",
-      "source_location": "L69",
+      "source_location": "L72",
       "_origin": "ast",
       "id": "tests_test_migrate_site_test_migrate_site_generates_staging_content_records",
-      "community": 156,
+      "community": 155,
       "norm_label": "test_migrate_site_generates_staging_content_records()"
     },
     {
       "label": "test_migrate_site_is_idempotent_and_does_not_overwrite()",
       "file_type": "code",
       "source_file": "tests/test_migrate_site.py",
-      "source_location": "L93",
+      "source_location": "L108",
       "_origin": "ast",
       "id": "tests_test_migrate_site_test_migrate_site_is_idempotent_and_does_not_overwrite",
-      "community": 156,
+      "community": 155,
       "norm_label": "test_migrate_site_is_idempotent_and_does_not_overwrite()"
+    },
+    {
+      "label": "test_copy_referenced_assets_reports_missing_source_with_page_reference()",
+      "file_type": "code",
+      "source_file": "tests/test_migrate_site.py",
+      "source_location": "L125",
+      "_origin": "ast",
+      "id": "tests_test_migrate_site_test_copy_referenced_assets_reports_missing_source_with_page_reference",
+      "community": 155,
+      "norm_label": "test_copy_referenced_assets_reports_missing_source_with_page_reference()"
     },
     {
       "label": "test_migration_inventory.py",
@@ -9577,7 +9837,7 @@
       "source_location": "L1070",
       "_origin": "ast",
       "id": "docs_mrp_v0_1_specification_17_work_packets",
-      "community": 37,
+      "community": 51,
       "norm_label": "17. work packets"
     },
     {
@@ -12954,9 +13214,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_import_site_title_from_slug",
-      "confidence_score": 1.0
+      "target": "core_import_site_title_from_slug"
     },
     {
       "relation": "calls",
@@ -12965,9 +13225,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L269",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_artist_record",
-      "target": "core_import_site_title_from_slug",
-      "confidence_score": 1.0
+      "target": "core_import_site_title_from_slug"
     },
     {
       "relation": "calls",
@@ -12976,9 +13236,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L205",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_page_record",
-      "target": "core_import_site_title_from_slug",
-      "confidence_score": 1.0
+      "target": "core_import_site_title_from_slug"
     },
     {
       "relation": "calls",
@@ -12987,9 +13247,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L242",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_post_record",
-      "target": "core_import_site_title_from_slug",
-      "confidence_score": 1.0
+      "target": "core_import_site_title_from_slug"
     },
     {
       "relation": "calls",
@@ -12998,9 +13258,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L291",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_release_record",
-      "target": "core_import_site_title_from_slug",
-      "confidence_score": 1.0
+      "target": "core_import_site_title_from_slug"
     },
     {
       "relation": "contains",
@@ -13360,9 +13620,39 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L265",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_artist_record",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_artist_record"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L487",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_asset_references_from_html"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L463",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_capture_assets_by_url"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L360",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_copy_referenced_assets"
     },
     {
       "relation": "contains",
@@ -13370,9 +13660,19 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L358",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_date_part",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_date_part"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L472",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_extract_content_asset_references"
     },
     {
       "relation": "contains",
@@ -13388,11 +13688,51 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L520",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_manifest_asset_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L540",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_merge_asset_manifest"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
       "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "core_migrate_site",
       "target": "core_migrate_site_migrate_site"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L527",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_migrated_asset_path"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L506",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_normalize_asset_url"
     },
     {
       "relation": "contains",
@@ -13410,9 +13750,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L199",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_page_record",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_page_record"
     },
     {
       "relation": "contains",
@@ -13430,9 +13770,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L232",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_post_record",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_post_record"
     },
     {
       "relation": "contains",
@@ -13440,9 +13780,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_posts_by_slug_from_inventory_source",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_posts_by_slug_from_inventory_source"
     },
     {
       "relation": "contains",
@@ -13450,9 +13790,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_release_record",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_release_record"
     },
     {
       "relation": "contains",
@@ -13460,9 +13800,19 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_run_migration",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_run_migration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L534",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_safe_filename"
     },
     {
       "relation": "contains",
@@ -13470,9 +13820,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L348",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_safe_slug",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_safe_slug"
     },
     {
       "relation": "contains",
@@ -13480,9 +13830,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L343",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_slug_from_path",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_slug_from_path"
     },
     {
       "relation": "contains",
@@ -13490,9 +13840,19 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L353",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_source_path",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_source_path"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L497",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site",
+      "target": "core_migrate_site_split_asset_reference"
     },
     {
       "relation": "contains",
@@ -13500,9 +13860,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site",
-      "target": "core_migrate_site_write_generated_yaml",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_write_generated_yaml"
     },
     {
       "relation": "contains",
@@ -13554,9 +13914,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_migrate_site",
-      "target": "core_migrate_site_run_migration",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_run_migration"
     },
     {
       "relation": "calls",
@@ -13603,15 +13963,59 @@
       "target": "mrp_core_migrate_site_py_path"
     },
     {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L360",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_copy_referenced_assets",
+      "target": "mrp_core_migrate_site_py_path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L472",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_extract_content_asset_references",
+      "target": "mrp_core_migrate_site_py_path"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L540",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_merge_asset_manifest",
+      "target": "mrp_core_migrate_site_py_path"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L529",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_migrated_asset_path",
+      "target": "mrp_core_migrate_site_py_path"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L174",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_posts_by_slug_from_inventory_source",
-      "target": "mrp_core_migrate_site_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_path"
     },
     {
       "relation": "references",
@@ -13620,9 +14024,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "mrp_core_migrate_site_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_path"
     },
     {
       "relation": "references",
@@ -13631,9 +14035,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_write_generated_yaml",
-      "target": "mrp_core_migrate_site_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_path"
     },
     {
       "relation": "references",
@@ -13653,9 +14057,31 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L265",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_artist_record",
-      "target": "mrp_core_migrate_site_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L463",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_capture_assets_by_url",
+      "target": "mrp_core_migrate_site_py_any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L360",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_copy_referenced_assets",
+      "target": "mrp_core_migrate_site_py_any"
     },
     {
       "relation": "references",
@@ -13673,11 +14099,22 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L540",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_merge_asset_manifest",
+      "target": "mrp_core_migrate_site_py_any"
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
       "source_location": "L199",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_page_record",
-      "target": "mrp_core_migrate_site_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_any"
     },
     {
       "relation": "references",
@@ -13697,9 +14134,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L232",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_post_record",
-      "target": "mrp_core_migrate_site_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_any"
     },
     {
       "relation": "references",
@@ -13708,9 +14145,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_posts_by_slug_from_inventory_source",
-      "target": "mrp_core_migrate_site_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_any"
     },
     {
       "relation": "references",
@@ -13719,9 +14156,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_release_record",
-      "target": "mrp_core_migrate_site_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_any"
     },
     {
       "relation": "references",
@@ -13730,9 +14167,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "mrp_core_migrate_site_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_any"
     },
     {
       "relation": "references",
@@ -13741,9 +14178,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_write_generated_yaml",
-      "target": "mrp_core_migrate_site_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_migrate_site_py_any"
     },
     {
       "relation": "references",
@@ -13763,9 +14200,20 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L113",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_artist_record",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_artist_record"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_run_migration",
+      "target": "core_migrate_site_copy_referenced_assets"
     },
     {
       "relation": "calls",
@@ -13774,9 +14222,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_page_record",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_page_record"
     },
     {
       "relation": "calls",
@@ -13785,9 +14233,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L149",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_planned_writes",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_planned_writes"
     },
     {
       "relation": "calls",
@@ -13796,9 +14244,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_post_record",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_post_record"
     },
     {
       "relation": "calls",
@@ -13807,9 +14255,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_posts_by_slug_from_inventory_source",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_posts_by_slug_from_inventory_source"
     },
     {
       "relation": "calls",
@@ -13818,9 +14266,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L119",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_release_record",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_release_record"
     },
     {
       "relation": "calls",
@@ -13829,9 +14277,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_safe_slug",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_safe_slug"
     },
     {
       "relation": "calls",
@@ -13840,9 +14288,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L86",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_slug_from_path",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_slug_from_path"
     },
     {
       "relation": "calls",
@@ -13851,9 +14299,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_source_path",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_source_path"
     },
     {
       "relation": "calls",
@@ -13862,9 +14310,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migrate_site_write_generated_yaml",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_write_generated_yaml"
     },
     {
       "relation": "calls",
@@ -13873,9 +14321,9 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_run_migration",
-      "target": "core_migration_inventory_migration_inventory",
-      "confidence_score": 1.0
+      "target": "core_migration_inventory_migration_inventory"
     },
     {
       "relation": "calls",
@@ -13884,9 +14332,152 @@
       "source_file": "mrp/core/migrate_site.py",
       "source_location": "L301",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_migrate_site_release_record",
-      "target": "core_migrate_site_date_part",
-      "confidence_score": 1.0
+      "target": "core_migrate_site_date_part"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L363",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_copy_referenced_assets",
+      "target": "core_migrate_site_capture_assets_by_url"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L364",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_copy_referenced_assets",
+      "target": "core_migrate_site_extract_content_asset_references"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L388",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_copy_referenced_assets",
+      "target": "core_migrate_site_manifest_asset_type"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L448",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_copy_referenced_assets",
+      "target": "core_migrate_site_merge_asset_manifest"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L410",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_copy_referenced_assets",
+      "target": "core_migrate_site_migrated_asset_path"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L375",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_copy_referenced_assets",
+      "target": "core_migrate_site_normalize_asset_url"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_migrate_site.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_test_migrate_site",
+      "target": "core_migrate_site_copy_referenced_assets"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_migrate_site.py",
+      "source_location": "L143",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_test_migrate_site_test_copy_referenced_assets_reports_missing_source_with_page_reference",
+      "target": "core_migrate_site_copy_referenced_assets"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L466",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_capture_assets_by_url",
+      "target": "core_migrate_site_normalize_asset_url"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L480",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_extract_content_asset_references",
+      "target": "core_migrate_site_asset_references_from_html"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L481",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_extract_content_asset_references",
+      "target": "core_migrate_site_normalize_asset_url"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L491",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_asset_references_from_html",
+      "target": "core_migrate_site_split_asset_reference"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/migrate_site.py",
+      "source_location": "L529",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "core_migrate_site_migrated_asset_path",
+      "target": "core_migrate_site_safe_filename"
     },
     {
       "relation": "contains",
@@ -22864,9 +23455,9 @@
       "source_file": "tests/test_migrate_site.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_migrate_site",
-      "target": "tests_test_migrate_site_content_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_migrate_site_content_repo"
     },
     {
       "relation": "contains",
@@ -22877,6 +23468,16 @@
       "confidence_score": 1.0,
       "source": "tests_test_migrate_site",
       "target": "tests_test_migrate_site_run_mrp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_migrate_site.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_test_migrate_site",
+      "target": "tests_test_migrate_site_test_copy_referenced_assets_reports_missing_source_with_page_reference"
     },
     {
       "relation": "contains",
@@ -22894,9 +23495,9 @@
       "source_file": "tests/test_migrate_site.py",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_migrate_site",
-      "target": "tests_test_migrate_site_test_migrate_site_generates_staging_content_records",
-      "confidence_score": 1.0
+      "target": "tests_test_migrate_site_test_migrate_site_generates_staging_content_records"
     },
     {
       "relation": "contains",
@@ -22904,9 +23505,9 @@
       "source_file": "tests/test_migrate_site.py",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_migrate_site",
-      "target": "tests_test_migrate_site_test_migrate_site_is_idempotent_and_does_not_overwrite",
-      "confidence_score": 1.0
+      "target": "tests_test_migrate_site_test_migrate_site_is_idempotent_and_does_not_overwrite"
     },
     {
       "relation": "contains",
@@ -22958,9 +23559,9 @@
       "source_file": "tests/test_migrate_site.py",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_migrate_site_test_migrate_site_generates_staging_content_records",
-      "target": "tests_test_migrate_site_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_migrate_site_run_mrp"
     },
     {
       "relation": "calls",
@@ -22969,9 +23570,9 @@
       "source_file": "tests/test_migrate_site.py",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_migrate_site_test_migrate_site_is_idempotent_and_does_not_overwrite",
-      "target": "tests_test_migrate_site_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_migrate_site_run_mrp"
     },
     {
       "relation": "calls",
@@ -22991,9 +23592,9 @@
       "source_file": "tests/test_migrate_site.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_migrate_site_content_repo",
-      "target": "tests_test_migrate_site_py_path",
-      "confidence_score": 1.0
+      "target": "tests_test_migrate_site_py_path"
     },
     {
       "relation": "calls",
@@ -23002,9 +23603,9 @@
       "source_file": "tests/test_migrate_site.py",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_migrate_site_test_migrate_site_generates_staging_content_records",
-      "target": "tests_test_migrate_site_content_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_migrate_site_content_repo"
     },
     {
       "relation": "calls",
@@ -23013,9 +23614,9 @@
       "source_file": "tests/test_migrate_site.py",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_migrate_site_test_migrate_site_is_idempotent_and_does_not_overwrite",
-      "target": "tests_test_migrate_site_content_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_migrate_site_content_repo"
     },
     {
       "relation": "contains",
@@ -26552,5 +27153,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "f79379381dda0a213ae0a8f1ed2c6b2705475de5"
+  "built_at_commit": "d1a391dbf08b46c179a8d9aacd2b7dbe7c29478f"
 }
