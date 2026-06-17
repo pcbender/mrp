@@ -1,16 +1,16 @@
 # Graph Report - mrp  (2026-06-17)
 
 ## Corpus Check
-- 273 files · ~90,368 words
+- 299 files · ~123,983 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 822 nodes · 1209 edges · 126 communities (119 shown, 7 thin omitted)
+- 869 nodes · 1279 edges · 132 communities (125 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `df09e186`
+- Built from commit: `dde30fc3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -87,39 +87,40 @@
 - [[_COMMUNITY_Community 69|Community 69]]
 - [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
+- [[_COMMUNITY_Community 126|Community 126]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `verify_target()` - 23 edges
 2. `17. Work Packets` - 21 edges
-3. `validate_repository()` - 19 edges
-4. `main()` - 15 edges
-5. `stage_build()` - 15 edges
-6. `publish()` - 15 edges
-7. `emit()` - 14 edges
-8. `rollback()` - 14 edges
-9. `getVisibleReleases()` - 13 edges
-10. `import_site()` - 12 edges
+3. `migration_inventory()` - 19 edges
+4. `validate_repository()` - 19 edges
+5. `main()` - 15 edges
+6. `stage_build()` - 15 edges
+7. `publish()` - 15 edges
+8. `emit()` - 14 edges
+9. `rollback()` - 14 edges
+10. `getVisibleReleases()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `validate_schema()` --calls--> `Draft202012Validator`  [INFERRED]
   mrp/core/validate.py → tests/test_schemas.py
-- `emit()` --calls--> `format_approval()`  [EXTRACTED]
-  mrp/cli/main.py → mrp/core/approve.py
-- `emit()` --calls--> `format_import()`  [EXTRACTED]
-  mrp/cli/main.py → mrp/core/import_site.py
-- `emit()` --calls--> `format_inspection()`  [EXTRACTED]
-  mrp/cli/main.py → mrp/core/inspect.py
-- `emit()` --calls--> `format_publish()`  [EXTRACTED]
-  mrp/cli/main.py → mrp/core/publish.py
+- `test_migration_inventory_accepts_artifact_root()` --calls--> `migration_inventory()`  [EXTRACTED]
+  tests/test_migration_inventory.py → mrp/core/migration_inventory.py
+- `test_migration_inventory_does_not_modify_source_files()` --calls--> `migration_inventory()`  [EXTRACTED]
+  tests/test_migration_inventory.py → mrp/core/migration_inventory.py
+- `test_migration_inventory_exclusions_are_explicit()` --calls--> `migration_inventory()`  [EXTRACTED]
+  tests/test_migration_inventory.py → mrp/core/migration_inventory.py
+- `test_migration_inventory_writes_report_and_known_counts()` --calls--> `migration_inventory()`  [EXTRACTED]
+  tests/test_migration_inventory.py → mrp/core/migration_inventory.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (126 total, 7 thin omitted)
+## Communities (132 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.12
-Nodes (43): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), base_result() (+35 more)
+Cohesion: 0.11
+Nodes (41): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), add_error() (+33 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.04
@@ -186,8 +187,8 @@ Cohesion: 0.44
 Nodes (11): add_error(), clear_target(), copy_tree(), finish(), format_rollback(), now_utc(), rollback(), rollback_candidate() (+3 more)
 
 ### Community 17 - "Community 17"
-Cohesion: 0.49
-Nodes (10): add_error(), approval_id(), approve(), finish(), format_approval(), latest_verification(), now_utc(), write_approval() (+2 more)
+Cohesion: 0.26
+Nodes (21): create_release(), failed(), release_record(), slugify(), track(), error_record(), load_content(), load_records() (+13 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.36
@@ -206,8 +207,8 @@ Cohesion: 0.44
 Nodes (10): publishable_repo(), CompletedProcess, Path, run_mrp(), test_publish_deploys_verifies_and_marks_release_live(), test_publish_refuses_missing_production_marker(), test_publish_refuses_unapproved_build(), write_file() (+2 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.51
-Nodes (9): find_release(), format_status(), latest_report(), release_summary(), report_summary(), rollback_available(), status(), Any (+1 more)
+Cohesion: 0.22
+Nodes (20): classify_artist_release_routes(), classify_asset(), classify_post(), exclusion_summary(), format_migration_inventory(), load_json(), migration_inventory(), normalize_route() (+12 more)
 
 ### Community 23 - "Community 23"
 Cohesion: 0.44
@@ -266,8 +267,8 @@ Cohesion: 0.40
 Nodes (4): Artists, Content Model, Releases, Site
 
 ### Community 37 - "Community 37"
-Cohesion: 0.40
-Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-004 — Implement MRP CLI Skeleton, Objective, Tasks
+Cohesion: 0.50
+Nodes (4): Acceptance Criteria, MRP-004 — Implement MRP CLI Skeleton, Objective, Tasks
 
 ### Community 38 - "Community 38"
 Cohesion: 0.40
@@ -346,8 +347,8 @@ Cohesion: 0.50
 Nodes (4): Acceptance Criteria, MRP-018 — Add Status Command, Objective, Tasks
 
 ### Community 57 - "Community 57"
-Cohesion: 0.50
-Nodes (4): Acceptance Criteria, MRP-019 — Documentation Pass, Objective, Tasks
+Cohesion: 0.40
+Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-019 — Documentation Pass, Objective, Tasks
 
 ### Community 58 - "Community 58"
 Cohesion: 0.50
@@ -377,24 +378,28 @@ Nodes (3): release_type, enum, type
 Cohesion: 0.67
 Nodes (3): status, enum, type
 
+### Community 126 - "Community 126"
+Cohesion: 0.10
+Nodes (19): Acceptance Criteria, CLI Shape, MRP-101 - Migration Inventory Refresh, MRP-102 - Migration Schemas And Content Directories, MRP-103 - Implement `mrp migrate-site --dry-run`, MRP-104 - Generate Migrated Content Records, MRP-105 - Curated Asset Copy, MRP-106 - Astro Rendering For Migrated Pages (+11 more)
+
 ## Knowledge Gaps
-- **320 isolated node(s):** `Namespace`, `Path`, `$schema`, `$id`, `title` (+315 more)
+- **337 isolated node(s):** `Namespace`, `Path`, `$schema`, `$id`, `title` (+332 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `17. Work Packets` connect `Community 37` to `Community 2`, `Community 40`, `Community 41`, `Community 42`, `Community 43`, `Community 44`, `Community 45`, `Community 46`, `Community 47`, `Community 48`, `Community 49`, `Community 50`, `Community 51`, `Community 52`, `Community 53`, `Community 54`, `Community 55`, `Community 56`, `Community 57`, `Community 58`?**
-  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `17. Work Packets` connect `Community 57` to `Community 2`, `Community 37`, `Community 40`, `Community 41`, `Community 42`, `Community 43`, `Community 44`, `Community 45`, `Community 46`, `Community 47`, `Community 48`, `Community 49`, `Community 50`, `Community 51`, `Community 52`, `Community 53`, `Community 54`, `Community 55`, `Community 56`, `Community 58`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
 - **Why does `properties` connect `Community 8` to `Community 64`, `Community 1`, `Community 33`, `Community 65`, `Community 66`, `Community 67`, `Community 39`, `Community 11`, `Community 19`, `Community 62`, `Community 63`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **Why does `main()` connect `Community 0` to `Community 7`, `Community 9`, `Community 12`, `Community 13`, `Community 16`, `Community 17`, `Community 22`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `main()` connect `Community 0` to `Community 7`, `Community 9`, `Community 12`, `Community 13`, `Community 16`, `Community 17`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **What connects `Maricopa Release Publisher.`, `MRP command-line interface.`, `Namespace` to the rest of the system?**
-  _322 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _339 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.11748381128584644 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1101010101010101 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
