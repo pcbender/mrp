@@ -8,6 +8,7 @@ from typing import Any, Sequence
 
 from mrp.core.approve import approve, format_approval
 from mrp.core.build import build_repository, format_build
+from mrp.core.clone_site import clone_site, format_clone_site
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
@@ -102,6 +103,11 @@ def build_parser() -> argparse.ArgumentParser:
     wxr_parser = subparsers.add_parser("wxr-inventory", help="Inventory the WordPress export for static clone work.")
     add_global_options(wxr_parser, suppress_defaults=True)
     wxr_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
+
+    clone_parser = subparsers.add_parser("clone-site", help="Generate WordPress static clone records.")
+    add_global_options(clone_parser, suppress_defaults=True)
+    clone_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
+    clone_parser.add_argument("--regenerate", action="store_true")
 
     return parser
 
@@ -207,6 +213,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "wxr-inventory":
         print(format_wxr_inventory(result))
         return
+    if result["command"] == "clone-site":
+        print(format_clone_site(result))
+        return
 
     print(result["message"])
 
@@ -254,6 +263,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "wxr-inventory":
         result = wxr_inventory(args.repo, source=args.source)
+    elif args.command == "clone-site":
+        result = clone_site(args.repo, source=args.source, regenerate=args.regenerate)
     else:
         result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))
@@ -287,6 +298,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "migrate-site" and result["status"] == "failed":
         return EXIT_CONFIG
     if args.command == "wxr-inventory" and result["status"] == "failed":
+        return EXIT_CONFIG
+    if args.command == "clone-site" and result["status"] == "failed":
         return EXIT_CONFIG
     return EXIT_SUCCESS
 

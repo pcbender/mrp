@@ -1,0 +1,26 @@
+clone:
+  id: posts
+  kind: static_page
+  title: Posts
+  status: review
+  route:
+    canonical_path: /posts/
+    aliases:
+    - /posts
+  source:
+    system: wordpress
+    id: '677'
+    post_type: page
+    post_status: publish
+    slug: posts
+    link: https://www.maricoparecords.com/posts/
+    guid: https://www.maricoparecords.com/?page_id=677
+    captured_path: null
+  content_html: ''
+  excerpt: null
+  seo:
+    title: Posts
+    description: null
+  assets: []
+  notes:
+  - Generated from WordPress WXR content:encoded.

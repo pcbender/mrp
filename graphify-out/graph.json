@@ -236,6 +236,26 @@
     {
       "label": "contact-submit.php",
       "file_type": "code",
+      "source_file": "builds/archive/production-20260617T230840Z/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "production_20260617t230840z_contact_submit",
+      "community": 277,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/archive/production-20260617T231056Z/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "production_20260617t231056z_contact_submit",
+      "community": 278,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
       "source_file": "builds/local-production/contact-submit.php",
       "source_location": "L1",
       "_origin": "ast",
@@ -1684,6 +1704,106 @@
       "norm_label": "contact-submit.php"
     },
     {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230809864348Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230809864348z_site_contact_submit",
+      "community": 267,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230814545484Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230814545484z_circuiting_contact_submit",
+      "community": 268,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230821604899Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230821604899z_site_contact_submit",
+      "community": 269,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230833975598Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230833975598z_circuiting_contact_submit",
+      "community": 270,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230848304646Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230848304646z_site_contact_submit",
+      "community": 271,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T231019592810Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t231019592810z_site_contact_submit",
+      "community": 272,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T231024274540Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t231024274540z_circuiting_contact_submit",
+      "community": 273,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T231031454875Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t231031454875z_site_contact_submit",
+      "community": 274,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T231050320869Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t231050320869z_circuiting_contact_submit",
+      "community": 275,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T231104379805Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t231104379805z_site_contact_submit",
+      "community": 276,
+      "norm_label": "contact-submit.php"
+    },
+    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "mrp/__init__.py",
@@ -1737,7 +1857,7 @@
       "label": "build_parser()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L35",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "cli_main_build_parser",
       "community": 0,
@@ -1747,7 +1867,7 @@
       "label": "ArgumentParser",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L35",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "argumentparser",
       "community": 0,
@@ -1757,7 +1877,7 @@
       "label": "add_global_options()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L109",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "cli_main_add_global_options",
       "community": 0,
@@ -1767,7 +1887,7 @@
       "label": "add_common_command_options()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L136",
+      "source_location": "L142",
       "_origin": "ast",
       "id": "cli_main_add_common_command_options",
       "community": 0,
@@ -1777,7 +1897,7 @@
       "label": "placeholder_result()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L152",
+      "source_location": "L158",
       "_origin": "ast",
       "id": "cli_main_placeholder_result",
       "community": 0,
@@ -1787,7 +1907,7 @@
       "label": "Namespace",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L152",
+      "source_location": "L158",
       "_origin": "ast",
       "id": "namespace",
       "community": 0,
@@ -1797,7 +1917,7 @@
       "label": "Any",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L152",
+      "source_location": "L158",
       "_origin": "ast",
       "id": "mrp_cli_main_py_any",
       "community": 0,
@@ -1807,7 +1927,7 @@
       "label": "emit()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L166",
+      "source_location": "L172",
       "_origin": "ast",
       "id": "cli_main_emit",
       "community": 0,
@@ -1817,7 +1937,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L214",
+      "source_location": "L223",
       "_origin": "ast",
       "id": "cli_main_main",
       "community": 0,
@@ -1840,7 +1960,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_approve",
-      "community": 254,
+      "community": 0,
       "norm_label": "approve.py"
     },
     {
@@ -1850,7 +1970,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "core_approve_approve",
-      "community": 254,
+      "community": 0,
       "norm_label": "approve()"
     },
     {
@@ -1860,7 +1980,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mrp_core_approve_py_path",
-      "community": 254,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -1870,7 +1990,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mrp_core_approve_py_any",
-      "community": 254,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -1880,7 +2000,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "core_approve_latest_verification",
-      "community": 254,
+      "community": 0,
       "norm_label": "latest_verification()"
     },
     {
@@ -1890,7 +2010,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "core_approve_add_error",
-      "community": 254,
+      "community": 0,
       "norm_label": "add_error()"
     },
     {
@@ -1900,7 +2020,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "core_approve_finish",
-      "community": 254,
+      "community": 0,
       "norm_label": "finish()"
     },
     {
@@ -1910,7 +2030,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "core_approve_approval_id",
-      "community": 254,
+      "community": 0,
       "norm_label": "approval_id()"
     },
     {
@@ -1920,7 +2040,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "core_approve_write_approval",
-      "community": 254,
+      "community": 0,
       "norm_label": "write_approval()"
     },
     {
@@ -1930,7 +2050,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "core_approve_now_utc",
-      "community": 254,
+      "community": 0,
       "norm_label": "now_utc()"
     },
     {
@@ -1940,7 +2060,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "core_approve_format_approval",
-      "community": 254,
+      "community": 0,
       "norm_label": "format_approval()"
     },
     {
@@ -2042,6 +2162,166 @@
       "id": "core_build_format_build",
       "community": 0,
       "norm_label": "format_build()"
+    },
+    {
+      "label": "clone_site.py",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "core_clone_site",
+      "community": 205,
+      "norm_label": "clone_site.py"
+    },
+    {
+      "label": "clone_site()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "core_clone_site_clone_site",
+      "community": 205,
+      "norm_label": "clone_site()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "mrp_core_clone_site_py_path",
+      "community": 205,
+      "norm_label": "path"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "mrp_core_clone_site_py_any",
+      "community": 205,
+      "norm_label": "any"
+    },
+    {
+      "label": "run_clone_generation()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "core_clone_site_run_clone_generation",
+      "community": 205,
+      "norm_label": "run_clone_generation()"
+    },
+    {
+      "label": "clone_record()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L113",
+      "_origin": "ast",
+      "id": "core_clone_site_clone_record",
+      "community": 205,
+      "norm_label": "clone_record()"
+    },
+    {
+      "label": "capture_routes()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L156",
+      "_origin": "ast",
+      "id": "core_clone_site_capture_routes",
+      "community": 205,
+      "norm_label": "capture_routes()"
+    },
+    {
+      "label": "aliases_for_path()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L171",
+      "_origin": "ast",
+      "id": "core_clone_site_aliases_for_path",
+      "community": 205,
+      "norm_label": "aliases_for_path()"
+    },
+    {
+      "label": "canonical_path()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L183",
+      "_origin": "ast",
+      "id": "core_clone_site_canonical_path",
+      "community": 205,
+      "norm_label": "canonical_path()"
+    },
+    {
+      "label": "normalize_path()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L192",
+      "_origin": "ast",
+      "id": "core_clone_site_normalize_path",
+      "community": 205,
+      "norm_label": "normalize_path()"
+    },
+    {
+      "label": "clone_id()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L200",
+      "_origin": "ast",
+      "id": "core_clone_site_clone_id",
+      "community": 205,
+      "norm_label": "clone_id()"
+    },
+    {
+      "label": "write_clone_record()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L208",
+      "_origin": "ast",
+      "id": "core_clone_site_write_clone_record",
+      "community": 205,
+      "norm_label": "write_clone_record()"
+    },
+    {
+      "label": "load_json()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L230",
+      "_origin": "ast",
+      "id": "core_clone_site_load_json",
+      "community": 205,
+      "norm_label": "load_json()"
+    },
+    {
+      "label": "write_report()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L234",
+      "_origin": "ast",
+      "id": "core_clone_site_write_report",
+      "community": 205,
+      "norm_label": "write_report()"
+    },
+    {
+      "label": "now_utc()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L242",
+      "_origin": "ast",
+      "id": "core_clone_site_now_utc",
+      "community": 205,
+      "norm_label": "now_utc()"
+    },
+    {
+      "label": "format_clone_site()",
+      "file_type": "code",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L246",
+      "_origin": "ast",
+      "id": "core_clone_site_format_clone_site",
+      "community": 205,
+      "norm_label": "format_clone_site()"
     },
     {
       "label": "deploy.py",
@@ -2770,7 +3050,7 @@
       "source_location": "L611",
       "_origin": "ast",
       "id": "core_migrate_site_format_migrate_site",
-      "community": 0,
+      "community": 155,
       "norm_label": "format_migrate_site()"
     },
     {
@@ -3080,7 +3360,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_release",
-      "community": 13,
+      "community": 0,
       "norm_label": "release.py"
     },
     {
@@ -3090,7 +3370,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "core_release_create_release",
-      "community": 13,
+      "community": 0,
       "norm_label": "create_release()"
     },
     {
@@ -3100,7 +3380,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mrp_core_release_py_path",
-      "community": 13,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -3110,7 +3390,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mrp_core_release_py_any",
-      "community": 13,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -3120,7 +3400,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "core_release_release_record",
-      "community": 13,
+      "community": 0,
       "norm_label": "release_record()"
     },
     {
@@ -3130,7 +3410,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "core_release_track",
-      "community": 13,
+      "community": 0,
       "norm_label": "track()"
     },
     {
@@ -3140,7 +3420,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "core_release_slugify",
-      "community": 13,
+      "community": 0,
       "norm_label": "slugify()"
     },
     {
@@ -3150,7 +3430,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "core_release_failed",
-      "community": 13,
+      "community": 0,
       "norm_label": "failed()"
     },
     {
@@ -3170,7 +3450,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_rollback",
-      "community": 0,
+      "community": 254,
       "norm_label": "rollback.py"
     },
     {
@@ -3180,7 +3460,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "core_rollback_rollback",
-      "community": 0,
+      "community": 254,
       "norm_label": "rollback()"
     },
     {
@@ -3190,7 +3470,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mrp_core_rollback_py_path",
-      "community": 0,
+      "community": 254,
       "norm_label": "path"
     },
     {
@@ -3200,7 +3480,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mrp_core_rollback_py_any",
-      "community": 0,
+      "community": 254,
       "norm_label": "any"
     },
     {
@@ -3210,7 +3490,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "core_rollback_rollback_candidate",
-      "community": 0,
+      "community": 254,
       "norm_label": "rollback_candidate()"
     },
     {
@@ -3220,7 +3500,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "core_rollback_clear_target",
-      "community": 0,
+      "community": 254,
       "norm_label": "clear_target()"
     },
     {
@@ -3230,7 +3510,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "core_rollback_copy_tree",
-      "community": 0,
+      "community": 254,
       "norm_label": "copy_tree()"
     },
     {
@@ -3240,7 +3520,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "core_rollback_add_error",
-      "community": 0,
+      "community": 254,
       "norm_label": "add_error()"
     },
     {
@@ -3250,7 +3530,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "core_rollback_finish",
-      "community": 0,
+      "community": 254,
       "norm_label": "finish()"
     },
     {
@@ -3260,7 +3540,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "core_rollback_write_rollback_report",
-      "community": 0,
+      "community": 254,
       "norm_label": "write_rollback_report()"
     },
     {
@@ -3270,7 +3550,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "core_rollback_now_utc",
-      "community": 0,
+      "community": 254,
       "norm_label": "now_utc()"
     },
     {
@@ -3280,7 +3560,7 @@
       "source_location": "L135",
       "_origin": "ast",
       "id": "core_rollback_format_rollback",
-      "community": 0,
+      "community": 254,
       "norm_label": "format_rollback()"
     },
     {
@@ -3870,7 +4150,7 @@
       "source_location": "L365",
       "_origin": "ast",
       "id": "core_verify_format_verification",
-      "community": 0,
+      "community": 9,
       "norm_label": "format_verification()"
     },
     {
@@ -4070,7 +4350,7 @@
       "source_location": "L306",
       "_origin": "ast",
       "id": "core_wxr_format_wxr_inventory",
-      "community": 0,
+      "community": 205,
       "norm_label": "format_wxr_inventory()"
     },
     {
@@ -10551,6 +10831,106 @@
       "norm_label": "test_nested_release_create_command_is_registered()"
     },
     {
+      "label": "test_clone_site.py",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_clone_site",
+      "community": 266,
+      "norm_label": "test_clone_site.py"
+    },
+    {
+      "label": "run_mrp()",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_run_mrp",
+      "community": 266,
+      "norm_label": "run_mrp()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_py_path",
+      "community": 266,
+      "norm_label": "path"
+    },
+    {
+      "label": "CompletedProcess",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_py_completedprocess",
+      "community": 266,
+      "norm_label": "completedprocess"
+    },
+    {
+      "label": "content_repo()",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_content_repo",
+      "community": 266,
+      "norm_label": "content_repo()"
+    },
+    {
+      "label": "test_clone_site_generates_wxr_clone_records()",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_test_clone_site_generates_wxr_clone_records",
+      "community": 266,
+      "norm_label": "test_clone_site_generates_wxr_clone_records()"
+    },
+    {
+      "label": "test_clone_site_records_capture_aliases()",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_test_clone_site_records_capture_aliases",
+      "community": 266,
+      "norm_label": "test_clone_site_records_capture_aliases()"
+    },
+    {
+      "label": "test_clone_site_is_idempotent_and_preserves_existing_records()",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_test_clone_site_is_idempotent_and_preserves_existing_records",
+      "community": 266,
+      "norm_label": "test_clone_site_is_idempotent_and_preserves_existing_records()"
+    },
+    {
+      "label": "test_clone_site_regenerate_overwrites_existing_records()",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_test_clone_site_regenerate_overwrites_existing_records",
+      "community": 266,
+      "norm_label": "test_clone_site_regenerate_overwrites_existing_records()"
+    },
+    {
+      "label": "test_clone_site_missing_source_fails_cleanly()",
+      "file_type": "code",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L126",
+      "_origin": "ast",
+      "id": "tests_test_clone_site_test_clone_site_missing_source_fails_cleanly",
+      "community": 266,
+      "norm_label": "test_clone_site_missing_source_fails_cleanly()"
+    },
+    {
       "label": "test_deploy.py",
       "file_type": "code",
       "source_file": "tests/test_deploy.py",
@@ -11584,7 +11964,7 @@
       "label": "test_validate_current_repo_writes_json_report()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L36",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "tests_test_validate_test_validate_current_repo_writes_json_report",
       "community": 24,
@@ -11594,7 +11974,7 @@
       "label": "test_validate_release_filter_unknown_release_fails()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L46",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "tests_test_validate_test_validate_release_filter_unknown_release_fails",
       "community": 24,
@@ -11604,7 +11984,7 @@
       "label": "test_missing_artist_reference_fails()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L56",
+      "source_location": "L60",
       "_origin": "ast",
       "id": "tests_test_validate_test_missing_artist_reference_fails",
       "community": 24,
@@ -11614,7 +11994,7 @@
       "label": "test_missing_cover_image_fails_for_publishable_release()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L69",
+      "source_location": "L73",
       "_origin": "ast",
       "id": "tests_test_validate_test_missing_cover_image_fails_for_publishable_release",
       "community": 24,
@@ -11624,7 +12004,7 @@
       "label": "test_validate_migrated_page_and_post_records()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L84",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "tests_test_validate_test_validate_migrated_page_and_post_records",
       "community": 24,
@@ -11634,7 +12014,7 @@
       "label": "test_invalid_migrated_page_fails_validation()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L99",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "tests_test_validate_test_invalid_migrated_page_fails_validation",
       "community": 24,
@@ -11644,7 +12024,7 @@
       "label": "clone_record()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L111",
+      "source_location": "L115",
       "_origin": "ast",
       "id": "tests_test_validate_clone_record",
       "community": 24,
@@ -11654,7 +12034,7 @@
       "label": "clone_asset_manifest()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L144",
+      "source_location": "L148",
       "_origin": "ast",
       "id": "tests_test_validate_clone_asset_manifest",
       "community": 24,
@@ -11664,7 +12044,7 @@
       "label": "test_validate_clone_records_and_asset_manifest()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L163",
+      "source_location": "L167",
       "_origin": "ast",
       "id": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
       "community": 24,
@@ -11674,7 +12054,7 @@
       "label": "test_invalid_clone_record_fails_independent_validation()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L181",
+      "source_location": "L185",
       "_origin": "ast",
       "id": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
       "community": 24,
@@ -11684,7 +12064,7 @@
       "label": "test_duplicate_clone_ids_fail_across_clone_pages_and_posts()",
       "file_type": "code",
       "source_file": "tests/test_validate.py",
-      "source_location": "L198",
+      "source_location": "L202",
       "_origin": "ast",
       "id": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
       "community": 24,
@@ -12697,7 +13077,7 @@
       "source_location": "L1070",
       "_origin": "ast",
       "id": "docs_mrp_v0_1_specification_17_work_packets",
-      "community": 49,
+      "community": 37,
       "norm_label": "17. work packets"
     },
     {
@@ -14405,6 +14785,28 @@
       "source_file": "mrp/cli/main.py",
       "source_location": "L11",
       "weight": 1.0,
+      "source": "cli_main",
+      "target": "core_clone_site_clone_site",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/cli/main.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "cli_main",
+      "target": "core_clone_site_format_clone_site",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/cli/main.py",
+      "source_location": "L11",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "cli_main",
       "target": "core_deploy_format_deployment"
@@ -14777,6 +15179,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "mrp/cli/main.py",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "cli_main_emit",
+      "target": "core_clone_site_format_clone_site",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/cli/main.py",
       "source_location": "L173",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -14925,6 +15338,17 @@
       "confidence_score": 1.0,
       "source": "cli_main_main",
       "target": "core_build_build_repository"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/cli/main.py",
+      "source_location": "L267",
+      "weight": 1.0,
+      "source": "cli_main_main",
+      "target": "core_clone_site_clone_site",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -15592,6 +16016,521 @@
       "confidence_score": 1.0,
       "source": "core_build_write_build_report",
       "target": "mrp_core_build_py_any"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_aliases_for_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_canonical_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_capture_routes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_clone_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_clone_record",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_clone_site",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_format_clone_site",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_load_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L192",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_normalize_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L242",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_now_utc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_run_clone_generation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_write_clone_record",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_clone_site_write_report",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_migration_inventory_resolve_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_wxr_classify_wxr_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "core_clone_site",
+      "target": "core_wxr_parse_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_site",
+      "target": "core_clone_site_now_utc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_site",
+      "target": "core_clone_site_run_clone_generation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_site",
+      "target": "core_clone_site_write_report",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_site",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_site",
+      "target": "mrp_core_clone_site_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "core_clone_site_load_json",
+      "target": "mrp_core_clone_site_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "mrp_core_clone_site_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "core_clone_site_write_clone_record",
+      "target": "mrp_core_clone_site_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "source": "core_clone_site_write_report",
+      "target": "mrp_core_clone_site_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "core_clone_site_aliases_for_path",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "core_clone_site_canonical_path",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "core_clone_site_capture_routes",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_id",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_record",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "source": "core_clone_site_format_clone_site",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L230",
+      "weight": 1.0,
+      "source": "core_clone_site_load_json",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "core_clone_site_write_clone_record",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "source": "core_clone_site_write_report",
+      "target": "mrp_core_clone_site_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "core_clone_site_canonical_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "core_clone_site_capture_routes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "core_clone_site_clone_record",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "core_clone_site_load_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "core_clone_site_write_clone_record",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "core_migration_inventory_resolve_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "core_wxr_classify_wxr_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "core_clone_site_run_clone_generation",
+      "target": "core_wxr_parse_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_record",
+      "target": "core_clone_site_aliases_for_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_record",
+      "target": "core_clone_site_canonical_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "core_clone_site_clone_record",
+      "target": "core_clone_site_clone_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "core_clone_site_capture_routes",
+      "target": "core_clone_site_normalize_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/clone_site.py",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "core_clone_site_canonical_path",
+      "target": "core_clone_site_normalize_path",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -22620,9 +23559,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema",
-      "target": "schemas_clone_asset_manifest_schema_additionalproperties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_additionalproperties"
     },
     {
       "relation": "contains",
@@ -22630,9 +23569,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema",
-      "target": "schemas_clone_asset_manifest_schema_id",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_id"
     },
     {
       "relation": "contains",
@@ -22640,9 +23579,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema",
-      "target": "schemas_clone_asset_manifest_schema_properties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties"
     },
     {
       "relation": "contains",
@@ -22650,9 +23589,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema",
-      "target": "schemas_clone_asset_manifest_schema_required",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_required"
     },
     {
       "relation": "contains",
@@ -22660,9 +23599,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema",
-      "target": "schemas_clone_asset_manifest_schema_schema",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_schema"
     },
     {
       "relation": "contains",
@@ -22670,9 +23609,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema",
-      "target": "schemas_clone_asset_manifest_schema_title",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_title"
     },
     {
       "relation": "contains",
@@ -22680,9 +23619,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema",
-      "target": "schemas_clone_asset_manifest_schema_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_type"
     },
     {
       "relation": "contains",
@@ -22690,9 +23629,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_clone_assets",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_clone_assets"
     },
     {
       "relation": "contains",
@@ -22700,9 +23639,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_clone_assets",
-      "target": "schemas_clone_asset_manifest_schema_clone_assets_items",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_clone_assets_items"
     },
     {
       "relation": "contains",
@@ -22710,9 +23649,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_clone_assets",
-      "target": "schemas_clone_asset_manifest_schema_clone_assets_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_clone_assets_type"
     },
     {
       "relation": "contains",
@@ -22720,9 +23659,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_clone_assets_items",
-      "target": "schemas_clone_asset_manifest_schema_items_additionalproperties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_items_additionalproperties"
     },
     {
       "relation": "contains",
@@ -22730,9 +23669,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_clone_assets_items",
-      "target": "schemas_clone_asset_manifest_schema_items_properties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_items_properties"
     },
     {
       "relation": "contains",
@@ -22740,9 +23679,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_clone_assets_items",
-      "target": "schemas_clone_asset_manifest_schema_items_required",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_items_required"
     },
     {
       "relation": "contains",
@@ -22750,9 +23689,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_clone_assets_items",
-      "target": "schemas_clone_asset_manifest_schema_items_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_items_type"
     },
     {
       "relation": "contains",
@@ -22760,9 +23699,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_used_by_items",
-      "target": "schemas_clone_asset_manifest_schema_items_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_items_type"
     },
     {
       "relation": "contains",
@@ -22770,9 +23709,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_bytes",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_bytes"
     },
     {
       "relation": "contains",
@@ -22780,9 +23719,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_content_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_content_type"
     },
     {
       "relation": "contains",
@@ -22790,9 +23729,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_id",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_id"
     },
     {
       "relation": "contains",
@@ -22800,9 +23739,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_local_path",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_local_path"
     },
     {
       "relation": "contains",
@@ -22810,9 +23749,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_required",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_required"
     },
     {
       "relation": "contains",
@@ -22820,9 +23759,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_sha256",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_sha256"
     },
     {
       "relation": "contains",
@@ -22830,9 +23769,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_source_url",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_source_url"
     },
     {
       "relation": "contains",
@@ -22840,9 +23779,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_status",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_status"
     },
     {
       "relation": "contains",
@@ -22850,9 +23789,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_type"
     },
     {
       "relation": "contains",
@@ -22860,9 +23799,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_items_properties",
-      "target": "schemas_clone_asset_manifest_schema_properties_used_by",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_properties_used_by"
     },
     {
       "relation": "contains",
@@ -22870,9 +23809,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_id",
-      "target": "schemas_clone_asset_manifest_schema_id_pattern",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_id_pattern"
     },
     {
       "relation": "contains",
@@ -22880,9 +23819,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_id",
-      "target": "schemas_clone_asset_manifest_schema_id_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_id_type"
     },
     {
       "relation": "contains",
@@ -22890,9 +23829,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_source_url",
-      "target": "schemas_clone_asset_manifest_schema_source_url_format",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_source_url_format"
     },
     {
       "relation": "contains",
@@ -22900,9 +23839,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_source_url",
-      "target": "schemas_clone_asset_manifest_schema_source_url_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_source_url_type"
     },
     {
       "relation": "contains",
@@ -22910,9 +23849,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_local_path",
-      "target": "schemas_clone_asset_manifest_schema_local_path_minlength",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_local_path_minlength"
     },
     {
       "relation": "contains",
@@ -22920,9 +23859,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_local_path",
-      "target": "schemas_clone_asset_manifest_schema_local_path_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_local_path_type"
     },
     {
       "relation": "contains",
@@ -22930,9 +23869,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_type",
-      "target": "schemas_clone_asset_manifest_schema_type_enum",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_type_enum"
     },
     {
       "relation": "contains",
@@ -22940,9 +23879,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_type",
-      "target": "schemas_clone_asset_manifest_schema_type_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_type_type"
     },
     {
       "relation": "contains",
@@ -22950,9 +23889,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_status",
-      "target": "schemas_clone_asset_manifest_schema_status_enum",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_status_enum"
     },
     {
       "relation": "contains",
@@ -22960,9 +23899,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_status",
-      "target": "schemas_clone_asset_manifest_schema_status_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_status_type"
     },
     {
       "relation": "contains",
@@ -22970,9 +23909,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_required",
-      "target": "schemas_clone_asset_manifest_schema_required_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_required_type"
     },
     {
       "relation": "contains",
@@ -22980,9 +23919,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_content_type",
-      "target": "schemas_clone_asset_manifest_schema_content_type_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_content_type_type"
     },
     {
       "relation": "contains",
@@ -22990,9 +23929,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_bytes",
-      "target": "schemas_clone_asset_manifest_schema_bytes_minimum",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_bytes_minimum"
     },
     {
       "relation": "contains",
@@ -23000,9 +23939,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_bytes",
-      "target": "schemas_clone_asset_manifest_schema_bytes_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_bytes_type"
     },
     {
       "relation": "contains",
@@ -23010,9 +23949,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_sha256",
-      "target": "schemas_clone_asset_manifest_schema_sha256_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_sha256_type"
     },
     {
       "relation": "contains",
@@ -23020,9 +23959,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_used_by",
-      "target": "schemas_clone_asset_manifest_schema_used_by_items",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_used_by_items"
     },
     {
       "relation": "contains",
@@ -23030,9 +23969,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_properties_used_by",
-      "target": "schemas_clone_asset_manifest_schema_used_by_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_used_by_type"
     },
     {
       "relation": "contains",
@@ -23040,9 +23979,9 @@
       "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_asset_manifest_schema_used_by_items",
-      "target": "schemas_clone_asset_manifest_schema_items_pattern",
-      "confidence_score": 1.0
+      "target": "schemas_clone_asset_manifest_schema_items_pattern"
     },
     {
       "relation": "contains",
@@ -23050,9 +23989,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema",
-      "target": "schemas_clone_record_schema_additionalproperties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_additionalproperties"
     },
     {
       "relation": "contains",
@@ -23060,9 +23999,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema",
-      "target": "schemas_clone_record_schema_defs",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_defs"
     },
     {
       "relation": "contains",
@@ -23070,9 +24009,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema",
-      "target": "schemas_clone_record_schema_id",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_id"
     },
     {
       "relation": "contains",
@@ -23080,9 +24019,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema",
-      "target": "schemas_clone_record_schema_properties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties"
     },
     {
       "relation": "contains",
@@ -23090,9 +24029,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema",
-      "target": "schemas_clone_record_schema_required",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_required"
     },
     {
       "relation": "contains",
@@ -23100,9 +24039,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema",
-      "target": "schemas_clone_record_schema_schema",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_schema"
     },
     {
       "relation": "contains",
@@ -23110,9 +24049,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema",
-      "target": "schemas_clone_record_schema_title",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_title"
     },
     {
       "relation": "contains",
@@ -23120,9 +24059,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema",
-      "target": "schemas_clone_record_schema_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_type"
     },
     {
       "relation": "contains",
@@ -23130,9 +24069,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties",
-      "target": "schemas_clone_record_schema_properties_clone",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_clone"
     },
     {
       "relation": "contains",
@@ -23140,9 +24079,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_clone",
-      "target": "schemas_clone_record_schema_clone_additionalproperties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_clone_additionalproperties"
     },
     {
       "relation": "contains",
@@ -23150,9 +24089,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_clone",
-      "target": "schemas_clone_record_schema_clone_properties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_clone_properties"
     },
     {
       "relation": "contains",
@@ -23160,9 +24099,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_clone",
-      "target": "schemas_clone_record_schema_clone_required",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_clone_required"
     },
     {
       "relation": "contains",
@@ -23170,9 +24109,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_clone",
-      "target": "schemas_clone_record_schema_clone_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_clone_type"
     },
     {
       "relation": "contains",
@@ -23180,9 +24119,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_assets",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_assets"
     },
     {
       "relation": "contains",
@@ -23190,9 +24129,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_content_html",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_content_html"
     },
     {
       "relation": "contains",
@@ -23200,9 +24139,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_excerpt",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_excerpt"
     },
     {
       "relation": "contains",
@@ -23210,9 +24149,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_id",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_id"
     },
     {
       "relation": "contains",
@@ -23220,9 +24159,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_kind",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_kind"
     },
     {
       "relation": "contains",
@@ -23230,9 +24169,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_notes",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_notes"
     },
     {
       "relation": "contains",
@@ -23240,9 +24179,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_route",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_route"
     },
     {
       "relation": "contains",
@@ -23250,9 +24189,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_seo",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_seo"
     },
     {
       "relation": "contains",
@@ -23260,9 +24199,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_source",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_source"
     },
     {
       "relation": "contains",
@@ -23270,9 +24209,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_status",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_status"
     },
     {
       "relation": "contains",
@@ -23280,9 +24219,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_clone_properties",
-      "target": "schemas_clone_record_schema_properties_title",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_title"
     },
     {
       "relation": "contains",
@@ -23290,9 +24229,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_id",
-      "target": "schemas_clone_record_schema_id_minlength",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_id_minlength"
     },
     {
       "relation": "contains",
@@ -23300,9 +24239,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_id",
-      "target": "schemas_clone_record_schema_id_pattern",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_id_pattern"
     },
     {
       "relation": "contains",
@@ -23310,9 +24249,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_id",
-      "target": "schemas_clone_record_schema_id_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_id_type"
     },
     {
       "relation": "contains",
@@ -23320,9 +24259,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_source_properties",
-      "target": "schemas_clone_record_schema_properties_id",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_id"
     },
     {
       "relation": "contains",
@@ -23330,9 +24269,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_kind",
-      "target": "schemas_clone_record_schema_kind_enum",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_kind_enum"
     },
     {
       "relation": "contains",
@@ -23340,9 +24279,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_kind",
-      "target": "schemas_clone_record_schema_kind_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_kind_type"
     },
     {
       "relation": "contains",
@@ -23350,9 +24289,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_title",
-      "target": "schemas_clone_record_schema_title_minlength",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_title_minlength"
     },
     {
       "relation": "contains",
@@ -23360,9 +24299,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_title",
-      "target": "schemas_clone_record_schema_title_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_title_type"
     },
     {
       "relation": "contains",
@@ -23370,9 +24309,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_seo_properties",
-      "target": "schemas_clone_record_schema_properties_title",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_title"
     },
     {
       "relation": "contains",
@@ -23380,9 +24319,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_status",
-      "target": "schemas_clone_record_schema_status_enum",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_status_enum"
     },
     {
       "relation": "contains",
@@ -23390,9 +24329,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_status",
-      "target": "schemas_clone_record_schema_status_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_status_type"
     },
     {
       "relation": "contains",
@@ -23400,9 +24339,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_route",
-      "target": "schemas_clone_record_schema_route_ref",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_route_ref"
     },
     {
       "relation": "contains",
@@ -23410,9 +24349,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_source",
-      "target": "schemas_clone_record_schema_source_ref",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_source_ref"
     },
     {
       "relation": "contains",
@@ -23420,9 +24359,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_content_html",
-      "target": "schemas_clone_record_schema_content_html_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_content_html_type"
     },
     {
       "relation": "contains",
@@ -23430,9 +24369,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_excerpt",
-      "target": "schemas_clone_record_schema_excerpt_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_excerpt_type"
     },
     {
       "relation": "contains",
@@ -23440,9 +24379,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_seo",
-      "target": "schemas_clone_record_schema_seo_ref",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_seo_ref"
     },
     {
       "relation": "contains",
@@ -23450,9 +24389,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_assets",
-      "target": "schemas_clone_record_schema_assets_items",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_assets_items"
     },
     {
       "relation": "contains",
@@ -23460,9 +24399,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_assets",
-      "target": "schemas_clone_record_schema_assets_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_assets_type"
     },
     {
       "relation": "contains",
@@ -23470,9 +24409,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_assets_items",
-      "target": "schemas_clone_record_schema_items_minlength",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_items_minlength"
     },
     {
       "relation": "contains",
@@ -23480,9 +24419,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_assets_items",
-      "target": "schemas_clone_record_schema_items_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_items_type"
     },
     {
       "relation": "contains",
@@ -23490,9 +24429,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_aliases_items",
-      "target": "schemas_clone_record_schema_items_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_items_type"
     },
     {
       "relation": "contains",
@@ -23500,9 +24439,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_notes_items",
-      "target": "schemas_clone_record_schema_items_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_items_type"
     },
     {
       "relation": "contains",
@@ -23510,9 +24449,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_notes_items",
-      "target": "schemas_clone_record_schema_items_minlength",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_items_minlength"
     },
     {
       "relation": "contains",
@@ -23520,9 +24459,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_notes",
-      "target": "schemas_clone_record_schema_notes_items",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_notes_items"
     },
     {
       "relation": "contains",
@@ -23530,9 +24469,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_notes",
-      "target": "schemas_clone_record_schema_notes_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_notes_type"
     },
     {
       "relation": "contains",
@@ -23540,9 +24479,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs",
-      "target": "schemas_clone_record_schema_defs_route",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_defs_route"
     },
     {
       "relation": "contains",
@@ -23550,9 +24489,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L65",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs",
-      "target": "schemas_clone_record_schema_defs_seo",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_defs_seo"
     },
     {
       "relation": "contains",
@@ -23560,9 +24499,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs",
-      "target": "schemas_clone_record_schema_defs_source",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_defs_source"
     },
     {
       "relation": "contains",
@@ -23570,9 +24509,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_route",
-      "target": "schemas_clone_record_schema_route_additionalproperties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_route_additionalproperties"
     },
     {
       "relation": "contains",
@@ -23580,9 +24519,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_route",
-      "target": "schemas_clone_record_schema_route_properties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_route_properties"
     },
     {
       "relation": "contains",
@@ -23590,9 +24529,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_route",
-      "target": "schemas_clone_record_schema_route_required",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_route_required"
     },
     {
       "relation": "contains",
@@ -23600,9 +24539,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_route",
-      "target": "schemas_clone_record_schema_route_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_route_type"
     },
     {
       "relation": "contains",
@@ -23610,9 +24549,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_route_properties",
-      "target": "schemas_clone_record_schema_properties_aliases",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_aliases"
     },
     {
       "relation": "contains",
@@ -23620,9 +24559,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_route_properties",
-      "target": "schemas_clone_record_schema_properties_canonical_path",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_canonical_path"
     },
     {
       "relation": "contains",
@@ -23630,9 +24569,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_canonical_path",
-      "target": "schemas_clone_record_schema_canonical_path_pattern",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_canonical_path_pattern"
     },
     {
       "relation": "contains",
@@ -23640,9 +24579,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_canonical_path",
-      "target": "schemas_clone_record_schema_canonical_path_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_canonical_path_type"
     },
     {
       "relation": "contains",
@@ -23650,9 +24589,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_aliases",
-      "target": "schemas_clone_record_schema_aliases_items",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_aliases_items"
     },
     {
       "relation": "contains",
@@ -23660,9 +24599,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_aliases",
-      "target": "schemas_clone_record_schema_aliases_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_aliases_type"
     },
     {
       "relation": "contains",
@@ -23670,9 +24609,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_aliases_items",
-      "target": "schemas_clone_record_schema_items_pattern",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_items_pattern"
     },
     {
       "relation": "contains",
@@ -23680,9 +24619,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_source",
-      "target": "schemas_clone_record_schema_source_additionalproperties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_source_additionalproperties"
     },
     {
       "relation": "contains",
@@ -23690,9 +24629,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_source",
-      "target": "schemas_clone_record_schema_source_properties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_source_properties"
     },
     {
       "relation": "contains",
@@ -23700,9 +24639,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_source",
-      "target": "schemas_clone_record_schema_source_required",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_source_required"
     },
     {
       "relation": "contains",
@@ -23710,9 +24649,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_source",
-      "target": "schemas_clone_record_schema_source_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_source_type"
     },
     {
       "relation": "contains",
@@ -23720,9 +24659,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_source_properties",
-      "target": "schemas_clone_record_schema_properties_captured_path",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_captured_path"
     },
     {
       "relation": "contains",
@@ -23730,9 +24669,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_source_properties",
-      "target": "schemas_clone_record_schema_properties_guid",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_guid"
     },
     {
       "relation": "contains",
@@ -23740,9 +24679,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_source_properties",
-      "target": "schemas_clone_record_schema_properties_link",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_link"
     },
     {
       "relation": "contains",
@@ -23750,9 +24689,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_source_properties",
-      "target": "schemas_clone_record_schema_properties_post_status",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_post_status"
     },
     {
       "relation": "contains",
@@ -23760,9 +24699,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_source_properties",
-      "target": "schemas_clone_record_schema_properties_post_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_post_type"
     },
     {
       "relation": "contains",
@@ -23770,9 +24709,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_source_properties",
-      "target": "schemas_clone_record_schema_properties_slug",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_slug"
     },
     {
       "relation": "contains",
@@ -23780,9 +24719,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_source_properties",
-      "target": "schemas_clone_record_schema_properties_system",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_system"
     },
     {
       "relation": "contains",
@@ -23790,9 +24729,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_system",
-      "target": "schemas_clone_record_schema_system_enum",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_system_enum"
     },
     {
       "relation": "contains",
@@ -23800,9 +24739,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_system",
-      "target": "schemas_clone_record_schema_system_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_system_type"
     },
     {
       "relation": "contains",
@@ -23810,9 +24749,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_post_type",
-      "target": "schemas_clone_record_schema_post_type_minlength",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_post_type_minlength"
     },
     {
       "relation": "contains",
@@ -23820,9 +24759,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_post_type",
-      "target": "schemas_clone_record_schema_post_type_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_post_type_type"
     },
     {
       "relation": "contains",
@@ -23830,9 +24769,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_post_status",
-      "target": "schemas_clone_record_schema_post_status_minlength",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_post_status_minlength"
     },
     {
       "relation": "contains",
@@ -23840,9 +24779,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_post_status",
-      "target": "schemas_clone_record_schema_post_status_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_post_status_type"
     },
     {
       "relation": "contains",
@@ -23850,9 +24789,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_slug",
-      "target": "schemas_clone_record_schema_slug_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_slug_type"
     },
     {
       "relation": "contains",
@@ -23860,9 +24799,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_link",
-      "target": "schemas_clone_record_schema_link_format",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_link_format"
     },
     {
       "relation": "contains",
@@ -23870,9 +24809,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_link",
-      "target": "schemas_clone_record_schema_link_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_link_type"
     },
     {
       "relation": "contains",
@@ -23880,9 +24819,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_guid",
-      "target": "schemas_clone_record_schema_guid_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_guid_type"
     },
     {
       "relation": "contains",
@@ -23890,9 +24829,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_captured_path",
-      "target": "schemas_clone_record_schema_captured_path_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_captured_path_type"
     },
     {
       "relation": "contains",
@@ -23900,9 +24839,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_seo",
-      "target": "schemas_clone_record_schema_seo_additionalproperties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_seo_additionalproperties"
     },
     {
       "relation": "contains",
@@ -23910,9 +24849,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_seo",
-      "target": "schemas_clone_record_schema_seo_properties",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_seo_properties"
     },
     {
       "relation": "contains",
@@ -23920,9 +24859,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_defs_seo",
-      "target": "schemas_clone_record_schema_seo_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_seo_type"
     },
     {
       "relation": "contains",
@@ -23930,9 +24869,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_seo_properties",
-      "target": "schemas_clone_record_schema_properties_description",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_properties_description"
     },
     {
       "relation": "contains",
@@ -23940,9 +24879,9 @@
       "source_file": "mrp/schemas/clone-record.schema.json",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "schemas_clone_record_schema_properties_description",
-      "target": "schemas_clone_record_schema_description_type",
-      "confidence_score": 1.0
+      "target": "schemas_clone_record_schema_description_type"
     },
     {
       "relation": "contains",
@@ -29405,6 +30344,219 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "tests_test_clone_site",
+      "target": "tests_test_clone_site_content_repo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tests_test_clone_site",
+      "target": "tests_test_clone_site_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "tests_test_clone_site",
+      "target": "tests_test_clone_site_test_clone_site_generates_wxr_clone_records",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "tests_test_clone_site",
+      "target": "tests_test_clone_site_test_clone_site_is_idempotent_and_preserves_existing_records",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "tests_test_clone_site",
+      "target": "tests_test_clone_site_test_clone_site_missing_source_fails_cleanly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "tests_test_clone_site",
+      "target": "tests_test_clone_site_test_clone_site_records_capture_aliases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "tests_test_clone_site",
+      "target": "tests_test_clone_site_test_clone_site_regenerate_overwrites_existing_records",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_run_mrp",
+      "target": "tests_test_clone_site_py_completedprocess",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_run_mrp",
+      "target": "tests_test_clone_site_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_generates_wxr_clone_records",
+      "target": "tests_test_clone_site_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_is_idempotent_and_preserves_existing_records",
+      "target": "tests_test_clone_site_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L130",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_missing_source_fails_cleanly",
+      "target": "tests_test_clone_site_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_records_capture_aliases",
+      "target": "tests_test_clone_site_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_regenerate_overwrites_existing_records",
+      "target": "tests_test_clone_site_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_content_repo",
+      "target": "tests_test_clone_site_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_generates_wxr_clone_records",
+      "target": "tests_test_clone_site_content_repo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_is_idempotent_and_preserves_existing_records",
+      "target": "tests_test_clone_site_content_repo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_missing_source_fails_cleanly",
+      "target": "tests_test_clone_site_content_repo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_records_capture_aliases",
+      "target": "tests_test_clone_site_content_repo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_clone_site.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "tests_test_clone_site_test_clone_site_regenerate_overwrites_existing_records",
+      "target": "tests_test_clone_site_content_repo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "tests/test_deploy.py",
       "source_location": "L22",
       "weight": 1.0,
@@ -31254,9 +32406,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate",
-      "target": "tests_test_validate_clone_asset_manifest",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_clone_asset_manifest"
     },
     {
       "relation": "contains",
@@ -31264,9 +32416,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate",
-      "target": "tests_test_validate_clone_record",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_clone_record"
     },
     {
       "relation": "contains",
@@ -31294,9 +32446,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L198",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate",
-      "target": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts"
     },
     {
       "relation": "contains",
@@ -31304,9 +32456,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L181",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate",
-      "target": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_test_invalid_clone_record_fails_independent_validation"
     },
     {
       "relation": "contains",
@@ -31344,9 +32496,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L163",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate",
-      "target": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_test_validate_clone_records_and_asset_manifest"
     },
     {
       "relation": "contains",
@@ -31417,9 +32569,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L206",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
-      "target": "tests_test_validate_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_run_mrp"
     },
     {
       "relation": "calls",
@@ -31428,9 +32580,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L187",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
-      "target": "tests_test_validate_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_run_mrp"
     },
     {
       "relation": "calls",
@@ -31472,9 +32624,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L172",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
-      "target": "tests_test_validate_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_run_mrp"
     },
     {
       "relation": "calls",
@@ -31538,9 +32690,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L200",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
-      "target": "tests_test_validate_write_yaml",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_write_yaml"
     },
     {
       "relation": "calls",
@@ -31549,9 +32701,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L185",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
-      "target": "tests_test_validate_write_yaml",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_write_yaml"
     },
     {
       "relation": "calls",
@@ -31593,9 +32745,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
-      "target": "tests_test_validate_write_yaml",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_write_yaml"
     },
     {
       "relation": "calls",
@@ -31615,9 +32767,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L199",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
-      "target": "tests_test_validate_minimal_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_minimal_repo"
     },
     {
       "relation": "calls",
@@ -31626,9 +32778,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
-      "target": "tests_test_validate_minimal_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_minimal_repo"
     },
     {
       "relation": "calls",
@@ -31670,9 +32822,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L164",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
-      "target": "tests_test_validate_minimal_repo",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_minimal_repo"
     },
     {
       "relation": "calls",
@@ -31703,9 +32855,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L200",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
-      "target": "tests_test_validate_clone_record",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_clone_record"
     },
     {
       "relation": "calls",
@@ -31714,9 +32866,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L183",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
-      "target": "tests_test_validate_clone_record",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_clone_record"
     },
     {
       "relation": "calls",
@@ -31725,9 +32877,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
-      "target": "tests_test_validate_clone_record",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_clone_record"
     },
     {
       "relation": "calls",
@@ -31736,9 +32888,9 @@
       "source_file": "tests/test_validate.py",
       "source_location": "L170",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
-      "target": "tests_test_validate_clone_asset_manifest",
-      "confidence_score": 1.0
+      "target": "tests_test_validate_clone_asset_manifest"
     },
     {
       "relation": "contains",
@@ -32478,9 +33630,9 @@
       "source_file": "docs/CONTENT-MODEL.md",
       "source_location": "L94",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_content_model_content_model",
-      "target": "docs_content_model_wordpress_static_clone",
-      "confidence_score": 1.0
+      "target": "docs_content_model_wordpress_static_clone"
     },
     {
       "relation": "contains",
@@ -34364,5 +35516,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "896d78742f0ca03a7d03baba01aaa7e22a62cf05"
+  "built_at_commit": "7d33d0fb7fc91e89b5e04733297aa37102ac3d68"
 }

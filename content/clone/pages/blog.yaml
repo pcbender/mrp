@@ -1,0 +1,26 @@
+clone:
+  id: blog
+  kind: static_page
+  title: Blog
+  status: review
+  route:
+    canonical_path: /blog/
+    aliases:
+    - /blog
+  source:
+    system: wordpress
+    id: '11'
+    post_type: page
+    post_status: publish
+    slug: blog
+    link: https://www.maricoparecords.com/blog/
+    guid: https://startersites.io/blocksy/floreo/?page_id=11
+    captured_path: null
+  content_html: ''
+  excerpt: null
+  seo:
+    title: Blog
+    description: null
+  assets: []
+  notes:
+  - Generated from WordPress WXR content:encoded.

@@ -29,6 +29,10 @@ def minimal_repo(tmp_path: Path) -> Path:
     repo = tmp_path / "repo"
     shutil.copytree(ROOT / "content", repo / "content")
     shutil.copytree(ROOT / "site" / "public" / "assets", repo / "site" / "public" / "assets")
+    shutil.rmtree(repo / "content" / "clone", ignore_errors=True)
+    (repo / "content" / "clone" / "pages").mkdir(parents=True)
+    (repo / "content" / "clone" / "posts").mkdir(parents=True)
+    (repo / "content" / "clone" / "assets").mkdir(parents=True)
     (repo / "reports" / "validation").mkdir(parents=True)
     return repo
 

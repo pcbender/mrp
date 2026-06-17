@@ -1,0 +1,27 @@
+clone:
+  id: portfolio
+  kind: static_page
+  title: Portfolio
+  status: review
+  route:
+    canonical_path: /portfolio/
+    aliases:
+    - /portfolio
+  source:
+    system: wordpress
+    id: '772'
+    post_type: page
+    post_status: publish
+    slug: portfolio
+    link: https://www.maricoparecords.com/portfolio/
+    guid: https://www.maricoparecords.com/portfolio/
+    captured_path: null
+  content_html: <!-- wp:visual-portfolio/block {"block_id":"599f48c0","content_source":"post-based","posts_source":"current_query","items_gap":30,"layout_elements":{"top":{"elements":["filter"],"align":"center"},"items":{"elements":["items"]},"bottom":{"elements":["pagination"],"align":"center"}},"pagination":"paged"}
+    /-->
+  excerpt: null
+  seo:
+    title: Portfolio
+    description: null
+  assets: []
+  notes:
+  - Generated from WordPress WXR content:encoded.

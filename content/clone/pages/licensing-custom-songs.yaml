@@ -1,0 +1,171 @@
+clone:
+  id: licensing-custom-songs
+  kind: static_page
+  title: Licensing & Custom Songs
+  status: review
+  route:
+    canonical_path: /licensing-custom-songs/
+    aliases:
+    - /licensing-custom-songs
+  source:
+    system: wordpress
+    id: '1053'
+    post_type: page
+    post_status: publish
+    slug: licensing-custom-songs
+    link: https://www.maricoparecords.com/licensing-custom-songs/
+    guid: https://www.maricoparecords.com/?page_id=1053
+    captured_path: raw/pages/www.maricoparecords.com/licensing-custom-songs/index.html
+  content_html: "<!-- wp:stackable/heading {\"uniqueId\":\"70eaac8\",\"blockMargin\"\
+    :{\"bottom\":\"\"}} -->\n<div class=\"wp-block-stackable-heading stk-block-heading\
+    \ stk-block-heading--v2 stk-block stk-70eaac8\" id=\"licensing-amp-custom-music-creation\"\
+    \ data-block-id=\"70eaac8\"><h2 class=\"stk-block-heading__text\">Licensing &amp;\
+    \ Custom Music Creation</h2></div>\n<!-- /wp:stackable/heading -->\n\n<!-- wp:paragraph\
+    \ -->\n<p><strong>Original AI-Driven Music for Film, TV, Advertising, and More</strong></p>\n\
+    <!-- /wp:paragraph -->\n\n<!-- wp:group {\"metadata\":{\"categories\":[\"featured-selling\"\
+    ],\"patternName\":\"woocommerce-blocks/hero-product-chessboard\",\"name\":\"Hero\
+    \ Product Chessboard\"},\"align\":\"full\",\"style\":{\"spacing\":{\"padding\"\
+    :{\"top\":\"calc( 0.5 * var(\\u002d\\u002dwp\\u002d\\u002dstyle\\u002d\\u002droot\\\
+    u002d\\u002dpadding-right, var(\\u002d\\u002dwp\\u002d\\u002dcustom\\u002d\\u002dgap\\\
+    u002d\\u002dhorizontal)))\",\"bottom\":\"calc( 0.5 * var(\\u002d\\u002dwp\\u002d\\\
+    u002dstyle\\u002d\\u002droot\\u002d\\u002dpadding-right, var(\\u002d\\u002dwp\\\
+    u002d\\u002dcustom\\u002d\\u002dgap\\u002d\\u002dhorizontal)))\",\"left\":\"var(\\\
+    u002d\\u002dwp\\u002d\\u002dstyle\\u002d\\u002droot\\u002d\\u002dpadding-left,\
+    \ var(\\u002d\\u002dwp\\u002d\\u002dcustom\\u002d\\u002dgap\\u002d\\u002dhorizontal))\"\
+    ,\"right\":\"var(\\u002d\\u002dwp\\u002d\\u002dstyle\\u002d\\u002droot\\u002d\\\
+    u002dpadding-right, var(\\u002d\\u002dwp\\u002d\\u002dcustom\\u002d\\u002dgap\\\
+    u002d\\u002dhorizontal))\"},\"margin\":{\"top\":\"0\",\"bottom\":\"0\"},\"blockGap\"\
+    :\"0\"}},\"layout\":{\"type\":\"constrained\",\"justifyContent\":\"center\"}}\
+    \ -->\n<div class=\"wp-block-group alignfull\" style=\"margin-top:0;margin-bottom:0;padding-top:calc(\
+    \ 0.5 * var(--wp--style--root--padding-right, var(--wp--custom--gap--horizontal)));padding-right:var(--wp--style--root--padding-right,\
+    \ var(--wp--custom--gap--horizontal));padding-bottom:calc( 0.5 * var(--wp--style--root--padding-right,\
+    \ var(--wp--custom--gap--horizontal)));padding-left:var(--wp--style--root--padding-left,\
+    \ var(--wp--custom--gap--horizontal))\"><!-- wp:spacer {\"height\":\"calc( 0.25\
+    \ * var(\\u002d\\u002dwp\\u002d\\u002dstyle\\u002d\\u002droot\\u002d\\u002dpadding-right,\
+    \ var(\\u002d\\u002dwp\\u002d\\u002dcustom\\u002d\\u002dgap\\u002d\\u002dhorizontal)))\"\
+    } -->\n<div style=\"height:calc( 0.25 * var(--wp--style--root--padding-right,\
+    \ var(--wp--custom--gap--horizontal)))\" aria-hidden=\"true\" class=\"wp-block-spacer\"\
+    ></div>\n<!-- /wp:spacer -->\n\n<!-- wp:columns {\"align\":\"full\",\"style\"\
+    :{\"spacing\":{\"padding\":{\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"\
+    left\":\"0\"},\"blockGap\":{\"top\":\"0\",\"left\":\"0\"}}}} -->\n<div class=\"\
+    wp-block-columns alignfull\" style=\"padding-top:0;padding-right:0;padding-bottom:0;padding-left:0\"\
+    ><!-- wp:column -->\n<div class=\"wp-block-column\"><!-- wp:cover {\"url\":\"\
+    https://www.maricoparecords.com/wp-content/uploads/2025/03/people-looking-at-a-computer-screen-adding-music-to-a.png\"\
+    ,\"id\":1057,\"dimRatio\":0,\"customOverlayColor\":\"#716460\",\"isUserOverlayColor\"\
+    :false,\"className\":\"is-light\",\"style\":{\"color\":[]}} -->\n<div class=\"\
+    wp-block-cover is-light\"><span aria-hidden=\"true\" class=\"wp-block-cover__background\
+    \ has-background-dim-0 has-background-dim\" style=\"background-color:#716460\"\
+    ></span><img class=\"wp-block-cover__image-background wp-image-1057\" alt=\"\"\
+    \ src=\"https://www.maricoparecords.com/wp-content/uploads/2025/03/people-looking-at-a-computer-screen-adding-music-to-a.png\"\
+    \ data-object-fit=\"cover\"/><div class=\"wp-block-cover__inner-container\"><!--\
+    \ wp:paragraph {\"align\":\"center\",\"placeholder\":\" \",\"fontSize\":\"large\"\
+    } -->\n<p class=\"has-text-align-center has-large-font-size\"></p>\n<!-- /wp:paragraph\
+    \ --></div></div>\n<!-- /wp:cover --></div>\n<!-- /wp:column -->\n\n<!-- wp:column\
+    \ {\"verticalAlignment\":\"center\",\"style\":{\"spacing\":{\"padding\":{\"top\"\
+    :\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\"}}},\"layout\":{\"type\"\
+    :\"constrained\"}} -->\n<div class=\"wp-block-column is-vertically-aligned-center\"\
+    \ style=\"padding-top:0;padding-right:0;padding-bottom:0;padding-left:0\"><!--\
+    \ wp:group {\"align\":\"full\",\"style\":{\"spacing\":{\"padding\":{\"top\":\"\
+    0px\",\"right\":\"60px\",\"bottom\":\"0px\",\"left\":\"60px\"},\"margin\":{\"\
+    top\":\"var:preset|spacing|40\",\"bottom\":\"var:preset|spacing|40\"}}}} -->\n\
+    <div class=\"wp-block-group alignfull\" style=\"margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40);padding-top:0px;padding-right:60px;padding-bottom:0px;padding-left:60px\"\
+    ><!-- wp:heading {\"textAlign\":\"left\",\"className\":\"has-large-font-size\"\
+    } -->\n<h2 class=\"wp-block-heading has-text-align-left has-large-font-size\"\
+    ><strong>Introduction</strong></h2>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph\
+    \ {\"style\":{\"spacing\":{\"margin\":{\"bottom\":\"var:preset|spacing|40\"}}}}\
+    \ -->\n<p style=\"margin-bottom:var(--wp--preset--spacing--40)\">At Maricopa Records,\
+    \ we specialize in <strong>cutting-edge, AI-enhanced music production</strong>,\
+    \ blending artificial intelligence with human creativity to deliver high-quality\
+    \ compositions. Whether you're looking to <strong>license existing music</strong>\
+    \ from our catalog or commission a <strong>custom song</strong>, we provide <strong>authentic,\
+    \ high-quality, and flexible music solutions</strong> for various industries.</p>\n\
+    <!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p><strong>Explore our offerings</strong></p>\n\
+    <!-- /wp:paragraph -->\n\n<!-- wp:stackable/icon-list {\"uniqueId\":\"56b1320\"\
+    ,\"blockMargin\":{\"bottom\":\"\"}} -->\n<div class=\"wp-block-stackable-icon-list\
+    \ stk-block-icon-list stk-block stk-56b1320\" data-block-id=\"56b1320\"><svg style=\"\
+    display:none\"><defs><g id=\"stk-icon-list__icon-svg-def-56b1320\"><svg xmlns=\"\
+    http://www.w3.org/2000/svg\" viewBox=\"0 0 190 190\"><polygon points=\"173.8,28.4\
+    \ 60.4,141.8 15.7,97.2 5.1,107.8 60.4,163 184.4,39 173.8,28.4\"/></svg></g></defs></svg><ul\
+    \ class=\"stk-block-icon-list__ul stk-block-icon-list--column\"><!-- wp:stackable/icon-list-item\
+    \ {\"uniqueId\":\"794b6ef\",\"parentUniqueId\":\"56b1320\"} -->\n<li class=\"\
+    wp-block-stackable-icon-list-item stk-block-icon-list-item stk-block stk-794b6ef\"\
+    \ data-block-id=\"794b6ef\"><div class=\"stk-block-icon-list-item__content\"><span\
+    \ class=\"stk--svg-wrapper\"><div class=\"stk--inner-svg\"><svg aria-hidden=\"\
+    true\" width=\"32\" height=\"32\"><use xlink:href=\"#stk-icon-list__icon-svg-def-56b1320\"\
+    ></use></svg></div></span><span class=\"stk-block-icon-list-item__text\"><strong>Music\
+    \ Licensing</strong> \u2013 Access our catalog for sync placements in <strong>film,\
+    \ TV, video games, and commercials.</strong></span></div></li>\n<!-- /wp:stackable/icon-list-item\
+    \ -->\n\n<!-- wp:stackable/icon-list-item {\"uniqueId\":\"08416fd\",\"parentUniqueId\"\
+    :\"56b1320\"} -->\n<li class=\"wp-block-stackable-icon-list-item stk-block-icon-list-item\
+    \ stk-block stk-08416fd\" data-block-id=\"08416fd\"><div class=\"stk-block-icon-list-item__content\"\
+    ><span class=\"stk--svg-wrapper\"><div class=\"stk--inner-svg\"><svg aria-hidden=\"\
+    true\" width=\"32\" height=\"32\"><use xlink:href=\"#stk-icon-list__icon-svg-def-56b1320\"\
+    ></use></svg></div></span><span class=\"stk-block-icon-list-item__text\"><strong>Custom\
+    \ Songs &amp; Scores</strong> \u2013 Work with us to create <strong>bespoke music</strong>\
+    \ tailored to your project.</span></div></li>\n<!-- /wp:stackable/icon-list-item\
+    \ --></ul></div>\n<!-- /wp:stackable/icon-list -->\n\n<!-- wp:buttons {\"style\"\
+    :{\"spacing\":{\"margin\":{\"top\":\"64px\"}}},\"layout\":{\"type\":\"flex\",\"\
+    justifyContent\":\"center\"}} -->\n<div class=\"wp-block-buttons\" style=\"margin-top:64px\"\
+    ><!-- wp:button {\"textAlign\":\"left\",\"className\":\"has-custom-font-size\"\
+    } -->\n<div class=\"wp-block-button has-custom-font-size\"><a class=\"wp-block-button__link\
+    \ has-text-align-left wp-element-button\" href=\"https://www.maricoparecords.com/licensing-custom-songs/music-licensing/\"\
+    >Music Licensing</a></div>\n<!-- /wp:button -->\n\n<!-- wp:button {\"textAlign\"\
+    :\"center\",\"className\":\"has-custom-font-size\"} -->\n<div class=\"wp-block-button\
+    \ has-custom-font-size\"><a class=\"wp-block-button__link has-text-align-center\
+    \ wp-element-button\" href=\"https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/\"\
+    >Custom Songs &amp; Scores</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons\
+    \ --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns\
+    \ -->\n\n<!-- wp:columns {\"align\":\"full\",\"style\":{\"spacing\":{\"padding\"\
+    :{\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\"},\"blockGap\"\
+    :{\"top\":\"0\",\"left\":\"0\"}}}} -->\n<div class=\"wp-block-columns alignfull\"\
+    \ style=\"padding-top:0;padding-right:0;padding-bottom:0;padding-left:0\"><!--\
+    \ wp:column {\"verticalAlignment\":\"center\",\"style\":{\"spacing\":{\"padding\"\
+    :{\"top\":\"0\",\"right\":\"0\",\"bottom\":\"0\",\"left\":\"0\"}}}} -->\n<div\
+    \ class=\"wp-block-column is-vertically-aligned-center\" style=\"padding-top:0;padding-right:0;padding-bottom:0;padding-left:0\"\
+    ><!-- wp:group {\"style\":{\"spacing\":{\"padding\":{\"right\":\"50px\",\"left\"\
+    :\"50px\",\"top\":\"50px\",\"bottom\":\"50px\"},\"blockGap\":\"50px\"}},\"layout\"\
+    :{\"type\":\"constrained\"}} -->\n<div class=\"wp-block-group\" style=\"padding-top:50px;padding-right:50px;padding-bottom:50px;padding-left:50px\"\
+    ><!-- wp:group -->\n<div class=\"wp-block-group\"><!-- wp:heading {\"level\":5,\"\
+    style\":{\"typography\":{\"textTransform\":\"capitalize\"}}} -->\n<h5 class=\"\
+    wp-block-heading\" style=\"text-transform:capitalize\"><strong>Ready to bring\
+    \ your project to life?</strong></h5>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph\
+    \ {\"style\":{\"spacing\":{\"padding\":{\"top\":\"0\",\"right\":\"0\",\"bottom\"\
+    :\"0\",\"left\":\"0\"},\"margin\":{\"top\":\"25px\",\"right\":\"0\",\"bottom\"\
+    :\"0\",\"left\":\"0\"}}}} -->\n<p style=\"margin-top:25px;margin-right:0;margin-bottom:0;margin-left:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0\"\
+    >Choose from our in-house AI artists, like <strong>STAB\u2019s energetic 80s pop\
+    \ rock</strong> or <strong>PCBender\u2019s jazz/blues craftsmanship</strong>,\
+    \ or let us create something completely unique.</p>\n<!-- /wp:paragraph --></div>\n\
+    <!-- /wp:group -->\n\n<!-- wp:group -->\n<div class=\"wp-block-group\"><!-- wp:buttons\
+    \ {\"layout\":{\"type\":\"flex\",\"justifyContent\":\"center\"}} -->\n<div class=\"\
+    wp-block-buttons\"><!-- wp:button -->\n<div class=\"wp-block-button\"><a class=\"\
+    wp-block-button__link wp-element-button\" href=\"/licensing-custom-songs/music-licensing/\"\
+    >Music Licensing</a></div>\n<!-- /wp:button -->\n\n<!-- wp:button -->\n<div class=\"\
+    wp-block-button\"><a class=\"wp-block-button__link wp-element-button\" href=\"\
+    https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/\"\
+    >Custom Songs &amp; Scores</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons\
+    \ --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></div>\n<!-- /wp:column\
+    \ -->\n\n<!-- wp:column {\"verticalAlignment\":\"center\"} -->\n<div class=\"\
+    wp-block-column is-vertically-aligned-center\"><!-- wp:cover {\"url\":\"https://www.maricoparecords.com/wp-content/uploads/2025/03/smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png\"\
+    ,\"id\":1060,\"dimRatio\":0,\"customOverlayColor\":\"#645347\",\"isUserOverlayColor\"\
+    :false,\"className\":\"is-light\",\"style\":{\"color\":[]}} -->\n<div class=\"\
+    wp-block-cover is-light\"><span aria-hidden=\"true\" class=\"wp-block-cover__background\
+    \ has-background-dim-0 has-background-dim\" style=\"background-color:#645347\"\
+    ></span><img class=\"wp-block-cover__image-background wp-image-1060\" alt=\"\"\
+    \ src=\"https://www.maricoparecords.com/wp-content/uploads/2025/03/smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png\"\
+    \ data-object-fit=\"cover\"/><div class=\"wp-block-cover__inner-container\"><!--\
+    \ wp:paragraph {\"align\":\"center\",\"placeholder\":\" \",\"fontSize\":\"large\"\
+    } -->\n<p class=\"has-text-align-center has-large-font-size\"></p>\n<!-- /wp:paragraph\
+    \ --></div></div>\n<!-- /wp:cover --></div>\n<!-- /wp:column --></div>\n<!-- /wp:columns\
+    \ -->\n\n<!-- wp:spacer {\"height\":\"calc( 0.25 * var(\\u002d\\u002dwp\\u002d\\\
+    u002dstyle\\u002d\\u002droot\\u002d\\u002dpadding-right, var(\\u002d\\u002dwp\\\
+    u002d\\u002dcustom\\u002d\\u002dgap\\u002d\\u002dhorizontal)))\"} -->\n<div style=\"\
+    height:calc( 0.25 * var(--wp--style--root--padding-right, var(--wp--custom--gap--horizontal)))\"\
+    \ aria-hidden=\"true\" class=\"wp-block-spacer\"></div>\n<!-- /wp:spacer --></div>\n\
+    <!-- /wp:group -->"
+  excerpt: null
+  seo:
+    title: Licensing & Custom Songs
+    description: null
+  assets: []
+  notes:
+  - Generated from WordPress WXR content:encoded.
