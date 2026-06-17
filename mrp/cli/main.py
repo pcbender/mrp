@@ -12,6 +12,7 @@ from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
 from mrp.core.publish import format_publish, publish
+from mrp.core.release import create_release, format_release_create
 from mrp.core.rollback import format_rollback, rollback
 from mrp.core.status import format_status, status
 from mrp.core.validate import format_validation, validate_repository
@@ -186,6 +187,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "rollback":
         print(format_rollback(result))
         return
+    if result["command"] == "release create":
+        print(format_release_create(result))
+        return
 
     print(result["message"])
 
@@ -225,6 +229,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
     elif args.command == "rollback":
         result = rollback(args.repo, to=args.to, yes=bool(getattr(args, "yes", False)))
+    elif args.command == "release" and args.release_command == "create":
+        result = create_release(args.repo, artist=args.artist, title=args.title, release_type=args.type)
     elif args.command == "import-site":
         result = import_site(args.repo, source=args.source)
     else:
@@ -253,6 +259,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             if result["errors"] and result["errors"][0]["field"] == "safety":
                 return EXIT_UNSAFE
             return EXIT_FAILURE
+    if args.command == "release" and result["status"] == "failed":
+        return EXIT_CONFIG
     return EXIT_SUCCESS
 
 

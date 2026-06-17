@@ -1,4 +1,5 @@
 import json
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -60,8 +61,23 @@ def test_unknown_command_fails_cleanly():
     assert "Traceback" not in result.stderr
 
 
-def test_nested_release_create_command_is_registered():
-    result = run_mrp("--json", "release", "create", "--artist", "pcbender", "--title", "Circuiting")
+def test_nested_release_create_command_is_registered(tmp_path):
+    repo = tmp_path / "repo"
+    shutil.copytree(ROOT / "content", repo / "content")
+    shutil.copytree(ROOT / "site" / "public" / "assets", repo / "site" / "public" / "assets")
+    (repo / "reports" / "validation").mkdir(parents=True)
+
+    result = run_mrp(
+        "--repo",
+        str(repo),
+        "--json",
+        "release",
+        "create",
+        "--artist",
+        "pcbender",
+        "--title",
+        "CLI Smoke Release",
+    )
 
     assert result.returncode == 0
     assert json.loads(result.stdout)["command"] == "release create"
