@@ -58,6 +58,8 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
         releases = [item for item in releases if item.get("id") == release]
         if not releases:
             add_error(result, "release", f"Unknown release: {release}")
+        artist_ids = {item.get("artist_id") for item in releases}
+        artists = [item for item in artists if item.get("id") in artist_ids]
 
     check_required_files(result, target_path)
     check_release_pages(result, target_path, releases)
@@ -92,6 +94,8 @@ def check_release_pages(result: dict[str, Any], target_path: Path, releases: lis
 
 def check_artist_pages(result: dict[str, Any], target_path: Path, artists: list[dict[str, Any]]) -> None:
     for artist in artists:
+        if artist.get("visibility") != "public":
+            continue
         slug = artist.get("slug") or artist["id"]
         relative = f"artists/{slug}/index.html"
         check_file(result, target_path / relative, relative)

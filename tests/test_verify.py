@@ -24,6 +24,11 @@ def verified_repo(tmp_path: Path) -> Path:
     repo = tmp_path / "repo"
     target = repo / "builds" / "local-staging"
     shutil.copytree(ROOT / "content", repo / "content")
+    for name in ["artists", "releases", "pages", "posts"]:
+        shutil.rmtree(repo / "content" / name)
+        (repo / "content" / name).mkdir()
+    shutil.copy2(ROOT / "content/artists/pcbender.json", repo / "content/artists/pcbender.json")
+    shutil.copy2(ROOT / "content/releases/circuiting.json", repo / "content/releases/circuiting.json")
     (repo / "deploy").mkdir(parents=True)
     (repo / "reports" / "verification").mkdir(parents=True)
     target.mkdir(parents=True)

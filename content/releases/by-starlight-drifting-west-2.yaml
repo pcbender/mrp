@@ -1,0 +1,43 @@
+release:
+  id: by-starlight-drifting-west-2
+  slug: by-starlight-drifting-west-2
+  title: By Starlight Drifting West
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2025-03-29'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: null
+  catalog_number: null
+  cover_image: assets/releases/by-starlight-drifting-west-2/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Pcbender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    bandcamp: null
+    soundcloud: null
+    landing_page: https://www.maricoparecords.com/artists/pcbender/by-starlight-drifting-west-2/
+  seo:
+    title: By Starlight Drifting West by Pcbender
+    description: By Starlight Drifting West by Pcbender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: null
+    title: By Starlight Drifting West
+    slug: by-starlight-drifting-west-2
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null

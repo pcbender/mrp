@@ -1,0 +1,43 @@
+release:
+  id: nearly-nothin-nowhere-fast
+  slug: nearly-nothin-nowhere-fast
+  title: "Nearly Nothin\u2019 Nowhere Fast"
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2025-03-29'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: null
+  catalog_number: null
+  cover_image: assets/releases/nearly-nothin-nowhere-fast/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Pcbender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    bandcamp: null
+    soundcloud: null
+    landing_page: https://www.maricoparecords.com/artists/pcbender/nearly-nothin-nowhere-fast/
+  seo:
+    title: "Nearly Nothin\u2019 Nowhere Fast by Pcbender"
+    description: "Nearly Nothin\u2019 Nowhere Fast by Pcbender on Maricopa Records."
+  automation:
+    allow_auto_publish: false
+  song:
+    number: null
+    title: "Nearly Nothin\u2019 Nowhere Fast"
+    slug: nearly-nothin-nowhere-fast
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null

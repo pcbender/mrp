@@ -1,4 +1,5 @@
 import json
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -18,6 +19,15 @@ def run_mrp(*args: str, cwd: Path = ROOT) -> subprocess.CompletedProcess[str]:
         capture_output=True,
         check=False,
     )
+
+
+def content_repo(tmp_path: Path) -> Path:
+    repo = tmp_path / "repo"
+    shutil.copytree(ROOT / "content", repo / "content")
+    shutil.copytree(ROOT / "site" / "public" / "assets", repo / "site" / "public" / "assets")
+    (repo / "reports" / "migration").mkdir(parents=True)
+    (repo / "reports" / "validation").mkdir(parents=True)
+    return repo
 
 
 def test_migrate_site_dry_run_reports_planned_writes_without_content_mutation(tmp_path):
@@ -56,14 +66,40 @@ def test_migrate_site_missing_source_fails_cleanly(tmp_path):
     assert (repo / payload["report_path"]).is_file()
 
 
-def test_migrate_site_mutation_mode_is_reserved_for_later_packet(tmp_path):
-    repo = tmp_path / "repo"
+def test_migrate_site_generates_staging_content_records(tmp_path):
+    repo = content_repo(tmp_path)
 
     result = run_mrp("--repo", str(repo), "--json", "migrate-site", "--source", str(SOURCE))
 
-    assert result.returncode == 2
+    assert result.returncode == 0
     payload = json.loads(result.stdout)
-    assert payload["status"] == "failed"
-    assert payload["stage"] == "config"
-    assert "MRP-104" in payload["message"]
+    assert payload["status"] == "completed"
+    assert payload["stage"] == "content_generation"
+    assert (repo / payload["report_path"]).is_file()
+    assert (repo / "content/pages/music-licensing.yaml").is_file()
+    assert (repo / "content/posts/the-future-of-ai-in-music.yaml").is_file()
+    assert (repo / "content/artists/4castle.yaml").is_file()
+    assert (repo / "content/releases/distance-not-safety.yaml").is_file()
+    assert (repo / "content/redirects.yaml").is_file()
+    assert any(item["path"] == "content/artists/pcbender.yaml" for item in payload["skipped"])
+
+    validation = run_mrp("--repo", str(repo), "--json", "validate")
+    assert validation.returncode == 0
+    validation_payload = json.loads(validation.stdout)
+    assert validation_payload["summary"]["pages"] >= 1
+    assert validation_payload["summary"]["posts"] == 3
+
+
+def test_migrate_site_is_idempotent_and_does_not_overwrite(tmp_path):
+    repo = content_repo(tmp_path)
+
+    first = run_mrp("--repo", str(repo), "--json", "migrate-site", "--source", str(SOURCE))
+    second = run_mrp("--repo", str(repo), "--json", "migrate-site", "--source", str(SOURCE))
+
+    assert first.returncode == 0
+    assert second.returncode == 0
+    payload = json.loads(second.stdout)
+    assert payload["status"] == "completed"
+    assert payload["skipped"]
+    assert any(item["reason"] == "Existing record was not overwritten." for item in payload["skipped"])
     assert (repo / payload["report_path"]).is_file()

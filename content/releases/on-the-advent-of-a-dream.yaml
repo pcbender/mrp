@@ -1,0 +1,43 @@
+release:
+  id: on-the-advent-of-a-dream
+  slug: on-the-advent-of-a-dream
+  title: On the Advent of a Dream
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2025-03-29'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: null
+  catalog_number: null
+  cover_image: assets/releases/on-the-advent-of-a-dream/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    bandcamp: null
+    soundcloud: null
+    landing_page: https://www.maricoparecords.com/artists/4castle/on-the-advent-of-a-dream/
+  seo:
+    title: On the Advent of a Dream by 4castle
+    description: On the Advent of a Dream by 4castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: null
+    title: On the Advent of a Dream
+    slug: on-the-advent-of-a-dream
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null

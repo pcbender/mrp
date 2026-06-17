@@ -1,0 +1,18 @@
+artist:
+  id: lingua-aeternum
+  name: Lingua Aeternum
+  sort_name: Lingua Aeternum
+  type: project
+  label: Maricopa Records
+  default_publisher: Maricopa Publishing
+  bio_short: ''
+  bio_long: ''
+  image: null
+  links:
+    website: https://www.maricoparecords.com/artists/lingua-aeternum/
+    spotify: null
+    apple_music: null
+    youtube: null
+    bandcamp: null
+    instagram: null
+  visibility: draft

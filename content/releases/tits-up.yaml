@@ -1,0 +1,43 @@
+release:
+  id: tits-up
+  slug: tits-up
+  title: Tits Up
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2025-02-21'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: null
+  catalog_number: null
+  cover_image: assets/releases/tits-up/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Pcbender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    bandcamp: null
+    soundcloud: null
+    landing_page: https://www.maricoparecords.com/artists/pcbender/tits-up/
+  seo:
+    title: Tits Up by Pcbender
+    description: Tits Up by Pcbender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: null
+    title: Tits Up
+    slug: tits-up
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null

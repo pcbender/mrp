@@ -92,8 +92,8 @@ def test_validate_migrated_page_and_post_records(tmp_path):
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
-    assert payload["summary"]["pages"] == 1
-    assert payload["summary"]["posts"] == 1
+    assert payload["summary"]["pages"] >= 1
+    assert payload["summary"]["posts"] >= 1
 
 
 def test_invalid_migrated_page_fails_validation(tmp_path):

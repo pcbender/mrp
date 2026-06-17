@@ -1,0 +1,18 @@
+page:
+  id: blog
+  slug: blog
+  title: Blog
+  status: draft
+  normalized_path: /blog/
+  source_url: https://www.maricoparecords.com/blog/
+  content_html: ''
+  excerpt: null
+  seo:
+    title: Blog
+    description: null
+  source:
+    system: wordpress
+    id: '11'
+    type: page
+    status: publish
+    captured_path: null

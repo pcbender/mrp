@@ -1,0 +1,18 @@
+page:
+  id: stab
+  slug: stab
+  title: STAB
+  status: draft
+  normalized_path: /artists/stab/
+  source_url: https://www.maricoparecords.com/artists/stab/
+  content_html: ''
+  excerpt: null
+  seo:
+    title: STAB
+    description: null
+  source:
+    system: wordpress
+    id: '775'
+    type: portfolio
+    status: publish
+    captured_path: raw/pages/www.maricoparecords.com/artists/stab/index.html

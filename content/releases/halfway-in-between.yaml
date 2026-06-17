@@ -1,0 +1,43 @@
+release:
+  id: halfway-in-between
+  slug: halfway-in-between
+  title: Halfway In Between
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2025-02-21'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: null
+  catalog_number: null
+  cover_image: assets/releases/halfway-in-between/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Pcbender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: null
+    apple_music: null
+    youtube_music: null
+    bandcamp: null
+    soundcloud: null
+    landing_page: https://www.maricoparecords.com/artists/pcbender/halfway-in-between/
+  seo:
+    title: Halfway In Between by Pcbender
+    description: Halfway In Between by Pcbender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: null
+    title: Halfway In Between
+    slug: halfway-in-between
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
