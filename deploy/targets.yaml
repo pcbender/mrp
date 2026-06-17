@@ -1,0 +1,12 @@
+targets:
+  local-staging:
+    type: local
+    environment: staging
+    path: builds/local-staging
+    require_marker: true
+
+  local-production:
+    type: local
+    environment: production
+    path: builds/local-production
+    require_marker: true

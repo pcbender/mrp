@@ -22,7 +22,7 @@ def test_cli_runs_from_repo_root():
 
     assert result.returncode == 0
     assert "MRP repository inspection" in result.stdout
-    assert "Warnings:" in result.stdout
+    assert "Deploy config: present" in result.stdout
 
 
 def test_inspect_json_output_is_valid():
