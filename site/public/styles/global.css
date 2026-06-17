@@ -1,0 +1,255 @@
+:root {
+  color-scheme: light;
+  --ink: #171717;
+  --muted: #5f625f;
+  --paper: #fbfaf6;
+  --panel: #ffffff;
+  --line: #dedbd2;
+  --gold: #d4ad35;
+  --red: #b84735;
+  --green: #506f5a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  min-height: 70vh;
+}
+
+.site-header,
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(20px, 4vw, 56px);
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(251, 250, 246, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand,
+.site-header nav,
+.site-footer div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.site-header nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.site-header nav a,
+.site-footer a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: center;
+  min-height: 68vh;
+  padding: clamp(48px, 8vw, 96px) clamp(20px, 4vw, 56px);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero h1,
+.page-heading h1 {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(2.5rem, 8vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.eyebrow,
+.card-kicker {
+  color: var(--red);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-actions,
+.streaming-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.button {
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.button.primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.hero-art {
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.hero-art img {
+  width: min(62%, 220px);
+  height: auto;
+}
+
+.section-grid,
+.page-heading,
+.page-grid,
+.prose,
+.contact-form {
+  padding: clamp(36px, 6vw, 72px) clamp(20px, 4vw, 56px);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr);
+  gap: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.release-card,
+.artist-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.release-card a,
+.artist-card a {
+  display: grid;
+  gap: 10px;
+  min-height: 190px;
+  padding: 18px;
+  text-decoration: none;
+}
+
+.cover-swatch,
+.artist-mark {
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  background: var(--gold);
+}
+
+.artist-mark {
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.release-card h3,
+.artist-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.release-card p,
+.artist-card p,
+.prose p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  max-width: 720px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+  font: inherit;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+}
+
+.site-footer span {
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .site-header,
+  .site-footer,
+  .section-grid,
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+}

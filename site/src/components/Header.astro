@@ -1,0 +1,18 @@
+---
+const nav = [
+  { href: "/artists/", label: "Artists" },
+  { href: "/releases/", label: "Releases" },
+  { href: "/catalog/", label: "Catalog" },
+  { href: "/about-us/", label: "About" },
+  { href: "/contact/", label: "Contact" }
+];
+---
+<header class="site-header">
+  <a class="brand" href="/">
+    <img src="/assets/maricopa-mark.svg" alt="Maricopa Records" width="44" height="44" />
+    <span>Maricopa Records</span>
+  </a>
+  <nav aria-label="Primary navigation">
+    {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+</header>

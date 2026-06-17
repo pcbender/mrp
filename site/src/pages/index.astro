@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArtistCard from "../components/ArtistCard.astro";
+import ReleaseCard from "../components/ReleaseCard.astro";
+---
+<BaseLayout title="Maricopa Records" description="Independent releases from Maricopa Records.">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Maricopa Records</p>
+      <h1>Moving Music Forward</h1>
+      <p>If You Feel, It's Real</p>
+      <div class="hero-actions">
+        <a class="button primary" href="/releases/">Releases</a>
+        <a class="button" href="/artists/">Artists</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="/assets/maricopa-mark.svg" alt="" width="180" height="180" />
+    </div>
+  </section>
+
+  <section class="section-grid">
+    <div>
+      <p class="eyebrow">Latest</p>
+      <h2>Release pipeline</h2>
+    </div>
+    <div class="card-grid">
+      <ReleaseCard title="Circuiting" artist="PCBender" href="/releases/circuiting/" />
+      <ReleaseCard title="Distance Not Safety" artist="4Castle" href="/releases/distance-not-safety/" />
+      <ReleaseCard title="Tits Up" artist="STAB" href="/releases/tits-up/" />
+    </div>
+  </section>
+
+  <section class="section-grid">
+    <div>
+      <p class="eyebrow">Roster</p>
+      <h2>Featured artists</h2>
+    </div>
+    <div class="card-grid">
+      <ArtistCard name="PCBender" href="/artists/pcbender/" />
+      <ArtistCard name="STAB" href="/artists/stab/" />
+      <ArtistCard name="4Castle" href="/artists/4castle/" />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArtistCard from "../../components/ArtistCard.astro";
+---
+<BaseLayout title="Artists | Maricopa Records" description="Artists on Maricopa Records.">
+  <section class="page-heading">
+    <p class="eyebrow">Artists</p>
+    <h1>Maricopa Records roster</h1>
+  </section>
+  <section class="card-grid page-grid">
+    <ArtistCard name="PCBender" href="/artists/pcbender/" />
+    <ArtistCard name="STAB" href="/artists/stab/" />
+    <ArtistCard name="4Castle" href="/artists/4castle/" />
+    <ArtistCard name="Lingua Aeternum" href="/artists/lingua-aeternum/" />
+  </section>
+</BaseLayout>

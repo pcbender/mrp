@@ -16,3 +16,7 @@ reports/**/*.secret
 assets/processed/**
 !assets/processed/
 !assets/processed/.gitkeep
+
+site/node_modules/
+site/dist/
+site/.astro/

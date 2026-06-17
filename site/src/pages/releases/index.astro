@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ReleaseCard from "../../components/ReleaseCard.astro";
+---
+<BaseLayout title="Releases | Maricopa Records" description="Singles, EPs, and albums from Maricopa Records.">
+  <section class="page-heading">
+    <p class="eyebrow">Releases</p>
+    <h1>Singles, EPs, and albums</h1>
+  </section>
+  <section class="card-grid page-grid">
+    <ReleaseCard title="Circuiting" artist="PCBender" href="/releases/circuiting/" />
+    <ReleaseCard title="Distance Not Safety" artist="4Castle" href="/releases/distance-not-safety/" />
+    <ReleaseCard title="Tits Up" artist="STAB" href="/releases/tits-up/" />
+    <ReleaseCard title="Umbra Ala" artist="4Castle" href="/releases/umbra-ala/" />
+  </section>
+</BaseLayout>

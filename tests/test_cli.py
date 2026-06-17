@@ -35,7 +35,8 @@ def test_inspect_json_output_is_valid():
     assert payload["repo"] == str(ROOT)
     assert payload["content"]["site"] == 1
     assert payload["content"]["artists"] == 0
-    assert payload["site_framework"]["detected"] is False
+    assert payload["site_framework"]["detected"] is True
+    assert payload["site_framework"]["name"] == "astro"
 
 
 def test_json_output_is_valid_for_placeholder_command():

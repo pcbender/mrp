@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Maricopa Records mark</title>
+  <rect width="128" height="128" rx="18" fill="#111111"/>
+  <circle cx="64" cy="64" r="42" fill="#f1d36b"/>
+  <path d="M35 74V48h13l16 19 16-19h13v26h-11V60L66 78h-4L46 60v14H35Z" fill="#111111"/>
+  <path d="M35 87h58v8H35z" fill="#c44f3d"/>
+</svg>

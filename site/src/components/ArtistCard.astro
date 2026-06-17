@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+  href: string;
+  summary?: string;
+}
+
+const { name, href, summary = "Maricopa Records artist" } = Astro.props;
+---
+<article class="artist-card">
+  <a href={href}>
+    <span class="artist-mark" aria-hidden="true">{name.slice(0, 1)}</span>
+    <h3>{name}</h3>
+    <p>{summary}</p>
+  </a>
+</article>
