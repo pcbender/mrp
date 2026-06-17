@@ -35,12 +35,12 @@
     "semantic_hash": ""
   },
   "builds/local-staging/build-manifest.json": {
-    "mtime": 1781728675.2896447,
-    "ast_hash": "f378fe169b128bb70b88fac35e997147",
+    "mtime": 1781728801.8625088,
+    "ast_hash": "a6c6599d5ef8ab1bfd0fad4cbee2c73c",
     "semantic_hash": ""
   },
   "builds/local-staging/contact-submit.php": {
-    "mtime": 1781728663.138581,
+    "mtime": 1781728801.7525089,
     "ast_hash": "4925692a8a695e2923aed9a437a08561",
     "semantic_hash": ""
   },
@@ -520,7 +520,7 @@
     "semantic_hash": ""
   },
   "content/releases/circuiting.json": {
-    "mtime": 1781728663.598453,
+    "mtime": 1781728802.2325087,
     "ast_hash": "7dd5f36a2bb04412a983ce9bf216cd72",
     "semantic_hash": ""
   },
@@ -535,8 +535,8 @@
     "semantic_hash": ""
   },
   "mrp/cli/main.py": {
-    "mtime": 1781725887.2374547,
-    "ast_hash": "82261c4ef18f9078dd0c4c2ff73e8ba6",
+    "mtime": 1781728752.5122273,
+    "ast_hash": "2e71a37252588eda8fa63063fdea2853",
     "semantic_hash": ""
   },
   "mrp/core/__init__.py": {
@@ -1330,8 +1330,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1781727694.9262946,
-    "ast_hash": "577798a971d9442b4878d8e870bc9eaa",
+    "mtime": 1781728777.387518,
+    "ast_hash": "5b73d0eced886b299808431d5a78aaf7",
     "semantic_hash": ""
   },
   "builds/archive/production-20260617T195554Z/about-us/index.html": {
@@ -1455,42 +1455,42 @@
     "semantic_hash": ""
   },
   "builds/local-staging/about-us/index.html": {
-    "mtime": 1781728675.2396448,
+    "mtime": 1781728801.8125088,
     "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/index.html": {
-    "mtime": 1781728675.2396448,
+    "mtime": 1781728801.8225088,
     "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/index.html": {
-    "mtime": 1781728675.2396448,
+    "mtime": 1781728801.8225088,
     "ast_hash": "ac7d6cca100e33635490d243c89ff962",
     "semantic_hash": ""
   },
   "builds/local-staging/catalog/index.html": {
-    "mtime": 1781728675.2396448,
+    "mtime": 1781728801.8225088,
     "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
     "semantic_hash": ""
   },
   "builds/local-staging/contact/index.html": {
-    "mtime": 1781728675.2496448,
+    "mtime": 1781728801.8325088,
     "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
     "semantic_hash": ""
   },
   "builds/local-staging/index.html": {
-    "mtime": 1781728675.2496448,
+    "mtime": 1781728801.8325088,
     "ast_hash": "0e7cc6103537c581402dffa32e75555c",
     "semantic_hash": ""
   },
   "builds/local-staging/releases/circuiting/index.html": {
-    "mtime": 1781728675.2496448,
+    "mtime": 1781728801.8325088,
     "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
     "semantic_hash": ""
   },
   "builds/local-staging/releases/index.html": {
-    "mtime": 1781728675.2496448,
+    "mtime": 1781728801.8325088,
     "ast_hash": "260f424773527685cdf3cf9af9f922c8",
     "semantic_hash": ""
   },
@@ -3500,12 +3500,12 @@
     "semantic_hash": ""
   },
   "builds/local-staging/assets/maricopa-mark.svg": {
-    "mtime": 1781728663.138581,
+    "mtime": 1781728801.7525089,
     "ast_hash": "4209d0f2f2acc716b627e818210daff6",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/releases/circuiting-cover.svg": {
-    "mtime": 1781728663.138581,
+    "mtime": 1781728801.7525089,
     "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
     "semantic_hash": ""
   },
@@ -4040,8 +4040,8 @@
     "semantic_hash": ""
   },
   "mrp/core/migration_inventory.py": {
-    "mtime": 1781728429.0718434,
-    "ast_hash": "dd51dc6cadbbf62357e634d5d04b06ad",
+    "mtime": 1781728718.2107196,
+    "ast_hash": "22610cbbf2cef130a1722412ac39fb68",
     "semantic_hash": ""
   },
   "reports/approval/circuiting-20260617T203444Z.json": {
@@ -4781,6 +4781,381 @@
   },
   "builds/staging/20260617T203741922446Z-circuiting/assets/releases/circuiting-cover.svg": {
     "mtime": 1781728663.138581,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/build-manifest.json": {
+    "mtime": 1781724868.8251379,
+    "ast_hash": "ebca03e1ac46c2e1981b93a25c96174a",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/contact-submit.php": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/build-manifest.json": {
+    "mtime": 1781728793.343095,
+    "ast_hash": "3772e10e57ba628df18a14b4415e7a7d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/contact-submit.php": {
+    "mtime": 1781728793.233095,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/build-manifest.json": {
+    "mtime": 1781728796.1336594,
+    "ast_hash": "d080818de1d0e9a21a976a7c0efe8050",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/contact-submit.php": {
+    "mtime": 1781728796.0236595,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/build-manifest.json": {
+    "mtime": 1781728797.6136591,
+    "ast_hash": "8e689b6b9dde804a7c5728ec115b74f0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/contact-submit.php": {
+    "mtime": 1781728797.5136592,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/build-manifest.json": {
+    "mtime": 1781728801.8625088,
+    "ast_hash": "a6c6599d5ef8ab1bfd0fad4cbee2c73c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/contact-submit.php": {
+    "mtime": 1781728801.7525089,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "mrp/core/migrate_site.py": {
+    "mtime": 1781728738.7210193,
+    "ast_hash": "f572856beb0f336a6fde85cca98e224e",
+    "semantic_hash": ""
+  },
+  "reports/approval/circuiting-20260617T204002Z.json": {
+    "mtime": 1781728802.1325088,
+    "ast_hash": "dda4cd895ac104c53a21f3aa8ecee3f5",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T204001Z-local-staging-20260617T204000571091Z-circuiting.json": {
+    "mtime": 1781728801.9525087,
+    "ast_hash": "c3648f7f7571a4af9cc70e0f6f4814d7",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T204002Z-local-production-20260617T204000571091Z-circuiting.json": {
+    "mtime": 1781728802.2325087,
+    "ast_hash": "69e61b8421f20777d768f17e49cbff3f",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T204002Z-publish-20260617T204000571091Z-circuiting.json": {
+    "mtime": 1781728802.2325087,
+    "ast_hash": "4c55be113e0ab06b4b4a1ec1c4f6a153",
+    "semantic_hash": ""
+  },
+  "reports/migration/20260617T203943Z-dry-run.json": {
+    "mtime": 1781728783.8978603,
+    "ast_hash": "cd825762f19dda47132b659337445787",
+    "semantic_hash": ""
+  },
+  "reports/rollback/20260617T204002Z.json": {
+    "mtime": 1781728802.4125087,
+    "ast_hash": "8f55a924dd3b45fae892ce17c4c0ad08",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T203951Z.json": {
+    "mtime": 1781728791.8930953,
+    "ast_hash": "17314a24cf7993fa3836a0fad3f231f7",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T203953Z.json": {
+    "mtime": 1781728793.7536597,
+    "ast_hash": "6ac9b8e57c59d183d7692e94eeb7b958",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T203954Z.json": {
+    "mtime": 1781728794.8036597,
+    "ast_hash": "a9b17f93ae779077c8b6cafe148c8472",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T203956Z.json": {
+    "mtime": 1781728796.2336593,
+    "ast_hash": "4b96be977509a53a04172770367fa8a2",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T204000Z.json": {
+    "mtime": 1781728800.562509,
+    "ast_hash": "e2982d66f20aa2849028eff2be26f8b6",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T204002Z-local-production.json": {
+    "mtime": 1781728802.5025086,
+    "ast_hash": "9ed6049b3c16ef769c00e87cc72f776d",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T204002Z-local-staging.json": {
+    "mtime": 1781728802.0425088,
+    "ast_hash": "2e82a99f509d44ee0f76e1ab453efbf8",
+    "semantic_hash": ""
+  },
+  "tests/test_migrate_site.py": {
+    "mtime": 1781728770.3966548,
+    "ast_hash": "43455413b05914a71806693e9f705466",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/about-us/index.html": {
+    "mtime": 1781724868.775138,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/artists/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/artists/pcbender/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/catalog/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/contact/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/releases/circuiting/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/releases/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/about-us/index.html": {
+    "mtime": 1781728793.293095,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/artists/index.html": {
+    "mtime": 1781728793.303095,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/artists/pcbender/index.html": {
+    "mtime": 1781728793.303095,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/catalog/index.html": {
+    "mtime": 1781728793.303095,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/contact/index.html": {
+    "mtime": 1781728793.303095,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/index.html": {
+    "mtime": 1781728793.313095,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/releases/circuiting/index.html": {
+    "mtime": 1781728793.313095,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/releases/index.html": {
+    "mtime": 1781728793.313095,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/about-us/index.html": {
+    "mtime": 1781728796.0836594,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/artists/index.html": {
+    "mtime": 1781728796.0836594,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/artists/pcbender/index.html": {
+    "mtime": 1781728796.0836594,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/catalog/index.html": {
+    "mtime": 1781728796.0936594,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/contact/index.html": {
+    "mtime": 1781728796.0936594,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/index.html": {
+    "mtime": 1781728796.0936594,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/releases/circuiting/index.html": {
+    "mtime": 1781728796.0936594,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/releases/index.html": {
+    "mtime": 1781728796.1036594,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/about-us/index.html": {
+    "mtime": 1781728797.5736592,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/artists/index.html": {
+    "mtime": 1781728797.5736592,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781728797.5736592,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/catalog/index.html": {
+    "mtime": 1781728797.5836592,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/contact/index.html": {
+    "mtime": 1781728797.5836592,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/index.html": {
+    "mtime": 1781728797.5836592,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781728797.5836592,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/releases/index.html": {
+    "mtime": 1781728797.5936592,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/about-us/index.html": {
+    "mtime": 1781728801.8125088,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/artists/index.html": {
+    "mtime": 1781728801.8225088,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781728801.8225088,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/catalog/index.html": {
+    "mtime": 1781728801.8225088,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/contact/index.html": {
+    "mtime": 1781728801.8325088,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/index.html": {
+    "mtime": 1781728801.8325088,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781728801.8325088,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/releases/index.html": {
+    "mtime": 1781728801.8325088,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/assets/maricopa-mark.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T204002Z/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781728793.233095,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203951898433Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781728793.233095,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781728796.0236595,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203954805349Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781728796.0236595,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781728797.5136592,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T203956237938Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781728797.5136592,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781728801.7525089,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T204000571091Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781728801.7525089,
     "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
     "semantic_hash": ""
   }

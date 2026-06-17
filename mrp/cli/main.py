@@ -11,6 +11,8 @@ from mrp.core.build import build_repository, format_build
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
+from mrp.core.migrate_site import format_migrate_site, migrate_site
+from mrp.core.migration_inventory import DEFAULT_MIGRATION_SOURCE
 from mrp.core.publish import format_publish, publish
 from mrp.core.release import create_release, format_release_create
 from mrp.core.rollback import format_rollback, rollback
@@ -91,6 +93,10 @@ def build_parser() -> argparse.ArgumentParser:
     add_global_options(import_parser, suppress_defaults=True)
     import_parser.add_argument("--source", default=str(DEFAULT_SOURCE))
     add_common_command_options(import_parser, "import-site")
+
+    migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
+    add_global_options(migrate_parser, suppress_defaults=True)
+    migrate_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
 
     return parser
 
@@ -190,6 +196,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "release create":
         print(format_release_create(result))
         return
+    if result["command"] == "migrate-site":
+        print(format_migrate_site(result))
+        return
 
     print(result["message"])
 
@@ -233,6 +242,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = create_release(args.repo, artist=args.artist, title=args.title, release_type=args.type)
     elif args.command == "import-site":
         result = import_site(args.repo, source=args.source)
+    elif args.command == "migrate-site":
+        result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
     else:
         result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))
@@ -262,6 +273,8 @@ def main(argv: Sequence[str] | None = None) -> int:
                 return EXIT_UNSAFE
             return EXIT_FAILURE
     if args.command == "release" and result["status"] == "failed":
+        return EXIT_CONFIG
+    if args.command == "migrate-site" and result["status"] == "failed":
         return EXIT_CONFIG
     return EXIT_SUCCESS
 

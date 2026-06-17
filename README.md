@@ -19,6 +19,7 @@ scripts/mrp approve --release circuiting --json
 scripts/mrp publish --release circuiting --json
 scripts/mrp rollback --to <build-id> --yes --json
 scripts/mrp release create --artist pcbender --title "Signal Path" --type single --json
+scripts/mrp migrate-site --source /home/mrose/website-migration --dry-run --json
 scripts/mrp status --release circuiting --json
 ```
 
@@ -66,6 +67,9 @@ records, and rollback availability.
 `release create` writes a draft YAML manifest under `content/releases/`, creates
 the matching `assets/releases/{slug}/` folder, and refuses to overwrite an
 existing release.
+
+`migrate-site --dry-run` plans the v0.1.1 full-site staging migration from the
+read-only `~/website-migration` source without writing content records or assets.
 
 MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
 v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).

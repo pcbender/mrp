@@ -35,6 +35,7 @@ UNSUPPORTED_TYPES = {
 def migration_inventory(
     repo: str | Path,
     source: str | Path = DEFAULT_MIGRATION_SOURCE,
+    write_report: bool = True,
 ) -> dict[str, Any]:
     root = Path(repo).resolve()
     source_paths = resolve_source(source)
@@ -74,8 +75,9 @@ def migration_inventory(
             "Source files under /home/mrose/website-migration were not modified.",
         ],
     }
-    report["report_path"] = report_path(root, generated_at)
-    write_json(root / report["report_path"], report)
+    if write_report:
+        report["report_path"] = report_path(root, generated_at)
+        write_json(root / report["report_path"], report)
     return report
 
 
