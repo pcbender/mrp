@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 from typing import Any, Sequence
 
+from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
 from mrp.core.validate import format_validation, validate_repository
 
@@ -61,6 +62,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     import_parser = subparsers.add_parser("import-site", help="Import source site content.")
     add_global_options(import_parser, suppress_defaults=True)
+    import_parser.add_argument("--source", default=str(DEFAULT_SOURCE))
     add_common_command_options(import_parser, "import-site")
 
     return parser
@@ -134,6 +136,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "validate":
         print(format_validation(result))
         return
+    if result["command"] == "import-site":
+        print(format_import(result))
+        return
 
     print(result["message"])
 
@@ -149,6 +154,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = inspect_repository(args.repo)
     elif args.command == "validate":
         result = validate_repository(args.repo, release=args.release)
+    elif args.command == "import-site":
+        result = import_site(args.repo, source=args.source)
     else:
         result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))

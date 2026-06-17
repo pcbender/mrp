@@ -1,0 +1,37 @@
+candidates:
+- artist:
+    id: 4castle
+    name: 4Castle
+    visibility: draft
+    source_url: https://www.maricoparecords.com/artists/4castle/
+    source_path: raw/pages/www.maricoparecords.com/artists/4castle/index.html
+    review_status: needs_review
+    notes:
+    - Imported from captured artist page.
+- artist:
+    id: lingua-aeternum
+    name: Lingua Aeternum
+    visibility: draft
+    source_url: https://www.maricoparecords.com/artists/lingua-aeternum/
+    source_path: raw/pages/www.maricoparecords.com/artists/lingua-aeternum/index.html
+    review_status: needs_review
+    notes:
+    - Imported from captured artist page.
+- artist:
+    id: pcbender
+    name: PCBender
+    visibility: draft
+    source_url: https://www.maricoparecords.com/artists/pcbender/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/index.html
+    review_status: needs_review
+    notes:
+    - Imported from captured artist page.
+- artist:
+    id: stab
+    name: STAB
+    visibility: draft
+    source_url: https://www.maricoparecords.com/artists/stab/
+    source_path: raw/pages/www.maricoparecords.com/artists/stab/index.html
+    review_status: needs_review
+    notes:
+    - Imported from captured artist page.

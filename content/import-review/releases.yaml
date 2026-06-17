@@ -1,0 +1,496 @@
+candidates:
+- release:
+    id: distance-not-safety
+    slug: distance-not-safety
+    title: Distance Not Safety
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-10'
+    source_url: https://www.maricoparecords.com/artists/4castle/distance-not-safety/
+    source_path: raw/pages/www.maricoparecords.com/artists/4castle/distance-not-safety/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: gone-and-forgotten
+    slug: gone-and-forgotten
+    title: Gone and Forgotten
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-12'
+    source_url: https://www.maricoparecords.com/artists/4castle/gone-and-forgotten/
+    source_path: raw/pages/www.maricoparecords.com/artists/4castle/gone-and-forgotten/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: here-comes-the-rain
+    slug: here-comes-the-rain
+    title: Here Comes the Rain
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/4castle/here-comes-the-rain/
+    source_path: raw/pages/www.maricoparecords.com/artists/4castle/here-comes-the-rain/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: on-the-advent-of-a-dream
+    slug: on-the-advent-of-a-dream
+    title: On the Advent of a Dream
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/4castle/on-the-advent-of-a-dream/
+    source_path: raw/pages/www.maricoparecords.com/artists/4castle/on-the-advent-of-a-dream/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: then-she-descends
+    slug: then-she-descends
+    title: Then She Descends
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/4castle/then-she-descends/
+    source_path: raw/pages/www.maricoparecords.com/artists/4castle/then-she-descends/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: umbra-ala
+    slug: umbra-ala
+    title: Umbra Ala
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/4castle/umbra-ala/
+    source_path: raw/pages/www.maricoparecords.com/artists/4castle/umbra-ala/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: abundant-emptiness
+    slug: abundant-emptiness
+    title: Abundant Emptiness
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/abundant-emptiness/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/abundant-emptiness/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: bakers-dozen
+    slug: bakers-dozen
+    title: Baker's Dozen
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-24'
+    source_url: https://www.maricoparecords.com/artists/pcbender/bakers-dozen/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/bakers-dozen/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: by-starlight-drifting-west-2
+    slug: by-starlight-drifting-west-2
+    title: By Starlight Drifting West
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/by-starlight-drifting-west-2/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/by-starlight-drifting-west-2/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: circuiting
+    slug: circuiting
+    title: Circuiting
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-15'
+    source_url: https://www.maricoparecords.com/artists/pcbender/circuiting/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/circuiting/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: comfortable-specter
+    slug: comfortable-specter
+    title: Comfortable Specter
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/comfortable-specter/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/comfortable-specter/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: elemental-fundamental
+    slug: elemental-fundamental
+    title: Elemental Fundamental
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/elemental-fundamental/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/elemental-fundamental/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: gemini-rising
+    slug: gemini-rising
+    title: Gemini Rising
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/gemini-rising/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/gemini-rising/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: halfway-in-between
+    slug: halfway-in-between
+    title: Halfway In Between
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/pcbender/halfway-in-between/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/halfway-in-between/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: have-a-heart
+    slug: have-a-heart
+    title: Have A Heart
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/pcbender/have-a-heart/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/have-a-heart/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: nancy-dance-with-me
+    slug: nancy-dance-with-me
+    title: Nancy (Dance With Me)
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/pcbender/nancy-dance-with-me/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/nancy-dance-with-me/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: nearly-nothin-nowhere-fast
+    slug: nearly-nothin-nowhere-fast
+    title: "Nearly Nothin\u2019 Nowhere Fast"
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/nearly-nothin-nowhere-fast/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/nearly-nothin-nowhere-fast/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: red-green-and-blues
+    slug: red-green-and-blues
+    title: Red, Green and Blues
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-26'
+    source_url: https://www.maricoparecords.com/artists/pcbender/red-green-and-blues/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/red-green-and-blues/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: riders-and-runners
+    slug: riders-and-runners
+    title: Riders And Runners
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/pcbender/riders-and-runners/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/riders-and-runners/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: sawmill-pond
+    slug: sawmill-pond
+    title: Sawmill Pond
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/sawmill-pond/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/sawmill-pond/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: scattershot-forget-me-not
+    slug: scattershot-forget-me-not
+    title: Scattershot Forget-Me-Not
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/scattershot-forget-me-not/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/scattershot-forget-me-not/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: still-my-days-before
+    slug: still-my-days-before
+    title: Still My Days Before
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/pcbender/still-my-days-before/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/still-my-days-before/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: the-one-that-got-away
+    slug: the-one-that-got-away
+    title: The One That Got Away
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-23'
+    source_url: https://www.maricoparecords.com/artists/pcbender/the-one-that-got-away/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/the-one-that-got-away/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: tits-up
+    slug: tits-up
+    title: Tits Up
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/pcbender/tits-up/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/tits-up/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: too-blue-to-lose
+    slug: too-blue-to-lose
+    title: Too Blue To Lose
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/pcbender/too-blue-to-lose/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/too-blue-to-lose/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: two-tree-road
+    slug: two-tree-road
+    title: Two Tree Road
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/pcbender/two-tree-road/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/two-tree-road/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: winds-of-change
+    slug: winds-of-change
+    title: Winds of Change
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-20'
+    source_url: https://www.maricoparecords.com/artists/pcbender/winds-of-change/
+    source_path: raw/pages/www.maricoparecords.com/artists/pcbender/winds-of-change/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: between-the-bottle-and-goodbye
+    slug: between-the-bottle-and-goodbye
+    title: Between the Bottle and Goodbye
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/stab/between-the-bottle-and-goodbye/
+    source_path: raw/pages/www.maricoparecords.com/artists/stab/between-the-bottle-and-goodbye/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: burn-me
+    slug: burn-me
+    title: Burn Me
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/stab/burn-me/
+    source_path: raw/pages/www.maricoparecords.com/artists/stab/burn-me/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: here-comes-the-rain
+    slug: here-comes-the-rain
+    title: Here Comes the Rain
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-29'
+    source_url: https://www.maricoparecords.com/artists/stab/here-comes-the-rain/
+    source_path: raw/pages/www.maricoparecords.com/artists/stab/here-comes-the-rain/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: the-hardest-gift
+    slug: the-hardest-gift
+    title: The Hardest Gift
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/stab/the-hardest-gift/
+    source_path: raw/pages/www.maricoparecords.com/artists/stab/the-hardest-gift/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: tits-up-remix
+    slug: tits-up-remix
+    title: Tits Up (Remix)
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-21'
+    source_url: https://www.maricoparecords.com/artists/stab/tits-up-remix/
+    source_path: raw/pages/www.maricoparecords.com/artists/stab/tits-up-remix/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
+- release:
+    id: you-still-have-my-heart
+    slug: you-still-have-my-heart
+    title: You Still Have My Heart
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-02-22'
+    source_url: https://www.maricoparecords.com/artists/stab/you-still-have-my-heart/
+    source_path: raw/pages/www.maricoparecords.com/artists/stab/you-still-have-my-heart/index.html
+    review_status: needs_review
+    notes:
+    - Imported as a single-song release candidate from artist page URL.
+    - Confirm release metadata, cover image, streaming links, ISRC, and date.
