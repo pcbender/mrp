@@ -39,11 +39,11 @@ def test_inspect_json_output_is_valid():
 
 
 def test_json_output_is_valid_for_placeholder_command():
-    result = run_mrp("--json", "validate")
+    result = run_mrp("--json", "build")
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
-    assert payload["command"] == "validate"
+    assert payload["command"] == "build"
     assert payload["status"] == "not_implemented"
 
 

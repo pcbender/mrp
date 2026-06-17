@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from mrp.core.inspect import format_inspection, inspect_repository
+from mrp.core.validate import format_validation, validate_repository
 
 
 EXIT_SUCCESS = 0
@@ -18,7 +19,6 @@ EXIT_RUNTIME = 5
 
 PLACEHOLDER_COMMANDS = {
     "init",
-    "validate",
     "build",
     "stage",
     "verify",
@@ -40,6 +40,10 @@ def build_parser() -> argparse.ArgumentParser:
 
     inspect_parser = subparsers.add_parser("inspect", help="Inspect repository state.")
     add_global_options(inspect_parser, suppress_defaults=True)
+
+    validate_parser = subparsers.add_parser("validate", help="Validate content records.")
+    add_global_options(validate_parser, suppress_defaults=True)
+    add_common_command_options(validate_parser, "validate")
 
     for command in sorted(PLACEHOLDER_COMMANDS):
         command_parser = subparsers.add_parser(command, help=f"{command} command placeholder.")
@@ -127,6 +131,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "inspect" and result["status"] == "ok":
         print(format_inspection(result))
         return
+    if result["command"] == "validate":
+        print(format_validation(result))
+        return
 
     print(result["message"])
 
@@ -140,9 +147,13 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     if args.command == "inspect":
         result = inspect_repository(args.repo)
+    elif args.command == "validate":
+        result = validate_repository(args.repo, release=args.release)
     else:
         result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))
+    if args.command == "validate" and result["status"] == "failed":
+        return EXIT_FAILURE
     return EXIT_SUCCESS
 
 
