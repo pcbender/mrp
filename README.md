@@ -14,6 +14,7 @@ scripts/mrp inspect --json
 scripts/mrp validate --json
 scripts/mrp build --json
 scripts/mrp stage --target local-staging --json
+scripts/mrp verify --target staging --json
 ```
 
 The MRP v0.1 CLI keeps the same entry point and global flags across commands:
@@ -43,7 +44,9 @@ import-site
 ```
 
 Implemented commands currently include `inspect`, `validate`, `import-site`,
-`build`, and `stage`. The build command validates content, runs the Astro
-static site build, copies output to `builds/staging/{build-id}/`, and writes a
-JSON report under `reports/build/`. The stage command deploys a build to a
-configured local target after verifying the target contains `.allow-deploy`.
+`build`, `stage`, and `verify`. The build command validates content, runs the
+Astro static site build, copies output to `builds/staging/{build-id}/`, and
+writes a JSON report under `reports/build/`. The stage command deploys a build
+to a configured local target after verifying the target contains
+`.allow-deploy`. The verify command checks a deployed local target for required
+pages, assets, sitemap/feed files, internal links, and placeholder tokens.

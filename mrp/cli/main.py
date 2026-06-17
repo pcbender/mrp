@@ -11,6 +11,7 @@ from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
 from mrp.core.validate import format_validation, validate_repository
+from mrp.core.verify import format_verification, verify_target
 
 
 EXIT_SUCCESS = 0
@@ -22,7 +23,6 @@ EXIT_RUNTIME = 5
 
 PLACEHOLDER_COMMANDS = {
     "init",
-    "verify",
     "approve",
     "publish",
     "rollback",
@@ -53,6 +53,10 @@ def build_parser() -> argparse.ArgumentParser:
     stage_parser = subparsers.add_parser("stage", help="Deploy a build to a local staging target.")
     add_global_options(stage_parser, suppress_defaults=True)
     add_common_command_options(stage_parser, "stage")
+
+    verify_parser = subparsers.add_parser("verify", help="Verify a local deployed target.")
+    add_global_options(verify_parser, suppress_defaults=True)
+    add_common_command_options(verify_parser, "verify")
 
     for command in sorted(PLACEHOLDER_COMMANDS):
         command_parser = subparsers.add_parser(command, help=f"{command} command placeholder.")
@@ -153,6 +157,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "stage":
         print(format_deployment(result))
         return
+    if result["command"] == "verify":
+        print(format_verification(result))
+        return
 
     print(result["message"])
 
@@ -177,6 +184,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             target=args.target,
             dry_run=bool(getattr(args, "dry_run", False)),
         )
+    elif args.command == "verify":
+        result = verify_target(args.repo, target=args.target, release=args.release)
     elif args.command == "import-site":
         result = import_site(args.repo, source=args.source)
     else:
@@ -190,6 +199,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         if result["stage"] == "config":
             return EXIT_CONFIG
         return EXIT_DEPLOYMENT
+    if args.command == "verify" and result["status"] == "failed":
+        return EXIT_FAILURE
     return EXIT_SUCCESS
 
 
