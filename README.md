@@ -76,6 +76,7 @@ v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.m
 - [Deployment](docs/DEPLOYMENT.md)
 - [Agent usage](docs/AGENT-USAGE.md)
 - [Remote deployment v0.2 candidate](docs/REMOTE-DEPLOYMENT-v0.2.md)
+- [MRP v0.1.1 full site staging plan](docs/MRP-v0.1.1-FULL-SITE-STAGING-PLAN.md)
 
 ## End-to-End Test
 
