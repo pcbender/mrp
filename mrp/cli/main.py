@@ -1,0 +1,138 @@
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from pathlib import Path
+from typing import Any, Sequence
+
+
+EXIT_SUCCESS = 0
+EXIT_FAILURE = 1
+EXIT_CONFIG = 2
+EXIT_UNSAFE = 3
+EXIT_DEPLOYMENT = 4
+EXIT_RUNTIME = 5
+
+PLACEHOLDER_COMMANDS = {
+    "init",
+    "inspect",
+    "validate",
+    "build",
+    "stage",
+    "verify",
+    "approve",
+    "publish",
+    "rollback",
+    "status",
+}
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="mrp",
+        description="Maricopa Release Publisher",
+    )
+    add_global_options(parser)
+
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    for command in sorted(PLACEHOLDER_COMMANDS):
+        command_parser = subparsers.add_parser(command, help=f"{command} command placeholder.")
+        add_global_options(command_parser, suppress_defaults=True)
+        add_common_command_options(command_parser, command)
+
+    release_parser = subparsers.add_parser("release", help="Release record commands.")
+    add_global_options(release_parser, suppress_defaults=True)
+    release_subparsers = release_parser.add_subparsers(dest="release_command", required=True)
+    create_parser = release_subparsers.add_parser("create", help="Create a release manifest.")
+    add_global_options(create_parser, suppress_defaults=True)
+    create_parser.add_argument("--artist")
+    create_parser.add_argument("--title")
+    create_parser.add_argument("--type", choices=["single", "ep", "album"])
+
+    import_parser = subparsers.add_parser("import-site", help="Import source site content.")
+    add_global_options(import_parser, suppress_defaults=True)
+    add_common_command_options(import_parser, "import-site")
+
+    return parser
+
+
+def add_global_options(parser: argparse.ArgumentParser, suppress_defaults: bool = False) -> None:
+    default = argparse.SUPPRESS if suppress_defaults else None
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        default=default,
+        help="Emit machine-readable JSON.",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        default=default,
+        help="Plan without writing changes.",
+    )
+    parser.add_argument(
+        "--no-color",
+        action="store_true",
+        default=default,
+        help="Disable terminal color.",
+    )
+    parser.add_argument(
+        "--repo",
+        default=argparse.SUPPRESS if suppress_defaults else ".",
+        help="Repository root to operate on.",
+    )
+
+
+def add_common_command_options(parser: argparse.ArgumentParser, command: str) -> None:
+    if command in {"validate", "build", "verify", "approve", "publish", "status"}:
+        parser.add_argument("--release")
+    if command in {"stage", "verify", "publish"}:
+        parser.add_argument("--target")
+    if command in {"stage", "approve", "publish", "rollback"}:
+        parser.add_argument("--build")
+    if command == "build":
+        parser.add_argument("--skip-validate", action="store_true")
+    if command == "publish":
+        parser.add_argument("--auto-approve", action="store_true")
+    if command == "rollback":
+        parser.add_argument("--to")
+        parser.add_argument("--yes", action="store_true")
+
+
+def placeholder_result(args: argparse.Namespace) -> dict[str, Any]:
+    command = args.command
+    if command == "release":
+        command = f"release {args.release_command}"
+
+    return {
+        "command": command,
+        "status": "not_implemented",
+        "repo": str(Path(args.repo).resolve()),
+        "dry_run": bool(getattr(args, "dry_run", False)),
+        "message": f"mrp {command} is registered but not implemented yet.",
+    }
+
+
+def emit(result: dict[str, Any], json_output: bool) -> None:
+    if json_output:
+        print(json.dumps(result, indent=2, sort_keys=True))
+        return
+
+    print(result["message"])
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    parser = build_parser()
+    try:
+        args = parser.parse_args(argv)
+    except SystemExit as exc:
+        return int(exc.code)
+
+    result = placeholder_result(args)
+    emit(result, bool(getattr(args, "json", False)))
+    return EXIT_SUCCESS
+
+
+if __name__ == "__main__":
+    sys.exit(main())

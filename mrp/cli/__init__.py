@@ -1,0 +1,1 @@
+"""MRP command-line interface."""
