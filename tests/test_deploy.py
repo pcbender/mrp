@@ -115,3 +115,23 @@ def test_stage_unknown_build_fails(tmp_path):
     payload = json.loads(result.stdout)
     assert payload["status"] == "failed"
     assert payload["stage"] == "build"
+
+
+def test_stage_refuses_remote_target_type(tmp_path):
+    repo = deployable_repo(tmp_path)
+    targets = yaml.safe_load((repo / "deploy/targets.yaml").read_text())
+    targets["targets"]["dreamhost-staging"] = {
+        "type": "rsync",
+        "environment": "staging",
+        "path": "/remote/path",
+        "require_marker": True,
+    }
+    (repo / "deploy/targets.yaml").write_text(yaml.safe_dump(targets, sort_keys=False))
+
+    result = run_mrp("--repo", str(repo), "--json", "stage", "--target", "dreamhost-staging")
+
+    assert result.returncode == 2
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "failed"
+    assert payload["stage"] == "config"
+    assert "Unsupported deploy target type" in payload["message"]

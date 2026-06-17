@@ -60,3 +60,6 @@ verifies production, and marks the release live after verification succeeds.
 Rollback restores local production from an archive or specified staging build
 after explicit `--yes` confirmation. Status reports the latest
 build/deployment/verification/approval records.
+
+MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
+v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).
