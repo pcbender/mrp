@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maricoparecords.local/mrp/redirects.schema.json",
+  "title": "MRP Normalized URL Metadata",
+  "type": "object",
+  "required": ["redirects"],
+  "additionalProperties": false,
+  "properties": {
+    "redirects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_path", "normalized_path", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "source_path": {"type": "string", "pattern": "^/.*"},
+          "normalized_path": {"type": "string", "pattern": "^/.*"},
+          "status": {"type": "string", "enum": ["normalized", "review"]},
+          "notes": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

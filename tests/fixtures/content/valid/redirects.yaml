@@ -1,0 +1,5 @@
+redirects:
+  - source_path: /artists/pcbender/circuiting
+    normalized_path: /artists/pcbender/circuiting/
+    status: normalized
+    notes: Added trailing slash for static route.

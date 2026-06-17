@@ -1,16 +1,16 @@
 # Graph Report - mrp  (2026-06-17)
 
 ## Corpus Check
-- 299 files · ~123,983 words
+- 326 files · ~130,847 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 869 nodes · 1279 edges · 132 communities (125 shown, 7 thin omitted)
+- 1028 nodes · 1444 edges · 155 communities (148 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `dde30fc3`
+- Built from commit: `b7db3e12`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -88,6 +88,24 @@
 - [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
 - [[_COMMUNITY_Community 126|Community 126]]
+- [[_COMMUNITY_Community 132|Community 132]]
+- [[_COMMUNITY_Community 133|Community 133]]
+- [[_COMMUNITY_Community 134|Community 134]]
+- [[_COMMUNITY_Community 135|Community 135]]
+- [[_COMMUNITY_Community 136|Community 136]]
+- [[_COMMUNITY_Community 137|Community 137]]
+- [[_COMMUNITY_Community 138|Community 138]]
+- [[_COMMUNITY_Community 139|Community 139]]
+- [[_COMMUNITY_Community 140|Community 140]]
+- [[_COMMUNITY_Community 141|Community 141]]
+- [[_COMMUNITY_Community 142|Community 142]]
+- [[_COMMUNITY_Community 143|Community 143]]
+- [[_COMMUNITY_Community 144|Community 144]]
+- [[_COMMUNITY_Community 145|Community 145]]
+- [[_COMMUNITY_Community 146|Community 146]]
+- [[_COMMUNITY_Community 147|Community 147]]
+- [[_COMMUNITY_Community 148|Community 148]]
+- [[_COMMUNITY_Community 149|Community 149]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `verify_target()` - 23 edges
@@ -116,7 +134,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (132 total, 7 thin omitted)
+## Communities (155 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.11
@@ -191,8 +209,8 @@ Cohesion: 0.26
 Nodes (21): create_release(), failed(), release_record(), slugify(), track(), error_record(), load_content(), load_records() (+13 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.36
-Nodes (10): Draft202012Validator, error_record(), load_schema(), load_yaml(), Path, test_invalid_release_samples_fail_validation(), test_schema_files_exist_and_are_valid(), test_valid_content_samples_pass_validation() (+2 more)
+Cohesion: 0.35
+Nodes (11): Draft202012Validator, error_record(), load_schema(), load_yaml(), Path, test_invalid_migrated_page_and_post_samples_fail_validation(), test_invalid_release_samples_fail_validation(), test_schema_files_exist_and_are_valid() (+3 more)
 
 ### Community 19 - "Community 19"
 Cohesion: 0.18
@@ -215,8 +233,8 @@ Cohesion: 0.44
 Nodes (9): deployable_repo(), CompletedProcess, Path, run_mrp(), test_stage_dry_run_reports_plan_without_copying(), test_stage_local_target_copies_build_and_writes_report(), test_stage_missing_marker_is_refused(), test_stage_refuses_remote_target_type() (+1 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.44
-Nodes (9): minimal_repo(), CompletedProcess, Path, run_mrp(), test_missing_artist_reference_fails(), test_missing_cover_image_fails_for_publishable_release(), test_validate_current_repo_writes_json_report(), test_validate_release_filter_unknown_release_fails() (+1 more)
+Cohesion: 0.42
+Nodes (11): minimal_repo(), CompletedProcess, Path, run_mrp(), test_invalid_migrated_page_fails_validation(), test_missing_artist_reference_fails(), test_missing_cover_image_fails_for_publishable_release(), test_validate_current_repo_writes_json_report() (+3 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.47
@@ -267,8 +285,8 @@ Cohesion: 0.40
 Nodes (4): Artists, Content Model, Releases, Site
 
 ### Community 37 - "Community 37"
-Cohesion: 0.50
-Nodes (4): Acceptance Criteria, MRP-004 — Implement MRP CLI Skeleton, Objective, Tasks
+Cohesion: 0.40
+Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-004 — Implement MRP CLI Skeleton, Objective, Tasks
 
 ### Community 38 - "Community 38"
 Cohesion: 0.40
@@ -347,8 +365,8 @@ Cohesion: 0.50
 Nodes (4): Acceptance Criteria, MRP-018 — Add Status Command, Objective, Tasks
 
 ### Community 57 - "Community 57"
-Cohesion: 0.40
-Nodes (5): 17. Work Packets, Acceptance Criteria, MRP-019 — Documentation Pass, Objective, Tasks
+Cohesion: 0.50
+Nodes (4): Acceptance Criteria, MRP-019 — Documentation Pass, Objective, Tasks
 
 ### Community 58 - "Community 58"
 Cohesion: 0.50
@@ -382,22 +400,94 @@ Nodes (3): status, enum, type
 Cohesion: 0.10
 Nodes (19): Acceptance Criteria, CLI Shape, MRP-101 - Migration Inventory Refresh, MRP-102 - Migration Schemas And Content Directories, MRP-103 - Implement `mrp migrate-site --dry-run`, MRP-104 - Generate Migrated Content Records, MRP-105 - Curated Asset Copy, MRP-106 - Astro Rendering For Migrated Pages (+11 more)
 
+### Community 132 - "Community 132"
+Cohesion: 0.08
+Nodes (25): additionalProperties, $id, additionalProperties, properties, required, type, pattern, type (+17 more)
+
+### Community 133 - "Community 133"
+Cohesion: 0.10
+Nodes (20): type, type, pattern, type, properties, content_html, excerpt, normalized_path (+12 more)
+
+### Community 134 - "Community 134"
+Cohesion: 0.17
+Nodes (12): type, minLength, pattern, type, captured_path, id, status, type (+4 more)
+
+### Community 135 - "Community 135"
+Cohesion: 0.17
+Nodes (12): type, type, properties, content_html, excerpt, seo, source, source_url (+4 more)
+
+### Community 136 - "Community 136"
+Cohesion: 0.17
+Nodes (12): type, minLength, pattern, type, captured_path, id, system, type (+4 more)
+
+### Community 137 - "Community 137"
+Cohesion: 0.25
+Nodes (8): $defs, seo, source, additionalProperties, type, additionalProperties, required, type
+
+### Community 138 - "Community 138"
+Cohesion: 0.25
+Nodes (8): $defs, seo, source, additionalProperties, type, additionalProperties, required, type
+
+### Community 139 - "Community 139"
+Cohesion: 0.29
+Nodes (6): additionalProperties, $id, required, $schema, title, type
+
+### Community 140 - "Community 140"
+Cohesion: 0.29
+Nodes (6): additionalProperties, $id, required, $schema, title, type
+
+### Community 141 - "Community 141"
+Cohesion: 0.33
+Nodes (6): type, description, title, properties, minLength, type
+
+### Community 142 - "Community 142"
+Cohesion: 0.33
+Nodes (6): type, description, title, properties, minLength, type
+
+### Community 143 - "Community 143"
+Cohesion: 0.40
+Nodes (5): additionalProperties, required, type, properties, page
+
+### Community 144 - "Community 144"
+Cohesion: 0.40
+Nodes (5): items, type, minLength, type, categories
+
+### Community 145 - "Community 145"
+Cohesion: 0.40
+Nodes (5): additionalProperties, required, type, properties, post
+
+### Community 146 - "Community 146"
+Cohesion: 0.67
+Nodes (3): pattern, type, normalized_path
+
+### Community 147 - "Community 147"
+Cohesion: 0.67
+Nodes (3): slug, pattern, type
+
+### Community 148 - "Community 148"
+Cohesion: 0.67
+Nodes (3): system, enum, type
+
+### Community 149 - "Community 149"
+Cohesion: 0.67
+Nodes (3): status, enum, type
+
 ## Knowledge Gaps
-- **337 isolated node(s):** `Namespace`, `Path`, `$schema`, `$id`, `title` (+332 more)
+- **430 isolated node(s):** `Namespace`, `Path`, `$schema`, `$id`, `title` (+425 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `17. Work Packets` connect `Community 57` to `Community 2`, `Community 37`, `Community 40`, `Community 41`, `Community 42`, `Community 43`, `Community 44`, `Community 45`, `Community 46`, `Community 47`, `Community 48`, `Community 49`, `Community 50`, `Community 51`, `Community 52`, `Community 53`, `Community 54`, `Community 55`, `Community 56`, `Community 58`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
-- **Why does `properties` connect `Community 8` to `Community 64`, `Community 1`, `Community 33`, `Community 65`, `Community 66`, `Community 67`, `Community 39`, `Community 11`, `Community 19`, `Community 62`, `Community 63`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `main()` connect `Community 0` to `Community 7`, `Community 9`, `Community 12`, `Community 13`, `Community 16`, `Community 17`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `17. Work Packets` connect `Community 37` to `Community 2`, `Community 40`, `Community 41`, `Community 42`, `Community 43`, `Community 44`, `Community 45`, `Community 46`, `Community 47`, `Community 48`, `Community 49`, `Community 50`, `Community 51`, `Community 52`, `Community 53`, `Community 54`, `Community 55`, `Community 56`, `Community 57`, `Community 58`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `verify_target()` connect `Community 9` to `Community 0`, `Community 16`, `Community 7`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
 - **What connects `Maricopa Release Publisher.`, `MRP command-line interface.`, `Namespace` to the rest of the system?**
-  _339 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _432 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.1101010101010101 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**

@@ -1,0 +1,10 @@
+post:
+  id: bad-post
+  slug: bad-post
+  title: Bad Post
+  status: published
+  normalized_path: /bad-post/
+  content_html: ""
+  source:
+    system: wordpress
+    id: "124"

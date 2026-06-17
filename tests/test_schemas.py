@@ -15,6 +15,9 @@ SCHEMA_FILES = {
     "artist": "artist.schema.json",
     "release": "release.schema.json",
     "assets": "asset-manifest.schema.json",
+    "page": "page.schema.json",
+    "post": "post.schema.json",
+    "redirects": "redirects.schema.json",
     "validation_error": "validation-error.schema.json",
 }
 
@@ -56,6 +59,9 @@ def test_valid_content_samples_pass_validation():
         ("release.schema.json", VALID / "release-song.yaml"),
         ("release.schema.json", VALID / "release-album.yaml"),
         ("asset-manifest.schema.json", VALID / "assets.yaml"),
+        ("page.schema.json", VALID / "page.yaml"),
+        ("post.schema.json", VALID / "post.yaml"),
+        ("redirects.schema.json", VALID / "redirects.yaml"),
     ]
 
     for schema_name, sample_path in cases:
@@ -71,6 +77,17 @@ def test_invalid_release_samples_fail_validation():
 
     for sample_path in cases:
         errors = list(validator("release.schema.json").iter_errors(load_yaml(sample_path)))
+        assert errors, f"{sample_path} unexpectedly passed validation"
+
+
+def test_invalid_migrated_page_and_post_samples_fail_validation():
+    cases = [
+        ("page.schema.json", INVALID / "page-missing-required.yaml"),
+        ("post.schema.json", INVALID / "post-invalid-status.yaml"),
+    ]
+
+    for schema_name, sample_path in cases:
+        errors = list(validator(schema_name).iter_errors(load_yaml(sample_path)))
         assert errors, f"{sample_path} unexpectedly passed validation"
 
 

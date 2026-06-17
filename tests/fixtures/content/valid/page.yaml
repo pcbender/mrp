@@ -1,0 +1,18 @@
+page:
+  id: contact
+  slug: contact
+  title: Contact
+  status: draft
+  normalized_path: /contact/
+  source_url: https://www.maricoparecords.com/contact/
+  content_html: "<p>Contact Maricopa Records.</p>"
+  excerpt: Contact Maricopa Records.
+  seo:
+    title: Contact Maricopa Records
+    description: Contact Maricopa Records.
+  source:
+    system: wordpress
+    id: "123"
+    type: page
+    status: publish
+    captured_path: raw/pages/www.maricoparecords.com/contact/index.html

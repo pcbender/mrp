@@ -1,0 +1,22 @@
+post:
+  id: future-of-ai-in-music
+  slug: future-of-ai-in-music
+  title: The Future of AI in Music
+  status: draft
+  normalized_path: /the-future-of-ai-in-music/
+  source_url: https://www.maricoparecords.com/the-future-of-ai-in-music/
+  published_at: "2025-02-28 18:12:12"
+  content_html: "<p>Blog/news post body.</p>"
+  excerpt: Blog/news post body.
+  categories:
+    - AI
+    - Music
+  seo:
+    title: The Future of AI in Music
+    description: The Future of AI in Music.
+  source:
+    system: wordpress
+    id: "997"
+    type: post
+    status: publish
+    captured_path:

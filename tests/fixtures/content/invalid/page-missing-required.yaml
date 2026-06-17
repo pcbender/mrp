@@ -1,0 +1,9 @@
+page:
+  id: bad-page
+  slug: bad-page
+  status: draft
+  normalized_path: contact
+  content_html: ""
+  source:
+    system: wordpress
+    id: "123"

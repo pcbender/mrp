@@ -16,6 +16,9 @@ SCHEMA_NAMES = {
     "artist": "artist.schema.json",
     "release": "release.schema.json",
     "assets": "asset-manifest.schema.json",
+    "page": "page.schema.json",
+    "post": "post.schema.json",
+    "redirects": "redirects.schema.json",
 }
 
 
@@ -35,6 +38,8 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
 
     artists = load_records(root / "content" / "artists", "artist", schema_dir, errors)
     releases = load_records(root / "content" / "releases", "release", schema_dir, errors)
+    pages = load_records(root / "content" / "pages", "page", schema_dir, errors)
+    posts = load_records(root / "content" / "posts", "post", schema_dir, errors)
     if release:
         releases = [item for item in releases if item["data"].get("release", {}).get("id") == release]
         if not releases:
@@ -49,9 +54,19 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
                 validate_schema(asset_manifest_path, asset_manifest, schema_dir / SCHEMA_NAMES["assets"])
             )
 
+    redirects_path = root / "content" / "redirects.yaml"
+    if redirects_path.exists():
+        redirects = load_content(redirects_path, errors)
+        if redirects is not None:
+            errors.extend(validate_schema(redirects_path, redirects, schema_dir / SCHEMA_NAMES["redirects"]))
+
     errors.extend(validate_duplicates(artists, "artist", "id"))
     errors.extend(validate_duplicates(releases, "release", "id"))
     errors.extend(validate_duplicates(releases, "release", "slug"))
+    errors.extend(validate_duplicates(pages, "page", "id"))
+    errors.extend(validate_duplicates(pages, "page", "slug"))
+    errors.extend(validate_duplicates(posts, "post", "id"))
+    errors.extend(validate_duplicates(posts, "post", "slug"))
     errors.extend(validate_artist_references(releases, artists))
     errors.extend(validate_asset_manifest(root, asset_manifest_path, asset_manifest))
     errors.extend(validate_release_assets(root, releases))
@@ -68,6 +83,8 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
             "warnings": len(warnings),
             "artists": len(artists),
             "releases": len(releases),
+            "pages": len(pages),
+            "posts": len(posts),
         },
         "errors": errors,
         "warnings": warnings,

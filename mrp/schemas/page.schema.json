@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maricoparecords.local/mrp/page.schema.json",
+  "title": "MRP Migrated Static Page",
+  "type": "object",
+  "required": ["page"],
+  "additionalProperties": false,
+  "properties": {
+    "page": {
+      "type": "object",
+      "required": ["id", "slug", "title", "status", "normalized_path", "content_html", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "title": {"type": "string", "minLength": 1},
+        "status": {"type": "string", "enum": ["draft", "review", "ready", "archived"]},
+        "normalized_path": {"type": "string", "pattern": "^/.*"},
+        "source_url": {"type": ["string", "null"], "format": "uri"},
+        "content_html": {"type": "string"},
+        "excerpt": {"type": ["string", "null"]},
+        "seo": {"$ref": "#/$defs/seo"},
+        "source": {"$ref": "#/$defs/source"}
+      }
+    }
+  },
+  "$defs": {
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {"type": ["string", "null"]},
+        "description": {"type": ["string", "null"]}
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["system", "id"],
+      "additionalProperties": false,
+      "properties": {
+        "system": {"type": "string", "enum": ["wordpress"]},
+        "id": {"type": "string", "minLength": 1},
+        "type": {"type": ["string", "null"]},
+        "status": {"type": ["string", "null"]},
+        "captured_path": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
