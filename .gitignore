@@ -1,0 +1,16 @@
+.env
+.env.*
+deploy/targets.local.yaml
+
+builds/**
+!builds/**/
+!builds/**/.gitkeep
+
+reports/**/*.json
+reports/**/*.secret
+!reports/**/
+!reports/**/.gitkeep
+
+assets/processed/**
+!assets/processed/
+!assets/processed/.gitkeep
