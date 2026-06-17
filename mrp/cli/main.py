@@ -11,6 +11,7 @@ from mrp.core.build import build_repository, format_build
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
+from mrp.core.publish import format_publish, publish
 from mrp.core.status import format_status, status
 from mrp.core.validate import format_validation, validate_repository
 from mrp.core.verify import format_verification, verify_target
@@ -25,7 +26,6 @@ EXIT_RUNTIME = 5
 
 PLACEHOLDER_COMMANDS = {
     "init",
-    "publish",
     "rollback",
 }
 
@@ -65,6 +65,10 @@ def build_parser() -> argparse.ArgumentParser:
     status_parser = subparsers.add_parser("status", help="Show publishing status.")
     add_global_options(status_parser, suppress_defaults=True)
     add_common_command_options(status_parser, "status")
+
+    publish_parser = subparsers.add_parser("publish", help="Publish an approved build to local production.")
+    add_global_options(publish_parser, suppress_defaults=True)
+    add_common_command_options(publish_parser, "publish")
 
     for command in sorted(PLACEHOLDER_COMMANDS):
         command_parser = subparsers.add_parser(command, help=f"{command} command placeholder.")
@@ -174,6 +178,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "status":
         print(format_status(result))
         return
+    if result["command"] == "publish":
+        print(format_publish(result))
+        return
 
     print(result["message"])
 
@@ -204,6 +211,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = approve(args.repo, release=args.release, build=args.build)
     elif args.command == "status":
         result = status(args.repo)
+    elif args.command == "publish":
+        result = publish(
+            args.repo,
+            release=args.release,
+            build=args.build,
+            auto_approve=bool(getattr(args, "auto_approve", False)),
+        )
     elif args.command == "import-site":
         result = import_site(args.repo, source=args.source)
     else:
@@ -220,6 +234,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "verify" and result["status"] == "failed":
         return EXIT_FAILURE
     if args.command == "approve" and result["status"] == "failed":
+        return EXIT_FAILURE
+    if args.command == "publish" and result["status"] == "failed":
+        if result["errors"] and result["errors"][0]["field"] == "safety":
+            return EXIT_UNSAFE
         return EXIT_FAILURE
     return EXIT_SUCCESS
 
