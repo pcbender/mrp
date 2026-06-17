@@ -27,7 +27,14 @@ denied_paths = [
   "builds/local-production",
 ]
 allowed_commands = [
+  "find",
+  "git diff",
   "git diff --check",
+  "git status",
+  "nl",
+  "python3 -c",
+  "rg",
+  "sed",
 ]
 required_commands = [
   "git diff --check",
