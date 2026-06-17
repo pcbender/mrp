@@ -19,7 +19,7 @@ scripts/mrp approve --release circuiting --json
 scripts/mrp publish --release circuiting --json
 scripts/mrp rollback --to <build-id> --yes --json
 scripts/mrp release create --artist pcbender --title "Signal Path" --type single --json
-scripts/mrp status --json
+scripts/mrp status --release circuiting --json
 ```
 
 The MRP v0.1 CLI keeps the same entry point and global flags across commands:
@@ -59,8 +59,9 @@ placeholder tokens. The approve command records approval only after verification
 passes. The publish command promotes an approved build to local production,
 verifies production, and marks the release live after verification succeeds.
 Rollback restores local production from an archive or specified staging build
-after explicit `--yes` confirmation. Status reports the latest
-build/deployment/verification/approval records.
+after explicit `--yes` confirmation. Status reports release content state,
+latest validation/build/deployment/verification/approval/publish/rollback
+records, and rollback availability.
 
 `release create` writes a draft YAML manifest under `content/releases/`, creates
 the matching `assets/releases/{slug}/` folder, and refuses to overwrite an

@@ -219,7 +219,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     elif args.command == "approve":
         result = approve(args.repo, release=args.release, build=args.build)
     elif args.command == "status":
-        result = status(args.repo)
+        result = status(args.repo, release=args.release)
     elif args.command == "publish":
         result = publish(
             args.repo,
@@ -248,6 +248,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         return EXIT_FAILURE
     if args.command == "approve" and result["status"] == "failed":
         return EXIT_FAILURE
+    if args.command == "status" and result["status"] == "failed":
+        return EXIT_CONFIG
     if args.command == "publish" and result["status"] == "failed":
         if result["errors"] and result["errors"][0]["field"] == "safety":
             return EXIT_UNSAFE
