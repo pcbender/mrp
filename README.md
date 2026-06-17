@@ -17,6 +17,7 @@ scripts/mrp stage --target local-staging --json
 scripts/mrp verify --target staging --json
 scripts/mrp approve --release circuiting --json
 scripts/mrp publish --release circuiting --json
+scripts/mrp rollback --to <build-id> --yes --json
 scripts/mrp status --json
 ```
 
@@ -47,8 +48,8 @@ import-site
 ```
 
 Implemented commands currently include `inspect`, `validate`, `import-site`,
-`build`, `stage`, `verify`, `approve`, `publish`, and `status`. The build command
-validates content, runs the Astro static site build, copies output to
+`build`, `stage`, `verify`, `approve`, `publish`, `rollback`, and `status`. The
+build command validates content, runs the Astro static site build, copies output to
 `builds/staging/{build-id}/`, and writes a JSON report under `reports/build/`.
 The stage command deploys a build to a configured local target after verifying
 the target contains `.allow-deploy`. The verify command checks a deployed local
@@ -56,4 +57,6 @@ target for required pages, assets, sitemap/feed files, internal links, and
 placeholder tokens. The approve command records approval only after verification
 passes. The publish command promotes an approved build to local production,
 verifies production, and marks the release live after verification succeeds.
-Status reports the latest build/deployment/verification/approval records.
+Rollback restores local production from an archive or specified staging build
+after explicit `--yes` confirmation. Status reports the latest
+build/deployment/verification/approval records.

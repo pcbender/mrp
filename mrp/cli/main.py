@@ -12,6 +12,7 @@ from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
 from mrp.core.publish import format_publish, publish
+from mrp.core.rollback import format_rollback, rollback
 from mrp.core.status import format_status, status
 from mrp.core.validate import format_validation, validate_repository
 from mrp.core.verify import format_verification, verify_target
@@ -24,10 +25,7 @@ EXIT_UNSAFE = 3
 EXIT_DEPLOYMENT = 4
 EXIT_RUNTIME = 5
 
-PLACEHOLDER_COMMANDS = {
-    "init",
-    "rollback",
-}
+PLACEHOLDER_COMMANDS = {"init"}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -69,6 +67,10 @@ def build_parser() -> argparse.ArgumentParser:
     publish_parser = subparsers.add_parser("publish", help="Publish an approved build to local production.")
     add_global_options(publish_parser, suppress_defaults=True)
     add_common_command_options(publish_parser, "publish")
+
+    rollback_parser = subparsers.add_parser("rollback", help="Rollback local production.")
+    add_global_options(rollback_parser, suppress_defaults=True)
+    add_common_command_options(rollback_parser, "rollback")
 
     for command in sorted(PLACEHOLDER_COMMANDS):
         command_parser = subparsers.add_parser(command, help=f"{command} command placeholder.")
@@ -181,6 +183,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "publish":
         print(format_publish(result))
         return
+    if result["command"] == "rollback":
+        print(format_rollback(result))
+        return
 
     print(result["message"])
 
@@ -218,6 +223,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             build=args.build,
             auto_approve=bool(getattr(args, "auto_approve", False)),
         )
+    elif args.command == "rollback":
+        result = rollback(args.repo, to=args.to, yes=bool(getattr(args, "yes", False)))
     elif args.command == "import-site":
         result = import_site(args.repo, source=args.source)
     else:
@@ -239,6 +246,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         if result["errors"] and result["errors"][0]["field"] == "safety":
             return EXIT_UNSAFE
         return EXIT_FAILURE
+    if args.command == "rollback":
+        if result["status"] == "confirmation_required":
+            return EXIT_UNSAFE
+        if result["status"] == "failed":
+            if result["errors"] and result["errors"][0]["field"] == "safety":
+                return EXIT_UNSAFE
+            return EXIT_FAILURE
     return EXIT_SUCCESS
 
 
