@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 from typing import Any, Sequence
 
+from mrp.core.build import build_repository, format_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
 from mrp.core.validate import format_validation, validate_repository
@@ -20,7 +21,6 @@ EXIT_RUNTIME = 5
 
 PLACEHOLDER_COMMANDS = {
     "init",
-    "build",
     "stage",
     "verify",
     "approve",
@@ -45,6 +45,10 @@ def build_parser() -> argparse.ArgumentParser:
     validate_parser = subparsers.add_parser("validate", help="Validate content records.")
     add_global_options(validate_parser, suppress_defaults=True)
     add_common_command_options(validate_parser, "validate")
+
+    build_command_parser = subparsers.add_parser("build", help="Build the static site.")
+    add_global_options(build_command_parser, suppress_defaults=True)
+    add_common_command_options(build_command_parser, "build")
 
     for command in sorted(PLACEHOLDER_COMMANDS):
         command_parser = subparsers.add_parser(command, help=f"{command} command placeholder.")
@@ -139,6 +143,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "import-site":
         print(format_import(result))
         return
+    if result["command"] == "build":
+        print(format_build(result))
+        return
 
     print(result["message"])
 
@@ -154,12 +161,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = inspect_repository(args.repo)
     elif args.command == "validate":
         result = validate_repository(args.repo, release=args.release)
+    elif args.command == "build":
+        result = build_repository(args.repo, release=args.release, skip_validate=args.skip_validate)
     elif args.command == "import-site":
         result = import_site(args.repo, source=args.source)
     else:
         result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))
-    if args.command == "validate" and result["status"] == "failed":
+    if args.command in {"validate", "build"} and result["status"] == "failed":
         return EXIT_FAILURE
     return EXIT_SUCCESS
 

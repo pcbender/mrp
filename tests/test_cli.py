@@ -42,13 +42,14 @@ def test_inspect_json_output_is_valid():
     assert payload["site_framework"]["name"] == "astro"
 
 
-def test_json_output_is_valid_for_placeholder_command():
+def test_json_output_is_valid_for_build_command():
     result = run_mrp("--json", "build")
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
     assert payload["command"] == "build"
-    assert payload["status"] == "not_implemented"
+    assert payload["status"] == "passed"
+    assert payload["build_path"].startswith("builds/staging/")
 
 
 def test_unknown_command_fails_cleanly():

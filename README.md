@@ -12,10 +12,10 @@ scripts/mrp --help
 scripts/mrp inspect
 scripts/mrp inspect --json
 scripts/mrp validate --json
+scripts/mrp build --json
 ```
 
-The MRP v0.1 CLI currently provides command routing and placeholder command
-handlers. Implemented commands will keep the same entry point and global flags:
+The MRP v0.1 CLI keeps the same entry point and global flags across commands:
 
 ```text
 --json
@@ -40,3 +40,8 @@ status
 release create
 import-site
 ```
+
+Implemented commands currently include `inspect`, `validate`, `import-site`, and
+`build`. The build command validates content, runs the Astro static site build,
+copies output to `builds/staging/{build-id}/`, and writes a JSON report under
+`reports/build/`.
