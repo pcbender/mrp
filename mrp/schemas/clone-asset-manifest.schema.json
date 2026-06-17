@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maricoparecords.local/mrp/clone-asset-manifest.schema.json",
+  "title": "MRP WordPress Static Clone Asset Manifest",
+  "type": "object",
+  "required": ["clone_assets"],
+  "additionalProperties": false,
+  "properties": {
+    "clone_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source_url", "local_path", "type", "status", "required"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+          "source_url": {"type": "string", "format": "uri"},
+          "local_path": {"type": "string", "minLength": 1},
+          "type": {"type": "string", "enum": ["image", "audio", "video", "document", "script", "style", "font", "other"]},
+          "status": {"type": "string", "enum": ["planned", "mirrored", "missing", "excluded"]},
+          "required": {"type": "boolean"},
+          "content_type": {"type": ["string", "null"]},
+          "bytes": {"type": ["integer", "null"], "minimum": 0},
+          "sha256": {"type": ["string", "null"]},
+          "used_by": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^/.*"}
+          }
+        }
+      }
+    }
+  }
+}

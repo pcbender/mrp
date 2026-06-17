@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maricoparecords.local/mrp/clone-record.schema.json",
+  "title": "MRP WordPress Static Clone Record",
+  "type": "object",
+  "required": ["clone"],
+  "additionalProperties": false,
+  "properties": {
+    "clone": {
+      "type": "object",
+      "required": ["id", "kind", "title", "status", "route", "source", "content_html"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "kind": {
+          "type": "string",
+          "enum": ["static_page", "artist_page", "release_page", "blog_post"]
+        },
+        "title": {"type": "string", "minLength": 1},
+        "status": {"type": "string", "enum": ["draft", "review", "ready", "archived"]},
+        "route": {"$ref": "#/$defs/route"},
+        "source": {"$ref": "#/$defs/source"},
+        "content_html": {"type": "string"},
+        "excerpt": {"type": ["string", "null"]},
+        "seo": {"$ref": "#/$defs/seo"},
+        "assets": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "notes": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "route": {
+      "type": "object",
+      "required": ["canonical_path", "aliases"],
+      "additionalProperties": false,
+      "properties": {
+        "canonical_path": {"type": "string", "pattern": "^/.*"},
+        "aliases": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^/.*"}
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["system", "id", "post_type", "post_status", "slug", "link"],
+      "additionalProperties": false,
+      "properties": {
+        "system": {"type": "string", "enum": ["wordpress"]},
+        "id": {"type": "string", "minLength": 1},
+        "post_type": {"type": "string", "minLength": 1},
+        "post_status": {"type": "string", "minLength": 1},
+        "slug": {"type": "string"},
+        "link": {"type": "string", "format": "uri"},
+        "guid": {"type": ["string", "null"]},
+        "captured_path": {"type": ["string", "null"]}
+      }
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {"type": ["string", "null"]},
+        "description": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

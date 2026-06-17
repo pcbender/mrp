@@ -90,3 +90,22 @@ scripts/mrp release create --artist pcbender --title "Signal Path" --type single
 
 The command writes `content/releases/{slug}.yaml`, creates
 `assets/releases/{slug}/`, refuses overwrite, and validates the generated draft.
+
+## WordPress Static Clone
+
+WXR-derived clone content lives under `content/clone/` and is separate from the
+curated MRP publishing records:
+
+- `content/clone/pages/` stores static pages, artist pages, and release pages.
+- `content/clone/posts/` stores blog/news posts.
+- `content/clone/assets/manifest.yaml` tracks WordPress assets referenced by
+  cloned HTML.
+
+Clone records use a single `clone` schema with `kind` distinguishing
+`static_page`, `artist_page`, `release_page`, and `blog_post`. The record keeps
+the WordPress source ID, post type, post status, source link, canonical path,
+aliases, and raw WXR `content_html`.
+
+This model is intentionally not the same as `content/artists/` or
+`content/releases/`. The clone layer preserves WordPress page content for the
+Astro static clone; the publishing layer remains the curated MRP release model.

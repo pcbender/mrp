@@ -19,6 +19,8 @@ SCHEMA_NAMES = {
     "page": "page.schema.json",
     "post": "post.schema.json",
     "redirects": "redirects.schema.json",
+    "clone_record": "clone-record.schema.json",
+    "clone_assets": "clone-asset-manifest.schema.json",
 }
 
 
@@ -40,6 +42,8 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
     releases = load_records(root / "content" / "releases", "release", schema_dir, errors)
     pages = load_records(root / "content" / "pages", "page", schema_dir, errors)
     posts = load_records(root / "content" / "posts", "post", schema_dir, errors)
+    clone_pages = load_records(root / "content" / "clone" / "pages", "clone_record", schema_dir, errors)
+    clone_posts = load_records(root / "content" / "clone" / "posts", "clone_record", schema_dir, errors)
     if release:
         releases = [item for item in releases if item["data"].get("release", {}).get("id") == release]
         if not releases:
@@ -52,6 +56,19 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
         if asset_manifest is not None:
             errors.extend(
                 validate_schema(asset_manifest_path, asset_manifest, schema_dir / SCHEMA_NAMES["assets"])
+            )
+
+    clone_asset_manifest_path = root / "content" / "clone" / "assets" / "manifest.yaml"
+    clone_asset_manifest = None
+    if clone_asset_manifest_path.exists():
+        clone_asset_manifest = load_content(clone_asset_manifest_path, errors)
+        if clone_asset_manifest is not None:
+            errors.extend(
+                validate_schema(
+                    clone_asset_manifest_path,
+                    clone_asset_manifest,
+                    schema_dir / SCHEMA_NAMES["clone_assets"],
+                )
             )
 
     redirects_path = root / "content" / "redirects.yaml"
@@ -67,6 +84,7 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
     errors.extend(validate_duplicates(pages, "page", "slug"))
     errors.extend(validate_duplicates(posts, "post", "id"))
     errors.extend(validate_duplicates(posts, "post", "slug"))
+    errors.extend(validate_duplicates(clone_pages + clone_posts, "clone", "id"))
     errors.extend(validate_artist_references(releases, artists))
     errors.extend(validate_asset_manifest(root, asset_manifest_path, asset_manifest))
     errors.extend(validate_release_assets(root, releases))
@@ -85,6 +103,9 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
             "releases": len(releases),
             "pages": len(pages),
             "posts": len(posts),
+            "clone_pages": len(clone_pages),
+            "clone_posts": len(clone_posts),
+            "clone_assets": len((clone_asset_manifest or {}).get("clone_assets", [])),
         },
         "errors": errors,
         "warnings": warnings,

@@ -226,6 +226,16 @@
     {
       "label": "contact-submit.php",
       "file_type": "code",
+      "source_file": "builds/archive/production-20260617T230253Z/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "production_20260617t230253z_contact_submit",
+      "community": 265,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
       "source_file": "builds/local-production/contact-submit.php",
       "source_location": "L1",
       "_origin": "ast",
@@ -1624,6 +1634,56 @@
       "norm_label": "contact-submit.php"
     },
     {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230220597161Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230220597161z_site_contact_submit",
+      "community": 260,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230224333170Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230224333170z_circuiting_contact_submit",
+      "community": 261,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230229474179Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230229474179z_site_contact_submit",
+      "community": 262,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230236247445Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230236247445z_circuiting_contact_submit",
+      "community": 263,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T230248762813Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t230248762813z_site_contact_submit",
+      "community": 264,
+      "norm_label": "contact-submit.php"
+    },
+    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "mrp/__init__.py",
@@ -1780,7 +1840,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_approve",
-      "community": 0,
+      "community": 254,
       "norm_label": "approve.py"
     },
     {
@@ -1790,7 +1850,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "core_approve_approve",
-      "community": 0,
+      "community": 254,
       "norm_label": "approve()"
     },
     {
@@ -1800,7 +1860,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mrp_core_approve_py_path",
-      "community": 0,
+      "community": 254,
       "norm_label": "path"
     },
     {
@@ -1810,7 +1870,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "mrp_core_approve_py_any",
-      "community": 0,
+      "community": 254,
       "norm_label": "any"
     },
     {
@@ -1820,7 +1880,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "core_approve_latest_verification",
-      "community": 0,
+      "community": 254,
       "norm_label": "latest_verification()"
     },
     {
@@ -1830,7 +1890,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "core_approve_add_error",
-      "community": 0,
+      "community": 254,
       "norm_label": "add_error()"
     },
     {
@@ -1840,7 +1900,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "core_approve_finish",
-      "community": 0,
+      "community": 254,
       "norm_label": "finish()"
     },
     {
@@ -1850,7 +1910,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "core_approve_approval_id",
-      "community": 0,
+      "community": 254,
       "norm_label": "approval_id()"
     },
     {
@@ -1860,7 +1920,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "core_approve_write_approval",
-      "community": 0,
+      "community": 254,
       "norm_label": "write_approval()"
     },
     {
@@ -1870,7 +1930,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "core_approve_now_utc",
-      "community": 0,
+      "community": 254,
       "norm_label": "now_utc()"
     },
     {
@@ -1880,7 +1940,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "core_approve_format_approval",
-      "community": 0,
+      "community": 254,
       "norm_label": "format_approval()"
     },
     {
@@ -1890,7 +1950,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_build",
-      "community": 13,
+      "community": 0,
       "norm_label": "build.py"
     },
     {
@@ -1900,7 +1960,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "core_build_build_repository",
-      "community": 13,
+      "community": 0,
       "norm_label": "build_repository()"
     },
     {
@@ -1910,7 +1970,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mrp_core_build_py_path",
-      "community": 13,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -1920,7 +1980,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mrp_core_build_py_any",
-      "community": 13,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -1930,7 +1990,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "core_build_base_result",
-      "community": 13,
+      "community": 0,
       "norm_label": "base_result()"
     },
     {
@@ -1940,7 +2000,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "core_build_now_utc",
-      "community": 13,
+      "community": 0,
       "norm_label": "now_utc()"
     },
     {
@@ -1950,7 +2010,7 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "core_build_next_build_id",
-      "community": 13,
+      "community": 0,
       "norm_label": "next_build_id()"
     },
     {
@@ -1960,7 +2020,7 @@
       "source_location": "L156",
       "_origin": "ast",
       "id": "core_build_inventory_files",
-      "community": 13,
+      "community": 0,
       "norm_label": "inventory_files()"
     },
     {
@@ -1970,7 +2030,7 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "core_build_write_build_report",
-      "community": 13,
+      "community": 0,
       "norm_label": "write_build_report()"
     },
     {
@@ -1980,7 +2040,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "core_build_format_build",
-      "community": 13,
+      "community": 0,
       "norm_label": "format_build()"
     },
     {
@@ -3020,7 +3080,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_release",
-      "community": 0,
+      "community": 13,
       "norm_label": "release.py"
     },
     {
@@ -3030,7 +3090,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "core_release_create_release",
-      "community": 0,
+      "community": 13,
       "norm_label": "create_release()"
     },
     {
@@ -3040,7 +3100,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mrp_core_release_py_path",
-      "community": 0,
+      "community": 13,
       "norm_label": "path"
     },
     {
@@ -3050,7 +3110,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "mrp_core_release_py_any",
-      "community": 0,
+      "community": 13,
       "norm_label": "any"
     },
     {
@@ -3060,7 +3120,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "core_release_release_record",
-      "community": 0,
+      "community": 13,
       "norm_label": "release_record()"
     },
     {
@@ -3070,7 +3130,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "core_release_track",
-      "community": 0,
+      "community": 13,
       "norm_label": "track()"
     },
     {
@@ -3080,7 +3140,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "core_release_slugify",
-      "community": 0,
+      "community": 13,
       "norm_label": "slugify()"
     },
     {
@@ -3090,7 +3150,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "core_release_failed",
-      "community": 0,
+      "community": 13,
       "norm_label": "failed()"
     },
     {
@@ -3110,7 +3170,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_rollback",
-      "community": 243,
+      "community": 0,
       "norm_label": "rollback.py"
     },
     {
@@ -3120,7 +3180,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "core_rollback_rollback",
-      "community": 243,
+      "community": 0,
       "norm_label": "rollback()"
     },
     {
@@ -3130,7 +3190,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mrp_core_rollback_py_path",
-      "community": 243,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -3140,7 +3200,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mrp_core_rollback_py_any",
-      "community": 243,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -3150,7 +3210,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "core_rollback_rollback_candidate",
-      "community": 243,
+      "community": 0,
       "norm_label": "rollback_candidate()"
     },
     {
@@ -3160,7 +3220,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "core_rollback_clear_target",
-      "community": 243,
+      "community": 0,
       "norm_label": "clear_target()"
     },
     {
@@ -3170,7 +3230,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "core_rollback_copy_tree",
-      "community": 243,
+      "community": 0,
       "norm_label": "copy_tree()"
     },
     {
@@ -3180,7 +3240,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "core_rollback_add_error",
-      "community": 243,
+      "community": 0,
       "norm_label": "add_error()"
     },
     {
@@ -3190,7 +3250,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "core_rollback_finish",
-      "community": 243,
+      "community": 0,
       "norm_label": "finish()"
     },
     {
@@ -3200,7 +3260,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "core_rollback_write_rollback_report",
-      "community": 243,
+      "community": 0,
       "norm_label": "write_rollback_report()"
     },
     {
@@ -3210,7 +3270,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "core_rollback_now_utc",
-      "community": 243,
+      "community": 0,
       "norm_label": "now_utc()"
     },
     {
@@ -3220,7 +3280,7 @@
       "source_location": "L135",
       "_origin": "ast",
       "id": "core_rollback_format_rollback",
-      "community": 243,
+      "community": 0,
       "norm_label": "format_rollback()"
     },
     {
@@ -3337,7 +3397,7 @@
       "label": "validate_repository()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L25",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "core_validate_validate_repository",
       "community": 13,
@@ -3347,7 +3407,7 @@
       "label": "Path",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L25",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "mrp_core_validate_py_path",
       "community": 13,
@@ -3357,7 +3417,7 @@
       "label": "Any",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L25",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "mrp_core_validate_py_any",
       "community": 13,
@@ -3367,7 +3427,7 @@
       "label": "load_records()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L97",
+      "source_location": "L118",
       "_origin": "ast",
       "id": "core_validate_load_records",
       "community": 13,
@@ -3377,7 +3437,7 @@
       "label": "load_content()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L118",
+      "source_location": "L139",
       "_origin": "ast",
       "id": "core_validate_load_content",
       "community": 13,
@@ -3387,7 +3447,7 @@
       "label": "load_schema()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L128",
+      "source_location": "L149",
       "_origin": "ast",
       "id": "core_validate_load_schema",
       "community": 13,
@@ -3397,7 +3457,7 @@
       "label": "validate_schema()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L132",
+      "source_location": "L153",
       "_origin": "ast",
       "id": "core_validate_validate_schema",
       "community": 13,
@@ -3407,7 +3467,7 @@
       "label": "validate_duplicates()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L140",
+      "source_location": "L161",
       "_origin": "ast",
       "id": "core_validate_validate_duplicates",
       "community": 13,
@@ -3417,7 +3477,7 @@
       "label": "validate_artist_references()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L160",
+      "source_location": "L181",
       "_origin": "ast",
       "id": "core_validate_validate_artist_references",
       "community": 13,
@@ -3427,7 +3487,7 @@
       "label": "validate_asset_manifest()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L179",
+      "source_location": "L200",
       "_origin": "ast",
       "id": "core_validate_validate_asset_manifest",
       "community": 13,
@@ -3437,7 +3497,7 @@
       "label": "validate_release_assets()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L195",
+      "source_location": "L216",
       "_origin": "ast",
       "id": "core_validate_validate_release_assets",
       "community": 13,
@@ -3447,7 +3507,7 @@
       "label": "report_path()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L209",
+      "source_location": "L230",
       "_origin": "ast",
       "id": "core_validate_report_path",
       "community": 13,
@@ -3457,7 +3517,7 @@
       "label": "write_report()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L215",
+      "source_location": "L236",
       "_origin": "ast",
       "id": "core_validate_write_report",
       "community": 13,
@@ -3467,7 +3527,7 @@
       "label": "error_record()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L221",
+      "source_location": "L242",
       "_origin": "ast",
       "id": "core_validate_error_record",
       "community": 13,
@@ -3477,7 +3537,7 @@
       "label": "format_validation()",
       "file_type": "code",
       "source_file": "mrp/core/validate.py",
-      "source_location": "L230",
+      "source_location": "L251",
       "_origin": "ast",
       "id": "core_validate_format_validation",
       "community": 0,
@@ -4010,7 +4070,7 @@
       "source_location": "L306",
       "_origin": "ast",
       "id": "core_wxr_format_wxr_inventory",
-      "community": 205,
+      "community": 0,
       "norm_label": "format_wxr_inventory()"
     },
     {
@@ -4751,6 +4811,1296 @@
       "_origin": "ast",
       "id": "schemas_asset_manifest_schema_alt_type",
       "community": 6,
+      "norm_label": "type"
+    },
+    {
+      "label": "clone-asset-manifest.schema.json",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema",
+      "community": 243,
+      "norm_label": "clone-asset-manifest.schema.json"
+    },
+    {
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_schema",
+      "community": 243,
+      "norm_label": "$schema"
+    },
+    {
+      "label": "$id",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_id",
+      "community": 243,
+      "norm_label": "$id"
+    },
+    {
+      "label": "title",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_title",
+      "community": 243,
+      "norm_label": "title"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "required",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_required",
+      "community": 243,
+      "norm_label": "required"
+    },
+    {
+      "label": "additionalProperties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_additionalproperties",
+      "community": 243,
+      "norm_label": "additionalproperties"
+    },
+    {
+      "label": "properties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties",
+      "community": 243,
+      "norm_label": "properties"
+    },
+    {
+      "label": "clone_assets",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_clone_assets",
+      "community": 243,
+      "norm_label": "clone_assets"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_clone_assets_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "items",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_clone_assets_items",
+      "community": 243,
+      "norm_label": "items"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_items_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "required",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_items_required",
+      "community": 243,
+      "norm_label": "required"
+    },
+    {
+      "label": "additionalProperties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_items_additionalproperties",
+      "community": 243,
+      "norm_label": "additionalproperties"
+    },
+    {
+      "label": "properties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_items_properties",
+      "community": 243,
+      "norm_label": "properties"
+    },
+    {
+      "label": "id",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_id",
+      "community": 243,
+      "norm_label": "id"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_id_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "pattern",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_id_pattern",
+      "community": 243,
+      "norm_label": "pattern"
+    },
+    {
+      "label": "source_url",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_source_url",
+      "community": 243,
+      "norm_label": "source_url"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_source_url_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "format",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_source_url_format",
+      "community": 243,
+      "norm_label": "format"
+    },
+    {
+      "label": "local_path",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_local_path",
+      "community": 243,
+      "norm_label": "local_path"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_local_path_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "minLength",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_local_path_minlength",
+      "community": 243,
+      "norm_label": "minlength"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_type_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "enum",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_type_enum",
+      "community": 243,
+      "norm_label": "enum"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_status",
+      "community": 243,
+      "norm_label": "status"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_status_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "enum",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_status_enum",
+      "community": 243,
+      "norm_label": "enum"
+    },
+    {
+      "label": "required",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_required",
+      "community": 243,
+      "norm_label": "required"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_required_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "content_type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_content_type",
+      "community": 243,
+      "norm_label": "content_type"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_content_type_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "bytes",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_bytes",
+      "community": 243,
+      "norm_label": "bytes"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_bytes_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "minimum",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_bytes_minimum",
+      "community": 243,
+      "norm_label": "minimum"
+    },
+    {
+      "label": "sha256",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_sha256",
+      "community": 243,
+      "norm_label": "sha256"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_sha256_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "used_by",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_properties_used_by",
+      "community": 243,
+      "norm_label": "used_by"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_used_by_type",
+      "community": 243,
+      "norm_label": "type"
+    },
+    {
+      "label": "items",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_used_by_items",
+      "community": 243,
+      "norm_label": "items"
+    },
+    {
+      "label": "pattern",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "schemas_clone_asset_manifest_schema_items_pattern",
+      "community": 243,
+      "norm_label": "pattern"
+    },
+    {
+      "label": "clone-record.schema.json",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema",
+      "community": 253,
+      "norm_label": "clone-record.schema.json"
+    },
+    {
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_schema",
+      "community": 253,
+      "norm_label": "$schema"
+    },
+    {
+      "label": "$id",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_id",
+      "community": 253,
+      "norm_label": "$id"
+    },
+    {
+      "label": "title",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_title",
+      "community": 253,
+      "norm_label": "title"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_type",
+      "community": 253,
+      "norm_label": "type"
+    },
+    {
+      "label": "required",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_required",
+      "community": 253,
+      "norm_label": "required"
+    },
+    {
+      "label": "additionalProperties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_additionalproperties",
+      "community": 253,
+      "norm_label": "additionalproperties"
+    },
+    {
+      "label": "properties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties",
+      "community": 253,
+      "norm_label": "properties"
+    },
+    {
+      "label": "clone",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_clone",
+      "community": 253,
+      "norm_label": "clone"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_clone_type",
+      "community": 253,
+      "norm_label": "type"
+    },
+    {
+      "label": "required",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_clone_required",
+      "community": 253,
+      "norm_label": "required"
+    },
+    {
+      "label": "additionalProperties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_clone_additionalproperties",
+      "community": 253,
+      "norm_label": "additionalproperties"
+    },
+    {
+      "label": "properties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_clone_properties",
+      "community": 252,
+      "norm_label": "properties"
+    },
+    {
+      "label": "id",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_id",
+      "community": 252,
+      "norm_label": "id"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_id_type",
+      "community": 252,
+      "norm_label": "type"
+    },
+    {
+      "label": "pattern",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_id_pattern",
+      "community": 252,
+      "norm_label": "pattern"
+    },
+    {
+      "label": "kind",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_kind",
+      "community": 252,
+      "norm_label": "kind"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_kind_type",
+      "community": 252,
+      "norm_label": "type"
+    },
+    {
+      "label": "enum",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_kind_enum",
+      "community": 252,
+      "norm_label": "enum"
+    },
+    {
+      "label": "title",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_title",
+      "community": 258,
+      "norm_label": "title"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_title_type",
+      "community": 258,
+      "norm_label": "type"
+    },
+    {
+      "label": "minLength",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_title_minlength",
+      "community": 258,
+      "norm_label": "minlength"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_status",
+      "community": 259,
+      "norm_label": "status"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_status_type",
+      "community": 259,
+      "norm_label": "type"
+    },
+    {
+      "label": "enum",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_status_enum",
+      "community": 259,
+      "norm_label": "enum"
+    },
+    {
+      "label": "route",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_route",
+      "community": 252,
+      "norm_label": "route"
+    },
+    {
+      "label": "$ref",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_route_ref",
+      "community": 252,
+      "norm_label": "$ref"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_source",
+      "community": 252,
+      "norm_label": "source"
+    },
+    {
+      "label": "$ref",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_source_ref",
+      "community": 252,
+      "norm_label": "$ref"
+    },
+    {
+      "label": "content_html",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_content_html",
+      "community": 252,
+      "norm_label": "content_html"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_content_html_type",
+      "community": 252,
+      "norm_label": "type"
+    },
+    {
+      "label": "excerpt",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_excerpt",
+      "community": 252,
+      "norm_label": "excerpt"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_excerpt_type",
+      "community": 252,
+      "norm_label": "type"
+    },
+    {
+      "label": "seo",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_seo",
+      "community": 252,
+      "norm_label": "seo"
+    },
+    {
+      "label": "$ref",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_seo_ref",
+      "community": 252,
+      "norm_label": "$ref"
+    },
+    {
+      "label": "assets",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_assets",
+      "community": 255,
+      "norm_label": "assets"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_assets_type",
+      "community": 255,
+      "norm_label": "type"
+    },
+    {
+      "label": "items",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_assets_items",
+      "community": 255,
+      "norm_label": "items"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_items_type",
+      "community": 255,
+      "norm_label": "type"
+    },
+    {
+      "label": "minLength",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_items_minlength",
+      "community": 255,
+      "norm_label": "minlength"
+    },
+    {
+      "label": "notes",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_notes",
+      "community": 255,
+      "norm_label": "notes"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_notes_type",
+      "community": 255,
+      "norm_label": "type"
+    },
+    {
+      "label": "items",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_notes_items",
+      "community": 255,
+      "norm_label": "items"
+    },
+    {
+      "label": "$defs",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_defs",
+      "community": 257,
+      "norm_label": "$defs"
+    },
+    {
+      "label": "route",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_defs_route",
+      "community": 256,
+      "norm_label": "route"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_route_type",
+      "community": 256,
+      "norm_label": "type"
+    },
+    {
+      "label": "required",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_route_required",
+      "community": 256,
+      "norm_label": "required"
+    },
+    {
+      "label": "additionalProperties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_route_additionalproperties",
+      "community": 256,
+      "norm_label": "additionalproperties"
+    },
+    {
+      "label": "properties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_route_properties",
+      "community": 256,
+      "norm_label": "properties"
+    },
+    {
+      "label": "canonical_path",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_canonical_path",
+      "community": 256,
+      "norm_label": "canonical_path"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_canonical_path_type",
+      "community": 256,
+      "norm_label": "type"
+    },
+    {
+      "label": "pattern",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_canonical_path_pattern",
+      "community": 256,
+      "norm_label": "pattern"
+    },
+    {
+      "label": "aliases",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_aliases",
+      "community": 256,
+      "norm_label": "aliases"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_aliases_type",
+      "community": 256,
+      "norm_label": "type"
+    },
+    {
+      "label": "items",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_aliases_items",
+      "community": 255,
+      "norm_label": "items"
+    },
+    {
+      "label": "pattern",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_items_pattern",
+      "community": 255,
+      "norm_label": "pattern"
+    },
+    {
+      "label": "source",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_defs_source",
+      "community": 257,
+      "norm_label": "source"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_source_type",
+      "community": 257,
+      "norm_label": "type"
+    },
+    {
+      "label": "required",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_source_required",
+      "community": 257,
+      "norm_label": "required"
+    },
+    {
+      "label": "additionalProperties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_source_additionalproperties",
+      "community": 257,
+      "norm_label": "additionalproperties"
+    },
+    {
+      "label": "properties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_source_properties",
+      "community": 251,
+      "norm_label": "properties"
+    },
+    {
+      "label": "system",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_system",
+      "community": 251,
+      "norm_label": "system"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_system_type",
+      "community": 251,
+      "norm_label": "type"
+    },
+    {
+      "label": "enum",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_system_enum",
+      "community": 251,
+      "norm_label": "enum"
+    },
+    {
+      "label": "minLength",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L56",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_id_minlength",
+      "community": 252,
+      "norm_label": "minlength"
+    },
+    {
+      "label": "post_type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_post_type",
+      "community": 251,
+      "norm_label": "post_type"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_post_type_type",
+      "community": 251,
+      "norm_label": "type"
+    },
+    {
+      "label": "minLength",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_post_type_minlength",
+      "community": 251,
+      "norm_label": "minlength"
+    },
+    {
+      "label": "post_status",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_post_status",
+      "community": 251,
+      "norm_label": "post_status"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_post_status_type",
+      "community": 251,
+      "norm_label": "type"
+    },
+    {
+      "label": "minLength",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_post_status_minlength",
+      "community": 251,
+      "norm_label": "minlength"
+    },
+    {
+      "label": "slug",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_slug",
+      "community": 251,
+      "norm_label": "slug"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_slug_type",
+      "community": 251,
+      "norm_label": "type"
+    },
+    {
+      "label": "link",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_link",
+      "community": 251,
+      "norm_label": "link"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_link_type",
+      "community": 251,
+      "norm_label": "type"
+    },
+    {
+      "label": "format",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L60",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_link_format",
+      "community": 251,
+      "norm_label": "format"
+    },
+    {
+      "label": "guid",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_guid",
+      "community": 251,
+      "norm_label": "guid"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_guid_type",
+      "community": 251,
+      "norm_label": "type"
+    },
+    {
+      "label": "captured_path",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_captured_path",
+      "community": 251,
+      "norm_label": "captured_path"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_captured_path_type",
+      "community": 251,
+      "norm_label": "type"
+    },
+    {
+      "label": "seo",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L65",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_defs_seo",
+      "community": 257,
+      "norm_label": "seo"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_seo_type",
+      "community": 257,
+      "norm_label": "type"
+    },
+    {
+      "label": "additionalProperties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L67",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_seo_additionalproperties",
+      "community": 257,
+      "norm_label": "additionalproperties"
+    },
+    {
+      "label": "properties",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_seo_properties",
+      "community": 258,
+      "norm_label": "properties"
+    },
+    {
+      "label": "description",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_properties_description",
+      "community": 258,
+      "norm_label": "description"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "schemas_clone_record_schema_description_type",
+      "community": 258,
       "norm_label": "type"
     },
     {
@@ -10291,6 +11641,56 @@
       "norm_label": "test_invalid_migrated_page_fails_validation()"
     },
     {
+      "label": "clone_record()",
+      "file_type": "code",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L111",
+      "_origin": "ast",
+      "id": "tests_test_validate_clone_record",
+      "community": 24,
+      "norm_label": "clone_record()"
+    },
+    {
+      "label": "clone_asset_manifest()",
+      "file_type": "code",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L144",
+      "_origin": "ast",
+      "id": "tests_test_validate_clone_asset_manifest",
+      "community": 24,
+      "norm_label": "clone_asset_manifest()"
+    },
+    {
+      "label": "test_validate_clone_records_and_asset_manifest()",
+      "file_type": "code",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L163",
+      "_origin": "ast",
+      "id": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
+      "community": 24,
+      "norm_label": "test_validate_clone_records_and_asset_manifest()"
+    },
+    {
+      "label": "test_invalid_clone_record_fails_independent_validation()",
+      "file_type": "code",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L181",
+      "_origin": "ast",
+      "id": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
+      "community": 24,
+      "norm_label": "test_invalid_clone_record_fails_independent_validation()"
+    },
+    {
+      "label": "test_duplicate_clone_ids_fail_across_clone_pages_and_posts()",
+      "file_type": "code",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L198",
+      "_origin": "ast",
+      "id": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
+      "community": 24,
+      "norm_label": "test_duplicate_clone_ids_fail_across_clone_pages_and_posts()"
+    },
+    {
       "label": "test_verify.py",
       "file_type": "code",
       "source_file": "tests/test_verify.py",
@@ -10801,6 +12201,16 @@
       "norm_label": "releases"
     },
     {
+      "label": "WordPress Static Clone",
+      "file_type": "document",
+      "source_file": "docs/CONTENT-MODEL.md",
+      "source_location": "L94",
+      "_origin": "ast",
+      "id": "docs_content_model_wordpress_static_clone",
+      "community": 36,
+      "norm_label": "wordpress static clone"
+    },
+    {
       "label": "DEPLOYMENT.md",
       "file_type": "document",
       "source_file": "docs/DEPLOYMENT.md",
@@ -11287,7 +12697,7 @@
       "source_location": "L1070",
       "_origin": "ast",
       "id": "docs_mrp_v0_1_specification_17_work_packets",
-      "community": 37,
+      "community": 49,
       "norm_label": "17. work packets"
     },
     {
@@ -13215,9 +14625,9 @@
       "source_file": "mrp/cli/main.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cli_main",
-      "target": "core_wxr_format_wxr_inventory",
-      "confidence_score": 1.0
+      "target": "core_wxr_format_wxr_inventory"
     },
     {
       "relation": "imports",
@@ -13226,9 +14636,9 @@
       "source_file": "mrp/cli/main.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cli_main",
-      "target": "core_wxr_wxr_inventory",
-      "confidence_score": 1.0
+      "target": "core_wxr_wxr_inventory"
     },
     {
       "relation": "references",
@@ -13479,9 +14889,9 @@
       "source_file": "mrp/cli/main.py",
       "source_location": "L208",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cli_main_emit",
-      "target": "core_wxr_format_wxr_inventory",
-      "confidence_score": 1.0
+      "target": "core_wxr_format_wxr_inventory"
     },
     {
       "relation": "calls",
@@ -13633,9 +15043,9 @@
       "source_file": "mrp/cli/main.py",
       "source_location": "L256",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "cli_main_main",
-      "target": "core_wxr_wxr_inventory",
-      "confidence_score": 1.0
+      "target": "core_wxr_wxr_inventory"
     },
     {
       "relation": "contains",
@@ -16843,9 +18253,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_migration_inventory_resolve_source",
-      "confidence_score": 1.0
+      "target": "core_migration_inventory_resolve_source"
     },
     {
       "relation": "calls",
@@ -16854,9 +18264,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_migration_inventory_resolve_source",
-      "confidence_score": 1.0
+      "target": "core_migration_inventory_resolve_source"
     },
     {
       "relation": "calls",
@@ -19869,9 +21279,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_classify_wxr_item",
-      "confidence_score": 1.0
+      "target": "core_wxr_classify_wxr_item"
     },
     {
       "relation": "contains",
@@ -19879,9 +21289,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L266",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_exclusion_summary",
-      "confidence_score": 1.0
+      "target": "core_wxr_exclusion_summary"
     },
     {
       "relation": "contains",
@@ -19889,9 +21299,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L306",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_format_wxr_inventory",
-      "confidence_score": 1.0
+      "target": "core_wxr_format_wxr_inventory"
     },
     {
       "relation": "contains",
@@ -19899,9 +21309,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L280",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_integer_text",
-      "confidence_score": 1.0
+      "target": "core_wxr_integer_text"
     },
     {
       "relation": "contains",
@@ -19909,9 +21319,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L248",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_inventory_summary",
-      "confidence_score": 1.0
+      "target": "core_wxr_inventory_summary"
     },
     {
       "relation": "contains",
@@ -19919,9 +21329,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_load_json",
-      "confidence_score": 1.0
+      "target": "core_wxr_load_json"
     },
     {
       "relation": "contains",
@@ -19929,9 +21339,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_normalize_capture_route",
-      "confidence_score": 1.0
+      "target": "core_wxr_normalize_capture_route"
     },
     {
       "relation": "contains",
@@ -19939,9 +21349,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L302",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_now_utc",
-      "confidence_score": 1.0
+      "target": "core_wxr_now_utc"
     },
     {
       "relation": "contains",
@@ -19949,9 +21359,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_parse_item",
-      "confidence_score": 1.0
+      "target": "core_wxr_parse_item"
     },
     {
       "relation": "contains",
@@ -19959,9 +21369,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_parse_wxr",
-      "confidence_score": 1.0
+      "target": "core_wxr_parse_wxr"
     },
     {
       "relation": "contains",
@@ -19969,9 +21379,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L217",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_public_page_category",
-      "confidence_score": 1.0
+      "target": "core_wxr_public_page_category"
     },
     {
       "relation": "contains",
@@ -19979,9 +21389,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L297",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_report_path",
-      "confidence_score": 1.0
+      "target": "core_wxr_report_path"
     },
     {
       "relation": "contains",
@@ -19989,9 +21399,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L244",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_route_parts",
-      "confidence_score": 1.0
+      "target": "core_wxr_route_parts"
     },
     {
       "relation": "contains",
@@ -19999,9 +21409,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L273",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_text",
-      "confidence_score": 1.0
+      "target": "core_wxr_text"
     },
     {
       "relation": "contains",
@@ -20009,9 +21419,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L292",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_write_json",
-      "confidence_score": 1.0
+      "target": "core_wxr_write_json"
     },
     {
       "relation": "contains",
@@ -20019,9 +21429,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr",
-      "target": "core_wxr_wxr_inventory",
-      "confidence_score": 1.0
+      "target": "core_wxr_wxr_inventory"
     },
     {
       "relation": "calls",
@@ -20030,9 +21440,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_classify_wxr_item",
-      "confidence_score": 1.0
+      "target": "core_wxr_classify_wxr_item"
     },
     {
       "relation": "calls",
@@ -20041,9 +21451,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_exclusion_summary",
-      "confidence_score": 1.0
+      "target": "core_wxr_exclusion_summary"
     },
     {
       "relation": "calls",
@@ -20052,9 +21462,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_inventory_summary",
-      "confidence_score": 1.0
+      "target": "core_wxr_inventory_summary"
     },
     {
       "relation": "calls",
@@ -20063,9 +21473,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_load_json",
-      "confidence_score": 1.0
+      "target": "core_wxr_load_json"
     },
     {
       "relation": "calls",
@@ -20074,9 +21484,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_normalize_capture_route",
-      "confidence_score": 1.0
+      "target": "core_wxr_normalize_capture_route"
     },
     {
       "relation": "calls",
@@ -20085,9 +21495,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_now_utc",
-      "confidence_score": 1.0
+      "target": "core_wxr_now_utc"
     },
     {
       "relation": "calls",
@@ -20096,9 +21506,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_parse_wxr",
-      "confidence_score": 1.0
+      "target": "core_wxr_parse_wxr"
     },
     {
       "relation": "calls",
@@ -20107,9 +21517,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L56",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_report_path",
-      "confidence_score": 1.0
+      "target": "core_wxr_report_path"
     },
     {
       "relation": "calls",
@@ -20118,9 +21528,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "core_wxr_write_json",
-      "confidence_score": 1.0
+      "target": "core_wxr_write_json"
     },
     {
       "relation": "references",
@@ -20129,9 +21539,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20140,9 +21550,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_wxr_inventory",
-      "target": "mrp_core_wxr_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_path"
     },
     {
       "relation": "imports",
@@ -20151,9 +21561,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "core_wxr_wxr_inventory",
-      "confidence_score": 1.0
+      "target": "core_wxr_wxr_inventory"
     },
     {
       "relation": "calls",
@@ -20162,9 +21572,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_test_wxr_inventory_reads_real_export_and_capture_manifest",
-      "target": "core_wxr_wxr_inventory",
-      "confidence_score": 1.0
+      "target": "core_wxr_wxr_inventory"
     },
     {
       "relation": "references",
@@ -20173,9 +21583,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_load_json",
-      "target": "mrp_core_wxr_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_path"
     },
     {
       "relation": "references",
@@ -20184,9 +21594,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_parse_wxr",
-      "target": "mrp_core_wxr_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_path"
     },
     {
       "relation": "references",
@@ -20195,9 +21605,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L297",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_report_path",
-      "target": "mrp_core_wxr_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_path"
     },
     {
       "relation": "references",
@@ -20206,9 +21616,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L292",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_write_json",
-      "target": "mrp_core_wxr_py_path",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_path"
     },
     {
       "relation": "references",
@@ -20217,9 +21627,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_classify_wxr_item",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20228,9 +21638,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L266",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_exclusion_summary",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20239,9 +21649,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L306",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_format_wxr_inventory",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20250,9 +21660,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L248",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_inventory_summary",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20261,9 +21671,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_load_json",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20272,9 +21682,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L228",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_normalize_capture_route",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20283,9 +21693,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_parse_item",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20294,9 +21704,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_parse_wxr",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "references",
@@ -20305,9 +21715,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L292",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_write_json",
-      "target": "mrp_core_wxr_py_any",
-      "confidence_score": 1.0
+      "target": "mrp_core_wxr_py_any"
     },
     {
       "relation": "calls",
@@ -20316,9 +21726,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_parse_wxr",
-      "target": "core_wxr_parse_item",
-      "confidence_score": 1.0
+      "target": "core_wxr_parse_item"
     },
     {
       "relation": "calls",
@@ -20327,9 +21737,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L109",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_parse_wxr",
-      "target": "core_wxr_text",
-      "confidence_score": 1.0
+      "target": "core_wxr_text"
     },
     {
       "relation": "imports",
@@ -20338,9 +21748,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "core_wxr_parse_wxr",
-      "confidence_score": 1.0
+      "target": "core_wxr_parse_wxr"
     },
     {
       "relation": "calls",
@@ -20349,9 +21759,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
-      "target": "core_wxr_parse_wxr",
-      "confidence_score": 1.0
+      "target": "core_wxr_parse_wxr"
     },
     {
       "relation": "calls",
@@ -20360,9 +21770,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_test_parse_wxr_preserves_namespaced_fields_and_raw_content",
-      "target": "core_wxr_parse_wxr",
-      "confidence_score": 1.0
+      "target": "core_wxr_parse_wxr"
     },
     {
       "relation": "calls",
@@ -20371,9 +21781,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L162",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_parse_item",
-      "target": "core_wxr_integer_text",
-      "confidence_score": 1.0
+      "target": "core_wxr_integer_text"
     },
     {
       "relation": "calls",
@@ -20382,9 +21792,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_parse_item",
-      "target": "core_wxr_text",
-      "confidence_score": 1.0
+      "target": "core_wxr_text"
     },
     {
       "relation": "references",
@@ -20393,9 +21803,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_parse_item",
-      "target": "element",
-      "confidence_score": 1.0
+      "target": "element"
     },
     {
       "relation": "references",
@@ -20404,9 +21814,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L280",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_integer_text",
-      "target": "element",
-      "confidence_score": 1.0
+      "target": "element"
     },
     {
       "relation": "references",
@@ -20415,9 +21825,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L273",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_text",
-      "target": "element",
-      "confidence_score": 1.0
+      "target": "element"
     },
     {
       "relation": "calls",
@@ -20426,9 +21836,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L194",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_classify_wxr_item",
-      "target": "core_wxr_public_page_category",
-      "confidence_score": 1.0
+      "target": "core_wxr_public_page_category"
     },
     {
       "relation": "imports",
@@ -20437,9 +21847,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "core_wxr_classify_wxr_item",
-      "confidence_score": 1.0
+      "target": "core_wxr_classify_wxr_item"
     },
     {
       "relation": "calls",
@@ -20448,9 +21858,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L125",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
-      "target": "core_wxr_classify_wxr_item",
-      "confidence_score": 1.0
+      "target": "core_wxr_classify_wxr_item"
     },
     {
       "relation": "calls",
@@ -20459,9 +21869,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L218",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_public_page_category",
-      "target": "core_wxr_route_parts",
-      "confidence_score": 1.0
+      "target": "core_wxr_route_parts"
     },
     {
       "relation": "calls",
@@ -20470,9 +21880,9 @@
       "source_file": "mrp/core/wxr.py",
       "source_location": "L281",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_wxr_integer_text",
-      "target": "core_wxr_text",
-      "confidence_score": 1.0
+      "target": "core_wxr_text"
     },
     {
       "relation": "contains",
@@ -21203,6 +22613,1336 @@
       "confidence_score": 1.0,
       "source": "schemas_asset_manifest_schema_properties_alt",
       "target": "schemas_asset_manifest_schema_alt_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema",
+      "target": "schemas_clone_asset_manifest_schema_additionalproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema",
+      "target": "schemas_clone_asset_manifest_schema_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema",
+      "target": "schemas_clone_asset_manifest_schema_properties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema",
+      "target": "schemas_clone_asset_manifest_schema_required",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema",
+      "target": "schemas_clone_asset_manifest_schema_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema",
+      "target": "schemas_clone_asset_manifest_schema_title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema",
+      "target": "schemas_clone_asset_manifest_schema_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_clone_assets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_clone_assets",
+      "target": "schemas_clone_asset_manifest_schema_clone_assets_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_clone_assets",
+      "target": "schemas_clone_asset_manifest_schema_clone_assets_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_clone_assets_items",
+      "target": "schemas_clone_asset_manifest_schema_items_additionalproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_clone_assets_items",
+      "target": "schemas_clone_asset_manifest_schema_items_properties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_clone_assets_items",
+      "target": "schemas_clone_asset_manifest_schema_items_required",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_clone_assets_items",
+      "target": "schemas_clone_asset_manifest_schema_items_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_used_by_items",
+      "target": "schemas_clone_asset_manifest_schema_items_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_bytes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_content_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_local_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_required",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_sha256",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_source_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_items_properties",
+      "target": "schemas_clone_asset_manifest_schema_properties_used_by",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_id",
+      "target": "schemas_clone_asset_manifest_schema_id_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_id",
+      "target": "schemas_clone_asset_manifest_schema_id_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_source_url",
+      "target": "schemas_clone_asset_manifest_schema_source_url_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_source_url",
+      "target": "schemas_clone_asset_manifest_schema_source_url_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_local_path",
+      "target": "schemas_clone_asset_manifest_schema_local_path_minlength",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_local_path",
+      "target": "schemas_clone_asset_manifest_schema_local_path_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_type",
+      "target": "schemas_clone_asset_manifest_schema_type_enum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_type",
+      "target": "schemas_clone_asset_manifest_schema_type_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_status",
+      "target": "schemas_clone_asset_manifest_schema_status_enum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_status",
+      "target": "schemas_clone_asset_manifest_schema_status_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_required",
+      "target": "schemas_clone_asset_manifest_schema_required_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_content_type",
+      "target": "schemas_clone_asset_manifest_schema_content_type_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_bytes",
+      "target": "schemas_clone_asset_manifest_schema_bytes_minimum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_bytes",
+      "target": "schemas_clone_asset_manifest_schema_bytes_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_sha256",
+      "target": "schemas_clone_asset_manifest_schema_sha256_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_used_by",
+      "target": "schemas_clone_asset_manifest_schema_used_by_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_properties_used_by",
+      "target": "schemas_clone_asset_manifest_schema_used_by_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-asset-manifest.schema.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "schemas_clone_asset_manifest_schema_used_by_items",
+      "target": "schemas_clone_asset_manifest_schema_items_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema",
+      "target": "schemas_clone_record_schema_additionalproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema",
+      "target": "schemas_clone_record_schema_defs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema",
+      "target": "schemas_clone_record_schema_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema",
+      "target": "schemas_clone_record_schema_properties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema",
+      "target": "schemas_clone_record_schema_required",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema",
+      "target": "schemas_clone_record_schema_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema",
+      "target": "schemas_clone_record_schema_title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema",
+      "target": "schemas_clone_record_schema_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties",
+      "target": "schemas_clone_record_schema_properties_clone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_clone",
+      "target": "schemas_clone_record_schema_clone_additionalproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_clone",
+      "target": "schemas_clone_record_schema_clone_properties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_clone",
+      "target": "schemas_clone_record_schema_clone_required",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_clone",
+      "target": "schemas_clone_record_schema_clone_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_assets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_content_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_excerpt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_kind",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_notes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_seo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_clone_properties",
+      "target": "schemas_clone_record_schema_properties_title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_id",
+      "target": "schemas_clone_record_schema_id_minlength",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_id",
+      "target": "schemas_clone_record_schema_id_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_id",
+      "target": "schemas_clone_record_schema_id_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_source_properties",
+      "target": "schemas_clone_record_schema_properties_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_kind",
+      "target": "schemas_clone_record_schema_kind_enum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_kind",
+      "target": "schemas_clone_record_schema_kind_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_title",
+      "target": "schemas_clone_record_schema_title_minlength",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_title",
+      "target": "schemas_clone_record_schema_title_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_seo_properties",
+      "target": "schemas_clone_record_schema_properties_title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_status",
+      "target": "schemas_clone_record_schema_status_enum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_status",
+      "target": "schemas_clone_record_schema_status_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_route",
+      "target": "schemas_clone_record_schema_route_ref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_source",
+      "target": "schemas_clone_record_schema_source_ref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_content_html",
+      "target": "schemas_clone_record_schema_content_html_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_excerpt",
+      "target": "schemas_clone_record_schema_excerpt_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_seo",
+      "target": "schemas_clone_record_schema_seo_ref",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_assets",
+      "target": "schemas_clone_record_schema_assets_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_assets",
+      "target": "schemas_clone_record_schema_assets_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_assets_items",
+      "target": "schemas_clone_record_schema_items_minlength",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_assets_items",
+      "target": "schemas_clone_record_schema_items_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_aliases_items",
+      "target": "schemas_clone_record_schema_items_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_notes_items",
+      "target": "schemas_clone_record_schema_items_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_notes_items",
+      "target": "schemas_clone_record_schema_items_minlength",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_notes",
+      "target": "schemas_clone_record_schema_notes_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_notes",
+      "target": "schemas_clone_record_schema_notes_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs",
+      "target": "schemas_clone_record_schema_defs_route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs",
+      "target": "schemas_clone_record_schema_defs_seo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs",
+      "target": "schemas_clone_record_schema_defs_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_route",
+      "target": "schemas_clone_record_schema_route_additionalproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_route",
+      "target": "schemas_clone_record_schema_route_properties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_route",
+      "target": "schemas_clone_record_schema_route_required",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_route",
+      "target": "schemas_clone_record_schema_route_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_route_properties",
+      "target": "schemas_clone_record_schema_properties_aliases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_route_properties",
+      "target": "schemas_clone_record_schema_properties_canonical_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_canonical_path",
+      "target": "schemas_clone_record_schema_canonical_path_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_canonical_path",
+      "target": "schemas_clone_record_schema_canonical_path_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_aliases",
+      "target": "schemas_clone_record_schema_aliases_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_aliases",
+      "target": "schemas_clone_record_schema_aliases_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_aliases_items",
+      "target": "schemas_clone_record_schema_items_pattern",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_source",
+      "target": "schemas_clone_record_schema_source_additionalproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_source",
+      "target": "schemas_clone_record_schema_source_properties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_source",
+      "target": "schemas_clone_record_schema_source_required",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_source",
+      "target": "schemas_clone_record_schema_source_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_source_properties",
+      "target": "schemas_clone_record_schema_properties_captured_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_source_properties",
+      "target": "schemas_clone_record_schema_properties_guid",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_source_properties",
+      "target": "schemas_clone_record_schema_properties_link",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_source_properties",
+      "target": "schemas_clone_record_schema_properties_post_status",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_source_properties",
+      "target": "schemas_clone_record_schema_properties_post_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_source_properties",
+      "target": "schemas_clone_record_schema_properties_slug",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_source_properties",
+      "target": "schemas_clone_record_schema_properties_system",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_system",
+      "target": "schemas_clone_record_schema_system_enum",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_system",
+      "target": "schemas_clone_record_schema_system_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_post_type",
+      "target": "schemas_clone_record_schema_post_type_minlength",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_post_type",
+      "target": "schemas_clone_record_schema_post_type_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_post_status",
+      "target": "schemas_clone_record_schema_post_status_minlength",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_post_status",
+      "target": "schemas_clone_record_schema_post_status_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_slug",
+      "target": "schemas_clone_record_schema_slug_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_link",
+      "target": "schemas_clone_record_schema_link_format",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_link",
+      "target": "schemas_clone_record_schema_link_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_guid",
+      "target": "schemas_clone_record_schema_guid_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_captured_path",
+      "target": "schemas_clone_record_schema_captured_path_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_seo",
+      "target": "schemas_clone_record_schema_seo_additionalproperties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_seo",
+      "target": "schemas_clone_record_schema_seo_properties",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_defs_seo",
+      "target": "schemas_clone_record_schema_seo_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_seo_properties",
+      "target": "schemas_clone_record_schema_properties_description",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/schemas/clone-record.schema.json",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "schemas_clone_record_schema_properties_description",
+      "target": "schemas_clone_record_schema_description_type",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -28512,6 +31252,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_validate.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "tests_test_validate",
+      "target": "tests_test_validate_clone_asset_manifest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "tests_test_validate",
+      "target": "tests_test_validate_clone_record",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
       "source_location": "L28",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -28527,6 +31287,26 @@
       "confidence_score": 1.0,
       "source": "tests_test_validate",
       "target": "tests_test_validate_run_mrp"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "tests_test_validate",
+      "target": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "tests_test_validate",
+      "target": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -28557,6 +31337,16 @@
       "confidence_score": 1.0,
       "source": "tests_test_validate",
       "target": "tests_test_validate_test_missing_cover_image_fails_for_publishable_release"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "tests_test_validate",
+      "target": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -28625,6 +31415,28 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_validate.py",
+      "source_location": "L206",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
+      "target": "tests_test_validate_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L187",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
+      "target": "tests_test_validate_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
       "source_location": "L104",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -28652,6 +31464,17 @@
       "confidence_score": 1.0,
       "source": "tests_test_validate_test_missing_cover_image_fails_for_publishable_release",
       "target": "tests_test_validate_run_mrp"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
+      "target": "tests_test_validate_run_mrp",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -28713,6 +31536,28 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_validate.py",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
+      "target": "tests_test_validate_write_yaml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L185",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
+      "target": "tests_test_validate_write_yaml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
       "source_location": "L102",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -28746,11 +31591,44 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_validate.py",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
+      "target": "tests_test_validate_write_yaml",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
       "source_location": "L88",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "tests_test_validate_test_validate_migrated_page_and_post_records",
       "target": "tests_test_validate_write_yaml"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
+      "target": "tests_test_validate_minimal_repo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
+      "target": "tests_test_validate_minimal_repo",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -28790,6 +31668,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "tests/test_validate.py",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
+      "target": "tests_test_validate_minimal_repo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
       "source_location": "L85",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -28806,6 +31695,50 @@
       "confidence_score": 1.0,
       "source": "tests_test_validate_test_validate_release_filter_unknown_release_fails",
       "target": "tests_test_validate_minimal_repo"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L200",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_duplicate_clone_ids_fail_across_clone_pages_and_posts",
+      "target": "tests_test_validate_clone_record",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_invalid_clone_record_fails_independent_validation",
+      "target": "tests_test_validate_clone_record",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L165",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
+      "target": "tests_test_validate_clone_record",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_validate.py",
+      "source_location": "L170",
+      "weight": 1.0,
+      "source": "tests_test_validate_test_validate_clone_records_and_asset_manifest",
+      "target": "tests_test_validate_clone_asset_manifest",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -29219,9 +32152,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "tests_test_wxr_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_run_mrp"
     },
     {
       "relation": "contains",
@@ -29229,9 +32162,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions"
     },
     {
       "relation": "contains",
@@ -29239,9 +32172,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "tests_test_wxr_test_parse_wxr_preserves_namespaced_fields_and_raw_content",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_test_parse_wxr_preserves_namespaced_fields_and_raw_content"
     },
     {
       "relation": "contains",
@@ -29249,9 +32182,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L156",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "tests_test_wxr_test_wxr_inventory_cli_outputs_json",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_test_wxr_inventory_cli_outputs_json"
     },
     {
       "relation": "contains",
@@ -29259,9 +32192,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L169",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "tests_test_wxr_test_wxr_inventory_missing_source_fails_cleanly",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_test_wxr_inventory_missing_source_fails_cleanly"
     },
     {
       "relation": "contains",
@@ -29269,9 +32202,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "tests_test_wxr_test_wxr_inventory_reads_real_export_and_capture_manifest",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_test_wxr_inventory_reads_real_export_and_capture_manifest"
     },
     {
       "relation": "contains",
@@ -29279,9 +32212,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr",
-      "target": "tests_test_wxr_write_wxr",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_write_wxr"
     },
     {
       "relation": "calls",
@@ -29290,9 +32223,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
-      "target": "tests_test_wxr_write_wxr",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_write_wxr"
     },
     {
       "relation": "calls",
@@ -29301,9 +32234,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L102",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_test_parse_wxr_preserves_namespaced_fields_and_raw_content",
-      "target": "tests_test_wxr_write_wxr",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_write_wxr"
     },
     {
       "relation": "references",
@@ -29312,9 +32245,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_write_wxr",
-      "target": "tests_test_wxr_py_path",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_py_path"
     },
     {
       "relation": "references",
@@ -29323,9 +32256,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_run_mrp",
-      "target": "tests_test_wxr_py_completedprocess",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_py_completedprocess"
     },
     {
       "relation": "calls",
@@ -29334,9 +32267,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L159",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_test_wxr_inventory_cli_outputs_json",
-      "target": "tests_test_wxr_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_run_mrp"
     },
     {
       "relation": "calls",
@@ -29345,9 +32278,9 @@
       "source_file": "tests/test_wxr.py",
       "source_location": "L173",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_wxr_test_wxr_inventory_missing_source_fails_cleanly",
-      "target": "tests_test_wxr_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_wxr_run_mrp"
     },
     {
       "relation": "contains",
@@ -29538,6 +32471,16 @@
       "confidence_score": 1.0,
       "source": "docs_content_model_content_model",
       "target": "docs_content_model_site"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/CONTENT-MODEL.md",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "docs_content_model_content_model",
+      "target": "docs_content_model_wordpress_static_clone",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -31421,5 +34364,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "179197316c06acfda6625bd6a4e662b03a769b27"
+  "built_at_commit": "896d78742f0ca03a7d03baba01aaa7e22a62cf05"
 }

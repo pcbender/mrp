@@ -35,12 +35,12 @@
     "semantic_hash": ""
   },
   "builds/local-staging/build-manifest.json": {
-    "mtime": 1781737056.0435216,
-    "ast_hash": "12baa4932922979f4a19c1d9583af21b",
+    "mtime": 1781737372.3586807,
+    "ast_hash": "8b02a3407f9c8144787363d23d0b23bb",
     "semantic_hash": ""
   },
   "builds/local-staging/contact-submit.php": {
-    "mtime": 1781737054.8335218,
+    "mtime": 1781737371.1437562,
     "ast_hash": "4925692a8a695e2923aed9a437a08561",
     "semantic_hash": ""
   },
@@ -520,7 +520,7 @@
     "semantic_hash": ""
   },
   "content/releases/circuiting.json": {
-    "mtime": 1781737046.7957108,
+    "mtime": 1781737363.0701816,
     "ast_hash": "7dd5f36a2bb04412a983ce9bf216cd72",
     "semantic_hash": ""
   },
@@ -590,8 +590,8 @@
     "semantic_hash": ""
   },
   "mrp/core/validate.py": {
-    "mtime": 1781728590.2483904,
-    "ast_hash": "b97b7b34fc2233cfb9e4809bc5150f46",
+    "mtime": 1781737287.1519835,
+    "ast_hash": "67e8858d4bc9249898b2737cabd92f59",
     "semantic_hash": ""
   },
   "mrp/core/verify.py": {
@@ -1300,8 +1300,8 @@
     "semantic_hash": ""
   },
   "tests/test_validate.py": {
-    "mtime": 1781729103.3624249,
-    "ast_hash": "5ec665baf8c17333f6fbe2667e89e9c0",
+    "mtime": 1781737311.170124,
+    "ast_hash": "fd48efe1cd7916a3a9185b38609aed57",
     "semantic_hash": ""
   },
   "tests/test_verify.py": {
@@ -1455,42 +1455,42 @@
     "semantic_hash": ""
   },
   "builds/local-staging/about-us/index.html": {
-    "mtime": 1781737055.8735216,
+    "mtime": 1781737372.1986809,
     "ast_hash": "5e41aa313aaf34ecc376dcf8f36836fe",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/index.html": {
-    "mtime": 1781737055.8835216,
+    "mtime": 1781737372.1986809,
     "ast_hash": "ee72a1c89fff7a760b602bacf4201892",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/index.html": {
-    "mtime": 1781737055.8835216,
+    "mtime": 1781737372.1986809,
     "ast_hash": "655f64a6b2c780b7d9595417ce259095",
     "semantic_hash": ""
   },
   "builds/local-staging/catalog/index.html": {
-    "mtime": 1781737055.8835216,
+    "mtime": 1781737372.1986809,
     "ast_hash": "3d619d2c81eb9dfefa882b0e7d99fa09",
     "semantic_hash": ""
   },
   "builds/local-staging/contact/index.html": {
-    "mtime": 1781737055.8935215,
+    "mtime": 1781737372.2086809,
     "ast_hash": "6fb5de4c413db028ddad3eced836fcd4",
     "semantic_hash": ""
   },
   "builds/local-staging/index.html": {
-    "mtime": 1781737055.8935215,
+    "mtime": 1781737372.2086809,
     "ast_hash": "635c61f3a91f63002a97fe0abcc29ac9",
     "semantic_hash": ""
   },
   "builds/local-staging/releases/circuiting/index.html": {
-    "mtime": 1781737055.9035215,
+    "mtime": 1781737372.2186809,
     "ast_hash": "45d937504f74a821b29161889fe09bb6",
     "semantic_hash": ""
   },
   "builds/local-staging/releases/index.html": {
-    "mtime": 1781737055.9035215,
+    "mtime": 1781737372.2186809,
     "ast_hash": "cbf8ac23c2c52645fd2b73d7b87332f1",
     "semantic_hash": ""
   },
@@ -3410,8 +3410,8 @@
     "semantic_hash": ""
   },
   "docs/CONTENT-MODEL.md": {
-    "mtime": 1781726051.151932,
-    "ast_hash": "0a0359119e2448eddce42692a480572f",
+    "mtime": 1781737318.623564,
+    "ast_hash": "1a8a3124057e92fab508e9682854481a",
     "semantic_hash": ""
   },
   "docs/DEPLOYMENT.md": {
@@ -3500,12 +3500,12 @@
     "semantic_hash": ""
   },
   "builds/local-staging/assets/maricopa-mark.svg": {
-    "mtime": 1781737054.7035217,
+    "mtime": 1781737371.0237563,
     "ast_hash": "4209d0f2f2acc716b627e818210daff6",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/releases/circuiting-cover.svg": {
-    "mtime": 1781737054.8335218,
+    "mtime": 1781737371.1437562,
     "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
     "semantic_hash": ""
   },
@@ -4705,7 +4705,7 @@
     "semantic_hash": ""
   },
   "content/redirects.yaml": {
-    "mtime": 1781737050.1957102,
+    "mtime": 1781737366.570181,
     "ast_hash": "9e986edbfe1f0a7583338f11057c8426",
     "semantic_hash": ""
   },
@@ -7400,187 +7400,187 @@
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
-    "mtime": 1781737054.7035217,
+    "mtime": 1781737371.0337563,
     "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/078e2b862c5f-Burn_Me.png": {
-    "mtime": 1781737054.7035217,
+    "mtime": 1781737371.0337563,
     "ast_hash": "40fa9771de4761f00e299b25b599161f",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
-    "mtime": 1781737054.7135217,
+    "mtime": 1781737371.0337563,
     "ast_hash": "89f94b100c4b587006b97dd5b59995de",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
-    "mtime": 1781737054.7135217,
+    "mtime": 1781737371.0437562,
     "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
-    "mtime": 1781737054.723522,
+    "mtime": 1781737371.0437562,
     "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/36b8e37ecd24-TU2.png": {
-    "mtime": 1781737054.723522,
+    "mtime": 1781737371.0437562,
     "ast_hash": "ea294a03ceb395534266006d58183693",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
-    "mtime": 1781737054.723522,
+    "mtime": 1781737371.0437562,
     "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
-    "mtime": 1781737054.723522,
+    "mtime": 1781737371.0537562,
     "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
-    "mtime": 1781737054.733522,
+    "mtime": 1781737371.0537562,
     "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
-    "mtime": 1781737054.733522,
+    "mtime": 1781737371.0537562,
     "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
-    "mtime": 1781737054.743522,
+    "mtime": 1781737371.0637562,
     "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
-    "mtime": 1781737054.743522,
+    "mtime": 1781737371.0637562,
     "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/640c69717d01-Tits-Up.png": {
-    "mtime": 1781737054.743522,
+    "mtime": 1781737371.0637562,
     "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
-    "mtime": 1781737054.753522,
+    "mtime": 1781737371.0737562,
     "ast_hash": "5273317edaf73f7174f8339a54264d6c",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
-    "mtime": 1781737054.753522,
+    "mtime": 1781737371.0737562,
     "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/76195be631e4-Umbra_Ala.png": {
-    "mtime": 1781737054.763522,
+    "mtime": 1781737371.0837562,
     "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
-    "mtime": 1781737054.763522,
+    "mtime": 1781737371.0837562,
     "ast_hash": "56e10e233d5acd56ff540269f015b30e",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/8744705d2da3-Have-A-Heart.png": {
-    "mtime": 1781737054.763522,
+    "mtime": 1781737371.0837562,
     "ast_hash": "dd000847aea308c829267d0c219b3192",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
-    "mtime": 1781737054.773522,
+    "mtime": 1781737371.0937562,
     "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/90aec637524d-LA_Profile_square.png": {
-    "mtime": 1781737054.773522,
+    "mtime": 1781737371.0937562,
     "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
-    "mtime": 1781737054.773522,
+    "mtime": 1781737371.0937562,
     "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/9738fd064754-PCBender.png": {
-    "mtime": 1781737054.783522,
+    "mtime": 1781737371.1037562,
     "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/a07742867a4f-Specter.jpg": {
-    "mtime": 1781737054.783522,
+    "mtime": 1781737371.1037562,
     "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
-    "mtime": 1781737054.783522,
+    "mtime": 1781737371.1037562,
     "ast_hash": "c38922af483e77597fd92bef4ad7862a",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/a86cd61722ea-WindsOfChange.png": {
-    "mtime": 1781737054.793522,
+    "mtime": 1781737371.1137562,
     "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
-    "mtime": 1781737054.793522,
+    "mtime": 1781737371.1137562,
     "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/b95b541b1109-Nancy.png": {
-    "mtime": 1781737054.793522,
+    "mtime": 1781737371.1137562,
     "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
-    "mtime": 1781737054.793522,
+    "mtime": 1781737371.1137562,
     "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
-    "mtime": 1781737054.793522,
+    "mtime": 1781737371.1137562,
     "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
-    "mtime": 1781737054.8035219,
+    "mtime": 1781737371.1137562,
     "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
-    "mtime": 1781737054.8035219,
+    "mtime": 1781737371.1237562,
     "ast_hash": "c6b0936c90d11e779d845dff813c6098",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
-    "mtime": 1781737054.8035219,
+    "mtime": 1781737371.1237562,
     "ast_hash": "b7f676bce295c17273c6576acabd2a76",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
-    "mtime": 1781737054.8135219,
+    "mtime": 1781737371.1337562,
     "ast_hash": "8236838440fb007d15e0cee573dbac05",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
-    "mtime": 1781737054.8135219,
+    "mtime": 1781737371.1337562,
     "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/f38a42a461ad-AboutUsImage.png": {
-    "mtime": 1781737054.8235219,
+    "mtime": 1781737371.1437562,
     "ast_hash": "78f30683705e69cd0a14f877f31176c0",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
-    "mtime": 1781737054.8235219,
+    "mtime": 1781737371.1437562,
     "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
     "semantic_hash": ""
   },
   "builds/local-staging/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
-    "mtime": 1781737054.8235219,
+    "mtime": 1781737371.1437562,
     "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
     "semantic_hash": ""
   },
@@ -10865,232 +10865,232 @@
     "semantic_hash": ""
   },
   "builds/local-staging/2025/02/26/the-future-of-ai-in-music/index.html": {
-    "mtime": 1781737054.9735217,
+    "mtime": 1781737371.2837563,
     "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
     "semantic_hash": ""
   },
   "builds/local-staging/2025/02/28/a-conversation-with-echo/index.html": {
-    "mtime": 1781737055.0035217,
+    "mtime": 1781737371.3137562,
     "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
     "semantic_hash": ""
   },
   "builds/local-staging/2025/02/28/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
-    "mtime": 1781737055.0235217,
+    "mtime": 1781737371.3337562,
     "ast_hash": "41defac63270550cdc7156e73a584b79",
     "semantic_hash": ""
   },
   "builds/local-staging/a-conversation-with-echo/index.html": {
-    "mtime": 1781737055.043522,
+    "mtime": 1781737371.3537562,
     "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/4castle/distance-not-safety/index.html": {
-    "mtime": 1781737055.0935218,
+    "mtime": 1781737371.4037561,
     "ast_hash": "b9bd09afc7e02e25f5808297411620a7",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/4castle/gone-and-forgotten/index.html": {
-    "mtime": 1781737055.1135218,
+    "mtime": 1781737371.4237561,
     "ast_hash": "8ab6e59aa2dffb4a28f1871764ab9520",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/4castle/index.html": {
-    "mtime": 1781737055.0635219,
+    "mtime": 1781737371.3737562,
     "ast_hash": "7787b4f5e1b8e98b3d4611d62d1bb98d",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/4castle/on-the-advent-of-a-dream/index.html": {
-    "mtime": 1781737055.1335218,
+    "mtime": 1781737371.443756,
     "ast_hash": "6c0ffa7b30d6c0a5e74503f00496dba0",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/4castle/then-she-descends/index.html": {
-    "mtime": 1781737055.1535218,
+    "mtime": 1781737371.463756,
     "ast_hash": "b7b5eb0adc3514998b2f4b5f4706c6e6",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/4castle/umbra-ala/index.html": {
-    "mtime": 1781737055.1735218,
+    "mtime": 1781737371.483756,
     "ast_hash": "d6cbfb16643a83003b0f768f3c3b45f0",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/lingua-aeternum/index.html": {
-    "mtime": 1781737055.1935217,
+    "mtime": 1781737371.503756,
     "ast_hash": "3ccb931e3718aa8134683039c1ceca3b",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/abundant-emptiness/index.html": {
-    "mtime": 1781737055.2135217,
+    "mtime": 1781737371.523756,
     "ast_hash": "3567af943edb7e0f5f52d4570d52ddda",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/bakers-dozen/index.html": {
-    "mtime": 1781737055.2335217,
+    "mtime": 1781737371.543756,
     "ast_hash": "787efcf5f5bcd772df4e2aac3d1e6206",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/by-starlight-drifting-west-2/index.html": {
-    "mtime": 1781737055.2535217,
+    "mtime": 1781737371.5637562,
     "ast_hash": "e9bedb68a3c6dfe6ae62ddbed9ab7d35",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/circuiting/index.html": {
-    "mtime": 1781737055.2835217,
+    "mtime": 1781737371.5837562,
     "ast_hash": "abaa565f4705c2cf87d3d82ebf94ef28",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/comfortable-specter/index.html": {
-    "mtime": 1781737055.3035216,
+    "mtime": 1781737383.8063383,
     "ast_hash": "b034dab03da1447a0693f0ffee5c9f3f",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/elemental-fundamental/index.html": {
-    "mtime": 1781737055.3235216,
+    "mtime": 1781737383.8163383,
     "ast_hash": "1a9641cffb87c8cd11f5bdf994f82b2a",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/gemini-rising/index.html": {
-    "mtime": 1781737055.3435218,
+    "mtime": 1781737383.8363383,
     "ast_hash": "09a298ab2b271134f9dd64b0a91edec6",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/halfway-in-between/index.html": {
-    "mtime": 1781737055.3635218,
+    "mtime": 1781737383.8563383,
     "ast_hash": "27741e9ba2f1db6a9d64f04ab03af30c",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/have-a-heart/index.html": {
-    "mtime": 1781737055.3835218,
+    "mtime": 1781737383.8763382,
     "ast_hash": "808be8b04d53bf6e5fd70c2dd74f883b",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/nancy-dance-with-me/index.html": {
-    "mtime": 1781737055.4035218,
+    "mtime": 1781737383.8963382,
     "ast_hash": "09405cd402281f684ce8fecc9413d429",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/nearly-nothin-nowhere-fast/index.html": {
-    "mtime": 1781737055.4235218,
+    "mtime": 1781737383.9163382,
     "ast_hash": "97ed3dbba2c17b078582a0aff3641e86",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/red-green-and-blues/index.html": {
-    "mtime": 1781737055.4435217,
+    "mtime": 1781737371.7586808,
     "ast_hash": "1231d8ff0dd66840776ac58f397fc67f",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/riders-and-runners/index.html": {
-    "mtime": 1781737055.4635217,
+    "mtime": 1781737371.7786808,
     "ast_hash": "5e7da53d5dea1896a6f4d934890e7000",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/sawmill-pond/index.html": {
-    "mtime": 1781737055.4835217,
+    "mtime": 1781737371.798681,
     "ast_hash": "9733a7f2435badc9c676764fc5030c3e",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/scattershot-forget-me-not/index.html": {
-    "mtime": 1781737055.5035217,
+    "mtime": 1781737371.818681,
     "ast_hash": "14405d24d4946539d037bb29af010f60",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/still-my-days-before/index.html": {
-    "mtime": 1781737055.5235217,
+    "mtime": 1781737371.838681,
     "ast_hash": "0503a5026164be9d713008d398a64d4a",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/the-one-that-got-away/index.html": {
-    "mtime": 1781737055.5435216,
+    "mtime": 1781737371.858681,
     "ast_hash": "96c1e7d04732f849f4a72c980ed43d1b",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/tits-up/index.html": {
-    "mtime": 1781737055.5635216,
+    "mtime": 1781737371.878681,
     "ast_hash": "dd8aa23a88471b4c0c3e39cb656facbf",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/too-blue-to-lose/index.html": {
-    "mtime": 1781737055.5835216,
+    "mtime": 1781737371.898681,
     "ast_hash": "725be5aff528e79cbc7781eddc7ee80d",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/two-tree-road/index.html": {
-    "mtime": 1781737055.6035216,
+    "mtime": 1781737371.918681,
     "ast_hash": "58ebb88d2e32c61ae7a4996497774bb1",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/pcbender/winds-of-change/index.html": {
-    "mtime": 1781737055.6235216,
+    "mtime": 1781737371.938681,
     "ast_hash": "6ec3cd6deacbf643ef6f8c3a313b3c79",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/stab/between-the-bottle-and-goodbye/index.html": {
-    "mtime": 1781737055.6435215,
+    "mtime": 1781737371.9586809,
     "ast_hash": "501a2038d26368ee9fa2109c3b3c9885",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/stab/burn-me/index.html": {
-    "mtime": 1781737055.6635218,
+    "mtime": 1781737371.9786808,
     "ast_hash": "70a6cf34c72c9b5254b38754f809ee06",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/stab/here-comes-the-rain/index.html": {
-    "mtime": 1781737055.6835217,
+    "mtime": 1781737371.9986808,
     "ast_hash": "26fd527987ed122b13e5cd80bcd37549",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/stab/the-hardest-gift/index.html": {
-    "mtime": 1781737055.7035217,
+    "mtime": 1781737372.0186808,
     "ast_hash": "3f1fb078a7132089a5444c46207584f1",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/stab/tits-up-remix/index.html": {
-    "mtime": 1781737055.7135217,
+    "mtime": 1781737372.0386808,
     "ast_hash": "96dff70f7731c28ae591b0d6642ed491",
     "semantic_hash": ""
   },
   "builds/local-staging/artists/stab/you-still-have-my-heart/index.html": {
-    "mtime": 1781737055.7335217,
+    "mtime": 1781737372.0586808,
     "ast_hash": "e744bd4df36f226d55297ba25dd0f7a7",
     "semantic_hash": ""
   },
   "builds/local-staging/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
-    "mtime": 1781737055.7535217,
+    "mtime": 1781737372.0786808,
     "ast_hash": "41defac63270550cdc7156e73a584b79",
     "semantic_hash": ""
   },
   "builds/local-staging/licensing-custom-songs/custom-songs-for-hire/index.html": {
-    "mtime": 1781737055.7935216,
+    "mtime": 1781737372.118681,
     "ast_hash": "1853b80c048ac275fb4acb228e45e8d5",
     "semantic_hash": ""
   },
   "builds/local-staging/licensing-custom-songs/index.html": {
-    "mtime": 1781737055.7735217,
+    "mtime": 1781737372.098681,
     "ast_hash": "c98fdead8c6bf7f074e8219c395187e5",
     "semantic_hash": ""
   },
   "builds/local-staging/licensing-custom-songs/music-licensing/index.html": {
-    "mtime": 1781737055.8135216,
+    "mtime": 1781737372.138681,
     "ast_hash": "b7daac49f39ca3efc609db9c3d29012d",
     "semantic_hash": ""
   },
   "builds/local-staging/portfolio/index.html": {
-    "mtime": 1781737055.8335216,
+    "mtime": 1781737372.148681,
     "ast_hash": "c6be37fc1158186273c37329df363870",
     "semantic_hash": ""
   },
   "builds/local-staging/posts/index.html": {
-    "mtime": 1781737055.8935215,
+    "mtime": 1781737372.2186809,
     "ast_hash": "e42276af91f88a22a66962d97e6bd48a",
     "semantic_hash": ""
   },
   "builds/local-staging/the-future-of-ai-in-music/index.html": {
-    "mtime": 1781737055.8535216,
+    "mtime": 1781737372.168681,
     "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
     "semantic_hash": ""
   },
   "builds/local-staging/trashed-2/index.html": {
-    "mtime": 1781737055.8735216,
+    "mtime": 1781737372.188681,
     "ast_hash": "7797f5443e6efde8a2ae67a4500b967c",
     "semantic_hash": ""
   },
@@ -27605,8 +27605,8 @@
     "semantic_hash": ""
   },
   "reports/migration/v011-full-site-e2e.json": {
-    "mtime": 1781737057.391999,
-    "ast_hash": "7bed8bba5428153645472d51fed88f4b",
+    "mtime": 1781737373.6886806,
+    "ast_hash": "ab4d7f1a7fd53da3883e658801aa5eb6",
     "semantic_hash": ""
   },
   "reports/rollback/20260617T211844Z.json": {
@@ -33601,6 +33601,2571 @@
   },
   "builds/staging/20260617T225732396114Z-site/assets/releases/circuiting-cover.svg": {
     "mtime": 1781737054.8335218,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/build-manifest.json": {
+    "mtime": 1781724868.8251379,
+    "ast_hash": "ebca03e1ac46c2e1981b93a25c96174a",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/contact-submit.php": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/build-manifest.json": {
+    "mtime": 1781737344.226659,
+    "ast_hash": "863e2b72ff0cfb87d17e004007c11fff",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/contact-submit.php": {
+    "mtime": 1781737343.0166593,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/build-manifest.json": {
+    "mtime": 1781737347.959984,
+    "ast_hash": "4a265aff480fbd8b56a9ab91aadc594f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/contact-submit.php": {
+    "mtime": 1781737358.926122,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/build-manifest.json": {
+    "mtime": 1781737353.0523949,
+    "ast_hash": "2477062a47357c26685510c2cb364e73",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/contact-submit.php": {
+    "mtime": 1781737351.8623953,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/build-manifest.json": {
+    "mtime": 1781737360.0483713,
+    "ast_hash": "154a761a0e69e1c684379acbddb6c562",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/contact-submit.php": {
+    "mtime": 1781737358.6883717,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/build-manifest.json": {
+    "mtime": 1781737372.3586807,
+    "ast_hash": "8b02a3407f9c8144787363d23d0b23bb",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/contact-submit.php": {
+    "mtime": 1781737371.1437562,
+    "ast_hash": "4925692a8a695e2923aed9a437a08561",
+    "semantic_hash": ""
+  },
+  "mrp/schemas/clone-asset-manifest.schema.json": {
+    "mtime": 1781737268.358818,
+    "ast_hash": "f1212f03849e7ab2946bf708ece5e2a4",
+    "semantic_hash": ""
+  },
+  "mrp/schemas/clone-record.schema.json": {
+    "mtime": 1781737258.1084485,
+    "ast_hash": "a9a3c187db058abe53842e753444dba5",
+    "semantic_hash": ""
+  },
+  "reports/approval/circuiting-20260617T230253Z.json": {
+    "mtime": 1781737373.8070984,
+    "ast_hash": "099d70b250ff8d6d5763487eb2b1ee91",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T230240Z-local-staging-20260617T230236247445Z-circuiting.json": {
+    "mtime": 1781737360.2683713,
+    "ast_hash": "73409a142cad3ee2876a5524902c062f",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T230252Z-local-staging-20260617T230248762813Z-site.json": {
+    "mtime": 1781737372.5786808,
+    "ast_hash": "79fa57ed4da7090392c3d275efee77d0",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T230253Z-local-production-20260617T230236247445Z-circuiting.json": {
+    "mtime": 1781737361.8701818,
+    "ast_hash": "67453becac401c861522122eb29b0cea",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260617T230253Z-publish-20260617T230236247445Z-circuiting.json": {
+    "mtime": 1781737363.0701816,
+    "ast_hash": "af11607d7213770f0f5b472f570f5bb3",
+    "semantic_hash": ""
+  },
+  "reports/migration/20260617T225953Z-wxr-inventory.json": {
+    "mtime": 1781737193.1091585,
+    "ast_hash": "02f6b7dd8afad9a7aa5d01315e698ab1",
+    "semantic_hash": ""
+  },
+  "reports/migration/20260617T230246Z-content-generation.json": {
+    "mtime": 1781737367.553757,
+    "ast_hash": "7dd5ad3f89064d2fa04060d6697614b7",
+    "semantic_hash": ""
+  },
+  "reports/rollback/20260617T230244Z.json": {
+    "mtime": 1781737365.340181,
+    "ast_hash": "11d4d7f19ee41bbdc7615f6b0f85cda6",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230204Z.json": {
+    "mtime": 1781737324.9033086,
+    "ast_hash": "17c67531444796982ff4e6edbf15f4bf",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230205Z.json": {
+    "mtime": 1781737325.0533087,
+    "ast_hash": "b76ccd7d73522ed495f1bc558af20973",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230225Z.json": {
+    "mtime": 1781737345.3666587,
+    "ast_hash": "b482742130492ab4d5f7e8d423474679",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230230Z.json": {
+    "mtime": 1781737350.4799838,
+    "ast_hash": "6631425ca11a4e934ef86427e903922a",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230233Z.json": {
+    "mtime": 1781737353.8052013,
+    "ast_hash": "ec7f2e413be9bff99a0f9f641676bced",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230236Z.json": {
+    "mtime": 1781737356.1423943,
+    "ast_hash": "7a1edeecbda260f4de2c14dd4e0b389e",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230237Z.json": {
+    "mtime": 1781737357.2483718,
+    "ast_hash": "78fb4c5db11de486b443c5ad3d9ada7a",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230248Z.json": {
+    "mtime": 1781737368.6637566,
+    "ast_hash": "bfdae879fd401852cd7ca282bd6de0b0",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230249Z.json": {
+    "mtime": 1781737369.7637565,
+    "ast_hash": "a55dcb1a9c02372d47847d99ae1bbd7b",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T230305Z.json": {
+    "mtime": 1781737385.586898,
+    "ast_hash": "62ab2bd7554e5123d6b55e7d02c681bc",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T230240Z-local-staging.json": {
+    "mtime": 1781737361.508371,
+    "ast_hash": "391b8b6f96d5fc38b8a06d2f94ad077c",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T230241Z-local-production.json": {
+    "mtime": 1781737363.0601816,
+    "ast_hash": "d8e4529906ec7f4e6d6eb6e28f8b737e",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T230243Z-local-production.json": {
+    "mtime": 1781737364.2601814,
+    "ast_hash": "385adbaf79df56cfdc54c338f0bb7793",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T230244Z-local-production.json": {
+    "mtime": 1781737365.340181,
+    "ast_hash": "34e94fe4a99fa8a63a4787f761c6d7d2",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T230245Z-local-production.json": {
+    "mtime": 1781737366.420181,
+    "ast_hash": "514402fa377999e47daccc163f30676d",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260617T230252Z-local-staging.json": {
+    "mtime": 1781737373.6686807,
+    "ast_hash": "a5349e173052cf28a910af12ed9777a7",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/about-us/index.html": {
+    "mtime": 1781724868.775138,
+    "ast_hash": "dc89e6413ad691a76b6890216d1ec470",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/artists/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f60bcb42689cfd0f44d66b69656f5909",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/artists/pcbender/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "ac7d6cca100e33635490d243c89ff962",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/catalog/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "f8590eb69c4c7e3f837b25cddc19bada",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/contact/index.html": {
+    "mtime": 1781724868.785138,
+    "ast_hash": "c32edd8cc09dd1ce02d7f463b9deb940",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "0e7cc6103537c581402dffa32e75555c",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/releases/circuiting/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "ffe9cf7680f60b9dee9cb740b34c0064",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/releases/index.html": {
+    "mtime": 1781724868.795138,
+    "ast_hash": "260f424773527685cdf3cf9af9f922c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/2025/02/26/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737343.166659,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/2025/02/28/a-conversation-with-echo/index.html": {
+    "mtime": 1781737343.196659,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/2025/02/28/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737343.216659,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/a-conversation-with-echo/index.html": {
+    "mtime": 1781737343.236659,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/about-us/index.html": {
+    "mtime": 1781737344.056659,
+    "ast_hash": "5e41aa313aaf34ecc376dcf8f36836fe",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/4castle/distance-not-safety/index.html": {
+    "mtime": 1781737343.2766593,
+    "ast_hash": "b9bd09afc7e02e25f5808297411620a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/4castle/gone-and-forgotten/index.html": {
+    "mtime": 1781737343.2966592,
+    "ast_hash": "8ab6e59aa2dffb4a28f1871764ab9520",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/4castle/index.html": {
+    "mtime": 1781737343.2566593,
+    "ast_hash": "7787b4f5e1b8e98b3d4611d62d1bb98d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/4castle/on-the-advent-of-a-dream/index.html": {
+    "mtime": 1781737343.3166592,
+    "ast_hash": "6c0ffa7b30d6c0a5e74503f00496dba0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/4castle/then-she-descends/index.html": {
+    "mtime": 1781737343.3366592,
+    "ast_hash": "b7b5eb0adc3514998b2f4b5f4706c6e6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/4castle/umbra-ala/index.html": {
+    "mtime": 1781737343.3566592,
+    "ast_hash": "d6cbfb16643a83003b0f768f3c3b45f0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/index.html": {
+    "mtime": 1781737344.066659,
+    "ast_hash": "ee72a1c89fff7a760b602bacf4201892",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/lingua-aeternum/index.html": {
+    "mtime": 1781737343.3766592,
+    "ast_hash": "3ccb931e3718aa8134683039c1ceca3b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/abundant-emptiness/index.html": {
+    "mtime": 1781737343.3966591,
+    "ast_hash": "3567af943edb7e0f5f52d4570d52ddda",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/bakers-dozen/index.html": {
+    "mtime": 1781737343.426659,
+    "ast_hash": "787efcf5f5bcd772df4e2aac3d1e6206",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/by-starlight-drifting-west-2/index.html": {
+    "mtime": 1781737343.446659,
+    "ast_hash": "e9bedb68a3c6dfe6ae62ddbed9ab7d35",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/circuiting/index.html": {
+    "mtime": 1781737343.466659,
+    "ast_hash": "abaa565f4705c2cf87d3d82ebf94ef28",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/comfortable-specter/index.html": {
+    "mtime": 1781737343.486659,
+    "ast_hash": "b034dab03da1447a0693f0ffee5c9f3f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/elemental-fundamental/index.html": {
+    "mtime": 1781737343.506659,
+    "ast_hash": "1a9641cffb87c8cd11f5bdf994f82b2a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/gemini-rising/index.html": {
+    "mtime": 1781737343.526659,
+    "ast_hash": "09a298ab2b271134f9dd64b0a91edec6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/halfway-in-between/index.html": {
+    "mtime": 1781737343.546659,
+    "ast_hash": "27741e9ba2f1db6a9d64f04ab03af30c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/have-a-heart/index.html": {
+    "mtime": 1781737343.5666592,
+    "ast_hash": "808be8b04d53bf6e5fd70c2dd74f883b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/index.html": {
+    "mtime": 1781737344.066659,
+    "ast_hash": "655f64a6b2c780b7d9595417ce259095",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/nancy-dance-with-me/index.html": {
+    "mtime": 1781737343.5866592,
+    "ast_hash": "09405cd402281f684ce8fecc9413d429",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/nearly-nothin-nowhere-fast/index.html": {
+    "mtime": 1781737343.6066592,
+    "ast_hash": "97ed3dbba2c17b078582a0aff3641e86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/red-green-and-blues/index.html": {
+    "mtime": 1781737343.6266592,
+    "ast_hash": "1231d8ff0dd66840776ac58f397fc67f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/riders-and-runners/index.html": {
+    "mtime": 1781737343.6466591,
+    "ast_hash": "5e7da53d5dea1896a6f4d934890e7000",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/sawmill-pond/index.html": {
+    "mtime": 1781737343.666659,
+    "ast_hash": "9733a7f2435badc9c676764fc5030c3e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/scattershot-forget-me-not/index.html": {
+    "mtime": 1781737343.686659,
+    "ast_hash": "14405d24d4946539d037bb29af010f60",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/still-my-days-before/index.html": {
+    "mtime": 1781737343.706659,
+    "ast_hash": "0503a5026164be9d713008d398a64d4a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/the-one-that-got-away/index.html": {
+    "mtime": 1781737343.726659,
+    "ast_hash": "96c1e7d04732f849f4a72c980ed43d1b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/tits-up/index.html": {
+    "mtime": 1781737343.746659,
+    "ast_hash": "dd8aa23a88471b4c0c3e39cb656facbf",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/too-blue-to-lose/index.html": {
+    "mtime": 1781737343.766659,
+    "ast_hash": "725be5aff528e79cbc7781eddc7ee80d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/two-tree-road/index.html": {
+    "mtime": 1781737343.786659,
+    "ast_hash": "58ebb88d2e32c61ae7a4996497774bb1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/pcbender/winds-of-change/index.html": {
+    "mtime": 1781737343.806659,
+    "ast_hash": "6ec3cd6deacbf643ef6f8c3a313b3c79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/stab/between-the-bottle-and-goodbye/index.html": {
+    "mtime": 1781737343.826659,
+    "ast_hash": "501a2038d26368ee9fa2109c3b3c9885",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/stab/burn-me/index.html": {
+    "mtime": 1781737343.846659,
+    "ast_hash": "70a6cf34c72c9b5254b38754f809ee06",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/stab/here-comes-the-rain/index.html": {
+    "mtime": 1781737343.866659,
+    "ast_hash": "26fd527987ed122b13e5cd80bcd37549",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/stab/the-hardest-gift/index.html": {
+    "mtime": 1781737343.8866591,
+    "ast_hash": "3f1fb078a7132089a5444c46207584f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/stab/tits-up-remix/index.html": {
+    "mtime": 1781737343.9066591,
+    "ast_hash": "96dff70f7731c28ae591b0d6642ed491",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/artists/stab/you-still-have-my-heart/index.html": {
+    "mtime": 1781737343.926659,
+    "ast_hash": "e744bd4df36f226d55297ba25dd0f7a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/catalog/index.html": {
+    "mtime": 1781737344.066659,
+    "ast_hash": "3d619d2c81eb9dfefa882b0e7d99fa09",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/contact/index.html": {
+    "mtime": 1781737344.076659,
+    "ast_hash": "6fb5de4c413db028ddad3eced836fcd4",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737343.936659,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/index.html": {
+    "mtime": 1781737344.076659,
+    "ast_hash": "635c61f3a91f63002a97fe0abcc29ac9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/licensing-custom-songs/custom-songs-for-hire/index.html": {
+    "mtime": 1781737343.976659,
+    "ast_hash": "1853b80c048ac275fb4acb228e45e8d5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/licensing-custom-songs/index.html": {
+    "mtime": 1781737343.956659,
+    "ast_hash": "c98fdead8c6bf7f074e8219c395187e5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/licensing-custom-songs/music-licensing/index.html": {
+    "mtime": 1781737343.996659,
+    "ast_hash": "b7daac49f39ca3efc609db9c3d29012d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/portfolio/index.html": {
+    "mtime": 1781737344.016659,
+    "ast_hash": "c6be37fc1158186273c37329df363870",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/posts/index.html": {
+    "mtime": 1781737344.086659,
+    "ast_hash": "e42276af91f88a22a66962d97e6bd48a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/releases/circuiting/index.html": {
+    "mtime": 1781737344.086659,
+    "ast_hash": "45d937504f74a821b29161889fe09bb6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/releases/index.html": {
+    "mtime": 1781737344.086659,
+    "ast_hash": "cbf8ac23c2c52645fd2b73d7b87332f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737344.036659,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/trashed-2/index.html": {
+    "mtime": 1781737344.056659,
+    "ast_hash": "7797f5443e6efde8a2ae67a4500b967c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/2025/02/26/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737346.8799844,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/2025/02/28/a-conversation-with-echo/index.html": {
+    "mtime": 1781737346.9099844,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/2025/02/28/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737346.9299843,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/a-conversation-with-echo/index.html": {
+    "mtime": 1781737346.9499843,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/about-us/index.html": {
+    "mtime": 1781737347.7899842,
+    "ast_hash": "5e41aa313aaf34ecc376dcf8f36836fe",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/4castle/distance-not-safety/index.html": {
+    "mtime": 1781737346.9899843,
+    "ast_hash": "b9bd09afc7e02e25f5808297411620a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/4castle/gone-and-forgotten/index.html": {
+    "mtime": 1781737347.0199842,
+    "ast_hash": "8ab6e59aa2dffb4a28f1871764ab9520",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/4castle/index.html": {
+    "mtime": 1781737346.9699843,
+    "ast_hash": "7787b4f5e1b8e98b3d4611d62d1bb98d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/4castle/on-the-advent-of-a-dream/index.html": {
+    "mtime": 1781737347.0399842,
+    "ast_hash": "6c0ffa7b30d6c0a5e74503f00496dba0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/4castle/then-she-descends/index.html": {
+    "mtime": 1781737347.0599842,
+    "ast_hash": "b7b5eb0adc3514998b2f4b5f4706c6e6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/4castle/umbra-ala/index.html": {
+    "mtime": 1781737347.0799844,
+    "ast_hash": "d6cbfb16643a83003b0f768f3c3b45f0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/index.html": {
+    "mtime": 1781737347.7999842,
+    "ast_hash": "ee72a1c89fff7a760b602bacf4201892",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/lingua-aeternum/index.html": {
+    "mtime": 1781737347.0999844,
+    "ast_hash": "3ccb931e3718aa8134683039c1ceca3b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/abundant-emptiness/index.html": {
+    "mtime": 1781737347.1199844,
+    "ast_hash": "3567af943edb7e0f5f52d4570d52ddda",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/bakers-dozen/index.html": {
+    "mtime": 1781737347.1399844,
+    "ast_hash": "787efcf5f5bcd772df4e2aac3d1e6206",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/by-starlight-drifting-west-2/index.html": {
+    "mtime": 1781737347.1599844,
+    "ast_hash": "e9bedb68a3c6dfe6ae62ddbed9ab7d35",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/circuiting/index.html": {
+    "mtime": 1781737347.1899843,
+    "ast_hash": "abaa565f4705c2cf87d3d82ebf94ef28",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/comfortable-specter/index.html": {
+    "mtime": 1781737347.2099843,
+    "ast_hash": "b034dab03da1447a0693f0ffee5c9f3f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/elemental-fundamental/index.html": {
+    "mtime": 1781737347.2299843,
+    "ast_hash": "1a9641cffb87c8cd11f5bdf994f82b2a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/gemini-rising/index.html": {
+    "mtime": 1781737347.2499843,
+    "ast_hash": "09a298ab2b271134f9dd64b0a91edec6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/halfway-in-between/index.html": {
+    "mtime": 1781737347.2699842,
+    "ast_hash": "27741e9ba2f1db6a9d64f04ab03af30c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/have-a-heart/index.html": {
+    "mtime": 1781737347.2899842,
+    "ast_hash": "808be8b04d53bf6e5fd70c2dd74f883b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781737347.7899842,
+    "ast_hash": "655f64a6b2c780b7d9595417ce259095",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/nancy-dance-with-me/index.html": {
+    "mtime": 1781737347.3099842,
+    "ast_hash": "09405cd402281f684ce8fecc9413d429",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/nearly-nothin-nowhere-fast/index.html": {
+    "mtime": 1781737347.3299842,
+    "ast_hash": "97ed3dbba2c17b078582a0aff3641e86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/red-green-and-blues/index.html": {
+    "mtime": 1781737347.3499842,
+    "ast_hash": "1231d8ff0dd66840776ac58f397fc67f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/riders-and-runners/index.html": {
+    "mtime": 1781737347.3699841,
+    "ast_hash": "5e7da53d5dea1896a6f4d934890e7000",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/sawmill-pond/index.html": {
+    "mtime": 1781737347.3899844,
+    "ast_hash": "9733a7f2435badc9c676764fc5030c3e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/scattershot-forget-me-not/index.html": {
+    "mtime": 1781737347.4099844,
+    "ast_hash": "14405d24d4946539d037bb29af010f60",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/still-my-days-before/index.html": {
+    "mtime": 1781737347.4299843,
+    "ast_hash": "0503a5026164be9d713008d398a64d4a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/the-one-that-got-away/index.html": {
+    "mtime": 1781737347.4499843,
+    "ast_hash": "96c1e7d04732f849f4a72c980ed43d1b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/tits-up/index.html": {
+    "mtime": 1781737347.4699843,
+    "ast_hash": "dd8aa23a88471b4c0c3e39cb656facbf",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/too-blue-to-lose/index.html": {
+    "mtime": 1781737347.4899843,
+    "ast_hash": "725be5aff528e79cbc7781eddc7ee80d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/two-tree-road/index.html": {
+    "mtime": 1781737347.5099843,
+    "ast_hash": "58ebb88d2e32c61ae7a4996497774bb1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/pcbender/winds-of-change/index.html": {
+    "mtime": 1781737347.5299842,
+    "ast_hash": "6ec3cd6deacbf643ef6f8c3a313b3c79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/stab/between-the-bottle-and-goodbye/index.html": {
+    "mtime": 1781737347.5499842,
+    "ast_hash": "501a2038d26368ee9fa2109c3b3c9885",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/stab/burn-me/index.html": {
+    "mtime": 1781737347.5699842,
+    "ast_hash": "70a6cf34c72c9b5254b38754f809ee06",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/stab/here-comes-the-rain/index.html": {
+    "mtime": 1781737347.5899842,
+    "ast_hash": "26fd527987ed122b13e5cd80bcd37549",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/stab/the-hardest-gift/index.html": {
+    "mtime": 1781737347.6099842,
+    "ast_hash": "3f1fb078a7132089a5444c46207584f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/stab/tits-up-remix/index.html": {
+    "mtime": 1781737347.6299841,
+    "ast_hash": "96dff70f7731c28ae591b0d6642ed491",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/artists/stab/you-still-have-my-heart/index.html": {
+    "mtime": 1781737347.6499841,
+    "ast_hash": "e744bd4df36f226d55297ba25dd0f7a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/catalog/index.html": {
+    "mtime": 1781737347.7999842,
+    "ast_hash": "3d619d2c81eb9dfefa882b0e7d99fa09",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/contact/index.html": {
+    "mtime": 1781737347.7999842,
+    "ast_hash": "6fb5de4c413db028ddad3eced836fcd4",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737347.669984,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/index.html": {
+    "mtime": 1781737347.8099842,
+    "ast_hash": "635c61f3a91f63002a97fe0abcc29ac9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/licensing-custom-songs/custom-songs-for-hire/index.html": {
+    "mtime": 1781737347.7099843,
+    "ast_hash": "1853b80c048ac275fb4acb228e45e8d5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/licensing-custom-songs/index.html": {
+    "mtime": 1781737347.689984,
+    "ast_hash": "c98fdead8c6bf7f074e8219c395187e5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/licensing-custom-songs/music-licensing/index.html": {
+    "mtime": 1781737347.7299843,
+    "ast_hash": "b7daac49f39ca3efc609db9c3d29012d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/portfolio/index.html": {
+    "mtime": 1781737347.7499843,
+    "ast_hash": "c6be37fc1158186273c37329df363870",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/posts/index.html": {
+    "mtime": 1781737347.8099842,
+    "ast_hash": "e42276af91f88a22a66962d97e6bd48a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781737347.8099842,
+    "ast_hash": "45d937504f74a821b29161889fe09bb6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/releases/index.html": {
+    "mtime": 1781737347.8099842,
+    "ast_hash": "cbf8ac23c2c52645fd2b73d7b87332f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737347.7699842,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/trashed-2/index.html": {
+    "mtime": 1781737347.7899842,
+    "ast_hash": "7797f5443e6efde8a2ae67a4500b967c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/2025/02/26/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737352.0023952,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/2025/02/28/a-conversation-with-echo/index.html": {
+    "mtime": 1781737352.0223951,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/2025/02/28/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737352.042395,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/a-conversation-with-echo/index.html": {
+    "mtime": 1781737352.062395,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/about-us/index.html": {
+    "mtime": 1781737352.892395,
+    "ast_hash": "5e41aa313aaf34ecc376dcf8f36836fe",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/4castle/distance-not-safety/index.html": {
+    "mtime": 1781737352.112395,
+    "ast_hash": "b9bd09afc7e02e25f5808297411620a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/4castle/gone-and-forgotten/index.html": {
+    "mtime": 1781737352.132395,
+    "ast_hash": "8ab6e59aa2dffb4a28f1871764ab9520",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/4castle/index.html": {
+    "mtime": 1781737352.082395,
+    "ast_hash": "7787b4f5e1b8e98b3d4611d62d1bb98d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/4castle/on-the-advent-of-a-dream/index.html": {
+    "mtime": 1781737352.1523952,
+    "ast_hash": "6c0ffa7b30d6c0a5e74503f00496dba0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/4castle/then-she-descends/index.html": {
+    "mtime": 1781737352.1723952,
+    "ast_hash": "b7b5eb0adc3514998b2f4b5f4706c6e6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/4castle/umbra-ala/index.html": {
+    "mtime": 1781737352.1923952,
+    "ast_hash": "d6cbfb16643a83003b0f768f3c3b45f0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/index.html": {
+    "mtime": 1781737352.892395,
+    "ast_hash": "ee72a1c89fff7a760b602bacf4201892",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/lingua-aeternum/index.html": {
+    "mtime": 1781737352.2123952,
+    "ast_hash": "3ccb931e3718aa8134683039c1ceca3b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/abundant-emptiness/index.html": {
+    "mtime": 1781737352.2323952,
+    "ast_hash": "3567af943edb7e0f5f52d4570d52ddda",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/bakers-dozen/index.html": {
+    "mtime": 1781737352.2523952,
+    "ast_hash": "787efcf5f5bcd772df4e2aac3d1e6206",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/by-starlight-drifting-west-2/index.html": {
+    "mtime": 1781737352.2723951,
+    "ast_hash": "e9bedb68a3c6dfe6ae62ddbed9ab7d35",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/circuiting/index.html": {
+    "mtime": 1781737352.292395,
+    "ast_hash": "abaa565f4705c2cf87d3d82ebf94ef28",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/comfortable-specter/index.html": {
+    "mtime": 1781737352.312395,
+    "ast_hash": "b034dab03da1447a0693f0ffee5c9f3f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/elemental-fundamental/index.html": {
+    "mtime": 1781737352.332395,
+    "ast_hash": "1a9641cffb87c8cd11f5bdf994f82b2a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/gemini-rising/index.html": {
+    "mtime": 1781737352.352395,
+    "ast_hash": "09a298ab2b271134f9dd64b0a91edec6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/halfway-in-between/index.html": {
+    "mtime": 1781737352.372395,
+    "ast_hash": "27741e9ba2f1db6a9d64f04ab03af30c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/have-a-heart/index.html": {
+    "mtime": 1781737352.392395,
+    "ast_hash": "808be8b04d53bf6e5fd70c2dd74f883b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/index.html": {
+    "mtime": 1781737352.892395,
+    "ast_hash": "655f64a6b2c780b7d9595417ce259095",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/nancy-dance-with-me/index.html": {
+    "mtime": 1781737352.412395,
+    "ast_hash": "09405cd402281f684ce8fecc9413d429",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/nearly-nothin-nowhere-fast/index.html": {
+    "mtime": 1781737352.432395,
+    "ast_hash": "97ed3dbba2c17b078582a0aff3641e86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/red-green-and-blues/index.html": {
+    "mtime": 1781737352.4623952,
+    "ast_hash": "1231d8ff0dd66840776ac58f397fc67f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/riders-and-runners/index.html": {
+    "mtime": 1781737352.4823952,
+    "ast_hash": "5e7da53d5dea1896a6f4d934890e7000",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/sawmill-pond/index.html": {
+    "mtime": 1781737352.5023952,
+    "ast_hash": "9733a7f2435badc9c676764fc5030c3e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/scattershot-forget-me-not/index.html": {
+    "mtime": 1781737352.5223951,
+    "ast_hash": "14405d24d4946539d037bb29af010f60",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/still-my-days-before/index.html": {
+    "mtime": 1781737352.5323951,
+    "ast_hash": "0503a5026164be9d713008d398a64d4a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/the-one-that-got-away/index.html": {
+    "mtime": 1781737352.552395,
+    "ast_hash": "96c1e7d04732f849f4a72c980ed43d1b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/tits-up/index.html": {
+    "mtime": 1781737352.572395,
+    "ast_hash": "dd8aa23a88471b4c0c3e39cb656facbf",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/too-blue-to-lose/index.html": {
+    "mtime": 1781737352.592395,
+    "ast_hash": "725be5aff528e79cbc7781eddc7ee80d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/two-tree-road/index.html": {
+    "mtime": 1781737352.612395,
+    "ast_hash": "58ebb88d2e32c61ae7a4996497774bb1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/pcbender/winds-of-change/index.html": {
+    "mtime": 1781737352.632395,
+    "ast_hash": "6ec3cd6deacbf643ef6f8c3a313b3c79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/stab/between-the-bottle-and-goodbye/index.html": {
+    "mtime": 1781737352.652395,
+    "ast_hash": "501a2038d26368ee9fa2109c3b3c9885",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/stab/burn-me/index.html": {
+    "mtime": 1781737352.672395,
+    "ast_hash": "70a6cf34c72c9b5254b38754f809ee06",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/stab/here-comes-the-rain/index.html": {
+    "mtime": 1781737352.692395,
+    "ast_hash": "26fd527987ed122b13e5cd80bcd37549",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/stab/the-hardest-gift/index.html": {
+    "mtime": 1781737352.712395,
+    "ast_hash": "3f1fb078a7132089a5444c46207584f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/stab/tits-up-remix/index.html": {
+    "mtime": 1781737352.732395,
+    "ast_hash": "96dff70f7731c28ae591b0d6642ed491",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/artists/stab/you-still-have-my-heart/index.html": {
+    "mtime": 1781737352.7523952,
+    "ast_hash": "e744bd4df36f226d55297ba25dd0f7a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/catalog/index.html": {
+    "mtime": 1781737352.902395,
+    "ast_hash": "3d619d2c81eb9dfefa882b0e7d99fa09",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/contact/index.html": {
+    "mtime": 1781737352.902395,
+    "ast_hash": "6fb5de4c413db028ddad3eced836fcd4",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737352.7723951,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/index.html": {
+    "mtime": 1781737352.912395,
+    "ast_hash": "635c61f3a91f63002a97fe0abcc29ac9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/licensing-custom-songs/custom-songs-for-hire/index.html": {
+    "mtime": 1781737352.812395,
+    "ast_hash": "1853b80c048ac275fb4acb228e45e8d5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/licensing-custom-songs/index.html": {
+    "mtime": 1781737352.792395,
+    "ast_hash": "c98fdead8c6bf7f074e8219c395187e5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/licensing-custom-songs/music-licensing/index.html": {
+    "mtime": 1781737352.832395,
+    "ast_hash": "b7daac49f39ca3efc609db9c3d29012d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/portfolio/index.html": {
+    "mtime": 1781737352.852395,
+    "ast_hash": "c6be37fc1158186273c37329df363870",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/posts/index.html": {
+    "mtime": 1781737352.912395,
+    "ast_hash": "e42276af91f88a22a66962d97e6bd48a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/releases/circuiting/index.html": {
+    "mtime": 1781737352.912395,
+    "ast_hash": "45d937504f74a821b29161889fe09bb6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/releases/index.html": {
+    "mtime": 1781737352.912395,
+    "ast_hash": "cbf8ac23c2c52645fd2b73d7b87332f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737352.872395,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/trashed-2/index.html": {
+    "mtime": 1781737352.892395,
+    "ast_hash": "7797f5443e6efde8a2ae67a4500b967c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/2025/02/26/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737358.8183715,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/2025/02/28/a-conversation-with-echo/index.html": {
+    "mtime": 1781737358.8483715,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/2025/02/28/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737358.8683717,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/a-conversation-with-echo/index.html": {
+    "mtime": 1781737358.8983717,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/about-us/index.html": {
+    "mtime": 1781737359.8783715,
+    "ast_hash": "5e41aa313aaf34ecc376dcf8f36836fe",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/4castle/distance-not-safety/index.html": {
+    "mtime": 1781737358.9383717,
+    "ast_hash": "b9bd09afc7e02e25f5808297411620a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/4castle/gone-and-forgotten/index.html": {
+    "mtime": 1781737358.9683716,
+    "ast_hash": "8ab6e59aa2dffb4a28f1871764ab9520",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/4castle/index.html": {
+    "mtime": 1781737358.9183717,
+    "ast_hash": "7787b4f5e1b8e98b3d4611d62d1bb98d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/4castle/on-the-advent-of-a-dream/index.html": {
+    "mtime": 1781737358.9883716,
+    "ast_hash": "6c0ffa7b30d6c0a5e74503f00496dba0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/4castle/then-she-descends/index.html": {
+    "mtime": 1781737359.0083716,
+    "ast_hash": "b7b5eb0adc3514998b2f4b5f4706c6e6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/4castle/umbra-ala/index.html": {
+    "mtime": 1781737359.0383716,
+    "ast_hash": "d6cbfb16643a83003b0f768f3c3b45f0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/index.html": {
+    "mtime": 1781737359.8883715,
+    "ast_hash": "ee72a1c89fff7a760b602bacf4201892",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/lingua-aeternum/index.html": {
+    "mtime": 1781737359.0583715,
+    "ast_hash": "3ccb931e3718aa8134683039c1ceca3b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/abundant-emptiness/index.html": {
+    "mtime": 1781737359.0783715,
+    "ast_hash": "3567af943edb7e0f5f52d4570d52ddda",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/bakers-dozen/index.html": {
+    "mtime": 1781737359.1083715,
+    "ast_hash": "787efcf5f5bcd772df4e2aac3d1e6206",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/by-starlight-drifting-west-2/index.html": {
+    "mtime": 1781737359.1283715,
+    "ast_hash": "e9bedb68a3c6dfe6ae62ddbed9ab7d35",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/circuiting/index.html": {
+    "mtime": 1781737359.1483715,
+    "ast_hash": "abaa565f4705c2cf87d3d82ebf94ef28",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/comfortable-specter/index.html": {
+    "mtime": 1781737359.1783717,
+    "ast_hash": "b034dab03da1447a0693f0ffee5c9f3f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/elemental-fundamental/index.html": {
+    "mtime": 1781737359.1983716,
+    "ast_hash": "1a9641cffb87c8cd11f5bdf994f82b2a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/gemini-rising/index.html": {
+    "mtime": 1781737359.2183716,
+    "ast_hash": "09a298ab2b271134f9dd64b0a91edec6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/halfway-in-between/index.html": {
+    "mtime": 1781737359.2483716,
+    "ast_hash": "27741e9ba2f1db6a9d64f04ab03af30c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/have-a-heart/index.html": {
+    "mtime": 1781737359.2683716,
+    "ast_hash": "808be8b04d53bf6e5fd70c2dd74f883b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/index.html": {
+    "mtime": 1781737359.8783715,
+    "ast_hash": "655f64a6b2c780b7d9595417ce259095",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/nancy-dance-with-me/index.html": {
+    "mtime": 1781737359.2883716,
+    "ast_hash": "09405cd402281f684ce8fecc9413d429",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/nearly-nothin-nowhere-fast/index.html": {
+    "mtime": 1781737359.3083715,
+    "ast_hash": "97ed3dbba2c17b078582a0aff3641e86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/red-green-and-blues/index.html": {
+    "mtime": 1781737359.3383715,
+    "ast_hash": "1231d8ff0dd66840776ac58f397fc67f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/riders-and-runners/index.html": {
+    "mtime": 1781737359.3583715,
+    "ast_hash": "5e7da53d5dea1896a6f4d934890e7000",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/sawmill-pond/index.html": {
+    "mtime": 1781737359.3883715,
+    "ast_hash": "9733a7f2435badc9c676764fc5030c3e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/scattershot-forget-me-not/index.html": {
+    "mtime": 1781737359.4083714,
+    "ast_hash": "14405d24d4946539d037bb29af010f60",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/still-my-days-before/index.html": {
+    "mtime": 1781737359.4383714,
+    "ast_hash": "0503a5026164be9d713008d398a64d4a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/the-one-that-got-away/index.html": {
+    "mtime": 1781737359.4583714,
+    "ast_hash": "96c1e7d04732f849f4a72c980ed43d1b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/tits-up/index.html": {
+    "mtime": 1781737359.4783716,
+    "ast_hash": "dd8aa23a88471b4c0c3e39cb656facbf",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/too-blue-to-lose/index.html": {
+    "mtime": 1781737359.5083716,
+    "ast_hash": "725be5aff528e79cbc7781eddc7ee80d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/two-tree-road/index.html": {
+    "mtime": 1781737359.5283716,
+    "ast_hash": "58ebb88d2e32c61ae7a4996497774bb1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/pcbender/winds-of-change/index.html": {
+    "mtime": 1781737359.5483716,
+    "ast_hash": "6ec3cd6deacbf643ef6f8c3a313b3c79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/stab/between-the-bottle-and-goodbye/index.html": {
+    "mtime": 1781737359.5783715,
+    "ast_hash": "501a2038d26368ee9fa2109c3b3c9885",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/stab/burn-me/index.html": {
+    "mtime": 1781737359.5983715,
+    "ast_hash": "70a6cf34c72c9b5254b38754f809ee06",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/stab/here-comes-the-rain/index.html": {
+    "mtime": 1781737359.6183715,
+    "ast_hash": "26fd527987ed122b13e5cd80bcd37549",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/stab/the-hardest-gift/index.html": {
+    "mtime": 1781737359.6483715,
+    "ast_hash": "3f1fb078a7132089a5444c46207584f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/stab/tits-up-remix/index.html": {
+    "mtime": 1781737359.6683714,
+    "ast_hash": "96dff70f7731c28ae591b0d6642ed491",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/artists/stab/you-still-have-my-heart/index.html": {
+    "mtime": 1781737359.6983714,
+    "ast_hash": "e744bd4df36f226d55297ba25dd0f7a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/catalog/index.html": {
+    "mtime": 1781737359.8883715,
+    "ast_hash": "3d619d2c81eb9dfefa882b0e7d99fa09",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/contact/index.html": {
+    "mtime": 1781737359.8883715,
+    "ast_hash": "6fb5de4c413db028ddad3eced836fcd4",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737359.7183714,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/index.html": {
+    "mtime": 1781737359.8983715,
+    "ast_hash": "635c61f3a91f63002a97fe0abcc29ac9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/licensing-custom-songs/custom-songs-for-hire/index.html": {
+    "mtime": 1781737359.7883716,
+    "ast_hash": "1853b80c048ac275fb4acb228e45e8d5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/licensing-custom-songs/index.html": {
+    "mtime": 1781737359.7383714,
+    "ast_hash": "c98fdead8c6bf7f074e8219c395187e5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/licensing-custom-songs/music-licensing/index.html": {
+    "mtime": 1781737359.8083715,
+    "ast_hash": "b7daac49f39ca3efc609db9c3d29012d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/portfolio/index.html": {
+    "mtime": 1781737359.8383715,
+    "ast_hash": "c6be37fc1158186273c37329df363870",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/posts/index.html": {
+    "mtime": 1781737359.8983715,
+    "ast_hash": "e42276af91f88a22a66962d97e6bd48a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/releases/circuiting/index.html": {
+    "mtime": 1781737359.9083714,
+    "ast_hash": "45d937504f74a821b29161889fe09bb6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/releases/index.html": {
+    "mtime": 1781737359.9083714,
+    "ast_hash": "cbf8ac23c2c52645fd2b73d7b87332f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737359.8583715,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/trashed-2/index.html": {
+    "mtime": 1781737359.8783715,
+    "ast_hash": "7797f5443e6efde8a2ae67a4500b967c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/2025/02/26/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737371.2837563,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/2025/02/28/a-conversation-with-echo/index.html": {
+    "mtime": 1781737371.3137562,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/2025/02/28/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737371.3337562,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/a-conversation-with-echo/index.html": {
+    "mtime": 1781737371.3537562,
+    "ast_hash": "d6283c5d828c4fe161d9c252c7841b86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/about-us/index.html": {
+    "mtime": 1781737372.1986809,
+    "ast_hash": "5e41aa313aaf34ecc376dcf8f36836fe",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/4castle/distance-not-safety/index.html": {
+    "mtime": 1781737371.4037561,
+    "ast_hash": "b9bd09afc7e02e25f5808297411620a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/4castle/gone-and-forgotten/index.html": {
+    "mtime": 1781737371.4237561,
+    "ast_hash": "8ab6e59aa2dffb4a28f1871764ab9520",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/4castle/index.html": {
+    "mtime": 1781737371.3737562,
+    "ast_hash": "7787b4f5e1b8e98b3d4611d62d1bb98d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/4castle/on-the-advent-of-a-dream/index.html": {
+    "mtime": 1781737371.443756,
+    "ast_hash": "6c0ffa7b30d6c0a5e74503f00496dba0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/4castle/then-she-descends/index.html": {
+    "mtime": 1781737371.463756,
+    "ast_hash": "b7b5eb0adc3514998b2f4b5f4706c6e6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/4castle/umbra-ala/index.html": {
+    "mtime": 1781737371.483756,
+    "ast_hash": "d6cbfb16643a83003b0f768f3c3b45f0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/index.html": {
+    "mtime": 1781737372.1986809,
+    "ast_hash": "ee72a1c89fff7a760b602bacf4201892",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/lingua-aeternum/index.html": {
+    "mtime": 1781737371.503756,
+    "ast_hash": "3ccb931e3718aa8134683039c1ceca3b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/abundant-emptiness/index.html": {
+    "mtime": 1781737371.523756,
+    "ast_hash": "3567af943edb7e0f5f52d4570d52ddda",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/bakers-dozen/index.html": {
+    "mtime": 1781737371.543756,
+    "ast_hash": "787efcf5f5bcd772df4e2aac3d1e6206",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/by-starlight-drifting-west-2/index.html": {
+    "mtime": 1781737371.5637562,
+    "ast_hash": "e9bedb68a3c6dfe6ae62ddbed9ab7d35",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/circuiting/index.html": {
+    "mtime": 1781737371.5837562,
+    "ast_hash": "abaa565f4705c2cf87d3d82ebf94ef28",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/comfortable-specter/index.html": {
+    "mtime": 1781737383.8063383,
+    "ast_hash": "b034dab03da1447a0693f0ffee5c9f3f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/elemental-fundamental/index.html": {
+    "mtime": 1781737383.8163383,
+    "ast_hash": "1a9641cffb87c8cd11f5bdf994f82b2a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/gemini-rising/index.html": {
+    "mtime": 1781737383.8363383,
+    "ast_hash": "09a298ab2b271134f9dd64b0a91edec6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/halfway-in-between/index.html": {
+    "mtime": 1781737383.8563383,
+    "ast_hash": "27741e9ba2f1db6a9d64f04ab03af30c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/have-a-heart/index.html": {
+    "mtime": 1781737383.8763382,
+    "ast_hash": "808be8b04d53bf6e5fd70c2dd74f883b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/index.html": {
+    "mtime": 1781737372.1986809,
+    "ast_hash": "655f64a6b2c780b7d9595417ce259095",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/nancy-dance-with-me/index.html": {
+    "mtime": 1781737383.8963382,
+    "ast_hash": "09405cd402281f684ce8fecc9413d429",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/nearly-nothin-nowhere-fast/index.html": {
+    "mtime": 1781737383.9163382,
+    "ast_hash": "97ed3dbba2c17b078582a0aff3641e86",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/red-green-and-blues/index.html": {
+    "mtime": 1781737371.7586808,
+    "ast_hash": "1231d8ff0dd66840776ac58f397fc67f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/riders-and-runners/index.html": {
+    "mtime": 1781737371.7786808,
+    "ast_hash": "5e7da53d5dea1896a6f4d934890e7000",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/sawmill-pond/index.html": {
+    "mtime": 1781737371.798681,
+    "ast_hash": "9733a7f2435badc9c676764fc5030c3e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/scattershot-forget-me-not/index.html": {
+    "mtime": 1781737371.818681,
+    "ast_hash": "14405d24d4946539d037bb29af010f60",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/still-my-days-before/index.html": {
+    "mtime": 1781737371.838681,
+    "ast_hash": "0503a5026164be9d713008d398a64d4a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/the-one-that-got-away/index.html": {
+    "mtime": 1781737371.858681,
+    "ast_hash": "96c1e7d04732f849f4a72c980ed43d1b",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/tits-up/index.html": {
+    "mtime": 1781737371.878681,
+    "ast_hash": "dd8aa23a88471b4c0c3e39cb656facbf",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/too-blue-to-lose/index.html": {
+    "mtime": 1781737371.898681,
+    "ast_hash": "725be5aff528e79cbc7781eddc7ee80d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/two-tree-road/index.html": {
+    "mtime": 1781737371.918681,
+    "ast_hash": "58ebb88d2e32c61ae7a4996497774bb1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/pcbender/winds-of-change/index.html": {
+    "mtime": 1781737371.938681,
+    "ast_hash": "6ec3cd6deacbf643ef6f8c3a313b3c79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/stab/between-the-bottle-and-goodbye/index.html": {
+    "mtime": 1781737371.9586809,
+    "ast_hash": "501a2038d26368ee9fa2109c3b3c9885",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/stab/burn-me/index.html": {
+    "mtime": 1781737371.9786808,
+    "ast_hash": "70a6cf34c72c9b5254b38754f809ee06",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/stab/here-comes-the-rain/index.html": {
+    "mtime": 1781737371.9986808,
+    "ast_hash": "26fd527987ed122b13e5cd80bcd37549",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/stab/the-hardest-gift/index.html": {
+    "mtime": 1781737372.0186808,
+    "ast_hash": "3f1fb078a7132089a5444c46207584f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/stab/tits-up-remix/index.html": {
+    "mtime": 1781737372.0386808,
+    "ast_hash": "96dff70f7731c28ae591b0d6642ed491",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/artists/stab/you-still-have-my-heart/index.html": {
+    "mtime": 1781737372.0586808,
+    "ast_hash": "e744bd4df36f226d55297ba25dd0f7a7",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/catalog/index.html": {
+    "mtime": 1781737372.1986809,
+    "ast_hash": "3d619d2c81eb9dfefa882b0e7d99fa09",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/contact/index.html": {
+    "mtime": 1781737372.2086809,
+    "ast_hash": "6fb5de4c413db028ddad3eced836fcd4",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/how-ai-music-generation-will-disrupt-the-traditional-music-industry-and-artists/index.html": {
+    "mtime": 1781737372.0786808,
+    "ast_hash": "41defac63270550cdc7156e73a584b79",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/index.html": {
+    "mtime": 1781737372.2086809,
+    "ast_hash": "635c61f3a91f63002a97fe0abcc29ac9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/licensing-custom-songs/custom-songs-for-hire/index.html": {
+    "mtime": 1781737372.118681,
+    "ast_hash": "1853b80c048ac275fb4acb228e45e8d5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/licensing-custom-songs/index.html": {
+    "mtime": 1781737372.098681,
+    "ast_hash": "c98fdead8c6bf7f074e8219c395187e5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/licensing-custom-songs/music-licensing/index.html": {
+    "mtime": 1781737372.138681,
+    "ast_hash": "b7daac49f39ca3efc609db9c3d29012d",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/portfolio/index.html": {
+    "mtime": 1781737372.148681,
+    "ast_hash": "c6be37fc1158186273c37329df363870",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/posts/index.html": {
+    "mtime": 1781737372.2186809,
+    "ast_hash": "e42276af91f88a22a66962d97e6bd48a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/releases/circuiting/index.html": {
+    "mtime": 1781737372.2186809,
+    "ast_hash": "45d937504f74a821b29161889fe09bb6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/releases/index.html": {
+    "mtime": 1781737372.2186809,
+    "ast_hash": "cbf8ac23c2c52645fd2b73d7b87332f1",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/the-future-of-ai-in-music/index.html": {
+    "mtime": 1781737372.168681,
+    "ast_hash": "d05fbc038c1201676b2c336b1b184dfa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/trashed-2/index.html": {
+    "mtime": 1781737372.188681,
+    "ast_hash": "7797f5443e6efde8a2ae67a4500b967c",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/assets/maricopa-mark.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/archive/production-20260617T230253Z/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781724868.725138,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781737342.8866591,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781737342.8966591,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781737342.8966591,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781737342.9066591,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781737342.9066591,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781737342.9066591,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781737342.916659,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781737342.916659,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781737342.916659,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781737342.926659,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781737342.926659,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781737342.926659,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781737342.9366593,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781737342.9366593,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781737342.9466593,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781737342.9466593,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781737342.9566593,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781737342.9566593,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781737342.9566593,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781737342.9566593,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781737342.9566593,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781737342.9666593,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781737342.9666593,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781737342.9666593,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781737342.9666593,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781737342.9766593,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781737342.9766593,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781737342.9866593,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781737342.9866593,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781737342.9866593,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781737342.9866593,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781737342.9966593,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781737342.9966593,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781737343.0066593,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781737343.0066593,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781737343.0066593,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781737343.0166593,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781737343.0166593,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230220597161Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781737343.0166593,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781737358.796122,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781737358.796122,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781737358.806122,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781737358.806122,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781737358.806122,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781737358.816122,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781737358.816122,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781737358.826122,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781737358.826122,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781737358.826122,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781737358.836122,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781737358.836122,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781737358.836122,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781737358.846122,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781737358.846122,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781737358.856122,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781737358.856122,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781737358.856122,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781737358.866122,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781737358.866122,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781737358.866122,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781737358.866122,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781737358.876122,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781737358.876122,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781737358.876122,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781737358.886122,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781737358.886122,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781737358.886122,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781737358.896122,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781737358.896122,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781737358.896122,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781737358.896122,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781737358.896122,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781737358.906122,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781737358.916122,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781737358.916122,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781737358.916122,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781737358.926122,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230224333170Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781737358.926122,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781737351.7423952,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781737351.7423952,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781737351.7523952,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781737351.7523952,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781737351.7523952,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781737351.7623951,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781737351.7623951,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781737351.7623951,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781737351.7623951,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781737351.7723951,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781737351.7723951,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781737351.7723951,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781737351.7723951,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781737351.7823951,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781737351.7823951,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781737351.792395,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781737351.792395,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781737351.792395,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781737351.802395,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781737351.802395,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781737351.802395,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781737351.802395,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781737351.812395,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781737351.812395,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781737351.812395,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781737351.822395,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781737351.822395,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781737351.822395,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781737351.822395,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781737351.822395,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781737351.8323953,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781737351.8323953,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781737351.8323953,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781737351.8423953,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781737351.8423953,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781737351.8523953,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781737351.8523953,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781737351.8623953,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230229474179Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781737351.8623953,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/maricopa-mark.svg": {
+    "mtime": 1781737358.5583718,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781737358.5583718,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781737358.5683718,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781737358.5683718,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781737358.5683718,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781737358.5783718,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781737358.5783718,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781737358.5783718,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781737358.5883718,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781737358.5883718,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781737358.5983717,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781737358.5983717,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781737358.5983717,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781737358.6083717,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781737358.6083717,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781737358.6183717,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781737358.6183717,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781737358.6183717,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781737358.6283717,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781737358.6283717,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781737358.6283717,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781737358.6283717,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781737358.6383717,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781737358.6383717,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781737358.6383717,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781737358.6483717,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781737358.6483717,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781737358.6483717,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781737358.6483717,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781737358.6583717,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781737358.6583717,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781737358.6583717,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781737358.6583717,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781737358.6683717,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781737358.6783717,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781737358.6783717,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781737358.6783717,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781737358.6883717,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230236247445Z-circuiting/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781737358.6883717,
+    "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/maricopa-mark.svg": {
+    "mtime": 1781737371.0237563,
+    "ast_hash": "4209d0f2f2acc716b627e818210daff6",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/07172daf6dd0-Sawmill_Pond.png": {
+    "mtime": 1781737371.0337563,
+    "ast_hash": "82ef4330e03876857f3c6b88a1a1f5f5",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/078e2b862c5f-Burn_Me.png": {
+    "mtime": 1781737371.0337563,
+    "ast_hash": "40fa9771de4761f00e299b25b599161f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/19c7200e89eb-Riders-and-runners.png": {
+    "mtime": 1781737371.0337563,
+    "ast_hash": "89f94b100c4b587006b97dd5b59995de",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png": {
+    "mtime": 1781737371.0437562,
+    "ast_hash": "0c10ae8a679bf1bbce64f77ae5b24ef3",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png": {
+    "mtime": 1781737371.0437562,
+    "ast_hash": "ddf4a5f9eedbaabfca7de25bc4f6de55",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/36b8e37ecd24-TU2.png": {
+    "mtime": 1781737371.0437562,
+    "ast_hash": "ea294a03ceb395534266006d58183693",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/3a6784f3a471-ChatGPT-Image-Mar-27-2025-04_28_34-PM.png": {
+    "mtime": 1781737371.0437562,
+    "ast_hash": "f9e42f5bf79d89dd02049b0152840822",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png": {
+    "mtime": 1781737371.0537562,
+    "ast_hash": "6028c88c91fbd3018dc36b6c2c979bd9",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/52b5e1e6089d-OnTheAdventOfADream-Landr.png": {
+    "mtime": 1781737371.0537562,
+    "ast_hash": "250eadf57659fdbeeeceb580b81e0383",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png": {
+    "mtime": 1781737371.0537562,
+    "ast_hash": "a3a84d06c82945dee2b4279d422286ac",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png": {
+    "mtime": 1781737371.0637562,
+    "ast_hash": "57e60c20f15d95bd39eb87418f140dc2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/631c1ce81182-Between_the_Bottle_and_Goodbye_Large_Title.png": {
+    "mtime": 1781737371.0637562,
+    "ast_hash": "80058258a25e7c3c5315cdf22b030a48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/640c69717d01-Tits-Up.png": {
+    "mtime": 1781737371.0637562,
+    "ast_hash": "c821453fdd4b67328f15b0dba106cacd",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png": {
+    "mtime": 1781737371.0737562,
+    "ast_hash": "5273317edaf73f7174f8339a54264d6c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/7253ce3268b5-The-One-That-Got-Away-Landr.png": {
+    "mtime": 1781737371.0737562,
+    "ast_hash": "7d749ecc9bbe124a717faaf3a18b2535",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/76195be631e4-Umbra_Ala.png": {
+    "mtime": 1781737371.0837562,
+    "ast_hash": "28b831c4dcfbc818aa4b6c0690333669",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/7af9531aa926-The-Hardest-Gift.jpg": {
+    "mtime": 1781737371.0837562,
+    "ast_hash": "56e10e233d5acd56ff540269f015b30e",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/8744705d2da3-Have-A-Heart.png": {
+    "mtime": 1781737371.0837562,
+    "ast_hash": "dd000847aea308c829267d0c219b3192",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/8ba23fe44ba8-scattershot.jpg": {
+    "mtime": 1781737371.0937562,
+    "ast_hash": "e6b93b11f7b89c71c890a08e826c9627",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/90aec637524d-LA_Profile_square.png": {
+    "mtime": 1781737371.0937562,
+    "ast_hash": "22c5f2f7769a0129de30c91f7bc1b40a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/94bf49f0e408-Elemental_Fundamental.png": {
+    "mtime": 1781737371.0937562,
+    "ast_hash": "021d7e5790a633d7d1606b2d3c55d445",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/9738fd064754-PCBender.png": {
+    "mtime": 1781737371.1037562,
+    "ast_hash": "5e1acc4b7859d55fdaadede118010f67",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/a07742867a4f-Specter.jpg": {
+    "mtime": 1781737371.1037562,
+    "ast_hash": "e76afb1664a2a85c9f39e445330c270f",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/a4753b0ddd52-Circuiting.jpg": {
+    "mtime": 1781737371.1037562,
+    "ast_hash": "c38922af483e77597fd92bef4ad7862a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/a86cd61722ea-WindsOfChange.png": {
+    "mtime": 1781737371.1137562,
+    "ast_hash": "7aeb74273ee94090a22c805eb368fd48",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/a8959fff44c8-HalfwayInBetween.jpg": {
+    "mtime": 1781737371.1137562,
+    "ast_hash": "56bd27718dbdb331a0a59f5165ffd9ae",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/b95b541b1109-Nancy.png": {
+    "mtime": 1781737371.1137562,
+    "ast_hash": "fd04a74012e4694bb7212bc3f764a7c8",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/bd5efa2769be-Here-Comes-The-Rain-4Castle.png": {
+    "mtime": 1781737371.1137562,
+    "ast_hash": "dc8a022a4ac713be8f77e7f0f2931a3a",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/cdcab312e822-Two-Tree-Road.jpg": {
+    "mtime": 1781737371.1137562,
+    "ast_hash": "1bf5a8aebced7208699a3e158fec51da",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png": {
+    "mtime": 1781737371.1137562,
+    "ast_hash": "f17d693b1c59453d9afd7f7ff1b54baa",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/d19e2a3a5f05-You-Still-Have-My-Heart-Landr.png": {
+    "mtime": 1781737371.1237562,
+    "ast_hash": "c6b0936c90d11e779d845dff813c6098",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/d4a7e8d1e1a5-GeminiRising.png": {
+    "mtime": 1781737371.1237562,
+    "ast_hash": "b7f676bce295c17273c6576acabd2a76",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/d70397e2d7a1-Too-Blue-To-Lose.png": {
+    "mtime": 1781737371.1337562,
+    "ast_hash": "8236838440fb007d15e0cee573dbac05",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/e1810c0d73f1-Bakers-Dozen-Landr.png": {
+    "mtime": 1781737371.1337562,
+    "ast_hash": "d921fae63121eaca1d0484fa6a0c8e2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/f38a42a461ad-AboutUsImage.png": {
+    "mtime": 1781737371.1437562,
+    "ast_hash": "78f30683705e69cd0a14f877f31176c0",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/fc6fd813f1e6-By-Starlight-Drifting-West.png": {
+    "mtime": 1781737371.1437562,
+    "ast_hash": "424c421ff488d2720aaa13a3f71a7c2c",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png": {
+    "mtime": 1781737371.1437562,
+    "ast_hash": "c4fa95c3a23d39644c1dcd422c535ad2",
+    "semantic_hash": ""
+  },
+  "builds/staging/20260617T230248762813Z-site/assets/releases/circuiting-cover.svg": {
+    "mtime": 1781737371.1437562,
     "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
     "semantic_hash": ""
   }
