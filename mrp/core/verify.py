@@ -48,6 +48,10 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
         return finish(root, generated_at, result)
 
     target_path = root / safety["target_path"]
+    deployment = latest_deployment(root, target_name)
+    result["build_id"] = deployment.get("build_id")
+    result["build_report_path"] = deployment.get("build_report_path")
+    result["deployment_report_path"] = deployment.get("report_path")
     releases = load_records(root / "content" / "releases", "release")
     artists = load_records(root / "content" / "artists", "artist")
     if release:
@@ -171,6 +175,16 @@ def load_records(directory: Path, root_key: str) -> list[dict[str, Any]]:
         record = data.get(root_key, {})
         records.append(record)
     return records
+
+
+def latest_deployment(root: Path, target: str) -> dict[str, Any]:
+    reports = sorted((root / "reports" / "deployment").glob(f"*-{target}-*.json"))
+    for report_path in reversed(reports):
+        data = json.loads(report_path.read_text())
+        if data.get("status") == "passed":
+            data["report_path"] = str(report_path.relative_to(root))
+            return data
+    return {}
 
 
 def add_error(result: dict[str, Any], field: str, message: str) -> None:

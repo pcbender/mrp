@@ -6,10 +6,12 @@ import sys
 from pathlib import Path
 from typing import Any, Sequence
 
+from mrp.core.approve import approve, format_approval
 from mrp.core.build import build_repository, format_build
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.inspect import format_inspection, inspect_repository
+from mrp.core.status import format_status, status
 from mrp.core.validate import format_validation, validate_repository
 from mrp.core.verify import format_verification, verify_target
 
@@ -23,10 +25,8 @@ EXIT_RUNTIME = 5
 
 PLACEHOLDER_COMMANDS = {
     "init",
-    "approve",
     "publish",
     "rollback",
-    "status",
 }
 
 
@@ -57,6 +57,14 @@ def build_parser() -> argparse.ArgumentParser:
     verify_parser = subparsers.add_parser("verify", help="Verify a local deployed target.")
     add_global_options(verify_parser, suppress_defaults=True)
     add_common_command_options(verify_parser, "verify")
+
+    approve_parser = subparsers.add_parser("approve", help="Approve a verified build or release.")
+    add_global_options(approve_parser, suppress_defaults=True)
+    add_common_command_options(approve_parser, "approve")
+
+    status_parser = subparsers.add_parser("status", help="Show publishing status.")
+    add_global_options(status_parser, suppress_defaults=True)
+    add_common_command_options(status_parser, "status")
 
     for command in sorted(PLACEHOLDER_COMMANDS):
         command_parser = subparsers.add_parser(command, help=f"{command} command placeholder.")
@@ -160,6 +168,12 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "verify":
         print(format_verification(result))
         return
+    if result["command"] == "approve":
+        print(format_approval(result))
+        return
+    if result["command"] == "status":
+        print(format_status(result))
+        return
 
     print(result["message"])
 
@@ -186,6 +200,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
     elif args.command == "verify":
         result = verify_target(args.repo, target=args.target, release=args.release)
+    elif args.command == "approve":
+        result = approve(args.repo, release=args.release, build=args.build)
+    elif args.command == "status":
+        result = status(args.repo)
     elif args.command == "import-site":
         result = import_site(args.repo, source=args.source)
     else:
@@ -200,6 +218,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             return EXIT_CONFIG
         return EXIT_DEPLOYMENT
     if args.command == "verify" and result["status"] == "failed":
+        return EXIT_FAILURE
+    if args.command == "approve" and result["status"] == "failed":
         return EXIT_FAILURE
     return EXIT_SUCCESS
 
