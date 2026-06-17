@@ -69,3 +69,10 @@ existing release.
 
 MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
 v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).
+
+## Docs
+
+- [Content model](docs/CONTENT-MODEL.md)
+- [Deployment](docs/DEPLOYMENT.md)
+- [Agent usage](docs/AGENT-USAGE.md)
+- [Remote deployment v0.2 candidate](docs/REMOTE-DEPLOYMENT-v0.2.md)
