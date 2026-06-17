@@ -1330,8 +1330,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1781730054.9207027,
-    "ast_hash": "223d930e10918a698d44fb1e973bc190",
+    "mtime": 1781731313.0358248,
+    "ast_hash": "6380bc22d2102dcae7178016ad767cbd",
     "semantic_hash": ""
   },
   "builds/archive/production-20260617T195554Z/about-us/index.html": {
@@ -30547,6 +30547,16 @@
   "builds/staging/20260617T211849333054Z-site/assets/releases/circuiting-cover.svg": {
     "mtime": 1781731131.8526642,
     "ast_hash": "f0d7d4c0d15de33921a1a61f74f37528",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260617T212201Z.json": {
+    "mtime": 1781731321.0746355,
+    "ast_hash": "bc72a7ec7bc4eded28294071ea295569",
+    "semantic_hash": ""
+  },
+  "docs/MRP-v0.1.1-REVIEW.md": {
+    "mtime": 1781731308.383647,
+    "ast_hash": "465da15c637d0092539b2b67a53e32a2",
     "semantic_hash": ""
   }
 }

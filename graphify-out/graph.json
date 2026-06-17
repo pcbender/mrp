@@ -1820,7 +1820,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_build",
-      "community": 13,
+      "community": 0,
       "norm_label": "build.py"
     },
     {
@@ -1830,7 +1830,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "core_build_build_repository",
-      "community": 13,
+      "community": 0,
       "norm_label": "build_repository()"
     },
     {
@@ -1840,7 +1840,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mrp_core_build_py_path",
-      "community": 13,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -1850,7 +1850,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "mrp_core_build_py_any",
-      "community": 13,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -1860,7 +1860,7 @@
       "source_location": "L130",
       "_origin": "ast",
       "id": "core_build_base_result",
-      "community": 13,
+      "community": 0,
       "norm_label": "base_result()"
     },
     {
@@ -1870,7 +1870,7 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "core_build_now_utc",
-      "community": 13,
+      "community": 0,
       "norm_label": "now_utc()"
     },
     {
@@ -1880,7 +1880,7 @@
       "source_location": "L144",
       "_origin": "ast",
       "id": "core_build_next_build_id",
-      "community": 13,
+      "community": 0,
       "norm_label": "next_build_id()"
     },
     {
@@ -1890,7 +1890,7 @@
       "source_location": "L156",
       "_origin": "ast",
       "id": "core_build_inventory_files",
-      "community": 13,
+      "community": 0,
       "norm_label": "inventory_files()"
     },
     {
@@ -1900,7 +1900,7 @@
       "source_location": "L170",
       "_origin": "ast",
       "id": "core_build_write_build_report",
-      "community": 13,
+      "community": 0,
       "norm_label": "write_build_report()"
     },
     {
@@ -1910,7 +1910,7 @@
       "source_location": "L177",
       "_origin": "ast",
       "id": "core_build_format_build",
-      "community": 13,
+      "community": 0,
       "norm_label": "format_build()"
     },
     {
@@ -2220,7 +2220,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_inspect",
-      "community": 0,
+      "community": 16,
       "norm_label": "inspect.py"
     },
     {
@@ -2230,7 +2230,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "core_inspect_contentcounts",
-      "community": 0,
+      "community": 16,
       "norm_label": "contentcounts"
     },
     {
@@ -2240,7 +2240,7 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "core_inspect_contentcounts_total",
-      "community": 0,
+      "community": 16,
       "norm_label": ".total()"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "core_inspect_inspect_repository",
-      "community": 0,
+      "community": 16,
       "norm_label": "inspect_repository()"
     },
     {
@@ -2260,7 +2260,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "mrp_core_inspect_py_path",
-      "community": 0,
+      "community": 16,
       "norm_label": "path"
     },
     {
@@ -2270,7 +2270,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "mrp_core_inspect_py_any",
-      "community": 0,
+      "community": 16,
       "norm_label": "any"
     },
     {
@@ -2280,7 +2280,7 @@
       "source_location": "L60",
       "_origin": "ast",
       "id": "core_inspect_count_content",
-      "community": 0,
+      "community": 16,
       "norm_label": "count_content()"
     },
     {
@@ -2290,7 +2290,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "core_inspect_count_record_files",
-      "community": 0,
+      "community": 16,
       "norm_label": "count_record_files()"
     },
     {
@@ -2300,7 +2300,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "core_inspect_count_assets",
-      "community": 0,
+      "community": 16,
       "norm_label": "count_assets()"
     },
     {
@@ -2310,7 +2310,7 @@
       "source_location": "L83",
       "_origin": "ast",
       "id": "core_inspect_detect_site_framework",
-      "community": 0,
+      "community": 16,
       "norm_label": "detect_site_framework()"
     },
     {
@@ -2320,7 +2320,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "core_inspect_inspect_deploy",
-      "community": 0,
+      "community": 16,
       "norm_label": "inspect_deploy()"
     },
     {
@@ -2330,7 +2330,7 @@
       "source_location": "L110",
       "_origin": "ast",
       "id": "core_inspect_latest_reports",
-      "community": 0,
+      "community": 16,
       "norm_label": "latest_reports()"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "core_inspect_inspect_warnings",
-      "community": 0,
+      "community": 16,
       "norm_label": "inspect_warnings()"
     },
     {
@@ -2350,7 +2350,7 @@
       "source_location": "L142",
       "_origin": "ast",
       "id": "core_inspect_format_inspection",
-      "community": 0,
+      "community": 16,
       "norm_label": "format_inspection()"
     },
     {
@@ -3040,7 +3040,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_rollback",
-      "community": 16,
+      "community": 0,
       "norm_label": "rollback.py"
     },
     {
@@ -3050,7 +3050,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "core_rollback_rollback",
-      "community": 16,
+      "community": 0,
       "norm_label": "rollback()"
     },
     {
@@ -3060,7 +3060,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mrp_core_rollback_py_path",
-      "community": 16,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -3070,7 +3070,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mrp_core_rollback_py_any",
-      "community": 16,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -3080,7 +3080,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "core_rollback_rollback_candidate",
-      "community": 16,
+      "community": 0,
       "norm_label": "rollback_candidate()"
     },
     {
@@ -3090,7 +3090,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "core_rollback_clear_target",
-      "community": 16,
+      "community": 0,
       "norm_label": "clear_target()"
     },
     {
@@ -3100,7 +3100,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "core_rollback_copy_tree",
-      "community": 16,
+      "community": 0,
       "norm_label": "copy_tree()"
     },
     {
@@ -3110,7 +3110,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "core_rollback_add_error",
-      "community": 16,
+      "community": 0,
       "norm_label": "add_error()"
     },
     {
@@ -3120,7 +3120,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "core_rollback_finish",
-      "community": 16,
+      "community": 0,
       "norm_label": "finish()"
     },
     {
@@ -3130,7 +3130,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "core_rollback_write_rollback_report",
-      "community": 16,
+      "community": 0,
       "norm_label": "write_rollback_report()"
     },
     {
@@ -3140,7 +3140,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "core_rollback_now_utc",
-      "community": 16,
+      "community": 0,
       "norm_label": "now_utc()"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_location": "L135",
       "_origin": "ast",
       "id": "core_rollback_format_rollback",
-      "community": 16,
+      "community": 0,
       "norm_label": "format_rollback()"
     },
     {
@@ -10324,7 +10324,7 @@
       "label": "End-to-End Test",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L87",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "readme_end_to_end_test",
       "community": 38,
@@ -10917,7 +10917,7 @@
       "source_location": "L1070",
       "_origin": "ast",
       "id": "docs_mrp_v0_1_specification_17_work_packets",
-      "community": 37,
+      "community": 51,
       "norm_label": "17. work packets"
     },
     {
@@ -12089,6 +12089,76 @@
       "id": "docs_mrp_v0_1_1_full_site_staging_plan_mrp_110_review_and_cleanup",
       "community": 126,
       "norm_label": "mrp-110 - review and cleanup"
+    },
+    {
+      "label": "MRP-v0.1.1-REVIEW.md",
+      "file_type": "document",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_mrp_v0_1_1_review",
+      "community": 242,
+      "norm_label": "mrp-v0.1.1-review.md"
+    },
+    {
+      "label": "MRP v0.1.1 Migration Review",
+      "file_type": "document",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_mrp_v0_1_1_review_mrp_v0_1_1_migration_review",
+      "community": 242,
+      "norm_label": "mrp v0.1.1 migration review"
+    },
+    {
+      "label": "Regenerate Staging",
+      "file_type": "document",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "docs_mrp_v0_1_1_review_regenerate_staging",
+      "community": 242,
+      "norm_label": "regenerate staging"
+    },
+    {
+      "label": "Current Staging Output",
+      "file_type": "document",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "docs_mrp_v0_1_1_review_current_staging_output",
+      "community": 242,
+      "norm_label": "current staging output"
+    },
+    {
+      "label": "Known Gaps",
+      "file_type": "document",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L37",
+      "_origin": "ast",
+      "id": "docs_mrp_v0_1_1_review_known_gaps",
+      "community": 242,
+      "norm_label": "known gaps"
+    },
+    {
+      "label": "Manual Review Checklist",
+      "file_type": "document",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "docs_mrp_v0_1_1_review_manual_review_checklist",
+      "community": 242,
+      "norm_label": "manual review checklist"
+    },
+    {
+      "label": "Post-v0.1.1 Follow-up",
+      "file_type": "document",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "docs_mrp_v0_1_1_review_post_v0_1_1_follow_up",
+      "community": 242,
+      "norm_label": "post-v0.1.1 follow-up"
     },
     {
       "label": "REMOTE-DEPLOYMENT-v0.2.md",
@@ -25648,9 +25718,9 @@
       "source_file": "tests/test_e2e_v011.py",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_e2e_v011",
-      "target": "tests_test_e2e_v011_ensure_staging_marker",
-      "confidence_score": 1.0
+      "target": "tests_test_e2e_v011_ensure_staging_marker"
     },
     {
       "relation": "contains",
@@ -25658,9 +25728,9 @@
       "source_file": "tests/test_e2e_v011.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_e2e_v011",
-      "target": "tests_test_e2e_v011_json_command",
-      "confidence_score": 1.0
+      "target": "tests_test_e2e_v011_json_command"
     },
     {
       "relation": "contains",
@@ -25668,9 +25738,9 @@
       "source_file": "tests/test_e2e_v011.py",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_e2e_v011",
-      "target": "tests_test_e2e_v011_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_e2e_v011_run_mrp"
     },
     {
       "relation": "contains",
@@ -25678,9 +25748,9 @@
       "source_file": "tests/test_e2e_v011.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_e2e_v011",
-      "target": "tests_test_e2e_v011_test_v011_full_site_staging_migration_end_to_end",
-      "confidence_score": 1.0
+      "target": "tests_test_e2e_v011_test_v011_full_site_staging_migration_end_to_end"
     },
     {
       "relation": "calls",
@@ -25689,9 +25759,9 @@
       "source_file": "tests/test_e2e_v011.py",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_e2e_v011_json_command",
-      "target": "tests_test_e2e_v011_run_mrp",
-      "confidence_score": 1.0
+      "target": "tests_test_e2e_v011_run_mrp"
     },
     {
       "relation": "references",
@@ -25700,9 +25770,9 @@
       "source_file": "tests/test_e2e_v011.py",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_e2e_v011_run_mrp",
-      "target": "tests_test_e2e_v011_py_completedprocess",
-      "confidence_score": 1.0
+      "target": "tests_test_e2e_v011_py_completedprocess"
     },
     {
       "relation": "calls",
@@ -25711,9 +25781,9 @@
       "source_file": "tests/test_e2e_v011.py",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_e2e_v011_test_v011_full_site_staging_migration_end_to_end",
-      "target": "tests_test_e2e_v011_json_command",
-      "confidence_score": 1.0
+      "target": "tests_test_e2e_v011_json_command"
     },
     {
       "relation": "calls",
@@ -25722,9 +25792,9 @@
       "source_file": "tests/test_e2e_v011.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_test_e2e_v011_test_v011_full_site_staging_migration_end_to_end",
-      "target": "tests_test_e2e_v011_ensure_staging_marker",
-      "confidence_score": 1.0
+      "target": "tests_test_e2e_v011_ensure_staging_marker"
     },
     {
       "relation": "contains",
@@ -29709,6 +29779,66 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "docs_mrp_v0_1_1_review",
+      "target": "docs_mrp_v0_1_1_review_mrp_v0_1_1_migration_review",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "docs_mrp_v0_1_1_review_mrp_v0_1_1_migration_review",
+      "target": "docs_mrp_v0_1_1_review_current_staging_output",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "docs_mrp_v0_1_1_review_mrp_v0_1_1_migration_review",
+      "target": "docs_mrp_v0_1_1_review_known_gaps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "docs_mrp_v0_1_1_review_mrp_v0_1_1_migration_review",
+      "target": "docs_mrp_v0_1_1_review_manual_review_checklist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "docs_mrp_v0_1_1_review_mrp_v0_1_1_migration_review",
+      "target": "docs_mrp_v0_1_1_review_post_v0_1_1_follow_up",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/MRP-v0.1.1-REVIEW.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "docs_mrp_v0_1_1_review_mrp_v0_1_1_migration_review",
+      "target": "docs_mrp_v0_1_1_review_regenerate_staging",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/REMOTE-DEPLOYMENT-v0.2.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -29718,5 +29848,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "df9a2e44252720f75c8000b41ace73679cbbbc48"
+  "built_at_commit": "b29e4918165f9311c3564f48a34e305f6863b1aa"
 }
