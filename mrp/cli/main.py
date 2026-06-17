@@ -19,6 +19,7 @@ from mrp.core.rollback import format_rollback, rollback
 from mrp.core.status import format_status, status
 from mrp.core.validate import format_validation, validate_repository
 from mrp.core.verify import format_verification, verify_target
+from mrp.core.wxr import format_wxr_inventory, wxr_inventory
 
 
 EXIT_SUCCESS = 0
@@ -97,6 +98,10 @@ def build_parser() -> argparse.ArgumentParser:
     migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
     add_global_options(migrate_parser, suppress_defaults=True)
     migrate_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
+
+    wxr_parser = subparsers.add_parser("wxr-inventory", help="Inventory the WordPress export for static clone work.")
+    add_global_options(wxr_parser, suppress_defaults=True)
+    wxr_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
 
     return parser
 
@@ -199,6 +204,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "migrate-site":
         print(format_migrate_site(result))
         return
+    if result["command"] == "wxr-inventory":
+        print(format_wxr_inventory(result))
+        return
 
     print(result["message"])
 
@@ -244,6 +252,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = import_site(args.repo, source=args.source)
     elif args.command == "migrate-site":
         result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
+    elif args.command == "wxr-inventory":
+        result = wxr_inventory(args.repo, source=args.source)
     else:
         result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))
@@ -275,6 +285,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "release" and result["status"] == "failed":
         return EXIT_CONFIG
     if args.command == "migrate-site" and result["status"] == "failed":
+        return EXIT_CONFIG
+    if args.command == "wxr-inventory" and result["status"] == "failed":
         return EXIT_CONFIG
     return EXIT_SUCCESS
 

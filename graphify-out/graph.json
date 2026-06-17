@@ -216,6 +216,16 @@
     {
       "label": "contact-submit.php",
       "file_type": "code",
+      "source_file": "builds/archive/production-20260617T225725Z/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "production_20260617t225725z_contact_submit",
+      "community": 250,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
       "source_file": "builds/local-production/contact-submit.php",
       "source_location": "L1",
       "_origin": "ast",
@@ -1554,6 +1564,66 @@
       "norm_label": "contact-submit.php"
     },
     {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T225653260338Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t225653260338z_site_contact_submit",
+      "community": 244,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T225704860007Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t225704860007z_site_contact_submit",
+      "community": 245,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T225708541118Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t225708541118z_circuiting_contact_submit",
+      "community": 246,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T225713691442Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t225713691442z_site_contact_submit",
+      "community": 247,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T225720372826Z-circuiting/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t225720372826z_circuiting_contact_submit",
+      "community": 248,
+      "norm_label": "contact-submit.php"
+    },
+    {
+      "label": "contact-submit.php",
+      "file_type": "code",
+      "source_file": "builds/staging/20260617T225732396114Z-site/contact-submit.php",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "20260617t225732396114z_site_contact_submit",
+      "community": 249,
+      "norm_label": "contact-submit.php"
+    },
+    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "mrp/__init__.py",
@@ -1607,7 +1677,7 @@
       "label": "build_parser()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "cli_main_build_parser",
       "community": 0,
@@ -1617,7 +1687,7 @@
       "label": "ArgumentParser",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "argumentparser",
       "community": 0,
@@ -1627,7 +1697,7 @@
       "label": "add_global_options()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L104",
+      "source_location": "L109",
       "_origin": "ast",
       "id": "cli_main_add_global_options",
       "community": 0,
@@ -1637,7 +1707,7 @@
       "label": "add_common_command_options()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L131",
+      "source_location": "L136",
       "_origin": "ast",
       "id": "cli_main_add_common_command_options",
       "community": 0,
@@ -1647,7 +1717,7 @@
       "label": "placeholder_result()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L147",
+      "source_location": "L152",
       "_origin": "ast",
       "id": "cli_main_placeholder_result",
       "community": 0,
@@ -1657,7 +1727,7 @@
       "label": "Namespace",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L147",
+      "source_location": "L152",
       "_origin": "ast",
       "id": "namespace",
       "community": 0,
@@ -1667,7 +1737,7 @@
       "label": "Any",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L147",
+      "source_location": "L152",
       "_origin": "ast",
       "id": "mrp_cli_main_py_any",
       "community": 0,
@@ -1677,7 +1747,7 @@
       "label": "emit()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L161",
+      "source_location": "L166",
       "_origin": "ast",
       "id": "cli_main_emit",
       "community": 0,
@@ -1687,7 +1757,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "mrp/cli/main.py",
-      "source_location": "L206",
+      "source_location": "L214",
       "_origin": "ast",
       "id": "cli_main_main",
       "community": 0,
@@ -2050,7 +2120,7 @@
       "source_location": "L243",
       "_origin": "ast",
       "id": "core_deploy_format_deployment",
-      "community": 0,
+      "community": 7,
       "norm_label": "format_deployment()"
     },
     {
@@ -3040,7 +3110,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_rollback",
-      "community": 0,
+      "community": 243,
       "norm_label": "rollback.py"
     },
     {
@@ -3050,7 +3120,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "core_rollback_rollback",
-      "community": 0,
+      "community": 243,
       "norm_label": "rollback()"
     },
     {
@@ -3060,7 +3130,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mrp_core_rollback_py_path",
-      "community": 0,
+      "community": 243,
       "norm_label": "path"
     },
     {
@@ -3070,7 +3140,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "mrp_core_rollback_py_any",
-      "community": 0,
+      "community": 243,
       "norm_label": "any"
     },
     {
@@ -3080,7 +3150,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "core_rollback_rollback_candidate",
-      "community": 0,
+      "community": 243,
       "norm_label": "rollback_candidate()"
     },
     {
@@ -3090,7 +3160,7 @@
       "source_location": "L88",
       "_origin": "ast",
       "id": "core_rollback_clear_target",
-      "community": 0,
+      "community": 243,
       "norm_label": "clear_target()"
     },
     {
@@ -3100,7 +3170,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "core_rollback_copy_tree",
-      "community": 0,
+      "community": 243,
       "norm_label": "copy_tree()"
     },
     {
@@ -3110,7 +3180,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "core_rollback_add_error",
-      "community": 0,
+      "community": 243,
       "norm_label": "add_error()"
     },
     {
@@ -3120,7 +3190,7 @@
       "source_location": "L116",
       "_origin": "ast",
       "id": "core_rollback_finish",
-      "community": 0,
+      "community": 243,
       "norm_label": "finish()"
     },
     {
@@ -3130,7 +3200,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "core_rollback_write_rollback_report",
-      "community": 0,
+      "community": 243,
       "norm_label": "write_rollback_report()"
     },
     {
@@ -3140,7 +3210,7 @@
       "source_location": "L131",
       "_origin": "ast",
       "id": "core_rollback_now_utc",
-      "community": 0,
+      "community": 243,
       "norm_label": "now_utc()"
     },
     {
@@ -3150,7 +3220,7 @@
       "source_location": "L135",
       "_origin": "ast",
       "id": "core_rollback_format_rollback",
-      "community": 0,
+      "community": 243,
       "norm_label": "format_rollback()"
     },
     {
@@ -3160,7 +3230,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_status",
-      "community": 205,
+      "community": 0,
       "norm_label": "status.py"
     },
     {
@@ -3170,7 +3240,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "core_status_status",
-      "community": 205,
+      "community": 0,
       "norm_label": "status()"
     },
     {
@@ -3180,7 +3250,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mrp_core_status_py_path",
-      "community": 205,
+      "community": 0,
       "norm_label": "path"
     },
     {
@@ -3190,7 +3260,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "mrp_core_status_py_any",
-      "community": 205,
+      "community": 0,
       "norm_label": "any"
     },
     {
@@ -3200,7 +3270,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "core_status_latest_report",
-      "community": 205,
+      "community": 0,
       "norm_label": "latest_report()"
     },
     {
@@ -3210,7 +3280,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "core_status_report_summary",
-      "community": 205,
+      "community": 0,
       "norm_label": "report_summary()"
     },
     {
@@ -3220,7 +3290,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "core_status_find_release",
-      "community": 205,
+      "community": 0,
       "norm_label": "find_release()"
     },
     {
@@ -3230,7 +3300,7 @@
       "source_location": "L95",
       "_origin": "ast",
       "id": "core_status_release_summary",
-      "community": 205,
+      "community": 0,
       "norm_label": "release_summary()"
     },
     {
@@ -3240,7 +3310,7 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "core_status_rollback_available",
-      "community": 205,
+      "community": 0,
       "norm_label": "rollback_available()"
     },
     {
@@ -3250,7 +3320,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "core_status_format_status",
-      "community": 205,
+      "community": 0,
       "norm_label": "format_status()"
     },
     {
@@ -3742,6 +3812,206 @@
       "id": "core_verify_format_verification",
       "community": 0,
       "norm_label": "format_verification()"
+    },
+    {
+      "label": "wxr.py",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "core_wxr",
+      "community": 205,
+      "norm_label": "wxr.py"
+    },
+    {
+      "label": "wxr_inventory()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "core_wxr_wxr_inventory",
+      "community": 205,
+      "norm_label": "wxr_inventory()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "mrp_core_wxr_py_path",
+      "community": 205,
+      "norm_label": "path"
+    },
+    {
+      "label": "Any",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "mrp_core_wxr_py_any",
+      "community": 205,
+      "norm_label": "any"
+    },
+    {
+      "label": "parse_wxr()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "core_wxr_parse_wxr",
+      "community": 205,
+      "norm_label": "parse_wxr()"
+    },
+    {
+      "label": "parse_item()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "core_wxr_parse_item",
+      "community": 205,
+      "norm_label": "parse_item()"
+    },
+    {
+      "label": "Element",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "element",
+      "community": 205,
+      "norm_label": "element"
+    },
+    {
+      "label": "classify_wxr_item()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L171",
+      "_origin": "ast",
+      "id": "core_wxr_classify_wxr_item",
+      "community": 205,
+      "norm_label": "classify_wxr_item()"
+    },
+    {
+      "label": "public_page_category()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L217",
+      "_origin": "ast",
+      "id": "core_wxr_public_page_category",
+      "community": 205,
+      "norm_label": "public_page_category()"
+    },
+    {
+      "label": "normalize_capture_route()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L228",
+      "_origin": "ast",
+      "id": "core_wxr_normalize_capture_route",
+      "community": 205,
+      "norm_label": "normalize_capture_route()"
+    },
+    {
+      "label": "route_parts()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L244",
+      "_origin": "ast",
+      "id": "core_wxr_route_parts",
+      "community": 205,
+      "norm_label": "route_parts()"
+    },
+    {
+      "label": "inventory_summary()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L248",
+      "_origin": "ast",
+      "id": "core_wxr_inventory_summary",
+      "community": 205,
+      "norm_label": "inventory_summary()"
+    },
+    {
+      "label": "exclusion_summary()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L266",
+      "_origin": "ast",
+      "id": "core_wxr_exclusion_summary",
+      "community": 205,
+      "norm_label": "exclusion_summary()"
+    },
+    {
+      "label": "text()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L273",
+      "_origin": "ast",
+      "id": "core_wxr_text",
+      "community": 205,
+      "norm_label": "text()"
+    },
+    {
+      "label": "integer_text()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L280",
+      "_origin": "ast",
+      "id": "core_wxr_integer_text",
+      "community": 205,
+      "norm_label": "integer_text()"
+    },
+    {
+      "label": "load_json()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L288",
+      "_origin": "ast",
+      "id": "core_wxr_load_json",
+      "community": 205,
+      "norm_label": "load_json()"
+    },
+    {
+      "label": "write_json()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L292",
+      "_origin": "ast",
+      "id": "core_wxr_write_json",
+      "community": 205,
+      "norm_label": "write_json()"
+    },
+    {
+      "label": "report_path()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L297",
+      "_origin": "ast",
+      "id": "core_wxr_report_path",
+      "community": 205,
+      "norm_label": "report_path()"
+    },
+    {
+      "label": "now_utc()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L302",
+      "_origin": "ast",
+      "id": "core_wxr_now_utc",
+      "community": 205,
+      "norm_label": "now_utc()"
+    },
+    {
+      "label": "format_wxr_inventory()",
+      "file_type": "code",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L306",
+      "_origin": "ast",
+      "id": "core_wxr_format_wxr_inventory",
+      "community": 205,
+      "norm_label": "format_wxr_inventory()"
     },
     {
       "label": "artist.schema.json",
@@ -10171,6 +10441,106 @@
       "norm_label": "test_verify_excluded_migration_path_fails()"
     },
     {
+      "label": "test_wxr.py",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "tests_test_wxr",
+      "community": 205,
+      "norm_label": "test_wxr.py"
+    },
+    {
+      "label": "write_wxr()",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "tests_test_wxr_write_wxr",
+      "community": 205,
+      "norm_label": "write_wxr()"
+    },
+    {
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "tests_test_wxr_py_path",
+      "community": 205,
+      "norm_label": "path"
+    },
+    {
+      "label": "run_mrp()",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "tests_test_wxr_run_mrp",
+      "community": 205,
+      "norm_label": "run_mrp()"
+    },
+    {
+      "label": "CompletedProcess",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "tests_test_wxr_py_completedprocess",
+      "community": 205,
+      "norm_label": "completedprocess"
+    },
+    {
+      "label": "test_parse_wxr_preserves_namespaced_fields_and_raw_content()",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L100",
+      "_origin": "ast",
+      "id": "tests_test_wxr_test_parse_wxr_preserves_namespaced_fields_and_raw_content",
+      "community": 205,
+      "norm_label": "test_parse_wxr_preserves_namespaced_fields_and_raw_content()"
+    },
+    {
+      "label": "test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions()",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L120",
+      "_origin": "ast",
+      "id": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
+      "community": 205,
+      "norm_label": "test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions()"
+    },
+    {
+      "label": "test_wxr_inventory_reads_real_export_and_capture_manifest()",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L133",
+      "_origin": "ast",
+      "id": "tests_test_wxr_test_wxr_inventory_reads_real_export_and_capture_manifest",
+      "community": 205,
+      "norm_label": "test_wxr_inventory_reads_real_export_and_capture_manifest()"
+    },
+    {
+      "label": "test_wxr_inventory_cli_outputs_json()",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L156",
+      "_origin": "ast",
+      "id": "tests_test_wxr_test_wxr_inventory_cli_outputs_json",
+      "community": 205,
+      "norm_label": "test_wxr_inventory_cli_outputs_json()"
+    },
+    {
+      "label": "test_wxr_inventory_missing_source_fails_cleanly()",
+      "file_type": "code",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L169",
+      "_origin": "ast",
+      "id": "tests_test_wxr_test_wxr_inventory_missing_source_fails_cleanly",
+      "community": 205,
+      "norm_label": "test_wxr_inventory_missing_source_fails_cleanly()"
+    },
+    {
       "label": "executor.md",
       "file_type": "document",
       "source_file": ".canto/agents/executor.md",
@@ -10917,7 +11287,7 @@
       "source_location": "L1070",
       "_origin": "ast",
       "id": "docs_mrp_v0_1_specification_17_work_packets",
-      "community": 49,
+      "community": 37,
       "norm_label": "17. work packets"
     },
     {
@@ -12839,6 +13209,28 @@
       "target": "core_verify_verify_target"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/cli/main.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "cli_main",
+      "target": "core_wxr_format_wxr_inventory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/cli/main.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "cli_main",
+      "target": "core_wxr_wxr_inventory",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
@@ -13085,6 +13477,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "mrp/cli/main.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "cli_main_emit",
+      "target": "core_wxr_format_wxr_inventory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/cli/main.py",
       "source_location": "L238",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13222,6 +13625,17 @@
       "confidence_score": 1.0,
       "source": "cli_main_main",
       "target": "core_verify_verify_target"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/cli/main.py",
+      "source_location": "L256",
+      "weight": 1.0,
+      "source": "cli_main_main",
+      "target": "core_wxr_wxr_inventory",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16423,6 +16837,28 @@
       "target": "mrp_core_migration_inventory_py_any"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_migration_inventory_resolve_source",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_migration_inventory_resolve_source",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -19426,6 +19862,617 @@
       "confidence_score": 1.0,
       "source": "core_verify_finish",
       "target": "core_verify_write_verification_report"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_classify_wxr_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L266",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_exclusion_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L306",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_format_wxr_inventory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L280",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_integer_text",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L248",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_inventory_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_load_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L228",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_normalize_capture_route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L302",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_now_utc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_parse_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_parse_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L217",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_public_page_category",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L297",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_report_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L244",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_route_parts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_text",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L292",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_write_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "core_wxr",
+      "target": "core_wxr_wxr_inventory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_classify_wxr_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_exclusion_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_inventory_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_load_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_normalize_capture_route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_now_utc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_parse_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_report_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "core_wxr_write_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "core_wxr_wxr_inventory",
+      "target": "mrp_core_wxr_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "core_wxr_wxr_inventory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "tests_test_wxr_test_wxr_inventory_reads_real_export_and_capture_manifest",
+      "target": "core_wxr_wxr_inventory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "core_wxr_load_json",
+      "target": "mrp_core_wxr_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "core_wxr_parse_wxr",
+      "target": "mrp_core_wxr_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L297",
+      "weight": 1.0,
+      "source": "core_wxr_report_path",
+      "target": "mrp_core_wxr_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L292",
+      "weight": 1.0,
+      "source": "core_wxr_write_json",
+      "target": "mrp_core_wxr_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L171",
+      "weight": 1.0,
+      "source": "core_wxr_classify_wxr_item",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L266",
+      "weight": 1.0,
+      "source": "core_wxr_exclusion_summary",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L306",
+      "weight": 1.0,
+      "source": "core_wxr_format_wxr_inventory",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L248",
+      "weight": 1.0,
+      "source": "core_wxr_inventory_summary",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L288",
+      "weight": 1.0,
+      "source": "core_wxr_load_json",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L228",
+      "weight": 1.0,
+      "source": "core_wxr_normalize_capture_route",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "core_wxr_parse_item",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "core_wxr_parse_wxr",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L292",
+      "weight": 1.0,
+      "source": "core_wxr_write_json",
+      "target": "mrp_core_wxr_py_any",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "core_wxr_parse_wxr",
+      "target": "core_wxr_parse_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "source": "core_wxr_parse_wxr",
+      "target": "core_wxr_text",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "core_wxr_parse_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
+      "target": "core_wxr_parse_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "tests_test_wxr_test_parse_wxr_preserves_namespaced_fields_and_raw_content",
+      "target": "core_wxr_parse_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "core_wxr_parse_item",
+      "target": "core_wxr_integer_text",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "core_wxr_parse_item",
+      "target": "core_wxr_text",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "core_wxr_parse_item",
+      "target": "element",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L280",
+      "weight": 1.0,
+      "source": "core_wxr_integer_text",
+      "target": "element",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "core_wxr_text",
+      "target": "element",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "core_wxr_classify_wxr_item",
+      "target": "core_wxr_public_page_category",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "core_wxr_classify_wxr_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
+      "target": "core_wxr_classify_wxr_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "source": "core_wxr_public_page_category",
+      "target": "core_wxr_route_parts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "mrp/core/wxr.py",
+      "source_location": "L281",
+      "weight": 1.0,
+      "source": "core_wxr_integer_text",
+      "target": "core_wxr_text",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -28169,6 +29216,142 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "tests_test_wxr_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "tests_test_wxr_test_parse_wxr_preserves_namespaced_fields_and_raw_content",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "tests_test_wxr_test_wxr_inventory_cli_outputs_json",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "tests_test_wxr_test_wxr_inventory_missing_source_fails_cleanly",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "tests_test_wxr_test_wxr_inventory_reads_real_export_and_capture_manifest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tests_test_wxr",
+      "target": "tests_test_wxr_write_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "source": "tests_test_wxr_test_classify_wxr_items_explicitly_marks_clone_scope_and_exclusions",
+      "target": "tests_test_wxr_write_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "tests_test_wxr_test_parse_wxr_preserves_namespaced_fields_and_raw_content",
+      "target": "tests_test_wxr_write_wxr",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "tests_test_wxr_write_wxr",
+      "target": "tests_test_wxr_py_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "tests_test_wxr_run_mrp",
+      "target": "tests_test_wxr_py_completedprocess",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L159",
+      "weight": 1.0,
+      "source": "tests_test_wxr_test_wxr_inventory_cli_outputs_json",
+      "target": "tests_test_wxr_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_wxr.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "tests_test_wxr_test_wxr_inventory_missing_source_fails_cleanly",
+      "target": "tests_test_wxr_run_mrp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": ".canto/agents/executor.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -30238,5 +31421,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "9a94a4c8646c42b8f79cb0fb002bfff68ddcd6b1"
+  "built_at_commit": "179197316c06acfda6625bd6a4e662b03a769b27"
 }
