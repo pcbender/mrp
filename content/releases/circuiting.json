@@ -1,0 +1,47 @@
+{
+  "release": {
+    "id": "circuiting",
+    "slug": "circuiting",
+    "title": "Circuiting",
+    "artist_id": "pcbender",
+    "model": "song",
+    "release_type": "single",
+    "status": "live",
+    "release_date": "2025-02-15",
+    "label": "Maricopa Records",
+    "publisher": "Maricopa Publishing",
+    "upc": null,
+    "catalog_number": null,
+    "cover_image": "site/public/assets/releases/circuiting-cover.svg",
+    "hero_image": null,
+    "summary": "Circuiting by PCBender on Maricopa Records.",
+    "description": "Circuiting is a single from PCBender, imported as the first curated release record for MRP v0.1.",
+    "credits": {
+      "primary_artist": "PCBender",
+      "songwriter": "Michael Anthony Rose",
+      "producer": null,
+      "mastering": null
+    },
+    "links": {
+      "spotify": null,
+      "apple_music": null,
+      "youtube_music": null,
+      "bandcamp": null,
+      "soundcloud": null,
+      "landing_page": "https://www.maricoparecords.com/artists/pcbender/circuiting/"
+    },
+    "seo": {
+      "title": "Circuiting by PCBender",
+      "description": "Circuiting by PCBender on Maricopa Records."
+    },
+    "song": {
+      "title": "Circuiting",
+      "slug": "circuiting",
+      "isrc": null,
+      "duration": null,
+      "explicit": false,
+      "preview_audio": null,
+      "lyrics_excerpt": null
+    }
+  }
+}

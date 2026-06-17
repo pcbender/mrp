@@ -3,13 +3,14 @@ interface Props {
   name: string;
   href: string;
   summary?: string;
+  image?: string;
 }
 
-const { name, href, summary = "Maricopa Records artist" } = Astro.props;
+const { name, href, summary = "Maricopa Records artist", image } = Astro.props;
 ---
 <article class="artist-card">
   <a href={href}>
-    <span class="artist-mark" aria-hidden="true">{name.slice(0, 1)}</span>
+    {image ? <img class="artist-image" src={image} alt="" loading="lazy" /> : <span class="artist-mark" aria-hidden="true">{name.slice(0, 1)}</span>}
     <h3>{name}</h3>
     <p>{summary}</p>
   </a>

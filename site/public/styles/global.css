@@ -177,10 +177,13 @@ main {
 }
 
 .cover-swatch,
-.artist-mark {
+.artist-mark,
+.cover-image,
+.artist-image {
   width: 64px;
   height: 64px;
   border-radius: 6px;
+  object-fit: cover;
   background: var(--gold);
 }
 
@@ -190,6 +193,27 @@ main {
   background: var(--green);
   color: #ffffff;
   font-weight: 800;
+}
+
+.release-detail {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  padding: clamp(36px, 6vw, 72px) clamp(20px, 4vw, 56px);
+}
+
+.release-detail > img,
+.artist-heading > img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.artist-heading > img {
+  width: 96px;
 }
 
 .release-card h3,
@@ -251,5 +275,9 @@ main {
 
   .hero {
     min-height: auto;
+  }
+
+  .release-detail {
+    grid-template-columns: 1fr;
   }
 }

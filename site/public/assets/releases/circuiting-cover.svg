@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title">
+  <title id="title">Circuiting cover art</title>
+  <rect width="1200" height="1200" fill="#111111"/>
+  <circle cx="600" cy="600" r="390" fill="none" stroke="#d4ad35" stroke-width="52"/>
+  <circle cx="600" cy="600" r="245" fill="none" stroke="#506f5a" stroke-width="42"/>
+  <path d="M290 610h190l70-140 110 300 86-160h164" fill="none" stroke="#f7f0d8" stroke-width="44" stroke-linejoin="round"/>
+  <path d="M315 885h570" stroke="#b84735" stroke-width="54" stroke-linecap="round"/>
+  <text x="600" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="84" font-weight="700" fill="#f7f0d8">PCBENDER</text>
+  <text x="600" y="1015" text-anchor="middle" font-family="Arial, sans-serif" font-size="92" font-weight="700" fill="#f7f0d8">CIRCUITING</text>
+</svg>

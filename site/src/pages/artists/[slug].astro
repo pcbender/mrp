@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ReleaseCard from "../../components/ReleaseCard.astro";
+import { getArtistById, getArtists, getVisibleReleases, releaseCoverUrl } from "../../lib/content.js";
+
+export function getStaticPaths() {
+  return getArtists().map((artist) => ({ params: { slug: artist.id } }));
+}
+
+const artist = getArtistById(Astro.params.slug);
+const releases = getVisibleReleases().filter((release) => release.artist_id === artist.id);
+---
+<BaseLayout title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
+  <section class="page-heading artist-heading">
+    <img src={artist.image || "/assets/maricopa-mark.svg"} alt="" width="96" height="96" />
+    <p class="eyebrow">Artist</p>
+    <h1>{artist.name}</h1>
+    <p>{artist.bio_short}</p>
+  </section>
+  <section class="card-grid page-grid">
+    {releases.map((release) => (
+      <ReleaseCard
+        title={release.title}
+        artist={artist.name}
+        href={`/releases/${release.slug}/`}
+        type={release.release_type}
+        coverImage={releaseCoverUrl(release)}
+      />
+    ))}
+  </section>
+</BaseLayout>

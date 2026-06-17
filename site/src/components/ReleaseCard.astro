@@ -4,13 +4,14 @@ interface Props {
   artist: string;
   href: string;
   type?: string;
+  coverImage?: string;
 }
 
-const { title, artist, href, type = "Single" } = Astro.props;
+const { title, artist, href, type = "Single", coverImage } = Astro.props;
 ---
 <article class="release-card">
   <a href={href} aria-label={`${title} by ${artist}`}>
-    <span class="cover-swatch" aria-hidden="true"></span>
+    {coverImage ? <img class="cover-image" src={coverImage} alt="" loading="lazy" /> : <span class="cover-swatch" aria-hidden="true"></span>}
     <span class="card-kicker">{type}</span>
     <h3>{title}</h3>
     <p>{artist}</p>

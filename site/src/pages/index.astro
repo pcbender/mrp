@@ -2,6 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArtistCard from "../components/ArtistCard.astro";
 import ReleaseCard from "../components/ReleaseCard.astro";
+import { artistReleaseCount, getArtistById, getArtists, latestRelease, releaseCoverUrl } from "../lib/content.js";
+
+const artists = getArtists();
+const release = latestRelease();
+const releaseArtist = release ? getArtistById(release.artist_id) : null;
 ---
 <BaseLayout title="Maricopa Records" description="Independent releases from Maricopa Records.">
   <section class="hero">
@@ -25,9 +30,15 @@ import ReleaseCard from "../components/ReleaseCard.astro";
       <h2>Release pipeline</h2>
     </div>
     <div class="card-grid">
-      <ReleaseCard title="Circuiting" artist="PCBender" href="/releases/circuiting/" />
-      <ReleaseCard title="Distance Not Safety" artist="4Castle" href="/releases/distance-not-safety/" />
-      <ReleaseCard title="Tits Up" artist="STAB" href="/releases/tits-up/" />
+      {release && (
+        <ReleaseCard
+          title={release.title}
+          artist={releaseArtist?.name || release.artist_id}
+          href={`/releases/${release.slug}/`}
+          type={release.release_type}
+          coverImage={releaseCoverUrl(release)}
+        />
+      )}
     </div>
   </section>
 
@@ -37,9 +48,14 @@ import ReleaseCard from "../components/ReleaseCard.astro";
       <h2>Featured artists</h2>
     </div>
     <div class="card-grid">
-      <ArtistCard name="PCBender" href="/artists/pcbender/" />
-      <ArtistCard name="STAB" href="/artists/stab/" />
-      <ArtistCard name="4Castle" href="/artists/4castle/" />
+      {artists.map((artist) => (
+        <ArtistCard
+          name={artist.name}
+          href={`/artists/${artist.id}/`}
+          summary={`${artistReleaseCount(artist.id)} public release${artistReleaseCount(artist.id) === 1 ? "" : "s"}`}
+          image={artist.image}
+        />
+      ))}
     </div>
   </section>
 </BaseLayout>

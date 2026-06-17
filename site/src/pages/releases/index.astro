@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ReleaseCard from "../../components/ReleaseCard.astro";
+import { getArtistById, getVisibleReleases, releaseCoverUrl } from "../../lib/content.js";
+
+const releases = getVisibleReleases();
 ---
 <BaseLayout title="Releases | Maricopa Records" description="Singles, EPs, and albums from Maricopa Records.">
   <section class="page-heading">
@@ -8,9 +11,14 @@ import ReleaseCard from "../../components/ReleaseCard.astro";
     <h1>Singles, EPs, and albums</h1>
   </section>
   <section class="card-grid page-grid">
-    <ReleaseCard title="Circuiting" artist="PCBender" href="/releases/circuiting/" />
-    <ReleaseCard title="Distance Not Safety" artist="4Castle" href="/releases/distance-not-safety/" />
-    <ReleaseCard title="Tits Up" artist="STAB" href="/releases/tits-up/" />
-    <ReleaseCard title="Umbra Ala" artist="4Castle" href="/releases/umbra-ala/" />
+    {releases.map((release) => (
+      <ReleaseCard
+        title={release.title}
+        artist={getArtistById(release.artist_id)?.name || release.artist_id}
+        href={`/releases/${release.slug}/`}
+        type={release.release_type}
+        coverImage={releaseCoverUrl(release)}
+      />
+    ))}
   </section>
 </BaseLayout>

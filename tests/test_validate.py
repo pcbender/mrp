@@ -55,6 +55,7 @@ def test_validate_release_filter_unknown_release_fails(tmp_path):
 def test_missing_artist_reference_fails(tmp_path):
     repo = minimal_repo(tmp_path)
     release = yaml.safe_load((ROOT / "tests/fixtures/content/valid/release-song.yaml").read_text())
+    release["release"]["artist_id"] = "missing-artist"
     write_yaml(repo / "content/releases/circuiting.yaml", release)
 
     result = run_mrp("--repo", str(repo), "--json", "validate")

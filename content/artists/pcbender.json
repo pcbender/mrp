@@ -1,0 +1,22 @@
+{
+  "artist": {
+    "id": "pcbender",
+    "name": "PCBender",
+    "sort_name": "PCBender",
+    "type": "solo",
+    "label": "Maricopa Records",
+    "default_publisher": "Maricopa Publishing",
+    "bio_short": "Independent artist on Maricopa Records.",
+    "bio_long": "PCBender releases singles and albums through Maricopa Records.",
+    "image": "/assets/maricopa-mark.svg",
+    "links": {
+      "website": "https://www.maricoparecords.com/artists/pcbender/",
+      "spotify": null,
+      "apple_music": null,
+      "youtube": null,
+      "bandcamp": null,
+      "instagram": null
+    },
+    "visibility": "public"
+  }
+}

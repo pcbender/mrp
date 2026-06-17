@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArtistCard from "../../components/ArtistCard.astro";
+import { artistReleaseCount, getArtists } from "../../lib/content.js";
+
+const artists = getArtists();
 ---
 <BaseLayout title="Artists | Maricopa Records" description="Artists on Maricopa Records.">
   <section class="page-heading">
@@ -8,9 +11,13 @@ import ArtistCard from "../../components/ArtistCard.astro";
     <h1>Maricopa Records roster</h1>
   </section>
   <section class="card-grid page-grid">
-    <ArtistCard name="PCBender" href="/artists/pcbender/" />
-    <ArtistCard name="STAB" href="/artists/stab/" />
-    <ArtistCard name="4Castle" href="/artists/4castle/" />
-    <ArtistCard name="Lingua Aeternum" href="/artists/lingua-aeternum/" />
+    {artists.map((artist) => (
+      <ArtistCard
+        name={artist.name}
+        href={`/artists/${artist.id}/`}
+        summary={`${artistReleaseCount(artist.id)} public release${artistReleaseCount(artist.id) === 1 ? "" : "s"}`}
+        image={artist.image}
+      />
+    ))}
   </section>
 </BaseLayout>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import StreamingLinks from "../../components/StreamingLinks.astro";
+import { getArtistById, getReleaseBySlug, getVisibleReleases, releaseCoverUrl, streamingLinks } from "../../lib/content.js";
+
+export function getStaticPaths() {
+  return getVisibleReleases().map((release) => ({ params: { slug: release.slug } }));
+}
+
+const release = getReleaseBySlug(Astro.params.slug);
+const artist = getArtistById(release.artist_id);
+---
+<BaseLayout title={release.seo.title} description={release.seo.description}>
+  <section class="release-detail">
+    <img src={releaseCoverUrl(release)} alt="" width="320" height="320" />
+    <div>
+      <p class="eyebrow">{release.release_type}</p>
+      <h1>{release.title}</h1>
+      <p>{artist?.name || release.artist_id}</p>
+      <p>{release.summary}</p>
+      <StreamingLinks links={streamingLinks(release)} />
+    </div>
+  </section>
+  <section class="prose">
+    <h2>Credits</h2>
+    <p>{release.credits?.songwriter ? `Songwriter: ${release.credits.songwriter}` : "Credits pending review."}</p>
+  </section>
+</BaseLayout>
