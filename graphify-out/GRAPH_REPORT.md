@@ -1,16 +1,16 @@
 # Graph Report - mrp  (2026-06-17)
 
 ## Corpus Check
-- 2641 files · ~1,727,147,473 words
+- 2796 files · ~1,845,960,741 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 16366 nodes · 22616 edges · 2515 communities (2094 shown, 421 thin omitted)
+- 17685 nodes · 24467 edges · 2709 communities (2252 shown, 457 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5493cdf5`
+- Built from commit: `9a62d45f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -1039,6 +1039,85 @@
 - [[_COMMUNITY_Community 2285|Community 2285]]
 - [[_COMMUNITY_Community 2287|Community 2287]]
 - [[_COMMUNITY_Community 2288|Community 2288]]
+- [[_COMMUNITY_Community 2515|Community 2515]]
+- [[_COMMUNITY_Community 2516|Community 2516]]
+- [[_COMMUNITY_Community 2517|Community 2517]]
+- [[_COMMUNITY_Community 2518|Community 2518]]
+- [[_COMMUNITY_Community 2519|Community 2519]]
+- [[_COMMUNITY_Community 2520|Community 2520]]
+- [[_COMMUNITY_Community 2521|Community 2521]]
+- [[_COMMUNITY_Community 2522|Community 2522]]
+- [[_COMMUNITY_Community 2523|Community 2523]]
+- [[_COMMUNITY_Community 2524|Community 2524]]
+- [[_COMMUNITY_Community 2525|Community 2525]]
+- [[_COMMUNITY_Community 2526|Community 2526]]
+- [[_COMMUNITY_Community 2527|Community 2527]]
+- [[_COMMUNITY_Community 2528|Community 2528]]
+- [[_COMMUNITY_Community 2529|Community 2529]]
+- [[_COMMUNITY_Community 2530|Community 2530]]
+- [[_COMMUNITY_Community 2531|Community 2531]]
+- [[_COMMUNITY_Community 2532|Community 2532]]
+- [[_COMMUNITY_Community 2533|Community 2533]]
+- [[_COMMUNITY_Community 2534|Community 2534]]
+- [[_COMMUNITY_Community 2535|Community 2535]]
+- [[_COMMUNITY_Community 2536|Community 2536]]
+- [[_COMMUNITY_Community 2537|Community 2537]]
+- [[_COMMUNITY_Community 2538|Community 2538]]
+- [[_COMMUNITY_Community 2539|Community 2539]]
+- [[_COMMUNITY_Community 2540|Community 2540]]
+- [[_COMMUNITY_Community 2541|Community 2541]]
+- [[_COMMUNITY_Community 2542|Community 2542]]
+- [[_COMMUNITY_Community 2543|Community 2543]]
+- [[_COMMUNITY_Community 2544|Community 2544]]
+- [[_COMMUNITY_Community 2545|Community 2545]]
+- [[_COMMUNITY_Community 2546|Community 2546]]
+- [[_COMMUNITY_Community 2547|Community 2547]]
+- [[_COMMUNITY_Community 2548|Community 2548]]
+- [[_COMMUNITY_Community 2549|Community 2549]]
+- [[_COMMUNITY_Community 2550|Community 2550]]
+- [[_COMMUNITY_Community 2551|Community 2551]]
+- [[_COMMUNITY_Community 2552|Community 2552]]
+- [[_COMMUNITY_Community 2553|Community 2553]]
+- [[_COMMUNITY_Community 2554|Community 2554]]
+- [[_COMMUNITY_Community 2555|Community 2555]]
+- [[_COMMUNITY_Community 2556|Community 2556]]
+- [[_COMMUNITY_Community 2557|Community 2557]]
+- [[_COMMUNITY_Community 2558|Community 2558]]
+- [[_COMMUNITY_Community 2559|Community 2559]]
+- [[_COMMUNITY_Community 2560|Community 2560]]
+- [[_COMMUNITY_Community 2561|Community 2561]]
+- [[_COMMUNITY_Community 2562|Community 2562]]
+- [[_COMMUNITY_Community 2563|Community 2563]]
+- [[_COMMUNITY_Community 2564|Community 2564]]
+- [[_COMMUNITY_Community 2565|Community 2565]]
+- [[_COMMUNITY_Community 2566|Community 2566]]
+- [[_COMMUNITY_Community 2567|Community 2567]]
+- [[_COMMUNITY_Community 2568|Community 2568]]
+- [[_COMMUNITY_Community 2569|Community 2569]]
+- [[_COMMUNITY_Community 2570|Community 2570]]
+- [[_COMMUNITY_Community 2571|Community 2571]]
+- [[_COMMUNITY_Community 2572|Community 2572]]
+- [[_COMMUNITY_Community 2573|Community 2573]]
+- [[_COMMUNITY_Community 2574|Community 2574]]
+- [[_COMMUNITY_Community 2575|Community 2575]]
+- [[_COMMUNITY_Community 2576|Community 2576]]
+- [[_COMMUNITY_Community 2577|Community 2577]]
+- [[_COMMUNITY_Community 2578|Community 2578]]
+- [[_COMMUNITY_Community 2579|Community 2579]]
+- [[_COMMUNITY_Community 2580|Community 2580]]
+- [[_COMMUNITY_Community 2581|Community 2581]]
+- [[_COMMUNITY_Community 2582|Community 2582]]
+- [[_COMMUNITY_Community 2583|Community 2583]]
+- [[_COMMUNITY_Community 2584|Community 2584]]
+- [[_COMMUNITY_Community 2585|Community 2585]]
+- [[_COMMUNITY_Community 2586|Community 2586]]
+- [[_COMMUNITY_Community 2587|Community 2587]]
+- [[_COMMUNITY_Community 2595|Community 2595]]
+- [[_COMMUNITY_Community 2598|Community 2598]]
+- [[_COMMUNITY_Community 2601|Community 2601]]
+- [[_COMMUNITY_Community 2604|Community 2604]]
+- [[_COMMUNITY_Community 2607|Community 2607]]
+- [[_COMMUNITY_Community 2610|Community 2610]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `$()` - 54 edges
@@ -1067,7 +1146,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (2515 total, 421 thin omitted)
+## Communities (2709 total, 457 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.07
@@ -1402,8 +1481,8 @@ Cohesion: 0.67
 Nodes (3): status, enum, type
 
 ### Community 155 - "Community 155"
-Cohesion: 0.19
-Nodes (28): title_from_slug(), artist_record(), asset_references_from_html(), capture_assets_by_url(), copy_referenced_assets(), date_part(), extract_content_asset_references(), manifest_asset_type() (+20 more)
+Cohesion: 0.13
+Nodes (37): title_from_slug(), artist_record(), asset_references_from_html(), capture_assets_by_url(), copy_referenced_assets(), date_part(), extract_content_asset_references(), manifest_asset_type() (+29 more)
 
 ### Community 205 - "Community 205"
 Cohesion: 0.16
@@ -1879,7 +1958,7 @@ Nodes (21): clone_head(), HeadParser, inline_styles(), is_excluded_dependency(),
 
 ### Community 738 - "Community 738"
 Cohesion: 0.13
-Nodes (30): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), format_clone_head() (+22 more)
+Nodes (31): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), base_result() (+23 more)
 
 ### Community 739 - "Community 739"
 Cohesion: 0.13
@@ -1918,8 +1997,8 @@ Cohesion: 0.49
 Nodes (10): add_error(), approval_id(), approve(), finish(), format_approval(), latest_verification(), now_utc(), write_approval() (+2 more)
 
 ### Community 753 - "Community 753"
-Cohesion: 0.49
-Nodes (9): base_result(), build_repository(), format_build(), inventory_files(), next_build_id(), now_utc(), write_build_report(), Any (+1 more)
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 754 - "Community 754"
 Cohesion: 0.22
@@ -2322,8 +2401,8 @@ Cohesion: 0.34
 Nodes (16): aliases_for_path(), canonical_path(), capture_routes(), clone_id(), clone_record(), clone_site(), format_clone_site(), is_excluded_clone_item() (+8 more)
 
 ### Community 1018 - "Community 1018"
-Cohesion: 0.36
-Nodes (9): content_repo(), CompletedProcess, Path, run_mrp(), test_copy_referenced_assets_reports_missing_source_with_page_reference(), test_migrate_site_dry_run_reports_planned_writes_without_content_mutation(), test_migrate_site_generates_staging_content_records(), test_migrate_site_is_idempotent_and_does_not_overwrite() (+1 more)
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 1019 - "Community 1019"
 Cohesion: 0.07
@@ -2794,8 +2873,8 @@ Cohesion: 0.29
 Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
 
 ### Community 1702 - "Community 1702"
-Cohesion: 0.29
-Nodes (19): add_review_item(), clone_records(), clone_rewrites(), collect_url_references(), dependency_url(), format_clone_rewrites(), load_record(), mirrored_asset_paths() (+11 more)
+Cohesion: 0.31
+Nodes (18): add_review_item(), clone_records(), clone_rewrites(), collect_url_references(), dependency_url(), load_record(), mirrored_asset_paths(), normalize_path() (+10 more)
 
 ### Community 1703 - "Community 1703"
 Cohesion: 0.13
@@ -3481,25 +3560,197 @@ Nodes (3): minLength, type, post_type
 Cohesion: 0.67
 Nodes (3): pattern, type, id
 
+### Community 2515 - "Community 2515"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2516 - "Community 2516"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2517 - "Community 2517"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2518 - "Community 2518"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2525 - "Community 2525"
+Cohesion: 0.22
+Nodes (18): add_issue(), clone_compare(), comparable_title(), compare_asset_references(), compare_containers(), compare_headings(), compare_markers(), compare_route() (+10 more)
+
+### Community 2526 - "Community 2526"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2527 - "Community 2527"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2528 - "Community 2528"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2529 - "Community 2529"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2530 - "Community 2530"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2531 - "Community 2531"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2532 - "Community 2532"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2533 - "Community 2533"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2534 - "Community 2534"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2535 - "Community 2535"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2536 - "Community 2536"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2537 - "Community 2537"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2544 - "Community 2544"
+Cohesion: 0.51
+Nodes (9): find_release(), format_status(), latest_report(), release_summary(), report_summary(), rollback_available(), status(), Any (+1 more)
+
+### Community 2545 - "Community 2545"
+Cohesion: 0.40
+Nodes (9): comparison_repo(), page_html(), CompletedProcess, Path, route_file(), run_mrp(), test_clone_compare_missing_marker_fails(), test_clone_compare_reports_representative_page_matches() (+1 more)
+
+### Community 2546 - "Community 2546"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2547 - "Community 2547"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2548 - "Community 2548"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2549 - "Community 2549"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2550 - "Community 2550"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2551 - "Community 2551"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2552 - "Community 2552"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2553 - "Community 2553"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2554 - "Community 2554"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2555 - "Community 2555"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2556 - "Community 2556"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2557 - "Community 2557"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2559 - "Community 2559"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2561 - "Community 2561"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2563 - "Community 2563"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2565 - "Community 2565"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2567 - "Community 2567"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2569 - "Community 2569"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2570 - "Community 2570"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2573 - "Community 2573"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2576 - "Community 2576"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2579 - "Community 2579"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2582 - "Community 2582"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2585 - "Community 2585"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
 ## Knowledge Gaps
-- **547 isolated node(s):** `codeToStatusMap`, `manifest`, `Namespace`, `Path`, `$schema` (+542 more)
+- **548 isolated node(s):** `codeToStatusMap`, `manifest`, `Namespace`, `Path`, `$schema` (+543 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **421 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **457 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `wxr_inventory()` connect `Community 205` to `Community 738`, `Community 754`?**
+- **Why does `verify_target()` connect `Community 9` to `Community 2088`, `Community 738`, `Community 2131`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **Why does `main()` connect `Community 738` to `Community 737`, `Community 993`, `Community 1702`, `Community 2088`, `Community 745`, `Community 744`, `Community 9`, `Community 205`, `Community 943`, `Community 752`, `Community 753`, `Community 2131`, `Community 22`, `Community 155`?**
+- **Why does `stage_build()` connect `Community 2088` to `Community 738`?**
+  _High betweenness centrality (0.000) - this node is a cross-community bridge._
+- **Why does `main()` connect `Community 738` to `Community 737`, `Community 993`, `Community 1702`, `Community 2088`, `Community 745`, `Community 744`, `Community 9`, `Community 205`, `Community 943`, `Community 752`, `Community 2544`, `Community 2131`, `Community 22`, `Community 155`, `Community 2525`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
 - **What connects `codeToStatusMap`, `manifest`, `Maricopa Release Publisher.` to the rest of the system?**
-  _549 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _550 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.06894049346879536 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.11397849462365592 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
