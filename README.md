@@ -85,6 +85,7 @@ v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.m
 - [MRP v0.1.1 full site staging plan](docs/MRP-v0.1.1-FULL-SITE-STAGING-PLAN.md)
 - [MRP v0.1.1 migration review](docs/MRP-v0.1.1-REVIEW.md)
 - [MRP v0.1.2 WXR static clone plan](docs/MRP-v0.1.2-WXR-STATIC-CLONE-PLAN.md)
+- [MRP v0.1.2 WXR static clone review](docs/MRP-v0.1.2-REVIEW.md)
 
 ## End-to-End Test
 
@@ -92,4 +93,10 @@ Run the v0.1 local flow regression:
 
 ```bash
 python3 -m pytest tests/test_e2e_v01.py
+```
+
+Run the v0.1.2 WXR static clone regression:
+
+```bash
+python3 -m pytest tests/test_e2e_v012.py
 ```

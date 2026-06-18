@@ -3160,17 +3160,6 @@ clone_assets:
   - pages/www.maricoparecords.com/artists/stab/burn-me/index.html
   - pages/www.maricoparecords.com/artists/stab/index.html
   - pages/www.maricoparecords.com/index.html
-- id: wp-0bdf50e3ba9b4299
-  source_url: https://www.maricoparecords.com/wp-content/uploads/2025/02/CFM_Revised_Transparent.png
-  local_path: site/public/assets/wp/wp-content/uploads/2025/02/CFM_Revised_Transparent.png
-  type: image
-  status: missing
-  required: true
-  content_type: image/png
-  bytes: null
-  sha256: null
-  used_by:
-  - content/clone/pages/trashed-2.yaml
 - id: wp-23e702f854d535b9
   source_url: https://www.maricoparecords.com/wp-content/uploads/2025/02/Circuiting-100x100.jpg
   local_path: site/public/assets/wp/wp-content/uploads/2025/02/Circuiting-100x100.jpg
@@ -6666,39 +6655,6 @@ clone_assets:
   - pages/www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/index.html
   - pages/www.maricoparecords.com/licensing-custom-songs/index.html
   - pages/www.maricoparecords.com/licensing-custom-songs/music-licensing/index.html
-- id: wp-533eca63f0a0f8cb
-  source_url: https://www.maricoparecords.com/wp-content/uploads/2025/02/sponsor1.jpg
-  local_path: site/public/assets/wp/wp-content/uploads/2025/02/sponsor1.jpg
-  type: image
-  status: missing
-  required: true
-  content_type: image/jpeg
-  bytes: null
-  sha256: null
-  used_by:
-  - content/clone/pages/trashed-2.yaml
-- id: wp-1f0a931f9d753194
-  source_url: https://www.maricoparecords.com/wp-content/uploads/2025/02/vendor.jpg
-  local_path: site/public/assets/wp/wp-content/uploads/2025/02/vendor.jpg
-  type: image
-  status: missing
-  required: true
-  content_type: image/jpeg
-  bytes: null
-  sha256: null
-  used_by:
-  - content/clone/pages/trashed-2.yaml
-- id: wp-5a7cfb3f9015e5d9
-  source_url: https://www.maricoparecords.com/wp-content/uploads/2025/02/volunteer.jpg
-  local_path: site/public/assets/wp/wp-content/uploads/2025/02/volunteer.jpg
-  type: image
-  status: missing
-  required: true
-  content_type: image/jpeg
-  bytes: null
-  sha256: null
-  used_by:
-  - content/clone/pages/trashed-2.yaml
 - id: wp-3ea8dae9af863bf1
   source_url: https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1-300x225.png
   local_path: site/public/assets/wp/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1-300x225.png
