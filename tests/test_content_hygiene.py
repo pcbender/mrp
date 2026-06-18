@@ -8,6 +8,7 @@ CANONICAL_CONTENT_DIRS = [
     ROOT / "content" / "pages",
     ROOT / "content" / "posts",
     ROOT / "content" / "releases",
+    ROOT / "site" / "src" / "content",
 ]
 FORBIDDEN_CANONICAL_ARTIFACTS = re.compile(
     r"wp-block|<!--\s*/?\s*wp:|\bstk-|/wp-content/(?:plugins|themes)/",
@@ -18,7 +19,9 @@ FORBIDDEN_CANONICAL_ARTIFACTS = re.compile(
 def test_canonical_content_excludes_wordpress_block_artifacts():
     offenders = []
     for directory in CANONICAL_CONTENT_DIRS:
-        for path in sorted(directory.glob("*")):
+        if not directory.is_dir():
+            continue
+        for path in sorted(directory.rglob("*")):
             if path.suffix not in {".json", ".yaml", ".yml", ".md", ".mdx"}:
                 continue
             text = path.read_text()
