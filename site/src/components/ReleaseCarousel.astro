@@ -1,0 +1,17 @@
+---
+import ReleaseGrid from "./ReleaseGrid.astro";
+import type { ReleaseCardModel } from "../lib/catalog";
+
+interface Props {
+  releases: ReleaseCardModel[];
+}
+
+const { releases } = Astro.props;
+---
+<section class="section-grid release-carousel">
+  <div>
+    <p class="eyebrow">Latest</p>
+    <h2>Latest releases</h2>
+  </div>
+  <ReleaseGrid releases={releases} />
+</section>

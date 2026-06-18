@@ -1,0 +1,21 @@
+---
+import ReleaseCard from "./ReleaseCard.astro";
+import type { ReleaseCardModel } from "../lib/catalog";
+
+interface Props {
+  releases: ReleaseCardModel[];
+}
+
+const { releases } = Astro.props;
+---
+<div class="card-grid release-grid">
+  {releases.map((release) => (
+    <ReleaseCard
+      title={release.title}
+      artist={release.artistName}
+      href={release.href}
+      type={release.releaseType}
+      coverImage={release.coverImage}
+    />
+  ))}
+</div>

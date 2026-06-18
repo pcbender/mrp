@@ -1,24 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ReleaseCard from "../../components/ReleaseCard.astro";
-import { getArtistById, getVisibleReleases, releaseCoverUrl } from "../../lib/content.js";
+import ReleaseGrid from "../../components/ReleaseGrid.astro";
+import { catalogReleases, releaseCardModel } from "../../lib/catalog";
 
-const releases = getVisibleReleases();
+const releases = catalogReleases().map(releaseCardModel);
 ---
 <BaseLayout title="Releases | Maricopa Records" description="Singles, EPs, and albums from Maricopa Records.">
   <section class="page-heading">
     <p class="eyebrow">Releases</p>
     <h1>Singles, EPs, and albums</h1>
   </section>
-  <section class="card-grid page-grid">
-    {releases.map((release) => (
-      <ReleaseCard
-        title={release.title}
-        artist={getArtistById(release.artist_id)?.name || release.artist_id}
-        href={`/releases/${release.slug}/`}
-        type={release.release_type}
-        coverImage={releaseCoverUrl(release)}
-      />
-    ))}
+  <section class="page-grid">
+    <ReleaseGrid releases={releases} />
   </section>
 </BaseLayout>

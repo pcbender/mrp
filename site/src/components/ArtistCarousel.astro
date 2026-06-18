@@ -1,0 +1,26 @@
+---
+import ArtistCard from "./ArtistCard.astro";
+import type { ArtistCardModel } from "../lib/catalog";
+
+interface Props {
+  artists: ArtistCardModel[];
+}
+
+const { artists } = Astro.props;
+---
+<section class="section-grid artist-carousel">
+  <div>
+    <p class="eyebrow">Roster</p>
+    <h2>Featured artists</h2>
+  </div>
+  <div class="card-grid">
+    {artists.map((artist) => (
+      <ArtistCard
+        name={artist.name}
+        href={artist.href}
+        summary={artist.summary}
+        image={artist.image}
+      />
+    ))}
+  </div>
+</section>

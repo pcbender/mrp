@@ -1,0 +1,21 @@
+---
+interface SocialLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  links: SocialLink[];
+}
+
+const { links } = Astro.props;
+---
+{links.length > 0 && (
+  <nav class="social-links" aria-label="External links">
+    {links.map((link) => (
+      <a class="button" href={link.href} target="_blank" rel="noreferrer noopener">
+        {link.label}
+      </a>
+    ))}
+  </nav>
+)}

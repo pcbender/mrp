@@ -1,23 +1,26 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import CloneLayout from "../../layouts/CloneLayout.astro";
-import ReleaseCard from "../../components/ReleaseCard.astro";
+import ArtistReleaseList from "../../components/ArtistReleaseList.astro";
+import SocialLinks from "../../components/SocialLinks.astro";
 import {
   cloneDescription,
   getArtistById,
   getArtists,
   getCloneByPath,
-  getVisibleReleases,
-  releaseCoverUrl,
   renderCloneHtml
 } from "../../lib/content.js";
+import { releasesForArtist } from "../../lib/catalog";
 
 export function getStaticPaths() {
   return getArtists().map((artist) => ({ params: { slug: artist.id } }));
 }
 
 const artist = getArtistById(Astro.params.slug);
-const releases = getVisibleReleases().filter((release) => release.artist_id === artist.id);
+const releases = releasesForArtist(artist.id);
+const links = Object.entries(artist.links || {})
+  .filter((entry): entry is [string, string] => Boolean(entry[1]))
+  .map(([label, href]) => ({ label: label.replaceAll("_", " "), href }));
 const clonePath = `/artists/${artist.id}/`;
 const clone = getCloneByPath(clonePath);
 const cloneHtml = clone ? renderCloneHtml(clone.content_html) : "";
@@ -35,17 +38,8 @@ const cloneHtml = clone ? renderCloneHtml(clone.content_html) : "";
       <p class="eyebrow">Artist</p>
       <h1>{artist.name}</h1>
       <p>{artist.bio_short}</p>
+      <SocialLinks links={links} />
     </section>
-    <section class="card-grid page-grid">
-      {releases.map((release) => (
-        <ReleaseCard
-          title={release.title}
-          artist={artist.name}
-          href={`/releases/${release.slug}/`}
-          type={release.release_type}
-          coverImage={releaseCoverUrl(release)}
-        />
-      ))}
-    </section>
+    <ArtistReleaseList artistName={artist.name} releases={releases} />
   </BaseLayout>
 )}

@@ -1,12 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ArtistCard from "../components/ArtistCard.astro";
-import ReleaseCard from "../components/ReleaseCard.astro";
-import { artistReleaseCount, getArtistById, getArtists, latestRelease, releaseCoverUrl } from "../lib/content.js";
+import ArtistCarousel from "../components/ArtistCarousel.astro";
+import ReleaseCarousel from "../components/ReleaseCarousel.astro";
+import { artistCards, latestReleases } from "../lib/catalog";
 
-const artists = getArtists();
-const release = latestRelease();
-const releaseArtist = release ? getArtistById(release.artist_id) : null;
+const artists = artistCards();
+const releases = latestReleases();
 ---
 <BaseLayout title="Maricopa Records" description="Independent releases from Maricopa Records.">
   <section class="hero">
@@ -24,38 +23,6 @@ const releaseArtist = release ? getArtistById(release.artist_id) : null;
     </div>
   </section>
 
-  <section class="section-grid">
-    <div>
-      <p class="eyebrow">Latest</p>
-      <h2>Release pipeline</h2>
-    </div>
-    <div class="card-grid">
-      {release && (
-        <ReleaseCard
-          title={release.title}
-          artist={releaseArtist?.name || release.artist_id}
-          href={`/releases/${release.slug}/`}
-          type={release.release_type}
-          coverImage={releaseCoverUrl(release)}
-        />
-      )}
-    </div>
-  </section>
-
-  <section class="section-grid">
-    <div>
-      <p class="eyebrow">Roster</p>
-      <h2>Featured artists</h2>
-    </div>
-    <div class="card-grid">
-      {artists.map((artist) => (
-        <ArtistCard
-          name={artist.name}
-          href={`/artists/${artist.id}/`}
-          summary={`${artistReleaseCount(artist.id)} public release${artistReleaseCount(artist.id) === 1 ? "" : "s"}`}
-          image={artist.image}
-        />
-      ))}
-    </div>
-  </section>
+  <ReleaseCarousel releases={releases} />
+  <ArtistCarousel artists={artists} />
 </BaseLayout>

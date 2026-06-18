@@ -106,7 +106,8 @@ main {
 }
 
 .hero-actions,
-.streaming-links {
+.streaming-links,
+.social-links {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -155,10 +156,34 @@ main {
   border-bottom: 1px solid var(--line);
 }
 
+.section-heading {
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
+}
+
+.release-grid {
+  width: 100%;
+}
+
+.artist-release-list {
+  display: grid;
+  gap: 18px;
+}
+
+.empty-state {
+  color: var(--muted);
 }
 
 .release-card,
