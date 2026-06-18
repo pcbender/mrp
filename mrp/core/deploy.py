@@ -200,6 +200,7 @@ def copy_plan(source: Path, destination: Path) -> dict[str, Any]:
 
 
 def copy_build(source: Path, destination: Path) -> int:
+    clean_destination(destination)
     copied = 0
     for path in sorted(source.rglob("*")):
         if not path.is_file():
@@ -210,6 +211,16 @@ def copy_build(source: Path, destination: Path) -> int:
         shutil.copy2(path, output_path)
         copied += 1
     return copied
+
+
+def clean_destination(destination: Path) -> None:
+    for path in sorted(destination.iterdir()):
+        if path.name == MARKER_FILE:
+            continue
+        if path.is_dir():
+            shutil.rmtree(path)
+        else:
+            path.unlink()
 
 
 def failed(stage: str, message: str) -> dict[str, Any]:

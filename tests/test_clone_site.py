@@ -45,10 +45,10 @@ def test_clone_site_generates_wxr_clone_records(tmp_path):
     payload = json.loads(result.stdout)
     assert payload["command"] == "clone-site"
     assert payload["status"] == "completed"
-    assert payload["summary"]["renderable_records"] == 51
-    assert payload["summary"]["pages"] == 48
+    assert payload["summary"]["renderable_records"] == 50
+    assert payload["summary"]["pages"] == 47
     assert payload["summary"]["posts"] == 3
-    assert payload["summary"]["created"] == 51
+    assert payload["summary"]["created"] == 50
     assert payload["summary"]["skipped"] == 0
     assert (repo / payload["report_path"]).is_file()
 
@@ -69,7 +69,7 @@ def test_clone_site_generates_wxr_clone_records(tmp_path):
     validation = run_mrp("--repo", str(repo), "--json", "validate")
     assert validation.returncode == 0
     validation_payload = json.loads(validation.stdout)
-    assert validation_payload["summary"]["clone_pages"] == 48
+    assert validation_payload["summary"]["clone_pages"] == 47
     assert validation_payload["summary"]["clone_posts"] == 3
 
 
@@ -96,7 +96,7 @@ def test_clone_site_is_idempotent_and_preserves_existing_records(tmp_path):
     assert second.returncode == 0
     payload = json.loads(second.stdout)
     assert payload["summary"]["created"] == 0
-    assert payload["summary"]["skipped"] == 51
+    assert payload["summary"]["skipped"] == 50
     assert all(item["reason"] == "Existing clone record was not overwritten." for item in payload["skipped"])
 
 
@@ -119,7 +119,7 @@ def test_clone_site_regenerate_overwrites_existing_records(tmp_path):
 
     assert regenerated.returncode == 0
     payload = json.loads(regenerated.stdout)
-    assert payload["summary"]["overwritten"] == 51
+    assert payload["summary"]["overwritten"] == 50
     assert "mystique" in yaml.safe_load(target.read_text())["clone"]["content_html"]
 
 

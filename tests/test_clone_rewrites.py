@@ -24,7 +24,7 @@ def test_clone_rewrites_reports_static_url_review_metadata():
     payload = json.loads(result.stdout)
     assert payload["command"] == "clone-rewrites"
     assert payload["status"] == "completed"
-    assert payload["summary"]["clone_records"] == 51
+    assert payload["summary"]["clone_records"] == 50
     assert payload["summary"]["local_references"] > 0
     assert payload["summary"]["wordpress_asset_references"] > 0
     assert payload["summary"]["external_references_preserved"] > 0

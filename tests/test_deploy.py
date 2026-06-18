@@ -80,6 +80,20 @@ def test_stage_local_target_copies_build_and_writes_report(tmp_path):
     assert (repo / payload["report_path"]).is_file()
 
 
+def test_stage_local_target_removes_stale_files_but_preserves_marker(tmp_path):
+    repo = deployable_repo(tmp_path)
+    stale = repo / "builds/local-staging/old-route/index.html"
+    stale.parent.mkdir(parents=True)
+    stale.write_text("<html>old</html>\n")
+
+    result = run_mrp("--repo", str(repo), "--json", "stage", "--target", "local-staging")
+
+    assert result.returncode == 0
+    assert not stale.exists()
+    assert (repo / "builds/local-staging/.allow-deploy").is_file()
+    assert (repo / "builds/local-staging/index.html").is_file()
+
+
 def test_stage_missing_marker_is_refused(tmp_path):
     repo = deployable_repo(tmp_path, marker=False)
 

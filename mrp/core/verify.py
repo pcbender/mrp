@@ -17,6 +17,18 @@ PLACEHOLDER_PATTERNS = ["TODO", "TBD", "FIXME", "lorem ipsum", "example.com", "I
 TEXT_EXTENSIONS = {".html", ".css", ".js", ".json", ".xml", ".txt", ".php"}
 EXCLUDED_MIGRATION_PATHS = ["cart", "checkout", "my-account", "account", "payment", "shop"]
 BASELINE_V01_ROUTES = {"/", "/about-us/", "/artists/", "/catalog/", "/contact/", "/posts/", "/releases/"}
+CLONE_KNOWN_MARKERS = [
+    {
+        "route": "/artists/pcbender/",
+        "marker": "mystique",
+        "description": "PCBender artist bio",
+    },
+    {
+        "route": "/artists/pcbender/circuiting/",
+        "marker": "Circuiting is not just an album",
+        "description": "Circuiting release page",
+    },
+]
 
 
 def verify_target(repo: str | Path, target: str | None = None, release: str | None = None) -> dict[str, Any]:
@@ -58,6 +70,8 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
     artists = load_records(root / "content" / "artists", "artist")
     pages = load_records(root / "content" / "pages", "page")
     posts = load_records(root / "content" / "posts", "post")
+    clone_pages = load_records(root / "content" / "clone" / "pages", "clone")
+    clone_posts = load_records(root / "content" / "clone" / "posts", "clone")
     if release:
         releases = [item for item in releases if item.get("id") == release]
         if not releases:
@@ -72,6 +86,7 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
     check_internal_links(result, target_path)
     check_placeholders(result, target_path)
     check_migration_surface(result, root, target_path, pages, posts, artists, releases)
+    check_clone_surface(result, root, target_path, clone_pages, clone_posts)
 
     return finish(root, generated_at, result)
 
@@ -267,6 +282,128 @@ def check_excluded_migration_paths(result: dict[str, Any], target_path: Path) ->
     )
 
 
+def check_clone_surface(
+    result: dict[str, Any],
+    root: Path,
+    target_path: Path,
+    clone_pages: list[dict[str, Any]],
+    clone_posts: list[dict[str, Any]],
+) -> None:
+    clone_records = [
+        record
+        for record in [*clone_pages, *clone_posts]
+        if (record.get("route") or {}).get("canonical_path")
+    ]
+    enabled = bool(clone_records) and target_has_clone_surface(target_path, clone_records)
+    clone = {
+        "enabled": enabled,
+        "pages": len(clone_pages),
+        "posts": len(clone_posts),
+        "routes_checked": 0,
+        "asset_records_checked": 0,
+        "rendered_wp_asset_refs_checked": 0,
+        "known_markers_checked": 0,
+        "excluded_paths_checked": EXCLUDED_MIGRATION_PATHS,
+    }
+    result["clone"] = clone
+    if not enabled:
+        return
+
+    clone["routes_checked"] = check_clone_routes(result, target_path, clone_records)
+    clone["asset_records_checked"] = check_clone_asset_manifest(result, root, target_path)
+    clone["rendered_wp_asset_refs_checked"] = check_rendered_wordpress_assets(result, target_path)
+    clone["known_markers_checked"] = check_clone_known_markers(result, target_path)
+    check_excluded_clone_paths(result, target_path)
+    result["checks"].append({"name": "clone_verification", "status": "passed", "checked": len(clone_records)})
+
+
+def target_has_clone_surface(target_path: Path, clone_records: list[dict[str, Any]]) -> bool:
+    for html_path in sorted(target_path.rglob("*.html")):
+        text = html_path.read_text(errors="ignore")
+        if 'data-clone-kind="' in text or "wp-clone-content" in text:
+            return True
+    return False
+
+
+def check_clone_routes(result: dict[str, Any], target_path: Path, clone_records: list[dict[str, Any]]) -> int:
+    checked = 0
+    for record in sorted(clone_records, key=lambda item: (item.get("route") or {}).get("canonical_path") or ""):
+        route = normalize_route_path((record.get("route") or {}).get("canonical_path") or "")
+        relative = route_to_html_relative(route)
+        check_file(result, target_path / relative, relative)
+        checked += 1
+    result["checks"].append({"name": "clone_routes", "status": "passed", "checked": checked})
+    return checked
+
+
+def check_clone_asset_manifest(result: dict[str, Any], root: Path, target_path: Path) -> int:
+    manifest = load_clone_asset_manifest(root)
+    checked = 0
+    for asset in manifest.get("clone_assets", []):
+        if not asset.get("required") or asset.get("status") != "mirrored":
+            continue
+        relative = str(asset.get("local_path", "")).removeprefix("site/public/")
+        check_file(result, target_path / relative, relative)
+        checked += 1
+    result["checks"].append({"name": "clone_asset_manifest", "status": "passed", "checked": checked})
+    return checked
+
+
+def check_rendered_wordpress_assets(result: dict[str, Any], target_path: Path) -> int:
+    checked = 0
+    seen: set[tuple[str, str]] = set()
+    for html_path in sorted(target_path.rglob("*.html")):
+        text = html_path.read_text(errors="ignore")
+        for reference in rendered_wordpress_asset_refs(text):
+            relative = reference.lstrip("/").split("?", 1)[0].split("#", 1)[0]
+            key = (str(html_path.relative_to(target_path)), relative)
+            if key in seen:
+                continue
+            seen.add(key)
+            checked += 1
+            if not (target_path / relative).is_file():
+                add_error(
+                    result,
+                    "clone.asset",
+                    f"{html_path.relative_to(target_path)} references missing WordPress asset: {reference}",
+                )
+    result["checks"].append({"name": "clone_rendered_wp_assets", "status": "passed", "checked": checked})
+    return checked
+
+
+def rendered_wordpress_asset_refs(text: str) -> set[str]:
+    references = set(re.findall(r"""["'(](/assets/wp/[^"')\s<>]+)""", text))
+    references.update(re.findall(r"""\b(?:href|src)=["'](/assets/wp/[^"']+)["']""", text))
+    return references
+
+
+def check_clone_known_markers(result: dict[str, Any], target_path: Path) -> int:
+    checked = 0
+    for marker in CLONE_KNOWN_MARKERS:
+        html_path = target_path / route_to_html_relative(marker["route"])
+        checked += 1
+        if not html_path.is_file():
+            add_error(result, "clone.marker", f"Missing marker page for {marker['description']}: {marker['route']}")
+            continue
+        text = html_path.read_text(errors="ignore")
+        if marker["marker"] not in text:
+            add_error(
+                result,
+                "clone.marker",
+                f"{html_path.relative_to(target_path)} is missing known content marker: {marker['marker']}",
+            )
+    result["checks"].append({"name": "clone_known_markers", "status": "passed", "checked": checked})
+    return checked
+
+
+def check_excluded_clone_paths(result: dict[str, Any], target_path: Path) -> None:
+    for path in EXCLUDED_MIGRATION_PATHS:
+        html_path = target_path / path / "index.html"
+        if html_path.exists():
+            add_error(result, "clone.excluded_path", f"Excluded clone path was rendered: /{path}/")
+    result["checks"].append({"name": "clone_exclusions", "status": "passed", "checked": len(EXCLUDED_MIGRATION_PATHS)})
+
+
 def normalized_route_path(record: dict[str, Any]) -> str:
     return normalize_route_path(record.get("normalized_path") or f"/{record.get('slug', '')}/")
 
@@ -295,6 +432,13 @@ def load_asset_manifest(root: Path) -> dict[str, Any]:
     if not path.is_file():
         return {"assets": []}
     return yaml.safe_load(path.read_text()) or {"assets": []}
+
+
+def load_clone_asset_manifest(root: Path) -> dict[str, Any]:
+    path = root / "content" / "clone" / "assets" / "manifest.yaml"
+    if not path.is_file():
+        return {"clone_assets": []}
+    return yaml.safe_load(path.read_text()) or {"clone_assets": []}
 
 
 def check_file(result: dict[str, Any], path: Path, relative: str) -> None:

@@ -257,3 +257,141 @@ def test_verify_excluded_migration_path_fails(tmp_path):
     payload = json.loads(result.stdout)
     assert payload["status"] == "failed"
     assert any(error["field"] == "migration.excluded_path" for error in payload["errors"])
+
+
+def clone_verified_repo(tmp_path: Path) -> Path:
+    repo = verified_repo(tmp_path)
+    pages_dir = repo / "content" / "clone" / "pages"
+    posts_dir = repo / "content" / "clone" / "posts"
+    assets_dir = repo / "content" / "clone" / "assets"
+    shutil.rmtree(pages_dir, ignore_errors=True)
+    shutil.rmtree(posts_dir, ignore_errors=True)
+    shutil.rmtree(assets_dir, ignore_errors=True)
+    pages_dir.mkdir(parents=True)
+    posts_dir.mkdir(parents=True)
+    assets_dir.mkdir(parents=True)
+    write_file(
+        pages_dir / "artists-pcbender.yaml",
+        yaml.safe_dump(
+            {
+                "clone": {
+                    "id": "artists-pcbender",
+                    "kind": "artist_page",
+                    "title": "PCBender",
+                    "route": {"canonical_path": "/artists/pcbender/", "aliases": []},
+                    "content_html": "<p>mystique</p>",
+                }
+            },
+            sort_keys=False,
+        ),
+    )
+    write_file(
+        pages_dir / "artists-pcbender-circuiting.yaml",
+        yaml.safe_dump(
+            {
+                "clone": {
+                    "id": "artists-pcbender-circuiting",
+                    "kind": "release_page",
+                    "title": "Circuiting",
+                    "route": {"canonical_path": "/artists/pcbender/circuiting/", "aliases": []},
+                    "content_html": "<p>Circuiting is not just an album</p>",
+                }
+            },
+            sort_keys=False,
+        ),
+    )
+    write_file(
+        assets_dir / "manifest.yaml",
+        yaml.safe_dump(
+            {
+                "clone_assets": [
+                    {
+                        "id": "wp-pcbender",
+                        "source_url": "https://www.maricoparecords.com/wp-content/uploads/pcbender.png",
+                        "local_path": "site/public/assets/wp/wp-content/uploads/pcbender.png",
+                        "status": "mirrored",
+                        "required": True,
+                    }
+                ]
+            },
+            sort_keys=False,
+        ),
+    )
+    write_file(
+        repo / "builds/local-staging/artists/pcbender/index.html",
+        '<article class="wp-clone-content" data-clone-kind="artist_page">mystique<img src="/assets/wp/wp-content/uploads/pcbender.png"></article>',
+    )
+    write_file(
+        repo / "builds/local-staging/artists/pcbender/circuiting/index.html",
+        '<article class="wp-clone-content" data-clone-kind="release_page">Circuiting is not just an album</article>',
+    )
+    write_file(repo / "builds/local-staging/assets/wp/wp-content/uploads/pcbender.png", "image\n")
+    return repo
+
+
+def test_verify_clone_surface_passes_for_routes_assets_and_markers(tmp_path):
+    repo = clone_verified_repo(tmp_path)
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 0
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "passed"
+    assert payload["clone"]["enabled"] is True
+    assert payload["clone"]["pages"] == 2
+    assert payload["clone"]["posts"] == 0
+    assert payload["clone"]["routes_checked"] == 2
+    assert payload["clone"]["asset_records_checked"] == 1
+    assert payload["clone"]["rendered_wp_asset_refs_checked"] == 1
+    assert payload["clone"]["known_markers_checked"] == 2
+
+
+def test_verify_missing_clone_route_fails(tmp_path):
+    repo = clone_verified_repo(tmp_path)
+    (repo / "builds/local-staging/artists/pcbender/circuiting/index.html").unlink()
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "failed"
+    assert any("artists/pcbender/circuiting/index.html" in error["message"] for error in payload["errors"])
+
+
+def test_verify_missing_rendered_clone_asset_fails(tmp_path):
+    repo = clone_verified_repo(tmp_path)
+    (repo / "builds/local-staging/assets/wp/wp-content/uploads/pcbender.png").unlink()
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "failed"
+    assert any(error["field"] == "clone.asset" for error in payload["errors"])
+
+
+def test_verify_missing_clone_marker_fails(tmp_path):
+    repo = clone_verified_repo(tmp_path)
+    write_file(
+        repo / "builds/local-staging/artists/pcbender/index.html",
+        '<article class="wp-clone-content" data-clone-kind="artist_page">PCBender</article>',
+    )
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "failed"
+    assert any(error["field"] == "clone.marker" for error in payload["errors"])
+
+
+def test_verify_excluded_clone_path_fails(tmp_path):
+    repo = clone_verified_repo(tmp_path)
+    write_file(repo / "builds/local-staging/checkout/index.html", "<p>Checkout</p>\n")
+
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert payload["status"] == "failed"
+    assert any(error["field"] == "clone.excluded_path" for error in payload["errors"])

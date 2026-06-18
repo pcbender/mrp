@@ -1,16 +1,16 @@
 # Graph Report - mrp  (2026-06-17)
 
 ## Corpus Check
-- 2284 files · ~1,448,240,926 words
+- 2641 files · ~1,727,147,473 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 13348 nodes · 18435 edges · 2062 communities (1725 shown, 337 thin omitted)
+- 16366 nodes · 22616 edges · 2515 communities (2094 shown, 421 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cb26c03a`
+- Built from commit: `5493cdf5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -854,6 +854,191 @@
 - [[_COMMUNITY_Community 1865|Community 1865]]
 - [[_COMMUNITY_Community 1867|Community 1867]]
 - [[_COMMUNITY_Community 1868|Community 1868]]
+- [[_COMMUNITY_Community 2062|Community 2062]]
+- [[_COMMUNITY_Community 2063|Community 2063]]
+- [[_COMMUNITY_Community 2064|Community 2064]]
+- [[_COMMUNITY_Community 2065|Community 2065]]
+- [[_COMMUNITY_Community 2066|Community 2066]]
+- [[_COMMUNITY_Community 2067|Community 2067]]
+- [[_COMMUNITY_Community 2068|Community 2068]]
+- [[_COMMUNITY_Community 2069|Community 2069]]
+- [[_COMMUNITY_Community 2070|Community 2070]]
+- [[_COMMUNITY_Community 2071|Community 2071]]
+- [[_COMMUNITY_Community 2072|Community 2072]]
+- [[_COMMUNITY_Community 2073|Community 2073]]
+- [[_COMMUNITY_Community 2074|Community 2074]]
+- [[_COMMUNITY_Community 2075|Community 2075]]
+- [[_COMMUNITY_Community 2076|Community 2076]]
+- [[_COMMUNITY_Community 2077|Community 2077]]
+- [[_COMMUNITY_Community 2078|Community 2078]]
+- [[_COMMUNITY_Community 2079|Community 2079]]
+- [[_COMMUNITY_Community 2080|Community 2080]]
+- [[_COMMUNITY_Community 2081|Community 2081]]
+- [[_COMMUNITY_Community 2082|Community 2082]]
+- [[_COMMUNITY_Community 2083|Community 2083]]
+- [[_COMMUNITY_Community 2084|Community 2084]]
+- [[_COMMUNITY_Community 2085|Community 2085]]
+- [[_COMMUNITY_Community 2086|Community 2086]]
+- [[_COMMUNITY_Community 2087|Community 2087]]
+- [[_COMMUNITY_Community 2088|Community 2088]]
+- [[_COMMUNITY_Community 2089|Community 2089]]
+- [[_COMMUNITY_Community 2090|Community 2090]]
+- [[_COMMUNITY_Community 2091|Community 2091]]
+- [[_COMMUNITY_Community 2092|Community 2092]]
+- [[_COMMUNITY_Community 2093|Community 2093]]
+- [[_COMMUNITY_Community 2094|Community 2094]]
+- [[_COMMUNITY_Community 2095|Community 2095]]
+- [[_COMMUNITY_Community 2096|Community 2096]]
+- [[_COMMUNITY_Community 2097|Community 2097]]
+- [[_COMMUNITY_Community 2098|Community 2098]]
+- [[_COMMUNITY_Community 2099|Community 2099]]
+- [[_COMMUNITY_Community 2100|Community 2100]]
+- [[_COMMUNITY_Community 2101|Community 2101]]
+- [[_COMMUNITY_Community 2102|Community 2102]]
+- [[_COMMUNITY_Community 2103|Community 2103]]
+- [[_COMMUNITY_Community 2104|Community 2104]]
+- [[_COMMUNITY_Community 2105|Community 2105]]
+- [[_COMMUNITY_Community 2106|Community 2106]]
+- [[_COMMUNITY_Community 2107|Community 2107]]
+- [[_COMMUNITY_Community 2108|Community 2108]]
+- [[_COMMUNITY_Community 2109|Community 2109]]
+- [[_COMMUNITY_Community 2110|Community 2110]]
+- [[_COMMUNITY_Community 2111|Community 2111]]
+- [[_COMMUNITY_Community 2112|Community 2112]]
+- [[_COMMUNITY_Community 2113|Community 2113]]
+- [[_COMMUNITY_Community 2114|Community 2114]]
+- [[_COMMUNITY_Community 2115|Community 2115]]
+- [[_COMMUNITY_Community 2116|Community 2116]]
+- [[_COMMUNITY_Community 2117|Community 2117]]
+- [[_COMMUNITY_Community 2118|Community 2118]]
+- [[_COMMUNITY_Community 2119|Community 2119]]
+- [[_COMMUNITY_Community 2120|Community 2120]]
+- [[_COMMUNITY_Community 2121|Community 2121]]
+- [[_COMMUNITY_Community 2122|Community 2122]]
+- [[_COMMUNITY_Community 2123|Community 2123]]
+- [[_COMMUNITY_Community 2124|Community 2124]]
+- [[_COMMUNITY_Community 2125|Community 2125]]
+- [[_COMMUNITY_Community 2126|Community 2126]]
+- [[_COMMUNITY_Community 2127|Community 2127]]
+- [[_COMMUNITY_Community 2128|Community 2128]]
+- [[_COMMUNITY_Community 2129|Community 2129]]
+- [[_COMMUNITY_Community 2130|Community 2130]]
+- [[_COMMUNITY_Community 2131|Community 2131]]
+- [[_COMMUNITY_Community 2132|Community 2132]]
+- [[_COMMUNITY_Community 2133|Community 2133]]
+- [[_COMMUNITY_Community 2134|Community 2134]]
+- [[_COMMUNITY_Community 2135|Community 2135]]
+- [[_COMMUNITY_Community 2136|Community 2136]]
+- [[_COMMUNITY_Community 2137|Community 2137]]
+- [[_COMMUNITY_Community 2138|Community 2138]]
+- [[_COMMUNITY_Community 2139|Community 2139]]
+- [[_COMMUNITY_Community 2140|Community 2140]]
+- [[_COMMUNITY_Community 2141|Community 2141]]
+- [[_COMMUNITY_Community 2142|Community 2142]]
+- [[_COMMUNITY_Community 2143|Community 2143]]
+- [[_COMMUNITY_Community 2144|Community 2144]]
+- [[_COMMUNITY_Community 2145|Community 2145]]
+- [[_COMMUNITY_Community 2146|Community 2146]]
+- [[_COMMUNITY_Community 2147|Community 2147]]
+- [[_COMMUNITY_Community 2148|Community 2148]]
+- [[_COMMUNITY_Community 2149|Community 2149]]
+- [[_COMMUNITY_Community 2150|Community 2150]]
+- [[_COMMUNITY_Community 2151|Community 2151]]
+- [[_COMMUNITY_Community 2152|Community 2152]]
+- [[_COMMUNITY_Community 2153|Community 2153]]
+- [[_COMMUNITY_Community 2154|Community 2154]]
+- [[_COMMUNITY_Community 2155|Community 2155]]
+- [[_COMMUNITY_Community 2156|Community 2156]]
+- [[_COMMUNITY_Community 2157|Community 2157]]
+- [[_COMMUNITY_Community 2158|Community 2158]]
+- [[_COMMUNITY_Community 2159|Community 2159]]
+- [[_COMMUNITY_Community 2160|Community 2160]]
+- [[_COMMUNITY_Community 2161|Community 2161]]
+- [[_COMMUNITY_Community 2162|Community 2162]]
+- [[_COMMUNITY_Community 2163|Community 2163]]
+- [[_COMMUNITY_Community 2164|Community 2164]]
+- [[_COMMUNITY_Community 2165|Community 2165]]
+- [[_COMMUNITY_Community 2166|Community 2166]]
+- [[_COMMUNITY_Community 2167|Community 2167]]
+- [[_COMMUNITY_Community 2168|Community 2168]]
+- [[_COMMUNITY_Community 2169|Community 2169]]
+- [[_COMMUNITY_Community 2170|Community 2170]]
+- [[_COMMUNITY_Community 2171|Community 2171]]
+- [[_COMMUNITY_Community 2172|Community 2172]]
+- [[_COMMUNITY_Community 2173|Community 2173]]
+- [[_COMMUNITY_Community 2174|Community 2174]]
+- [[_COMMUNITY_Community 2175|Community 2175]]
+- [[_COMMUNITY_Community 2176|Community 2176]]
+- [[_COMMUNITY_Community 2177|Community 2177]]
+- [[_COMMUNITY_Community 2178|Community 2178]]
+- [[_COMMUNITY_Community 2179|Community 2179]]
+- [[_COMMUNITY_Community 2180|Community 2180]]
+- [[_COMMUNITY_Community 2181|Community 2181]]
+- [[_COMMUNITY_Community 2182|Community 2182]]
+- [[_COMMUNITY_Community 2183|Community 2183]]
+- [[_COMMUNITY_Community 2184|Community 2184]]
+- [[_COMMUNITY_Community 2185|Community 2185]]
+- [[_COMMUNITY_Community 2186|Community 2186]]
+- [[_COMMUNITY_Community 2187|Community 2187]]
+- [[_COMMUNITY_Community 2188|Community 2188]]
+- [[_COMMUNITY_Community 2189|Community 2189]]
+- [[_COMMUNITY_Community 2190|Community 2190]]
+- [[_COMMUNITY_Community 2191|Community 2191]]
+- [[_COMMUNITY_Community 2192|Community 2192]]
+- [[_COMMUNITY_Community 2193|Community 2193]]
+- [[_COMMUNITY_Community 2194|Community 2194]]
+- [[_COMMUNITY_Community 2195|Community 2195]]
+- [[_COMMUNITY_Community 2196|Community 2196]]
+- [[_COMMUNITY_Community 2197|Community 2197]]
+- [[_COMMUNITY_Community 2198|Community 2198]]
+- [[_COMMUNITY_Community 2199|Community 2199]]
+- [[_COMMUNITY_Community 2200|Community 2200]]
+- [[_COMMUNITY_Community 2201|Community 2201]]
+- [[_COMMUNITY_Community 2202|Community 2202]]
+- [[_COMMUNITY_Community 2203|Community 2203]]
+- [[_COMMUNITY_Community 2204|Community 2204]]
+- [[_COMMUNITY_Community 2205|Community 2205]]
+- [[_COMMUNITY_Community 2206|Community 2206]]
+- [[_COMMUNITY_Community 2207|Community 2207]]
+- [[_COMMUNITY_Community 2208|Community 2208]]
+- [[_COMMUNITY_Community 2209|Community 2209]]
+- [[_COMMUNITY_Community 2210|Community 2210]]
+- [[_COMMUNITY_Community 2211|Community 2211]]
+- [[_COMMUNITY_Community 2212|Community 2212]]
+- [[_COMMUNITY_Community 2213|Community 2213]]
+- [[_COMMUNITY_Community 2214|Community 2214]]
+- [[_COMMUNITY_Community 2215|Community 2215]]
+- [[_COMMUNITY_Community 2216|Community 2216]]
+- [[_COMMUNITY_Community 2217|Community 2217]]
+- [[_COMMUNITY_Community 2218|Community 2218]]
+- [[_COMMUNITY_Community 2219|Community 2219]]
+- [[_COMMUNITY_Community 2220|Community 2220]]
+- [[_COMMUNITY_Community 2221|Community 2221]]
+- [[_COMMUNITY_Community 2222|Community 2222]]
+- [[_COMMUNITY_Community 2223|Community 2223]]
+- [[_COMMUNITY_Community 2224|Community 2224]]
+- [[_COMMUNITY_Community 2225|Community 2225]]
+- [[_COMMUNITY_Community 2226|Community 2226]]
+- [[_COMMUNITY_Community 2227|Community 2227]]
+- [[_COMMUNITY_Community 2228|Community 2228]]
+- [[_COMMUNITY_Community 2229|Community 2229]]
+- [[_COMMUNITY_Community 2244|Community 2244]]
+- [[_COMMUNITY_Community 2246|Community 2246]]
+- [[_COMMUNITY_Community 2249|Community 2249]]
+- [[_COMMUNITY_Community 2252|Community 2252]]
+- [[_COMMUNITY_Community 2255|Community 2255]]
+- [[_COMMUNITY_Community 2258|Community 2258]]
+- [[_COMMUNITY_Community 2261|Community 2261]]
+- [[_COMMUNITY_Community 2264|Community 2264]]
+- [[_COMMUNITY_Community 2267|Community 2267]]
+- [[_COMMUNITY_Community 2270|Community 2270]]
+- [[_COMMUNITY_Community 2273|Community 2273]]
+- [[_COMMUNITY_Community 2276|Community 2276]]
+- [[_COMMUNITY_Community 2279|Community 2279]]
+- [[_COMMUNITY_Community 2282|Community 2282]]
+- [[_COMMUNITY_Community 2285|Community 2285]]
+- [[_COMMUNITY_Community 2287|Community 2287]]
+- [[_COMMUNITY_Community 2288|Community 2288]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `$()` - 54 edges
@@ -882,7 +1067,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (2062 total, 337 thin omitted)
+## Communities (2515 total, 421 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.07
@@ -917,12 +1102,12 @@ Cohesion: 0.07
 Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.06
-Nodes (31): type, minLength, type, $ref, type, pattern, type, type (+23 more)
+Cohesion: 0.07
+Nodes (28): type, minLength, type, $ref, type, type, $ref, enum (+20 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.09
-Nodes (68): copy_build(), copy_plan(), failed(), failed_build(), format_deployment(), load_targets(), now_utc(), resolve_build() (+60 more)
+Cohesion: 0.18
+Nodes (41): add_error(), check_artist_pages(), check_clone_asset_manifest(), check_clone_known_markers(), check_clone_routes(), check_clone_surface(), check_cover_images(), check_excluded_clone_paths() (+33 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.10
@@ -973,16 +1158,16 @@ Cohesion: 0.29
 Nodes (17): add_references(), asset_manifest_record(), asset_type(), clone_assets(), collect_asset_references(), file_sha256(), format_clone_assets(), is_wordpress_asset_path() (+9 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.44
-Nodes (9): deployable_repo(), CompletedProcess, Path, run_mrp(), test_stage_dry_run_reports_plan_without_copying(), test_stage_local_target_copies_build_and_writes_report(), test_stage_missing_marker_is_refused(), test_stage_refuses_remote_target_type() (+1 more)
+Cohesion: 0.42
+Nodes (10): deployable_repo(), CompletedProcess, Path, run_mrp(), test_stage_dry_run_reports_plan_without_copying(), test_stage_local_target_copies_build_and_writes_report(), test_stage_local_target_removes_stale_files_but_preserves_marker(), test_stage_missing_marker_is_refused() (+2 more)
 
 ### Community 24 - "Community 24"
 Cohesion: 0.34
 Nodes (16): clone_asset_manifest(), clone_record(), minimal_repo(), CompletedProcess, Path, run_mrp(), test_duplicate_clone_ids_fail_across_clone_pages_and_posts(), test_invalid_clone_record_fails_independent_validation() (+8 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.34
-Nodes (16): migrated_verified_repo(), CompletedProcess, Path, run_mrp(), test_verify_excluded_migration_path_fails(), test_verify_ignores_placeholder_tokens_in_mirrored_wordpress_assets(), test_verify_ignores_protocol_relative_external_links(), test_verify_migration_surface_passes_for_routes_assets_and_aliases() (+8 more)
+Cohesion: 0.26
+Nodes (22): clone_verified_repo(), migrated_verified_repo(), CompletedProcess, Path, run_mrp(), test_verify_clone_surface_passes_for_routes_assets_and_markers(), test_verify_excluded_clone_path_fails(), test_verify_excluded_migration_path_fails() (+14 more)
 
 ### Community 26 - "Community 26"
 Cohesion: 0.44
@@ -1042,11 +1227,11 @@ Nodes (5): $ref, tracks, items, minItems, type
 
 ### Community 40 - "Community 40"
 Cohesion: 0.15
-Nodes (13): 17. Work Packets, Acceptance Criteria, Acceptance Criteria, Acceptance Criteria, MRP-001 — Repository Survey and Implementation Plan, MRP-010 — Implement `mrp build`, MRP-015 — Implement Rollback, Objective (+5 more)
+Nodes (13): 17. Work Packets, Acceptance Criteria, Acceptance Criteria, Acceptance Criteria, MRP-002 — Create MRP Directory Structure, MRP-010 — Implement `mrp build`, MRP-015 — Implement Rollback, Objective (+5 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.50
-Nodes (4): Acceptance Criteria, MRP-002 — Create MRP Directory Structure, Objective, Tasks
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 42 - "Community 42"
 Cohesion: 0.50
@@ -1221,8 +1406,8 @@ Cohesion: 0.19
 Nodes (28): title_from_slug(), artist_record(), asset_references_from_html(), capture_assets_by_url(), copy_referenced_assets(), date_part(), extract_content_asset_references(), manifest_asset_type() (+20 more)
 
 ### Community 205 - "Community 205"
-Cohesion: 0.17
-Nodes (27): classify_wxr_item(), exclusion_summary(), integer_text(), inventory_summary(), load_json(), normalize_capture_route(), now_utc(), parse_item() (+19 more)
+Cohesion: 0.16
+Nodes (28): classify_wxr_item(), exclusion_summary(), format_wxr_inventory(), integer_text(), inventory_summary(), load_json(), normalize_capture_route(), now_utc() (+20 more)
 
 ### Community 206 - "Community 206"
 Cohesion: 0.24
@@ -1241,12 +1426,12 @@ Cohesion: 0.05
 Nodes (42): additionalProperties, minimum, type, items, type, type, $id, pattern (+34 more)
 
 ### Community 251 - "Community 251"
-Cohesion: 0.11
-Nodes (19): type, type, format, type, minLength, type, minLength, type (+11 more)
+Cohesion: 0.10
+Nodes (20): type, type, minLength, pattern, type, format, type, minLength (+12 more)
 
 ### Community 252 - "Community 252"
-Cohesion: 0.11
-Nodes (18): properties, type, type, minLength, pattern, type, enum, type (+10 more)
+Cohesion: 0.12
+Nodes (17): properties, type, type, enum, type, content_html, excerpt, kind (+9 more)
 
 ### Community 253 - "Community 253"
 Cohesion: 0.17
@@ -1689,12 +1874,12 @@ Cohesion: 0.29
 Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
 
 ### Community 737 - "Community 737"
-Cohesion: 0.18
-Nodes (19): clone_head(), HeadParser, inline_styles(), is_excluded_external(), local_asset_path(), normalize_asset_url(), now_utc(), page_head_record() (+11 more)
+Cohesion: 0.17
+Nodes (21): clone_head(), HeadParser, inline_styles(), is_excluded_dependency(), is_excluded_external(), is_woocommerce_reference(), local_asset_path(), normalize_asset_url() (+13 more)
 
 ### Community 738 - "Community 738"
 Cohesion: 0.13
-Nodes (32): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), format_clone_head() (+24 more)
+Nodes (30): ArgumentParser, add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), format_clone_head() (+22 more)
 
 ### Community 739 - "Community 739"
 Cohesion: 0.13
@@ -2133,8 +2318,8 @@ Cohesion: 0.13
 Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
 
 ### Community 993 - "Community 993"
-Cohesion: 0.35
-Nodes (15): aliases_for_path(), canonical_path(), capture_routes(), clone_id(), clone_record(), clone_site(), format_clone_site(), load_json() (+7 more)
+Cohesion: 0.34
+Nodes (16): aliases_for_path(), canonical_path(), capture_routes(), clone_id(), clone_record(), clone_site(), format_clone_site(), is_excluded_clone_item() (+8 more)
 
 ### Community 1018 - "Community 1018"
 Cohesion: 0.36
@@ -2609,8 +2794,8 @@ Cohesion: 0.29
 Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
 
 ### Community 1702 - "Community 1702"
-Cohesion: 0.31
-Nodes (18): add_review_item(), clone_records(), clone_rewrites(), collect_url_references(), dependency_url(), load_record(), mirrored_asset_paths(), normalize_path() (+10 more)
+Cohesion: 0.29
+Nodes (19): add_review_item(), clone_records(), clone_rewrites(), collect_url_references(), dependency_url(), format_clone_rewrites(), load_record(), mirrored_asset_paths() (+11 more)
 
 ### Community 1703 - "Community 1703"
 Cohesion: 0.13
@@ -2885,26 +3070,428 @@ Cohesion: 0.67
 Nodes (3): CompletedProcess, run_mrp(), test_clone_rewrites_reports_static_url_review_metadata()
 
 ### Community 1867 - "Community 1867"
-Cohesion: 0.67
-Nodes (3): status, enum, type
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
 
 ### Community 1868 - "Community 1868"
 Cohesion: 0.67
 Nodes (3): status, enum, type
 
+### Community 2062 - "Community 2062"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2063 - "Community 2063"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2064 - "Community 2064"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2065 - "Community 2065"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2066 - "Community 2066"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2067 - "Community 2067"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2068 - "Community 2068"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2069 - "Community 2069"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2070 - "Community 2070"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2071 - "Community 2071"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2072 - "Community 2072"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2073 - "Community 2073"
+Cohesion: 0.07
+Nodes (28): $(), Ae(), B(), Be(), c(), $e(), ee(), F() (+20 more)
+
+### Community 2088 - "Community 2088"
+Cohesion: 0.21
+Nodes (26): clean_destination(), copy_build(), copy_plan(), failed(), failed_build(), format_deployment(), load_targets(), now_utc() (+18 more)
+
+### Community 2089 - "Community 2089"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2090 - "Community 2090"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2091 - "Community 2091"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2092 - "Community 2092"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2093 - "Community 2093"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2094 - "Community 2094"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2095 - "Community 2095"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2096 - "Community 2096"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2097 - "Community 2097"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2098 - "Community 2098"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2099 - "Community 2099"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2100 - "Community 2100"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2101 - "Community 2101"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2102 - "Community 2102"
+Cohesion: 0.29
+Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
+
+### Community 2103 - "Community 2103"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2104 - "Community 2104"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2105 - "Community 2105"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2106 - "Community 2106"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2107 - "Community 2107"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2108 - "Community 2108"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2109 - "Community 2109"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2110 - "Community 2110"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2111 - "Community 2111"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2112 - "Community 2112"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2113 - "Community 2113"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2114 - "Community 2114"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2115 - "Community 2115"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2116 - "Community 2116"
+Cohesion: 0.13
+Nodes (3): cryoutAutoScroll(), cryoutPortfolioFilter(), cryoutPortfolioMasonry()
+
+### Community 2131 - "Community 2131"
+Cohesion: 0.44
+Nodes (11): add_error(), clear_target(), copy_tree(), finish(), format_rollback(), now_utc(), rollback(), rollback_candidate() (+3 more)
+
+### Community 2132 - "Community 2132"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2133 - "Community 2133"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2134 - "Community 2134"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2135 - "Community 2135"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2136 - "Community 2136"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2137 - "Community 2137"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2138 - "Community 2138"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2139 - "Community 2139"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2140 - "Community 2140"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2141 - "Community 2141"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2142 - "Community 2142"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2143 - "Community 2143"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2144 - "Community 2144"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2145 - "Community 2145"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2146 - "Community 2146"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2147 - "Community 2147"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2148 - "Community 2148"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2149 - "Community 2149"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2150 - "Community 2150"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2151 - "Community 2151"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2152 - "Community 2152"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2153 - "Community 2153"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2154 - "Community 2154"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2155 - "Community 2155"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2156 - "Community 2156"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2157 - "Community 2157"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2158 - "Community 2158"
+Cohesion: 0.33
+Nodes (5): a(), c(), i(), r(), u()
+
+### Community 2159 - "Community 2159"
+Cohesion: 0.44
+Nodes (6): a(), i(), n(), o(), r(), t()
+
+### Community 2161 - "Community 2161"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2163 - "Community 2163"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2165 - "Community 2165"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2167 - "Community 2167"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2169 - "Community 2169"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2171 - "Community 2171"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2173 - "Community 2173"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2175 - "Community 2175"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2177 - "Community 2177"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2179 - "Community 2179"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2181 - "Community 2181"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2183 - "Community 2183"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2185 - "Community 2185"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2187 - "Community 2187"
+Cohesion: 0.46
+Nodes (7): a(), d(), g(), l(), m(), o(), t()
+
+### Community 2188 - "Community 2188"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2191 - "Community 2191"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2194 - "Community 2194"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2197 - "Community 2197"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2200 - "Community 2200"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2203 - "Community 2203"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2206 - "Community 2206"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2209 - "Community 2209"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2212 - "Community 2212"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2215 - "Community 2215"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2218 - "Community 2218"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2221 - "Community 2221"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2224 - "Community 2224"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2227 - "Community 2227"
+Cohesion: 0.47
+Nodes (3): focus_populate_live_region(), on_document_ready(), refresh_sorted_by_live_region()
+
+### Community 2244 - "Community 2244"
+Cohesion: 0.50
+Nodes (4): Acceptance Criteria, MRP-001 — Repository Survey and Implementation Plan, Objective, Tasks
+
+### Community 2287 - "Community 2287"
+Cohesion: 0.67
+Nodes (3): minLength, type, post_type
+
+### Community 2288 - "Community 2288"
+Cohesion: 0.67
+Nodes (3): pattern, type, id
+
 ## Knowledge Gaps
 - **547 isolated node(s):** `codeToStatusMap`, `manifest`, `Namespace`, `Path`, `$schema` (+542 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **337 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **421 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `17. Work Packets` connect `Community 40` to `Community 2`, `Community 37`, `Community 41`, `Community 42`, `Community 43`, `Community 44`, `Community 45`, `Community 46`, `Community 47`, `Community 49`, `Community 50`, `Community 51`, `Community 52`, `Community 54`, `Community 55`, `Community 56`, `Community 57`, `Community 58`?**
+- **Why does `wxr_inventory()` connect `Community 205` to `Community 738`, `Community 754`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **Why does `publish()` connect `Community 9` to `Community 738`?**
-  _High betweenness centrality (0.000) - this node is a cross-community bridge._
-- **Why does `properties` connect `Community 8` to `Community 1`, `Community 66`, `Community 33`, `Community 39`, `Community 11`, `Community 1868`, `Community 19`, `Community 62`?**
+- **Why does `main()` connect `Community 738` to `Community 737`, `Community 993`, `Community 1702`, `Community 2088`, `Community 745`, `Community 744`, `Community 9`, `Community 205`, `Community 943`, `Community 752`, `Community 753`, `Community 2131`, `Community 22`, `Community 155`?**
   _High betweenness centrality (0.000) - this node is a cross-community bridge._
 - **What connects `codeToStatusMap`, `manifest`, `Maricopa Release Publisher.` to the rest of the system?**
   _549 weakly-connected nodes found - possible documentation gaps or missing edges._
@@ -2914,3 +3501,5 @@ _Questions this graph is uniquely positioned to answer:_
   _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.11397849462365592 - nodes in this community are weakly interconnected._
+- **Should `Community 4` be split into smaller, more focused modules?**
+  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._

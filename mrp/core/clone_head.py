@@ -95,9 +95,17 @@ def page_head_record(path: Path, page_root: Path) -> dict[str, Any]:
     return {
         "canonical_path": route,
         "captured_path": capture_path,
-        "stylesheets": [rewrite_dependency(item) for item in parser.links if item["kind"] == "stylesheet"],
-        "preloads": [rewrite_dependency(item) for item in parser.links if item["kind"] == "preload"],
-        "scripts": [rewrite_dependency(item) for item in parser.scripts],
+        "stylesheets": [
+            rewrite_dependency(item)
+            for item in parser.links
+            if item["kind"] == "stylesheet" and not is_excluded_dependency(item)
+        ],
+        "preloads": [
+            rewrite_dependency(item)
+            for item in parser.links
+            if item["kind"] == "preload" and not is_excluded_dependency(item)
+        ],
+        "scripts": [rewrite_dependency(item) for item in parser.scripts if not is_excluded_dependency(item)],
         "inline_styles": inline_styles(parser.inline_styles),
         "excluded_external": parser.excluded_external,
     }
@@ -110,6 +118,15 @@ def rewrite_dependency(item: dict[str, Any]) -> dict[str, Any]:
     if local:
         rewritten["local_path"] = local
     return rewritten
+
+
+def is_excluded_dependency(item: dict[str, Any]) -> bool:
+    url = item.get("href") or item.get("src") or ""
+    return is_woocommerce_reference(url)
+
+
+def is_woocommerce_reference(value: str) -> bool:
+    return "woocommerce" in value.lower()
 
 
 def local_asset_path(value: str) -> str | None:
@@ -142,6 +159,8 @@ def inline_styles(styles: list[str]) -> list[dict[str, Any]]:
     for content in styles:
         normalized = content.strip()
         if not normalized:
+            continue
+        if is_woocommerce_reference(normalized):
             continue
         records.append(
             {

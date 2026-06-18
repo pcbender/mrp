@@ -67,6 +67,7 @@ def run_clone_generation(root: Path, source: str | Path, regenerate: bool) -> di
         for item in wxr["items"]
         for classification in [classify_wxr_item(item)]
         if classification["category"] in RENDERABLE_CATEGORIES
+        and not is_excluded_clone_item(item)
     ]
 
     for item, classification in sorted(renderable, key=lambda pair: canonical_path(pair[0])):
@@ -151,6 +152,12 @@ def clone_record(
             ],
         }
     }
+
+
+def is_excluded_clone_item(item: dict[str, Any]) -> bool:
+    path = canonical_path(item)
+    slug = str(item.get("slug") or "")
+    return path.startswith("/__trashed") or slug.startswith("__trashed")
 
 
 def capture_routes(pages: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
