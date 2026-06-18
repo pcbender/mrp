@@ -52,6 +52,10 @@ def test_build_creates_staging_artifact_and_report():
     assert "/2025/02/26/the-future-of-ai-in-music/" not in conversation
     licensing = (ROOT / payload["build_path"] / "licensing-custom-songs/music-licensing/index.html").read_text()
     assert "/assets/wp/" in licensing
+    assert "https://www.maricoparecords.com/wp-content/" not in licensing
+    assert "https://www.maricoparecords.com/wp-includes/" not in licensing
+    licensing_parent = (ROOT / payload["build_path"] / "licensing-custom-songs/index.html").read_text()
+    assert 'href="/licensing-custom-songs/custom-songs-for-hire/"' in licensing_parent
     streaming = (ROOT / payload["build_path"] / "artists/pcbender/too-blue-to-lose/index.html").read_text()
     assert "https://open.spotify.com" in streaming
     assert "https://music.apple.com" in streaming

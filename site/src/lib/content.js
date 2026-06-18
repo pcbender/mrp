@@ -158,7 +158,7 @@ export function cloneDescription(entry) {
 }
 
 export function renderCloneHtml(html) {
-  return rewriteWordPressAssetReferences(rewriteInternalLinks(String(html || "")));
+  return rewriteCloneUrls(String(html || ""));
 }
 
 function migratedPostRouteEntries() {
@@ -203,6 +203,62 @@ function rewriteInternalLinks(html) {
   });
 }
 
+function rewriteCloneUrls(html) {
+  const routes = cloneRouteMap();
+  let rewritten = rewriteWordPressAssetReferences(html);
+  rewritten = rewriteCssUrls(rewritten, routes);
+  rewritten = rewriteSrcsets(rewritten, routes);
+  rewritten = rewriteHtmlUrlAttributes(rewritten, routes);
+  return rewritten;
+}
+
+function rewriteHtmlUrlAttributes(html, routes) {
+  const urlAttributes = [
+    "href",
+    "src",
+    "poster",
+    "action",
+    "data-src",
+    "data-srcset",
+    "data-bg",
+    "data-background",
+    "data-url",
+    "xlink:href"
+  ].join("|");
+  const attributePattern = new RegExp(`\\b(${urlAttributes})=(["'])([^"']*)\\2`, "gi");
+  return html.replace(attributePattern, (match, name, quote, value) => {
+    if (name.toLowerCase().endsWith("srcset")) {
+      return `${name}=${quote}${rewriteSrcsetValue(value, routes)}${quote}`;
+    }
+    return `${name}=${quote}${rewriteStaticUrl(value, routes)}${quote}`;
+  });
+}
+
+function rewriteSrcsets(html, routes) {
+  return html.replace(/\bsrcset=(["'])([^"']*)\1/gi, (match, quote, value) => {
+    return `srcset=${quote}${rewriteSrcsetValue(value, routes)}${quote}`;
+  });
+}
+
+function rewriteSrcsetValue(value, routes) {
+  return value
+    .split(",")
+    .map((candidate) => {
+      const trimmed = candidate.trim();
+      if (!trimmed) return candidate;
+      const [url, ...descriptors] = trimmed.split(/\s+/);
+      return [rewriteStaticUrl(url, routes), ...descriptors].join(" ");
+    })
+    .join(", ");
+}
+
+function rewriteCssUrls(html, routes) {
+  return html.replace(/url\(\s*(["']?)([^"')]+)\1\s*\)/gi, (match, quote, value) => {
+    const rewritten = rewriteStaticUrl(value, routes);
+    return `url(${quote}${rewritten}${quote})`;
+  });
+}
+
 function rewriteInternalHref(href, routes) {
   if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) {
     return href;
@@ -222,6 +278,35 @@ function rewriteInternalHref(href, routes) {
     return href;
   }
   return `${rewritten}${parsed.search}${parsed.hash}`;
+}
+
+function rewriteStaticUrl(value, routes) {
+  if (!value || value.startsWith("#") || isNonHttpUrl(value)) {
+    return value;
+  }
+  const asset = wordpressAssetPath(value);
+  if (asset) {
+    return asset;
+  }
+  let parsed;
+  try {
+    parsed = new URL(value, "https://www.maricoparecords.com");
+  } catch {
+    return value;
+  }
+  if (!localHosts.has(parsed.hostname)) {
+    return value;
+  }
+  const normalized = normalizePath(parsed.pathname);
+  const rewritten = routes.get(normalized);
+  if (!rewritten) {
+    return value;
+  }
+  return `${rewritten}${parsed.search}${parsed.hash}`;
+}
+
+function isNonHttpUrl(value) {
+  return /^(?:mailto|tel|sms|javascript|data|blob):/i.test(value);
 }
 
 function migratedRouteMap() {
@@ -246,6 +331,18 @@ function migratedRouteMap() {
   return routes;
 }
 
+function cloneRouteMap() {
+  const routes = migratedRouteMap();
+  for (const entry of [...getClonePages(), ...getClonePosts()]) {
+    const canonical = normalizePath(entry.route.canonical_path);
+    routes.set(canonical, canonical);
+    for (const alias of entry.route.aliases || []) {
+      routes.set(normalizePath(alias), canonical);
+    }
+  }
+  return routes;
+}
+
 function rewriteMediaReferences(html) {
   return html.replace(/(?:https?:\/\/(?:www\.)?maricoparecords\.com)?\/wp-content\/[^\s"'<>),\\]+/g, (url) => {
     const localPath = localMigratedAssetPath(url);
@@ -255,17 +352,25 @@ function rewriteMediaReferences(html) {
 
 function rewriteWordPressAssetReferences(html) {
   return html.replace(/(?:https?:\/\/(?:www\.)?maricoparecords\.com)?\/(?:wp-content|wp-includes)\/[^\s"'<>),\\]+/g, (url) => {
-    let parsed;
-    try {
-      parsed = new URL(url, "https://www.maricoparecords.com");
-    } catch {
-      return url;
-    }
-    if (!localHosts.has(parsed.hostname)) {
-      return url;
-    }
-    return `/assets/wp${decodeURIComponent(parsed.pathname)}`;
+    return wordpressAssetPath(url) || url;
   });
+}
+
+function wordpressAssetPath(url) {
+  let parsed;
+  try {
+    parsed = new URL(url, "https://www.maricoparecords.com");
+  } catch {
+    return null;
+  }
+  if (!localHosts.has(parsed.hostname)) {
+    return null;
+  }
+  const path = decodeURIComponent(parsed.pathname);
+  if (!path.startsWith("/wp-content/") && !path.startsWith("/wp-includes/")) {
+    return null;
+  }
+  return `/assets/wp${path}`;
 }
 
 function localMigratedAssetPath(url) {
