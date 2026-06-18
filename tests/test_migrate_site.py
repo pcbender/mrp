@@ -85,6 +85,19 @@ def test_migrate_site_generates_staging_content_records(tmp_path):
     assert (repo / "content/artists/4castle.yaml").is_file()
     assert (repo / "content/releases/distance-not-safety.yaml").is_file()
     assert (repo / "content/redirects.yaml").is_file()
+    artifact_report = repo / "migration/reports/unresolved-artifacts.json"
+    assert artifact_report.is_file()
+    assert payload["normalization"]["report_path"] == "migration/reports/unresolved-artifacts.json"
+    assert payload["normalization"]["unresolved_count"] == 0
+    migrated_page_text = (repo / "content/pages/music-licensing.yaml").read_text()
+    assert "wp-block" not in migrated_page_text
+    assert "stk-" not in migrated_page_text
+    assert "wp:" not in migrated_page_text
+    migrated_page = yaml.safe_load(migrated_page_text)["page"]
+    assert migrated_page["content_markdown"]
+    assert isinstance(migrated_page["sections"], list)
+    assert isinstance(migrated_page["images"], list)
+    assert isinstance(migrated_page["socials"], dict)
     assert payload["assets"]["referenced"] > 0
     assert payload["assets"]["copied"] > 0
     assert payload["assets"]["referenced"] < payload["planned_writes"]["assets"]

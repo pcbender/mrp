@@ -15,6 +15,7 @@ import yaml
 
 from mrp.core.import_site import title_from_slug
 from mrp.core.migration_inventory import DEFAULT_MIGRATION_SOURCE, migration_inventory
+from mrp.core.wp_normalize import normalize_wordpress_content
 
 MIGRATED_ASSET_USAGE = "migrated_content"
 OVERSIZED_ASSET_BYTES = 5_000_000
@@ -155,6 +156,9 @@ def run_migration(root: Path, source: str | Path) -> dict[str, Any]:
     redirects_path.parent.mkdir(parents=True, exist_ok=True)
     redirects_path.write_text(yaml.safe_dump(redirects, sort_keys=False, allow_unicode=False))
     created.append(str(redirects_path.relative_to(root)))
+    normalization_result = normalize_canonical_content(root)
+    if normalization_result["report_path"]:
+        created.append(normalization_result["report_path"])
     asset_result = copy_referenced_assets(root, inventory)
     if asset_result.get("manifest_updated"):
         created.append("content/assets/manifest.yaml")
@@ -164,6 +168,7 @@ def run_migration(root: Path, source: str | Path) -> dict[str, Any]:
         "stage": "content_generation",
         "summary": inventory["summary"],
         "planned_writes": planned_writes(inventory),
+        "normalization": normalization_result,
         "assets": asset_result,
         "created": sorted(created),
         "skipped": sorted(skipped, key=lambda item: item["path"]),
@@ -222,6 +227,10 @@ def page_record(
 ) -> dict[str, Any]:
     title = unescape(post.get("title") or page.get("title") or title_from_slug(slug))
     normalized_path = route["normalized_path"] if route else f"/{slug}/"
+    content = normalize_wordpress_content(
+        post.get("content") or "",
+        f"content/pages/{slug}.yaml",
+    )
     return {
         "page": {
             "id": slug,
@@ -230,7 +239,11 @@ def page_record(
             "status": "draft",
             "normalized_path": normalized_path,
             "source_url": (route["url"] if route else f"https://www.maricoparecords.com/{slug}/"),
-            "content_html": post.get("content") or "",
+            "content_html": content.content_html,
+            "content_markdown": content.content_markdown,
+            "sections": content.sections,
+            "images": content.images,
+            "socials": content.socials,
             "excerpt": post.get("excerpt") or None,
             "seo": {
                 "title": title,
@@ -253,6 +266,10 @@ def post_record(post: dict[str, Any], source_post: dict[str, Any]) -> dict[str, 
         for term in source_post.get("terms", [])
         if term.get("taxonomy") == "category" and term.get("name")
     ]
+    content = normalize_wordpress_content(
+        source_post.get("content") or "",
+        f"content/posts/{post['slug']}.yaml",
+    )
     return {
         "post": {
             "id": post["slug"],
@@ -262,7 +279,11 @@ def post_record(post: dict[str, Any], source_post: dict[str, Any]) -> dict[str, 
             "normalized_path": f"/{post['slug']}/",
             "source_url": f"https://www.maricoparecords.com/{post['slug']}/",
             "published_at": post.get("published_at"),
-            "content_html": source_post.get("content") or "",
+            "content_html": content.content_html,
+            "content_markdown": content.content_markdown,
+            "sections": content.sections,
+            "images": content.images,
+            "socials": content.socials,
             "excerpt": source_post.get("excerpt") or None,
             "categories": categories,
             "seo": {
@@ -278,6 +299,52 @@ def post_record(post: dict[str, Any], source_post: dict[str, Any]) -> dict[str, 
             },
         }
     }
+
+
+def normalize_canonical_content(root: Path) -> dict[str, Any]:
+    updated: list[str] = []
+    unresolved: list[dict[str, str]] = []
+    for directory, root_key in ((root / "content" / "pages", "page"), (root / "content" / "posts", "post")):
+        if not directory.is_dir():
+            continue
+        for path in sorted(directory.glob("*.yaml")):
+            data = yaml.safe_load(path.read_text()) or {}
+            record = data.get(root_key)
+            if not isinstance(record, dict) or "content_html" not in record:
+                continue
+            rel_path = str(path.relative_to(root))
+            content = normalize_wordpress_content(record.get("content_html") or "", rel_path)
+            before = yaml.safe_dump(data, sort_keys=False, allow_unicode=False)
+            record["content_html"] = content.content_html
+            record["content_markdown"] = content.content_markdown
+            record["sections"] = content.sections
+            record["images"] = content.images
+            record["socials"] = content.socials
+            unresolved.extend(content.unresolved_artifacts)
+            after = yaml.safe_dump(data, sort_keys=False, allow_unicode=False)
+            if after != before:
+                path.write_text(after)
+                updated.append(rel_path)
+    report_path = write_unresolved_artifact_report(root, unresolved)
+    return {
+        "updated": updated,
+        "updated_count": len(updated),
+        "unresolved_count": len(unresolved),
+        "report_path": report_path,
+    }
+
+
+def write_unresolved_artifact_report(root: Path, artifacts: list[dict[str, str]]) -> str:
+    report_path = root / "migration" / "reports" / "unresolved-artifacts.json"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report = {
+        "generated_at": now_utc(),
+        "scope": "canonical_content",
+        "artifact_count": len(artifacts),
+        "artifacts": artifacts,
+    }
+    report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+    return str(report_path.relative_to(root))
 
 
 def artist_record(artist: dict[str, Any]) -> dict[str, Any]:

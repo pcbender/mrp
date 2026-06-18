@@ -5,8 +5,7 @@ page:
   status: draft
   normalized_path: /portfolio/
   source_url: https://www.maricoparecords.com/portfolio/
-  content_html: <!-- wp:visual-portfolio/block {"block_id":"599f48c0","content_source":"post-based","posts_source":"current_query","items_gap":30,"layout_elements":{"top":{"elements":["filter"],"align":"center"},"items":{"elements":["items"]},"bottom":{"elements":["pagination"],"align":"center"}},"pagination":"paged"}
-    /-->
+  content_html: ''
   excerpt: null
   seo:
     title: Portfolio
@@ -17,3 +16,7 @@ page:
     type: page
     status: publish
     captured_path: null
+  content_markdown: ''
+  sections: []
+  images: []
+  socials: {}

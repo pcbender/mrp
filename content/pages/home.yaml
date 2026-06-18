@@ -5,156 +5,12 @@ page:
   status: draft
   normalized_path: /
   source_url: https://www.maricoparecords.com
-  content_html: '<!-- wp:stackable/design-library /-->
-
-
-    <!-- wp:stackable/carousel {"uniqueId":"0f38196","blockWidth":1024,"blockVerticalAlign":"center","blockHorizontalAlign":"center","align":"wide","contentAlign":"center","innerBlockContentAlign":"alignwide"}
-    -->
-
-    <div class="wp-block-stackable-carousel alignwide stk-block-carousel stk--is-slide
-    stk--arrows-justify-space-between stk--arrows-align-center stk-block stk-0f38196"
-    data-slides-to-show="" data-block-id="0f38196"><style>.stk-0f38196 {align-items:center
-    !important;max-width:1024px !important;min-width:auto !important;margin-right:auto
-    !important;margin-left:auto !important;display:flex !important;}</style><div class="stk-block-carousel__content-wrapper"><div
-    class="stk-row stk-inner-blocks has-text-align-center stk-block-content stk-block-carousel__slider-wrapper
-    stk-content-align stk-0f38196-column alignwide"><div class="stk-block-carousel__slider"
-    role="list" data-autoplay="4000" data-label-slide-of="Slide %%d of %%d"><!-- wp:stackable/column
-    {"uniqueId":"e81e546"} -->
-
-    <div class="wp-block-stackable-column stk-block-column stk-column stk-block stk-e81e546"
-    data-v="4" data-block-id="e81e546"><div class="stk-column-wrapper stk-block-column__content
-    stk-container stk-e81e546-container stk--no-background stk--no-padding"><div class="stk-block-content
-    stk-inner-blocks stk-e81e546-inner-blocks"><!-- wp:stackable/image {"uniqueId":"1415551","imageUrl":"https://www.maricoparecords.com/wp-content/uploads/2025/02/Circuiting.jpg","imageId":694,"imageWidthAttribute":1920,"imageHeightAttribute":1920,"imageFit":"fill"}
-    -->
-
-    <div class="wp-block-stackable-image stk-block-image stk-block stk-1415551" data-block-id="1415551"><style>.stk-1415551
-    .stk-img-wrapper img{object-fit:fill !important;}</style><figure><span class="stk-img-wrapper
-    stk-image--shape-stretch"><img class="stk-img wp-image-694" src="https://www.maricoparecords.com/wp-content/uploads/2025/02/Circuiting.jpg"
-    width="1920" height="1920"/></span></figure></div>
-
-    <!-- /wp:stackable/image --></div></div></div>
-
-    <!-- /wp:stackable/column -->
-
-
-    <!-- wp:stackable/column {"uniqueId":"dc2e4f8"} -->
-
-    <div class="wp-block-stackable-column stk-block-column stk-column stk-block stk-dc2e4f8"
-    data-v="4" data-block-id="dc2e4f8"><div class="stk-column-wrapper stk-block-column__content
-    stk-container stk-dc2e4f8-container stk--no-background stk--no-padding"><div class="stk-block-content
-    stk-inner-blocks stk-dc2e4f8-inner-blocks"><!-- wp:stackable/image {"uniqueId":"28583cc","imageUrl":"https://www.maricoparecords.com/wp-content/uploads/2025/02/Two-Tree-Road.jpg","imageId":690,"imageWidthAttribute":1024,"imageHeightAttribute":1024,"imageWidth":1024,"imageWidthUnit":"px"}
-    -->
-
-    <div class="wp-block-stackable-image stk-block-image stk-block stk-28583cc" data-block-id="28583cc"><style>.stk-28583cc
-    .stk-img-wrapper{width:1024px !important;}</style><figure><span class="stk-img-wrapper
-    stk-image--shape-stretch"><img class="stk-img wp-image-690" src="https://www.maricoparecords.com/wp-content/uploads/2025/02/Two-Tree-Road.jpg"
-    width="1024" height="1024"/></span></figure></div>
-
-    <!-- /wp:stackable/image --></div></div></div>
-
-    <!-- /wp:stackable/column -->
-
-
-    <!-- wp:stackable/column {"uniqueId":"315f418"} -->
-
-    <div class="wp-block-stackable-column stk-block-column stk-column stk-block stk-315f418"
-    data-v="4" data-block-id="315f418"><div class="stk-column-wrapper stk-block-column__content
-    stk-container stk-315f418-container stk--no-background stk--no-padding"><div class="stk-block-content
-    stk-inner-blocks stk-315f418-inner-blocks"><!-- wp:stackable/image {"uniqueId":"ba0e6b7","imageUrl":"https://www.maricoparecords.com/wp-content/uploads/2025/02/Riders-and-runners.png","imageId":687,"imageWidthAttribute":1920,"imageHeightAttribute":1920}
-    -->
-
-    <div class="wp-block-stackable-image stk-block-image stk-block stk-ba0e6b7" data-block-id="ba0e6b7"><figure><span
-    class="stk-img-wrapper stk-image--shape-stretch"><img class="stk-img wp-image-687"
-    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/Riders-and-runners.png"
-    width="1920" height="1920"/></span></figure></div>
-
-    <!-- /wp:stackable/image --></div></div></div>
-
-    <!-- /wp:stackable/column -->
-
-
-    <!-- wp:stackable/column {"uniqueId":"b67e4a0"} -->
-
-    <div class="wp-block-stackable-column stk-block-column stk-column stk-block stk-b67e4a0"
-    data-v="4" data-block-id="b67e4a0"><div class="stk-column-wrapper stk-block-column__content
-    stk-container stk-b67e4a0-container stk--no-background stk--no-padding"><div class="stk-block-content
-    stk-inner-blocks stk-b67e4a0-inner-blocks"><!-- wp:stackable/image {"uniqueId":"4690e66","imageUrl":"https://www.maricoparecords.com/wp-content/uploads/2025/02/TU2.png","imageId":689,"imageWidthAttribute":1920,"imageHeightAttribute":1920}
-    -->
-
-    <div class="wp-block-stackable-image stk-block-image stk-block stk-4690e66" data-block-id="4690e66"><figure><span
-    class="stk-img-wrapper stk-image--shape-stretch"><img class="stk-img wp-image-689"
-    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/TU2.png" width="1920"
-    height="1920"/></span></figure></div>
-
-    <!-- /wp:stackable/image --></div></div></div>
-
-    <!-- /wp:stackable/column -->
-
-
-    <!-- wp:stackable/column {"uniqueId":"7faab4c"} -->
-
-    <div class="wp-block-stackable-column stk-block-column stk-column stk-block stk-7faab4c"
-    data-v="4" data-block-id="7faab4c"><div class="stk-column-wrapper stk-block-column__content
-    stk-container stk-7faab4c-container stk--no-background stk--no-padding"><div class="stk-block-content
-    stk-inner-blocks stk-7faab4c-inner-blocks"><!-- wp:stackable/image {"uniqueId":"fb596b1","imageUrl":"https://www.maricoparecords.com/wp-content/uploads/2025/02/Burn_Me.png","imageId":686,"imageWidthAttribute":1920,"imageHeightAttribute":1920}
-    -->
-
-    <div class="wp-block-stackable-image stk-block-image stk-block stk-fb596b1" data-block-id="fb596b1"><figure><span
-    class="stk-img-wrapper stk-image--shape-stretch"><img class="stk-img wp-image-686"
-    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/Burn_Me.png" width="1920"
-    height="1920"/></span></figure></div>
-
-    <!-- /wp:stackable/image --></div></div></div>
-
-    <!-- /wp:stackable/column -->
-
-
-    <!-- wp:stackable/column {"uniqueId":"1c0d156"} -->
-
-    <div class="wp-block-stackable-column stk-block-column stk-column stk-block stk-1c0d156"
-    data-v="4" data-block-id="1c0d156"><div class="stk-column-wrapper stk-block-column__content
-    stk-container stk-1c0d156-container stk--no-background stk--no-padding"><div class="stk-block-content
-    stk-inner-blocks stk-1c0d156-inner-blocks"><!-- wp:stackable/image {"uniqueId":"3406ad2","imageUrl":"https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png","imageId":691,"imageWidthAttribute":1920,"imageHeightAttribute":1920}
-    -->
-
-    <div class="wp-block-stackable-image stk-block-image stk-block stk-3406ad2" data-block-id="3406ad2"><figure><span
-    class="stk-img-wrapper stk-image--shape-stretch"><img class="stk-img wp-image-691"
-    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png"
-    width="1920" height="1920"/></span></figure></div>
-
-    <!-- /wp:stackable/image --></div></div></div>
-
-    <!-- /wp:stackable/column --></div><div class="stk-block-carousel__buttons"><button
-    class="stk-block-carousel__button stk-block-carousel__button__prev" aria-label="Previous
-    slide"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-    class="svg-inline--fa fa-chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0
-    0 320 512" width="32" height="32"><path d="M34.52 239.03L228.87 44.69c9.37-9.37
-    24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02
-    154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94
-    0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></button><button class="stk-block-carousel__button
-    stk-block-carousel__button__next" aria-label="Next slide"><svg aria-hidden="true"
-    focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa
-    fa-chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="32"
-    height="32"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941
-    0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373
-    24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></button></div></div><div
-    class="stk-block-carousel__dots" role="list" data-label="Slide %%d"></div></div></div>
-
-    <!-- /wp:stackable/carousel -->
-
-
-    <!-- wp:paragraph -->
-
-    <p></p>
-
-    <!-- /wp:paragraph -->
-
-
-    <!-- wp:paragraph -->
-
-    <p></p>
-
-    <!-- /wp:paragraph -->'
+  content_html: <img src="https://www.maricoparecords.com/wp-content/uploads/2025/02/Circuiting.jpg"><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/Two-Tree-Road.jpg"><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/Riders-and-runners.png"><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/TU2.png"><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/Burn_Me.png"><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png"><p></p><p></p>
   excerpt: null
   seo:
     title: Home
@@ -165,3 +21,19 @@ page:
     type: page
     status: publish
     captured_path: raw/pages/www.maricoparecords.com/index.html
+  content_markdown: '![](https://www.maricoparecords.com/wp-content/uploads/2025/02/Circuiting.jpg)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/Two-Tree-Road.jpg)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/Riders-and-runners.png)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/TU2.png)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/Burn_Me.png)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png)'
+  sections: []
+  images:
+  - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/Circuiting.jpg
+    alt: null
+  - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/Two-Tree-Road.jpg
+    alt: null
+  - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/Riders-and-runners.png
+    alt: null
+  - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/TU2.png
+    alt: null
+  - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/Burn_Me.png
+    alt: null
+  - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png
+    alt: null
+  socials: {}

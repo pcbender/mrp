@@ -19,6 +19,19 @@
         "source_url": {"type": ["string", "null"], "format": "uri"},
         "published_at": {"type": ["string", "null"]},
         "content_html": {"type": "string"},
+        "content_markdown": {"type": "string"},
+        "sections": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/section"}
+        },
+        "images": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/image"}
+        },
+        "socials": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "format": "uri"}
+        },
         "excerpt": {"type": ["string", "null"]},
         "categories": {
           "type": "array",
@@ -48,6 +61,26 @@
         "type": {"type": ["string", "null"]},
         "status": {"type": ["string", "null"]},
         "captured_path": {"type": ["string", "null"]}
+      }
+    },
+    "section": {
+      "type": "object",
+      "required": ["type"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["artist_releases", "latest_releases", "artist_carousel"]
+        }
+      }
+    },
+    "image": {
+      "type": "object",
+      "required": ["src"],
+      "additionalProperties": false,
+      "properties": {
+        "src": {"type": "string", "minLength": 1},
+        "alt": {"type": ["string", "null"]}
       }
     }
   }
