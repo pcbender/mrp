@@ -6,6 +6,15 @@ Use the repo-local wrapper from `/home/mrose/mrp`:
 scripts/mrp --help
 ```
 
+Generated site output must live outside the repository. Use the default
+`~/astro-sites/maricoparecords` output root or set:
+
+```bash
+export MRP_SITE_OUT_ROOT="$HOME/astro-sites/maricoparecords"
+```
+
+Do not point `MRP_SITE_OUT_ROOT` at `/home/mrose/mrp` or any child path.
+
 Prefer JSON output for automation:
 
 ```bash

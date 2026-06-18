@@ -6,6 +6,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from mrp.core.output import archive_root, build_artifact_dir, display_path, path_from_report
 from mrp.core.publish import production_safety
 from mrp.core.verify import verify_target
 
@@ -44,8 +45,8 @@ def rollback(repo: str | Path, to: str | None = None, yes: bool = False) -> dict
         result["report_path"] = write_rollback_report(root, generated_at, result)
         return result
 
-    destination = root / safety["target_path"]
-    source = root / candidate["path"]
+    destination = path_from_report(root, safety["target_path"])
+    source = path_from_report(root, candidate["path"])
     clear_target(destination)
     copied = copy_tree(source, destination)
     result["copied_files"] = copied
@@ -64,24 +65,26 @@ def rollback(repo: str | Path, to: str | None = None, yes: bool = False) -> dict
 
 def rollback_candidate(root: Path, to: str | None) -> dict[str, Any]:
     if to:
-        build_path = root / "builds" / "staging" / to
+        build_path = build_artifact_dir(root, to)
         if not build_path.is_dir():
             return {"status": "failed", "message": f"Unknown rollback build: {to}"}
         return {
             "status": "passed",
             "kind": "build",
             "build_id": to,
-            "path": str(build_path.relative_to(root)),
+            "path": str(build_path),
+            "path_display": display_path(root, build_path),
         }
 
-    archives = sorted(path for path in (root / "builds" / "archive").glob("production-*") if path.is_dir())
+    archives = sorted(path for path in archive_root(root).glob("production-*") if path.is_dir())
     if not archives:
         return {"status": "failed", "message": "No production archive available for rollback."}
     archive = archives[-1]
     return {
         "status": "passed",
         "kind": "archive",
-        "path": str(archive.relative_to(root)),
+        "path": str(archive),
+        "path_display": display_path(root, archive),
     }
 
 

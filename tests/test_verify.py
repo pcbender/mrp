@@ -1,4 +1,5 @@
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -10,19 +11,31 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def run_mrp(*args: str, cwd: Path = ROOT) -> subprocess.CompletedProcess[str]:
+def site_out_root(repo: Path) -> Path:
+    return repo.parent / "site-out"
+
+
+def staging_path(repo: Path) -> Path:
+    return site_out_root(repo) / "staging"
+
+
+def run_mrp(*args: str, cwd: Path = ROOT, site_out_root: Path | None = None) -> subprocess.CompletedProcess[str]:
+    env = os.environ.copy()
+    if site_out_root is not None:
+        env["MRP_SITE_OUT_ROOT"] = str(site_out_root)
     return subprocess.run(
         [sys.executable, "-m", "mrp.cli.main", *args],
         cwd=cwd,
         text=True,
         capture_output=True,
         check=False,
+        env=env,
     )
 
 
 def verified_repo(tmp_path: Path) -> Path:
     repo = tmp_path / "repo"
-    target = repo / "builds" / "local-staging"
+    target = staging_path(repo)
     shutil.copytree(ROOT / "content", repo / "content")
     for name in ["artists", "releases", "pages", "posts"]:
         shutil.rmtree(repo / "content" / name)
@@ -40,7 +53,7 @@ def verified_repo(tmp_path: Path) -> Path:
                     "local-staging": {
                         "type": "local",
                         "environment": "staging",
-                        "path": "builds/local-staging",
+                        "path": "staging",
                         "require_marker": True,
                     }
                 }
@@ -68,7 +81,7 @@ def write_file(path: Path, text: str) -> None:
 def test_verify_staging_passes_for_valid_local_target(tmp_path):
     repo = verified_repo(tmp_path)
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
@@ -80,9 +93,9 @@ def test_verify_staging_passes_for_valid_local_target(tmp_path):
 
 def test_verify_missing_release_page_fails(tmp_path):
     repo = verified_repo(tmp_path)
-    (repo / "builds/local-staging/releases/circuiting/index.html").unlink()
+    (staging_path(repo) / "releases/circuiting/index.html").unlink()
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -92,9 +105,9 @@ def test_verify_missing_release_page_fails(tmp_path):
 
 def test_verify_missing_cover_image_fails(tmp_path):
     repo = verified_repo(tmp_path)
-    (repo / "builds/local-staging/assets/releases/circuiting-cover.svg").unlink()
+    (staging_path(repo) / "assets/releases/circuiting-cover.svg").unlink()
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -104,9 +117,9 @@ def test_verify_missing_cover_image_fails(tmp_path):
 
 def test_verify_placeholder_token_fails(tmp_path):
     repo = verified_repo(tmp_path)
-    write_file(repo / "builds/local-staging/about-us/index.html", "TODO\n")
+    write_file(staging_path(repo) / "about-us/index.html", "TODO\n")
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -116,9 +129,9 @@ def test_verify_placeholder_token_fails(tmp_path):
 
 def test_verify_ignores_placeholder_tokens_in_mirrored_wordpress_assets(tmp_path):
     repo = verified_repo(tmp_path)
-    write_file(repo / "builds/local-staging/assets/wp/wp-content/themes/anima-plus/shortcodes.js", "/* TODO upstream */\n")
+    write_file(staging_path(repo) / "assets/wp/wp-content/themes/anima-plus/shortcodes.js", "/* TODO upstream */\n")
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
@@ -127,9 +140,9 @@ def test_verify_ignores_placeholder_tokens_in_mirrored_wordpress_assets(tmp_path
 
 def test_verify_ignores_protocol_relative_external_links(tmp_path):
     repo = verified_repo(tmp_path)
-    write_file(repo / "builds/local-staging/about-us/index.html", '<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway">')
+    write_file(staging_path(repo) / "about-us/index.html", '<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway">')
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
@@ -201,17 +214,17 @@ def migrated_verified_repo(tmp_path: Path) -> Path:
             sort_keys=False,
         ),
     )
-    write_file(repo / "builds/local-staging/music/index.html", "<p>Music</p>\n")
-    write_file(repo / "builds/local-staging/news/index.html", "<p>News</p>\n")
-    write_file(repo / "builds/local-staging/2025/02/26/news/index.html", "<p>News alias</p>\n")
-    write_file(repo / "builds/local-staging/assets/migrated/cover.jpg", "image\n")
+    write_file(staging_path(repo) / "music/index.html", "<p>Music</p>\n")
+    write_file(staging_path(repo) / "news/index.html", "<p>News</p>\n")
+    write_file(staging_path(repo) / "2025/02/26/news/index.html", "<p>News alias</p>\n")
+    write_file(staging_path(repo) / "assets/migrated/cover.jpg", "image\n")
     return repo
 
 
 def test_verify_migration_surface_passes_for_routes_assets_and_aliases(tmp_path):
     repo = migrated_verified_repo(tmp_path)
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
@@ -225,9 +238,9 @@ def test_verify_migration_surface_passes_for_routes_assets_and_aliases(tmp_path)
 
 def test_verify_missing_migrated_route_fails(tmp_path):
     repo = migrated_verified_repo(tmp_path)
-    (repo / "builds/local-staging/music/index.html").unlink()
+    (staging_path(repo) / "music/index.html").unlink()
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -237,9 +250,9 @@ def test_verify_missing_migrated_route_fails(tmp_path):
 
 def test_verify_missing_migrated_asset_fails(tmp_path):
     repo = migrated_verified_repo(tmp_path)
-    (repo / "builds/local-staging/assets/migrated/cover.jpg").unlink()
+    (staging_path(repo) / "assets/migrated/cover.jpg").unlink()
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -249,9 +262,9 @@ def test_verify_missing_migrated_asset_fails(tmp_path):
 
 def test_verify_excluded_migration_path_fails(tmp_path):
     repo = migrated_verified_repo(tmp_path)
-    write_file(repo / "builds/local-staging/cart/index.html", "<p>Cart</p>\n")
+    write_file(staging_path(repo) / "cart/index.html", "<p>Cart</p>\n")
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -318,21 +331,21 @@ def clone_verified_repo(tmp_path: Path) -> Path:
         ),
     )
     write_file(
-        repo / "builds/local-staging/artists/pcbender/index.html",
+        staging_path(repo) / "artists/pcbender/index.html",
         '<article class="wp-clone-content" data-clone-kind="artist_page">mystique<img src="/assets/wp/wp-content/uploads/pcbender.png"></article>',
     )
     write_file(
-        repo / "builds/local-staging/artists/pcbender/circuiting/index.html",
+        staging_path(repo) / "artists/pcbender/circuiting/index.html",
         '<article class="wp-clone-content" data-clone-kind="release_page">Circuiting is not just an album</article>',
     )
-    write_file(repo / "builds/local-staging/assets/wp/wp-content/uploads/pcbender.png", "image\n")
+    write_file(staging_path(repo) / "assets/wp/wp-content/uploads/pcbender.png", "image\n")
     return repo
 
 
 def test_verify_clone_surface_passes_for_routes_assets_and_markers(tmp_path):
     repo = clone_verified_repo(tmp_path)
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
@@ -348,9 +361,9 @@ def test_verify_clone_surface_passes_for_routes_assets_and_markers(tmp_path):
 
 def test_verify_missing_clone_route_fails(tmp_path):
     repo = clone_verified_repo(tmp_path)
-    (repo / "builds/local-staging/artists/pcbender/circuiting/index.html").unlink()
+    (staging_path(repo) / "artists/pcbender/circuiting/index.html").unlink()
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -360,9 +373,9 @@ def test_verify_missing_clone_route_fails(tmp_path):
 
 def test_verify_missing_rendered_clone_asset_fails(tmp_path):
     repo = clone_verified_repo(tmp_path)
-    (repo / "builds/local-staging/assets/wp/wp-content/uploads/pcbender.png").unlink()
+    (staging_path(repo) / "assets/wp/wp-content/uploads/pcbender.png").unlink()
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -373,11 +386,11 @@ def test_verify_missing_rendered_clone_asset_fails(tmp_path):
 def test_verify_missing_clone_marker_fails(tmp_path):
     repo = clone_verified_repo(tmp_path)
     write_file(
-        repo / "builds/local-staging/artists/pcbender/index.html",
+        staging_path(repo) / "artists/pcbender/index.html",
         '<article class="wp-clone-content" data-clone-kind="artist_page">PCBender</article>',
     )
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -387,9 +400,9 @@ def test_verify_missing_clone_marker_fails(tmp_path):
 
 def test_verify_excluded_clone_path_fails(tmp_path):
     repo = clone_verified_repo(tmp_path)
-    write_file(repo / "builds/local-staging/checkout/index.html", "<p>Checkout</p>\n")
+    write_file(staging_path(repo) / "checkout/index.html", "<p>Checkout</p>\n")
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging")
+    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)

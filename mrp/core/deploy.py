@@ -8,6 +8,8 @@ from typing import Any
 
 import yaml
 
+from mrp.core.output import display_path, path_from_report, resolve_output_path
+
 
 MARKER_FILE = ".allow-deploy"
 
@@ -65,8 +67,8 @@ def stage_build(
         result["report_path"] = write_deployment_report(root, generated_at, result)
         return result
 
-    source = root / build_record["build_path"]
-    destination = root / safety["target_path"]
+    source = path_from_report(root, build_record["build_path"])
+    destination = path_from_report(root, safety["target_path"])
     plan = copy_plan(source, destination)
     result["plan"] = plan
 
@@ -117,16 +119,20 @@ def load_targets(root: Path) -> tuple[dict[str, Any], list[str]]:
 def resolve_build(root: Path, build: str | None) -> dict[str, Any]:
     if build:
         report_path = root / "reports" / "build" / f"{build}.json"
-        build_path = root / "builds" / "staging" / build
         if not report_path.is_file():
             return failed_build(f"Unknown build report: {build}")
+        report = json.loads(report_path.read_text())
+        raw_build_path = report.get("build_path")
+        if not raw_build_path:
+            return failed_build(f"Build report has no build_path: {build}")
+        build_path = path_from_report(root, raw_build_path)
         if not build_path.is_dir():
             return failed_build(f"Build directory is missing: {build}")
-        report = json.loads(report_path.read_text())
         return {
             "status": "passed",
             "build_id": build,
-            "build_path": str(build_path.relative_to(root)),
+            "build_path": str(build_path),
+            "build_path_display": display_path(root, build_path),
             "report_path": str(report_path.relative_to(root)),
             "release": report.get("release"),
         }
@@ -137,12 +143,16 @@ def resolve_build(root: Path, build: str | None) -> dict[str, Any]:
         if report.get("status") != "passed":
             continue
         build_id = report.get("build_id") or report_path.stem
-        build_path = root / "builds" / "staging" / build_id
+        raw_build_path = report.get("build_path")
+        if not raw_build_path:
+            continue
+        build_path = path_from_report(root, raw_build_path)
         if build_path.is_dir():
             return {
                 "status": "passed",
                 "build_id": build_id,
-                "build_path": str(build_path.relative_to(root)),
+                "build_path": str(build_path),
+                "build_path_display": display_path(root, build_path),
                 "report_path": str(report_path.relative_to(root)),
                 "release": report.get("release"),
             }
@@ -154,20 +164,21 @@ def validate_target(root: Path, target_name: str, config: dict[str, Any]) -> dic
     if not raw_path:
         return {"status": "failed", "message": f"Deploy target {target_name} has no path."}
 
-    target_path = (root / raw_path).resolve()
+    try:
+        target_path = resolve_output_path(root, raw_path)
+    except ValueError as exc:
+        return {"status": "failed", "message": str(exc)}
     if target_path == Path("/") or target_path == Path.home():
         return {"status": "failed", "message": f"Unsafe deploy target path: {target_path}"}
-    try:
-        relative_target = target_path.relative_to(root)
-    except ValueError:
-        return {"status": "failed", "message": f"Deploy target must be inside the repository: {target_path}"}
+    target_display = display_path(root, target_path)
 
     marker = target_path / MARKER_FILE
     if config.get("require_marker", True):
         if not marker.is_file():
             return {
                 "status": "failed",
-                "target_path": str(relative_target),
+                "target_path": str(target_path),
+                "target_path_display": target_display,
                 "environment": config.get("environment"),
                 "message": f"Missing deploy marker: {marker}",
             }
@@ -176,14 +187,16 @@ def validate_target(root: Path, target_name: str, config: dict[str, Any]) -> dic
         if expected not in marker_text:
             return {
                 "status": "failed",
-                "target_path": str(relative_target),
+                "target_path": str(target_path),
+                "target_path_display": target_display,
                 "environment": config.get("environment"),
                 "message": f"Deploy marker does not match expected target: {expected}",
             }
 
     return {
         "status": "passed",
-        "target_path": str(relative_target),
+        "target_path": str(target_path),
+        "target_path_display": target_display,
         "environment": config.get("environment"),
         "message": "Target passed safety checks.",
     }

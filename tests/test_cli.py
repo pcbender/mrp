@@ -1,4 +1,5 @@
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -8,13 +9,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def run_mrp(*args: str) -> subprocess.CompletedProcess[str]:
+def run_mrp(*args: str, site_out_root: Path | None = None) -> subprocess.CompletedProcess[str]:
+    env = os.environ.copy()
+    if site_out_root is not None:
+        env["MRP_SITE_OUT_ROOT"] = str(site_out_root)
     return subprocess.run(
         [sys.executable, "-m", "mrp.cli.main", *args],
         cwd=ROOT,
         text=True,
         capture_output=True,
         check=False,
+        env=env,
     )
 
 
@@ -43,14 +48,17 @@ def test_inspect_json_output_is_valid():
     assert payload["site_framework"]["name"] == "astro"
 
 
-def test_json_output_is_valid_for_build_command():
-    result = run_mrp("--json", "build")
+def test_json_output_is_valid_for_build_command(tmp_path):
+    out_root = tmp_path / "site-out"
+    result = run_mrp("--json", "build", site_out_root=out_root)
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
     assert payload["command"] == "build"
     assert payload["status"] == "passed"
-    assert payload["build_path"].startswith("builds/staging/")
+    build_path = Path(payload["build_path"])
+    assert build_path.is_absolute()
+    assert out_root in build_path.parents
 
 
 def test_unknown_command_fails_cleanly():

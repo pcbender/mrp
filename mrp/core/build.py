@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
 import subprocess
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from mrp.core.output import build_artifact_dir, display_path
 from mrp.core.validate import validate_repository
 
 
@@ -18,7 +18,21 @@ def build_repository(
 ) -> dict[str, Any]:
     root = Path(repo).resolve()
     generated_at = now_utc()
-    build_id = next_build_id(root, generated_at, release)
+    try:
+        build_id = next_build_id(root, generated_at, release)
+    except ValueError as exc:
+        build_id = generated_at.replace("-", "").replace(":", "").replace(".", "").replace("Z", "Z") + "-site"
+        result = base_result(root, build_id, generated_at, release)
+        result.update(
+            {
+                "status": "failed",
+                "stage": "output_path",
+                "message": str(exc),
+                "errors": [{"field": "MRP_SITE_OUT_ROOT", "message": str(exc), "severity": "error"}],
+            }
+        )
+        result["report_path"] = write_build_report(root, build_id, result)
+        return result
 
     validation = None
     if not skip_validate:
@@ -38,8 +52,9 @@ def build_repository(
             return result
 
     site_dir = root / "site"
-    dist_dir = site_dir / "dist"
-    command = ["npm", "run", "build"]
+    build_dir = build_artifact_dir(root, build_id)
+    build_dir.mkdir(parents=True, exist_ok=True)
+    command = ["npm", "run", "build", "--", "--outDir", str(build_dir)]
     env = os.environ.copy()
     env["ASTRO_TELEMETRY_DISABLED"] = "1"
     result = base_result(root, build_id, generated_at, release)
@@ -84,27 +99,25 @@ def build_repository(
         result["report_path"] = write_build_report(root, build_id, result)
         return result
 
-    if not dist_dir.is_dir():
+    if not build_dir.is_dir():
         result.update(
             {
                 "status": "failed",
                 "stage": "static_build",
-                "message": "Static site build did not create site/dist.",
+                "message": f"Static site build did not create output directory: {build_dir}",
                 "exit_code": 1,
             }
         )
         result["report_path"] = write_build_report(root, build_id, result)
         return result
 
-    build_dir = root / "builds" / "staging" / build_id
-    shutil.copytree(dist_dir, build_dir)
     files = inventory_files(build_dir)
     manifest = {
         "build_id": build_id,
         "generated_at": generated_at,
         "release": release,
-        "source_dist": str(dist_dir.relative_to(root)),
-        "output_path": str(build_dir.relative_to(root)),
+        "source_dist": None,
+        "output_path": str(build_dir),
         "file_count": len(files),
         "total_bytes": sum(item["bytes"] for item in files),
         "files": files,
@@ -117,8 +130,10 @@ def build_repository(
             "stage": "complete",
             "message": "Build completed.",
             "exit_code": completed.returncode,
-            "build_path": str(build_dir.relative_to(root)),
-            "manifest_path": str((build_dir / "build-manifest.json").relative_to(root)),
+            "build_path": str(build_dir),
+            "build_path_display": display_path(root, build_dir),
+            "manifest_path": str(build_dir / "build-manifest.json"),
+            "manifest_path_display": display_path(root, build_dir / "build-manifest.json"),
             "file_count": manifest["file_count"],
             "total_bytes": manifest["total_bytes"],
         }
@@ -147,7 +162,7 @@ def next_build_id(root: Path, generated_at: str, release: str | None) -> str:
     base = f"{timestamp}-{release_part}"
     candidate = base
     index = 1
-    while (root / "builds" / "staging" / candidate).exists() or (root / "reports" / "build" / f"{candidate}.json").exists():
+    while build_artifact_dir(root, candidate).exists() or (root / "reports" / "build" / f"{candidate}.json").exists():
         candidate = f"{base}-{index:02d}"
         index += 1
     return candidate

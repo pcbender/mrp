@@ -8,6 +8,7 @@ read-only source at `/home/mrose/website-migration`.
 From the repository root:
 
 ```bash
+export MRP_SITE_OUT_ROOT="${MRP_SITE_OUT_ROOT:-$HOME/astro-sites/maricoparecords}"
 scripts/mrp --json migrate-site --source /home/mrose/website-migration
 scripts/mrp --json validate
 scripts/mrp --json build
@@ -53,8 +54,8 @@ and build outputs are intentionally ignored by git.
 
 ## Manual Review Checklist
 
-- Open `builds/local-staging/index.html` and confirm the v0.1 homepage still
-  loads.
+- Open `$MRP_SITE_OUT_ROOT/staging/index.html` and confirm the v0.1 homepage
+  still loads.
 - Review representative migrated routes:
   - `/artists/pcbender/circuiting/`
   - `/artists/4castle/distance-not-safety/`

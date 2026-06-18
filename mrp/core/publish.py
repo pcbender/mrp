@@ -9,6 +9,7 @@ from typing import Any
 import yaml
 
 from mrp.core.deploy import load_targets, stage_build, validate_target
+from mrp.core.output import archive_root, display_path, path_from_report
 from mrp.core.verify import verify_target
 
 
@@ -56,7 +57,7 @@ def publish(
         add_error(result, "safety", safety["message"])
         return finish(root, generated_at, result)
 
-    archive_path = archive_production(root, Path(root / safety["target_path"]), generated_at)
+    archive_path = archive_production(root, path_from_report(root, safety["target_path"]), generated_at)
     result["archive_path"] = archive_path
 
     deployment = stage_build(root, build=build_id, target="local-production")
@@ -109,9 +110,9 @@ def archive_production(root: Path, target_path: Path, generated_at: str) -> str 
     if not target_path.exists() or not any(target_path.iterdir()):
         return None
     timestamp = generated_at.replace("-", "").replace(":", "").replace("Z", "Z")
-    archive = root / "builds" / "archive" / f"production-{timestamp}"
+    archive = archive_root(root) / f"production-{timestamp}"
     shutil.copytree(target_path, archive)
-    return str(archive.relative_to(root))
+    return display_path(root, archive)
 
 
 def update_release_status(root: Path, release_id: str, status: str) -> None:

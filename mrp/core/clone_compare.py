@@ -11,6 +11,7 @@ from typing import Any
 
 from mrp.core.deploy import load_targets, validate_target
 from mrp.core.migration_inventory import DEFAULT_MIGRATION_SOURCE, resolve_source
+from mrp.core.output import display_path, path_from_report
 from mrp.core.verify import normalize_target, route_to_html_relative
 
 
@@ -62,7 +63,7 @@ def clone_compare(
         source_paths = resolve_source(source)
         target_path = resolve_target(root, result["target"])
         result["source_files"] = {"page_root": str(source_paths["artifact_root"] / PAGE_ROOT_RELATIVE)}
-        result["target_path"] = str(target_path.relative_to(root))
+        result["target_path"] = display_path(root, target_path)
         result.update(run_comparison(source_paths["artifact_root"] / PAGE_ROOT_RELATIVE, target_path))
     except (FileNotFoundError, ValueError) as exc:
         result["failures"].append({"route": None, "field": "config", "message": str(exc)})
@@ -86,7 +87,7 @@ def resolve_target(root: Path, target_name: str) -> Path:
     safety = validate_target(root, target_name, targets[target_name])
     if safety["status"] != "passed":
         raise ValueError(safety["message"])
-    return root / safety["target_path"]
+    return path_from_report(root, safety["target_path"])
 
 
 def run_comparison(page_root: Path, target_path: Path) -> dict[str, Any]:

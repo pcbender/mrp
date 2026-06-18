@@ -8,6 +8,7 @@ from the read-only source at `/home/mrose/website-migration`.
 From the repository root:
 
 ```bash
+export MRP_SITE_OUT_ROOT="${MRP_SITE_OUT_ROOT:-$HOME/astro-sites/maricoparecords}"
 scripts/mrp --json clone-site --source /home/mrose/website-migration --regenerate
 scripts/mrp --json clone-assets --source /home/mrose/website-migration
 scripts/mrp --json clone-head --source /home/mrose/website-migration
@@ -33,7 +34,8 @@ reports and build outputs are intentionally ignored by git.
 
 - Clone content: 47 WXR page records and 3 WXR post records under
   `content/clone/`.
-- Rendered clone surface: 50 clone routes verified in `builds/local-staging/`.
+- Rendered clone surface: 50 clone routes verified in
+  `$MRP_SITE_OUT_ROOT/staging/`.
 - Mirrored WordPress assets: 559 records under
   `content/clone/assets/manifest.yaml` and `/assets/wp/`.
 - Rendered asset refs: 1030 `/assets/wp/` references checked in staged HTML.
@@ -70,8 +72,8 @@ reports and build outputs are intentionally ignored by git.
 
 ## Manual Review Checklist
 
-- Open `builds/local-staging/index.html` and confirm the existing v0.1 homepage
-  still loads.
+- Open `$MRP_SITE_OUT_ROOT/staging/index.html` and confirm the existing v0.1
+  homepage still loads.
 - Review representative clone routes:
   - `/artists/pcbender/`
   - `/artists/pcbender/circuiting/`

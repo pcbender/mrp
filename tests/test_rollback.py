@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -9,18 +10,27 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def run_mrp(*args: str, cwd: Path = ROOT) -> subprocess.CompletedProcess[str]:
+def site_out_root(repo: Path) -> Path:
+    return repo.parent / "site-out"
+
+
+def run_mrp(*args: str, cwd: Path = ROOT, site_out_root: Path | None = None) -> subprocess.CompletedProcess[str]:
+    env = os.environ.copy()
+    if site_out_root is not None:
+        env["MRP_SITE_OUT_ROOT"] = str(site_out_root)
     return subprocess.run(
         [sys.executable, "-m", "mrp.cli.main", *args],
         cwd=cwd,
         text=True,
         capture_output=True,
         check=False,
+        env=env,
     )
 
 
 def rollback_repo(tmp_path: Path, marker: bool = True) -> Path:
     repo = tmp_path / "repo"
+    out_root = site_out_root(repo)
     for path in [
         repo / "content" / "artists",
         repo / "content" / "releases",
@@ -28,9 +38,9 @@ def rollback_repo(tmp_path: Path, marker: bool = True) -> Path:
         repo / "reports" / "rollback",
         repo / "reports" / "verification",
         repo / "reports" / "deployment",
-        repo / "builds" / "local-production",
-        repo / "builds" / "staging" / "build-123",
-        repo / "builds" / "archive" / "production-20260617T120000Z",
+        out_root / "prod",
+        out_root / "builds" / "staging" / "build-123",
+        out_root / "archive" / "production-20260617T120000Z",
     ]:
         path.mkdir(parents=True)
 
@@ -52,11 +62,11 @@ def rollback_repo(tmp_path: Path, marker: bool = True) -> Path:
         },
     )
     write_targets(repo)
-    write_site(repo / "builds/staging/build-123", "build")
-    write_site(repo / "builds/archive/production-20260617T120000Z", "archive")
-    write_site(repo / "builds/local-production", "current")
+    write_site(out_root / "builds/staging/build-123", "build")
+    write_site(out_root / "archive/production-20260617T120000Z", "archive")
+    write_site(out_root / "prod", "current")
     if marker:
-        (repo / "builds/local-production/.allow-deploy").write_text("MARICOPA_RECORDS_DEPLOY_TARGET=production\n")
+        (out_root / "prod/.allow-deploy").write_text("MARICOPA_RECORDS_DEPLOY_TARGET=production\n")
     return repo
 
 
@@ -68,7 +78,7 @@ def write_targets(repo: Path) -> None:
                     "local-production": {
                         "type": "local",
                         "environment": "production",
-                        "path": "builds/local-production",
+                        "path": "prod",
                         "require_marker": True,
                     }
                 }
@@ -101,24 +111,24 @@ def write_json(path: Path, data) -> None:
 def test_rollback_requires_confirmation(tmp_path):
     repo = rollback_repo(tmp_path)
 
-    result = run_mrp("--repo", str(repo), "--json", "rollback", "--to", "build-123")
+    result = run_mrp("--repo", str(repo), "--json", "rollback", "--to", "build-123", site_out_root=site_out_root(repo))
 
     assert result.returncode == 3
     payload = json.loads(result.stdout)
     assert payload["status"] == "confirmation_required"
-    assert "current" in (repo / "builds/local-production/index.html").read_text()
+    assert "current" in (site_out_root(repo) / "prod/index.html").read_text()
 
 
 def test_rollback_to_build_restores_and_verifies(tmp_path):
     repo = rollback_repo(tmp_path)
 
-    result = run_mrp("--repo", str(repo), "--json", "rollback", "--to", "build-123", "--yes")
+    result = run_mrp("--repo", str(repo), "--json", "rollback", "--to", "build-123", "--yes", site_out_root=site_out_root(repo))
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
     assert payload["status"] == "rolled_back"
     assert payload["candidate"]["build_id"] == "build-123"
-    assert "build" in (repo / "builds/local-production/index.html").read_text()
+    assert "build" in (site_out_root(repo) / "prod/index.html").read_text()
     assert (repo / payload["verification_report_path"]).is_file()
     assert (repo / payload["report_path"]).is_file()
 
@@ -126,19 +136,19 @@ def test_rollback_to_build_restores_and_verifies(tmp_path):
 def test_rollback_without_to_uses_latest_archive(tmp_path):
     repo = rollback_repo(tmp_path)
 
-    result = run_mrp("--repo", str(repo), "--json", "rollback", "--yes")
+    result = run_mrp("--repo", str(repo), "--json", "rollback", "--yes", site_out_root=site_out_root(repo))
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
     assert payload["status"] == "rolled_back"
     assert payload["candidate"]["kind"] == "archive"
-    assert "archive" in (repo / "builds/local-production/index.html").read_text()
+    assert "archive" in (site_out_root(repo) / "prod/index.html").read_text()
 
 
 def test_rollback_refuses_missing_marker(tmp_path):
     repo = rollback_repo(tmp_path, marker=False)
 
-    result = run_mrp("--repo", str(repo), "--json", "rollback", "--to", "build-123", "--yes")
+    result = run_mrp("--repo", str(repo), "--json", "rollback", "--to", "build-123", "--yes", site_out_root=site_out_root(repo))
 
     assert result.returncode == 3
     payload = json.loads(result.stdout)

@@ -6,6 +6,8 @@ from typing import Any
 
 import yaml
 
+from mrp.core.output import archive_root
+
 CONTENT_EXTENSIONS = {".yaml", ".yml", ".json"}
 
 
@@ -107,8 +109,8 @@ def release_summary(release: dict[str, Any] | None) -> dict[str, Any] | None:
 
 
 def rollback_available(root: Path) -> bool:
-    archive_root = root / "builds" / "archive"
-    return archive_root.is_dir() and any(path.is_dir() for path in archive_root.glob("production-*"))
+    archives = archive_root(root)
+    return archives.is_dir() and any(path.is_dir() for path in archives.glob("production-*"))
 
 
 def format_status(result: dict[str, Any]) -> str:

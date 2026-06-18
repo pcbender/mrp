@@ -2,11 +2,11 @@ targets:
   local-staging:
     type: local
     environment: staging
-    path: builds/local-staging
+    path: staging
     require_marker: true
 
   local-production:
     type: local
     environment: production
-    path: builds/local-production
+    path: prod
     require_marker: true

@@ -3,6 +3,16 @@
 MRP v0.1 deploys only to local filesystem targets. Remote SSH, rsync, and SFTP
 deployment are deferred to v0.2.
 
+Generated site output is written outside the repository. Set
+`MRP_SITE_OUT_ROOT` to override the default:
+
+```bash
+export MRP_SITE_OUT_ROOT="$HOME/astro-sites/maricoparecords"
+```
+
+If unset, MRP uses `~/astro-sites/maricoparecords`. MRP refuses output roots
+inside the Git repository.
+
 ## Targets
 
 Committed targets live in `deploy/targets.yaml`:
@@ -12,17 +22,24 @@ targets:
   local-staging:
     type: local
     environment: staging
-    path: builds/local-staging
+    path: staging
     require_marker: true
 
   local-production:
     type: local
     environment: production
-    path: builds/local-production
+    path: prod
     require_marker: true
 ```
 
-Local overrides may be placed in ignored `deploy/targets.local.yaml`.
+Relative target paths are resolved under `MRP_SITE_OUT_ROOT`, so the default
+targets resolve to:
+
+- `~/astro-sites/maricoparecords/staging`
+- `~/astro-sites/maricoparecords/prod`
+
+Local overrides may be placed in ignored `deploy/targets.local.yaml`, but MRP
+still rejects targets inside the repository.
 
 ## Required Markers
 
@@ -58,9 +75,10 @@ scripts/mrp status --release circuiting --json
 
 Generated artifacts and reports are ignored by git:
 
-- `builds/staging/{build-id}/`
-- `builds/local-staging/`
-- `builds/local-production/`
+- `$MRP_SITE_OUT_ROOT/builds/staging/{build-id}/`
+- `$MRP_SITE_OUT_ROOT/staging/`
+- `$MRP_SITE_OUT_ROOT/prod/`
+- `$MRP_SITE_OUT_ROOT/archive/`
 - `reports/*/*.json`
 
 ## Rollback
@@ -71,6 +89,7 @@ Rollback requires explicit confirmation:
 scripts/mrp rollback --to <build-id> --yes --json
 ```
 
-Without `--to`, MRP selects the latest `builds/archive/production-*` candidate.
-Rollback validates the production marker, restores files, verifies production,
-and writes `reports/rollback/{timestamp}.json`.
+Without `--to`, MRP selects the latest
+`$MRP_SITE_OUT_ROOT/archive/production-*` candidate. Rollback validates the
+production marker, restores files, verifies production, and writes
+`reports/rollback/{timestamp}.json`.

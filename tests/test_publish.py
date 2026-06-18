@@ -1,4 +1,5 @@
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -9,21 +10,30 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def run_mrp(*args: str, cwd: Path = ROOT) -> subprocess.CompletedProcess[str]:
+def site_out_root(repo: Path) -> Path:
+    return repo.parent / "site-out"
+
+
+def run_mrp(*args: str, cwd: Path = ROOT, site_out_root: Path | None = None) -> subprocess.CompletedProcess[str]:
+    env = os.environ.copy()
+    if site_out_root is not None:
+        env["MRP_SITE_OUT_ROOT"] = str(site_out_root)
     return subprocess.run(
         [sys.executable, "-m", "mrp.cli.main", *args],
         cwd=cwd,
         text=True,
         capture_output=True,
         check=False,
+        env=env,
     )
 
 
 def publishable_repo(tmp_path: Path, approval: bool = True, marker: bool = True) -> Path:
     repo = tmp_path / "repo"
+    out_root = site_out_root(repo)
     build_id = "build-123"
-    build = repo / "builds" / "staging" / build_id
-    production = repo / "builds" / "local-production"
+    build = out_root / "builds" / "staging" / build_id
+    production = out_root / "prod"
     for path in [
         repo / "content" / "artists",
         repo / "content" / "releases",
@@ -57,7 +67,13 @@ def publishable_repo(tmp_path: Path, approval: bool = True, marker: bool = True)
     write_site(build)
     write_json(
         repo / "reports" / "build" / f"{build_id}.json",
-        {"command": "build", "status": "passed", "build_id": build_id, "release": "circuiting"},
+        {
+            "command": "build",
+            "status": "passed",
+            "build_id": build_id,
+            "build_path": str(build),
+            "release": "circuiting",
+        },
     )
     if approval:
         write_json(
@@ -78,7 +94,7 @@ def publishable_repo(tmp_path: Path, approval: bool = True, marker: bool = True)
                     "local-production": {
                         "type": "local",
                         "environment": "production",
-                        "path": "builds/local-production",
+                        "path": "prod",
                         "require_marker": True,
                     }
                 }
@@ -114,7 +130,7 @@ def write_json(path: Path, data) -> None:
 def test_publish_refuses_unapproved_build(tmp_path):
     repo = publishable_repo(tmp_path, approval=False)
 
-    result = run_mrp("--repo", str(repo), "--json", "publish", "--release", "circuiting")
+    result = run_mrp("--repo", str(repo), "--json", "publish", "--release", "circuiting", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
@@ -125,7 +141,7 @@ def test_publish_refuses_unapproved_build(tmp_path):
 def test_publish_refuses_missing_production_marker(tmp_path):
     repo = publishable_repo(tmp_path, marker=False)
 
-    result = run_mrp("--repo", str(repo), "--json", "publish", "--release", "circuiting")
+    result = run_mrp("--repo", str(repo), "--json", "publish", "--release", "circuiting", site_out_root=site_out_root(repo))
 
     assert result.returncode == 3
     payload = json.loads(result.stdout)
@@ -136,13 +152,13 @@ def test_publish_refuses_missing_production_marker(tmp_path):
 def test_publish_deploys_verifies_and_marks_release_live(tmp_path):
     repo = publishable_repo(tmp_path)
 
-    result = run_mrp("--repo", str(repo), "--json", "publish", "--release", "circuiting")
+    result = run_mrp("--repo", str(repo), "--json", "publish", "--release", "circuiting", site_out_root=site_out_root(repo))
 
     assert result.returncode == 0
     payload = json.loads(result.stdout)
     assert payload["status"] == "published"
     assert payload["build_id"] == "build-123"
-    assert (repo / "builds/local-production/index.html").is_file()
+    assert (site_out_root(repo) / "prod/index.html").is_file()
     assert (repo / payload["deployment_report_path"]).is_file()
     assert (repo / payload["verification_report_path"]).is_file()
     assert (repo / payload["report_path"]).is_file()

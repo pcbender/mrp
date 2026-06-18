@@ -10,6 +10,7 @@ from urllib.parse import urlparse
 import yaml
 
 from mrp.core.deploy import load_targets, validate_target
+from mrp.core.output import path_from_report
 
 
 CONTENT_EXTENSIONS = {".yaml", ".yml", ".json"}
@@ -61,7 +62,7 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
         add_error(result, "safety", safety["message"])
         return finish(root, generated_at, result)
 
-    target_path = root / safety["target_path"]
+    target_path = path_from_report(root, safety["target_path"])
     deployment = latest_deployment(root, target_name)
     result["build_id"] = deployment.get("build_id")
     result["build_report_path"] = deployment.get("build_report_path")

@@ -51,18 +51,20 @@ import-site
 
 Implemented commands currently include `inspect`, `validate`, `import-site`,
 `build`, `stage`, `verify`, `approve`, `publish`, `rollback`, and `status`. The
-build command validates content, runs the Astro static site build, copies output to
-`builds/staging/{build-id}/`, and writes a JSON report under `reports/build/`.
-The stage command deploys a build to a configured local target after verifying
-the target contains `.allow-deploy`. The verify command checks a deployed local
-target for required pages, assets, sitemap/feed files, internal links, and
-placeholder tokens. The approve command records approval only after verification
-passes. The publish command promotes an approved build to local production,
-verifies production, and marks the release live after verification succeeds.
-Rollback restores local production from an archive or specified staging build
-after explicit `--yes` confirmation. Status reports release content state,
-latest validation/build/deployment/verification/approval/publish/rollback
-records, and rollback availability.
+build command validates content, runs the Astro static site build into
+`$MRP_SITE_OUT_ROOT/builds/staging/{build-id}/`, and writes a JSON report under
+`reports/build/`. `MRP_SITE_OUT_ROOT` defaults to
+`~/astro-sites/maricoparecords` and must be outside the repository. The stage
+command deploys a build to a configured local target after verifying the target
+contains `.allow-deploy`. The verify command checks a deployed local target for
+required pages, assets, sitemap/feed files, internal links, and placeholder
+tokens. The approve command records approval only after verification passes. The
+publish command promotes an approved build to local production, verifies
+production, and marks the release live after verification succeeds. Rollback
+restores local production from an archive or specified staging build after
+explicit `--yes` confirmation. Status reports release content state, latest
+validation/build/deployment/verification/approval/publish/rollback records, and
+rollback availability.
 
 `release create` writes a draft YAML manifest under `content/releases/`, creates
 the matching `assets/releases/{slug}/` folder, and refuses to overwrite an
