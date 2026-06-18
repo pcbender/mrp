@@ -5,31 +5,46 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: draft
+  status: staged
   release_date: '2025-03-29'
   label: Maricopa Records
   publisher: Maricopa Publishing
   upc: null
   catalog_number: null
-  cover_image: assets/releases/scattershot-forget-me-not/cover.jpg
+  cover_image: site/public/assets/migrated/8ba23fe44ba8-scattershot.jpg
   hero_image: null
-  summary: ''
-  description: ''
+  summary: Maricopa Records proudly presents _Scattershot Forget-Me-Not,_the latest
+    heartfelt ballad from songwriter and producer **PCBender**. Delivered in the tender,
+    piano-driven style of classic Elton John, this emotionally rich track captures
+    the quiet ache of unsaid words and imperfect goodbyes. With raw vulnerability
+    and lyrical introspection, PCBender weaves a stream-of-consciousness letter to
+    love left lingering, memories half-kept, and feelings too big to fit inside a
+    single note.
+  description: "## Scattershot Forget-Me-Not\n\nMaricopa Records proudly presents\
+    \ _Scattershot Forget-Me-Not,_the latest heartfelt ballad from songwriter and\
+    \ producer **PCBender**. Delivered in the tender, piano-driven style of classic\
+    \ Elton John, this emotionally rich track captures the quiet ache of unsaid words\
+    \ and imperfect goodbyes. With raw vulnerability and lyrical introspection, PCBender\
+    \ weaves a stream-of-consciousness letter to love left lingering, memories half-kept,\
+    \ and feelings too big to fit inside a single note.\n\n\u201C_Scattershot Forget-Me-Not_\u201D\
+    \ is a love song for those who struggle to say it right\u2014but feel it deeply.\
+    \ At once fragmented and full, wistful and warm, the track is a delicate reminder\
+    \ that sometimes, even a ramble can hold everything that matters.\n\n[](https://open.spotify.com/album/3JlPo2UtlSCqkIlMrp6dsD?si=QM1ZEAMRQj2E2GVQodPFNg)[](https://music.apple.com/us/album/scattershot-forget-me-not-single/1803186097)[](https://music.youtube.com/watch?v=JnZFl8naBAw&si=OYgNM3fPpBLhASQz)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/scattershot.jpg)"
   credits:
-    primary_artist: Pcbender
+    primary_artist: PCBender
     songwriter: null
     producer: null
     mastering: null
   links:
-    spotify: null
-    apple_music: null
-    youtube_music: null
+    spotify: https://open.spotify.com/album/3JlPo2UtlSCqkIlMrp6dsD?si=QM1ZEAMRQj2E2GVQodPFNg
+    apple_music: https://music.apple.com/us/album/scattershot-forget-me-not-single/1803186097
+    youtube_music: https://music.youtube.com/watch?v=JnZFl8naBAw&si=OYgNM3fPpBLhASQz
     bandcamp: null
     soundcloud: null
     landing_page: https://www.maricoparecords.com/artists/pcbender/scattershot-forget-me-not/
   seo:
-    title: Scattershot Forget-Me-Not by Pcbender
-    description: Scattershot Forget-Me-Not by Pcbender on Maricopa Records.
+    title: Scattershot Forget-Me-Not by PCBender
+    description: Scattershot Forget-Me-Not by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
   song:

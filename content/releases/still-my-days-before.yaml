@@ -5,31 +5,41 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: draft
+  status: staged
   release_date: '2025-03-29'
   label: Maricopa Records
   publisher: Maricopa Publishing
   upc: null
   catalog_number: null
-  cover_image: assets/releases/still-my-days-before/cover.jpg
+  cover_image: site/public/assets/migrated/65929518683d-ChatGPT-Image-Mar-28-2025-03_30_17-PM.png
   hero_image: null
-  summary: ''
-  description: ''
+  summary: "\u201C_Still My Days Before_\u201D is a quiet reckoning with time, memory,\
+    \ and the paths not taken. **PCBender **delivers a beautifully restrained performance,\
+    \ where each note feels like a whispered confession and each pause carries the\
+    \ weight of what once was."
+  description: "## Still My Days Before\n\n\u201C_Still My Days Before_\u201D is a\
+    \ quiet reckoning with time, memory, and the paths not taken. **PCBender **delivers\
+    \ a beautifully restrained performance, where each note feels like a whispered\
+    \ confession and each pause carries the weight of what once was.\n\nBlending mellow\
+    \ guitar tones with a reflective melodic arc, the track moves with the grace of\
+    \ a journal entry written at golden hour\u2014intimate, nostalgic, and unafraid\
+    \ to linger. \"_Still My Days Before_\" doesn\u2019t chase the past\u2014it sits\
+    \ beside it and listens.\n\n[](https://open.spotify.com/album/72rjvHWyvlvG3nwO6iLaDO?si=SwTp5E5VRHiOvMy8DSg74w)[](https://music.apple.com/us/album/still-my-days-before/1805258484?i=1805258485)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/ChatGPT-Image-Mar-28-2025-03_30_17-PM.png)"
   credits:
-    primary_artist: Pcbender
+    primary_artist: PCBender
     songwriter: null
     producer: null
     mastering: null
   links:
-    spotify: null
-    apple_music: null
+    spotify: https://open.spotify.com/album/72rjvHWyvlvG3nwO6iLaDO?si=SwTp5E5VRHiOvMy8DSg74w
+    apple_music: https://music.apple.com/us/album/still-my-days-before/1805258484?i=1805258485
     youtube_music: null
     bandcamp: null
     soundcloud: null
     landing_page: https://www.maricoparecords.com/artists/pcbender/still-my-days-before/
   seo:
-    title: Still My Days Before by Pcbender
-    description: Still My Days Before by Pcbender on Maricopa Records.
+    title: Still My Days Before by PCBender
+    description: Still My Days Before by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
   song:

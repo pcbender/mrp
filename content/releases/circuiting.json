@@ -4,18 +4,18 @@
     "slug": "circuiting",
     "title": "Circuiting",
     "artist_id": "pcbender",
-    "model": "song",
-    "release_type": "single",
-    "status": "live",
+    "model": "album",
+    "release_type": "album",
+    "status": "staged",
     "release_date": "2025-02-15",
     "label": "Maricopa Records",
     "publisher": "Maricopa Publishing",
     "upc": null,
     "catalog_number": null,
-    "cover_image": "site/public/assets/releases/circuiting-cover.svg",
+    "cover_image": "site/public/assets/migrated/a4753b0ddd52-Circuiting.jpg",
     "hero_image": null,
-    "summary": "Circuiting by PCBender on Maricopa Records.",
-    "description": "Circuiting is a single from PCBender, imported as the first curated release record for MRP v0.1.",
+    "summary": "A signal sparks. A connection is made. A system comes to life. Circuiting is not just an album\u2014it\u2019s a living network of sound, energy, and emotion. In this groundbreaking concept album from Maricopa Records, electronic components are more than just hardware; they are characters, relationships, and forces of nature, embodying the tensions and harmonies of the modern world.",
+    "description": "## Circuiting\n\nA signal sparks. A connection is made. A system comes to life. Circuiting is not just an album\u2014it\u2019s a living network of sound, energy, and emotion. In this groundbreaking concept album from Maricopa Records, electronic components are more than just hardware; they are characters, relationships, and forces of nature, embodying the tensions and harmonies of the modern world.\n\nThrough a fusion of AI-driven composition and analog production, Circuiting explores the delicate balance between connection and resistance, flow and interference, function and failure. Each track represents a critical piece of the circuit, from the rhythmic pulses of capacitors storing energy to the raw emotional charge of short circuits and burnouts.\n\nWith a sound that oscillates between synthetic precision and human imperfection, the album pulses with electronic textures, industrial rhythms, glitchy distortions, and melodic currents\u2014all wired together into a cohesive musical system. Lyrically bold and thematically rich, Circuiting examines the fragile, electrified world we navigate daily, where every relationship is a signal waiting to be sent, received, or lost to the noise.\n\nAt its core, Circuiting is about what happens when connections hold, when they fail, and when they transform.\n\n**Plug in. Tune in. Feel the current flow.**\n\n[](https://open.spotify.com/album/0epxRoEuofP2oJbEXOGC7l?si=ZQKdCReXT6mKwdjc64mEKA)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/Circuiting.jpg)\n## Tracks\n\n#\n\nTitle\n\nListen\n\n1\n\nConductor\n\n[](https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a)\n2\n\nResistor\n\n[](https://open.spotify.com/track/0Z5JIx6FM55dEkmqlsDqjo?si=b2e4378330d040c4)\n3\n\nCapacitor\n\n[](https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073)\n4\n\nInductor\n\n[](https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39)\n5\n\nDiode\n\n[](https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44)\n6\n\nTransistor\n\n[](https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961)\n7\n\nRelay\n\n[](https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7)\n8\n\nFuse\n\n[](https://open.spotify.com/track/52R7pwCQAqcHx1aDjrCiCV?si=bb5fbaaecb394a06)\n9\n\nOscillator\n\n[](https://open.spotify.com/track/6U6z0EBKHxqFFtkhlIanI3?si=678be27fd7094707)\n10\n\nCircuit\n\n[](https://open.spotify.com/track/4P6oRJ0WhhTbobqDqoy1JB?si=02f02c241b774e2b)",
     "credits": {
       "primary_artist": "PCBender",
       "songwriter": "Michael Anthony Rose",
@@ -23,7 +23,7 @@
       "mastering": null
     },
     "links": {
-      "spotify": null,
+      "spotify": "https://open.spotify.com/album/0epxRoEuofP2oJbEXOGC7l?si=ZQKdCReXT6mKwdjc64mEKA",
       "apple_music": null,
       "youtube_music": null,
       "bandcamp": null,
@@ -34,14 +34,107 @@
       "title": "Circuiting by PCBender",
       "description": "Circuiting by PCBender on Maricopa Records."
     },
-    "song": {
-      "title": "Circuiting",
-      "slug": "circuiting",
-      "isrc": null,
-      "duration": null,
-      "explicit": false,
-      "preview_audio": null,
-      "lyrics_excerpt": null
-    }
+    "tracks": [
+      {
+        "number": 1,
+        "title": "Conductor",
+        "slug": "conductor",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 2,
+        "title": "Resistor",
+        "slug": "resistor",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 3,
+        "title": "Capacitor",
+        "slug": "capacitor",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 4,
+        "title": "Inductor",
+        "slug": "inductor",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 5,
+        "title": "Diode",
+        "slug": "diode",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 6,
+        "title": "Transistor",
+        "slug": "transistor",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 7,
+        "title": "Relay",
+        "slug": "relay",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 8,
+        "title": "Fuse",
+        "slug": "fuse",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 9,
+        "title": "Oscillator",
+        "slug": "oscillator",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      },
+      {
+        "number": 10,
+        "title": "Circuit",
+        "slug": "circuit",
+        "isrc": null,
+        "duration": null,
+        "explicit": false,
+        "preview_audio": null,
+        "lyrics_excerpt": null
+      }
+    ]
   }
 }

@@ -3,39 +3,179 @@ release:
   slug: red-green-and-blues
   title: Red, Green and Blues
   artist_id: pcbender
-  model: song
-  release_type: single
-  status: draft
+  model: album
+  release_type: album
+  status: staged
   release_date: '2025-02-26'
   label: Maricopa Records
   publisher: Maricopa Publishing
   upc: null
   catalog_number: null
-  cover_image: assets/releases/red-green-and-blues/cover.jpg
+  cover_image: site/public/assets/migrated/567968e1ddfa-Reg-Green-and-Blues-Landr.png
   hero_image: null
-  summary: ''
-  description: ''
+  summary: A soulful blend of blues, rock, jazz, _Red, Green and Blues_is an instrumental
+    vision of a box of colors. Beautiful guitar and keyboard performances weave melody,
+    rhythm and style into every musical color. Supported by the Maricopa Players rhythm
+    section, each track pulses with groove and style.
+  description: "## Red, Green and Blues\n\nA soulful blend of blues, rock, jazz, _Red,\
+    \ Green and Blues_is an instrumental vision of a box of colors. Beautiful guitar\
+    \ and keyboard performances weave melody, rhythm and style into every musical\
+    \ color. Supported by the Maricopa Players rhythm section, each track pulses with\
+    \ groove and style.\n\nFrom the funky opener **\u201CCyclamen\u201D**to the jazzy\
+    \ energy of **\u201COlivine,\u201D**and the laid back groove of **\u201CSunray,\u201D\
+    **the album flows effortlessly, capturing the moods and moments of each season.\
+    \ PCBender's _Red, Green and Blues_is a soundscape where every song leaves a lasting\
+    \ mood. And with **\u201CMoonstone\u201D**closing the album, you have an instant\
+    \ cure for the blues.\n\nWhatever color fits your mood, _Red, Green and Blues_is\
+    \ your brush, painting a musical canvas sure to move you.\n\n[](https://open.spotify.com/album/7r361vipWtjpzbGoEf2Cdm?si=NjqZASwbREWuzJJjwwzrIQ)[](https://music.apple.com/us/album/red-green-and-blues/1798943883)[](https://music.youtube.com/playlist?list=OLAK5uy_mvvFrMOdE9HDWl4eNtR-kZM0Z-EvW39Go&si=XhMjGE72myN0vaks)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/Reg-Green-and-Blues-Landr.png)\n\
+    ## Tracks\n\n#\n\nTitle\n\nListen\n\n1\n\nCyclamen\n\n[](https://open.spotify.com/track/5OzR501NoPbQrUtMVUCUFY?si=5540b7a4981542b1)[](https://music.apple.com/us/album/cyclamen/1798943883?i=1798943884)[](https://music.youtube.com/watch?v=-NS70JZa5O8&si=DAtxNxVErseqKumy)\n\
+    2\n\nTumbleweed\n\n[](https://open.spotify.com/track/6rhWrksNcgSgZA0WvMjsN9?si=46d0383b9f994272)[](https://music.apple.com/us/album/tumbleweed/1798943883?i=1798943885)[](https://music.youtube.com/watch?v=mc7saVI4IUU&si=2e9a77qayWMFO2Dr)\n\
+    3\n\nRufous\n\n[](https://open.spotify.com/track/4bkU5BDJfQBYhwZiJqV8wQ?si=34ac600f924247fb)[](https://music.apple.com/us/album/rufous/1798943883?i=1798943886)[](https://music.youtube.com/watch?v=IXa0HwU9_Cc&si=Fgn6X3v8h33AACZF)\n\
+    4\n\nOlivine\n\n[](https://open.spotify.com/track/2BCLooDE48SWNGdCZNpn21?si=c278a12dd90e4a7c)[](https://music.apple.com/us/album/olivine/1798943883?i=1798943887)[](https://music.youtube.com/watch?v=4wuFDjxW6b8&si=_huKOze2tGxKbb5E)\n\
+    5\n\nVerdigris\n\n[](https://open.spotify.com/track/4QgL35WZFFOJK4Wt24vJlO?si=99ee14d3ea2148c3)[](https://music.apple.com/us/album/verdigris/1798943883?i=1798943888)[](https://music.youtube.com/watch?v=FK_syE2lJTs&si=1yQ3xIqcw6XDacrj)\n\
+    6\n\nWenge\n\n[](https://open.spotify.com/track/3LaPOndFo8dcZpenHVDQYt?si=3332d1c000294647)[](https://music.apple.com/us/album/wenge/1798943883?i=1798943889)[](https://music.youtube.com/watch?v=EGFx7gLSk_s&si=cagoxZtkhYaE5-7D)\n\
+    7\n\nPistachio\n\n[](https://open.spotify.com/track/6ihGW4PRpv8MAAZQVRQQ7k?si=6129c3e005e6473c)[](https://music.apple.com/us/album/pistachio/1798943883?i=1798943890)[](https://music.youtube.com/watch?v=N20Uz12rSGw&si=FhrmS0y-Tkl24IOI)\n\
+    8\n\nSunray\n\n[](https://open.spotify.com/track/0KQaqrKDzvAHdCwtOstQbf?si=37ca9e695a144269)[](https://music.apple.com/us/album/sunray/1798943883?i=1798943891)[](https://music.youtube.com/watch?v=llu-rvpdS_s&si=YQ9XEKfLoUAA2cwe)\n\
+    9\n\nZaffre\n\n[](https://open.spotify.com/track/4WYSmhcVi7QNPF6Ms72waj?si=8d81a10797b54430)[](https://music.apple.com/us/album/zaffre/1798943883?i=1798943892)[](https://music.youtube.com/watch?v=gdDnq85zPas&si=8kzZ6ZixhtZ_86Ou)\n\
+    10\n\nNyanza\n\n[](https://open.spotify.com/track/6T0HkCzN1k30WLJfJtYtAa?si=720466b9ddc64ab6)[](https://music.apple.com/us/album/nyanza/1798943883?i=1798943893)[](https://music.youtube.com/watch?v=71nBNgOMm8s&si=UhvAQATsTGPJpuxL)\n\
+    11\n\nLimerick\n\n[](https://open.spotify.com/track/00uSXlzvcKjyLDVBH9wEjv?si=fc106f4c06144212)[](https://music.apple.com/us/album/limerick/1798943883?i=1798943894)[](https://music.youtube.com/watch?v=zgl_nEN7b_Y&si=t3XRMp01ZWblDrdq)\n\
+    12\n\nThulian\n\n[](https://open.spotify.com/track/6dSLiXgFc3s3eqUF8SW5W5?si=0cdaf36d2cb54189)[](https://music.apple.com/us/album/thulian/1798943883?i=1798943895)[](https://music.youtube.com/watch?v=ghEqDSEdhzQ&si=_1QoAoC29Mxm-cDG)\n\
+    13\n\nJonquil\n\n[](https://open.spotify.com/track/4jPApd6M7O5MS8Ywe33igh?si=469fd0c20bb8487d)[](https://music.apple.com/us/album/jonquil/1798943883?i=1798943896)[](https://music.youtube.com/watch?v=pAmFNGPRI9g&si=UxDhUGt2bKZEM8G4)\n\
+    14\n\nAureolin\n\n[](https://open.spotify.com/track/7F18VnsY1ny6o5Ed4nuMvT?si=c5637c9c255642a8)[](https://music.apple.com/us/album/aureolin/1798943883?i=1798943897)[](https://music.youtube.com/watch?v=A64413XKenA&si=0bCunYRmDVCF2IZE)\n\
+    15\n\nMoonstone\n\n[](https://open.spotify.com/track/14XdezU0R53HegyP6bdh96?si=f653a70d53af4fc2)[](https://music.apple.com/us/album/moonstone/1798943883?i=1798943898)[](https://music.youtube.com/watch?v=S_833lAnCaM&si=tCxtVG4uVT8OaQ_L)"
   credits:
-    primary_artist: Pcbender
+    primary_artist: PCBender
     songwriter: null
     producer: null
     mastering: null
   links:
-    spotify: null
-    apple_music: null
-    youtube_music: null
+    spotify: https://open.spotify.com/album/7r361vipWtjpzbGoEf2Cdm?si=NjqZASwbREWuzJJjwwzrIQ
+    apple_music: https://music.apple.com/us/album/red-green-and-blues/1798943883
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mvvFrMOdE9HDWl4eNtR-kZM0Z-EvW39Go&si=XhMjGE72myN0vaks
     bandcamp: null
     soundcloud: null
     landing_page: https://www.maricoparecords.com/artists/pcbender/red-green-and-blues/
   seo:
-    title: Red, Green and Blues by Pcbender
-    description: Red, Green and Blues by Pcbender on Maricopa Records.
+    title: Red, Green and Blues by PCBender
+    description: Red, Green and Blues by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
-  song:
-    number: null
-    title: Red, Green and Blues
-    slug: red-green-and-blues
+  tracks:
+  - number: 1
+    title: Cyclamen
+    slug: cyclamen
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 2
+    title: Tumbleweed
+    slug: tumbleweed
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 3
+    title: Rufous
+    slug: rufous
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 4
+    title: Olivine
+    slug: olivine
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 5
+    title: Verdigris
+    slug: verdigris
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 6
+    title: Wenge
+    slug: wenge
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 7
+    title: Pistachio
+    slug: pistachio
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 8
+    title: Sunray
+    slug: sunray
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 9
+    title: Zaffre
+    slug: zaffre
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 10
+    title: Nyanza
+    slug: nyanza
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 11
+    title: Limerick
+    slug: limerick
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 12
+    title: Thulian
+    slug: thulian
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 13
+    title: Jonquil
+    slug: jonquil
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 14
+    title: Aureolin
+    slug: aureolin
+    isrc: null
+    duration: null
+    explicit: false
+    preview_audio: null
+    lyrics_excerpt: null
+  - number: 15
+    title: Moonstone
+    slug: moonstone
     isrc: null
     duration: null
     explicit: false

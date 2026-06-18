@@ -162,6 +162,7 @@ def run_migration(root: Path, source: str | Path) -> dict[str, Any]:
     asset_result = copy_referenced_assets(root, inventory)
     if asset_result.get("manifest_updated"):
         created.append("content/assets/manifest.yaml")
+    catalog_result = promote_catalog_metadata(root)
 
     return {
         "status": "completed",
@@ -169,6 +170,7 @@ def run_migration(root: Path, source: str | Path) -> dict[str, Any]:
         "summary": inventory["summary"],
         "planned_writes": planned_writes(inventory),
         "normalization": normalization_result,
+        "catalog": catalog_result,
         "assets": asset_result,
         "created": sorted(created),
         "skipped": sorted(skipped, key=lambda item: item["path"]),
@@ -345,6 +347,234 @@ def write_unresolved_artifact_report(root: Path, artifacts: list[dict[str, str]]
     }
     report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     return str(report_path.relative_to(root))
+
+
+def promote_catalog_metadata(root: Path) -> dict[str, Any]:
+    artist_pages, release_pages = catalog_pages(root)
+    updated: list[str] = []
+    for artist_id, page in sorted(artist_pages.items()):
+        path = existing_record_path(root / "content" / "artists", artist_id)
+        if path is None:
+            continue
+        data = load_structured_record(path)
+        artist = data.get("artist")
+        if not isinstance(artist, dict):
+            continue
+        before = serialize_structured_record(path, data)
+        artist["name"] = page.get("title") or artist.get("name") or title_from_slug(artist_id)
+        artist["sort_name"] = artist["name"]
+        artist["visibility"] = "public"
+        artist["bio_long"] = page.get("content_markdown") or artist.get("bio_long") or ""
+        artist["bio_short"] = (
+            first_nonempty_paragraph(page.get("content_markdown") or "", page.get("title"))
+            or artist.get("bio_short")
+            or ""
+        )
+        image = first_local_asset_url(root, page)
+        if image:
+            artist["image"] = public_asset_url(image)
+        links = artist.setdefault("links", {})
+        for key, value in (page.get("socials") or {}).items():
+            if key in links:
+                links[key] = value
+        after = serialize_structured_record(path, data)
+        if after != before:
+            path.write_text(after)
+            updated.append(str(path.relative_to(root)))
+
+    for (artist_id, release_id), page in sorted(release_pages.items()):
+        path = existing_record_path(root / "content" / "releases", release_id)
+        if path is None:
+            continue
+        data = load_structured_record(path)
+        release = data.get("release")
+        if not isinstance(release, dict):
+            continue
+        before = serialize_structured_record(path, data)
+        tracks = release_tracks(page)
+        release["artist_id"] = artist_id
+        release["status"] = "staged"
+        release["summary"] = (
+            first_nonempty_paragraph(page.get("content_markdown") or "", page.get("title"))
+            or release.get("summary")
+            or ""
+        )
+        release["description"] = page.get("content_markdown") or release.get("description") or ""
+        image = first_local_asset_url(root, page)
+        if image:
+            release["cover_image"] = image
+        links = release.setdefault("links", {})
+        for source_key, target_key in (
+            ("spotify", "spotify"),
+            ("apple_music", "apple_music"),
+            ("youtube_music", "youtube_music"),
+            ("bandcamp", "bandcamp"),
+            ("soundcloud", "soundcloud"),
+        ):
+            value = (page.get("socials") or {}).get(source_key)
+            if value:
+                links[target_key] = value
+        links["landing_page"] = page.get("source_url") or links.get("landing_page")
+        primary_artist = title_from_slug(artist_id)
+        if artist_id in artist_pages:
+            primary_artist = artist_pages[artist_id].get("title") or primary_artist
+        release.setdefault("credits", {})["primary_artist"] = primary_artist
+        if tracks:
+            release["model"] = "album"
+            release["release_type"] = "ep" if len(tracks) <= 6 else "album"
+            release["tracks"] = tracks
+            release.pop("song", None)
+        else:
+            release["model"] = "song"
+            release["release_type"] = "single"
+            release["song"] = {
+                "number": None,
+                "title": release.get("title") or page.get("title") or title_from_slug(release_id),
+                "slug": release_id,
+                "isrc": None,
+                "duration": None,
+                "explicit": False,
+                "preview_audio": None,
+                "lyrics_excerpt": None,
+            }
+            release.pop("tracks", None)
+        title = release.get("title") or page.get("title") or title_from_slug(release_id)
+        release["seo"] = {
+            "title": f"{title} by {primary_artist}",
+            "description": f"{title} by {primary_artist} on Maricopa Records.",
+        }
+        after = serialize_structured_record(path, data)
+        if after != before:
+            path.write_text(after)
+            updated.append(str(path.relative_to(root)))
+    return {"updated": sorted(updated), "updated_count": len(updated)}
+
+
+def catalog_pages(root: Path) -> tuple[dict[str, dict[str, Any]], dict[tuple[str, str], dict[str, Any]]]:
+    artist_pages: dict[str, dict[str, Any]] = {}
+    release_pages: dict[tuple[str, str], dict[str, Any]] = {}
+    pages_dir = root / "content" / "pages"
+    if not pages_dir.is_dir():
+        return artist_pages, release_pages
+    for path in sorted(pages_dir.glob("*.yaml")):
+        data = yaml.safe_load(path.read_text()) or {}
+        page = data.get("page") or {}
+        parts = [part for part in (page.get("normalized_path") or "").split("/") if part]
+        if len(parts) == 2 and parts[0] == "artists":
+            artist_pages[parts[1]] = page
+        elif len(parts) == 3 and parts[0] == "artists":
+            release_pages[(parts[1], parts[2])] = page
+    for artist_id, page in list(artist_pages.items()):
+        if page.get("content_html") or page.get("images"):
+            continue
+        clone_page = clone_artist_page(root, artist_id)
+        if clone_page:
+            artist_pages[artist_id] = clone_page
+    return artist_pages, release_pages
+
+
+def clone_artist_page(root: Path, artist_id: str) -> dict[str, Any] | None:
+    path = root / "content" / "clone" / "pages" / f"artists-{artist_id}.yaml"
+    if not path.is_file():
+        return None
+    clone = (yaml.safe_load(path.read_text()) or {}).get("clone") or {}
+    content = normalize_wordpress_content(clone.get("content_html") or "", str(path.relative_to(root)))
+    return {
+        "title": clone.get("title") or title_from_slug(artist_id),
+        "source_url": ((clone.get("source") or {}).get("link")),
+        "content_html": content.content_html,
+        "content_markdown": content.content_markdown,
+        "images": content.images,
+        "socials": content.socials,
+    }
+
+
+def existing_record_path(directory: Path, record_id: str) -> Path | None:
+    for suffix in (".yaml", ".yml", ".json"):
+        path = directory / f"{record_id}{suffix}"
+        if path.exists():
+            return path
+    return None
+
+
+def load_structured_record(path: Path) -> dict[str, Any]:
+    if path.suffix == ".json":
+        return json.loads(path.read_text())
+    return yaml.safe_load(path.read_text()) or {}
+
+
+def serialize_structured_record(path: Path, data: dict[str, Any]) -> str:
+    if path.suffix == ".json":
+        return json.dumps(data, indent=2, sort_keys=False) + "\n"
+    return yaml.safe_dump(data, sort_keys=False, allow_unicode=False)
+
+
+def first_nonempty_paragraph(markdown: str, title: str | None = None) -> str:
+    normalized_title = (title or "").strip().lower()
+    for block in markdown.split("\n\n"):
+        value = re.sub(r"^#+\s*", "", block).strip()
+        if (
+            value
+            and value.lower() != normalized_title
+            and not value.startswith("![")
+            and not value.startswith("[](")
+        ):
+            return value
+    return ""
+
+
+def first_local_asset_url(root: Path, page: dict[str, Any]) -> str | None:
+    for image in page.get("images") or []:
+        src = image.get("src") if isinstance(image, dict) else None
+        normalized = normalize_asset_url(src or "")
+        if normalized:
+            migrated = migrated_asset_path(normalized)
+            if (root / migrated).is_file():
+                return migrated
+            parsed = urlparse(normalized)
+            if parsed.netloc.endswith("maricoparecords.com") and parsed.path.startswith("/wp-content/"):
+                mirrored = f"site/public/assets/wp{parsed.path}"
+                if (root / mirrored).is_file():
+                    return mirrored
+    return None
+
+
+def public_asset_url(path: str) -> str:
+    return "/" + path.removeprefix("site/public/").lstrip("/")
+
+
+def release_tracks(page: dict[str, Any]) -> list[dict[str, Any]]:
+    text = re.sub(r"<[^>]+>", "\n", page.get("content_html") or "")
+    lines = [unescape(line).strip() for line in text.splitlines() if unescape(line).strip()]
+    tracks: list[dict[str, Any]] = []
+    for index, line in enumerate(lines):
+        if not line.isdigit():
+            continue
+        number = int(line)
+        if number < 1:
+            continue
+        title = next((candidate for candidate in lines[index + 1 :] if candidate and not candidate.isdigit()), "")
+        if title and title.lower() not in {"title", "listen"}:
+            tracks.append(
+                {
+                    "number": number,
+                    "title": title,
+                    "slug": safe_slug(title),
+                    "isrc": None,
+                    "duration": None,
+                    "explicit": False,
+                    "preview_audio": None,
+                    "lyrics_excerpt": None,
+                }
+            )
+    deduped: list[dict[str, Any]] = []
+    seen: set[int] = set()
+    for track in tracks:
+        if track["number"] in seen:
+            continue
+        seen.add(track["number"])
+        deduped.append(track)
+    return deduped
 
 
 def artist_record(artist: dict[str, Any]) -> dict[str, Any]:

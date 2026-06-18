@@ -1,18 +1,51 @@
 artist:
   id: 4castle
-  name: 4castle
-  sort_name: 4castle
+  name: 4Castle
+  sort_name: 4Castle
   type: project
   label: Maricopa Records
   default_publisher: Maricopa Publishing
-  bio_short: ''
-  bio_long: ''
-  image: null
+  bio_short: The Future of Rock, The Power of Harmony
+  bio_long: "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is\
+    \ a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation\
+    \ of powerful vocal harmonies, intricate musicianship, and fearless innovation.\
+    \ Rooted in rock, but unbound by limitations, their music fuses elements of progressive\
+    \ rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both\
+    \ technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\
+    \nEach member of **4Castle **brings a distinct voice\u2014both musically and vocally\u2014\
+    to the mix:\n\U0001F3B8 **Raven Cortez**(Lead Guitar, Vocals) \u2013 A fiery virtuoso\
+    \ with Latin and blues influences, weaving face-melting solos into every performance.\n\
+    \U0001F3B8 **Skylar \u201CSky\u201D Monroe**(Rhythm Guitar, Vocals) \u2013 The\
+    \ poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n\
+    \U0001F3B9 **Jonah Vega**(Keyboards, Vocals) \u2013 The sonic architect, layering\
+    \ psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n\U0001F3B8\
+    \ **Malcolm \u201CMack\u201D Bishop**(Bass, Vocals) \u2013 The groove master,\
+    \ blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n\
+    \U0001F941 **Eli \u201CFox\u201D Foster **(Drums, Vocals) \u2013 The wild heartbeat,\
+    \ pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive\
+    \ energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**\u2013\
+    \ All five members **sing**, creating **rich, choral-like textures**that elevate\
+    \ every song.\n\n- **Complex Arrangements & Bold Songwriting**\u2013 Each track\
+    \ is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\
+    \n- **Rhythmic Power & Innovation**\u2013 From **tight funk grooves to shifting\
+    \ time signatures**, their music **moves you\u2014literally and figuratively**.\n\
+    \n- **Lyrically Challenging Yet Accessible**\u2013 Their songs explore **deep\
+    \ themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\
+    \n### **4Castle\u2019s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart,\
+    \ Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**.\
+    \ Their music pays homage to the greats while pushing rock\u2019s boundaries into\
+    \ the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle\
+    \ **is set to redefine what a modern rock band can be. Expect genre-bending albums,\
+    \ electrifying performances, and music that resonates across generations.\n\n\U0001F680\
+    \ Follow **4Castle **as they build their legacy\u2014one song, one harmony, and\
+    \ one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n\
+    ## Releases"
+  image: /assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png
   links:
     website: https://www.maricoparecords.com/artists/4castle/
-    spotify: null
-    apple_music: null
+    spotify: https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh
+    apple_music: https://music.apple.com/us/artist/4castle/1801052673
     youtube: null
     bandcamp: null
     instagram: null
-  visibility: draft
+  visibility: public

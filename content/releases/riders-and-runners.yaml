@@ -5,31 +5,55 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: draft
+  status: staged
   release_date: '2025-02-21'
   label: Maricopa Records
   publisher: Maricopa Publishing
   upc: null
   catalog_number: null
-  cover_image: assets/releases/riders-and-runners/cover.jpg
+  cover_image: site/public/assets/migrated/19c7200e89eb-Riders-and-runners.png
   hero_image: null
-  summary: ''
-  description: ''
+  summary: "A **haunting, poetic reflection on conflict, fear, and the cycles we repeat**,\
+    \ **\"Riders and Runners\"**blends **echoing guitars, atmospheric reverb, and\
+    \ layered harmonies**into a **moody, introspective rock anthem**. PCBender\u2019\
+    s signature **lyrical depth**and **melancholic storytelling**shine, delivering\
+    \ a track that is both **thought-provoking and sonically immersive**."
+  description: "## Riders And Runners\n\nA **haunting, poetic reflection on conflict,\
+    \ fear, and the cycles we repeat**, **\"Riders and Runners\"**blends **echoing\
+    \ guitars, atmospheric reverb, and layered harmonies**into a **moody, introspective\
+    \ rock anthem**. PCBender\u2019s signature **lyrical depth**and **melancholic\
+    \ storytelling**shine, delivering a track that is both **thought-provoking and\
+    \ sonically immersive**.\n\nThe verses paint a world filled with **hollow pretenders,\
+    \ distorted truths, and unbreakable shadows**\u2014a landscape where motives are\
+    \ twisted, and meaning feels just out of reach. The **pre-chorus**tightens the\
+    \ tension, revealing the **hollow nature of deception**, before the **chorus**delivers\
+    \ its **powerful central theme**:\n_\"The riders turn and run, when the runners\
+    \ turn and fight.\"_\n\nWith its **soaring harmonies and hypnotic melody**, the\
+    \ chorus explores the idea of **shifting roles in struggle\u2014those who flee\
+    \ and those who choose to stand their ground**. The bridge questions whether **change\
+    \ is possible or if we are doomed to repeat the same mistakes**, while the **guitar\
+    \ solo**injects an emotional intensity that **rides the line between resignation\
+    \ and defiance**.\n\nAs the song **fades into its final refrain**, _\"Riders and\
+    \ Runners\"_leaves the listener **caught in the echoes of its message**, urging\
+    \ reflection on the choices we make when faced with truth, power, and fear. With\
+    \ **a cinematic feel and rich, textured sound**, PCBender delivers a song that\
+    \ is both **timeless and deeply relevant**, a **sweeping anthem for those caught\
+    \ in life\u2019s endless turning cycles.**\n\n[](https://open.spotify.com/track/3rGZUFxWB5SyuxJ9mmE8PZ?si=fd658dd515d84382)[](https://music.apple.com/us/album/riders-and-runners/1794085667?i=1794085668)[](https://music.youtube.com/playlist?list=OLAK5uy_m9X26Y0tjoDqu6I0Ot0UUHKQ0b4dXcMcI&si=w8n-WtyVwTJANeVO)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/Riders-and-runners.png)"
   credits:
-    primary_artist: Pcbender
+    primary_artist: PCBender
     songwriter: null
     producer: null
     mastering: null
   links:
-    spotify: null
-    apple_music: null
-    youtube_music: null
+    spotify: https://open.spotify.com/track/3rGZUFxWB5SyuxJ9mmE8PZ?si=fd658dd515d84382
+    apple_music: https://music.apple.com/us/album/riders-and-runners/1794085667?i=1794085668
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_m9X26Y0tjoDqu6I0Ot0UUHKQ0b4dXcMcI&si=w8n-WtyVwTJANeVO
     bandcamp: null
     soundcloud: null
     landing_page: https://www.maricoparecords.com/artists/pcbender/riders-and-runners/
   seo:
-    title: Riders And Runners by Pcbender
-    description: Riders And Runners by Pcbender on Maricopa Records.
+    title: Riders And Runners by PCBender
+    description: Riders And Runners by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
   song:

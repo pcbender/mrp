@@ -5,31 +5,41 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: draft
+  status: staged
   release_date: '2025-03-29'
   label: Maricopa Records
   publisher: Maricopa Publishing
   upc: null
   catalog_number: null
-  cover_image: assets/releases/gemini-rising/cover.jpg
+  cover_image: site/public/assets/migrated/d4a7e8d1e1a5-GeminiRising.png
   hero_image: null
-  summary: ''
-  description: ''
+  summary: "In \"_Gemini Riding_\", **PCBender **fuses intricate guitar work with\
+    \ poetic reflection, capturing the duality of spirit and the thrill of chasing\
+    \ freedom. Inspired by the restless energy of a twin soul on the move, the track\
+    \ balances motion and mystery\u2014riding the line between control and surrender."
+  description: "## Gemini Rising\n\nIn \"_Gemini Riding_\", **PCBender **fuses intricate\
+    \ guitar work with poetic reflection, capturing the duality of spirit and the\
+    \ thrill of chasing freedom. Inspired by the restless energy of a twin soul on\
+    \ the move, the track balances motion and mystery\u2014riding the line between\
+    \ control and surrender.\n\nWith its blend of jazz-inflected progressions, soulful\
+    \ phrasing, and a touch of cosmic wonder, \"_Gemini Riding_\" is a journey through\
+    \ inner landscapes and open skies. PCBender once again proves that introspection\
+    \ can ride with the wind.\n\n[](https://open.spotify.com/album/0kPizQWJRib0yeNrsTdwvz?si=tuH36JQVTpKWTWIDPulZ7Q)[](https://music.apple.com/us/album/gemini-rising/1803972680?i=1803972681)[](https://music.youtube.com/watch?v=3e4LxH_pKrM&si=GwD4y21i-qIT5Qun)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/GeminiRising.png)"
   credits:
-    primary_artist: Pcbender
+    primary_artist: PCBender
     songwriter: null
     producer: null
     mastering: null
   links:
-    spotify: null
-    apple_music: null
-    youtube_music: null
+    spotify: https://open.spotify.com/album/0kPizQWJRib0yeNrsTdwvz?si=tuH36JQVTpKWTWIDPulZ7Q
+    apple_music: https://music.apple.com/us/album/gemini-rising/1803972680?i=1803972681
+    youtube_music: https://music.youtube.com/watch?v=3e4LxH_pKrM&si=GwD4y21i-qIT5Qun
     bandcamp: null
     soundcloud: null
     landing_page: https://www.maricoparecords.com/artists/pcbender/gemini-rising/
   seo:
-    title: Gemini Rising by Pcbender
-    description: Gemini Rising by Pcbender on Maricopa Records.
+    title: Gemini Rising by PCBender
+    description: Gemini Rising by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
   song:

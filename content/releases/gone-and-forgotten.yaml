@@ -5,18 +5,31 @@ release:
   artist_id: 4castle
   model: song
   release_type: single
-  status: draft
+  status: staged
   release_date: '2025-03-12'
   label: Maricopa Records
   publisher: Maricopa Publishing
   upc: null
   catalog_number: null
-  cover_image: assets/releases/gone-and-forgotten/cover.jpg
+  cover_image: site/public/assets/migrated/25d5c9e5d9d6-GoneAndForgotten.png
   hero_image: null
-  summary: ''
-  description: ''
+  summary: '**Gone and Forgotten**'
+  description: "## **Gone and Forgotten**\n\nA haunting reflection on time, loss,\
+    \ and regret, _Gone and Forgotten_is the latest release from **4Castle**, showcasing\
+    \ the band\u2019s signature blend of evocative storytelling, intricate arrangements,\
+    \ and powerful vocal harmonies.\n\nSet against a backdrop of atmospheric instrumentation,\
+    \ the song weaves a somber tale of memories fading like mist, voices lost in the\
+    \ wind, and the quiet ache of what can never be reclaimed. With its haunting melody\
+    \ and poetic lyricism, Gone and Forgotten pulls the listener into a deep emotional\
+    \ landscape where past and present blur.\n\nLush guitars, melancholic keys, and\
+    \ a rhythm section that moves like the ticking hands of time build into an immersive,\
+    \ cinematic experience. The band\u2019s layered vocal harmonies add a deeply human\
+    \ touch, emphasizing the emotional weight of each verse.\n\n**4Castle **continues\
+    \ to explore the boundaries of rock, weaving classic influences with modern sensibilities,\
+    \ and _Gone and Forgotten_stands as a testament to their ability to craft songs\
+    \ that resonate long after the final note fades.\n\n![](https://www.maricoparecords.com/wp-content/uploads/2025/03/GoneAndForgotten.png)"
   credits:
-    primary_artist: 4castle
+    primary_artist: 4Castle
     songwriter: null
     producer: null
     mastering: null
@@ -28,8 +41,8 @@ release:
     soundcloud: null
     landing_page: https://www.maricoparecords.com/artists/4castle/gone-and-forgotten/
   seo:
-    title: Gone and Forgotten by 4castle
-    description: Gone and Forgotten by 4castle on Maricopa Records.
+    title: Gone and Forgotten by 4Castle
+    description: Gone and Forgotten by 4Castle on Maricopa Records.
   automation:
     allow_auto_publish: false
   song:

@@ -19,6 +19,17 @@ def staging_path(repo: Path) -> Path:
     return site_out_root(repo) / "staging"
 
 
+def staged_cover_path(repo: Path, release_id: str = "circuiting") -> Path:
+    for extension in ("json", "yaml", "yml"):
+        path = repo / "content" / "releases" / f"{release_id}.{extension}"
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text()) if extension == "json" else yaml.safe_load(path.read_text())
+        cover = data["release"]["cover_image"]
+        return staging_path(repo) / cover.removeprefix("site/public/")
+    raise AssertionError(f"Missing fixture release: {release_id}")
+
+
 def run_mrp(*args: str, cwd: Path = ROOT, site_out_root: Path | None = None) -> subprocess.CompletedProcess[str]:
     env = os.environ.copy()
     if site_out_root is not None:
@@ -66,8 +77,10 @@ def verified_repo(tmp_path: Path) -> Path:
     write_file(target / "artists/index.html", '<a href="/artists/pcbender/">PCBender</a>\n')
     write_file(target / "artists/pcbender/index.html", '<a href="/releases/circuiting/">Circuiting</a>\n')
     write_file(target / "releases/index.html", '<a href="/releases/circuiting/">Circuiting</a>\n')
-    write_file(target / "releases/circuiting/index.html", '<img src="/assets/releases/circuiting-cover.svg">\n')
-    write_file(target / "assets/releases/circuiting-cover.svg", "<svg></svg>\n")
+    cover_path = staged_cover_path(repo)
+    cover_url = f"/{cover_path.relative_to(target).as_posix()}"
+    write_file(target / "releases/circuiting/index.html", f'<img src="{cover_url}">\n')
+    write_file(cover_path, "image\n")
     write_file(target / "sitemap.xml", "<urlset></urlset>\n")
     write_file(target / "feed.xml", "<rss></rss>\n")
     return repo
@@ -105,14 +118,16 @@ def test_verify_missing_release_page_fails(tmp_path):
 
 def test_verify_missing_cover_image_fails(tmp_path):
     repo = verified_repo(tmp_path)
-    (staging_path(repo) / "assets/releases/circuiting-cover.svg").unlink()
+    cover_path = staged_cover_path(repo)
+    cover_path.unlink()
 
     result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
 
     assert result.returncode == 1
     payload = json.loads(result.stdout)
     assert payload["status"] == "failed"
-    assert any("assets/releases/circuiting-cover.svg" in error["message"] for error in payload["errors"])
+    expected = cover_path.relative_to(staging_path(repo)).as_posix()
+    assert any(expected in error["message"] for error in payload["errors"])
 
 
 def test_verify_placeholder_token_fails(tmp_path):

@@ -1,15 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import CloneLayout from "../../layouts/CloneLayout.astro";
 import ArtistReleaseList from "../../components/ArtistReleaseList.astro";
 import SocialLinks from "../../components/SocialLinks.astro";
-import {
-  cloneDescription,
-  getArtistById,
-  getArtists,
-  getCloneByPath,
-  renderCloneHtml
-} from "../../lib/content.js";
+import { getArtistById, getArtists } from "../../lib/content.js";
 import { releasesForArtist } from "../../lib/catalog";
 
 export function getStaticPaths() {
@@ -21,25 +14,49 @@ const releases = releasesForArtist(artist.id);
 const links = Object.entries(artist.links || {})
   .filter((entry): entry is [string, string] => Boolean(entry[1]))
   .map(([label, href]) => ({ label: label.replaceAll("_", " "), href }));
-const clonePath = `/artists/${artist.id}/`;
-const clone = getCloneByPath(clonePath);
-const cloneHtml = clone ? renderCloneHtml(clone.content_html) : "";
+const bioBlocks = String(artist.bio_long || "")
+  .split("## Releases")[0]
+  .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
+  .replace(/\[[^\]]*\]\([^)]+\)/g, "")
+  .split(/\n{2,}/)
+  .map((block) => block.trim())
+  .filter(Boolean)
+  .filter((block) => block !== `## ${artist.name}`)
+  .map((block) => {
+    if (block.startsWith("## ")) {
+      return { tag: "h2", text: cleanMarkdownText(block.slice(3)) };
+    }
+    if (block.startsWith("### ")) {
+      return { tag: "h3", text: cleanMarkdownText(block.slice(4)) };
+    }
+    return { tag: "p", text: cleanMarkdownText(block.replace(/\n+/g, " ")) };
+  });
+
+function cleanMarkdownText(value: string) {
+  return String(value)
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/_([^_]+)_/g, "$1")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 ---
-{clone ? (
-  <CloneLayout title={`${clone.title} | Maricopa Records`} description={cloneDescription(clone)} path={clonePath}>
-    <article class="wp-clone-content" data-clone-kind={clone.kind}>
-      <div class="wp-content" set:html={cloneHtml} />
-    </article>
-  </CloneLayout>
-) : (
-  <BaseLayout title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
-    <section class="page-heading artist-heading">
-      <img src={artist.image || "/assets/maricopa-mark.svg"} alt="" width="96" height="96" />
-      <p class="eyebrow">Artist</p>
-      <h1>{artist.name}</h1>
-      <p>{artist.bio_short}</p>
-      <SocialLinks links={links} />
+<BaseLayout title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
+  <section class="page-heading artist-heading">
+    <img src={artist.image || "/assets/maricopa-mark.svg"} alt="" width="96" height="96" />
+    <p class="eyebrow">Artist</p>
+    <h1>{artist.name}</h1>
+    <p>{artist.bio_short}</p>
+    <SocialLinks links={links} />
+  </section>
+  {bioBlocks.length > 0 && (
+    <section class="prose">
+      {bioBlocks.map((block) =>
+        block.tag === "h2" ? <h2>{block.text}</h2> : block.tag === "h3" ? <h3>{block.text}</h3> : <p>{block.text}</p>
+      )}
     </section>
-    <ArtistReleaseList artistName={artist.name} releases={releases} />
-  </BaseLayout>
-)}
+  )}
+  <ArtistReleaseList artistName={artist.name} releases={releases} />
+</BaseLayout>
