@@ -1,12 +1,17 @@
 .env
 .env.*
 deploy/targets.local.yaml
+node_modules/
+site/node_modules/
+.venv/
 __pycache__/
 *.py[cod]
 
-builds/**
-!builds/**/
-!builds/**/.gitkeep
+site/dist/
+site/.astro/
+
+builds/
+graphify-out/
 
 reports/**/*.json
 reports/**/*.secret
@@ -17,9 +22,14 @@ assets/processed/**
 !assets/processed/
 !assets/processed/.gitkeep
 
-site/node_modules/
-site/dist/
-site/.astro/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.tmp/
+.cache/
 
-graphify-out/cache/
-graphify-out/.graphify_root
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
