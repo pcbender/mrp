@@ -11,6 +11,15 @@ Rules:
 - Prefer direct source inspection with `rg`, targeted file reads, and project docs unless the user explicitly asks for `/graphify`.
 - If Graphify is run, verify it does not create tracked output before committing.
 
+## Repository Boundaries
+
+- MRP code lives under `mrp/`; Astro source lives under `site/`; canonical content lives under `content/`.
+- `content/` is the publishing source of truth, except for explicitly temporary staging/audit subtrees such as `content/clone/`.
+- `content/clone/` is the temporary v0.1.2 WXR static clone surface. It may contain WordPress HTML/classes while the semantic migration is in progress, but it is not the final content model.
+- Future WordPress migration output must be normalized into the same canonical metadata and asset format used for newly created artists and releases.
+- `migration/staging/`, if present, is audit/staging data and is not final canonical content unless a packet explicitly promotes it.
+- `builds/`, `graphify-out/`, `site/dist/`, `site/.astro/`, and `$MRP_SITE_OUT_ROOT/*` are generated/disposable output. Do not edit them as source and do not commit them.
+
 ## Canto Agent Instructions
 
 This repository is Canto-enabled. Before working, read

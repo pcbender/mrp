@@ -78,6 +78,24 @@ posts; migrated static pages are listed in the sitemap but are not feed items.
 MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
 v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).
 
+## Repository Policy
+
+MRP is the release/content publisher and migration tool; Astro is the website
+builder. Git stores source, canonical content, tests, and docs. Generated site
+output is disposable and must live outside the repository under
+`MRP_SITE_OUT_ROOT`.
+
+Canonical content lives in `content/` and is the format used for both imported
+WordPress content after normalization and future manually added artists,
+releases, pages, and posts. Temporary staging or audit records are allowed only
+when explicitly labeled, such as `content/clone/` during the v0.1.2 WXR clone
+transition. Raw or semi-raw migration staging data belongs under
+`migration/staging/` if that pipeline is added, and is not final canonical
+content unless explicitly promoted.
+
+Do not commit or hand-edit generated HTML under `builds/`, `graphify-out/`,
+`site/dist/`, `site/.astro/`, or `$MRP_SITE_OUT_ROOT/*`.
+
 ## Docs
 
 - [Content model](docs/CONTENT-MODEL.md)
