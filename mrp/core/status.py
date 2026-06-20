@@ -52,7 +52,7 @@ def latest_report(
 ) -> dict[str, Any] | None:
     reports = sorted((root / "reports" / name).glob("*.json"))
     for path in reversed(reports):
-        data = json.loads(path.read_text())
+        data = json.loads(path.read_text(encoding="utf-8"))
         if release and data.get("release") not in {None, release}:
             continue
         if target and data.get("target") != target:
@@ -86,7 +86,7 @@ def find_release(root: Path, release_id: str | None) -> dict[str, Any] | None:
     for path in sorted(release_dir.iterdir()):
         if not path.is_file() or path.suffix not in CONTENT_EXTENSIONS:
             continue
-        data = json.loads(path.read_text()) if path.suffix == ".json" else yaml.safe_load(path.read_text())
+        data = json.loads(path.read_text(encoding="utf-8")) if path.suffix == ".json" else yaml.safe_load(path.read_text(encoding="utf-8"))
         release = data.get("release", {})
         if release.get("id") == release_id:
             release["file_path"] = str(path.relative_to(root))

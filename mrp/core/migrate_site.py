@@ -196,7 +196,7 @@ def planned_writes(inventory: dict[str, Any]) -> dict[str, Any]:
 
 
 def posts_by_slug_from_inventory_source(path: str) -> dict[str, dict[str, Any]]:
-    data = json.loads(Path(path).read_text())
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
     posts = data["payload"]["posts"]
     return {post.get("slug"): post for post in posts if post.get("slug")}
 
@@ -310,7 +310,7 @@ def normalize_canonical_content(root: Path) -> dict[str, Any]:
         if not directory.is_dir():
             continue
         for path in sorted(directory.glob("*.yaml")):
-            data = yaml.safe_load(path.read_text()) or {}
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
             record = data.get(root_key)
             if not isinstance(record, dict) or "content_html" not in record:
                 continue
@@ -458,7 +458,7 @@ def catalog_pages(root: Path) -> tuple[dict[str, dict[str, Any]], dict[tuple[str
     if not pages_dir.is_dir():
         return artist_pages, release_pages
     for path in sorted(pages_dir.glob("*.yaml")):
-        data = yaml.safe_load(path.read_text()) or {}
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         page = data.get("page") or {}
         parts = [part for part in (page.get("normalized_path") or "").split("/") if part]
         if len(parts) == 2 and parts[0] == "artists":
@@ -478,7 +478,7 @@ def clone_artist_page(root: Path, artist_id: str) -> dict[str, Any] | None:
     path = root / "content" / "clone" / "pages" / f"artists-{artist_id}.yaml"
     if not path.is_file():
         return None
-    clone = (yaml.safe_load(path.read_text()) or {}).get("clone") or {}
+    clone = (yaml.safe_load(path.read_text(encoding="utf-8")) or {}).get("clone") or {}
     content = normalize_wordpress_content(clone.get("content_html") or "", str(path.relative_to(root)))
     return {
         "title": clone.get("title") or title_from_slug(artist_id),
@@ -500,8 +500,8 @@ def existing_record_path(directory: Path, record_id: str) -> Path | None:
 
 def load_structured_record(path: Path) -> dict[str, Any]:
     if path.suffix == ".json":
-        return json.loads(path.read_text())
-    return yaml.safe_load(path.read_text()) or {}
+        return json.loads(path.read_text(encoding="utf-8"))
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
 
 
 def serialize_structured_record(path: Path, data: dict[str, Any]) -> str:
@@ -826,7 +826,7 @@ def extract_content_asset_references(root: Path) -> dict[str, set[str]]:
         if not directory.is_dir():
             continue
         for path in sorted(directory.glob("*.yaml")):
-            data = yaml.safe_load(path.read_text()) or {}
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
             html = ((data.get(key) or {}).get("content_html") or "")
             for raw_reference in asset_references_from_html(html):
                 normalized = normalize_asset_url(raw_reference)
@@ -894,7 +894,7 @@ def merge_asset_manifest(root: Path, generated_records: list[dict[str, Any]]) ->
     manifest_path = root / "content" / "assets" / "manifest.yaml"
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
     if manifest_path.exists():
-        manifest = yaml.safe_load(manifest_path.read_text()) or {}
+        manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}
     else:
         manifest = {"assets": []}
     assets = manifest.setdefault("assets", [])

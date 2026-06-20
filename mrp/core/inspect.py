@@ -75,7 +75,7 @@ def count_record_files(path: Path) -> int:
 def count_assets(manifest: Path) -> int:
     if not manifest.is_file():
         return 0
-    data = yaml.safe_load(manifest.read_text()) or {}
+    data = yaml.safe_load(manifest.read_text(encoding="utf-8")) or {}
     assets = data.get("assets", [])
     return len(assets) if isinstance(assets, list) else 0
 

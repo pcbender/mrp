@@ -264,7 +264,7 @@ def exclusion_summary(classifications: list[dict[str, Any]]) -> dict[str, list[d
 
 
 def load_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:

@@ -131,8 +131,8 @@ def compare_route(
         comparison["status"] = "failed"
         return comparison
 
-    source = HtmlSnapshot.from_text(source_file.read_text(errors="ignore"))
-    target = HtmlSnapshot.from_text(target_file.read_text(errors="ignore"))
+    source = HtmlSnapshot.from_text(source_file.read_text(encoding="utf-8", errors="ignore"))
+    target = HtmlSnapshot.from_text(target_file.read_text(encoding="utf-8", errors="ignore"))
     comparison["checks"] = {
         "title": compare_title(route, source, target, warnings),
         "headings": compare_headings(route, source, target, warnings),

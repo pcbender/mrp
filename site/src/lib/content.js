@@ -4,7 +4,9 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
 
-const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
+const repoRoot = process.env.MRP_REPO_ROOT
+  ? resolve(process.env.MRP_REPO_ROOT)
+  : resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
 const publicRoot = resolve(repoRoot, "site/public");
 const publicStatuses = new Set(["staged", "verified", "approved", "live"]);
 const reservedMigratedPaths = new Set(["/", "/about-us/", "/artists/", "/contact/", "/posts/", "/releases/"]);

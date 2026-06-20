@@ -5,6 +5,18 @@ pipeline for the Maricopa Records static site.
 
 ## CLI
 
+Install Python dependencies once per environment:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+On Windows, the same dependency file works from PowerShell:
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
 Run the repo-local wrapper from the repository root:
 
 ```bash
@@ -22,6 +34,17 @@ scripts/mrp release create --artist pcbender --title "Signal Path" --type single
 scripts/mrp migrate-site --source /home/mrose/website-migration --dry-run --json
 scripts/mrp status --release circuiting --json
 ```
+
+On Windows, use the matching launcher from PowerShell or cmd:
+
+```powershell
+.\scripts\mrp.ps1 --help
+.\scripts\mrp.cmd validate --json
+```
+
+This repository keeps tracked text files normalized as LF so the same checkout
+can move between WSL2/Linux and Windows without line-ending churn. Windows-only
+launchers are stored with CRLF endings.
 
 The MRP v0.1 CLI keeps the same entry point and global flags across commands:
 

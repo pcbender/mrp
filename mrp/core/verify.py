@@ -137,7 +137,7 @@ def check_cover_images(result: dict[str, Any], target_path: Path, releases: list
 def check_internal_links(result: dict[str, Any], target_path: Path) -> None:
     checked = 0
     for html_path in sorted(target_path.rglob("*.html")):
-        text = html_path.read_text(errors="ignore")
+        text = html_path.read_text(encoding="utf-8", errors="ignore")
         for href in re.findall(r'href=["\']([^"\']+)["\']', text):
             if should_skip_link(href):
                 continue
@@ -157,7 +157,7 @@ def check_placeholders(result: dict[str, Any], target_path: Path) -> None:
         if is_mirrored_wordpress_asset(target_path, path):
             continue
         scanned += 1
-        text = path.read_text(errors="ignore")
+        text = path.read_text(encoding="utf-8", errors="ignore")
         lower = text.lower()
         for pattern in PLACEHOLDER_PATTERNS:
             matched = pattern in text if pattern.isupper() or pattern.endswith("_") else pattern in lower
@@ -320,7 +320,7 @@ def check_clone_surface(
 
 def target_has_clone_surface(target_path: Path, clone_records: list[dict[str, Any]]) -> bool:
     for html_path in sorted(target_path.rglob("*.html")):
-        text = html_path.read_text(errors="ignore")
+        text = html_path.read_text(encoding="utf-8", errors="ignore")
         if 'data-clone-kind="' in text or "wp-clone-content" in text:
             return True
     return False
@@ -354,7 +354,7 @@ def check_rendered_wordpress_assets(result: dict[str, Any], target_path: Path) -
     checked = 0
     seen: set[tuple[str, str]] = set()
     for html_path in sorted(target_path.rglob("*.html")):
-        text = html_path.read_text(errors="ignore")
+        text = html_path.read_text(encoding="utf-8", errors="ignore")
         for reference in rendered_wordpress_asset_refs(text):
             relative = reference.lstrip("/").split("?", 1)[0].split("#", 1)[0]
             key = (str(html_path.relative_to(target_path)), relative)
@@ -386,7 +386,7 @@ def check_clone_known_markers(result: dict[str, Any], target_path: Path) -> int:
         if not html_path.is_file():
             add_error(result, "clone.marker", f"Missing marker page for {marker['description']}: {marker['route']}")
             continue
-        text = html_path.read_text(errors="ignore")
+        text = html_path.read_text(encoding="utf-8", errors="ignore")
         if marker["marker"] not in text:
             add_error(
                 result,
@@ -424,7 +424,7 @@ def load_redirects(root: Path) -> list[dict[str, Any]]:
     path = root / "content" / "redirects.yaml"
     if not path.is_file():
         return []
-    data = yaml.safe_load(path.read_text()) or {}
+    data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     return data.get("redirects", [])
 
 
@@ -432,14 +432,14 @@ def load_asset_manifest(root: Path) -> dict[str, Any]:
     path = root / "content" / "assets" / "manifest.yaml"
     if not path.is_file():
         return {"assets": []}
-    return yaml.safe_load(path.read_text()) or {"assets": []}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {"assets": []}
 
 
 def load_clone_asset_manifest(root: Path) -> dict[str, Any]:
     path = root / "content" / "clone" / "assets" / "manifest.yaml"
     if not path.is_file():
         return {"clone_assets": []}
-    return yaml.safe_load(path.read_text()) or {"clone_assets": []}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {"clone_assets": []}
 
 
 def check_file(result: dict[str, Any], path: Path, relative: str) -> None:
@@ -476,7 +476,7 @@ def load_records(directory: Path, root_key: str) -> list[dict[str, Any]]:
     for path in sorted(directory.iterdir()):
         if not path.is_file() or path.suffix not in CONTENT_EXTENSIONS:
             continue
-        data = json.loads(path.read_text()) if path.suffix == ".json" else yaml.safe_load(path.read_text())
+        data = json.loads(path.read_text(encoding="utf-8")) if path.suffix == ".json" else yaml.safe_load(path.read_text(encoding="utf-8"))
         record = data.get(root_key, {})
         records.append(record)
     return records
@@ -485,7 +485,7 @@ def load_records(directory: Path, root_key: str) -> list[dict[str, Any]]:
 def latest_deployment(root: Path, target: str) -> dict[str, Any]:
     reports = sorted((root / "reports" / "deployment").glob(f"*-{target}-*.json"))
     for report_path in reversed(reports):
-        data = json.loads(report_path.read_text())
+        data = json.loads(report_path.read_text(encoding="utf-8"))
         if data.get("status") == "passed":
             data["report_path"] = str(report_path.relative_to(root))
             return data

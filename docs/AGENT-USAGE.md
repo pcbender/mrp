@@ -3,8 +3,20 @@
 Use the repo-local wrapper from `/home/mrose/mrp`:
 
 ```bash
+python3 -m pip install -r requirements.txt
 scripts/mrp --help
 ```
+
+When working from Windows at `C:\Dev\mrp`, use:
+
+```powershell
+python -m pip install -r requirements.txt
+.\scripts\mrp.ps1 --help
+.\scripts\mrp.cmd validate --json
+```
+
+Do not depend on Windows Git's global `core.autocrlf`; the repository
+normalizes tracked text files through `.gitattributes`.
 
 Generated site output must live outside the repository. Use the default
 `~/astro-sites/maricoparecords` output root or set:

@@ -43,7 +43,8 @@ function escapeXml(value) {
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
+    .replaceAll('"', "&quot;")
+    .replace(/[^\x00-\x7F]/g, (character) => `&#${character.codePointAt(0)};`);
 }
 
 function rssDate(value) {

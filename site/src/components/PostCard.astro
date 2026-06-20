@@ -1,0 +1,24 @@
+---
+import { postDate, postExcerpt, postImage, postUrl } from "../lib/posts.js";
+
+interface Props {
+  post: Record<string, any>;
+}
+
+const { post } = Astro.props;
+const href = postUrl(post);
+const image = postImage(post);
+const date = postDate(post);
+const excerpt = postExcerpt(post);
+---
+<article class="post-card">
+  <a class="post-card-media" href={href} aria-label={post.title}>
+    <img src={image} alt="" loading="lazy" />
+  </a>
+  <div class="post-card-copy">
+    <p class="post-card-meta">Michael <span aria-hidden="true">/</span> {date} <span aria-hidden="true">/</span> AI / Music</p>
+    <h2><a href={href}>{post.title}</a></h2>
+    <p>{excerpt}</p>
+    <a class="post-card-more" href={href}>Read more</a>
+  </div>
+</article>

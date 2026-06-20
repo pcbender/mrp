@@ -71,7 +71,7 @@ def import_site(repo: str | Path, source: str | Path = DEFAULT_SOURCE) -> dict[s
 
 
 def load_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
