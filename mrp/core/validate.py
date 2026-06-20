@@ -139,15 +139,15 @@ def load_records(
 def load_content(path: Path, errors: list[dict[str, str]]) -> Any | None:
     try:
         if path.suffix == ".json":
-            return json.loads(path.read_text())
-        return yaml.safe_load(path.read_text())
+            return json.loads(path.read_text(encoding="utf-8"))
+        return yaml.safe_load(path.read_text(encoding="utf-8"))
     except Exception as exc:  # noqa: BLE001 - converted to validation error.
         errors.append(error_record(path, "$", f"Could not parse content: {exc}"))
         return None
 
 
 def load_schema(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def validate_schema(path: Path, data: Any, schema_path: Path) -> list[dict[str, str]]:
@@ -230,7 +230,7 @@ def validate_release_assets(root: Path, releases: list[dict[str, Any]]) -> list[
 def report_path(root: Path, generated_at: str) -> str:
     timestamp = generated_at.replace("-", "").replace(":", "").replace("Z", "Z")
     path = root / "reports" / "validation" / f"{timestamp}.json"
-    return str(path.relative_to(root))
+    return path.relative_to(root).as_posix()
 
 
 def write_report(root: Path, result: dict[str, Any]) -> None:

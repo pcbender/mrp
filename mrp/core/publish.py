@@ -84,7 +84,7 @@ def publish(
 def matching_approval(root: Path, release: str | None, build: str | None) -> dict[str, Any] | None:
     reports = sorted((root / "reports" / "approval").glob("*.json"))
     for report_path in reversed(reports):
-        data = json.loads(report_path.read_text())
+        data = json.loads(report_path.read_text(encoding="utf-8"))
         if data.get("status") != "approved":
             continue
         if release and data.get("release") not in {None, release}:
@@ -119,7 +119,7 @@ def update_release_status(root: Path, release_id: str, status: str) -> None:
     for path in sorted((root / "content" / "releases").iterdir()):
         if not path.is_file() or path.suffix not in CONTENT_EXTENSIONS:
             continue
-        data = json.loads(path.read_text()) if path.suffix == ".json" else yaml.safe_load(path.read_text())
+        data = json.loads(path.read_text(encoding="utf-8")) if path.suffix == ".json" else yaml.safe_load(path.read_text(encoding="utf-8"))
         release = data.get("release", {})
         if release.get("id") != release_id:
             continue

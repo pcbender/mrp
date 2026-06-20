@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import subprocess
 from datetime import UTC, datetime
 from pathlib import Path
@@ -51,12 +52,38 @@ def build_repository(
             result["report_path"] = write_build_report(root, build_id, result)
             return result
 
-    site_dir = root / "site"
     build_dir = build_artifact_dir(root, build_id)
     build_dir.mkdir(parents=True, exist_ok=True)
-    command = ["npm", "run", "build", "--", "--outDir", str(build_dir)]
+    try:
+        site_workspace = prepare_site_workspace(root, build_dir, build_id)
+    except OSError as exc:
+        result = base_result(root, build_id, generated_at, release)
+        result["validation_report_path"] = validation["report_path"] if validation else None
+        result.update(
+            {
+                "status": "failed",
+                "stage": "static_build",
+                "message": f"Could not prepare static site workspace: {exc}",
+                "stdout": "",
+                "stderr": str(exc),
+                "exit_code": 1,
+            }
+        )
+        result["report_path"] = write_build_report(root, build_id, result)
+        return result
+    command = [
+        node_executable(),
+        str(root / "site" / "scripts" / "astro.mjs"),
+        "build",
+        "--root",
+        str(site_workspace),
+        "--outDir",
+        str(build_dir),
+    ]
     env = os.environ.copy()
     env["ASTRO_TELEMETRY_DISABLED"] = "1"
+    env["MRP_ASTRO_CACHE_DIR"] = str(build_dir.parent.parent.parent / "cache" / build_id)
+    env["MRP_REPO_ROOT"] = str(root)
     result = base_result(root, build_id, generated_at, release)
     result["validation_report_path"] = validation["report_path"] if validation else None
     result["command_line"] = command
@@ -64,7 +91,7 @@ def build_repository(
     try:
         completed = subprocess.run(
             command,
-            cwd=site_dir,
+            cwd=site_workspace,
             text=True,
             capture_output=True,
             check=False,
@@ -111,6 +138,7 @@ def build_repository(
         result["report_path"] = write_build_report(root, build_id, result)
         return result
 
+    normalize_generated_text(build_dir)
     files = inventory_files(build_dir)
     manifest = {
         "build_id": build_id,
@@ -182,11 +210,61 @@ def inventory_files(build_dir: Path) -> list[dict[str, Any]]:
     return files
 
 
+def normalize_generated_text(build_dir: Path) -> None:
+    for path in sorted(build_dir.rglob("*")):
+        if path.suffix.lower() not in {".html", ".xml"} or not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        normalized = text.replace("\r\n", "\n").replace("\r", "\n")
+        normalized = normalized.replace("&amp;#", "&#")
+        normalized = normalized.replace("&amp;#x", "&#x")
+        normalized = normalized.encode("ascii", "xmlcharrefreplace").decode("ascii")
+        path.write_text(normalized, encoding="ascii")
+
+
+def npm_executable() -> str:
+    return "npm.cmd" if os.name == "nt" else "npm"
+
+
+def node_executable() -> str:
+    return "node.exe" if os.name == "nt" else "node"
+
+
+def prepare_site_workspace(root: Path, build_dir: Path, build_id: str) -> Path:
+    source = root / "site"
+    workspace = build_dir.parent.parent.parent / "cache" / build_id / "site"
+    if workspace.exists():
+        shutil.rmtree(workspace)
+    shutil.copytree(source, workspace, ignore=shutil.ignore_patterns("node_modules", "dist", ".astro", "public"))
+    link_directory(source / "node_modules", workspace / "node_modules")
+    link_directory(source / "public", workspace / "public")
+    return workspace
+
+
+def link_directory(source: Path, target: Path) -> None:
+    if not source.is_dir():
+        return
+    try:
+        os.symlink(source, target, target_is_directory=True)
+        return
+    except OSError:
+        if os.name == "nt":
+            completed = subprocess.run(
+                ["cmd", "/c", "mklink", "/J", str(target), str(source)],
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+            if completed.returncode == 0:
+                return
+        shutil.copytree(source, target)
+
+
 def write_build_report(root: Path, build_id: str, result: dict[str, Any]) -> str:
     report_path = root / "reports" / "build" / f"{build_id}.json"
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
-    return str(report_path.relative_to(root))
+    return report_path.relative_to(root).as_posix()
 
 
 def format_build(result: dict[str, Any]) -> str:

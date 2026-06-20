@@ -161,12 +161,12 @@ def collect_asset_references(root: Path, page_root: Path) -> dict[str, set[str]]
         if not directory.is_dir():
             continue
         for path in sorted(directory.glob("*.yaml")):
-            data = yaml.safe_load(path.read_text()) or {}
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
             html = (data.get("clone") or {}).get("content_html") or ""
             add_references(references, html, str(path.relative_to(root)))
 
     for path in sorted(page_root.rglob("*.html")):
-        html = path.read_text(errors="ignore")
+        html = path.read_text(encoding="utf-8", errors="ignore")
         add_references(references, html, str(path.relative_to(page_root.parent.parent)))
     return references
 

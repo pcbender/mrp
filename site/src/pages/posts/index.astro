@@ -1,23 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getMigratedPosts, migratedDescription } from "../../lib/content.js";
+import PostCard from "../../components/PostCard.astro";
+import { allStructuredPosts } from "../../lib/posts.js";
 
-const posts = getMigratedPosts().sort((left, right) =>
-  String(right.published_at || "").localeCompare(String(left.published_at || ""))
-);
+const posts = allStructuredPosts();
 ---
 <BaseLayout title="Posts | Maricopa Records" description="News and posts from Maricopa Records.">
-  <section class="page-heading">
-    <p class="eyebrow">Posts</p>
-    <h1>News and notes</h1>
+  <section class="page-heading posts-heading">
+    <h1>Posts</h1>
   </section>
-  <section class="content-list">
+  <section class="post-card-grid posts-index" aria-label="Posts">
     {posts.map((post) => (
-      <article>
-        <p class="eyebrow">{post.published_at}</p>
-        <h2><a href={`/${post.slug}/`}>{post.title}</a></h2>
-        <p>{migratedDescription(post)}</p>
-      </article>
+      <PostCard post={post} />
     ))}
   </section>
 </BaseLayout>

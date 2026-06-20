@@ -89,7 +89,7 @@ def run_head_extraction(root: Path, source: str | Path) -> dict[str, Any]:
 
 def page_head_record(path: Path, page_root: Path) -> dict[str, Any]:
     parser = HeadParser()
-    parser.feed(path.read_text(errors="ignore"))
+    parser.feed(path.read_text(encoding="utf-8", errors="ignore"))
     capture_path = str(path.relative_to(page_root.parent.parent))
     route = route_from_capture_path(path, page_root)
     return {

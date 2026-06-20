@@ -103,7 +103,7 @@ def load_targets(root: Path) -> tuple[dict[str, Any], list[str]]:
         if not path.exists():
             continue
         try:
-            data = yaml.safe_load(path.read_text()) or {}
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         except Exception as exc:  # noqa: BLE001 - converted to structured config error.
             errors.append(f"Could not parse {path}: {exc}")
             continue
@@ -121,7 +121,7 @@ def resolve_build(root: Path, build: str | None) -> dict[str, Any]:
         report_path = root / "reports" / "build" / f"{build}.json"
         if not report_path.is_file():
             return failed_build(f"Unknown build report: {build}")
-        report = json.loads(report_path.read_text())
+        report = json.loads(report_path.read_text(encoding="utf-8"))
         raw_build_path = report.get("build_path")
         if not raw_build_path:
             return failed_build(f"Build report has no build_path: {build}")
@@ -139,7 +139,7 @@ def resolve_build(root: Path, build: str | None) -> dict[str, Any]:
 
     reports = sorted((root / "reports" / "build").glob("*.json"))
     for report_path in reversed(reports):
-        report = json.loads(report_path.read_text())
+        report = json.loads(report_path.read_text(encoding="utf-8"))
         if report.get("status") != "passed":
             continue
         build_id = report.get("build_id") or report_path.stem
@@ -183,7 +183,7 @@ def validate_target(root: Path, target_name: str, config: dict[str, Any]) -> dic
                 "message": f"Missing deploy marker: {marker}",
             }
         expected = f"MARICOPA_RECORDS_DEPLOY_TARGET={config.get('environment', target_name)}"
-        marker_text = marker.read_text().strip().splitlines()
+        marker_text = marker.read_text(encoding="utf-8").strip().splitlines()
         if expected not in marker_text:
             return {
                 "status": "failed",

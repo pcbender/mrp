@@ -57,7 +57,7 @@ def latest_verification(root: Path) -> dict[str, Any] | None:
     if not reports:
         return None
     report_path = reports[-1]
-    data = json.loads(report_path.read_text())
+    data = json.loads(report_path.read_text(encoding="utf-8"))
     data["report_path"] = str(report_path.relative_to(root))
     return data
 

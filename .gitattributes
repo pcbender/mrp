@@ -1,1 +1,17 @@
+* text=auto eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+*.jpg -text
+*.jpeg -text
+*.png -text
+*.gif -text
+*.ico -text
+*.webp -text
+*.mp3 -text
+*.wav -text
+*.zip -text
+
 site/public/assets/wp/** -text -diff

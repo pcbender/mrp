@@ -235,7 +235,7 @@ def write_clone_record(
 
 
 def load_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def write_report(root: Path, generated_at: str, result: dict[str, Any]) -> str:

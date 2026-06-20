@@ -112,7 +112,7 @@ def clone_records(root: Path) -> list[dict[str, Any]]:
         if not directory.is_dir():
             continue
         for path in sorted(directory.glob("*.yaml")):
-            data = yaml.safe_load(path.read_text()) or {}
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
             clone = data.get("clone") or {}
             records.append(
                 {
@@ -143,14 +143,14 @@ def route_map(root: Path) -> set[str]:
     for record in clone_records(root):
         routes.add(record["canonical_path"])
         path = root / record["source"]
-        data = yaml.safe_load(path.read_text()) or {}
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         route = (data.get("clone") or {}).get("route") or {}
         for alias in route.get("aliases") or []:
             routes.add(normalize_path(alias))
 
     redirects_path = root / "content" / "redirects.yaml"
     if redirects_path.is_file():
-        redirects = (yaml.safe_load(redirects_path.read_text()) or {}).get("redirects") or []
+        redirects = (yaml.safe_load(redirects_path.read_text(encoding="utf-8")) or {}).get("redirects") or []
         for redirect in redirects:
             if redirect.get("source_path"):
                 routes.add(normalize_path(redirect["source_path"]))
@@ -160,7 +160,7 @@ def route_map(root: Path) -> set[str]:
 
 
 def load_record(path: Path) -> dict[str, Any]:
-    text = path.read_text()
+    text = path.read_text(encoding="utf-8")
     return json.loads(text) if path.suffix == ".json" else yaml.safe_load(text) or {}
 
 
@@ -168,7 +168,7 @@ def mirrored_asset_paths(root: Path) -> set[str]:
     paths = set()
     manifest_path = root / "content" / "clone" / "assets" / "manifest.yaml"
     if manifest_path.is_file():
-        for asset in (yaml.safe_load(manifest_path.read_text()) or {}).get("clone_assets") or []:
+        for asset in (yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}).get("clone_assets") or []:
             if asset.get("status") == "mirrored" and asset.get("local_path"):
                 paths.add(asset["local_path"])
     asset_root = root / "site" / "public" / "assets" / "wp"
@@ -238,7 +238,7 @@ def review_head_dependencies(root: Path, asset_paths: set[str]) -> list[dict[str
     manifest_path = root / "content" / "clone" / "head-manifest.yaml"
     if not manifest_path.is_file():
         return []
-    manifest = (yaml.safe_load(manifest_path.read_text()) or {}).get("clone_head") or {}
+    manifest = (yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}).get("clone_head") or {}
     dependencies = []
     shared = manifest.get("shared") or {}
     for key in ("stylesheets", "scripts", "preloads"):

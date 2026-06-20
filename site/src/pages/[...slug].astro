@@ -1,7 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CloneLayout from "../layouts/CloneLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PostCard from "../components/PostCard.astro";
 import ReleaseLanding from "../components/ReleaseLanding.astro";
+import { postDate, postImage, relatedPosts } from "../lib/posts.js";
 import {
   cloneDescription,
   clonePathParam,
@@ -44,13 +47,57 @@ const routedArtist = routedRelease ? getArtistById(routedRelease.artist_id) : nu
 const isStructuredReleaseRoute = Boolean(routedRelease && routedRelease.artist_id === pathParts[1]);
 const description = isClone ? cloneDescription(entry) : migratedDescription(entry);
 const html = isClone ? renderCloneHtml(entry.content_html) : renderMigratedHtml(entry.content_html);
+const normalizedPath = String(path || "").replace(/\/?$/, "/");
+const isBlogPost = entry.kind === "blog_post" || Boolean(entry.published_at);
+const postRelated = isBlogPost ? relatedPosts(entry, 2) : [];
+const licensingPaths = new Set([
+  "/licensing-custom-songs/",
+  "/licensing-custom-songs/music-licensing/",
+  "/licensing-custom-songs/custom-songs-for-hire/"
+]);
+const isLicensingPage = licensingPaths.has(normalizedPath);
+const licensingBreadcrumbs = normalizedPath === "/licensing-custom-songs/"
+  ? [{ label: "Licensing & Custom Songs" }]
+  : [
+      { label: "Licensing & Custom Songs", href: "/licensing-custom-songs/" },
+      { label: entry.title }
+    ];
+const licensingHeroImage = "/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png";
 ---
 {isStructuredReleaseRoute ? (
   <BaseLayout title={routedRelease.seo.title} description={routedRelease.seo.description}>
     <ReleaseLanding release={routedRelease} artist={routedArtist} />
   </BaseLayout>
+) : isBlogPost ? (
+  <BaseLayout title={`${title} | Maricopa Records`} description={description}>
+    <article class="post-detail">
+      <header class="content-hero post-hero" style={`--content-hero-image: url("${postImage(entry)}")`}>
+        <p class="post-hero-meta">Posted by Michael on {postDate(entry)} <span aria-hidden="true">/</span> AI / Music</p>
+        <h1>{entry.title}</h1>
+        <Breadcrumbs items={[
+          { label: "Posts", href: "/posts/" },
+          { label: entry.title }
+        ]} />
+      </header>
+      <div class="wp-content post-content" set:html={html} />
+      {postRelated.length > 0 && (
+        <aside class="related-posts" aria-labelledby="related-posts-heading">
+          <h2 id="related-posts-heading">Related Posts</h2>
+          <div class="post-card-grid related-post-grid">
+            {postRelated.map((post) => <PostCard post={post} />)}
+          </div>
+        </aside>
+      )}
+    </article>
+  </BaseLayout>
 ) : isClone ? (
   <CloneLayout title={`${title} | Maricopa Records`} description={description} path={path}>
+    {isLicensingPage && (
+      <header class="content-hero licensing-hero" style={`--content-hero-image: url("${licensingHeroImage}")`}>
+        <h1>{entry.title}</h1>
+        <Breadcrumbs items={licensingBreadcrumbs} />
+      </header>
+    )}
     <article class="wp-clone-content" data-clone-kind={entry.kind}>
       <div class="wp-content" set:html={html} />
     </article>
@@ -58,11 +105,18 @@ const html = isClone ? renderCloneHtml(entry.content_html) : renderMigratedHtml(
 ) : (
   <BaseLayout title={`${title} | Maricopa Records`} description={description}>
     <article class="migrated-content">
-      <header class="page-heading">
-        <p class="eyebrow">{entry.published_at ? "News" : "Page"}</p>
-        <h1>{entry.title}</h1>
-        {entry.excerpt && <p>{entry.excerpt}</p>}
-      </header>
+      {isLicensingPage ? (
+        <header class="content-hero licensing-hero" style={`--content-hero-image: url("${licensingHeroImage}")`}>
+          <h1>{entry.title}</h1>
+          <Breadcrumbs items={licensingBreadcrumbs} />
+        </header>
+      ) : (
+        <header class="page-heading">
+          <p class="eyebrow">{entry.published_at ? "News" : "Page"}</p>
+          <h1>{entry.title}</h1>
+          {entry.excerpt && <p>{entry.excerpt}</p>}
+        </header>
+      )}
       <div class="wp-content" set:html={html} />
     </article>
   </BaseLayout>
