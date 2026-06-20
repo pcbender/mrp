@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArtistReleaseList from "../../components/ArtistReleaseList.astro";
-import SocialLinks from "../../components/SocialLinks.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import StreamingLinks from "../../components/StreamingLinks.astro";
 import { getArtistById, getArtists } from "../../lib/content.js";
 import { releasesForArtist } from "../../lib/catalog";
 
@@ -12,8 +13,10 @@ export function getStaticPaths() {
 const artist = getArtistById(Astro.params.slug);
 const releases = releasesForArtist(artist.id);
 const links = Object.entries(artist.links || {})
+  .filter(([label, href]) => !isLocalSourceWebsite(label, href))
+  .filter(([label]) => ["spotify", "apple_music", "youtube_music", "youtube"].includes(label))
   .filter((entry): entry is [string, string] => Boolean(entry[1]))
-  .map(([label, href]) => ({ label: label.replaceAll("_", " "), href }));
+  .map(([label, href]) => ({ label: label === "youtube" ? "youtube music" : label.replaceAll("_", " "), href }));
 const bioBlocks = String(artist.bio_long || "")
   .split("## Releases")[0]
   .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
@@ -42,21 +45,30 @@ function cleanMarkdownText(value: string) {
     .replace(/\s+/g, " ")
     .trim();
 }
+
+function isLocalSourceWebsite(label: string, href: unknown) {
+  return label === "website" && /^https:\/\/(?:www\.)?maricoparecords\.com\/artists\//.test(String(href || ""));
+}
 ---
 <BaseLayout title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
-  <section class="page-heading artist-heading">
-    <img src={artist.image || "/assets/maricopa-mark.svg"} alt="" width="96" height="96" />
-    <p class="eyebrow">Artist</p>
+  <header class="artist-hero" style={`--artist-hero-image: url("${artist.image || "/assets/maricopa-mark.svg"}")`}>
     <h1>{artist.name}</h1>
-    <p>{artist.bio_short}</p>
-    <SocialLinks links={links} />
-  </section>
-  {bioBlocks.length > 0 && (
-    <section class="prose">
+    <Breadcrumbs items={[
+      { label: "Artists", href: "/artists/" },
+      { label: artist.name },
+    ]} />
+  </header>
+
+  <section class="artist-profile-card">
+    <div>
+      <p class="eyebrow">Artist</p>
+      <h1>{artist.name}</h1>
       {bioBlocks.map((block) =>
         block.tag === "h2" ? <h2>{block.text}</h2> : block.tag === "h3" ? <h3>{block.text}</h3> : <p>{block.text}</p>
       )}
-    </section>
-  )}
+      <StreamingLinks links={links} />
+    </div>
+    <img src={artist.image || "/assets/maricopa-mark.svg"} alt="" width="320" height="320" />
+  </section>
   <ArtistReleaseList artistName={artist.name} releases={releases} />
 </BaseLayout>

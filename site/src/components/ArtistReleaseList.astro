@@ -15,7 +15,7 @@ const { artistName, releases } = Astro.props;
     <h2>{artistName} catalog</h2>
   </div>
   {releases.length > 0 ? (
-    <ReleaseGrid releases={releases} />
+    <ReleaseGrid releases={releases} rich />
   ) : (
     <p class="empty-state">No public releases yet.</p>
   )}

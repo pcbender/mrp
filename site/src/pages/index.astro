@@ -8,21 +8,12 @@ const artists = artistCards();
 const releases = latestReleases();
 ---
 <BaseLayout title="Maricopa Records" description="Independent releases from Maricopa Records.">
-  <section class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow">Maricopa Records</p>
-      <h1>Moving Music Forward</h1>
-      <p>If You Feel, It's Real</p>
-      <div class="hero-actions">
-        <a class="button primary" href="/releases/">Releases</a>
-        <a class="button" href="/artists/">Artists</a>
-      </div>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <img src="/assets/maricopa-mark.svg" alt="" width="180" height="180" />
-    </div>
+  <section class="page-heading centered-page home-intro">
+    <p class="eyebrow">Maricopa Records</p>
+    <h1>Moving Music Forward</h1>
+    <p>Independent releases, artists, and stories from Maricopa Records. If you feel, it's real.</p>
   </section>
 
-  <ReleaseCarousel releases={releases} />
-  <ArtistCarousel artists={artists} />
+  <ReleaseCarousel releases={releases} variant="media" />
+  <ArtistCarousel artists={artists} variant="media" />
 </BaseLayout>

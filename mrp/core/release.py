@@ -92,7 +92,6 @@ def release_record(artist: str, title: str, slug: str, release_type: str) -> dic
             "youtube_music": None,
             "bandcamp": None,
             "soundcloud": None,
-            "landing_page": None,
         },
         "seo": {
             "title": f"{title} by {artist}",

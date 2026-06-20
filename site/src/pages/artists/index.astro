@@ -1,23 +1,50 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArtistCard from "../../components/ArtistCard.astro";
-import { artistReleaseCount, getArtists } from "../../lib/content.js";
+import { artistCards } from "../../lib/catalog";
 
-const artists = getArtists();
+const artists = artistCards();
 ---
 <BaseLayout title="Artists | Maricopa Records" description="Artists on Maricopa Records.">
-  <section class="page-heading">
-    <p class="eyebrow">Artists</p>
-    <h1>Maricopa Records roster</h1>
+  <section class="artists-intro-panel">
+    <div>
+      <h1>Our Artists</h1>
+      <p>
+        At Maricopa Records, our artists are the heart and soul of everything we do. We are proud to represent a
+        diverse and innovative roster of talent, blending AI-driven musicians with human creators to shape the future
+        of music. From high-energy rock anthems to intimate storytelling ballads, our artists push creative boundaries
+        and redefine what's possible in modern sound.
+      </p>
+      <p>
+        Each artist at Maricopa Records brings a unique voice and perspective, creating music that resonates across
+        genres and generations. Whether it's the raw, rebellious energy of STAB or the seasoned, soulful storytelling
+        of PCBender, our artists are pioneers in a new era of musical expression. We celebrate their individuality and
+        provide them with the tools, technology, and support they need to bring their visions to life.
+      </p>
+      <h2>Join the Maricopa Records Family</h2>
+      <p>
+        If you're ready to be part of a label that's <strong>Moving - Music - Forward</strong>, we'd love to hear from
+        you. Submit your <a href="/contact/">demo or portfolio</a> and let's create something extraordinary together.
+      </p>
+      <p><strong>Discover the future of music. Join Maricopa Records.</strong></p>
+    </div>
   </section>
-  <section class="card-grid page-grid">
-    {artists.map((artist) => (
-      <ArtistCard
-        name={artist.name}
-        href={`/artists/${artist.id}/`}
-        summary={`${artistReleaseCount(artist.id)} public release${artistReleaseCount(artist.id) === 1 ? "" : "s"}`}
-        image={artist.image}
-      />
-    ))}
+
+  <section class="artists-roster page-grid">
+    <div class="section-heading section-heading-centered">
+      <h2>Artist Roster</h2>
+    </div>
+    <div class="card-grid artist-roster-grid">
+      {artists.map((artist) => (
+        <ArtistCard
+          name={artist.name}
+          href={artist.href}
+          summary={artist.bioSummary || artist.summary}
+          meta={artist.summary}
+          image={artist.image}
+          rich
+        />
+      ))}
+    </div>
   </section>
 </BaseLayout>

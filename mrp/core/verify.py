@@ -17,7 +17,7 @@ CONTENT_EXTENSIONS = {".yaml", ".yml", ".json"}
 PLACEHOLDER_PATTERNS = ["TODO", "TBD", "FIXME", "lorem ipsum", "example.com", "INSERT_", "PLACEHOLDER"]
 TEXT_EXTENSIONS = {".html", ".css", ".js", ".json", ".xml", ".txt", ".php"}
 EXCLUDED_MIGRATION_PATHS = ["cart", "checkout", "my-account", "account", "payment", "shop"]
-BASELINE_V01_ROUTES = {"/", "/about-us/", "/artists/", "/catalog/", "/contact/", "/posts/", "/releases/"}
+BASELINE_V01_ROUTES = {"/", "/about-us/", "/artists/", "/contact/", "/posts/", "/releases/"}
 CLONE_KNOWN_MARKERS = [
     {
         "route": "/artists/pcbender/",

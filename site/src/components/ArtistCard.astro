@@ -3,15 +3,19 @@ interface Props {
   name: string;
   href: string;
   summary?: string;
+  meta?: string;
   image?: string;
+  rich?: boolean;
 }
 
-const { name, href, summary = "Maricopa Records artist", image } = Astro.props;
+const { name, href, summary = "Maricopa Records artist", meta = "", image, rich = false } = Astro.props;
 ---
-<article class="artist-card">
+<article class:list={["artist-card", rich && "artist-card-rich"]}>
   <a href={href}>
     {image ? <img class="artist-image" src={image} alt="" loading="lazy" /> : <span class="artist-mark" aria-hidden="true">{name.slice(0, 1)}</span>}
     <h3>{name}</h3>
+    {rich && meta ? <span class="artist-card-meta">{meta}</span> : null}
     <p>{summary}</p>
+    {rich && <span class="release-more">More...</span>}
   </a>
 </article>

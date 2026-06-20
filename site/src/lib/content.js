@@ -7,7 +7,7 @@ import yaml from "js-yaml";
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
 const publicRoot = resolve(repoRoot, "site/public");
 const publicStatuses = new Set(["staged", "verified", "approved", "live"]);
-const reservedMigratedPaths = new Set(["/", "/about-us/", "/artists/", "/catalog/", "/contact/", "/posts/", "/releases/"]);
+const reservedMigratedPaths = new Set(["/", "/about-us/", "/artists/", "/contact/", "/posts/", "/releases/"]);
 const localHosts = new Set(["maricoparecords.com", "www.maricoparecords.com"]);
 
 function readRecords(relativeDir, rootKey) {
@@ -66,6 +66,7 @@ export function releaseCoverUrl(release) {
 
 export function streamingLinks(release) {
   return Object.entries(release?.links || {})
+    .filter(([key]) => key !== "landing_page")
     .filter(([, value]) => Boolean(value))
     .map(([key, href]) => ({ label: key.replaceAll("_", " "), href }));
 }
@@ -314,7 +315,6 @@ function migratedRouteMap() {
     ["/", "/"],
     ["/about-us/", "/about-us/"],
     ["/artists/", "/artists/"],
-    ["/catalog/", "/catalog/"],
     ["/contact/", "/contact/"],
     ["/posts/", "/posts/"],
     ["/releases/", "/releases/"]

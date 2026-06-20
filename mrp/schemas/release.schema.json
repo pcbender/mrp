@@ -103,8 +103,7 @@
         "apple_music": {"type": ["string", "null"]},
         "youtube_music": {"type": ["string", "null"]},
         "bandcamp": {"type": ["string", "null"]},
-        "soundcloud": {"type": ["string", "null"]},
-        "landing_page": {"type": ["string", "null"]}
+        "soundcloud": {"type": ["string", "null"]}
       }
     },
     "song": {
@@ -119,7 +118,8 @@
         "duration": {"type": ["string", "null"]},
         "explicit": {"type": "boolean"},
         "preview_audio": {"type": ["string", "null"]},
-        "lyrics_excerpt": {"type": ["string", "null"]}
+        "lyrics_excerpt": {"type": ["string", "null"]},
+        "links": {"$ref": "#/$defs/links"}
       }
     }
   }

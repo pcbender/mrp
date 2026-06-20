@@ -1,11 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CloneLayout from "../layouts/CloneLayout.astro";
+import ReleaseLanding from "../components/ReleaseLanding.astro";
 import {
   cloneDescription,
   clonePathParam,
+  getArtistById,
   getCloneRoutes,
   getMigratedRoutes,
+  getReleaseBySlug,
   migratedDescription,
   migratedPathParam,
   renderCloneHtml,
@@ -35,10 +38,18 @@ const { entry, source } = Astro.props;
 const title = entry.seo?.title || entry.title;
 const isClone = source === "clone";
 const path = isClone ? entry.normalized_path : entry.normalized_path;
+const pathParts = String(path || "").split("/").filter(Boolean);
+const routedRelease = isClone && pathParts[0] === "artists" && pathParts.length === 3 ? getReleaseBySlug(pathParts[2]) : null;
+const routedArtist = routedRelease ? getArtistById(routedRelease.artist_id) : null;
+const isStructuredReleaseRoute = Boolean(routedRelease && routedRelease.artist_id === pathParts[1]);
 const description = isClone ? cloneDescription(entry) : migratedDescription(entry);
 const html = isClone ? renderCloneHtml(entry.content_html) : renderMigratedHtml(entry.content_html);
 ---
-{isClone ? (
+{isStructuredReleaseRoute ? (
+  <BaseLayout title={routedRelease.seo.title} description={routedRelease.seo.description}>
+    <ReleaseLanding release={routedRelease} artist={routedArtist} />
+  </BaseLayout>
+) : isClone ? (
   <CloneLayout title={`${title} | Maricopa Records`} description={description} path={path}>
     <article class="wp-clone-content" data-clone-kind={entry.kind}>
       <div class="wp-content" set:html={html} />

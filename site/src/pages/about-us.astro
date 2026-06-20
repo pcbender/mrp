@@ -1,12 +1,71 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const aboutImage = "/assets/migrated/f38a42a461ad-AboutUsImage.png";
+const heroImage = "/assets/wp/wp-content/uploads/2025/02/Two-Tree-Road-611x350.jpg";
 ---
 <BaseLayout title="About Us | Maricopa Records" description="About Maricopa Records.">
-  <section class="page-heading">
-    <p class="eyebrow">About</p>
-    <h1>Independent releases with a durable publishing pipeline</h1>
+  <section class="about-page-hero" style={`--about-hero-image: url("${heroImage}")`}>
+    <h1>About Us</h1>
+    <Breadcrumbs items={[{ label: "About Us" }]} />
   </section>
-  <section class="prose">
-    <p>Maricopa Records publishes artist, song, album, licensing, and catalog content from structured release records.</p>
+
+  <section class="about-content-panel">
+    <h2>Welcome to Maricopa Records</h2>
+    <div class="about-lead-grid">
+      <img src={aboutImage} alt="" width="1024" height="1024" />
+      <div>
+        <p>
+          Maricopa Records is an innovative music production and distribution company at the intersection of AI
+          technology and analog creativity. We specialize in crafting unique music, lyrics, images, and videos using a
+          fusion of cutting-edge artificial intelligence and traditional recording techniques. Our mission is to push
+          the boundaries of artistic expression, creating fresh, genre-defying music that captivates audiences
+          worldwide.
+        </p>
+        <p>
+          With a commitment to authenticity and high-quality production, we embrace both the digital revolution and the
+          warmth of analog sound. Our roster of artists includes groundbreaking AI-driven performers as well as human
+          collaborators, all contributing to a sonic landscape that challenges conventions and redefines what's possible
+          in modern music.
+        </p>
+        <p>
+          At Maricopa Records, we are more than just a label - we are a creative powerhouse, a platform for artists,
+          and a home for those who want to explore uncharted musical territories. Whether it's the high-energy 80s rock
+          revival of STAB or the storytelling wisdom of PCBender, our artists represent a bold new era of sound and
+          innovation.
+        </p>
+        <p><strong>Moving - Music - Forward</strong> - this is our passion, our mission, and our promise.</p>
+      </div>
+    </div>
+
+    <div class="about-join-grid">
+      <div>
+        <p>
+          Are you an artist looking for a label that embraces the future while honoring the past? Whether you're a
+          musician, vocalist, producer, or AI-driven creator, we want to hear from you. Maricopa Records is always on
+          the lookout for fresh talent who share our passion for music and innovation.
+        </p>
+        <p>What we offer:</p>
+        <ul>
+          <li>A forward-thinking approach to music production and distribution</li>
+          <li>Access to AI-powered creative tools and high-quality analog recording techniques</li>
+          <li>Collaboration with a diverse network of artists and producers</li>
+          <li>Support in branding, promotion, and digital distribution</li>
+        </ul>
+        <p>
+          If you have a unique sound, a fresh perspective, and a passion for breaking musical boundaries, we'd love to
+          hear your work. Submit your <a href="/contact/">demo or portfolio</a> and let's make something extraordinary
+          together.
+        </p>
+      </div>
+      <aside>
+        <h2>Join Us</h2>
+        <blockquote>
+          <p>Welcome to the future of music. Welcome to Maricopa Records.</p>
+          <strong>Moving - Music - Forward</strong>
+        </blockquote>
+      </aside>
+    </div>
   </section>
 </BaseLayout>

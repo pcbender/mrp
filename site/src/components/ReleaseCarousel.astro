@@ -1,17 +1,19 @@
 ---
-import ReleaseGrid from "./ReleaseGrid.astro";
+import ImageLoop from "./ImageLoop.astro";
 import type { ReleaseCardModel } from "../lib/catalog";
 
 interface Props {
   releases: ReleaseCardModel[];
+  variant?: "split" | "media";
 }
 
-const { releases } = Astro.props;
+const { releases, variant = "split" } = Astro.props;
+const items = releases.map((release) => ({
+  title: release.title,
+  subtitle: release.artistName,
+  href: release.href,
+  image: release.coverImage,
+  kicker: release.releaseType,
+}));
 ---
-<section class="section-grid release-carousel">
-  <div>
-    <p class="eyebrow">Latest</p>
-    <h2>Latest releases</h2>
-  </div>
-  <ReleaseGrid releases={releases} />
-</section>
+<ImageLoop eyebrow="Latest" title="Latest releases" ariaLabel="Latest releases carousel" items={items} variant={variant} />

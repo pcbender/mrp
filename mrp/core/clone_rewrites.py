@@ -13,7 +13,7 @@ import yaml
 
 
 LOCAL_HOSTS = {"maricoparecords.com", "www.maricoparecords.com"}
-STATIC_ROUTES = {"/", "/about-us/", "/artists/", "/catalog/", "/contact/", "/posts/", "/releases/"}
+STATIC_ROUTES = {"/", "/about-us/", "/artists/", "/contact/", "/posts/", "/releases/"}
 URL_ATTRIBUTE_RE = re.compile(
     r"""\b(?:href|src|poster|action|data-src|data-srcset|data-bg|data-background|data-url|xlink:href)=["']([^"']*)["']""",
     re.IGNORECASE,

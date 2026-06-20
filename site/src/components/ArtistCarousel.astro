@@ -1,26 +1,19 @@
 ---
-import ArtistCard from "./ArtistCard.astro";
+import ImageLoop from "./ImageLoop.astro";
 import type { ArtistCardModel } from "../lib/catalog";
 
 interface Props {
   artists: ArtistCardModel[];
+  variant?: "split" | "media";
 }
 
-const { artists } = Astro.props;
+const { artists, variant = "split" } = Astro.props;
+const items = artists.map((artist) => ({
+  title: artist.name,
+  subtitle: artist.summary,
+  href: artist.href,
+  image: artist.image,
+  kicker: "Artist",
+}));
 ---
-<section class="section-grid artist-carousel">
-  <div>
-    <p class="eyebrow">Roster</p>
-    <h2>Featured artists</h2>
-  </div>
-  <div class="card-grid">
-    {artists.map((artist) => (
-      <ArtistCard
-        name={artist.name}
-        href={artist.href}
-        summary={artist.summary}
-        image={artist.image}
-      />
-    ))}
-  </div>
-</section>
+<ImageLoop eyebrow="Roster" title="Our Artists" ariaLabel="Artist carousel" items={items} variant={variant} />

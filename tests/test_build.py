@@ -51,7 +51,9 @@ def test_build_creates_external_staging_artifact_and_report(tmp_path):
     assert (build_path / "the-future-of-ai-in-music/index.html").is_file()
     assert (build_path / "posts/index.html").is_file()
     assert (build_path / "releases/circuiting/index.html").is_file()
+    assert not (build_path / "catalog/index.html").exists()
     sitemap = (build_path / "sitemap.xml").read_text()
+    assert "https://www.maricoparecords.com/catalog/" not in sitemap
     assert "https://www.maricoparecords.com/licensing-custom-songs/music-licensing/" in sitemap
     assert "https://www.maricoparecords.com/the-future-of-ai-in-music/" in sitemap
     feed = (build_path / "feed.xml").read_text()
@@ -69,6 +71,18 @@ def test_build_creates_external_staging_artifact_and_report(tmp_path):
     assert "https://open.spotify.com" in streaming
     assert "https://music.apple.com" in streaming
     assert "https://music.youtube.com" in streaming
+    assert "landing page" not in streaming.lower()
+    assert "Credits pending review" not in streaming
+    starlight = (build_path / "artists/pcbender/by-starlight-drifting-west-2/index.html").read_text()
+    assert "Artists" in starlight
+    assert "PCBender" in starlight
+    assert "By Starlight Drifting West" in starlight
+    assert "**PCBender" not in starlight
+    assert "_By Starlight" not in starlight
+    winds = (build_path / "artists/pcbender/winds-of-change/index.html").read_text()
+    assert "Two Tree Road streaming links" in winds
+    assert "https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv" in winds
+    assert "Missing apple music link" in winds
     assert Path(payload["manifest_path"]).is_file()
     assert (ROOT / payload["report_path"]).is_file()
 

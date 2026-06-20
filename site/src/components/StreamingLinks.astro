@@ -1,21 +1,67 @@
 ---
-interface LinkItem {
+interface StreamingLink {
   label: string;
-  href: string;
+  href?: string | null;
+  missing?: boolean;
 }
 
 interface Props {
-  links?: LinkItem[];
+  links: StreamingLink[];
+  compact?: boolean;
+  showMissing?: boolean;
+  label?: string;
 }
 
-const { links = [] } = Astro.props;
+const { links, compact = false, showMissing = false, label = "Streaming links" } = Astro.props;
+
+const brand = (label: string) => label.toLowerCase().replace(/\s+/g, "_");
 ---
-{
-  links.length > 0 && (
-    <ul class="streaming-links">
-      {links.map((link) => (
-        <li><a href={link.href}>{link.label}</a></li>
-      ))}
-    </ul>
-  )
-}
+{links.length > 0 && (
+  <nav class:list={["streaming-icon-links", compact && "streaming-icon-links-compact"]} aria-label={label}>
+    {links.map((link) => (
+      link.href ? (
+      <a class={`streaming-icon ${brand(link.label)}`} href={link.href} target="_blank" rel="noreferrer noopener" aria-label={link.label} title={link.label}>
+        {brand(link.label) === "spotify" && (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0Zm5.5 17.3c-.24.36-.72.47-1.08.23-2.96-1.82-6.68-2.23-11.07-1.22-.42.1-.84-.16-.94-.58-.1-.43.16-.85.58-.95 4.8-1.1 8.92-.62 12.28 1.45.36.23.47.71.23 1.07Zm1.46-3.24c-.3.45-.9.58-1.35.28-3.39-2.08-8.56-2.68-12.56-1.47-.52.16-1.06-.14-1.21-.65-.16-.52.14-1.06.65-1.22 4.58-1.39 10.28-.72 14.19 1.68.45.28.58.88.28 1.38Zm.13-3.37C15.02 8.27 8.3 8.04 4.42 9.31c-.62.2-1.28-.14-1.48-.75-.2-.62.14-1.28.76-1.48 4.45-1.45 11.86-1.18 16.6 1.63.56.33.74 1.05.41 1.61-.33.55-1.05.73-1.62.37Z" />
+          </svg>
+        )}
+        {brand(link.label) === "apple_music" && (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.8 2.1c-.47.06-6.15 1.05-6.15 1.05-.63.11-.85.36-.85 1.03v10.18c0 .78-.48 1.18-1.25 1.34l-1.36.28c-1.54.32-2.59 1.22-2.59 2.58 0 1.45 1.25 2.42 3.02 2.07 1.64-.33 2.78-1.28 2.78-2.86V8.5c0-.38.1-.48.45-.55l4.85-.98c.3-.06.42.02.42.33v5.53c0 .78-.47 1.18-1.24 1.34l-1.36.28c-1.55.32-2.6 1.22-2.6 2.58 0 1.45 1.26 2.42 3.03 2.07 1.64-.33 2.77-1.28 2.77-2.86V2.68c0-.43-.2-.64-.62-.58Z" />
+          </svg>
+        )}
+        {brand(link.label) === "youtube_music" && (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="5.8" class="inner" />
+            <path d="m10.2 8.7 5.2 3.3-5.2 3.3V8.7Z" />
+          </svg>
+        )}
+        <span class="sr-only">{link.label}</span>
+      </a>
+      ) : showMissing ? (
+      <span class={`streaming-icon streaming-icon-missing ${brand(link.label)}`} aria-label={`Missing ${link.label} link`} title={`Missing ${link.label} link`}>
+        {brand(link.label) === "spotify" && (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C5.38 0 0 5.38 0 12s5.38 12 12 12 12-5.38 12-12S18.62 0 12 0Zm5.5 17.3c-.24.36-.72.47-1.08.23-2.96-1.82-6.68-2.23-11.07-1.22-.42.1-.84-.16-.94-.58-.1-.43.16-.85.58-.95 4.8-1.1 8.92-.62 12.28 1.45.36.23.47.71.23 1.07Zm1.46-3.24c-.3.45-.9.58-1.35.28-3.39-2.08-8.56-2.68-12.56-1.47-.52.16-1.06-.14-1.21-.65-.16-.52.14-1.06.65-1.22 4.58-1.39 10.28-.72 14.19 1.68.45.28.58.88.28 1.38Zm.13-3.37C15.02 8.27 8.3 8.04 4.42 9.31c-.62.2-1.28-.14-1.48-.75-.2-.62.14-1.28.76-1.48 4.45-1.45 11.86-1.18 16.6 1.63.56.33.74 1.05.41 1.61-.33.55-1.05.73-1.62.37Z" />
+          </svg>
+        )}
+        {brand(link.label) === "apple_music" && (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.8 2.1c-.47.06-6.15 1.05-6.15 1.05-.63.11-.85.36-.85 1.03v10.18c0 .78-.48 1.18-1.25 1.34l-1.36.28c-1.54.32-2.59 1.22-2.59 2.58 0 1.45 1.25 2.42 3.02 2.07 1.64-.33 2.78-1.28 2.78-2.86V8.5c0-.38.1-.48.45-.55l4.85-.98c.3-.06.42.02.42.33v5.53c0 .78-.47 1.18-1.24 1.34l-1.36.28c-1.55.32-2.6 1.22-2.6 2.58 0 1.45 1.26 2.42 3.03 2.07 1.64-.33 2.77-1.28 2.77-2.86V2.68c0-.43-.2-.64-.62-.58Z" />
+          </svg>
+        )}
+        {brand(link.label) === "youtube_music" && (
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="5.8" class="inner" />
+            <path d="m10.2 8.7 5.2 3.3-5.2 3.3V8.7Z" />
+          </svg>
+        )}
+        <span class="sr-only">Missing {link.label} link</span>
+      </span>
+      ) : null
+    ))}
+  </nav>
+)}

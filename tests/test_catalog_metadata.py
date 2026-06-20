@@ -41,3 +41,4 @@ def test_imported_release_metadata_is_visible_and_local_asset_backed():
     assert releases["distance-not-safety"]["model"] == "album"
     assert releases["distance-not-safety"]["release_type"] == "album"
     assert len(releases["distance-not-safety"]["tracks"]) == 10
+    assert releases["winds-of-change"]["tracks"][0]["links"]["spotify"].startswith("https://open.spotify.com/track/")

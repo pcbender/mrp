@@ -374,8 +374,9 @@ def promote_catalog_metadata(root: Path) -> dict[str, Any]:
         if image:
             artist["image"] = public_asset_url(image)
         links = artist.setdefault("links", {})
+        links.pop("website", None)
         for key, value in (page.get("socials") or {}).items():
-            if key in links:
+            if key in {"spotify", "apple_music", "youtube_music", "youtube", "bandcamp", "instagram"}:
                 links[key] = value
         after = serialize_structured_record(path, data)
         if after != before:
@@ -414,7 +415,7 @@ def promote_catalog_metadata(root: Path) -> dict[str, Any]:
             value = (page.get("socials") or {}).get(source_key)
             if value:
                 links[target_key] = value
-        links["landing_page"] = page.get("source_url") or links.get("landing_page")
+        links.pop("landing_page", None)
         primary_artist = title_from_slug(artist_id)
         if artist_id in artist_pages:
             primary_artist = artist_pages[artist_id].get("title") or primary_artist
@@ -543,9 +544,48 @@ def public_asset_url(path: str) -> str:
     return "/" + path.removeprefix("site/public/").lstrip("/")
 
 
+def streaming_service_key(url: str) -> str | None:
+    host = urlparse(url).netloc.lower()
+    if "open.spotify.com" in host:
+        return "spotify"
+    if "music.apple.com" in host:
+        return "apple_music"
+    if "music.youtube.com" in host or host.endswith("youtube.com") or host.endswith("youtu.be"):
+        return "youtube_music"
+    return None
+
+
+def release_track_links(page: dict[str, Any]) -> dict[int, dict[str, str]]:
+    markdown = page.get("content_markdown") or ""
+    if "## Tracks" not in markdown:
+        return {}
+    track_section = markdown.split("## Tracks", 1)[1]
+    lines = [line.strip() for line in track_section.splitlines() if line.strip()]
+    links_by_number: dict[int, dict[str, str]] = {}
+    for index, line in enumerate(lines):
+        if not line.isdigit():
+            continue
+        number = int(line)
+        cursor = index + 1
+        while cursor < len(lines) and (lines[cursor].isdigit() or lines[cursor].lower() in {"#", "title", "listen"}):
+            cursor += 1
+        cursor += 1
+        links: dict[str, str] = {}
+        while cursor < len(lines) and not lines[cursor].isdigit():
+            for url in re.findall(r"\]\((https?://[^)]+)\)", lines[cursor]):
+                service = streaming_service_key(url)
+                if service and service not in links:
+                    links[service] = url
+            cursor += 1
+        if links:
+            links_by_number[number] = links
+    return links_by_number
+
+
 def release_tracks(page: dict[str, Any]) -> list[dict[str, Any]]:
     text = re.sub(r"<[^>]+>", "\n", page.get("content_html") or "")
     lines = [unescape(line).strip() for line in text.splitlines() if unescape(line).strip()]
+    track_links = release_track_links(page)
     tracks: list[dict[str, Any]] = []
     for index, line in enumerate(lines):
         if not line.isdigit():
@@ -565,6 +605,7 @@ def release_tracks(page: dict[str, Any]) -> list[dict[str, Any]]:
                     "explicit": False,
                     "preview_audio": None,
                     "lyrics_excerpt": None,
+                    "links": track_links.get(number, {}),
                 }
             )
     deduped: list[dict[str, Any]] = []
@@ -590,9 +631,9 @@ def artist_record(artist: dict[str, Any]) -> dict[str, Any]:
             "bio_long": "",
             "image": None,
             "links": {
-                "website": artist["source_url"],
                 "spotify": None,
                 "apple_music": None,
+                "youtube_music": None,
                 "youtube": None,
                 "bandcamp": None,
                 "instagram": None,
@@ -634,7 +675,6 @@ def release_record(release: dict[str, Any], source_post: dict[str, Any]) -> dict
                 "youtube_music": None,
                 "bandcamp": None,
                 "soundcloud": None,
-                "landing_page": release["source_url"],
             },
             "seo": {
                 "title": f"{title} by {title_from_slug(release['artist'])}",

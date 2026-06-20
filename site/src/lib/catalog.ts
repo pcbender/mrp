@@ -45,7 +45,9 @@ export interface ArtistCardModel {
   href: string;
   image?: string | null;
   summary: string;
+  bioSummary: string;
   releaseCount: number;
+  latestReleaseDate: string;
 }
 
 export function catalogArtists(): ArtistRecord[] {
@@ -66,8 +68,9 @@ export function catalogReleases(): ReleaseRecord[] {
   return [...(getVisibleReleases() as ReleaseRecord[])].sort(compareReleasesNewestFirst);
 }
 
-export function latestReleases(limit = 6): ReleaseCardModel[] {
-  return catalogReleases().slice(0, limit).map(releaseCardModel);
+export function latestReleases(limit?: number): ReleaseCardModel[] {
+  const releases = catalogReleases();
+  return (limit === undefined ? releases : releases.slice(0, limit)).map(releaseCardModel);
 }
 
 export function releasesForArtist(artistId: string): ReleaseCardModel[] {
@@ -77,15 +80,30 @@ export function releasesForArtist(artistId: string): ReleaseCardModel[] {
 export function artistCards(): ArtistCardModel[] {
   return catalogArtists().map((artist) => {
     const count = artistReleaseCount(artist.id);
+    const latestReleaseDate = latestReleaseDateForArtist(artist.id);
     return {
       id: artist.id,
       name: artist.name,
       href: `/artists/${artist.id}/`,
       image: artist.image,
       releaseCount: count,
+      latestReleaseDate,
+      bioSummary: cleanSummary(artist.bio_short || artist.bio_long || ""),
       summary: `${count} public release${count === 1 ? "" : "s"}`
     };
-  });
+  }).sort(compareArtistCardsByLatestRelease);
+}
+
+export function latestReleaseDateForArtist(artistId: string): string {
+  return catalogReleases().find((release) => release.artist_id === artistId)?.release_date || "";
+}
+
+export function compareArtistCardsByLatestRelease(left: ArtistCardModel, right: ArtistCardModel): number {
+  const dateOrder = right.latestReleaseDate.localeCompare(left.latestReleaseDate);
+  if (dateOrder !== 0) return dateOrder;
+  const countOrder = right.releaseCount - left.releaseCount;
+  if (countOrder !== 0) return countOrder;
+  return left.name.localeCompare(right.name);
 }
 
 export function releaseCardModel(release: ReleaseRecord): ReleaseCardModel {
@@ -105,4 +123,18 @@ export function releaseCardModel(release: ReleaseRecord): ReleaseCardModel {
 
 export function releaseSocialLinks(release: ReleaseRecord): { label: string; href: string }[] {
   return streamingLinks(release);
+}
+
+function cleanSummary(value: string): string {
+  return String(value)
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, " ")
+    .replace(/\[[^\]]*\]\([^)]+\)/g, " ")
+    .replace(/^#{1,6}\s+/gm, " ")
+    .replace(/\*\*([^*]+)\*\*/g, " $1 ")
+    .replace(/__([^_]+)__/g, " $1 ")
+    .replace(/\*([^*]+)\*/g, " $1 ")
+    .replace(/_([^_]+)_/g, " $1 ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
 }

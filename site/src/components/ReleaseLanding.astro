@@ -1,0 +1,97 @@
+---
+import Breadcrumbs from "./Breadcrumbs.astro";
+import StreamingLinks from "./StreamingLinks.astro";
+import { releaseCoverUrl } from "../lib/content.js";
+import { releaseSocialLinks } from "../lib/catalog";
+
+interface Props {
+  release: any;
+  artist?: any;
+}
+
+const { release, artist } = Astro.props;
+const artistName = artist?.name || release.artist_id;
+const artistHref = `/artists/${release.artist_id}/`;
+const copyBlocks = releaseCopyBlocks(release);
+const streamingLinks = releaseSocialLinks(release);
+const coverUrl = releaseCoverUrl(release);
+const hasCredits = Boolean(release.credits?.songwriter || release.credits?.producer || release.credits?.mastering);
+const trackServices = ["spotify", "apple_music", "youtube_music"];
+const serviceLabel = (service: string) => service.replaceAll("_", " ");
+const trackStreamingLinks = (track: any) =>
+  trackServices.map((service) => ({
+    label: serviceLabel(service),
+    href: track.links?.[service] || null,
+  }));
+
+function releaseCopyBlocks(release: any) {
+  const source = String(release.description || release.summary || "").split(/\n## Tracks\b/i)[0];
+  return source
+    .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
+    .replace(/\[([^\]]*)\]\([^)]+\)/g, "$1")
+    .split(/\n{2,}/)
+    .map((block) => block.trim())
+    .filter(Boolean)
+    .filter((block) => !block.startsWith("## "))
+    .map(cleanMarkdownText)
+    .filter(Boolean);
+}
+
+function cleanMarkdownText(value: string) {
+  return String(value)
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/\*([^*]+)\*/g, "$1")
+    .replace(/_([^_]+)_/g, "$1 ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+---
+<article class="release-landing">
+  <header class="release-hero" style={`--release-hero-image: url("${coverUrl}")`}>
+    <h1>{release.title}</h1>
+    <Breadcrumbs items={[
+      { label: "Artists", href: "/artists/" },
+      { label: artistName, href: artistHref },
+      { label: release.title },
+    ]} />
+  </header>
+
+  <section class="release-feature">
+    <div class="release-copy">
+      <p class="eyebrow">{release.release_type}</p>
+      <h2>{release.title}</h2>
+      {copyBlocks.map((block) => <p>{block}</p>)}
+      <StreamingLinks links={streamingLinks} />
+    </div>
+    <img src={coverUrl} alt="" width="800" height="800" />
+  </section>
+
+  {release.tracks?.length > 0 && (
+    <section class="track-list">
+      <div class="section-heading">
+        <p class="eyebrow">Tracks</p>
+        <h2>{release.release_type === "ep" ? "EP tracks" : "Album tracks"}</h2>
+      </div>
+      <ol>
+        {release.tracks.map((track: any) => (
+          <li>
+            <span>{track.number}</span>
+            <strong>{track.title}</strong>
+            <StreamingLinks links={trackStreamingLinks(track)} compact showMissing label={`${track.title} streaming links`} />
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
+
+  {hasCredits && (
+    <section class="prose">
+      <h2>Credits</h2>
+      {release.credits?.songwriter && <p>Songwriter: {release.credits.songwriter}</p>}
+      {release.credits?.producer && <p>Producer: {release.credits.producer}</p>}
+      {release.credits?.mastering && <p>Mastering: {release.credits.mastering}</p>}
+    </section>
+  )}
+</article>

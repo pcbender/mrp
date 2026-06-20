@@ -6,7 +6,6 @@ export async function GET() {
     "/",
     "/artists/",
     "/releases/",
-    "/catalog/",
     "/posts/",
     "/about-us/",
     "/contact/",

@@ -27,8 +27,7 @@
       "apple_music": null,
       "youtube_music": null,
       "bandcamp": null,
-      "soundcloud": null,
-      "landing_page": "https://www.maricoparecords.com/artists/pcbender/circuiting/"
+      "soundcloud": null
     },
     "seo": {
       "title": "Circuiting by PCBender",
@@ -43,7 +42,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a"
+        }
       },
       {
         "number": 2,
@@ -53,7 +55,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/0Z5JIx6FM55dEkmqlsDqjo?si=b2e4378330d040c4"
+        }
       },
       {
         "number": 3,
@@ -63,7 +68,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073"
+        }
       },
       {
         "number": 4,
@@ -73,7 +81,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39"
+        }
       },
       {
         "number": 5,
@@ -83,7 +94,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44"
+        }
       },
       {
         "number": 6,
@@ -93,7 +107,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961"
+        }
       },
       {
         "number": 7,
@@ -103,7 +120,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7"
+        }
       },
       {
         "number": 8,
@@ -113,7 +133,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/52R7pwCQAqcHx1aDjrCiCV?si=bb5fbaaecb394a06"
+        }
       },
       {
         "number": 9,
@@ -123,7 +146,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/6U6z0EBKHxqFFtkhlIanI3?si=678be27fd7094707"
+        }
       },
       {
         "number": 10,
@@ -133,7 +159,10 @@
         "duration": null,
         "explicit": false,
         "preview_audio": null,
-        "lyrics_excerpt": null
+        "lyrics_excerpt": null,
+        "links": {
+          "spotify": "https://open.spotify.com/track/4P6oRJ0WhhTbobqDqoy1JB?si=02f02c241b774e2b"
+        }
       }
     ]
   }

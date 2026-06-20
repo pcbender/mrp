@@ -4,9 +4,10 @@ import type { ReleaseCardModel } from "../lib/catalog";
 
 interface Props {
   releases: ReleaseCardModel[];
+  rich?: boolean;
 }
 
-const { releases } = Astro.props;
+const { releases, rich = false } = Astro.props;
 ---
 <div class="card-grid release-grid">
   {releases.map((release) => (
@@ -16,6 +17,8 @@ const { releases } = Astro.props;
       href={release.href}
       type={release.releaseType}
       coverImage={release.coverImage}
+      summary={release.summary}
+      rich={rich}
     />
   ))}
 </div>

@@ -5,15 +5,36 @@ interface Props {
   href: string;
   type?: string;
   coverImage?: string;
+  summary?: string;
+  rich?: boolean;
 }
 
-const { title, artist, href, type = "Single", coverImage } = Astro.props;
+const { title, artist, href, type = "Single", coverImage, summary = "", rich = false } = Astro.props;
+const cleanSummary = cleanMarkdownText(summary);
+
+function cleanMarkdownText(value: string) {
+  return String(value)
+    .replace(/\*\*([^*]+)\*\*/g, " $1 ")
+    .replace(/__([^_]+)__/g, " $1 ")
+    .replace(/\*([^*]+)\*/g, " $1 ")
+    .replace(/_([^_]+)_/g, " $1 ")
+    .replace(/"\s*([^"]*?)\s*"/g, '"$1"')
+    .replace(/“\s+/g, "“")
+    .replace(/\s+”/g, "”")
+    .replace(/([,.;:!?])(["“])/g, "$1 $2")
+    .replace(/(["”])([a-z])/g, "$1 $2")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
 ---
-<article class="release-card">
+<article class:list={["release-card", rich && "release-card-rich"]}>
   <a href={href} aria-label={`${title} by ${artist}`}>
     {coverImage ? <img class="cover-image" src={coverImage} alt="" loading="lazy" /> : <span class="cover-swatch" aria-hidden="true"></span>}
     <span class="card-kicker">{type}</span>
     <h3>{title}</h3>
-    <p>{artist}</p>
+    {rich && <span class="release-card-artist">{artist}</span>}
+    {rich && cleanSummary ? <p>{cleanSummary}</p> : <p>{artist}</p>}
+    {rich && <span class="release-more">More...</span>}
   </a>
 </article>

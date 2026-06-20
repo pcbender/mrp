@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import SocialLinks from "../../components/SocialLinks.astro";
-import { getArtistById, getReleaseBySlug, getVisibleReleases, releaseCoverUrl } from "../../lib/content.js";
-import { releaseSocialLinks } from "../../lib/catalog";
+import ReleaseLanding from "../../components/ReleaseLanding.astro";
+import { getArtistById, getReleaseBySlug, getVisibleReleases } from "../../lib/content.js";
 
 export function getStaticPaths() {
   return getVisibleReleases().map((release) => ({ params: { slug: release.slug } }));
@@ -12,18 +11,5 @@ const release = getReleaseBySlug(Astro.params.slug);
 const artist = getArtistById(release.artist_id);
 ---
 <BaseLayout title={release.seo.title} description={release.seo.description}>
-  <section class="release-detail">
-    <img src={releaseCoverUrl(release)} alt="" width="320" height="320" />
-    <div>
-      <p class="eyebrow">{release.release_type}</p>
-      <h1>{release.title}</h1>
-      <p>{artist?.name || release.artist_id}</p>
-      <p>{release.summary}</p>
-      <SocialLinks links={releaseSocialLinks(release)} />
-    </div>
-  </section>
-  <section class="prose">
-    <h2>Credits</h2>
-    <p>{release.credits?.songwriter ? `Songwriter: ${release.credits.songwriter}` : "Credits pending review."}</p>
-  </section>
+  <ReleaseLanding release={release} artist={artist} />
 </BaseLayout>
