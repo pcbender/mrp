@@ -1,0 +1,37 @@
+release:
+  id: echo-primae
+  slug: echo-primae
+  title: Echo Primae
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-11'
+  label: null
+  publisher: null
+  upc: 056870858258
+  catalog_number: null
+  cover_image: site/public/assets/releases/echo-primae/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3J4XF9Turl3GOoLbwKXclB
+  seo:
+    title: Echo Primae by 4Castle
+    description: Echo Primae by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Echo Primae
+    slug: echo-primae
+    isrc: CAENV2551198
+    duration: '3:31'
+    explicit: false
+    preview_audio: null

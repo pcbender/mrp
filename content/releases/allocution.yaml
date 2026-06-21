@@ -1,0 +1,37 @@
+release:
+  id: allocution
+  slug: allocution
+  title: Allocution
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-07-07'
+  label: null
+  publisher: null
+  upc: '990591906648'
+  catalog_number: null
+  cover_image: site/public/assets/releases/allocution/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4s4GcIIMHyd9696NXlnSxZ
+  seo:
+    title: Allocution by PCBender
+    description: Allocution by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Allocution
+    slug: allocution
+    isrc: CALVP2537448
+    duration: '4:20'
+    explicit: false
+    preview_audio: null

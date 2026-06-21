@@ -1,0 +1,37 @@
+release:
+  id: this-over-that
+  slug: this-over-that
+  title: This Over That
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-23'
+  label: null
+  publisher: null
+  upc: '990591006720'
+  catalog_number: null
+  cover_image: site/public/assets/releases/this-over-that/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6lfxIazmH5WubNPrKZg3ZK
+  seo:
+    title: This Over That by Lingua Aeternum
+    description: This Over That by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: This Over That
+    slug: this-over-that
+    isrc: CAENV2578537
+    duration: '3:20'
+    explicit: false
+    preview_audio: null

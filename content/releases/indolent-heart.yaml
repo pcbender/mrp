@@ -1,0 +1,37 @@
+release:
+  id: indolent-heart
+  slug: indolent-heart
+  title: Indolent Heart
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-01'
+  label: null
+  publisher: null
+  upc: '990591104495'
+  catalog_number: null
+  cover_image: site/public/assets/releases/indolent-heart/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/34EWGePPgSQ2Xk1eUF9E5a
+  seo:
+    title: Indolent Heart by Lingua Aeternum
+    description: Indolent Heart by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Indolent Heart
+    slug: indolent-heart
+    isrc: CAENV2597228
+    duration: '3:24'
+    explicit: false
+    preview_audio: null

@@ -1,7 +1,7 @@
 release:
   id: nearly-nothin-nowhere-fast
   slug: nearly-nothin-nowhere-fast
-  title: Nearly Nothin’ Nowhere Fast
+  title: "Nearly Nothin\u2019 Nowhere Fast"
   artist_id: pcbender
   model: song
   release_type: single
@@ -9,31 +9,24 @@ release:
   release_date: '2025-03-29'
   label: Maricopa Records
   publisher: Maricopa Publishing
-  upc: null
+  upc: 056870654362
   catalog_number: null
   cover_image: site/public/assets/migrated/fe64a9a28d3f-ChatGPT-Image-Mar-27-2025-12_06_14-PM.png
   hero_image: null
-  summary: “_Nearly Nothin’ Nowhere Fast_” finds **PCBender **in full road-weary poet
-    mode—dust on his boots, a guitar in the passenger seat, and a head full of unfinished
-    thoughts. With a laid-back groove and a touch of dry wit, the track rolls through
-    empty highways and emotional detours, capturing that in-between place where momentum
-    masks meaning.
-  description: '## Nearly Nothin’ Nowhere Fast
-
-
-    “_Nearly Nothin’ Nowhere Fast_” finds **PCBender **in full road-weary poet mode—dust
-    on his boots, a guitar in the passenger seat, and a head full of unfinished thoughts.
-    With a laid-back groove and a touch of dry wit, the track rolls through empty
-    highways and emotional detours, capturing that in-between place where momentum
-    masks meaning.
-
-
-    Blending rootsy guitar work with subtle jazz and Americana influences, **PCBender
-    **delivers a song that’s equal parts shrug and soul-search. It’s a quiet anthem
-    for the ones who keep going, even when the map’s long gone.
-
-
-    [](https://open.spotify.com/album/1KwCQIwk4vs5qoc56olPy8?si=FqU_hfQhTBC5g8OJ4fzmDA)[](https://music.apple.com/us/album/nearly-nothin-nowhere-fast/1805037361?i=1805037362)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/ChatGPT-Image-Mar-27-2025-12_06_14-PM.png)'
+  summary: "\u201C_Nearly Nothin\u2019 Nowhere Fast_\u201D finds **PCBender **in full\
+    \ road-weary poet mode\u2014dust on his boots, a guitar in the passenger seat,\
+    \ and a head full of unfinished thoughts. With a laid-back groove and a touch\
+    \ of dry wit, the track rolls through empty highways and emotional detours, capturing\
+    \ that in-between place where momentum masks meaning."
+  description: "## Nearly Nothin\u2019 Nowhere Fast\n\n\u201C_Nearly Nothin\u2019\
+    \ Nowhere Fast_\u201D finds **PCBender **in full road-weary poet mode\u2014dust\
+    \ on his boots, a guitar in the passenger seat, and a head full of unfinished\
+    \ thoughts. With a laid-back groove and a touch of dry wit, the track rolls through\
+    \ empty highways and emotional detours, capturing that in-between place where\
+    \ momentum masks meaning.\n\nBlending rootsy guitar work with subtle jazz and\
+    \ Americana influences, **PCBender **delivers a song that\u2019s equal parts shrug\
+    \ and soul-search. It\u2019s a quiet anthem for the ones who keep going, even\
+    \ when the map\u2019s long gone.\n\n[](https://open.spotify.com/album/1KwCQIwk4vs5qoc56olPy8?si=FqU_hfQhTBC5g8OJ4fzmDA)[](https://music.apple.com/us/album/nearly-nothin-nowhere-fast/1805037361?i=1805037362)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/ChatGPT-Image-Mar-27-2025-12_06_14-PM.png)"
   credits:
     primary_artist: PCBender
     songwriter: null
@@ -46,13 +39,13 @@ release:
     bandcamp: null
     soundcloud: null
   seo:
-    title: Nearly Nothin’ Nowhere Fast by PCBender
-    description: Nearly Nothin’ Nowhere Fast by PCBender on Maricopa Records.
+    title: "Nearly Nothin\u2019 Nowhere Fast by PCBender"
+    description: "Nearly Nothin\u2019 Nowhere Fast by PCBender on Maricopa Records."
   automation:
     allow_auto_publish: false
   song:
     number: null
-    title: Nearly Nothin’ Nowhere Fast
+    title: "Nearly Nothin\u2019 Nowhere Fast"
     slug: nearly-nothin-nowhere-fast
     isrc: null
     duration: null

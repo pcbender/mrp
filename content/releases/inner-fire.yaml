@@ -1,0 +1,37 @@
+release:
+  id: inner-fire
+  slug: inner-fire
+  title: Inner Fire
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-02'
+  label: null
+  publisher: null
+  upc: '990591122284'
+  catalog_number: null
+  cover_image: site/public/assets/releases/inner-fire/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3lxH2v520TgDsnPhefc6Uq
+  seo:
+    title: Inner Fire by PCBender
+    description: Inner Fire by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Inner Fire
+    slug: inner-fire
+    isrc: CAGOO2500902
+    duration: '4:22'
+    explicit: false
+    preview_audio: null

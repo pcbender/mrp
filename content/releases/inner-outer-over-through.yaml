@@ -1,0 +1,58 @@
+release:
+  id: inner-outer-over-through
+  slug: inner-outer-over-through
+  title: Inner Outer Over Through
+  artist_id: lingua-aeternum
+  model: album
+  release_type: ep
+  status: staged
+  release_date: '2025-04-20'
+  label: null
+  publisher: null
+  upc: 056870953052
+  catalog_number: null
+  cover_image: site/public/assets/releases/inner-outer-over-through/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6K20WzKCiDSDG2y6Vq4yyR
+  seo:
+    title: Inner Outer Over Through by Lingua Aeternum
+    description: Inner Outer Over Through by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  tracks:
+  - number: 1
+    title: Inner Outer Over Through
+    slug: inner-outer-over-through
+    isrc: CAENV2568702
+    duration: '3:43'
+    explicit: false
+    preview_audio: null
+  - number: 2
+    title: Invocate
+    slug: invocate
+    isrc: CAENV2566315
+    duration: '3:25'
+    explicit: false
+    preview_audio: null
+  - number: 3
+    title: The Memory I'll Borrow
+    slug: the-memory-i-ll-borrow
+    isrc: CAENV2566056
+    duration: '3:14'
+    explicit: false
+    preview_audio: null
+  - number: 4
+    title: Thread By Thread
+    slug: thread-by-thread
+    isrc: CAENV2568461
+    duration: '3:20'
+    explicit: false
+    preview_audio: null

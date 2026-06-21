@@ -1,0 +1,37 @@
+release:
+  id: thread-by-thread
+  slug: thread-by-thread
+  title: Thread By Thread
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-20'
+  label: null
+  publisher: null
+  upc: 056870941929
+  catalog_number: null
+  cover_image: site/public/assets/releases/thread-by-thread/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5ePqbfbKSEmCR1JUy4rDhj
+  seo:
+    title: Thread By Thread by Lingua Aeternum
+    description: Thread By Thread by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Thread By Thread
+    slug: thread-by-thread
+    isrc: CAENV2568461
+    duration: '3:20'
+    explicit: false
+    preview_audio: null

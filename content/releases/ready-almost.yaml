@@ -1,0 +1,37 @@
+release:
+  id: ready-almost
+  slug: ready-almost
+  title: Ready Almost
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-05-13'
+  label: null
+  publisher: null
+  upc: '991043792024'
+  catalog_number: null
+  cover_image: site/public/assets/releases/ready-almost/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4l1bU3Lf6UjCg6mzjle3lh
+  seo:
+    title: Ready Almost by 4Castle
+    description: Ready Almost by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Ready Almost
+    slug: ready-almost
+    isrc: CAENV2605851
+    duration: '4:44'
+    explicit: false
+    preview_audio: null

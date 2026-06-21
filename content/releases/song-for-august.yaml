@@ -1,0 +1,37 @@
+release:
+  id: song-for-august
+  slug: song-for-august
+  title: Song For August
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-10-22'
+  label: null
+  publisher: null
+  upc: '7300346650833'
+  catalog_number: null
+  cover_image: site/public/assets/releases/song-for-august/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3eJSRBzsiVerDZ7XpE71JN
+  seo:
+    title: Song For August by PCBender
+    description: Song For August by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Song For August
+    slug: song-for-august
+    isrc: SE6I32580413
+    duration: '4:10'
+    explicit: false
+    preview_audio: null

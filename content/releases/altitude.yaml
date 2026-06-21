@@ -1,0 +1,37 @@
+release:
+  id: altitude
+  slug: altitude
+  title: Altitude
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-01-16'
+  label: null
+  publisher: null
+  upc: '7300348115446'
+  catalog_number: null
+  cover_image: site/public/assets/releases/altitude/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1M7MZe6MIDk8KbHPyo81da
+  seo:
+    title: Altitude by PCBender
+    description: Altitude by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Altitude
+    slug: altitude
+    isrc: SE5BU2648590
+    duration: '3:58'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: with-preposition
+  slug: with-preposition
+  title: With Preposition
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-30'
+  label: null
+  publisher: null
+  upc: '991043642398'
+  catalog_number: null
+  cover_image: site/public/assets/releases/with-preposition/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4aZ9znFmozosco1OGLT8TP
+  seo:
+    title: With Preposition by PCBender
+    description: With Preposition by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: With Preposition
+    slug: with-preposition
+    isrc: CACWV2681464
+    duration: '4:24'
+    explicit: false
+    preview_audio: null

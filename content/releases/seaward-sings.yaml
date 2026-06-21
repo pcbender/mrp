@@ -1,0 +1,37 @@
+release:
+  id: seaward-sings
+  slug: seaward-sings
+  title: Seaward Sings
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-08-01'
+  label: null
+  publisher: null
+  upc: 057829182400
+  catalog_number: null
+  cover_image: site/public/assets/releases/seaward-sings/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/7DLm5d25LlYBJNVaRMpFKF
+  seo:
+    title: Seaward Sings by PCBender
+    description: Seaward Sings by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Seaward Sings
+    slug: seaward-sings
+    isrc: CALVP2585489
+    duration: '6:44'
+    explicit: false
+    preview_audio: null

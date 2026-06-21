@@ -1,0 +1,121 @@
+release:
+  id: bent
+  slug: bent
+  title: Bent
+  artist_id: 4castle
+  model: album
+  release_type: album
+  status: staged
+  release_date: '2025-05-26'
+  label: null
+  publisher: null
+  upc: '990591448766'
+  catalog_number: null
+  cover_image: site/public/assets/releases/bent/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4Bi0av41wTYBH7DAXlFVrI
+  seo:
+    title: Bent by 4Castle
+    description: Bent by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  tracks:
+  - number: 1
+    title: Mr. McKay
+    slug: mr-mckay
+    isrc: CAGOO2558703
+    duration: '4:59'
+    explicit: false
+    preview_audio: null
+  - number: 2
+    title: The Bend
+    slug: the-bend
+    isrc: CAGOO2558704
+    duration: '4:02'
+    explicit: false
+    preview_audio: null
+  - number: 3
+    title: Below The Line
+    slug: below-the-line
+    isrc: CAGOO2558715
+    duration: '4:50'
+    explicit: false
+    preview_audio: null
+  - number: 4
+    title: "Friedman\u2019s Folly"
+    slug: friedmans-folly
+    isrc: CAGOO2558705
+    duration: '3:55'
+    explicit: false
+    preview_audio: null
+  - number: 5
+    title: Authenticity Factory
+    slug: authenticity-factory
+    isrc: CAGOO2558706
+    duration: '4:07'
+    explicit: false
+    preview_audio: null
+  - number: 6
+    title: Voluntary Mandatory
+    slug: voluntary-mandatory
+    isrc: CAGOO2558707
+    duration: '3:17'
+    explicit: false
+    preview_audio: null
+  - number: 7
+    title: All Change Is Painful
+    slug: all-change-is-painful
+    isrc: CAGOO2558708
+    duration: '4:13'
+    explicit: false
+    preview_audio: null
+  - number: 8
+    title: Human Capital
+    slug: human-capital
+    isrc: CAGOO2558709
+    duration: '5:33'
+    explicit: false
+    preview_audio: null
+  - number: 9
+    title: Cracks in the Culture Deck
+    slug: cracks-in-the-culture-deck
+    isrc: CAGOO2558710
+    duration: '4:25'
+    explicit: false
+    preview_audio: null
+  - number: 10
+    title: Vision & Values
+    slug: vision-values
+    isrc: CAGOO2558711
+    duration: '3:36'
+    explicit: false
+    preview_audio: null
+  - number: 11
+    title: Stock Price Jesus
+    slug: stock-price-jesus
+    isrc: CAGOO2558712
+    duration: '3:48'
+    explicit: false
+    preview_audio: null
+  - number: 12
+    title: At What Cost
+    slug: at-what-cost
+    isrc: CAGOO2558713
+    duration: '4:10'
+    explicit: false
+    preview_audio: null
+  - number: 13
+    title: Nightmares Return
+    slug: nightmares-return
+    isrc: CAGOO2558714
+    duration: '3:41'
+    explicit: true
+    preview_audio: null

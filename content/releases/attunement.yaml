@@ -1,0 +1,37 @@
+release:
+  id: attunement
+  slug: attunement
+  title: Attunement
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-12'
+  label: null
+  publisher: null
+  upc: 056870869148
+  catalog_number: null
+  cover_image: site/public/assets/releases/attunement/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5qwftnD6px2w9iGqMcicDq
+  seo:
+    title: Attunement by 4Castle
+    description: Attunement by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Attunement
+    slug: attunement
+    isrc: CAENV2552535
+    duration: '2:38'
+    explicit: false
+    preview_audio: null

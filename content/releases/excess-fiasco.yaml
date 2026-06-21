@@ -1,0 +1,37 @@
+release:
+  id: excess-fiasco
+  slug: excess-fiasco
+  title: Excess Fiasco
+  artist_id: stab
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-02'
+  label: null
+  publisher: null
+  upc: '990591122703'
+  catalog_number: null
+  cover_image: site/public/assets/releases/excess-fiasco/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: STAB
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0cRPOK93xC2N2JkcezL5sb
+  seo:
+    title: Excess Fiasco by STAB
+    description: Excess Fiasco by STAB on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Excess Fiasco
+    slug: excess-fiasco
+    isrc: CAGOO2500968
+    duration: '2:59'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: never-knowing
+  slug: never-knowing
+  title: Never Knowing
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-15'
+  label: null
+  publisher: null
+  upc: '991043502142'
+  catalog_number: null
+  cover_image: site/public/assets/releases/never-knowing/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5x0nxD5nFqOphFMIoLTdPO
+  seo:
+    title: Never Knowing by Michael Anthony Rose
+    description: Never Knowing by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Never Knowing
+    slug: never-knowing
+    isrc: CACWV2659228
+    duration: '4:17'
+    explicit: false
+    preview_audio: null

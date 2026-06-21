@@ -1,0 +1,37 @@
+release:
+  id: aim-for-true
+  slug: aim-for-true
+  title: Aim For True
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-05-27'
+  label: null
+  publisher: null
+  upc: '991043919353'
+  catalog_number: null
+  cover_image: site/public/assets/releases/aim-for-true/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5akzx6G5qGr9qOqzXWnjHR
+  seo:
+    title: Aim For True by Lingua Aeternum
+    description: Aim For True by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Aim For True
+    slug: aim-for-true
+    isrc: CAENV2626190
+    duration: '4:29'
+    explicit: false
+    preview_audio: null

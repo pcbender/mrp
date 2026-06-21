@@ -1,0 +1,37 @@
+release:
+  id: you-become-the-night
+  slug: you-become-the-night
+  title: You Become The Night
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-12-03'
+  label: null
+  publisher: null
+  upc: '7300347349767'
+  catalog_number: null
+  cover_image: site/public/assets/releases/you-become-the-night/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/2MHjKFpwuX6EqyvRCiYiyy
+  seo:
+    title: You Become The Night by PCBender
+    description: You Become The Night by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: You Become The Night
+    slug: you-become-the-night
+    isrc: SE5752517221
+    duration: '5:05'
+    explicit: false
+    preview_audio: null

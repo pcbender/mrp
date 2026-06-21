@@ -1,0 +1,37 @@
+release:
+  id: the-bridge-gets-you-over
+  slug: the-bridge-gets-you-over
+  title: The Bridge Gets You Over
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-05-04'
+  label: null
+  publisher: null
+  upc: '991043697893'
+  catalog_number: null
+  cover_image: site/public/assets/releases/the-bridge-gets-you-over/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3sdvsWBmD6azFyWSkNDusR
+  seo:
+    title: The Bridge Gets You Over by Michael Anthony Rose
+    description: The Bridge Gets You Over by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: The Bridge Gets You Over
+    slug: the-bridge-gets-you-over
+    isrc: CACWV2689826
+    duration: '4:35'
+    explicit: false
+    preview_audio: null

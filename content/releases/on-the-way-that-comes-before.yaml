@@ -1,0 +1,37 @@
+release:
+  id: on-the-way-that-comes-before
+  slug: on-the-way-that-comes-before
+  title: On the Way That Comes Before
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-07-11'
+  label: null
+  publisher: null
+  upc: '990591955431'
+  catalog_number: null
+  cover_image: site/public/assets/releases/on-the-way-that-comes-before/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3P7rpjVKMzKwguEgDAoOoC
+  seo:
+    title: On the Way That Comes Before by PCBender
+    description: On the Way That Comes Before by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: On the Way That Comes Before
+    slug: on-the-way-that-comes-before
+    isrc: CALVP2546574
+    duration: '4:48'
+    explicit: false
+    preview_audio: null

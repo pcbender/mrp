@@ -1,0 +1,37 @@
+release:
+  id: come-up-and-see
+  slug: come-up-and-see
+  title: Come Up And See
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-01-15'
+  label: null
+  publisher: null
+  upc: 057914624242
+  catalog_number: null
+  cover_image: site/public/assets/releases/come-up-and-see/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0n0Nk320P3yVdYgtT2ouUZ
+  seo:
+    title: Come Up And See by PCBender
+    description: Come Up And See by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Come Up And See
+    slug: come-up-and-see
+    isrc: CAHQJ2620263
+    duration: '3:33'
+    explicit: false
+    preview_audio: null

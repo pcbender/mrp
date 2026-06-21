@@ -1,0 +1,37 @@
+release:
+  id: for-the-love-of-a-woman
+  slug: for-the-love-of-a-woman
+  title: For The Love Of A Woman
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-11-28'
+  label: null
+  publisher: null
+  upc: 057914189314
+  catalog_number: null
+  cover_image: site/public/assets/releases/for-the-love-of-a-woman/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/7vyLyBGCxgi2UUQx0WoZhy
+  seo:
+    title: For The Love Of A Woman by PCBender
+    description: For The Love Of A Woman by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: For The Love Of A Woman
+    slug: for-the-love-of-a-woman
+    isrc: CBF8B2553735
+    duration: '3:36'
+    explicit: false
+    preview_audio: null

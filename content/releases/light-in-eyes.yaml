@@ -1,0 +1,37 @@
+release:
+  id: light-in-eyes
+  slug: light-in-eyes
+  title: Light In Eyes
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-22'
+  label: null
+  publisher: null
+  upc: '990591391512'
+  catalog_number: null
+  cover_image: site/public/assets/releases/light-in-eyes/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6ZBVMDkFF7SBJAvBrb71qk
+  seo:
+    title: Light In Eyes by 4Castle
+    description: Light In Eyes by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Light In Eyes
+    slug: light-in-eyes
+    isrc: CAGOO2549386
+    duration: '4:40'
+    explicit: false
+    preview_audio: null

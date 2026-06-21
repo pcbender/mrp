@@ -1,0 +1,37 @@
+release:
+  id: mispronouncing-anastasia
+  slug: mispronouncing-anastasia
+  title: Mispronouncing Anastasia
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-11-06'
+  label: null
+  publisher: null
+  upc: '7300346912221'
+  catalog_number: null
+  cover_image: site/public/assets/releases/mispronouncing-anastasia/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/2mRlu4aFTpBHX4cJtiKuL6
+  seo:
+    title: Mispronouncing Anastasia by PCBender
+    description: Mispronouncing Anastasia by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Mispronouncing Anastasia
+    slug: mispronouncing-anastasia
+    isrc: SE6QE2531164
+    duration: '6:44'
+    explicit: false
+    preview_audio: null

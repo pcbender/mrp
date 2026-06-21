@@ -1,0 +1,37 @@
+release:
+  id: but-that-was-then
+  slug: but-that-was-then
+  title: But That Was Then
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-09'
+  label: null
+  publisher: null
+  upc: '991043442356'
+  catalog_number: null
+  cover_image: site/public/assets/releases/but-that-was-then/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5CMbfr7EwmUWGtpuWvu47C
+  seo:
+    title: But That Was Then by Michael Anthony Rose
+    description: But That Was Then by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: But That Was Then
+    slug: but-that-was-then
+    isrc: CACWV2649495
+    duration: '5:58'
+    explicit: false
+    preview_audio: null

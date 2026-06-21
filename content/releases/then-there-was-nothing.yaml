@@ -1,0 +1,37 @@
+release:
+  id: then-there-was-nothing
+  slug: then-there-was-nothing
+  title: Then There Was Nothing
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-07-20'
+  label: null
+  publisher: null
+  upc: 057829032231
+  catalog_number: null
+  cover_image: site/public/assets/releases/then-there-was-nothing/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4ucJpemAhtEW4luT2RK8iJ
+  seo:
+    title: Then There Was Nothing by PCBender
+    description: Then There Was Nothing by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Then There Was Nothing
+    slug: then-there-was-nothing
+    isrc: CALVP2562048
+    duration: '7:12'
+    explicit: false
+    preview_audio: null

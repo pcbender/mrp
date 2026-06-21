@@ -1,0 +1,37 @@
+release:
+  id: how-many-gone
+  slug: how-many-gone
+  title: How Many Gone
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-11-04'
+  label: null
+  publisher: null
+  upc: '7300346873836'
+  catalog_number: null
+  cover_image: site/public/assets/releases/how-many-gone/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0LQh81urEQcg07yTPnOYFM
+  seo:
+    title: How Many Gone by PCBender
+    description: How Many Gone by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: How Many Gone
+    slug: how-many-gone
+    isrc: SE6QE2523675
+    duration: '4:56'
+    explicit: false
+    preview_audio: null

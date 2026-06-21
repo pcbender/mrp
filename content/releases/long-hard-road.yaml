@@ -1,0 +1,37 @@
+release:
+  id: long-hard-road
+  slug: long-hard-road
+  title: Long Hard Road
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-01-07'
+  label: null
+  publisher: null
+  upc: 057914551203
+  catalog_number: null
+  cover_image: site/public/assets/releases/long-hard-road/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3w53CCe1OYI4paaoLUmbb5
+  seo:
+    title: Long Hard Road by PCBender
+    description: Long Hard Road by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Long Hard Road
+    slug: long-hard-road
+    isrc: CAHQJ2609323
+    duration: '3:41'
+    explicit: false
+    preview_audio: null

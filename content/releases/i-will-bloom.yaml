@@ -1,0 +1,37 @@
+release:
+  id: i-will-bloom
+  slug: i-will-bloom
+  title: I Will Bloom
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-03-27'
+  label: null
+  publisher: null
+  upc: '991043308577'
+  catalog_number: null
+  cover_image: site/public/assets/releases/i-will-bloom/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/132W7roMIX9sbaq8vbXBm6
+  seo:
+    title: I Will Bloom by Michael Anthony Rose
+    description: I Will Bloom by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: I Will Bloom
+    slug: i-will-bloom
+    isrc: CACWV2628488
+    duration: '3:15'
+    explicit: false
+    preview_audio: null

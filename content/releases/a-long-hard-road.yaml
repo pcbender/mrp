@@ -1,0 +1,37 @@
+release:
+  id: a-long-hard-road
+  slug: a-long-hard-road
+  title: A Long Hard Road
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-01-12'
+  label: null
+  publisher: null
+  upc: '7300348037199'
+  catalog_number: null
+  cover_image: site/public/assets/releases/a-long-hard-road/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6KgslEbzvumt1u7csLHrCg
+  seo:
+    title: A Long Hard Road by 4Castle
+    description: A Long Hard Road by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: A Long Hard Road
+    slug: a-long-hard-road
+    isrc: SE5BU2634377
+    duration: '3:44'
+    explicit: false
+    preview_audio: null

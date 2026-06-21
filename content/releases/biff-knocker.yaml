@@ -1,0 +1,37 @@
+release:
+  id: biff-knocker
+  slug: biff-knocker
+  title: Biff Knocker
+  artist_id: michael-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-02-09'
+  label: null
+  publisher: null
+  upc: 057914858821
+  catalog_number: null
+  cover_image: site/public/assets/releases/biff-knocker/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5q2kgkxfSmpwrTyZt0u6ln
+  seo:
+    title: Biff Knocker by Michael Rose
+    description: Biff Knocker by Michael Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Biff Knocker
+    slug: biff-knocker
+    isrc: CAHQJ2656041
+    duration: '4:26'
+    explicit: false
+    preview_audio: null

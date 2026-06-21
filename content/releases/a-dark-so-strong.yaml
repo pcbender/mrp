@@ -1,0 +1,37 @@
+release:
+  id: a-dark-so-strong
+  slug: a-dark-so-strong
+  title: A Dark So Strong
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-11-07'
+  label: null
+  publisher: null
+  upc: '7300346930232'
+  catalog_number: null
+  cover_image: site/public/assets/releases/a-dark-so-strong/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/2RM2LzRjrYzuXDgkURrKlj
+  seo:
+    title: A Dark So Strong by PCBender
+    description: A Dark So Strong by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: A Dark So Strong
+    slug: a-dark-so-strong
+    isrc: SE6QE2534839
+    duration: '4:36'
+    explicit: false
+    preview_audio: null

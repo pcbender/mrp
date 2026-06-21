@@ -1,0 +1,37 @@
+release:
+  id: memory-assembly
+  slug: memory-assembly
+  title: Memory Assembly
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-06-11'
+  label: null
+  publisher: null
+  upc: '990591595057'
+  catalog_number: null
+  cover_image: site/public/assets/releases/memory-assembly/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1IgUhngTgkYFw3RhKWgzrf
+  seo:
+    title: Memory Assembly by PCBender
+    description: Memory Assembly by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Memory Assembly
+    slug: memory-assembly
+    isrc: CAGOO2583592
+    duration: '4:04'
+    explicit: false
+    preview_audio: null

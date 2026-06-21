@@ -1,0 +1,37 @@
+release:
+  id: measure-s-measure
+  slug: measure-s-measure
+  title: Measure's Measure
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-09-22'
+  label: null
+  publisher: null
+  upc: 057829643857
+  catalog_number: null
+  cover_image: site/public/assets/releases/measure-s-measure/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5lDTJIa8RCqKc2eVDiVqUp
+  seo:
+    title: Measure's Measure by PCBender
+    description: Measure's Measure by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Measure's Measure
+    slug: measure-s-measure
+    isrc: CBEYJ2566732
+    duration: '6:22'
+    explicit: false
+    preview_audio: null

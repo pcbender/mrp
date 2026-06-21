@@ -1,0 +1,37 @@
+release:
+  id: ever-only-after
+  slug: ever-only-after
+  title: Ever Only After
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-06-03'
+  label: null
+  publisher: null
+  upc: '990591510715'
+  catalog_number: null
+  cover_image: site/public/assets/releases/ever-only-after/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0hKSAn4y3euPn2arlwIeeQ
+  seo:
+    title: Ever Only After by PCBender
+    description: Ever Only After by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Ever Only After
+    slug: ever-only-after
+    isrc: CAGOO2569447
+    duration: '4:20'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: try-to-be-okay
+  slug: try-to-be-okay
+  title: Try To Be Okay
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-25'
+  label: null
+  publisher: null
+  upc: '991043600145'
+  catalog_number: null
+  cover_image: site/public/assets/releases/try-to-be-okay/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3yS9OWVZp5IhNF3Np2Gdf3
+  seo:
+    title: Try To Be Okay by PCBender
+    description: Try To Be Okay by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Try To Be Okay
+    slug: try-to-be-okay
+    isrc: CACWV2674140
+    duration: '3:21'
+    explicit: false
+    preview_audio: null

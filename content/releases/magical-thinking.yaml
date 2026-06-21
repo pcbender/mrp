@@ -1,0 +1,37 @@
+release:
+  id: magical-thinking
+  slug: magical-thinking
+  title: Magical Thinking
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-06-03'
+  label: null
+  publisher: null
+  upc: '990591513198'
+  catalog_number: null
+  cover_image: site/public/assets/releases/magical-thinking/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/78FefL5lkpZb57KPpyFuvN
+  seo:
+    title: Magical Thinking by Lingua Aeternum
+    description: Magical Thinking by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Magical Thinking
+    slug: magical-thinking
+    isrc: CAGOO2569517
+    duration: '4:29'
+    explicit: false
+    preview_audio: null

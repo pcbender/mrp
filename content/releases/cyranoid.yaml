@@ -1,0 +1,37 @@
+release:
+  id: cyranoid
+  slug: cyranoid
+  title: Cyranoid
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-09-17'
+  label: null
+  publisher: null
+  upc: 057829615465
+  catalog_number: null
+  cover_image: site/public/assets/releases/cyranoid/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3vJE1kJvjZKi9oEFRJFmDq
+  seo:
+    title: Cyranoid by PCBender
+    description: Cyranoid by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Cyranoid
+    slug: cyranoid
+    isrc: CBEYJ2560536
+    duration: '7:10'
+    explicit: false
+    preview_audio: null

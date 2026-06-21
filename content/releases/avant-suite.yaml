@@ -1,0 +1,37 @@
+release:
+  id: avant-suite
+  slug: avant-suite
+  title: Avant Suite
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-14'
+  label: null
+  publisher: null
+  upc: '991043492054'
+  catalog_number: null
+  cover_image: site/public/assets/releases/avant-suite/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6DTBKUJnrNGPiSA5GnaN9t
+  seo:
+    title: Avant Suite by Michael Anthony Rose
+    description: Avant Suite by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Avant Suite
+    slug: avant-suite
+    isrc: CACWV2656854
+    duration: '4:50'
+    explicit: false
+    preview_audio: null

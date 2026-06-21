@@ -1,0 +1,37 @@
+release:
+  id: fabulous-catastrophe
+  slug: fabulous-catastrophe
+  title: Fabulous Catastrophe
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-21'
+  label: null
+  publisher: null
+  upc: '991043558958'
+  catalog_number: null
+  cover_image: site/public/assets/releases/fabulous-catastrophe/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/07RR1AN7a9HrthVnqTPswU
+  seo:
+    title: Fabulous Catastrophe by PCBender
+    description: Fabulous Catastrophe by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Fabulous Catastrophe
+    slug: fabulous-catastrophe
+    isrc: CACWV2666884
+    duration: '4:29'
+    explicit: false
+    preview_audio: null

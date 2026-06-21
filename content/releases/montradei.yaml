@@ -1,0 +1,37 @@
+release:
+  id: montradei
+  slug: montradei
+  title: Montradei
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-03-19'
+  label: null
+  publisher: null
+  upc: '991043235347'
+  catalog_number: null
+  cover_image: site/public/assets/releases/montradei/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1K9nNJtmHArCepJaoKfn2G
+  seo:
+    title: Montradei by 4Castle
+    description: Montradei by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Montradei
+    slug: montradei
+    isrc: CACWV2615456
+    duration: '4:39'
+    explicit: false
+    preview_audio: null

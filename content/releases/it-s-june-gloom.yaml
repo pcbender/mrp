@@ -1,0 +1,37 @@
+release:
+  id: it-s-june-gloom
+  slug: it-s-june-gloom
+  title: It's June Gloom
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-24'
+  label: null
+  publisher: null
+  upc: '991043589235'
+  catalog_number: null
+  cover_image: site/public/assets/releases/it-s-june-gloom/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/18hXklBXPtPsYWbUsiYxOh
+  seo:
+    title: It's June Gloom by PCBender
+    description: It's June Gloom by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: It's June Gloom
+    slug: it-s-june-gloom
+    isrc: CACWV2672657
+    duration: '3:02'
+    explicit: false
+    preview_audio: null

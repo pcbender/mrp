@@ -1,0 +1,37 @@
+release:
+  id: sentia-becomes
+  slug: sentia-becomes
+  title: Sentia Becomes
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-22'
+  label: null
+  publisher: null
+  upc: 056870987118
+  catalog_number: null
+  cover_image: site/public/assets/releases/sentia-becomes/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1F8ckFyZBs9gOpUyWeI5j7
+  seo:
+    title: Sentia Becomes by Lingua Aeternum
+    description: Sentia Becomes by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Sentia Becomes
+    slug: sentia-becomes
+    isrc: CAENV2574164
+    duration: '4:24'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: invocate
+  slug: invocate
+  title: Invocate
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-18'
+  label: null
+  publisher: null
+  upc: 056870944883
+  catalog_number: null
+  cover_image: site/public/assets/releases/invocate/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1sk79JSILddfYbmdm34dSQ
+  seo:
+    title: Invocate by Lingua Aeternum
+    description: Invocate by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Invocate
+    slug: invocate
+    isrc: CAENV2566315
+    duration: '3:25'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: hardwood-confessions
+  slug: hardwood-confessions
+  title: Hardwood Confessions
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-05'
+  label: null
+  publisher: null
+  upc: '990591168213'
+  catalog_number: null
+  cover_image: site/public/assets/releases/hardwood-confessions/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/59uL5HOJuAEqxuK2TfAtNw
+  seo:
+    title: Hardwood Confessions by PCBender
+    description: Hardwood Confessions by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Hardwood Confessions
+    slug: hardwood-confessions
+    isrc: CAGOO2508414
+    duration: '3:38'
+    explicit: false
+    preview_audio: null

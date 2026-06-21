@@ -1,0 +1,37 @@
+release:
+  id: yesterday-s-delayed
+  slug: yesterday-s-delayed
+  title: Yesterday's Delayed
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-10-01'
+  label: null
+  publisher: null
+  upc: '7300346330018'
+  catalog_number: null
+  cover_image: site/public/assets/releases/yesterday-s-delayed/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5yLf6Ecs3hjMeunIArZAsG
+  seo:
+    title: Yesterday's Delayed by PCBender
+    description: Yesterday's Delayed by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Yesterday's Delayed
+    slug: yesterday-s-delayed
+    isrc: SE6I32513353
+    duration: '3:29'
+    explicit: false
+    preview_audio: null

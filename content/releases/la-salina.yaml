@@ -1,0 +1,37 @@
+release:
+  id: la-salina
+  slug: la-salina
+  title: La Salina
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-04'
+  label: null
+  publisher: null
+  upc: '990591140073'
+  catalog_number: null
+  cover_image: site/public/assets/releases/la-salina/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/7FnenfUkY1Zo6hPKeiNzHn
+  seo:
+    title: La Salina by PCBender
+    description: La Salina by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: La Salina
+    slug: la-salina
+    isrc: CAGOO2503337
+    duration: '3:40'
+    explicit: false
+    preview_audio: null

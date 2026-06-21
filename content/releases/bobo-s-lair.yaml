@@ -1,0 +1,37 @@
+release:
+  id: bobo-s-lair
+  slug: bobo-s-lair
+  title: Bobo's Lair
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-03'
+  label: null
+  publisher: null
+  upc: 056870747767
+  catalog_number: null
+  cover_image: site/public/assets/releases/bobo-s-lair/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5mOiWFvolaBSnTaBoSQMEh
+  seo:
+    title: Bobo's Lair by 4Castle
+    description: Bobo's Lair by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Bobo's Lair
+    slug: bobo-s-lair
+    isrc: CAENV2530356
+    duration: '3:40'
+    explicit: false
+    preview_audio: null

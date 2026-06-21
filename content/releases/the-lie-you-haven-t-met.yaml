@@ -1,0 +1,37 @@
+release:
+  id: the-lie-you-haven-t-met
+  slug: the-lie-you-haven-t-met
+  title: The Lie You Haven't Met
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-07-12'
+  label: null
+  publisher: null
+  upc: '990591964532'
+  catalog_number: null
+  cover_image: site/public/assets/releases/the-lie-you-haven-t-met/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3HeV0i0RHJQvNJJjghYt6O
+  seo:
+    title: The Lie You Haven't Met by PCBender
+    description: The Lie You Haven't Met by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: The Lie You Haven't Met
+    slug: the-lie-you-haven-t-met
+    isrc: CALVP2547807
+    duration: '4:29'
+    explicit: false
+    preview_audio: null

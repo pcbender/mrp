@@ -1,0 +1,37 @@
+release:
+  id: hither-come-softly
+  slug: hither-come-softly
+  title: Hither Come Softly
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-28'
+  label: null
+  publisher: null
+  upc: '990591063679'
+  catalog_number: null
+  cover_image: site/public/assets/releases/hither-come-softly/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4F44moTk0uB0bTQSTUnmqM
+  seo:
+    title: Hither Come Softly by Lingua Aeternum
+    description: Hither Come Softly by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Hither Come Softly
+    slug: hither-come-softly
+    isrc: CAENV2589573
+    duration: '3:04'
+    explicit: false
+    preview_audio: null

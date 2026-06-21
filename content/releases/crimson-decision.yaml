@@ -1,0 +1,37 @@
+release:
+  id: crimson-decision
+  slug: crimson-decision
+  title: Crimson Decision
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-20'
+  label: null
+  publisher: null
+  upc: '990591372542'
+  catalog_number: null
+  cover_image: site/public/assets/releases/crimson-decision/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1uLY3dsf3Qmt6ji9FDKWzl
+  seo:
+    title: Crimson Decision by 4Castle
+    description: Crimson Decision by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Crimson Decision
+    slug: crimson-decision
+    isrc: CAGOO2544901
+    duration: '4:23'
+    explicit: false
+    preview_audio: null

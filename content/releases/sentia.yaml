@@ -1,0 +1,37 @@
+release:
+  id: sentia
+  slug: sentia
+  title: Sentia
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-01'
+  label: null
+  publisher: null
+  upc: '991043359098'
+  catalog_number: null
+  cover_image: site/public/assets/releases/sentia/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5yY9JNEuCvvbs6Oji9SOPD
+  seo:
+    title: Sentia by Lingua Aeternum
+    description: Sentia by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Sentia
+    slug: sentia
+    isrc: CACWV2636473
+    duration: '5:28'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: turn-a-phrase
+  slug: turn-a-phrase
+  title: Turn a Phrase
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-07-16'
+  label: null
+  publisher: null
+  upc: 057829010925
+  catalog_number: null
+  cover_image: site/public/assets/releases/turn-a-phrase/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1MrSwZqKeijuChvAyb4YUR
+  seo:
+    title: Turn a Phrase by PCBender
+    description: Turn a Phrase by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Turn a Phrase
+    slug: turn-a-phrase
+    isrc: CALVP2556688
+    duration: '5:08'
+    explicit: false
+    preview_audio: null

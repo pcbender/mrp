@@ -1,0 +1,37 @@
+release:
+  id: the-rats-are-in-the-roses
+  slug: the-rats-are-in-the-roses
+  title: The Rats Are In The Roses
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-11-10'
+  label: null
+  publisher: null
+  upc: 057914042244
+  catalog_number: null
+  cover_image: site/public/assets/releases/the-rats-are-in-the-roses/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4bMsCh2zwkJAo2BkzKHXBA
+  seo:
+    title: The Rats Are In The Roses by PCBender
+    description: The Rats Are In The Roses by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: The Rats Are In The Roses
+    slug: the-rats-are-in-the-roses
+    isrc: CBF8B2530544
+    duration: '3:24'
+    explicit: false
+    preview_audio: null

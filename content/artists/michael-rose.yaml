@@ -1,0 +1,18 @@
+artist:
+  id: michael-rose
+  name: Michael Rose
+  sort_name: Michael Rose
+  type: null
+  label: Maricopa Records
+  default_publisher: Maricopa Publishing
+  bio_short: null
+  bio_long: null
+  image: /assets/artists/michael-rose/cover.jpg
+  links:
+    spotify: https://open.spotify.com/artist/49lxwccrBkArWVhPknMJtz
+    apple_music: null
+    youtube_music: null
+    youtube: null
+    bandcamp: null
+    instagram: null
+  visibility: public

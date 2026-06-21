@@ -1,0 +1,37 @@
+release:
+  id: what-you-want
+  slug: what-you-want
+  title: What You Want
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-25'
+  label: null
+  publisher: null
+  upc: '990591032019'
+  catalog_number: null
+  cover_image: site/public/assets/releases/what-you-want/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6pdJAZeTungK7ol1kvi8At
+  seo:
+    title: What You Want by PCBender
+    description: What You Want by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: What You Want
+    slug: what-you-want
+    isrc: CAENV2583567
+    duration: '2:40'
+    explicit: false
+    preview_audio: null

@@ -150,7 +150,7 @@ def test_new_artist_single_and_ep_with_partial_date(tmp_path):
         repo,
         [
             {
-                "artist_id": "michael-rose",
+                "artist_id": "nova-test-artist",
                 "spotify_url": f"https://open.spotify.com/artist/{artist_spotify_id}",
             }
         ],
@@ -168,8 +168,8 @@ def test_new_artist_single_and_ep_with_partial_date(tmp_path):
     client = FakeSpotifyClient(
         artists={
             artist_spotify_id: {
-                "name": "Michael Rose",
-                "images": [{"url": "https://img.example/michael-rose.jpg"}],
+                "name": "Nova Test Artist",
+                "images": [{"url": "https://img.example/nova-test-artist.jpg"}],
                 "external_urls": {"spotify": f"https://open.spotify.com/artist/{artist_spotify_id}"},
             }
         },
@@ -189,7 +189,7 @@ def test_new_artist_single_and_ep_with_partial_date(tmp_path):
 
     artists = yaml.safe_load((repo / "content/import-review/spotify-artists.yaml").read_text())
     assert artists["candidates"][0]["artist"]["review_status"] == "needs_review"
-    assert artists["candidates"][0]["artist"]["id"] == "michael-rose"
+    assert artists["candidates"][0]["artist"]["id"] == "nova-test-artist"
 
     releases = {
         r["release"]["title"]: r["release"]

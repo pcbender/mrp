@@ -1,0 +1,37 @@
+release:
+  id: the-turn-is-yours
+  slug: the-turn-is-yours
+  title: The Turn is Yours
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-07-16'
+  label: null
+  publisher: null
+  upc: 057829010833
+  catalog_number: null
+  cover_image: site/public/assets/releases/the-turn-is-yours/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6uaD7eL2tpyiBw400yEAP4
+  seo:
+    title: The Turn is Yours by 4Castle
+    description: The Turn is Yours by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: The Turn is Yours
+    slug: the-turn-is-yours
+    isrc: CALVP2556673
+    duration: '4:23'
+    explicit: false
+    preview_audio: null
