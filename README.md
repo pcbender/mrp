@@ -32,6 +32,7 @@ scripts/mrp publish --release circuiting --json
 scripts/mrp rollback --to <build-id> --yes --json
 scripts/mrp release create --artist pcbender --title "Signal Path" --type single --json
 scripts/mrp migrate-site --source /home/mrose/website-migration --dry-run --json
+scripts/mrp import-spotify --roster content/import-review/spotify-roster.yaml --json
 scripts/mrp status --release circuiting --json
 ```
 
@@ -70,10 +71,12 @@ rollback
 status
 release create
 import-site
+import-spotify
 ```
 
 Implemented commands currently include `inspect`, `validate`, `import-site`,
-`build`, `stage`, `verify`, `approve`, `publish`, `rollback`, and `status`. The
+`import-spotify`, `build`, `stage`, `verify`, `approve`, `publish`, `rollback`,
+and `status`. The
 build command validates content, runs the Astro static site build into
 `$MRP_SITE_OUT_ROOT/builds/staging/{build-id}/`, and writes a JSON report under
 `reports/build/`. `MRP_SITE_OUT_ROOT` defaults to
@@ -97,6 +100,16 @@ existing release.
 read-only `~/website-migration` source without writing content records or assets.
 The staging RSS feed includes current release entries and migrated blog/news
 posts; migrated static pages are listed in the sitemap but are not feed items.
+
+`import-spotify` reads a roster of Spotify artist links from
+`content/import-review/spotify-roster.yaml` and writes artist/release/asset
+candidates under `content/import-review/spotify-*.yaml` plus a JSON report
+under `reports/import/`. It never writes to `content/artists/` or
+`content/releases/` directly; new releases that match an existing record by
+UPC, ISRC, or title get a `matched_existing` patch proposal instead of a
+duplicate. Requires `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` in the
+environment. See
+[docs/SPOTIFY-CATALOG-IMPORT-v0.2.md](docs/SPOTIFY-CATALOG-IMPORT-v0.2.md).
 
 MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
 v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).
@@ -125,6 +138,7 @@ Do not commit or hand-edit generated HTML under `builds/`, `graphify-out/`,
 - [Deployment](docs/DEPLOYMENT.md)
 - [Agent usage](docs/AGENT-USAGE.md)
 - [Remote deployment v0.2 candidate](docs/REMOTE-DEPLOYMENT-v0.2.md)
+- [Spotify catalog import v0.2 candidate](docs/SPOTIFY-CATALOG-IMPORT-v0.2.md)
 - [MRP v0.1.1 full site staging plan](docs/MRP-v0.1.1-FULL-SITE-STAGING-PLAN.md)
 - [MRP v0.1.1 migration review](docs/MRP-v0.1.1-REVIEW.md)
 - [MRP v0.1.2 WXR static clone plan](docs/MRP-v0.1.2-WXR-STATIC-CLONE-PLAN.md)

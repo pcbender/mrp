@@ -67,6 +67,9 @@ scripts/mrp status --release signal-path --json
 - Do not implement WooCommerce, cart, checkout, account, or payment behavior in
   v0.1.
 - Do not add remote deployment credentials to git.
+- Do not add Spotify API credentials to git; load `SPOTIFY_CLIENT_ID` /
+  `SPOTIFY_CLIENT_SECRET` from the environment or an untracked `.env` file at
+  the repo root.
 - Do not bypass `.allow-deploy` marker checks.
 - Use `--dry-run` for deployment planning when reviewing target changes.
 - Use `--yes` only after reviewing rollback candidate output.

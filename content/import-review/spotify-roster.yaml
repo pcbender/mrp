@@ -1,0 +1,24 @@
+# Human-edited input for `scripts/mrp import-spotify`.
+#
+# Known artists: spotify_url left null so the importer reuses the
+# artist.links.spotify already on file in content/artists/. Verified against
+# the user-supplied links on 2026-06-21 (base artist IDs match; the on-file
+# links carry extra ?si= tracking params, which is fine).
+#
+# New artists: artist_id is pinned explicitly (not left for the importer to
+# derive from the Spotify display name) because "Michael Rose" and
+# "Michael Anthony Rose" are two intentionally distinct artist profiles with
+# near-identical names — leave both ids exactly as set below.
+artists:
+  - artist_id: 4castle
+    spotify_url: null
+  - artist_id: lingua-aeternum
+    spotify_url: null
+  - artist_id: pcbender
+    spotify_url: null
+  - artist_id: stab
+    spotify_url: null
+  - artist_id: michael-rose
+    spotify_url: https://open.spotify.com/artist/49lxwccrBkArWVhPknMJtz
+  - artist_id: michael-anthony-rose
+    spotify_url: https://open.spotify.com/artist/1bpeEWD8VsTewFr5FKOKv0

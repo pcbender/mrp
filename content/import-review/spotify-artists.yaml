@@ -1,0 +1,69 @@
+candidates:
+- artist:
+    id: 4castle
+    name: 4Castle
+    image_source: https://i.scdn.co/image/ab6761610000e5eb7baa9a109b8f64ce95492008
+    visibility: draft
+    links:
+      spotify: https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh
+    review_status: known_artist
+    notes:
+    - Matches an existing content/artists record; only links.spotify is authoritative
+      from Spotify.
+- artist:
+    id: lingua-aeternum
+    name: Lingua Aeternum
+    image_source: https://i.scdn.co/image/ab6761610000e5ebdc44ced30dd04d3bc86104cf
+    visibility: draft
+    links:
+      spotify: https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd
+    review_status: known_artist
+    notes:
+    - Matches an existing content/artists record; only links.spotify is authoritative
+      from Spotify.
+- artist:
+    id: pcbender
+    name: PCBender
+    image_source: https://i.scdn.co/image/ab6761610000e5ebb382845917609511d79d47b3
+    visibility: draft
+    links:
+      spotify: https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo
+    review_status: known_artist
+    notes:
+    - Matches an existing content/artists record; only links.spotify is authoritative
+      from Spotify.
+- artist:
+    id: stab
+    name: STAB
+    image_source: https://i.scdn.co/image/ab6761610000e5ebefe8df8153e088ae3bf11868
+    visibility: draft
+    links:
+      spotify: https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE
+    review_status: known_artist
+    notes:
+    - Matches an existing content/artists record; only links.spotify is authoritative
+      from Spotify.
+- artist:
+    id: michael-rose
+    name: Michael Rose
+    image_source: https://i.scdn.co/image/ab67616d0000b273ff3b20283310b9e1c865e202
+    visibility: draft
+    links:
+      spotify: https://open.spotify.com/artist/49lxwccrBkArWVhPknMJtz
+    review_status: needs_review
+    notes:
+    - New artist, not present in content/artists/.
+    - bio_short, bio_long, type, default_publisher, and non-Spotify links need manual/collaborative
+      drafting before promotion.
+- artist:
+    id: michael-anthony-rose
+    name: Michael Anthony Rose
+    image_source: https://i.scdn.co/image/ab67616d0000b2731c3c3a9297e9247374dbf830
+    visibility: draft
+    links:
+      spotify: https://open.spotify.com/artist/1bpeEWD8VsTewFr5FKOKv0
+    review_status: needs_review
+    notes:
+    - New artist, not present in content/artists/.
+    - bio_short, bio_long, type, default_publisher, and non-Spotify links need manual/collaborative
+      drafting before promotion.

@@ -15,6 +15,7 @@ from mrp.core.clone_rewrites import clone_rewrites, format_clone_rewrites
 from mrp.core.clone_site import clone_site, format_clone_site
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
+from mrp.core.import_spotify import DEFAULT_ROSTER, format_import_spotify, import_spotify
 from mrp.core.inspect import format_inspection, inspect_repository
 from mrp.core.migrate_site import format_migrate_site, migrate_site
 from mrp.core.migration_inventory import DEFAULT_MIGRATION_SOURCE
@@ -99,6 +100,13 @@ def build_parser() -> argparse.ArgumentParser:
     add_global_options(import_parser, suppress_defaults=True)
     import_parser.add_argument("--source", default=str(DEFAULT_SOURCE))
     add_common_command_options(import_parser, "import-site")
+
+    import_spotify_parser = subparsers.add_parser(
+        "import-spotify", help="Import artist/release candidates from the Spotify Web API."
+    )
+    add_global_options(import_spotify_parser, suppress_defaults=True)
+    import_spotify_parser.add_argument("--roster", default=str(DEFAULT_ROSTER))
+    import_spotify_parser.add_argument("--download-covers", action="store_true")
 
     migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
     add_global_options(migrate_parser, suppress_defaults=True)
@@ -203,6 +211,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "import-site":
         print(format_import(result))
         return
+    if result["command"] == "import-spotify":
+        print(format_import_spotify(result))
+        return
     if result["command"] == "build":
         print(format_build(result))
         return
@@ -291,6 +302,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = create_release(args.repo, artist=args.artist, title=args.title, release_type=args.type)
     elif args.command == "import-site":
         result = import_site(args.repo, source=args.source)
+    elif args.command == "import-spotify":
+        result = import_spotify(args.repo, roster=args.roster, download_covers=args.download_covers)
     elif args.command == "migrate-site":
         result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "wxr-inventory":

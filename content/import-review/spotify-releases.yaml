@@ -1,0 +1,4777 @@
+candidates:
+- release:
+    artist_id: 4castle
+    existing_path: content/releases/distance-not-safety.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870413655
+      tracks_isrc:
+      - index: 0
+        title: Cut Flowers
+        isrc: CACWV2560554
+      - index: 1
+        title: Distance Not Safety
+        isrc: CACWV2560555
+      - index: 2
+        title: Getting Through
+        isrc: CACWV2560556
+      - index: 3
+        title: The Dreamer and the Dreamed
+        isrc: CACWV2560557
+      - index: 4
+        title: Double Black Diamonds
+        isrc: CACWV2560558
+      - index: 5
+        title: Cat's Claw
+        isrc: CACWV2560559
+      - index: 6
+        title: Belligerent
+        isrc: CACWV2560560
+      - index: 7
+        title: Delusion of Truth
+        isrc: CACWV2560563
+      - index: 8
+        title: Venus Syndrome
+        isrc: CACWV2560561
+      - index: 9
+        title: Void of Intention
+        isrc: CACWV2560562
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: 4castle
+    existing_path: content/releases/gone-and-forgotten.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870452753
+      song_isrc: CACWV2568180
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: 4castle
+    existing_path: content/releases/on-the-advent-of-a-dream.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870534718
+      tracks_isrc:
+      - index: 0
+        title: On the Advent of a Dream
+        isrc: CACWV2586250
+      - index: 1
+        title: Scattershot Forget-Me-Not
+        isrc: CACWV2586254
+      - index: 2
+        title: And the Gods Fell Down
+        isrc: CACWV2586245
+      - index: 3
+        title: By Starlight Drifting West
+        isrc: CACWV2586247
+      - index: 4
+        title: "Tiger\u2019s Eye"
+        isrc: CACWV2586255
+      - index: 5
+        title: Haymakers and Body Blows
+        isrc: CACWV2586248
+      - index: 6
+        title: Paradox of Contradictions
+        isrc: CACWV2586251
+      - index: 7
+        title: Pixy Stix
+        isrc: CACWV2586252
+      - index: 8
+        title: Bit Wise Resistance
+        isrc: CACWV2586246
+      - index: 9
+        title: Next to Nothing
+        isrc: CACWV2586249
+      - index: 10
+        title: Preternatural
+        isrc: CACWV2586253
+      - index: 11
+        title: Gone and Forgotten
+        isrc: CACWV2568180
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    id: here-comes-the-rain
+    slug: here-comes-the-rain
+    title: Here Comes the Rain
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-21'
+    label: null
+    publisher: null
+    upc: 056870572727
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0vcmUAc94me3pQntl9Lpnp
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Here Comes the Rain
+      slug: here-comes-the-rain
+      isrc: CACWV2595550
+      duration: '3:22'
+      explicit: false
+      preview_audio: null
+- release:
+    artist_id: 4castle
+    existing_path: content/releases/umbra-ala.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870596907
+      song_isrc: CAENV2500587
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: 4castle
+    existing_path: content/releases/then-she-descends.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870657349
+      song_isrc: CAENV2511953
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    id: what-s-best
+    slug: what-s-best
+    title: What's Best
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-02'
+    label: null
+    publisher: null
+    upc: 056870737621
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5xqqBZNDbr7bktBDU4pmIC
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: What's Best
+      slug: what-s-best
+      isrc: CAENV2527871
+      duration: '3:40'
+      explicit: false
+      preview_audio: null
+- release:
+    id: bobo-s-lair
+    slug: bobo-s-lair
+    title: Bobo's Lair
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-03'
+    label: null
+    publisher: null
+    upc: 056870747767
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5mOiWFvolaBSnTaBoSQMEh
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Bobo's Lair
+      slug: bobo-s-lair
+      isrc: CAENV2530356
+      duration: '3:40'
+      explicit: false
+      preview_audio: null
+- release:
+    id: something-less-would-joy-then-be
+    slug: something-less-would-joy-then-be
+    title: Something Less Would Joy Then Be
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-04'
+    label: null
+    publisher: null
+    upc: 056870766003
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7HN4YOvsIr3R0srxU7HdnE
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Something Less Would Joy Then Be
+      slug: something-less-would-joy-then-be
+      isrc: CAENV2534692
+      duration: '3:45'
+      explicit: false
+      preview_audio: null
+- release:
+    id: echo-primae
+    slug: echo-primae
+    title: Echo Primae
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-11'
+    label: null
+    publisher: null
+    upc: 056870858258
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3J4XF9Turl3GOoLbwKXclB
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Echo Primae
+      slug: echo-primae
+      isrc: CAENV2551198
+      duration: '3:31'
+      explicit: false
+      preview_audio: null
+- release:
+    id: attunement
+    slug: attunement
+    title: Attunement
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-12'
+    label: null
+    publisher: null
+    upc: 056870869148
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5qwftnD6px2w9iGqMcicDq
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Attunement
+      slug: attunement
+      isrc: CAENV2552535
+      duration: '2:38'
+      explicit: false
+      preview_audio: null
+- release:
+    id: coda-returns
+    slug: coda-returns
+    title: Coda Returns
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-15'
+    label: null
+    publisher: null
+    upc: 056870905228
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0d7MbiwOZhtBrex1Bg6F4r
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Coda Returns
+      slug: coda-returns
+      isrc: CAENV2559895
+      duration: '3:50'
+      explicit: false
+      preview_audio: null
+- release:
+    id: hesitation-denies
+    slug: hesitation-denies
+    title: Hesitation Denies
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-16'
+    label: null
+    publisher: null
+    upc: 056870918563
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/35zRQUkOPiEmk4R8OmXeyL
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Hesitation Denies
+      slug: hesitation-denies
+      isrc: CAENV2562312
+      duration: '3:45'
+      explicit: false
+      preview_audio: null
+- release:
+    id: crimson-decision
+    slug: crimson-decision
+    title: Crimson Decision
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-20'
+    label: null
+    publisher: null
+    upc: '990591372542'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1uLY3dsf3Qmt6ji9FDKWzl
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Crimson Decision
+      slug: crimson-decision
+      isrc: CAGOO2544901
+      duration: '4:23'
+      explicit: false
+      preview_audio: null
+- release:
+    id: light-in-eyes
+    slug: light-in-eyes
+    title: Light In Eyes
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-22'
+    label: null
+    publisher: null
+    upc: '990591391512'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6ZBVMDkFF7SBJAvBrb71qk
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Light In Eyes
+      slug: light-in-eyes
+      isrc: CAGOO2549386
+      duration: '4:40'
+      explicit: false
+      preview_audio: null
+- release:
+    id: bent
+    slug: bent
+    title: Bent
+    artist_id: 4castle
+    model: album
+    release_type: album
+    status: draft
+    release_date: '2025-05-26'
+    label: null
+    publisher: null
+    upc: '990591448766'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4Bi0av41wTYBH7DAXlFVrI
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    tracks:
+    - number: 1
+      title: Mr. McKay
+      slug: mr-mckay
+      isrc: CAGOO2558703
+      duration: '4:59'
+      explicit: false
+      preview_audio: null
+    - number: 2
+      title: The Bend
+      slug: the-bend
+      isrc: CAGOO2558704
+      duration: '4:02'
+      explicit: false
+      preview_audio: null
+    - number: 3
+      title: Below The Line
+      slug: below-the-line
+      isrc: CAGOO2558715
+      duration: '4:50'
+      explicit: false
+      preview_audio: null
+    - number: 4
+      title: "Friedman\u2019s Folly"
+      slug: friedmans-folly
+      isrc: CAGOO2558705
+      duration: '3:55'
+      explicit: false
+      preview_audio: null
+    - number: 5
+      title: Authenticity Factory
+      slug: authenticity-factory
+      isrc: CAGOO2558706
+      duration: '4:07'
+      explicit: false
+      preview_audio: null
+    - number: 6
+      title: Voluntary Mandatory
+      slug: voluntary-mandatory
+      isrc: CAGOO2558707
+      duration: '3:17'
+      explicit: false
+      preview_audio: null
+    - number: 7
+      title: All Change Is Painful
+      slug: all-change-is-painful
+      isrc: CAGOO2558708
+      duration: '4:13'
+      explicit: false
+      preview_audio: null
+    - number: 8
+      title: Human Capital
+      slug: human-capital
+      isrc: CAGOO2558709
+      duration: '5:33'
+      explicit: false
+      preview_audio: null
+    - number: 9
+      title: Cracks in the Culture Deck
+      slug: cracks-in-the-culture-deck
+      isrc: CAGOO2558710
+      duration: '4:25'
+      explicit: false
+      preview_audio: null
+    - number: 10
+      title: Vision & Values
+      slug: vision-values
+      isrc: CAGOO2558711
+      duration: '3:36'
+      explicit: false
+      preview_audio: null
+    - number: 11
+      title: Stock Price Jesus
+      slug: stock-price-jesus
+      isrc: CAGOO2558712
+      duration: '3:48'
+      explicit: false
+      preview_audio: null
+    - number: 12
+      title: At What Cost
+      slug: at-what-cost
+      isrc: CAGOO2558713
+      duration: '4:10'
+      explicit: false
+      preview_audio: null
+    - number: 13
+      title: Nightmares Return
+      slug: nightmares-return
+      isrc: CAGOO2558714
+      duration: '3:41'
+      explicit: true
+      preview_audio: null
+- release:
+    id: the-distance-between
+    slug: the-distance-between
+    title: The Distance Between
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-06-14'
+    label: null
+    publisher: null
+    upc: '990591660397'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2McA9vOt1PAlNL84lo5x8K
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Distance Between
+      slug: the-distance-between
+      isrc: CAGOO2588995
+      duration: '3:32'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-turn-is-yours
+    slug: the-turn-is-yours
+    title: The Turn is Yours
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-07-16'
+    label: null
+    publisher: null
+    upc: 057829010833
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6uaD7eL2tpyiBw400yEAP4
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Turn is Yours
+      slug: the-turn-is-yours
+      isrc: CALVP2556673
+      duration: '4:23'
+      explicit: false
+      preview_audio: null
+- release:
+    id: dispirited-santos
+    slug: dispirited-santos
+    title: Dispirited Santos
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-10-23'
+    label: null
+    publisher: null
+    upc: '7300346672712'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0YGRw2H9xCeIuK9LgZbnDE
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Dispirited Santos
+      slug: dispirited-santos
+      isrc: SE6I32584957
+      duration: '4:32'
+      explicit: false
+      preview_audio: null
+- release:
+    id: a-long-hard-road
+    slug: a-long-hard-road
+    title: A Long Hard Road
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-01-12'
+    label: null
+    publisher: null
+    upc: '7300348037199'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6KgslEbzvumt1u7csLHrCg
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: A Long Hard Road
+      slug: a-long-hard-road
+      isrc: SE5BU2634377
+      duration: '3:44'
+      explicit: false
+      preview_audio: null
+- release:
+    id: montradei
+    slug: montradei
+    title: Montradei
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-03-19'
+    label: null
+    publisher: null
+    upc: '991043235347'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1K9nNJtmHArCepJaoKfn2G
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Montradei
+      slug: montradei
+      isrc: CACWV2615456
+      duration: '4:39'
+      explicit: false
+      preview_audio: null
+- release:
+    id: a-certain-sense
+    slug: a-certain-sense
+    title: A Certain Sense
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-04'
+    label: null
+    publisher: null
+    upc: '7333583124461'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/26EiSpZ4qtRJYOSbiiHWsZ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: A Certain Sense
+      slug: a-certain-sense
+      isrc: SE6QE2606798
+      duration: '4:35'
+      explicit: false
+      preview_audio: null
+- release:
+    id: ready-almost
+    slug: ready-almost
+    title: Ready Almost
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-13'
+    label: null
+    publisher: null
+    upc: '991043792024'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4l1bU3Lf6UjCg6mzjle3lh
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Ready Almost
+      slug: ready-almost
+      isrc: CAENV2605851
+      duration: '4:44'
+      explicit: false
+      preview_audio: null
+- release:
+    id: to-be-all
+    slug: to-be-all
+    title: To Be All
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-18'
+    label: null
+    publisher: null
+    upc: '991043839408'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3lbd5yABKyHDLug5yWNomz
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: To Be All
+      slug: to-be-all
+      isrc: CAENV2612532
+      duration: '5:43'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-only-way-over
+    slug: the-only-way-over
+    title: The Only Way Over
+    artist_id: 4castle
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-06-14'
+    label: null
+    publisher: null
+    upc: '991048114180'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0tZ2UqUKDlN61TUeU7xXGM
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Only Way Over
+      slug: the-only-way-over
+      isrc: CAENV2654355
+      duration: '4:53'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-memory-i-ll-borrow
+    slug: the-memory-i-ll-borrow
+    title: The Memory I'll Borrow
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-18'
+    label: null
+    publisher: null
+    upc: 056870941974
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1xw3FnlYejSbtOFUXpPp0J
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Memory I'll Borrow
+      slug: the-memory-i-ll-borrow
+      isrc: CAENV2566056
+      duration: '3:14'
+      explicit: false
+      preview_audio: null
+- release:
+    id: invocate
+    slug: invocate
+    title: Invocate
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-18'
+    label: null
+    publisher: null
+    upc: 056870944883
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1sk79JSILddfYbmdm34dSQ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Invocate
+      slug: invocate
+      isrc: CAENV2566315
+      duration: '3:25'
+      explicit: false
+      preview_audio: null
+- release:
+    id: thread-by-thread
+    slug: thread-by-thread
+    title: Thread By Thread
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-20'
+    label: null
+    publisher: null
+    upc: 056870941929
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5ePqbfbKSEmCR1JUy4rDhj
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Thread By Thread
+      slug: thread-by-thread
+      isrc: CAENV2568461
+      duration: '3:20'
+      explicit: false
+      preview_audio: null
+- release:
+    id: ramps-and-lanes
+    slug: ramps-and-lanes
+    title: Ramps and Lanes
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-20'
+    label: null
+    publisher: null
+    upc: 056870964263
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1jyg9CRNWKgKxanxrKls6k
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Ramps and Lanes
+      slug: ramps-and-lanes
+      isrc: CAENV2569717
+      duration: '3:28'
+      explicit: false
+      preview_audio: null
+- release:
+    id: just-the-same
+    slug: just-the-same
+    title: Just the Same
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-20'
+    label: null
+    publisher: null
+    upc: 056870965871
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0YglFU7Ya5J8TkCyTGOUBJ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Just the Same
+      slug: just-the-same
+      isrc: CAENV2569881
+      duration: '4:02'
+      explicit: false
+      preview_audio: null
+- release:
+    id: inner-outer-over-through
+    slug: inner-outer-over-through
+    title: Inner Outer Over Through
+    artist_id: lingua-aeternum
+    model: album
+    release_type: ep
+    status: draft
+    release_date: '2025-04-20'
+    label: null
+    publisher: null
+    upc: 056870953052
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6K20WzKCiDSDG2y6Vq4yyR
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    tracks:
+    - number: 1
+      title: Inner Outer Over Through
+      slug: inner-outer-over-through
+      isrc: CAENV2568702
+      duration: '3:43'
+      explicit: false
+      preview_audio: null
+    - number: 2
+      title: Invocate
+      slug: invocate
+      isrc: CAENV2566315
+      duration: '3:25'
+      explicit: false
+      preview_audio: null
+    - number: 3
+      title: The Memory I'll Borrow
+      slug: the-memory-i-ll-borrow
+      isrc: CAENV2566056
+      duration: '3:14'
+      explicit: false
+      preview_audio: null
+    - number: 4
+      title: Thread By Thread
+      slug: thread-by-thread
+      isrc: CAENV2568461
+      duration: '3:20'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-color-of-wind
+    slug: the-color-of-wind
+    title: The Color of Wind
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-21'
+    label: null
+    publisher: null
+    upc: 056870968285
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5zaDpoBT3AmcJplr0fgNaj
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Color of Wind
+      slug: the-color-of-wind
+      isrc: CAENV2570191
+      duration: '3:31'
+      explicit: false
+      preview_audio: null
+- release:
+    id: one-day
+    slug: one-day
+    title: One Day
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-21'
+    label: null
+    publisher: null
+    upc: 056870977713
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2xOGMs7WoieP3enluejavO
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: One Day
+      slug: one-day
+      isrc: CAENV2572245
+      duration: '3:48'
+      explicit: false
+      preview_audio: null
+- release:
+    id: sentia-becomes
+    slug: sentia-becomes
+    title: Sentia Becomes
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-22'
+    label: null
+    publisher: null
+    upc: 056870987118
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1F8ckFyZBs9gOpUyWeI5j7
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Sentia Becomes
+      slug: sentia-becomes
+      isrc: CAENV2574164
+      duration: '4:24'
+      explicit: false
+      preview_audio: null
+- release:
+    id: gratitude-express
+    slug: gratitude-express
+    title: Gratitude Express
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-22'
+    label: null
+    publisher: null
+    upc: 056870993584
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0t1NwwDWfAHbDpScP5Zi88
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Gratitude Express
+      slug: gratitude-express
+      isrc: CAENV2575442
+      duration: '3:26'
+      explicit: false
+      preview_audio: null
+- release:
+    id: this-over-that
+    slug: this-over-that
+    title: This Over That
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-23'
+    label: null
+    publisher: null
+    upc: '990591006720'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6lfxIazmH5WubNPrKZg3ZK
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: This Over That
+      slug: this-over-that
+      isrc: CAENV2578537
+      duration: '3:20'
+      explicit: false
+      preview_audio: null
+- release:
+    id: knots-and-needles
+    slug: knots-and-needles
+    title: Knots and Needles
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-24'
+    label: null
+    publisher: null
+    upc: '990591017238'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7iNoJRTqpKHfPclqJVWyu7
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Knots and Needles
+      slug: knots-and-needles
+      isrc: CAENV2580678
+      duration: '3:57'
+      explicit: false
+      preview_audio: null
+- release:
+    id: body-of-work
+    slug: body-of-work
+    title: Body Of Work
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-26'
+    label: null
+    publisher: null
+    upc: '990591031005'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1UqldsOofOFSGWVbQKS6o2
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Body Of Work
+      slug: body-of-work
+      isrc: CAENV2583732
+      duration: '3:38'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-wayfinder
+    slug: the-wayfinder
+    title: The Wayfinder
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-28'
+    label: null
+    publisher: null
+    upc: '990591063532'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/55iOD72LYapPjUbDkQqkY2
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Wayfinder
+      slug: the-wayfinder
+      isrc: CAENV2589544
+      duration: '3:24'
+      explicit: false
+      preview_audio: null
+- release:
+    id: hither-come-softly
+    slug: hither-come-softly
+    title: Hither Come Softly
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-28'
+    label: null
+    publisher: null
+    upc: '990591063679'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4F44moTk0uB0bTQSTUnmqM
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Hither Come Softly
+      slug: hither-come-softly
+      isrc: CAENV2589573
+      duration: '3:04'
+      explicit: false
+      preview_audio: null
+- release:
+    id: indolent-heart
+    slug: indolent-heart
+    title: Indolent Heart
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-01'
+    label: null
+    publisher: null
+    upc: '990591104495'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/34EWGePPgSQ2Xk1eUF9E5a
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Indolent Heart
+      slug: indolent-heart
+      isrc: CAENV2597228
+      duration: '3:24'
+      explicit: false
+      preview_audio: null
+- release:
+    id: where-sky-and-morning-meet
+    slug: where-sky-and-morning-meet
+    title: Where Sky and Morning Meet
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-03'
+    label: null
+    publisher: null
+    upc: '990591135833'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2UDaIabpfCt1SHR4SNMr0r
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Where Sky and Morning Meet
+      slug: where-sky-and-morning-meet
+      isrc: CAGOO2502844
+      duration: '4:00'
+      explicit: false
+      preview_audio: null
+- release:
+    id: opposites-attach
+    slug: opposites-attach
+    title: Opposites Attach
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-03'
+    label: null
+    publisher: null
+    upc: '990591136908'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2kBB1y04DTsMZ19sZhfxMb
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Opposites Attach
+      slug: opposites-attach
+      isrc: CAGOO2502967
+      duration: '4:17'
+      explicit: false
+      preview_audio: null
+- release:
+    id: begin-with-nothing
+    slug: begin-with-nothing
+    title: Begin With Nothing
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-04'
+    label: null
+    publisher: null
+    upc: '990591152786'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/35Jx1CdvGGdpKIIxCUCsxW
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Begin With Nothing
+      slug: begin-with-nothing
+      isrc: CAGOO2505080
+      duration: '4:25'
+      explicit: false
+      preview_audio: null
+- release:
+    id: cosmic-relations
+    slug: cosmic-relations
+    title: Cosmic Relations
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-06'
+    label: null
+    publisher: null
+    upc: '990591178311'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/67xizs5F1ndn8nOTShk5KD
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Cosmic Relations
+      slug: cosmic-relations
+      isrc: CAGOO2510180
+      duration: '4:46'
+      explicit: false
+      preview_audio: null
+- release:
+    id: mad-river
+    slug: mad-river
+    title: Mad River
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-10'
+    label: null
+    publisher: null
+    upc: '990591243668'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4YiNiegVIcc1BkA4N2pEZP
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Mad River
+      slug: mad-river
+      isrc: CAGOO2522558
+      duration: '5:50'
+      explicit: false
+      preview_audio: null
+- release:
+    id: stone-warrior
+    slug: stone-warrior
+    title: Stone Warrior
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-15'
+    label: null
+    publisher: null
+    upc: '990591313354'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1o8k8LV9qpkDWK2NpqhYmW
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Stone Warrior
+      slug: stone-warrior
+      isrc: CAGOO2536704
+      duration: '5:01'
+      explicit: false
+      preview_audio: null
+- release:
+    id: piercing-dread-of-light
+    slug: piercing-dread-of-light
+    title: Piercing Dread of Light
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-18'
+    label: null
+    publisher: null
+    upc: '990591348509'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7JLwlJcx2wm4Bul9P0tyiT
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Piercing Dread of Light
+      slug: piercing-dread-of-light
+      isrc: CAGOO2540763
+      duration: '5:12'
+      explicit: false
+      preview_audio: null
+- release:
+    id: crimson-decision
+    slug: crimson-decision
+    title: Crimson Decision
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-20'
+    label: null
+    publisher: null
+    upc: '990591372689'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7xvJlfT69uEXi5UePYAQ7w
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Crimson Decision
+      slug: crimson-decision
+      isrc: CAGOO2544959
+      duration: '4:25'
+      explicit: false
+      preview_audio: null
+- release:
+    id: a-candle-deep
+    slug: a-candle-deep
+    title: A Candle Deep
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-22'
+    label: null
+    publisher: null
+    upc: '990591391390'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4PyJgrhcB1XWc4FCjqN2zn
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: A Candle Deep
+      slug: a-candle-deep
+      isrc: CAGOO2549381
+      duration: '5:03'
+      explicit: false
+      preview_audio: null
+- release:
+    id: magical-thinking
+    slug: magical-thinking
+    title: Magical Thinking
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-06-03'
+    label: null
+    publisher: null
+    upc: '990591513198'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/78FefL5lkpZb57KPpyFuvN
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Magical Thinking
+      slug: magical-thinking
+      isrc: CAGOO2569517
+      duration: '4:29'
+      explicit: false
+      preview_audio: null
+- release:
+    id: sentia
+    slug: sentia
+    title: Sentia
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-01'
+    label: null
+    publisher: null
+    upc: '991043359098'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5yY9JNEuCvvbs6Oji9SOPD
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Sentia
+      slug: sentia
+      isrc: CACWV2636473
+      duration: '5:28'
+      explicit: false
+      preview_audio: null
+- release:
+    id: aim-for-true
+    slug: aim-for-true
+    title: Aim For True
+    artist_id: lingua-aeternum
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-27'
+    label: null
+    publisher: null
+    upc: '991043919353'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5akzx6G5qGr9qOqzXWnjHR
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Aim For True
+      slug: aim-for-true
+      isrc: CAENV2626190
+      duration: '4:29'
+      explicit: false
+      preview_audio: null
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/two-tree-road.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 055905883951
+      song_isrc: CAHQJ2563286
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    id: tits-up-remix
+    slug: tits-up-remix
+    title: Tits Up (Remix)
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-01-31'
+    label: null
+    publisher: null
+    upc: 055905924920
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2AlpeE6jycw3u0Dv0JVinq
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Tits Up - Remix
+      slug: tits-up-remix
+      isrc: CAHQJ2571234
+      duration: '2:59'
+      explicit: true
+      preview_audio: null
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/tits-up.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 055905926658
+      song_isrc: CAHQJ2571580
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/riders-and-runners.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 055905937951
+      song_isrc: CAHQJ2573353
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/have-a-heart.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 055905939092
+      song_isrc: CAHQJ2573597
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/circuiting.json
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870053295
+      tracks_isrc:
+      - index: 0
+        title: Conductor
+        isrc: CAHQJ2594887
+      - index: 1
+        title: Resistor
+        isrc: CAHQJ2594888
+      - index: 2
+        title: Capacitor
+        isrc: CAHQJ2594889
+      - index: 3
+        title: Inductor
+        isrc: CAHQJ2594890
+      - index: 4
+        title: Diode
+        isrc: CAHQJ2594891
+      - index: 5
+        title: Transistor
+        isrc: CAHQJ2594892
+      - index: 6
+        title: Relay
+        isrc: CAHQJ2594893
+      - index: 7
+        title: Fuse
+        isrc: CAHQJ2594894
+      - index: 8
+        title: Oscillator
+        isrc: CAHQJ2594895
+      - index: 9
+        title: Circuit
+        isrc: CAHQJ2594896
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/halfway-in-between.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870073064
+      song_isrc: CAHQJ2598091
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/too-blue-to-lose.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870113296
+      song_isrc: CACWV2505630
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/the-one-that-got-away.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870230337
+      song_isrc: CACWV2526890
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/bakers-dozen.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870246345
+      tracks_isrc:
+      - index: 0
+        title: January Kiss
+        isrc: CACWV2531937
+      - index: 1
+        title: February Actuary
+        isrc: CACWV2531952
+      - index: 2
+        title: Ides of March
+        isrc: CACWV2531953
+      - index: 3
+        title: April All Day Long
+        isrc: CACWV2531954
+      - index: 4
+        title: May Flowers
+        isrc: CACWV2531955
+      - index: 5
+        title: June Gloom
+        isrc: CACWV2531956
+      - index: 6
+        title: Sparkles In July
+        isrc: CACWV2531957
+      - index: 7
+        title: Too August
+        isrc: CACWV2531958
+      - index: 8
+        title: September On My Mind
+        isrc: CACWV2531960
+      - index: 9
+        title: October Boo Hoo
+        isrc: CACWV2531961
+      - index: 10
+        title: November I Never Remember
+        isrc: CACWV2531962
+      - index: 11
+        title: Slipping Into December
+        isrc: CACWV2531963
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/red-green-and-blues.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870262024
+      tracks_isrc:
+      - index: 0
+        title: Cyclamen
+        isrc: CACWV2534820
+      - index: 1
+        title: Tumbleweed
+        isrc: CACWV2534821
+      - index: 2
+        title: Rufous
+        isrc: CACWV2534822
+      - index: 3
+        title: Olivine
+        isrc: CACWV2534823
+      - index: 4
+        title: Verdigris
+        isrc: CACWV2534824
+      - index: 5
+        title: Wenge
+        isrc: CACWV2534825
+      - index: 6
+        title: Pistachio
+        isrc: CACWV2534826
+      - index: 7
+        title: Sunray
+        isrc: CACWV2534827
+      - index: 8
+        title: Zaffre
+        isrc: CACWV2534828
+      - index: 9
+        title: Nyanza
+        isrc: CACWV2534829
+      - index: 10
+        title: Limerick
+        isrc: CACWV2534830
+      - index: 11
+        title: Thulian
+        isrc: CACWV2534831
+      - index: 12
+        title: Jonquil
+        isrc: CACWV2534832
+      - index: 13
+        title: Aureolin
+        isrc: CACWV2534833
+      - index: 14
+        title: Moonstone
+        isrc: CACWV2534834
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    id: void-of-intention
+    slug: void-of-intention
+    title: Void Of Intention
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-03-16'
+    label: null
+    publisher: null
+    upc: 056870485157
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/68GMuLlYRRlZ4Smy9ad9Hv
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Void Of Intention
+      slug: void-of-intention
+      isrc: CACWV2579463
+      duration: '3:59'
+      explicit: false
+      preview_audio: null
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/by-starlight-drifting-west-2.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870534824
+      song_isrc: CACWV2586308
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/scattershot-forget-me-not.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870543116
+      song_isrc: CACWV2588617
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/comfortable-specter.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870564388
+      song_isrc: CACWV2594039
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/gemini-rising.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870600253
+      song_isrc: CAENV2500867
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/elemental-fundamental.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870615547
+      song_isrc: CAENV2503770
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/abundant-emptiness.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870624594
+      song_isrc: CAENV2505540
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/still-my-days-before.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870672052
+      song_isrc: CAENV2514552
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/sawmill-pond.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870667263
+      song_isrc: CAENV2513592
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/nearly-nothin-nowhere-fast.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870654362
+      song_isrc: CAENV2511735
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    id: what-s-best
+    slug: what-s-best
+    title: What's Best
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-02'
+    label: null
+    publisher: null
+    upc: 056870737898
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/75z85fnGxTPTN3zU99Abca
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: What's Best
+      slug: what-s-best
+      isrc: CAENV2528135
+      duration: '3:41'
+      explicit: false
+      preview_audio: null
+- release:
+    id: for-what-is-love
+    slug: for-what-is-love
+    title: For What is Love
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-02'
+    label: null
+    publisher: null
+    upc: 056870737959
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7iJhlGmUNxs7l8zeb9yuun
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: For What is Love
+      slug: for-what-is-love
+      isrc: CAENV2528055
+      duration: '3:25'
+      explicit: false
+      preview_audio: null
+- release:
+    id: welcome-to-the-sign
+    slug: welcome-to-the-sign
+    title: Welcome to the Sign
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-05'
+    label: null
+    publisher: null
+    upc: 056870776552
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0nFhw6BBR3t8JsgCWZuKhy
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Welcome to the Sign
+      slug: welcome-to-the-sign
+      isrc: CAENV2535979
+      duration: '3:32'
+      explicit: false
+      preview_audio: null
+- release:
+    id: inner-outer-over-through
+    slug: inner-outer-over-through
+    title: Inner Outer Over Through
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-19'
+    label: null
+    publisher: null
+    upc: 056870954455
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5XEOufuDl9FyKOcu8D09kn
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Inner Outer Over Through
+      slug: inner-outer-over-through
+      isrc: CAENV2567470
+      duration: '3:42'
+      explicit: false
+      preview_audio: null
+- release:
+    id: one-day
+    slug: one-day
+    title: One Day
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-21'
+    label: null
+    publisher: null
+    upc: 056870977652
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2q5RLvrt0HeIsLVefZKAli
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: One Day
+      slug: one-day
+      isrc: CAENV2572209
+      duration: '3:57'
+      explicit: false
+      preview_audio: null
+- release:
+    id: what-you-want
+    slug: what-you-want
+    title: What You Want
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-04-25'
+    label: null
+    publisher: null
+    upc: '990591032019'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6pdJAZeTungK7ol1kvi8At
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: What You Want
+      slug: what-you-want
+      isrc: CAENV2583567
+      duration: '2:40'
+      explicit: false
+      preview_audio: null
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/winds-of-change.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 055905893790
+      tracks_isrc:
+      - index: 0
+        title: Two Tree Road
+        isrc: CAHQJ2563286
+      - index: 1
+        title: Joni
+        isrc: CAHQJ2565569
+      - index: 2
+        title: The Only One
+        isrc: CAHQJ2565564
+      - index: 3
+        title: I Think I'm Falling
+        isrc: CAHQJ2565565
+      - index: 4
+        title: Deb
+        isrc: CAHQJ2565566
+      - index: 5
+        title: This Love Grows
+        isrc: CAHQJ2565567
+      - index: 6
+        title: Winds of Change
+        isrc: CAHQJ2565568
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: pcbender
+    existing_path: content/releases/nancy-dance-with-me.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 055905926764
+      song_isrc: CAHQJ2571604
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    id: on-down-the-way
+    slug: on-down-the-way
+    title: On Down the Way
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-01'
+    label: null
+    publisher: null
+    upc: '990591104587'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5CpHGy2HbKfpfDEpctFQmW
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: On Down the Way
+      slug: on-down-the-way
+      isrc: CAENV2597240
+      duration: '3:52'
+      explicit: false
+      preview_audio: null
+- release:
+    id: inner-fire
+    slug: inner-fire
+    title: Inner Fire
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-02'
+    label: null
+    publisher: null
+    upc: '990591122284'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3lxH2v520TgDsnPhefc6Uq
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Inner Fire
+      slug: inner-fire
+      isrc: CAGOO2500902
+      duration: '4:22'
+      explicit: false
+      preview_audio: null
+- release:
+    id: la-salina
+    slug: la-salina
+    title: La Salina
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-04'
+    label: null
+    publisher: null
+    upc: '990591140073'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7FnenfUkY1Zo6hPKeiNzHn
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: La Salina
+      slug: la-salina
+      isrc: CAGOO2503337
+      duration: '3:40'
+      explicit: false
+      preview_audio: null
+- release:
+    id: and-then-he-rested
+    slug: and-then-he-rested
+    title: And Then He Rested
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-04'
+    label: null
+    publisher: null
+    upc: '990591150614'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2hcTVb15TiVBls4hjrJdyu
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: And Then He Rested
+      slug: and-then-he-rested
+      isrc: CAGOO2504869
+      duration: '3:53'
+      explicit: false
+      preview_audio: null
+- release:
+    id: hardwood-confessions
+    slug: hardwood-confessions
+    title: Hardwood Confessions
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-05'
+    label: null
+    publisher: null
+    upc: '990591168213'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/59uL5HOJuAEqxuK2TfAtNw
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Hardwood Confessions
+      slug: hardwood-confessions
+      isrc: CAGOO2508414
+      duration: '3:38'
+      explicit: false
+      preview_audio: null
+- release:
+    id: camino-cielo
+    slug: camino-cielo
+    title: Camino Cielo
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-08'
+    label: null
+    publisher: null
+    upc: '990591211711'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5JUwlOWdDGNF7vaTHom1mT
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Camino Cielo
+      slug: camino-cielo
+      isrc: CAGOO2516530
+      duration: '4:08'
+      explicit: false
+      preview_audio: null
+- release:
+    id: mad-river
+    slug: mad-river
+    title: Mad River
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-10'
+    label: null
+    publisher: null
+    upc: '990591243620'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1DEz8htgXK5tlrchulFswP
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Mad River
+      slug: mad-river
+      isrc: CAGOO2522555
+      duration: '4:28'
+      explicit: false
+      preview_audio: null
+- release:
+    id: crimson-decision
+    slug: crimson-decision
+    title: Crimson Decision
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-20'
+    label: null
+    publisher: null
+    upc: '990591372504'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/55ijnVur9q25PxGScJZQGQ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Crimson Decision
+      slug: crimson-decision
+      isrc: CAGOO2544885
+      duration: '4:38'
+      explicit: false
+      preview_audio: null
+- release:
+    id: candle-deep
+    slug: candle-deep
+    title: Candle Deep
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-22'
+    label: null
+    publisher: null
+    upc: '990591391451'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3S2noFmZDlLrZUeiW3Juyx
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Candle Deep
+      slug: candle-deep
+      isrc: CAGOO2549383
+      duration: '5:15'
+      explicit: false
+      preview_audio: null
+- release:
+    id: ever-only-after
+    slug: ever-only-after
+    title: Ever Only After
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-06-03'
+    label: null
+    publisher: null
+    upc: '990591510715'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0hKSAn4y3euPn2arlwIeeQ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Ever Only After
+      slug: ever-only-after
+      isrc: CAGOO2569447
+      duration: '4:20'
+      explicit: false
+      preview_audio: null
+- release:
+    id: beat-lightning
+    slug: beat-lightning
+    title: Beat Lightning
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-06-03'
+    label: null
+    publisher: null
+    upc: '990591513402'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4RPiFu4VHIWUY72685tx22
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Beat Lightning
+      slug: beat-lightning
+      isrc: CAGOO2569518
+      duration: '3:33'
+      explicit: false
+      preview_audio: null
+- release:
+    id: only-the-ones-that-matter
+    slug: only-the-ones-that-matter
+    title: Only The Ones That Matter
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-06-11'
+    label: null
+    publisher: null
+    upc: '990591596108'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2Zr03uNNGFHQcyRwaIVKjk
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Only The Ones That Matter
+      slug: only-the-ones-that-matter
+      isrc: CAGOO2583617
+      duration: '4:24'
+      explicit: false
+      preview_audio: null
+- release:
+    id: memory-assembly
+    slug: memory-assembly
+    title: Memory Assembly
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-06-11'
+    label: null
+    publisher: null
+    upc: '990591595057'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1IgUhngTgkYFw3RhKWgzrf
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Memory Assembly
+      slug: memory-assembly
+      isrc: CAGOO2583592
+      duration: '4:04'
+      explicit: false
+      preview_audio: null
+- release:
+    id: tria
+    slug: tria
+    title: "Tria\u03C4\u03AF"
+    artist_id: pcbender
+    model: album
+    release_type: ep
+    status: draft
+    release_date: '2025-06-17'
+    label: null
+    publisher: null
+    upc: '990591695177'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6tGsl61IaiQQg7AB6uXNsD
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    tracks:
+    - number: 1
+      title: Apa
+      slug: apa
+      isrc: CAGOO2598738
+      duration: '3:46'
+      explicit: false
+      preview_audio: null
+    - number: 2
+      title: "Aite\u014D"
+      slug: aiteo
+      isrc: CAGOO2598739
+      duration: '3:54'
+      explicit: false
+      preview_audio: null
+    - number: 3
+      title: Ego Eimi
+      slug: ego-eimi
+      isrc: CAGOO2598740
+      duration: '3:22'
+      explicit: false
+      preview_audio: null
+    - number: 4
+      title: "Esm\xE9n"
+      slug: esmen
+      isrc: CAGOO2598741
+      duration: '3:54'
+      explicit: false
+      preview_audio: null
+    - number: 5
+      title: Esti
+      slug: esti
+      isrc: CAGOO2598742
+      duration: '3:49'
+      explicit: false
+      preview_audio: null
+    - number: 6
+      title: Ousia
+      slug: ousia
+      isrc: CAGOO2598743
+      duration: '3:03'
+      explicit: false
+      preview_audio: null
+- release:
+    id: allocution
+    slug: allocution
+    title: Allocution
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-07-07'
+    label: null
+    publisher: null
+    upc: '990591906648'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4s4GcIIMHyd9696NXlnSxZ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Allocution
+      slug: allocution
+      isrc: CALVP2537448
+      duration: '4:20'
+      explicit: false
+      preview_audio: null
+- release:
+    id: on-the-way-that-comes-before
+    slug: on-the-way-that-comes-before
+    title: On the Way That Comes Before
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-07-11'
+    label: null
+    publisher: null
+    upc: '990591955431'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3P7rpjVKMzKwguEgDAoOoC
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: On the Way That Comes Before
+      slug: on-the-way-that-comes-before
+      isrc: CALVP2546574
+      duration: '4:48'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-lie-you-haven-t-met
+    slug: the-lie-you-haven-t-met
+    title: The Lie You Haven't Met
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-07-12'
+    label: null
+    publisher: null
+    upc: '990591964532'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3HeV0i0RHJQvNJJjghYt6O
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Lie You Haven't Met
+      slug: the-lie-you-haven-t-met
+      isrc: CALVP2547807
+      duration: '4:29'
+      explicit: false
+      preview_audio: null
+- release:
+    id: sum-sacer
+    slug: sum-sacer
+    title: Sum Sacer
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-07-14'
+    label: null
+    publisher: null
+    upc: '990591987791'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7ld61QxPKWQs03mLPs6Cui
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Sum Sacer
+      slug: sum-sacer
+      isrc: CALVP2551886
+      duration: '5:53'
+      explicit: false
+      preview_audio: null
+- release:
+    id: because-you-do
+    slug: because-you-do
+    title: Because You Do
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-07-14'
+    label: null
+    publisher: null
+    upc: '990591974456'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6sXp8QqMUTc5jyZ7pVGwnj
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Because You Do
+      slug: because-you-do
+      isrc: CALVP2551412
+      duration: '3:50'
+      explicit: false
+      preview_audio: null
+- release:
+    id: turn-a-phrase
+    slug: turn-a-phrase
+    title: Turn a Phrase
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-07-16'
+    label: null
+    publisher: null
+    upc: 057829010925
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1MrSwZqKeijuChvAyb4YUR
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Turn a Phrase
+      slug: turn-a-phrase
+      isrc: CALVP2556688
+      duration: '5:08'
+      explicit: false
+      preview_audio: null
+- release:
+    id: then-there-was-nothing
+    slug: then-there-was-nothing
+    title: Then There Was Nothing
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-07-20'
+    label: null
+    publisher: null
+    upc: 057829032231
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4ucJpemAhtEW4luT2RK8iJ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Then There Was Nothing
+      slug: then-there-was-nothing
+      isrc: CALVP2562048
+      duration: '7:12'
+      explicit: false
+      preview_audio: null
+- release:
+    id: seaward-sings
+    slug: seaward-sings
+    title: Seaward Sings
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-08-01'
+    label: null
+    publisher: null
+    upc: 057829182400
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7DLm5d25LlYBJNVaRMpFKF
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Seaward Sings
+      slug: seaward-sings
+      isrc: CALVP2585489
+      duration: '6:44'
+      explicit: false
+      preview_audio: null
+- release:
+    id: driving-the-clock
+    slug: driving-the-clock
+    title: Driving The Clock
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-09-09'
+    label: null
+    publisher: null
+    upc: 057829546295
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5QGLpVpe2gIRHXKlUPnt1v
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Driving The Clock
+      slug: driving-the-clock
+      isrc: CBEYJ2548314
+      duration: '4:20'
+      explicit: false
+      preview_audio: null
+- release:
+    id: impossibly
+    slug: impossibly
+    title: Impossibly
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-09-17'
+    label: null
+    publisher: null
+    upc: 057829612488
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4AGaj31FerMI7fdvd3si6E
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Impossibly
+      slug: impossibly
+      isrc: CBEYJ2559249
+      duration: '4:37'
+      explicit: false
+      preview_audio: null
+- release:
+    id: cyranoid
+    slug: cyranoid
+    title: Cyranoid
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-09-17'
+    label: null
+    publisher: null
+    upc: 057829615465
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3vJE1kJvjZKi9oEFRJFmDq
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Cyranoid
+      slug: cyranoid
+      isrc: CBEYJ2560536
+      duration: '7:10'
+      explicit: false
+      preview_audio: null
+- release:
+    id: unaccustomed-lullaby
+    slug: unaccustomed-lullaby
+    title: Unaccustomed Lullaby
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-09-18'
+    label: null
+    publisher: null
+    upc: 057829622166
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3iGFxTVl1Cxkkj4wryvR8Y
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Unaccustomed Lullaby
+      slug: unaccustomed-lullaby
+      isrc: CBEYJ2561759
+      duration: '4:06'
+      explicit: false
+      preview_audio: null
+- release:
+    id: measure-s-measure
+    slug: measure-s-measure
+    title: Measure's Measure
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-09-22'
+    label: null
+    publisher: null
+    upc: 057829643857
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5lDTJIa8RCqKc2eVDiVqUp
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Measure's Measure
+      slug: measure-s-measure
+      isrc: CBEYJ2566732
+      duration: '6:22'
+      explicit: false
+      preview_audio: null
+- release:
+    id: yesterday-s-delayed
+    slug: yesterday-s-delayed
+    title: Yesterday's Delayed
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-10-01'
+    label: null
+    publisher: null
+    upc: '7300346330018'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5yLf6Ecs3hjMeunIArZAsG
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Yesterday's Delayed
+      slug: yesterday-s-delayed
+      isrc: SE6I32513353
+      duration: '3:29'
+      explicit: false
+      preview_audio: null
+- release:
+    id: riddles-abound
+    slug: riddles-abound
+    title: Riddles Abound
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-10-05'
+    label: null
+    publisher: null
+    upc: '7300346389658'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3Ii0U4UY1JeyWGg3Om91e3
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Riddles Abound
+      slug: riddles-abound
+      isrc: SE6I32525002
+      duration: '5:30'
+      explicit: false
+      preview_audio: null
+- release:
+    id: made-by-moving
+    slug: made-by-moving
+    title: Made By Moving
+    artist_id: pcbender
+    model: album
+    release_type: album
+    status: draft
+    release_date: '2025-10-11'
+    label: null
+    publisher: null
+    upc: 057829798878
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6bHOtaZf4Pz5Jsciswwy5y
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    tracks:
+    - number: 1
+      title: Made By Moving
+      slug: made-by-moving
+      isrc: CBEYJ2593227
+      duration: '4:39'
+      explicit: false
+      preview_audio: null
+    - number: 2
+      title: Confused By Your Wires
+      slug: confused-by-your-wires
+      isrc: CBEYJ2593224
+      duration: '5:08'
+      explicit: false
+      preview_audio: null
+    - number: 3
+      title: "Everything\u2019s Better Than Nothin\u2019"
+      slug: everythings-better-than-nothin
+      isrc: CBEYJ2593225
+      duration: '4:52'
+      explicit: false
+      preview_audio: null
+    - number: 4
+      title: Inner Outer
+      slug: inner-outer
+      isrc: CBEYJ2593226
+      duration: '4:49'
+      explicit: false
+      preview_audio: null
+    - number: 5
+      title: Maria's Cup
+      slug: maria-s-cup
+      isrc: CBEYJ2593231
+      duration: '4:42'
+      explicit: false
+      preview_audio: null
+    - number: 6
+      title: July Surprise
+      slug: july-surprise
+      isrc: CBEYJ2593232
+      duration: '4:08'
+      explicit: false
+      preview_audio: null
+    - number: 7
+      title: Opposites Attract In Time
+      slug: opposites-attract-in-time
+      isrc: CBEYJ2593228
+      duration: '4:59'
+      explicit: false
+      preview_audio: null
+    - number: 8
+      title: Active Illusion
+      slug: active-illusion
+      isrc: CBEYJ2593229
+      duration: '4:30'
+      explicit: false
+      preview_audio: null
+    - number: 9
+      title: Prehistoric Lies
+      slug: prehistoric-lies
+      isrc: CBEYJ2593230
+      duration: '6:03'
+      explicit: false
+      preview_audio: null
+    - number: 10
+      title: Riddles Abound
+      slug: riddles-abound
+      isrc: SE6I32525002
+      duration: '5:30'
+      explicit: false
+      preview_audio: null
+- release:
+    id: dusty-desert-rain
+    slug: dusty-desert-rain
+    title: Dusty Desert Rain
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-10-14'
+    label: null
+    publisher: null
+    upc: '7300346521805'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/35YVq2yAfRhFdeJogpNyIk
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Dusty Desert Rain
+      slug: dusty-desert-rain
+      isrc: SE6I32552773
+      duration: '5:11'
+      explicit: false
+      preview_audio: null
+- release:
+    id: song-for-august
+    slug: song-for-august
+    title: Song For August
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-10-22'
+    label: null
+    publisher: null
+    upc: '7300346650833'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3eJSRBzsiVerDZ7XpE71JN
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Song For August
+      slug: song-for-august
+      isrc: SE6I32580413
+      duration: '4:10'
+      explicit: false
+      preview_audio: null
+- release:
+    id: how-many-gone
+    slug: how-many-gone
+    title: How Many Gone
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-11-04'
+    label: null
+    publisher: null
+    upc: '7300346873836'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0LQh81urEQcg07yTPnOYFM
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: How Many Gone
+      slug: how-many-gone
+      isrc: SE6QE2523675
+      duration: '4:56'
+      explicit: false
+      preview_audio: null
+- release:
+    id: mispronouncing-anastasia
+    slug: mispronouncing-anastasia
+    title: Mispronouncing Anastasia
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-11-06'
+    label: null
+    publisher: null
+    upc: '7300346912221'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2mRlu4aFTpBHX4cJtiKuL6
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Mispronouncing Anastasia
+      slug: mispronouncing-anastasia
+      isrc: SE6QE2531164
+      duration: '6:44'
+      explicit: false
+      preview_audio: null
+- release:
+    id: a-dark-so-strong
+    slug: a-dark-so-strong
+    title: A Dark So Strong
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-11-07'
+    label: null
+    publisher: null
+    upc: '7300346930232'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2RM2LzRjrYzuXDgkURrKlj
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: A Dark So Strong
+      slug: a-dark-so-strong
+      isrc: SE6QE2534839
+      duration: '4:36'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-rats-are-in-the-roses
+    slug: the-rats-are-in-the-roses
+    title: The Rats Are In The Roses
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-11-10'
+    label: null
+    publisher: null
+    upc: 057914042244
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4bMsCh2zwkJAo2BkzKHXBA
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Rats Are In The Roses
+      slug: the-rats-are-in-the-roses
+      isrc: CBF8B2530544
+      duration: '3:24'
+      explicit: false
+      preview_audio: null
+- release:
+    id: half-happenstance
+    slug: half-happenstance
+    title: Half Happenstance
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-11-12'
+    label: null
+    publisher: null
+    upc: '7300347004505'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6iQ320jwDj12SL37x44Gv0
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Half Happenstance
+      slug: half-happenstance
+      isrc: SE6QE2549394
+      duration: '4:38'
+      explicit: false
+      preview_audio: null
+- release:
+    id: lightning-up
+    slug: lightning-up
+    title: Lightning Up
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-11-15'
+    label: null
+    publisher: null
+    upc: 057914078625
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1uObochAtrmqaLtZMj5mQv
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Lightning Up
+      slug: lightning-up
+      isrc: CBF8B2537772
+      duration: '4:04'
+      explicit: false
+      preview_audio: null
+- release:
+    id: for-the-love-of-a-woman
+    slug: for-the-love-of-a-woman
+    title: For The Love Of A Woman
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-11-28'
+    label: null
+    publisher: null
+    upc: 057914189314
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7vyLyBGCxgi2UUQx0WoZhy
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: For The Love Of A Woman
+      slug: for-the-love-of-a-woman
+      isrc: CBF8B2553735
+      duration: '3:36'
+      explicit: false
+      preview_audio: null
+- release:
+    id: you-become-the-night
+    slug: you-become-the-night
+    title: You Become The Night
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-12-03'
+    label: null
+    publisher: null
+    upc: '7300347349767'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2MHjKFpwuX6EqyvRCiYiyy
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: You Become The Night
+      slug: you-become-the-night
+      isrc: SE5752517221
+      duration: '5:05'
+      explicit: false
+      preview_audio: null
+- release:
+    id: free
+    slug: free
+    title: Free
+    artist_id: pcbender
+    model: album
+    release_type: album
+    status: draft
+    release_date: '2025-12-11'
+    label: null
+    publisher: null
+    upc: '7300347467041'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4EIhyMzEwu4vkjm4XSz40u
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    tracks:
+    - number: 1
+      title: Free
+      slug: free
+      isrc: SE5752541119
+      duration: '6:28'
+      explicit: false
+      preview_audio: null
+    - number: 2
+      title: Law
+      slug: law
+      isrc: SE5752541120
+      duration: '5:03'
+      explicit: false
+      preview_audio: null
+    - number: 3
+      title: Love
+      slug: love
+      isrc: SE5752541121
+      duration: '5:22'
+      explicit: false
+      preview_audio: null
+    - number: 4
+      title: God
+      slug: god
+      isrc: SE5752541122
+      duration: '5:18'
+      explicit: false
+      preview_audio: null
+    - number: 5
+      title: Death
+      slug: death
+      isrc: SE5752541123
+      duration: '6:40'
+      explicit: false
+      preview_audio: null
+    - number: 6
+      title: Desire
+      slug: desire
+      isrc: SE5752541124
+      duration: '5:00'
+      explicit: false
+      preview_audio: null
+    - number: 7
+      title: Difference
+      slug: difference
+      isrc: SE5752541125
+      duration: '4:48'
+      explicit: false
+      preview_audio: null
+    - number: 8
+      title: Meaning
+      slug: meaning
+      isrc: SE5752541126
+      duration: '5:19'
+      explicit: false
+      preview_audio: null
+    - number: 9
+      title: Sovereign
+      slug: sovereign
+      isrc: SE5752541127
+      duration: '7:14'
+      explicit: false
+      preview_audio: null
+- release:
+    id: pepper-pot
+    slug: pepper-pot
+    title: Pepper Pot
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-12-16'
+    label: null
+    publisher: null
+    upc: 057914348261
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5ccP8MHOU8cNdLtQYtmtoM
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Pepper Pot
+      slug: pepper-pot
+      isrc: CBF8B2576613
+      duration: '4:59'
+      explicit: false
+      preview_audio: null
+- release:
+    id: busy
+    slug: busy
+    title: Busy
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-12-17'
+    label: null
+    publisher: null
+    upc: 057914366494
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/78pDnX8hnQrYS2yeqHNXlY
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Busy
+      slug: busy
+      isrc: CBF8B2578875
+      duration: '3:24'
+      explicit: false
+      preview_audio: null
+- release:
+    id: on-to-potter-s-field
+    slug: on-to-potter-s-field
+    title: On To Potter's Field
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-12-23'
+    label: null
+    publisher: null
+    upc: 057914420059
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5bTK26qM2xYicoJe9DL6kL
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: On To Potter's Field
+      slug: on-to-potter-s-field
+      isrc: CBF8B2585808
+      duration: '4:12'
+      explicit: false
+      preview_audio: null
+- release:
+    id: long-hard-road
+    slug: long-hard-road
+    title: Long Hard Road
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-01-07'
+    label: null
+    publisher: null
+    upc: 057914551203
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3w53CCe1OYI4paaoLUmbb5
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Long Hard Road
+      slug: long-hard-road
+      isrc: CAHQJ2609323
+      duration: '3:41'
+      explicit: false
+      preview_audio: null
+- release:
+    id: waterwheel
+    slug: waterwheel
+    title: Waterwheel
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-01-08'
+    label: null
+    publisher: null
+    upc: '7300347955319'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/65tDg7iUgjefDCpu5IYocO
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Waterwheel
+      slug: waterwheel
+      isrc: SE5BU2619207
+      duration: '3:39'
+      explicit: false
+      preview_audio: null
+- release:
+    id: come-up-and-see
+    slug: come-up-and-see
+    title: Come Up And See
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-01-15'
+    label: null
+    publisher: null
+    upc: 057914624242
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0n0Nk320P3yVdYgtT2ouUZ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Come Up And See
+      slug: come-up-and-see
+      isrc: CAHQJ2620263
+      duration: '3:33'
+      explicit: false
+      preview_audio: null
+- release:
+    id: altitude
+    slug: altitude
+    title: Altitude
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-01-16'
+    label: null
+    publisher: null
+    upc: '7300348115446'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1M7MZe6MIDk8KbHPyo81da
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Altitude
+      slug: altitude
+      isrc: SE5BU2648590
+      duration: '3:58'
+      explicit: false
+      preview_audio: null
+- release:
+    id: how-can-this-be-us
+    slug: how-can-this-be-us
+    title: How Can This Be Us
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-01-29'
+    label: null
+    publisher: null
+    upc: 057914752853
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/7qreDmzm7VbdDYcX8f3WlW
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: How Can This Be Us
+      slug: how-can-this-be-us
+      isrc: CAHQJ2640385
+      duration: '3:47'
+      explicit: false
+      preview_audio: null
+- release:
+    id: funkit
+    slug: funkit
+    title: Funkit
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-03-18'
+    label: null
+    publisher: null
+    upc: '991043225973'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4AXOjPNrt0XVRNB2KhDDg4
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Funkit
+      slug: funkit
+      isrc: CACWV2612969
+      duration: '3:50'
+      explicit: false
+      preview_audio: null
+- release:
+    id: i-cant-quite-make-it-fit
+    slug: i-cant-quite-make-it-fit
+    title: "I Can\u2019t Quite Make It Fit"
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-05'
+    label: null
+    publisher: null
+    upc: '991043390640'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/43MrXE5kKuvziBdje7xmMA
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: "I Can\u2019t Quite Make It Fit"
+      slug: i-cant-quite-make-it-fit
+      isrc: CACWV2641851
+      duration: '3:42'
+      explicit: false
+      preview_audio: null
+- release:
+    id: not-long-enough-for-me
+    slug: not-long-enough-for-me
+    title: Not Long Enough For Me
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-13'
+    label: null
+    publisher: null
+    upc: '991043442516'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3LHOdus1gswCvp0ZCQEQVH
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Not Long Enough For Me
+      slug: not-long-enough-for-me
+      isrc: CACWV2653959
+      duration: '4:06'
+      explicit: false
+      preview_audio: null
+- release:
+    id: fabulous-catastrophe
+    slug: fabulous-catastrophe
+    title: Fabulous Catastrophe
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-21'
+    label: null
+    publisher: null
+    upc: '991043558958'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/07RR1AN7a9HrthVnqTPswU
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Fabulous Catastrophe
+      slug: fabulous-catastrophe
+      isrc: CACWV2666884
+      duration: '4:29'
+      explicit: false
+      preview_audio: null
+- release:
+    id: it-s-june-gloom
+    slug: it-s-june-gloom
+    title: It's June Gloom
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-24'
+    label: null
+    publisher: null
+    upc: '991043589235'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/18hXklBXPtPsYWbUsiYxOh
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: It's June Gloom
+      slug: it-s-june-gloom
+      isrc: CACWV2672657
+      duration: '3:02'
+      explicit: false
+      preview_audio: null
+- release:
+    id: try-to-be-okay
+    slug: try-to-be-okay
+    title: Try To Be Okay
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-25'
+    label: null
+    publisher: null
+    upc: '991043600145'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3yS9OWVZp5IhNF3Np2Gdf3
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Try To Be Okay
+      slug: try-to-be-okay
+      isrc: CACWV2674140
+      duration: '3:21'
+      explicit: false
+      preview_audio: null
+- release:
+    id: with-preposition
+    slug: with-preposition
+    title: With Preposition
+    artist_id: pcbender
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-30'
+    label: null
+    publisher: null
+    upc: '991043642398'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4aZ9znFmozosco1OGLT8TP
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: With Preposition
+      slug: with-preposition
+      isrc: CACWV2681464
+      duration: '4:24'
+      explicit: false
+      preview_audio: null
+- release:
+    artist_id: stab
+    existing_path: content/releases/burn-me.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870003580
+      song_isrc: CAHQJ2586034
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: stab
+    existing_path: content/releases/the-hardest-gift.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870005911
+      song_isrc: CAHQJ2586236
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: stab
+    existing_path: content/releases/between-the-bottle-and-goodbye.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870113050
+      song_isrc: CACWV2505597
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: stab
+    existing_path: content/releases/you-still-have-my-heart.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870221342
+      song_isrc: CACWV2525747
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    artist_id: stab
+    existing_path: content/releases/here-comes-the-rain.yaml
+    review_status: matched_existing
+    proposed_patch:
+      upc: 056870572741
+      song_isrc: CACWV2595555
+    notes:
+    - Backfilling fields missing from the existing record; not auto-applied.
+- release:
+    id: excess-fiasco
+    slug: excess-fiasco
+    title: Excess Fiasco
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-02'
+    label: null
+    publisher: null
+    upc: '990591122703'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0cRPOK93xC2N2JkcezL5sb
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Excess Fiasco
+      slug: excess-fiasco
+      isrc: CAGOO2500968
+      duration: '2:59'
+      explicit: false
+      preview_audio: null
+- release:
+    id: ladder-to-nowhere
+    slug: ladder-to-nowhere
+    title: Ladder to Nowhere
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-05-07'
+    label: null
+    publisher: null
+    upc: '990591198487'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0QauHsD9lKA9rwVLApBaXF
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Ladder to Nowhere
+      slug: ladder-to-nowhere
+      isrc: CAGOO2513973
+      duration: '3:50'
+      explicit: false
+      preview_audio: null
+- release:
+    id: bring-me-the-claws
+    slug: bring-me-the-claws
+    title: Bring Me The Claws
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-12-19'
+    label: null
+    publisher: null
+    upc: 057914386317
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0tfCnWpenkS0PMpjgNRc2e
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Bring Me The Claws
+      slug: bring-me-the-claws
+      isrc: CBF8B2581436
+      duration: '3:54'
+      explicit: false
+      preview_audio: null
+- release:
+    id: hana-on-the-way
+    slug: hana-on-the-way
+    title: "H\u0101na On The Way"
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-12-23'
+    label: null
+    publisher: null
+    upc: '7300347696823'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2x3qlGEgEPRvnjM4MY7XLA
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: "H\u0101na On The Way"
+      slug: hana-on-the-way
+      isrc: SE5752588831
+      duration: '3:24'
+      explicit: false
+      preview_audio: null
+- release:
+    id: four-quarters
+    slug: four-quarters
+    title: Four Quarters
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2025-12-24'
+    label: null
+    publisher: null
+    upc: '7300347712387'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/48mW2OrKlsQMzAefX6NKuC
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Four Quarters
+      slug: four-quarters
+      isrc: SE5752591930
+      duration: '4:29'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-messy-middle
+    slug: the-messy-middle
+    title: The Messy Middle
+    artist_id: stab
+    model: album
+    release_type: album
+    status: draft
+    release_date: '2026-01-29'
+    label: null
+    publisher: null
+    upc: '7300348367388'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1OA7b5kzbB9JsJicyaEBK3
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    tracks:
+    - number: 1
+      title: I think I'm Losing My Place
+      slug: i-think-i-m-losing-my-place
+      isrc: SE5752602047
+      duration: '2:50'
+      explicit: false
+      preview_audio: null
+    - number: 2
+      title: Not Sure This Is Me
+      slug: not-sure-this-is-me
+      isrc: SE5752602048
+      duration: '3:18'
+      explicit: false
+      preview_audio: null
+    - number: 3
+      title: Don't Even Need To Try
+      slug: don-t-even-need-to-try
+      isrc: SE5752602049
+      duration: '3:20'
+      explicit: false
+      preview_audio: null
+    - number: 4
+      title: Stay With One Thing
+      slug: stay-with-one-thing
+      isrc: SE5752602050
+      duration: '2:40'
+      explicit: false
+      preview_audio: null
+    - number: 5
+      title: Here To Be Watched
+      slug: here-to-be-watched
+      isrc: SE5752602051
+      duration: '3:21'
+      explicit: false
+      preview_audio: null
+    - number: 6
+      title: Moving Too Fast
+      slug: moving-too-fast
+      isrc: SE5752602052
+      duration: '2:54'
+      explicit: false
+      preview_audio: null
+    - number: 7
+      title: Harder Than I Thought
+      slug: harder-than-i-thought
+      isrc: SE5752602053
+      duration: '3:28'
+      explicit: false
+      preview_audio: null
+    - number: 8
+      title: That's The Point
+      slug: that-s-the-point
+      isrc: SE5752602054
+      duration: '3:08'
+      explicit: false
+      preview_audio: null
+    - number: 9
+      title: My Hands Don't Know
+      slug: my-hands-don-t-know
+      isrc: SE5752602055
+      duration: '3:10'
+      explicit: false
+      preview_audio: null
+    - number: 10
+      title: What To Do With Me
+      slug: what-to-do-with-me
+      isrc: SE5752602056
+      duration: '4:48'
+      explicit: false
+      preview_audio: null
+    - number: 11
+      title: Not Picking Up
+      slug: not-picking-up
+      isrc: SE5752602057
+      duration: '3:36'
+      explicit: false
+      preview_audio: null
+    - number: 12
+      title: Maybe I Should
+      slug: maybe-i-should
+      isrc: SE5752602058
+      duration: '3:03'
+      explicit: false
+      preview_audio: null
+    - number: 13
+      title: Doing My Best
+      slug: doing-my-best
+      isrc: SE5752602059
+      duration: '3:52'
+      explicit: false
+      preview_audio: null
+    - number: 14
+      title: Here Right Now
+      slug: here-right-now
+      isrc: SE5752602060
+      duration: '2:58'
+      explicit: false
+      preview_audio: null
+    - number: 15
+      title: Bring It With Me
+      slug: bring-it-with-me
+      isrc: SE5752602061
+      duration: '3:41'
+      explicit: false
+      preview_audio: null
+- release:
+    id: no-longer-there
+    slug: no-longer-there
+    title: No Longer There
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-03-21'
+    label: null
+    publisher: null
+    upc: '7300349288354'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6Urt0ONbIiJMAifnMkrWnQ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: No Longer There
+      slug: no-longer-there
+      isrc: SE6HN2619898
+      duration: '3:07'
+      explicit: false
+      preview_audio: null
+- release:
+    id: you-become-the-night
+    slug: you-become-the-night
+    title: You Become The Night
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-10'
+    label: null
+    publisher: null
+    upc: '7300349674454'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5CbGAYITvnrSvO5hym8BTj
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: You Become The Night
+      slug: you-become-the-night
+      isrc: SE6I32607149
+      duration: '4:57'
+      explicit: false
+      preview_audio: null
+- release:
+    id: just-a-waste-of-tears
+    slug: just-a-waste-of-tears
+    title: Just A Waste Of Tears
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-12'
+    label: null
+    publisher: null
+    upc: '7300349692922'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/4qC2teWGlRu1Al6V4ZVXtt
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Just A Waste Of Tears
+      slug: just-a-waste-of-tears
+      isrc: SE6I32610603
+      duration: '4:10'
+      explicit: false
+      preview_audio: null
+- release:
+    id: june-gloom
+    slug: june-gloom
+    title: June Gloom
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-24'
+    label: null
+    publisher: null
+    upc: '991043589556'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/79LEYkZ8OtMN8o32xiWqIs
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: June Gloom
+      slug: june-gloom
+      isrc: CACWV2672659
+      duration: '3:07'
+      explicit: false
+      preview_audio: null
+- release:
+    id: raven-dark
+    slug: raven-dark
+    title: Raven Dark
+    artist_id: stab
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-07'
+    label: null
+    publisher: null
+    upc: '991043729501'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/0QVNvnB1xlXj1xdviw57rz
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Raven Dark
+      slug: raven-dark
+      isrc: CACWV2695811
+      duration: '4:34'
+      explicit: false
+      preview_audio: null
+- release:
+    id: biff-knocker
+    slug: biff-knocker
+    title: Biff Knocker
+    artist_id: michael-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-02-09'
+    label: null
+    publisher: null
+    upc: 057914858821
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5q2kgkxfSmpwrTyZt0u6ln
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Biff Knocker
+      slug: biff-knocker
+      isrc: CAHQJ2656041
+      duration: '4:26'
+      explicit: false
+      preview_audio: null
+- release:
+    id: nowhere-but-up
+    slug: nowhere-but-up
+    title: Nowhere But Up
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: null
+    label: null
+    publisher: null
+    upc: '991043186335'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3qfg7woVKH7Rtszkf7Lb44
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    - Spotify release_date precision was 'year'; confirm the exact date manually.
+    song:
+      number: 1
+      title: Nowhere But Up
+      slug: nowhere-but-up
+      isrc: CACWV2606643
+      duration: '4:21'
+      explicit: false
+      preview_audio: null
+- release:
+    id: aletheion
+    slug: aletheion
+    title: Aletheion
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-02-20'
+    label: null
+    publisher: null
+    upc: 057914976174
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/1N8xYe1I3KaRKiE0ikU3YA
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Aletheion
+      slug: aletheion
+      isrc: CAHQJ2674257
+      duration: '3:58'
+      explicit: false
+      preview_audio: null
+- release:
+    id: build-me-a-lie
+    slug: build-me-a-lie
+    title: Build Me A Lie
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-03-08'
+    label: null
+    publisher: null
+    upc: '991043129790'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5PMqDiPjBC1xUlsVS93mZt
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Build Me A Lie
+      slug: build-me-a-lie
+      isrc: CAHQJ2696719
+      duration: '5:40'
+      explicit: false
+      preview_audio: null
+- release:
+    id: i-will-bloom
+    slug: i-will-bloom
+    title: I Will Bloom
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-03-27'
+    label: null
+    publisher: null
+    upc: '991043308577'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/132W7roMIX9sbaq8vbXBm6
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: I Will Bloom
+      slug: i-will-bloom
+      isrc: CACWV2628488
+      duration: '3:15'
+      explicit: false
+      preview_audio: null
+- release:
+    id: but-that-was-then
+    slug: but-that-was-then
+    title: But That Was Then
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-09'
+    label: null
+    publisher: null
+    upc: '991043442356'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5CMbfr7EwmUWGtpuWvu47C
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: But That Was Then
+      slug: but-that-was-then
+      isrc: CACWV2649495
+      duration: '5:58'
+      explicit: false
+      preview_audio: null
+- release:
+    id: avant-suite
+    slug: avant-suite
+    title: Avant Suite
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-14'
+    label: null
+    publisher: null
+    upc: '991043492054'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/6DTBKUJnrNGPiSA5GnaN9t
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Avant Suite
+      slug: avant-suite
+      isrc: CACWV2656854
+      duration: '4:50'
+      explicit: false
+      preview_audio: null
+- release:
+    id: never-knowing
+    slug: never-knowing
+    title: Never Knowing
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-15'
+    label: null
+    publisher: null
+    upc: '991043502142'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5x0nxD5nFqOphFMIoLTdPO
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Never Knowing
+      slug: never-knowing
+      isrc: CACWV2659228
+      duration: '4:17'
+      explicit: false
+      preview_audio: null
+- release:
+    id: prepositions
+    slug: prepositions
+    title: Prepositions
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-04-30'
+    label: null
+    publisher: null
+    upc: '991043642237'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/5w5aj7EiDkh1o7LMlqWevu
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Prepositions
+      slug: prepositions
+      isrc: CACWV2681460
+      duration: '3:28'
+      explicit: false
+      preview_audio: null
+- release:
+    id: the-bridge-gets-you-over
+    slug: the-bridge-gets-you-over
+    title: The Bridge Gets You Over
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-04'
+    label: null
+    publisher: null
+    upc: '991043697893'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3sdvsWBmD6azFyWSkNDusR
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: The Bridge Gets You Over
+      slug: the-bridge-gets-you-over
+      isrc: CACWV2689826
+      duration: '4:35'
+      explicit: false
+      preview_audio: null
+- release:
+    id: truth-s-empty-promise
+    slug: truth-s-empty-promise
+    title: Truth's Empty Promise
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-10'
+    label: null
+    publisher: null
+    upc: '991043750161'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3u2W9uesRzo8xiW74eAjMT
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Truth's Empty Promise
+      slug: truth-s-empty-promise
+      isrc: CAENV2600220
+      duration: '4:12'
+      explicit: false
+      preview_audio: null
+- release:
+    id: aroma-of-you
+    slug: aroma-of-you
+    title: Aroma Of You
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-11'
+    label: null
+    publisher: null
+    upc: '991043771531'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3tuEBEMG8cFeVW7PgwfhoY
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Aroma Of You
+      slug: aroma-of-you
+      isrc: CAENV2602092
+      duration: '4:18'
+      explicit: false
+      preview_audio: null
+- release:
+    id: i-m-still-here
+    slug: i-m-still-here
+    title: I'm Still Here
+    artist_id: michael-anthony-rose
+    model: album
+    release_type: album
+    status: draft
+    release_date: '2026-05-19'
+    label: null
+    publisher: null
+    upc: '7333583407885'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/2IYrDIEYqUhCkMI5VI8Jft
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    tracks:
+    - number: 1
+      title: I'm Old Now
+      slug: i-m-old-now
+      isrc: SE6QE2670828
+      duration: '4:15'
+      explicit: false
+      preview_audio: null
+    - number: 2
+      title: Slow Down
+      slug: slow-down
+      isrc: SE6QE2670829
+      duration: '3:25'
+      explicit: false
+      preview_audio: null
+    - number: 3
+      title: I Know Exactly What This Is
+      slug: i-know-exactly-what-this-is
+      isrc: SE6QE2670830
+      duration: '4:00'
+      explicit: false
+      preview_audio: null
+    - number: 4
+      title: Some Things Just Stop
+      slug: some-things-just-stop
+      isrc: SE6QE2670831
+      duration: '3:58'
+      explicit: false
+      preview_audio: null
+    - number: 5
+      title: Rooms Keep People
+      slug: rooms-keep-people
+      isrc: SE6QE2670832
+      duration: '4:07'
+      explicit: false
+      preview_audio: null
+    - number: 6
+      title: "They Don\u2019t Know"
+      slug: they-dont-know
+      isrc: SE6QE2670833
+      duration: '4:05'
+      explicit: false
+      preview_audio: null
+    - number: 7
+      title: "That\u2019s The Question"
+      slug: thats-the-question
+      isrc: SE6QE2670834
+      duration: '3:40'
+      explicit: false
+      preview_audio: null
+    - number: 8
+      title: Full-Size Person
+      slug: full-size-person
+      isrc: SE6QE2670835
+      duration: '4:23'
+      explicit: false
+      preview_audio: null
+    - number: 9
+      title: Some Days Still Break Me
+      slug: some-days-still-break-me
+      isrc: SE6QE2670836
+      duration: '3:27'
+      explicit: false
+      preview_audio: null
+    - number: 10
+      title: "It\u2019s In Me Too"
+      slug: its-in-me-too
+      isrc: SE6QE2670837
+      duration: '3:43'
+      explicit: false
+      preview_audio: null
+    - number: 11
+      title: "That\u2019s Enough"
+      slug: thats-enough
+      isrc: SE6QE2670838
+      duration: '3:59'
+      explicit: false
+      preview_audio: null
+    - number: 12
+      title: I'm Still Here
+      slug: i-m-still-here
+      isrc: SE6QE2670839
+      duration: '4:13'
+      explicit: false
+      preview_audio: null
+- release:
+    id: entraining
+    slug: entraining
+    title: Entraining
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-05-30'
+    label: null
+    publisher: null
+    upc: '7333583640695'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3bAmM5j1aPLwWN2psguqGX
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Entraining
+      slug: entraining
+      isrc: SE6SA2625324
+      duration: '4:20'
+      explicit: false
+      preview_audio: null
+- release:
+    id: live-forever-or-die-trying
+    slug: live-forever-or-die-trying
+    title: Live Forever Or Die Trying
+    artist_id: michael-anthony-rose
+    model: song
+    release_type: single
+    status: draft
+    release_date: '2026-06-16'
+    label: null
+    publisher: null
+    upc: '991048122079'
+    catalog_number: null
+    cover_image: null
+    links:
+      spotify: https://open.spotify.com/album/3NUvQ4hmP89MULDSrMIAuJ
+    review_status: needs_review
+    notes:
+    - Imported from Spotify catalog; credits, catalog_number, publisher, and non-Spotify
+      links need manual fill.
+    song:
+      number: 1
+      title: Live Forever Or Die Trying
+      slug: live-forever-or-die-trying
+      isrc: CAENV2656917
+      duration: '4:26'
+      explicit: false
+      preview_audio: null
