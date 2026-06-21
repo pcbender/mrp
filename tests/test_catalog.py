@@ -188,7 +188,16 @@ def test_catalog_components_are_used_by_dynamic_pages():
             assert expected in text
 
 
-def test_releases_index_uses_rich_release_cards():
+def test_releases_index_uses_release_browser():
     text = (ROOT / "site/src/pages/releases/index.astro").read_text()
 
-    assert "<ReleaseGrid releases={releases} rich />" in text
+    assert 'import ReleaseBrowser from "../../components/ReleaseBrowser.astro";' in text
+    assert "<ReleaseBrowser releases={releases} rich />" in text
+
+
+def test_artist_release_list_uses_release_browser_in_center_column():
+    text = (ROOT / "site/src/components/ArtistReleaseList.astro").read_text()
+
+    assert 'import ReleaseBrowser from "./ReleaseBrowser.astro";' in text
+    assert 'class="artist-release-list page-grid centered-page"' in text
+    assert "<ReleaseBrowser releases={releases} rich />" in text

@@ -222,6 +222,78 @@ main {
   width: 100%;
 }
 
+.release-browser {
+  display: grid;
+  gap: 20px;
+}
+
+.release-browser-controls {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.4fr) repeat(4, minmax(105px, 0.8fr));
+  gap: 12px;
+  align-items: end;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.release-browser-controls label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.release-browser-search {
+  grid-column: auto;
+}
+
+.release-browser-controls input,
+.release-browser-controls select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 9px 10px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.release-browser-summary,
+.release-browser-pages {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.release-browser-summary {
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.release-browser-pages .button {
+  background: var(--panel);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.release-browser-pages .button:disabled {
+  cursor: default;
+  opacity: 0.42;
+}
+
+.release-browser-empty {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
 .image-loop-section {
   align-items: start;
 }
@@ -1346,6 +1418,19 @@ main {
 
   .centered-page {
     width: min(100% - 40px, 980px);
+  }
+
+  .release-browser-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .release-browser-search {
+    grid-column: 1;
+  }
+
+  .release-browser-summary {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .hero {

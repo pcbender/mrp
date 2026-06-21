@@ -1,0 +1,181 @@
+---
+import ReleaseGrid from "./ReleaseGrid.astro";
+import type { ReleaseCardModel } from "../lib/catalog";
+
+interface Props {
+  releases: ReleaseCardModel[];
+  rich?: boolean;
+  initialPageSize?: number;
+}
+
+const { releases, rich = true, initialPageSize = 12 } = Astro.props;
+const releaseTypes = uniqueValues(releases.map((release) => release.releaseType));
+const artists = uniqueValues(releases.map((release) => release.artistName));
+const years = uniqueValues(releases.map((release) => release.releaseDate.slice(0, 4)).filter(Boolean)).sort().reverse();
+
+function uniqueValues(values: string[]) {
+  return Array.from(new Set(values.filter(Boolean))).sort((left, right) => left.localeCompare(right));
+}
+---
+<div class="release-browser" data-release-browser>
+  <form class="release-browser-controls" data-release-controls>
+    <label class="release-browser-search">
+      <span>Search</span>
+      <input type="search" name="search" autocomplete="off" placeholder="Title, artist, or text" data-release-search />
+    </label>
+    {releaseTypes.length > 1 && (
+      <label>
+        <span>Type</span>
+        <select name="type" data-release-type>
+          <option value="">All types</option>
+          {releaseTypes.map((type) => <option value={type}>{type}</option>)}
+        </select>
+      </label>
+    )}
+    {artists.length > 1 && (
+      <label>
+        <span>Artist</span>
+        <select name="artist" data-release-artist>
+          <option value="">All artists</option>
+          {artists.map((artist) => <option value={artist}>{artist}</option>)}
+        </select>
+      </label>
+    )}
+    {years.length > 1 && (
+      <label>
+        <span>Year</span>
+        <select name="year" data-release-year>
+          <option value="">All years</option>
+          {years.map((year) => <option value={year}>{year}</option>)}
+        </select>
+      </label>
+    )}
+    <label>
+      <span>Sort</span>
+      <select name="sort" data-release-sort>
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+        <option value="title">Title A-Z</option>
+        <option value="artist">Artist A-Z</option>
+      </select>
+    </label>
+    <label>
+      <span>Show</span>
+      <select name="page-size" data-release-page-size>
+        {[12, 24, 48].map((size) => <option value={size} selected={size === initialPageSize}>{size}</option>)}
+        <option value="0">All</option>
+      </select>
+    </label>
+  </form>
+
+  <div class="release-browser-summary">
+    <span data-release-count>{releases.length} release{releases.length === 1 ? "" : "s"}</span>
+    <div class="release-browser-pages">
+      <button class="button" type="button" data-release-prev>Previous</button>
+      <span data-release-page-status>Page 1</span>
+      <button class="button" type="button" data-release-next>Next</button>
+    </div>
+  </div>
+
+  <ReleaseGrid releases={releases} rich={rich} />
+  <p class="empty-state release-browser-empty" data-release-empty hidden>No releases match those controls.</p>
+</div>
+
+<script>
+  const browsers = document.querySelectorAll("[data-release-browser]");
+
+  browsers.forEach((browser) => {
+    const grid = browser.querySelector(".release-grid");
+    const cards = Array.from(browser.querySelectorAll("[data-release-card]"));
+    const search = browser.querySelector("[data-release-search]");
+    const type = browser.querySelector("[data-release-type]");
+    const artist = browser.querySelector("[data-release-artist]");
+    const year = browser.querySelector("[data-release-year]");
+    const sort = browser.querySelector("[data-release-sort]");
+    const pageSize = browser.querySelector("[data-release-page-size]");
+    const previous = browser.querySelector("[data-release-prev]");
+    const next = browser.querySelector("[data-release-next]");
+    const count = browser.querySelector("[data-release-count]");
+    const pageStatus = browser.querySelector("[data-release-page-status]");
+    const empty = browser.querySelector("[data-release-empty]");
+    if (!grid || cards.length === 0 || !search || !sort || !pageSize || !previous || !next || !count || !pageStatus || !empty) return;
+
+    let page = 1;
+
+    function normalized(value) {
+      return String(value || "").toLowerCase().trim();
+    }
+
+    function compareCards(left, right) {
+      const mode = sort.value;
+      if (mode === "oldest") return String(left.dataset.releaseDate || "").localeCompare(String(right.dataset.releaseDate || ""));
+      if (mode === "title") return String(left.dataset.releaseTitle || "").localeCompare(String(right.dataset.releaseTitle || ""));
+      if (mode === "artist") {
+        const artistOrder = String(left.dataset.releaseArtist || "").localeCompare(String(right.dataset.releaseArtist || ""));
+        if (artistOrder !== 0) return artistOrder;
+        return String(left.dataset.releaseTitle || "").localeCompare(String(right.dataset.releaseTitle || ""));
+      }
+      const dateOrder = String(right.dataset.releaseDate || "").localeCompare(String(left.dataset.releaseDate || ""));
+      if (dateOrder !== 0) return dateOrder;
+      return String(left.dataset.releaseTitle || "").localeCompare(String(right.dataset.releaseTitle || ""));
+    }
+
+    function matches(card) {
+      const query = normalized(search.value);
+      const selectedType = type ? type.value : "";
+      const selectedArtist = artist ? artist.value : "";
+      const selectedYear = year ? year.value : "";
+      if (query && !normalized(card.dataset.releaseSearch).includes(query)) return false;
+      if (selectedType && card.dataset.releaseType !== selectedType) return false;
+      if (selectedArtist && card.dataset.releaseArtist !== selectedArtist) return false;
+      if (selectedYear && !String(card.dataset.releaseDate || "").startsWith(selectedYear)) return false;
+      return true;
+    }
+
+    function render() {
+      const size = Number(pageSize.value);
+      const matched = cards.filter(matches).sort(compareCards);
+      const totalPages = size > 0 ? Math.max(1, Math.ceil(matched.length / size)) : 1;
+      page = Math.min(page, totalPages);
+      const start = size > 0 ? (page - 1) * size : 0;
+      const visible = size > 0 ? matched.slice(start, start + size) : matched;
+
+      cards.forEach((card) => {
+        card.hidden = true;
+      });
+      matched.forEach((card) => grid.appendChild(card));
+      visible.forEach((card) => {
+        card.hidden = false;
+      });
+
+      const releaseLabel = matched.length === 1 ? "release" : "releases";
+      count.textContent = `${matched.length} ${releaseLabel}`;
+      pageStatus.textContent = size > 0 ? `Page ${page} of ${totalPages}` : "All results";
+      previous.disabled = page <= 1 || size === 0;
+      next.disabled = page >= totalPages || size === 0;
+      empty.hidden = matched.length > 0;
+    }
+
+    browser.addEventListener("input", (event) => {
+      if (event.target === search) {
+        page = 1;
+        render();
+      }
+    });
+    browser.addEventListener("change", (event) => {
+      if ([type, artist, year, sort, pageSize].includes(event.target)) {
+        page = 1;
+        render();
+      }
+    });
+    previous.addEventListener("click", () => {
+      page = Math.max(1, page - 1);
+      render();
+    });
+    next.addEventListener("click", () => {
+      page += 1;
+      render();
+    });
+    render();
+  });
+</script>
