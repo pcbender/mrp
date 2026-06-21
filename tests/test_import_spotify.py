@@ -66,6 +66,7 @@ def track(track_id: str, name: str, isrc: str | None = None) -> dict[str, Any]:
         "explicit": False,
         "preview_url": None,
         "external_ids": {"isrc": isrc},
+        "external_urls": {"spotify": f"https://open.spotify.com/track/{track_id}"},
     }
 
 
@@ -204,6 +205,7 @@ def test_new_artist_single_and_ep_with_partial_date(tmp_path):
     assert short_stories["release_type"] == "ep"
     assert short_stories["release_date"] is None
     assert any("precision was 'year'" in note for note in short_stories["notes"])
+    assert short_stories["tracks"][0]["links"]["spotify"] == "https://open.spotify.com/track/e1"
 
     assets = yaml.safe_load((repo / "content/import-review/spotify-assets.yaml").read_text())
     assert len(assets["candidates"]) == 2

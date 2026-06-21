@@ -215,6 +215,7 @@ def build_track(number: int, track: dict[str, Any]) -> dict[str, Any]:
         "duration": format_duration(track.get("duration_ms")),
         "explicit": bool(track.get("explicit", False)),
         "preview_audio": track.get("preview_url"),
+        "links": {"spotify": (track.get("external_urls") or {}).get("spotify")},
     }
 
 
