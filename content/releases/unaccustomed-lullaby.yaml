@@ -1,0 +1,37 @@
+release:
+  id: unaccustomed-lullaby
+  slug: unaccustomed-lullaby
+  title: Unaccustomed Lullaby
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-09-18'
+  label: null
+  publisher: null
+  upc: 057829622166
+  catalog_number: null
+  cover_image: site/public/assets/releases/unaccustomed-lullaby/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3iGFxTVl1Cxkkj4wryvR8Y
+  seo:
+    title: Unaccustomed Lullaby by PCBender
+    description: Unaccustomed Lullaby by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Unaccustomed Lullaby
+    slug: unaccustomed-lullaby
+    isrc: CBEYJ2561759
+    duration: '4:06'
+    explicit: false
+    preview_audio: null

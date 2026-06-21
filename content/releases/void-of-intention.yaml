@@ -1,0 +1,37 @@
+release:
+  id: void-of-intention
+  slug: void-of-intention
+  title: Void Of Intention
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-03-16'
+  label: null
+  publisher: null
+  upc: 056870485157
+  catalog_number: null
+  cover_image: site/public/assets/releases/void-of-intention/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/68GMuLlYRRlZ4Smy9ad9Hv
+  seo:
+    title: Void Of Intention by PCBender
+    description: Void Of Intention by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Void Of Intention
+    slug: void-of-intention
+    isrc: CACWV2579463
+    duration: '3:59'
+    explicit: false
+    preview_audio: null

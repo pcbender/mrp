@@ -1,0 +1,37 @@
+release:
+  id: opposites-attach
+  slug: opposites-attach
+  title: Opposites Attach
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-03'
+  label: null
+  publisher: null
+  upc: '990591136908'
+  catalog_number: null
+  cover_image: site/public/assets/releases/opposites-attach/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/2kBB1y04DTsMZ19sZhfxMb
+  seo:
+    title: Opposites Attach by Lingua Aeternum
+    description: Opposites Attach by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Opposites Attach
+    slug: opposites-attach
+    isrc: CAGOO2502967
+    duration: '4:17'
+    explicit: false
+    preview_audio: null

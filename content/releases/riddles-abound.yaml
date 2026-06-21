@@ -1,0 +1,37 @@
+release:
+  id: riddles-abound
+  slug: riddles-abound
+  title: Riddles Abound
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-10-05'
+  label: null
+  publisher: null
+  upc: '7300346389658'
+  catalog_number: null
+  cover_image: site/public/assets/releases/riddles-abound/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3Ii0U4UY1JeyWGg3Om91e3
+  seo:
+    title: Riddles Abound by PCBender
+    description: Riddles Abound by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Riddles Abound
+    slug: riddles-abound
+    isrc: SE6I32525002
+    duration: '5:30'
+    explicit: false
+    preview_audio: null

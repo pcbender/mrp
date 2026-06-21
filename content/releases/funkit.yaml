@@ -1,0 +1,37 @@
+release:
+  id: funkit
+  slug: funkit
+  title: Funkit
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-03-18'
+  label: null
+  publisher: null
+  upc: '991043225973'
+  catalog_number: null
+  cover_image: site/public/assets/releases/funkit/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4AXOjPNrt0XVRNB2KhDDg4
+  seo:
+    title: Funkit by PCBender
+    description: Funkit by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Funkit
+    slug: funkit
+    isrc: CACWV2612969
+    duration: '3:50'
+    explicit: false
+    preview_audio: null

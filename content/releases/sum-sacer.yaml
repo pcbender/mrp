@@ -1,0 +1,37 @@
+release:
+  id: sum-sacer
+  slug: sum-sacer
+  title: Sum Sacer
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-07-14'
+  label: null
+  publisher: null
+  upc: '990591987791'
+  catalog_number: null
+  cover_image: site/public/assets/releases/sum-sacer/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/7ld61QxPKWQs03mLPs6Cui
+  seo:
+    title: Sum Sacer by PCBender
+    description: Sum Sacer by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Sum Sacer
+    slug: sum-sacer
+    isrc: CALVP2551886
+    duration: '5:53'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: gratitude-express
+  slug: gratitude-express
+  title: Gratitude Express
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-22'
+  label: null
+  publisher: null
+  upc: 056870993584
+  catalog_number: null
+  cover_image: site/public/assets/releases/gratitude-express/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0t1NwwDWfAHbDpScP5Zi88
+  seo:
+    title: Gratitude Express by Lingua Aeternum
+    description: Gratitude Express by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Gratitude Express
+    slug: gratitude-express
+    isrc: CAENV2575442
+    duration: '3:26'
+    explicit: false
+    preview_audio: null

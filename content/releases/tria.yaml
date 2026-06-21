@@ -1,0 +1,72 @@
+release:
+  id: tria
+  slug: tria
+  title: "Tria\u03C4\u03AF"
+  artist_id: pcbender
+  model: album
+  release_type: ep
+  status: staged
+  release_date: '2025-06-17'
+  label: null
+  publisher: null
+  upc: '990591695177'
+  catalog_number: null
+  cover_image: site/public/assets/releases/tria/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6tGsl61IaiQQg7AB6uXNsD
+  seo:
+    title: "Tria\u03C4\u03AF by PCBender"
+    description: "Tria\u03C4\u03AF by PCBender on Maricopa Records."
+  automation:
+    allow_auto_publish: false
+  tracks:
+  - number: 1
+    title: Apa
+    slug: apa
+    isrc: CAGOO2598738
+    duration: '3:46'
+    explicit: false
+    preview_audio: null
+  - number: 2
+    title: "Aite\u014D"
+    slug: aiteo
+    isrc: CAGOO2598739
+    duration: '3:54'
+    explicit: false
+    preview_audio: null
+  - number: 3
+    title: Ego Eimi
+    slug: ego-eimi
+    isrc: CAGOO2598740
+    duration: '3:22'
+    explicit: false
+    preview_audio: null
+  - number: 4
+    title: "Esm\xE9n"
+    slug: esmen
+    isrc: CAGOO2598741
+    duration: '3:54'
+    explicit: false
+    preview_audio: null
+  - number: 5
+    title: Esti
+    slug: esti
+    isrc: CAGOO2598742
+    duration: '3:49'
+    explicit: false
+    preview_audio: null
+  - number: 6
+    title: Ousia
+    slug: ousia
+    isrc: CAGOO2598743
+    duration: '3:03'
+    explicit: false
+    preview_audio: null

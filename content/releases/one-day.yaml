@@ -1,0 +1,37 @@
+release:
+  id: one-day
+  slug: one-day
+  title: One Day
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-21'
+  label: null
+  publisher: null
+  upc: 056870977713
+  catalog_number: null
+  cover_image: site/public/assets/releases/one-day/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/2xOGMs7WoieP3enluejavO
+  seo:
+    title: One Day by Lingua Aeternum
+    description: One Day by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: One Day
+    slug: one-day
+    isrc: CAENV2572245
+    duration: '3:48'
+    explicit: false
+    preview_audio: null

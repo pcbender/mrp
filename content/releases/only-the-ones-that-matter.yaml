@@ -1,0 +1,37 @@
+release:
+  id: only-the-ones-that-matter
+  slug: only-the-ones-that-matter
+  title: Only The Ones That Matter
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-06-11'
+  label: null
+  publisher: null
+  upc: '990591596108'
+  catalog_number: null
+  cover_image: site/public/assets/releases/only-the-ones-that-matter/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/2Zr03uNNGFHQcyRwaIVKjk
+  seo:
+    title: Only The Ones That Matter by PCBender
+    description: Only The Ones That Matter by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Only The Ones That Matter
+    slug: only-the-ones-that-matter
+    isrc: CAGOO2583617
+    duration: '4:24'
+    explicit: false
+    preview_audio: null

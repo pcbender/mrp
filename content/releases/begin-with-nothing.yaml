@@ -1,0 +1,37 @@
+release:
+  id: begin-with-nothing
+  slug: begin-with-nothing
+  title: Begin With Nothing
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-04'
+  label: null
+  publisher: null
+  upc: '990591152786'
+  catalog_number: null
+  cover_image: site/public/assets/releases/begin-with-nothing/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/35Jx1CdvGGdpKIIxCUCsxW
+  seo:
+    title: Begin With Nothing by Lingua Aeternum
+    description: Begin With Nothing by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Begin With Nothing
+    slug: begin-with-nothing
+    isrc: CAGOO2505080
+    duration: '4:25'
+    explicit: false
+    preview_audio: null

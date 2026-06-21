@@ -1,0 +1,37 @@
+release:
+  id: body-of-work
+  slug: body-of-work
+  title: Body Of Work
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-26'
+  label: null
+  publisher: null
+  upc: '990591031005'
+  catalog_number: null
+  cover_image: site/public/assets/releases/body-of-work/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1UqldsOofOFSGWVbQKS6o2
+  seo:
+    title: Body Of Work by Lingua Aeternum
+    description: Body Of Work by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Body Of Work
+    slug: body-of-work
+    isrc: CAENV2583732
+    duration: '3:38'
+    explicit: false
+    preview_audio: null

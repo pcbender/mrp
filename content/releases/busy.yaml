@@ -1,0 +1,37 @@
+release:
+  id: busy
+  slug: busy
+  title: Busy
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-12-17'
+  label: null
+  publisher: null
+  upc: 057914366494
+  catalog_number: null
+  cover_image: site/public/assets/releases/busy/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/78pDnX8hnQrYS2yeqHNXlY
+  seo:
+    title: Busy by PCBender
+    description: Busy by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Busy
+    slug: busy
+    isrc: CBF8B2578875
+    duration: '3:24'
+    explicit: false
+    preview_audio: null

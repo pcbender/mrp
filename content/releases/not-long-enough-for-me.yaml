@@ -1,0 +1,37 @@
+release:
+  id: not-long-enough-for-me
+  slug: not-long-enough-for-me
+  title: Not Long Enough For Me
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-13'
+  label: null
+  publisher: null
+  upc: '991043442516'
+  catalog_number: null
+  cover_image: site/public/assets/releases/not-long-enough-for-me/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3LHOdus1gswCvp0ZCQEQVH
+  seo:
+    title: Not Long Enough For Me by PCBender
+    description: Not Long Enough For Me by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Not Long Enough For Me
+    slug: not-long-enough-for-me
+    isrc: CACWV2653959
+    duration: '4:06'
+    explicit: false
+    preview_audio: null

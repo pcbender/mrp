@@ -1,0 +1,37 @@
+release:
+  id: camino-cielo
+  slug: camino-cielo
+  title: Camino Cielo
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-08'
+  label: null
+  publisher: null
+  upc: '990591211711'
+  catalog_number: null
+  cover_image: site/public/assets/releases/camino-cielo/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5JUwlOWdDGNF7vaTHom1mT
+  seo:
+    title: Camino Cielo by PCBender
+    description: Camino Cielo by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Camino Cielo
+    slug: camino-cielo
+    isrc: CAGOO2516530
+    duration: '4:08'
+    explicit: false
+    preview_audio: null

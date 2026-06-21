@@ -1,0 +1,37 @@
+release:
+  id: half-happenstance
+  slug: half-happenstance
+  title: Half Happenstance
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-11-12'
+  label: null
+  publisher: null
+  upc: '7300347004505'
+  catalog_number: null
+  cover_image: site/public/assets/releases/half-happenstance/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6iQ320jwDj12SL37x44Gv0
+  seo:
+    title: Half Happenstance by PCBender
+    description: Half Happenstance by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Half Happenstance
+    slug: half-happenstance
+    isrc: SE6QE2549394
+    duration: '4:38'
+    explicit: false
+    preview_audio: null

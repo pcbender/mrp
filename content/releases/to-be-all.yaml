@@ -1,0 +1,37 @@
+release:
+  id: to-be-all
+  slug: to-be-all
+  title: To Be All
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-05-18'
+  label: null
+  publisher: null
+  upc: '991043839408'
+  catalog_number: null
+  cover_image: site/public/assets/releases/to-be-all/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3lbd5yABKyHDLug5yWNomz
+  seo:
+    title: To Be All by 4Castle
+    description: To Be All by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: To Be All
+    slug: to-be-all
+    isrc: CAENV2612532
+    duration: '5:43'
+    explicit: false
+    preview_audio: null

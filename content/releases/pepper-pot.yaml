@@ -1,0 +1,37 @@
+release:
+  id: pepper-pot
+  slug: pepper-pot
+  title: Pepper Pot
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-12-16'
+  label: null
+  publisher: null
+  upc: 057914348261
+  catalog_number: null
+  cover_image: site/public/assets/releases/pepper-pot/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5ccP8MHOU8cNdLtQYtmtoM
+  seo:
+    title: Pepper Pot by PCBender
+    description: Pepper Pot by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Pepper Pot
+    slug: pepper-pot
+    isrc: CBF8B2576613
+    duration: '4:59'
+    explicit: false
+    preview_audio: null

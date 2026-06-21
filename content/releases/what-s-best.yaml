@@ -1,0 +1,37 @@
+release:
+  id: what-s-best
+  slug: what-s-best
+  title: What's Best
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-02'
+  label: null
+  publisher: null
+  upc: 056870737621
+  catalog_number: null
+  cover_image: site/public/assets/releases/what-s-best/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5xqqBZNDbr7bktBDU4pmIC
+  seo:
+    title: What's Best by 4Castle
+    description: What's Best by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: What's Best
+    slug: what-s-best
+    isrc: CAENV2527871
+    duration: '3:40'
+    explicit: false
+    preview_audio: null

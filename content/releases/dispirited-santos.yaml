@@ -1,0 +1,37 @@
+release:
+  id: dispirited-santos
+  slug: dispirited-santos
+  title: Dispirited Santos
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-10-23'
+  label: null
+  publisher: null
+  upc: '7300346672712'
+  catalog_number: null
+  cover_image: site/public/assets/releases/dispirited-santos/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0YGRw2H9xCeIuK9LgZbnDE
+  seo:
+    title: Dispirited Santos by 4Castle
+    description: Dispirited Santos by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Dispirited Santos
+    slug: dispirited-santos
+    isrc: SE6I32584957
+    duration: '4:32'
+    explicit: false
+    preview_audio: null

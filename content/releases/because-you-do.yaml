@@ -1,0 +1,37 @@
+release:
+  id: because-you-do
+  slug: because-you-do
+  title: Because You Do
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-07-14'
+  label: null
+  publisher: null
+  upc: '990591974456'
+  catalog_number: null
+  cover_image: site/public/assets/releases/because-you-do/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6sXp8QqMUTc5jyZ7pVGwnj
+  seo:
+    title: Because You Do by PCBender
+    description: Because You Do by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Because You Do
+    slug: because-you-do
+    isrc: CALVP2551412
+    duration: '3:50'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: something-less-would-joy-then-be
+  slug: something-less-would-joy-then-be
+  title: Something Less Would Joy Then Be
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-04'
+  label: null
+  publisher: null
+  upc: 056870766003
+  catalog_number: null
+  cover_image: site/public/assets/releases/something-less-would-joy-then-be/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/7HN4YOvsIr3R0srxU7HdnE
+  seo:
+    title: Something Less Would Joy Then Be by 4Castle
+    description: Something Less Would Joy Then Be by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Something Less Would Joy Then Be
+    slug: something-less-would-joy-then-be
+    isrc: CAENV2534692
+    duration: '3:45'
+    explicit: false
+    preview_audio: null

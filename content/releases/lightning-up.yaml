@@ -1,0 +1,37 @@
+release:
+  id: lightning-up
+  slug: lightning-up
+  title: Lightning Up
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-11-15'
+  label: null
+  publisher: null
+  upc: 057914078625
+  catalog_number: null
+  cover_image: site/public/assets/releases/lightning-up/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1uObochAtrmqaLtZMj5mQv
+  seo:
+    title: Lightning Up by PCBender
+    description: Lightning Up by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Lightning Up
+    slug: lightning-up
+    isrc: CBF8B2537772
+    duration: '4:04'
+    explicit: false
+    preview_audio: null

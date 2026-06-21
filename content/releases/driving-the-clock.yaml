@@ -1,0 +1,37 @@
+release:
+  id: driving-the-clock
+  slug: driving-the-clock
+  title: Driving The Clock
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-09-09'
+  label: null
+  publisher: null
+  upc: 057829546295
+  catalog_number: null
+  cover_image: site/public/assets/releases/driving-the-clock/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5QGLpVpe2gIRHXKlUPnt1v
+  seo:
+    title: Driving The Clock by PCBender
+    description: Driving The Clock by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Driving The Clock
+    slug: driving-the-clock
+    isrc: CBEYJ2548314
+    duration: '4:20'
+    explicit: false
+    preview_audio: null

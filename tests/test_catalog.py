@@ -170,8 +170,22 @@ def test_artist_cards_sort_by_latest_release_newest_first(tmp_path):
 
     assert result.returncode == 0, result.stderr
     artists = json.loads(result.stdout)
-    assert [artist["id"] for artist in artists] == ["pcbender", "stab", "4castle", "lingua-aeternum"]
-    assert [artist["latestReleaseDate"] for artist in artists] == ["2025-03-29", "2025-03-29", "2025-03-29", ""]
+    assert [artist["id"] for artist in artists] == [
+        "michael-anthony-rose",
+        "4castle",
+        "lingua-aeternum",
+        "stab",
+        "pcbender",
+        "michael-rose",
+    ]
+    assert [artist["latestReleaseDate"] for artist in artists] == [
+        "2026-06-16",
+        "2026-06-14",
+        "2026-05-27",
+        "2026-05-07",
+        "2026-04-30",
+        "2026-02-09",
+    ]
 
 
 def test_catalog_components_are_used_by_dynamic_pages():

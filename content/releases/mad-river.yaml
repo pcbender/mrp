@@ -1,0 +1,37 @@
+release:
+  id: mad-river
+  slug: mad-river
+  title: Mad River
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-10'
+  label: null
+  publisher: null
+  upc: '990591243668'
+  catalog_number: null
+  cover_image: site/public/assets/releases/mad-river/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4YiNiegVIcc1BkA4N2pEZP
+  seo:
+    title: Mad River by Lingua Aeternum
+    description: Mad River by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Mad River
+    slug: mad-river
+    isrc: CAGOO2522558
+    duration: '5:50'
+    explicit: false
+    preview_audio: null

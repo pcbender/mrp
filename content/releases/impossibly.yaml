@@ -1,0 +1,37 @@
+release:
+  id: impossibly
+  slug: impossibly
+  title: Impossibly
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-09-17'
+  label: null
+  publisher: null
+  upc: 057829612488
+  catalog_number: null
+  cover_image: site/public/assets/releases/impossibly/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4AGaj31FerMI7fdvd3si6E
+  seo:
+    title: Impossibly by PCBender
+    description: Impossibly by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Impossibly
+    slug: impossibly
+    isrc: CBEYJ2559249
+    duration: '4:37'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: aletheion
+  slug: aletheion
+  title: Aletheion
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-02-20'
+  label: null
+  publisher: null
+  upc: 057914976174
+  catalog_number: null
+  cover_image: site/public/assets/releases/aletheion/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1N8xYe1I3KaRKiE0ikU3YA
+  seo:
+    title: Aletheion by Michael Anthony Rose
+    description: Aletheion by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Aletheion
+    slug: aletheion
+    isrc: CAHQJ2674257
+    duration: '3:58'
+    explicit: false
+    preview_audio: null

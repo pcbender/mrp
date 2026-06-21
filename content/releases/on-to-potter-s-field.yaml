@@ -1,0 +1,37 @@
+release:
+  id: on-to-potter-s-field
+  slug: on-to-potter-s-field
+  title: On To Potter's Field
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-12-23'
+  label: null
+  publisher: null
+  upc: 057914420059
+  catalog_number: null
+  cover_image: site/public/assets/releases/on-to-potter-s-field/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5bTK26qM2xYicoJe9DL6kL
+  seo:
+    title: On To Potter's Field by PCBender
+    description: On To Potter's Field by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: On To Potter's Field
+    slug: on-to-potter-s-field
+    isrc: CBF8B2585808
+    duration: '4:12'
+    explicit: false
+    preview_audio: null

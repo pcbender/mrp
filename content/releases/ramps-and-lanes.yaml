@@ -1,0 +1,37 @@
+release:
+  id: ramps-and-lanes
+  slug: ramps-and-lanes
+  title: Ramps and Lanes
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-20'
+  label: null
+  publisher: null
+  upc: 056870964263
+  catalog_number: null
+  cover_image: site/public/assets/releases/ramps-and-lanes/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/1jyg9CRNWKgKxanxrKls6k
+  seo:
+    title: Ramps and Lanes by Lingua Aeternum
+    description: Ramps and Lanes by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Ramps and Lanes
+    slug: ramps-and-lanes
+    isrc: CAENV2569717
+    duration: '3:28'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: cosmic-relations
+  slug: cosmic-relations
+  title: Cosmic Relations
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-06'
+  label: null
+  publisher: null
+  upc: '990591178311'
+  catalog_number: null
+  cover_image: site/public/assets/releases/cosmic-relations/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/67xizs5F1ndn8nOTShk5KD
+  seo:
+    title: Cosmic Relations by Lingua Aeternum
+    description: Cosmic Relations by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Cosmic Relations
+    slug: cosmic-relations
+    isrc: CAGOO2510180
+    duration: '4:46'
+    explicit: false
+    preview_audio: null

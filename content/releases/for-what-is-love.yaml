@@ -1,0 +1,37 @@
+release:
+  id: for-what-is-love
+  slug: for-what-is-love
+  title: For What is Love
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-02'
+  label: null
+  publisher: null
+  upc: 056870737959
+  catalog_number: null
+  cover_image: site/public/assets/releases/for-what-is-love/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/7iJhlGmUNxs7l8zeb9yuun
+  seo:
+    title: For What is Love by PCBender
+    description: For What is Love by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: For What is Love
+    slug: for-what-is-love
+    isrc: CAENV2528055
+    duration: '3:25'
+    explicit: false
+    preview_audio: null

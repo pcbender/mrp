@@ -1,0 +1,93 @@
+release:
+  id: free
+  slug: free
+  title: Free
+  artist_id: pcbender
+  model: album
+  release_type: album
+  status: staged
+  release_date: '2025-12-11'
+  label: null
+  publisher: null
+  upc: '7300347467041'
+  catalog_number: null
+  cover_image: site/public/assets/releases/free/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4EIhyMzEwu4vkjm4XSz40u
+  seo:
+    title: Free by PCBender
+    description: Free by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  tracks:
+  - number: 1
+    title: Free
+    slug: free
+    isrc: SE5752541119
+    duration: '6:28'
+    explicit: false
+    preview_audio: null
+  - number: 2
+    title: Law
+    slug: law
+    isrc: SE5752541120
+    duration: '5:03'
+    explicit: false
+    preview_audio: null
+  - number: 3
+    title: Love
+    slug: love
+    isrc: SE5752541121
+    duration: '5:22'
+    explicit: false
+    preview_audio: null
+  - number: 4
+    title: God
+    slug: god
+    isrc: SE5752541122
+    duration: '5:18'
+    explicit: false
+    preview_audio: null
+  - number: 5
+    title: Death
+    slug: death
+    isrc: SE5752541123
+    duration: '6:40'
+    explicit: false
+    preview_audio: null
+  - number: 6
+    title: Desire
+    slug: desire
+    isrc: SE5752541124
+    duration: '5:00'
+    explicit: false
+    preview_audio: null
+  - number: 7
+    title: Difference
+    slug: difference
+    isrc: SE5752541125
+    duration: '4:48'
+    explicit: false
+    preview_audio: null
+  - number: 8
+    title: Meaning
+    slug: meaning
+    isrc: SE5752541126
+    duration: '5:19'
+    explicit: false
+    preview_audio: null
+  - number: 9
+    title: Sovereign
+    slug: sovereign
+    isrc: SE5752541127
+    duration: '7:14'
+    explicit: false
+    preview_audio: null

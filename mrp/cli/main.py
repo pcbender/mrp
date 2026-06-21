@@ -19,7 +19,14 @@ from mrp.core.import_spotify import DEFAULT_ROSTER, format_import_spotify, impor
 from mrp.core.inspect import format_inspection, inspect_repository
 from mrp.core.migrate_site import format_migrate_site, migrate_site
 from mrp.core.migration_inventory import DEFAULT_MIGRATION_SOURCE
+from mrp.core.promote_spotify import (
+    DEFAULT_ARTISTS_PATH,
+    DEFAULT_RELEASES_PATH,
+    format_promote_spotify,
+    promote_spotify,
+)
 from mrp.core.publish import format_publish, publish
+from mrp.core.spotify_client import SpotifyClient
 from mrp.core.release import create_release, format_release_create
 from mrp.core.rollback import format_rollback, rollback
 from mrp.core.status import format_status, status
@@ -107,6 +114,16 @@ def build_parser() -> argparse.ArgumentParser:
     add_global_options(import_spotify_parser, suppress_defaults=True)
     import_spotify_parser.add_argument("--roster", default=str(DEFAULT_ROSTER))
     import_spotify_parser.add_argument("--download-covers", action="store_true")
+
+    promote_spotify_parser = subparsers.add_parser(
+        "promote-spotify", help="Promote reviewed Spotify import candidates into content/."
+    )
+    add_global_options(promote_spotify_parser, suppress_defaults=True)
+    promote_spotify_parser.add_argument("--artists", default=str(DEFAULT_ARTISTS_PATH))
+    promote_spotify_parser.add_argument("--releases", default=str(DEFAULT_RELEASES_PATH))
+    promote_spotify_parser.add_argument(
+        "--skip-artist-images", action="store_true", help="Skip downloading new-artist photos."
+    )
 
     migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
     add_global_options(migrate_parser, suppress_defaults=True)
@@ -214,6 +231,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "import-spotify":
         print(format_import_spotify(result))
         return
+    if result["command"] == "promote-spotify":
+        print(format_promote_spotify(result))
+        return
     if result["command"] == "build":
         print(format_build(result))
         return
@@ -304,6 +324,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = import_site(args.repo, source=args.source)
     elif args.command == "import-spotify":
         result = import_spotify(args.repo, roster=args.roster, download_covers=args.download_covers)
+    elif args.command == "promote-spotify":
+        promote_client = None if args.skip_artist_images else SpotifyClient.from_env(repo=args.repo)
+        result = promote_spotify(args.repo, artists_path=args.artists, releases_path=args.releases, client=promote_client)
     elif args.command == "migrate-site":
         result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "wxr-inventory":

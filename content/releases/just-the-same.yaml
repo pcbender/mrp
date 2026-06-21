@@ -1,0 +1,37 @@
+release:
+  id: just-the-same
+  slug: just-the-same
+  title: Just the Same
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-20'
+  label: null
+  publisher: null
+  upc: 056870965871
+  catalog_number: null
+  cover_image: site/public/assets/releases/just-the-same/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0YglFU7Ya5J8TkCyTGOUBJ
+  seo:
+    title: Just the Same by Lingua Aeternum
+    description: Just the Same by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Just the Same
+    slug: just-the-same
+    isrc: CAENV2569881
+    duration: '4:02'
+    explicit: false
+    preview_audio: null

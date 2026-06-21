@@ -1,0 +1,37 @@
+release:
+  id: dusty-desert-rain
+  slug: dusty-desert-rain
+  title: Dusty Desert Rain
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-10-14'
+  label: null
+  publisher: null
+  upc: '7300346521805'
+  catalog_number: null
+  cover_image: site/public/assets/releases/dusty-desert-rain/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/35YVq2yAfRhFdeJogpNyIk
+  seo:
+    title: Dusty Desert Rain by PCBender
+    description: Dusty Desert Rain by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Dusty Desert Rain
+    slug: dusty-desert-rain
+    isrc: SE6I32552773
+    duration: '5:11'
+    explicit: false
+    preview_audio: null

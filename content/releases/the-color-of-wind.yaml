@@ -1,0 +1,37 @@
+release:
+  id: the-color-of-wind
+  slug: the-color-of-wind
+  title: The Color of Wind
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-21'
+  label: null
+  publisher: null
+  upc: 056870968285
+  catalog_number: null
+  cover_image: site/public/assets/releases/the-color-of-wind/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5zaDpoBT3AmcJplr0fgNaj
+  seo:
+    title: The Color of Wind by Lingua Aeternum
+    description: The Color of Wind by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: The Color of Wind
+    slug: the-color-of-wind
+    isrc: CAENV2570191
+    duration: '3:31'
+    explicit: false
+    preview_audio: null

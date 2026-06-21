@@ -1,0 +1,37 @@
+release:
+  id: piercing-dread-of-light
+  slug: piercing-dread-of-light
+  title: Piercing Dread of Light
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-05-18'
+  label: null
+  publisher: null
+  upc: '990591348509'
+  catalog_number: null
+  cover_image: site/public/assets/releases/piercing-dread-of-light/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/7JLwlJcx2wm4Bul9P0tyiT
+  seo:
+    title: Piercing Dread of Light by Lingua Aeternum
+    description: Piercing Dread of Light by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Piercing Dread of Light
+    slug: piercing-dread-of-light
+    isrc: CAGOO2540763
+    duration: '5:12'
+    explicit: false
+    preview_audio: null

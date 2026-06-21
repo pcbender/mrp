@@ -1,0 +1,37 @@
+release:
+  id: i-cant-quite-make-it-fit
+  slug: i-cant-quite-make-it-fit
+  title: "I Can\u2019t Quite Make It Fit"
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-05'
+  label: null
+  publisher: null
+  upc: '991043390640'
+  catalog_number: null
+  cover_image: site/public/assets/releases/i-cant-quite-make-it-fit/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/43MrXE5kKuvziBdje7xmMA
+  seo:
+    title: "I Can\u2019t Quite Make It Fit by PCBender"
+    description: "I Can\u2019t Quite Make It Fit by PCBender on Maricopa Records."
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: "I Can\u2019t Quite Make It Fit"
+    slug: i-cant-quite-make-it-fit
+    isrc: CACWV2641851
+    duration: '3:42'
+    explicit: false
+    preview_audio: null

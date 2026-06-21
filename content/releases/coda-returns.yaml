@@ -1,0 +1,37 @@
+release:
+  id: coda-returns
+  slug: coda-returns
+  title: Coda Returns
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-15'
+  label: null
+  publisher: null
+  upc: 056870905228
+  catalog_number: null
+  cover_image: site/public/assets/releases/coda-returns/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0d7MbiwOZhtBrex1Bg6F4r
+  seo:
+    title: Coda Returns by 4Castle
+    description: Coda Returns by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Coda Returns
+    slug: coda-returns
+    isrc: CAENV2559895
+    duration: '3:50'
+    explicit: false
+    preview_audio: null

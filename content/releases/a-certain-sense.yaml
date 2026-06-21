@@ -1,0 +1,37 @@
+release:
+  id: a-certain-sense
+  slug: a-certain-sense
+  title: A Certain Sense
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-05-04'
+  label: null
+  publisher: null
+  upc: '7333583124461'
+  catalog_number: null
+  cover_image: site/public/assets/releases/a-certain-sense/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/26EiSpZ4qtRJYOSbiiHWsZ
+  seo:
+    title: A Certain Sense by 4Castle
+    description: A Certain Sense by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: A Certain Sense
+    slug: a-certain-sense
+    isrc: SE6QE2606798
+    duration: '4:35'
+    explicit: false
+    preview_audio: null

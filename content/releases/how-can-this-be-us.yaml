@@ -1,0 +1,37 @@
+release:
+  id: how-can-this-be-us
+  slug: how-can-this-be-us
+  title: How Can This Be Us
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-01-29'
+  label: null
+  publisher: null
+  upc: 057914752853
+  catalog_number: null
+  cover_image: site/public/assets/releases/how-can-this-be-us/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/7qreDmzm7VbdDYcX8f3WlW
+  seo:
+    title: How Can This Be Us by PCBender
+    description: How Can This Be Us by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: How Can This Be Us
+    slug: how-can-this-be-us
+    isrc: CAHQJ2640385
+    duration: '3:47'
+    explicit: false
+    preview_audio: null

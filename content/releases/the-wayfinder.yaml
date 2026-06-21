@@ -1,0 +1,37 @@
+release:
+  id: the-wayfinder
+  slug: the-wayfinder
+  title: The Wayfinder
+  artist_id: lingua-aeternum
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-28'
+  label: null
+  publisher: null
+  upc: '990591063532'
+  catalog_number: null
+  cover_image: site/public/assets/releases/the-wayfinder/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Lingua Aeternum
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/55iOD72LYapPjUbDkQqkY2
+  seo:
+    title: The Wayfinder by Lingua Aeternum
+    description: The Wayfinder by Lingua Aeternum on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: The Wayfinder
+    slug: the-wayfinder
+    isrc: CAENV2589544
+    duration: '3:24'
+    explicit: false
+    preview_audio: null

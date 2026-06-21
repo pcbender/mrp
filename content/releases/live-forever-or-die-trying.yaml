@@ -1,0 +1,37 @@
+release:
+  id: live-forever-or-die-trying
+  slug: live-forever-or-die-trying
+  title: Live Forever Or Die Trying
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-06-16'
+  label: null
+  publisher: null
+  upc: '991048122079'
+  catalog_number: null
+  cover_image: site/public/assets/releases/live-forever-or-die-trying/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3NUvQ4hmP89MULDSrMIAuJ
+  seo:
+    title: Live Forever Or Die Trying by Michael Anthony Rose
+    description: Live Forever Or Die Trying by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Live Forever Or Die Trying
+    slug: live-forever-or-die-trying
+    isrc: CAENV2656917
+    duration: '4:26'
+    explicit: false
+    preview_audio: null

@@ -1,0 +1,37 @@
+release:
+  id: prepositions
+  slug: prepositions
+  title: Prepositions
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-04-30'
+  label: null
+  publisher: null
+  upc: '991043642237'
+  catalog_number: null
+  cover_image: site/public/assets/releases/prepositions/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5w5aj7EiDkh1o7LMlqWevu
+  seo:
+    title: Prepositions by Michael Anthony Rose
+    description: Prepositions by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Prepositions
+    slug: prepositions
+    isrc: CACWV2681460
+    duration: '3:28'
+    explicit: false
+    preview_audio: null

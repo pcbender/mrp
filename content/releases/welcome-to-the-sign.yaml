@@ -1,0 +1,37 @@
+release:
+  id: welcome-to-the-sign
+  slug: welcome-to-the-sign
+  title: Welcome to the Sign
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-05'
+  label: null
+  publisher: null
+  upc: 056870776552
+  catalog_number: null
+  cover_image: site/public/assets/releases/welcome-to-the-sign/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0nFhw6BBR3t8JsgCWZuKhy
+  seo:
+    title: Welcome to the Sign by PCBender
+    description: Welcome to the Sign by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Welcome to the Sign
+    slug: welcome-to-the-sign
+    isrc: CAENV2535979
+    duration: '3:32'
+    explicit: false
+    preview_audio: null

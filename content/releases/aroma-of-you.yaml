@@ -1,0 +1,37 @@
+release:
+  id: aroma-of-you
+  slug: aroma-of-you
+  title: Aroma Of You
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2026-05-11'
+  label: null
+  publisher: null
+  upc: '991043771531'
+  catalog_number: null
+  cover_image: site/public/assets/releases/aroma-of-you/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: Michael Anthony Rose
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/3tuEBEMG8cFeVW7PgwfhoY
+  seo:
+    title: Aroma Of You by Michael Anthony Rose
+    description: Aroma Of You by Michael Anthony Rose on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Aroma Of You
+    slug: aroma-of-you
+    isrc: CAENV2602092
+    duration: '4:18'
+    explicit: false
+    preview_audio: null

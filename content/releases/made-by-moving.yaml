@@ -1,0 +1,100 @@
+release:
+  id: made-by-moving
+  slug: made-by-moving
+  title: Made By Moving
+  artist_id: pcbender
+  model: album
+  release_type: album
+  status: staged
+  release_date: '2025-10-11'
+  label: null
+  publisher: null
+  upc: 057829798878
+  catalog_number: null
+  cover_image: site/public/assets/releases/made-by-moving/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/6bHOtaZf4Pz5Jsciswwy5y
+  seo:
+    title: Made By Moving by PCBender
+    description: Made By Moving by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  tracks:
+  - number: 1
+    title: Made By Moving
+    slug: made-by-moving
+    isrc: CBEYJ2593227
+    duration: '4:39'
+    explicit: false
+    preview_audio: null
+  - number: 2
+    title: Confused By Your Wires
+    slug: confused-by-your-wires
+    isrc: CBEYJ2593224
+    duration: '5:08'
+    explicit: false
+    preview_audio: null
+  - number: 3
+    title: "Everything\u2019s Better Than Nothin\u2019"
+    slug: everythings-better-than-nothin
+    isrc: CBEYJ2593225
+    duration: '4:52'
+    explicit: false
+    preview_audio: null
+  - number: 4
+    title: Inner Outer
+    slug: inner-outer
+    isrc: CBEYJ2593226
+    duration: '4:49'
+    explicit: false
+    preview_audio: null
+  - number: 5
+    title: Maria's Cup
+    slug: maria-s-cup
+    isrc: CBEYJ2593231
+    duration: '4:42'
+    explicit: false
+    preview_audio: null
+  - number: 6
+    title: July Surprise
+    slug: july-surprise
+    isrc: CBEYJ2593232
+    duration: '4:08'
+    explicit: false
+    preview_audio: null
+  - number: 7
+    title: Opposites Attract In Time
+    slug: opposites-attract-in-time
+    isrc: CBEYJ2593228
+    duration: '4:59'
+    explicit: false
+    preview_audio: null
+  - number: 8
+    title: Active Illusion
+    slug: active-illusion
+    isrc: CBEYJ2593229
+    duration: '4:30'
+    explicit: false
+    preview_audio: null
+  - number: 9
+    title: Prehistoric Lies
+    slug: prehistoric-lies
+    isrc: CBEYJ2593230
+    duration: '6:03'
+    explicit: false
+    preview_audio: null
+  - number: 10
+    title: Riddles Abound
+    slug: riddles-abound
+    isrc: SE6I32525002
+    duration: '5:30'
+    explicit: false
+    preview_audio: null

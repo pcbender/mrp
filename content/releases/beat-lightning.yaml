@@ -1,0 +1,37 @@
+release:
+  id: beat-lightning
+  slug: beat-lightning
+  title: Beat Lightning
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-06-03'
+  label: null
+  publisher: null
+  upc: '990591513402'
+  catalog_number: null
+  cover_image: site/public/assets/releases/beat-lightning/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/4RPiFu4VHIWUY72685tx22
+  seo:
+    title: Beat Lightning by PCBender
+    description: Beat Lightning by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Beat Lightning
+    slug: beat-lightning
+    isrc: CAGOO2569518
+    duration: '3:33'
+    explicit: false
+    preview_audio: null
