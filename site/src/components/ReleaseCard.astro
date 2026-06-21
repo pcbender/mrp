@@ -7,10 +7,12 @@ interface Props {
   coverImage?: string;
   summary?: string;
   rich?: boolean;
+  releaseDate?: string;
 }
 
-const { title, artist, href, type = "Single", coverImage, summary = "", rich = false } = Astro.props;
+const { title, artist, href, type = "Single", coverImage, summary = "", rich = false, releaseDate = "" } = Astro.props;
 const cleanSummary = cleanMarkdownText(summary);
+const searchText = [title, artist, type, releaseDate, cleanSummary].filter(Boolean).join(" ");
 
 function cleanMarkdownText(value: string) {
   return String(value)
@@ -28,7 +30,15 @@ function cleanMarkdownText(value: string) {
     .trim();
 }
 ---
-<article class:list={["release-card", rich && "release-card-rich"]}>
+<article
+  class:list={["release-card", rich && "release-card-rich"]}
+  data-release-card
+  data-release-title={title}
+  data-release-artist={artist}
+  data-release-type={type}
+  data-release-date={releaseDate}
+  data-release-search={searchText}
+>
   <a href={href} aria-label={`${title} by ${artist}`}>
     {coverImage ? <img class="cover-image" src={coverImage} alt="" loading="lazy" /> : <span class="cover-swatch" aria-hidden="true"></span>}
     <span class="card-kicker">{type}</span>

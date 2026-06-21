@@ -1,5 +1,5 @@
 ---
-import ReleaseGrid from "./ReleaseGrid.astro";
+import ReleaseBrowser from "./ReleaseBrowser.astro";
 import type { ReleaseCardModel } from "../lib/catalog";
 
 interface Props {
@@ -9,13 +9,13 @@ interface Props {
 
 const { artistName, releases } = Astro.props;
 ---
-<section class="artist-release-list page-grid">
+<section class="artist-release-list page-grid centered-page">
   <div class="section-heading">
     <p class="eyebrow">Releases</p>
     <h2>{artistName} catalog</h2>
   </div>
   {releases.length > 0 ? (
-    <ReleaseGrid releases={releases} rich />
+    <ReleaseBrowser releases={releases} rich />
   ) : (
     <p class="empty-state">No public releases yet.</p>
   )}

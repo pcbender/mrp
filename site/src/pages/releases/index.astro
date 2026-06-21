@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ReleaseGrid from "../../components/ReleaseGrid.astro";
+import ReleaseBrowser from "../../components/ReleaseBrowser.astro";
 import { catalogReleases, releaseCardModel } from "../../lib/catalog";
 
 const releases = catalogReleases().map(releaseCardModel);
@@ -12,6 +12,6 @@ const releases = catalogReleases().map(releaseCardModel);
     <p>Explore Maricopa Records releases, ordered newest first.</p>
   </section>
   <section class="page-grid centered-page">
-    <ReleaseGrid releases={releases} rich />
+    <ReleaseBrowser releases={releases} rich />
   </section>
 </BaseLayout>
