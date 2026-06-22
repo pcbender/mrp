@@ -35,9 +35,10 @@ release:
   links:
     spotify: https://open.spotify.com/album/1KwCQIwk4vs5qoc56olPy8?si=FqU_hfQhTBC5g8OJ4fzmDA
     apple_music: https://music.apple.com/us/album/nearly-nothin-nowhere-fast/1805037361?i=1805037362
-    youtube_music: null
+    youtube_music: https://music.youtube.com/watch?v=pJWQ97uRz5M
     bandcamp: null
     soundcloud: null
+    youtube: https://www.youtube.com/watch?v=pJWQ97uRz5M
   seo:
     title: "Nearly Nothin\u2019 Nowhere Fast by PCBender"
     description: "Nearly Nothin\u2019 Nowhere Fast by PCBender on Maricopa Records."

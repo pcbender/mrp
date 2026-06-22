@@ -24,6 +24,8 @@ release:
     spotify: https://open.spotify.com/album/4EIhyMzEwu4vkjm4XSz40u
     tidal: https://listen.tidal.com/album/480936070
     apple_music: https://music.apple.com/us/album/free/1860637805
+    youtube: https://www.youtube.com/watch?v=dM-esrtPuG4
+    youtube_music: https://music.youtube.com/watch?v=dM-esrtPuG4
   seo:
     title: Free by PCBender
     description: Free by PCBender on Maricopa Records.
@@ -39,6 +41,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/free/1860637805?i=1860637806
+      youtube: https://www.youtube.com/watch?v=dM-esrtPuG4
+      youtube_music: https://music.youtube.com/watch?v=dM-esrtPuG4
   - number: 2
     title: Law
     slug: law
@@ -48,6 +52,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/law/1860637805?i=1860637811
+      youtube: https://www.youtube.com/watch?v=rnJBKm-khZc
+      youtube_music: https://music.youtube.com/watch?v=rnJBKm-khZc
   - number: 3
     title: Love
     slug: love
@@ -57,6 +63,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/love/1860637805?i=1860637812
+      youtube: https://www.youtube.com/watch?v=Ptwb6NeGRbg
+      youtube_music: https://music.youtube.com/watch?v=Ptwb6NeGRbg
   - number: 4
     title: God
     slug: god
@@ -66,6 +74,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/god/1860637805?i=1860637815
+      youtube: https://www.youtube.com/watch?v=2SlM6_btv2w
+      youtube_music: https://music.youtube.com/watch?v=2SlM6_btv2w
   - number: 5
     title: Death
     slug: death
@@ -75,6 +85,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/death/1860637805?i=1860637816
+      youtube: https://www.youtube.com/watch?v=UzRc9HbibrM
+      youtube_music: https://music.youtube.com/watch?v=UzRc9HbibrM
   - number: 6
     title: Desire
     slug: desire
@@ -84,6 +96,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/desire/1860637805?i=1860637819
+      youtube: https://www.youtube.com/watch?v=wi5DK50zXkU
+      youtube_music: https://music.youtube.com/watch?v=wi5DK50zXkU
   - number: 7
     title: Difference
     slug: difference
@@ -93,6 +107,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/difference/1860637805?i=1860638017
+      youtube: https://www.youtube.com/watch?v=ASulp7ZfTcA
+      youtube_music: https://music.youtube.com/watch?v=ASulp7ZfTcA
   - number: 8
     title: Meaning
     slug: meaning
@@ -102,6 +118,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/meaning/1860637805?i=1860638018
+      youtube: https://www.youtube.com/watch?v=KjMYkXEyGHc
+      youtube_music: https://music.youtube.com/watch?v=KjMYkXEyGHc
   - number: 9
     title: Sovereign
     slug: sovereign
@@ -111,3 +129,5 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/sovereign/1860637805?i=1860638020
+      youtube: https://www.youtube.com/watch?v=RvNFNG5egX4
+      youtube_music: https://music.youtube.com/watch?v=RvNFNG5egX4

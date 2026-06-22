@@ -23,6 +23,8 @@ release:
   links:
     spotify: https://open.spotify.com/album/6K20WzKCiDSDG2y6Vq4yyR
     apple_music: https://music.apple.com/us/album/inner-outer-over-through-ep/1809601010
+    youtube: https://www.youtube.com/watch?v=wYRnkHl51VY
+    youtube_music: https://music.youtube.com/watch?v=wYRnkHl51VY
   seo:
     title: Inner Outer Over Through by Lingua Aeternum
     description: Inner Outer Over Through by Lingua Aeternum on Maricopa Records.
@@ -38,6 +40,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/inner-outer-over-through/1809601010?i=1809601011
+      youtube: https://www.youtube.com/watch?v=wYRnkHl51VY
+      youtube_music: https://music.youtube.com/watch?v=wYRnkHl51VY
   - number: 2
     title: Invocate
     slug: invocate
@@ -47,6 +51,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/invocate/1809601010?i=1809601012
+      youtube: https://www.youtube.com/watch?v=N6sOF4xX-0M
+      youtube_music: https://music.youtube.com/watch?v=N6sOF4xX-0M
   - number: 3
     title: The Memory I'll Borrow
     slug: the-memory-i-ll-borrow
@@ -56,6 +62,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/the-memory-ill-borrow/1809601010?i=1809601013
+      youtube: https://www.youtube.com/watch?v=ck2iFN0HQ9Y
+      youtube_music: https://music.youtube.com/watch?v=ck2iFN0HQ9Y
   - number: 4
     title: Thread By Thread
     slug: thread-by-thread
@@ -65,3 +73,5 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/thread-by-thread/1809601010?i=1809601015
+      youtube: https://www.youtube.com/watch?v=oTm7Pl15QAs
+      youtube_music: https://music.youtube.com/watch?v=oTm7Pl15QAs

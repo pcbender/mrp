@@ -34,9 +34,10 @@ release:
   links:
     spotify: https://open.spotify.com/album/0lwM63UVxrncOM0ramU4IG?si=YLMqKWOIQnKkpEUAUp-1wg
     apple_music: https://music.apple.com/us/album/then-she-descends/1805039333?i=1805039334
-    youtube_music: null
+    youtube_music: https://music.youtube.com/watch?v=KM_GLmjvqGU
     bandcamp: null
     soundcloud: null
+    youtube: https://www.youtube.com/watch?v=KM_GLmjvqGU
   seo:
     title: Then She Descends by 4Castle
     description: Then She Descends by 4Castle on Maricopa Records.

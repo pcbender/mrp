@@ -36,9 +36,10 @@ release:
   links:
     spotify: null
     apple_music: https://music.apple.com/us/album/gone-and-forgotten-single/1801803890
-    youtube_music: null
+    youtube_music: https://music.youtube.com/watch?v=FoDSzcVMzeU
     bandcamp: null
     soundcloud: null
+    youtube: https://www.youtube.com/watch?v=FoDSzcVMzeU
   seo:
     title: Gone and Forgotten by 4Castle
     description: Gone and Forgotten by 4Castle on Maricopa Records.

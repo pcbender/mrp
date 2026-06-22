@@ -47,9 +47,10 @@ release:
   links:
     spotify: https://open.spotify.com/album/0epxRoEuofP2oJbEXOGC7l?si=ZQKdCReXT6mKwdjc64mEKA
     apple_music: https://music.apple.com/us/album/winds-of-change/1793400637
-    youtube_music: null
+    youtube_music: https://music.youtube.com/watch?v=KeeuQvzGpeM
     bandcamp: null
     soundcloud: null
+    youtube: https://www.youtube.com/watch?v=KeeuQvzGpeM
   seo:
     title: Winds of Change by PCBender
     description: Winds of Change by PCBender on Maricopa Records.
@@ -66,7 +67,6 @@ release:
     lyrics_excerpt: null
     links:
       spotify: https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a
-      apple_music: https://music.apple.com/us/album/two-tree-road/1793400637?i=1793400638
   - number: 2
     title: Joni
     slug: joni
@@ -87,7 +87,6 @@ release:
     lyrics_excerpt: null
     links:
       spotify: https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073
-      apple_music: https://music.apple.com/us/album/the-only-one/1793400637?i=1793400640
   - number: 4
     title: I Think I'm Falling
     slug: i-think-i-m-falling
@@ -98,7 +97,6 @@ release:
     lyrics_excerpt: null
     links:
       spotify: https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39
-      apple_music: https://music.apple.com/us/album/i-think-im-falling/1793400637?i=1793400641
   - number: 5
     title: Deb
     slug: deb
@@ -109,7 +107,6 @@ release:
     lyrics_excerpt: null
     links:
       spotify: https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44
-      apple_music: https://music.apple.com/us/album/deb/1793400637?i=1793400642
   - number: 6
     title: This Love Grows
     slug: this-love-grows
@@ -120,7 +117,6 @@ release:
     lyrics_excerpt: null
     links:
       spotify: https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961
-      apple_music: https://music.apple.com/us/album/this-love-grows/1793400637?i=1793400643
   - number: 7
     title: Winds of Change
     slug: winds-of-change
@@ -131,4 +127,3 @@ release:
     lyrics_excerpt: null
     links:
       spotify: https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7
-      apple_music: https://music.apple.com/us/album/winds-of-change/1793400637?i=1793400644

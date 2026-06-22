@@ -23,6 +23,8 @@ release:
   links:
     spotify: https://open.spotify.com/album/6bHOtaZf4Pz5Jsciswwy5y
     apple_music: https://music.apple.com/us/album/made-by-moving/1845588107
+    youtube: https://www.youtube.com/watch?v=N4HpsRNexh0
+    youtube_music: https://music.youtube.com/watch?v=N4HpsRNexh0
   seo:
     title: Made By Moving by PCBender
     description: Made By Moving by PCBender on Maricopa Records.
@@ -38,6 +40,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/made-by-moving/1845588107?i=1845588108
+      youtube: https://www.youtube.com/watch?v=N4HpsRNexh0
+      youtube_music: https://music.youtube.com/watch?v=N4HpsRNexh0
   - number: 2
     title: Confused By Your Wires
     slug: confused-by-your-wires
@@ -47,6 +51,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/confused-by-your-wires/1845588107?i=1845588109
+      youtube: https://www.youtube.com/watch?v=LOvQEWERNkg
+      youtube_music: https://music.youtube.com/watch?v=LOvQEWERNkg
   - number: 3
     title: "Everything\u2019s Better Than Nothin\u2019"
     slug: everythings-better-than-nothin
@@ -56,6 +62,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/everythings-better-than-nothin/1845588107?i=1845588110
+      youtube: https://www.youtube.com/watch?v=NqPoN-AI1oY
+      youtube_music: https://music.youtube.com/watch?v=NqPoN-AI1oY
   - number: 4
     title: Inner Outer
     slug: inner-outer
@@ -65,6 +73,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/inner-outer/1845588107?i=1845588111
+      youtube: https://www.youtube.com/watch?v=QcoXOdnj0c8
+      youtube_music: https://music.youtube.com/watch?v=QcoXOdnj0c8
   - number: 5
     title: Maria's Cup
     slug: maria-s-cup
@@ -74,6 +84,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/marias-cup/1845588107?i=1845588112
+      youtube: https://www.youtube.com/watch?v=vhcYO0C_XEM
+      youtube_music: https://music.youtube.com/watch?v=vhcYO0C_XEM
   - number: 6
     title: July Surprise
     slug: july-surprise
@@ -83,6 +95,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/july-surprise/1845588107?i=1845588113
+      youtube: https://www.youtube.com/watch?v=b9tzfZvYQag
+      youtube_music: https://music.youtube.com/watch?v=b9tzfZvYQag
   - number: 7
     title: Opposites Attract In Time
     slug: opposites-attract-in-time
@@ -92,6 +106,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/opposites-attract-in-time/1845588107?i=1845588114
+      youtube: https://www.youtube.com/watch?v=cwV2lUYPys8
+      youtube_music: https://music.youtube.com/watch?v=cwV2lUYPys8
   - number: 8
     title: Active Illusion
     slug: active-illusion
@@ -101,6 +117,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/active-illusion/1845588107?i=1845588115
+      youtube: https://www.youtube.com/watch?v=sKimRAgV9WQ
+      youtube_music: https://music.youtube.com/watch?v=sKimRAgV9WQ
   - number: 9
     title: Prehistoric Lies
     slug: prehistoric-lies
@@ -110,6 +128,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/prehistoric-lies/1845588107?i=1845588116
+      youtube: https://www.youtube.com/watch?v=V4rOu38eulI
+      youtube_music: https://music.youtube.com/watch?v=V4rOu38eulI
   - number: 10
     title: Riddles Abound
     slug: riddles-abound
@@ -119,3 +139,5 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/riddles-abound/1845588107?i=1845588207
+      youtube: https://www.youtube.com/watch?v=ah1zSCq7w6M
+      youtube_music: https://music.youtube.com/watch?v=ah1zSCq7w6M
