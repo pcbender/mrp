@@ -28,12 +28,14 @@ PLATFORM_MAP = {
 
 def enrich_links(
     repo: str | Path,
-    delay_seconds: float = DEFAULT_DELAY_SECONDS,
+    delay_seconds: float | None = None,
     dry_run: bool = False,
     client: OdesliClient | None = None,
 ) -> dict[str, Any]:
     root = Path(repo).resolve()
-    odesli = client or OdesliClient()
+    odesli = client or OdesliClient.from_env(repo=root)
+    if delay_seconds is None:
+        delay_seconds = getattr(odesli, "default_delay_seconds", DEFAULT_DELAY_SECONDS)
 
     releases_dir = root / "content" / "releases"
     paths = sorted(p for p in releases_dir.glob("*") if p.suffix in {".yaml", ".yml", ".json"}) if releases_dir.is_dir() else []
@@ -102,6 +104,8 @@ def enrich_links(
         "repo": str(root),
         "dry_run": dry_run,
         "generated_at": generated_at,
+        "delay_seconds": delay_seconds,
+        "used_api_key": getattr(odesli, "has_key", False),
         "aborted_for_rate_limit": aborted_for_rate_limit,
         "summary": {
             "releases_scanned": len(paths),
@@ -133,6 +137,8 @@ def format_enrich_links(report: dict[str, Any]) -> str:
     title = "Enrich-links " + ("aborted (rate-limited)" if report["aborted_for_rate_limit"] else "completed")
     lines = [
         title + (" (dry run)" if report["dry_run"] else ""),
+        f"Odesli API key: {'used' if report.get('used_api_key') else 'not set (anonymous, 10 req/min cap)'}"
+        f" -- delay: {report.get('delay_seconds')}s",
         f"Releases scanned: {summary['releases_scanned']} (checked: {summary['releases_checked']})",
         f"Releases patched: {summary['releases_patched']}",
         f"Skipped (no spotify link): {summary['skipped_no_spotify_link']}",

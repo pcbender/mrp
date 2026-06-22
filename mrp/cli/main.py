@@ -130,7 +130,12 @@ def build_parser() -> argparse.ArgumentParser:
         "enrich-links", help="Backfill non-Spotify streaming links via Odesli (api.song.link)."
     )
     add_global_options(enrich_links_parser, suppress_defaults=True)
-    enrich_links_parser.add_argument("--delay", type=float, default=1.0, help="Seconds between Odesli requests.")
+    enrich_links_parser.add_argument(
+        "--delay",
+        type=float,
+        default=None,
+        help="Seconds between Odesli requests (default: 1.1s with ODESLI_API_KEY set, 6.5s without).",
+    )
 
     migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
     add_global_options(migrate_parser, suppress_defaults=True)

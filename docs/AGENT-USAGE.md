@@ -70,6 +70,9 @@ scripts/mrp status --release signal-path --json
 - Do not add Spotify API credentials to git; load `SPOTIFY_CLIENT_ID` /
   `SPOTIFY_CLIENT_SECRET` from the environment or an untracked `.env` file at
   the repo root.
+- Do not add the Odesli API key to git; load `ODESLI_API_KEY` the same way
+  (environment or `.env`). Without it, `enrich-links` is capped at 10
+  requests/min by Odesli; with it, 60/min.
 - Do not bypass `.allow-deploy` marker checks.
 - Use `--dry-run` for deployment planning when reviewing target changes.
 - Use `--yes` only after reviewing rollback candidate output.

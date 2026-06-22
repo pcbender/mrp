@@ -111,6 +111,14 @@ duplicate. Requires `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` in the
 environment. See
 [docs/SPOTIFY-CATALOG-IMPORT-v0.2.md](docs/SPOTIFY-CATALOG-IMPORT-v0.2.md).
 
+`enrich-links` backfills non-Spotify streaming links (Apple Music, YouTube,
+YouTube Music, Tidal, Deezer, Amazon Music, SoundCloud) on existing releases
+in `content/releases/` via the Odesli (api.song.link) API, keyed off each
+release's `links.spotify`. It only fills in currently-null fields, never
+overwrites a set value. Odesli rate-limits anonymous requests to 10/min;
+setting `ODESLI_API_KEY` in the environment or `.env` raises that to 60/min
+and lowers the default delay between requests accordingly.
+
 MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
 v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).
 
