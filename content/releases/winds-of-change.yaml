@@ -63,6 +63,7 @@ release:
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -74,6 +75,7 @@ release:
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -85,6 +87,7 @@ release:
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -96,6 +99,7 @@ release:
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -107,6 +111,7 @@ release:
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -118,6 +123,7 @@ release:
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -129,6 +135,7 @@ release:
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
     lyrics_text: null
     lyrics_source: null

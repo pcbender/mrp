@@ -42,6 +42,7 @@ release:
       apple_music: https://music.apple.com/us/album/made-by-moving/1845588107?i=1845588108
       youtube: https://www.youtube.com/watch?v=N4HpsRNexh0
       youtube_music: https://music.youtube.com/watch?v=N4HpsRNexh0
+    instrumental: false
   - number: 2
     title: Confused By Your Wires
     slug: confused-by-your-wires
@@ -53,6 +54,7 @@ release:
       apple_music: https://music.apple.com/us/album/confused-by-your-wires/1845588107?i=1845588109
       youtube: https://www.youtube.com/watch?v=LOvQEWERNkg
       youtube_music: https://music.youtube.com/watch?v=LOvQEWERNkg
+    instrumental: false
   - number: 3
     title: "Everything\u2019s Better Than Nothin\u2019"
     slug: everythings-better-than-nothin
@@ -64,6 +66,7 @@ release:
       apple_music: https://music.apple.com/us/album/everythings-better-than-nothin/1845588107?i=1845588110
       youtube: https://www.youtube.com/watch?v=NqPoN-AI1oY
       youtube_music: https://music.youtube.com/watch?v=NqPoN-AI1oY
+    instrumental: false
   - number: 4
     title: Inner Outer
     slug: inner-outer
@@ -75,6 +78,7 @@ release:
       apple_music: https://music.apple.com/us/album/inner-outer/1845588107?i=1845588111
       youtube: https://www.youtube.com/watch?v=QcoXOdnj0c8
       youtube_music: https://music.youtube.com/watch?v=QcoXOdnj0c8
+    instrumental: false
   - number: 5
     title: Maria's Cup
     slug: maria-s-cup
@@ -86,6 +90,7 @@ release:
       apple_music: https://music.apple.com/us/album/marias-cup/1845588107?i=1845588112
       youtube: https://www.youtube.com/watch?v=vhcYO0C_XEM
       youtube_music: https://music.youtube.com/watch?v=vhcYO0C_XEM
+    instrumental: false
   - number: 6
     title: July Surprise
     slug: july-surprise
@@ -97,6 +102,7 @@ release:
       apple_music: https://music.apple.com/us/album/july-surprise/1845588107?i=1845588113
       youtube: https://www.youtube.com/watch?v=b9tzfZvYQag
       youtube_music: https://music.youtube.com/watch?v=b9tzfZvYQag
+    instrumental: false
   - number: 7
     title: Opposites Attract In Time
     slug: opposites-attract-in-time
@@ -108,6 +114,7 @@ release:
       apple_music: https://music.apple.com/us/album/opposites-attract-in-time/1845588107?i=1845588114
       youtube: https://www.youtube.com/watch?v=cwV2lUYPys8
       youtube_music: https://music.youtube.com/watch?v=cwV2lUYPys8
+    instrumental: false
   - number: 8
     title: Active Illusion
     slug: active-illusion
@@ -119,6 +126,7 @@ release:
       apple_music: https://music.apple.com/us/album/active-illusion/1845588107?i=1845588115
       youtube: https://www.youtube.com/watch?v=sKimRAgV9WQ
       youtube_music: https://music.youtube.com/watch?v=sKimRAgV9WQ
+    instrumental: false
   - number: 9
     title: Prehistoric Lies
     slug: prehistoric-lies
@@ -130,6 +138,7 @@ release:
       apple_music: https://music.apple.com/us/album/prehistoric-lies/1845588107?i=1845588116
       youtube: https://www.youtube.com/watch?v=V4rOu38eulI
       youtube_music: https://music.youtube.com/watch?v=V4rOu38eulI
+    instrumental: false
   - number: 10
     title: Riddles Abound
     slug: riddles-abound
@@ -141,3 +150,4 @@ release:
       apple_music: https://music.apple.com/us/album/riddles-abound/1845588107?i=1845588207
       youtube: https://www.youtube.com/watch?v=ah1zSCq7w6M
       youtube_music: https://music.youtube.com/watch?v=ah1zSCq7w6M
+    instrumental: false

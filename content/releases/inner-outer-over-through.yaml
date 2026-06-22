@@ -42,6 +42,7 @@ release:
       apple_music: https://music.apple.com/us/album/inner-outer-over-through/1809601010?i=1809601011
       youtube: https://www.youtube.com/watch?v=wYRnkHl51VY
       youtube_music: https://music.youtube.com/watch?v=wYRnkHl51VY
+    instrumental: false
   - number: 2
     title: Invocate
     slug: invocate
@@ -53,6 +54,7 @@ release:
       apple_music: https://music.apple.com/us/album/invocate/1809601010?i=1809601012
       youtube: https://www.youtube.com/watch?v=N6sOF4xX-0M
       youtube_music: https://music.youtube.com/watch?v=N6sOF4xX-0M
+    instrumental: false
   - number: 3
     title: The Memory I'll Borrow
     slug: the-memory-i-ll-borrow
@@ -64,6 +66,7 @@ release:
       apple_music: https://music.apple.com/us/album/the-memory-ill-borrow/1809601010?i=1809601013
       youtube: https://www.youtube.com/watch?v=ck2iFN0HQ9Y
       youtube_music: https://music.youtube.com/watch?v=ck2iFN0HQ9Y
+    instrumental: false
   - number: 4
     title: Thread By Thread
     slug: thread-by-thread
@@ -75,3 +78,4 @@ release:
       apple_music: https://music.apple.com/us/album/thread-by-thread/1809601010?i=1809601015
       youtube: https://www.youtube.com/watch?v=oTm7Pl15QAs
       youtube_music: https://music.youtube.com/watch?v=oTm7Pl15QAs
+    instrumental: false

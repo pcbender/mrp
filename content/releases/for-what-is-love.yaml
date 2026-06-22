@@ -38,3 +38,4 @@ release:
     duration: '3:25'
     explicit: false
     preview_audio: null
+    instrumental: false
