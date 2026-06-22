@@ -14,6 +14,7 @@ from mrp.core.clone_head import clone_head, format_clone_head
 from mrp.core.clone_rewrites import clone_rewrites, format_clone_rewrites
 from mrp.core.clone_site import clone_site, format_clone_site
 from mrp.core.deploy import format_deployment, stage_build
+from mrp.core.enrich_links import format_enrich_links, enrich_links
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.import_spotify import DEFAULT_ROSTER, format_import_spotify, import_spotify
 from mrp.core.inspect import format_inspection, inspect_repository
@@ -125,6 +126,12 @@ def build_parser() -> argparse.ArgumentParser:
         "--skip-artist-images", action="store_true", help="Skip downloading new-artist photos."
     )
 
+    enrich_links_parser = subparsers.add_parser(
+        "enrich-links", help="Backfill non-Spotify streaming links via Odesli (api.song.link)."
+    )
+    add_global_options(enrich_links_parser, suppress_defaults=True)
+    enrich_links_parser.add_argument("--delay", type=float, default=1.0, help="Seconds between Odesli requests.")
+
     migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
     add_global_options(migrate_parser, suppress_defaults=True)
     migrate_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
@@ -234,6 +241,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "promote-spotify":
         print(format_promote_spotify(result))
         return
+    if result["command"] == "enrich-links":
+        print(format_enrich_links(result))
+        return
     if result["command"] == "build":
         print(format_build(result))
         return
@@ -327,6 +337,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     elif args.command == "promote-spotify":
         promote_client = None if args.skip_artist_images else SpotifyClient.from_env(repo=args.repo)
         result = promote_spotify(args.repo, artists_path=args.artists, releases_path=args.releases, client=promote_client)
+    elif args.command == "enrich-links":
+        result = enrich_links(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "migrate-site":
         result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "wxr-inventory":

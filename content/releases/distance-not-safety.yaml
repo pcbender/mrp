@@ -55,6 +55,7 @@ release:
     youtube_music: null
     bandcamp: null
     soundcloud: null
+    tidal: https://listen.tidal.com/track/422836372
   seo:
     title: Distance Not Safety by 4Castle
     description: Distance Not Safety by 4Castle on Maricopa Records.
