@@ -14,6 +14,7 @@ from mrp.core.clone_head import clone_head, format_clone_head
 from mrp.core.clone_rewrites import clone_rewrites, format_clone_rewrites
 from mrp.core.clone_site import clone_site, format_clone_site
 from mrp.core.deploy import format_deployment, stage_build
+from mrp.core.enrich_apple_music import format_enrich_apple_music, enrich_apple_music
 from mrp.core.enrich_links import format_enrich_links, enrich_links
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.import_spotify import DEFAULT_ROSTER, format_import_spotify, import_spotify
@@ -137,6 +138,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Seconds between Odesli requests (default: 1.1s with ODESLI_API_KEY set, 6.5s without).",
     )
 
+    enrich_apple_music_parser = subparsers.add_parser(
+        "enrich-apple-music",
+        help="Backfill Apple Music links via the free iTunes lookup API, using artist.links.apple_music.",
+    )
+    add_global_options(enrich_apple_music_parser, suppress_defaults=True)
+    enrich_apple_music_parser.add_argument(
+        "--delay",
+        type=float,
+        default=1.0,
+        help="Seconds between iTunes lookup requests (default: 1.0s).",
+    )
+
     migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
     add_global_options(migrate_parser, suppress_defaults=True)
     migrate_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
@@ -249,6 +262,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "enrich-links":
         print(format_enrich_links(result))
         return
+    if result["command"] == "enrich-apple-music":
+        print(format_enrich_apple_music(result))
+        return
     if result["command"] == "build":
         print(format_build(result))
         return
@@ -344,6 +360,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = promote_spotify(args.repo, artists_path=args.artists, releases_path=args.releases, client=promote_client)
     elif args.command == "enrich-links":
         result = enrich_links(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
+    elif args.command == "enrich-apple-music":
+        result = enrich_apple_music(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "migrate-site":
         result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "wxr-inventory":

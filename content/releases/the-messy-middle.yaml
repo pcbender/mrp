@@ -23,6 +23,7 @@ release:
   links:
     spotify: https://open.spotify.com/album/1OA7b5kzbB9JsJicyaEBK3
     tidal: https://listen.tidal.com/album/494308869
+    apple_music: https://music.apple.com/us/album/the-messy-middle/1873052569
   seo:
     title: The Messy Middle by STAB
     description: The Messy Middle by STAB on Maricopa Records.
@@ -36,6 +37,8 @@ release:
     duration: '2:50'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/i-think-im-losing-my-place/1873052569?i=1873052573
   - number: 2
     title: Not Sure This Is Me
     slug: not-sure-this-is-me
@@ -43,6 +46,8 @@ release:
     duration: '3:18'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/not-sure-this-is-me/1873052569?i=1873052574
   - number: 3
     title: Don't Even Need To Try
     slug: don-t-even-need-to-try
@@ -50,6 +55,8 @@ release:
     duration: '3:20'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/dont-even-need-to-try/1873052569?i=1873052581
   - number: 4
     title: Stay With One Thing
     slug: stay-with-one-thing
@@ -57,6 +64,8 @@ release:
     duration: '2:40'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/stay-with-one-thing/1873052569?i=1873052586
   - number: 5
     title: Here To Be Watched
     slug: here-to-be-watched
@@ -64,6 +73,8 @@ release:
     duration: '3:21'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/here-to-be-watched/1873052569?i=1873052587
   - number: 6
     title: Moving Too Fast
     slug: moving-too-fast
@@ -71,6 +82,8 @@ release:
     duration: '2:54'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/moving-too-fast/1873052569?i=1873052591
   - number: 7
     title: Harder Than I Thought
     slug: harder-than-i-thought
@@ -78,6 +91,8 @@ release:
     duration: '3:28'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/harder-than-i-thought/1873052569?i=1873052593
   - number: 8
     title: That's The Point
     slug: that-s-the-point
@@ -85,6 +100,8 @@ release:
     duration: '3:08'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/thats-the-point/1873052569?i=1873052836
   - number: 9
     title: My Hands Don't Know
     slug: my-hands-don-t-know
@@ -92,6 +109,8 @@ release:
     duration: '3:10'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/my-hands-dont-know/1873052569?i=1873052837
   - number: 10
     title: What To Do With Me
     slug: what-to-do-with-me
@@ -99,6 +118,8 @@ release:
     duration: '4:48'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/what-to-do-with-me/1873052569?i=1873052839
   - number: 11
     title: Not Picking Up
     slug: not-picking-up
@@ -106,6 +127,8 @@ release:
     duration: '3:36'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/not-picking-up/1873052569?i=1873052840
   - number: 12
     title: Maybe I Should
     slug: maybe-i-should
@@ -113,6 +136,8 @@ release:
     duration: '3:03'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/maybe-i-should/1873052569?i=1873052842
   - number: 13
     title: Doing My Best
     slug: doing-my-best
@@ -120,6 +145,8 @@ release:
     duration: '3:52'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/doing-my-best/1873052569?i=1873052843
   - number: 14
     title: Here Right Now
     slug: here-right-now
@@ -127,6 +154,8 @@ release:
     duration: '2:58'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/here-right-now/1873052569?i=1873052848
   - number: 15
     title: Bring It With Me
     slug: bring-it-with-me
@@ -134,3 +163,5 @@ release:
     duration: '3:41'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/bring-it-with-me/1873052569?i=1873052851

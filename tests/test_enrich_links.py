@@ -37,6 +37,17 @@ def content_repo(tmp_path: Path) -> Path:
     return repo
 
 
+def reset_links(path: Path, *keys: str) -> dict[str, Any]:
+    """Force the given link fields to null, independent of whatever a real
+    enrichment run may have already written into this fixture file."""
+    data = yaml.safe_load(path.read_text())
+    release = data["release"]
+    for key in keys:
+        release.get("links", {}).pop(key, None)
+    path.write_text(yaml.safe_dump(data, sort_keys=False))
+    return release
+
+
 def odesli_payload(platforms: dict[str, str]) -> dict[str, Any]:
     return {"linksByPlatform": {key: {"url": url} for key, url in platforms.items()}}
 
@@ -44,7 +55,7 @@ def odesli_payload(platforms: dict[str, str]) -> dict[str, Any]:
 def test_enrich_links_backfills_only_null_platform_fields(tmp_path):
     repo = content_repo(tmp_path)
     path = repo / "content/releases/a-candle-deep.yaml"
-    before = yaml.safe_load(path.read_text())["release"]
+    before = reset_links(path, "apple_music", "tidal")
     spotify_url = before["links"]["spotify"]
     assert before["links"].get("apple_music") is None
     assert before["links"].get("tidal") is None
@@ -107,8 +118,9 @@ def test_enrich_links_skips_releases_without_spotify_link(tmp_path):
 def test_enrich_links_dry_run_does_not_write(tmp_path):
     repo = content_repo(tmp_path)
     path = repo / "content/releases/bent.yaml"
+    release = reset_links(path, "apple_music")
+    spotify_url = release["links"]["spotify"]
     before_text = path.read_text()
-    spotify_url = yaml.safe_load(before_text)["release"]["links"]["spotify"]
 
     client = FakeOdesliClient({spotify_url: odesli_payload({"appleMusic": "https://music.apple.com/us/album/x/1"})})
     report = enrich_links(repo, delay_seconds=0, dry_run=True, client=client)

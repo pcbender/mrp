@@ -23,6 +23,7 @@ release:
   links:
     spotify: https://open.spotify.com/album/4EIhyMzEwu4vkjm4XSz40u
     tidal: https://listen.tidal.com/album/480936070
+    apple_music: https://music.apple.com/us/album/free/1860637805
   seo:
     title: Free by PCBender
     description: Free by PCBender on Maricopa Records.
@@ -36,6 +37,8 @@ release:
     duration: '6:28'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/free/1860637805?i=1860637806
   - number: 2
     title: Law
     slug: law
@@ -43,6 +46,8 @@ release:
     duration: '5:03'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/law/1860637805?i=1860637811
   - number: 3
     title: Love
     slug: love
@@ -50,6 +55,8 @@ release:
     duration: '5:22'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/love/1860637805?i=1860637812
   - number: 4
     title: God
     slug: god
@@ -57,6 +64,8 @@ release:
     duration: '5:18'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/god/1860637805?i=1860637815
   - number: 5
     title: Death
     slug: death
@@ -64,6 +73,8 @@ release:
     duration: '6:40'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/death/1860637805?i=1860637816
   - number: 6
     title: Desire
     slug: desire
@@ -71,6 +82,8 @@ release:
     duration: '5:00'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/desire/1860637805?i=1860637819
   - number: 7
     title: Difference
     slug: difference
@@ -78,6 +91,8 @@ release:
     duration: '4:48'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/difference/1860637805?i=1860638017
   - number: 8
     title: Meaning
     slug: meaning
@@ -85,6 +100,8 @@ release:
     duration: '5:19'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/meaning/1860637805?i=1860638018
   - number: 9
     title: Sovereign
     slug: sovereign
@@ -92,3 +109,5 @@ release:
     duration: '7:14'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/sovereign/1860637805?i=1860638020
