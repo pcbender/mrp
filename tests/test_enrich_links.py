@@ -43,10 +43,11 @@ def odesli_payload(platforms: dict[str, str]) -> dict[str, Any]:
 
 def test_enrich_links_backfills_only_null_platform_fields(tmp_path):
     repo = content_repo(tmp_path)
-    path = repo / "content/releases/bent.yaml"
+    path = repo / "content/releases/a-candle-deep.yaml"
     before = yaml.safe_load(path.read_text())["release"]
     spotify_url = before["links"]["spotify"]
     assert before["links"].get("apple_music") is None
+    assert before["links"].get("tidal") is None
 
     client = FakeOdesliClient(
         {
