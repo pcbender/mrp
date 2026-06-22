@@ -115,8 +115,10 @@ def track(title: str, slug: str, number: int | None) -> dict[str, Any]:
         "isrc": None,
         "duration": None,
         "explicit": False,
+        "instrumental": False,
         "preview_audio": None,
-        "lyrics_excerpt": None,
+        "lyrics_text": None,
+        "lyrics_source": None,
     }
 
 

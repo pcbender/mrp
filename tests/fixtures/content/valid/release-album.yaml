@@ -27,7 +27,9 @@ release:
       title: Apa
       slug: apa
       explicit: false
+      instrumental: false
     - number: 2
       title: Aiteo
       slug: aiteo
       explicit: false
+      instrumental: false

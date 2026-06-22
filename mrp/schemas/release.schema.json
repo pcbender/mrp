@@ -108,7 +108,7 @@
     },
     "song": {
       "type": "object",
-      "required": ["title", "slug", "explicit"],
+      "required": ["title", "slug", "explicit", "instrumental"],
       "additionalProperties": false,
       "properties": {
         "number": {"type": ["integer", "null"], "minimum": 0},
@@ -117,8 +117,10 @@
         "isrc": {"type": ["string", "null"]},
         "duration": {"type": ["string", "null"]},
         "explicit": {"type": "boolean"},
+        "instrumental": {"type": "boolean"},
         "preview_audio": {"type": ["string", "null"]},
-        "lyrics_excerpt": {"type": ["string", "null"]},
+        "lyrics_text": {"type": ["string", "null"]},
+        "lyrics_source": {"type": ["string", "null"]},
         "links": {"$ref": "#/$defs/links"}
       }
     }

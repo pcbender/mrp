@@ -70,153 +70,165 @@ release:
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/2u27FeeobtntmI8Vp8qQPx?si=ef71e3afa03b47af
       apple_music: https://music.apple.com/us/album/on-the-advent-of-a-dream/1802973212?i=1802973213
       youtube_music: https://music.youtube.com/watch?v=SSTNsoW0kfU&si=X8xrvEi6XmOoBOiH
-      youtube: https://www.youtube.com/watch?v=SSTNsoW0kfU
   - number: 2
     title: Scattershot Forget-Me-Not
     slug: scattershot-forget-me-not
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/0BRSgowJezX8ZVuwhFakKQ?si=f304ef5930ae4951
       apple_music: https://music.apple.com/us/album/scattershot-forget-me-not/1802973212?i=1802973214
       youtube_music: https://music.youtube.com/watch?v=cmlfWUvUuXM&si=v3DW50vkBU_OFJ5k
-      youtube: https://www.youtube.com/watch?v=cmlfWUvUuXM
   - number: 3
     title: And the Gods Fell Down
     slug: and-the-gods-fell-down
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/3C1aRC9qEOYJonEczpAxlw?si=760ac294007f4ca1
       apple_music: https://music.apple.com/us/album/and-the-gods-fell-down/1802973212?i=1802973215
       youtube_music: https://music.youtube.com/watch?v=YsRHZ1rDhjo&si=ckWMZh4h6yEHWzPC
-      youtube: https://www.youtube.com/watch?v=YsRHZ1rDhjo
   - number: 4
     title: By Starlight Drifting West
     slug: by-starlight-drifting-west
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/364T5Nkh2mgMBtfTurLJDm?si=6f4c5adfa4b84f33
       apple_music: https://music.apple.com/us/album/by-starlight-drifting-west/1802973212?i=1802973216
       youtube_music: https://music.youtube.com/watch?v=YsRHZ1rDhjo&si=ckWMZh4h6yEHWzPC
-      youtube: https://www.youtube.com/watch?v=GA1euONLxtA
   - number: 5
     title: "Tiger\u2019s Eye"
     slug: tigers-eye
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/4ieomkxG4IfuYZKcuQU7Hu?si=eda3467ac95447bb
       apple_music: https://music.apple.com/us/album/tigers-eye/1802973212?i=1802973217
       youtube_music: https://music.youtube.com/watch?v=XWrNsJY4Iow&si=HaCsSgqwlPmQWlkk
-      youtube: https://www.youtube.com/watch?v=XWrNsJY4Iow
   - number: 6
     title: Haymakers and Body Blows
     slug: haymakers-and-body-blows
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/7jTppOx94uCear54A3FM25?si=4ab1442264564e10
       apple_music: https://music.apple.com/us/album/haymakers-and-body-blows/1802973212?i=1802973218
       youtube_music: https://music.youtube.com/watch?v=GsyBztOywLs&si=uqinRdO_Ws2X2Xu7
-      youtube: https://www.youtube.com/watch?v=GsyBztOywLs
   - number: 7
     title: Paradox of Contradictions
     slug: paradox-of-contradictions
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/76EV3id0tbluNmzNnOm1vr?si=7024cc9ebdd549dc
       apple_music: https://music.apple.com/us/album/paradox-of-contradictions/1802973212?i=1802973219
       youtube_music: https://music.youtube.com/watch?v=cAxQSn_P-iM&si=Hd6HP5XaK_ZIYyHC
-      youtube: https://www.youtube.com/watch?v=cAxQSn_P-iM
   - number: 8
     title: Pixy Stix
     slug: pixy-stix
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/1u6laU543yDc4szSjKkiBb?si=564a303ccadd4416
       apple_music: https://music.apple.com/us/album/pixy-stix/1802973212?i=1802973220
       youtube_music: https://music.youtube.com/watch?v=cAxQSn_P-iM&si=Hd6HP5XaK_ZIYyHC
-      youtube: https://www.youtube.com/watch?v=mkJ3uAEADPU
   - number: 9
     title: Bit Wise Resistance
     slug: bit-wise-resistance
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/6ZfXTreunXANPEmw94ZiSL?si=d3e053bf4ff24b25
       apple_music: https://music.apple.com/us/album/bit-wise-resistance/1802973212?i=1802973221
       youtube_music: https://music.youtube.com/watch?v=cCOCS53GtnY&si=IakTkSztoToN7Uq7
-      youtube: https://www.youtube.com/watch?v=cCOCS53GtnY
   - number: 10
     title: Next to Nothing
     slug: next-to-nothing
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/46UlCwtOL2kqw83GHBQQ8U?si=e6aaf58d29464238
       apple_music: https://music.apple.com/us/album/next-to-nothing/1802973212?i=1802973222
       youtube_music: https://music.youtube.com/watch?v=I8fFbQN8uvM&si=AMvLsN7TlxxLnNPj
-      youtube: https://www.youtube.com/watch?v=I8fFbQN8uvM
   - number: 11
     title: Preternatural
     slug: preternatural
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/3cVhs4Zqnslq3aryAlD3nV?si=21cdcd5113dd4d5a
       apple_music: https://music.apple.com/us/album/preternatural/1802973212?i=1802973223
       youtube_music: https://music.youtube.com/watch?v=Wrqpru-Jhvw&si=q_JAAy2bijuxisKX
-      youtube: https://www.youtube.com/watch?v=Wrqpru-Jhvw
   - number: 12
     title: Gone and Forgotten
     slug: gone-and-forgotten
     isrc: null
     duration: null
     explicit: false
+    instrumental: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/4DXGjzpWSz8DWtkpNwnt73?si=1f40fb59701545b1
       apple_music: https://music.apple.com/us/album/gone-and-forgotten/1802973212?i=1802973224
       youtube_music: https://music.youtube.com/watch?v=kcVltDLVGV0&si=MX137PPVclwY6vCJ
-      youtube: https://www.youtube.com/watch?v=FoDSzcVMzeU

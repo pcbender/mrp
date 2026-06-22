@@ -40,6 +40,7 @@ release:
       apple_music: https://music.apple.com/us/album/apa/1821324918?i=1821324919
       youtube: https://www.youtube.com/watch?v=xdmBRiyJNu0
       youtube_music: https://music.youtube.com/watch?v=xdmBRiyJNu0
+    instrumental: false
   - number: 2
     title: "Aite\u014D"
     slug: aiteo
@@ -51,6 +52,7 @@ release:
       apple_music: https://music.apple.com/us/album/aite%C5%8D/1821324918?i=1821324920
       youtube: https://www.youtube.com/watch?v=mwDJvZJC6iM
       youtube_music: https://music.youtube.com/watch?v=mwDJvZJC6iM
+    instrumental: false
   - number: 3
     title: Ego Eimi
     slug: ego-eimi
@@ -62,6 +64,7 @@ release:
       apple_music: https://music.apple.com/us/album/ego-eimi/1821324918?i=1821324921
       youtube: https://www.youtube.com/watch?v=qQXEvMARHdo
       youtube_music: https://music.youtube.com/watch?v=qQXEvMARHdo
+    instrumental: false
   - number: 4
     title: "Esm\xE9n"
     slug: esmen
@@ -73,6 +76,7 @@ release:
       apple_music: https://music.apple.com/us/album/esm%C3%A9n/1821324918?i=1821324922
       youtube: https://www.youtube.com/watch?v=Tf3GOtbyN84
       youtube_music: https://music.youtube.com/watch?v=Tf3GOtbyN84
+    instrumental: false
   - number: 5
     title: Esti
     slug: esti
@@ -84,6 +88,7 @@ release:
       apple_music: https://music.apple.com/us/album/esti/1821324918?i=1821324923
       youtube: https://www.youtube.com/watch?v=j8aGlRDrG5w
       youtube_music: https://music.youtube.com/watch?v=j8aGlRDrG5w
+    instrumental: false
   - number: 6
     title: Ousia
     slug: ousia
@@ -95,3 +100,4 @@ release:
       apple_music: https://music.apple.com/us/album/ousia/1821324918?i=1821324924
       youtube: https://www.youtube.com/watch?v=RFIdXFMNqJs
       youtube_music: https://music.youtube.com/watch?v=RFIdXFMNqJs
+    instrumental: false

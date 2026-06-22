@@ -214,6 +214,7 @@ def build_track(number: int, track: dict[str, Any]) -> dict[str, Any]:
         "isrc": (track.get("external_ids") or {}).get("isrc"),
         "duration": format_duration(track.get("duration_ms")),
         "explicit": bool(track.get("explicit", False)),
+        "instrumental": False,
         "preview_audio": track.get("preview_url"),
         "links": {"spotify": (track.get("external_urls") or {}).get("spotify")},
     }
