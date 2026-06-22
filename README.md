@@ -119,6 +119,16 @@ overwrites a set value. Odesli rate-limits anonymous requests to 10/min;
 setting `ODESLI_API_KEY` in the environment or `.env` raises that to 60/min
 and lowers the default delay between requests accordingly.
 
+`enrich-apple-music` backfills Apple Music links on releases and tracks using
+Apple's free, keyless iTunes lookup API. It starts from each artist's
+`links.apple_music` artist-page URL in `content/artists/`, matches that
+artist's Apple albums to our releases by (normalized) title, and additively
+fills `links.apple_music` on the release and, for multi-track releases, on
+each matching track. Odesli generally lacks Apple Music/YouTube coverage for
+this catalog, so this command exists alongside `enrich-links` rather than
+replacing it; releases with no title match are reported as
+`unmatched_release_paths` for manual follow-up.
+
 MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
 v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).
 

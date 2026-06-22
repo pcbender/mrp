@@ -22,6 +22,7 @@ release:
     mastering: null
   links:
     spotify: https://open.spotify.com/album/6bHOtaZf4Pz5Jsciswwy5y
+    apple_music: https://music.apple.com/us/album/made-by-moving/1845588107
   seo:
     title: Made By Moving by PCBender
     description: Made By Moving by PCBender on Maricopa Records.
@@ -35,6 +36,8 @@ release:
     duration: '4:39'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/made-by-moving/1845588107?i=1845588108
   - number: 2
     title: Confused By Your Wires
     slug: confused-by-your-wires
@@ -42,6 +45,8 @@ release:
     duration: '5:08'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/confused-by-your-wires/1845588107?i=1845588109
   - number: 3
     title: "Everything\u2019s Better Than Nothin\u2019"
     slug: everythings-better-than-nothin
@@ -49,6 +54,8 @@ release:
     duration: '4:52'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/everythings-better-than-nothin/1845588107?i=1845588110
   - number: 4
     title: Inner Outer
     slug: inner-outer
@@ -56,6 +63,8 @@ release:
     duration: '4:49'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/inner-outer/1845588107?i=1845588111
   - number: 5
     title: Maria's Cup
     slug: maria-s-cup
@@ -63,6 +72,8 @@ release:
     duration: '4:42'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/marias-cup/1845588107?i=1845588112
   - number: 6
     title: July Surprise
     slug: july-surprise
@@ -70,6 +81,8 @@ release:
     duration: '4:08'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/july-surprise/1845588107?i=1845588113
   - number: 7
     title: Opposites Attract In Time
     slug: opposites-attract-in-time
@@ -77,6 +90,8 @@ release:
     duration: '4:59'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/opposites-attract-in-time/1845588107?i=1845588114
   - number: 8
     title: Active Illusion
     slug: active-illusion
@@ -84,6 +99,8 @@ release:
     duration: '4:30'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/active-illusion/1845588107?i=1845588115
   - number: 9
     title: Prehistoric Lies
     slug: prehistoric-lies
@@ -91,6 +108,8 @@ release:
     duration: '6:03'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/prehistoric-lies/1845588107?i=1845588116
   - number: 10
     title: Riddles Abound
     slug: riddles-abound
@@ -98,3 +117,5 @@ release:
     duration: '5:30'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/riddles-abound/1845588107?i=1845588207

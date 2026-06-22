@@ -22,6 +22,7 @@ release:
     mastering: null
   links:
     spotify: https://open.spotify.com/album/6tGsl61IaiQQg7AB6uXNsD
+    apple_music: https://music.apple.com/us/album/tria%CF%84%CE%AF-ep/1821324918
   seo:
     title: "Tria\u03C4\u03AF by PCBender"
     description: "Tria\u03C4\u03AF by PCBender on Maricopa Records."
@@ -35,6 +36,8 @@ release:
     duration: '3:46'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/apa/1821324918?i=1821324919
   - number: 2
     title: "Aite\u014D"
     slug: aiteo
@@ -42,6 +45,8 @@ release:
     duration: '3:54'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/aite%C5%8D/1821324918?i=1821324920
   - number: 3
     title: Ego Eimi
     slug: ego-eimi
@@ -49,6 +54,8 @@ release:
     duration: '3:22'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/ego-eimi/1821324918?i=1821324921
   - number: 4
     title: "Esm\xE9n"
     slug: esmen
@@ -56,6 +63,8 @@ release:
     duration: '3:54'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/esm%C3%A9n/1821324918?i=1821324922
   - number: 5
     title: Esti
     slug: esti
@@ -63,6 +72,8 @@ release:
     duration: '3:49'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/esti/1821324918?i=1821324923
   - number: 6
     title: Ousia
     slug: ousia
@@ -70,3 +81,5 @@ release:
     duration: '3:03'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/ousia/1821324918?i=1821324924

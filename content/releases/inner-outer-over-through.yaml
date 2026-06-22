@@ -22,6 +22,7 @@ release:
     mastering: null
   links:
     spotify: https://open.spotify.com/album/6K20WzKCiDSDG2y6Vq4yyR
+    apple_music: https://music.apple.com/us/album/inner-outer-over-through-ep/1809601010
   seo:
     title: Inner Outer Over Through by Lingua Aeternum
     description: Inner Outer Over Through by Lingua Aeternum on Maricopa Records.
@@ -35,6 +36,8 @@ release:
     duration: '3:43'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/inner-outer-over-through/1809601010?i=1809601011
   - number: 2
     title: Invocate
     slug: invocate
@@ -42,6 +45,8 @@ release:
     duration: '3:25'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/invocate/1809601010?i=1809601012
   - number: 3
     title: The Memory I'll Borrow
     slug: the-memory-i-ll-borrow
@@ -49,6 +54,8 @@ release:
     duration: '3:14'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/the-memory-ill-borrow/1809601010?i=1809601013
   - number: 4
     title: Thread By Thread
     slug: thread-by-thread
@@ -56,3 +63,5 @@ release:
     duration: '3:20'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/thread-by-thread/1809601010?i=1809601015

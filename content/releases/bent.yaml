@@ -23,6 +23,7 @@ release:
   links:
     spotify: https://open.spotify.com/album/4Bi0av41wTYBH7DAXlFVrI
     tidal: https://listen.tidal.com/album/442538811
+    apple_music: https://music.apple.com/us/album/bent/1816826240
   seo:
     title: Bent by 4Castle
     description: Bent by 4Castle on Maricopa Records.
@@ -36,6 +37,8 @@ release:
     duration: '4:59'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/mr-mckay/1816826240?i=1816826241
   - number: 2
     title: The Bend
     slug: the-bend
@@ -43,6 +46,8 @@ release:
     duration: '4:02'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/the-bend/1816826240?i=1816826242
   - number: 3
     title: Below The Line
     slug: below-the-line
@@ -50,6 +55,8 @@ release:
     duration: '4:50'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/below-the-line/1816826240?i=1816826243
   - number: 4
     title: "Friedman\u2019s Folly"
     slug: friedmans-folly
@@ -57,6 +64,8 @@ release:
     duration: '3:55'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/friedmans-folly/1816826240?i=1816826244
   - number: 5
     title: Authenticity Factory
     slug: authenticity-factory
@@ -64,6 +73,8 @@ release:
     duration: '4:07'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/authenticity-factory/1816826240?i=1816826245
   - number: 6
     title: Voluntary Mandatory
     slug: voluntary-mandatory
@@ -71,6 +82,8 @@ release:
     duration: '3:17'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/voluntary-mandatory/1816826240?i=1816826246
   - number: 7
     title: All Change Is Painful
     slug: all-change-is-painful
@@ -78,6 +91,8 @@ release:
     duration: '4:13'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/all-change-is-painful/1816826240?i=1816826247
   - number: 8
     title: Human Capital
     slug: human-capital
@@ -85,6 +100,8 @@ release:
     duration: '5:33'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/human-capital/1816826240?i=1816826248
   - number: 9
     title: Cracks in the Culture Deck
     slug: cracks-in-the-culture-deck
@@ -92,6 +109,8 @@ release:
     duration: '4:25'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/cracks-in-the-culture-deck/1816826240?i=1816826249
   - number: 10
     title: Vision & Values
     slug: vision-values
@@ -99,6 +118,8 @@ release:
     duration: '3:36'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/vision-values/1816826240?i=1816826340
   - number: 11
     title: Stock Price Jesus
     slug: stock-price-jesus
@@ -106,6 +127,8 @@ release:
     duration: '3:48'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/stock-price-jesus/1816826240?i=1816826341
   - number: 12
     title: At What Cost
     slug: at-what-cost
@@ -113,6 +136,8 @@ release:
     duration: '4:10'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/at-what-cost/1816826240?i=1816826342
   - number: 13
     title: Nightmares Return
     slug: nightmares-return
@@ -120,3 +145,5 @@ release:
     duration: '3:41'
     explicit: true
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/nightmares-return/1816826240?i=1816826343
