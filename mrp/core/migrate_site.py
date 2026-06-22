@@ -436,7 +436,8 @@ def promote_catalog_metadata(root: Path) -> dict[str, Any]:
                 "duration": None,
                 "explicit": False,
                 "preview_audio": None,
-                "lyrics_excerpt": None,
+                "lyrics_text": None,
+                "lyrics_source": None,
             }
             release.pop("tracks", None)
         title = release.get("title") or page.get("title") or title_from_slug(release_id)
@@ -604,7 +605,8 @@ def release_tracks(page: dict[str, Any]) -> list[dict[str, Any]]:
                     "duration": None,
                     "explicit": False,
                     "preview_audio": None,
-                    "lyrics_excerpt": None,
+                    "lyrics_text": None,
+                    "lyrics_source": None,
                     "links": track_links.get(number, {}),
                 }
             )
@@ -689,7 +691,8 @@ def release_record(release: dict[str, Any], source_post: dict[str, Any]) -> dict
                 "duration": None,
                 "explicit": False,
                 "preview_audio": None,
-                "lyrics_excerpt": None,
+                "lyrics_text": None,
+                "lyrics_source": None,
             },
         }
     }

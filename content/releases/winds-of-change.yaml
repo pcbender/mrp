@@ -64,12 +64,10 @@ release:
     duration: null
     explicit: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a
-      apple_music: https://music.apple.com/us/album/two-tree-road/1793400637?i=1793400638
-      youtube: https://www.youtube.com/watch?v=Jzk3YiaYW3E
-      youtube_music: https://music.youtube.com/watch?v=Jzk3YiaYW3E
   - number: 2
     title: Joni
     slug: joni
@@ -77,11 +75,10 @@ release:
     duration: null
     explicit: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/0Z5JIx6FM55dEkmqlsDqjo?si=b2e4378330d040c4
-      youtube: https://www.youtube.com/watch?v=aMrm09UIlJQ
-      youtube_music: https://music.youtube.com/watch?v=aMrm09UIlJQ
   - number: 3
     title: The Only One
     slug: the-only-one
@@ -89,12 +86,10 @@ release:
     duration: null
     explicit: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073
-      apple_music: https://music.apple.com/us/album/the-only-one/1793400637?i=1793400640
-      youtube: https://www.youtube.com/watch?v=Lx19g7pFfOg
-      youtube_music: https://music.youtube.com/watch?v=Lx19g7pFfOg
   - number: 4
     title: I Think I'm Falling
     slug: i-think-i-m-falling
@@ -102,12 +97,10 @@ release:
     duration: null
     explicit: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39
-      apple_music: https://music.apple.com/us/album/i-think-im-falling/1793400637?i=1793400641
-      youtube: https://www.youtube.com/watch?v=ZB62Rj3trow
-      youtube_music: https://music.youtube.com/watch?v=ZB62Rj3trow
   - number: 5
     title: Deb
     slug: deb
@@ -115,12 +108,10 @@ release:
     duration: null
     explicit: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44
-      apple_music: https://music.apple.com/us/album/deb/1793400637?i=1793400642
-      youtube: https://www.youtube.com/watch?v=0x_IKU5FlCU
-      youtube_music: https://music.youtube.com/watch?v=0x_IKU5FlCU
   - number: 6
     title: This Love Grows
     slug: this-love-grows
@@ -128,12 +119,10 @@ release:
     duration: null
     explicit: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961
-      apple_music: https://music.apple.com/us/album/this-love-grows/1793400637?i=1793400643
-      youtube: https://www.youtube.com/watch?v=_38ryd95p6k
-      youtube_music: https://music.youtube.com/watch?v=_38ryd95p6k
   - number: 7
     title: Winds of Change
     slug: winds-of-change
@@ -141,9 +130,7 @@ release:
     duration: null
     explicit: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
     links:
       spotify: https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7
-      apple_music: https://music.apple.com/us/album/winds-of-change/1793400637?i=1793400644
-      youtube: https://www.youtube.com/watch?v=KeeuQvzGpeM
-      youtube_music: https://music.youtube.com/watch?v=KeeuQvzGpeM

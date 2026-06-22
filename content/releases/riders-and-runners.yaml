@@ -64,4 +64,5 @@ release:
     duration: null
     explicit: false
     preview_audio: null
-    lyrics_excerpt: null
+    lyrics_text: null
+    lyrics_source: null
