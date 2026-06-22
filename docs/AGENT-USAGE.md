@@ -73,6 +73,8 @@ scripts/mrp status --release signal-path --json
 - Do not add the Odesli API key to git; load `ODESLI_API_KEY` the same way
   (environment or `.env`). Without it, `enrich-links` is capped at 10
   requests/min by Odesli; with it, 60/min.
+- Do not add the Google API key to git; load `GOOGLE_SERVICE_API_KEY` the
+  same way (environment or `.env`). Required for `enrich-youtube`.
 - Do not bypass `.allow-deploy` marker checks.
 - Use `--dry-run` for deployment planning when reviewing target changes.
 - Use `--yes` only after reviewing rollback candidate output.

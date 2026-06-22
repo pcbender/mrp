@@ -39,9 +39,10 @@ release:
   links:
     spotify: https://open.spotify.com/album/4HAe5UT7iSNfeySjXB4UKD?si=s67gqJyfRUadRXuzswLOqA
     apple_music: https://music.apple.com/us/album/the-one-that-got-away-single/1798086824
-    youtube_music: null
+    youtube_music: https://music.youtube.com/watch?v=edaROseNl8Y
     bandcamp: null
     soundcloud: null
+    youtube: https://www.youtube.com/watch?v=edaROseNl8Y
   seo:
     title: The One That Got Away by PCBender
     description: The One That Got Away by PCBender on Maricopa Records.

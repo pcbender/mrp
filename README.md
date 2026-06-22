@@ -129,6 +129,16 @@ this catalog, so this command exists alongside `enrich-links` rather than
 replacing it; releases with no title match are reported as
 `unmatched_release_paths` for manual follow-up.
 
+`enrich-youtube` backfills YouTube and YouTube Music links the same way,
+using the YouTube Data API v3 (`GOOGLE_SERVICE_API_KEY` in the environment
+or `.env`). It starts from each artist's `links.youtube` channel URL,
+fetches that channel's uploads playlist once, and matches videos to
+releases and tracks by normalized title -- one playlist fetch per artist
+covers every track, no per-release API calls. Both `links.youtube` and
+`links.youtube_music` are filled from the same matched video ID, since an
+artist's own channel uploads are the same underlying video on both
+surfaces. Additive only, same as the other enrich-* commands.
+
 MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
 v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).
 

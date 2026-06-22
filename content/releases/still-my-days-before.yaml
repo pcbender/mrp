@@ -33,9 +33,10 @@ release:
   links:
     spotify: https://open.spotify.com/album/72rjvHWyvlvG3nwO6iLaDO?si=SwTp5E5VRHiOvMy8DSg74w
     apple_music: https://music.apple.com/us/album/still-my-days-before/1805258484?i=1805258485
-    youtube_music: null
+    youtube_music: https://music.youtube.com/watch?v=zzmD_nYlAmc
     bandcamp: null
     soundcloud: null
+    youtube: https://www.youtube.com/watch?v=zzmD_nYlAmc
   seo:
     title: Still My Days Before by PCBender
     description: Still My Days Before by PCBender on Maricopa Records.

@@ -73,7 +73,7 @@ def test_enrich_apple_music_backfills_release_and_track_links(tmp_path):
     path = repo / "content/releases/made-by-moving.yaml"
     before = reset_apple_music_links(path)
     assert before["links"].get("apple_music") is None
-    assert all("links" not in track for track in before["tracks"])
+    assert all((track.get("links") or {}).get("apple_music") is None for track in before["tracks"])
 
     client = FakeAppleMusicClient(
         albums_by_artist_id={"1793178641": [made_by_moving_album()]},
@@ -92,7 +92,7 @@ def test_enrich_apple_music_backfills_release_and_track_links(tmp_path):
     # Case-insensitive match: our title is "Opposites Attract In Time".
     assert tracks_by_slug["opposites-attract-in-time"]["links"]["apple_music"] == "https://music.apple.com/us/album/made-by-moving/1845588107?i=7"
     # No Apple match was supplied for this track; it must stay untouched.
-    assert "links" not in tracks_by_slug["riddles-abound"]
+    assert (tracks_by_slug["riddles-abound"].get("links") or {}).get("apple_music") is None
 
 
 def test_enrich_apple_music_never_overwrites_existing_value(tmp_path):

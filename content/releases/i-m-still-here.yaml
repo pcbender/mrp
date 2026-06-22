@@ -23,6 +23,8 @@ release:
   links:
     spotify: https://open.spotify.com/album/2IYrDIEYqUhCkMI5VI8Jft
     apple_music: https://music.apple.com/us/album/im-still-here/6770845926
+    youtube: https://www.youtube.com/watch?v=3RcK60jhmjM
+    youtube_music: https://music.youtube.com/watch?v=3RcK60jhmjM
   seo:
     title: I'm Still Here by Michael Anthony Rose
     description: I'm Still Here by Michael Anthony Rose on Maricopa Records.
@@ -38,6 +40,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/im-old-now/6770845926?i=6770845927
+      youtube: https://www.youtube.com/watch?v=S7OjVtF-E4k
+      youtube_music: https://music.youtube.com/watch?v=S7OjVtF-E4k
   - number: 2
     title: Slow Down
     slug: slow-down
@@ -47,6 +51,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/slow-down/6770845926?i=6770845931
+      youtube: https://www.youtube.com/watch?v=kMvPB6TcqWc
+      youtube_music: https://music.youtube.com/watch?v=kMvPB6TcqWc
   - number: 3
     title: I Know Exactly What This Is
     slug: i-know-exactly-what-this-is
@@ -56,6 +62,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/i-know-exactly-what-this-is/6770845926?i=6770845932
+      youtube: https://www.youtube.com/watch?v=ob-TUie-GFY
+      youtube_music: https://music.youtube.com/watch?v=ob-TUie-GFY
   - number: 4
     title: Some Things Just Stop
     slug: some-things-just-stop
@@ -65,6 +73,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/some-things-just-stop/6770845926?i=6770845934
+      youtube: https://www.youtube.com/watch?v=0nlTcm1Xohw
+      youtube_music: https://music.youtube.com/watch?v=0nlTcm1Xohw
   - number: 5
     title: Rooms Keep People
     slug: rooms-keep-people
@@ -74,6 +84,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/rooms-keep-people/6770845926?i=6770845937
+      youtube: https://www.youtube.com/watch?v=i9uhQndU6o0
+      youtube_music: https://music.youtube.com/watch?v=i9uhQndU6o0
   - number: 6
     title: "They Don\u2019t Know"
     slug: they-dont-know
@@ -83,6 +95,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/they-dont-know/6770845926?i=6770845941
+      youtube: https://www.youtube.com/watch?v=1sxZTJgKFPg
+      youtube_music: https://music.youtube.com/watch?v=1sxZTJgKFPg
   - number: 7
     title: "That\u2019s The Question"
     slug: thats-the-question
@@ -92,6 +106,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/thats-the-question/6770845926?i=6770846226
+      youtube: https://www.youtube.com/watch?v=N4X9F3Y9Yfc
+      youtube_music: https://music.youtube.com/watch?v=N4X9F3Y9Yfc
   - number: 8
     title: Full-Size Person
     slug: full-size-person
@@ -101,6 +117,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/full-size-person/6770845926?i=6770846228
+      youtube: https://www.youtube.com/watch?v=QJbrfNFLgzE
+      youtube_music: https://music.youtube.com/watch?v=QJbrfNFLgzE
   - number: 9
     title: Some Days Still Break Me
     slug: some-days-still-break-me
@@ -110,6 +128,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/some-days-still-break-me/6770845926?i=6770846229
+      youtube: https://www.youtube.com/watch?v=4f6GWNt8Iic
+      youtube_music: https://music.youtube.com/watch?v=4f6GWNt8Iic
   - number: 10
     title: "It\u2019s In Me Too"
     slug: its-in-me-too
@@ -119,6 +139,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/its-in-me-too/6770845926?i=6770846232
+      youtube: https://www.youtube.com/watch?v=Ih0zlxp9bGU
+      youtube_music: https://music.youtube.com/watch?v=Ih0zlxp9bGU
   - number: 11
     title: "That\u2019s Enough"
     slug: thats-enough
@@ -128,6 +150,8 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/thats-enough/6770845926?i=6770846239
+      youtube: https://www.youtube.com/watch?v=1f6v1qoIbzA
+      youtube_music: https://music.youtube.com/watch?v=1f6v1qoIbzA
   - number: 12
     title: I'm Still Here
     slug: i-m-still-here
@@ -137,3 +161,5 @@ release:
     preview_audio: null
     links:
       apple_music: https://music.apple.com/us/album/im-still-here/6770845926?i=6770846240
+      youtube: https://www.youtube.com/watch?v=3RcK60jhmjM
+      youtube_music: https://music.youtube.com/watch?v=3RcK60jhmjM

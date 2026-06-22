@@ -16,6 +16,7 @@ from mrp.core.clone_site import clone_site, format_clone_site
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.enrich_apple_music import format_enrich_apple_music, enrich_apple_music
 from mrp.core.enrich_links import format_enrich_links, enrich_links
+from mrp.core.enrich_youtube import format_enrich_youtube, enrich_youtube
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.import_spotify import DEFAULT_ROSTER, format_import_spotify, import_spotify
 from mrp.core.inspect import format_inspection, inspect_repository
@@ -150,6 +151,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Seconds between iTunes lookup requests (default: 1.0s).",
     )
 
+    enrich_youtube_parser = subparsers.add_parser(
+        "enrich-youtube",
+        help="Backfill YouTube/YouTube Music links via the YouTube Data API v3, using artist.links.youtube.",
+    )
+    add_global_options(enrich_youtube_parser, suppress_defaults=True)
+    enrich_youtube_parser.add_argument(
+        "--delay",
+        type=float,
+        default=0.2,
+        help="Seconds between YouTube Data API requests (default: 0.2s).",
+    )
+
     migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
     add_global_options(migrate_parser, suppress_defaults=True)
     migrate_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
@@ -265,6 +278,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "enrich-apple-music":
         print(format_enrich_apple_music(result))
         return
+    if result["command"] == "enrich-youtube":
+        print(format_enrich_youtube(result))
+        return
     if result["command"] == "build":
         print(format_build(result))
         return
@@ -362,6 +378,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = enrich_links(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "enrich-apple-music":
         result = enrich_apple_music(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
+    elif args.command == "enrich-youtube":
+        result = enrich_youtube(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "migrate-site":
         result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "wxr-inventory":

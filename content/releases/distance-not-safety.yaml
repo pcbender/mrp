@@ -52,10 +52,11 @@ release:
   links:
     spotify: https://open.spotify.com/track/2BQpFdLyixPI1bD7SOlnZy?si=5d6a071b37434674
     apple_music: https://music.apple.com/us/album/cut-flowers/1801053116?i=1801053117
-    youtube_music: null
+    youtube_music: https://music.youtube.com/watch?v=IG4-h2T67ls
     bandcamp: null
     soundcloud: null
     tidal: https://listen.tidal.com/track/422836372
+    youtube: https://www.youtube.com/watch?v=IG4-h2T67ls
   seo:
     title: Distance Not Safety by 4Castle
     description: Distance Not Safety by 4Castle on Maricopa Records.
