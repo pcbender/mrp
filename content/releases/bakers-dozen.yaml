@@ -79,6 +79,7 @@ release:
       spotify: https://open.spotify.com/track/59Nqaq4nGtcwe4rCFX8SIk?si=cfe347906eef4c73
       apple_music: https://music.apple.com/us/album/january-kiss/1798606650?i=1798606651
       youtube_music: https://music.youtube.com/watch?v=8NRb6YusUQU&si=lsTZUlxP61o43ire
+      youtube: https://www.youtube.com/watch?v=8NRb6YusUQU
   - number: 2
     title: February Actuary
     slug: february-actuary
@@ -91,6 +92,7 @@ release:
       spotify: https://open.spotify.com/track/5mFSqycBCF2yv6NWtf8vbp?si=2210a6a8df9746ef
       apple_music: https://music.apple.com/us/album/february-actuary/1798606650?i=1798606652
       youtube_music: https://music.youtube.com/watch?v=9zvLKZcF66M&si=0Q2MEV69NjfU3Rg7
+      youtube: https://www.youtube.com/watch?v=9zvLKZcF66M
   - number: 3
     title: Ides of March
     slug: ides-of-march
@@ -103,6 +105,7 @@ release:
       spotify: https://open.spotify.com/track/23En96BdwWUTvdjBp5m8pU?si=c1bd93cf03e74309
       apple_music: https://music.apple.com/us/album/ides-of-march/1798606650?i=1798606653
       youtube_music: https://music.youtube.com/watch?v=03a2oSEWaIo&si=D4WI_ZuTBPfgFVS_
+      youtube: https://www.youtube.com/watch?v=03a2oSEWaIo
   - number: 4
     title: April All Day Long
     slug: april-all-day-long
@@ -115,6 +118,7 @@ release:
       spotify: https://open.spotify.com/track/6cijmvJEZlNBGYVsrQJGGr?si=e76b7f13f4074d3f
       apple_music: https://music.apple.com/us/album/april-all-day-long/1798606650?i=1798606654
       youtube_music: https://music.youtube.com/watch?v=2ndZa515aPU&si=CBNI_7RyWF_EsslE
+      youtube: https://www.youtube.com/watch?v=2ndZa515aPU
   - number: 5
     title: May Flowers
     slug: may-flowers
@@ -127,6 +131,7 @@ release:
       spotify: https://open.spotify.com/track/5E60sCmi0qXMXds1CWzcro?si=ec128befcf614ef2
       apple_music: https://music.apple.com/us/album/may-flowers/1798606650?i=1798606655
       youtube_music: https://music.youtube.com/watch?v=bIRmZii65Xs&si=9v718t9AaQq31a9L
+      youtube: https://www.youtube.com/watch?v=bIRmZii65Xs
   - number: 6
     title: June Gloom
     slug: june-gloom
@@ -139,6 +144,7 @@ release:
       spotify: https://open.spotify.com/track/7Ckl0k2Z0KGsYAIdF6FyRC?si=ce3ec1415fe84bef
       apple_music: https://music.apple.com/us/album/june-gloom/1798606650?i=1798606656
       youtube_music: https://music.youtube.com/watch?v=0WWix9RLoMs&si=HKCgtqs9MgPHjdDd
+      youtube: https://www.youtube.com/watch?v=0WWix9RLoMs
   - number: 7
     title: Sparkles In July
     slug: sparkles-in-july
@@ -151,6 +157,7 @@ release:
       spotify: https://open.spotify.com/track/2fsmRqWJyDpJwuA8QDGVEO?si=ddd021c1d2184aee
       apple_music: https://music.apple.com/us/album/sparkles-in-july/1798606650?i=1798606657
       youtube_music: https://music.youtube.com/watch?v=0e1Tz0Ox-Qw&si=so6Mehepg7u3A-10
+      youtube: https://www.youtube.com/watch?v=0e1Tz0Ox-Qw
   - number: 8
     title: Too August
     slug: too-august
@@ -162,6 +169,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/3MxrhN09bnA3lvuaUFjhGZ?si=bfa9dc2f57e846ad
       youtube_music: https://music.youtube.com/watch?v=cHYjWKLKb14&si=FAdZb6Hb2-QX7XQh
+      apple_music: https://music.apple.com/us/album/too-august/1798606650?i=1798606658
+      youtube: https://www.youtube.com/watch?v=cHYjWKLKb14
   - number: 9
     title: September On My Mind
     slug: september-on-my-mind
@@ -174,6 +183,7 @@ release:
       spotify: https://open.spotify.com/track/4xkZUIsNCiuoadRErFZnVL?si=cb1e396e5abc43c3
       apple_music: https://music.apple.com/us/album/september-on-my-mind/1798606650?i=1798606659
       youtube_music: https://music.youtube.com/watch?v=Fa-0VO-iDDg&si=V8oAGOXLyUe6i1II
+      youtube: https://www.youtube.com/watch?v=Fa-0VO-iDDg
   - number: 10
     title: October Boo Hoo
     slug: october-boo-hoo
@@ -186,6 +196,7 @@ release:
       spotify: https://open.spotify.com/track/3wlnkbgTjJgZmgHK7nM0BL?si=0773d220f49748b4
       apple_music: https://music.apple.com/us/album/october-boo-hoo/1798606650?i=1798606660
       youtube_music: https://music.youtube.com/watch?v=I6Le0z1ckYY&si=WIv461VaZh_jTAnM
+      youtube: https://www.youtube.com/watch?v=I6Le0z1ckYY
   - number: 11
     title: November I Never Remember
     slug: november-i-never-remember
@@ -197,6 +208,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/6BC7snjYszLuVOLzaduCbT?si=92fa39bf0f4f44f0
       youtube_music: https://music.youtube.com/watch?v=i8yBumRUCv8&si=hnxzreeu0bvWH0sp
+      apple_music: https://music.apple.com/us/album/november-i-never-remember/1798606650?i=1798606661
+      youtube: https://www.youtube.com/watch?v=i8yBumRUCv8
   - number: 12
     title: Slipping Into December
     slug: slipping-into-december
@@ -208,3 +221,5 @@ release:
     links:
       spotify: https://open.spotify.com/track/5epacg2kGS8lG2FxnSUSms?si=0495ecc9a2064e2f
       apple_music: https://music.apple.com/us/album/slipping-into-december/1798606650?i=1798606662
+      youtube: https://www.youtube.com/watch?v=FW_K9UoVmYI
+      youtube_music: https://music.youtube.com/watch?v=FW_K9UoVmYI
