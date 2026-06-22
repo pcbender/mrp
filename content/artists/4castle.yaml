@@ -44,7 +44,8 @@ artist:
   links:
     spotify: https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh
     apple_music: https://music.apple.com/us/artist/4castle/1801052673
-    youtube: null
+    youtube_music: https://music.youtube.com/channel/UCsOqoX06N2MQYbZwqCX-LUw
+    youtube: https://www.youtube.com/channel/UCsOqoX06N2MQYbZwqCX-LUw
     bandcamp: null
     instagram: null
   visibility: public

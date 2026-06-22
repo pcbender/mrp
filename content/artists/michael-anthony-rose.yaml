@@ -10,9 +10,9 @@ artist:
   image: /assets/artists/michael-anthony-rose/cover.jpg
   links:
     spotify: https://open.spotify.com/artist/1bpeEWD8VsTewFr5FKOKv0
-    apple_music: null
-    youtube_music: null
-    youtube: null
+    apple_music: https://music.apple.com/us/artist/michael-anthony-rose/1022964730
+    youtube_music: https://music.youtube.com/browse/MPLAUC4qhZ-vNfzzS_9JLjxqgTZw
+    youtube: https://www.youtube.com/channel/UC4qhZ-vNfzzS_9JLjxqgTZw
     bandcamp: null
     instagram: null
   visibility: public
