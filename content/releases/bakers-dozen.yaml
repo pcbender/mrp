@@ -162,6 +162,7 @@ release:
     links:
       spotify: https://open.spotify.com/track/3MxrhN09bnA3lvuaUFjhGZ?si=bfa9dc2f57e846ad
       youtube_music: https://music.youtube.com/watch?v=cHYjWKLKb14&si=FAdZb6Hb2-QX7XQh
+      apple_music: https://music.apple.com/us/album/too-august/1798606650?i=1798606658
   - number: 9
     title: September On My Mind
     slug: september-on-my-mind
@@ -197,6 +198,7 @@ release:
     links:
       spotify: https://open.spotify.com/track/6BC7snjYszLuVOLzaduCbT?si=92fa39bf0f4f44f0
       youtube_music: https://music.youtube.com/watch?v=i8yBumRUCv8&si=hnxzreeu0bvWH0sp
+      apple_music: https://music.apple.com/us/album/november-i-never-remember/1798606650?i=1798606661
   - number: 12
     title: Slipping Into December
     slug: slipping-into-december

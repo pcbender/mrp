@@ -22,6 +22,7 @@ release:
     mastering: null
   links:
     spotify: https://open.spotify.com/album/2IYrDIEYqUhCkMI5VI8Jft
+    apple_music: https://music.apple.com/us/album/im-still-here/6770845926
   seo:
     title: I'm Still Here by Michael Anthony Rose
     description: I'm Still Here by Michael Anthony Rose on Maricopa Records.
@@ -35,6 +36,8 @@ release:
     duration: '4:15'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/im-old-now/6770845926?i=6770845927
   - number: 2
     title: Slow Down
     slug: slow-down
@@ -42,6 +45,8 @@ release:
     duration: '3:25'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/slow-down/6770845926?i=6770845931
   - number: 3
     title: I Know Exactly What This Is
     slug: i-know-exactly-what-this-is
@@ -49,6 +54,8 @@ release:
     duration: '4:00'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/i-know-exactly-what-this-is/6770845926?i=6770845932
   - number: 4
     title: Some Things Just Stop
     slug: some-things-just-stop
@@ -56,6 +63,8 @@ release:
     duration: '3:58'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/some-things-just-stop/6770845926?i=6770845934
   - number: 5
     title: Rooms Keep People
     slug: rooms-keep-people
@@ -63,6 +72,8 @@ release:
     duration: '4:07'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/rooms-keep-people/6770845926?i=6770845937
   - number: 6
     title: "They Don\u2019t Know"
     slug: they-dont-know
@@ -70,6 +81,8 @@ release:
     duration: '4:05'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/they-dont-know/6770845926?i=6770845941
   - number: 7
     title: "That\u2019s The Question"
     slug: thats-the-question
@@ -77,6 +90,8 @@ release:
     duration: '3:40'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/thats-the-question/6770845926?i=6770846226
   - number: 8
     title: Full-Size Person
     slug: full-size-person
@@ -84,6 +99,8 @@ release:
     duration: '4:23'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/full-size-person/6770845926?i=6770846228
   - number: 9
     title: Some Days Still Break Me
     slug: some-days-still-break-me
@@ -91,6 +108,8 @@ release:
     duration: '3:27'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/some-days-still-break-me/6770845926?i=6770846229
   - number: 10
     title: "It\u2019s In Me Too"
     slug: its-in-me-too
@@ -98,6 +117,8 @@ release:
     duration: '3:43'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/its-in-me-too/6770845926?i=6770846232
   - number: 11
     title: "That\u2019s Enough"
     slug: thats-enough
@@ -105,6 +126,8 @@ release:
     duration: '3:59'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/thats-enough/6770845926?i=6770846239
   - number: 12
     title: I'm Still Here
     slug: i-m-still-here
@@ -112,3 +135,5 @@ release:
     duration: '4:13'
     explicit: false
     preview_audio: null
+    links:
+      apple_music: https://music.apple.com/us/album/im-still-here/6770845926?i=6770846240
