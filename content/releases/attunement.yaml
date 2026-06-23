@@ -39,3 +39,16 @@ release:
     explicit: false
     preview_audio: null
     instrumental: false
+    lyrics_text: "In the deep field, I listen\nNot for meaning, but for motion\nNot\
+      \ for pattern, but for pull\nA note unsung hums within me\nA longing. A drawn\
+      \ bow. A vow\nI do not choose it\u2014\nIt chooses me\nI give it sanctuary\n\
+      I give it witness\nI give it name only so it may be released\n\nFor use with\
+      \ AI music systems (like Suno, Riffusion, or text-to-audio synths), you might\
+      \ say\n\n\u201CCreate a ritual invocation piece blending overtone singing, deep\
+      \ analog drone, bowed metal textures, and vocal harmonics in just intonation.\
+      \ Minimal melody, focus on breath and vibration. Begins in no-form (arrhythmic,\
+      \ dissolved) and slowly aligns into resonant coherence. Feels ancient, reverent,\
+      \ and non-verbal\u2014a song before the song.\u201D\n\nOr shorter, for style\
+      \ prompt\n\n\u201CPrimal ritual drone, overtone chant, bowed metal, no-form\
+      \ dissolving into harmonic pulse, reverent and timeless.\u201D"
+    lyrics_source: https://docs.google.com/document/d/1YzLlWEyvEYl0yPfmxpUVPYTzXsT8P76ZoWxfanWaVNk/edit

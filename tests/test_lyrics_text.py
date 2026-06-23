@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from mrp.core.lyrics_text import clean_lyrics
+from mrp.core.lyrics_text import clean_lyrics, extract_primary_section
 
 WINDS_OF_CHANGE_RAW = (
     "\\[Verse 1\\]\n\nI walked the road less traveled, beneath the twilight's glow,\n\n"
@@ -90,3 +90,40 @@ def test_clean_lyrics_trims_leading_and_trailing_whitespace() -> None:
     raw = "\n\n[Verse]\n\nLine one.\n\n"
     result = clean_lyrics(raw)
     assert result == "Line one"
+
+
+def test_extract_primary_section_returns_raw_when_no_headings() -> None:
+    raw = "[Verse]\n\nLine one.\n\nLine two."
+    assert extract_primary_section(raw) == raw
+
+
+def test_extract_primary_section_strips_single_heading() -> None:
+    raw = "# Lyrics\n\n[Verse]\n\nLine one."
+    assert extract_primary_section(raw) == "\n\n[Verse]\n\nLine one."
+
+
+def test_extract_primary_section_picks_the_longer_cleaned_section() -> None:
+    # Real-world pattern (e.g. "Tits Up"): Tab 1 has the full structured
+    # song, Tab 2 is a short stripped-tag duplicate -- Tab 1 should win.
+    raw = (
+        "# Tab 1\n\n[Verse 1]\n\nFirst line of the real song.\n\n"
+        "[Chorus]\n\nSecond line that matters too.\n\n"
+        "# Tab 2\n\nFirst line of the real song."
+    )
+    chosen = extract_primary_section(raw)
+    cleaned = clean_lyrics(chosen)
+    assert "Second line that matters too" in cleaned
+
+
+def test_extract_primary_section_picks_later_section_when_it_is_longer() -> None:
+    # Real-world pattern (e.g. "On Down The Way"): Tab 1 is a short
+    # fragment, Tab 2 has the actual full structured song.
+    raw = (
+        "# Tab 1\n\nJust a short fragment line.\n\n"
+        "# Tab 2\n\n[Verse 1]\n\nA much longer first line of the real song.\n\n"
+        "[Chorus]\n\nWith a second line and even more content here."
+    )
+    chosen = extract_primary_section(raw)
+    cleaned = clean_lyrics(chosen)
+    assert "much longer first line" in cleaned
+    assert "even more content" in cleaned
