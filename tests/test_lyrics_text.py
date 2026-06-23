@@ -127,3 +127,82 @@ def test_extract_primary_section_picks_later_section_when_it_is_longer() -> None
     cleaned = clean_lyrics(chosen)
     assert "much longer first line" in cleaned
     assert "even more content" in cleaned
+
+
+def test_clean_lyrics_strips_hash_prefixed_tag_lines() -> None:
+    # Variant structure-tag style with no space after the hash, distinct
+    # from "# Tab N" doc headings (which always have a space).
+    raw = "\\#Verse\n\nFirst real lyric line.\n\n\\#Chorus\n\nSecond real lyric line."
+    result = clean_lyrics(raw)
+    assert "#" not in result
+    assert "Verse" not in result
+    assert "First real lyric line" in result
+    assert "Second real lyric line" in result
+
+
+def test_extract_primary_section_prefers_a_section_named_lyrics() -> None:
+    # Real-world pattern: Suno docs with named tabs ("Lyrics", "Style",
+    # "Persona", "Exclusions") rather than "Tab N" -- only "Lyrics" is
+    # actual lyrics; "Style" here is deliberately the longest section to
+    # prove the name match wins over the length heuristic.
+    raw = (
+        "# Lyrics\n\n[Verse]\n\nShort real lyric line.\n\n"
+        "# Style\n\nA very long prompt-style paragraph describing the desired "
+        "instrumentation and production aesthetic in great detail, much longer "
+        "than the actual lyrics section above by design.\n\n"
+        "# Exclusions\n\nwhispers, screaming, metal"
+    )
+    chosen = extract_primary_section(raw)
+    cleaned = clean_lyrics(chosen)
+    assert cleaned == "Short real lyric line"
+
+
+def test_extract_primary_section_prefers_bracket_style_over_hash_style() -> None:
+    # Real-world pattern (e.g. "Inner Outer"): a \#hash-tagged condensed
+    # tab can edge out a [bracket]-tagged tab on raw length even though
+    # the bracket-tagged one is the primary take -- bracket style should
+    # win when both exist and are close in length.
+    raw = (
+        "# Tab 1\n\n[Verse]\n\nThe real primary version of this line.\n\n"
+        "# Tab 2\n\n\\#Verse\n\nThe real primary version of this line plus extra."
+    )
+    chosen = extract_primary_section(raw)
+    cleaned = clean_lyrics(chosen)
+    assert cleaned == "The real primary version of this line"
+
+
+def test_clean_lyrics_strips_parenthetical_structure_tags() -> None:
+    # Real-world pattern (e.g. "On the Advent of a Dream"): some docs use
+    # (Verse 1) / (Pre-Chorus) / (Chorus) parenthetical tags instead of
+    # [brackets].
+    raw = "(Verse 1)\n\nFirst real lyric line.\n\n(Pre-Chorus)\n\nSecond real lyric line."
+    result = clean_lyrics(raw)
+    assert "(Verse 1)" not in result
+    assert "(Pre-Chorus)" not in result
+    assert "First real lyric line" in result
+    assert "Second real lyric line" in result
+
+
+def test_clean_lyrics_strips_parenthetical_production_directions() -> None:
+    # Real-world pattern (e.g. "Pixy Stix"): free-form production notes
+    # and call-and-response role labels, also parenthetical.
+    raw = (
+        "(Bass & Drums Kick In - Funky Groove)\n\n"
+        "Real lyric line here.\n\n"
+        "(Lead:)\n\n"
+        "Another real lyric line."
+    )
+    result = clean_lyrics(raw)
+    assert "Funky Groove" not in result
+    assert "(Lead:)" not in result
+    assert "Real lyric line here" in result
+    assert "Another real lyric line" in result
+
+
+def test_clean_lyrics_keeps_legitimate_parenthetical_lyric_lines() -> None:
+    # Real-world pattern (e.g. "Slow Down"): a standalone parenthetical
+    # backing-vocal echo line is real lyric content, not a tag, and must
+    # survive even though it's the only thing on its line.
+    raw = "When it keeps moving through you\n\n(through you)\n\nWhen it keeps moving through you"
+    result = clean_lyrics(raw)
+    assert "(through you)" in result

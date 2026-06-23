@@ -232,3 +232,17 @@ release:
     links:
       spotify: https://open.spotify.com/track/5epacg2kGS8lG2FxnSUSms?si=0495ecc9a2064e2f
       apple_music: https://music.apple.com/us/album/slipping-into-december/1798606650?i=1798606662
+  - number: 13
+    title: '366'
+    slug: '366'
+    isrc: null
+    duration: null
+    explicit: false
+    instrumental: true
+    preview_audio: null
+    lyrics_text: null
+    lyrics_source: null
+    links:
+      spotify: https://open.spotify.com/track/410RP51qq1LQesQtYlczAI?si=e8d2e31c1d9d40a7
+      apple_music: https://music.apple.com/us/album/366/1798606650?i=1798606663
+      youtube_music: https://music.youtube.com/watch?v=BlEQwR1C1i8&si=1-WY8dPfZEHroyan
