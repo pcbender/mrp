@@ -1,0 +1,40 @@
+release:
+  id: tits-up-remix-2
+  slug: tits-up-remix-2
+  title: Tits Up (Remix)
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-01-31'
+  label: null
+  publisher: null
+  upc: 055905924920
+  catalog_number: null
+  cover_image: site/public/assets/releases/tits-up-remix-2/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/2AlpeE6jycw3u0Dv0JVinq
+  seo:
+    title: Tits Up (Remix) by PCBender
+    description: Tits Up (Remix) by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Tits Up - Remix
+    slug: tits-up-remix-2
+    isrc: CAHQJ2571234
+    duration: '2:59'
+    explicit: true
+    instrumental: false
+    preview_audio: null
+    lyrics_text: null
+    lyrics_source: null

@@ -1,0 +1,40 @@
+release:
+  id: one-day-2
+  slug: one-day-2
+  title: One Day
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-21'
+  label: null
+  publisher: null
+  upc: 056870977652
+  catalog_number: null
+  cover_image: site/public/assets/releases/one-day-2/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/2q5RLvrt0HeIsLVefZKAli
+  seo:
+    title: One Day by PCBender
+    description: One Day by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: One Day
+    slug: one-day-2
+    isrc: CAENV2572209
+    duration: '3:57'
+    explicit: false
+    instrumental: false
+    preview_audio: null
+    lyrics_text: null
+    lyrics_source: null
