@@ -39,3 +39,12 @@ release:
     explicit: false
     preview_audio: null
     instrumental: false
+    lyrics_text: The conversations.json document contains a history of my chats. I
+      want to extract all information from the document related to Lingua Aeternum.
+      That includes chats, narrative text, descriptions, lyrics and images. The intention
+      is to use this extracted information as the basis for a book. The output should
+      be a glossary of terms or characters relevant to the Lingua Aeternum mythos
+      with their description in a .docx format. An additional output should be an
+      organized narrative representation for the story of the Lingua Aeternum from
+      the Nullum forward. The narrative should also be in .docx format
+    lyrics_source: https://docs.google.com/document/d/1rPc5RK4QxX2T2--x1cohQN9uE83PO_Cvt26ooPfOJXE/edit

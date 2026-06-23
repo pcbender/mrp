@@ -39,3 +39,8 @@ release:
     explicit: false
     preview_audio: null
     instrumental: false
+    lyrics_text: This alternative rock track kicks off with driving, punchy overdriven
+      guitars and solid drums. Baritone male vocals deliver the verses with a brooding
+      tone. The chorus adds thicker guitar layers, building intensity. A dramatic
+      key change elevates the bridge, then surges into a powerful final chorus
+    lyrics_source: https://docs.google.com/document/d/1QnI0eHQKQnp5I55jQwM487JpIvSB-B3IgqhZ1oJvhGQ/edit

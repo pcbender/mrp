@@ -16,6 +16,7 @@ from mrp.core.clone_site import clone_site, format_clone_site
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.enrich_apple_music import format_enrich_apple_music, enrich_apple_music
 from mrp.core.enrich_links import format_enrich_links, enrich_links
+from mrp.core.enrich_lyrics import format_enrich_lyrics, enrich_lyrics
 from mrp.core.enrich_youtube import format_enrich_youtube, enrich_youtube
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
 from mrp.core.import_spotify import DEFAULT_ROSTER, format_import_spotify, import_spotify
@@ -163,6 +164,17 @@ def build_parser() -> argparse.ArgumentParser:
         help="Seconds between YouTube Data API requests (default: 0.2s).",
     )
 
+    enrich_lyrics_parser = subparsers.add_parser(
+        "enrich-lyrics",
+        help="Backfill song.lyrics_text by matching titles against a local snapshot of fetched lyrics docs.",
+    )
+    add_global_options(enrich_lyrics_parser, suppress_defaults=True)
+    enrich_lyrics_parser.add_argument(
+        "--docs-file",
+        required=True,
+        help="Path to a JSON file: a list of {id, title, content} objects, one per lyrics doc.",
+    )
+
     migrate_parser = subparsers.add_parser("migrate-site", help="Plan or run full-site staging migration.")
     add_global_options(migrate_parser, suppress_defaults=True)
     migrate_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
@@ -281,6 +293,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "enrich-youtube":
         print(format_enrich_youtube(result))
         return
+    if result["command"] == "enrich-lyrics":
+        print(format_enrich_lyrics(result))
+        return
     if result["command"] == "build":
         print(format_build(result))
         return
@@ -380,6 +395,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = enrich_apple_music(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "enrich-youtube":
         result = enrich_youtube(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
+    elif args.command == "enrich-lyrics":
+        docs = json.loads(Path(args.docs_file).read_text())
+        result = enrich_lyrics(args.repo, docs=docs, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "migrate-site":
         result = migrate_site(args.repo, source=args.source, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "wxr-inventory":
