@@ -66,7 +66,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -80,7 +80,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -94,7 +94,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -108,7 +108,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -122,7 +122,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -136,7 +136,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -150,7 +150,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -164,7 +164,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -178,7 +178,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -192,7 +192,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -206,7 +206,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -220,7 +220,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -234,7 +234,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -248,7 +248,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
@@ -262,7 +262,7 @@ release:
     isrc: null
     duration: null
     explicit: false
-    instrumental: false
+    instrumental: true
     preview_audio: null
     lyrics_text: null
     lyrics_source: null
