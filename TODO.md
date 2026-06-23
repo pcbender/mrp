@@ -1,20 +1,19 @@
 # TODO
 
-Status as of 2026-06-22. Streaming-link enrichment is the active thread;
+Status as of 2026-06-23. Streaming-link enrichment is the active thread;
 see `reports/enrichment/` for individual run reports.
-
-## Blocked
-
-- **Spotify per-track link backfill** (7 multi-track releases / 69 tracks:
-  `bent`, `free`, `i-m-still-here`, `inner-outer-over-through`,
-  `made-by-moving`, `the-messy-middle`, `tria`). Code fix landed in PR #4
-  (`build_track()` now copies a track's own `external_urls.spotify`), but
-  the live data backfill is blocked by a ~21h Spotify rate limit from
-  2026-06-21. Do not attempt before ~16:30 on 2026-06-22 -- probe with a
-  single lightweight call first, not a batch.
 
 ## Done
 
+- **Spotify per-track link backfill** (7 multi-track releases / 69 tracks:
+  `bent`, `free`, `i-m-still-here`, `inner-outer-over-through`,
+  `made-by-moving`, `the-messy-middle`, `tria`). Code fix landed in PR #4;
+  the data backfill was blocked by a ~21h Spotify rate limit from
+  2026-06-21, which had cleared by 2026-06-23. Probed with a single
+  `get_album()` call first, then fetched all 7 albums directly (7 calls
+  total -- track data comes back in the album response, no per-track
+  fetch needed) and patched `tracks[].links.spotify` in place. All 69
+  tracks matched cleanly by `track_number`, no title mismatches.
 - Spotify catalog import (`import-spotify` / `promote-spotify`): 161
   releases, artists promoted into `content/`.
 - Odesli enrichment (`enrich-links`): release-level only. `ODESLI_API_KEY`

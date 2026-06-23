@@ -1,0 +1,40 @@
+release:
+  id: here-comes-the-rain-2
+  slug: here-comes-the-rain-2
+  title: Here Comes the Rain
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-03-21'
+  label: null
+  publisher: null
+  upc: 056870572727
+  catalog_number: null
+  cover_image: site/public/assets/releases/here-comes-the-rain-2/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: 4Castle
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/0vcmUAc94me3pQntl9Lpnp
+  seo:
+    title: Here Comes the Rain by 4Castle
+    description: Here Comes the Rain by 4Castle on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Here Comes the Rain
+    slug: here-comes-the-rain-2
+    isrc: CACWV2595550
+    duration: '3:22'
+    explicit: false
+    instrumental: false
+    preview_audio: null
+    lyrics_text: null
+    lyrics_source: null

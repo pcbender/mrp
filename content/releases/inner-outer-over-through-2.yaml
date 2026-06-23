@@ -1,0 +1,40 @@
+release:
+  id: inner-outer-over-through-2
+  slug: inner-outer-over-through-2
+  title: Inner Outer Over Through
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-19'
+  label: null
+  publisher: null
+  upc: 056870954455
+  catalog_number: null
+  cover_image: site/public/assets/releases/inner-outer-over-through-2/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/5XEOufuDl9FyKOcu8D09kn
+  seo:
+    title: Inner Outer Over Through by PCBender
+    description: Inner Outer Over Through by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: Inner Outer Over Through
+    slug: inner-outer-over-through-2
+    isrc: CAENV2567470
+    duration: '3:42'
+    explicit: false
+    instrumental: false
+    preview_audio: null
+    lyrics_text: null
+    lyrics_source: null

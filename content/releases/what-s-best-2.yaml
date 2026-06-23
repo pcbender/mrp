@@ -1,0 +1,40 @@
+release:
+  id: what-s-best-2
+  slug: what-s-best-2
+  title: What's Best
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: staged
+  release_date: '2025-04-02'
+  label: null
+  publisher: null
+  upc: 056870737898
+  catalog_number: null
+  cover_image: site/public/assets/releases/what-s-best-2/cover.jpg
+  hero_image: null
+  summary: ''
+  description: ''
+  credits:
+    primary_artist: PCBender
+    songwriter: null
+    producer: null
+    mastering: null
+  links:
+    spotify: https://open.spotify.com/album/75z85fnGxTPTN3zU99Abca
+  seo:
+    title: What's Best by PCBender
+    description: What's Best by PCBender on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  song:
+    number: 1
+    title: What's Best
+    slug: what-s-best-2
+    isrc: CAENV2528135
+    duration: '3:41'
+    explicit: false
+    instrumental: false
+    preview_audio: null
+    lyrics_text: null
+    lyrics_source: null
