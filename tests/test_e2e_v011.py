@@ -10,11 +10,11 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = Path("/home/mrose/website-migration")
 
 
-def run_mrp(*args: str, site_out_root: Path) -> subprocess.CompletedProcess[str]:
+def run_mrp(*args: str, repo: Path, site_out_root: Path) -> subprocess.CompletedProcess[str]:
     env = os.environ.copy()
     env["MRP_SITE_OUT_ROOT"] = str(site_out_root)
     return subprocess.run(
-        [sys.executable, "-m", "mrp.cli.main", *args],
+        [sys.executable, "-m", "mrp.cli.main", "--repo", str(repo), *args],
         cwd=ROOT,
         text=True,
         capture_output=True,
@@ -23,8 +23,8 @@ def run_mrp(*args: str, site_out_root: Path) -> subprocess.CompletedProcess[str]
     )
 
 
-def json_command(*args: str, site_out_root: Path) -> dict:
-    result = run_mrp("--json", *args, site_out_root=site_out_root)
+def json_command(*args: str, repo: Path, site_out_root: Path) -> dict:
+    result = run_mrp("--json", *args, repo=repo, site_out_root=site_out_root)
     assert result.returncode == 0, result.stderr or result.stdout
     return json.loads(result.stdout)
 
@@ -35,15 +35,15 @@ def ensure_staging_marker(site_out_root: Path) -> None:
     (staging / ".allow-deploy").write_text("MARICOPA_RECORDS_DEPLOY_TARGET=staging\n")
 
 
-def test_v011_full_site_staging_migration_end_to_end(tmp_path):
+def test_v011_full_site_staging_migration_end_to_end(tmp_path, isolated_repo):
     site_out_root = tmp_path / "site-out"
     ensure_staging_marker(site_out_root)
 
-    migration = json_command("migrate-site", "--source", str(SOURCE), site_out_root=site_out_root)
-    validation = json_command("validate", site_out_root=site_out_root)
-    build = json_command("build", site_out_root=site_out_root)
-    stage = json_command("stage", "--target", "local-staging", "--build", build["build_id"], site_out_root=site_out_root)
-    verification = json_command("verify", "--target", "staging", site_out_root=site_out_root)
+    migration = json_command("migrate-site", "--source", str(SOURCE), repo=isolated_repo, site_out_root=site_out_root)
+    validation = json_command("validate", repo=isolated_repo, site_out_root=site_out_root)
+    build = json_command("build", repo=isolated_repo, site_out_root=site_out_root)
+    stage = json_command("stage", "--target", "local-staging", "--build", build["build_id"], repo=isolated_repo, site_out_root=site_out_root)
+    verification = json_command("verify", "--target", "staging", repo=isolated_repo, site_out_root=site_out_root)
 
     report = {
         "command": "v0.1.1-full-site-e2e",
@@ -84,7 +84,7 @@ def test_v011_full_site_staging_migration_end_to_end(tmp_path):
             "verification": verification["report_path"],
         },
     }
-    report_path = ROOT / "reports/migration/v011-full-site-e2e.json"
+    report_path = isolated_repo / "reports/migration/v011-full-site-e2e.json"
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
 
