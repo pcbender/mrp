@@ -3,6 +3,7 @@ import {
   getArtistById,
   getArtists,
   getVisibleReleases,
+  PLATFORM_ORDER,
   releaseCoverUrl,
   streamingLinks
 } from "./content.js";
@@ -123,6 +124,23 @@ export function releaseCardModel(release: ReleaseRecord): ReleaseCardModel {
 
 export function releaseSocialLinks(release: ReleaseRecord): { label: string; href: string }[] {
   return streamingLinks(release);
+}
+
+const CORE_TRACK_PLATFORMS = new Set(["spotify", "apple_music", "youtube_music"]);
+
+export function trackStreamingLinks(track: { links?: Record<string, string | null> }): { label: string; href: string | null }[] {
+  const present = streamingLinks(track);
+  const presentPlatforms = new Set(present.map((link) => link.label.replaceAll(" ", "_")));
+  const missingCore = PLATFORM_ORDER.filter((platform) => CORE_TRACK_PLATFORMS.has(platform) && !presentPlatforms.has(platform))
+    .map((platform) => ({ label: platform.replaceAll("_", " "), href: null }));
+  return [...present, ...missingCore].sort(
+    (left, right) => PLATFORM_ORDER.indexOf(left.label.replaceAll(" ", "_")) - PLATFORM_ORDER.indexOf(right.label.replaceAll(" ", "_"))
+  );
+}
+
+export function artistStreamingLinks(artist: ArtistRecord): { label: string; href: string }[] {
+  const platforms = new Set(PLATFORM_ORDER);
+  return streamingLinks(artist).filter((link) => platforms.has(link.label.replaceAll(" ", "_")));
 }
 
 function cleanSummary(value: string): string {

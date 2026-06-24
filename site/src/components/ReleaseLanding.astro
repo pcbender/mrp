@@ -1,8 +1,9 @@
 ---
 import Breadcrumbs from "./Breadcrumbs.astro";
+import Lyrics from "./Lyrics.astro";
 import StreamingLinks from "./StreamingLinks.astro";
 import { releaseCoverUrl } from "../lib/content.js";
-import { releaseSocialLinks } from "../lib/catalog";
+import { releaseSocialLinks, trackStreamingLinks } from "../lib/catalog";
 
 interface Props {
   release: any;
@@ -16,13 +17,6 @@ const copyBlocks = releaseCopyBlocks(release);
 const streamingLinks = releaseSocialLinks(release);
 const coverUrl = releaseCoverUrl(release);
 const hasCredits = Boolean(release.credits?.songwriter || release.credits?.producer || release.credits?.mastering);
-const trackServices = ["spotify", "apple_music", "youtube_music"];
-const serviceLabel = (service: string) => service.replaceAll("_", " ");
-const trackStreamingLinks = (track: any) =>
-  trackServices.map((service) => ({
-    label: serviceLabel(service),
-    href: track.links?.[service] || null,
-  }));
 
 function releaseCopyBlocks(release: any) {
   const source = String(release.description || release.summary || "").split(/\n## Tracks\b/i)[0];
@@ -78,11 +72,18 @@ function cleanMarkdownText(value: string) {
         {release.tracks.map((track: any) => (
           <li>
             <span>{track.number}</span>
-            <strong>{track.title}</strong>
+            <strong><a href={`/releases/${release.slug}/${track.slug}/`}>{track.title}</a></strong>
             <StreamingLinks links={trackStreamingLinks(track)} compact showMissing label={`${track.title} streaming links`} />
           </li>
         ))}
       </ol>
+    </section>
+  )}
+
+  {release.song && (release.song.lyrics_text || release.song.instrumental) && (
+    <section class="lyrics">
+      <h2>Lyrics</h2>
+      <Lyrics lyricsText={release.song.lyrics_text} instrumental={release.song.instrumental} />
     </section>
   )}
 

@@ -1,0 +1,47 @@
+---
+import Breadcrumbs from "./Breadcrumbs.astro";
+import Lyrics from "./Lyrics.astro";
+import StreamingLinks from "./StreamingLinks.astro";
+import { releaseCoverUrl } from "../lib/content.js";
+import { trackStreamingLinks } from "../lib/catalog";
+
+interface Props {
+  release: any;
+  track: any;
+  artist?: any;
+}
+
+const { release, track, artist } = Astro.props;
+const artistName = artist?.name || release.artist_id;
+const artistHref = `/artists/${release.artist_id}/`;
+const releaseHref = `/releases/${release.slug}/`;
+const streamingLinks = trackStreamingLinks(track);
+const coverUrl = releaseCoverUrl(release);
+---
+<article class="release-landing">
+  <header class="release-hero" style={`--release-hero-image: url("${coverUrl}")`}>
+    <h1>{track.title}</h1>
+    <Breadcrumbs items={[
+      { label: "Artists", href: "/artists/" },
+      { label: artistName, href: artistHref },
+      { label: release.title, href: releaseHref },
+      { label: track.title },
+    ]} />
+  </header>
+
+  <section class="release-feature">
+    <div class="release-copy">
+      <p class="eyebrow">From {release.title}</p>
+      <h2>{track.title}</h2>
+      <StreamingLinks links={streamingLinks} showMissing />
+    </div>
+    <img src={coverUrl} alt="" width="800" height="800" />
+  </section>
+
+  {(track.lyrics_text || track.instrumental) && (
+    <section class="lyrics">
+      <h2>Lyrics</h2>
+      <Lyrics lyricsText={track.lyrics_text} instrumental={track.instrumental} />
+    </section>
+  )}
+</article>
