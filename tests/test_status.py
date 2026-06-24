@@ -30,6 +30,7 @@ def run_mrp(*args: str, cwd: Path = ROOT, site_out_root: Path | None = None) -> 
 def status_repo(tmp_path: Path) -> Path:
     repo = tmp_path / "repo"
     shutil.copytree(ROOT / "content", repo / "content")
+    force_release_status(repo, "circuiting", "live")
     for name in ["validation", "build", "deployment", "verification", "approval", "rollback"]:
         (repo / "reports" / name).mkdir(parents=True, exist_ok=True)
     write_report(repo, "validation", "20260617T120000Z.json", {"command": "validate", "status": "passed", "release": "circuiting"})
@@ -69,6 +70,16 @@ def status_repo(tmp_path: Path) -> Path:
 
 def write_report(repo: Path, kind: str, name: str, data) -> None:
     path = repo / "reports" / kind / name
+    path.write_text(json.dumps(data, indent=2) + "\n")
+
+
+def force_release_status(repo: Path, slug: str, status: str) -> None:
+    # This fixture's deployment/approval reports simulate a fully published
+    # release; pin the copied release's status so the test doesn't depend on
+    # the real catalog's current lifecycle state for `slug`.
+    path = repo / "content" / "releases" / f"{slug}.json"
+    data = json.loads(path.read_text())
+    data["release"]["status"] = status
     path.write_text(json.dumps(data, indent=2) + "\n")
 
 

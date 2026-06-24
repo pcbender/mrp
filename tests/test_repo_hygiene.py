@@ -18,7 +18,6 @@ FORBIDDEN_TRACKED_PREFIXES = (
 )
 FORBIDDEN_GENERATED_DIRS = (
     "builds",
-    "graphify-out",
     "site/dist",
     "site/.astro",
 )
