@@ -31,14 +31,26 @@ def test_build_renders_wxr_clone_artist_release_and_blog_pages(tmp_path):
 
     pcbender = (build_path / "artists/pcbender/index.html").read_text()
     assert "mystique" in pcbender
-    assert "wp-block-stackable-column" in pcbender
-    assert "/assets/wp/wp-content/uploads/2025/02/PCBender.png" in pcbender
+    # pcbender is a promoted artist now, not a clone fallback: the native
+    # artist page renders curated bio_long, so raw WP block markup must not
+    # leak through (it did, pre-promotion, when this page was clone-rendered).
+    assert "wp-block-stackable-column" not in pcbender
+    # Likewise, the native page uses the artist record's own (migrated,
+    # deduplicated) image path rather than a raw wp-content passthrough URL.
+    assert "/assets/migrated/9738fd064754-PCBender.png" in pcbender
 
     circuiting = (build_path / "artists/pcbender/circuiting/index.html").read_text()
-    assert "data-clone-kind=\"release_page\"" in circuiting
+    # circuiting was promoted from a clone-only page to a real catalog
+    # release, so this legacy nested URL now resolves to the canonical
+    # structured release page (isStructuredReleaseRoute in [...slug].astro)
+    # instead of raw clone HTML.
+    assert 'class="release-landing"' in circuiting
     assert "Circuiting is not just an album" in circuiting
-    assert "/assets/wp/wp-content/uploads/2025/02/Circuiting.jpg" in circuiting
+    assert "/assets/migrated/a4753b0ddd52-Circuiting.jpg" in circuiting
 
     post = (build_path / "2025/02/26/the-future-of-ai-in-music/index.html").read_text()
-    assert "data-clone-kind=\"blog_post\"" in post
+    # Blog posts get a dedicated post-detail layout (added after this test was
+    # written) instead of the generic wp-clone-content wrapper, so they no
+    # longer carry a data-clone-kind attribute.
+    assert 'class="post-detail"' in post
     assert "The Future of AI in Music" in post
