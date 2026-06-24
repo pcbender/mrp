@@ -485,8 +485,15 @@ main {
   height: 48px;
   border: 0;
   border-radius: 0;
-  background: rgba(23, 23, 23, 0.48);
-  color: #ffffff;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.8rem;
+  transition: color 150ms ease;
+}
+
+.image-loop-media .icon-button:hover,
+.image-loop-media .icon-button:focus-visible {
+  color: var(--red);
 }
 
 .image-loop-media [data-loop-prev] {
