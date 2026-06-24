@@ -43,9 +43,6 @@ const { eyebrow, title, ariaLabel, items, variant = "split" } = Astro.props;
     </div>
     <div class="image-loop-controls">
       <button class="icon-button" type="button" data-loop-prev aria-label={`Previous ${title}`}>‹</button>
-      <div class="image-loop-dots" aria-hidden="true">
-        {items.map((_, index) => <span class={index === 0 ? "is-active" : ""} data-loop-dot></span>)}
-      </div>
       <button class="icon-button" type="button" data-loop-next aria-label={`Next ${title}`}>›</button>
     </div>
   </div>
@@ -57,7 +54,6 @@ const { eyebrow, title, ariaLabel, items, variant = "split" } = Astro.props;
   carousels.forEach((carousel) => {
     const track = carousel.querySelector<HTMLElement>(".image-loop-track");
     const slides = Array.from(carousel.querySelectorAll<HTMLElement>("[data-loop-slide]"));
-    const dots = Array.from(carousel.querySelectorAll<HTMLElement>("[data-loop-dot]"));
     const previous = carousel.querySelector<HTMLButtonElement>("[data-loop-prev]");
     const next = carousel.querySelector<HTMLButtonElement>("[data-loop-next]");
     if (!track || slides.length === 0 || !previous || !next) return;
@@ -71,7 +67,6 @@ const { eyebrow, title, ariaLabel, items, variant = "split" } = Astro.props;
       slides.forEach((slide, slideIndex) => {
         slide.setAttribute("aria-hidden", slideIndex === active ? "false" : "true");
       });
-      dots.forEach((dot, dotIndex) => dot.classList.toggle("is-active", dotIndex === active));
     }
 
     function start() {

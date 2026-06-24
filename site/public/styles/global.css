@@ -499,40 +499,6 @@ main {
   grid-row: 1;
 }
 
-.image-loop-dots {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  max-width: min(340px, 42vw);
-  overflow: hidden;
-}
-
-.image-loop-media .image-loop-dots {
-  grid-column: 2;
-  grid-row: 2;
-  justify-content: center;
-  max-width: min(620px, 80vw);
-  margin: 0 auto;
-}
-
-.image-loop-dots span {
-  width: 7px;
-  height: 7px;
-  flex: 0 0 auto;
-  border-radius: 999px;
-  background: var(--line);
-}
-
-.image-loop-media .image-loop-dots span {
-  width: 8px;
-  height: 8px;
-  background: rgba(23, 23, 23, 0.26);
-}
-
-.image-loop-dots span.is-active {
-  background: var(--red);
-}
-
 .artist-release-list {
   display: grid;
   gap: 18px;
