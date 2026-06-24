@@ -4,7 +4,7 @@ import ArtistReleaseList from "../../components/ArtistReleaseList.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import StreamingLinks from "../../components/StreamingLinks.astro";
 import { getArtistById, getArtists } from "../../lib/content.js";
-import { releasesForArtist } from "../../lib/catalog";
+import { artistStreamingLinks, releasesForArtist } from "../../lib/catalog";
 
 export function getStaticPaths() {
   return getArtists().map((artist) => ({ params: { slug: artist.id } }));
@@ -12,11 +12,7 @@ export function getStaticPaths() {
 
 const artist = getArtistById(Astro.params.slug);
 const releases = releasesForArtist(artist.id);
-const links = Object.entries(artist.links || {})
-  .filter(([label, href]) => !isLocalSourceWebsite(label, href))
-  .filter(([label]) => ["spotify", "apple_music", "youtube_music", "youtube"].includes(label))
-  .filter((entry): entry is [string, string] => Boolean(entry[1]))
-  .map(([label, href]) => ({ label: label === "youtube" ? "youtube music" : label.replaceAll("_", " "), href }));
+const links = artistStreamingLinks(artist);
 const bioBlocks = String(artist.bio_long || "")
   .split("## Releases")[0]
   .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
@@ -46,9 +42,6 @@ function cleanMarkdownText(value: string) {
     .trim();
 }
 
-function isLocalSourceWebsite(label: string, href: unknown) {
-  return label === "website" && /^https:\/\/(?:www\.)?maricoparecords\.com\/artists\//.test(String(href || ""));
-}
 ---
 <BaseLayout title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
   <header class="artist-hero" style={`--artist-hero-image: url("${artist.image || "/assets/maricopa-mark.svg"}")`}>

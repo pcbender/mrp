@@ -47,6 +47,16 @@ export function getReleaseBySlug(slug) {
   return getVisibleReleases().find((release) => release.slug === slug);
 }
 
+export function getTrackBySlug(release, trackSlug) {
+  return (release?.tracks || []).find((track) => track.slug === trackSlug);
+}
+
+export function getAllTrackRouteParams() {
+  return getVisibleReleases().flatMap((release) =>
+    (release.tracks || []).map((track) => ({ slug: release.slug, track: track.slug }))
+  );
+}
+
 export function latestRelease() {
   return [...getVisibleReleases()].sort((left, right) =>
     String(right.release_date || "").localeCompare(String(left.release_date || ""))
@@ -66,11 +76,29 @@ export function releaseCoverUrl(release) {
   return "/assets/maricopa-mark.svg";
 }
 
-export function streamingLinks(release) {
-  return Object.entries(release?.links || {})
+export const PLATFORM_ORDER = [
+  "spotify",
+  "apple_music",
+  "youtube_music",
+  "youtube",
+  "tidal",
+  "amazon_music",
+  "deezer",
+  "soundcloud",
+  "bandcamp"
+];
+
+export function streamingLinks(record) {
+  return Object.entries(record?.links || {})
     .filter(([key]) => key !== "landing_page")
     .filter(([, value]) => Boolean(value))
-    .map(([key, href]) => ({ label: key.replaceAll("_", " "), href }));
+    .map(([key, href]) => ({ label: key.replaceAll("_", " "), href }))
+    .sort((left, right) => platformRank(left.label) - platformRank(right.label));
+}
+
+function platformRank(label) {
+  const index = PLATFORM_ORDER.indexOf(label.replaceAll(" ", "_"));
+  return index === -1 ? PLATFORM_ORDER.length : index;
 }
 
 export function getMigratedPages() {

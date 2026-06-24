@@ -1014,6 +1014,46 @@ main {
   fill: #ff0000;
 }
 
+.streaming-icon.youtube svg rect {
+  fill: #ff0000;
+}
+
+.streaming-icon.youtube svg .inner {
+  fill: #ffffff;
+}
+
+.streaming-icon.tidal svg {
+  fill: var(--ink);
+}
+
+.streaming-icon.amazon_music {
+  background: #00a8e1;
+}
+
+.streaming-icon.amazon_music svg {
+  width: 56%;
+  height: 56%;
+  fill: #ffffff;
+}
+
+.streaming-icon.deezer svg {
+  fill: #a238ff;
+}
+
+.streaming-icon.soundcloud svg {
+  fill: #ff5500;
+}
+
+.streaming-icon.bandcamp {
+  background: #1da0c3;
+}
+
+.streaming-icon.bandcamp svg {
+  width: 56%;
+  height: 56%;
+  fill: #ffffff;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1032,6 +1072,25 @@ main {
   width: min(100% - clamp(40px, 8vw, 112px), 980px);
   margin: 0 auto;
   padding: clamp(20px, 4vw, 42px) 0 clamp(42px, 7vw, 84px);
+}
+
+.lyrics {
+  display: grid;
+  gap: 16px;
+  width: min(100% - clamp(40px, 8vw, 112px), 720px);
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 42px) 0 clamp(42px, 7vw, 84px);
+}
+
+.lyrics-text {
+  white-space: pre-line;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.lyrics-empty {
+  color: var(--muted);
+  font-style: italic;
 }
 
 .track-list ol {

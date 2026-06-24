@@ -1,0 +1,13 @@
+---
+interface Props {
+  lyricsText?: string | null;
+  instrumental?: boolean;
+}
+
+const { lyricsText, instrumental = false } = Astro.props;
+---
+{instrumental ? (
+  <p class="lyrics-empty">Instrumental — no lyrics.</p>
+) : lyricsText ? (
+  <div class="lyrics-text">{lyricsText}</div>
+) : null}

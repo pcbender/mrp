@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SongLanding from "../../../components/SongLanding.astro";
+import { getAllTrackRouteParams, getArtistById, getReleaseBySlug, getTrackBySlug } from "../../../lib/content.js";
+
+export function getStaticPaths() {
+  return getAllTrackRouteParams().map(({ slug, track }) => ({ params: { slug, track } }));
+}
+
+const release = getReleaseBySlug(Astro.params.slug);
+const track = getTrackBySlug(release, Astro.params.track);
+const artist = getArtistById(release.artist_id);
+---
+<BaseLayout
+  title={`${track.title} | ${release.title} | Maricopa Records`}
+  description={`${track.title}, from ${release.title} by ${artist?.name || release.artist_id} on Maricopa Records.`}
+>
+  <SongLanding release={release} track={track} artist={artist} />
+</BaseLayout>
