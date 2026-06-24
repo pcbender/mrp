@@ -1,6 +1,6 @@
 # TODO
 
-Status as of 2026-06-23. Streaming-link enrichment is the active thread;
+Status as of 2026-06-24. Streaming-link enrichment is the active thread;
 see `reports/enrichment/` for individual run reports.
 
 ## Done
@@ -33,6 +33,17 @@ see `reports/enrichment/` for individual run reports.
   sometime after merge, on multi-track releases only. Restored via
   fresh idempotent re-runs; not a code bug (verified via isolated
   full-scale repro twice).
+- **Promoted the 9 slug-collision Spotify candidates** (PR #16) that were
+  skipped during the original import (PR #3) because their auto-generated
+  slug collided with an unrelated existing release of the same title:
+  Here Comes the Rain (4Castle), Crimson Decision (Lingua Aeternum),
+  Crimson Decision (PCBender), What's Best (PCBender), Inner Outer Over
+  Through (PCBender), One Day (PCBender), Mad River (PCBender), Tits Up
+  (Remix) (PCBender), You Become The Night (STAB). Each confirmed by the
+  user as a distinct song (different UPC/ISRC), not a duplicate. Built
+  from the candidate data already in
+  `content/import-review/spotify-releases.yaml`, reusing cached cover art
+  from the original import run.
 
 ## Not started
 
@@ -54,14 +65,6 @@ see `reports/enrichment/` for individual run reports.
   will need one too once Odesli covers it.
 - **Export staging site for review**: `mrp build` + `mrp stage` (+
   `mrp verify`) once the above link work settles.
-
-## Open questions (untouched this engagement)
-
-- 296 vs 292 song-count discrepancy -- never confirmed where 296 comes
-  from (Landr/Amuse dashboard vs. something else).
-- 9 skipped Spotify release candidates with slug collisions, sitting in
-  `content/import-review/spotify-releases.yaml`, need manual
-  disambiguation before they can be promoted.
 
 ## Operational note
 
