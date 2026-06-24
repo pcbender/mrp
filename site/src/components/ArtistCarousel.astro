@@ -10,7 +10,7 @@ interface Props {
 const { artists, variant = "split" } = Astro.props;
 const items = artists.map((artist) => ({
   title: artist.name,
-  subtitle: artist.summary,
+  subtitle: variant === "media" ? undefined : artist.summary,
   href: artist.href,
   image: artist.image,
   kicker: "Artist",
