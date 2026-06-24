@@ -16,13 +16,21 @@ interface Props {
 }
 
 const { eyebrow, title, ariaLabel, items, variant = "split" } = Astro.props;
+const isMedia = variant === "media";
+const captionItems = items.map((item) => ({ title: item.title, subtitle: item.subtitle ?? null, href: item.href }));
+const firstCaption = captionItems[0];
 ---
 <section class:list={["section-grid", "image-loop-section", variant === "media" && "image-loop-section-media"]}>
   <div class="section-heading">
     <p class="eyebrow">{eyebrow}</p>
     <h2>{title}</h2>
   </div>
-  <div class:list={["image-loop", variant === "media" && "image-loop-media"]} data-loop-carousel aria-label={ariaLabel}>
+  <div
+    class:list={["image-loop", variant === "media" && "image-loop-media"]}
+    data-loop-carousel
+    aria-label={ariaLabel}
+    data-loop-items={isMedia ? JSON.stringify(captionItems) : undefined}
+  >
     <div class="image-loop-viewport">
       <div class="image-loop-track">
         {items.map((item, index) => (
@@ -33,9 +41,9 @@ const { eyebrow, title, ariaLabel, items, variant = "split" } = Astro.props;
               ) : (
                 <span class="image-loop-placeholder" aria-hidden="true">{item.title.slice(0, 1)}</span>
               )}
-              <span class="card-kicker">{item.kicker}</span>
-              <h3>{item.title}</h3>
-              {item.subtitle && <p>{item.subtitle}</p>}
+              {!isMedia && <span class="card-kicker">{item.kicker}</span>}
+              {!isMedia && <h3>{item.title}</h3>}
+              {!isMedia && item.subtitle && <p>{item.subtitle}</p>}
             </a>
           </article>
         ))}
@@ -43,12 +51,27 @@ const { eyebrow, title, ariaLabel, items, variant = "split" } = Astro.props;
     </div>
     <div class="image-loop-controls">
       <button class="icon-button" type="button" data-loop-prev aria-label={`Previous ${title}`}>‹</button>
+      {isMedia && firstCaption && (
+        <a class="image-loop-caption" href={firstCaption.href} data-loop-caption>
+          <span class="image-loop-caption-title" data-loop-caption-title>{firstCaption.title}</span>
+          <span
+            class:list={["image-loop-caption-subtitle", !firstCaption.subtitle && "is-hidden"]}
+            data-loop-caption-subtitle
+          >{firstCaption.subtitle ?? ""}</span>
+        </a>
+      )}
       <button class="icon-button" type="button" data-loop-next aria-label={`Next ${title}`}>›</button>
     </div>
   </div>
 </section>
 
 <script>
+  interface CaptionItem {
+    title: string;
+    subtitle: string | null;
+    href: string;
+  }
+
   const carousels = document.querySelectorAll<HTMLElement>("[data-loop-carousel]");
 
   carousels.forEach((carousel) => {
@@ -57,6 +80,12 @@ const { eyebrow, title, ariaLabel, items, variant = "split" } = Astro.props;
     const previous = carousel.querySelector<HTMLButtonElement>("[data-loop-prev]");
     const next = carousel.querySelector<HTMLButtonElement>("[data-loop-next]");
     if (!track || slides.length === 0 || !previous || !next) return;
+
+    const captionLink = carousel.querySelector<HTMLAnchorElement>("[data-loop-caption]");
+    const captionTitle = carousel.querySelector<HTMLElement>("[data-loop-caption-title]");
+    const captionSubtitle = carousel.querySelector<HTMLElement>("[data-loop-caption-subtitle]");
+    const rawCaptionItems = carousel.dataset.loopItems;
+    const captionItems: CaptionItem[] = rawCaptionItems ? JSON.parse(rawCaptionItems) : [];
 
     let active = 0;
     let timer: number | undefined;
@@ -67,6 +96,14 @@ const { eyebrow, title, ariaLabel, items, variant = "split" } = Astro.props;
       slides.forEach((slide, slideIndex) => {
         slide.setAttribute("aria-hidden", slideIndex === active ? "false" : "true");
       });
+
+      const captionItem = captionItems[active];
+      if (captionLink && captionTitle && captionSubtitle && captionItem) {
+        captionLink.href = captionItem.href;
+        captionTitle.textContent = captionItem.title;
+        captionSubtitle.textContent = captionItem.subtitle ?? "";
+        captionSubtitle.classList.toggle("is-hidden", !captionItem.subtitle);
+      }
     }
 
     function start() {

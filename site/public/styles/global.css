@@ -420,10 +420,6 @@ main {
   align-self: end;
 }
 
-.image-loop-media .image-loop-slide .card-kicker {
-  display: none;
-}
-
 .image-loop-slide h3 {
   margin: 0;
   font-size: clamp(2rem, 5vw, 4.2rem);
@@ -431,27 +427,10 @@ main {
   letter-spacing: 0;
 }
 
-.image-loop-media .image-loop-slide h3 {
-  position: absolute;
-  right: 24px;
-  bottom: 20%;
-  left: 24px;
-  z-index: 1;
-  color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
-  font-size: clamp(1.5rem, 3vw, 2.3rem);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 .image-loop-slide p {
   margin: 0;
   color: var(--muted);
   font-size: 1.08rem;
-}
-
-.image-loop-media .image-loop-slide p {
-  display: none;
 }
 
 .image-loop-controls {
@@ -504,6 +483,38 @@ main {
 .image-loop-media [data-loop-next] {
   grid-column: 3;
   grid-row: 1;
+}
+
+.image-loop-caption {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.image-loop-media .image-loop-caption {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: min(620px, 80vw);
+  margin: 0 auto;
+}
+
+.image-loop-caption-title {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.image-loop-caption-subtitle {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.image-loop-caption-subtitle.is-hidden {
+  display: none;
 }
 
 .artist-release-list {
@@ -1537,13 +1548,6 @@ main {
     display: block;
   }
 
-  .image-loop-media .image-loop-slide h3 {
-    right: 14px;
-    bottom: 16%;
-    left: 14px;
-    font-size: clamp(1.15rem, 6vw, 1.6rem);
-  }
-
   .image-loop-media .icon-button {
     width: 40px;
     height: 40px;
@@ -1553,11 +1557,6 @@ main {
   .image-loop-slide h3,
   .image-loop-slide p {
     grid-column: 1;
-  }
-
-  .image-loop-media .image-loop-slide .card-kicker,
-  .image-loop-media .image-loop-slide p {
-    display: none;
   }
 
   .image-loop-controls {
