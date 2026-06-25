@@ -23,6 +23,7 @@ PLATFORM_MAP = {
     "deezer": "deezer",
     "amazonMusic": "amazon_music",
     "soundcloud": "soundcloud",
+    "pandora": "pandora",
 }
 
 
@@ -47,6 +48,8 @@ def enrich_links(
     errors: list[str] = []
     consecutive_rate_limited = 0
     aborted_for_rate_limit = False
+    total_tracks_checked = 0
+    total_tracks_patched = 0
 
     for index, path in enumerate(paths):
         data = load_structured_record(path)
@@ -62,6 +65,8 @@ def enrich_links(
         if index > 0:
             time.sleep(delay_seconds)
 
+        # Release-level enrichment
+        release_added: dict[str, str] = {}
         try:
             payload = odesli.get_links(spotify_url)
         except OdesliRateLimitedError:
@@ -79,7 +84,6 @@ def enrich_links(
 
         links_by_platform = payload.get("linksByPlatform") or {}
         target_links = release.setdefault("links", {})
-        added: dict[str, str] = {}
         for odesli_key, our_key in PLATFORM_MAP.items():
             if target_links.get(our_key):
                 continue
@@ -87,13 +91,54 @@ def enrich_links(
             url = entry.get("url") if isinstance(entry, dict) else None
             if url:
                 target_links[our_key] = url
-                added[our_key] = url
+                release_added[our_key] = url
 
-        if not added:
+        # Per-track enrichment
+        tracks_patched: list[dict[str, Any]] = []
+        for track in release.get("tracks") or []:
+            track_spotify = (track.get("links") or {}).get("spotify")
+            if not track_spotify:
+                continue
+            total_tracks_checked += 1
+            time.sleep(delay_seconds)
+            try:
+                track_payload = odesli.get_links(track_spotify)
+            except OdesliRateLimitedError:
+                rate_limited.append(f"{path.relative_to(root)}#track{track.get('number')}")
+                consecutive_rate_limited += 1
+                if consecutive_rate_limited >= CONSECUTIVE_RATE_LIMIT_ABORT_THRESHOLD:
+                    aborted_for_rate_limit = True
+                    break
+                continue
+            except Exception as exc:  # noqa: BLE001
+                errors.append(f"{path.relative_to(root)}#track{track.get('number')}: {exc}")
+                consecutive_rate_limited = 0
+                continue
+            consecutive_rate_limited = 0
+
+            track_links_by_platform = track_payload.get("linksByPlatform") or {}
+            track_links = track.setdefault("links", {})
+            track_added: dict[str, str] = {}
+            for odesli_key, our_key in PLATFORM_MAP.items():
+                if track_links.get(our_key):
+                    continue
+                entry = track_links_by_platform.get(odesli_key)
+                url = entry.get("url") if isinstance(entry, dict) else None
+                if url:
+                    track_links[our_key] = url
+                    track_added[our_key] = url
+            if track_added:
+                tracks_patched.append({"number": track.get("number"), "title": track.get("title"), "added": track_added})
+
+        if aborted_for_rate_limit:
+            break
+
+        if not release_added and not tracks_patched:
             skipped_no_new_links += 1
             continue
 
-        patched.append({"path": str(path.relative_to(root)), "added": added})
+        total_tracks_patched += len(tracks_patched)
+        patched.append({"path": str(path.relative_to(root)), "added": release_added, "tracks_patched": tracks_patched})
         if not dry_run:
             path.write_text(serialize_structured_record(path, data))
 
@@ -113,6 +158,8 @@ def enrich_links(
             "releases_patched": len(patched),
             "skipped_no_spotify_link": skipped_no_spotify,
             "skipped_no_new_links": skipped_no_new_links,
+            "tracks_checked": total_tracks_checked,
+            "tracks_patched": total_tracks_patched,
             "rate_limited": len(rate_limited),
             "errors": len(errors),
         },
@@ -141,6 +188,7 @@ def format_enrich_links(report: dict[str, Any]) -> str:
         f" -- delay: {report.get('delay_seconds')}s",
         f"Releases scanned: {summary['releases_scanned']} (checked: {summary['releases_checked']})",
         f"Releases patched: {summary['releases_patched']}",
+        f"Tracks checked: {summary['tracks_checked']} / patched: {summary['tracks_patched']}",
         f"Skipped (no spotify link): {summary['skipped_no_spotify_link']}",
         f"Skipped (no new links found): {summary['skipped_no_new_links']}",
         f"Rate-limited (uncertain, not real misses): {summary['rate_limited']}",

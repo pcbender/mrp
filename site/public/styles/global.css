@@ -2,7 +2,7 @@
   color-scheme: light;
   --ink: #171717;
   --muted: #5f625f;
-  --paper: #fbfaf6;
+  --paper: #ffffff;
   --panel: #ffffff;
   --line: #dedbd2;
   --gold: #d4ad35;
@@ -41,7 +41,7 @@ main {
 
 .site-header {
   border-bottom: 1px solid var(--line);
-  background: rgba(251, 250, 246, 0.95);
+  background: #ffffff;
   position: sticky;
   top: 0;
   z-index: 10;
