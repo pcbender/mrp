@@ -10,3 +10,19 @@ targets:
     environment: production
     path: prod
     require_marker: true
+
+  remote-staging:
+    type: rsync
+    environment: staging
+    host: ${STAGING_SSH_USERNAME}
+    path: ${STAGING_DEPLOY_PATH}
+    ssh_key: ${STAGING_SSH_KEY}
+    require_marker: true
+
+  remote-production:
+    type: rsync
+    environment: production
+    host: ${PROD_USERNAME}
+    path: ${PROD_DEPLOY_PATH}
+    ssh_key: ${PROD_SSH_KEY}
+    require_marker: true
