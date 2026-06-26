@@ -44,7 +44,7 @@ function cleanMarkdownText(value: string) {
     <span class="card-kicker">{type}</span>
     <h3>{title}</h3>
     {rich && <span class="release-card-artist">{artist}</span>}
-    {rich && cleanSummary ? <p>{cleanSummary}</p> : <p>{artist}</p>}
+    {rich ? (cleanSummary && <p>{cleanSummary}</p>) : <p>{artist}</p>}
     {rich && <span class="release-more">More...</span>}
   </a>
 </article>
