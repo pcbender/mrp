@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const siteKey = import.meta.env.TURNSTILE_SITE_KEY;
 ---
 <BaseLayout paneled={true} title="Contact | Maricopa Records" description="Contact Maricopa Records.">
   <section class="page-heading centered-page">
@@ -65,7 +64,7 @@ const siteKey = import.meta.env.TURNSTILE_SITE_KEY;
       <textarea name="message" rows="6" required></textarea>
     </label>
 
-    <div class="cf-turnstile" data-sitekey={siteKey}></div>
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAADrlj8JnJJ2ei5B7"></div>
 
     <button class="button primary" type="submit">Send</button>
   </form>
