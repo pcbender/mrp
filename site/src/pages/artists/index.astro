@@ -48,3 +48,82 @@ const artists = artistCards();
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .artists-intro-panel {
+    width: min(100% - clamp(40px, 8vw, 112px), 1180px);
+    min-height: 460px;
+    display: grid;
+    align-items: center;
+    margin: clamp(34px, 5vw, 70px) auto 0;
+    padding: clamp(42px, 6vw, 72px);
+    color: #ffffff;
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.62)),
+      url("/assets/migrated/d14a68295208-smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png"),
+      #111111;
+    background-position: center 24%;
+    background-size: cover;
+  }
+
+  .artists-intro-panel > div {
+    width: min(100%, 860px);
+  }
+
+  .artists-intro-panel h1,
+  .artists-intro-panel h2,
+  .artists-intro-panel p {
+    margin: 0;
+  }
+
+  .artists-intro-panel h1,
+  .artists-intro-panel h2 {
+    color: var(--red);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .artists-intro-panel h1 {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+  }
+
+  .artists-intro-panel h2 {
+    margin-top: 22px;
+    font-size: clamp(1.55rem, 2.8vw, 2.25rem);
+  }
+
+  .artists-intro-panel p {
+    margin-top: 18px;
+    max-width: 830px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .artists-intro-panel a {
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .artists-roster {
+    width: min(100% - clamp(40px, 8vw, 112px), 1180px);
+    margin: 0 auto;
+    background: var(--panel);
+  }
+
+  .artist-roster-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: start;
+  }
+
+  @media (max-width: 760px) {
+    .artists-intro-panel,
+    .artists-roster {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .artists-intro-panel {
+      min-height: 0;
+      padding: 34px 20px;
+    }
+  }
+</style>

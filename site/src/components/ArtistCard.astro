@@ -19,3 +19,96 @@ const { name, href, summary = "Maricopa Records artist", meta = "", image, rich 
     {rich && <span class="release-more">More...</span>}
   </a>
 </article>
+
+<style>
+  .artist-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .artist-card:hover {
+    box-shadow: 0 8px 24px rgba(23, 23, 23, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .artist-card a {
+    display: grid;
+    gap: 10px;
+    min-height: 190px;
+    padding: 18px;
+    text-decoration: none;
+  }
+
+  .artist-card-rich {
+    background: #d4d4d0;
+  }
+
+  .artist-card-rich a {
+    grid-template-rows: auto auto auto 1fr auto;
+    min-height: 430px;
+    gap: 12px;
+  }
+
+  .artist-mark,
+  .artist-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: var(--gold);
+  }
+
+  .artist-card-rich .artist-image,
+  .artist-card-rich .artist-mark {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 2px;
+  }
+
+  .artist-mark {
+    display: grid;
+    place-items: center;
+    background: var(--green);
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  .artist-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .artist-card p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .artist-card-meta {
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+
+  .artist-card-rich p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    font-size: 0.92rem;
+  }
+
+  .release-more {
+    justify-self: end;
+    color: #455fd6;
+    font-size: 0.86rem;
+    font-style: italic;
+  }
+
+  @media (max-width: 760px) {
+    .artist-card-rich a {
+      min-height: 0;
+    }
+  }
+</style>

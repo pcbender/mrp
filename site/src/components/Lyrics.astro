@@ -12,3 +12,26 @@ const stanzas = lyricsText ? lyricsText.split(/\n{2,}/).map(s => s.trim()).filte
 ) : stanzas.length > 0 ? (
   stanzas.map((stanza) => <p class="lyrics-stanza">{stanza}</p>)
 ) : null}
+
+<style>
+  .lyrics-stanza {
+    white-space: pre-line;
+    color: var(--ink);
+    line-height: 2;
+    font-size: 1.05rem;
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .lyrics-stanza + .lyrics-stanza {
+    margin-top: 1.5em;
+  }
+
+  .lyrics-empty {
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+    padding: 32px 0;
+  }
+</style>

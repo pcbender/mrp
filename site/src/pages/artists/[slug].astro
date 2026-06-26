@@ -65,3 +65,104 @@ function cleanMarkdownText(value: string) {
   </section>
   <ArtistReleaseList artistName={artist.name} releases={releases} />
 </BaseLayout>
+
+<style>
+  .artist-hero,
+  .content-hero {
+    min-height: 150px;
+    display: grid;
+    place-items: center;
+    padding: clamp(24px, 4vw, 44px) clamp(20px, 4vw, 56px);
+    color: #ffffff;
+    text-align: center;
+    background:
+      linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.58)),
+      var(--artist-hero-image, var(--content-hero-image)),
+      var(--green);
+    background-position: center 38%;
+    background-size: cover;
+  }
+
+  .artist-hero h1,
+  .content-hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 4.2rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .artist-hero :global(.breadcrumbs),
+  .content-hero :global(.breadcrumbs) {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .artist-hero :global(.breadcrumbs li + li::before),
+  .content-hero :global(.breadcrumbs li + li::before) {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .artist-profile-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+    gap: clamp(26px, 4vw, 52px);
+    align-items: center;
+    width: min(100% - clamp(40px, 8vw, 112px), 980px);
+    margin: clamp(24px, 4vw, 48px) auto;
+    padding: clamp(22px, 4vw, 36px);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    box-shadow: 0 10px 28px rgba(23, 23, 23, 0.08);
+  }
+
+  .artist-profile-card > div {
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .artist-profile-card h1,
+  .artist-profile-card h2,
+  .artist-profile-card h3,
+  .artist-profile-card p {
+    margin: 0;
+  }
+
+  .artist-profile-card h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .artist-profile-card h2,
+  .artist-profile-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  .artist-profile-card p {
+    color: var(--muted);
+  }
+
+  .artist-profile-card > img {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    object-fit: cover;
+    background: var(--panel);
+  }
+
+  @media (max-width: 760px) {
+    .artist-profile-card {
+      grid-template-columns: 1fr;
+    }
+
+    .artist-profile-card > div {
+      justify-items: start;
+      text-align: left;
+    }
+  }
+</style>
