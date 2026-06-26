@@ -5,6 +5,18 @@ import { catalogReleases, releaseCardModel } from "../../lib/catalog";
 
 const releases = catalogReleases().map(releaseCardModel);
 ---
+<style>
+  .page-heading .eyebrow {
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
+  .page-heading p:not(.eyebrow) {
+    margin: 12px 0 0;
+    text-align: left;
+  }
+</style>
 <BaseLayout paneled={true} title="Releases | Maricopa Records" description="Singles, EPs, and albums from Maricopa Records.">
   <section class="page-heading centered-page">
     <p class="eyebrow">Releases</p>
