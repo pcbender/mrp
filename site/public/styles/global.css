@@ -8,6 +8,7 @@
   --gold: #d4ad35;
   --red: #b84735;
   --green: #506f5a;
+  --transition: 150ms ease;
 }
 
 * {
@@ -30,8 +31,7 @@ main {
   min-height: 70vh;
 }
 
-.site-header,
-.site-footer {
+.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,8 +57,7 @@ main {
 }
 
 .brand,
-.site-header nav,
-.site-footer div {
+.site-header nav {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -74,11 +73,37 @@ main {
   justify-content: flex-end;
 }
 
-.site-header nav a,
-.site-footer a {
+.site-header nav a {
   color: var(--muted);
   font-size: 0.95rem;
   text-decoration: none;
+  transition: color var(--transition);
+}
+
+.site-header nav a:hover {
+  color: var(--ink);
+}
+
+.site-header nav a.active {
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom: 2px solid var(--red);
+  padding-bottom: 2px;
+}
+
+.site-header nav a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.main-panel {
+  width: min(100% - clamp(20px, 4vw, 56px), 1280px);
+  margin: clamp(20px, 3vw, 36px) auto clamp(48px, 6vw, 72px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: clip;
+  box-shadow: 0 8px 24px rgba(23, 23, 23, 0.06);
 }
 
 .hero {
@@ -130,11 +155,22 @@ main {
   padding: 10px 16px;
   text-decoration: none;
   font-weight: 700;
+  transition: opacity var(--transition), background var(--transition);
+}
+
+.button:hover {
+  opacity: 0.8;
 }
 
 .button.primary {
   background: var(--ink);
   color: var(--paper);
+}
+
+.button.primary:hover {
+  opacity: 1;
+  background: var(--muted);
+  border-color: var(--muted);
 }
 
 .hero-art {
@@ -1066,15 +1102,25 @@ main {
   padding: clamp(20px, 4vw, 42px) 0 clamp(42px, 7vw, 84px);
 }
 
-.lyrics-text {
+.lyrics-stanza {
   white-space: pre-line;
-  color: var(--muted);
-  line-height: 1.7;
+  color: var(--ink);
+  line-height: 2;
+  font-size: 1.05rem;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.lyrics-stanza + .lyrics-stanza {
+  margin-top: 1.5em;
 }
 
 .lyrics-empty {
   color: var(--muted);
   font-style: italic;
+  text-align: center;
+  padding: 32px 0;
 }
 
 .track-list ol {
@@ -1090,12 +1136,30 @@ main {
   grid-template-columns: 4ch minmax(0, 1fr) minmax(130px, auto);
   gap: 20px;
   align-items: center;
-  padding: 14px 0;
+  padding: 14px 8px;
   border-bottom: 1px solid var(--line);
+  border-radius: 4px;
+  transition: background var(--transition);
+}
+
+.track-list li:hover {
+  background: rgba(212, 173, 53, 0.06);
+}
+
+.track-list li a {
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.track-list li a:hover {
+  color: var(--red);
 }
 
 .track-list span {
   color: var(--muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 .empty-state {
@@ -1107,6 +1171,13 @@ main {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.release-card:hover,
+.artist-card:hover {
+  box-shadow: 0 8px 24px rgba(23, 23, 23, 0.1);
+  transform: translateY(-2px);
 }
 
 .release-card a,
@@ -1304,6 +1375,11 @@ main {
 .post-card h2 a,
 .post-card-more {
   text-decoration: none;
+  transition: color var(--transition);
+}
+
+.post-card h2 a:hover {
+  color: var(--red);
 }
 
 .post-card-copy > p:not(.post-card-meta) {
@@ -1313,9 +1389,13 @@ main {
 
 .post-card-more {
   justify-self: start;
-  color: #455fd6;
+  color: var(--red);
   font-size: 0.86rem;
-  font-style: italic;
+  font-weight: 700;
+}
+
+.post-card-more:hover {
+  color: var(--ink);
 }
 
 .post-hero {
@@ -1433,15 +1513,115 @@ main {
 
 .site-footer {
   border-top: 1px solid var(--line);
+  padding: 48px clamp(20px, 4vw, 56px) 24px;
 }
 
-.site-footer span {
+.site-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  width: min(100%, 1180px);
+  margin: 0 auto 40px;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.footer-brand strong {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.footer-brand > span {
   color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.footer-social a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+.footer-social a:hover {
+  color: var(--ink);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 48px;
+}
+
+.footer-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-nav-group h3 {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.footer-nav-group a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-nav-group a:hover {
+  color: var(--ink);
+}
+
+.site-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(100%, 1180px);
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.site-footer-bottom a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.site-footer-bottom a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 1000px) {
+  .post-card-grid,
+  .related-post-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 760px) {
   .site-header,
-  .site-footer,
   .section-grid,
   .hero,
   .artist-profile-heading,
@@ -1453,10 +1633,24 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .site-header-inner,
-  .site-footer {
+  .site-header-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .site-footer-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-nav {
+    gap: 32px;
+  }
+
+  .site-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .centered-page {

@@ -43,7 +43,7 @@ function cleanMarkdownText(value: string) {
 }
 
 ---
-<BaseLayout title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
+<BaseLayout paneled={true} title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
   <header class="artist-hero" style={`--artist-hero-image: url("${artist.image || "/assets/maricopa-mark.svg"}")`}>
     <h1>{artist.name}</h1>
     <Breadcrumbs items={[

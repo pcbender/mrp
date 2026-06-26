@@ -5,9 +5,10 @@ interface Props {
 }
 
 const { lyricsText, instrumental = false } = Astro.props;
+const stanzas = lyricsText ? lyricsText.split(/\n{2,}/).map(s => s.trim()).filter(Boolean) : [];
 ---
 {instrumental ? (
   <p class="lyrics-empty">Instrumental — no lyrics.</p>
-) : lyricsText ? (
-  <div class="lyrics-text">{lyricsText}</div>
+) : stanzas.length > 0 ? (
+  stanzas.map((stanza) => <p class="lyrics-stanza">{stanza}</p>)
 ) : null}

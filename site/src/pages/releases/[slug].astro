@@ -10,6 +10,6 @@ export function getStaticPaths() {
 const release = getReleaseBySlug(Astro.params.slug);
 const artist = getArtistById(release.artist_id);
 ---
-<BaseLayout title={release.seo.title} description={release.seo.description}>
+<BaseLayout paneled={true} title={release.seo.title} description={release.seo.description}>
   <ReleaseLanding release={release} artist={artist} />
 </BaseLayout>

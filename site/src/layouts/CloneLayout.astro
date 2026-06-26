@@ -38,7 +38,7 @@ const staticUrl = (value) => (value ? renderCloneHtml(value) : value);
   <body class="wp-clone-body">
     <Header />
     <main class="wp-clone-main">
-      <slot />
+      <div class="main-panel"><slot /></div>
     </main>
     <Footer />
   </body>

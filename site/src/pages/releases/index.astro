@@ -5,7 +5,7 @@ import { catalogReleases, releaseCardModel } from "../../lib/catalog";
 
 const releases = catalogReleases().map(releaseCardModel);
 ---
-<BaseLayout title="Releases | Maricopa Records" description="Singles, EPs, and albums from Maricopa Records.">
+<BaseLayout paneled={true} title="Releases | Maricopa Records" description="Singles, EPs, and albums from Maricopa Records.">
   <section class="page-heading centered-page">
     <p class="eyebrow">Releases</p>
     <h1>Singles, EPs, and albums</h1>

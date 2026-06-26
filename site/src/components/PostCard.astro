@@ -16,7 +16,7 @@ const excerpt = postExcerpt(post);
     <img src={image} alt="" loading="lazy" />
   </a>
   <div class="post-card-copy">
-    <p class="post-card-meta">Michael <span aria-hidden="true">/</span> {date} <span aria-hidden="true">/</span> AI / Music</p>
+    <p class="post-card-meta">{post.author ?? 'Maricopa Records'} &middot; {date}</p>
     <h2><a href={href}>{post.title}</a></h2>
     <p>{excerpt}</p>
     <a class="post-card-more" href={href}>Read more</a>
