@@ -91,6 +91,7 @@
       "properties": {
         "primary_artist": {"type": ["string", "null"]},
         "songwriter": {"type": ["string", "null"]},
+        "lyrics": {"type": ["string", "null"]},
         "producer": {"type": ["string", "null"]},
         "mastering": {"type": ["string", "null"]}
       }

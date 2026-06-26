@@ -86,10 +86,10 @@ function cleanMarkdownText(value: string) {
       <Lyrics lyricsText={release.song.lyrics_text} instrumental={release.song.instrumental} />
       {release.song.lyrics_text && (
         <footer class="lyrics-footer">
-          <p>Written by {release.credits?.songwriter || artistName}</p>
+          <p>Written by {release.credits?.lyrics || artistName}</p>
           <p>Lyrics © {release.release_date?.slice(0, 4)} Maricopa Publishing. All rights reserved.</p>
           <p>Published by Maricopa Publishing. Displayed by permission.</p>
-          <p>For licensing: <a href="/licensing-custom-songs/">maricoparecords.com/licensing</a></p>
+          <p>For licensing: <a href="/licensing-custom-songs/music-licensing">maricoparecords.com/licensing</a></p>
         </footer>
       )}
     </section>
