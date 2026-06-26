@@ -48,3 +48,82 @@ function cleanMarkdownText(value: string) {
     {rich && <span class="release-more">More...</span>}
   </a>
 </article>
+
+<style>
+  .release-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .release-card:hover {
+    box-shadow: 0 8px 24px rgba(23, 23, 23, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .release-card a {
+    display: grid;
+    gap: 10px;
+    min-height: 190px;
+    padding: 18px;
+    text-decoration: none;
+  }
+
+  .cover-swatch,
+  .cover-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: var(--gold);
+  }
+
+  .release-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .release-card p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .release-card-rich {
+    background: #d4d4d0;
+  }
+
+  .release-card-rich a {
+    grid-template-rows: auto auto auto 1fr auto;
+    min-height: 370px;
+    gap: 12px;
+  }
+
+  .release-card-rich .cover-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 2px;
+  }
+
+  .release-card-artist {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .release-card-rich p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    font-size: 0.92rem;
+  }
+
+  .release-more {
+    justify-self: end;
+    color: #455fd6;
+    font-size: 0.86rem;
+    font-style: italic;
+  }
+</style>

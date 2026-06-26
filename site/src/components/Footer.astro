@@ -35,3 +35,124 @@
     <a href="mailto:contact@maricoparecords.com">contact@maricoparecords.com</a>
   </div>
 </footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: 48px clamp(20px, 4vw, 56px) 24px;
+  }
+
+  .site-footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+    width: min(100%, 1180px);
+    margin: 0 auto 40px;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .footer-brand strong {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--ink);
+  }
+
+  .footer-brand > span {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+  }
+
+  .footer-social a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color var(--transition);
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-social a:hover {
+    color: var(--ink);
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 48px;
+  }
+
+  .footer-nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-nav-group h3 {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 6px;
+  }
+
+  .footer-nav-group a {
+    color: var(--muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .footer-nav-group a:hover {
+    color: var(--ink);
+  }
+
+  .site-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .site-footer-bottom a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .site-footer-bottom a:hover {
+    color: var(--ink);
+  }
+
+  @media (max-width: 760px) {
+    .site-footer-inner {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .footer-nav {
+      gap: 32px;
+    }
+
+    .site-footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+</style>

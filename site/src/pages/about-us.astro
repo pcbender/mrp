@@ -69,3 +69,147 @@ const heroImage = "/assets/wp/wp-content/uploads/2025/02/Two-Tree-Road-611x350.j
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .about-page-hero {
+    display: grid;
+    place-items: center;
+    width: min(100% - clamp(40px, 8vw, 112px), 1180px);
+    min-height: 160px;
+    margin: 0 auto;
+    padding: clamp(24px, 4vw, 44px) clamp(20px, 4vw, 56px);
+    color: #ffffff;
+    text-align: center;
+    background:
+      linear-gradient(90deg, rgba(17, 17, 17, 0.62), rgba(17, 17, 17, 0.28), rgba(17, 17, 17, 0.62)),
+      var(--about-hero-image),
+      var(--green);
+    background-position: center 42%;
+    background-size: cover;
+  }
+
+  .about-page-hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .about-page-hero :global(.breadcrumbs) {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .about-page-hero :global(.breadcrumbs li + li::before) {
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .about-content-panel {
+    display: grid;
+    gap: clamp(38px, 5vw, 72px);
+    width: min(100% - clamp(40px, 8vw, 112px), 1180px);
+    margin: clamp(48px, 6vw, 72px) auto;
+    padding: clamp(24px, 4vw, 44px);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--panel);
+    box-shadow: 0 8px 24px rgba(23, 23, 23, 0.06);
+  }
+
+  .about-content-panel > h2 {
+    margin: 0;
+    color: var(--green);
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+
+  .about-lead-grid,
+  .about-join-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: start;
+  }
+
+  .about-lead-grid img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .about-lead-grid p,
+  .about-join-grid p,
+  .about-join-grid li {
+    color: var(--muted);
+    font-size: 1.03rem;
+  }
+
+  .about-lead-grid p,
+  .about-join-grid p {
+    margin: 0 0 22px;
+  }
+
+  .about-join-grid ul {
+    display: grid;
+    gap: 10px;
+    margin: 0 0 22px;
+    padding-left: 1.2rem;
+  }
+
+  .about-join-grid a {
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .about-join-grid aside {
+    align-self: center;
+    display: grid;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .about-join-grid aside h2 {
+    margin: 0;
+    color: var(--red);
+    font-size: clamp(3.4rem, 7vw, 5.2rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: 0;
+  }
+
+  .about-join-grid blockquote {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.35rem;
+  }
+
+  .about-join-grid blockquote p {
+    margin: 0 0 8px;
+    font-size: inherit;
+  }
+
+  @media (max-width: 760px) {
+    .about-page-hero,
+    .about-content-panel {
+      width: 100%;
+    }
+
+    .about-content-panel {
+      margin: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .about-lead-grid,
+    .about-join-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-join-grid aside {
+      text-align: left;
+    }
+  }
+</style>
