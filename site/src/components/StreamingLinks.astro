@@ -74,7 +74,8 @@ const ICONS: Record<string, string> = {
     text-decoration: none;
   }
 
-  .streaming-icon svg {
+  /* SVGs are injected via set:html so they don't get the cid attribute — :global() required */
+  .streaming-icon :global(svg) {
     width: 100%;
     height: 100%;
   }
@@ -86,28 +87,28 @@ const ICONS: Record<string, string> = {
     outline-offset: 3px;
   }
 
-  .streaming-icon.spotify svg          { fill: #1db954; }
+  .streaming-icon.spotify :global(svg)          { fill: #1db954; }
 
-  .streaming-icon.apple_music          { background: #fa243c; }
-  .streaming-icon.apple_music svg      { width: 58%; height: 58%; fill: #ffffff; }
+  .streaming-icon.apple_music                   { background: #fa243c; }
+  .streaming-icon.apple_music :global(svg)      { width: 58%; height: 58%; fill: #ffffff; }
 
-  .streaming-icon.youtube_music svg circle:first-child { fill: #ff0000; }
-  .streaming-icon.youtube_music svg .inner             { fill: #ffffff; }
-  .streaming-icon.youtube_music svg path               { fill: #ff0000; }
+  .streaming-icon.youtube_music :global(svg circle:first-child) { fill: #ff0000; }
+  .streaming-icon.youtube_music :global(svg .inner)             { fill: #ffffff; }
+  .streaming-icon.youtube_music :global(svg path)               { fill: #ff0000; }
 
-  .streaming-icon.youtube svg rect     { fill: #ff0000; }
-  .streaming-icon.youtube svg .inner   { fill: #ffffff; }
+  .streaming-icon.youtube :global(svg rect)     { fill: #ff0000; }
+  .streaming-icon.youtube :global(svg .inner)   { fill: #ffffff; }
 
-  .streaming-icon.tidal svg            { fill: var(--ink); }
+  .streaming-icon.tidal :global(svg)            { fill: var(--ink); }
 
-  .streaming-icon.amazon_music         { background: #00a8e1; }
-  .streaming-icon.amazon_music svg     { width: 56%; height: 56%; fill: #ffffff; }
+  .streaming-icon.amazon_music                  { background: #00a8e1; }
+  .streaming-icon.amazon_music :global(svg)     { width: 56%; height: 56%; fill: #ffffff; }
 
-  .streaming-icon.deezer svg           { fill: #a238ff; }
-  .streaming-icon.soundcloud svg       { fill: #ff5500; }
+  .streaming-icon.deezer :global(svg)           { fill: #a238ff; }
+  .streaming-icon.soundcloud :global(svg)       { fill: #ff5500; }
 
-  .streaming-icon.bandcamp             { background: #1da0c3; }
-  .streaming-icon.bandcamp svg         { width: 56%; height: 56%; fill: #ffffff; }
+  .streaming-icon.bandcamp                      { background: #1da0c3; }
+  .streaming-icon.bandcamp :global(svg)         { width: 56%; height: 56%; fill: #ffffff; }
 
   @media (max-width: 760px) {
     .streaming-icon-links {
