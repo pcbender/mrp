@@ -1,25 +1,108 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const siteKey = import.meta.env.TURNSTILE_SITE_KEY;
 ---
 <BaseLayout paneled={true} title="Contact | Maricopa Records" description="Contact Maricopa Records.">
   <section class="page-heading centered-page">
     <p class="eyebrow">Contact</p>
     <h1>Contact Maricopa Records</h1>
-    <p>Use the form below for release, licensing, artist, and general Maricopa Records inquiries.</p>
+    <p>Use the form below for licensing, custom song, publishing, sync, press, and general inquiries.</p>
   </section>
+
   <form class="contact-form centered-page" method="post" action="/contact-submit.php">
+
+    <!-- honeypot: bots fill this, humans don't see it -->
+    <div class="hp-field" aria-hidden="true">
+      <label for="hp-website">Website</label>
+      <input type="text" id="hp-website" name="website" tabindex="-1" autocomplete="off" />
+    </div>
+
     <label>
       Name
       <input name="name" autocomplete="name" required />
     </label>
+
     <label>
       Email
       <input name="email" type="email" autocomplete="email" required />
     </label>
+
+    <label>
+      Company / Organization
+      <input name="company" autocomplete="organization" />
+    </label>
+
+    <label>
+      Request type
+      <select name="request_type" required>
+        <option value="" disabled selected>Select a request type…</option>
+        <option value="licensing">Licensing inquiry</option>
+        <option value="custom_song">Custom song / commission</option>
+        <option value="publishing">Publishing inquiry</option>
+        <option value="sync">Sync / film / TV / game</option>
+        <option value="press">Press / media</option>
+        <option value="technical">Technical issue</option>
+        <option value="other">Other</option>
+      </select>
+    </label>
+
+    <label>
+      Project / song / licensing interest
+      <input name="interest" />
+    </label>
+
+    <label>
+      Budget range <span class="field-optional">(optional)</span>
+      <input name="budget" />
+    </label>
+
+    <label>
+      Deadline <span class="field-optional">(optional)</span>
+      <input name="deadline" type="text" autocomplete="off" placeholder="e.g. Aug 1, 2026" />
+    </label>
+
     <label>
       Message
       <textarea name="message" rows="6" required></textarea>
     </label>
+
+    <div class="cf-turnstile" data-sitekey={siteKey}></div>
+
     <button class="button primary" type="submit">Send</button>
   </form>
+
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </BaseLayout>
+
+<style>
+  .hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .field-optional {
+    font-weight: 400;
+    font-size: 0.85em;
+    color: var(--muted);
+  }
+
+  .contact-form select {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px;
+    font: inherit;
+    background: var(--paper);
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .cf-turnstile {
+    margin-top: 4px;
+  }
+</style>
