@@ -64,6 +64,34 @@ const licensingBreadcrumbs = normalizedPath === "/licensing-custom-songs/"
     ];
 const licensingHeroImage = "/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png";
 ---
+<style>
+  .content-hero {
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 3vw, 32px) clamp(20px, 4vw, 56px);
+    color: #ffffff;
+    text-align: center;
+    background:
+      linear-gradient(rgba(17, 17, 17, 0.52), rgba(17, 17, 17, 0.56)),
+      var(--content-hero-image),
+      var(--green);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .licensing-hero {
+    min-height: 140px;
+  }
+
+  .content-hero :global(.breadcrumbs) {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .content-hero :global(.breadcrumbs li + li::before) {
+    color: rgba(255, 255, 255, 0.45);
+  }
+</style>
+
 {isStructuredReleaseRoute ? (
   <BaseLayout paneled={true} title={routedRelease.seo.title} description={routedRelease.seo.description}>
     <ReleaseLanding release={routedRelease} artist={routedArtist} />
@@ -94,7 +122,6 @@ const licensingHeroImage = "/assets/migrated/52a0570c6494-people-looking-at-a-co
   <CloneLayout title={`${title} | Maricopa Records`} description={description} path={path}>
     {isLicensingPage && (
       <header class="content-hero licensing-hero" style={`--content-hero-image: url("${licensingHeroImage}")`}>
-        <h1>{entry.title}</h1>
         <Breadcrumbs items={licensingBreadcrumbs} />
       </header>
     )}
@@ -107,7 +134,6 @@ const licensingHeroImage = "/assets/migrated/52a0570c6494-people-looking-at-a-co
     <article class="migrated-content">
       {isLicensingPage ? (
         <header class="content-hero licensing-hero" style={`--content-hero-image: url("${licensingHeroImage}")`}>
-          <h1>{entry.title}</h1>
           <Breadcrumbs items={licensingBreadcrumbs} />
         </header>
       ) : (
