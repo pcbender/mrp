@@ -187,10 +187,10 @@ function uniqueValues(values: string[]) {
   }
 
   .release-browser-controls {
-    display: grid;
-    grid-template-columns: minmax(160px, 1.6fr) repeat(5, minmax(78px, 0.65fr));
+    display: flex;
+    flex-wrap: nowrap;
     gap: 10px;
-    align-items: end;
+    align-items: flex-end;
     padding: 16px;
     border: 1px solid var(--line);
     border-radius: 8px;
@@ -200,13 +200,15 @@ function uniqueValues(values: string[]) {
   .release-browser-controls label {
     display: grid;
     gap: 6px;
+    flex: 0.65 0 78px;
+    min-width: 0;
     color: var(--muted);
     font-size: 0.82rem;
     font-weight: 800;
   }
 
   .release-browser-search {
-    grid-column: auto;
+    flex: 1.6 0 160px;
   }
 
   .release-browser-controls input,
@@ -255,11 +257,12 @@ function uniqueValues(values: string[]) {
 
   @media (max-width: 760px) {
     .release-browser-controls {
-      grid-template-columns: 1fr;
+      flex-wrap: wrap;
     }
 
+    .release-browser-controls label,
     .release-browser-search {
-      grid-column: 1;
+      flex: 1 0 100%;
     }
 
     .release-browser-summary {
