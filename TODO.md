@@ -33,6 +33,10 @@ see `reports/enrichment/` for individual run reports.
   sometime after merge, on multi-track releases only. Restored via
   fresh idempotent re-runs; not a code bug (verified via isolated
   full-scale repro twice).
+- **YouTube channel links**: added `links.youtube` for `stab`
+  (`https://www.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw`); `michael-rose`
+  confirmed not a YouTube artist (skipped). Re-ran `enrich-youtube` -- 28
+  releases and 82 tracks patched across STAB and PCBender catalogs.
 - **Promoted the 9 slug-collision Spotify candidates** (PR #16) that were
   skipped during the original import (PR #3) because their auto-generated
   slug collided with an unrelated existing release of the same title:
@@ -56,9 +60,6 @@ see `reports/enrichment/` for individual run reports.
   it will produce per-track Tidal/Pandora/Amazon Music icons.
 - **Re-run Odesli** with the above two fixes -- independent of the
   Spotify window, can happen anytime.
-- **YouTube channel links missing** for `michael-rose` and `stab`
-  (`content/artists/*.yaml` `links.youtube`) -- their catalogs haven't
-  been touched by `enrich-youtube` yet. Re-run once set.
 - **Site icons**: `StreamingLinks.astro` only has custom SVG icons for
   spotify/apple_music/youtube_music. tidal/deezer/amazon_music/youtube/
   bandcamp/soundcloud render as functional but icon-less links; pandora

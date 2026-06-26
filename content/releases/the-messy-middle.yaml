@@ -40,6 +40,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/i-think-im-losing-my-place/1873052569?i=1873052573
       spotify: https://open.spotify.com/track/4jyvFeVoi8bOTKbDNDLpiQ
+      youtube: https://www.youtube.com/watch?v=dsYv9wAv3RQ
+      youtube_music: https://music.youtube.com/watch?v=dsYv9wAv3RQ
     instrumental: false
     lyrics_text: '(mhm)
 
@@ -125,6 +127,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/not-sure-this-is-me/1873052569?i=1873052574
       spotify: https://open.spotify.com/track/4wZNCnaJWPdgGQOLDbxdcd
+      youtube: https://www.youtube.com/watch?v=j3uVnsnuyPk
+      youtube_music: https://music.youtube.com/watch?v=j3uVnsnuyPk
     instrumental: false
     lyrics_text: 'I wake up and the room is bright before the sun
 
@@ -262,6 +266,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/dont-even-need-to-try/1873052569?i=1873052581
       spotify: https://open.spotify.com/track/7LKjBB0F150QXpUVFBkDZ4
+      youtube: https://www.youtube.com/watch?v=2EOT-SCfN3I
+      youtube_music: https://music.youtube.com/watch?v=2EOT-SCfN3I
     instrumental: false
     lyrics_text: '(One, two, three... smile)
 
@@ -352,6 +358,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/stay-with-one-thing/1873052569?i=1873052586
       spotify: https://open.spotify.com/track/2SPbsHHKIKKF9fo7ekYHi9
+      youtube: https://www.youtube.com/watch?v=AlWj0F94yvo
+      youtube_music: https://music.youtube.com/watch?v=AlWj0F94yvo
     instrumental: false
     lyrics_text: "I'm in the kitchen, but I'm not really here\nI'm reading something,\
       \ but I'm not really clear\nI'm talking back, but I missed what you said\nMy\
@@ -388,6 +396,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/here-to-be-watched/1873052569?i=1873052587
       spotify: https://open.spotify.com/track/0FoYUuHqlkNWlStdgkgx81
+      youtube: https://www.youtube.com/watch?v=-_ntSr2fFVw
+      youtube_music: https://music.youtube.com/watch?v=-_ntSr2fFVw
     instrumental: false
     lyrics_text: 'Smile
 
@@ -532,6 +542,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/moving-too-fast/1873052569?i=1873052591
       spotify: https://open.spotify.com/track/6UMgKX0Lfe129j0riVAlkD
+      youtube: https://www.youtube.com/watch?v=PiN2jS8F750
+      youtube_music: https://music.youtube.com/watch?v=PiN2jS8F750
     instrumental: false
     lyrics_text: '(Up, up, down, down, scroll)
 
@@ -628,6 +640,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/harder-than-i-thought/1873052569?i=1873052593
       spotify: https://open.spotify.com/track/0i5M1cL3EGD90qvtU4VWcn
+      youtube: https://www.youtube.com/watch?v=_T4_e35B6z0
+      youtube_music: https://music.youtube.com/watch?v=_T4_e35B6z0
     instrumental: false
     lyrics_text: "No music\nNo screen\nJust\u2026 (mm)\nEverything\n\nI turned it\
       \ off like it was going to feel good\nLike closing a door would fix my mood\n\
@@ -665,6 +679,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/thats-the-point/1873052569?i=1873052836
       spotify: https://open.spotify.com/track/29XpIGIfliYCF6I6n05ZRu
+      youtube: https://www.youtube.com/watch?v=wMI6H7hjnys
+      youtube_music: https://music.youtube.com/watch?v=wMI6H7hjnys
     instrumental: false
     lyrics_text: "I don't need a big announcement\nI don't need a new personality\n\
       I just need one small decision\nThat belongs to me\nSo I put the phone in a\
@@ -702,6 +718,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/my-hands-dont-know/1873052569?i=1873052837
       spotify: https://open.spotify.com/track/3kUNo2oN6L5pWsmtyiXk7q
+      youtube: https://www.youtube.com/watch?v=Fj_WfXaJ3MI
+      youtube_music: https://music.youtube.com/watch?v=Fj_WfXaJ3MI
     instrumental: false
     lyrics_text: '(My hands...)
 
@@ -790,6 +808,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/what-to-do-with-me/1873052569?i=1873052839
       spotify: https://open.spotify.com/track/6vFxbLVFaYdSJfVRGX7ptL
+      youtube: https://www.youtube.com/watch?v=ITkW4BU6VPI
+      youtube_music: https://music.youtube.com/watch?v=ITkW4BU6VPI
     instrumental: false
     lyrics_text: 'No distractions
 
@@ -916,6 +936,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/not-picking-up/1873052569?i=1873052840
       spotify: https://open.spotify.com/track/3JEYUUaxSYhkbmpfMm8oLQ
+      youtube: https://www.youtube.com/watch?v=7fTCX8DNaog
+      youtube_music: https://music.youtube.com/watch?v=7fTCX8DNaog
     instrumental: false
     lyrics_text: '(One. Two. One. Two.)
 
@@ -1004,6 +1026,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/maybe-i-should/1873052569?i=1873052842
       spotify: https://open.spotify.com/track/6o1BbcOIy2ndonqtVFoDEs
+      youtube: https://www.youtube.com/watch?v=F064GAmVDpo
+      youtube_music: https://music.youtube.com/watch?v=F064GAmVDpo
     instrumental: false
     lyrics_text: '(hey...)
 
@@ -1094,6 +1118,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/doing-my-best/1873052569?i=1873052843
       spotify: https://open.spotify.com/track/6ICf8bipu4LaNeCBH5Rsss
+      youtube: https://www.youtube.com/watch?v=TEwF46z5_kc
+      youtube_music: https://music.youtube.com/watch?v=TEwF46z5_kc
     instrumental: false
     lyrics_text: 'I messed up today
 
@@ -1228,6 +1254,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/here-right-now/1873052569?i=1873052848
       spotify: https://open.spotify.com/track/5V18Lu2FXl6QETRfvlvS9B
+      youtube: https://www.youtube.com/watch?v=LjgJiQJA81w
+      youtube_music: https://music.youtube.com/watch?v=LjgJiQJA81w
     instrumental: false
     lyrics_text: 'I don''t need a cabin in the woods
 
@@ -1362,6 +1390,8 @@ release:
     links:
       apple_music: https://music.apple.com/us/album/bring-it-with-me/1873052569?i=1873052851
       spotify: https://open.spotify.com/track/44BKy2EyRHZJVEocpgbmXS
+      youtube: https://www.youtube.com/watch?v=eefnIRISTJ8
+      youtube_music: https://music.youtube.com/watch?v=eefnIRISTJ8
     instrumental: false
     lyrics_text: 'Same world
 

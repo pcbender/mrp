@@ -74,6 +74,7 @@ release:
       spotify: https://open.spotify.com/track/5OzR501NoPbQrUtMVUCUFY?si=5540b7a4981542b1
       apple_music: https://music.apple.com/us/album/cyclamen/1798943883?i=1798943884
       youtube_music: https://music.youtube.com/watch?v=-NS70JZa5O8&si=DAtxNxVErseqKumy
+      youtube: https://www.youtube.com/watch?v=-NS70JZa5O8
   - number: 2
     title: Tumbleweed
     slug: tumbleweed
@@ -88,6 +89,7 @@ release:
       spotify: https://open.spotify.com/track/6rhWrksNcgSgZA0WvMjsN9?si=46d0383b9f994272
       apple_music: https://music.apple.com/us/album/tumbleweed/1798943883?i=1798943885
       youtube_music: https://music.youtube.com/watch?v=mc7saVI4IUU&si=2e9a77qayWMFO2Dr
+      youtube: https://www.youtube.com/watch?v=mc7saVI4IUU
   - number: 3
     title: Rufous
     slug: rufous
@@ -102,6 +104,7 @@ release:
       spotify: https://open.spotify.com/track/4bkU5BDJfQBYhwZiJqV8wQ?si=34ac600f924247fb
       apple_music: https://music.apple.com/us/album/rufous/1798943883?i=1798943886
       youtube_music: https://music.youtube.com/watch?v=IXa0HwU9_Cc&si=Fgn6X3v8h33AACZF
+      youtube: https://www.youtube.com/watch?v=IXa0HwU9_Cc
   - number: 4
     title: Olivine
     slug: olivine
@@ -116,6 +119,7 @@ release:
       spotify: https://open.spotify.com/track/2BCLooDE48SWNGdCZNpn21?si=c278a12dd90e4a7c
       apple_music: https://music.apple.com/us/album/olivine/1798943883?i=1798943887
       youtube_music: https://music.youtube.com/watch?v=4wuFDjxW6b8&si=_huKOze2tGxKbb5E
+      youtube: https://www.youtube.com/watch?v=4wuFDjxW6b8
   - number: 5
     title: Verdigris
     slug: verdigris
@@ -130,6 +134,7 @@ release:
       spotify: https://open.spotify.com/track/4QgL35WZFFOJK4Wt24vJlO?si=99ee14d3ea2148c3
       apple_music: https://music.apple.com/us/album/verdigris/1798943883?i=1798943888
       youtube_music: https://music.youtube.com/watch?v=FK_syE2lJTs&si=1yQ3xIqcw6XDacrj
+      youtube: https://www.youtube.com/watch?v=FK_syE2lJTs
   - number: 6
     title: Wenge
     slug: wenge
@@ -144,6 +149,7 @@ release:
       spotify: https://open.spotify.com/track/3LaPOndFo8dcZpenHVDQYt?si=3332d1c000294647
       apple_music: https://music.apple.com/us/album/wenge/1798943883?i=1798943889
       youtube_music: https://music.youtube.com/watch?v=EGFx7gLSk_s&si=cagoxZtkhYaE5-7D
+      youtube: https://www.youtube.com/watch?v=EGFx7gLSk_s
   - number: 7
     title: Pistachio
     slug: pistachio
@@ -158,6 +164,7 @@ release:
       spotify: https://open.spotify.com/track/6ihGW4PRpv8MAAZQVRQQ7k?si=6129c3e005e6473c
       apple_music: https://music.apple.com/us/album/pistachio/1798943883?i=1798943890
       youtube_music: https://music.youtube.com/watch?v=N20Uz12rSGw&si=FhrmS0y-Tkl24IOI
+      youtube: https://www.youtube.com/watch?v=N20Uz12rSGw
   - number: 8
     title: Sunray
     slug: sunray
@@ -172,6 +179,7 @@ release:
       spotify: https://open.spotify.com/track/0KQaqrKDzvAHdCwtOstQbf?si=37ca9e695a144269
       apple_music: https://music.apple.com/us/album/sunray/1798943883?i=1798943891
       youtube_music: https://music.youtube.com/watch?v=llu-rvpdS_s&si=YQ9XEKfLoUAA2cwe
+      youtube: https://www.youtube.com/watch?v=llu-rvpdS_s
   - number: 9
     title: Zaffre
     slug: zaffre
@@ -186,6 +194,7 @@ release:
       spotify: https://open.spotify.com/track/4WYSmhcVi7QNPF6Ms72waj?si=8d81a10797b54430
       apple_music: https://music.apple.com/us/album/zaffre/1798943883?i=1798943892
       youtube_music: https://music.youtube.com/watch?v=gdDnq85zPas&si=8kzZ6ZixhtZ_86Ou
+      youtube: https://www.youtube.com/watch?v=gdDnq85zPas
   - number: 10
     title: Nyanza
     slug: nyanza
@@ -200,6 +209,7 @@ release:
       spotify: https://open.spotify.com/track/6T0HkCzN1k30WLJfJtYtAa?si=720466b9ddc64ab6
       apple_music: https://music.apple.com/us/album/nyanza/1798943883?i=1798943893
       youtube_music: https://music.youtube.com/watch?v=71nBNgOMm8s&si=UhvAQATsTGPJpuxL
+      youtube: https://www.youtube.com/watch?v=71nBNgOMm8s
   - number: 11
     title: Limerick
     slug: limerick
@@ -214,6 +224,7 @@ release:
       spotify: https://open.spotify.com/track/00uSXlzvcKjyLDVBH9wEjv?si=fc106f4c06144212
       apple_music: https://music.apple.com/us/album/limerick/1798943883?i=1798943894
       youtube_music: https://music.youtube.com/watch?v=zgl_nEN7b_Y&si=t3XRMp01ZWblDrdq
+      youtube: https://www.youtube.com/watch?v=zgl_nEN7b_Y
   - number: 12
     title: Thulian
     slug: thulian
@@ -228,6 +239,7 @@ release:
       spotify: https://open.spotify.com/track/6dSLiXgFc3s3eqUF8SW5W5?si=0cdaf36d2cb54189
       apple_music: https://music.apple.com/us/album/thulian/1798943883?i=1798943895
       youtube_music: https://music.youtube.com/watch?v=ghEqDSEdhzQ&si=_1QoAoC29Mxm-cDG
+      youtube: https://www.youtube.com/watch?v=ghEqDSEdhzQ
   - number: 13
     title: Jonquil
     slug: jonquil
@@ -242,6 +254,7 @@ release:
       spotify: https://open.spotify.com/track/4jPApd6M7O5MS8Ywe33igh?si=469fd0c20bb8487d
       apple_music: https://music.apple.com/us/album/jonquil/1798943883?i=1798943896
       youtube_music: https://music.youtube.com/watch?v=pAmFNGPRI9g&si=UxDhUGt2bKZEM8G4
+      youtube: https://www.youtube.com/watch?v=pAmFNGPRI9g
   - number: 14
     title: Aureolin
     slug: aureolin
@@ -256,6 +269,7 @@ release:
       spotify: https://open.spotify.com/track/7F18VnsY1ny6o5Ed4nuMvT?si=c5637c9c255642a8
       apple_music: https://music.apple.com/us/album/aureolin/1798943883?i=1798943897
       youtube_music: https://music.youtube.com/watch?v=A64413XKenA&si=0bCunYRmDVCF2IZE
+      youtube: https://www.youtube.com/watch?v=A64413XKenA
   - number: 15
     title: Moonstone
     slug: moonstone
@@ -270,3 +284,4 @@ release:
       spotify: https://open.spotify.com/track/14XdezU0R53HegyP6bdh96?si=f653a70d53af4fc2
       apple_music: https://music.apple.com/us/album/moonstone/1798943883?i=1798943898
       youtube_music: https://music.youtube.com/watch?v=S_833lAnCaM&si=tCxtVG4uVT8OaQ_L
+      youtube: https://www.youtube.com/watch?v=S_833lAnCaM
