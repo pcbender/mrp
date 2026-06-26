@@ -10,10 +10,7 @@ interface Props {
 const { artistName, releases } = Astro.props;
 ---
 <section class="artist-release-list page-grid centered-page">
-  <div class="section-heading">
-    <p class="eyebrow">Releases</p>
-    <h2>{artistName} catalog</h2>
-  </div>
+  <p class="eyebrow artist-releases-eyebrow">Releases</p>
   {releases.length > 0 ? (
     <ReleaseBrowser releases={releases} rich />
   ) : (
@@ -25,5 +22,11 @@ const { artistName, releases } = Astro.props;
   .artist-release-list {
     display: grid;
     gap: 18px;
+  }
+
+  .artist-releases-eyebrow {
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    text-align: center;
   }
 </style>
