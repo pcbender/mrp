@@ -36,9 +36,10 @@ release:
   links:
     spotify: https://open.spotify.com/album/470JRdtsu3uzdfv741DLxg?si=tpJ6nFZLTvODOEKoNYOcZQ
     apple_music: https://music.apple.com/us/album/you-still-have-my-heart-single/1797996492
-    youtube_music: null
+    youtube_music: https://music.youtube.com/watch?v=ceX7bUYTvcw
     bandcamp: null
     soundcloud: null
+    youtube: https://www.youtube.com/watch?v=ceX7bUYTvcw
   seo:
     title: You Still Have My Heart by STAB
     description: You Still Have My Heart by STAB on Maricopa Records.
