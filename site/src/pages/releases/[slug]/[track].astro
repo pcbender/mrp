@@ -11,7 +11,7 @@ const release = getReleaseBySlug(Astro.params.slug);
 const track = getTrackBySlug(release, Astro.params.track);
 const artist = getArtistById(release.artist_id);
 ---
-<BaseLayout
+<BaseLayout paneled={true}
   title={`${track.title} | ${release.title} | Maricopa Records`}
   description={`${track.title}, from ${release.title} by ${artist?.name || release.artist_id} on Maricopa Records.`}
 >

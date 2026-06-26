@@ -65,11 +65,11 @@ const licensingBreadcrumbs = normalizedPath === "/licensing-custom-songs/"
 const licensingHeroImage = "/assets/migrated/52a0570c6494-people-looking-at-a-computer-screen-adding-music-to-a.png";
 ---
 {isStructuredReleaseRoute ? (
-  <BaseLayout title={routedRelease.seo.title} description={routedRelease.seo.description}>
+  <BaseLayout paneled={true} title={routedRelease.seo.title} description={routedRelease.seo.description}>
     <ReleaseLanding release={routedRelease} artist={routedArtist} />
   </BaseLayout>
 ) : isBlogPost ? (
-  <BaseLayout title={`${title} | Maricopa Records`} description={description}>
+  <BaseLayout paneled={true} title={`${title} | Maricopa Records`} description={description}>
     <article class="post-detail">
       <header class="content-hero post-hero" style={`--content-hero-image: url("${postImage(entry)}")`}>
         <p class="post-hero-meta">Posted by Michael on {postDate(entry)} <span aria-hidden="true">/</span> AI / Music</p>
@@ -103,7 +103,7 @@ const licensingHeroImage = "/assets/migrated/52a0570c6494-people-looking-at-a-co
     </article>
   </CloneLayout>
 ) : (
-  <BaseLayout title={`${title} | Maricopa Records`} description={description}>
+  <BaseLayout paneled={true} title={`${title} | Maricopa Records`} description={description}>
     <article class="migrated-content">
       {isLicensingPage ? (
         <header class="content-hero licensing-hero" style={`--content-hero-image: url("${licensingHeroImage}")`}>

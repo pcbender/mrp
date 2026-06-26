@@ -7,6 +7,8 @@ const nav = [
   { href: "/about-us/", label: "About" },
   { href: "/contact/", label: "Contact" }
 ];
+const { pathname } = Astro.url;
+const isActive = (href: string) => pathname === href || pathname.startsWith(href);
 ---
 <header class="site-header">
   <div class="site-header-inner">
@@ -14,7 +16,9 @@ const nav = [
       <img src="/assets/maricopa-logo-header.png" alt="Maricopa Records" width="363" height="132" />
     </a>
     <nav aria-label="Primary navigation">
-      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      {nav.map((item) => (
+        <a href={item.href} class={isActive(item.href) ? 'active' : undefined}>{item.label}</a>
+      ))}
     </nav>
   </div>
 </header>
