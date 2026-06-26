@@ -44,14 +44,16 @@ $type_label = label_for_type($request_type);
 $subject    = '[MRP Contact] ' . $type_label . ' — ' . $name;
 $body       = build_body($name, $email, $company, $type_label, $interest, $budget, $deadline, $message);
 
+$from    = 'noreply@maricoparecords.com';
 $headers = implode("\r\n", [
-    'From: noreply@' . CONTACT_FROM_DOMAIN,
+    'From: ' . $from,
     'Reply-To: ' . $name . ' <' . $email . '>',
     'Content-Type: text/plain; charset=UTF-8',
     'X-Mailer: PHP/' . PHP_VERSION,
 ]);
 
-if (mail(CONTACT_RECIPIENT, $subject, $body, $headers)) {
+// -f sets the envelope sender (Return-Path); required on DreamHost or mail is silently dropped
+if (mail(CONTACT_RECIPIENT, $subject, $body, $headers, '-f ' . $from)) {
     render_success();
 } else {
     render_error('The message could not be sent due to a server error. Please try again later or email us directly.');
