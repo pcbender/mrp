@@ -2,16 +2,28 @@
 interface Props {
   title: string;
   description: string;
+  ogType?: string;
+  ogImage?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, ogType = "website", ogImage } = Astro.props;
+const canonical = Astro.url.href;
+const absoluteImage = ogImage ? new URL(ogImage, Astro.site).href : undefined;
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
 <meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content={ogType} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:type" content="website" />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content="Maricopa Records" />
+{absoluteImage && <meta property="og:image" content={absoluteImage} />}
+<meta name="twitter:card" content={absoluteImage ? "summary_large_image" : "summary"} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{absoluteImage && <meta name="twitter:image" content={absoluteImage} />}
 <link rel="icon" href="/assets/maricopa-mark.svg" />
 <link rel="stylesheet" href="/styles/global.css" />

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SongLanding from "../../../components/SongLanding.astro";
-import { getAllTrackRouteParams, getArtistById, getReleaseBySlug, getTrackBySlug } from "../../../lib/content.js";
+import { getAllTrackRouteParams, getArtistById, getReleaseBySlug, getTrackBySlug, releaseCoverUrl } from "../../../lib/content.js";
 
 export function getStaticPaths() {
   return getAllTrackRouteParams().map(({ slug, track }) => ({ params: { slug, track } }));
@@ -14,6 +14,8 @@ const artist = getArtistById(release.artist_id);
 <BaseLayout paneled={true}
   title={`${track.title} | ${release.title} | Maricopa Records`}
   description={`${track.title}, from ${release.title} by ${artist?.name || release.artist_id} on Maricopa Records.`}
+  ogType="music.song"
+  ogImage={releaseCoverUrl(release)}
 >
   <SongLanding release={release} track={track} artist={artist} />
 </BaseLayout>

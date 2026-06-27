@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ReleaseLanding from "../../components/ReleaseLanding.astro";
-import { getArtistById, getReleaseBySlug, getVisibleReleases } from "../../lib/content.js";
+import { getArtistById, getReleaseBySlug, getVisibleReleases, releaseCoverUrl } from "../../lib/content.js";
 
 export function getStaticPaths() {
   return getVisibleReleases().map((release) => ({ params: { slug: release.slug } }));
@@ -10,6 +10,6 @@ export function getStaticPaths() {
 const release = getReleaseBySlug(Astro.params.slug);
 const artist = getArtistById(release.artist_id);
 ---
-<BaseLayout paneled={true} title={release.seo.title} description={release.seo.description}>
+<BaseLayout paneled={true} title={release.seo.title} description={release.seo.description} ogType="music.album" ogImage={releaseCoverUrl(release)}>
   <ReleaseLanding release={release} artist={artist} />
 </BaseLayout>
