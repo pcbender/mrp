@@ -7,14 +7,16 @@ interface Props {
   title: string;
   description: string;
   paneled?: boolean;
+  ogType?: string;
+  ogImage?: string;
 }
 
-const { title, description, paneled = false } = Astro.props;
+const { title, description, paneled = false, ogType, ogImage } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
   <head>
-    <SEOHead title={title} description={description} />
+    <SEOHead title={title} description={description} ogType={ogType} ogImage={ogImage} />
   </head>
   <body>
     <Header />

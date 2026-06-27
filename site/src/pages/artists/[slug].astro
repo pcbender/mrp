@@ -43,7 +43,7 @@ function cleanMarkdownText(value: string) {
 }
 
 ---
-<BaseLayout paneled={true} title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`}>
+<BaseLayout paneled={true} title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`} ogType="profile" ogImage={artist.image}>
   <header class="artist-hero" style={`--artist-hero-image: url("${artist.image || "/assets/maricopa-mark.svg"}")`}>
     <h1>{artist.name}</h1>
     <Breadcrumbs items={[
@@ -61,7 +61,7 @@ function cleanMarkdownText(value: string) {
       )}
       <StreamingLinks links={links} />
     </div>
-    <img src={artist.image || "/assets/maricopa-mark.svg"} alt="" width="320" height="320" />
+    <img src={artist.image || "/assets/maricopa-mark.svg"} alt={artist.name} width="320" height="320" />
   </section>
   <ArtistReleaseList artistName={artist.name} releases={releases} />
 </BaseLayout>
