@@ -17,6 +17,7 @@ const { title, description, paneled = false, ogType, ogImage } = Astro.props;
 <html lang="en">
   <head>
     <SEOHead title={title} description={description} ogType={ogType} ogImage={ogImage} />
+    <slot name="head" />
   </head>
   <body>
     <Header />

@@ -9,7 +9,37 @@ export function getStaticPaths() {
 
 const release = getReleaseBySlug(Astro.params.slug);
 const artist = getArtistById(release.artist_id);
+const artistName = artist?.name || release.artist_id;
+const coverUrl = releaseCoverUrl(release);
+
+const allTracks = [
+  ...(release.tracks || []),
+  ...(release.song ? [release.song] : [])
+];
+
+const releaseJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "MusicAlbum",
+  "name": release.title,
+  "url": `https://www.maricoparecords.com/releases/${release.slug}/`,
+  "image": `https://www.maricoparecords.com${coverUrl}`,
+  ...(release.release_date ? { "datePublished": release.release_date } : {}),
+  "byArtist": {
+    "@type": "MusicGroup",
+    "name": artistName,
+    "url": `https://www.maricoparecords.com/artists/${release.artist_id}/`
+  },
+  ...(allTracks.length ? {
+    "track": allTracks.map((t: any) => ({
+      "@type": "MusicRecording",
+      "name": t.title,
+      "url": `https://www.maricoparecords.com/releases/${release.slug}/${t.slug}/`,
+      ...(t.isrc ? { "isrcCode": t.isrc } : {})
+    }))
+  } : {})
+});
 ---
 <BaseLayout paneled={true} title={release.seo.title} description={release.seo.description} ogType="music.album" ogImage={releaseCoverUrl(release)}>
+  <script type="application/ld+json" slot="head" set:html={releaseJsonLd} />
   <ReleaseLanding release={release} artist={artist} />
 </BaseLayout>
