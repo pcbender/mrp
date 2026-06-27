@@ -6,6 +6,18 @@ import { artistCards, latestReleases } from "../lib/catalog";
 
 const artists = artistCards();
 const releases = latestReleases();
+
+const orgJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Maricopa Records",
+  "url": "https://www.maricoparecords.com",
+  "logo": "https://www.maricoparecords.com/assets/MR-LOGO.png",
+  "sameAs": [
+    "https://open.spotify.com/user/maricoparecords",
+    "https://music.apple.com/us/artist/maricopa-records/1793178641"
+  ]
+});
 ---
 <style>
   .home-intro .eyebrow {
@@ -19,6 +31,7 @@ const releases = latestReleases();
   }
 </style>
 <BaseLayout title="Maricopa Records" description="Independent releases from Maricopa Records.">
+  <script type="application/ld+json" slot="head" set:html={orgJsonLd} />
   <section class="page-heading centered-page home-intro">
     <p class="eyebrow">Maricopa Records</p>
     <p>Maricopa Records is a music production and distribution company built at the intersection of AI technology and analog creativity. We create and release music, lyrics, images, and video through a hybrid process that combines emerging tools with human judgment, traditional musicianship, and a deep respect for emotional truth. Our work is genre-fluid, forward-looking, and grounded in the belief that technology should expand creativity, not replace it.</p>

@@ -13,6 +13,17 @@ export function getStaticPaths() {
 const artist = getArtistById(Astro.params.slug);
 const releases = releasesForArtist(artist.id);
 const links = artistStreamingLinks(artist);
+
+const sameAs = Object.values(artist.links || {}).filter(Boolean);
+const artistJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": artist.name,
+  "url": `https://www.maricoparecords.com/artists/${artist.id}/`,
+  ...(artist.image ? { "image": `https://www.maricoparecords.com${artist.image}` } : {}),
+  ...(artist.bio_short ? { "description": artist.bio_short } : {}),
+  ...(sameAs.length ? { "sameAs": sameAs } : {})
+});
 const bioBlocks = String(artist.bio_long || "")
   .split("## Releases")[0]
   .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
@@ -44,6 +55,7 @@ function cleanMarkdownText(value: string) {
 
 ---
 <BaseLayout paneled={true} title={`${artist.name} | Maricopa Records`} description={artist.bio_short || `${artist.name} on Maricopa Records.`} ogType="profile" ogImage={artist.image}>
+  <script type="application/ld+json" slot="head" set:html={artistJsonLd} />
   <header class="artist-hero" style={`--artist-hero-image: url("${artist.image || "/assets/maricopa-mark.svg"}")`}>
     <h1>{artist.name}</h1>
     <Breadcrumbs items={[

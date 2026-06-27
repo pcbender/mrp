@@ -10,12 +10,41 @@ export function getStaticPaths() {
 const release = getReleaseBySlug(Astro.params.slug);
 const track = getTrackBySlug(release, Astro.params.track);
 const artist = getArtistById(release.artist_id);
+const artistName = artist?.name || release.artist_id;
+
+function durationToISO(str: string | null | undefined): string | undefined {
+  if (!str) return undefined;
+  const parts = str.split(":").map(Number);
+  if (parts.length === 2) return `PT${parts[0]}M${parts[1]}S`;
+  if (parts.length === 3) return `PT${parts[0]}H${parts[1]}M${parts[2]}S`;
+  return undefined;
+}
+
+const trackJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "MusicRecording",
+  "name": track.title,
+  "url": `https://www.maricoparecords.com/releases/${release.slug}/${track.slug}/`,
+  ...(track.isrc ? { "isrcCode": track.isrc } : {}),
+  ...(durationToISO(track.duration) ? { "duration": durationToISO(track.duration) } : {}),
+  "byArtist": {
+    "@type": "MusicGroup",
+    "name": artistName,
+    "url": `https://www.maricoparecords.com/artists/${release.artist_id}/`
+  },
+  "inAlbum": {
+    "@type": "MusicAlbum",
+    "name": release.title,
+    "url": `https://www.maricoparecords.com/releases/${release.slug}/`
+  }
+});
 ---
 <BaseLayout paneled={true}
   title={`${track.title} | ${release.title} | Maricopa Records`}
-  description={`${track.title}, from ${release.title} by ${artist?.name || release.artist_id} on Maricopa Records.`}
+  description={`${track.title}, from ${release.title} by ${artistName} on Maricopa Records.`}
   ogType="music.song"
   ogImage={releaseCoverUrl(release)}
 >
+  <script type="application/ld+json" slot="head" set:html={trackJsonLd} />
   <SongLanding release={release} track={track} artist={artist} />
 </BaseLayout>
