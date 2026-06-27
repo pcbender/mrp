@@ -15,11 +15,14 @@ import json
 import sys
 from pathlib import Path
 
+from .batch import run_batch, write_report
 from .catalog import get_artist_name, get_lyrics, get_persona, get_release_meta
 from .config import OUT_DIR
 from .dsp import extract_dsp
+from .impression import get_impression
 from .ingest import ingest
 from .synthesize import synthesize
+from .tags import extract_tags
 
 
 def cmd_review(args: argparse.Namespace) -> None:
@@ -47,11 +50,19 @@ def cmd_review(args: argparse.Namespace) -> None:
         print("  ⚠  No artist persona found — proceeding without.")
 
     # ── DSP ──────────────────────────────────────────────────────────────────
-    print("[2/3] Analysing  DSP…")
+    print("[2/4] Analysing   DSP…")
     finding.hard_facts = extract_dsp(arr)
 
+    # ── Impression ───────────────────────────────────────────────────────────
+    print("[3/4] Impression  Gemini…")
+    finding.impression = get_impression(finding.source.proxy)
+
+    # ── Tags ─────────────────────────────────────────────────────────────────
+    print("      Tags       CLAP…")
+    finding.tags = extract_tags(args.audio)
+
     # ── Synthesize ───────────────────────────────────────────────────────────
-    print(f"[3/3] Synthesising  review ({args.model} model)…")
+    print(f"[4/4] Synthesising  review ({args.model} model)…")
     finding.review = synthesize(
         finding,
         target=args.target,
@@ -77,6 +88,26 @@ def cmd_review(args: argparse.Namespace) -> None:
     print(f"\n  Record written → {out_path}")
 
 
+def cmd_batch(args: argparse.Namespace) -> None:
+    out_dir = Path(args.out) if args.out else OUT_DIR
+    findings = run_batch(
+        args.manifest,
+        model=args.model,
+        target=args.target,
+        target_tier=args.target_tier,
+        out_dir=out_dir,
+        skip_impression=args.skip_impression,
+        skip_tags=args.skip_tags,
+    )
+    print(f"\nProcessed {len(findings)} track(s).")
+    write_report(out_dir)
+
+
+def cmd_report(args: argparse.Namespace) -> None:
+    out_dir = Path(args.out) if args.out else OUT_DIR
+    write_report(out_dir)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="critic",
@@ -100,10 +131,33 @@ def main() -> None:
     )
     rev.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
 
+    # critic batch …
+    bat = sub.add_parser("batch", help="Run pipeline on all tracks in a manifest")
+    bat.add_argument("manifest", help="JSON manifest file listing tracks to process")
+    bat.add_argument("--target", choices=["blurb", "liner"], default="blurb")
+    bat.add_argument("--target-tier", type=int, choices=[2, 3, 4, 5])
+    bat.add_argument(
+        "--model",
+        choices=["dev", "default", "hero"],
+        default="dev",
+        help="dev=haiku (default), default=sonnet, hero=opus",
+    )
+    bat.add_argument("--skip-impression", action="store_true", help="Skip Gemini impression step")
+    bat.add_argument("--skip-tags", action="store_true", help="Skip CLAP tags step")
+    bat.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
+
+    # critic report …
+    rep = sub.add_parser("report", help="Generate QA report from existing out/ findings")
+    rep.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
+
     args = parser.parse_args()
 
     if args.command == "review":
         cmd_review(args)
+    elif args.command == "batch":
+        cmd_batch(args)
+    elif args.command == "report":
+        cmd_report(args)
     else:
         parser.print_help()
         sys.exit(1)
