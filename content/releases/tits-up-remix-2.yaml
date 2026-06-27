@@ -2,7 +2,7 @@ release:
   id: tits-up-remix-2
   slug: tits-up-remix-2
   title: Tits Up (Remix)
-  artist_id: pcbender
+  artist_id: stab
   model: song
   release_type: single
   status: staged
@@ -16,7 +16,7 @@ release:
   summary: ''
   description: ''
   credits:
-    primary_artist: PCBender
+    primary_artist: STAB
     songwriter: Michael Anthony Rose
     lyrics: Michael Anthony Rose
     producer: null
@@ -26,8 +26,8 @@ release:
     youtube: https://www.youtube.com/watch?v=QPN-XSuZUKs
     youtube_music: https://music.youtube.com/watch?v=QPN-XSuZUKs
   seo:
-    title: Tits Up (Remix) by PCBender
-    description: Tits Up (Remix) by PCBender on Maricopa Records.
+    title: Tits Up (Remix) by STAB
+    description: Tits Up (Remix) by STAB on Maricopa Records.
   automation:
     allow_auto_publish: false
   song:
