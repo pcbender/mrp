@@ -18,6 +18,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+tags = ["laion-clap", "torch", "torchvision"]
 dev = ["pytest>=8.0"]
 
 [project.scripts]
