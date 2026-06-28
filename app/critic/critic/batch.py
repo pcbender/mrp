@@ -144,7 +144,10 @@ def write_report(out_dir: Path | None = None) -> tuple[Path, Path]:
         if p.name.startswith("qa_report"):
             continue
         try:
-            findings.append(_hydrate(json.loads(p.read_text())))
+            data = json.loads(p.read_text())
+            if "album_id" in data:   # album record — different schema, skip
+                continue
+            findings.append(_hydrate(data))
         except Exception as exc:
             print(f"  ⚠  skipping {p.name}: {exc}")
 

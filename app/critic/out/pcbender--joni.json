@@ -1,0 +1,96 @@
+{
+  "track_id": "pcbender--joni",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Joni.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--joni.opus"
+  },
+  "lyrics": "Joni don't listen to the things they say to you\nDon't listen when they say you're foolish\nDon't listen when they're being cruel\n\nHe left you and you couldn't stand it\nSo you went looking for another plan\nIt's not my place to give advice but\nI don't think you need a man\n\nWhat you need is a friend\n\nJoni you're beautiful\nJoni you're beautiful\nyou're beautiful\n\nJoni stop crying\nWe all have crosses we have to bear\nIt's not your fault that you've been hurt, girl\nBut who says that life is fair\n\nI know you're feeling sad and lonely\nAnd you're missing the touch of his hand\nBut maybe you should take a moment\n'cause I don't think you need a man\n\nWhat you need is a friend\n\nJoni you're beautiful\nJoni you're beautiful\nyou're beautiful\n\nJoni you're beautiful",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production\u2014digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher\u2019s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it\u2019s made, but why.\n\nFor those who seek music with depth, texture, and soul\u2014PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "A",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 146.52,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.02,
+        "label": "S1"
+      },
+      {
+        "start": 3.02,
+        "end": 20.76,
+        "label": "S2"
+      },
+      {
+        "start": 20.76,
+        "end": 39.61,
+        "label": "S3"
+      },
+      {
+        "start": 39.61,
+        "end": 62.16,
+        "label": "S4"
+      },
+      {
+        "start": 62.16,
+        "end": 79.6,
+        "label": "S5"
+      },
+      {
+        "start": 79.6,
+        "end": 130.15,
+        "label": "S6"
+      },
+      {
+        "start": 130.15,
+        "end": 146.52,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.907
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "harmonica"
+    ]
+  },
+  "impression": {
+    "text": "This is a high-energy, anthemic rock track with an empowering and slightly defiant emotional atmosphere. The production is dense and polished, featuring a wide wall of heavily distorted guitars and a punchy, driving drum kit that creates a powerful \"wall of sound.\" The lead vocal sits clearly on top of the mix, supported by prominent harmonies, and the overall feel is tight and commercially ready. A defining moment is the melodic and technically proficient guitar solo that erupts after the second chorus, perfectly elevating the track's emotional peak.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Joni\" hits with the kind of direct sincerity that feels rare in rock songwriting\u2014a friend\u2019s voice cutting through the noise, telling someone they\u2019re beautiful not because it\u2019s easy, but because it needs to be said. Built on a galloping 161 BPM foundation and anchored in A minor, the track layers distorted guitars into a wall that never overwhelms the vocal; instead, it props up the tenderness of the message. PCBender\u2019s harmonic support and that technically assured guitar solo after the second chorus elevate what could have been a simple verse-chorus into something more architecturally sound\u2014the production knows when to surge and when to let the lyric breathe. It\u2019s a song about choosing friendship over false fixes, and the music refuses to cheapen that choice with sentimentality. A highlight that proves PCBender can marry craft with heart without sacrificing either.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "161 BPM / A minor foundation",
+      "distorted guitars + clear vocal mix",
+      "guitar solo eruption after second chorus",
+      "harmonic support for lyrical sincerity",
+      "\"What you need is a friend\" as central argument"
+    ]
+  }
+}

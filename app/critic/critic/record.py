@@ -42,6 +42,7 @@ class Tags:
     genre: list[str] = field(default_factory=list)
     mood: list[str] = field(default_factory=list)
     instruments: list[str] = field(default_factory=list)
+    model: str = ""
 
 
 @dataclass
@@ -60,11 +61,10 @@ class VerdictTier:
 class Review:
     target: str = "blurb"
     review_text: str = ""
-    # "pending" until explicitly approved; mirrors the Cantor SOUL.md
-    # human-approval policy — mrp owns this rule locally.
     status: str = "pending"
     verdict_tier: VerdictTier = field(default_factory=VerdictTier)
     anchors_used: list[str] = field(default_factory=list)
+    model: str = ""
 
 
 @dataclass

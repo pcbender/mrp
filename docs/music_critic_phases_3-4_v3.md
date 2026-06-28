@@ -218,3 +218,36 @@ Goal: harden, govern, and Cantor-shape **both** critics in one pass. Optional; p
 - Keep each album worker independently runnable (`python -m critic.album.<worker> ...`).
 - SOUL.md is a **different project** (Cantor), out of scope. WP-17's gate is local to `mrp`.
 - Stop at every GATE. Summarize, don't proceed.
+
+
+## Clarifications
+
+Questions 3
+
+Give CP a method, not the placeholder. The short version: cosine-to-centroid, not pairwise Jaccard. Here's the reasoning to pass along.
+Jaccard has two weaknesses for this. It's binary — it throws away tag strength, so two tracks both weakly "rock" score identically to two strongly "rock," and it needs an arbitrary threshold to decide when a track "has" a tag. And it's pairwise, so you're aggregating O(n²) comparisons. The cleaner construction:
+For each track, build a feature vector from the tagger's probability distributions (genre ⊕ mood ⊕ instrument), L2-normalized. Take the album centroid (mean vector). Then palette_consistency = mean cosine similarity of each track to the centroid, which lands in [0, 1], is O(n), and respects strength without any thresholding knob. 1.0 = every track sits on the centroid; lower = scattered.
+Which signal to feed it depends on what WP-6 actually retained, best to worst:
+
+Raw CLAP audio embeddings (if cached) → centroid cosine over those. Truest palette measure, because embeddings encode timbre and production, not just labels — two tracks can both be "rock" with completely different palettes, and the embedding catches what the label can't.
+Decoded tag probability vectors → centroid cosine over the concatenated genre/mood/instrument vectors. Good, and probably what you have.
+Only top-k discrete tags, no scores → fall back to overlap ratio, but flag it as the weak option and ideally have WP-6 keep the scores.
+
+Two design points worth stating so CP doesn't drift:
+Keep tempo and key out of palette_consistency. Palette is timbre/genre/mood — texture. Tempo and key are movement, and the BPM/key progressions in album_features already carry that as arc. An album can deliberately vary tempo while staying tonally cohesive; folding those in would conflate two different axes and muddy both.
+Don't hardcode the cohesion thresholds. Cosine over sparse non-negative vectors runs high in absolute terms (0.7–0.95 even for fairly varied albums), so the raw number is less meaningful than the relative spread. The cohesive_statement | varied | shuffle_playlist cutoffs should be calibrated on a couple of real albums — one you'd call cohesive, one eclectic — and that calibration belongs in WP-17, not guessed now. For <2 tracks, return 1.0 and skip the verdict.
+So the answer to CP's question: yes, it's yours to implement, but the intended method is centroid cosine over the richest available tag/embedding vectors, 0–1, texture-only, thresholds deferred to eval.
+
+Question 4
+
+Your read is right — null when sequence doesn't move the standing, set only on a real shift. Keep it sparse, because the sparsity is the signal: a non-null context_rank is your QA query for "tracks whose standing is sequence-dependent." If you always populate it, you've buried that signal under echoes of standalone_rank and now have to diff two fields on every track to find the interesting ones. Null-means-unchanged makes divergence self-announcing, which is the same logic as freezing Pass 1 and treating context as the delta.
+The rule to hand CP, made precise:
+
+Always copy standalone_rank.
+Ask: would a reasonable critic place this track on a different rung because of where it sits in the sequence? Yes → set context_rank (still respecting the rank-2 floor) and a one-line context_note with the reason. No → context_rank = null.
+Don't set context_rank equal to standalone_rank as a "no change" marker — that's what null is for. Populating it defensively defeats the purpose.
+
+Two things worth making explicit so CP gets the edges:
+context_rank moves both directions. Up is the breather-earns-its-place case. Down is a standalone-strong track that sags the album where it sits, or is redundant after a similar neighbor — and a downward context_rank is a sequencing flag, not a knock on the song, because standalone_rank still holds the song's honest standing. Both directions are useful QA.
+And separate context_rank from review_text. The text should get light sequencing framing pretty often — "follows the peak," "sets up the closer" — even when the rung doesn't move. So review_text can differ from standalone while context_rank stays null. The rank is reserved for an actual change in standing; the prose just reads in sequence. If there's genuinely nothing sequence-relevant to say, the contextual text may equal the standalone — that's fine, not a failure.
+Net: yes to your judgment call. Set on meaningful rung change, null otherwise, note required when set, text reframed freely regardless.

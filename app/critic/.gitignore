@@ -1,4 +1,4 @@
-out/
+out/qa_report.*
 __pycache__/
 *.pyc
 *.egg-info/

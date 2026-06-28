@@ -1,0 +1,107 @@
+{
+  "track_id": "pcbender--ousia",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Ousia.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--ousia.opus"
+  },
+  "lyrics": "I am\nWe are\nIt is\n\nI am\nWe are\nIt is\n\nI am. (soprano)\nWe are. (alto joins)\nIt is. (bass grounds)\n\nI am\nWe are\nIt is\n\n# Style Prompts\n(not used - production notes)\n# Tab 7\n(not used - summary notes)",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production\u2014digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher\u2019s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it\u2019s made, but why.\n\nFor those who seek music with depth, texture, and soul\u2014PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "F",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 183.0,
+    "lufs": -23.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 18.97,
+        "label": "S1"
+      },
+      {
+        "start": 18.97,
+        "end": 35.81,
+        "label": "S2"
+      },
+      {
+        "start": 35.81,
+        "end": 53.99,
+        "label": "S3"
+      },
+      {
+        "start": 53.99,
+        "end": 83.57,
+        "label": "S4"
+      },
+      {
+        "start": 83.57,
+        "end": 100.87,
+        "label": "S5"
+      },
+      {
+        "start": 100.87,
+        "end": 124.88,
+        "label": "S6"
+      },
+      {
+        "start": 124.88,
+        "end": 158.13,
+        "label": "S7"
+      },
+      {
+        "start": 158.13,
+        "end": 174.99,
+        "label": "S8"
+      },
+      {
+        "start": 174.99,
+        "end": 183.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.948,
+      "key": 0.931
+    }
+  },
+  "tags": {
+    "genre": [
+      "soul",
+      "classic rock",
+      "acoustic"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "strings",
+      "piano"
+    ]
+  },
+  "impression": {
+    "text": "This track opens with a vast, sacred atmosphere, built upon a sparse texture of a heavily reverberated solo female vocalist and a sustained organ pad. The energy is extremely low and contemplative, with a free-flowing, unmetered feel that is guided entirely by the emotional delivery of the vocal performance. The production quality is pristine and cinematic, creating an immense sense of space where the voice feels simultaneously intimate and distant. The most defining moment is the dramatic entrance of a full string section around 1:30, which swells to transform the piece from a solitary lament into a grand, epic statement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Three words, nine syllables, three minutes \u2014 and PCBender somehow makes it feel earned. 'Ousia' (Greek for 'essence' or 'being') opens in near-silence, a soprano voice alone in a cathedral of reverb, and the restraint is the whole argument: when the strings finally surge around the 1:30 mark, they hit with the force of a G\u00f3recki symphony because the space before them was so carefully honored. At 123 BPM in F major the pulse is technically there, but you'd never feel it as a clock \u2014 this runs on breath, not bar lines. It's the kind of track that asks more of the listener than it explains, and that's a genuine artistic bet.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "title etymology (ousia)",
+      "soprano opening / reverb texture",
+      "string entrance at ~1:30",
+      "123 BPM / F major",
+      "free-flowing unmetered feel",
+      "G\u00f3recki comparison"
+    ]
+  }
+}

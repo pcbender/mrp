@@ -92,7 +92,8 @@ def extract_tags(audio_path: str | Path) -> Tags:
         genres = _zero_shot(model, path, _GENRES, "this is a {} song")
         moods = _zero_shot(model, path, _MOODS, "this music feels {}")
         instruments = _zero_shot(model, path, _INSTRUMENTS, "this song features {}")
-        return Tags(genre=genres, mood=moods, instruments=instruments)
+        from .config import CLAP_MODEL
+        return Tags(genre=genres, mood=moods, instruments=instruments, model=CLAP_MODEL)
     except Exception as exc:
         print(f"  ⚠  CLAP tagging failed: {exc}")
         return Tags()

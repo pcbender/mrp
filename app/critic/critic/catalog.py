@@ -74,6 +74,42 @@ def get_artist_name(artist_slug: str) -> str:
     return artist_slug
 
 
+def get_release_tracks(release_slug: str) -> list[dict]:
+    """Return ordered tracks for a release.
+    Each dict: slug, title, number, duration.
+    Works for multi-track albums/EPs and single-song releases."""
+    path = _RELEASES_DIR / f"{release_slug}.yaml"
+    if not path.exists():
+        return []
+    data = _load_yaml(path)
+    rel = data.get("release", {})
+
+    tracks = rel.get("tracks", [])
+    if tracks:
+        return [
+            {
+                "slug": t["slug"],
+                "title": t.get("title", ""),
+                "number": t.get("number", i + 1),
+                "duration": t.get("duration", ""),
+            }
+            for i, t in enumerate(sorted(tracks, key=lambda t: t.get("number", 0)))
+        ]
+
+    song = rel.get("song", {})
+    if song:
+        return [
+            {
+                "slug": song.get("slug", release_slug),
+                "title": song.get("title", rel.get("title", "")),
+                "number": 1,
+                "duration": song.get("duration", ""),
+            }
+        ]
+
+    return []
+
+
 def get_release_meta(release_slug: str) -> dict:
     """Return top-level release metadata (artist_id, title, release_date, etc.)."""
     path = _RELEASES_DIR / f"{release_slug}.yaml"
