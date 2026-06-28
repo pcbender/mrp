@@ -154,6 +154,7 @@ def synthesize(
         status="pending",
         verdict_tier=VerdictTier(rank=tier["rank"], label=tier["label"]),
         anchors_used=parsed.get("anchors_used", []),
+        model=selected_model,
     )
 
 

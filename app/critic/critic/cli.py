@@ -15,6 +15,8 @@ import json
 import sys
 from pathlib import Path
 
+from .album.cli import run_album, write_album_report
+from .pipeline import show as pipeline_show
 from .batch import run_batch, write_report
 from .catalog import get_artist_name, get_lyrics, get_persona, get_release_meta
 from .config import OUT_DIR
@@ -108,6 +110,32 @@ def cmd_report(args: argparse.Namespace) -> None:
     write_report(out_dir)
 
 
+def cmd_album(args: argparse.Namespace) -> None:
+    out_dir = Path(args.out) if args.out else OUT_DIR
+    record = run_album(
+        args.release_slug,
+        target=args.target,
+        model=args.model,
+        out_dir=out_dir,
+    )
+    report_path = write_album_report(record, out_dir=out_dir)
+    rv = record.review
+    print(f"\n{'═' * 60}")
+    print(f"  {record.artist} — {args.release_slug}")
+    print(f"  Rank {rv.verdict_tier.rank} — {rv.verdict_tier.label}  |  "
+          f"sum_vs_parts: {rv.sum_vs_parts}  |  persona: {rv.persona_delivery}")
+    print(f"{'═' * 60}")
+    print(f"\n{rv.review_text}\n")
+    shifts = [t for t in record.track_reviews_in_context if t.context_rank is not None]
+    print(f"Context shifts: {len(shifts)} of {len(record.tracklist)}")
+    for t in shifts:
+        d = "↑" if t.context_rank > t.standalone_rank else "↓"
+        print(f"  [{t.position}] {t.track_id.split('--', 1)[-1]}  "
+              f"{t.standalone_rank} → {t.context_rank} {d}  {t.context_note}")
+    print(f"\nAlbum record  → {out_dir / record.album_id}.json")
+    print(f"Album QA      → {report_path}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         prog="critic",
@@ -150,6 +178,20 @@ def main() -> None:
     rep = sub.add_parser("report", help="Generate QA report from existing out/ findings")
     rep.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
 
+    # critic show …
+    shw = sub.add_parser("show", help="Show pipeline ingredients for a track or album")
+    shw.add_argument("id", help="track_id (e.g. pcbender--apa) or release_slug (e.g. tria)")
+    shw.add_argument("--save", action="store_true", help="Save to out/pipeline_<id>.md")
+    shw.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
+
+    # critic album …
+    alb = sub.add_parser("album", help="Run album pipeline (Pass 2 + 3) on a release")
+    alb.add_argument("release_slug", help="Release slug (e.g. tria)")
+    alb.add_argument("--target", choices=["album_blurb", "album_long"], default="album_blurb")
+    alb.add_argument("--model", choices=["dev", "default", "hero"], default="dev",
+                     help="dev=haiku (default), default=sonnet, hero=opus")
+    alb.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
+
     args = parser.parse_args()
 
     if args.command == "review":
@@ -158,6 +200,13 @@ def main() -> None:
         cmd_batch(args)
     elif args.command == "report":
         cmd_report(args)
+    elif args.command == "album":
+        cmd_album(args)
+    elif args.command == "show":
+        out_dir = Path(args.out) if args.out else OUT_DIR
+        doc = pipeline_show(args.id, save=args.save, out_dir=out_dir)
+        if not args.save:
+            print(doc)
     else:
         parser.print_help()
         sys.exit(1)
