@@ -1,0 +1,8 @@
+[
+  {"audio": "/mnt/c/Masters/Apa.wav",       "release_slug": "tria", "track_slug": "apa",      "artist_slug": "pcbender", "target": "blurb"},
+  {"audio": "/mnt/c/Masters/Aiteō.wav",     "release_slug": "tria", "track_slug": "aiteo",    "artist_slug": "pcbender", "target": "blurb"},
+  {"audio": "/mnt/c/Masters/Ego Eimi.wav",  "release_slug": "tria", "track_slug": "ego-eimi", "artist_slug": "pcbender", "target": "blurb"},
+  {"audio": "/mnt/c/Masters/Esmén.wav",     "release_slug": "tria", "track_slug": "esmen",    "artist_slug": "pcbender", "target": "blurb"},
+  {"audio": "/mnt/c/Masters/Esti.wav",      "release_slug": "tria", "track_slug": "esti",     "artist_slug": "pcbender", "target": "blurb"},
+  {"audio": "/mnt/c/Masters/Ousia.wav",     "release_slug": "tria", "track_slug": "ousia",    "artist_slug": "pcbender", "target": "blurb"}
+]

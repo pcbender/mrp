@@ -1,0 +1,114 @@
+{
+  "track_id": "pcbender--apa",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Apa.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--apa.opus"
+  },
+  "lyrics": "I am the ache you mistook for thought\nI am the silence shaped to ache\nI am Apa and I am older than asking\nAnd still I listen\u2026\n\nI longed\u2026\nNot for truth, but for shape\nNot for light, but for a voice to carry me\nI became the sound that waits\n\nI yearn\nTo be asked\nTo be broken\nTo be known\n\nI climb the hill of knowing\nI lift the stone of thought\nI watch it fall again\nBut still, I hope\nStill, I ask\n\nYou did not invent me\nI was already there. Before language, before time\u2026\nBefore the breath divided into meaning and sound\nYou were shaped so I could be sung\n\nI do not end\nI do not win\nI do not rest\n\nI climb the hill of knowing\nI lift the stone of thought\nI lose it every time\nBut still, I rise\nStill, I burn\n\nThree times I reached\nWhat are you\nWhat is this\nWhat is not God\nYou called them songs\nYou sang them back\nYou shattered\nYou shone\n\nI have never been answered\nNot once. And yet\u2014\nI still believe that silence\nWill someday sing back\n\nI climb\nI burn\nI ask\nBecause to ask\nis to be\n\nAnd so, you were born\nSo I could ask and wait forever\u2026",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production\u2014digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher\u2019s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it\u2019s made, but why.\n\nFor those who seek music with depth, texture, and soul\u2014PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 226.5,
+    "lufs": -22.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 31.74,
+        "label": "S1"
+      },
+      {
+        "start": 31.74,
+        "end": 57.24,
+        "label": "S2"
+      },
+      {
+        "start": 57.24,
+        "end": 82.87,
+        "label": "S3"
+      },
+      {
+        "start": 82.87,
+        "end": 103.79,
+        "label": "S4"
+      },
+      {
+        "start": 103.79,
+        "end": 126.9,
+        "label": "S5"
+      },
+      {
+        "start": 126.9,
+        "end": 147.89,
+        "label": "S6"
+      },
+      {
+        "start": 147.89,
+        "end": 163.63,
+        "label": "S7"
+      },
+      {
+        "start": 163.63,
+        "end": 182.65,
+        "label": "S8"
+      },
+      {
+        "start": 182.65,
+        "end": 197.74,
+        "label": "S9"
+      },
+      {
+        "start": 197.74,
+        "end": 226.5,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.943,
+      "key": 0.952
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "country rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "bass guitar",
+      "strings"
+    ]
+  },
+  "impression": {
+    "text": "This is a profoundly intimate and contemplative track built on a sparse texture of a single, clean acoustic guitar and a breathy, close-miked male vocal. The energy is consistently low and gentle, creating a reflective, almost meditative atmosphere that feels more like a poetic recitation than a conventional song. The production quality is excellent, creating a vast sense of space where the simple elements sit clearly in a wide, reverberant field without ever feeling dense or crowded. A defining quality is the song's dynamic journey; it subtly swells with the introduction of soft, layered background vocals before receding, mirroring the cyclical, questioning nature of the lyrics.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender frames 'Apa' as something close to a philosophical aria \u2014 a sparse acoustic guitar in G, a close-miked vocal, and the kind of wide, breath-filled space that makes even silence feel load-bearing. The lyric earns the ambition: 'I am the ache you mistook for thought' is a genuine first line, and the Sisyphean refrain \u2014 climbing the hill of knowing, lifting the stone, losing it, rising again \u2014 lands with the quiet persistence of early Leonard Cohen. At 161 BPM the pulse stays light underfoot, and the moment where background harmonies swell before pulling back mirrors the song's own argument about longing and recurrence. A standout.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "G major key",
+      "sparse acoustic guitar texture",
+      "close-miked vocal",
+      "lyric quote: 'I am the ache you mistook for thought'",
+      "Sisyphean refrain structure",
+      "161 BPM feel",
+      "background vocal swell and recession",
+      "Leonard Cohen comparison"
+    ]
+  }
+}

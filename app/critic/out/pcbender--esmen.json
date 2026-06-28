@@ -1,0 +1,102 @@
+{
+  "track_id": "pcbender--esmen",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Esm\u00e9n.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--esmen.opus"
+  },
+  "lyrics": "It points, it loops, it calibrates\nA schema shaped by nested fates\nA map that redraws its terrain\nA structure dreaming it's a brain\n\nWe hold the frame and call it true\nBut what frames the frame that's framing you\n\nWhat is this\u2014this pulse, this plan\nA wheel that turns to birth a man\nA story told in tangled thread\nBy books that quote what books have said\n\nThe mirror speaks, the symbols hum\nA system aging into sum\nBut underneath the shifting glow\nThe silence waits for what we know\n\nThis world we build with mirrored walls\u2014\nWhich version breaks? Which one recalls\n\nWhat is this\u2014this rhyme, this scar\nA language reaching for a star\nEach answer caught inside the play\nOf names that shift and drift away\n\nThere is no ground beneath the gears\nNo code untouched by hands or fears\nWe watch the watcher watching through\nThe glass that bends to copy you\n\nWhat is this\u2014this form, this lie\nA frame that answers with a sigh\nAnd every word and every phase\nBecomes the script we can't erase",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production\u2014digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher\u2019s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it\u2019s made, but why.\n\nFor those who seek music with depth, texture, and soul\u2014PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 234.0,
+    "lufs": -18.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 28.44,
+        "label": "S1"
+      },
+      {
+        "start": 28.44,
+        "end": 52.8,
+        "label": "S2"
+      },
+      {
+        "start": 52.8,
+        "end": 73.77,
+        "label": "S3"
+      },
+      {
+        "start": 73.77,
+        "end": 90.98,
+        "label": "S4"
+      },
+      {
+        "start": 90.98,
+        "end": 129.73,
+        "label": "S5"
+      },
+      {
+        "start": 129.73,
+        "end": 149.77,
+        "label": "S6"
+      },
+      {
+        "start": 149.77,
+        "end": 167.76,
+        "label": "S7"
+      },
+      {
+        "start": 167.76,
+        "end": 234.0,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.948,
+      "key": 0.965
+    }
+  },
+  "tags": {
+    "genre": [
+      "soul",
+      "electronic",
+      "rock"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "emotional"
+    ],
+    "instruments": [
+      "piano",
+      "acoustic guitar",
+      "strings"
+    ]
+  },
+  "impression": {
+    "text": "This track unfolds with a dreamy and pensive atmosphere, built on a texture of spacious piano, ethereal pads, and a soft, intimate male vocal. It maintains a low-to-mid energy level, building a thoughtful, steady groove that feels both gentle and purposeful. The production quality is exceptionally clean and wide, creating a sense of vastness where each element sits clearly in the mix without ever feeling cluttered. Its most defining quality is the powerful dynamic lift into the soaring, layered chorus, which creates a cathartic emotional release that stands in stark contrast to the track's more subdued, questioning verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always been drawn to the big questions, but 'Esmen' is the first time he's let the philosophy breathe at waltz-time \u2014 129 BPM in 3/4 feels like a heartbeat with one extra beat of hesitation, and it suits the material perfectly. The verses sit low and close, the piano stripped back while lines like 'we watch the watcher watching through / the glass that bends to copy you' do the heavy lifting, and then the chorus opens up with a lift that recalls the best of Peter Gabriel's mid-period work \u2014 that same cathartic release after sustained tension. The production is notably wide without being busy; every element earns its place in G minor. A genuine highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "129 BPM in 3/4",
+      "G minor",
+      "lyric quote: 'we watch the watcher watching through / the glass that bends to copy you'",
+      "verse/chorus dynamic contrast",
+      "Peter Gabriel comparison",
+      "spacious piano-led production"
+    ]
+  }
+}

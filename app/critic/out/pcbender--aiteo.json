@@ -1,0 +1,106 @@
+{
+  "track_id": "pcbender--aiteo",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Aite\u014d.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--aiteo.opus"
+  },
+  "lyrics": "I want to know. I need to see\nThere must be more inside of me\nEach answer fades, each page is torn\u2014\nBut still I ache for what I'm born\n\nI'm asking\u2014\nWith open hands and sleepless eyes\nI'm asking\u2014\nIf the stars are truths or lies\nI'm asking\u2014\nNot to doubt, but to believe\nThat something waits, that something sees\n\nThe world is ink. The soul is thread\nWe stitch our meaning from what's said\nBut in the dark between each name\nI hear a pulse I cannot frame\n\nSo ask I must. It drives the flame\nEven if it has no name\n\nI'm asking\u2014\nFor the self I haven't met\nI'm asking\u2014\nFor the things I must forget\nI'm asking\u2014\nNot for fact, but for the key\nTo what I am, and what this means to be\n\nI'm asking\u2014\nI'm asking\u2014\nI'm asking\u2014\nI'm asking\u2014\nAs if the asking is enough\u2026",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production\u2014digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher\u2019s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it\u2019s made, but why.\n\nFor those who seek music with depth, texture, and soul\u2014PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 234.0,
+    "lufs": -17.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 35.81,
+        "label": "S1"
+      },
+      {
+        "start": 35.81,
+        "end": 50.81,
+        "label": "S2"
+      },
+      {
+        "start": 50.81,
+        "end": 75.91,
+        "label": "S3"
+      },
+      {
+        "start": 75.91,
+        "end": 92.44,
+        "label": "S4"
+      },
+      {
+        "start": 92.44,
+        "end": 114.68,
+        "label": "S5"
+      },
+      {
+        "start": 114.68,
+        "end": 136.93,
+        "label": "S6"
+      },
+      {
+        "start": 136.93,
+        "end": 169.83,
+        "label": "S7"
+      },
+      {
+        "start": 169.83,
+        "end": 192.7,
+        "label": "S8"
+      },
+      {
+        "start": 192.7,
+        "end": 234.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.959,
+      "key": 0.959
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ]
+  },
+  "impression": {
+    "text": "This track unfolds with a deeply introspective and searching atmosphere, starting with a sparse and spacious texture of piano, strings, and a gentle male vocal. The energy builds with cinematic grandeur, swelling from a quiet ballad into a powerful, cathartic anthem in the choruses, driven by a full drum kit and soaring string arrangements. The production is polished and expansive, creating a wide stereo image where the central vocal maintains clarity and emotional weight even as the instrumental layers become dense and powerful. A defining quality is the track's dynamic arc, particularly the transition around 1:27 where a passionate string-led instrumental elevates the emotional stakes before a final, impassioned vocal release.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender opens 'Aiteo' almost alone \u2014 piano, a breath of strings, and a vocal that sounds like it's thinking out loud \u2014 before the track earns its swell the old-fashioned way, measure by measure. By the time the drums arrive and those strings lift into the bridge around the 1:27 mark, the question at the heart of the lyric ('Not for fact, but for the key / To what I am') has accumulated enough weight to justify the release. At 117 BPM in G major it sits in that classic rock ballad pocket where U2 and early Peter Gabriel both found their best cathedral moments, and PCBender navigates the same territory with enough grit to keep it grounded. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "bridge transition at 1:27",
+      "lyric quote 'Not for fact, but for the key'",
+      "BPM 117 / G major",
+      "dynamic build from sparse intro to full ensemble",
+      "U2 / Peter Gabriel comparison"
+    ]
+  }
+}
