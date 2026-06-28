@@ -1,0 +1,29 @@
+version: 1
+
+# Reference tracks and albums with expected ranks.
+# Run `critic calibrate` to check current records against these.
+# Flag drift: ±1 is a warning, ±2 is an error.
+
+tracks:
+  - track_id: pcbender--apa
+    expected_rank: 5
+    note: "philosophical aria opener; sparse acoustic, Sisyphean lyric"
+  - track_id: pcbender--esmen
+    expected_rank: 4
+    note: "high-energy standout; style/lyric peak of the Tria EP"
+  - track_id: pcbender--ousia
+    expected_rank: 4
+    note: "meditative closer with soaring soprano"
+
+albums:
+  - album_id: pcbender--tria
+    expected_rank: 4
+    expected_sum_vs_parts: greater
+    note: "Tria EP — meditative 6-track EP, cohesive statement"
+    cohesion_notes:
+      palette_consistency: 0.79
+      verdict: varied
+      # Thresholds to calibrate against more albums (WP-17):
+      # cohesive_statement: >= 0.85
+      # varied: 0.65 – 0.85
+      # shuffle_playlist: < 0.65

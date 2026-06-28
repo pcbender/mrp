@@ -28,6 +28,7 @@ def run_album(
     target: str = "album_blurb",
     model: str = "dev",
     out_dir: Path | None = None,
+    persona: str = "default",
 ) -> AlbumRecord:
     """Full Pass 2 → Pass 3 pipeline for one release. Returns populated AlbumRecord."""
     out_dir = Path(out_dir) if out_dir else OUT_DIR
@@ -50,11 +51,11 @@ def run_album(
     print(f"[2/4] Cohesion…")
     record.cohesion = build_cohesion(release_slug, out_dir=out_dir, findings=findings)
 
-    print(f"[3/4] Album synthesis  ({model} model)…")
-    record.review = album_synthesize(record, findings, target=target, model=model)
+    print(f"[3/4] Album synthesis  ({model} model, {persona} persona)…")
+    record.review = album_synthesize(record, findings, target=target, model=model, persona=persona)
 
     print(f"[4/4] Recontextualising tracks…")
-    record.track_reviews_in_context = recontextualize(record, findings, model=model)
+    record.track_reviews_in_context = recontextualize(record, findings, model=model, persona=persona)
 
     out_path = out_dir / f"{record.album_id}.json"
     out_path.write_text(record.to_json())

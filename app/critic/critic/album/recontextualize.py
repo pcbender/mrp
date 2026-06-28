@@ -19,15 +19,26 @@ from pathlib import Path
 import anthropic
 
 from ..config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
+from ..schema import validate_context_review, warn_issues
 from .record import AlbumRecord, AlbumReview, TrackInContext
 
 _TIER_LABELS = {2: "soft_floor", 3: "solid", 4: "strong", 5: "essential"}
 _MODEL_ALIASES = {"dev": CRITIC_MODEL_DEV, "default": CRITIC_MODEL_DEFAULT, "hero": CRITIC_MODEL_HERO}
 _SYSTEM_PROMPT_PATH = Path(__file__).parent.parent / "prompts" / "track_context_system.md"
+_PERSONAS_DIR = Path(__file__).parent.parent / "personas"
 
 
-def _load_system_prompt() -> str:
-    return _SYSTEM_PROMPT_PATH.read_text()
+def _load_persona(persona: str, artist_name: str = "") -> str:
+    path = _PERSONAS_DIR / f"{persona}.md"
+    if not path.exists():
+        path = _PERSONAS_DIR / "default.md"
+    return path.read_text().strip().replace("{artist_name}", artist_name or "this artist")
+
+
+def _load_system_prompt(persona: str = "default", artist_name: str = "") -> str:
+    template = _SYSTEM_PROMPT_PATH.read_text()
+    preamble = _load_persona(persona, artist_name)
+    return template.replace("{persona_preamble}", preamble)
 
 
 def _build_user_message(
@@ -109,6 +120,7 @@ def recontextualize(
     record: AlbumRecord,
     findings: list[dict],
     model: str | None = None,
+    persona: str = "default",
 ) -> list[TrackInContext]:
     """
     Re-pass each track review in album context. Returns the full
@@ -118,7 +130,7 @@ def recontextualize(
         raise EnvironmentError("ANTHROPIC_API_KEY not set in .env")
 
     selected_model = _MODEL_ALIASES.get(model or "dev", model or CRITIC_MODEL_DEV)
-    system = _load_system_prompt()
+    system = _load_system_prompt(persona, artist_name=record.artist)
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
     results: list[TrackInContext] = []
@@ -154,6 +166,14 @@ def recontextualize(
         else:
             context_rank = None
             context_note = ""
+
+        tic_dict = {
+            "review_text": parsed.get("review_text", finding["review"]["review_text"]),
+            "standalone_rank": standalone_rank,
+            "context_rank": context_rank,
+            "context_note": context_note,
+        }
+        warn_issues(f"context review {track_id}", validate_context_review(tic_dict))
 
         results.append(TrackInContext(
             track_id=track_id,
