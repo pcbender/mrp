@@ -18,15 +18,25 @@ import anthropic
 
 from .config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
 from .record import Review, TrackFinding, VerdictTier
+from .schema import validate_track_review, warn_issues
 
 _TIER_LABELS = {2: "soft_floor", 3: "dependable", 4: "highlight", 5: "standout"}
 _MODEL_ALIASES = {"dev": CRITIC_MODEL_DEV, "default": CRITIC_MODEL_DEFAULT, "hero": CRITIC_MODEL_HERO}
 _SYSTEM_PROMPT_PATH = Path(__file__).parent / "prompts" / "critic_system.md"
+_PERSONAS_DIR = Path(__file__).parent / "personas"
 
 
-def _load_system_prompt(artist_name: str) -> str:
+def _load_persona(persona: str, artist_name: str) -> str:
+    path = _PERSONAS_DIR / f"{persona}.md"
+    if not path.exists():
+        path = _PERSONAS_DIR / "default.md"
+    return path.read_text().strip().replace("{artist_name}", artist_name or "this artist")
+
+
+def _load_system_prompt(artist_name: str, persona: str = "default") -> str:
     template = _SYSTEM_PROMPT_PATH.read_text()
-    return template.replace("{artist_name}", artist_name or "this artist")
+    preamble = _load_persona(persona, artist_name)
+    return template.replace("{persona_preamble}", preamble)
 
 
 def _build_user_message(
@@ -128,12 +138,13 @@ def synthesize(
     target_tier: int | None = None,
     artist_name: str = "",
     model: str | None = None,
+    persona: str = "default",
 ) -> Review:
     if not ANTHROPIC_API_KEY:
         raise EnvironmentError("ANTHROPIC_API_KEY not set in .env")
 
     selected_model = _MODEL_ALIASES.get(model or "dev", model or CRITIC_MODEL_DEV)
-    system = _load_system_prompt(artist_name)
+    system = _load_system_prompt(artist_name, persona)
     user_msg = _build_user_message(finding, target, target_tier, artist_name)
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
@@ -147,6 +158,8 @@ def synthesize(
     raw = response.content[0].text
     parsed = _parse_response(raw)
     tier = _enforce_floor(parsed.get("verdict_tier", {}))
+
+    warn_issues(f"track review {finding.track_id}", validate_track_review(parsed))
 
     return Review(
         target=target,

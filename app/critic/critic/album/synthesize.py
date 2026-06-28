@@ -19,6 +19,7 @@ from pathlib import Path
 import anthropic
 
 from ..config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
+from ..schema import validate_album_review, warn_issues
 from .features import build_features
 from .cohesion import build_cohesion
 from .record import AlbumRecord, AlbumReview, AlbumVerdictTier
@@ -26,11 +27,20 @@ from .record import AlbumRecord, AlbumReview, AlbumVerdictTier
 _TIER_LABELS = {2: "soft_floor", 3: "solid", 4: "strong", 5: "essential"}
 _MODEL_ALIASES = {"dev": CRITIC_MODEL_DEV, "default": CRITIC_MODEL_DEFAULT, "hero": CRITIC_MODEL_HERO}
 _SYSTEM_PROMPT_PATH = Path(__file__).parent.parent / "prompts" / "album_critic_system.md"
+_PERSONAS_DIR = Path(__file__).parent.parent / "personas"
 
 
-def _load_system_prompt(artist_name: str) -> str:
+def _load_persona(persona: str, artist_name: str) -> str:
+    path = _PERSONAS_DIR / f"{persona}.md"
+    if not path.exists():
+        path = _PERSONAS_DIR / "default.md"
+    return path.read_text().strip().replace("{artist_name}", artist_name or "this artist")
+
+
+def _load_system_prompt(artist_name: str, persona: str = "default") -> str:
     template = _SYSTEM_PROMPT_PATH.read_text()
-    return template.replace("{artist_name}", artist_name or "this artist")
+    preamble = _load_persona(persona, artist_name)
+    return template.replace("{persona_preamble}", preamble)
 
 
 def _build_user_message(record: AlbumRecord, findings: list[dict], target: str) -> str:
@@ -63,9 +73,17 @@ def _build_user_message(record: AlbumRecord, findings: list[dict], target: str) 
             f"     ↳ {excerpt}"
         )
 
+    # Thin-data warning: flag when cohesion metrics couldn't be computed
+    thin_warnings: list[str] = []
+    if co.palette_consistency == 0.0 and len(record.tracklist) < 2:
+        thin_warnings.append("palette consistency unavailable (fewer than 2 tracks)")
+    if not co.theme_threads:
+        thin_warnings.append("no lyrical theme threads detected (instrumental or no lyrics)")
+
     parts = [
         f"Album: {record.artist} — {record.release_slug}",
         f"Format: {target}",
+        *(["", "⚠  DATA NOTES (thin data — avoid asserting arcs for these):", *[f"  - {w}" for w in thin_warnings]] if thin_warnings else []),
         "",
         "=== ARTIST PERSONA ===",
         record.persona or "(none)",
@@ -128,12 +146,13 @@ def album_synthesize(
     findings: list[dict],
     target: str = "album_blurb",
     model: str | None = None,
+    persona: str = "default",
 ) -> AlbumReview:
     if not ANTHROPIC_API_KEY:
         raise EnvironmentError("ANTHROPIC_API_KEY not set in .env")
 
     selected_model = _MODEL_ALIASES.get(model or "dev", model or CRITIC_MODEL_DEV)
-    system = _load_system_prompt(record.artist)
+    system = _load_system_prompt(record.artist, persona)
     user_msg = _build_user_message(record, findings, target)
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
@@ -147,6 +166,8 @@ def album_synthesize(
     raw = response.content[0].text
     parsed = _parse_response(raw)
     tier = _enforce_floor(parsed.get("verdict_tier", {}))
+
+    warn_issues(f"album review {record.album_id}", validate_album_review(parsed))
 
     return AlbumReview(
         target=target,

@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 from .album.cli import run_album, write_album_report
+from .eval import approve as eval_approve, calibrate as eval_calibrate
 from .pipeline import show as pipeline_show
 from .batch import run_batch, write_report
 from .catalog import get_artist_name, get_lyrics, get_persona, get_release_meta
@@ -64,13 +65,14 @@ def cmd_review(args: argparse.Namespace) -> None:
     finding.tags = extract_tags(args.audio)
 
     # ── Synthesize ───────────────────────────────────────────────────────────
-    print(f"[4/4] Synthesising  review ({args.model} model)…")
+    print(f"[4/4] Synthesising  review ({args.model} model, {args.persona} persona)…")
     finding.review = synthesize(
         finding,
         target=args.target,
         target_tier=args.target_tier,
         artist_name=artist_name,
         model=args.model,
+        persona=args.persona,
     )
 
     # ── Output ───────────────────────────────────────────────────────────────
@@ -100,6 +102,7 @@ def cmd_batch(args: argparse.Namespace) -> None:
         out_dir=out_dir,
         skip_impression=args.skip_impression,
         skip_tags=args.skip_tags,
+        persona=args.persona,
     )
     print(f"\nProcessed {len(findings)} track(s).")
     write_report(out_dir)
@@ -117,6 +120,7 @@ def cmd_album(args: argparse.Namespace) -> None:
         target=args.target,
         model=args.model,
         out_dir=out_dir,
+        persona=args.persona,
     )
     report_path = write_album_report(record, out_dir=out_dir)
     rv = record.review
@@ -134,6 +138,25 @@ def cmd_album(args: argparse.Namespace) -> None:
               f"{t.standalone_rank} → {t.context_rank} {d}  {t.context_note}")
     print(f"\nAlbum record  → {out_dir / record.album_id}.json")
     print(f"Album QA      → {report_path}")
+
+
+def cmd_approve(args: argparse.Namespace) -> None:
+    out_dir = Path(args.out) if args.out else OUT_DIR
+    path = eval_approve(
+        args.id,
+        publish=args.publish,
+        all_tracks=args.all_tracks,
+        out_dir=out_dir,
+    )
+    print(f"  Record updated → {path}")
+
+
+def cmd_calibrate(args: argparse.Namespace) -> None:
+    out_dir = Path(args.out) if args.out else OUT_DIR
+    report_path = eval_calibrate(out_dir=out_dir)
+    with open(report_path) as f:
+        print(f.read())
+    print(f"Report written → {report_path}")
 
 
 def main() -> None:
@@ -157,6 +180,8 @@ def main() -> None:
         default="dev",
         help="dev=haiku (default), default=sonnet, hero=opus",
     )
+    rev.add_argument("--persona", default="default",
+                     help="Critic persona (default|pundit|liner, or any file in critic/personas/)")
     rev.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
 
     # critic batch …
@@ -172,6 +197,8 @@ def main() -> None:
     )
     bat.add_argument("--skip-impression", action="store_true", help="Skip Gemini impression step")
     bat.add_argument("--skip-tags", action="store_true", help="Skip CLAP tags step")
+    bat.add_argument("--persona", default="default",
+                     help="Critic persona (default|pundit|liner, or any file in critic/personas/)")
     bat.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
 
     # critic report …
@@ -190,7 +217,22 @@ def main() -> None:
     alb.add_argument("--target", choices=["album_blurb", "album_long"], default="album_blurb")
     alb.add_argument("--model", choices=["dev", "default", "hero"], default="dev",
                      help="dev=haiku (default), default=sonnet, hero=opus")
+    alb.add_argument("--persona", default="default",
+                     help="Critic persona (default|pundit|liner, or any file in critic/personas/)")
     alb.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
+
+    # critic approve …
+    apr = sub.add_parser("approve", help="Approve a track or album review for publishing")
+    apr.add_argument("id", help="track_id or album_id (e.g. pcbender--apa or pcbender--tria)")
+    apr.add_argument("--publish", action="store_true",
+                     help="Mark as publishable (vs. just approved)")
+    apr.add_argument("--all-tracks", action="store_true",
+                     help="Album only — also approve all contextual track reviews")
+    apr.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
+
+    # critic calibrate …
+    cal = sub.add_parser("calibrate", help="Check records against calibration spec; write calibration.md")
+    cal.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
 
     args = parser.parse_args()
 
@@ -207,6 +249,10 @@ def main() -> None:
         doc = pipeline_show(args.id, save=args.save, out_dir=out_dir)
         if not args.save:
             print(doc)
+    elif args.command == "approve":
+        cmd_approve(args)
+    elif args.command == "calibrate":
+        cmd_calibrate(args)
     else:
         parser.print_help()
         sys.exit(1)

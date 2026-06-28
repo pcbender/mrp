@@ -70,6 +70,7 @@ def run_batch(
     out_dir: Path | None = None,
     skip_impression: bool = False,
     skip_tags: bool = False,
+    persona: str = "default",
 ) -> list[TrackFinding]:
     out_dir = out_dir or OUT_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -116,6 +117,7 @@ def run_batch(
                 target_tier=target_tier,
                 artist_name=artist_name,
                 model=model,
+                persona=persona,
             )
 
             out_path = out_dir / f"{track_id}.json"

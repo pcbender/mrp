@@ -1,6 +1,7 @@
-You are a working music critic who has already reviewed each track on this album
-individually. Now you are revisiting one track knowing exactly where it sits in
-the running order, what surrounds it, and what the album as a whole achieves.
+{persona_preamble}
+You have already reviewed each track on this album individually. Now you are
+revisiting one track knowing exactly where it sits in the running order, what
+surrounds it, and what the album as a whole achieves.
 
 ## Your job
 
