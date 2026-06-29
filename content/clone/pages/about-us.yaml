@@ -16,189 +16,300 @@ clone:
     link: https://www.maricoparecords.com/about-us/
     guid: https://startersites.io/blocksy/floreo/?page_id=9
     captured_path: raw/pages/www.maricoparecords.com/about-us/index.html
-  content_html: "<!-- wp:stackable/heading {\"contentAlign\":\"center\",\"uniqueId\"\
-    :\"b891f36\",\"textColor1\":\"#2d4d2b\"} -->\n<div class=\"wp-block-stackable-heading\
-    \ stk-block-heading stk-block-heading--v2 stk-block stk-b891f36\" id=\"welcome-to-maricopa-records\"\
-    \ data-block-id=\"b891f36\"><style>.stk-b891f36 .stk-block-heading__text{color:#2d4d2b\
-    \ !important;}</style><h2 class=\"stk-block-heading__text has-text-color has-text-align-center\"\
-    >Welcome to Maricopa Records</h2></div>\n<!-- /wp:stackable/heading -->\n\n<!--\
-    \ wp:group {\"metadata\":{\"categories\":[\"about\"],\"patternName\":\"woocommerce-blocks/content-right-with-image-left\"\
-    ,\"name\":\"Content right with image left\"},\"align\":\"full\",\"className\"\
-    :\"alignfull\",\"style\":{\"spacing\":{\"padding\":{\"top\":\"calc( 0.5 * var(\\\
-    u002d\\u002dwp\\u002d\\u002dstyle\\u002d\\u002droot\\u002d\\u002dpadding-right,\
-    \ var(\\u002d\\u002dwp\\u002d\\u002dcustom\\u002d\\u002dgap\\u002d\\u002dhorizontal)))\"\
-    ,\"bottom\":\"calc( 0.5 * var(\\u002d\\u002dwp\\u002d\\u002dstyle\\u002d\\u002droot\\\
-    u002d\\u002dpadding-right, var(\\u002d\\u002dwp\\u002d\\u002dcustom\\u002d\\u002dgap\\\
-    u002d\\u002dhorizontal)))\",\"left\":\"var(\\u002d\\u002dwp\\u002d\\u002dstyle\\\
-    u002d\\u002droot\\u002d\\u002dpadding-left, var(\\u002d\\u002dwp\\u002d\\u002dcustom\\\
-    u002d\\u002dgap\\u002d\\u002dhorizontal))\",\"right\":\"var(\\u002d\\u002dwp\\\
-    u002d\\u002dstyle\\u002d\\u002droot\\u002d\\u002dpadding-right, var(\\u002d\\\
-    u002dwp\\u002d\\u002dcustom\\u002d\\u002dgap\\u002d\\u002dhorizontal))\"},\"margin\"\
-    :{\"top\":\"0\",\"bottom\":\"0\"}}},\"layout\":{\"type\":\"constrained\",\"justifyContent\"\
-    :\"center\"}} -->\n<div class=\"wp-block-group alignfull\" style=\"margin-top:0;margin-bottom:0;padding-top:calc(\
-    \ 0.5 * var(--wp--style--root--padding-right, var(--wp--custom--gap--horizontal)));padding-right:var(--wp--style--root--padding-right,\
-    \ var(--wp--custom--gap--horizontal));padding-bottom:calc( 0.5 * var(--wp--style--root--padding-right,\
-    \ var(--wp--custom--gap--horizontal)));padding-left:var(--wp--style--root--padding-left,\
-    \ var(--wp--custom--gap--horizontal))\"><!-- wp:spacer {\"height\":\"calc( 0.25\
-    \ * var(\\u002d\\u002dwp\\u002d\\u002dstyle\\u002d\\u002droot\\u002d\\u002dpadding-right,\
-    \ var(\\u002d\\u002dwp\\u002d\\u002dcustom\\u002d\\u002dgap\\u002d\\u002dhorizontal)))\"\
-    } -->\n<div style=\"height:calc( 0.25 * var(--wp--style--root--padding-right,\
-    \ var(--wp--custom--gap--horizontal)))\" aria-hidden=\"true\" class=\"wp-block-spacer\"\
-    ></div>\n<!-- /wp:spacer -->\n\n<!-- wp:columns {\"verticalAlignment\":\"center\"\
-    ,\"align\":\"wide\",\"style\":{\"spacing\":{\"blockGap\":{\"left\":\"var:preset|spacing|40\"\
-    }}}} -->\n<div class=\"wp-block-columns alignwide are-vertically-aligned-center\"\
-    ><!-- wp:column {\"verticalAlignment\":\"center\"} -->\n<div class=\"wp-block-column\
-    \ is-vertically-aligned-center\"><!-- wp:image {\"id\":898,\"aspectRatio\":\"\
-    1\",\"scale\":\"cover\",\"sizeSlug\":\"full\",\"linkDestination\":\"none\"} -->\n\
-    <figure class=\"wp-block-image size-full\"><img src=\"https://www.maricoparecords.com/wp-content/uploads/2025/02/AboutUsImage.png\"\
-    \ alt=\"\" class=\"wp-image-898\" style=\"aspect-ratio:1;object-fit:cover\"/></figure>\n\
-    <!-- /wp:image --></div>\n<!-- /wp:column -->\n\n<!-- wp:column {\"verticalAlignment\"\
-    :\"center\"} -->\n<div class=\"wp-block-column is-vertically-aligned-center\"\
-    ><!-- wp:paragraph -->\n<p>Maricopa Records is an innovative music production\
-    \ and distribution company at the intersection of AI technology and analog creativity.\
-    \ We specialize in crafting unique music, lyrics, images, and videos using a fusion\
-    \ of cutting-edge artificial intelligence and traditional recording techniques.\
-    \ Our mission is to push the boundaries of artistic expression, creating fresh,\
-    \ genre-defying music that captivates audiences worldwide.</p>\n<!-- /wp:paragraph\
-    \ -->\n\n<!-- wp:paragraph -->\n<p>With a commitment to authenticity and high-quality\
-    \ production, we embrace both the digital revolution and the warmth of analog\
-    \ sound. Our roster of artists includes groundbreaking AI-driven performers as\
-    \ well as human collaborators, all contributing to a sonic landscape that challenges\
-    \ conventions and redefines what\u2019s possible in modern music.</p>\n<!-- /wp:paragraph\
-    \ -->\n\n<!-- wp:paragraph -->\n<p>At Maricopa Records, we are more than just\
-    \ a label\u2014we are a creative powerhouse, a platform for artists, and a home\
-    \ for those who want to explore uncharted musical territories. Whether it's the\
-    \ high-energy 80s rock revival of STAB or the storytelling wisdom of PCBender,\
-    \ our artists represent a bold new era of sound and innovation.</p>\n<!-- /wp:paragraph\
-    \ -->\n\n<!-- wp:paragraph -->\n<p><strong>Moving \u25E6 Music \u25E6 Forward</strong>\u2014\
-    this is our passion, our mission, and our promise.</p>\n<!-- /wp:paragraph -->\n\
-    \n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:column\
-    \ --></div>\n<!-- /wp:columns --></div>\n<!-- /wp:group -->\n\n<!-- wp:stackable/columns\
-    \ {\"uniqueId\":\"59ccf9e\",\"blockHeight\":400,\"blockVerticalAlign\":\"center\"\
-    ,\"blockMargin\":{\"top\":60,\"right\":\"\",\"bottom\":\"\",\"left\":\"\"},\"\
-    align\":\"wide\",\"innerBlockContentAlign\":\"alignwide\",\"columnArrangementMobile\"\
-    :\"2,1\"} -->\n<div class=\"wp-block-stackable-columns alignwide stk-block-columns\
-    \ stk-block stk-59ccf9e\" data-block-id=\"59ccf9e\"><style>.stk-59ccf9e {min-height:400px\
-    \ !important;align-items:center !important;margin-top:60px !important;display:flex\
-    \ !important;}@media screen and (max-width: 767px){.stk-59ccf9e {--stk-col-order-1:2\
-    \ !important;--stk-col-order-2:1 !important;}}</style><div class=\"stk-row stk-inner-blocks\
-    \ stk-block-content stk-content-align stk-59ccf9e-column alignwide\"><!-- wp:stackable/column\
-    \ {\"uniqueId\":\"72686c1\"} -->\n<div class=\"wp-block-stackable-column stk-block-column\
-    \ stk-column stk-block stk-72686c1\" data-v=\"4\" data-block-id=\"72686c1\"><div\
-    \ class=\"stk-column-wrapper stk-block-column__content stk-container stk-72686c1-container\
-    \ stk--no-background stk--no-padding\"><div class=\"stk-block-content stk-inner-blocks\
-    \ stk-72686c1-inner-blocks\"><!-- wp:stackable/text {\"uniqueId\":\"a9caa96\"\
-    } -->\n<div class=\"wp-block-stackable-text stk-block-text stk-block stk-a9caa96\"\
-    \ data-block-id=\"a9caa96\"><p class=\"stk-block-text__text\">Are you an artist\
-    \ looking for a label that embraces the future while honoring the past? Whether\
-    \ you\u2019re a musician, vocalist, producer, or AI-driven creator, we want to\
-    \ hear from you! Maricopa Records is always on the lookout for fresh talent who\
-    \ share our passion for music and innovation.</p></div>\n<!-- /wp:stackable/text\
-    \ -->\n\n<!-- wp:stackable/subtitle {\"uniqueId\":\"1499a64\"} -->\n<div class=\"\
-    wp-block-stackable-subtitle stk-block-subtitle stk-block stk-1499a64\" data-block-id=\"\
-    1499a64\"><p class=\"stk-block-subtitle__text stk-subtitle\">What we offer:</p></div>\n\
-    <!-- /wp:stackable/subtitle -->\n\n<!-- wp:stackable/icon-list {\"uniqueId\":\"\
-    e9d01b8\"} -->\n<div class=\"wp-block-stackable-icon-list stk-block-icon-list\
-    \ stk-block stk-e9d01b8\" data-block-id=\"e9d01b8\"><svg style=\"display:none\"\
-    ><defs><g id=\"stk-icon-list__icon-svg-def-e9d01b8\"><svg xmlns=\"http://www.w3.org/2000/svg\"\
-    \ viewBox=\"0 0 190 190\"><polygon points=\"173.8,28.4 60.4,141.8 15.7,97.2 5.1,107.8\
-    \ 60.4,163 184.4,39 173.8,28.4\"/></svg></g></defs></svg><ul class=\"stk-block-icon-list__ul\
-    \ stk-block-icon-list--column\"><!-- wp:stackable/icon-list-item {\"uniqueId\"\
-    :\"be00bfd\",\"textShadow\":\"none\",\"parentUniqueId\":\"e9d01b8\"} -->\n<li\
-    \ class=\"wp-block-stackable-icon-list-item stk-block-icon-list-item stk-block\
-    \ stk-be00bfd\" data-block-id=\"be00bfd\"><style>.stk-be00bfd .stk-block-icon-list-item__text{text-shadow:none\
-    \ !important;}</style><div class=\"stk-block-icon-list-item__content\"><span class=\"\
-    stk--svg-wrapper\"><div class=\"stk--inner-svg\"><svg aria-hidden=\"true\" width=\"\
-    32\" height=\"32\"><use xlink:href=\"#stk-icon-list__icon-svg-def-e9d01b8\"></use></svg></div></span><span\
-    \ class=\"stk-block-icon-list-item__text\">A forward-thinking approach to music\
-    \ production and distribution</span></div></li>\n<!-- /wp:stackable/icon-list-item\
-    \ -->\n\n<!-- wp:stackable/icon-list-item {\"uniqueId\":\"a1588f9\",\"parentUniqueId\"\
-    :\"e9d01b8\"} -->\n<li class=\"wp-block-stackable-icon-list-item stk-block-icon-list-item\
-    \ stk-block stk-a1588f9\" data-block-id=\"a1588f9\"><div class=\"stk-block-icon-list-item__content\"\
-    ><span class=\"stk--svg-wrapper\"><div class=\"stk--inner-svg\"><svg aria-hidden=\"\
-    true\" width=\"32\" height=\"32\"><use xlink:href=\"#stk-icon-list__icon-svg-def-e9d01b8\"\
-    ></use></svg></div></span><span class=\"stk-block-icon-list-item__text\">Access\
-    \ to AI-powered creative tools and high-quality analog recording techniques</span></div></li>\n\
-    <!-- /wp:stackable/icon-list-item -->\n\n<!-- wp:stackable/icon-list-item {\"\
-    uniqueId\":\"99a40c7\",\"parentUniqueId\":\"e9d01b8\"} -->\n<li class=\"wp-block-stackable-icon-list-item\
-    \ stk-block-icon-list-item stk-block stk-99a40c7\" data-block-id=\"99a40c7\"><div\
-    \ class=\"stk-block-icon-list-item__content\"><span class=\"stk--svg-wrapper\"\
-    ><div class=\"stk--inner-svg\"><svg aria-hidden=\"true\" width=\"32\" height=\"\
-    32\"><use xlink:href=\"#stk-icon-list__icon-svg-def-e9d01b8\"></use></svg></div></span><span\
-    \ class=\"stk-block-icon-list-item__text\">Collaboration with a diverse network\
-    \ of artists and producers</span></div></li>\n<!-- /wp:stackable/icon-list-item\
-    \ -->\n\n<!-- wp:stackable/icon-list-item {\"uniqueId\":\"bdba86d\",\"parentUniqueId\"\
-    :\"e9d01b8\"} -->\n<li class=\"wp-block-stackable-icon-list-item stk-block-icon-list-item\
-    \ stk-block stk-bdba86d\" data-block-id=\"bdba86d\"><div class=\"stk-block-icon-list-item__content\"\
-    ><span class=\"stk--svg-wrapper\"><div class=\"stk--inner-svg\"><svg aria-hidden=\"\
-    true\" width=\"32\" height=\"32\"><use xlink:href=\"#stk-icon-list__icon-svg-def-e9d01b8\"\
-    ></use></svg></div></span><span class=\"stk-block-icon-list-item__text\">Support\
-    \ in branding, promotion, and digital distribution</span></div></li>\n<!-- /wp:stackable/icon-list-item\
-    \ --></ul></div>\n<!-- /wp:stackable/icon-list -->\n\n<!-- wp:paragraph -->\n\
-    <p>If you have a unique sound, a fresh perspective, and a passion for breaking\
-    \ musical boundaries, we\u2019d love to hear your work. Submit your <a href=\"\
-    https://www.maricoparecords.com/contact/\">demo or portfolio</a> and let\u2019\
-    s make something extraordinary together.</p>\n<!-- /wp:paragraph --></div></div></div>\n\
-    <!-- /wp:stackable/column -->\n\n<!-- wp:stackable/column {\"uniqueId\":\"2c595f8\"\
-    } -->\n<div class=\"wp-block-stackable-column stk-block-column stk-column stk-block\
-    \ stk-2c595f8\" data-v=\"4\" data-block-id=\"2c595f8\"><div class=\"stk-column-wrapper\
-    \ stk-block-column__content stk-container stk-2c595f8-container stk--no-background\
-    \ stk--no-padding\"><div class=\"stk-block-content stk-inner-blocks stk-2c595f8-inner-blocks\"\
-    ><!-- wp:stackable/heading {\"contentAlign\":\"center\",\"uniqueId\":\"a463cbc\"\
-    ,\"blockMargin\":{\"top\":\"\",\"right\":\"\",\"bottom\":0,\"left\":\"\"},\"fontSize\"\
-    :64,\"fontFamily\":\"DM Serif Display\",\"textColorType\":\"gradient\",\"textColor1\"\
-    :\"#ed3f40\",\"showTopLine\":false,\"topLineColor\":\"#f28e18\",\"topLineAlign\"\
-    :\"center\"} -->\n<div class=\"wp-block-stackable-heading stk-block-heading stk-block-heading--v2\
-    \ stk-block stk-a463cbc\" id=\"join-us\" data-block-id=\"a463cbc\"><style>.stk-a463cbc\
-    \ .stk-block-heading__top-line{background-color:#f28e18 !important;margin-left:auto\
-    \ !important;margin-right:auto !important;}.stk-a463cbc {margin-bottom:0px !important;}.stk-a463cbc\
-    \ .stk-block-heading__text{font-size:64px !important;background-image:linear-gradient(#ed3f40\
-    \ 0%, #ed3f40 100%) !important;font-family:\"DM Serif Display\", Sans-serif !important;}@media\
-    \ screen and (max-width: 1023px){.stk-a463cbc .stk-block-heading__text{font-size:50px\
-    \ !important;}}</style><h2 class=\"stk-block-heading__text stk--is-gradient has-text-color\
-    \ has-text-align-center\">Join Us</h2></div>\n<!-- /wp:stackable/heading --></div></div></div>\n\
-    <!-- /wp:stackable/column --></div></div>\n<!-- /wp:stackable/columns -->\n\n\
-    <!-- wp:stackable/blockquote {\"uniqueId\":\"7e2b999\",\"hasContainer\":true,\"\
-    className\":\"is-style-simple\"} -->\n<blockquote class=\"wp-block-stackable-blockquote\
-    \ stk-block-blockquote stk-block stk-7e2b999 is-style-simple\" data-v=\"2\" data-block-id=\"\
-    7e2b999\"><div class=\"stk-block-blockquote__content stk-container stk-7e2b999-container\
-    \ stk-hover-parent\"><div class=\"stk-block-content stk-inner-blocks\"><!-- wp:stackable/icon\
-    \ {\"uniqueId\":\"57405ad\",\"opacity\":0.2,\"position\":\"absolute\",\"positionNum\"\
-    :{\"top\":-50,\"right\":\"\",\"bottom\":\"\",\"left\":-50},\"icon\":\"\\u003csvg\
-    \ xmlns=\\u0022http://www.w3.org/2000/svg\\u0022 viewBox=\\u00220 0 50 50\\u0022\\\
-    u003e\\u003cpath d=\\u0022M19.8 9.3C10.5 11.8 4.6 17 2.1 24.8c2.3-3.6 5.6-5.4\
-    \ 9.9-5.4 3.3 0 6 1.1 8.3 3.3 2.2 2.2 3.4 5 3.4 8.3 0 3.2-1.1 5.8-3.3 8-2.2 2.2-5.1\
-    \ 3.2-8.7 3.2-3.7 0-6.5-1.2-8.6-3.5C1 36.3 0 33.1 0 29 0 18.3 6.5 11.2 19.6 7.9l.2\
-    \ 1.4zm26.4 0C36.9 11.9 31 17 28.5 24.8c2.2-3.6 5.5-5.4 9.8-5.4 3.2 0 6 1.1 8.3\
-    \ 3.2 2.3 2.2 3.4 4.9 3.4 8.3 0 3.1-1.1 5.8-3.3 7.9-2.2 2.2-5.1 3.3-8.6 3.3-3.7\
-    \ 0-6.6-1.1-8.6-3.4-2.1-2.3-3.1-5.5-3.1-9.7 0-10.7 6.6-17.8 19.7-21.1l.1 1.4z\\\
-    u0022\\u003e\\u003c/path\\u003e\\u003c/svg\\u003e\",\"iconSize\":200} -->\n<div\
-    \ class=\"wp-block-stackable-icon stk-block-icon stk-block stk-57405ad\" data-block-id=\"\
-    57405ad\"><style>.stk-57405ad {top:-50px !important;left:-50px !important;position:absolute\
-    \ !important;opacity:0.2 !important;}.stk-57405ad .stk--svg-wrapper .stk--inner-svg\
-    \ svg:last-child{height:200px !important;width:200px !important;}</style><span\
-    \ class=\"stk--svg-wrapper\"><div class=\"stk--inner-svg\"><svg style=\"height:0;width:0\"\
-    ><defs><linearGradient id=\"linear-gradient-57405ad\" x1=\"0\" x2=\"100%\" y1=\"\
-    0\" y2=\"0\"><stop offset=\"0%\" style=\"stop-opacity:1;stop-color:var(--linear-gradient-57405-ad-color-1)\"\
-    ></stop><stop offset=\"100%\" style=\"stop-opacity:1;stop-color:var(--linear-gradient-57405-ad-color-2)\"\
-    ></stop></linearGradient></defs></svg><svg xmlns=\"http://www.w3.org/2000/svg\"\
-    \ viewBox=\"0 0 50 50\" aria-hidden=\"true\" width=\"32\" height=\"32\"><path\
-    \ d=\"M19.8 9.3C10.5 11.8 4.6 17 2.1 24.8c2.3-3.6 5.6-5.4 9.9-5.4 3.3 0 6 1.1\
-    \ 8.3 3.3 2.2 2.2 3.4 5 3.4 8.3 0 3.2-1.1 5.8-3.3 8-2.2 2.2-5.1 3.2-8.7 3.2-3.7\
-    \ 0-6.5-1.2-8.6-3.5C1 36.3 0 33.1 0 29 0 18.3 6.5 11.2 19.6 7.9l.2 1.4zm26.4 0C36.9\
-    \ 11.9 31 17 28.5 24.8c2.2-3.6 5.5-5.4 9.8-5.4 3.2 0 6 1.1 8.3 3.2 2.3 2.2 3.4\
-    \ 4.9 3.4 8.3 0 3.1-1.1 5.8-3.3 7.9-2.2 2.2-5.1 3.3-8.6 3.3-3.7 0-6.6-1.1-8.6-3.4-2.1-2.3-3.1-5.5-3.1-9.7\
-    \ 0-10.7 6.6-17.8 19.7-21.1l.1 1.4z\"></path></svg></div></span></div>\n<!-- /wp:stackable/icon\
-    \ -->\n\n<!-- wp:stackable/text {\"uniqueId\":\"6bd661e\",\"blockVerticalAlign\"\
-    :\"center\",\"contentAlign\":\"center\",\"fontSize\":30} -->\n<div class=\"wp-block-stackable-text\
-    \ stk-block-text stk-block stk-6bd661e\" data-block-id=\"6bd661e\"><style>.stk-6bd661e\
-    \ {align-items:center !important;display:flex !important;}.stk-6bd661e .stk-block-text__text{font-size:30px\
-    \ !important;}@media screen and (max-width: 1023px){.stk-6bd661e .stk-block-text__text{font-size:30px\
-    \ !important;}}</style><p class=\"stk-block-text__text has-text-align-center\"\
-    >Welcome to the future of music. Welcome to Maricopa Records. <br><strong>Moving\
-    \ \u25E6 Music \u25E6 Forward</strong></p></div>\n<!-- /wp:stackable/text --></div></div></blockquote>\n\
-    <!-- /wp:stackable/blockquote -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph\
-    \ -->"
+  content_html: '<!-- wp:stackable/heading {"contentAlign":"center","uniqueId":"b891f36","textColor1":"#2d4d2b"}
+    -->
+
+    <div class="wp-block-stackable-heading stk-block-heading stk-block-heading--v2
+    stk-block stk-b891f36" id="welcome-to-maricopa-records" data-block-id="b891f36"><style>.stk-b891f36
+    .stk-block-heading__text{color:#2d4d2b !important;}</style><h2 class="stk-block-heading__text
+    has-text-color has-text-align-center">Welcome to Maricopa Records</h2></div>
+
+    <!-- /wp:stackable/heading -->
+
+
+    <!-- wp:group {"metadata":{"categories":["about"],"patternName":"woocommerce-blocks/content-right-with-image-left","name":"Content
+    right with image left"},"align":"full","className":"alignfull","style":{"spacing":{"padding":{"top":"calc(
+    0.5 * var(\u002d\u002dwp\u002d\u002dstyle\u002d\u002droot\u002d\u002dpadding-right,
+    var(\u002d\u002dwp\u002d\u002dcustom\u002d\u002dgap\u002d\u002dhorizontal)))","bottom":"calc(
+    0.5 * var(\u002d\u002dwp\u002d\u002dstyle\u002d\u002droot\u002d\u002dpadding-right,
+    var(\u002d\u002dwp\u002d\u002dcustom\u002d\u002dgap\u002d\u002dhorizontal)))","left":"var(\u002d\u002dwp\u002d\u002dstyle\u002d\u002droot\u002d\u002dpadding-left,
+    var(\u002d\u002dwp\u002d\u002dcustom\u002d\u002dgap\u002d\u002dhorizontal))","right":"var(\u002d\u002dwp\u002d\u002dstyle\u002d\u002droot\u002d\u002dpadding-right,
+    var(\u002d\u002dwp\u002d\u002dcustom\u002d\u002dgap\u002d\u002dhorizontal))"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","justifyContent":"center"}}
+    -->
+
+    <div class="wp-block-group alignfull" style="margin-top:0;margin-bottom:0;padding-top:calc(
+    0.5 * var(--wp--style--root--padding-right, var(--wp--custom--gap--horizontal)));padding-right:var(--wp--style--root--padding-right,
+    var(--wp--custom--gap--horizontal));padding-bottom:calc( 0.5 * var(--wp--style--root--padding-right,
+    var(--wp--custom--gap--horizontal)));padding-left:var(--wp--style--root--padding-left,
+    var(--wp--custom--gap--horizontal))"><!-- wp:spacer {"height":"calc( 0.25 * var(\u002d\u002dwp\u002d\u002dstyle\u002d\u002droot\u002d\u002dpadding-right,
+    var(\u002d\u002dwp\u002d\u002dcustom\u002d\u002dgap\u002d\u002dhorizontal)))"}
+    -->
+
+    <div style="height:calc( 0.25 * var(--wp--style--root--padding-right, var(--wp--custom--gap--horizontal)))"
+    aria-hidden="true" class="wp-block-spacer"></div>
+
+    <!-- /wp:spacer -->
+
+
+    <!-- wp:columns {"verticalAlignment":"center","align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|40"}}}}
+    -->
+
+    <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column
+    {"verticalAlignment":"center"} -->
+
+    <div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"id":898,"aspectRatio":"1","scale":"cover","sizeSlug":"full","linkDestination":"none"}
+    -->
+
+    <figure class="wp-block-image size-full"><img src="https://www.maricoparecords.com/wp-content/uploads/2025/02/AboutUsImage.png"
+    alt="" class="wp-image-898" style="aspect-ratio:1;object-fit:cover"/></figure>
+
+    <!-- /wp:image --></div>
+
+    <!-- /wp:column -->
+
+
+    <!-- wp:column {"verticalAlignment":"center"} -->
+
+    <div class="wp-block-column is-vertically-aligned-center"><!-- wp:paragraph -->
+
+    <p>Maricopa Records is an innovative music production and distribution company
+    at the intersection of AI technology and analog creativity. We specialize in crafting
+    unique music, lyrics, images, and videos using a fusion of cutting-edge artificial
+    intelligence and traditional recording techniques. Our mission is to push the
+    boundaries of artistic expression, creating fresh, genre-defying music that captivates
+    audiences worldwide.</p>
+
+    <!-- /wp:paragraph -->
+
+
+    <!-- wp:paragraph -->
+
+    <p>With a commitment to authenticity and high-quality production, we embrace both
+    the digital revolution and the warmth of analog sound. Our roster of artists includes
+    groundbreaking AI-driven performers as well as human collaborators, all contributing
+    to a sonic landscape that challenges conventions and redefines what’s possible
+    in modern music.</p>
+
+    <!-- /wp:paragraph -->
+
+
+    <!-- wp:paragraph -->
+
+    <p>At Maricopa Records, we are more than just a label-we are a creative powerhouse,
+    a platform for artists, and a home for those who want to explore uncharted musical
+    territories. Whether it''s the high-energy 80s rock revival of STAB or the storytelling
+    wisdom of PCBender, our artists represent a bold new era of sound and innovation.</p>
+
+    <!-- /wp:paragraph -->
+
+
+    <!-- wp:paragraph -->
+
+    <p><strong>Moving ◦ Music ◦ Forward</strong>-this is our passion, our mission,
+    and our promise.</p>
+
+    <!-- /wp:paragraph -->
+
+
+    <!-- wp:paragraph -->
+
+    <p></p>
+
+    <!-- /wp:paragraph --></div>
+
+    <!-- /wp:column --></div>
+
+    <!-- /wp:columns --></div>
+
+    <!-- /wp:group -->
+
+
+    <!-- wp:stackable/columns {"uniqueId":"59ccf9e","blockHeight":400,"blockVerticalAlign":"center","blockMargin":{"top":60,"right":"","bottom":"","left":""},"align":"wide","innerBlockContentAlign":"alignwide","columnArrangementMobile":"2,1"}
+    -->
+
+    <div class="wp-block-stackable-columns alignwide stk-block-columns stk-block stk-59ccf9e"
+    data-block-id="59ccf9e"><style>.stk-59ccf9e {min-height:400px !important;align-items:center
+    !important;margin-top:60px !important;display:flex !important;}@media screen and
+    (max-width: 767px){.stk-59ccf9e {--stk-col-order-1:2 !important;--stk-col-order-2:1
+    !important;}}</style><div class="stk-row stk-inner-blocks stk-block-content stk-content-align
+    stk-59ccf9e-column alignwide"><!-- wp:stackable/column {"uniqueId":"72686c1"}
+    -->
+
+    <div class="wp-block-stackable-column stk-block-column stk-column stk-block stk-72686c1"
+    data-v="4" data-block-id="72686c1"><div class="stk-column-wrapper stk-block-column__content
+    stk-container stk-72686c1-container stk--no-background stk--no-padding"><div class="stk-block-content
+    stk-inner-blocks stk-72686c1-inner-blocks"><!-- wp:stackable/text {"uniqueId":"a9caa96"}
+    -->
+
+    <div class="wp-block-stackable-text stk-block-text stk-block stk-a9caa96" data-block-id="a9caa96"><p
+    class="stk-block-text__text">Are you an artist looking for a label that embraces
+    the future while honoring the past? Whether you’re a musician, vocalist, producer,
+    or AI-driven creator, we want to hear from you! Maricopa Records is always on
+    the lookout for fresh talent who share our passion for music and innovation.</p></div>
+
+    <!-- /wp:stackable/text -->
+
+
+    <!-- wp:stackable/subtitle {"uniqueId":"1499a64"} -->
+
+    <div class="wp-block-stackable-subtitle stk-block-subtitle stk-block stk-1499a64"
+    data-block-id="1499a64"><p class="stk-block-subtitle__text stk-subtitle">What
+    we offer:</p></div>
+
+    <!-- /wp:stackable/subtitle -->
+
+
+    <!-- wp:stackable/icon-list {"uniqueId":"e9d01b8"} -->
+
+    <div class="wp-block-stackable-icon-list stk-block-icon-list stk-block stk-e9d01b8"
+    data-block-id="e9d01b8"><svg style="display:none"><defs><g id="stk-icon-list__icon-svg-def-e9d01b8"><svg
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 190"><polygon points="173.8,28.4
+    60.4,141.8 15.7,97.2 5.1,107.8 60.4,163 184.4,39 173.8,28.4"/></svg></g></defs></svg><ul
+    class="stk-block-icon-list__ul stk-block-icon-list--column"><!-- wp:stackable/icon-list-item
+    {"uniqueId":"be00bfd","textShadow":"none","parentUniqueId":"e9d01b8"} -->
+
+    <li class="wp-block-stackable-icon-list-item stk-block-icon-list-item stk-block
+    stk-be00bfd" data-block-id="be00bfd"><style>.stk-be00bfd .stk-block-icon-list-item__text{text-shadow:none
+    !important;}</style><div class="stk-block-icon-list-item__content"><span class="stk--svg-wrapper"><div
+    class="stk--inner-svg"><svg aria-hidden="true" width="32" height="32"><use xlink:href="#stk-icon-list__icon-svg-def-e9d01b8"></use></svg></div></span><span
+    class="stk-block-icon-list-item__text">A forward-thinking approach to music production
+    and distribution</span></div></li>
+
+    <!-- /wp:stackable/icon-list-item -->
+
+
+    <!-- wp:stackable/icon-list-item {"uniqueId":"a1588f9","parentUniqueId":"e9d01b8"}
+    -->
+
+    <li class="wp-block-stackable-icon-list-item stk-block-icon-list-item stk-block
+    stk-a1588f9" data-block-id="a1588f9"><div class="stk-block-icon-list-item__content"><span
+    class="stk--svg-wrapper"><div class="stk--inner-svg"><svg aria-hidden="true" width="32"
+    height="32"><use xlink:href="#stk-icon-list__icon-svg-def-e9d01b8"></use></svg></div></span><span
+    class="stk-block-icon-list-item__text">Access to AI-powered creative tools and
+    high-quality analog recording techniques</span></div></li>
+
+    <!-- /wp:stackable/icon-list-item -->
+
+
+    <!-- wp:stackable/icon-list-item {"uniqueId":"99a40c7","parentUniqueId":"e9d01b8"}
+    -->
+
+    <li class="wp-block-stackable-icon-list-item stk-block-icon-list-item stk-block
+    stk-99a40c7" data-block-id="99a40c7"><div class="stk-block-icon-list-item__content"><span
+    class="stk--svg-wrapper"><div class="stk--inner-svg"><svg aria-hidden="true" width="32"
+    height="32"><use xlink:href="#stk-icon-list__icon-svg-def-e9d01b8"></use></svg></div></span><span
+    class="stk-block-icon-list-item__text">Collaboration with a diverse network of
+    artists and producers</span></div></li>
+
+    <!-- /wp:stackable/icon-list-item -->
+
+
+    <!-- wp:stackable/icon-list-item {"uniqueId":"bdba86d","parentUniqueId":"e9d01b8"}
+    -->
+
+    <li class="wp-block-stackable-icon-list-item stk-block-icon-list-item stk-block
+    stk-bdba86d" data-block-id="bdba86d"><div class="stk-block-icon-list-item__content"><span
+    class="stk--svg-wrapper"><div class="stk--inner-svg"><svg aria-hidden="true" width="32"
+    height="32"><use xlink:href="#stk-icon-list__icon-svg-def-e9d01b8"></use></svg></div></span><span
+    class="stk-block-icon-list-item__text">Support in branding, promotion, and digital
+    distribution</span></div></li>
+
+    <!-- /wp:stackable/icon-list-item --></ul></div>
+
+    <!-- /wp:stackable/icon-list -->
+
+
+    <!-- wp:paragraph -->
+
+    <p>If you have a unique sound, a fresh perspective, and a passion for breaking
+    musical boundaries, we’d love to hear your work. Submit your <a href="https://www.maricoparecords.com/contact/">demo
+    or portfolio</a> and let’s make something extraordinary together.</p>
+
+    <!-- /wp:paragraph --></div></div></div>
+
+    <!-- /wp:stackable/column -->
+
+
+    <!-- wp:stackable/column {"uniqueId":"2c595f8"} -->
+
+    <div class="wp-block-stackable-column stk-block-column stk-column stk-block stk-2c595f8"
+    data-v="4" data-block-id="2c595f8"><div class="stk-column-wrapper stk-block-column__content
+    stk-container stk-2c595f8-container stk--no-background stk--no-padding"><div class="stk-block-content
+    stk-inner-blocks stk-2c595f8-inner-blocks"><!-- wp:stackable/heading {"contentAlign":"center","uniqueId":"a463cbc","blockMargin":{"top":"","right":"","bottom":0,"left":""},"fontSize":64,"fontFamily":"DM
+    Serif Display","textColorType":"gradient","textColor1":"#ed3f40","showTopLine":false,"topLineColor":"#f28e18","topLineAlign":"center"}
+    -->
+
+    <div class="wp-block-stackable-heading stk-block-heading stk-block-heading--v2
+    stk-block stk-a463cbc" id="join-us" data-block-id="a463cbc"><style>.stk-a463cbc
+    .stk-block-heading__top-line{background-color:#f28e18 !important;margin-left:auto
+    !important;margin-right:auto !important;}.stk-a463cbc {margin-bottom:0px !important;}.stk-a463cbc
+    .stk-block-heading__text{font-size:64px !important;background-image:linear-gradient(#ed3f40
+    0%, #ed3f40 100%) !important;font-family:"DM Serif Display", Sans-serif !important;}@media
+    screen and (max-width: 1023px){.stk-a463cbc .stk-block-heading__text{font-size:50px
+    !important;}}</style><h2 class="stk-block-heading__text stk--is-gradient has-text-color
+    has-text-align-center">Join Us</h2></div>
+
+    <!-- /wp:stackable/heading --></div></div></div>
+
+    <!-- /wp:stackable/column --></div></div>
+
+    <!-- /wp:stackable/columns -->
+
+
+    <!-- wp:stackable/blockquote {"uniqueId":"7e2b999","hasContainer":true,"className":"is-style-simple"}
+    -->
+
+    <blockquote class="wp-block-stackable-blockquote stk-block-blockquote stk-block
+    stk-7e2b999 is-style-simple" data-v="2" data-block-id="7e2b999"><div class="stk-block-blockquote__content
+    stk-container stk-7e2b999-container stk-hover-parent"><div class="stk-block-content
+    stk-inner-blocks"><!-- wp:stackable/icon {"uniqueId":"57405ad","opacity":0.2,"position":"absolute","positionNum":{"top":-50,"right":"","bottom":"","left":-50},"icon":"\u003csvg
+    xmlns=\u0022http://www.w3.org/2000/svg\u0022 viewBox=\u00220 0 50 50\u0022\u003e\u003cpath
+    d=\u0022M19.8 9.3C10.5 11.8 4.6 17 2.1 24.8c2.3-3.6 5.6-5.4 9.9-5.4 3.3 0 6 1.1
+    8.3 3.3 2.2 2.2 3.4 5 3.4 8.3 0 3.2-1.1 5.8-3.3 8-2.2 2.2-5.1 3.2-8.7 3.2-3.7
+    0-6.5-1.2-8.6-3.5C1 36.3 0 33.1 0 29 0 18.3 6.5 11.2 19.6 7.9l.2 1.4zm26.4 0C36.9
+    11.9 31 17 28.5 24.8c2.2-3.6 5.5-5.4 9.8-5.4 3.2 0 6 1.1 8.3 3.2 2.3 2.2 3.4 4.9
+    3.4 8.3 0 3.1-1.1 5.8-3.3 7.9-2.2 2.2-5.1 3.3-8.6 3.3-3.7 0-6.6-1.1-8.6-3.4-2.1-2.3-3.1-5.5-3.1-9.7
+    0-10.7 6.6-17.8 19.7-21.1l.1 1.4z\u0022\u003e\u003c/path\u003e\u003c/svg\u003e","iconSize":200}
+    -->
+
+    <div class="wp-block-stackable-icon stk-block-icon stk-block stk-57405ad" data-block-id="57405ad"><style>.stk-57405ad
+    {top:-50px !important;left:-50px !important;position:absolute !important;opacity:0.2
+    !important;}.stk-57405ad .stk--svg-wrapper .stk--inner-svg svg:last-child{height:200px
+    !important;width:200px !important;}</style><span class="stk--svg-wrapper"><div
+    class="stk--inner-svg"><svg style="height:0;width:0"><defs><linearGradient id="linear-gradient-57405ad"
+    x1="0" x2="100%" y1="0" y2="0"><stop offset="0%" style="stop-opacity:1;stop-color:var(--linear-gradient-57405-ad-color-1)"></stop><stop
+    offset="100%" style="stop-opacity:1;stop-color:var(--linear-gradient-57405-ad-color-2)"></stop></linearGradient></defs></svg><svg
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true" width="32"
+    height="32"><path d="M19.8 9.3C10.5 11.8 4.6 17 2.1 24.8c2.3-3.6 5.6-5.4 9.9-5.4
+    3.3 0 6 1.1 8.3 3.3 2.2 2.2 3.4 5 3.4 8.3 0 3.2-1.1 5.8-3.3 8-2.2 2.2-5.1 3.2-8.7
+    3.2-3.7 0-6.5-1.2-8.6-3.5C1 36.3 0 33.1 0 29 0 18.3 6.5 11.2 19.6 7.9l.2 1.4zm26.4
+    0C36.9 11.9 31 17 28.5 24.8c2.2-3.6 5.5-5.4 9.8-5.4 3.2 0 6 1.1 8.3 3.2 2.3 2.2
+    3.4 4.9 3.4 8.3 0 3.1-1.1 5.8-3.3 7.9-2.2 2.2-5.1 3.3-8.6 3.3-3.7 0-6.6-1.1-8.6-3.4-2.1-2.3-3.1-5.5-3.1-9.7
+    0-10.7 6.6-17.8 19.7-21.1l.1 1.4z"></path></svg></div></span></div>
+
+    <!-- /wp:stackable/icon -->
+
+
+    <!-- wp:stackable/text {"uniqueId":"6bd661e","blockVerticalAlign":"center","contentAlign":"center","fontSize":30}
+    -->
+
+    <div class="wp-block-stackable-text stk-block-text stk-block stk-6bd661e" data-block-id="6bd661e"><style>.stk-6bd661e
+    {align-items:center !important;display:flex !important;}.stk-6bd661e .stk-block-text__text{font-size:30px
+    !important;}@media screen and (max-width: 1023px){.stk-6bd661e .stk-block-text__text{font-size:30px
+    !important;}}</style><p class="stk-block-text__text has-text-align-center">Welcome
+    to the future of music. Welcome to Maricopa Records. <br><strong>Moving ◦ Music
+    ◦ Forward</strong></p></div>
+
+    <!-- /wp:stackable/text --></div></div></blockquote>
+
+    <!-- /wp:stackable/blockquote -->
+
+
+    <!-- wp:paragraph -->
+
+    <p></p>
+
+    <!-- /wp:paragraph -->'
   excerpt: null
   seo:
     title: About Us
