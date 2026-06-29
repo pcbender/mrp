@@ -5,22 +5,21 @@ page:
   status: draft
   normalized_path: /artists/4castle/gone-and-forgotten/
   source_url: https://www.maricoparecords.com/artists/4castle/gone-and-forgotten/
-  content_html: "<h2><strong>Gone and Forgotten</strong></h2><p>A haunting reflection\
-    \ on time, loss, and regret, <em>Gone and Forgotten</em>is the latest release\
-    \ from <strong>4Castle</strong>, showcasing the band\u2019s signature blend of\
-    \ evocative storytelling, intricate arrangements, and powerful vocal harmonies.</p><p>Set\
-    \ against a backdrop of atmospheric instrumentation, the song weaves a somber\
-    \ tale of memories fading like mist, voices lost in the wind, and the quiet ache\
-    \ of what can never be reclaimed. With its haunting melody and poetic lyricism,\
-    \ Gone and Forgotten pulls the listener into a deep emotional landscape where\
-    \ past and present blur.</p><p>Lush guitars, melancholic keys, and a rhythm section\
-    \ that moves like the ticking hands of time build into an immersive, cinematic\
-    \ experience. The band\u2019s layered vocal harmonies add a deeply human touch,\
-    \ emphasizing the emotional weight of each verse.</p><p><strong>4Castle </strong>continues\
-    \ to explore the boundaries of rock, weaving classic influences with modern sensibilities,\
-    \ and <em>Gone and Forgotten</em>stands as a testament to their ability to craft\
-    \ songs that resonate long after the final note fades.</p><img src=\"https://www.maricoparecords.com/wp-content/uploads/2025/03/GoneAndForgotten.png\"\
-    ><p></p>"
+  content_html: <h2><strong>Gone and Forgotten</strong></h2><p>A haunting reflection
+    on time, loss, and regret, <em>Gone and Forgotten</em>is the latest release from
+    <strong>4Castle</strong>, showcasing the band’s signature blend of evocative storytelling,
+    intricate arrangements, and powerful vocal harmonies.</p><p>Set against a backdrop
+    of atmospheric instrumentation, the song weaves a somber tale of memories fading
+    like mist, voices lost in the wind, and the quiet ache of what can never be reclaimed.
+    With its haunting melody and poetic lyricism, Gone and Forgotten pulls the listener
+    into a deep emotional landscape where past and present blur.</p><p>Lush guitars,
+    melancholic keys, and a rhythm section that moves like the ticking hands of time
+    build into an immersive, cinematic experience. The band’s layered vocal harmonies
+    add a deeply human touch, emphasizing the emotional weight of each verse.</p><p><strong>4Castle
+    </strong>continues to explore the boundaries of rock, weaving classic influences
+    with modern sensibilities, and <em>Gone and Forgotten</em>stands as a testament
+    to their ability to craft songs that resonate long after the final note fades.</p><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/03/GoneAndForgotten.png"><p></p>
   excerpt: null
   seo:
     title: Gone and Forgotten
@@ -31,20 +30,33 @@ page:
     type: page
     status: publish
     captured_path: raw/pages/www.maricoparecords.com/artists/4castle/gone-and-forgotten/index.html
-  content_markdown: "## **Gone and Forgotten**\n\nA haunting reflection on time, loss,\
-    \ and regret, _Gone and Forgotten_is the latest release from **4Castle**, showcasing\
-    \ the band\u2019s signature blend of evocative storytelling, intricate arrangements,\
-    \ and powerful vocal harmonies.\n\nSet against a backdrop of atmospheric instrumentation,\
-    \ the song weaves a somber tale of memories fading like mist, voices lost in the\
-    \ wind, and the quiet ache of what can never be reclaimed. With its haunting melody\
-    \ and poetic lyricism, Gone and Forgotten pulls the listener into a deep emotional\
-    \ landscape where past and present blur.\n\nLush guitars, melancholic keys, and\
-    \ a rhythm section that moves like the ticking hands of time build into an immersive,\
-    \ cinematic experience. The band\u2019s layered vocal harmonies add a deeply human\
-    \ touch, emphasizing the emotional weight of each verse.\n\n**4Castle **continues\
-    \ to explore the boundaries of rock, weaving classic influences with modern sensibilities,\
-    \ and _Gone and Forgotten_stands as a testament to their ability to craft songs\
-    \ that resonate long after the final note fades.\n\n![](https://www.maricoparecords.com/wp-content/uploads/2025/03/GoneAndForgotten.png)"
+  content_markdown: '## **Gone and Forgotten**
+
+
+    A haunting reflection on time, loss, and regret, _Gone and Forgotten_is the latest
+    release from **4Castle**, showcasing the band’s signature blend of evocative storytelling,
+    intricate arrangements, and powerful vocal harmonies.
+
+
+    Set against a backdrop of atmospheric instrumentation, the song weaves a somber
+    tale of memories fading like mist, voices lost in the wind, and the quiet ache
+    of what can never be reclaimed. With its haunting melody and poetic lyricism,
+    Gone and Forgotten pulls the listener into a deep emotional landscape where past
+    and present blur.
+
+
+    Lush guitars, melancholic keys, and a rhythm section that moves like the ticking
+    hands of time build into an immersive, cinematic experience. The band’s layered
+    vocal harmonies add a deeply human touch, emphasizing the emotional weight of
+    each verse.
+
+
+    **4Castle **continues to explore the boundaries of rock, weaving classic influences
+    with modern sensibilities, and _Gone and Forgotten_stands as a testament to their
+    ability to craft songs that resonate long after the final note fades.
+
+
+    ![](https://www.maricoparecords.com/wp-content/uploads/2025/03/GoneAndForgotten.png)'
   sections: []
   images:
   - src: https://www.maricoparecords.com/wp-content/uploads/2025/03/GoneAndForgotten.png

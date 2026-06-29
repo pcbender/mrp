@@ -13,37 +13,128 @@ release:
   catalog_number: null
   cover_image: site/public/assets/migrated/5dba5aca51d0-5-rooks-in-a-dark-setting-1.png
   hero_image: null
-  summary: "Maricopa Records proudly presents the debut album from **4Castle**, _Distance\
-    \ Not Safety_\u2014a powerful fusion of progressive rock, intricate vocal harmonies,\
-    \ and masterful musicianship. With a lineup that blends fiery guitars, deep bass\
-    \ grooves, commanding drums, and lush keyboards, **4Castle **delivers a record\
-    \ that is as emotionally gripping as it is musically sophisticated."
-  description: "## Distance Not Safety\n\nMaricopa Records proudly presents the debut\
-    \ album from **4Castle**, _Distance Not Safety_\u2014a powerful fusion of progressive\
-    \ rock, intricate vocal harmonies, and masterful musicianship. With a lineup that\
-    \ blends fiery guitars, deep bass grooves, commanding drums, and lush keyboards,\
-    \ **4Castle **delivers a record that is as emotionally gripping as it is musically\
-    \ sophisticated.\n\nFrom the haunting storytelling of \"**Cat\u2019s Claw**\"\
-    \ to the relentless energy of \"**Belligerent**\", the soaring melodies of \"\
-    **The Dreamer and the Dreamed**\", and the thought-provoking depths of \"**Delusion\
-    \ of Truth**\", _Distance Not Safety_is an album that refuses to be confined to\
-    \ a single sound. The title track, \"**Distance Not Safety**\", sets the tone\
-    \ with its tension and release, while \"**Double Black Diamonds**\" carves through\
-    \ with precision and intensity. Closing with the hopeful weight of \"**Void of\
-    \ Intention**\", the album leaves a lasting impression\u2014unapologetic, bold,\
-    \ and unforgettable.\n\nThis isn\u2019t just a collection of songs\u2014it\u2019\
-    s a statement. A journey through sound and emotion, crafted by a band that thrives\
-    \ on pushing boundaries.\n\n![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n\
-    ## Tracks\n\n#\n\nTitle\n\nListen\n\n1\n\nCut Flowers\n\n[](https://open.spotify.com/track/2BQpFdLyixPI1bD7SOlnZy?si=5d6a071b37434674)[](https://music.apple.com/us/album/cut-flowers/1801053116?i=1801053117)\n\
-    2\n\nDistance Not Safety\n\n[](https://open.spotify.com/track/1UsGrKVAYoJKCYAedQdp7V?si=76c2b39297194eaf)[](https://music.apple.com/us/album/distance-not-safety/1801053116?i=1801053118)\n\
-    3\n\nGetting Through\n\n[](https://open.spotify.com/track/18ym3vijmNJCeGeI3r2uFN?si=53cf972512254189)[](https://music.apple.com/us/album/getting-through/1801053116?i=1801053119)\n\
-    4\n\nThe Dreamer and the Dreamed\n\n[](https://open.spotify.com/track/4YGxlRMdna5fs0FupYJazf?si=5cca8a69b9484a15)[](https://music.apple.com/us/album/the-dreamer-and-the-dreamed/1801053116?i=1801053120)\n\
-    5\n\nDouble Black Diamonds\n\n[](https://open.spotify.com/track/40fbIaJ35FWRvrR20jIfZc?si=338cd67ee3a4470e)[](https://music.apple.com/us/album/double-black-diamonds/1801053116?i=1801053121)\n\
-    6\n\nCat's Claw\n\n[](https://open.spotify.com/track/4tmVTqtzzxjrC9Ljlob42M?si=0cd1f5e97474471c)[](https://music.apple.com/us/album/cats-claw/1801053116?i=1801053122)\n\
-    7\n\nBelligerent\n\n[](https://open.spotify.com/track/4NwmmJ9wU9OSAGNmAE4zoB?si=4dfe1cce0b834e84)[](https://music.apple.com/us/album/belligerent/1801053116?i=1801053123)\n\
-    8\n\nDelusion of Truth\n\n[](https://open.spotify.com/track/05eW9PZs7tXFp6Vq5f0CSN?si=153ffb62e9e24cf0)[](https://music.apple.com/us/album/delusion-of-truth/1801053116?i=1801053124)\n\
-    9\n\nVenus Syndrome\n\n[](https://open.spotify.com/track/4qgUJ9ygAf68VW1V8OQTCD?si=c11ade996bc845f7)[](https://music.apple.com/us/album/venus-syndrome/1801053116?i=1801053125)\n\
-    10\n\nVoid of Intention\n\n[](https://open.spotify.com/track/0SF7oJvd0wvwY6dRFKmyEf?si=cf3ac4d3bd7e473e)[](https://music.apple.com/us/album/void-of-intention/1801053116?i=1801053126)"
+  summary: Maricopa Records proudly presents the debut album from **4Castle**, _Distance
+    Not Safety_—a powerful fusion of progressive rock, intricate vocal harmonies,
+    and masterful musicianship. With a lineup that blends fiery guitars, deep bass
+    grooves, commanding drums, and lush keyboards, **4Castle **delivers a record that
+    is as emotionally gripping as it is musically sophisticated.
+  description: '## Distance Not Safety
+
+
+    Maricopa Records proudly presents the debut album from **4Castle**, _Distance
+    Not Safety_—a powerful fusion of progressive rock, intricate vocal harmonies,
+    and masterful musicianship. With a lineup that blends fiery guitars, deep bass
+    grooves, commanding drums, and lush keyboards, **4Castle **delivers a record that
+    is as emotionally gripping as it is musically sophisticated.
+
+
+    From the haunting storytelling of "**Cat’s Claw**" to the relentless energy of
+    "**Belligerent**", the soaring melodies of "**The Dreamer and the Dreamed**",
+    and the thought-provoking depths of "**Delusion of Truth**", _Distance Not Safety_is
+    an album that refuses to be confined to a single sound. The title track, "**Distance
+    Not Safety**", sets the tone with its tension and release, while "**Double Black
+    Diamonds**" carves through with precision and intensity. Closing with the hopeful
+    weight of "**Void of Intention**", the album leaves a lasting impression—unapologetic,
+    bold, and unforgettable.
+
+
+    This isn’t just a collection of songs—it’s a statement. A journey through sound
+    and emotion, crafted by a band that thrives on pushing boundaries.
+
+
+    ![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)
+
+    ## Tracks
+
+
+    #
+
+
+    Title
+
+
+    Listen
+
+
+    1
+
+
+    Cut Flowers
+
+
+    [](https://open.spotify.com/track/2BQpFdLyixPI1bD7SOlnZy?si=5d6a071b37434674)[](https://music.apple.com/us/album/cut-flowers/1801053116?i=1801053117)
+
+    2
+
+
+    Distance Not Safety
+
+
+    [](https://open.spotify.com/track/1UsGrKVAYoJKCYAedQdp7V?si=76c2b39297194eaf)[](https://music.apple.com/us/album/distance-not-safety/1801053116?i=1801053118)
+
+    3
+
+
+    Getting Through
+
+
+    [](https://open.spotify.com/track/18ym3vijmNJCeGeI3r2uFN?si=53cf972512254189)[](https://music.apple.com/us/album/getting-through/1801053116?i=1801053119)
+
+    4
+
+
+    The Dreamer and the Dreamed
+
+
+    [](https://open.spotify.com/track/4YGxlRMdna5fs0FupYJazf?si=5cca8a69b9484a15)[](https://music.apple.com/us/album/the-dreamer-and-the-dreamed/1801053116?i=1801053120)
+
+    5
+
+
+    Double Black Diamonds
+
+
+    [](https://open.spotify.com/track/40fbIaJ35FWRvrR20jIfZc?si=338cd67ee3a4470e)[](https://music.apple.com/us/album/double-black-diamonds/1801053116?i=1801053121)
+
+    6
+
+
+    Cat''s Claw
+
+
+    [](https://open.spotify.com/track/4tmVTqtzzxjrC9Ljlob42M?si=0cd1f5e97474471c)[](https://music.apple.com/us/album/cats-claw/1801053116?i=1801053122)
+
+    7
+
+
+    Belligerent
+
+
+    [](https://open.spotify.com/track/4NwmmJ9wU9OSAGNmAE4zoB?si=4dfe1cce0b834e84)[](https://music.apple.com/us/album/belligerent/1801053116?i=1801053123)
+
+    8
+
+
+    Delusion of Truth
+
+
+    [](https://open.spotify.com/track/05eW9PZs7tXFp6Vq5f0CSN?si=153ffb62e9e24cf0)[](https://music.apple.com/us/album/delusion-of-truth/1801053116?i=1801053124)
+
+    9
+
+
+    Venus Syndrome
+
+
+    [](https://open.spotify.com/track/4qgUJ9ygAf68VW1V8OQTCD?si=c11ade996bc845f7)[](https://music.apple.com/us/album/venus-syndrome/1801053116?i=1801053125)
+
+    10
+
+
+    Void of Intention
+
+
+    [](https://open.spotify.com/track/0SF7oJvd0wvwY6dRFKmyEf?si=cf3ac4d3bd7e473e)[](https://music.apple.com/us/album/void-of-intention/1801053116?i=1801053126)'
   credits:
     primary_artist: 4Castle
     songwriter: Michael Anthony Rose
@@ -72,23 +163,88 @@ release:
     explicit: false
     instrumental: false
     preview_audio: null
-    lyrics_text: "They sit in a glass by the window pane\nFading slow in the August\
-      \ rain\nOnce they grew in the open air\nNow it falls apart but we don't care\n\
-      \nDid you think we'd last forever\nDid you think we'd never change\nBeauty fades\
-      \ when roots are severed\nLeft to wither in a frame\u2026\n\nCut flowers\u2014\
-      where did we go\nOnce alive, now losing glow\nCut flowers\u2014we won't know\n\
-      If we had more time to grow\nWe bloom, we fade, we fall\u2026\nWas it worth\
-      \ it at all\n\nYour hands shook when you cut me free\nSaid, \"Hold onto this,\
-      \ remember me.\"\nBut pressed between these brittle pages\nI can't turn back\
-      \ to greener ages\n\nDid you think we'd last forever\nDid you think we'd never\
-      \ change\nBeauty fades when roots are severed\nLeft to wither in a frame\u2026\
-      \n\nCut flowers\u2014where did we go\nOnce alive, now losing glow\nCut flowers\u2014\
-      we won't know\nIf we had more time to grow\nWe bloom, we fade, we fall\u2026\
-      \nWas it worth it at all\n\nYou gave me petals, not the roots\nThey drank the\
-      \ light, but lost the truth\u2026\nYou said we'd never change\nBut look\u2014\
-      look what time can do\u2026\n\nCut flowers\u2014where did we go\nWhat was whole\
-      \ is breaking slow\nCut flowers\u2014we won't know\nIf we had more time to grow\n\
-      We bloom, we fade, we fall\u2026\nWas it worth it at all"
+    lyrics_text: 'They sit in a glass by the window pane
+
+      Fading slow in the August rain
+
+      Once they grew in the open air
+
+      Now it falls apart but we don''t care
+
+
+      Did you think we''d last forever
+
+      Did you think we''d never change
+
+      Beauty fades when roots are severed
+
+      Left to wither in a frame…
+
+
+      Cut flowers—where did we go
+
+      Once alive, now losing glow
+
+      Cut flowers—we won''t know
+
+      If we had more time to grow
+
+      We bloom, we fade, we fall…
+
+      Was it worth it at all
+
+
+      Your hands shook when you cut me free
+
+      Said, "Hold onto this, remember me."
+
+      But pressed between these brittle pages
+
+      I can''t turn back to greener ages
+
+
+      Did you think we''d last forever
+
+      Did you think we''d never change
+
+      Beauty fades when roots are severed
+
+      Left to wither in a frame…
+
+
+      Cut flowers—where did we go
+
+      Once alive, now losing glow
+
+      Cut flowers—we won''t know
+
+      If we had more time to grow
+
+      We bloom, we fade, we fall…
+
+      Was it worth it at all
+
+
+      You gave me petals, not the roots
+
+      They drank the light, but lost the truth…
+
+      You said we''d never change
+
+      But look—look what time can do…
+
+
+      Cut flowers—where did we go
+
+      What was whole is breaking slow
+
+      Cut flowers—we won''t know
+
+      If we had more time to grow
+
+      We bloom, we fade, we fall…
+
+      Was it worth it at all'
     lyrics_source: https://docs.google.com/document/d/1LHdeVijqpxGFiw5Cr71B3GJcGB26XbBwgoLliK28D1Y/edit
     links:
       spotify: https://open.spotify.com/track/2BQpFdLyixPI1bD7SOlnZy?si=5d6a071b37434674
@@ -103,26 +259,71 @@ release:
     explicit: false
     instrumental: false
     preview_audio: null
-    lyrics_text: "I put a thousand miles between us, thought that'd be enough\nChanged\
-      \ my name, changed my number, but I still feel your touch\nTried to bury every\
-      \ echo, let the silence set me free\nBut the further that I run, the closer\
-      \ you seem to be\n\nI swore I'd leave it all behind\nBut ghosts don't care for\
-      \ space or time\n\nDistance, not safety, I learned that too late\nYou can run\
-      \ from the fire, but you still breathe the flame\nThe road disappears, but the\
-      \ scars still remain\nAnd once again, I pick distance, not safety\n\nEvery border,\
-      \ every city, just a different kind of cage\nTrading chains for open highways,\
-      \ but the past won't disengage\nThought the night would keep me hidden, thought\
-      \ the sun would burn it clean\nBut shadows stretch forever, and they know just\
-      \ where I've been\n\nI swore I'd leave it all behind\nBut ghosts don't care\
-      \ for space or time\n\nDistance, not safety, I learned that too late\nYou can\
-      \ run from the fire, but you still breathe the flame\nThe road disappears, but\
-      \ the scars still remain\nAnd once again, I pick distance, not safety\n\nIt's\
-      \ not the miles, it's the weight you carry\nNot the silence, but the words unsaid\n\
-      You can build your walls, make your world imaginary\nBut what's in your head\
-      \ ain't ever dead\n\nDistance, not safety, I learned that too late\nYou can\
-      \ run from the fire, but you still breathe the flame\nThe road disappears, but\
-      \ the scars still remain\nAnd once again, I pick distance, not safety\n\nAnd\
-      \ once again, I pick distance\u2026 not safety\u2026"
+    lyrics_text: 'I put a thousand miles between us, thought that''d be enough
+
+      Changed my name, changed my number, but I still feel your touch
+
+      Tried to bury every echo, let the silence set me free
+
+      But the further that I run, the closer you seem to be
+
+
+      I swore I''d leave it all behind
+
+      But ghosts don''t care for space or time
+
+
+      Distance, not safety, I learned that too late
+
+      You can run from the fire, but you still breathe the flame
+
+      The road disappears, but the scars still remain
+
+      And once again, I pick distance, not safety
+
+
+      Every border, every city, just a different kind of cage
+
+      Trading chains for open highways, but the past won''t disengage
+
+      Thought the night would keep me hidden, thought the sun would burn it clean
+
+      But shadows stretch forever, and they know just where I''ve been
+
+
+      I swore I''d leave it all behind
+
+      But ghosts don''t care for space or time
+
+
+      Distance, not safety, I learned that too late
+
+      You can run from the fire, but you still breathe the flame
+
+      The road disappears, but the scars still remain
+
+      And once again, I pick distance, not safety
+
+
+      It''s not the miles, it''s the weight you carry
+
+      Not the silence, but the words unsaid
+
+      You can build your walls, make your world imaginary
+
+      But what''s in your head ain''t ever dead
+
+
+      Distance, not safety, I learned that too late
+
+      You can run from the fire, but you still breathe the flame
+
+      The road disappears, but the scars still remain
+
+      And once again, I pick distance, not safety
+
+
+      And once again, I pick distance… not safety…'
     lyrics_source: https://docs.google.com/document/d/1aTC-PAcMOMHK3MEUL4SNIFVMKskPLPi7Hlg29n_LyOk/edit
     links:
       spotify: https://open.spotify.com/track/1UsGrKVAYoJKCYAedQdp7V?si=76c2b39297194eaf
@@ -137,25 +338,77 @@ release:
     explicit: false
     instrumental: false
     preview_audio: null
-    lyrics_text: "The echoes linger in this empty room\nA shadow dances on the wall\
-      \ at night\nI try to move, but all I find is gloom\nYour voice still calls,\
-      \ but fades before the light\n\nI reach for you but touch the air\nThe past\
-      \ is pulling, I can't stay\n\n(Getting through\u2026) I'm going through the\
-      \ fire, through the rain\n(Getting through\u2026) Every step is breaking me\
-      \ in two\n(Getting through\u2026) Drowning in the echoes of your name\n(Getting\
-      \ through\u2026) I'm good. I'm getting through\n\nI see your face in every passerby\n\
-      A ghost that time won't chase away\nI call your name, but get no reply\nJust\
-      \ empty winds where love once lay\n\nI reach for you but touch the air\nThe\
-      \ past is pulling, I can't stay\n\n(Getting through\u2026) I'm going through\
-      \ the fire, through the rain\n(Getting through\u2026) Every step is breaking\
-      \ me in two\n(Getting through\u2026) Drowning in the echoes of your name\n(Getting\
-      \ through\u2026) I'm good. I'm getting through\n\nThe storm is quiet, but the\
-      \ pain remains\nI'm standing lost between the then and now\nI try to move, but\
-      \ I'm locked in chains\nStill searching for a way somehow\n\n(Getting through\u2026\
-      ) I'm going through the fire, through the rain\n(Getting through\u2026) Every\
-      \ step is breaking me in two\n(Getting through\u2026) Drowning in the echoes\
-      \ of your name\n(Getting through\u2026) I'm good. I'm getting through\n\nI'm\
-      \ getting through\nI'm getting through\nI'm getting through\nI'm getting through"
+    lyrics_text: 'The echoes linger in this empty room
+
+      A shadow dances on the wall at night
+
+      I try to move, but all I find is gloom
+
+      Your voice still calls, but fades before the light
+
+
+      I reach for you but touch the air
+
+      The past is pulling, I can''t stay
+
+
+      (Getting through…) I''m going through the fire, through the rain
+
+      (Getting through…) Every step is breaking me in two
+
+      (Getting through…) Drowning in the echoes of your name
+
+      (Getting through…) I''m good. I''m getting through
+
+
+      I see your face in every passerby
+
+      A ghost that time won''t chase away
+
+      I call your name, but get no reply
+
+      Just empty winds where love once lay
+
+
+      I reach for you but touch the air
+
+      The past is pulling, I can''t stay
+
+
+      (Getting through…) I''m going through the fire, through the rain
+
+      (Getting through…) Every step is breaking me in two
+
+      (Getting through…) Drowning in the echoes of your name
+
+      (Getting through…) I''m good. I''m getting through
+
+
+      The storm is quiet, but the pain remains
+
+      I''m standing lost between the then and now
+
+      I try to move, but I''m locked in chains
+
+      Still searching for a way somehow
+
+
+      (Getting through…) I''m going through the fire, through the rain
+
+      (Getting through…) Every step is breaking me in two
+
+      (Getting through…) Drowning in the echoes of your name
+
+      (Getting through…) I''m good. I''m getting through
+
+
+      I''m getting through
+
+      I''m getting through
+
+      I''m getting through
+
+      I''m getting through'
     lyrics_source: https://docs.google.com/document/d/1BIJPcNO4GrzW9BGX6CtF-2OcJxaJcMQiTcyp7dmkIjU/edit
     links:
       spotify: https://open.spotify.com/track/18ym3vijmNJCeGeI3r2uFN?si=53cf972512254189
@@ -259,22 +512,72 @@ release:
     explicit: false
     instrumental: false
     preview_audio: null
-    lyrics_text: "Cold wind rushin', heart starts to race\nOne step forward\u2014\
-      ain't no time to waste\nYou pull me closer, whisper my name\nEdge of the world,\
-      \ but we're one and the same\nNo turning back, no second-guess\nWe ride the\
-      \ fire, nothing less\n\nOh, the rush, the fall, the ride\nEyes closed, arms\
-      \ open wide\n\nDouble black diamonds, wild and free\nHold on tight, just you\
-      \ and me\nCold on my face, but my temperature's rising\nYou're making me feel\
-      \ like Double black diamonds\n\nHeartbeat pounding, flying so fast\nWe carve\
-      \ the slope, leave fear in the past\nNo safe trails, no easy way down\nBut baby,\
-      \ I swear, I'll never touch the ground\n\nOh, the rush, the fall, the ride\n\
-      Eyes closed, arms open wide\n\nDouble black diamonds, wild and free\nHold on\
-      \ tight, just you and me\nCold on my face, but my temperature's rising\nYou're\
-      \ making me feel like Double black diamonds\n\nBreathe it in, let the momentum\
-      \ take you\nLove's a storm, don't let it break you\nClose your eyes, feel the\
-      \ flame\nOnce you jump in, nothing's the same\n\nDouble black diamonds, wild\
-      \ and free\nHold on tight, just you and me\nCold on my face, but my temperature's\
-      \ rising\nYou're making me feel like Double black diamonds"
+    lyrics_text: 'Cold wind rushin'', heart starts to race
+
+      One step forward—ain''t no time to waste
+
+      You pull me closer, whisper my name
+
+      Edge of the world, but we''re one and the same
+
+      No turning back, no second-guess
+
+      We ride the fire, nothing less
+
+
+      Oh, the rush, the fall, the ride
+
+      Eyes closed, arms open wide
+
+
+      Double black diamonds, wild and free
+
+      Hold on tight, just you and me
+
+      Cold on my face, but my temperature''s rising
+
+      You''re making me feel like Double black diamonds
+
+
+      Heartbeat pounding, flying so fast
+
+      We carve the slope, leave fear in the past
+
+      No safe trails, no easy way down
+
+      But baby, I swear, I''ll never touch the ground
+
+
+      Oh, the rush, the fall, the ride
+
+      Eyes closed, arms open wide
+
+
+      Double black diamonds, wild and free
+
+      Hold on tight, just you and me
+
+      Cold on my face, but my temperature''s rising
+
+      You''re making me feel like Double black diamonds
+
+
+      Breathe it in, let the momentum take you
+
+      Love''s a storm, don''t let it break you
+
+      Close your eyes, feel the flame
+
+      Once you jump in, nothing''s the same
+
+
+      Double black diamonds, wild and free
+
+      Hold on tight, just you and me
+
+      Cold on my face, but my temperature''s rising
+
+      You''re making me feel like Double black diamonds'
     lyrics_source: https://docs.google.com/document/d/1_7cmNAbAk-lUhE6_8RFUBOnMx5_3LFHdAlF8IhS7qAs/edit
     links:
       spotify: https://open.spotify.com/track/40fbIaJ35FWRvrR20jIfZc?si=338cd67ee3a4470e
@@ -289,27 +592,81 @@ release:
     explicit: false
     instrumental: false
     preview_audio: null
-    lyrics_text: "The ancestors walked where the red stone stands\nThey learned of\
-      \ the bargain and the blood in the sand\n\nA shaman knelt in the canyon below\n\
-      Cut by cat's claw as the summer moon rose\nHe bargained for water, and plentiful\
-      \ corn\nFor thirteen long moons, the people reborn\n\nBut the river ran dry\
-      \ on the next summer night\nThe harvest turned bitter, the stars burned bright\n\
-      They gathered the people, they followed the flood\nTheir memory vanished, the\
-      \ bargain draws blood\n\nCat's Claw\u2026 Take the crown, take the gold\nCat's\
-      \ Claw\u2026 Take the love you'll never hold\nHopeful, we make the bargain,\
-      \ tho the ending is set\nWhat the desert gives, we will never forget\n\nA man\
-      \ builds his fortune, a queen finds her king\nA poet writes verses, the world\
-      \ starts to sing\nBut things turn to dust, and love fades to pain\nAnd the songs\
-      \ we remember are lost in the rain\n\nCat's Claw\u2026 Take the crown, take\
-      \ the gold\nCat's Claw\u2026 Take the love you'll never hold\nHopeful, we make\
-      \ the bargain, tho the ending is set\nWhat the desert gives, we will never forget\n\
-      \nBut still we reach, and still we run\nStill we love beneath the sun\nEach\
-      \ having has an ending\nThe bargain is pretending\n\nCat's Claw\u2026 Take the\
-      \ crown, take the gold\nCat's Claw\u2026 Take the love you'll never hold\nHopeful,\
-      \ we make the bargain, tho the ending is set\nWhat the desert gives, we will\
-      \ never forget\n\nThe people walk where the red stone stands\nWe make the bargain,\
-      \ we lose our land\nThe claw hooks us like wind in the sand\nThe bargain is\
-      \ pretending"
+    lyrics_text: 'The ancestors walked where the red stone stands
+
+      They learned of the bargain and the blood in the sand
+
+
+      A shaman knelt in the canyon below
+
+      Cut by cat''s claw as the summer moon rose
+
+      He bargained for water, and plentiful corn
+
+      For thirteen long moons, the people reborn
+
+
+      But the river ran dry on the next summer night
+
+      The harvest turned bitter, the stars burned bright
+
+      They gathered the people, they followed the flood
+
+      Their memory vanished, the bargain draws blood
+
+
+      Cat''s Claw… Take the crown, take the gold
+
+      Cat''s Claw… Take the love you''ll never hold
+
+      Hopeful, we make the bargain, tho the ending is set
+
+      What the desert gives, we will never forget
+
+
+      A man builds his fortune, a queen finds her king
+
+      A poet writes verses, the world starts to sing
+
+      But things turn to dust, and love fades to pain
+
+      And the songs we remember are lost in the rain
+
+
+      Cat''s Claw… Take the crown, take the gold
+
+      Cat''s Claw… Take the love you''ll never hold
+
+      Hopeful, we make the bargain, tho the ending is set
+
+      What the desert gives, we will never forget
+
+
+      But still we reach, and still we run
+
+      Still we love beneath the sun
+
+      Each having has an ending
+
+      The bargain is pretending
+
+
+      Cat''s Claw… Take the crown, take the gold
+
+      Cat''s Claw… Take the love you''ll never hold
+
+      Hopeful, we make the bargain, tho the ending is set
+
+      What the desert gives, we will never forget
+
+
+      The people walk where the red stone stands
+
+      We make the bargain, we lose our land
+
+      The claw hooks us like wind in the sand
+
+      The bargain is pretending'
     lyrics_source: https://docs.google.com/document/d/1_ryw9cLdkEzsa12lMK2gNddhJi0Wme7DeGgbharYRvQ/edit
     links:
       spotify: https://open.spotify.com/track/4tmVTqtzzxjrC9Ljlob42M?si=0cd1f5e97474471c
@@ -541,25 +898,73 @@ release:
     explicit: false
     instrumental: false
     preview_audio: null
-    lyrics_text: "She emerged from the waves brushing foam from her chest\nInnocently\
-      \ smiling, she said \"Hi.\" I was impressed\nPerfect face, with a voice too\
-      \ low\nI knew in that moment I could not let her go\n\nToo good to be true,\
-      \ I thought I knew\nYou better be careful, or you'll find out too\n\nThought\
-      \ she was Venus, shining bright\nBut those looks are a helpless disguise\nUnder\
-      \ that mask, she's waiting to ignite\nGet too close and you'll pay the price\
-      \ - for Venus\n\nGot her name, got her number, got her socials, SNAP\nAsked\
-      \ her out, paid for dinner, then she went on the attack\nIf you ghost me, I\
-      \ will find you\u2014I swear on your life\nAnd don't you ever, I mean NEVER\
-      \ say goodbye\n\nToo good to be true, I thought I knew\nYou better be careful,\
-      \ or you'll find out too\n\nThought she was Venus, shining bright\nBut those\
-      \ looks are a helpless disguise\nUnder that mask, she's waiting to ignite\n\
-      Get too close and you'll pay the price - for Venus\n\nWhen beauty opens any\
-      \ door, you don't hear \"No.\"\nYour fragile glow is poison, it pulls us to\
-      \ you\nI thought I might get lucky, get past your beauty show\nLike Venus, being\
-      \ hot is no virtue\n\nThought she was Venus, shining bright\nBut those looks\
-      \ are a helpless disguise\nUnder that mask, she's waiting to ignite\nGet too\
-      \ close and you'll pay the price - for Venus\n\nYou'll pay the price - for Venus\n\
-      You'll pay the price - for Venus"
+    lyrics_text: 'She emerged from the waves brushing foam from her chest
+
+      Innocently smiling, she said "Hi." I was impressed
+
+      Perfect face, with a voice too low
+
+      I knew in that moment I could not let her go
+
+
+      Too good to be true, I thought I knew
+
+      You better be careful, or you''ll find out too
+
+
+      Thought she was Venus, shining bright
+
+      But those looks are a helpless disguise
+
+      Under that mask, she''s waiting to ignite
+
+      Get too close and you''ll pay the price - for Venus
+
+
+      Got her name, got her number, got her socials, SNAP
+
+      Asked her out, paid for dinner, then she went on the attack
+
+      If you ghost me, I will find you—I swear on your life
+
+      And don''t you ever, I mean NEVER say goodbye
+
+
+      Too good to be true, I thought I knew
+
+      You better be careful, or you''ll find out too
+
+
+      Thought she was Venus, shining bright
+
+      But those looks are a helpless disguise
+
+      Under that mask, she''s waiting to ignite
+
+      Get too close and you''ll pay the price - for Venus
+
+
+      When beauty opens any door, you don''t hear "No."
+
+      Your fragile glow is poison, it pulls us to you
+
+      I thought I might get lucky, get past your beauty show
+
+      Like Venus, being hot is no virtue
+
+
+      Thought she was Venus, shining bright
+
+      But those looks are a helpless disguise
+
+      Under that mask, she''s waiting to ignite
+
+      Get too close and you''ll pay the price - for Venus
+
+
+      You''ll pay the price - for Venus
+
+      You''ll pay the price - for Venus'
     lyrics_source: https://docs.google.com/document/d/1YjYiwZYAl5jEM1wNfnCjHG4rhHrqXgLW2pTjhG61N-Q/edit
     links:
       spotify: https://open.spotify.com/track/4qgUJ9ygAf68VW1V8OQTCD?si=c11ade996bc845f7

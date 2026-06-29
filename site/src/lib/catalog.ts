@@ -20,6 +20,7 @@ export interface ReleaseRecord {
   id: string;
   slug: string;
   title: string;
+  title_ascii?: string;
   artist_id: string;
   release_type?: string;
   release_date?: string | null;
@@ -31,6 +32,7 @@ export interface ReleaseRecord {
 export interface ReleaseCardModel {
   slug: string;
   title: string;
+  titleAscii?: string;
   artistName: string;
   artistId: string;
   href: string;
@@ -112,6 +114,7 @@ export function releaseCardModel(release: ReleaseRecord): ReleaseCardModel {
   return {
     slug: release.slug,
     title: release.title,
+    titleAscii: release.title_ascii,
     artistName: artist?.name || release.artist_id,
     artistId: release.artist_id,
     href: `/releases/${release.slug}/`,

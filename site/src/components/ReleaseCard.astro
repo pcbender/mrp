@@ -1,6 +1,7 @@
 ---
 interface Props {
   title: string;
+  titleAscii?: string;
   artist: string;
   href: string;
   type?: string;
@@ -10,9 +11,9 @@ interface Props {
   releaseDate?: string;
 }
 
-const { title, artist, href, type = "Single", coverImage, summary = "", rich = false, releaseDate = "" } = Astro.props;
+const { title, titleAscii, artist, href, type = "Single", coverImage, summary = "", rich = false, releaseDate = "" } = Astro.props;
 const cleanSummary = cleanMarkdownText(summary);
-const searchText = [title, artist, type, releaseDate, cleanSummary].filter(Boolean).join(" ");
+const searchText = [title, titleAscii, artist, type, releaseDate, cleanSummary].filter(Boolean).join(" ");
 
 function cleanMarkdownText(value: string) {
   return String(value)

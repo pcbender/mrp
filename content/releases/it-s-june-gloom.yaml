@@ -39,21 +39,28 @@ release:
     explicit: false
     preview_audio: null
     instrumental: false
-    lyrics_text: "Album cover artwork for an alt-rock single titled \u201CJune Gloom\u201D\
-      \ by the artist \u201CSTAB\u201D. Minimalist, desaturated coastal scene with\
-      \ a seamless gradient transition: pale sand dissolving into a calm steel-blue\
-      \ ocean dissolving into a flat gray sky, near-horizonless and almost indistinguishable\
-      \ boundaries. No sun, no dramatic lighting, no god rays; soft, uniform overcast\
-      \ illumination with zero highlights\n\nA solitary female figure wearing a simple\
-      \ bikini with a sheer, lightweight cover-up, sitting on a beach chair on the\
-      \ sand, centered, facing the camera. She looks gloomy and emotionally distant;\
-      \ heavy posture, shoulders slightly slumped, hands resting loosely, tired eyes,\
-      \ unsmiling expression. Keep the overall composition clean with large negative\
-      \ space; subject small-to-medium in frame (not filling the cover), lots of sky\
-      \ and empty space\n\nSubtle film grain, slight texture like fine art photography\
-      \ / analog scan, muted palette (cool grays, blue-gray, sand beige), quiet and\
-      \ bleak mood\n\nTypography integrated: \u201CJune Gloom\u201D at the top (upper\
-      \ margin), large distressed condensed sans-serif with slight blur/ink-bleed;\
-      \ \u201CSTAB\u201D smaller beneath it or top-right, spaced lettering. Only these\
-      \ two text elements; no logos, no extra words, no border"
+    lyrics_text: 'Album cover artwork for an alt-rock single titled “June Gloom” by
+      the artist “STAB”. Minimalist, desaturated coastal scene with a seamless gradient
+      transition: pale sand dissolving into a calm steel-blue ocean dissolving into
+      a flat gray sky, near-horizonless and almost indistinguishable boundaries. No
+      sun, no dramatic lighting, no god rays; soft, uniform overcast illumination
+      with zero highlights
+
+
+      A solitary female figure wearing a simple bikini with a sheer, lightweight cover-up,
+      sitting on a beach chair on the sand, centered, facing the camera. She looks
+      gloomy and emotionally distant; heavy posture, shoulders slightly slumped, hands
+      resting loosely, tired eyes, unsmiling expression. Keep the overall composition
+      clean with large negative space; subject small-to-medium in frame (not filling
+      the cover), lots of sky and empty space
+
+
+      Subtle film grain, slight texture like fine art photography / analog scan, muted
+      palette (cool grays, blue-gray, sand beige), quiet and bleak mood
+
+
+      Typography integrated: “June Gloom” at the top (upper margin), large distressed
+      condensed sans-serif with slight blur/ink-bleed; “STAB” smaller beneath it or
+      top-right, spaced lettering. Only these two text elements; no logos, no extra
+      words, no border'
     lyrics_source: https://docs.google.com/document/d/1E-azWTrkHN7jYRykgcMzjiRakQav9_WC6hffS7m8uwc/edit

@@ -1,7 +1,8 @@
 release:
   id: i-cant-quite-make-it-fit
   slug: i-cant-quite-make-it-fit
-  title: "I Can\u2019t Quite Make It Fit"
+  title: I Can’t Quite Make It Fit
+  title_ascii: I Can’t Quite Make It Fit
   artist_id: pcbender
   model: song
   release_type: single
@@ -26,48 +27,144 @@ release:
     youtube: https://www.youtube.com/watch?v=ooiMsYxKAuI
     youtube_music: https://music.youtube.com/watch?v=ooiMsYxKAuI
   seo:
-    title: "I Can\u2019t Quite Make It Fit by PCBender"
-    description: "I Can\u2019t Quite Make It Fit by PCBender on Maricopa Records."
+    title: I Can’t Quite Make It Fit by PCBender
+    description: I Can’t Quite Make It Fit by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
   song:
     number: 1
-    title: "I Can\u2019t Quite Make It Fit"
+    title: I Can’t Quite Make It Fit
     slug: i-cant-quite-make-it-fit
     isrc: CACWV2641851
     duration: '3:42'
     explicit: false
     preview_audio: null
     instrumental: false
-    lyrics_text: "She says, \u201CBaby, it\u2019s simple,\u201D with a look in her\
-      \ eye\nThen she changes the weather while I\u2019m still asking why\nOne minute\
-      \ she\u2019s thunder, next minute she\u2019s silk\nI\u2019m standing in the\
-      \ kitchen turning coffee into milk\n\nShe says I don't listen, I say she talks\
-      \ in smoke\nEvery answer's got a sparkle and a hidden little joke\nI\u2019m\
-      \ trying to read the signal, trying to catch the drift\nBut every time I grab\
-      \ the handle, she gives it one more twist\n\nI can\u2019t quite make it fit\n\
-      No matter how I turn it\nThis piece of my life got a fire in it, baby\nAnd I\
-      \ can\u2019t quite make it fit\nHer love, this world, my mind\nI\u2019m looking\
-      \ for the edges, but they keep on moving\nAnd I can\u2019t quite make it fit\n\
-      \nNow the TV keeps shouting like it knows what\u2019s true\nEverybody\u2019\
-      s drawing lines telling me what to do\nLeft side, right side, wrong side, righteous\n\
-      Everybody\u2019s so certain, that\u2019s what frightens us\n\nAnd my job feels\
-      \ shaky, and my back feels old\nGot a head full of questions and a hand I can\u2019\
-      t quite hold\nThought I\u2019d have a map by now, thought I\u2019d know the\
-      \ way\nBut I\u2019m improvising dinner just to get through one more day\n\n\
-      I can\u2019t quite make it fit\nNo matter how I turn it\nThis piece of my life\
-      \ got a fire in it, baby\nAnd I can\u2019t quite make it fit\nHer love, this\
-      \ world, my mind\nI\u2019m looking for the edges, but they keep on moving\n\
-      And I can\u2019t quite make it fit\n\nMaybe that\u2019s the trouble\nMaybe that\u2019\
-      s the trick\nLife ain\u2019t a clean line, baby\nIt\u2019s a jump and a slip\n\
-      \nShe ain\u2019t a puzzle\nThis world ain\u2019t square\nMaybe all this meaning\n\
-      Was never sitting there\n\nMaybe love is crooked\nMaybe truth can bend\nMaybe\
-      \ all I really need\nIs to stop needing it to end\n\nI can\u2019t quite make\
-      \ it fit\nBut I\u2019m dancing with it anyway\nGot one shoe on the ceiling\n\
-      And one foot in yesterday\n\nI can\u2019t quite make it fit\nBut I\u2019m laughing\
-      \ in the strain\nShe\u2019s a beautiful mystery\nAnd this world\u2019s a leaky\
-      \ brain\n\nI can\u2019t quite make it fit\nMy plans, my heart, my pride\nBut\
-      \ the groove gets a little better\nWhen I quit trying to force the ride\n\n\
-      I can\u2019t quite make it fit\nNo, I can\u2019t quite make it fit\nBut if it\
-      \ don\u2019t come together clean\nI\u2019ll never make it fit"
+    lyrics_text: 'She says, “Baby, it’s simple,” with a look in her eye
+
+      Then she changes the weather while I’m still asking why
+
+      One minute she’s thunder, next minute she’s silk
+
+      I’m standing in the kitchen turning coffee into milk
+
+
+      She says I don''t listen, I say she talks in smoke
+
+      Every answer''s got a sparkle and a hidden little joke
+
+      I’m trying to read the signal, trying to catch the drift
+
+      But every time I grab the handle, she gives it one more twist
+
+
+      I can’t quite make it fit
+
+      No matter how I turn it
+
+      This piece of my life got a fire in it, baby
+
+      And I can’t quite make it fit
+
+      Her love, this world, my mind
+
+      I’m looking for the edges, but they keep on moving
+
+      And I can’t quite make it fit
+
+
+      Now the TV keeps shouting like it knows what’s true
+
+      Everybody’s drawing lines telling me what to do
+
+      Left side, right side, wrong side, righteous
+
+      Everybody’s so certain, that’s what frightens us
+
+
+      And my job feels shaky, and my back feels old
+
+      Got a head full of questions and a hand I can’t quite hold
+
+      Thought I’d have a map by now, thought I’d know the way
+
+      But I’m improvising dinner just to get through one more day
+
+
+      I can’t quite make it fit
+
+      No matter how I turn it
+
+      This piece of my life got a fire in it, baby
+
+      And I can’t quite make it fit
+
+      Her love, this world, my mind
+
+      I’m looking for the edges, but they keep on moving
+
+      And I can’t quite make it fit
+
+
+      Maybe that’s the trouble
+
+      Maybe that’s the trick
+
+      Life ain’t a clean line, baby
+
+      It’s a jump and a slip
+
+
+      She ain’t a puzzle
+
+      This world ain’t square
+
+      Maybe all this meaning
+
+      Was never sitting there
+
+
+      Maybe love is crooked
+
+      Maybe truth can bend
+
+      Maybe all I really need
+
+      Is to stop needing it to end
+
+
+      I can’t quite make it fit
+
+      But I’m dancing with it anyway
+
+      Got one shoe on the ceiling
+
+      And one foot in yesterday
+
+
+      I can’t quite make it fit
+
+      But I’m laughing in the strain
+
+      She’s a beautiful mystery
+
+      And this world’s a leaky brain
+
+
+      I can’t quite make it fit
+
+      My plans, my heart, my pride
+
+      But the groove gets a little better
+
+      When I quit trying to force the ride
+
+
+      I can’t quite make it fit
+
+      No, I can’t quite make it fit
+
+      But if it don’t come together clean
+
+      I’ll never make it fit'
     lyrics_source: https://docs.google.com/document/d/1fL8ByNFOOCrWiVLsb4p3Cj4WIZV-uuNwu7nuQguYvOM/edit

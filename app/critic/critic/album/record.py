@@ -71,4 +71,4 @@ class AlbumRecord:
     track_reviews_in_context: list[TrackInContext] = field(default_factory=list)
 
     def to_json(self, indent: int = 2) -> str:
-        return json.dumps(dataclasses.asdict(self), indent=indent)
+        return json.dumps(dataclasses.asdict(self), indent=indent, ensure_ascii=False)

@@ -48,7 +48,7 @@ def create_release(
     release_path.parent.mkdir(parents=True, exist_ok=True)
     asset_dir.mkdir(parents=True, exist_ok=True)
     (asset_dir / ".gitkeep").touch()
-    release_path.write_text(yaml.safe_dump(release_record(artist, title, slug, release_type), sort_keys=False))
+    release_path.write_text(yaml.safe_dump(release_record(artist, title, slug, release_type), sort_keys=False, allow_unicode=True))
 
     validation = validate_repository(root, release=slug)
     result["validation_report_path"] = validation["report_path"]

@@ -5,22 +5,21 @@ page:
   status: draft
   normalized_path: /artists/
   source_url: https://www.maricoparecords.com/artists/
-  content_html: "<h2>Our Artists</h2><p>At Maricopa Records, our artists are the heart\
-    \ and soul of everything we do. We are proud to represent a diverse and innovative\
-    \ roster of talent, blending AI-driven musicians with human creators to shape\
-    \ the future of music. From high-energy rock anthems to intimate storytelling\
-    \ ballads, our artists push creative boundaries and redefine what\u2019s possible\
-    \ in modern sound.</p><p>Each artist at Maricopa Records brings a unique voice\
-    \ and perspective, creating music that resonates across genres and generations.\
-    \ Whether it\u2019s the raw, rebellious energy of STAB or the seasoned, soulful\
-    \ storytelling of PCBender, our artists are pioneers in a new era of musical expression.\
-    \ We celebrate their individuality and provide them with the tools, technology,\
-    \ and support they need to bring their visions to life.</p><h2>Join the Maricopa\
-    \ Records Family</h2><p>If you\u2019re ready to be part of a label that\u2019\
-    s <strong>Moving \u25E6 Music \u25E6 Forward</strong>, we\u2019d love to hear\
-    \ from you. Submit your <a href=\"/Contact\">demo or portfolio</a>and let\u2019\
-    s create something extraordinary together.</p><p><strong>Discover the future of\
-    \ music. Join Maricopa Records.</strong></p><h2>Artist Roster</h2><p></p>"
+  content_html: <h2>Our Artists</h2><p>At Maricopa Records, our artists are the heart
+    and soul of everything we do. We are proud to represent a diverse and innovative
+    roster of talent, blending AI-driven musicians with human creators to shape the
+    future of music. From high-energy rock anthems to intimate storytelling ballads,
+    our artists push creative boundaries and redefine what’s possible in modern sound.</p><p>Each
+    artist at Maricopa Records brings a unique voice and perspective, creating music
+    that resonates across genres and generations. Whether it’s the raw, rebellious
+    energy of STAB or the seasoned, soulful storytelling of PCBender, our artists
+    are pioneers in a new era of musical expression. We celebrate their individuality
+    and provide them with the tools, technology, and support they need to bring their
+    visions to life.</p><h2>Join the Maricopa Records Family</h2><p>If you’re ready
+    to be part of a label that’s <strong>Moving ◦ Music ◦ Forward</strong>, we’d love
+    to hear from you. Submit your <a href="/Contact">demo or portfolio</a>and let’s
+    create something extraordinary together.</p><p><strong>Discover the future of
+    music. Join Maricopa Records.</strong></p><h2>Artist Roster</h2><p></p>
   excerpt: null
   seo:
     title: Artists
@@ -31,21 +30,36 @@ page:
     type: page
     status: publish
     captured_path: raw/pages/www.maricoparecords.com/artists/index.html
-  content_markdown: "## Our Artists\n\nAt Maricopa Records, our artists are the heart\
-    \ and soul of everything we do. We are proud to represent a diverse and innovative\
-    \ roster of talent, blending AI-driven musicians with human creators to shape\
-    \ the future of music. From high-energy rock anthems to intimate storytelling\
-    \ ballads, our artists push creative boundaries and redefine what\u2019s possible\
-    \ in modern sound.\n\nEach artist at Maricopa Records brings a unique voice and\
-    \ perspective, creating music that resonates across genres and generations. Whether\
-    \ it\u2019s the raw, rebellious energy of STAB or the seasoned, soulful storytelling\
-    \ of PCBender, our artists are pioneers in a new era of musical expression. We\
-    \ celebrate their individuality and provide them with the tools, technology, and\
-    \ support they need to bring their visions to life.\n\n## Join the Maricopa Records\
-    \ Family\n\nIf you\u2019re ready to be part of a label that\u2019s **Moving \u25E6\
-    \ Music \u25E6 Forward**, we\u2019d love to hear from you. Submit your [demo or\
-    \ portfolio](/Contact)and let\u2019s create something extraordinary together.\n\
-    \n**Discover the future of music. Join Maricopa Records.**\n\n## Artist Roster"
+  content_markdown: '## Our Artists
+
+
+    At Maricopa Records, our artists are the heart and soul of everything we do. We
+    are proud to represent a diverse and innovative roster of talent, blending AI-driven
+    musicians with human creators to shape the future of music. From high-energy rock
+    anthems to intimate storytelling ballads, our artists push creative boundaries
+    and redefine what’s possible in modern sound.
+
+
+    Each artist at Maricopa Records brings a unique voice and perspective, creating
+    music that resonates across genres and generations. Whether it’s the raw, rebellious
+    energy of STAB or the seasoned, soulful storytelling of PCBender, our artists
+    are pioneers in a new era of musical expression. We celebrate their individuality
+    and provide them with the tools, technology, and support they need to bring their
+    visions to life.
+
+
+    ## Join the Maricopa Records Family
+
+
+    If you’re ready to be part of a label that’s **Moving ◦ Music ◦ Forward**, we’d
+    love to hear from you. Submit your [demo or portfolio](/Contact)and let’s create
+    something extraordinary together.
+
+
+    **Discover the future of music. Join Maricopa Records.**
+
+
+    ## Artist Roster'
   sections: []
   images: []
   socials: {}

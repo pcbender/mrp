@@ -25,7 +25,7 @@ scripts/mrp inspect
 scripts/mrp inspect --json
 scripts/mrp validate --json
 scripts/mrp build --json
-scripts/mrp stage --target local-staging --json
+scripts/mrp stage --target remote-staging --json
 scripts/mrp verify --target staging --json
 scripts/mrp approve --release circuiting --json
 scripts/mrp publish --release circuiting --json
@@ -139,9 +139,6 @@ covers every track, no per-release API calls. Both `links.youtube` and
 artist's own channel uploads are the same underlying video on both
 surfaces. Additive only, same as the other enrich-* commands.
 
-MRP v0.1 is local-only. Remote SSH, rsync, and SFTP deployment are deferred as a
-v0.2 candidate in [docs/REMOTE-DEPLOYMENT-v0.2.md](docs/REMOTE-DEPLOYMENT-v0.2.md).
-
 ## Repository Policy
 
 MRP is the release/content publisher and migration tool; Astro is the website
@@ -162,10 +159,9 @@ Do not commit or hand-edit generated HTML under `builds/`, `graphify-out/`,
 
 ## Docs
 
+- [Site deployment](docs/Site_Deployment.md)
 - [Content model](docs/CONTENT-MODEL.md)
-- [Deployment](docs/DEPLOYMENT.md)
 - [Agent usage](docs/AGENT-USAGE.md)
-- [Remote deployment v0.2 candidate](docs/REMOTE-DEPLOYMENT-v0.2.md)
 - [Spotify catalog import v0.2 candidate](docs/SPOTIFY-CATALOG-IMPORT-v0.2.md)
 - [MRP v0.1.1 full site staging plan](docs/MRP-v0.1.1-FULL-SITE-STAGING-PLAN.md)
 - [MRP v0.1.1 migration review](docs/MRP-v0.1.1-REVIEW.md)
