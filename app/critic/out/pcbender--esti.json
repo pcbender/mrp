@@ -5,8 +5,8 @@
     "path": "/home/mrose/audio/masters/Esti.wav",
     "proxy": "/home/mrose/audio/proxy/pcbender--esti.opus"
   },
-  "lyrics": "The breath before the breath begins\nThe sound that ends where sound grows thin\nThe hollow shape the light won't fill\nThe mountain bowed to what is still\n\nI asked the sky and heard no word\nBut felt the silence being heard\n\nWhat is not God? The space between\nThe holy lack, the might-have-been\nWhere truth unforms, and names decay\nAnd time forgets to count the day\n\nNo altar holds it, none can bind\nThe question older than the mind\nA doorway made of unsaid grace\nThat vanishes without a trace\n\nThe glyph dissolves, the echo stays\u2014\nAnd sings the world in other ways\n\nWhat is not God? A breath unmade\nA chord too deep to strike or play\nThe hum that haunts the shape of sound\nThe fall that rises from the ground\n\nTo know is loss\nTo lose is whole\nTo be unformed\nIs to be soul\n\nWhat is not God? Not void. Not all\nThe slip between the rise and fall\nEsti waits\u2014not here, not gone\u2014\nThe note that was\u2026 before the song",
-  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production\u2014digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher\u2019s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it\u2019s made, but why.\n\nFor those who seek music with depth, texture, and soul\u2014PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "lyrics": "The breath before the breath begins\nThe sound that ends where sound grows thin\nThe hollow shape the light won't fill\nThe mountain bowed to what is still\n\nI asked the sky and heard no word\nBut felt the silence being heard\n\nWhat is not God? The space between\nThe holy lack, the might-have-been\nWhere truth unforms, and names decay\nAnd time forgets to count the day\n\nNo altar holds it, none can bind\nThe question older than the mind\nA doorway made of unsaid grace\nThat vanishes without a trace\n\nThe glyph dissolves, the echo stays—\nAnd sings the world in other ways\n\nWhat is not God? A breath unmade\nA chord too deep to strike or play\nThe hum that haunts the shape of sound\nThe fall that rises from the ground\n\nTo know is loss\nTo lose is whole\nTo be unformed\nIs to be soul\n\nWhat is not God? Not void. Not all\nThe slip between the rise and fall\nEsti waits—not here, not gone—\nThe note that was… before the song",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
   "hard_facts": {
     "bpm": 117.5,
     "key": "A#",
@@ -85,37 +85,39 @@
     "genre": [
       "soul",
       "acoustic",
-      "folk rock"
+      "classic rock"
     ],
     "mood": [
       "tender",
       "emotional",
-      "melancholic"
+      "hopeful"
     ],
     "instruments": [
-      "acoustic guitar",
+      "harmonica",
       "bass guitar",
-      "harmonica"
-    ]
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "This is a solemn and contemplative a cappella male choir performance. The texture is purely homophonic, with all voices moving in rhythmic unison, creating a reverent and unified atmosphere. The energy is extremely low and sustained, fostering a meditative and introspective feel. The production quality is defined by a vast, natural reverb, suggesting the performance was captured in a large, resonant space like a cathedral, which allows the harmonies to bloom and decay beautifully. The most distinctive quality is the slow, almost static harmonic movement, where dissonances are introduced and resolved over long durations, creating a profound sense of timelessness and spiritual stillness.",
+    "text": "This is a solemn and ethereal choral piece, featuring a male choir in a vast, reverberant space that creates a contemplative and almost sacred atmosphere. The energy is very low and sustained, with a slow, patient unfolding of harmonies that gives the track a static yet emotionally resonant feel. The production expertly captures the sense of a large, empty hall, with the blended vocal layers sitting together as a single, cohesive entity while still allowing for immense spaciousness and clarity. Its defining characteristic is the subtle, almost imperceptible shifting of dense, close-voiced harmonies, which create a feeling of unresolved tension that is both unsettling and profoundly beautiful.",
     "model": "gemini-2.5-pro"
   },
   "review": {
     "target": "blurb",
-    "review_text": "PCBender writes about the space before God has a name, and 'Esti' earns the ambition \u2014 the choir-like voicings bloom and resolve in that wide, cathedral-grade reverb while the lyric does something genuinely difficult: it argues through negative theology without going stiff. 'The glyph dissolves, the echo stays' is the kind of line that justifies the whole track. At -27 LUFS it's uncompromisingly quiet, closer to Arvo P\u00e4rt than anything on rock radio, and listeners wanting a hook in the conventional sense should know upfront what they're signing up for \u2014 but for anyone willing to sit inside the stillness, the payoff is real.",
+    "review_text": "\"Esti\" operates at a level of restraint that most artists wouldn't risk — measured at 117.5 BPM but feeling far slower, the track builds through twelve short sections that function less like verses and choruses than like inhalations, each one making room for the next. The lyric \"To know is loss / To lose is whole\" lands with the kind of aphoristic weight that John Hiatt achieves when he's writing at his most distilled, and the choral production — dense, close-voiced harmonies suspended in a cavernous space — makes the theology feel earned rather than decorative. This is PCBender working at the philosophical edge of his songwriting, and it holds.",
     "status": "pending",
     "verdict_tier": {
       "rank": 4,
       "label": "highlight"
     },
     "anchors_used": [
-      "cathedral reverb / LUFS -27.4",
-      "quoted lyric: 'The glyph dissolves, the echo stays'",
-      "negative theology lyric concept",
-      "Arvo P\u00e4rt comparison",
-      "choir voicings and slow harmonic movement"
-    ]
+      "117.5 BPM",
+      "12 sections",
+      "lyric: 'To know is loss / To lose is whole'",
+      "choral harmony production",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
   }
 }

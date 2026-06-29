@@ -20,7 +20,8 @@ from .eval import approve as eval_approve, calibrate as eval_calibrate
 from .pipeline import show as pipeline_show
 from .batch import run_batch, write_report
 from .catalog import get_artist_name, get_lyrics, get_persona, get_release_meta
-from .config import OUT_DIR
+from .config import OUT_DIR, critic_model_for, impression_model_for
+from .writeback import cmd_writeback as _cmd_writeback
 from .dsp import extract_dsp
 from .impression import get_impression
 from .ingest import ingest
@@ -58,7 +59,8 @@ def cmd_review(args: argparse.Namespace) -> None:
 
     # ── Impression ───────────────────────────────────────────────────────────
     print("[3/4] Impression  Gemini…")
-    finding.impression = get_impression(finding.source.proxy)
+    finding.impression = get_impression(finding.source.proxy,
+                                        model=impression_model_for(args.model))
 
     # ── Tags ─────────────────────────────────────────────────────────────────
     print("      Tags       CLAP…")
@@ -97,6 +99,7 @@ def cmd_batch(args: argparse.Namespace) -> None:
     findings = run_batch(
         args.manifest,
         model=args.model,
+        impression_model=impression_model_for(args.model),
         target=args.target,
         target_tier=args.target_tier,
         out_dir=out_dir,
@@ -151,6 +154,10 @@ def cmd_approve(args: argparse.Namespace) -> None:
     print(f"  Record updated → {path}")
 
 
+def cmd_writeback(args: argparse.Namespace) -> None:
+    _cmd_writeback(args)
+
+
 def cmd_calibrate(args: argparse.Namespace) -> None:
     out_dir = Path(args.out) if args.out else OUT_DIR
     report_path = eval_calibrate(out_dir=out_dir)
@@ -178,7 +185,7 @@ def main() -> None:
         "--model",
         choices=["dev", "default", "hero"],
         default="dev",
-        help="dev=haiku (default), default=sonnet, hero=opus",
+        help="dev=Haiku+Gemini-2.0-Flash, default=Sonnet+Gemini-2.5-Pro, hero=Opus+Gemini-3.5-Flash",
     )
     rev.add_argument("--persona", default="default",
                      help="Critic persona (default|pundit|liner, or any file in critic/personas/)")
@@ -193,7 +200,7 @@ def main() -> None:
         "--model",
         choices=["dev", "default", "hero"],
         default="dev",
-        help="dev=haiku (default), default=sonnet, hero=opus",
+        help="dev=Haiku+Gemini-2.0-Flash, default=Sonnet+Gemini-2.5-Pro, hero=Opus+Gemini-3.5-Flash",
     )
     bat.add_argument("--skip-impression", action="store_true", help="Skip Gemini impression step")
     bat.add_argument("--skip-tags", action="store_true", help="Skip CLAP tags step")
@@ -216,7 +223,7 @@ def main() -> None:
     alb.add_argument("release_slug", help="Release slug (e.g. tria)")
     alb.add_argument("--target", choices=["album_blurb", "album_long"], default="album_blurb")
     alb.add_argument("--model", choices=["dev", "default", "hero"], default="dev",
-                     help="dev=haiku (default), default=sonnet, hero=opus")
+                     help="dev=Haiku+Gemini-2.0-Flash, default=Sonnet+Gemini-2.5-Pro, hero=Opus+Gemini-3.5-Flash")
     alb.add_argument("--persona", default="default",
                      help="Critic persona (default|pundit|liner, or any file in critic/personas/)")
     alb.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
@@ -229,6 +236,14 @@ def main() -> None:
     apr.add_argument("--all-tracks", action="store_true",
                      help="Album only — also approve all contextual track reviews")
     apr.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
+
+    # critic writeback …
+    wb = sub.add_parser("writeback", help="Write critic reviews to site/src/content/reviews/")
+    wb_grp = wb.add_mutually_exclusive_group(required=True)
+    wb_grp.add_argument("--all", action="store_true", help="Write all records in out/")
+    wb_grp.add_argument("--track", metavar="ID", help="Write one track by track_id")
+    wb.add_argument("--force", action="store_true", help="Overwrite existing review files")
+    wb.add_argument("--out", help=f"Input directory (default: {OUT_DIR})")
 
     # critic calibrate …
     cal = sub.add_parser("calibrate", help="Check records against calibration spec; write calibration.md")
@@ -251,6 +266,8 @@ def main() -> None:
             print(doc)
     elif args.command == "approve":
         cmd_approve(args)
+    elif args.command == "writeback":
+        cmd_writeback(args)
     elif args.command == "calibrate":
         cmd_calibrate(args)
     else:

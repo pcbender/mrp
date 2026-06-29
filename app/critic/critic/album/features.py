@@ -96,6 +96,8 @@ def build_features(release_slug: str, out_dir: Path | None = None) -> AlbumRecor
     return AlbumRecord(
         album_id=album_id,
         release_slug=release_slug,
+        title=meta.get("title", release_slug),
+        release_type=meta.get("release_type", "album"),
         artist=artist_name,
         persona=persona,
         tracklist=track_ids,

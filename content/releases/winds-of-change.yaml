@@ -225,7 +225,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--joni.mp3
     lyrics_text: 'Joni don''t listen to the things they say to you
 
       Don''t listen when they say you''re foolish

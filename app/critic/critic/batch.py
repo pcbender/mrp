@@ -65,6 +65,7 @@ def _hydrate(data: dict) -> TrackFinding:
 def run_batch(
     manifest_path: str | Path,
     model: str = "dev",
+    impression_model: str | None = None,
     target: str = "blurb",
     target_tier: int | None = None,
     out_dir: Path | None = None,
@@ -103,7 +104,8 @@ def run_batch(
 
             if not skip_impression:
                 print("  impression…")
-                finding.impression = get_impression(finding.source.proxy)
+                finding.impression = get_impression(finding.source.proxy,
+                                                    model=impression_model)
 
             if not skip_tags:
                 print("  tags…")

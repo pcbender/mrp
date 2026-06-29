@@ -76,6 +76,8 @@ prose. A reader of the published review should never see any of these:
   rank 3 — solid       : "does what it sets out to do," "a dependable collection"
   rank 2 — soft_floor  : "not their strongest collection, but worth your time"
 
+Never use em dashes (—). Use commas, colons, semicolons, or rewrite the sentence instead.
+
 ## Output format
 
 Return JSON only — no markdown fences, no commentary:

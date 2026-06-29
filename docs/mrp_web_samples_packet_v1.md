@@ -33,7 +33,7 @@ the top" player on a competitor's page.
 
 - **Length:** 30s default (iTunes/Spotify convention; gives the hook room). Configurable.
 - **Cut from the master**, not the model proxy. The 96k mono proxy is for Gemini and would sound thin to a human. Read `source.path` from the record (local master or LANDR re-download).
-- **Stereo, 128k AAC in `.m4a`** — best quality/byte with universal `<audio>` support. MP3 is the hedge if any downstream tool dislikes AAC.
+- **Stereo, 128k MP3** — universal `<audio>` support, no container ambiguity.
 - **Loudness:** normalize the *excerpt* to **-14 LUFS**, -1 dBTP true-peak ceiling.
 - **Fades:** ~0.3s in, ~1.5s out (no hard edges).
 - **Manual override** per track for the handful the auto-picker gets wrong.
@@ -44,8 +44,8 @@ the top" player on a competitor's page.
 
 ## WP-SAMPLE · Hook-centered web sample generator
 
-- **Deliverable:** a `prime-samples` command + selection helper + manifest.
-- **Files:** `critic/samples/select.py`, `critic/samples/cli.py`, `samples/overrides.json` (hand-edited), `samples/<track_id>.m4a`, `samples/manifest.json`.
+- **Deliverable:** a `prime-samples` command + selection helper + manifest + `preview_audio` write-back.
+- **Files:** `app/sampler/select.py`, `app/sampler/cli.py`, `app/sampler/overrides.json` (hand-edited), `site/public/samples/<track_id>.mp3`, `app/sampler/manifest.json`.
 
 ### Selection logic (fallback ladder, in `select.py`)
 
@@ -60,23 +60,29 @@ For each track, choose the 30s window:
 
 ### Encode behavior (`cli.py`)
 
-Cut from `source.path`, apply fades, normalize to -14 LUFS, encode stereo 128k AAC:
+Cut from `source.path`, apply fades, normalize to -14 LUFS using two-pass loudnorm, encode stereo 128k MP3:
 
 ```
+# Pass 1 — measure the excerpt
 ffmpeg -ss <start_s> -t <len> -i "<master>" \
   -af "afade=t=in:st=0:d=0.3, afade=t=out:st=<len-1.5>:d=1.5, \
-       loudnorm=I=-14:TP=-1:LRA=11" \
-  -ac 2 -c:a aac -b:a 128k "samples/<track_id>.m4a"
+       loudnorm=I=-14:TP=-1:LRA=11:print_format=json" \
+  -f null - 2>&1  # parse measured_I, measured_LRA, measured_TP, measured_thresh, offset
+
+# Pass 2 — encode with measured values
+ffmpeg -ss <start_s> -t <len> -i "<master>" \
+  -af "afade=t=in:st=0:d=0.3, afade=t=out:st=<len-1.5>:d=1.5, \
+       loudnorm=I=-14:TP=-1:LRA=11:measured_I=<I>:measured_LRA=<LRA>:measured_TP=<TP>:measured_thresh=<thresh>:offset=<offset>:linear=true" \
+  -ac 2 -c:a libmp3lame -b:a 128k "site/public/samples/<track_id>.mp3"
 ```
 
-(Per-excerpt `loudnorm` rather than track-level gain, because a chorus is louder than the
-track average — normalizing the actual excerpt is what makes the catalog consistent.)
+Two-pass on the excerpt (not the full track) — a chorus is louder than the track average,
+so normalizing the actual excerpt is what makes the catalog consistent.
 
 ### CLI surface
 
 ```
-critic prime-samples [--all | --track <id>] [--length 30] [--format m4a|mp3] \
-                     [--target-lufs -14] [--force]
+critic prime-samples [--all | --track <id>] [--length 30] [--target-lufs -14] [--force]
 ```
 
 - `--all` walks every `out/<track_id>.json`; cached samples are skipped unless `--force`.
@@ -87,16 +93,21 @@ critic prime-samples [--all | --track <id>] [--length 30] [--format m4a|mp3] \
 ```json
 {
   "track_id": "stab--cargo-cult",
-  "sample_path": "samples/stab--cargo-cult.m4a",
+  "sample_path": "site/public/samples/stab--cargo-cult.mp3",
+  "preview_audio": "/samples/stab--cargo-cult.mp3",
   "start_s": 96.4,
   "duration_s": 30.0,
   "selection": "first_chorus | peak_energy | fallback_offset | manual_override",
   "target_lufs": -14.0,
   "measured_lufs_out": -14.1,
-  "format": "aac_128k_m4a",
+  "format": "mp3_128k",
   "status": "ok | needs_source | short_track"
 }
 ```
+
+`preview_audio` is the site-relative URL written back into `content/releases/{slug}.yaml`
+under `song.preview_audio` or `tracks[n].preview_audio`. The Astro build picks it up at
+build time; no web code changes are needed.
 
 The `selection` field is your review lever: anything that fired `fallback_offset` is a
 candidate for a manual override entry.
@@ -119,8 +130,9 @@ candidate for a manual override entry.
 
 ## Notes for the agent
 
-- **Cut from the master, never from the model proxy.** The proxy is mono 96k for Gemini only.
-- This packet **does not** touch the critic phases or their records (read-only on `out/<track_id>.json`).
+- **Cut from the master, never from the model proxy.** The proxy is mono 96k for Gemini only. Masters live at `/mnt/c/Masters`.
+- The critic metadata (sections, lufs, source path) is **descriptive, not prescriptive**. The sampler (`select.py`) owns the decision about which 30s window to use; the critic makes no recommendation.
+- This packet is **read-only on `out/<track_id>.json`**. It writes only to `site/public/samples/` and `content/releases/*.yaml` (`preview_audio` field).
 - Idempotent: don't regenerate an existing sample unless `--force` or the master changed.
-- Don't add any web-serving code — produce files + manifest; Weaver consumes them.
+- Don't add any web-serving code — files in `site/public/samples/` are served automatically by the Astro build.
 - Stop at each GATE. Summarize, don't proceed.

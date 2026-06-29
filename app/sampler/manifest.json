@@ -1,0 +1,42 @@
+[
+  {
+    "track_id": "pcbender--aiteo",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--aiteo.mp3"
+  },
+  {
+    "track_id": "pcbender--apa",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--apa.mp3"
+  },
+  {
+    "track_id": "pcbender--ego-eimi",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--ego-eimi.mp3"
+  },
+  {
+    "track_id": "pcbender--esmen",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--esmen.mp3"
+  },
+  {
+    "track_id": "pcbender--esti",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--esti.mp3"
+  },
+  {
+    "track_id": "pcbender--joni",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--joni.mp3"
+  },
+  {
+    "track_id": "pcbender--ousia",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--ousia.mp3"
+  },
+  {
+    "track_id": "pcbender--tria",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  }
+]
