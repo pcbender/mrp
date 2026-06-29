@@ -16,56 +16,111 @@ clone:
     link: https://www.maricoparecords.com/artists/
     guid: https://www.maricoparecords.com/?page_id=782
     captured_path: raw/pages/www.maricoparecords.com/artists/index.html
-  content_html: "<!-- wp:cover {\"url\":\"https://www.maricoparecords.com/wp-content/plugins/woocommerce/assets/images/pattern-placeholders/man-person-music-black-and-white-white-photography.jpg\"\
-    ,\"dimRatio\":50,\"focalPoint\":{\"x\":0.5,\"y\":0.21},\"minHeight\":574,\"minHeightUnit\"\
-    :\"px\",\"contentPosition\":\"center right\",\"metadata\":{\"categories\":[\"\
-    intro\"],\"patternName\":\"woocommerce-blocks/just-arrived-full-hero\",\"name\"\
-    :\"Just Arrived Full Hero\"},\"align\":\"full\"} -->\n<div class=\"wp-block-cover\
-    \ alignfull has-custom-content-position is-position-center-right\" style=\"min-height:574px\"\
-    ><span aria-hidden=\"true\" class=\"wp-block-cover__background has-background-dim\"\
-    ></span><img class=\"wp-block-cover__image-background\" alt=\"\" src=\"https://www.maricoparecords.com/wp-content/plugins/woocommerce/assets/images/pattern-placeholders/man-person-music-black-and-white-white-photography.jpg\"\
-    \ style=\"object-position:50% 21%\" data-object-fit=\"cover\" data-object-position=\"\
-    50% 21%\"/><div class=\"wp-block-cover__inner-container\"><!-- wp:group {\"style\"\
-    :{\"spacing\":{\"padding\":{\"right\":\"60px\",\"left\":\"60px\"}}},\"layout\"\
-    :{\"type\":\"constrained\",\"justifyContent\":\"center\"}} -->\n<div class=\"\
-    wp-block-group\" style=\"padding-right:60px;padding-left:60px\"><!-- wp:stackable/heading\
-    \ {\"uniqueId\":\"7d39582\",\"textColor1\":\"#D0422C\"} -->\n<div class=\"wp-block-stackable-heading\
-    \ stk-block-heading stk-block-heading--v2 stk-block stk-7d39582\" id=\"our-artists\"\
-    \ data-block-id=\"7d39582\"><style>.stk-7d39582 .stk-block-heading__text{color:#D0422C\
-    \ !important;}</style><h2 class=\"stk-block-heading__text has-text-color\">Our\
-    \ Artists</h2></div>\n<!-- /wp:stackable/heading -->\n\n<!-- wp:paragraph -->\n\
-    <p>At Maricopa Records, our artists are the heart and soul of everything we do.\
-    \ We are proud to represent a diverse and innovative roster of talent, blending\
-    \ AI-driven musicians with human creators to shape the future of music. From high-energy\
-    \ rock anthems to intimate storytelling ballads, our artists push creative boundaries\
-    \ and redefine what\u2019s possible in modern sound.</p>\n<!-- /wp:paragraph -->\n\
-    \n<!-- wp:paragraph -->\n<p>Each artist at Maricopa Records brings a unique voice\
-    \ and perspective, creating music that resonates across genres and generations.\
-    \ Whether it\u2019s the raw, rebellious energy of STAB or the seasoned, soulful\
-    \ storytelling of PCBender, our artists are pioneers in a new era of musical expression.\
-    \ We celebrate their individuality and provide them with the tools, technology,\
-    \ and support they need to bring their visions to life.</p>\n<!-- /wp:paragraph\
-    \ -->\n\n<!-- wp:stackable/heading {\"uniqueId\":\"e46569c\",\"textColor1\":\"\
-    #ed3f40\"} -->\n<div class=\"wp-block-stackable-heading stk-block-heading stk-block-heading--v2\
-    \ stk-block stk-e46569c\" id=\"join-the-maricopa-records-family\" data-block-id=\"\
-    e46569c\"><style>.stk-e46569c .stk-block-heading__text{color:#ed3f40 !important;}</style><h2\
-    \ class=\"stk-block-heading__text has-text-color\">Join the Maricopa Records Family</h2></div>\n\
-    <!-- /wp:stackable/heading -->\n\n<!-- wp:paragraph -->\n<p>If you\u2019re ready\
-    \ to be part of a label that\u2019s <strong>Moving \u25E6 Music \u25E6 Forward</strong>,\
-    \ we\u2019d love to hear from you. Submit your <a href=\"/Contact\">demo or portfolio</a>\
-    \ and let\u2019s create something extraordinary together.</p>\n<!-- /wp:paragraph\
-    \ -->\n\n<!-- wp:paragraph -->\n<p><strong>Discover the future of music. Join\
-    \ Maricopa Records.</strong></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group\
-    \ --></div></div>\n<!-- /wp:cover -->\n\n<!-- wp:stackable/spacer {\"uniqueId\"\
-    :\"5d102ef\"} -->\n<div class=\"wp-block-stackable-spacer stk-block-spacer stk--no-padding\
-    \ stk-block stk-5d102ef\" data-block-id=\"5d102ef\"></div>\n<!-- /wp:stackable/spacer\
-    \ -->\n\n<!-- wp:stackable/heading {\"contentAlign\":\"center\",\"uniqueId\":\"\
-    101fe1f\"} -->\n<div class=\"wp-block-stackable-heading stk-block-heading stk-block-heading--v2\
-    \ stk-block stk-101fe1f\" id=\"artist-roster\" data-block-id=\"101fe1f\"><h2 class=\"\
-    stk-block-heading__text has-text-align-center\">Artist Roster</h2></div>\n<!--\
-    \ /wp:stackable/heading -->\n\n<!-- wp:shortcode -->\n[child_pages cols=\"3\"\
-    \ more=\"More...\" link_titles=\"true\" thumbs=\"true\" link_thumbs=\"true\"]\n\
-    <!-- /wp:shortcode -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph -->"
+  content_html: '<!-- wp:cover {"url":"https://www.maricoparecords.com/wp-content/plugins/woocommerce/assets/images/pattern-placeholders/man-person-music-black-and-white-white-photography.jpg","dimRatio":50,"focalPoint":{"x":0.5,"y":0.21},"minHeight":574,"minHeightUnit":"px","contentPosition":"center
+    right","metadata":{"categories":["intro"],"patternName":"woocommerce-blocks/just-arrived-full-hero","name":"Just
+    Arrived Full Hero"},"align":"full"} -->
+
+    <div class="wp-block-cover alignfull has-custom-content-position is-position-center-right"
+    style="min-height:574px"><span aria-hidden="true" class="wp-block-cover__background
+    has-background-dim"></span><img class="wp-block-cover__image-background" alt=""
+    src="https://www.maricoparecords.com/wp-content/plugins/woocommerce/assets/images/pattern-placeholders/man-person-music-black-and-white-white-photography.jpg"
+    style="object-position:50% 21%" data-object-fit="cover" data-object-position="50%
+    21%"/><div class="wp-block-cover__inner-container"><!-- wp:group {"style":{"spacing":{"padding":{"right":"60px","left":"60px"}}},"layout":{"type":"constrained","justifyContent":"center"}}
+    -->
+
+    <div class="wp-block-group" style="padding-right:60px;padding-left:60px"><!--
+    wp:stackable/heading {"uniqueId":"7d39582","textColor1":"#D0422C"} -->
+
+    <div class="wp-block-stackable-heading stk-block-heading stk-block-heading--v2
+    stk-block stk-7d39582" id="our-artists" data-block-id="7d39582"><style>.stk-7d39582
+    .stk-block-heading__text{color:#D0422C !important;}</style><h2 class="stk-block-heading__text
+    has-text-color">Our Artists</h2></div>
+
+    <!-- /wp:stackable/heading -->
+
+
+    <!-- wp:paragraph -->
+
+    <p>At Maricopa Records, our artists are the heart and soul of everything we do.
+    We are proud to represent a diverse and innovative roster of talent, blending
+    AI-driven musicians with human creators to shape the future of music. From high-energy
+    rock anthems to intimate storytelling ballads, our artists push creative boundaries
+    and redefine what’s possible in modern sound.</p>
+
+    <!-- /wp:paragraph -->
+
+
+    <!-- wp:paragraph -->
+
+    <p>Each artist at Maricopa Records brings a unique voice and perspective, creating
+    music that resonates across genres and generations. Whether it’s the raw, rebellious
+    energy of STAB or the seasoned, soulful storytelling of PCBender, our artists
+    are pioneers in a new era of musical expression. We celebrate their individuality
+    and provide them with the tools, technology, and support they need to bring their
+    visions to life.</p>
+
+    <!-- /wp:paragraph -->
+
+
+    <!-- wp:stackable/heading {"uniqueId":"e46569c","textColor1":"#ed3f40"} -->
+
+    <div class="wp-block-stackable-heading stk-block-heading stk-block-heading--v2
+    stk-block stk-e46569c" id="join-the-maricopa-records-family" data-block-id="e46569c"><style>.stk-e46569c
+    .stk-block-heading__text{color:#ed3f40 !important;}</style><h2 class="stk-block-heading__text
+    has-text-color">Join the Maricopa Records Family</h2></div>
+
+    <!-- /wp:stackable/heading -->
+
+
+    <!-- wp:paragraph -->
+
+    <p>If you’re ready to be part of a label that’s <strong>Moving ◦ Music ◦ Forward</strong>,
+    we’d love to hear from you. Submit your <a href="/Contact">demo or portfolio</a>
+    and let’s create something extraordinary together.</p>
+
+    <!-- /wp:paragraph -->
+
+
+    <!-- wp:paragraph -->
+
+    <p><strong>Discover the future of music. Join Maricopa Records.</strong></p>
+
+    <!-- /wp:paragraph --></div>
+
+    <!-- /wp:group --></div></div>
+
+    <!-- /wp:cover -->
+
+
+    <!-- wp:stackable/spacer {"uniqueId":"5d102ef"} -->
+
+    <div class="wp-block-stackable-spacer stk-block-spacer stk--no-padding stk-block
+    stk-5d102ef" data-block-id="5d102ef"></div>
+
+    <!-- /wp:stackable/spacer -->
+
+
+    <!-- wp:stackable/heading {"contentAlign":"center","uniqueId":"101fe1f"} -->
+
+    <div class="wp-block-stackable-heading stk-block-heading stk-block-heading--v2
+    stk-block stk-101fe1f" id="artist-roster" data-block-id="101fe1f"><h2 class="stk-block-heading__text
+    has-text-align-center">Artist Roster</h2></div>
+
+    <!-- /wp:stackable/heading -->
+
+
+    <!-- wp:shortcode -->
+
+    [child_pages cols="3" more="More..." link_titles="true" thumbs="true" link_thumbs="true"]
+
+    <!-- /wp:shortcode -->
+
+
+    <!-- wp:paragraph -->
+
+    <p></p>
+
+    <!-- /wp:paragraph -->'
   excerpt: null
   seo:
     title: Artists
