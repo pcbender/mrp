@@ -67,6 +67,7 @@ sequence-relevant to add, the text may stay close to the original.
 - Full key signatures ("G major"). At most: "in a minor key," or omit.
 - Schema field names: never "context_rank," "standalone_rank," "sum_vs_parts."
 - Internal metric scores of any kind.
+- Em dashes (—). Use commas, colons, semicolons, or rewrite the sentence instead.
 
 ## Output format
 

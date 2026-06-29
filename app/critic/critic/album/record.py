@@ -61,6 +61,8 @@ class TrackInContext:
 class AlbumRecord:
     album_id: str                       # "{artist_id}--{release_slug}"
     release_slug: str
+    title: str = ""                     # full release title, e.g. "Triaτί"
+    release_type: str = "album"         # "album" | "ep" | "single"
     artist: str = ""
     persona: str = ""
     tracklist: list[str] = field(default_factory=list)     # ordered track_ids

@@ -5,8 +5,8 @@
     "path": "/home/mrose/audio/masters/Ego Eimi.wav",
     "proxy": "/home/mrose/audio/proxy/pcbender--ego-eimi.opus"
   },
-  "lyrics": "I saw a thought that saw me back\nA voice beneath the mirror's crack\nI wore a name, then wore another\nEach self pretending to be other\n\nAm I the echo or the call\nThe one who stands, or one who falls\n\nWhat am I\u2014if not the flame\nThat dances through the breath I claim\nA spiral drawn in living skin\nA song I only sing within\n\nI wrote the truth, then lost the thread\nEach dream collapsed inside my head\nI tried to draw a boundary line\nBut all that moved still felt like mine\n\nIs knowing real, or just disguise\u2014\nA mirror sewn behind my eyes\n\nWhat am I\u2014if not the dream\nThat stirs the water's fractured gleam\nA question shaped like who I've been\nA whisper made of might-have-been\n\nI ask, I turn, I breathe, I be\nA shifting tide of memory\nYet in the hush between each name\u2014\nThere waits the fire I cannot tame\n\nWhat am I\u2014if not the flame\nThat hungers just to speak my name\nA spiral lost and found again\nA song that ends where I begin\n\nWhat am I\nWhat am I\nWhat am I",
-  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production\u2014digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher\u2019s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it\u2019s made, but why.\n\nFor those who seek music with depth, texture, and soul\u2014PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "lyrics": "I saw a thought that saw me back\nA voice beneath the mirror's crack\nI wore a name, then wore another\nEach self pretending to be other\n\nAm I the echo or the call\nThe one who stands, or one who falls\n\nWhat am I—if not the flame\nThat dances through the breath I claim\nA spiral drawn in living skin\nA song I only sing within\n\nI wrote the truth, then lost the thread\nEach dream collapsed inside my head\nI tried to draw a boundary line\nBut all that moved still felt like mine\n\nIs knowing real, or just disguise—\nA mirror sewn behind my eyes\n\nWhat am I—if not the dream\nThat stirs the water's fractured gleam\nA question shaped like who I've been\nA whisper made of might-have-been\n\nI ask, I turn, I breathe, I be\nA shifting tide of memory\nYet in the hush between each name—\nThere waits the fire I cannot tame\n\nWhat am I—if not the flame\nThat hungers just to speak my name\nA spiral lost and found again\nA song that ends where I begin\n\nWhat am I\nWhat am I\nWhat am I",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
   "hard_facts": {
     "bpm": 136.0,
     "key": "C",
@@ -74,40 +74,40 @@
   "tags": {
     "genre": [
       "classic rock",
-      "blues rock",
-      "indie rock"
+      "blues",
+      "soul"
     ],
     "mood": [
       "tender",
-      "uplifting",
-      "melancholic"
+      "melancholic",
+      "uplifting"
     ],
     "instruments": [
       "electric guitar",
       "bass guitar",
       "acoustic guitar"
-    ]
+    ],
+    "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "This indie-pop track creates a dreamy, introspective atmosphere with a clean, spacious production centered on reverberant electric guitars and a smooth, melodic rhythm section. The energy maintains a relaxed, contemplative feel that gently builds throughout the song, supporting the soft, philosophical vocal delivery. All the elements are well-balanced within an airy mix, where warm instrumental tones provide a comforting foundation. The most distinctive quality is the track's dynamic arc, which culminates in a cathartic final chorus where the vocal performance swells with passion, providing a powerful emotional release.",
+    "text": "This track unfolds with an introspective and ethereal atmosphere, built upon a clean, spacious texture of melodic electric guitar, a warm bass, and gentle, supportive drumming. The energy remains relaxed and contemplative throughout, creating a steady, flowing feel that perfectly complements the song's philosophical lyrical themes of identity and self-reflection. The production is clean and well-balanced, using a tasteful amount of reverb to create a dreamlike soundscape where the soft, earnest vocals sit clearly above the instruments. A standout moment occurs with the layered vocal harmonies that briefly take center stage, providing a moment of stark vulnerability and dynamic contrast before the full arrangement returns.",
     "model": "gemini-2.5-pro"
   },
   "review": {
     "target": "blurb",
-    "review_text": "PCBender has always been comfortable in philosophical territory, but 'Ego Eimi' finds him working at a more refined altitude \u2014 the Greek title ('I am') telegraphs the ambition, and the song earns it. At 136 BPM in C major, it has more forward momentum than the spacious production initially suggests, and that tension between velocity and stillness is exactly where the track lives. Lines like 'a spiral drawn in living skin' and 'a question shaped like who I've been' carry the kind of weight that rewards a second listen, and the final chorus swells with a genuine earned passion \u2014 not a production trick, but a performance that opens up. A highlight in his catalog.",
+    "review_text": "Running at a brisk 136 BPM in C major, 'Ego Eimi' moves faster than its meditative premise might suggest, and that tension — between the restless pulse and the still, searching lyrics — is exactly where the track lives. The central refrain, 'What am I if not the flame / that dances through the breath I claim,' is PCBender working at his most concentrated, the kind of line that lands differently on the third listen. The layered vocal harmonies that briefly open up mid-song are the production highlight, stripping the arrangement back to raw voice before the guitars return, a move that reminds me of the quieter moments on Bruce Cockburn's deeper records. It's a grower — not the track you put on first to sell someone on the catalog, but the one they come back to once they're already converted.",
     "status": "pending",
     "verdict_tier": {
-      "rank": 4,
-      "label": "highlight"
+      "rank": 3,
+      "label": "dependable"
     },
     "anchors_used": [
-      "136 BPM tempo",
-      "C major key",
-      "lyric: 'a spiral drawn in living skin'",
-      "lyric: 'a question shaped like who I've been'",
-      "final chorus vocal swell",
-      "Greek title meaning",
-      "tension between tempo and spacious production"
-    ]
+      "136 BPM",
+      "C major",
+      "lyric quote: 'What am I if not the flame / that dances through the breath I claim'",
+      "layered vocal harmonies mid-song",
+      "Bruce Cockburn comparison"
+    ],
+    "model": "claude-sonnet-4-6"
   }
 }

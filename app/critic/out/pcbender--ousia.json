@@ -6,7 +6,7 @@
     "proxy": "/home/mrose/audio/proxy/pcbender--ousia.opus"
   },
   "lyrics": "I am\nWe are\nIt is\n\nI am\nWe are\nIt is\n\nI am. (soprano)\nWe are. (alto joins)\nIt is. (bass grounds)\n\nI am\nWe are\nIt is\n\n# Style Prompts\n(not used - production notes)\n# Tab 7\n(not used - summary notes)",
-  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production\u2014digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher\u2019s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it\u2019s made, but why.\n\nFor those who seek music with depth, texture, and soul\u2014PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
   "hard_facts": {
     "bpm": 123.0,
     "key": "F",
@@ -78,30 +78,32 @@
       "melancholic"
     ],
     "instruments": [
-      "acoustic guitar",
+      "piano",
       "strings",
-      "piano"
-    ]
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "This track opens with a vast, sacred atmosphere, built upon a sparse texture of a heavily reverberated solo female vocalist and a sustained organ pad. The energy is extremely low and contemplative, with a free-flowing, unmetered feel that is guided entirely by the emotional delivery of the vocal performance. The production quality is pristine and cinematic, creating an immense sense of space where the voice feels simultaneously intimate and distant. The most defining moment is the dramatic entrance of a full string section around 1:30, which swells to transform the piece from a solitary lament into a grand, epic statement.",
+    "text": "This track creates a vast, ethereal atmosphere with a lone, heavily reverberant female vocal floating over a simple synth pad, creating a haunting and spiritual mood. The energy flows in long, dramatic waves, building from a quiet, contemplative state to powerful, cinematic swells driven by a lush string orchestra and soaring, wordless vocal lines. The production quality is high, characterized by an immense sense of space and a polished mix where the sparse elements feel intimate and the dense orchestral sections are wide and enveloping. A defining characteristic is the expressive vocal performance, particularly the transition around 1:51 where the full string section enters, transforming the piece from a gentle lament into a truly epic and emotionally resonant statement.",
     "model": "gemini-2.5-pro"
   },
   "review": {
     "target": "blurb",
-    "review_text": "Three words, nine syllables, three minutes \u2014 and PCBender somehow makes it feel earned. 'Ousia' (Greek for 'essence' or 'being') opens in near-silence, a soprano voice alone in a cathedral of reverb, and the restraint is the whole argument: when the strings finally surge around the 1:30 mark, they hit with the force of a G\u00f3recki symphony because the space before them was so carefully honored. At 123 BPM in F major the pulse is technically there, but you'd never feel it as a clock \u2014 this runs on breath, not bar lines. It's the kind of track that asks more of the listener than it explains, and that's a genuine artistic bet.",
+    "review_text": "Three phrases — 'I am,' 'We are,' 'It is' — and PCBender builds a full philosophical arc out of them, which tells you everything about the ambition here. The piece moves in long waves, opening with a single reverb-soaked soprano voice over a spare synth pad, then expanding around the 1:51 mark when a full string section arrives and transforms the whole thing into something genuinely cinematic. At 123 BPM in F major it has more forward momentum than the orchestral-choral genre usually allows, which keeps it from feeling static. It lands somewhere between Arvo Pärt's economy of means and the kind of arena-scale emotional payoff you'd expect from Hans Zimmer — a combination that, when it works, really works.",
     "status": "pending",
     "verdict_tier": {
       "rank": 4,
       "label": "highlight"
     },
     "anchors_used": [
-      "title etymology (ousia)",
-      "soprano opening / reverb texture",
-      "string entrance at ~1:30",
-      "123 BPM / F major",
-      "free-flowing unmetered feel",
-      "G\u00f3recki comparison"
-    ]
+      "lyric: 'I am / We are / It is'",
+      "key: F major",
+      "BPM: 123",
+      "structural turn at 1:51 (string section entry)",
+      "soprano-to-full-orchestra build",
+      "AUDIO IMPRESSION: vocal floating over synth pad, orchestral swell"
+    ],
+    "model": "claude-sonnet-4-6"
   }
 }

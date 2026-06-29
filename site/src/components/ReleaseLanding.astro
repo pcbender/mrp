@@ -4,6 +4,7 @@ import Lyrics from "./Lyrics.astro";
 import StreamingLinks from "./StreamingLinks.astro";
 import { releaseCoverUrl } from "../lib/content.js";
 import { releaseSocialLinks, trackStreamingLinks } from "../lib/catalog";
+import { getEntry } from "astro:content";
 
 interface Props {
   release: any;
@@ -17,6 +18,12 @@ const copyBlocks = releaseCopyBlocks(release);
 const streamingLinks = releaseSocialLinks(release);
 const coverUrl = releaseCoverUrl(release);
 const hasCredits = Boolean(release.credits?.songwriter || release.credits?.producer || release.credits?.mastering);
+
+const reviewId = release.song?.slug
+  ? `${release.artist_id}--${release.song.slug}`   // single
+  : `${release.artist_id}--${release.slug}`;        // album / EP
+const reviewEntry = await getEntry("reviews", reviewId).catch(() => null);
+const { Content: ReviewContent } = reviewEntry ? await reviewEntry.render() : {};
 
 function releaseCopyBlocks(release: any) {
   const source = String(release.description || release.summary || "").split(/\n## Tracks\b/i)[0];
@@ -57,6 +64,24 @@ function cleanMarkdownText(value: string) {
       <p class="eyebrow">{release.release_type}</p>
       <h2>{release.title}</h2>
       {copyBlocks.map((block) => <p>{block}</p>)}
+      {reviewEntry && (
+        <div class="track-review">
+          {reviewEntry.data.impression && (
+            <p class="impression">{reviewEntry.data.impression}</p>
+          )}
+          {ReviewContent && (
+            <details class="review-more">
+              <summary>More</summary>
+              <div class="review-body"><ReviewContent /></div>
+            </details>
+          )}
+        </div>
+      )}
+      {release.song?.preview_audio && (
+        <audio class="sample-player" controls src={release.song.preview_audio}>
+          <source src={release.song.preview_audio} type="audio/mpeg" />
+        </audio>
+      )}
       <StreamingLinks links={streamingLinks} />
     </div>
     <img src={coverUrl} alt="" width="800" height="800" />
@@ -180,6 +205,57 @@ function cleanMarkdownText(value: string) {
     margin: 0;
     color: var(--muted);
     font-size: 1.08rem;
+  }
+
+  .sample-player {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .track-review {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .impression {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  .review-body {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .review-body :global(p) {
+    margin: 0 0 1em;
+  }
+
+  .review-more {
+    width: 100%;
+  }
+
+  .review-more summary {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    list-style: none;
+    user-select: none;
+  }
+
+  .review-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .review-more[open] summary {
+    margin-bottom: 12px;
   }
 
   .track-list {

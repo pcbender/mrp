@@ -18,7 +18,9 @@ from pathlib import Path
 
 import anthropic
 
+from ..catalog import get_release_tracks
 from ..config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
+from ..utils import scrub_emdash
 from ..schema import validate_album_review, warn_issues
 from .features import build_features
 from .cohesion import build_cohesion
@@ -55,6 +57,10 @@ def _build_user_message(record: AlbumRecord, findings: list[dict], target: str) 
                   for rank, label in [(5, "standout"), (4, "highlight"), (3, "dependable"), (2, "soft_floor")]]
     dist_str = "  ".join(p for p in dist_parts if not p.endswith(": 0"))
 
+    # Build slug→title map from catalog so track names are correct (not slugs)
+    _tracks = get_release_tracks(record.release_slug) or []
+    _title_map = {t["slug"]: t.get("title", t["slug"]) for t in _tracks}
+
     # Per-track table for the model
     track_lines = []
     for i, (tid, bpm, key, mood, finding) in enumerate(zip(
@@ -66,10 +72,11 @@ def _build_user_message(record: AlbumRecord, findings: list[dict], target: str) 
     ), start=1):
         rank = finding["review"]["verdict_tier"]["rank"]
         label = _TIER_LABELS.get(rank, "")
-        short = tid.split("--", 1)[-1]
+        slug = tid.split("--", 1)[-1]
+        track_title = _title_map.get(slug, slug)
         excerpt = finding["review"]["review_text"][:120].rstrip() + "…"
         track_lines.append(
-            f"  {i}. {short}  |  {bpm} BPM, {key}, {mood}  |  rank {rank} ({label})\n"
+            f"  {i}. {track_title}  |  {bpm} BPM, {key}, {mood}  |  rank {rank} ({label})\n"
             f"     ↳ {excerpt}"
         )
 
@@ -81,7 +88,8 @@ def _build_user_message(record: AlbumRecord, findings: list[dict], target: str) 
         thin_warnings.append("no lyrical theme threads detected (instrumental or no lyrics)")
 
     parts = [
-        f"Album: {record.artist} — {record.release_slug}",
+        f"Release: {record.artist} — {record.title}",
+        f"Release type: {record.release_type}",
         f"Format: {target}",
         *(["", "⚠  DATA NOTES (thin data — avoid asserting arcs for these):", *[f"  - {w}" for w in thin_warnings]] if thin_warnings else []),
         "",
@@ -171,7 +179,7 @@ def album_synthesize(
 
     return AlbumReview(
         target=target,
-        review_text=parsed.get("review_text", ""),
+        review_text=scrub_emdash(parsed.get("review_text", "")),
         verdict_tier=AlbumVerdictTier(rank=tier["rank"], label=tier["label"]),
         sum_vs_parts=parsed.get("sum_vs_parts", ""),
         persona_delivery=parsed.get("persona_delivery", ""),

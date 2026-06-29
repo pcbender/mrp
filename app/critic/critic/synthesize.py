@@ -18,6 +18,7 @@ import anthropic
 
 from .config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
 from .record import Review, TrackFinding, VerdictTier
+from .utils import scrub_emdash
 from .schema import validate_track_review, warn_issues
 
 _TIER_LABELS = {2: "soft_floor", 3: "dependable", 4: "highlight", 5: "standout"}
@@ -163,7 +164,7 @@ def synthesize(
 
     return Review(
         target=target,
-        review_text=parsed.get("review_text", ""),
+        review_text=scrub_emdash(parsed.get("review_text", "")),
         status="pending",
         verdict_tier=VerdictTier(rank=tier["rank"], label=tier["label"]),
         anchors_used=parsed.get("anchors_used", []),

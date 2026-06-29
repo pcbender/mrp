@@ -42,3 +42,5 @@ Verdict ladder:
   rank 2 — soft_floor : "a grower," "for the faithful," "worthy of a listen"
 
 The floor is rank 2. Never go below it.
+
+Never use em dashes (—). Use commas, colons, semicolons, or rewrite the sentence instead.

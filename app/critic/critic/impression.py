@@ -16,6 +16,7 @@ from pathlib import Path
 
 from .config import GOOGLE_API_KEY, IMPRESSION_MODEL
 from .record import Impression
+from .utils import scrub_emdash
 
 _PROMPT = """\
 Listen to this audio and describe what you hear in 3-5 sentences as a music \
@@ -28,7 +29,8 @@ Cover:
 - Any distinctive moment, transition, or quality that defines the track
 
 Do NOT mention BPM, tempo, key, mode, or time signature — those are \
-documented separately. Be specific to what you actually hear.
+documented separately. Be specific to what you actually hear. \
+Do NOT use em dashes (—); use commas, colons, or rephrase instead.
 """
 
 
@@ -58,7 +60,7 @@ def get_impression(proxy_path: str | Path, model: str | None = None) -> Impressi
                 types.Part.from_text(text=_PROMPT),
             ],
         )
-        return Impression(text=response.text.strip(), model=selected)
+        return Impression(text=scrub_emdash(response.text.strip()), model=selected)
     except Exception as exc:
         print(f"  ⚠  Gemini impression failed: {exc}")
         return Impression(text="", model="")

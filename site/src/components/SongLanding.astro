@@ -4,6 +4,7 @@ import Lyrics from "./Lyrics.astro";
 import StreamingLinks from "./StreamingLinks.astro";
 import { releaseCoverUrl } from "../lib/content.js";
 import { trackStreamingLinks } from "../lib/catalog";
+import { getEntry } from "astro:content";
 
 interface Props {
   release: any;
@@ -17,6 +18,9 @@ const artistHref = `/artists/${release.artist_id}/`;
 const releaseHref = `/releases/${release.slug}/`;
 const streamingLinks = trackStreamingLinks(track);
 const coverUrl = releaseCoverUrl(release);
+const trackId = `${release.artist_id}--${track.slug}`;
+const reviewEntry = await getEntry("reviews", trackId);
+const { Content: ReviewContent } = reviewEntry ? await reviewEntry.render() : {};
 ---
 <article class="release-landing">
   <header class="release-hero" style={`--release-hero-image: url("${coverUrl}")`}>
@@ -33,6 +37,24 @@ const coverUrl = releaseCoverUrl(release);
     <div class="release-copy">
       <p class="eyebrow">From {release.title}</p>
       <h2>{track.title}</h2>
+      {reviewEntry && (
+        <div class="track-review">
+          {reviewEntry.data.impression && (
+            <p class="impression">{reviewEntry.data.impression}</p>
+          )}
+          {ReviewContent && (
+            <details class="review-more">
+              <summary>More</summary>
+              <div class="review-body"><ReviewContent /></div>
+            </details>
+          )}
+        </div>
+      )}
+      {track.preview_audio && (
+        <audio class="sample-player" controls src={track.preview_audio}>
+          <source src={track.preview_audio} type="audio/mpeg" />
+        </audio>
+      )}
       <StreamingLinks links={streamingLinks} showMissing />
     </div>
     <img src={coverUrl} alt="" width="800" height="800" />
@@ -52,6 +74,7 @@ const coverUrl = releaseCoverUrl(release);
       )}
     </section>
   )}
+
 </article>
 
 <style>
@@ -131,6 +154,11 @@ const coverUrl = releaseCoverUrl(release);
     font-size: 1.08rem;
   }
 
+  .sample-player {
+    width: 100%;
+    max-width: 380px;
+  }
+
   .lyrics {
     display: grid;
     gap: 16px;
@@ -160,6 +188,52 @@ const coverUrl = releaseCoverUrl(release);
 
   .lyrics-footer a:hover {
     color: var(--ink);
+  }
+
+  .track-review {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .impression {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  .review-body {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .review-body :global(p) {
+    margin: 0 0 1em;
+  }
+
+  .review-more {
+    width: 100%;
+  }
+
+  .review-more summary {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+    list-style: none;
+    user-select: none;
+  }
+
+  .review-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .review-more[open] summary {
+    margin-bottom: 12px;
   }
 
   @media (max-width: 760px) {

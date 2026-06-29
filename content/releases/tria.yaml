@@ -37,7 +37,7 @@ release:
     isrc: CAGOO2598738
     duration: '3:46'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--apa.mp3
     links:
       apple_music: https://music.apple.com/us/album/apa/1821324918?i=1821324919
       youtube: https://www.youtube.com/watch?v=xdmBRiyJNu0
@@ -156,7 +156,7 @@ release:
     isrc: CAGOO2598739
     duration: '3:54'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--aiteo.mp3
     links:
       apple_music: https://music.apple.com/us/album/aite%C5%8D/1821324918?i=1821324920
       youtube: https://www.youtube.com/watch?v=mwDJvZJC6iM
@@ -232,7 +232,7 @@ release:
     isrc: CAGOO2598740
     duration: '3:22'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--ego-eimi.mp3
     links:
       apple_music: https://music.apple.com/us/album/ego-eimi/1821324918?i=1821324921
       youtube: https://www.youtube.com/watch?v=qQXEvMARHdo
@@ -315,7 +315,7 @@ release:
     isrc: CAGOO2598741
     duration: '3:54'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--esmen.mp3
     links:
       apple_music: https://music.apple.com/us/album/esm%C3%A9n/1821324918?i=1821324922
       youtube: https://www.youtube.com/watch?v=Tf3GOtbyN84
@@ -391,7 +391,7 @@ release:
     isrc: CAGOO2598742
     duration: '3:49'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--esti.mp3
     links:
       apple_music: https://music.apple.com/us/album/esti/1821324918?i=1821324923
       youtube: https://www.youtube.com/watch?v=j8aGlRDrG5w
