@@ -1,6 +1,7 @@
 ---
 import ReleaseCard from "./ReleaseCard.astro";
 import type { ReleaseCardModel } from "../lib/catalog";
+import { getEntry } from "astro:content";
 
 interface Props {
   releases: ReleaseCardModel[];
@@ -8,9 +9,17 @@ interface Props {
 }
 
 const { releases, rich = false } = Astro.props;
+
+const summaries = await Promise.all(
+  releases.map(async (release) => {
+    if (release.summary) return release.summary;
+    const reviewEntry = await getEntry("reviews", `${release.artistId}--${release.slug}`).catch(() => null);
+    return reviewEntry?.data.impression || reviewEntry?.data.summary || "";
+  })
+);
 ---
 <div class="card-grid release-grid">
-  {releases.map((release) => (
+  {releases.map((release, i) => (
     <ReleaseCard
       title={release.title}
       titleAscii={release.titleAscii}
@@ -19,7 +28,7 @@ const { releases, rich = false } = Astro.props;
       type={release.releaseType}
       releaseDate={release.releaseDate}
       coverImage={release.coverImage}
-      summary={release.summary}
+      summary={summaries[i]}
       rich={rich}
     />
   ))}
