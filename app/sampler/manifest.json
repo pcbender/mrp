@@ -1,42 +1,15 @@
 [
   {
-    "track_id": "pcbender--aiteo",
-    "status": "cached",
-    "sample_path": "site/public/samples/pcbender--aiteo.mp3"
-  },
-  {
-    "track_id": "pcbender--apa",
-    "status": "cached",
-    "sample_path": "site/public/samples/pcbender--apa.mp3"
-  },
-  {
-    "track_id": "pcbender--ego-eimi",
-    "status": "cached",
-    "sample_path": "site/public/samples/pcbender--ego-eimi.mp3"
-  },
-  {
-    "track_id": "pcbender--esmen",
-    "status": "cached",
-    "sample_path": "site/public/samples/pcbender--esmen.mp3"
-  },
-  {
-    "track_id": "pcbender--esti",
-    "status": "cached",
-    "sample_path": "site/public/samples/pcbender--esti.mp3"
-  },
-  {
-    "track_id": "pcbender--joni",
-    "status": "cached",
-    "sample_path": "site/public/samples/pcbender--joni.mp3"
-  },
-  {
-    "track_id": "pcbender--ousia",
-    "status": "cached",
-    "sample_path": "site/public/samples/pcbender--ousia.mp3"
-  },
-  {
-    "track_id": "pcbender--tria",
-    "status": "skipped",
-    "message": "no source field (album-level record)"
+    "track_id": "pcbender--seaward-sings",
+    "sample_path": "site/public/samples/pcbender--seaward-sings.mp3",
+    "preview_audio": "/samples/pcbender--seaward-sings.mp3",
+    "start_s": 251.56,
+    "duration_s": 30.0,
+    "selection": "peak_energy",
+    "target_lufs": -14.0,
+    "measured_lufs_out": -10.1,
+    "format": "mp3_128k",
+    "status": "ok",
+    "preview_audio_written": true
   }
 ]

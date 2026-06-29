@@ -38,483 +38,85 @@ release:
     isrc: CALVP2585489
     duration: '6:44'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--seaward-sings.mp3
     instrumental: false
-    lyrics_text: 'CARD: Intro / sh\_l1 (00:00:00.000–00:00:31.909)
+    lyrics_text: 'Seaward slack, a stay unset
 
-      LYRIC: Seaward slack, a stay unset
+      She hides the things she can''t forget
 
-      SCENE: A 32 foot sloop named “Seaward” written in script font on the boat’s
-      transom is making way at dawn. A young woman @Seaward Johnson is at the helm.
-      Through memory flashbacks we see @Young Seaward Johnson then @Tad Johnson her
-      father, then @Middle-aged Seaward Johnson, then @Mature Seaward Johnson setting
-      the stage for what’s to come
+      A windward silhouette
 
-      PROMPT: A lyrical passage through memory and tide. Dynamic shifts in intensity
-      guide scene pacing, balancing quiet reflection with rising resolve. The shoreline
-      frames a journey from drift to acceptance
+      Of something waiting
 
-      ACTION: Transition 00:00:36.175
 
-      CARD: sh\_l1 (00:00:31.910–00:00:36.175)
+      She''s drawing, a trailing sea
 
-      LYRIC: Seaward slack, a stay unset
+      A pulsing urge to feel the lee
 
-      SCENE: A frustrated @Seaward Johnson at the helm of her sailboat stares off
-      in the distance
+      A drifting story
 
-      PROMPT: A frustrated @Seaward Johnson at the helm of her sailboat stares off
-      in the distance
+      Of something fading
 
-      ACTION: Transition 00:00:36.175
 
-      CARD: sh\_l2 (00:00:36.185–00:00:40.403)
+      Seaward sings her soft refrain
 
-      LYRIC: She hides the things she can’t forget
+      Some things are lost and some remain
 
-      SCENE: @Seaward Johnson sees the face of @Ramona Perez a former lover in a bed
-      room
+      The telltales caution "mind the vane"
 
-      PROMPT: @Seaward Johnson sees the face of @Ramona Perez a former lover in a
-      bed room
+      A rising tide when Seaward calls
 
-      ACTION: Transition 00:00:40.403
 
-      CARD: sh\_l3 (00:00:56.430–00:01:04.586)
+      Mast firm set, her headsail clean
 
-      LYRIC: A windward silhouette
+      She sets her track to things unseen
 
-      SCENE: @Ramona Perez in the shower behind thin curtain
+      A wake without a sounding trace
 
-      PROMPT: @Seaward Johnson’s bedroom from the bed into the bathroom
+      Like something silent missed
 
-      ACTION: Transition 00:01:04.586
 
-      CARD: sh\_l4 (00:01:21.299–00:01:29.002)
+      Her compass cast in pale reflection
 
-      LYRIC: Something waiting
+      Still she draws her destination
 
-      SCENE: @Seaward Johnson alone in a bar waiting
+      A quiet contradiction
 
-      PROMPT: An empty bar at midnight
+      Like something dismissed
 
-      ACTION: Transition 00:01:29.002
 
-      CARD: sh\_l5 (00:01:31.591–00:01:36.253)
+      Seaward sings her soft refrain
 
-      LYRIC: She’s drawing, a trailing sea
+      Some things are lost and some remain
 
-      SCENE: @Radon Topaz a very attractive black man enters the bar and @Seaward
-      Johnson watches him approach with desire
+      The telltales bold "you found your name"
 
-      PROMPT: An empty bar at midnight
+      A flooding tide as Seaward calls
 
-      ACTION: Transition 00:01:36.253
 
-      CARD: sh\_l6 (00:01:36.263–00:01:40.867)
+      She bends the sheet, begins to heel
 
-      LYRIC: A pulsing urge to feel the lee
+      Remembers how the stays feel
 
-      SCENE: @Radon Topaz and @Seaward Johnson sitting too close
+      Too few hours left to steal
 
-      PROMPT: An empty bar at midnight
+      Like a ship upon a reef
 
-      ACTION: Transition 00:01:40.867
 
-      CARD: sh\_l7 (00:01:43.224–00:01:48.667)
+      She dreams the drawing mainsail
 
-      LYRIC: A drifting story
+      The breakers do prevail
 
-      SCENE: @Ramona Perez finds @Radon Topaz and @Seaward Johnson in bed together
+      No longer subject to the gale
 
-      PROMPT: @Seaward Johnson’s bedroom
+      Time is not the thief
 
-      ACTION: Transition 00:01:48.667
 
-      CARD: sh\_l8 (00:01:48.722–00:01:54.091)
+      Seaward sings her soft refrain
 
-      LYRIC: Something fading
+      Some things are lost and some remain
 
-      SCENE: @Seaward Johnson on her sloop leaning over the railing looking at her
-      reflection in the sea
+      The telltales sigh "not the same"
 
-      PROMPT: Calm seas mid-day light
-
-      ACTION: Transition 00:01:54.091
-
-      CARD: sh\_l9 (00:01:55.525–00:02:00.698)
-
-      LYRIC: Seaward sings her soft refrain
-
-      SCENE: @Seaward Johnson watching the seagulls fly overhead from her sloop
-
-      PROMPT: The soft refrain is the time, like water or wind, rushing by
-
-      ACTION: Transition 00:02:00.698
-
-      CARD: sh\_l10 (00:02:00.848–00:02:05.916)
-
-      LYRIC: Some things are lost and some remain
-
-      SCENE: The sloop is leaving the harbor
-
-      PROMPT: The sloop is leaving the harbor
-
-      ACTION: Transition 00:02:05.916
-
-      CARD: sh\_l11 (00:02:07.269–00:02:12.277)
-
-      LYRIC: The telltales caution “mind the vane”
-
-      SCENE: On the sloop the telltale shimmers as the main sail takes wind
-
-      PROMPT: On the sloop the telltale shimmers as the main sail takes wind
-
-      ACTION: Transition 00:02:12.277
-
-      CARD: sh\_l12 (00:02:12.287–00:02:17.236)
-
-      LYRIC: A rising tide when Seaward calls
-
-      SCENE: The sloop makes way as another memory displays @Young Seaward Johnson
-
-      PROMPT: @Young Seaward Johnson standing on a dock watching the sloop piloted
-      by @Tad Johnson motor from the harbor
-
-      ACTION: Transition 00:02:17.236
-
-      CARD: sh\_l10a - B-roll Transition (Bar → Office, 00:02:20)
-
-      Scene: Close-up of water pouring into a sink dissolving into open sea
-
-      Prompt: Match cut symbolizing time’s flow between desire and ambition. Maintain
-      color continuity: amber to cool white
-
-      CARD: sh\_l13 (00:02:31.777–00:02:36.654)
-
-      LYRIC: Mast firm set, her headsail clean
-
-      SCENE: @Middle-aged Seaward Johnson in business attire at a desk interviewing
-      for a job
-
-      PROMPT: Business conference room with an interviewer
-
-      ACTION: Transition 00:02:36.654
-
-      CARD: sh\_l14 (00:02:36.664–00:02:41.483)
-
-      LYRIC: She sets her track to things unseen
-
-      SCENE: @Middle-aged Seaward Johnson working at her work desk
-
-      PROMPT: @Middle-aged Seaward Johnson working at her work desk
-
-      ACTION: Transition 00:02:41.483
-
-      CARD: sh\_l15 (00:02:42.772–00:02:47.258)
-
-      LYRIC: A wake without a sounding trace
-
-      SCENE: @Middle-aged Seaward Johnson presenting to a group of people
-
-      PROMPT: @Middle-aged Seaward Johnson looks slightly uncomfortable as she presents
-
-      ACTION: Transition 00:02:47.258
-
-      CARD: sh\_l16 (00:02:47.268–00:02:51.754)
-
-      LYRIC: Something silent missed
-
-      SCENE: @Middle-aged Seaward finishes her presentation in the conference room
-
-      PROMPT: As she finishes she looks out the window and remembers the call of the
-      sea
-
-      ACTION: Transition 00:02:51.754
-
-      CARD: sh\_l17 (00:02:51.764–00:02:56.250)
-
-      LYRIC: Her compass cast in pale reflection
-
-      SCENE: @Middle-aged Seaward still looking out the window of the conference room
-      sees @Ramona Perez and @Radon Topaz in reflections of longing
-
-      PROMPT: @Middle-aged Seaward still looking out the window of the conference
-      room sees @Ramona Perez and @Radon Topaz in reflections of longing
-
-      ACTION: Transition 00:02:56.250
-
-      CARD: sh\_l18 (00:02:56.260–00:03:00.747)
-
-      LYRIC: Still she draws her destination
-
-      SCENE: @Middle-aged Seaward moves toward her office
-
-      PROMPT: @Middle-aged Seaward looks slightly sad
-
-      ACTION: Transition 00:03:00.747
-
-      CARD: sh\_l19 (00:03:00.814–00:03:05.300)
-
-      LYRIC: A quiet contradiction
-
-      SCENE: @Middle-aged Seaward in a new bigger office
-
-      PROMPT: @Middle-aged Seaward sitting in her big new office. A picture of her
-      sloop and her father @Tad Johnson sits on her desk next to a name plate which
-      says “Seaward Johnson - Director”
-
-      ACTION: Transition 00:03:05.300
-
-      CARD: sh\_l20 (00:03:05.310–00:03:09.796)
-
-      LYRIC: Something dismissed
-
-      SCENE: @Middle-aged Seaward in her big new office
-
-      PROMPT: @Middle-aged Seaward picks up the picture of the sloop and smiles
-
-      ACTION: Transition 00:03:09.796
-
-      Card: sh\_l20a - B-roll Transition (Office → Retirement, 00:03:12)
-
-      Scene: Pendulum clock in office swings; crossfade to boat boom swaying in same
-      rhythm
-
-      Prompt: Passage of time and rhythm of labor. Maintain color continuity: cool
-      to warm light
-
-      CARD: sh\_l21 (00:03:09.881–00:03:14.367)
-
-      LYRIC: Seaward sings her soft refrain
-
-      SCENE: @Middle-aged Seaward watching the seagulls fly overhead from her sloop
-
-      PROMPT: The soft refrain is the time, like water or wind, rushing by
-
-      ACTION: Transition 00:03:14.367
-
-      CARD: sh\_l22 (00:03:14.456–00:03:18.942)
-
-      LYRIC: Some things are lost and some remain
-
-      SCENE: @Middle-aged Seaward on the sloop anchored just off an island
-
-      PROMPT: The sloop is safe and secure in the harbor
-
-      ACTION: Transition 00:03:18.942
-
-      CARD: sh\_l23 (00:03:18.952–00:03:23.439)
-
-      LYRIC: The telltales bold “you found your name”
-
-      SCENE: @Middle-aged Seaward in a very professional suit in a business setting
-
-      PROMPT: @Middle-aged Seaward celebrating with business members her big promotion
-
-      ACTION: Transition 00:03:23.439
-
-      CARD: sh\_l24 (00:03:23.449–00:03:27.935)
-
-      LYRIC: A flooding tide as Seaward calls
-
-      SCENE: @Middle-aged Seaward at an expensive car dealership
-
-      PROMPT: @Middle-aged Seaward has bought an expensive new car to celebrate her
-      promotion
-
-      ACTION: Transition 00:03:27.935
-
-      CARD: sh\_l25 (00:03:28.045–00:03:32.531)
-
-      LYRIC: She bends the sheet, begins to heel
-
-      SCENE: We meet @Mature Seaward Johnson
-
-      PROMPT: @Mature Seaward Johnson in her big office years later. Things packed
-      and a box in her hand. She is retiring
-
-      ACTION: Transition 00:03:32.531
-
-      CARD: sh\_l26 (00:03:32.724–00:03:37.210)
-
-      LYRIC: Remembers how the stays feel
-
-      SCENE: A rush of memories
-
-      PROMPT: A rush of memories - @Ramona Perez, @Radon Topaz, @Young Seaward, @Tad
-      Johnson and the sloop
-
-      ACTION: Transition 00:03:37.210
-
-      CARD: sh\_l27 (00:03:37.220–00:03:41.698)
-
-      LYRIC: Too few hours left to steal
-
-      SCENE: @Mature Seaward Johnson’s home
-
-      PROMPT: @Mature Seaward Johnson alone in a comfortable home, looking lonely
-
-      ACTION: Transition 00:03:41.698
-
-      CARD: sh\_l28 (00:03:44.636–00:03:50.410)
-
-      LYRIC: A ship upon a reef
-
-      SCENE: @Mature Seaward Johnson sitting in a recliner in her home
-
-      PROMPT: @Mature Seaward Johnson resting in an easy chair
-
-      ACTION: Transition 00:03:50.410
-
-      CARD: sh\_l29 (00:03:50.420–00:03:56.188)
-
-      LYRIC: She dreams the drawing mainsail
-
-      SCENE: A vision of @Seaward on the sloop moving fast
-
-      PROMPT: @Seaward at the helm in a gale with the sail luffing
-
-      ACTION: Transition 00:03:56.188
-
-      CARD: sh\_l30 (00:03:59.131–00:04:05.016)
-
-      LYRIC: The breakers do prevail
-
-      SCENE: @Mature Seaward Johnson in a hospital in a wheelchair wearing a leg brace
-
-      PROMPT: @Mature Seaward Johnson is wheelchaired to a waiting car after surgery
-      on her knee
-
-      ACTION: Transition 00:04:05.016
-
-      CARD: sh\_l31 (00:04:05.026–00:04:10.910)
-
-      LYRIC: No longer subject to the gale
-
-      SCENE: @Mature Seaward Johnson in a physical therapy office rehabbing her knee
-
-      PROMPT: @Mature Seaward Johnson trying to regain her mobility
-
-      ACTION: Transition 00:04:10.910
-
-      CARD: sh\_l32 (00:04:10.920–00:04:16.795)
-
-      LYRIC: Time is not the thief
-
-      SCENE: @Mature Seaward Johnson walking slowly in her beautiful backyard
-
-      PROMPT: @Mature Seaward Johnson is slowly walking through her garden. A sense
-      of grace and acceptance shows on her face
-
-      ACTION: Transition 00:04:16.795
-
-      CARD: sh\_l33 (00:04:17.637–00:04:22.360)
-
-      LYRIC: Seaward sings her soft refrain
-
-      SCENE: @Mature Seaward Johnson’s face in close-up
-
-      PROMPT: @Mature Seaward Johnson has gained acceptance with time. It is neither
-      thief nor evil. It just is
-
-      ACTION: Transition 00:04:22.360
-
-      CARD: sh\_l30a - B-roll Transition (Reflection → Outro, 00:04:45)
-
-      Scene: Sunlight gliding across desk, gradually turning into shimmering tide
-
-      Prompt: Time dissolves into the sea; prepare entry to metaphoric outro. Maintain
-      color continuity: warm to silver-white
-
-      CARD: sh\_l34 (00:04:22.370–00:04:27.094)
-
-      LYRIC: Some things are lost and some remain
-
-      SCENE: Montage of memories of her life and the people in it
-
-      PROMPT: Montage of memories of her life and the people in it from previous scenes
-
-      ACTION: Transition 00:04:27.094
-
-      CARD: sh\_l35 (00:04:27.250–00:04:31.973)
-
-      LYRIC: The telltales sigh “not the same”
-
-      SCENE: @Mature Seaward Johnson looking at the trees in her backyard
-
-      PROMPT: @Mature Seaward Johnson looks up at the trees in her yard as they gently
-      sway in a soft breeze
-
-      ACTION: Transition 00:04:31.973
-
-      CARD: sh\_l36 (00:04:31.983–00:04:36.706)
-
-      LYRIC: A falling tide as Seaward calls
-
-      SCENE: @Mature Seaward Johnson’s backyard
-
-      PROMPT: @Mature Seaward Johnson sits and closes her eyes as a sweet smile crosses
-      her face
-
-      ACTION: Transition 00:04:36.706
-
-
-      CARD: sh\_l37 - The Call (00:05:14–00:05:34)
-
-      Scene: Mature Seaward’s garden; wind rises, light flickers across her face
-
-      Prompt: ''The Call'' - leaves and waves intercut. Maintain color continuity:
-      golden to silver
-
-      Mood: Awakening, invitation. Action: Transition 00:05:34
-
-
-      CARD: sh\_l38 - The Return of the Tide (00:05:34–00:05:54)
-
-      Scene: Camera tilts skyward; clouds drift, dissolve into waves
-
-      Prompt: ''The Return of the Tide'' - wind becomes tide, color shift green→blue-silver
-
-      Mood: Gathering power. Action: Transition 00:05:54
-
-
-      CARD: sh\_l39 - Memory’s Wake (00:05:54–00:06:10)
-
-      Scene: Overlapping transparencies - Young, Middle-aged, and Mature Seaward moving
-      as one
-
-      Prompt: ''Memory’s Wake'' - layered dissolve of lives in rhythmic motion
-
-      Mood: Crescendo, union. Action: Transition 00:06:10
-
-
-      CARD: sh\_l40 - Dissolution (00:06:10–00:06:24)
-
-      Scene: Composite image dissolves into pure light and spray; sloop becomes luminous
-      ink
-
-      Prompt: ''Dissolution'' - upward float through particles of light
-
-      Mood: Ecstatic surrender. Action: Transition 00:06:24
-
-
-      CARD: sh\_l41 - The Breath (00:06:24–00:06:36)
-
-      Scene: Wide aerial over calm ocean at dawn; horizon glows
-
-      Prompt: ''The Breath'' - wind and distant gulls remain; reflection faint in
-      sky
-
-      Mood: Tranquil exhale. Action: Transition 00:06:36
-
-
-      CARD: sh\_l42 - Silence / Return (00:06:36–00:06:44)
-
-      Scene: Static frame of horizon dissolving to white, then black
-
-      Prompt: ''Silence / Return'' - final wind becomes breath; optional text: ''Some
-      things are lost, and some remain.''
-
-      Mood: Stillness, completion. Action: Fade out 00:06:44'
+      A falling tide as Seaward calls'
     lyrics_source: https://docs.google.com/document/d/12hejwdW5O50eVhid3A2wIQhivDhNbX-qECotfbDQKEA/edit
