@@ -19,6 +19,7 @@ const streamingLinks = releaseSocialLinks(release);
 const coverUrl = releaseCoverUrl(release);
 const hasCredits = Boolean(release.credits?.songwriter || release.credits?.producer || release.credits?.mastering);
 
+const isAlbum = Boolean(release.tracks?.length);
 const reviewId = release.song?.slug
   ? `${release.artist_id}--${release.song.slug}`   // single
   : `${release.artist_id}--${release.slug}`;        // album / EP
@@ -66,14 +67,20 @@ function cleanMarkdownText(value: string) {
       {copyBlocks.map((block) => <p>{block}</p>)}
       {reviewEntry && (
         <div class="track-review">
-          {reviewEntry.data.impression && (
-            <p class="impression">{reviewEntry.data.impression}</p>
-          )}
-          {ReviewContent && (
-            <details class="review-more">
-              <summary>More</summary>
-              <div class="review-body"><ReviewContent /></div>
-            </details>
+          {isAlbum ? (
+            ReviewContent && <div class="review-body"><ReviewContent /></div>
+          ) : (
+            <>
+              {reviewEntry.data.impression && (
+                <p class="impression">{reviewEntry.data.impression}</p>
+              )}
+              {ReviewContent && (
+                <details class="review-more">
+                  <summary>More</summary>
+                  <div class="review-body"><ReviewContent /></div>
+                </details>
+              )}
+            </>
           )}
         </div>
       )}
