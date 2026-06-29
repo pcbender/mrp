@@ -11,6 +11,18 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 REVIEWS_DIR = REPO_ROOT / "site" / "src" / "content" / "reviews"
 
 
+def _find_contextual_review(track_id: str, source_dir: Path) -> dict | None:
+    """Return the Pass 3 TrackInContext dict for track_id from any album record, or None."""
+    for album_path in sorted(source_dir.glob("*.json")):
+        data = json.loads(album_path.read_text(encoding="utf-8"))
+        if "album_id" not in data:
+            continue
+        for tic in data.get("track_reviews_in_context", []):
+            if tic.get("track_id") == track_id:
+                return tic
+    return None
+
+
 def _yaml_str(value: str) -> str:
     escaped = value.replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
     return f'"{escaped}"'
@@ -30,10 +42,22 @@ def write_review(record_id: str, out_dir: Path | None = None, force: bool = Fals
     slug = record.get("album_id") or record.get("track_id") or record_id
 
     impression = scrub_emdash(record.get("impression", {}).get("text", "")) if not is_album else ""
-    review_text = scrub_emdash(record.get("review", {}).get("review_text", ""))
+
+    # Prefer Pass 3 contextual review when one exists for this track
+    tic = _find_contextual_review(record_id, source_dir) if not is_album else None
+    raw_review_text = (tic["review_text"] if tic else None) or record.get("review", {}).get("review_text", "")
+    review_text = scrub_emdash(raw_review_text)
+
     verdict = record.get("review", {}).get("verdict_tier", {})
-    verdict_rank = verdict.get("rank")
+    # context_rank overrides standalone rank when the album pass changed the assessment
+    verdict_rank = (tic.get("context_rank") if tic else None) or verdict.get("rank")
     verdict_label = verdict.get("label", "")
+
+    # For album records: extract first sentence as card summary
+    summary = ""
+    if is_album and review_text:
+        end = review_text.find(". ")
+        summary = review_text[: end + 1].strip() if end != -1 else review_text[:200].strip()
 
     if not review_text:
         return {"record_id": record_id, "status": "skipped",
@@ -47,6 +71,8 @@ def write_review(record_id: str, out_dir: Path | None = None, force: bool = Fals
     lines = ["---", f"track_id: {slug}"]
     if impression:
         lines.append(f"impression: {_yaml_str(impression)}")
+    if summary:
+        lines.append(f"summary: {_yaml_str(summary)}")
     if verdict_rank is not None:
         lines.append(f"verdict_rank: {verdict_rank}")
     if verdict_label:

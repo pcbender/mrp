@@ -5,6 +5,7 @@ const reviews = defineCollection({
   schema: z.object({
     track_id: z.string(),
     impression: z.string().optional(),
+    summary: z.string().optional(),
     verdict_rank: z.number().optional(),
     verdict_label: z.string().optional(),
   }),

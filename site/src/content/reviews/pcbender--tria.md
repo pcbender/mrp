@@ -1,5 +1,6 @@
 ---
 track_id: pcbender--tria
+summary: "Triaτί opens with 'Apa' moving at a brisk clip, all warmth and earned tenderness, and that opening move is essentially a contract: PCBender is here to ask questions slowly and mean them."
 verdict_rank: 4
 verdict_label: "strong"
 ---
