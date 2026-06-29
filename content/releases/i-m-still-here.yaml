@@ -45,30 +45,142 @@ release:
       youtube_music: https://music.youtube.com/watch?v=S7OjVtF-E4k
       spotify: https://open.spotify.com/track/0ktqN5tm3KIRZbipG8wuhl
     instrumental: false
-    lyrics_text: "Mm\nNo, that's not\u2014\nYep, that's me\n\nCaught myself in the\
-      \ black phone screen\nArm half raised, just passing through\nBad light, wrong\
-      \ angle, tired face\nBut it wasn't bad light, it was true\nI stood there longer\
-      \ than I should\nLike I'd been called into another room\nSame kitchen, same\
-      \ coffee cup\nSame day, but something changed at noon\n\nNobody said a word\n\
-      Nothing dramatic happened\nJust one small thought\nLanding where it hadn't\n\
-      \nI didn't trip, I didn't fall\nDidn't hear some distant call\nIt was quieter\
-      \ than that\nJust a shift I couldn't fight\nSomething in me turned and looked\n\
-      And didn't look away this time\nI stood there thinking, clear as day\nI'm old\
-      \ now\n\nI went upstairs for something small\nForgot it halfway up the steps\n\
-      Laughed it off like people do\nLike a harmless little bit\nBut later on while\
-      \ brushing teeth\nI watched my face arrange itself\nLike it was trying to stay\
-      \ polite\nWhile telling me something else\n\nNot dying, not done\nNot giving\
-      \ up the keys\nJust losing the right\nTo say this happens gradually\n\nI didn't\
-      \ trip, I didn't fall\nDidn't hear some distant call\nIt was quieter than that\n\
-      Just a shift I couldn't fight\nSomething in me turned and looked\nAnd didn't\
-      \ look away this time\nI stood there thinking, clear as day\nI'm old now\n\n\
-      I always thought it would arrive\nWith sirens, tests, some bigger proof\nBut\
-      \ no, it came like truth comes in\nPlain clothes, standing in my room\nAnd once\
-      \ you know it\nYou know it\nOnce it lands\nIt stays\n(yeah, it stays)\n\nI didn't\
-      \ trip, I didn't fall\nDidn't lose my name at all\nI'm still in here, I know\
-      \ that much\nBut something changed tonight\nAll the years I kept ahead\nAre\
-      \ suddenly at my side\nAnd I can say it if I have to\u2026\nI'm old now\n\n\
-      Mm\nI'm old now\nYeah\nI'm old now"
+    lyrics_text: 'Mm
+
+      No, that''s not—
+
+      Yep, that''s me
+
+
+      Caught myself in the black phone screen
+
+      Arm half raised, just passing through
+
+      Bad light, wrong angle, tired face
+
+      But it wasn''t bad light, it was true
+
+      I stood there longer than I should
+
+      Like I''d been called into another room
+
+      Same kitchen, same coffee cup
+
+      Same day, but something changed at noon
+
+
+      Nobody said a word
+
+      Nothing dramatic happened
+
+      Just one small thought
+
+      Landing where it hadn''t
+
+
+      I didn''t trip, I didn''t fall
+
+      Didn''t hear some distant call
+
+      It was quieter than that
+
+      Just a shift I couldn''t fight
+
+      Something in me turned and looked
+
+      And didn''t look away this time
+
+      I stood there thinking, clear as day
+
+      I''m old now
+
+
+      I went upstairs for something small
+
+      Forgot it halfway up the steps
+
+      Laughed it off like people do
+
+      Like a harmless little bit
+
+      But later on while brushing teeth
+
+      I watched my face arrange itself
+
+      Like it was trying to stay polite
+
+      While telling me something else
+
+
+      Not dying, not done
+
+      Not giving up the keys
+
+      Just losing the right
+
+      To say this happens gradually
+
+
+      I didn''t trip, I didn''t fall
+
+      Didn''t hear some distant call
+
+      It was quieter than that
+
+      Just a shift I couldn''t fight
+
+      Something in me turned and looked
+
+      And didn''t look away this time
+
+      I stood there thinking, clear as day
+
+      I''m old now
+
+
+      I always thought it would arrive
+
+      With sirens, tests, some bigger proof
+
+      But no, it came like truth comes in
+
+      Plain clothes, standing in my room
+
+      And once you know it
+
+      You know it
+
+      Once it lands
+
+      It stays
+
+      (yeah, it stays)
+
+
+      I didn''t trip, I didn''t fall
+
+      Didn''t lose my name at all
+
+      I''m still in here, I know that much
+
+      But something changed tonight
+
+      All the years I kept ahead
+
+      Are suddenly at my side
+
+      And I can say it if I have to…
+
+      I''m old now
+
+
+      Mm
+
+      I''m old now
+
+      Yeah
+
+      I''m old now'
     lyrics_source: https://docs.google.com/document/d/1g_XgrSIW2M-jUobE4fZjBSDpVIB-2oT3jdjMXgPm7rI/edit
   - number: 2
     title: Slow Down
@@ -543,7 +655,7 @@ release:
       I still do'
     lyrics_source: https://docs.google.com/document/d/1WmOq8ajLQGknbzSRDQQuzA2dN61zKkQFFAsdRJa7h6s/edit
   - number: 6
-    title: "They Don\u2019t Know"
+    title: They Don’t Know
     slug: they-dont-know
     isrc: SE6QE2670833
     duration: '4:05'
@@ -669,7 +781,7 @@ release:
       They don''t know they''re in'
     lyrics_source: https://docs.google.com/document/d/1hQjQT_XCd258Qwe98F9TVNW3MXIBr5t5fpC63M4yO4Y/edit
   - number: 7
-    title: "That\u2019s The Question"
+    title: That’s The Question
     slug: thats-the-question
     isrc: SE6QE2670834
     duration: '3:40'
@@ -1028,7 +1140,7 @@ release:
       Still break me'
     lyrics_source: https://docs.google.com/document/d/1JR235Cjge5fNthyOJRsKJIznW9nJ5_N6GZ-2aXiURX0/edit
   - number: 10
-    title: "It\u2019s In Me Too"
+    title: It’s In Me Too
     slug: its-in-me-too
     isrc: SE6QE2670837
     duration: '3:43'
@@ -1154,7 +1266,7 @@ release:
       It''s in me too'
     lyrics_source: https://docs.google.com/document/d/1pWQN6f0k0h_1nbH_OsWSMlyYZFlN2bfMYloiHuTWLxY/edit
   - number: 11
-    title: "That\u2019s Enough"
+    title: That’s Enough
     slug: thats-enough
     isrc: SE6QE2670838
     duration: '3:59'

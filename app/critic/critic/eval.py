@@ -72,7 +72,7 @@ def approve(id_: str, publish: bool = False, all_tracks: bool = False, out_dir: 
         data["review"] = review
         print(f"  {id_}  {old} → {target_status}")
 
-    path.write_text(json.dumps(data, indent=2))
+    path.write_text(json.dumps(data, indent=2, ensure_ascii=False))
     return path
 
 

@@ -25,6 +25,7 @@
         "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
         "slug": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
         "title": {"type": "string", "minLength": 1},
+        "title_ascii": {"type": "string", "minLength": 1},
         "artist_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
         "model": {"type": "string", "enum": ["song", "album"]},
         "release_type": {"type": "string", "enum": ["single", "ep", "album"]},

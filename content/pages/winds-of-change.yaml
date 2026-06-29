@@ -5,31 +5,28 @@ page:
   status: draft
   normalized_path: /artists/pcbender/winds-of-change/
   source_url: https://www.maricoparecords.com/artists/pcbender/winds-of-change/
-  content_html: "<h2>Winds of Change</h2><p>Winds of Change is a journey through time,\
-    \ love, loss, and renewal\u2014an album that embraces the beauty of transformation\
-    \ and the roads we take to find ourselves. Across seven tracks, PCBender weaves\
-    \ together heartfelt storytelling, rich melodies, and timeless themes of resilience,\
-    \ reflection, and discovery.</p><p>From the restless search for freedom in Two\
-    \ Tree Road to the poignant wisdom of Joni, the emotional turbulence of The Only\
-    \ One, and the haunting uncertainty of I Think I&#x27;m Falling, the album unfolds\
-    \ like a personal voyage. Songs like Deb capture fleeting moments of magic, while\
-    \ This Love Grows stands as a testament to lasting devotion. Finally, the title\
-    \ track, Winds of Change, serves as the album\u2019s defining anthem\u2014an ode\
-    \ to embracing the unknown and stepping boldly into the future.</p><p>With warm,\
-    \ organic instrumentation and a spirit of introspection, Winds of Change is more\
-    \ than just an album\u2014it\u2019s an experience. PCBender invites listeners\
-    \ to walk the road less traveled, to hear the whispers of the past, and to find\
-    \ hope in the ever-changing winds.</p><a href=\"https://open.spotify.com/album/0epxRoEuofP2oJbEXOGC7l?si=ZQKdCReXT6mKwdjc64mEKA\"\
-    ></a><img src=\"https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png\"\
-    ><h2>Tracks</h2><p>#</p><p>Title</p><p>Listen</p><p>1</p><p>Two Tree Road</p><a\
-    \ href=\"https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a\"\
-    ></a><p>2</p><p>Joni</p><a href=\"https://open.spotify.com/track/0Z5JIx6FM55dEkmqlsDqjo?si=b2e4378330d040c4\"\
-    ></a><p>3</p><p>The Only One</p><a href=\"https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073\"\
-    ></a><p>4</p><p>I Think I&#x27;m Falling</p><a href=\"https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39\"\
-    ></a><p>5</p><p>Deb</p><a href=\"https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44\"\
-    ></a><p>6</p><p>This Love Grows</p><a href=\"https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961\"\
-    ></a><p>7</p><p>Winds of Change</p><a href=\"https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7\"\
-    ></a><p></p>"
+  content_html: <h2>Winds of Change</h2><p>Winds of Change is a journey through time,
+    love, loss, and renewal—an album that embraces the beauty of transformation and
+    the roads we take to find ourselves. Across seven tracks, PCBender weaves together
+    heartfelt storytelling, rich melodies, and timeless themes of resilience, reflection,
+    and discovery.</p><p>From the restless search for freedom in Two Tree Road to
+    the poignant wisdom of Joni, the emotional turbulence of The Only One, and the
+    haunting uncertainty of I Think I&#x27;m Falling, the album unfolds like a personal
+    voyage. Songs like Deb capture fleeting moments of magic, while This Love Grows
+    stands as a testament to lasting devotion. Finally, the title track, Winds of
+    Change, serves as the album’s defining anthem—an ode to embracing the unknown
+    and stepping boldly into the future.</p><p>With warm, organic instrumentation
+    and a spirit of introspection, Winds of Change is more than just an album—it’s
+    an experience. PCBender invites listeners to walk the road less traveled, to hear
+    the whispers of the past, and to find hope in the ever-changing winds.</p><a href="https://open.spotify.com/album/0epxRoEuofP2oJbEXOGC7l?si=ZQKdCReXT6mKwdjc64mEKA"></a><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png"><h2>Tracks</h2><p>#</p><p>Title</p><p>Listen</p><p>1</p><p>Two
+    Tree Road</p><a href="https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a"></a><p>2</p><p>Joni</p><a
+    href="https://open.spotify.com/track/0Z5JIx6FM55dEkmqlsDqjo?si=b2e4378330d040c4"></a><p>3</p><p>The
+    Only One</p><a href="https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073"></a><p>4</p><p>I
+    Think I&#x27;m Falling</p><a href="https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39"></a><p>5</p><p>Deb</p><a
+    href="https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44"></a><p>6</p><p>This
+    Love Grows</p><a href="https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961"></a><p>7</p><p>Winds
+    of Change</p><a href="https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7"></a><p></p>
   excerpt: null
   seo:
     title: Winds of Change
@@ -40,28 +37,99 @@ page:
     type: page
     status: publish
     captured_path: raw/pages/www.maricoparecords.com/artists/pcbender/winds-of-change/index.html
-  content_markdown: "## Winds of Change\n\nWinds of Change is a journey through time,\
-    \ love, loss, and renewal\u2014an album that embraces the beauty of transformation\
-    \ and the roads we take to find ourselves. Across seven tracks, PCBender weaves\
-    \ together heartfelt storytelling, rich melodies, and timeless themes of resilience,\
-    \ reflection, and discovery.\n\nFrom the restless search for freedom in Two Tree\
-    \ Road to the poignant wisdom of Joni, the emotional turbulence of The Only One,\
-    \ and the haunting uncertainty of I Think I'm Falling, the album unfolds like\
-    \ a personal voyage. Songs like Deb capture fleeting moments of magic, while This\
-    \ Love Grows stands as a testament to lasting devotion. Finally, the title track,\
-    \ Winds of Change, serves as the album\u2019s defining anthem\u2014an ode to embracing\
-    \ the unknown and stepping boldly into the future.\n\nWith warm, organic instrumentation\
-    \ and a spirit of introspection, Winds of Change is more than just an album\u2014\
-    it\u2019s an experience. PCBender invites listeners to walk the road less traveled,\
-    \ to hear the whispers of the past, and to find hope in the ever-changing winds.\n\
-    \n[](https://open.spotify.com/album/0epxRoEuofP2oJbEXOGC7l?si=ZQKdCReXT6mKwdjc64mEKA)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png)\n\
-    ## Tracks\n\n#\n\nTitle\n\nListen\n\n1\n\nTwo Tree Road\n\n[](https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a)\n\
-    2\n\nJoni\n\n[](https://open.spotify.com/track/0Z5JIx6FM55dEkmqlsDqjo?si=b2e4378330d040c4)\n\
-    3\n\nThe Only One\n\n[](https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073)\n\
-    4\n\nI Think I'm Falling\n\n[](https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39)\n\
-    5\n\nDeb\n\n[](https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44)\n\
-    6\n\nThis Love Grows\n\n[](https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961)\n\
-    7\n\nWinds of Change\n\n[](https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7)"
+  content_markdown: '## Winds of Change
+
+
+    Winds of Change is a journey through time, love, loss, and renewal—an album that
+    embraces the beauty of transformation and the roads we take to find ourselves.
+    Across seven tracks, PCBender weaves together heartfelt storytelling, rich melodies,
+    and timeless themes of resilience, reflection, and discovery.
+
+
+    From the restless search for freedom in Two Tree Road to the poignant wisdom of
+    Joni, the emotional turbulence of The Only One, and the haunting uncertainty of
+    I Think I''m Falling, the album unfolds like a personal voyage. Songs like Deb
+    capture fleeting moments of magic, while This Love Grows stands as a testament
+    to lasting devotion. Finally, the title track, Winds of Change, serves as the
+    album’s defining anthem—an ode to embracing the unknown and stepping boldly into
+    the future.
+
+
+    With warm, organic instrumentation and a spirit of introspection, Winds of Change
+    is more than just an album—it’s an experience. PCBender invites listeners to walk
+    the road less traveled, to hear the whispers of the past, and to find hope in
+    the ever-changing winds.
+
+
+    [](https://open.spotify.com/album/0epxRoEuofP2oJbEXOGC7l?si=ZQKdCReXT6mKwdjc64mEKA)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png)
+
+    ## Tracks
+
+
+    #
+
+
+    Title
+
+
+    Listen
+
+
+    1
+
+
+    Two Tree Road
+
+
+    [](https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a)
+
+    2
+
+
+    Joni
+
+
+    [](https://open.spotify.com/track/0Z5JIx6FM55dEkmqlsDqjo?si=b2e4378330d040c4)
+
+    3
+
+
+    The Only One
+
+
+    [](https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073)
+
+    4
+
+
+    I Think I''m Falling
+
+
+    [](https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39)
+
+    5
+
+
+    Deb
+
+
+    [](https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44)
+
+    6
+
+
+    This Love Grows
+
+
+    [](https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961)
+
+    7
+
+
+    Winds of Change
+
+
+    [](https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7)'
   sections: []
   images:
   - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/WindsOfChange.png

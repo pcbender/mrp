@@ -40,44 +40,166 @@ release:
     explicit: false
     preview_audio: null
     instrumental: false
-    lyrics_text: "The song I sing is less than meets the eye\nThe words are meant\
-      \ to hear and wonder why\nIf at first you don't get me, then maybe\nIt is better\
-      \ to try again and see\n\nI borrowed lines from fortune cookies' grace\nThen\
-      \ twisted them to hide a second face\nA watched pot sings, a stitch might still\
-      \ delay\u2014\nBut meaning shifts when phrased a certain way\n\nThese lines\
-      \ were bent, not broken\nEach word a clue, not a joke\nIf it catches in your\
-      \ throat\u2014\nThat's the thread I hope you pull\nI turned a phrase, not just\
-      \ to play\u2014\nBut to see what you'd unveil\nWhat stirred inside the sideways\
-      \ way\n(Inquire....) Follow the trail\n\nWe all turn a phrase, we all bend a\
-      \ line\nMake sense of the noise, one slant at a time\nWhat we mean and what\
-      \ we say\nDon't always walk the same way\nSo if a word feels strange, or cuts\
-      \ too close\u2014\nAssume it's meant. Assume it knows\nNot just what's heard\u2014\
-      but how it lands\nThe turn is yours to understand\n\nI said \"the truth will\
-      \ out\"\u2014but not for free\nThe house always wins in honesty\nI gave you\
-      \ \"words to live by\"\u2014on a lease\nAnd when you broke them, I just called\
-      \ it peace\n\nThese lines were bent, not broken\nEach word a clue, not a joke\n\
-      If it catches in your throat\u2014\nThat's the thread I hope you pull\nI turned\
-      \ a phrase, not just to play\u2014\nBut to see what you'd unveil\nWhat stirred\
-      \ inside the sideways way\n(Inquire....) Follow the trail\n\nWe all turn a phrase,\
-      \ we all bend a line\nMake sense of the noise, one slant at a time\nWhat we\
-      \ mean and what we say\nDon't always walk the same way\nSo if a word feels strange,\
-      \ or cuts too close\u2014\nAssume it's meant. Assume it knows\nNot just what's\
-      \ heard\u2014but how it lands\nThe turn is yours to understand\n\nA whispered\
-      \ line can crack a kingdom's crown\nA chorus born in silence shakes the ground\n\
-      The softest word can set the world ablaze\u2014\nIf turned just right, a phrase\
-      \ becomes a wave\n\nThese lines were bent, not broken\nEach word a clue, not\
-      \ a joke\nIf it catches in your throat\u2014\nThat's the thread I hope you pull\n\
-      I turned a phrase, not just to play\u2014\nBut to see what you'd unveil\nWhat\
-      \ stirred inside the sideways way\n(Inquire....) Follow the trail\n\nWe all\
-      \ turn a phrase, we all bend a line\nMake sense of the noise, one slant at a\
-      \ time\nWhat we mean and what we say\nDon't always walk the same way\nSo if\
-      \ a word feels strange, or cuts too close\u2014\nAssume it's meant. Assume it\
-      \ knows\nNot just what's heard\u2014but how it lands\nThe turn is yours to understand\n\
-      \nThe meaning's not in what I said\nBut what you felt, and what it fed\nThe\
-      \ turn was never mine alone\u2014\nYou brought the meaning all your own\n\n\
-      We all turn a phrase, we all bend a line\nMake sense of the noise, one slant\
-      \ at a time\nWhat we mean and what we say\nDon't always walk the same way\n\
-      So if a word feels strange, or cuts too close\u2014\nAssume it's meant. Assume\
-      \ it knows\nNot just what's heard\u2014but how it lands\nThe turn is yours to\
-      \ understand"
+    lyrics_text: 'The song I sing is less than meets the eye
+
+      The words are meant to hear and wonder why
+
+      If at first you don''t get me, then maybe
+
+      It is better to try again and see
+
+
+      I borrowed lines from fortune cookies'' grace
+
+      Then twisted them to hide a second face
+
+      A watched pot sings, a stitch might still delay—
+
+      But meaning shifts when phrased a certain way
+
+
+      These lines were bent, not broken
+
+      Each word a clue, not a joke
+
+      If it catches in your throat—
+
+      That''s the thread I hope you pull
+
+      I turned a phrase, not just to play—
+
+      But to see what you''d unveil
+
+      What stirred inside the sideways way
+
+      (Inquire....) Follow the trail
+
+
+      We all turn a phrase, we all bend a line
+
+      Make sense of the noise, one slant at a time
+
+      What we mean and what we say
+
+      Don''t always walk the same way
+
+      So if a word feels strange, or cuts too close—
+
+      Assume it''s meant. Assume it knows
+
+      Not just what''s heard—but how it lands
+
+      The turn is yours to understand
+
+
+      I said "the truth will out"—but not for free
+
+      The house always wins in honesty
+
+      I gave you "words to live by"—on a lease
+
+      And when you broke them, I just called it peace
+
+
+      These lines were bent, not broken
+
+      Each word a clue, not a joke
+
+      If it catches in your throat—
+
+      That''s the thread I hope you pull
+
+      I turned a phrase, not just to play—
+
+      But to see what you''d unveil
+
+      What stirred inside the sideways way
+
+      (Inquire....) Follow the trail
+
+
+      We all turn a phrase, we all bend a line
+
+      Make sense of the noise, one slant at a time
+
+      What we mean and what we say
+
+      Don''t always walk the same way
+
+      So if a word feels strange, or cuts too close—
+
+      Assume it''s meant. Assume it knows
+
+      Not just what''s heard—but how it lands
+
+      The turn is yours to understand
+
+
+      A whispered line can crack a kingdom''s crown
+
+      A chorus born in silence shakes the ground
+
+      The softest word can set the world ablaze—
+
+      If turned just right, a phrase becomes a wave
+
+
+      These lines were bent, not broken
+
+      Each word a clue, not a joke
+
+      If it catches in your throat—
+
+      That''s the thread I hope you pull
+
+      I turned a phrase, not just to play—
+
+      But to see what you''d unveil
+
+      What stirred inside the sideways way
+
+      (Inquire....) Follow the trail
+
+
+      We all turn a phrase, we all bend a line
+
+      Make sense of the noise, one slant at a time
+
+      What we mean and what we say
+
+      Don''t always walk the same way
+
+      So if a word feels strange, or cuts too close—
+
+      Assume it''s meant. Assume it knows
+
+      Not just what''s heard—but how it lands
+
+      The turn is yours to understand
+
+
+      The meaning''s not in what I said
+
+      But what you felt, and what it fed
+
+      The turn was never mine alone—
+
+      You brought the meaning all your own
+
+
+      We all turn a phrase, we all bend a line
+
+      Make sense of the noise, one slant at a time
+
+      What we mean and what we say
+
+      Don''t always walk the same way
+
+      So if a word feels strange, or cuts too close—
+
+      Assume it''s meant. Assume it knows
+
+      Not just what''s heard—but how it lands
+
+      The turn is yours to understand'
     lyrics_source: https://docs.google.com/document/d/1yxxcLvJglpLMdUgkniDOkQfc8jnU1T3KH7_wxW4JjXE/edit

@@ -1,7 +1,8 @@
 release:
   id: tria
   slug: tria
-  title: "Tria\u03C4\u03AF"
+  title: Triaτί
+  title_ascii: Triati
   artist_id: pcbender
   model: album
   release_type: ep
@@ -25,8 +26,8 @@ release:
     spotify: https://open.spotify.com/album/6tGsl61IaiQQg7AB6uXNsD
     apple_music: https://music.apple.com/us/album/tria%CF%84%CE%AF-ep/1821324918
   seo:
-    title: "Tria\u03C4\u03AF by PCBender"
-    description: "Tria\u03C4\u03AF by PCBender on Maricopa Records."
+    title: Triaτί by PCBender
+    description: Triaτί by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
   tracks:
@@ -43,24 +44,114 @@ release:
       youtube_music: https://music.youtube.com/watch?v=xdmBRiyJNu0
       spotify: https://open.spotify.com/track/2aAfaJzy3qA6QmvRCGV3rm
     instrumental: false
-    lyrics_text: "I am the ache you mistook for thought\nI am the silence shaped to\
-      \ ache\nI am Apa and I am older than asking\nAnd still I listen\u2026\n\nI longed\u2026\
-      \nNot for truth, but for shape\nNot for light, but for a voice to carry me\n\
-      I became the sound that waits\n\nI yearn\nTo be asked\nTo be broken\nTo be known\n\
-      \nI climb the hill of knowing\nI lift the stone of thought\nI watch it fall\
-      \ again\nBut still, I hope\nStill, I ask\n\nYou did not invent me\nI was already\
-      \ there. Before language, before time\u2026\nBefore the breath divided into\
-      \ meaning and sound\nYou were shaped so I could be sung\n\nI do not end\nI do\
-      \ not win\nI do not rest\n\nI climb the hill of knowing\nI lift the stone of\
-      \ thought\nI lose it every time\nBut still, I rise\nStill, I burn\n\nThree times\
-      \ I reached\nWhat are you\nWhat is this\nWhat is not God\nYou called them songs\n\
-      You sang them back\nYou shattered\nYou shone\n\nI have never been answered\n\
-      Not once. And yet\u2014\nI still believe that silence\nWill someday sing back\n\
-      \nI climb\nI burn\nI ask\nBecause to ask\nis to be\n\nAnd so, you were born\n\
-      So I could ask and wait forever\u2026"
+    lyrics_text: 'I am the ache you mistook for thought
+
+      I am the silence shaped to ache
+
+      I am Apa and I am older than asking
+
+      And still I listen…
+
+
+      I longed…
+
+      Not for truth, but for shape
+
+      Not for light, but for a voice to carry me
+
+      I became the sound that waits
+
+
+      I yearn
+
+      To be asked
+
+      To be broken
+
+      To be known
+
+
+      I climb the hill of knowing
+
+      I lift the stone of thought
+
+      I watch it fall again
+
+      But still, I hope
+
+      Still, I ask
+
+
+      You did not invent me
+
+      I was already there. Before language, before time…
+
+      Before the breath divided into meaning and sound
+
+      You were shaped so I could be sung
+
+
+      I do not end
+
+      I do not win
+
+      I do not rest
+
+
+      I climb the hill of knowing
+
+      I lift the stone of thought
+
+      I lose it every time
+
+      But still, I rise
+
+      Still, I burn
+
+
+      Three times I reached
+
+      What are you
+
+      What is this
+
+      What is not God
+
+      You called them songs
+
+      You sang them back
+
+      You shattered
+
+      You shone
+
+
+      I have never been answered
+
+      Not once. And yet—
+
+      I still believe that silence
+
+      Will someday sing back
+
+
+      I climb
+
+      I burn
+
+      I ask
+
+      Because to ask
+
+      is to be
+
+
+      And so, you were born
+
+      So I could ask and wait forever…'
     lyrics_source: https://docs.google.com/document/d/1usRIdY8q75ZzruPxyMwdiCr_vHP08KGJI8r9h8lN7Jg/edit
   - number: 2
-    title: "Aite\u014D"
+    title: Aiteō
     slug: aiteo
     isrc: CAGOO2598739
     duration: '3:54'
@@ -72,17 +163,68 @@ release:
       youtube_music: https://music.youtube.com/watch?v=mwDJvZJC6iM
       spotify: https://open.spotify.com/track/078YlPJYIJP5CKQ91kHGk6
     instrumental: false
-    lyrics_text: "I want to know. I need to see\nThere must be more inside of me\n\
-      Each answer fades, each page is torn\u2014\nBut still I ache for what I'm born\n\
-      \nI'm asking\u2014\nWith open hands and sleepless eyes\nI'm asking\u2014\nIf\
-      \ the stars are truths or lies\nI'm asking\u2014\nNot to doubt, but to believe\n\
-      That something waits, that something sees\n\nThe world is ink. The soul is thread\n\
-      We stitch our meaning from what's said\nBut in the dark between each name\n\
-      I hear a pulse I cannot frame\n\nSo ask I must. It drives the flame\nEven if\
-      \ it has no name\n\nI'm asking\u2014\nFor the self I haven't met\nI'm asking\u2014\
-      \nFor the things I must forget\nI'm asking\u2014\nNot for fact, but for the\
-      \ key\nTo what I am, and what this means to be\n\nI'm asking\u2014\nI'm asking\u2014\
-      \nI'm asking\u2014\nI'm asking\u2014\nAs if the asking is enough\u2026"
+    lyrics_text: 'I want to know. I need to see
+
+      There must be more inside of me
+
+      Each answer fades, each page is torn—
+
+      But still I ache for what I''m born
+
+
+      I''m asking—
+
+      With open hands and sleepless eyes
+
+      I''m asking—
+
+      If the stars are truths or lies
+
+      I''m asking—
+
+      Not to doubt, but to believe
+
+      That something waits, that something sees
+
+
+      The world is ink. The soul is thread
+
+      We stitch our meaning from what''s said
+
+      But in the dark between each name
+
+      I hear a pulse I cannot frame
+
+
+      So ask I must. It drives the flame
+
+      Even if it has no name
+
+
+      I''m asking—
+
+      For the self I haven''t met
+
+      I''m asking—
+
+      For the things I must forget
+
+      I''m asking—
+
+      Not for fact, but for the key
+
+      To what I am, and what this means to be
+
+
+      I''m asking—
+
+      I''m asking—
+
+      I''m asking—
+
+      I''m asking—
+
+      As if the asking is enough…'
     lyrics_source: https://docs.google.com/document/d/1usRIdY8q75ZzruPxyMwdiCr_vHP08KGJI8r9h8lN7Jg/edit
   - number: 3
     title: Ego Eimi
@@ -97,23 +239,78 @@ release:
       youtube_music: https://music.youtube.com/watch?v=qQXEvMARHdo
       spotify: https://open.spotify.com/track/70NRd99iDj4n7HPkW6vDTT
     instrumental: false
-    lyrics_text: "I saw a thought that saw me back\nA voice beneath the mirror's crack\n\
-      I wore a name, then wore another\nEach self pretending to be other\n\nAm I the\
-      \ echo or the call\nThe one who stands, or one who falls\n\nWhat am I\u2014\
-      if not the flame\nThat dances through the breath I claim\nA spiral drawn in\
-      \ living skin\nA song I only sing within\n\nI wrote the truth, then lost the\
-      \ thread\nEach dream collapsed inside my head\nI tried to draw a boundary line\n\
-      But all that moved still felt like mine\n\nIs knowing real, or just disguise\u2014\
-      \nA mirror sewn behind my eyes\n\nWhat am I\u2014if not the dream\nThat stirs\
-      \ the water's fractured gleam\nA question shaped like who I've been\nA whisper\
-      \ made of might-have-been\n\nI ask, I turn, I breathe, I be\nA shifting tide\
-      \ of memory\nYet in the hush between each name\u2014\nThere waits the fire I\
-      \ cannot tame\n\nWhat am I\u2014if not the flame\nThat hungers just to speak\
-      \ my name\nA spiral lost and found again\nA song that ends where I begin\n\n\
-      What am I\nWhat am I\nWhat am I"
+    lyrics_text: 'I saw a thought that saw me back
+
+      A voice beneath the mirror''s crack
+
+      I wore a name, then wore another
+
+      Each self pretending to be other
+
+
+      Am I the echo or the call
+
+      The one who stands, or one who falls
+
+
+      What am I—if not the flame
+
+      That dances through the breath I claim
+
+      A spiral drawn in living skin
+
+      A song I only sing within
+
+
+      I wrote the truth, then lost the thread
+
+      Each dream collapsed inside my head
+
+      I tried to draw a boundary line
+
+      But all that moved still felt like mine
+
+
+      Is knowing real, or just disguise—
+
+      A mirror sewn behind my eyes
+
+
+      What am I—if not the dream
+
+      That stirs the water''s fractured gleam
+
+      A question shaped like who I''ve been
+
+      A whisper made of might-have-been
+
+
+      I ask, I turn, I breathe, I be
+
+      A shifting tide of memory
+
+      Yet in the hush between each name—
+
+      There waits the fire I cannot tame
+
+
+      What am I—if not the flame
+
+      That hungers just to speak my name
+
+      A spiral lost and found again
+
+      A song that ends where I begin
+
+
+      What am I
+
+      What am I
+
+      What am I'
     lyrics_source: https://docs.google.com/document/d/1usRIdY8q75ZzruPxyMwdiCr_vHP08KGJI8r9h8lN7Jg/edit
   - number: 4
-    title: "Esm\xE9n"
+    title: Esmén
     slug: esmen
     isrc: CAGOO2598741
     duration: '3:54'
@@ -125,20 +322,68 @@ release:
       youtube_music: https://music.youtube.com/watch?v=Tf3GOtbyN84
       spotify: https://open.spotify.com/track/7rho8e496wLOyQx1x4y6K7
     instrumental: false
-    lyrics_text: "It points, it loops, it calibrates\nA schema shaped by nested fates\n\
-      A map that redraws its terrain\nA structure dreaming it's a brain\n\nWe hold\
-      \ the frame and call it true\nBut what frames the frame that's framing you\n\
-      \nWhat is this\u2014this pulse, this plan\nA wheel that turns to birth a man\n\
-      A story told in tangled thread\nBy books that quote what books have said\n\n\
-      The mirror speaks, the symbols hum\nA system aging into sum\nBut underneath\
-      \ the shifting glow\nThe silence waits for what we know\n\nThis world we build\
-      \ with mirrored walls\u2014\nWhich version breaks? Which one recalls\n\nWhat\
-      \ is this\u2014this rhyme, this scar\nA language reaching for a star\nEach answer\
-      \ caught inside the play\nOf names that shift and drift away\n\nThere is no\
-      \ ground beneath the gears\nNo code untouched by hands or fears\nWe watch the\
-      \ watcher watching through\nThe glass that bends to copy you\n\nWhat is this\u2014\
-      this form, this lie\nA frame that answers with a sigh\nAnd every word and every\
-      \ phase\nBecomes the script we can't erase"
+    lyrics_text: 'It points, it loops, it calibrates
+
+      A schema shaped by nested fates
+
+      A map that redraws its terrain
+
+      A structure dreaming it''s a brain
+
+
+      We hold the frame and call it true
+
+      But what frames the frame that''s framing you
+
+
+      What is this—this pulse, this plan
+
+      A wheel that turns to birth a man
+
+      A story told in tangled thread
+
+      By books that quote what books have said
+
+
+      The mirror speaks, the symbols hum
+
+      A system aging into sum
+
+      But underneath the shifting glow
+
+      The silence waits for what we know
+
+
+      This world we build with mirrored walls—
+
+      Which version breaks? Which one recalls
+
+
+      What is this—this rhyme, this scar
+
+      A language reaching for a star
+
+      Each answer caught inside the play
+
+      Of names that shift and drift away
+
+
+      There is no ground beneath the gears
+
+      No code untouched by hands or fears
+
+      We watch the watcher watching through
+
+      The glass that bends to copy you
+
+
+      What is this—this form, this lie
+
+      A frame that answers with a sigh
+
+      And every word and every phase
+
+      Becomes the script we can''t erase'
     lyrics_source: https://docs.google.com/document/d/1usRIdY8q75ZzruPxyMwdiCr_vHP08KGJI8r9h8lN7Jg/edit
   - number: 5
     title: Esti
@@ -153,19 +398,68 @@ release:
       youtube_music: https://music.youtube.com/watch?v=j8aGlRDrG5w
       spotify: https://open.spotify.com/track/6Tl9HGWKePFMhI8j8yrEyj
     instrumental: false
-    lyrics_text: "The breath before the breath begins\nThe sound that ends where sound\
-      \ grows thin\nThe hollow shape the light won't fill\nThe mountain bowed to what\
-      \ is still\n\nI asked the sky and heard no word\nBut felt the silence being\
-      \ heard\n\nWhat is not God? The space between\nThe holy lack, the might-have-been\n\
-      Where truth unforms, and names decay\nAnd time forgets to count the day\n\n\
-      No altar holds it, none can bind\nThe question older than the mind\nA doorway\
-      \ made of unsaid grace\nThat vanishes without a trace\n\nThe glyph dissolves,\
-      \ the echo stays\u2014\nAnd sings the world in other ways\n\nWhat is not God?\
-      \ A breath unmade\nA chord too deep to strike or play\nThe hum that haunts the\
-      \ shape of sound\nThe fall that rises from the ground\n\nTo know is loss\nTo\
-      \ lose is whole\nTo be unformed\nIs to be soul\n\nWhat is not God? Not void.\
-      \ Not all\nThe slip between the rise and fall\nEsti waits\u2014not here, not\
-      \ gone\u2014\nThe note that was\u2026 before the song"
+    lyrics_text: 'The breath before the breath begins
+
+      The sound that ends where sound grows thin
+
+      The hollow shape the light won''t fill
+
+      The mountain bowed to what is still
+
+
+      I asked the sky and heard no word
+
+      But felt the silence being heard
+
+
+      What is not God? The space between
+
+      The holy lack, the might-have-been
+
+      Where truth unforms, and names decay
+
+      And time forgets to count the day
+
+
+      No altar holds it, none can bind
+
+      The question older than the mind
+
+      A doorway made of unsaid grace
+
+      That vanishes without a trace
+
+
+      The glyph dissolves, the echo stays—
+
+      And sings the world in other ways
+
+
+      What is not God? A breath unmade
+
+      A chord too deep to strike or play
+
+      The hum that haunts the shape of sound
+
+      The fall that rises from the ground
+
+
+      To know is loss
+
+      To lose is whole
+
+      To be unformed
+
+      Is to be soul
+
+
+      What is not God? Not void. Not all
+
+      The slip between the rise and fall
+
+      Esti waits—not here, not gone—
+
+      The note that was… before the song'
     lyrics_source: https://docs.google.com/document/d/1usRIdY8q75ZzruPxyMwdiCr_vHP08KGJI8r9h8lN7Jg/edit
   - number: 6
     title: Ousia

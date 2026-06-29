@@ -5,30 +5,27 @@ page:
   status: draft
   normalized_path: /artists/pcbender/
   source_url: https://www.maricoparecords.com/artists/pcbender/
-  content_html: "<h2>PCBender</h2><p>Rugged, wise, and deeply entrenched in the art\
-    \ of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic\
-    \ craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies\
-    \ the soul of analog warmth, weaving together rich textures of classic rock, blues,\
-    \ and experimental soundscapes with a modern edge.</p><p>With a presence that\
-    \ carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of\
-    \ music production\u2014digging deep into the essence of sound, unearthing raw\
-    \ emotion, and shaping it into songs that resonate beyond time. His music is a\
-    \ fusion of grit and refinement, where worn-in guitar tones meet polished production,\
-    \ and every note feels like it was carved from experience.</p><p>A producer at\
-    \ heart, he doesn\u2019t just create songs\u2014he builds them. Each track is\
-    \ an expedition through layers of melody, distortion, and lyrical depth, reflecting\
-    \ both his technical expertise and his philosopher\u2019s approach to songwriting.\
-    \ Whether delivering anthemic riffs, cinematic storytelling, or stripped-down\
-    \ acoustic wisdom, PCBender brings an authenticity that makes listeners feel like\
-    \ they\u2019re sitting in the studio with him, watching music come to life.</p><p>As\
-    \ a key figure in Maricopa Records, PCBender bridges the gap between analog and\
-    \ AI-driven creativity, proving that the heart of a song is never about how it\u2019\
-    s made, but why.</p><p>For those who seek music with depth, texture, and soul\u2014\
-    PCBender is your guide.</p><a href=\"https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg\"\
-    ></a><a href=\"https://music.apple.com/us/artist/pcbender/1793178641\"></a><a\
-    \ href=\"https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw\"></a><img\
-    \ src=\"https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png\"\
-    ><h2>Releases</h2><p></p>"
+  content_html: <h2>PCBender</h2><p>Rugged, wise, and deeply entrenched in the art
+    of music-making, PCBender is more than just a musician—he’s a sonic craftsman.
+    A guitar-slinging songwriter, producer, and storyteller, he embodies the soul
+    of analog warmth, weaving together rich textures of classic rock, blues, and experimental
+    soundscapes with a modern edge.</p><p>With a presence that carries the mystique
+    of a seasoned explorer, PCBender is the Indiana Jones of music production—digging
+    deep into the essence of sound, unearthing raw emotion, and shaping it into songs
+    that resonate beyond time. His music is a fusion of grit and refinement, where
+    worn-in guitar tones meet polished production, and every note feels like it was
+    carved from experience.</p><p>A producer at heart, he doesn’t just create songs—he
+    builds them. Each track is an expedition through layers of melody, distortion,
+    and lyrical depth, reflecting both his technical expertise and his philosopher’s
+    approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling,
+    or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners
+    feel like they’re sitting in the studio with him, watching music come to life.</p><p>As
+    a key figure in Maricopa Records, PCBender bridges the gap between analog and
+    AI-driven creativity, proving that the heart of a song is never about how it’s
+    made, but why.</p><p>For those who seek music with depth, texture, and soul—PCBender
+    is your guide.</p><a href="https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg"></a><a
+    href="https://music.apple.com/us/artist/pcbender/1793178641"></a><a href="https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw"></a><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png"><h2>Releases</h2><p></p>
   excerpt: null
   seo:
     title: PCBender
@@ -39,27 +36,41 @@ page:
     type: page
     status: publish
     captured_path: raw/pages/www.maricoparecords.com/artists/pcbender/index.html
-  content_markdown: "## PCBender\n\nRugged, wise, and deeply entrenched in the art\
-    \ of music-making, PCBender is more than just a musician\u2014he\u2019s a sonic\
-    \ craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies\
-    \ the soul of analog warmth, weaving together rich textures of classic rock, blues,\
-    \ and experimental soundscapes with a modern edge.\n\nWith a presence that carries\
-    \ the mystique of a seasoned explorer, PCBender is the Indiana Jones of music\
-    \ production\u2014digging deep into the essence of sound, unearthing raw emotion,\
-    \ and shaping it into songs that resonate beyond time. His music is a fusion of\
-    \ grit and refinement, where worn-in guitar tones meet polished production, and\
-    \ every note feels like it was carved from experience.\n\nA producer at heart,\
-    \ he doesn\u2019t just create songs\u2014he builds them. Each track is an expedition\
-    \ through layers of melody, distortion, and lyrical depth, reflecting both his\
-    \ technical expertise and his philosopher\u2019s approach to songwriting. Whether\
-    \ delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic\
-    \ wisdom, PCBender brings an authenticity that makes listeners feel like they\u2019\
-    re sitting in the studio with him, watching music come to life.\n\nAs a key figure\
-    \ in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity,\
-    \ proving that the heart of a song is never about how it\u2019s made, but why.\n\
-    \nFor those who seek music with depth, texture, and soul\u2014PCBender is your\
-    \ guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n\
-    ## Releases"
+  content_markdown: '## PCBender
+
+
+    Rugged, wise, and deeply entrenched in the art of music-making, PCBender is more
+    than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer,
+    and storyteller, he embodies the soul of analog warmth, weaving together rich
+    textures of classic rock, blues, and experimental soundscapes with a modern edge.
+
+
+    With a presence that carries the mystique of a seasoned explorer, PCBender is
+    the Indiana Jones of music production—digging deep into the essence of sound,
+    unearthing raw emotion, and shaping it into songs that resonate beyond time. His
+    music is a fusion of grit and refinement, where worn-in guitar tones meet polished
+    production, and every note feels like it was carved from experience.
+
+
+    A producer at heart, he doesn’t just create songs—he builds them. Each track is
+    an expedition through layers of melody, distortion, and lyrical depth, reflecting
+    both his technical expertise and his philosopher’s approach to songwriting. Whether
+    delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom,
+    PCBender brings an authenticity that makes listeners feel like they’re sitting
+    in the studio with him, watching music come to life.
+
+
+    As a key figure in Maricopa Records, PCBender bridges the gap between analog and
+    AI-driven creativity, proving that the heart of a song is never about how it’s
+    made, but why.
+
+
+    For those who seek music with depth, texture, and soul—PCBender is your guide.
+
+
+    [](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)
+
+    ## Releases'
   sections: []
   images:
   - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png

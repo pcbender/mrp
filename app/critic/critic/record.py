@@ -79,4 +79,4 @@ class TrackFinding:
     review: Review = field(default_factory=Review)
 
     def to_json(self, indent: int = 2) -> str:
-        return json.dumps(dataclasses.asdict(self), indent=indent)
+        return json.dumps(dataclasses.asdict(self), indent=indent, ensure_ascii=False)

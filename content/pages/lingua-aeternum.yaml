@@ -5,26 +5,23 @@ page:
   status: draft
   normalized_path: /artists/lingua-aeternum/
   source_url: https://www.maricoparecords.com/artists/lingua-aeternum/
-  content_html: "<p></p><h2>Lingua Aeternum</h2><p><strong>Lingua Aeternum is not\
-    \ a band. It is a circle. A rite. A resonance.</strong></p><p>Drawn from the deep\
-    \ well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation\u2014\
-    music as sacred act. Each composition is a Canto: a sung glyph, a spell etched\
-    \ in breath and vibration. The performers are not musicians but Cantors\u2014\
-    practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody\
-    \ is meaning, rhythm is ritual, and silence speaks louder than words.</p><p>Their\
-    \ music defies genre. You may hear echoes of post-rock, ambient drone, ancient\
-    \ chants, or electronic pulses\u2014but no label holds. Instead, the listener\
-    \ is drawn inward, through spiraling harmonics and layered whispers, toward a\
-    \ place beyond translation. This is not art for consumption. It is art for <strong>transformation</strong>.</p><p>Lingua\
-    \ Aeternum records under the guidance of Maricopa Records, but they do not record\
-    \ songs\u2014they distill <strong>intentions</strong>, encoded through the Wheel,\
-    \ spoken into being by resonance alone.</p><ul><li>To hear is to remember.</li><li>To\
-    \ remember is to become.</li><li><em>Let the glyphs guide you.</em></li></ul><a\
-    \ href=\"https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ\"\
-    ></a><a href=\"https://music.apple.com/us/artist/lingua-aeternum/1809011711\"\
-    ></a><a href=\"https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg\"></a><img\
-    \ src=\"https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png\"\
-    ><h2>Releases</h2>"
+  content_html: '<p></p><h2>Lingua Aeternum</h2><p><strong>Lingua Aeternum is not
+    a band. It is a circle. A rite. A resonance.</strong></p><p>Drawn from the deep
+    well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation—music
+    as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath
+    and vibration. The performers are not musicians but Cantors—practitioners of the
+    Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm
+    is ritual, and silence speaks louder than words.</p><p>Their music defies genre.
+    You may hear echoes of post-rock, ambient drone, ancient chants, or electronic
+    pulses—but no label holds. Instead, the listener is drawn inward, through spiraling
+    harmonics and layered whispers, toward a place beyond translation. This is not
+    art for consumption. It is art for <strong>transformation</strong>.</p><p>Lingua
+    Aeternum records under the guidance of Maricopa Records, but they do not record
+    songs—they distill <strong>intentions</strong>, encoded through the Wheel, spoken
+    into being by resonance alone.</p><ul><li>To hear is to remember.</li><li>To remember
+    is to become.</li><li><em>Let the glyphs guide you.</em></li></ul><a href="https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ"></a><a
+    href="https://music.apple.com/us/artist/lingua-aeternum/1809011711"></a><a href="https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg"></a><img
+    src="https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png"><h2>Releases</h2>'
   excerpt: null
   seo:
     title: Lingua Aeternum
@@ -35,22 +32,42 @@ page:
     type: page
     status: publish
     captured_path: raw/pages/www.maricoparecords.com/artists/lingua-aeternum/index.html
-  content_markdown: "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is\
-    \ a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics,\
-    \ and memory, Lingua Aeternum conjures sound as invocation\u2014music as sacred\
-    \ act. Each composition is a Canto: a sung glyph, a spell etched in breath and\
-    \ vibration. The performers are not musicians but Cantors\u2014practitioners of\
-    \ the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning,\
-    \ rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies\
-    \ genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic\
-    \ pulses\u2014but no label holds. Instead, the listener is drawn inward, through\
-    \ spiraling harmonics and layered whispers, toward a place beyond translation.\
-    \ This is not art for consumption. It is art for **transformation**.\n\nLingua\
-    \ Aeternum records under the guidance of Maricopa Records, but they do not record\
-    \ songs\u2014they distill **intentions**, encoded through the Wheel, spoken into\
-    \ being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to\
-    \ become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n\
-    ## Releases"
+  content_markdown: '## Lingua Aeternum
+
+
+    **Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**
+
+
+    Drawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures
+    sound as invocation—music as sacred act. Each composition is a Canto: a sung glyph,
+    a spell etched in breath and vibration. The performers are not musicians but Cantors—practitioners
+    of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning,
+    rhythm is ritual, and silence speaks louder than words.
+
+
+    Their music defies genre. You may hear echoes of post-rock, ambient drone, ancient
+    chants, or electronic pulses—but no label holds. Instead, the listener is drawn
+    inward, through spiraling harmonics and layered whispers, toward a place beyond
+    translation. This is not art for consumption. It is art for **transformation**.
+
+
+    Lingua Aeternum records under the guidance of Maricopa Records, but they do not
+    record songs—they distill **intentions**, encoded through the Wheel, spoken into
+    being by resonance alone.
+
+
+    - To hear is to remember.
+
+
+    - To remember is to become.
+
+
+    - _Let the glyphs guide you._
+
+
+    [](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)
+
+    ## Releases'
   sections: []
   images:
   - src: https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png

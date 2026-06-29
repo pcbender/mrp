@@ -5,27 +5,24 @@ page:
   status: draft
   normalized_path: /licensing-custom-songs/
   source_url: https://www.maricoparecords.com/licensing-custom-songs/
-  content_html: "<h2>Licensing &amp; Custom Music Creation</h2><p><strong>Original\
-    \ AI-Driven Music for Film, TV, Advertising, and More</strong></p><img src=\"\
-    https://www.maricoparecords.com/wp-content/uploads/2025/03/people-looking-at-a-computer-screen-adding-music-to-a.png\"\
-    ><p></p><h2><strong>Introduction</strong></h2><p>At Maricopa Records, we specialize\
-    \ in <strong>cutting-edge, AI-enhanced music production</strong>, blending artificial\
-    \ intelligence with human creativity to deliver high-quality compositions. Whether\
-    \ you&#x27;re looking to <strong>license existing music</strong>from our catalog\
-    \ or commission a <strong>custom song</strong>, we provide <strong>authentic,\
-    \ high-quality, and flexible music solutions</strong>for various industries.</p><p><strong>Explore\
-    \ our offerings</strong></p><ul><li><strong>Music Licensing</strong>\u2013 Access\
-    \ our catalog for sync placements in <strong>film, TV, video games, and commercials.</strong></li><li><strong>Custom\
-    \ Songs &amp; Scores</strong>\u2013 Work with us to create <strong>bespoke music</strong>tailored\
-    \ to your project.</li></ul><a href=\"https://www.maricoparecords.com/licensing-custom-songs/music-licensing/\"\
-    >Music Licensing</a><a href=\"https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/\"\
-    >Custom Songs &amp; Scores</a><h5><strong>Ready to bring your project to life?</strong></h5><p>Choose\
-    \ from our in-house AI artists, like <strong>STAB\u2019s energetic 80s pop rock</strong>or\
-    \ <strong>PCBender\u2019s jazz/blues craftsmanship</strong>, or let us create\
-    \ something completely unique.</p><a href=\"/licensing-custom-songs/music-licensing/\"\
-    >Music Licensing</a><a href=\"https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/\"\
-    >Custom Songs &amp; Scores</a><img src=\"https://www.maricoparecords.com/wp-content/uploads/2025/03/smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png\"\
-    ><p></p>"
+  content_html: <h2>Licensing &amp; Custom Music Creation</h2><p><strong>Original
+    AI-Driven Music for Film, TV, Advertising, and More</strong></p><img src="https://www.maricoparecords.com/wp-content/uploads/2025/03/people-looking-at-a-computer-screen-adding-music-to-a.png"><p></p><h2><strong>Introduction</strong></h2><p>At
+    Maricopa Records, we specialize in <strong>cutting-edge, AI-enhanced music production</strong>,
+    blending artificial intelligence with human creativity to deliver high-quality
+    compositions. Whether you&#x27;re looking to <strong>license existing music</strong>from
+    our catalog or commission a <strong>custom song</strong>, we provide <strong>authentic,
+    high-quality, and flexible music solutions</strong>for various industries.</p><p><strong>Explore
+    our offerings</strong></p><ul><li><strong>Music Licensing</strong>– Access our
+    catalog for sync placements in <strong>film, TV, video games, and commercials.</strong></li><li><strong>Custom
+    Songs &amp; Scores</strong>– Work with us to create <strong>bespoke music</strong>tailored
+    to your project.</li></ul><a href="https://www.maricoparecords.com/licensing-custom-songs/music-licensing/">Music
+    Licensing</a><a href="https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/">Custom
+    Songs &amp; Scores</a><h5><strong>Ready to bring your project to life?</strong></h5><p>Choose
+    from our in-house AI artists, like <strong>STAB’s energetic 80s pop rock</strong>or
+    <strong>PCBender’s jazz/blues craftsmanship</strong>, or let us create something
+    completely unique.</p><a href="/licensing-custom-songs/music-licensing/">Music
+    Licensing</a><a href="https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/">Custom
+    Songs &amp; Scores</a><img src="https://www.maricoparecords.com/wp-content/uploads/2025/03/smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png"><p></p>
   excerpt: null
   seo:
     title: Licensing & Custom Songs
@@ -36,22 +33,48 @@ page:
     type: page
     status: publish
     captured_path: raw/pages/www.maricoparecords.com/licensing-custom-songs/index.html
-  content_markdown: "## Licensing & Custom Music Creation\n\n**Original AI-Driven\
-    \ Music for Film, TV, Advertising, and More**\n\n![](https://www.maricoparecords.com/wp-content/uploads/2025/03/people-looking-at-a-computer-screen-adding-music-to-a.png)\n\
-    \n## **Introduction**\n\nAt Maricopa Records, we specialize in **cutting-edge,\
-    \ AI-enhanced music production**, blending artificial intelligence with human\
-    \ creativity to deliver high-quality compositions. Whether you're looking to **license\
-    \ existing music**from our catalog or commission a **custom song**, we provide\
-    \ **authentic, high-quality, and flexible music solutions**for various industries.\n\
-    \n**Explore our offerings**\n\n- **Music Licensing**\u2013 Access our catalog\
-    \ for sync placements in **film, TV, video games, and commercials.**\n\n- **Custom\
-    \ Songs & Scores**\u2013 Work with us to create **bespoke music**tailored to your\
-    \ project.\n\n[Music Licensing](https://www.maricoparecords.com/licensing-custom-songs/music-licensing/)[Custom\
-    \ Songs & Scores](https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/)\n\
-    ##### **Ready to bring your project to life?**\n\nChoose from our in-house AI\
-    \ artists, like **STAB\u2019s energetic 80s pop rock**or **PCBender\u2019s jazz/blues\
-    \ craftsmanship**, or let us create something completely unique.\n\n[Music Licensing](/licensing-custom-songs/music-licensing/)[Custom\
-    \ Songs & Scores](https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png)"
+  content_markdown: '## Licensing & Custom Music Creation
+
+
+    **Original AI-Driven Music for Film, TV, Advertising, and More**
+
+
+    ![](https://www.maricoparecords.com/wp-content/uploads/2025/03/people-looking-at-a-computer-screen-adding-music-to-a.png)
+
+
+    ## **Introduction**
+
+
+    At Maricopa Records, we specialize in **cutting-edge, AI-enhanced music production**,
+    blending artificial intelligence with human creativity to deliver high-quality
+    compositions. Whether you''re looking to **license existing music**from our catalog
+    or commission a **custom song**, we provide **authentic, high-quality, and flexible
+    music solutions**for various industries.
+
+
+    **Explore our offerings**
+
+
+    - **Music Licensing**– Access our catalog for sync placements in **film, TV, video
+    games, and commercials.**
+
+
+    - **Custom Songs & Scores**– Work with us to create **bespoke music**tailored
+    to your project.
+
+
+    [Music Licensing](https://www.maricoparecords.com/licensing-custom-songs/music-licensing/)[Custom
+    Songs & Scores](https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/)
+
+    ##### **Ready to bring your project to life?**
+
+
+    Choose from our in-house AI artists, like **STAB’s energetic 80s pop rock**or
+    **PCBender’s jazz/blues craftsmanship**, or let us create something completely
+    unique.
+
+
+    [Music Licensing](/licensing-custom-songs/music-licensing/)[Custom Songs & Scores](https://www.maricoparecords.com/licensing-custom-songs/custom-songs-for-hire/)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/smiling-young-woman-listening-on-headphones-watching-the-closing-credits.png)'
   sections: []
   images:
   - src: https://www.maricoparecords.com/wp-content/uploads/2025/03/people-looking-at-a-computer-screen-adding-music-to-a.png

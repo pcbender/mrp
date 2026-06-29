@@ -13,6 +13,7 @@ const { releases, rich = false } = Astro.props;
   {releases.map((release) => (
     <ReleaseCard
       title={release.title}
+      titleAscii={release.titleAscii}
       artist={release.artistName}
       href={release.href}
       type={release.releaseType}

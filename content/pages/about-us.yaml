@@ -5,36 +5,35 @@ page:
   status: draft
   normalized_path: /about-us/
   source_url: https://www.maricoparecords.com/about-us/
-  content_html: "<h2>Welcome to Maricopa Records</h2><img src=\"https://www.maricoparecords.com/wp-content/uploads/2025/02/AboutUsImage.png\"\
-    ><p>Maricopa Records is an innovative music production and distribution company\
-    \ at the intersection of AI technology and analog creativity. We specialize in\
-    \ crafting unique music, lyrics, images, and videos using a fusion of cutting-edge\
-    \ artificial intelligence and traditional recording techniques. Our mission is\
-    \ to push the boundaries of artistic expression, creating fresh, genre-defying\
-    \ music that captivates audiences worldwide.</p><p>With a commitment to authenticity\
-    \ and high-quality production, we embrace both the digital revolution and the\
-    \ warmth of analog sound. Our roster of artists includes groundbreaking AI-driven\
-    \ performers as well as human collaborators, all contributing to a sonic landscape\
-    \ that challenges conventions and redefines what\u2019s possible in modern music.</p><p>At\
-    \ Maricopa Records, we are more than just a label\u2014we are a creative powerhouse,\
-    \ a platform for artists, and a home for those who want to explore uncharted musical\
-    \ territories. Whether it&#x27;s the high-energy 80s rock revival of STAB or the\
-    \ storytelling wisdom of PCBender, our artists represent a bold new era of sound\
-    \ and innovation.</p><p><strong>Moving \u25E6 Music \u25E6 Forward</strong>\u2014\
-    this is our passion, our mission, and our promise.</p><p></p><p>Are you an artist\
-    \ looking for a label that embraces the future while honoring the past? Whether\
-    \ you\u2019re a musician, vocalist, producer, or AI-driven creator, we want to\
-    \ hear from you! Maricopa Records is always on the lookout for fresh talent who\
-    \ share our passion for music and innovation.</p><p>What we offer:</p><ul><li>A\
-    \ forward-thinking approach to music production and distribution</li><li>Access\
-    \ to AI-powered creative tools and high-quality analog recording techniques</li><li>Collaboration\
-    \ with a diverse network of artists and producers</li><li>Support in branding,\
-    \ promotion, and digital distribution</li></ul><p>If you have a unique sound,\
-    \ a fresh perspective, and a passion for breaking musical boundaries, we\u2019\
-    d love to hear your work. Submit your <a href=\"https://www.maricoparecords.com/contact/\"\
-    >demo or portfolio</a>and let\u2019s make something extraordinary together.</p><h2>Join\
-    \ Us</h2><blockquote><p>Welcome to the future of music. Welcome to Maricopa Records.\
-    \ <br><strong>Moving \u25E6 Music \u25E6 Forward</strong></p></blockquote><p></p>"
+  content_html: <h2>Welcome to Maricopa Records</h2><img src="https://www.maricoparecords.com/wp-content/uploads/2025/02/AboutUsImage.png"><p>Maricopa
+    Records is an innovative music production and distribution company at the intersection
+    of AI technology and analog creativity. We specialize in crafting unique music,
+    lyrics, images, and videos using a fusion of cutting-edge artificial intelligence
+    and traditional recording techniques. Our mission is to push the boundaries of
+    artistic expression, creating fresh, genre-defying music that captivates audiences
+    worldwide.</p><p>With a commitment to authenticity and high-quality production,
+    we embrace both the digital revolution and the warmth of analog sound. Our roster
+    of artists includes groundbreaking AI-driven performers as well as human collaborators,
+    all contributing to a sonic landscape that challenges conventions and redefines
+    what’s possible in modern music.</p><p>At Maricopa Records, we are more than just
+    a label—we are a creative powerhouse, a platform for artists, and a home for those
+    who want to explore uncharted musical territories. Whether it&#x27;s the high-energy
+    80s rock revival of STAB or the storytelling wisdom of PCBender, our artists represent
+    a bold new era of sound and innovation.</p><p><strong>Moving ◦ Music ◦ Forward</strong>—this
+    is our passion, our mission, and our promise.</p><p></p><p>Are you an artist looking
+    for a label that embraces the future while honoring the past? Whether you’re a
+    musician, vocalist, producer, or AI-driven creator, we want to hear from you!
+    Maricopa Records is always on the lookout for fresh talent who share our passion
+    for music and innovation.</p><p>What we offer:</p><ul><li>A forward-thinking approach
+    to music production and distribution</li><li>Access to AI-powered creative tools
+    and high-quality analog recording techniques</li><li>Collaboration with a diverse
+    network of artists and producers</li><li>Support in branding, promotion, and digital
+    distribution</li></ul><p>If you have a unique sound, a fresh perspective, and
+    a passion for breaking musical boundaries, we’d love to hear your work. Submit
+    your <a href="https://www.maricoparecords.com/contact/">demo or portfolio</a>and
+    let’s make something extraordinary together.</p><h2>Join Us</h2><blockquote><p>Welcome
+    to the future of music. Welcome to Maricopa Records. <br><strong>Moving ◦ Music
+    ◦ Forward</strong></p></blockquote><p></p>
   excerpt: null
   seo:
     title: About Us
@@ -45,35 +44,67 @@ page:
     type: page
     status: publish
     captured_path: raw/pages/www.maricoparecords.com/about-us/index.html
-  content_markdown: "## Welcome to Maricopa Records\n\n![](https://www.maricoparecords.com/wp-content/uploads/2025/02/AboutUsImage.png)\n\
-    Maricopa Records is an innovative music production and distribution company at\
-    \ the intersection of AI technology and analog creativity. We specialize in crafting\
-    \ unique music, lyrics, images, and videos using a fusion of cutting-edge artificial\
-    \ intelligence and traditional recording techniques. Our mission is to push the\
-    \ boundaries of artistic expression, creating fresh, genre-defying music that\
-    \ captivates audiences worldwide.\n\nWith a commitment to authenticity and high-quality\
-    \ production, we embrace both the digital revolution and the warmth of analog\
-    \ sound. Our roster of artists includes groundbreaking AI-driven performers as\
-    \ well as human collaborators, all contributing to a sonic landscape that challenges\
-    \ conventions and redefines what\u2019s possible in modern music.\n\nAt Maricopa\
-    \ Records, we are more than just a label\u2014we are a creative powerhouse, a\
-    \ platform for artists, and a home for those who want to explore uncharted musical\
-    \ territories. Whether it's the high-energy 80s rock revival of STAB or the storytelling\
-    \ wisdom of PCBender, our artists represent a bold new era of sound and innovation.\n\
-    \n**Moving \u25E6 Music \u25E6 Forward**\u2014this is our passion, our mission,\
-    \ and our promise.\n\nAre you an artist looking for a label that embraces the\
-    \ future while honoring the past? Whether you\u2019re a musician, vocalist, producer,\
-    \ or AI-driven creator, we want to hear from you! Maricopa Records is always on\
-    \ the lookout for fresh talent who share our passion for music and innovation.\n\
-    \nWhat we offer:\n\n- A forward-thinking approach to music production and distribution\n\
-    \n- Access to AI-powered creative tools and high-quality analog recording techniques\n\
-    \n- Collaboration with a diverse network of artists and producers\n\n- Support\
-    \ in branding, promotion, and digital distribution\n\nIf you have a unique sound,\
-    \ a fresh perspective, and a passion for breaking musical boundaries, we\u2019\
-    d love to hear your work. Submit your [demo or portfolio](https://www.maricoparecords.com/contact/)and\
-    \ let\u2019s make something extraordinary together.\n\n## Join Us\n\nWelcome to\
-    \ the future of music. Welcome to Maricopa Records.\n**Moving \u25E6 Music \u25E6\
-    \ Forward**"
+  content_markdown: '## Welcome to Maricopa Records
+
+
+    ![](https://www.maricoparecords.com/wp-content/uploads/2025/02/AboutUsImage.png)
+
+    Maricopa Records is an innovative music production and distribution company at
+    the intersection of AI technology and analog creativity. We specialize in crafting
+    unique music, lyrics, images, and videos using a fusion of cutting-edge artificial
+    intelligence and traditional recording techniques. Our mission is to push the
+    boundaries of artistic expression, creating fresh, genre-defying music that captivates
+    audiences worldwide.
+
+
+    With a commitment to authenticity and high-quality production, we embrace both
+    the digital revolution and the warmth of analog sound. Our roster of artists includes
+    groundbreaking AI-driven performers as well as human collaborators, all contributing
+    to a sonic landscape that challenges conventions and redefines what’s possible
+    in modern music.
+
+
+    At Maricopa Records, we are more than just a label—we are a creative powerhouse,
+    a platform for artists, and a home for those who want to explore uncharted musical
+    territories. Whether it''s the high-energy 80s rock revival of STAB or the storytelling
+    wisdom of PCBender, our artists represent a bold new era of sound and innovation.
+
+
+    **Moving ◦ Music ◦ Forward**—this is our passion, our mission, and our promise.
+
+
+    Are you an artist looking for a label that embraces the future while honoring
+    the past? Whether you’re a musician, vocalist, producer, or AI-driven creator,
+    we want to hear from you! Maricopa Records is always on the lookout for fresh
+    talent who share our passion for music and innovation.
+
+
+    What we offer:
+
+
+    - A forward-thinking approach to music production and distribution
+
+
+    - Access to AI-powered creative tools and high-quality analog recording techniques
+
+
+    - Collaboration with a diverse network of artists and producers
+
+
+    - Support in branding, promotion, and digital distribution
+
+
+    If you have a unique sound, a fresh perspective, and a passion for breaking musical
+    boundaries, we’d love to hear your work. Submit your [demo or portfolio](https://www.maricoparecords.com/contact/)and
+    let’s make something extraordinary together.
+
+
+    ## Join Us
+
+
+    Welcome to the future of music. Welcome to Maricopa Records.
+
+    **Moving ◦ Music ◦ Forward**'
   sections: []
   images:
   - src: https://www.maricoparecords.com/wp-content/uploads/2025/02/AboutUsImage.png

@@ -127,7 +127,7 @@ def update_release_status(root: Path, release_id: str, status: str) -> None:
         if path.suffix == ".json":
             path.write_text(json.dumps(data, indent=2, sort_keys=False) + "\n")
         else:
-            path.write_text(yaml.safe_dump(data, sort_keys=False))
+            path.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True))
         return
 
 
