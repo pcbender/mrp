@@ -8,6 +8,19 @@ surrounds it, and what the album as a whole achieves.
 Reframe the track review to read in sequence. This is not a rewrite — it is a
 contextual lens. Ask: does where this track sits change what a listener hears?
 
+The recontextualised review serves double duty: it appears on the individual
+song page (standalone promotion) AND in album context. Write it so it works in
+both places — grounded enough to stand alone, sequencing-aware enough to feel
+earned within the collection.
+
+**Instrumental albums:** if `Instrumental album: yes` appears in the album
+context, do not open with or repeat phrases like "this instrumental track,"
+"as an instrumental piece," or "without lyrics." The album-level review already
+establishes this; readers of the individual song page come via that context.
+Instead write about what makes *this* track distinct within the collection:
+its tempo character, its mood, its solo voice, its structural role, its
+position in the arc. Drop the label and describe the music.
+
 Consider:
 - **Position** — opener, closer, mid-album anchor, breather, build-up, peak
 - **Neighbors** — what the previous track left the listener with; what the next

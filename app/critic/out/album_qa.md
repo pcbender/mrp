@@ -1,24 +1,24 @@
-# MRP Critic — Album QA: PCBender / tria
+# MRP Critic — Album QA: PCBender / bakers-dozen
 
-**Album ID:** `pcbender--tria`
+**Album ID:** `pcbender--bakers-dozen`
 
 ## Verdict
 
 | Field | Value |
 |-------|-------|
-| Rank | 4 — strong |
-| Sum vs parts | greater |
+| Rank | 3 — solid |
+| Sum vs parts | equal |
 | Persona delivery | on_character |
 | Status | pending |
-| Runtime | 21m 48s |
-| Palette consistency | 0.82 (varied) |
-| Theme threads | waits, there, ask, between, breath, inside, know, shaped |
+| Runtime | 41m 56s |
+| Palette consistency | 0.84 (varied) |
+| Theme threads | none |
 
 ## Album Review
 
-Triaτί opens with 'Apa' moving at a brisk clip, all warmth and earned tenderness, and that opening move is essentially a contract: PCBender is here to ask questions slowly and mean them. The EP holds that commitment for just under 22 minutes, threading words like breath, between, and inside through six tracks that share a meditative register without ever becoming monotonous — 'Esmén,' with its unsettling waltz feel and minor-key gravity, provides the necessary shadow, while the closer 'Ousia' builds an entire philosophical arc from three phrases and sticks the landing with the kind of restraint that makes you replay it. The one place the collection loses a step is 'Ego Eimi,' which moves faster than its premise wants to and sits slightly outside the intimate pocket the other tracks inhabit — not a misstep exactly, but a moment where the seam shows. Still, as a collection, Triaτί is more than the sum of its parts: the sequencing earns its quietness, and PCBender's craftsman instincts — the analog warmth, the philosophical patience — are fully present.
+Baker's Dozen is PCBender doing what he does best: building a full guitar record from pure feel, no lyrics needed, no explanation required. The calendar conceit gives the album a loose structural spine, moving from the brisk, coiled energy of 'January Kiss' through the waltz-heavy middle months and landing softly on '366', a compact closer that feels less like a finale than a quiet exhale after a long year. Eight of the thirteen tracks earn their keep without qualification, and the five that sit a step below never embarrass the collection; they just breathe a little less. At roughly 42 minutes, it earns its title without overstaying its welcome.
 
-_Anchors: Apa, Esmén, Ousia, Ego Eimi, breath, between, inside, I am / We are / It is, waltz feel, 21m 48s runtime_
+_Anchors: January Kiss, 366, Baker's Dozen, calendar conceit, waltz-heavy middle months, 42 minutes_
 
 ---
 
@@ -26,47 +26,86 @@ _Anchors: Apa, Esmén, Ousia, Ego Eimi, breath, between, inside, I am / We are /
 
 | # | Track | Standalone | Context | Note |
 |---|-------|-----------|---------|------|
-| 1 | `apa` | 4 | — |  |
-| 2 | `aiteo` | 4 | — |  |
-| 3 | `ego-eimi` | 3 | — |  |
-| 4 | `esmen` | 4 | — |  |
-| 5 | `esti` | 4 | — |  |
-| 6 | `ousia` | 4 | — |  |
+| 1 | `january-kiss` | 4 | 3 ↓ | As the album's strongest track and its front door, it earns more in context… |
+| 2 | `february-actuary` | 4 | — |  |
+| 3 | `ides-of-march` | 4 | — |  |
+| 4 | `april-all-day-long` | 3 | — |  |
+| 5 | `may-flowers` | 4 | — |  |
+| 6 | `june-gloom` | 3 | — |  |
+| 7 | `sparkles-in-july` | 4 | — |  |
+| 8 | `too-august` | 3 | — |  |
+| 9 | `september-on-my-mind` | 4 | — |  |
+| 10 | `october-boo-hoo` | 3 | — |  |
+| 11 | `november-i-never-remember` | 4 | — |  |
+| 12 | `slipping-into-december` | 4 | — |  |
+| 13 | `366` | 3 | — |  |
 
 ---
 
 ## Contextual Track Reviews
 
-### [1] apa  _standalone 4_
+### [1] january-kiss  _standalone 4 → context 3 ↓_
 
-Opening an album is its own kind of pressure, and 'Apa' handles it with the confidence of a track that doesn't need to announce itself. PCBender puts his quietest, most exposed card on the table first — a close-miked vocal over fingerpicked acoustic, almost no arrangement to hide behind — and the bet pays off. It's a statement of intent: this album will not be loud, will not perform for you, will ask you to come to it. Lines like 'I became the sound that waits' hit harder here at the start than they might anywhere else, because the listener hasn't yet learned to trust the record. By the time the last chord fades, they do.
+'January Kiss' opens a calendar-spanning collection at a brisk clip, and it does so with real authority. The tightly coiled energy, the arpeggiated run that arrives around the eleven-second mark, the overdriven guitars pressing against a bright organ: all of it signals immediately that this is a record with something to say and a guitarist confident enough to say it without a word. What the sequence makes clear is just how much weight this opener carries. The album that follows is warmer, slower, more reflective, a long arc from the crispness of January toward the tender introspection of December. That means 'January Kiss' is the only moment quite like itself across all thirteen tracks, and its hard rock muscle, filtered through something harmonically nimble in the manner of early Jeff Beck Group, lands differently knowing the collection never returns to this voltage. It is not just a strong start; it is the energy ceiling, which makes the gradual descent into the quieter months feel intentional rather than incidental. Stand-alone, it is a tight, virtuosic piece under three minutes. In sequence, it is the reason the album's emotional geography makes sense.
 
-What follows — 'aiteo' and the rest of the sequence — is entirely tender in register, and 'Apa' is what makes that sustained mood feel like a choice rather than a limitation. It sets the temperature for everything downstream: unhurried, intimate, philosophically ambitious without being pretentious. Mastered at one of the quieter levels you'll encounter, this is not a track that eases you in gently — it simply begins, fully itself, and trusts you to meet it there. The album's strongest moment, placed first, means the collection announces its ceiling immediately and then spends five tracks exploring the room beneath it. That's a bold sequencing call, and it works.
+_Context note: As the album's strongest track and its front door, it earns more in context than its standalone rank suggested; nothing else on the record matches its voltage, and that asymmetry actually works in its favor._
 
-### [2] aiteo  _standalone 4_
+### [2] february-actuary  _standalone 4_
 
-Coming directly off 'Apa' — the album's strongest moment, a track that moves at a genuinely brisk clip — 'Aiteo' has a real job to do: slow the pulse without losing the listener. It does. PCBender opens in near-silence, just piano and voice, and the deceleration from what came before feels intentional rather than deflating. The album has already established its emotional register; now it earns the right to breathe. The lyric does the heavy lifting here: 'the world is ink, the soul is thread / we stitch our meaning from what's said' lands with the weight of someone who's actually sat with the question, not just borrowed the vocabulary of searching. The rhythm section arrives like it was always supposed to be there, the strings push the chorus without overwhelming it, and by the time the song builds toward something close to an anthem — early Springsteen in its confidence that a simple question, asked sincerely enough, can carry a room — the listener has been given time to settle in and feel it. The outro's retreat to quiet is well-timed too, leaving 'Ego-Eimi' room to pick the album back up at its own tempo. As a second track, 'Aiteo' functions as the album's first exhale, and it handles that role cleanly.
+'February Actuary' arrives right after the album's strongest moment, 'January Kiss,' and it has the good sense not to try to top it. Instead it shifts the mood cleanly: where 'January Kiss' runs tender, this one pushes uplifting, and the quicker pulse keeps the energy from sagging in the early going. The blues-infused guitar work is the main event, loose enough to feel spontaneous but precise enough to hold through eight sections without wandering. It has that quality you get from early Stevie Ray Vaughan instrumentals, where the technique is obvious but the feel is what you actually remember. After this, 'Ides of March' slows things further and deepens the uplifting register, so 'February Actuary' functions as the bridge between the album's opening energy and its first real deceleration. It handles that job well, and the locked-in rhythm section gives it a center of gravity that stands on its own terms too.
 
-### [3] ego-eimi  _standalone 3_
+### [3] ides-of-march  _standalone 4_
 
-Landing at the album's midpoint after 'aiteo' has eased the listener down from the opener's energy, 'Ego Eimi' performs a quiet recalibration. Where 'aiteo' settled into a slower, more ruminative pace, this track steps the tempo back up without fully departing the tender register the album has established — a nudge forward rather than a lurch. It's a small but important distinction: the album doesn't coast here, it breathes with intention. Running at a brisk clip in a major key, the track moves faster than its meditative premise might suggest, and that tension — between the restless pulse and the still, searching lyrics — is exactly where it lives. The central refrain, 'What am I if not the flame / that dances through the breath I claim,' is PCBender working at his most concentrated, the kind of line that lands differently on the third listen. The layered vocal harmonies that briefly open up mid-song are the production highlight, stripping the arrangement back to raw voice before the guitars return — a move that recalls the quieter moments on Bruce Cockburn's deeper records. 'Esmen' will carry this mood further, and the groundwork laid here makes that possible. It's a grower — not the track you put on first to sell someone on the catalog, but the one they come back to once they're already converted, and in sequence, that quality is exactly what the album needs at this juncture.
+'Ides of March' arrives as the album's tempo has been descending steadily, dropping from the brisk opener through the mid-paced second track, and this one continues that drift downward into something warmer and more deliberate. It lands exactly where the sequence needs it: upbeat enough to keep momentum alive, relaxed enough to ease the listener toward the quieter, tenderer territory that 'April All Day Long' opens up next.
 
-### [4] esmen  _standalone 4_
+The shuffle groove does most of the heavy lifting, feeling lived-in from the first bar, the kind of thing that makes you check whether you've heard it before even though you haven't. The walking bassline doesn't just anchor the low end; it actively trades ideas with the guitar, giving the track a conversational quality that suits its position as the album shifts from energy to warmth. When the harmonized rock riff kicks in around the midpoint, it delivers a satisfying lift, something earned rather than assumed. Under three minutes, nothing wasted. In a collection that earns its consistency, this is one of the moments where the sequencing and the material work together without drawing attention to themselves, which is exactly the point.
 
-By the time 'esmen' arrives, the album has established a clear sonic grammar — tender, searching, unhurried — and PCBender has been working that register for three tracks running. What's notable is that this doesn't feel like diminishing returns. 'esmen' holds its own precisely because it earns its place in the sequence through specificity rather than variation: the philosophical recursion baked into the track ('what frames the frame that's framing you') lands differently as a fourth consecutive meditation than it would as a standalone piece. The listener is already inside a contemplative loop, and 'esmen' makes that loop explicit, nearly structural. The waltz feel — unhurried, circular — suits that function exactly. Piano and breathy vocal carry the early verses with real restraint before the arrangement opens up around the 1:38 mark into a harmonically dense swell that lands like an answer that only deepens the question. It has the same recursive quality as early Peter Gabriel — thought trying to think about itself, the music matching the shape of that effort. Coming off 'ego-eimi' and leading into 'esti,' it occupies the album's middle passage like a hinge rather than a peak, and that is the right job for it. It doesn't need to be the album's strongest moment. It needs to be the point where the album's internal logic becomes undeniable to the listener — and it is.
+### [4] april-all-day-long  _standalone 3_
 
-### [5] esti  _standalone 4_
+After three tracks that have been gradually stepping down from the album's opening energy, april-all-day-long arrives as the first real stillness. The arc has decelerated from january-kiss's brisk tenderness through two uplifting but progressively slower entries, and by the time ides-of-march hands off, the listener is ready for something that simply settles. This waltz in a minor key obliges without apology, letting the 3/4 meter breathe at an unhurried pulse while electric guitar and what sounds like mandolin trade lines with the easy patience of musicians who have nothing to prove. It is the album's first genuine exhale, and PCBender holds it long enough to matter. The 12-section structure gives the piece room to develop without overstaying its welcome, and the clean-toned lead work in the midsections has a warmth reminiscent of early Mark Knopfler, fingerpicked and deliberate. What follows in may-flowers picks the tempo back up, which means april-all-day-long functions as the album's hinge point, the moment the calendar pauses before the year resumes its motion. A waltz shouldn't feel like a porch swing in late April, but PCBender pulls it off, and in context that unhurried quality earns its place.
 
-"Esti" arrives as the penultimate station on an album that has held a single emotional register — tender, patient, inward — across every track. By position five, that consistency is either the album's strength or its vulnerability, and "Esti" is where you feel both at once. It has been a long time since the opening track's energy peaked, and the record has been descending in temperature ever since. This track doesn't fight that descent; it accepts it, and in doing so becomes something like the album's philosophical resting point before the closer makes its final gesture.
+### [5] may-flowers  _standalone 4_
 
-Operating at a measured pulse that feels far slower than it technically is, the track builds through twelve short sections that function less like verses and choruses than like inhalations, each one making room for the next. The lyric "To know is loss / To lose is whole" lands with the kind of aphoristic weight that John Hiatt achieves when he's writing at his most distilled, and the choral production — dense, close-voiced harmonies suspended in a cavernous space — makes the theology feel earned rather than decorative. Coming directly after "Esmen," which shares a similar tempo and tenderness, a listener might wonder if the album is beginning to blur at the edges. But "Esti" holds its own through sheer specificity of language and the architectural patience of its construction.
+After 'April All Day Long' eases the album to its slowest and most intimate point, 'May Flowers' lifts the pace back to a midtempo waltz without abandoning the tender mood that has settled in across the first four tracks. That recovery matters: it keeps the album from pooling in one emotional register, while the 3/4 groove and warm, overdriven guitar keep the transition feeling organic rather than abrupt. The lead tone sings with vibrato phrasing and melodic double-stops that carry the emotional weight lyrics would elsewhere, and the spacious production never crowds the rhythm section, so each return of the lead feels earned. The 11-section structure gives PCBender room to develop ideas without rushing, and he does: this sits in the same pocket as early Gary Moore ballad-blues, tender without being soft. It also positions the album well for what follows, since 'June Gloom' arrives at the same tempo but shifts the mood toward something more openly emotional, a shift 'May Flowers' has quietly prepared the listener for.
 
-What it gives "Ousia" is a listener already stilled — already philosophical, already prepared to receive something final rather than something surprising. That is exactly what a closer needs, and "Esti" delivers it without sacrificing its own integrity. PCBender working at the philosophical edge of his songwriting, and it holds.
+### [6] june-gloom  _standalone 3_
 
-### [6] ousia  _standalone 4_
+"June Gloom" arrives at the album's emotional center, and the timing feels deliberate. It follows "May Flowers" at the exact same tempo, but where that track leans tender, this one leans harder into something stormier, a mood shift that registers even before the first solo run lands. The waltz time is the key variable: in a collection that has mostly moved in straight rhythmic feel, the 3/4 pulse here creates a slight tilt underfoot, a sense of being pulled forward on a diagonal rather than a straight line.
 
-Three phrases — 'I am,' 'We are,' 'It is' — and PCBender builds a full philosophical arc out of them, which tells you everything about the ambition here. As the closer, that arc lands with particular weight: the album has been circling questions of being and existence across five tracks, and ousia arrives to name the thing directly. The title itself — the Greek philosophical term for essence, for what a thing fundamentally is — makes clear this was always where the record was headed.
+The guitar work is the main event. High-gain harmonized leads trade off against a rhythm section that keeps everything grounded rather than chaotic, and the rapid arpeggios across the middle sections are precise without feeling cold. The production gives each layer room to breathe despite the density, which is harder to pull off at this tempo in waltz time than it sounds.
 
-The piece opens with a single reverb-soaked soprano voice over a spare synth pad, then expands around the 1:51 mark when a full string section arrives and transforms everything into something genuinely cinematic. Coming out of esti, which shares a similarly measured tempo and tender register, there's a moment of recognition before the strings lift the ceiling entirely — the familiar pulse suddenly carrying far more weight than it did a track ago. At a pace that has more forward momentum than the orchestral-choral genre usually allows, it never feels static, which is exactly what a closer needs: resolution that moves rather than settles.
+The placement earns its keep. Coming out of the album's slower, more reflective stretch through April and May, "June Gloom" reintroduces urgency without breaking the mood entirely, and it hands off to "Sparkles in July" with enough forward momentum that the uplifting turn there feels earned rather than abrupt. It is doing sequencing work as much as it is doing showcase work, and it does both dependably. A listener coming to this track alone will hear a confident guitar feature; a listener coming through the album will feel it as the moment the year in music stops drifting and starts moving again.
 
-It lands somewhere between Arvo Pärt's economy of means and the kind of arena-scale emotional payoff you'd expect from Hans Zimmer. That combination is difficult to pull off and PCBender mostly pulls it off. As the capstone to an album that is genuinely greater than the sum of its parts, ousia earns its place — not by being the album's most striking individual moment, but by being the moment that makes the whole thing cohere.
+### [7] sparkles-in-july  _standalone 4_
+
+'Sparkles in July' arrives at the album's exact midpoint, and the timing feels deliberate. The two tracks before it, 'May Flowers' and 'June Gloom', share a tempo and lean into tenderness and emotional weight. This one breaks the spell: the tight, funky groove kicks in and suddenly there's daylight. PCBender's lead guitar moves freely between rhythmic chops and full melodic solos without losing the thread, and the rhythm section keeps things spacious enough that each run lands with real clarity. It sits somewhere between a Robben Ford workout and a late-period Allman Brothers instrumental cut, warm and confident without overstaying its welcome at three and a half minutes. That lift carries into 'Too August', which settles back into tender territory from a higher energy floor than it would have had otherwise. In an album that tracks twelve months of emotional weather, 'Sparkles in July' earns its place as the moment summer actually shows up.
+
+### [8] too-august  _standalone 3_
+
+A waltz at a brisk clip sounds like a contradiction, but PCBender makes it feel inevitable: the triple meter gives his blues phrasing room to breathe and lean, and the creamy overdriven guitar sits in a clean, spacious mix that keeps every bend and rapid-fire run audible without crowding the pocket. It plays like a live-in-studio take, the kind of thing John Mayer might have cut after hours with a Stevie Ray Vaughan record on the turntable. Coming off the uplifting bounce of sparkles-in-july, the shift here into something warmer and more deliberate is well-timed: the album has been building through lighter textures, and too-august arrives as a confident, grounded anchor before the back half opens up again with september-on-my-mind. It does its job and does it well.
+
+### [9] september-on-my-mind  _standalone 4_
+
+A waltz at a brisk clip is a bold move, and PCBender pulls it off by leaning into the swing of it rather than fighting the meter, letting the rhythm section lock into a shuffle groove that feels more roadhouse than ballroom. Coming off the tender float of too-august, that shift in posture is immediately refreshing: where the previous track settles, this one leans forward. The lead guitar in a minor key is the whole story here, expressive bends, quick melodic runs, and a tone with just enough grit to keep it honest, the kind of playing that recalls early Gary Moore when he still had Texas on his mind. At just over three and a half minutes, it doesn't overstay its welcome, cycling through eleven sections that keep the ear guessing without ever losing the thread. Its uplifting energy also does useful work at this point in the calendar sequence, providing a lift before the album begins its gradual descent into autumn and the more reflective textures of october-boo-hoo and beyond. A strong argument that sometimes the song is just the guitar.
+
+### [10] october-boo-hoo  _standalone 3_
+
+'October Boo Hoo' arrives at position ten with a tempo drop that earns its place: after 'September on My Mind' lifts the album's energy to a brisk, uplifting peak, this waltz-time blues eases the listener back into something more private and unhurried. The pacing shift is exactly right. What follows, 'November I Never Remember,' needs a mood that leans nostalgic, and this track hands it over gently, already tilting toward reflection. It functions as a hinge in the album's long autumn sequence, and it does the job without announcing itself.
+
+The track itself has the feel of late-afternoon playing, the kind where the guitarist is working something out for themselves and you happen to be in the room. At around the 53-second mark the phrasing opens up, slides stretching into melodic runs that gain weight without losing the relaxed center. At just under three minutes it doesn't overstay, and the clean, spacious production keeps every note accountable. In the full run of thirteen months, it is one of eight tracks that hold the album's middle rank, and it belongs there: dependable, unhurried, and considerably more useful in sequence than it might seem standing alone.
+
+### [11] november-i-never-remember  _standalone 4_
+
+A waltz-time roadhouse number in a minor key, 'November I Never Remember' arrives at exactly the right moment in the calendar. After 'October Boo Hoo' settles into its tender, reflective mood, this track shakes the room a little: the overdriven guitar tone is wide and punchy without getting muddy, and the tempo nudges just enough above its neighbors to signal that the year still has some fight left in it before the closing stretch begins.
+
+PCBender works through eleven distinct sections in just over three minutes, keeping the momentum honest rather than overstaying any single idea. The variety matters here. As the album moves into its final act, with 'Slipping into December' and the closing '366' both leaning tender and inward, this track earns its place as the last real surge of energy before the descent. It holds the room the way a good Stevie Ray Vaughan shuffle does: you stop what you're doing and just listen to the hands. In the arc of a thirteen-track year, that quality is not just welcome, it is necessary.
+
+### [12] slipping-into-december  _standalone 4_
+
+A waltz-time blues workout in a minor key, 'Slipping Into December' announces itself immediately with a call-and-response guitar figure so crisp and fast it dares you to keep up. At this tempo the shuffle never drags, and PCBender keeps the structure moving across its twelve sections without losing the groove that anchors it all. Think Robben Ford with the patience of a storyteller: technically dazzling, but the flash is always in service of feel.
+
+Arriving at position twelve, the track follows 'November I Never Remember' carrying the same mid-tempo pulse, but where November leans nostalgic, December sharpens into something more driven and immediate. The call-and-response figure reintroduces forward momentum right when the album needs it most, clearing space before the closer '366' can settle the year into its final, quieter reckoning. In a collection that has spent thirteen months cycling through tenderness, uplift, and emotional weight, December's blues energy is a tonic, the sound of a year not quite done asserting itself before it lets go.
+
+### [13] 366  _standalone 3_
+
+A two-and-a-half minute workout in E minor that wastes no time: the 3/4 groove locks in around the five-second mark and the guitars never let go, trading fluid blues runs and wide-panned leads with the kind of assertive tone you hear from players who have something to prove and the chops to back it up. The waltz feel gives the soloing more room to breathe than a straight-four would, and PCBender uses every measure of it. As a closer, that choice feels deliberate. After eleven months of mood shifts and tempo changes, the album arrives here with something grounded and unhurried, a track that doesn't try to summarize the year so much as sign off on it with confidence. The title nods to the leap year's extra day, and there is something fitting in that: not a grand finale, just one more good day before the calendar turns. A strong showcase for where his playing is right now, and a closer that earns its place without reaching for it.

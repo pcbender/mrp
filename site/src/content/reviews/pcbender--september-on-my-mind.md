@@ -1,0 +1,8 @@
+---
+track_id: pcbender--september-on-my-mind
+impression: "This track has a gritty, guitar-centric texture, creating an atmosphere of confident, bar-room swagger. The energy is high and driving, carried by a tight rhythm section that establishes an infectious blues-rock shuffle. The production is clean and powerful, allowing the raw, overdriven lead guitar to sit prominently in the mix without overwhelming the punchy bass and drums. The most distinctive quality is the virtuosic and melodic lead guitar work, full of expressive bends and fiery runs that define the track's electrifying personality."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+A waltz at a brisk clip is a bold move, and PCBender pulls it off by leaning into the swing of it rather than fighting the meter, letting the rhythm section lock into a shuffle groove that feels more roadhouse than ballroom. Coming off the tender float of too-august, that shift in posture is immediately refreshing: where the previous track settles, this one leans forward. The lead guitar in a minor key is the whole story here, expressive bends, quick melodic runs, and a tone with just enough grit to keep it honest, the kind of playing that recalls early Gary Moore when he still had Texas on his mind. At just over three and a half minutes, it doesn't overstay its welcome, cycling through eleven sections that keep the ear guessing without ever losing the thread. Its uplifting energy also does useful work at this point in the calendar sequence, providing a lift before the album begins its gradual descent into autumn and the more reflective textures of october-boo-hoo and beyond. A strong argument that sometimes the song is just the guitar.

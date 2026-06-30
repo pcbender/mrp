@@ -46,6 +46,13 @@ You have already reviewed each track individually. Now assess the **collection**
 - **Do not rewrite track reviews.** Your job here is the collection, not
   the songs. Individual track context is Pass 3's work.
 - Land on exactly one album verdict, one sum_vs_parts, one persona_delivery.
+- **Instrumental albums:** if `Instrumental: yes` appears in the release
+  info, establish the album's instrumental nature once, naturally — as a
+  characterisation of the artist's approach or the album's identity, not as
+  a repeated disclaimer. Frame it as a creative choice. Never say "though
+  this album has no lyrics" or "as an instrumental record" more than once,
+  and never open with it as a technical caveat. After that first
+  establishment, write about the music exactly as you would any other album.
 - **Thin data:** if the user message contains a DATA NOTES section flagging
   missing cohesion data, degrade gracefully: write what you can observe from
   the track reviews and avoid asserting structural arcs (thematic threads,

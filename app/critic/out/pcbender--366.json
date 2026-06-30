@@ -1,0 +1,105 @@
+{
+  "track_id": "pcbender--366",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/366.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--366.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 103.4,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 145.96,
+    "lufs": -13.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.55,
+        "label": "S1"
+      },
+      {
+        "start": 4.55,
+        "end": 31.93,
+        "label": "S2"
+      },
+      {
+        "start": 31.93,
+        "end": 69.24,
+        "label": "S3"
+      },
+      {
+        "start": 69.24,
+        "end": 85.47,
+        "label": "S4"
+      },
+      {
+        "start": 85.47,
+        "end": 104.14,
+        "label": "S5"
+      },
+      {
+        "start": 104.14,
+        "end": 121.16,
+        "label": "S6"
+      },
+      {
+        "start": 121.16,
+        "end": 142.13,
+        "label": "S7"
+      },
+      {
+        "start": 142.13,
+        "end": 145.96,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.98,
+      "key": 0.882
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "energetic",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This instrumental track presents a confident and aggressive atmosphere, built on a dense texture of virtuosic, distorted electric guitars. The energy is relentlessly high, propelled by a tight and powerful rhythm section that establishes a commanding rock feel. The production is modern and punchy, managing the dense instrumentation with impressive clarity and giving the lead guitars a prominent, wide stereo presence. The track's defining quality is its technically brilliant guitar work, which is full of fluid, blues-infused soloing and intricate runs delivered with an assertive tone.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A two-and-a-half minute workout in E minor that wastes no time: the 3/4 groove locks in around the five-second mark and the guitars never let go, trading fluid blues runs and wide-panned leads with the kind of assertive tone you hear from players who have something to prove and the chops to back it up. At 103 BPM the waltz feel gives the soloing more room to breathe than a straight-four would, and PCBender uses every measure of it. A dependable cut, and a strong showcase for where his playing is right now.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "E minor key",
+      "3/4 time signature",
+      "103 BPM",
+      "wide stereo guitar presence",
+      "blues-infused soloing",
+      "2:25 duration",
+      "section entry at 5s"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

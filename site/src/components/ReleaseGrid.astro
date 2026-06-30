@@ -12,9 +12,8 @@ const { releases, rich = false } = Astro.props;
 
 const summaries = await Promise.all(
   releases.map(async (release) => {
-    if (release.summary) return release.summary;
     const reviewEntry = await getEntry("reviews", `${release.artistId}--${release.slug}`).catch(() => null);
-    return reviewEntry?.data.impression || reviewEntry?.data.summary || "";
+    return reviewEntry?.data.summary || reviewEntry?.data.impression || release.summary || "";
   })
 );
 ---

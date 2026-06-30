@@ -1,0 +1,125 @@
+{
+  "track_id": "pcbender--slipping-into-december",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Slipping Into December.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--slipping-into-december.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 213.32,
+    "lufs": -12.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.79,
+        "label": "S1"
+      },
+      {
+        "start": 2.79,
+        "end": 17.79,
+        "label": "S2"
+      },
+      {
+        "start": 17.79,
+        "end": 39.13,
+        "label": "S3"
+      },
+      {
+        "start": 39.13,
+        "end": 65.39,
+        "label": "S4"
+      },
+      {
+        "start": 65.39,
+        "end": 81.55,
+        "label": "S5"
+      },
+      {
+        "start": 81.55,
+        "end": 100.94,
+        "label": "S6"
+      },
+      {
+        "start": 100.94,
+        "end": 124.3,
+        "label": "S7"
+      },
+      {
+        "start": 124.3,
+        "end": 139.97,
+        "label": "S8"
+      },
+      {
+        "start": 139.97,
+        "end": 166.74,
+        "label": "S9"
+      },
+      {
+        "start": 166.74,
+        "end": 191.03,
+        "label": "S10"
+      },
+      {
+        "start": 191.03,
+        "end": 206.77,
+        "label": "S11"
+      },
+      {
+        "start": 206.77,
+        "end": 213.32,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.965,
+      "key": 0.869
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This instrumental track has a dense, virtuosic texture, creating an atmosphere of confident, high-stakes blues-rock fusion. The energy is consistently high and driving, locked into a slick, funky shuffle feel that is both groovy and intellectually engaging. The production is clean and focused, placing the sharp, articulate electric guitar squarely at the front of the mix, while the bass and drums provide a punchy and well-defined foundation. A defining quality is the fluid, lightning-fast guitar phrasing, established immediately by the intricate call-and-response melody in the introduction which sets a high bar for the song's technical prowess.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz-time blues workout in E minor, 'Slipping Into December' announces itself immediately with a call-and-response guitar figure so crisp and fast it dares you to keep up. At 117 BPM the shuffle never drags, and PCBender keeps the structure moving across its twelve sections without losing the groove that anchors it all. Think Robben Ford with the patience of a storyteller: technically dazzling, but the flash is always in service of feel.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "E minor key",
+      "117.5 BPM",
+      "3/4 time signature",
+      "opening call-and-response guitar motif",
+      "12-section structure",
+      "blues-rock shuffle feel",
+      "Robben Ford comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -21,6 +21,13 @@ const coverUrl = releaseCoverUrl(release);
 const trackId = `${release.artist_id}--${track.slug}`;
 const reviewEntry = await getEntry("reviews", trackId);
 const { Content: ReviewContent } = reviewEntry ? await reviewEntry.render() : {};
+
+const sortedTracks = release.tracks
+  ? [...release.tracks].sort((a: any, b: any) => (a.number ?? 0) - (b.number ?? 0))
+  : [];
+const trackIndex = sortedTracks.findIndex((t: any) => t.slug === track.slug);
+const prevTrack = trackIndex > 0 ? sortedTracks[trackIndex - 1] : null;
+const nextTrack = trackIndex < sortedTracks.length - 1 ? sortedTracks[trackIndex + 1] : null;
 ---
 <article class="release-landing">
   <header class="release-hero" style={`--release-hero-image: url("${coverUrl}")`}>
@@ -60,7 +67,31 @@ const { Content: ReviewContent } = reviewEntry ? await reviewEntry.render() : {}
     <img src={coverUrl} alt="" width="800" height="800" />
   </section>
 
-  {(track.lyrics_text || track.instrumental) && (
+  {sortedTracks.length > 1 && (
+    <nav class="track-nav" aria-label="Album track navigation">
+      {prevTrack ? (
+        <a href={`/releases/${release.slug}/${prevTrack.slug}/`} class="track-nav-link track-nav-prev">
+          <span class="track-nav-arrow" aria-hidden="true">&#8592;</span>
+          <span class="track-nav-info">
+            <span class="track-nav-label">Previous</span>
+            <span class="track-nav-title">{prevTrack.title}</span>
+          </span>
+        </a>
+      ) : <span class="track-nav-link track-nav-prev track-nav-disabled" aria-hidden="true" />}
+      <a href={releaseHref} class="track-nav-album">{release.title}</a>
+      {nextTrack ? (
+        <a href={`/releases/${release.slug}/${nextTrack.slug}/`} class="track-nav-link track-nav-next">
+          <span class="track-nav-info">
+            <span class="track-nav-label">Next</span>
+            <span class="track-nav-title">{nextTrack.title}</span>
+          </span>
+          <span class="track-nav-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+      ) : <span class="track-nav-link track-nav-next track-nav-disabled" aria-hidden="true" />}
+    </nav>
+  )}
+
+  {track.lyrics_text && (
     <section class="lyrics">
       <h2>Lyrics</h2>
       <Lyrics lyricsText={track.lyrics_text} instrumental={track.instrumental} />
@@ -157,6 +188,89 @@ const { Content: ReviewContent } = reviewEntry ? await reviewEntry.render() : {}
   .sample-player {
     width: 100%;
     max-width: 380px;
+  }
+
+  .track-nav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    width: min(100% - clamp(40px, 8vw, 112px), 1200px);
+    margin: 0 auto clamp(32px, 5vw, 64px);
+    padding: 16px clamp(16px, 3vw, 32px);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+  }
+
+  .track-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.15s;
+  }
+
+  .track-nav-link:hover {
+    background: var(--line);
+  }
+
+  .track-nav-prev { justify-content: flex-start; }
+  .track-nav-next { justify-content: flex-end; }
+
+  .track-nav-disabled {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .track-nav-arrow {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    color: var(--muted);
+  }
+
+  .track-nav-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .track-nav-prev .track-nav-info { align-items: flex-start; }
+  .track-nav-next .track-nav-info { align-items: flex-end; }
+
+  .track-nav-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  .track-nav-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .track-nav-album {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: color 0.15s;
+  }
+
+  .track-nav-album:hover { color: var(--ink); }
+
+  @media (max-width: 560px) {
+    .track-nav { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+    .track-nav-album { grid-column: 1 / -1; grid-row: 2; border-top: 1px solid var(--line); padding-top: 12px; }
   }
 
   .lyrics {
