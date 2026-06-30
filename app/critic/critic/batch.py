@@ -29,6 +29,7 @@ from pathlib import Path
 
 from .catalog import get_artist_name, get_lyrics, get_persona, get_release_meta
 from .config import OUT_DIR
+from .usage import tracker
 from .dsp import extract_dsp
 from .impression import get_impression
 from .ingest import ingest
@@ -76,6 +77,7 @@ def run_batch(
     out_dir = out_dir or OUT_DIR
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    tracker.reset()
     entries = json.loads(Path(manifest_path).read_text())
     results: list[TrackFinding] = []
 
@@ -133,6 +135,7 @@ def run_batch(
             print(f"  ✗ failed:")
             traceback.print_exc()
 
+    tracker.print_summary()
     return results
 
 

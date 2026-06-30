@@ -16,6 +16,7 @@ from pathlib import Path
 
 from .config import GOOGLE_API_KEY, IMPRESSION_MODEL
 from .record import Impression
+from .usage import record_gemini
 from .utils import scrub_emdash
 
 _PROMPT = """\
@@ -60,6 +61,7 @@ def get_impression(proxy_path: str | Path, model: str | None = None) -> Impressi
                 types.Part.from_text(text=_PROMPT),
             ],
         )
+        record_gemini(response)
         return Impression(text=scrub_emdash(response.text.strip()), model=selected)
     except Exception as exc:
         print(f"  ⚠  Gemini impression failed: {exc}")

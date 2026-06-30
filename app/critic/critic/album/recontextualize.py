@@ -21,6 +21,7 @@ import anthropic
 
 from ..catalog import get_release_tracks, is_release_instrumental
 from ..config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
+from ..usage import call_claude
 from ..schema import validate_context_review, warn_issues
 from .record import AlbumRecord, TrackInContext
 
@@ -140,7 +141,8 @@ def recontextualize(
     user_msg = _build_user_message(record, findings, is_instrumental=is_instrumental)
 
     print(f"  Sending all {n} tracks in one call…")
-    response = client.messages.create(
+    response = call_claude(
+        client,
         model=selected_model,
         max_tokens=8192,
         system=system,
