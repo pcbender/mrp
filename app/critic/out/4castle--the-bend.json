@@ -1,0 +1,120 @@
+{
+  "track_id": "4castle--the-bend",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Bend.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--the-bend.opus"
+  },
+  "lyrics": "We are The Bend, where the metal sings\nWhere Mom and Pop build useful things\nNo titles here, just names and pride\nA dozen towns where craft resides\n\nEach piece we make, we stamp by hand\nA mark that says: \"I understand\"\n\nWe sponsor teams, we fix the parks\nWe build our lives into these parts\nNo spreadsheets here, just flesh and bone\nA place that feels a bit like home\n\nThe cafe smells like stew\nAnd everyone knows what you've been through\n\nWe are The Bend, where the work is real\nWhere you know a name by how it feels\nThe weld is clean, the edge is square\nYou feel the love in the metal there\nThe margins tight, the days are long\nBut good is good, and right is strong\n\nOur softball team wears \"Bent\" with pride\nGreen jerseys with our name inscribed\nWe chose that name-it felt like us\nStrong enough to bend, no fuss\n\nWhen someone says \"Go get 'em, Bent\\!\"\nWe know exactly what they meant\n\nMom and Pop grew tired and gray\nSaid, \"Time to let the new one play.\"\nYoung Dirk with suit and MBA\nTook the floor and found his way\n\nHe says we're more than bolts and beams\nHe talks in markets, talks in dreams\n\nWe are The Bend, where the work is real\nWhere you know a name by how it feels\nThe weld is clean, the edge is square\nYou feel the love in the metal there\nThe margins tight, the days are long\nBut good is good, and right is strong\n\nThe signs are new, the paint is clean\nHe swapped the blueprint for a screen\nThe words still warm, but something's off\nThe breakroom talks in nervous coughs\n\nWe are The Bent-but not the same\nThe pieces fit, but not the name\nThe weld is clean, the edge still true\nBut something cold is seeping through\nThe margins hold. The lines are crossed\nAnd no one stops to ask the cost",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "A#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 242.2,
+    "lufs": -16.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 27.33,
+        "label": "S1"
+      },
+      {
+        "start": 27.33,
+        "end": 54.87,
+        "label": "S2"
+      },
+      {
+        "start": 54.87,
+        "end": 87.54,
+        "label": "S3"
+      },
+      {
+        "start": 87.54,
+        "end": 105.0,
+        "label": "S4"
+      },
+      {
+        "start": 105.0,
+        "end": 120.05,
+        "label": "S5"
+      },
+      {
+        "start": 120.05,
+        "end": 135.4,
+        "label": "S6"
+      },
+      {
+        "start": 135.4,
+        "end": 154.99,
+        "label": "S7"
+      },
+      {
+        "start": 154.99,
+        "end": 170.11,
+        "label": "S8"
+      },
+      {
+        "start": 170.11,
+        "end": 193.61,
+        "label": "S9"
+      },
+      {
+        "start": 193.61,
+        "end": 222.42,
+        "label": "S10"
+      },
+      {
+        "start": 222.42,
+        "end": 242.2,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.957,
+      "key": 0.813
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "The track opens with a delicate, fingerpicked acoustic guitar that establishes a warm, intimate, and comforting atmosphere, evoking a strong sense of nostalgia. With its steady, low-energy flow and gentle male lead vocals, the song maintains a laid-back and contemplative feel, further enriched by soft backing harmonies that elevate the emotional weight. The production is exceptionally spacious and clean: each element, from the resonant bass notes to the sparse piano chords, sits perfectly in the mix, allowing the vocals to remain the clear focal point. A poignant transition occurs toward the final minute, where the vocals subside to leave a quiet, reflective outro of solitary acoustic guitar notes and fading ambient textures, bringing the track to a peaceful resolve.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"The Bend\" is 4Castle in a quieter register, and it suits them: a fingerpicked acoustic figure at a relaxed 123 BPM, warm A# major, the band's harmonies dialed back to a soft glow behind a plainspoken lead vocal. What makes it land is the writing. This is a small-town fable about a metal shop that loses its soul to a young MBA, and the turn lands in the lyric itself, \"We are The Bent, but not the same / The pieces fit, but not the name,\" the chorus reshaped just enough to ache. The clean, spacious mix lets every word breathe, and that solitary guitar outro fading into silence reads less like an ending than a held breath. It runs long at four minutes and stays low-energy throughout, so it rewards patience more than it grabs you, closer to John Prine's storytelling than the Zeppelin firepower the band usually trades in. A highlight, and proof these five can hold a room without raising their voices.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "123 BPM",
+      "A# major",
+      "fingerpicked acoustic opening",
+      "\"We are The Bent, but not the same / The pieces fit, but not the name\"",
+      "solitary guitar outro fading to silence",
+      "4:02 runtime",
+      "soft backing harmonies"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

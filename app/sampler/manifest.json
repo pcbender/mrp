@@ -1,13 +1,13 @@
 [
   {
-    "track_id": "pcbender--seaward-sings",
-    "sample_path": "site/public/samples/pcbender--seaward-sings.mp3",
-    "preview_audio": "/samples/pcbender--seaward-sings.mp3",
-    "start_s": 251.56,
+    "track_id": "4castle--nightmares-return",
+    "sample_path": "site/public/samples/4castle--nightmares-return.mp3",
+    "preview_audio": "/samples/4castle--nightmares-return.mp3",
+    "start_s": 91.12,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
-    "measured_lufs_out": -10.1,
+    "measured_lufs_out": -10.8,
     "format": "mp3_128k",
     "status": "ok",
     "preview_audio_written": true

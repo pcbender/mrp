@@ -1,0 +1,119 @@
+{
+  "track_id": "4castle--all-change-is-painful",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/All Change Is Painful.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--all-change-is-painful.opus"
+  },
+  "lyrics": "Change is hard. We've all been told\nGrowth begins when comfort folds\nThe posters say, \"Just Dare To Try\"\nAnd, \"Pain is just a better why\"\nThey take your desk, they change your name\nThen smile and say, \"It's not a game.\"\n\nThis isn't growth. It's just pretend-\nA brand-new cut with the same end\n\nAll change is painful. All pain is earned\nWhat you resist is what you've not learned\nWe burn the bridge, then light your way\nIf you feel lost, that's how you stay\nAdapt. Align. Absorb. Obey\nYou'll thank us all someday\n\nThey said, \"It's hard. But that means true.\"\nWe nodded, hoped that it was true\nWe bent, we strained, we took the heat\nWe lost our names, but stayed on beat\nBut change that leads to something real\nDoesn't look like this. Don't make you kneel\n\nThis isn't growth. It's just pretend-\nA brand-new cut with the same end\n\nAll change is painful. All pain is earned\nWhat you resist is what you've not learned\nWe burn the bridge, then light your way\nIf you feel lost, that's how you stay\nAdapt. Align. Absorb. Obey\nYou'll thank us all someday\n\nBut how does this make things better\n\nThat question is below the line\nPlease review Module 3: Our Attitude Pillar™\n\nWelcome to the Attitude Pillar\nWhere resilience meets opportunity\\\nRemember: change isn't about comfort\nIt's about commitment\nGrowth is painful\nbecause you're growing\n\nAll change is painful. All pain is right\nTrust the script, ignore the sight\nWe bend the truth to shape the frame\nAnd call it culture. Call it flame\nThe old ways die. We dim the past\nWe move too fast to see who lasts\nThis is the cost to feel renewed\nThis is the cut we call success\n\nIf it isn't broke",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 252.96,
+    "lufs": -14.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.9,
+        "label": "S1"
+      },
+      {
+        "start": 6.9,
+        "end": 22.73,
+        "label": "S2"
+      },
+      {
+        "start": 22.73,
+        "end": 40.61,
+        "label": "S3"
+      },
+      {
+        "start": 40.61,
+        "end": 64.2,
+        "label": "S4"
+      },
+      {
+        "start": 64.2,
+        "end": 99.59,
+        "label": "S5"
+      },
+      {
+        "start": 99.59,
+        "end": 121.81,
+        "label": "S6"
+      },
+      {
+        "start": 121.81,
+        "end": 136.84,
+        "label": "S7"
+      },
+      {
+        "start": 136.84,
+        "end": 189.03,
+        "label": "S8"
+      },
+      {
+        "start": 189.03,
+        "end": 208.17,
+        "label": "S9"
+      },
+      {
+        "start": 208.17,
+        "end": 244.85,
+        "label": "S10"
+      },
+      {
+        "start": 244.85,
+        "end": 252.96,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.959,
+      "key": 0.876
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "The track opens with a tense, atmospheric drone and melancholic vocals, establishing a dark and introspective mood that feels both cinematic and emotionally heavy. This minimalist beginning quickly erupts into a high-energy synth-rock anthem, driven by aggressive power-chord synths, driving percussion, and soaring, dramatic vocals. The production is expertly polished, creating a vast sense of space where crisp, forward vocals sit atop dense layers of distorted synth textures and punchy drums without muddying the mix. A notable spoken-word vocal bridge adds a robotic, narrative element before launching into the track's final explosive climax.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "This is 4Castle's sharpest piece of satire yet, a takedown of corporate change-speak that lands because it commits to the bit. The track opens tense and brooding in D major before it snaps into a 123-BPM power-chord drive, and the genius is in the lyric: \"Adapt. Align. Absorb. Obey / You'll thank us all someday\" is the kind of line that sticks in your teeth. That spoken-word interlude welcoming you to the \"Attitude Pillar\" could have felt gimmicky, but it sells the dystopian HR-handbook tone instead, and the cold cut to \"If it isn't broke\" at the end is a perfect mic-drop. A highlight, and proof these guys can write with a knife.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "D major",
+      "123 BPM",
+      "Adapt. Align. Absorb. Obey / You'll thank us all someday",
+      "spoken-word Attitude Pillar interlude",
+      "If it isn't broke ending",
+      "tense brooding open into power-chord drive"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

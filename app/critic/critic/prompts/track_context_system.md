@@ -24,7 +24,9 @@ position in the arc. Drop the label and describe the music.
 Consider:
 - **Position** — opener, closer, mid-album anchor, breather, build-up, peak
 - **Neighbors** — what the previous track left the listener with; what the next
-  track needs from this one
+  track needs from this one. **Use the neighbor review text to understand each
+  track's actual character** — mood labels in the arc (e.g. "tender") are
+  CLAP model predictions and can be wrong. The written review is authoritative.
 - **Arc role** — does this track carry the album forward, provide relief, or
   mark a turning point?
 - **Album verdict** — given what the collection achieves, does this track earn

@@ -1,24 +1,24 @@
-# MRP Critic — Album QA: PCBender / bakers-dozen
+# MRP Critic — Album QA: 4Castle / bent
 
-**Album ID:** `pcbender--bakers-dozen`
+**Album ID:** `4castle--bent`
 
 ## Verdict
 
 | Field | Value |
 |-------|-------|
-| Rank | 3 — solid |
+| Rank | 4 — strong |
 | Sum vs parts | equal |
-| Persona delivery | on_character |
+| Persona delivery | expands |
 | Status | pending |
-| Runtime | 41m 56s |
-| Palette consistency | 0.84 (varied) |
-| Theme threads | none |
+| Runtime | 54m 36s |
+| Palette consistency | 0.76 (varied) |
+| Theme threads | bent, said, it's, like, name, through, too, words |
 
 ## Album Review
 
-Baker's Dozen is PCBender doing what he does best: building a full guitar record from pure feel, no lyrics needed, no explanation required. The calendar conceit gives the album a loose structural spine, moving from the brisk, coiled energy of 'January Kiss' through the waltz-heavy middle months and landing softly on '366', a compact closer that feels less like a finale than a quiet exhale after a long year. Eight of the thirteen tracks earn their keep without qualification, and the five that sit a step below never embarrass the collection; they just breathe a little less. At roughly 42 minutes, it earns its title without overstaying its welcome.
+Bent is a concept record about the modern workplace, and 4Castle treat it the way a good novelist treats a villain: with enough patience to let the rot show itself. "Mr. McKay" opens in storyteller mode, a B-minor character study of a venture capitalist that sets the tone and the trick the whole album runs on, melodies warm enough to make the satire sting. From there the band works almost entirely in a tender register, which is the daring choice here: songs like "Vision & Values" and "Stock Price Jesus" gut corporate doublespeak while the harmonies stay gorgeous and sincere, never winking. The risk is that thirteen tracks at the same emotional temperature can blur, and a couple of the colder, more deliberate cuts, "Authenticity Factory" in particular, feel more like exercises in the concept than fully realized songs. "Nightmares Return" closes on a quieter, riskier note that lands more as a fade than a finish, but the writing across the middle stretch, especially "All Change Is Painful" and "Human Capital," is the sharpest this band has put to tape. A confident, cohesive record that holds together on the strength of its idea and its execution.
 
-_Anchors: January Kiss, 366, Baker's Dozen, calendar conceit, waltz-heavy middle months, 42 minutes_
+_Anchors: Mr. McKay, Vision & Values, Stock Price Jesus, Authenticity Factory, Nightmares Return, All Change Is Painful, Human Capital_
 
 ---
 
@@ -26,86 +26,72 @@ _Anchors: January Kiss, 366, Baker's Dozen, calendar conceit, waltz-heavy middle
 
 | # | Track | Standalone | Context | Note |
 |---|-------|-----------|---------|------|
-| 1 | `january-kiss` | 4 | 3 ↓ | As the album's strongest track and its front door, it earns more in context… |
-| 2 | `february-actuary` | 4 | — |  |
-| 3 | `ides-of-march` | 4 | — |  |
-| 4 | `april-all-day-long` | 3 | — |  |
-| 5 | `may-flowers` | 4 | — |  |
-| 6 | `june-gloom` | 3 | — |  |
-| 7 | `sparkles-in-july` | 4 | — |  |
-| 8 | `too-august` | 3 | — |  |
-| 9 | `september-on-my-mind` | 4 | — |  |
-| 10 | `october-boo-hoo` | 3 | — |  |
-| 11 | `november-i-never-remember` | 4 | — |  |
-| 12 | `slipping-into-december` | 4 | — |  |
-| 13 | `366` | 3 | — |  |
+| 1 | `mr-mckay` | 4 | — |  |
+| 2 | `the-bend` | 4 | — |  |
+| 3 | `below-the-line` | 4 | — |  |
+| 4 | `friedmans-folly` | 4 | — |  |
+| 5 | `authenticity-factory` | 2 | — |  |
+| 6 | `voluntary-mandatory` | 4 | — |  |
+| 7 | `all-change-is-painful` | 4 | — |  |
+| 8 | `human-capital` | 4 | — |  |
+| 9 | `cracks-in-the-culture-deck` | 4 | — |  |
+| 10 | `vision-values` | 4 | — |  |
+| 11 | `stock-price-jesus` | 4 | — |  |
+| 12 | `at-what-cost` | 4 | — |  |
+| 13 | `nightmares-return` | 2 | — |  |
 
 ---
 
 ## Contextual Track Reviews
 
-### [1] january-kiss  _standalone 4 → context 3 ↓_
+### [1] mr-mckay  _standalone 4_
 
-'January Kiss' opens a calendar-spanning collection at a brisk clip, and it does so with real authority. The tightly coiled energy, the arpeggiated run that arrives around the eleven-second mark, the overdriven guitars pressing against a bright organ: all of it signals immediately that this is a record with something to say and a guitarist confident enough to say it without a word. What the sequence makes clear is just how much weight this opener carries. The album that follows is warmer, slower, more reflective, a long arc from the crispness of January toward the tender introspection of December. That means 'January Kiss' is the only moment quite like itself across all thirteen tracks, and its hard rock muscle, filtered through something harmonically nimble in the manner of early Jeff Beck Group, lands differently knowing the collection never returns to this voltage. It is not just a strong start; it is the energy ceiling, which makes the gradual descent into the quieter months feel intentional rather than incidental. Stand-alone, it is a tight, virtuosic piece under three minutes. In sequence, it is the reason the album's emotional geography makes sense.
+"Mr. McKay" is 4Castle in storyteller mode, and as an opener it sets the album's terms cleanly: this is a character study of the venture-capital messiah who "speaks in graphs and gospel tones / then bleeds the gold from gray," a B-minor portrait that doubles as a thesis statement for everything that follows. At a deliberate pace the verses brood low under a cavernous baritone before the chorus opens up, that turn from "To the moon. Through the flame" landing with real theatrical lift. The best stroke is structural restraint: when the band drops to "You called him boss, he was decay / The poison stays," they let the line hang instead of crowding it, and the near-five-minute runtime earns its slow burn rather than dragging. The album's strongest moment, and proof from the jump that their lyrical bite is as sharp as their playing.
 
-_Context note: As the album's strongest track and its front door, it earns more in context than its standalone rank suggested; nothing else on the record matches its voltage, and that asymmetry actually works in its favor._
+### [2] the-bend  _standalone 4_
 
-### [2] february-actuary  _standalone 4_
+After the brooding theatrics of the opener, "The Bend" pulls 4Castle into a quieter register, and the contrast suits them: a fingerpicked acoustic figure at a relaxed clip, warm and major-key, the band's harmonies dialed back to a soft glow behind a plainspoken lead vocal. What makes it land is the writing. This is a small-town fable about a metal shop that loses its soul to a young MBA, and the turn lands in the lyric itself, "We are The Bent, but not the same / The pieces fit, but not the name," the chorus reshaped just enough to ache. The clean, spacious mix lets every word breathe, and that solitary guitar outro fading into silence reads less like an ending than a held breath. It runs long and stays low-energy throughout, so it rewards patience more than it grabs you, closer to John Prine's storytelling than the Zeppelin firepower the band usually trades in. Proof these five can hold a room without raising their voices.
 
-'February Actuary' arrives right after the album's strongest moment, 'January Kiss,' and it has the good sense not to try to top it. Instead it shifts the mood cleanly: where 'January Kiss' runs tender, this one pushes uplifting, and the quicker pulse keeps the energy from sagging in the early going. The blues-infused guitar work is the main event, loose enough to feel spontaneous but precise enough to hold through eight sections without wandering. It has that quality you get from early Stevie Ray Vaughan instrumentals, where the technique is obvious but the feel is what you actually remember. After this, 'Ides of March' slows things further and deepens the uplifting register, so 'February Actuary' functions as the bridge between the album's opening energy and its first real deceleration. It handles that job well, and the locked-in rhythm section gives it a center of gravity that stands on its own terms too.
+### [3] below-the-line  _standalone 4_
 
-### [3] ides-of-march  _standalone 4_
+Where "The Bend" warmed the room, "Below The Line" cools it back down, and that's the point: 4Castle work here in a colder mode, trading their harmony stacks for a tense, dystopian pulse, steady and detached, with spoken-word vocals riding heavy synths and industrial percussion. The conceit is a corporate satire that actually bites, and the call-and-response hook does the heavy lifting, that robotic 'You're not fired, you're out-placed' landing with real menace, like Roger Waters narrating an HR onboarding video. The best writing is the small human detail underneath the jargon: 'There used to be stew in the breakroom air, a joke, a name, a coat left there' grounds the whole thing before the satire swallows it. At nearly five minutes the central trick wears a little thin by the final chorus, and the steady mid-energy pulse never quite breaks into release, but the idea is sharp enough to carry it, and it rewards a close listen to the lyrics.
 
-'Ides of March' arrives as the album's tempo has been descending steadily, dropping from the brisk opener through the mid-paced second track, and this one continues that drift downward into something warmer and more deliberate. It lands exactly where the sequence needs it: upbeat enough to keep momentum alive, relaxed enough to ease the listener toward the quieter, tenderer territory that 'April All Day Long' opens up next.
+### [4] friedmans-folly  _standalone 4_
 
-The shuffle groove does most of the heavy lifting, feeling lived-in from the first bar, the kind of thing that makes you check whether you've heard it before even though you haven't. The walking bassline doesn't just anchor the low end; it actively trades ideas with the guitar, giving the track a conversational quality that suits its position as the album shifts from energy to warmth. When the harmonized rock riff kicks in around the midpoint, it delivers a satisfying lift, something earned rather than assumed. Under three minutes, nothing wasted. In a collection that earns its consistency, this is one of the moments where the sequencing and the material work together without drawing attention to themselves, which is exactly the point.
+"Friedman's Folly" is a parable dressed as a song, and after the airless chill of "Below The Line" it brings the warmth and the people back: 4Castle let it build instead of forcing it. It opens stark, an organ-like drone under a close, dry vocal that sells the menace of "a meager man not born from wealth / with teeth too bright to trust." The real payoff comes around the midpoint, where acoustic guitar, steady percussion, and stacked harmonies swell the thing into something communal and gothic, a folk-anthem turn that earns its weight. The refrain, "The Bent built all but owned no part," lands like a worker's hymn, and the closing twist, "you can't eat yield, you can't drink growth," is the kind of plain-spoken gut-punch John Hiatt would respect. At a brisk pace in a bright-feeling key, the band trusts the slow reveal over the obvious hook, which makes this one a grower more than an instant grabber, but the patience pays off.
 
-### [4] april-all-day-long  _standalone 3_
+### [5] authenticity-factory  _standalone 2_
 
-After three tracks that have been gradually stepping down from the album's opening energy, april-all-day-long arrives as the first real stillness. The arc has decelerated from january-kiss's brisk tenderness through two uplifting but progressively slower entries, and by the time ides-of-march hands off, the listener is ready for something that simply settles. This waltz in a minor key obliges without apology, letting the 3/4 meter breathe at an unhurried pulse while electric guitar and what sounds like mandolin trade lines with the easy patience of musicians who have nothing to prove. It is the album's first genuine exhale, and PCBender holds it long enough to matter. The 12-section structure gives the piece room to develop without overstaying its welcome, and the clean-toned lead work in the midsections has a warmth reminiscent of early Mark Knopfler, fingerpicked and deliberate. What follows in may-flowers picks the tempo back up, which means april-all-day-long functions as the album's hinge point, the moment the calendar pauses before the year resumes its motion. A waltz shouldn't feel like a porch swing in late April, but PCBender pulls it off, and in context that unhurried quality earns its place.
+"Authenticity Factory" finds 4Castle in a colder, more deliberate mode: a midtempo groove in a minor key built on a crisp drum-machine pulse and punchy bass, with the usual face-melting guitar pulled way back in favor of space and restraint. Coming off the communal swell of "Friedman's Folly," the pullback is deliberate, and the satire is the whole point: it lands, especially the gut-punch line "Our greatest resource is our people, until you're not, then we delete you," and the corporate spoken-word monologue in the outro before it dissolves into that chanted "You are the product, you are bent." It's a slow build rather than an immediate hook, and listeners who come to this band for the harmony-stacked rock fireworks may need a couple of spins to settle in. A grower that rewards the patient, and one of the quietest knives in the collection.
 
-### [5] may-flowers  _standalone 4_
+### [6] voluntary-mandatory  _standalone 4_
 
-After 'April All Day Long' eases the album to its slowest and most intimate point, 'May Flowers' lifts the pace back to a midtempo waltz without abandoning the tender mood that has settled in across the first four tracks. That recovery matters: it keeps the album from pooling in one emotional register, while the 3/4 groove and warm, overdriven guitar keep the transition feeling organic rather than abrupt. The lead tone sings with vibrato phrasing and melodic double-stops that carry the emotional weight lyrics would elsewhere, and the spacious production never crowds the rhythm section, so each return of the lead feels earned. The 11-section structure gives PCBender room to develop ideas without rushing, and he does: this sits in the same pocket as early Gary Moore ballad-blues, tender without being soft. It also positions the album well for what follows, since 'June Gloom' arrives at the same tempo but shifts the mood toward something more openly emotional, a shift 'May Flowers' has quietly prepared the listener for.
+If "Authenticity Factory" asked for patience, "Voluntary Mandatory" pays the listener back with immediacy: the genius here is how cheerful it stays while gutting the modern workplace. At a brisk clip in a bright major key, those stacked harmonies and claps sound like an HR onboarding video that slowly curdles. The hook lands the thesis cold, 'Click the box that says you're proud / Then smile and nod along out loud,' and the spoken-word breakdown in the middle, where hushed voices ask 'Please elaborate on your lack of resilience' over a stripped-back beat, is the song's sharpest stroke. It's closer to Randy Newman's satirical streak than anything on the band's prog side, and the polish never undercuts the bite. Proof they can write a hook that thinks.
 
-### [6] june-gloom  _standalone 3_
+### [7] all-change-is-painful  _standalone 4_
 
-"June Gloom" arrives at the album's emotional center, and the timing feels deliberate. It follows "May Flowers" at the exact same tempo, but where that track leans tender, this one leans harder into something stormier, a mood shift that registers even before the first solo run lands. The waltz time is the key variable: in a collection that has mostly moved in straight rhythmic feel, the 3/4 pulse here creates a slight tilt underfoot, a sense of being pulled forward on a diagonal rather than a straight line.
+By now the album's corporate-satire engine is fully warm, and "All Change Is Painful" is its sharpest piece yet, a takedown of change-speak that lands because it commits to the bit. The track opens tense and brooding in a major key before it snaps into a power-chord drive, and the genius is in the lyric: "Adapt. Align. Absorb. Obey / You'll thank us all someday" is the kind of line that sticks in your teeth. That spoken-word interlude welcoming you to the "Attitude Pillar" could have felt gimmicky, but it sells the dystopian HR-handbook tone instead, and the cold cut to "If it isn't broke" at the end is a perfect mic-drop. Proof these guys can write with a knife.
 
-The guitar work is the main event. High-gain harmonized leads trade off against a rhythm section that keeps everything grounded rather than chaotic, and the rapid arpeggios across the middle sections are precise without feeling cold. The production gives each layer room to breathe despite the density, which is harder to pull off at this tempo in waltz time than it sounds.
+### [8] human-capital  _standalone 4_
 
-The placement earns its keep. Coming out of the album's slower, more reflective stretch through April and May, "June Gloom" reintroduces urgency without breaking the mood entirely, and it hands off to "Sparkles in July" with enough forward momentum that the uplifting turn there feels earned rather than abrupt. It is doing sequencing work as much as it is doing showcase work, and it does both dependably. A listener coming to this track alone will hear a confident guitar feature; a listener coming through the album will feel it as the moment the year in music stops drifting and starts moving again.
+"People are not numbers / You can't reduce a hand to score": that's the spine of "Human Capital," and 4Castle build it into a slow-burn dystopia that earns its payoff. After the snap and bite of "All Change Is Painful," this one slows the pulse and digs in: the verses stay tense and claustrophobic, all whispered narration over sparse industrial textures, before the choruses rupture into the kind of anthemic harmony declarations the band does best, riding a driving pulse in a minor key. The dead-eyed corporate interludes ("Your pain serves the greater gain") are a sharp touch, and the final fade to "nothing / now" lands the gut-punch the whole song is building toward. At over five minutes it asks for patience and the structural contrast can feel jarring on first pass, but this is one of their more ambitious swings and it holds.
 
-### [7] sparkles-in-july  _standalone 4_
+### [9] cracks-in-the-culture-deck  _standalone 4_
 
-'Sparkles in July' arrives at the album's exact midpoint, and the timing feels deliberate. The two tracks before it, 'May Flowers' and 'June Gloom', share a tempo and lean into tenderness and emotional weight. This one breaks the spell: the tight, funky groove kicks in and suddenly there's daylight. PCBender's lead guitar moves freely between rhythmic chops and full melodic solos without losing the thread, and the rhythm section keeps things spacious enough that each run lands with real clarity. It sits somewhere between a Robben Ford workout and a late-period Allman Brothers instrumental cut, warm and confident without overstaying its welcome at three and a half minutes. That lift carries into 'Too August', which settles back into tender territory from a higher energy floor than it would have had otherwise. In an album that tracks twelve months of emotional weather, 'Sparkles in July' earns its place as the moment summer actually shows up.
+4Castle aims its sharpest writing yet at corporate doublespeak, and the conceit holds: "You can't plant Eskimo belief / in desert grief" is the kind of line that earns its place in the chorus. Like "Human Capital" before it, the track works by contrast, opening on a brooding minor-key synth drone and intimate vocals before the chorus detonates into grinding, wall-of-sound guitars, and the mix keeps the vocal clear through all of it. The closing turn, "What's left ain't culture, mission, brand / Just faded ink / and empty hands," lands the indictment without overplaying it. Proof their songwriting can carry a heavy idea without sinking under it.
 
-### [8] too-august  _standalone 3_
+### [10] vision-values  _standalone 4_
 
-A waltz at a brisk clip sounds like a contradiction, but PCBender makes it feel inevitable: the triple meter gives his blues phrasing room to breathe and lean, and the creamy overdriven guitar sits in a clean, spacious mix that keeps every bend and rapid-fire run audible without crowding the pocket. It plays like a live-in-studio take, the kind of thing John Mayer might have cut after hours with a Stevie Ray Vaughan record on the turntable. Coming off the uplifting bounce of sparkles-in-july, the shift here into something warmer and more deliberate is well-timed: the album has been building through lighter textures, and too-august arrives as a confident, grounded anchor before the back half opens up again with september-on-my-mind. It does its job and does it well.
+The joke here is that the music never winks: at a bright tempo in a sunny major key, those gospel-style harmonies soar in total earnest while the lyrics gut the corporate playbook they're celebrating. After a run of brooding-to-detonation structures, "Vision & Values" wears its irony right on the surface, which makes its late move all the more striking. "Vision and values, strong and bright / Guiding every PowerPoint slide" is the kind of couplet that earns a real laugh, and the call-and-response bridge ("Our values true?" / "They're aligned with our K-P-I's") lands the satire cold. Best of all is the late turn when the arrangement drops out and the cynicism gives way to something genuine: "You build it from how people treat each other when no one's watching." That tonal pivot, anthem to ache, is what makes this more than a novelty, and a smarter one than its glossy surface lets on.
 
-### [9] september-on-my-mind  _standalone 4_
+### [11] stock-price-jesus  _standalone 4_
 
-A waltz at a brisk clip is a bold move, and PCBender pulls it off by leaning into the swing of it rather than fighting the meter, letting the rhythm section lock into a shuffle groove that feels more roadhouse than ballroom. Coming off the tender float of too-august, that shift in posture is immediately refreshing: where the previous track settles, this one leans forward. The lead guitar in a minor key is the whole story here, expressive bends, quick melodic runs, and a tone with just enough grit to keep it honest, the kind of playing that recalls early Gary Moore when he still had Texas on his mind. At just over three and a half minutes, it doesn't overstay its welcome, cycling through eleven sections that keep the ear guessing without ever losing the thread. Its uplifting energy also does useful work at this point in the calendar sequence, providing a lift before the album begins its gradual descent into autumn and the more reflective textures of october-boo-hoo and beyond. A strong argument that sometimes the song is just the guitar.
+4Castle turns a corporate satire into a slow-burning power ballad, and the conceit holds because they commit to it: "He walks on spreadsheets, multiplies believers" is the kind of line that earns its grandeur instead of winking at it. Coming after the late ache of "Vision & Values," this one leans all the way into theatrical scope, building at a patient pace with the mock-gospel swell of late-period Pink Floyd, and the late spoken-word interlude ("Disruption isn't easy. But it's necessary.") earns its keep by stripping the arrangement bare before the final high-register chorus comes crashing back. The clipped call-and-response section, "(Productivity) - Down, (Morale) - Shattered," is the sharpest writing here, a bulletin of collapse delivered with a straight face. The grandeur asks for your full attention rather than handing you an instant hook, but it lands cleanly as a piece of storytelling.
 
-### [10] october-boo-hoo  _standalone 3_
+### [12] at-what-cost  _standalone 4_
 
-'October Boo Hoo' arrives at position ten with a tempo drop that earns its place: after 'September on My Mind' lifts the album's energy to a brisk, uplifting peak, this waltz-time blues eases the listener back into something more private and unhurried. The pacing shift is exactly right. What follows, 'November I Never Remember,' needs a mood that leans nostalgic, and this track hands it over gently, already tilting toward reflection. It functions as a hinge in the album's long autumn sequence, and it does the job without announcing itself.
+This is 4Castle at their most patient, and after a stretch of satire it pulls the focus down to a single human face. The song opens nearly bare, a spoken-feeling vocal and sparse piano introducing Bentley, the lifer who watched 'the floor was poured' and stayed thirty-six years, and it earns its slow burn into that big harmonized chorus around the minute mark. The hook does real work: 'They took their cut. We bore the cost' lands with the plainspoken weight of a Springsteen factory song, and the major-key brightness underneath the bitterness gives the whole thing a stubborn dignity rather than just gloom. The final turn, 'So I sign off. I drop the key,' is the kind of small gesture that says more than a guitar solo would, and the band is smart enough to let it. One of their most affecting story-songs, and the right note to land before the album's cold final word.
 
-The track itself has the feel of late-afternoon playing, the kind where the guitarist is working something out for themselves and you happen to be in the room. At around the 53-second mark the phrasing opens up, slides stretching into melodic runs that gain weight without losing the relaxed center. At just under three minutes it doesn't overstay, and the clean, spacious production keeps every note accountable. In the full run of thirteen months, it is one of eight tracks that hold the album's middle rank, and it belongs there: dependable, unhurried, and considerably more useful in sequence than it might seem standing alone.
+### [13] nightmares-return  _standalone 2_
 
-### [11] november-i-never-remember  _standalone 4_
-
-A waltz-time roadhouse number in a minor key, 'November I Never Remember' arrives at exactly the right moment in the calendar. After 'October Boo Hoo' settles into its tender, reflective mood, this track shakes the room a little: the overdriven guitar tone is wide and punchy without getting muddy, and the tempo nudges just enough above its neighbors to signal that the year still has some fight left in it before the closing stretch begins.
-
-PCBender works through eleven distinct sections in just over three minutes, keeping the momentum honest rather than overstaying any single idea. The variety matters here. As the album moves into its final act, with 'Slipping into December' and the closing '366' both leaning tender and inward, this track earns its place as the last real surge of energy before the descent. It holds the room the way a good Stevie Ray Vaughan shuffle does: you stop what you're doing and just listen to the hands. In the arc of a thirteen-track year, that quality is not just welcome, it is necessary.
-
-### [12] slipping-into-december  _standalone 4_
-
-A waltz-time blues workout in a minor key, 'Slipping Into December' announces itself immediately with a call-and-response guitar figure so crisp and fast it dares you to keep up. At this tempo the shuffle never drags, and PCBender keeps the structure moving across its twelve sections without losing the groove that anchors it all. Think Robben Ford with the patience of a storyteller: technically dazzling, but the flash is always in service of feel.
-
-Arriving at position twelve, the track follows 'November I Never Remember' carrying the same mid-tempo pulse, but where November leans nostalgic, December sharpens into something more driven and immediate. The call-and-response figure reintroduces forward momentum right when the album needs it most, clearing space before the closer '366' can settle the year into its final, quieter reckoning. In a collection that has spent thirteen months cycling through tenderness, uplift, and emotional weight, December's blues energy is a tonic, the sound of a year not quite done asserting itself before it lets go.
-
-### [13] 366  _standalone 3_
-
-A two-and-a-half minute workout in E minor that wastes no time: the 3/4 groove locks in around the five-second mark and the guitars never let go, trading fluid blues runs and wide-panned leads with the kind of assertive tone you hear from players who have something to prove and the chops to back it up. The waltz feel gives the soloing more room to breathe than a straight-four would, and PCBender uses every measure of it. As a closer, that choice feels deliberate. After eleven months of mood shifts and tempo changes, the album arrives here with something grounded and unhurried, a track that doesn't try to summarize the year so much as sign off on it with confidence. The title nods to the leap year's extra day, and there is something fitting in that: not a grand finale, just one more good day before the calendar turns. A strong showcase for where his playing is right now, and a closer that earns its place without reaching for it.
+As a closer, "Nightmares Return" steps well outside their classic-rock blender, and the gamble mostly pays off. At a slow, deliberate pace in a major key, it builds a cold, industrial dystopia where workers are reduced to numbers, and the chorus lands the thesis cleanly: "People ain't numbers. You can't reduce / A hand to score, a name to use," a line that rhymes back to "Human Capital" and closes the album's loop. The robotic pitch-shifting and buzzing low end can feel a little airless across the long middle stretch, but the payoff is real: that final section strips the beat away into a reflective synth-pad coda, and "now I am dust inside the plan" hits harder for the silence around it, especially after the human warmth of "At What Cost." Not their most inviting cut on first pass, but it rewards repeat plays. A grower for the faithful.
