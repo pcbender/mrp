@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 from .album.cli import run_album, write_album_report
+from .audit import _main as _audit_main
 from .eval import approve as eval_approve, calibrate as eval_calibrate
 from .pipeline import show as pipeline_show
 from .batch import run_batch, write_report
@@ -245,6 +246,15 @@ def main() -> None:
     wb.add_argument("--force", action="store_true", help="Overwrite existing review files")
     wb.add_argument("--out", help=f"Input directory (default: {OUT_DIR})")
 
+    # critic audit …
+    aud = sub.add_parser("audit", help="Audit catalog against Masters and generate batch manifest")
+    aud.add_argument("--masters-dir", default="/mnt/c/Masters",
+                     help="Root directory of audio master files (default: /mnt/c/Masters)")
+    aud.add_argument("--manifest", help="Output manifest JSON path (default: manifests/catalog-YYYY-MM-DD.json)")
+    aud.add_argument("--report", help="Output audit report path (default: manifests/audit-YYYY-MM-DD.md)")
+    aud.add_argument("--force", action="store_true", help="Include already-processed tracks in manifest")
+    aud.add_argument("--out", help=f"Critic out/ directory (default: {OUT_DIR})")
+
     # critic calibrate …
     cal = sub.add_parser("calibrate", help="Check records against calibration spec; write calibration.md")
     cal.add_argument("--out", help=f"Output directory (default: {OUT_DIR})")
@@ -268,6 +278,20 @@ def main() -> None:
         cmd_approve(args)
     elif args.command == "writeback":
         cmd_writeback(args)
+    elif args.command == "audit":
+        import sys
+        sys.argv = ["critic audit"]
+        argv_parts = ["--masters-dir", args.masters_dir]
+        if args.manifest:
+            argv_parts += ["--manifest", args.manifest]
+        if args.report:
+            argv_parts += ["--report", args.report]
+        if args.force:
+            argv_parts.append("--force")
+        if args.out:
+            argv_parts += ["--out", args.out]
+        sys.argv += argv_parts
+        _audit_main()
     elif args.command == "calibrate":
         cmd_calibrate(args)
     else:

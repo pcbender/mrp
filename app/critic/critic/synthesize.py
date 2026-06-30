@@ -17,6 +17,7 @@ from pathlib import Path
 import anthropic
 
 from .config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
+from .usage import call_claude
 from .record import Review, TrackFinding, VerdictTier
 from .utils import scrub_emdash
 from .schema import validate_track_review, warn_issues
@@ -149,7 +150,8 @@ def synthesize(
     user_msg = _build_user_message(finding, target, target_tier, artist_name)
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-    response = client.messages.create(
+    response = call_claude(
+        client,
         model=selected_model,
         max_tokens=1024,
         system=system,
