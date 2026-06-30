@@ -57,7 +57,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/stab--here-comes-the-rain.mp3
     lyrics_text: 'Cracked ground, open sky
 
       Waited years for a reason why

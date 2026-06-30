@@ -1,0 +1,104 @@
+{
+  "track_id": "stab--bring-me-the-claws",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Bring Me The Claws.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--bring-me-the-claws.opus"
+  },
+  "lyrics": "Bring Me The Claws\n\nSend out the message\nTell Dad it’s time\nMeet us at dawn\nCircle behind\nScouts in the trees\nMove silent and fast\nSky with no moon\nAdvance to the last\n\nBring me the claws\n\nWe did not start\nBut we will end\nBetrayed by one\nOnce called a friend\nHow many lost\nWhat is enough\nNever forget\nDeath at the bluff\n\nBring me the claws\n\nStill long shadows\nMoving down hill\nCrow and magpie\nAll had their fill\nWe pressed, they ran\nBrave and afraid\nBalance restored\nBut no one saved\n\nBring me the claws\n\nBring me the claws\n\nBring me the claws",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 99.4,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 234.0,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.73,
+        "label": "S1"
+      },
+      {
+        "start": 11.73,
+        "end": 26.98,
+        "label": "S2"
+      },
+      {
+        "start": 26.98,
+        "end": 45.49,
+        "label": "S3"
+      },
+      {
+        "start": 45.49,
+        "end": 82.99,
+        "label": "S4"
+      },
+      {
+        "start": 82.99,
+        "end": 106.97,
+        "label": "S5"
+      },
+      {
+        "start": 106.97,
+        "end": 161.36,
+        "label": "S6"
+      },
+      {
+        "start": 161.36,
+        "end": 185.02,
+        "label": "S7"
+      },
+      {
+        "start": 185.02,
+        "end": 234.0,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.774
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "pop rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a dark and suspenseful atmosphere, built on a tight electronic pulse, a clean arpeggiated guitar, and intimate, breathy female vocals. The energy builds from a controlled, determined verse into an expansive and powerful chorus, where distorted guitars and soaring background vocal harmonies create a feeling of anthemic release. The production is clean and well-balanced, effectively contrasting the spaciousness of the verses with the dense, immersive wall-of-sound in the chorus, allowing both the intimate lead vocal and the massive instrumental layers to have impact. A defining quality is the transition into the chorus at 0:56, where the track suddenly opens up into a vast, reverb-drenched space, establishing the song's epic and emotional scale.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A war-council anthem in G major, 'Bring Me The Claws' earns its tension through contrast: the verses move at a controlled, deliberate pace, intimate vocals and clean arpeggiated guitar doing the quiet work before the chorus blows the doors off with distorted guitars and stacked harmonies that hit like a Bangles track crossed with something rawer and older. The lyric 'Betrayed by one, once called a friend' lands with the kind of plainspoken weight that good rock writing aims for, and STAB delivers it with enough cool restraint to make the chorus payoff feel genuinely earned. Play this first.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "G major",
+      "arpeggiated guitar verse texture",
+      "distorted guitar chorus",
+      "lyric: 'Betrayed by one, once called a friend'",
+      "verse-to-chorus contrast",
+      "Bangles comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

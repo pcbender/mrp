@@ -1,0 +1,114 @@
+{
+  "track_id": "stab--tits-up-remix-2",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Tits Up (Remix).wav",
+    "proxy": "/home/mrose/audio/proxy/stab--tits-up-remix-2.opus"
+  },
+  "lyrics": "",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 179.32,
+    "lufs": -12.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.14,
+        "label": "S1"
+      },
+      {
+        "start": 2.14,
+        "end": 18.16,
+        "label": "S2"
+      },
+      {
+        "start": 18.16,
+        "end": 42.03,
+        "label": "S3"
+      },
+      {
+        "start": 42.03,
+        "end": 58.1,
+        "label": "S4"
+      },
+      {
+        "start": 58.1,
+        "end": 85.12,
+        "label": "S5"
+      },
+      {
+        "start": 85.12,
+        "end": 111.39,
+        "label": "S6"
+      },
+      {
+        "start": 111.39,
+        "end": 127.8,
+        "label": "S7"
+      },
+      {
+        "start": 127.8,
+        "end": 143.78,
+        "label": "S8"
+      },
+      {
+        "start": 143.78,
+        "end": 159.87,
+        "label": "S9"
+      },
+      {
+        "start": 159.87,
+        "end": 179.32,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.91
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a high-energy, modern rock track with a dense and confrontational atmosphere, driven by layers of heavily distorted guitars and a tight, punchy rhythm section. The production quality is polished and powerful, creating a wide wall of sound where the angst-filled lead vocal sits clearly on top without getting lost in the mix. The feel is relentlessly driving and full of classic pop-punk defiance, with explosive, anthemic choruses that serve as cathartic peaks. A defining moment occurs in the bridge, where a spoken, filtered vocal provides a stark textural shift that builds tension effectively before the final, powerful chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The remix strips away any breathing room and replaces it with a wall of distorted guitar that feels genuinely confrontational, those densely layered riffs hitting harder at 89 BPM than you'd expect from a mid-tempo E minor groove. The ten-section structure keeps things moving across under three minutes, and the filtered spoken passage that surfaces around the bridge is a smart left turn, pulling tension tight before the final push. It's an instrumental that earns its volume.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "89.1 BPM",
+      "E minor",
+      "ten-section structure",
+      "filtered spoken bridge passage",
+      "duration under three minutes",
+      "distorted guitar layers"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

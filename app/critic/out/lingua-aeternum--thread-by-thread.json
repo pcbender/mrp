@@ -1,0 +1,109 @@
+{
+  "track_id": "lingua-aeternum--thread-by-thread",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Thread By Thread.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--thread-by-thread.opus"
+  },
+  "lyrics": "I shudder in the cold\nBut the room is crazy hot\nThis place feels good and old\nBut time forgets what it forgot\n\nWhat’s broken speaks the loudest part\nWhat’s missing makes the work of art\n\nAn endless thread is just a string…\nUntil it’s woven\nA tapestry is simply cloth…\nUntil the colors are chosen\nThread by thread (Thread by thread)\nThread by thread (Thread by thread)\n\nI never cared for quiet\nAnd I never like it loud\nThe gift-I have to buy it\nWith my song, if I’m allowed\n\nWhat’s broken speaks the loudest part\nWhat’s missing makes the work of art\n\nAn endless thread is just a string…\nUntil it’s woven\nA tapestry is simply cloth…\nUntil the colors are chosen\nThread by thread (Thread by thread)\nThread by thread (Thread by thread)\n\nI search for signs in silence\nBut the noise reveals much more\nThe truth, a veiled defiance\nHiding just behind the door\n\nWhat’s broken speaks the loudest part\nWhat’s missing makes the work of art\n\nAn endless thread became something\nWhen we began weaving\nA tapestry once only cloth\nNow sings with meaning\nThread by thread (Thread by thread)\nWe are woven (Thread by thread)\n\nUntil we’re whole…\nThread by thread (Thread by thread)\nUntil we’re whole…\nThread by thread (Thread by thread)",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 92.3,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 200.0,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.48,
+        "label": "S1"
+      },
+      {
+        "start": 6.48,
+        "end": 28.1,
+        "label": "S2"
+      },
+      {
+        "start": 28.1,
+        "end": 62.32,
+        "label": "S3"
+      },
+      {
+        "start": 62.32,
+        "end": 82.96,
+        "label": "S4"
+      },
+      {
+        "start": 82.96,
+        "end": 127.69,
+        "label": "S5"
+      },
+      {
+        "start": 127.69,
+        "end": 146.19,
+        "label": "S6"
+      },
+      {
+        "start": 146.19,
+        "end": 172.15,
+        "label": "S7"
+      },
+      {
+        "start": 172.15,
+        "end": 187.76,
+        "label": "S8"
+      },
+      {
+        "start": 187.76,
+        "end": 200.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.983,
+      "key": 0.833
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This modern rock track delivers an urgent and anthemic atmosphere, contrasting its more reflective verses with explosive, emotionally charged choruses. The energy is consistently high and forward-propelling, supported by a polished and dense production that layers multiple distorted guitars and powerful drums. Despite the density of the arrangement, the lead vocal remains clear and centered in the mix, never getting lost in the powerful instrumental. The song's most defining quality is its effective use of dynamic contrast, building from a sparse verse into a huge, stadium-sized chorus that feels both climactic and memorable.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The chorus hook on 'Thread by Thread' earns its keep the old-fashioned way: the lyric 'what's broken speaks the loudest part / what's missing makes the work of art' lands with the kind of plain-spoken conviction that Springsteen built whole albums around, and at 92 BPM in B minor the track has enough forward momentum to carry the sentiment without overselling it. The dynamic build from spare verse to full-band surge is handled cleanly, the vocal staying centered and clear even when the guitars pile up behind it. It is a dependable cut that does its job and does it well.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "92 BPM",
+      "B minor",
+      "lyric: 'what's broken speaks the loudest part / what's missing makes the work of art'",
+      "dynamic contrast verse-to-chorus",
+      "vocal clarity in dense mix",
+      "Springsteen comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

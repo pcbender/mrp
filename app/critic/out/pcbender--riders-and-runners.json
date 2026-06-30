@@ -1,0 +1,113 @@
+{
+  "track_id": "pcbender--riders-and-runners",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Riders and Runners.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--riders-and-runners.opus"
+  },
+  "lyrics": "Playing card characters speaking in echoes\nThey justify motives by placing the blame\nBut me, in my silence, desperate for meaning\nHold on to nothing and resign from the game\n\nShadows stretch, but they never break\nTruth is hollow when intent is fake\n\nThe riders turn and run\nWhen the runners turn and fight\nLines are drawn, then come undone\nWhen the riders turn and run\n\nOutraged pretenders keep missing their marks\nQuestioning little with smiling contempt\nStained glass reflections distorting the image\nThe merciless mannequins stumble and fall\n\nShadows stretch, but they never break\nTruth is hollow when intent is fake\n\nThe riders turn and run\nWhen the runners turn and fight\nLines are drawn, then come undone\nWhen the riders turn and run\n\nIs there meaning in the turning\nOr just lessons still to learn\nCycles spin in endless waves\nFear's the drug the runners crave\n\nThe riders turn and run\nWhen the runners turn and fight\nLines are drawn, then come undone\nWhen the riders turn and run\n\nThe riders turn and run\nWhen the runners turn and fight\nLines are drawn, then come undone\nWhen the riders turn and run",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "D#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 239.4,
+    "lufs": -13.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 20.6,
+        "label": "S1"
+      },
+      {
+        "start": 20.6,
+        "end": 41.52,
+        "label": "S2"
+      },
+      {
+        "start": 41.52,
+        "end": 85.68,
+        "label": "S3"
+      },
+      {
+        "start": 85.68,
+        "end": 101.75,
+        "label": "S4"
+      },
+      {
+        "start": 101.75,
+        "end": 116.98,
+        "label": "S5"
+      },
+      {
+        "start": 116.98,
+        "end": 144.31,
+        "label": "S6"
+      },
+      {
+        "start": 144.31,
+        "end": 162.77,
+        "label": "S7"
+      },
+      {
+        "start": 162.77,
+        "end": 192.47,
+        "label": "S8"
+      },
+      {
+        "start": 192.47,
+        "end": 221.38,
+        "label": "S9"
+      },
+      {
+        "start": 221.38,
+        "end": 239.4,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.974,
+      "key": 0.927
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a dramatic and introspective atmosphere with clean, arpeggiated guitars and emotive vocals that build a palpable sense of tension. The energy explodes in the anthemic choruses, driven by a thick wall of distorted guitars and a powerful rhythm section, establishing a strong dynamic shift between contemplative verses and aggressive release. The production is modern and polished, creating a dense yet clear mix where the layered guitars feel massive without sacrificing the clarity of the commanding central vocal. The most defining quality is this stark contrast between the clean verses and the soaring, heavy choruses, which gives the song its powerful emotional arc.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The contrast does the heavy lifting here: clean arpeggiated guitars open each verse with a kind of coiled restraint, and then the chorus hits like a door coming off its hinges, distorted and wide, the rhythm section locking in hard at that 112 BPM clip. Lyrically, PCBender is in his element, 'stained glass reflections distorting the image' landing as the kind of line that earns its keep. The hook itself is sharp and repeatable, the riders-and-runners inversion giving it a folk-parable quality not far from Tom Petty at his most allegorical. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "arpeggiated clean guitar verses vs. distorted chorus wall",
+      "112 BPM rhythm section lock",
+      "lyric quote: 'stained glass reflections distorting the image'",
+      "riders-and-runners inversion in hook",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

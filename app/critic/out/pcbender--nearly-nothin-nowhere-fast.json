@@ -1,0 +1,98 @@
+{
+  "track_id": "pcbender--nearly-nothin-nowhere-fast",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Nearly Nothin’ Nowhere Fast.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--nearly-nothin-nowhere-fast.opus"
+  },
+  "lyrics": "Well I woke up slow in a hurry to wait\nTried to choose my way but I showed up late\nGot a map in my hand, but the roads all bend\nEvery turn I take just loops 'round again\n\nNearly nothin', nowhere fast\nRunnin' in circles, lettin' life slip past\nGot a foot on the gas, but I can't commit\nTo a left or a right or to sit for a bit\nNeedin' somethin' solid, but it just don't last\nNearly nothin', nowhere fast\n\nI called up Sue, she put me on hold\nSaid \"You gotta know what you want, or the coffee gets cold\"\nI said, \"I might love you,\" she said, \"Boy that's a laugh!\"\nKinda sounded like she's writin' my epitaph\n\nNearly nothin', nowhere fast\nCaught between the future and the overcast\nGot a suitcase packed with could've-beens\nAnd a jukebox heart stuck on the spins\nFull of almost songs and questions un-asked\nNearly nothin', nowhere fast\n\nSlide guitar's cryin' just like me\nPlayin' the blues in the key of \"maybe\"\nIf doubt was gold, I'd be a rich man\nBut I'm half asleep and livin' the dream\n\nSo I raise my glass to the in-between\nTo the halfway saints and might-have-beens\nA toast to the folks who can't pick a lane\nStill hummin' their song in the drivin' rain\n\nNearly nothin', nowhere fast\nChasin' my tail like it might be cash\nGot a beat-up soul and a two-step chance\nTo finally stumble into circumstance\nBut until then I'll raise a glass\nTo Nearly nothin', nowhere fast\n\nYeah, I might not know where I'm headed\nBut I sure took my time NOT gettin' there",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 202.52,
+    "lufs": -13.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.37,
+        "label": "S1"
+      },
+      {
+        "start": 2.37,
+        "end": 29.91,
+        "label": "S2"
+      },
+      {
+        "start": 29.91,
+        "end": 67.41,
+        "label": "S3"
+      },
+      {
+        "start": 67.41,
+        "end": 113.92,
+        "label": "S4"
+      },
+      {
+        "start": 113.92,
+        "end": 136.25,
+        "label": "S5"
+      },
+      {
+        "start": 136.25,
+        "end": 171.97,
+        "label": "S6"
+      },
+      {
+        "start": 171.97,
+        "end": 202.52,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.966,
+      "key": 0.907
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a polished, high-energy country-rock track with a restless yet confident emotional atmosphere. The feel is driving and powerful, carried by a punchy, upfront rhythm section and dense layers of electric guitars that blend bluesy slide licks with modern rock crunch. The production creates a wide, full sonic space where the character-driven lead vocal remains the clear and articulate focus. A particularly distinctive feature is the fiery, melodic guitar solo, which provides a powerful instrumental centerpiece that elevates the song's already high energy level.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has a gift for turning existential drift into something you can two-step to, and 'Nearly Nothin', Nowhere Fast' is that gift in full swing. The hook earns its keep: 'a jukebox heart stuck on the spins' is the kind of line that lands on first listen and sticks around, and the E minor groove at 117 BPM keeps the whole thing moving with exactly the restless urgency the lyric calls for. The slide guitar solo that arrives midway through is the real standout, a fiery, melodic centerpiece that does the emotional work the verses set up, somewhere between early Allman Brothers and a sunburned John Hiatt. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'a jukebox heart stuck on the spins'",
+      "lyric: 'Yeah, I might not know where I’s headed / But I sure took my time NOT gettin’ there'",
+      "E minor key",
+      "117.5 BPM",
+      "slide guitar solo as structural centerpiece"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "track_id": "4castle--delusion-of-truth",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Delusion of Truth.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--delusion-of-truth.opus"
+  },
+  "lyrics": "It's not a sin, to think again\nIt depends what you've seen\nFeel the pain, make it real\nNothing alters what you reveal\nJust remember, it's all a game\nWinner, loser, it's all the same\nTemperamental, not born to lose\nIn the moment, you have to choose\n\nI'll bet you won't let go\nOf the shit you think you know, oh no\nImagine for a moment\nThat the truth is not objective, oh yeah\n\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble\n\nStep in line, don't fall behind\nEvery word is a seed\nTear it down, build it new\nWhat you know is what they choose\nFace the mirror, see what remains\nTruth is shifting, it never stays\nClose your eyes, hold on tight\nTell yourself it's black and white\n\nI'll bet you won't let go\nOf the shit you think you know, oh no\nImagine for a moment\nThat the truth is not objective, oh yeah\n\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble\n\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble, the Delusion of Truth\nWelcome to the bubble",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "C",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 204.28,
+    "lufs": -13.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 17.76,
+        "label": "S1"
+      },
+      {
+        "start": 17.76,
+        "end": 32.74,
+        "label": "S2"
+      },
+      {
+        "start": 32.74,
+        "end": 55.43,
+        "label": "S3"
+      },
+      {
+        "start": 55.43,
+        "end": 78.62,
+        "label": "S4"
+      },
+      {
+        "start": 78.62,
+        "end": 103.84,
+        "label": "S5"
+      },
+      {
+        "start": 103.84,
+        "end": 159.34,
+        "label": "S6"
+      },
+      {
+        "start": 159.34,
+        "end": 184.71,
+        "label": "S7"
+      },
+      {
+        "start": 184.71,
+        "end": 201.73,
+        "label": "S8"
+      },
+      {
+        "start": 201.73,
+        "end": 204.28,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.974,
+      "key": 0.918
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "defiant"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a dense, high-gain modern rock texture, creating a confrontational and urgent emotional atmosphere led by a powerful, forward vocal. The energy is relentlessly high and driving, with a propulsive feel established by the locked-in, pounding drums and chugging rhythm guitars. Sonically, the production is very full and polished, with all elements compressed to sit tightly together in a cohesive, loud wall of sound without feeling muddy. A defining feature is the anthemic, layered vocal hook in the chorus (\"Welcome to the bubble\"), which is immediately catchy and serves as the track's central, memorable statement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 136 BPM in C minor, 'Delusion of Truth' hits the ground running and doesn't let up: the rhythm section locks in tight from the first bar, and that chorus, 'Welcome to the bubble, the Delusion of Truth,' lands with the kind of communal punch that Audioslave used to own. The pre-chorus hook, 'I'll bet you won't let go / Of the shit you think you know,' is blunt in the best way, and the layered vocals make it feel like a full room agreeing with you. The production is dense and loud without turning to mud, which is harder to pull off than it sounds.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 136",
+      "C minor",
+      "chorus lyric 'Welcome to the bubble, the Delusion of Truth'",
+      "pre-chorus lyric 'I'll bet you won't let go / Of the shit you think you know'",
+      "layered vocal hook",
+      "rhythm section lock",
+      "Audioslave comparison",
+      "production density"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "track_id": "lingua-aeternum--ramps-and-lanes",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Ramps and Lanes.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--ramps-and-lanes.opus"
+  },
+  "lyrics": "Lines divide\nNot to bind, but to guide\nMovement follows\nWhat was decided\nColors fade\nBoundaries stay\nSignals flash\nBut silence obeys\n\nNot the path\nbut the choosing\nNot the line\nbut the leaning\nLet the lanes\nbe drawn in motion\nLet the rules\nbe made by moving\n\nSlope invites\nWhat flat denies\nA gentle rise\nBecomes a flight\nExit unseen\nUntil the need\nDeparture whispered\nNot decreed\n\nNot the path\nbut the choosing\nNot the line\nbut the leaning\nLet the lanes\nbe drawn in motion\nLet the rules\nbe made by moving\n\nCurves become\nThe lines to come\nNo map holds\nWhat must be run\nEach ascent\nReveals design\nEvery turn\nAnother sign\n\nNot the path\nbut the choosing\nNot the line\nbut the leaning\nLet the lanes\nbe drawn in motion\nLet the life\nbe made by moving",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 208.28,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.68,
+        "label": "S1"
+      },
+      {
+        "start": 9.68,
+        "end": 24.98,
+        "label": "S2"
+      },
+      {
+        "start": 24.98,
+        "end": 48.58,
+        "label": "S3"
+      },
+      {
+        "start": 48.58,
+        "end": 71.31,
+        "label": "S4"
+      },
+      {
+        "start": 71.31,
+        "end": 88.05,
+        "label": "S5"
+      },
+      {
+        "start": 88.05,
+        "end": 104.44,
+        "label": "S6"
+      },
+      {
+        "start": 104.44,
+        "end": 121.81,
+        "label": "S7"
+      },
+      {
+        "start": 121.81,
+        "end": 137.53,
+        "label": "S8"
+      },
+      {
+        "start": 137.53,
+        "end": 154.85,
+        "label": "S9"
+      },
+      {
+        "start": 154.85,
+        "end": 175.19,
+        "label": "S10"
+      },
+      {
+        "start": 175.19,
+        "end": 195.05,
+        "label": "S11"
+      },
+      {
+        "start": 195.05,
+        "end": 208.28,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.973,
+      "key": 0.762
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a polished and atmospheric rock track, establishing a contemplative yet determined mood through its layers of clean, arpeggiated electric guitars and more sustained, overdriven lead lines. The energy is a steady, driving force, propelled by a tight rhythm section that gives the song a feeling of constant forward motion without being aggressive. The production is wide and clear, allowing each element, from the articulate vocals to the resonant bass, to occupy its own defined space within a cohesive mix. A defining quality is the central lyrical refrain, \"Not the path but the choosing,\" which serves as a powerful thematic anchor, reinforced by tasteful, melodic guitar work that builds emotional intensity.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 143 BPM in a bright E major, 'Ramps and Lanes' keeps moving the way its lyrics insist you should: forward, by choice, not by force. The central hook, 'Not the path but the choosing,' lands with the kind of clean conviction that early Counting Crows used to manage before everything got complicated, and the arpeggiated guitar work underneath it earns every bit of the lift the chorus promises. It does its job and does it well.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "BPM 143.6",
+      "E major",
+      "quoted lyric: 'Not the path but the choosing'",
+      "arpeggiated electric guitar",
+      "Counting Crows comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

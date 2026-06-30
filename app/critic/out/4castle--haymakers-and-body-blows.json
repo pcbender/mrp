@@ -1,0 +1,110 @@
+{
+  "track_id": "4castle--haymakers-and-body-blows",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Haymakers and Body Blows.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--haymakers-and-body-blows.opus"
+  },
+  "lyrics": "Swingin' in the ring, I never saw it comin'\nFirst hit landed, now my heartbeat's drummin'\nHands of fire, work a left-right combo\nI'm reelin', I'm feelin', I'm stuck in the tornado\n\nOh-oh, I should've seen it comin'\nOh-oh, but I was runnin' blind\nOh-oh, now I'm dizzy from the way you got me\nHooked and tangled up inside\n\nOh-oh, Haymakers and body blows\nYou're knockin' me out, you're takin' control\nClinching in the corner, keep me in the bout\nOne more round and I'm down for the count, Oh-oh\n\nOut on my feet but I don't wanna stop it\nEvery word you say is hittin' like a rocket\nYou push me hard, but damn, I kinda like it\nI should run, but I don't wanna fight it\n\nOh-oh, I should've seen it comin'\nOh-oh, but I was runnin' blind\nOh-oh, now I'm dizzy from the way you got me\nHooked and tangled up inside\n\nOh-oh, Haymakers and body blows\nYou're knockin' me out, you're takin' control\nClinching in the corner, keep me in the bout\nOne more round and I'm down for the count, Oh-oh\n\nOne, two, don't you let me go\nThree, four, come and take it slow\nFive, six, we can lose control\nSeven, eight, baby, here we go\n\nOh-oh, Haymakers and body blows\nYou're knockin' me out, you're takin' control\nClinching in the corner, keep me in the bout\nOne more round and I'm down for the count, Oh-oh\n\nSwingin' in the dark, I never saw it comin'\nFirst hit landed, now my heartbeat's drummin'",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 184.92,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 14.79,
+        "label": "S1"
+      },
+      {
+        "start": 14.79,
+        "end": 34.06,
+        "label": "S2"
+      },
+      {
+        "start": 34.06,
+        "end": 60.91,
+        "label": "S3"
+      },
+      {
+        "start": 60.91,
+        "end": 76.07,
+        "label": "S4"
+      },
+      {
+        "start": 76.07,
+        "end": 105.19,
+        "label": "S5"
+      },
+      {
+        "start": 105.19,
+        "end": 132.73,
+        "label": "S6"
+      },
+      {
+        "start": 132.73,
+        "end": 150.49,
+        "label": "S7"
+      },
+      {
+        "start": 150.49,
+        "end": 165.54,
+        "label": "S8"
+      },
+      {
+        "start": 165.54,
+        "end": 184.92,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.965,
+      "key": 0.815
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track immediately presents a dense, high-stakes atmosphere, using a boxing metaphor to create a feeling of thrilling, almost dangerous, romantic tension. The energy is relentlessly high and driving from the start, fueled by a powerful rock rhythm section and anthemic guitar layers that give it a polished, pop-rock swagger. The production quality is excellent, with a clean and wide mix where the punchy drums and bass anchor the track, allowing the commanding female lead vocal to sit clearly on top of the powerful instrumentation. A defining quality is the incredibly catchy and energetic chorus, where the \"haymakers and body blows\" hook provides a memorable and impactful peak.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 161 BPM in G minor, 'Haymakers and Body Blows' hits like it means to: the lead vocal cuts clean above a punchy rhythm section, and the chorus hook lands with the kind of momentum that makes you want to replay it before the track even finishes. The countdown bridge, 'One, two, don't you let me go,' is a smart structural move that releases tension just right before the final chorus push. Four members singing means the harmonies on those 'Oh-oh' lifts have real weight behind them, and the production keeps the mix wide enough to let every layer breathe without crowding the vocal. This is a highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 161",
+      "G minor key",
+      "lead vocal placement",
+      "chorus hook 'Haymakers and body blows'",
+      "countdown bridge lyric 'One, two, don't you let me go'",
+      "multi-vocal harmonies on Oh-oh lifts",
+      "production mix width"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

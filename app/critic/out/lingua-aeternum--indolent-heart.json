@@ -1,0 +1,104 @@
+{
+  "track_id": "lingua-aeternum--indolent-heart",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Indolent Heart.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--indolent-heart.opus"
+  },
+  "lyrics": "I wake to walls I’ve seen too long\nA half-remembered morning song\nThe mirror shows a memory\nSoft around the edges, quietly\n\nIndolent heart, slow to start\nBeating time in the dark\nStirred by chaos, calmed by art\nStill an indolent heart\n\nOnce I chased a flicker in the wind\nA voice too strange to let begin\nThe rhythm broke, the silence cracked\nThen order came and pulled it back\n\nIndolent heart, slow to start\nBeating time in the dark\nStirred by chaos, calmed by art\nStill an indolent heart\n\nThere’s a storm outside my chest\nBut the windows never break\nI feel the tremble, then forget-\nA stir, a pause, a small escape\n\nIndolent heart, soft and slow\nStill afraid of what it knows\nBut every silence has a spark-\nA whisper deep inside the dark\n\nI move, I stay\nI hum, I stray\nNo anthem, no fresh start\nBut not yet gone-my indolent heart",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 204.36,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 22.06,
+        "label": "S1"
+      },
+      {
+        "start": 22.06,
+        "end": 44.44,
+        "label": "S2"
+      },
+      {
+        "start": 44.44,
+        "end": 74.51,
+        "label": "S3"
+      },
+      {
+        "start": 74.51,
+        "end": 89.75,
+        "label": "S4"
+      },
+      {
+        "start": 89.75,
+        "end": 104.75,
+        "label": "S5"
+      },
+      {
+        "start": 104.75,
+        "end": 128.52,
+        "label": "S6"
+      },
+      {
+        "start": 128.52,
+        "end": 155.6,
+        "label": "S7"
+      },
+      {
+        "start": 155.6,
+        "end": 204.36,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.962,
+      "key": 0.912
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a vast, atmospheric synth choir, establishing an introspective and slightly somber mood that supports a clear, melodic male vocal. The energy builds methodically from a contemplative verse into an anthemic, driving chorus, creating a feel of gradual emotional release and forward momentum. The production is modern and polished, featuring a spacious mix where punchy electronic drums and layered synths provide a dense yet well-defined foundation for the prominent lead vocal. A defining moment occurs in the breakdown at 2:17, where the arrangement strips back to a soft, vulnerable state before rebuilding into a powerful, cathartic final section that encapsulates the track's dynamic journey.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Indolent Heart\" earns its title honestly: it moves at a deliberate pace that belies its 129 BPM clip, the rhythm engine buried under synth choir and a vocal that stays unhurried right up until the chorus breaks open. That chorus lands well, built on the kind of contrast that makes emotional payoff feel deserved rather than manufactured. The real argument for the track, though, is the breakdown around the 2:17 mark, where the arrangement goes quiet and the lyric \"every silence has a spark\" sits exposed before the final build comes back in. It's a small structural gamble that pays off.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 129.2",
+      "D major",
+      "breakdown at 2:17",
+      "lyric 'every silence has a spark'",
+      "synth choir texture from audio impression",
+      "chorus structure contrast"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "track_id": "4castle--a-long-hard-road",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/A Long Hard Road.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--a-long-hard-road.opus"
+  },
+  "lyrics": "Listen, oh traveller, gather your mind\nLay down your burdens, ignore the signs\nLoosen your grasp and love just the same\nLife is a gift, not something you tame\n\nIt’s a long (Long)\nIt’s a long (Long)\nIt’s a long (Long)\nIt’s a long hard road…\nThat leads to the end\n\nYou long for the lovely, turn from the pain\nBuild castles from sand and hope they remain\nYou plot and you plan, leave nothing to chance\nWhat feels like a loss is part of the dance\n\nIt’s a long (Long)\nIt’s a long (Long)\nIt’s a long (Long)\nIt’s a long hard road…\nThat leads to the end\n\nThe boots that I wear are worn to the sole\nMy stride has grown soft with miles to go\nAgain and again, I asked the gods, \"Why?\"\nThe lack of an answer is the truest reply\n\nIt’s a long (Long)\nIt’s a long (Long)\nIt’s a long (Long)\nIt’s a long hard road…\nThat leads to the end\n\nIt’s a long (Long)\nIt’s a long (Long)\nIt’s a long (Long)\nIt’s a long hard road…\nThat leads to the end",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 224.0,
+    "lufs": -15.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.88,
+        "label": "S1"
+      },
+      {
+        "start": 2.88,
+        "end": 17.93,
+        "label": "S2"
+      },
+      {
+        "start": 17.93,
+        "end": 43.86,
+        "label": "S3"
+      },
+      {
+        "start": 43.86,
+        "end": 59.23,
+        "label": "S4"
+      },
+      {
+        "start": 59.23,
+        "end": 79.64,
+        "label": "S5"
+      },
+      {
+        "start": 79.64,
+        "end": 99.2,
+        "label": "S6"
+      },
+      {
+        "start": 99.2,
+        "end": 115.17,
+        "label": "S7"
+      },
+      {
+        "start": 115.17,
+        "end": 135.19,
+        "label": "S8"
+      },
+      {
+        "start": 135.19,
+        "end": 152.51,
+        "label": "S9"
+      },
+      {
+        "start": 152.51,
+        "end": 175.12,
+        "label": "S10"
+      },
+      {
+        "start": 175.12,
+        "end": 191.47,
+        "label": "S11"
+      },
+      {
+        "start": 191.47,
+        "end": 214.88,
+        "label": "S12"
+      },
+      {
+        "start": 214.88,
+        "end": 224.0,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.956,
+      "key": 0.97
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "country",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a sparse and intimate texture, creating a contemplative and heartfelt emotional atmosphere led by a gentle male vocal and a clean acoustic guitar. The energy level is low and steady, with a slow-burning, narrative feel that draws the listener into the story without the drive of percussion. The production quality is excellent, featuring a spacious and clear mix where the layered, choir-like background vocals add significant depth and emotional weight without cluttering the foreground. The most distinctive quality is the call-and-response between the lead vocal and these rich background harmonies, which elevates a simple folk arrangement into something more profound and anthemic.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The third verse is where this one earns its keep: 'The boots that I wear are worn to the sole / My stride has grown soft with miles to go' lands with the quiet authority of a line that has been lived in, not just written. At 123 BPM in A major, the track never rushes, and the production gives it room to breathe, clean acoustic guitar up front, with those five-part harmonies swelling in on the chorus like a congregation finding its footing. The call-and-response between the lead vocal and the choir on 'It's a long, long, long hard road' is the hook doing exactly what a hook should, sticking not because it's clever but because it's true.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'The boots that I wear are worn to the sole / My stride has grown soft with miles to go'",
+      "BPM: 123.0",
+      "Key: A major",
+      "call-and-response hook structure",
+      "five-part vocal harmonies",
+      "clean acoustic guitar production"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

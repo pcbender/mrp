@@ -1,0 +1,101 @@
+{
+  "track_id": "stab--burn-me",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Burn Me.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--burn-me.opus"
+  },
+  "lyrics": "Feel you staring, from the wall\nEyes like heat, they see it all\nHidden sparks when you move\nI don't think, I like, I take\n\nBreath is thick, head is spinning\nHands are cold, I am tripping\nNo words, no signs\nHit the gas, I am flying\n\nBurn me, that shit is tight\nBurn me, make me feel alright\nFire and skin, a perfect fix\nSet me off, don't let me quit-Burn me\n\nLips say nothing, bodies speak loud\nPull me close, don't slow down\nFingers trace my skin\nOne more kiss, I move in\n\nBreath is thick, head is spinning\nBody's hot, I am stripping\nNo words, no signs\nHit the gas, I am flying\n\nBurn me, that shit is tight\nBurn me, make me feel alright\nFire and skin, a perfect fix\nSet me off, don't let me quit-Burn me\n\nSingle nights, endless fails\nNo one hears, no one calls\nMade up smiles, faceless names\nThe needless longing ends…\n\nBurn me, that shit is tight\nBurn me, make me feel alright\nFire and skin, a perfect fix\nSet me off, don't let me quit-Burn me\n\nBreath is thick, head is spinning\nBody's spent, I am dripping\nNo words, no signs\nHit the gas, I am flying\n\nBurn me, that shit is tight\nBurn me, make me feel alright\nFire and skin, a perfect fix\nSet me off, don't let me quit-Burn me\n\nBurn me\nBurn me\nBurn me\nBurn me",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 184.96,
+    "lufs": -13.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 23.78,
+        "label": "S1"
+      },
+      {
+        "start": 23.78,
+        "end": 68.48,
+        "label": "S2"
+      },
+      {
+        "start": 68.48,
+        "end": 86.84,
+        "label": "S3"
+      },
+      {
+        "start": 86.84,
+        "end": 112.48,
+        "label": "S4"
+      },
+      {
+        "start": 112.48,
+        "end": 132.47,
+        "label": "S5"
+      },
+      {
+        "start": 132.47,
+        "end": 148.07,
+        "label": "S6"
+      },
+      {
+        "start": 148.07,
+        "end": 184.96,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.827
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "energetic",
+      "uplifting",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This high-energy modern rock track presents an urgent and rebellious atmosphere, built on a foundation of powerful, distorted electric guitars and a commanding female lead vocal. The production is dense and polished, creating a tight, driving feel where a wall of wide guitars provides a solid backdrop for a punchy, centered rhythm section and an upfront vocal. The mix feels full without being cluttered, allowing each instrument to occupy its own space effectively. A defining quality of the track is the explosive dynamic shift into the anthemic chorus, where the chant-like hook \"Burn me\" creates a memorable and powerful peak.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in G minor and written in 3/4, 'Burn Me' moves with an urgency that shouldn't work as well as it does, a waltz-time engine driving something that feels more like a sprint. The chorus lands the way it needs to: 'fire and skin, a perfect fix' hits like a chant, and the production earns its density, with the guitars widening right on cue without burying the vocal. The bridge, 'single nights, endless fails / no one hears, no one calls,' is the quiet punch that reframes everything before the final chorus burns it down. A highlight, and one of STAB's most tightly constructed tracks.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "152 BPM",
+      "G minor",
+      "3/4 time",
+      "quoted lyric: 'fire and skin, a perfect fix'",
+      "quoted bridge: 'single nights, endless fails / no one hears, no one calls'",
+      "chorus dynamic shift",
+      "chant-like hook 'Burn me'",
+      "guitar widening in chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

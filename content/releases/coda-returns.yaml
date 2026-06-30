@@ -38,7 +38,7 @@ release:
     isrc: CAENV2559895
     duration: '3:50'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--coda-returns.mp3
     instrumental: false
     lyrics_text: The conversations.json document contains a history of my chats. I
       want to extract all information from the document related to Lingua Aeternum.

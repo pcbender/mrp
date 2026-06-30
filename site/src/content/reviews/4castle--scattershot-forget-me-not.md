@@ -1,0 +1,8 @@
+---
+track_id: 4castle--scattershot-forget-me-not
+impression: "This track establishes an intimate and reflective atmosphere with a sparse texture of warm piano and a prominent, emotive male vocal. The energy is gentle and builds carefully into the choruses, creating a heartfelt and slightly melancholic feel that ebbs and flows with the vocal performance. The production quality is polished and spacious, allowing the lead vocal to sit clearly in the forefront while the supporting instrumentation provides depth without ever sounding cluttered. A distinctive quality is the dynamic lift in the chorus, where the vocalist's impassioned delivery provides a cathartic release that defines the emotional core of the song."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+Coming off the hymn-like swell of the opener, 'Scattershot Forget-Me-Not' makes a smart pivot: where 'On the Advent of a Dream' reaches upward, this one reaches across. The title earns its place the moment you hear it, and 4Castle build the whole song around that honest, fumbling logic of loving someone better than you can say. Moving at a crisp, forward-leaning pace, the track opens with gentle piano before the chorus lifts with the kind of open-handed warmth you get from early Tom Petty, the kind where the feeling arrives before you can explain it. The closing turn, 'if you ever feel lonely, just hum it,' lands quietly and doesn't oversell itself, which is exactly right. As the second track, it widens the album's emotional range without breaking its momentum, and it plants a melodic generosity that the record keeps drawing on.

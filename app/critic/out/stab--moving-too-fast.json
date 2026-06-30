@@ -1,0 +1,99 @@
+{
+  "track_id": "stab--moving-too-fast",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Moving Too Fast.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--moving-too-fast.opus"
+  },
+  "lyrics": "(Up, up, down, down, scroll)\n\nI'm thumbing through a decade in a minute and a half\nI see a tragedy, then I see a viral laugh\nThere's no time to feel it, there's no time to think\nI'm trying to take a sip, but I'm falling in the sink\n(whoa)\nThe colors are blurring, the headlines are screaming\nI can't tell if I'm awake or if I'm just dreaming\n\nThe floor is moving and the walls are spinning\nI'm losing the game but I thought I was winning\nI can't catch my breath, I can't make it last\nEverything is moving too fast\n\nMy eyes are getting heavy but I can't look away\nI've forgotten what I've done with the middle of the day\nIt's a frictionless slide, it's a bottomless hole\nAnd I'm losing every bit of my self-control\n(just one more)\n(maybe just one more)\nThe sun went down and I didn't even notice\n\nThe floor is moving and the walls are spinning\nI'm losing the game but I thought I was winning\nI can't catch my breath, I can't make it last\nEverything is moving too fast\n\n(Wait)\n(Hold on)\n(Stop the feed)\nThe world is a blur, the world is a rush\nI'm looking for a pause, I'm looking for a hush\nBut the wheel keeps turning\n(faster)\n(faster!)\n\nThe floor is moving and the walls are spinning\nI'm losing the game but I thought I was winning\nI can't catch my breath, I can't make it last\nEverything is moving too fast\n\n(Too fast)\n(It's all moving)\n(Everything is moving too fast)\n(Sudden silence)",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "C#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 174.5,
+    "lufs": -14.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.5,
+        "label": "S1"
+      },
+      {
+        "start": 5.5,
+        "end": 36.9,
+        "label": "S2"
+      },
+      {
+        "start": 36.9,
+        "end": 76.23,
+        "label": "S3"
+      },
+      {
+        "start": 76.23,
+        "end": 113.22,
+        "label": "S4"
+      },
+      {
+        "start": 113.22,
+        "end": 145.87,
+        "label": "S5"
+      },
+      {
+        "start": 145.87,
+        "end": 164.93,
+        "label": "S6"
+      },
+      {
+        "start": 164.93,
+        "end": 174.5,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.737
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "blues rock",
+      "classic rock"
+    ],
+    "mood": [
+      "defiant",
+      "emotional",
+      "dark"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a frantic, digitally-saturated atmosphere by layering heavily distorted pop-punk guitars over glitchy synths and punchy electronic drums. The energy is relentlessly high and anxious, propelled by a driving rhythm and forward, layered female vocals that feel breathless and overwhelmed. The production is dense and highly compressed, creating a claustrophobic wall of sound where every element fights for space, mirroring the lyrical theme of overstimulation. A distinctive quality is the seamless blend of raw rock angst with hyper-pop electronics, especially in the stuttering vocal edits and the anthemic, explosive chorus declaring \"everything is moving too fast.\"",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in C# major, 'Moving Too Fast' earns its title by feel as much as physics: the distorted guitars and compressed, claustrophobic mix turn the doom-scroll experience into something you can actually feel in your chest. The chorus lands hard, 'I'm losing the game but I thought I was winning' delivered with just enough breathlessness that it sounds lived-in rather than written, and the sudden silence at the end is the smartest thirty seconds on the track. It's the kind of overstimulation anthem that Paramore or early Metric might have staked a whole album on, and STAB pulls it off in under three minutes.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "152 BPM",
+      "C# major",
+      "compressed mix / claustrophobic production",
+      "lyric: 'I'm losing the game but I thought I was winning'",
+      "sudden silence ending",
+      "Paramore / early Metric comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

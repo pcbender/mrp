@@ -1,0 +1,109 @@
+{
+  "track_id": "stab--no-longer-there",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/No Longer There.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--no-longer-there.opus"
+  },
+  "lyrics": "I'm staring at the ceiling again\nCounting all the shadows like they're my only friends\nYou said you'd call but the phone is cold\nJust another story that's already been told\n\nAnd I'm falling through the cracks of time\nTrying to make a reason out of every rhyme\nYou're the ghost in the hallway, the chill in the air\nI'm reaching for something that's no longer there (no longer there)\n\nFound your picture in a dusty drawer\nI don't even know what I'm looking for anymore\nThe colors are fading, the edges are torn\nLike a summer day that's weathered the storm\n\nAnd I'm falling through the cracks of time\nTrying to make a reason out of every rhyme\nYou're the ghost in the hallway, the chill in the air\nI'm reaching for something that's no longer there (no longer there)\n\nMaybe I'm better off on my own\nBuilding a kingdom on a broken throne\nBut the silence is loud and the walls are thin\nI don't know where to start or where to begin\n\nAnd I'm falling through the cracks of time\nTrying to make a reason out of every rhyme\nYou're the ghost in the hallway, the chill in the air\nI'm reaching for something that's no longer there (no longer there)",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 186.96,
+    "lufs": -15.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 8.34,
+        "label": "S1"
+      },
+      {
+        "start": 8.34,
+        "end": 27.52,
+        "label": "S2"
+      },
+      {
+        "start": 27.52,
+        "end": 66.94,
+        "label": "S3"
+      },
+      {
+        "start": 66.94,
+        "end": 85.4,
+        "label": "S4"
+      },
+      {
+        "start": 85.4,
+        "end": 103.56,
+        "label": "S5"
+      },
+      {
+        "start": 103.56,
+        "end": 134.05,
+        "label": "S6"
+      },
+      {
+        "start": 134.05,
+        "end": 153.11,
+        "label": "S7"
+      },
+      {
+        "start": 153.11,
+        "end": 174.94,
+        "label": "S8"
+      },
+      {
+        "start": 174.94,
+        "end": 186.96,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.98,
+      "key": 0.77
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a polished and emotive pop atmosphere, blending a feeling of wistful longing with an upbeat, driving energy. The production is clean and spacious, allowing the upfront female lead vocal to sit clearly on top of layered synths, a tight four-on-the-floor kick, and a propulsive bassline. The mix feels full but never crowded, with each element occupying a well-defined space. A distinctive moment is the dynamic shift in the bridge, which strips the arrangement back to a more reflective piano and vocal before rebuilding with a heavily effected vocal chop that launches into a powerful final chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The bridge is where STAB earns it: the arrangement pulls back to something close to just piano and voice, and when the final chorus hits back in D major at a steady mid-tempo pulse, the line 'reaching for something that's no longer there' lands with real weight. The production keeps things clean without going sterile, and the vocal sits forward enough that you catch every shade of the performance. This is STAB's more introspective side, closer to early Sheryl Crow than The Runaways, but the craft is there.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "D major",
+      "bridge dynamic shift to piano and vocal",
+      "final chorus rebuild",
+      "quoted lyric: 'reaching for something that’s no longer there'",
+      "Sheryl Crow comparison",
+      "mid-tempo pace"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

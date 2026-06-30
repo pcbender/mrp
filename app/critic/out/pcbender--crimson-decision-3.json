@@ -1,0 +1,129 @@
+{
+  "track_id": "pcbender--crimson-decision-3",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Crimson Decision - PCBender.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--crimson-decision-3.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 278.36,
+    "lufs": -17.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 31.83,
+        "label": "S1"
+      },
+      {
+        "start": 31.83,
+        "end": 62.79,
+        "label": "S2"
+      },
+      {
+        "start": 62.79,
+        "end": 85.19,
+        "label": "S3"
+      },
+      {
+        "start": 85.19,
+        "end": 102.28,
+        "label": "S4"
+      },
+      {
+        "start": 102.28,
+        "end": 119.12,
+        "label": "S5"
+      },
+      {
+        "start": 119.12,
+        "end": 136.46,
+        "label": "S6"
+      },
+      {
+        "start": 136.46,
+        "end": 156.29,
+        "label": "S7"
+      },
+      {
+        "start": 156.29,
+        "end": 178.42,
+        "label": "S8"
+      },
+      {
+        "start": 178.42,
+        "end": 195.81,
+        "label": "S9"
+      },
+      {
+        "start": 195.81,
+        "end": 211.79,
+        "label": "S10"
+      },
+      {
+        "start": 211.79,
+        "end": 240.65,
+        "label": "S11"
+      },
+      {
+        "start": 240.65,
+        "end": 259.9,
+        "label": "S12"
+      },
+      {
+        "start": 259.9,
+        "end": 278.36,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.932,
+      "key": 0.823
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a polished progressive rock track with a dark, contemplative atmosphere that builds significantly throughout. The energy starts with a pensive, spacious feel before erupting into a powerful, driving chorus with a steady and assertive rhythmic foundation. The production is clean and modern, featuring wide, layered guitars and a punchy rhythm section that creates a dense yet clear sonic space for the emotive lead vocal to sit on top. A defining quality of the track is its dynamic journey, particularly the powerful shift into the anthemic chorus, which unleashes the full weight of the arrangement and the song's emotional core.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Thirteen sections across four and a half minutes sounds like a lot to manage, and PCBender earns every one of them: 'Crimson Decision 3' builds from a pensive, open-voiced G-major guitar figure at a measured 107 BPM into something that genuinely pushes against its own restraint before the full arrangement lands. The layered electric and acoustic guitars stay wide without going muddy, and the moment the rhythm section commits is the track's best argument for itself. For an instrumental, it holds attention the way a good film cue does, propelling forward rather than decorating. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "G major",
+      "107 BPM",
+      "13 sections",
+      "4:38 duration",
+      "layered electric and acoustic guitars",
+      "dynamic build structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -270,7 +270,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--scattershot-forget-me-not.mp3
     lyrics_text: 'I left you a note on the nightstand last night
 
       Just some lines that I scribbled, they didn''t come out right
@@ -343,7 +343,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--and-the-gods-fell-down.mp3
     lyrics_text: 'You held their words like sacred lines
 
       Swore their wisdom would stand through time
@@ -422,7 +422,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--by-starlight-drifting-west.mp3
     lyrics_text: 'Pulled the anchor, set the sails
 
       Ocean whispers, moonlight pales
@@ -503,7 +503,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--tigers-eye.mp3
     lyrics_text: 'Winds scream against the windowpane
 
       I used to run, I used to break
@@ -582,7 +582,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--haymakers-and-body-blows.mp3
     lyrics_text: 'Swingin'' in the ring, I never saw it comin''
 
       First hit landed, now my heartbeat''s drummin''
@@ -671,7 +671,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--paradox-of-contradictions.mp3
     lyrics_text: 'Dances in her sleep and cries with a smile
 
       Gone in a breath but stays lost for a while
@@ -750,7 +750,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--pixy-stix.mp3
     lyrics_text: 'Mmm… yeah… you know what I need…
 
       That sweet, sweet sugar…
@@ -852,7 +852,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--bit-wise-resistance.mp3
     lyrics_text: 'Bitters sit in towers high
 
       Counting numbers, selling lies
@@ -925,7 +925,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--next-to-nothing.mp3
     lyrics_text: 'I''ve held fortunes in my hands
 
       Watched them slip like grains of sand
@@ -1009,7 +1009,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/4castle--preternatural.mp3
     lyrics_text: null
     lyrics_source: null
     links:

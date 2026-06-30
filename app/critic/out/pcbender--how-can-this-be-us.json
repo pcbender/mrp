@@ -1,0 +1,98 @@
+{
+  "track_id": "pcbender--how-can-this-be-us",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/How Can This Be Us.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--how-can-this-be-us.opus"
+  },
+  "lyrics": "Smoke in the air, ice in the streets\nNowhere to hide, can't beat the heat\nBe searching for gold that nobody has\nThe army of the king gone mad\nBullets flying, people dying\nHow can this be us\nBullets flying, people dying\nHow can this be us\nI'm missing the life that was taken from me\nThere's a hole in my pocket where my heart used to be\nNa, na, na, na, na, na, na, na\nNa, na, na, na, na, na, na, na\nBullets flying, people dying\nHow can this be us\nBullets flying, people dying\nHow can this be us\nI'm missing the life that was taken from me\nThere's a hole in my pocket where my heart used to be, yeah\nBullets flying, people dying\nHow can this be us\nBullets flying, people dying\nHow can this be us",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 226.52,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.43,
+        "label": "S1"
+      },
+      {
+        "start": 5.43,
+        "end": 31.63,
+        "label": "S2"
+      },
+      {
+        "start": 31.63,
+        "end": 65.62,
+        "label": "S3"
+      },
+      {
+        "start": 65.62,
+        "end": 84.57,
+        "label": "S4"
+      },
+      {
+        "start": 84.57,
+        "end": 113.52,
+        "label": "S5"
+      },
+      {
+        "start": 113.52,
+        "end": 192.59,
+        "label": "S6"
+      },
+      {
+        "start": 192.59,
+        "end": 226.52,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.903
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "pop rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "defiant"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a tense, gritty atmosphere built on overdriven guitars and a driving rhythm, quickly establishing a modern hard rock feel. The energy is high and aggressive, with powerful, soaring vocals that express a sense of urgent desperation and frustration. The production is clean and spacious, allowing the thick, layered guitars and punchy drums to create a dense wall of sound without overwhelming the clear, centered vocals. A standout moment is the virtuosic and fiery guitar solo, which explodes with impressive technicality and elevates the song's emotional peak before a powerful final chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The hook here is blunt and it earns that bluntness: 'there's a hole in my pocket where my heart used to be' lands because the rest of the song has been building the case for it, verse by verse in G minor at a mid-tempo grind that keeps the pressure steady without tipping into chaos. PCBender's vocal delivery carries real urgency, and the guitar solo that tears through the back half is the kind of playing that reminds you why the electric guitar was built in the first place. This sits in the same territory as early Audioslave or late-period Soundgarden, protest and grief sharing the same four beats. A highlight, and one of the more emotionally direct things he's put his name on.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "G minor key",
+      "BPM ~89 mid-tempo",
+      "lyric: 'there's a hole in my pocket where my heart used to be'",
+      "guitar solo structural placement",
+      "Audioslave/Soundgarden comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

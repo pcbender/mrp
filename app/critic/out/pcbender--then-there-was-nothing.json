@@ -1,0 +1,143 @@
+{
+  "track_id": "pcbender--then-there-was-nothing",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Then There Was Nothing.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--then-there-was-nothing.opus"
+  },
+  "lyrics": "I walked along a misty pier\nThe water dark, the sky unclear\nI almost missed her standing there\nHalf-turned, with sea-salt in her hair\nShe moved too close and touched my head\n“I’m Nothing,” she turned and said\n“I’ve been waiting, longing for you.”\nAnd strangely now I felt it too\n\nI found a face I knew\nThere was nothing left to do\nBut dissolve into her force\nAs if I had a choice\nI surrender to her always\nWith a love that can not stay\nThere is Me and there is Nothing\nAnd may it always be that way\n\nThen there was Nothing-her voice in the air\nShe didn’t arrive, she was always there\nShe pulled me apart with a whisper, a glance\nAnd gave back a soul that had lost its chance\nThen there was Nothing-no fear, no disguise\nJust love in the dark and light in her eyes\nNo questions, no reason, no need to explain\nThen there was Nothing-and Nothing remains\n\nWe woke when dawn begins to breathe\nShe spoke in truths, she opened me\nNo promises, no binding thread-\nJust moments blooming in my head\nShe sang a name I used to wear\nThen let it vanish in the air\nShe kissed me once, then stepped away-\nAs if goodbye was how she’d stay\n\nI found a face I knew\nThere was nothing left to do\nBut dissolve into her force\nAs if I had a choice\nI surrender to her always\nWith a love that can not stay\nThere is Me and there is Nothing\nAnd may it always be that way\n\nThen there was Nothing-her voice in the air\nShe didn’t arrive, she was always there\nShe pulled me apart with a whisper, a glance\nAnd gave back a soul that had lost its chance\nThen there was Nothing-no fear, no disguise\nJust love in the dark and light in her eyes\nNo questions, no reason, no need to explain\nThen there was Nothing-and Nothing remains\n\nShe didn’t stay, but stayed in me\nA quiet hum, a memory\nAnd even when she isn’t here-\nI know that she is always near\n\nThen there was Nothing-her voice in the air\nShe didn’t arrive, she was always there\nShe pulled me apart with a whisper, a glance\nAnd gave back a soul that had lost its chance\nThen there was Nothing-no fear, no disguise\nJust love in the dark and light in her eyes\nNo questions, no reason, no need to explain\nThen there was Nothing-and Nothing remains\n\nThen there was Nothing…\nThen there was Nothing…\nThen there was Nothing",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 431.76,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.17,
+        "label": "S1"
+      },
+      {
+        "start": 13.17,
+        "end": 28.14,
+        "label": "S2"
+      },
+      {
+        "start": 28.14,
+        "end": 54.85,
+        "label": "S3"
+      },
+      {
+        "start": 54.85,
+        "end": 73.17,
+        "label": "S4"
+      },
+      {
+        "start": 73.17,
+        "end": 105.12,
+        "label": "S5"
+      },
+      {
+        "start": 105.12,
+        "end": 123.46,
+        "label": "S6"
+      },
+      {
+        "start": 123.46,
+        "end": 150.74,
+        "label": "S7"
+      },
+      {
+        "start": 150.74,
+        "end": 165.91,
+        "label": "S8"
+      },
+      {
+        "start": 165.91,
+        "end": 180.91,
+        "label": "S9"
+      },
+      {
+        "start": 180.91,
+        "end": 198.04,
+        "label": "S10"
+      },
+      {
+        "start": 198.04,
+        "end": 241.26,
+        "label": "S11"
+      },
+      {
+        "start": 241.26,
+        "end": 286.84,
+        "label": "S12"
+      },
+      {
+        "start": 286.84,
+        "end": 308.34,
+        "label": "S13"
+      },
+      {
+        "start": 308.34,
+        "end": 360.14,
+        "label": "S14"
+      },
+      {
+        "start": 360.14,
+        "end": 390.56,
+        "label": "S15"
+      },
+      {
+        "start": 390.56,
+        "end": 431.76,
+        "label": "S16"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.975,
+      "key": 0.842
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "bass guitar",
+      "synthesizer",
+      "electric guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a spacious and atmospheric texture, built on shimmering, delayed electric guitars that create a melancholic and reflective mood. It builds from a restrained, contemplative verse into an explosive, anthemic chorus where distorted guitars and powerful drums drive the energy forward with a cathartic sense of release. The production balances this dynamic range well, creating a wide, clean sonic space where the earnest lead vocal sits clearly atop the dense, layered rock instrumentation. A defining quality is the powerful contrast between the introspective verses and the immediate emotional impact of the choruses, which feel both vast and intimate.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always known how to build a song from the ground up, and 'Then There Was Nothing' earns its seven-minute run time the hard way: by actually going somewhere. The shimmering, delay-soaked intro gives way to a chorus that hits like a wave breaking, distorted guitars and drums landing with the kind of cathartic weight you hear on the better end of classic rock radio. The lyric 'she didn't arrive, she was always there' does real philosophical work without straining for it, and the C major key keeps the whole thing open and unguarded even as the arrangement thickens. A highlight that holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "seven-minute duration",
+      "C major key",
+      "delay-soaked intro texture from audio impression",
+      "distorted chorus build from audio impression",
+      "quoted lyric: she didn't arrive she was always there"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

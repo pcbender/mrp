@@ -1,0 +1,124 @@
+{
+  "track_id": "4castle--cut-flowers",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Cut Flowers.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--cut-flowers.opus"
+  },
+  "lyrics": "They sit in a glass by the window pane\nFading slow in the August rain\nOnce they grew in the open air\nNow it falls apart but we don't care\n\nDid you think we'd last forever\nDid you think we'd never change\nBeauty fades when roots are severed\nLeft to wither in a frame…\n\nCut flowers-where did we go\nOnce alive, now losing glow\nCut flowers-we won't know\nIf we had more time to grow\nWe bloom, we fade, we fall…\nWas it worth it at all\n\nYour hands shook when you cut me free\nSaid, \"Hold onto this, remember me.\"\nBut pressed between these brittle pages\nI can't turn back to greener ages\n\nDid you think we'd last forever\nDid you think we'd never change\nBeauty fades when roots are severed\nLeft to wither in a frame…\n\nCut flowers-where did we go\nOnce alive, now losing glow\nCut flowers-we won't know\nIf we had more time to grow\nWe bloom, we fade, we fall…\nWas it worth it at all\n\nYou gave me petals, not the roots\nThey drank the light, but lost the truth…\nYou said we'd never change\nBut look-look what time can do…\n\nCut flowers-where did we go\nWhat was whole is breaking slow\nCut flowers-we won't know\nIf we had more time to grow\nWe bloom, we fade, we fall…\nWas it worth it at all",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 103.4,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 233.56,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.71,
+        "label": "S1"
+      },
+      {
+        "start": 6.71,
+        "end": 23.64,
+        "label": "S2"
+      },
+      {
+        "start": 23.64,
+        "end": 45.56,
+        "label": "S3"
+      },
+      {
+        "start": 45.56,
+        "end": 76.16,
+        "label": "S4"
+      },
+      {
+        "start": 76.16,
+        "end": 91.9,
+        "label": "S5"
+      },
+      {
+        "start": 91.9,
+        "end": 109.02,
+        "label": "S6"
+      },
+      {
+        "start": 109.02,
+        "end": 128.62,
+        "label": "S7"
+      },
+      {
+        "start": 128.62,
+        "end": 154.09,
+        "label": "S8"
+      },
+      {
+        "start": 154.09,
+        "end": 173.64,
+        "label": "S9"
+      },
+      {
+        "start": 173.64,
+        "end": 189.57,
+        "label": "S10"
+      },
+      {
+        "start": 189.57,
+        "end": 207.1,
+        "label": "S11"
+      },
+      {
+        "start": 207.1,
+        "end": 233.56,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.9
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "country rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This modern rock track creates a powerful emotional atmosphere by contrasting sparse, melancholic verses with a dense, anthemic chorus. The energy follows a dramatic arc, building from quiet introspection to an explosive, almost metal-influenced feel in its most powerful sections. The production is polished and clear, masterfully handling the dynamic shifts by allowing the intimate vocals space in the verses before constructing a massive, layered wall of sound for the cathartic choruses. The most distinctive quality is this stark contrast between quiet and loud, which gives the chorus an immense sense of impact and emotional release.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Written in 3/4 and built around one of the more honestly felt central metaphors 4Castle has put to tape, 'Cut Flowers' earns its waltz-time weightiness: the image of something severed from its roots and pressed between pages gives the chorus real stakes, and the band plays to that tension beautifully, pulling back to near-silence in the verses before the harmonies stack into something close to a freight train on the refrain. The lyric 'You gave me petals, not the roots' lands with the kind of plainspoken sting that reminds me of what John Hiatt does best, saying something complicated in one clean line. At 103 BPM in E major, the track never rushes what it knows it has, and the dynamic discipline here is the production's smartest move.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "103 BPM",
+      "E major",
+      "lyric quote: 'You gave me petals, not the roots'",
+      "verse-to-chorus dynamic contrast",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

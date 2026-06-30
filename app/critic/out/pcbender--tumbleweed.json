@@ -1,0 +1,120 @@
+{
+  "track_id": "pcbender--tumbleweed",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Tumbleweed.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--tumbleweed.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "A",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 227.92,
+    "lufs": -13.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 16.39,
+        "label": "S1"
+      },
+      {
+        "start": 16.39,
+        "end": 50.9,
+        "label": "S2"
+      },
+      {
+        "start": 50.9,
+        "end": 68.61,
+        "label": "S3"
+      },
+      {
+        "start": 68.61,
+        "end": 92.09,
+        "label": "S4"
+      },
+      {
+        "start": 92.09,
+        "end": 112.94,
+        "label": "S5"
+      },
+      {
+        "start": 112.94,
+        "end": 129.13,
+        "label": "S6"
+      },
+      {
+        "start": 129.13,
+        "end": 144.22,
+        "label": "S7"
+      },
+      {
+        "start": 144.22,
+        "end": 167.67,
+        "label": "S8"
+      },
+      {
+        "start": 167.67,
+        "end": 197.3,
+        "label": "S9"
+      },
+      {
+        "start": 197.3,
+        "end": 222.03,
+        "label": "S10"
+      },
+      {
+        "start": 222.03,
+        "end": 227.92,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.89
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "blues"
+    ],
+    "mood": [
+      "uplifting",
+      "hopeful",
+      "tender"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is an energetic and confident blues-rock instrumental, establishing a fun, freewheeling atmosphere from the very first guitar lick. The energy is high and consistent, driven by a tight rhythm section that creates an upbeat, bar-band jam feel perfect for a live setting. The production feels organic and well-balanced, allowing the slightly overdriven lead guitar to sit clearly on top of the organ, bass, and drums without crowding the mix. The defining quality of the track is the virtuosic guitar work, which is full of personality and skillful phrasing that maintains interest throughout the piece.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz at 161 BPM is a small act of daring, and PCBender pulls it off: 'Tumbleweed' leans into that rolling three-quarter feel with a slightly overdriven lead guitar that phrases like it has somewhere to be and nowhere to be at the same time. The rhythm section keeps things honest and tight, giving the guitar room to stretch into the kind of SRV-adjacent lick work that sounds best when it's not trying too hard. At nearly four minutes across eleven sections, the track sustains its momentum without overstaying its welcome, a creditable feat for a purely instrumental piece built on feel rather than flash.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "161.5 BPM in 3/4 time",
+      "A minor key",
+      "slightly overdriven lead guitar",
+      "11-section structure",
+      "3:47 duration",
+      "SRV comparison",
+      "bar-band jam feel from audio impression"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

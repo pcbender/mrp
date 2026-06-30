@@ -1,0 +1,115 @@
+{
+  "track_id": "4castle--pixy-stix",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Pixy Stix.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--pixy-stix.opus"
+  },
+  "lyrics": "Mmm… yeah… you know what I need…\nThat sweet, sweet sugar…\nSo pour it on me, baby…\n\nGot that flavor on your lips, yeah, I see it shine\nA little sour, little sweet, drive me out my mind\nTear it open, don't be shy, let me taste that thrill\nDissolve it slow, sugar rush, baby, take your fill\n\n(Lead:) A little tangy, little sweet\n(Backups:) Ooh, it's meltin' on me\n(Lead:) Got me buzzin' to the beat\n(Backups:) Mmm, I just can't leave\n\nI need to get my fix\nOf your sweet Pixy Stix\nShake me up, pour it down\nSugar high, don't stop now\n\nStraw between your lips, yeah, tease me slow\nDrip that sugar, let it flow\nFeel that tingle, feel that heat\nOnce I start, I can't retreat\n\n(Lead:) A little tangy, little sweet\n(Backups:) Ooh, it's meltin' on me\n(Lead:) Got me buzzin' to the beat\n(Backups:) Mmm, I just can't leave\n\nI need to get my fix\nOf your sweet Pixy Stix\nShake me up, pour it down\nSugar high, don't stop now\n\nStraw in your lips, sugar on mine\nDissolve so slow, take your time…\nNo rush, no waste, let it drip\nYeah, let me get… another sip…\n\n(Lead:) I need to get my fix\n(Backups:) You know you need it\n(Lead:) Of your sweet Pixy Stix\n(Backups:) Come on and feed it\n(Lead:) Shake me up, pour me down\n(Backups:) Whoo, we goin' 'round\n\nMmm… just one more taste, baby…\nGimme that sugar, yeah…\nYou know what I like…",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 199.84,
+    "lufs": -12.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 12.68,
+        "label": "S1"
+      },
+      {
+        "start": 12.68,
+        "end": 28.03,
+        "label": "S2"
+      },
+      {
+        "start": 28.03,
+        "end": 43.42,
+        "label": "S3"
+      },
+      {
+        "start": 43.42,
+        "end": 59.28,
+        "label": "S4"
+      },
+      {
+        "start": 59.28,
+        "end": 89.91,
+        "label": "S5"
+      },
+      {
+        "start": 89.91,
+        "end": 116.73,
+        "label": "S6"
+      },
+      {
+        "start": 116.73,
+        "end": 139.78,
+        "label": "S7"
+      },
+      {
+        "start": 139.78,
+        "end": 170.97,
+        "label": "S8"
+      },
+      {
+        "start": 170.97,
+        "end": 186.29,
+        "label": "S9"
+      },
+      {
+        "start": 186.29,
+        "end": 199.84,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.782
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "harmonica",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a high-energy funk track built on a dense, layered texture and a playful, celebratory atmosphere. The production is exceptionally clean and spacious, allowing the tight rhythm section and punchy horn stabs to support the powerful lead vocal without ever sounding cluttered. The feel is consistently driving and danceable, creating a polished and infectious groove from start to finish. A truly distinctive quality is the prominent, virtuosic saxophone, which provides memorable melodic fills and a fiery solo that solidifies the song's identity.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz-time funk number in C major is a genuinely unusual bet, and 4Castle mostly wins it: the groove sits at a comfortable 95 BPM where the three-beat phrase feels less like a restriction and more like a slow roll, and the call-and-response chorus, 'I need to get my fix / of your sweet Pixy Stix,' lands with the kind of sticky confidence that early Kool and the Gang made look effortless. The saxophone tears through the back half with real personality, and the vocal split between lead and backups in the final chorus adds enough lift to push the whole thing home. The candy-as-desire conceit is well-worn territory, but the band plays it with enough wink and swing that it holds.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "C major",
+      "95 BPM",
+      "3/4 time",
+      "call-and-response chorus structure",
+      "quoted lyric: 'I need to get my fix / of your sweet Pixy Stix'",
+      "saxophone solo",
+      "final chorus vocal split"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

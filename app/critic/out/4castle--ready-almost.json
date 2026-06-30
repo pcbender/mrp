@@ -1,0 +1,125 @@
+{
+  "track_id": "4castle--ready-almost",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Ready Almost.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--ready-almost.opus"
+  },
+  "lyrics": "Progressive Rock, Symphonic Prog, early 70s art rock in F Major. Keyboard/Guitar power quartet with aggressive Hammond organ, modular Moog leads, grand piano interludes, overdriven electric guitar, overdriven bass guitar played melodically, and highly technical drumming with rapid fills and cymbal splashes. Mostly 4/4 with brief excursions into 7/8 and 5/4 during transitions and instrumental passages. Dramatic dynamic contrasts between restrained verses and explosive choruses. Male lead vocal with rich baritone tone, theatrical phrasing, tight harmonized backing vocals in the choruses. Intricate counterpoint between organ and bass. Classical-inspired chord movement, chromatic passing tones, suspended harmonies, syncopated rhythmic accents. Instrumental bridge expands into a virtuosic organ and guitar duel with shifting meters and descending piano figures. Warm analog tape saturation, wide stereo image, punchy tom-heavy drum mix, bright Hammond overdrive, vintage studio reverb",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 92.3,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 284.34,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 50.62,
+        "label": "S1"
+      },
+      {
+        "start": 50.62,
+        "end": 66.39,
+        "label": "S2"
+      },
+      {
+        "start": 66.39,
+        "end": 122.53,
+        "label": "S3"
+      },
+      {
+        "start": 122.53,
+        "end": 137.65,
+        "label": "S4"
+      },
+      {
+        "start": 137.65,
+        "end": 153.21,
+        "label": "S5"
+      },
+      {
+        "start": 153.21,
+        "end": 179.68,
+        "label": "S6"
+      },
+      {
+        "start": 179.68,
+        "end": 194.91,
+        "label": "S7"
+      },
+      {
+        "start": 194.91,
+        "end": 215.41,
+        "label": "S8"
+      },
+      {
+        "start": 215.41,
+        "end": 236.82,
+        "label": "S9"
+      },
+      {
+        "start": 236.82,
+        "end": 262.46,
+        "label": "S10"
+      },
+      {
+        "start": 262.46,
+        "end": 277.66,
+        "label": "S11"
+      },
+      {
+        "start": 277.66,
+        "end": 284.34,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.977,
+      "key": 0.906
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an epic and determined emotional atmosphere with a vast, atmospheric texture led by a soaring, melodic electric guitar. It has a high, driving energy, built upon a dense wall of crunchy rhythm guitars and powerful, stadium-ready drums, creating a classic rock anthem feel. The production is modern and polished, featuring a wide stereo space that allows the multiple guitar layers to coexist without muddying the mix, while the lead vocal remains clear and present. A defining moment is the powerful chorus at 1:23, where layered vocals and crashing cymbals create a cathartic, fist-pumping peak that the entire song effectively builds towards.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 92 BPM in C major, 'Ready Almost' moves with the patient confidence of a band that knows the payoff is coming, and it is: the chorus at 1:23 hits like a stadium opening up, layered vocals and crashing cymbals landing with the kind of cathartic weight that puts you in mind of early Heart at their most anthemic. The verses hold back well, the baritone lead sitting in controlled tension over a crunchy rhythm bed before everything opens wide. Twelve sections in under five minutes means the architecture is doing real work here, and 4Castle earns every bit of it.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "92 BPM",
+      "C major",
+      "chorus at 1:23",
+      "layered vocals and crashing cymbals",
+      "baritone lead vocal",
+      "twelve sections",
+      "4:44 duration"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

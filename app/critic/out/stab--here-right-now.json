@@ -1,0 +1,98 @@
+{
+  "track_id": "stab--here-right-now",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Here Right Now.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--here-right-now.opus"
+  },
+  "lyrics": "I don't need a cabin in the woods\nI need ten minutes with my own breath\nI need to feel my feet on the floor\nBefore I let the world in my head\nI open the window, I make some tea\nI hear a neighbor's car stretch the dawn\nIt's not romantic, it's not a movie\nIt's just the day, turning on\n\nSo I practice like it matters\nBecause it does\nI look at what's in front of me\nWithout rushing past it\nI don't have to fix my life today\nI just have to meet it\nAnd if I forget, I come back and say -\nI'm here right now\n\nI keep a small notebook, not for goals\nJust for noticing what's real\nA line about the way light hit the table\nA line about how my shoulders feel\nI take a walk and leave my phone behind\nNot as a rule, as a choice I like\nI'm learning the difference between being alone\nAnd being with myself\nThat's the whole hike\n\nSome days it's easy\nSome days it's not\nBut I'm starting to trust\nThe return more than the spark\n\nSo I practice like it matters\nBecause it does\nI look at what's in front of me\nWithout rushing past it\nI don't have to fix my life today\nI just have to meet it\nAnd if I forget, I come back and say -\nI'm here right now\n\nThe world will keep yelling\nAnd I don't hate it for that\nI just don't want to live\nInside the yelling anymore\nI want to be a person\nWith a pulse and a pace\nNot a reaction\nNot a feed\nNot a chase\n\nSo I practice like it matters\nBecause it does\nI look at what's in front of me\nWithout rushing past it\nI don't have to fix my life today\nI just have to meet it\nAnd if I forget, I come back and say -\nI'm here right now\n\n(soft)\nHere right now\n(mm)\nHere right now",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 178.49,
+    "lufs": -13.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.28,
+        "label": "S1"
+      },
+      {
+        "start": 11.28,
+        "end": 26.68,
+        "label": "S2"
+      },
+      {
+        "start": 26.68,
+        "end": 60.91,
+        "label": "S3"
+      },
+      {
+        "start": 60.91,
+        "end": 79.76,
+        "label": "S4"
+      },
+      {
+        "start": 79.76,
+        "end": 123.27,
+        "label": "S5"
+      },
+      {
+        "start": 123.27,
+        "end": 142.71,
+        "label": "S6"
+      },
+      {
+        "start": 142.71,
+        "end": 178.49,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.909
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a warm, intimate texture, built on a foundation of acoustic guitar and a gentle, conversational female vocal, creating a reflective and hopeful atmosphere. The energy is calm and steady, building subtly from a sparse, personal verse into a fuller, more affirmative chorus with a relaxed, walking-pace feel. The production is clean and spacious, allowing the lead vocal to remain front and center while layers of harmonies, bass, and light percussion are added without creating a sense of density. A distinctive moment is the transition into the chorus, where the arrangement swells with supportive background vocals and a steady tambourine, beautifully reinforcing the song's grounded lyrical message.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in A major, 'Here Right Now' moves with more momentum than its meditative lyrics suggest, and that tension is exactly what makes it work: STAB is singing about slowing down while the track quietly refuses to. The chorus hook, built around the line 'I don't have to fix my life today, I just have to meet it,' lands with the kind of plainspoken warmth you get from early Sheryl Crow, and the swell of background vocals that carries it home feels genuinely earned. It's the most grounded thing in her catalog, and it holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152 in A major",
+      "chorus lyric 'I don't have to fix my life today / I just have to meet it'",
+      "background vocal swell into chorus",
+      "Sheryl Crow comparison",
+      "audio impression: warm intimate texture, tambourine, spacious production"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

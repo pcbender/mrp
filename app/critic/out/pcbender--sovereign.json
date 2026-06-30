@@ -1,0 +1,146 @@
+{
+  "track_id": "pcbender--sovereign",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Sovereign.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--sovereign.opus"
+  },
+  "lyrics": "Sovereignty is quiet\nA flame without a throne\nNo banners in the night wind\nNo kingdom carved in stone\nIt rises when I recognize\nThe fear that wasn't mine\nAnd step beyond the boundaries\nI once mistook for spine\n\nI am not what I inherited\nNor the echo I outgrew\nI am the one who chooses\nWhat each moment draws me to\nIf my freedom harms another\nThen I'm only appetite\nBut if my freedom wakes them\nThen I'm walking into light\n\nI am sovereign\nNot above you\nNot apart\nI am sovereign\nIn the compass\nOf my heart\nNo permission\nIn my breathing\nNo decree in how I stand\nI am sovereign\nBy my own\nUnborrowed hand\n\nSovereignty is a candle\nHeld steady in the storm\nNot a shield against the weather\nBut a vow to stay my form\nI do not kneel to judgment\nNor rise to wear a crown\nI travel with no hierarchy\nOnly gravity and ground\n\nI am sovereign\nNot the ruler\nOf the land\nI am sovereign\nIn the shaping\nOf my span\nEvery step\nA declaration\nEvery truth I understand\nI am sovereign\nBy my own\nUnborrowed hand\n\nNo voice can name my worth\nThat right is mine alone\n\nNo structure owns my outline\nNo system claims my bone\nI walk from inner weather\nThe storm, the calm, the flame\nI exist without permission\nAnd I answer to my name\n\nI am sovereign\nNot triumphant\nNot divine\nI am sovereign\nIn this fleeting\nSlice of time\nWhat I choose\nBecomes my kingdom\nWhat I love becomes my stand\nI am sovereign\nBy my own\nUnborrowed hand\n\nWhen the world forgets my outline\nI will still remain\nA quiet, sovereign motion\nIn the shape\nI chose to claim",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "F",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 434.0,
+    "lufs": -14.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 46.25,
+        "label": "S1"
+      },
+      {
+        "start": 46.25,
+        "end": 64.11,
+        "label": "S2"
+      },
+      {
+        "start": 64.11,
+        "end": 105.4,
+        "label": "S3"
+      },
+      {
+        "start": 105.4,
+        "end": 126.99,
+        "label": "S4"
+      },
+      {
+        "start": 126.99,
+        "end": 145.89,
+        "label": "S5"
+      },
+      {
+        "start": 145.89,
+        "end": 196.14,
+        "label": "S6"
+      },
+      {
+        "start": 196.14,
+        "end": 217.57,
+        "label": "S7"
+      },
+      {
+        "start": 217.57,
+        "end": 236.75,
+        "label": "S8"
+      },
+      {
+        "start": 236.75,
+        "end": 255.56,
+        "label": "S9"
+      },
+      {
+        "start": 255.56,
+        "end": 304.18,
+        "label": "S10"
+      },
+      {
+        "start": 304.18,
+        "end": 330.98,
+        "label": "S11"
+      },
+      {
+        "start": 330.98,
+        "end": 358.47,
+        "label": "S12"
+      },
+      {
+        "start": 358.47,
+        "end": 375.7,
+        "label": "S13"
+      },
+      {
+        "start": 375.7,
+        "end": 393.09,
+        "label": "S14"
+      },
+      {
+        "start": 393.09,
+        "end": 410.58,
+        "label": "S15"
+      },
+      {
+        "start": 410.58,
+        "end": 434.0,
+        "label": "S16"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.894
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "country rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "defiant"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track begins with a vast, atmospheric texture from a lone, reverb-drenched electric guitar, creating a contemplative yet epic emotional landscape. A dramatic dynamic shift transforms the piece from a brooding rock build-up into a high-energy, anthemic metal track, fueled by powerful, heavily distorted guitars and commanding vocals. The production is modern and spacious, managing to maintain clarity and separation between instruments even in the densest, most powerful sections. The song's defining quality is its central, declarative theme of personal sovereignty, delivered with unwavering conviction in the memorable chorus and reinforced by the track's relentless, driving momentum.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Seven minutes in 3/4 time is a bet most writers don't have the material to cover, but PCBender earns every bar of it here. The track opens on a single reverb-soaked electric guitar, patient and wide, before the full band arrives and tips the whole thing into something closer to an anthem, the kind of lift that recalls early Tom Petty finding his footing between tenderness and defiance. The lyric does the heaviest lifting: \"I am sovereign / by my own / unborrowed hand\" lands as a genuine credo rather than a bumper sticker, and the waltz feel at 108 BPM gives the chorus a gravitational pull that a straight 4/4 would have flattened. PCBender knows when to let the room breathe and when to fill it, and at seven-plus minutes he never outstays his welcome.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "107.7 BPM",
+      "F major",
+      "reverb-soaked electric guitar opening",
+      "7:14 duration",
+      "lyric: 'by my own unborrowed hand'",
+      "dynamic shift from spare intro to full-band anthem",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

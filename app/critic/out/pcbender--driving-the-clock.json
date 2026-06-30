@@ -1,0 +1,104 @@
+{
+  "track_id": "pcbender--driving-the-clock",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Driving The Clock.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--driving-the-clock.opus"
+  },
+  "lyrics": "Driving the clock through invisible streets\nhands without numbers, faces without heat\nThe gears are illusions, the seconds deceive\nAnd what we call time is the cage we can’t see\n\nAm I driving the clock, or is the clock driving me\nAm I steering the hands, or the hands steering me\nAnd if there’s no clock, only measure and mind-\nthen who is it binding, and what then is time\n\nChimes without rhythm, a chaos of bells\nringing the fiction the silence compels\nThe tick is a fiction, the tock is a chain\nyet both are demanding-the rules of the game\n\nAm I driving the clock, or is the clock driving me\nAm I steering the hands, or the hands steering me\nAnd if there’s no clock, only measure and mind-\nthen who is it binding, and what then is time\n\nClockwork dissolves in the pulse of a dream\nunwinding the hours, unspooling the scheme\n\nAm I driving the clock, or is the clock driving me\nAm I steering the hands, or the hands steering me\nAnd if there’s no clock, only measure and mind-\nthen who is it binding, and what then is time\n\nCopyright © 2025 Maricopa Records",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "G#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 259.72,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.46,
+        "label": "S1"
+      },
+      {
+        "start": 3.46,
+        "end": 18.44,
+        "label": "S2"
+      },
+      {
+        "start": 18.44,
+        "end": 33.48,
+        "label": "S3"
+      },
+      {
+        "start": 33.48,
+        "end": 54.52,
+        "label": "S4"
+      },
+      {
+        "start": 54.52,
+        "end": 111.66,
+        "label": "S5"
+      },
+      {
+        "start": 111.66,
+        "end": 177.33,
+        "label": "S6"
+      },
+      {
+        "start": 177.33,
+        "end": 246.97,
+        "label": "S7"
+      },
+      {
+        "start": 246.97,
+        "end": 259.72,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.93
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "emotional",
+      "dark",
+      "tender"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a polished and powerful modern rock track with a dense, layered texture. The atmosphere feels urgent and philosophical, driven by a tight, punchy rhythm section and walls of electric guitar. Its energy is consistently high, building to anthemic choruses that feel both massive and emotionally resonant. The production is clean and spacious, allowing the clear, melodic vocals to sit comfortably on top of the powerful instrumental arrangement without ever feeling crowded. A defining quality is the powerful chorus hook, where the layered vocals and soaring guitars create a memorable and impactful peak that encapsulates the song's central, questioning theme.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always done his best work when the philosophy lines up with the groove, and at 161 BPM in G# major, 'Driving the Clock' earns its urgency. The chorus hook, built around the central question 'Am I driving the clock, or is the clock driving me,' hits with the kind of anthemic lift that reminds you of prime Tom Petty: simple, irresistible, and slightly unsettling once it sticks. The production is punchy and spacious at once, the guitars walled up but never crowding the melody, and the layered vocals at the peak feel genuinely earned rather than cosmetic. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 161.5",
+      "G# major",
+      "chorus lyric 'Am I driving the clock, or is the clock driving me'",
+      "layered vocals at chorus peak",
+      "Tom Petty comparison for anthemic quality",
+      "spacious production / guitar arrangement"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

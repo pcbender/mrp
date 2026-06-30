@@ -58,7 +58,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--elemental-fundamental.mp3
     lyrics_text: 'Before the word, there was the wave
 
       A hum, a wind, a cry to save

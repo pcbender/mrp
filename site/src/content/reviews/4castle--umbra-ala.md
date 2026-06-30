@@ -1,0 +1,8 @@
+---
+track_id: 4castle--umbra-ala
+impression: "This track establishes a narrative, almost mythic atmosphere with a clean, driving electric guitar and clear, storytelling vocals, creating a sense of anticipation from the start. The energy builds from a measured, folk-rock verse into a powerful, anthemic chorus with soaring vocals and thick, distorted guitars, giving the song a dramatic, climactic feel. The production is clean and dynamic, with a well-balanced mix that allows the powerful lead vocal to sit clearly above the crunchy guitars and solid rhythm section, creating a sound that feels both spacious and dense in its louder moments. A defining quality is the explosive shift into the chorus at 0:57, where the full band erupts, transforming the track's mood from contemplative to a powerful, declarative statement that solidifies its epic rock identity."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+"Umbra Ala" arrives in 3/4 time at a pace that should feel relentless but instead breathes like a war ballad, and the concept of a mythic gatekeeper who earns her own freedom gives the lyrics real weight: "I turned from stone, and the gate turned too" is the kind of line that lands differently the second time through. The folk-rock verse builds carefully before the full band erupts just past the midpoint, distorted guitars and stacked vocals turning the chorus into something closer to early Heart than anything on modern rock radio. At 3:42 in E minor, it doesn't overstay its welcome, and the final variation, "Many ways swings the gate," closes the mythology with just enough ambiguity to send you back to the beginning. A genuine highlight.

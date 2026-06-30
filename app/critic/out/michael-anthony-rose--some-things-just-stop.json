@@ -1,0 +1,118 @@
+{
+  "track_id": "michael-anthony-rose--some-things-just-stop",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Some Things Just Stop.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--some-things-just-stop.opus"
+  },
+  "lyrics": "One by one\nThat's how it goes\n\nIt's not one giant thing that leaves\nIt's little pieces, week by week\nThe easy sleep, the painless bend\nThe steady hand, the quick recall\nThe way a room once turned my way\nThe way tomorrow felt secure\nNothing gone enough to mourn out loud\nStill less than there was before\n\nI started making lists I never meant to write\nNot on paper, just at night\nWhat got thinner, what got hard\nWhat still works, what takes too long\nI keep adding to it quietly\nWhether I want to or not\nSome things leave all at once\nSome things just stop\n\nConfidence was never perfect\nBut it used to come when called\nNow it waits out in the hallway\nLike it doesn't live here now\nThere are mirrors I pass quickly\nThere are stairs I think about\nThere are mornings where my first thought is\nWhat hurts now, and how much now\n\nI started making lists I never meant to write\nNot on paper, just at night\nWhat got thinner, what got hard\nWhat still works, what takes too long\nI keep adding to it quietly\nWhether I want to or not\nSome things leave all at once\nSome things just stop\n\nI'm not asking for my twenties\nI'm not begging to go back\nI'm just standing in the count of things\nTrying not to lose the facts\n\nI started making lists I never meant to write\nNot on paper, just at night\nWhat got thinner, what got hard\nWhat still works, what takes too long\nI keep adding to it quietly\nWhether I want to or not\nSome things leave all at once\nSome things just stop\n\nNo\nIt's not the same",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 238.49,
+    "lufs": -16.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 20.53,
+        "label": "S1"
+      },
+      {
+        "start": 20.53,
+        "end": 37.24,
+        "label": "S2"
+      },
+      {
+        "start": 37.24,
+        "end": 60.98,
+        "label": "S3"
+      },
+      {
+        "start": 60.98,
+        "end": 85.5,
+        "label": "S4"
+      },
+      {
+        "start": 85.5,
+        "end": 108.6,
+        "label": "S5"
+      },
+      {
+        "start": 108.6,
+        "end": 131.82,
+        "label": "S6"
+      },
+      {
+        "start": 131.82,
+        "end": 156.87,
+        "label": "S7"
+      },
+      {
+        "start": 156.87,
+        "end": 175.82,
+        "label": "S8"
+      },
+      {
+        "start": 175.82,
+        "end": 191.47,
+        "label": "S9"
+      },
+      {
+        "start": 191.47,
+        "end": 221.77,
+        "label": "S10"
+      },
+      {
+        "start": 221.77,
+        "end": 238.49,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.956,
+      "key": 0.969
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This song presents a sparse and intimate texture, opening with a gentle acoustic guitar and a breathy, close-miked male vocal that creates a deeply reflective and melancholic atmosphere. The energy begins low and contemplative, gradually building in emotional weight with the introduction of piano, a full drum kit, and subtle strings that swell without overwhelming the arrangement. The production is clean and spacious, allowing the elements to sit together cohesively while maintaining the raw vulnerability of the lead vocal at the forefront. A defining quality of the track is its dynamic arc, particularly the transition around 02:21 where the vocalist’s delivery becomes more impassioned, lifting the song to a powerful, cathartic peak before settling back into quiet resignation.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose writes about aging the way most people only think about it at 2am: not as decline, but as inventory. The detail that lands hardest is 'confidence was never perfect, but it used to come when called, now it waits out in the hallway like it doesn't live here now,' which is the kind of line that makes you set your phone down. The song opens spare in C major with close-miked vocal over acoustic guitar, and the arrangement earns its swells, building through piano and a full kit without ever crowding the lyric. The quiet coda, 'No, it's not the same,' lands exactly right: no resolution, just the fact of it.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "quoted lyric: 'confidence was never perfect, but it used to come when called, now it waits out in the hallway like it doesn't live here now'",
+      "quoted lyric: 'No, it's not the same'",
+      "key: C major",
+      "arrangement arc: acoustic opening building to piano and full kit",
+      "close-miked vocal production"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

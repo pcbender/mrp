@@ -1,0 +1,104 @@
+{
+  "track_id": "pcbender--inner-outer-over-through-2",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Inner Outer Over Through - PCBender.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--inner-outer-over-through-2.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 99.4,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 222.31,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 61.58,
+        "label": "S1"
+      },
+      {
+        "start": 61.58,
+        "end": 86.75,
+        "label": "S2"
+      },
+      {
+        "start": 86.75,
+        "end": 105.91,
+        "label": "S3"
+      },
+      {
+        "start": 105.91,
+        "end": 125.06,
+        "label": "S4"
+      },
+      {
+        "start": 125.06,
+        "end": 148.61,
+        "label": "S5"
+      },
+      {
+        "start": 148.61,
+        "end": 167.0,
+        "label": "S6"
+      },
+      {
+        "start": 167.0,
+        "end": 182.88,
+        "label": "S7"
+      },
+      {
+        "start": 182.88,
+        "end": 222.31,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.89
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "uplifting"
+    ],
+    "instruments": [
+      "piano",
+      "synthesizer",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a contemplative and spacious atmosphere, built upon a gentle, reverberant piano and breathy, layered male vocals. The energy builds methodically from a low, introspective feel to a driving, cathartic peak, propelled by the introduction of a solid electronic beat and swelling synth pads. The production quality is pristine, creating an expansive sonic field where each element, from the deep sub-bass to the ethereal vocal textures, occupies its own clear space without feeling dense. A defining characteristic is the powerful dynamic shift into the choruses, where the full arrangement coalesces to support the repeating vocal hook \"In and out and over through,\" creating a feeling of expansive release.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A wordless anthem built around a single repeated vocal hook, 'In and out and over through,' this track earns its runtime by treating that phrase as a structural principle rather than a shortcut. PCBender lets the opening piano breathe for a full minute before the electronic beat and swelling synths arrive, and when they do, the payoff is real, the kind of controlled release that Elbow used to nail on their best mid-2000s records. At 99 BPM in C major, the pace is deliberate without dragging, and the mix stays clean and wide throughout all eight sections without ever feeling overcrowded. A confident instrumental that holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "vocal hook 'In and out and over through'",
+      "99 BPM",
+      "C major",
+      "8-section structure",
+      "piano intro held for ~62 seconds before beat enters",
+      "Elbow comparison for dynamic release"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

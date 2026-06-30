@@ -67,7 +67,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--gone-and-forgotten.mp3
     lyrics_text: 'I walked the road where we once wandered
 
       The stars were dim, the night felt hollow

@@ -1,0 +1,124 @@
+{
+  "track_id": "pcbender--void-of-intention",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Void of Intention - PCBender.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--void-of-intention.opus"
+  },
+  "lyrics": "In silence, beyond the pale, I sit beside myself\nWaking, not thinking, void of intention\nBreath, the traveller, guides an empty mind\nA drop in an endless void",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "D",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 238.76,
+    "lufs": -14.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 25.68,
+        "label": "S1"
+      },
+      {
+        "start": 25.68,
+        "end": 56.84,
+        "label": "S2"
+      },
+      {
+        "start": 56.84,
+        "end": 74.42,
+        "label": "S3"
+      },
+      {
+        "start": 74.42,
+        "end": 96.66,
+        "label": "S4"
+      },
+      {
+        "start": 96.66,
+        "end": 112.13,
+        "label": "S5"
+      },
+      {
+        "start": 112.13,
+        "end": 127.62,
+        "label": "S6"
+      },
+      {
+        "start": 127.62,
+        "end": 145.94,
+        "label": "S7"
+      },
+      {
+        "start": 145.94,
+        "end": 168.44,
+        "label": "S8"
+      },
+      {
+        "start": 168.44,
+        "end": 197.28,
+        "label": "S9"
+      },
+      {
+        "start": 197.28,
+        "end": 213.16,
+        "label": "S10"
+      },
+      {
+        "start": 213.16,
+        "end": 228.39,
+        "label": "S11"
+      },
+      {
+        "start": 228.39,
+        "end": 238.76,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.932
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a vast, ethereal choral texture, creating a cinematic atmosphere before erupting into a modern rock anthem. Its energy is high and driving, characterized by powerful, chugging guitars and a propulsive rhythm section that creates a feeling of urgent determination. The production is polished and dense, with layers of distorted guitars and synths crafting a wide, immersive soundscape while the lead vocal remains clear and prominent in the mix. A defining quality is the abrupt shift from the spacious introduction to the full-force, heavy instrumental entrance, a transition that effectively establishes the track's dynamic and epic scope.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender opens 'Void of Intention' with a choral swell that drops away the moment the guitars hit, and that transition alone earns your attention: the contrast between the wide, almost devotional opening and the chugging full-band entrance in D minor at a brisk 129 BPM gives the track a genuine sense of arrival. The lyric is spare to the point of being a koan, 'breath, the traveller, guides an empty mind,' and the production leans into that stillness-versus-force dynamic across twelve distinct sections, keeping nearly four minutes from feeling padded. It lands somewhere between late-era Soundgarden and a more spiritually inclined Queens of the Stone Age, which is a fine place to be.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "D minor key",
+      "129 BPM tempo",
+      "choral opening to full-band transition",
+      "quoted lyric: 'breath, the traveller, guides an empty mind'",
+      "12-section structure",
+      "3:58 duration"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

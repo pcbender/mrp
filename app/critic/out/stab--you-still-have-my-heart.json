@@ -1,0 +1,114 @@
+{
+  "track_id": "stab--you-still-have-my-heart",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/You Still Have My Heart.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--you-still-have-my-heart.opus"
+  },
+  "lyrics": "The sky fades to grey, but your light never dims\nA memory etched like a song on the wind\nI tried to let go, but the nights fall apart\nYou walk in my dreams, you still have my heart\n\nI've been chasing shadows, running through the haze\nLooking for the fire in the words we used to say\n\nYou still have my heart, no matter how far\nLike a northern star, you guide me where you are\nEvery beat I feel, it's calling your name\nYou still have my heart, and it's driving me insane\n\nI see your face in the crowd, a ghost in the rain\nA spark in the silence that cuts through the pain\nI'm holding the pieces, but I'm falling apart\n'Cause nothing can change that you still have my heart\n\nI've been chasing shadows, running through the haze\nLooking for the fire in the words we used to say\n\nYou still have my heart, no matter how far\nLike a northern star, you guide me where you are\nEvery beat I feel, it's calling your name\nYou still have my heart, and it's driving me insane\n\nEven if the world turns cold and fades away\nI'll keep the fire burning 'til my dying day\nA love like this, it never disappears\nThrough the storms and the years, you're still here\n\nYou still have my heart, no matter how far\nLike a northern star, you guide me where you are\nEvery beat I feel, it's calling your name\nYou still have my heart, and it's driving me insane\n\n\"You still have my heart…\"",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "C#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 208.88,
+    "lufs": -13.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.03,
+        "label": "S1"
+      },
+      {
+        "start": 9.03,
+        "end": 26.63,
+        "label": "S2"
+      },
+      {
+        "start": 26.63,
+        "end": 42.61,
+        "label": "S3"
+      },
+      {
+        "start": 42.61,
+        "end": 60.53,
+        "label": "S4"
+      },
+      {
+        "start": 60.53,
+        "end": 87.03,
+        "label": "S5"
+      },
+      {
+        "start": 87.03,
+        "end": 114.78,
+        "label": "S6"
+      },
+      {
+        "start": 114.78,
+        "end": 145.94,
+        "label": "S7"
+      },
+      {
+        "start": 145.94,
+        "end": 175.1,
+        "label": "S8"
+      },
+      {
+        "start": 175.1,
+        "end": 194.61,
+        "label": "S9"
+      },
+      {
+        "start": 194.61,
+        "end": 208.88,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.981,
+      "key": 0.891
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a dense, powerful texture, blending heavily distorted guitars with soaring, emotive female vocals to create an atmosphere of dramatic, anthemic longing. The energy is consistently high and driving, with a powerful rock feel that builds from a tense, chugging verse into an explosive, emotionally charged chorus. The production is modern and polished, managing a thick wall of sound where punchy drums and clear, layered vocals cut through the wide, aggressive guitars effectively. A defining quality is the dynamic contrast between the verses and the massive, singalong chorus, where the vocal melody becomes the central, unforgettable hook of the song.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 89 BPM in C# minor, 'You Still Have My Heart' is built around the push and pull between a tight, chugging verse and a chorus that opens up like a door blown off its hinges, the line 'like a northern star, you guide me where you are' landing exactly where it needs to. STAB's vocal sits high in the mix with real authority, cutting through the wide, distorted guitars without losing the ache underneath. It's the kind of power-ballad architecture that Fleetwood Mac perfected and Heart weaponized, and this sits comfortably in that lineage.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "89 BPM tempo",
+      "C# minor key",
+      "quoted lyric: 'like a northern star, you guide me where you are'",
+      "verse-to-chorus dynamic contrast",
+      "vocal placement in mix",
+      "Fleetwood Mac / Heart comparisons"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

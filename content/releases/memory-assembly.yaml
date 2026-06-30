@@ -38,7 +38,7 @@ release:
     isrc: CAGOO2583592
     duration: '4:04'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--memory-assembly.mp3
     instrumental: false
     lyrics_text: 'We said, "This is one of those days"
 

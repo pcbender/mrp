@@ -1,0 +1,108 @@
+{
+  "track_id": "stab--doing-my-best",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Doing My Best.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--doing-my-best.opus"
+  },
+  "lyrics": "I messed up today\nAnd I'm still here\n(yeah)\n\nI tried to be \"good\" at being present\nLike it was another thing to win\nLike I could graduate into calm\nIf I just did it perfectly enough to begin\nBut then I caught myself spiraling\nOver one dumb scroll, one late-night check\nAnd I realized the old voice in my head\nWas still using shame as a steering wheel\nAnd I'm done with that\n\nI'm not going to punish myself\nFor being human in a loud place\nI can come back a hundred times\nAnd it still counts as grace\nI don't need a clean streak\nI don't need to prove I've changed\nI just need to notice and return and say -\nI'm doing my best\n\nSome days I'll be steady\nSome days I'll be a mess\nSome days the quiet feels easy\nSome days it feels like a test\nI'm learning to talk to myself\nLike I'm someone I actually care about\nNot a project, not a problem\nJust a person figuring it out\nStep by step, without the performance\nWithout the scoreboard\nWithout the fear of being caught\n\nI'm not going to punish myself\nFor being human in a loud place\nI can come back a hundred times\nAnd it still counts as grace\nI don't need a clean streak\nI don't need to prove I've changed\nI just need to notice and return and say -\nI'm doing my best\n\nEmerson wrote about self-reliance\nBut I don't think he meant \"be harsh\"\nI think he meant \"trust the part of you\nThat knows what's true when it's quiet\"\nAnd Thoreau wasn't perfect either\nHe was just paying attention\nOn purpose\nAgain\n\nI'm not going to punish myself\nFor being human in a loud place\nI can come back a hundred times\nAnd it still counts as grace\nI don't need a clean streak\nI don't need to prove I've changed\nI just need to notice and return and say -\nI'm doing my best\n\nI messed up today\n(mm)\nAnd I came back",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "A#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 232.01,
+    "lufs": -12.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 14.47,
+        "label": "S1"
+      },
+      {
+        "start": 14.47,
+        "end": 29.63,
+        "label": "S2"
+      },
+      {
+        "start": 29.63,
+        "end": 58.65,
+        "label": "S3"
+      },
+      {
+        "start": 58.65,
+        "end": 82.41,
+        "label": "S4"
+      },
+      {
+        "start": 82.41,
+        "end": 105.98,
+        "label": "S5"
+      },
+      {
+        "start": 105.98,
+        "end": 148.03,
+        "label": "S6"
+      },
+      {
+        "start": 148.03,
+        "end": 177.63,
+        "label": "S7"
+      },
+      {
+        "start": 177.63,
+        "end": 222.49,
+        "label": "S8"
+      },
+      {
+        "start": 222.49,
+        "end": 232.01,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.972
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop",
+      "pop rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "piano",
+      "electric guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This song begins with a sparse, intimate texture, featuring a close, breathy vocal over a gentle piano that establishes a vulnerable and reflective atmosphere. The energy builds dynamically from quiet introspection into a powerful, anthemic pop chorus, shifting the feel from self-doubt to triumphant self-compassion, driven by a steady, modern beat. The production is clean and polished, allowing the lead vocal to remain the clear focus while the arrangement swells with layered harmonies, synth pads, and crisp percussion that create a wide, spacious sound. A defining quality is the cathartic emotional and sonic transition into the chorus, where the full arrangement enters abruptly, transforming the track's mood into an empowering declaration.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "STAB turns the familiar self-help loop inside out here, opening with just piano and a close-mic'd vocal before the chorus hits like a door swinging open at 152 BPM, the full arrangement rushing in and making the release feel genuinely earned. The lyric 'I can come back a hundred times and it still counts as grace' lands because the production proves it, the swelling harmonies arriving not as decoration but as the argument itself. The Emerson and Thoreau bridge is a swing that mostly connects, giving the track an intellectual backbone you don't often find in this corner of pop-rock. A highlight that shows STAB can do vulnerable without losing the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "152 BPM tempo and chorus arrival as structural release",
+      "quoted lyric: 'I can come back a hundred times and it still counts as grace'",
+      "piano and close-mic vocal opening texture",
+      "Emerson/Thoreau bridge as lyrical anchor",
+      "layered harmonies as production choice"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

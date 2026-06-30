@@ -1,0 +1,125 @@
+{
+  "track_id": "pcbender--camino-cielo",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Camino Cielo.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--camino-cielo.opus"
+  },
+  "lyrics": "Dust kicks up on a one-lane road\nEdge of the mountain, silent and old\nTree roots tangle where no one sees\nThe air grows thinner with every breeze\n\nNo maps are laid, no lines betray, Camino Cielo\nNo way surveyed, no signs displayed, Camino Cielo\nJust trust your steps, decide to begin\nCamino Cielo, where journeys end and start again\n\nI walked to forget, but found instead\nOld truths returning with things unsaid\nNo guardrails hold what the soul must weigh\nJust open sky and the will to stay\n\nNo maps are laid, no lines betray, Camino Cielo\nNo way surveyed, no signs displayed, Camino Cielo\nJust trust your steps, decide to begin\nCamino Cielo, where journeys end and start again\n\n(Oh, oh, oh) Camino Cielo (The road to the sky)\n(Oh, oh, oh) Camino Cielo (The road to the sky)\n(Oh, oh, oh) Camino Cielo\n\nSome pass it by, too rough, too steep\nBut something called from canyons deep\nA whisper said, “This way was made”\nI took one step-and the road obeyed\n\nNo maps are laid, no lines betray, Camino Cielo\nNo way surveyed, no signs displayed, Camino Cielo\nJust trust your steps, decide to begin\nCamino Cielo, where journeys end and start again\n\n(Oh, oh, oh) Camino Cielo\n(Oh, oh, oh) Camino Cielo",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 184.6,
+    "key": "F",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 248.0,
+    "lufs": -17.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.0,
+        "label": "S1"
+      },
+      {
+        "start": 13.0,
+        "end": 30.79,
+        "label": "S2"
+      },
+      {
+        "start": 30.79,
+        "end": 57.91,
+        "label": "S3"
+      },
+      {
+        "start": 57.91,
+        "end": 73.24,
+        "label": "S4"
+      },
+      {
+        "start": 73.24,
+        "end": 97.25,
+        "label": "S5"
+      },
+      {
+        "start": 97.25,
+        "end": 126.87,
+        "label": "S6"
+      },
+      {
+        "start": 126.87,
+        "end": 151.84,
+        "label": "S7"
+      },
+      {
+        "start": 151.84,
+        "end": 169.37,
+        "label": "S8"
+      },
+      {
+        "start": 169.37,
+        "end": 188.06,
+        "label": "S9"
+      },
+      {
+        "start": 188.06,
+        "end": 211.49,
+        "label": "S10"
+      },
+      {
+        "start": 211.49,
+        "end": 228.41,
+        "label": "S11"
+      },
+      {
+        "start": 228.41,
+        "end": 248.0,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.965,
+      "key": 0.958
+    }
+  },
+  "tags": {
+    "genre": [
+      "country",
+      "acoustic",
+      "soul"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a warm and intimate texture, led by a clean, fingerpicked acoustic guitar and a gentle, breathy male vocal that create a contemplative and relaxed atmosphere. The energy is consistently low and reflective, driven by a light, shuffling drum groove and a smooth, supportive bass line that grounds the arrangement without becoming intrusive. The production is spacious and clear, with a subtle reverb that gives each element room to breathe and contributes to an open, airy quality. A distinctive moment arrives in the chorus, where layered vocal harmonies introduce a soaring, hopeful lift that contrasts effectively with the more grounded feel of the verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender takes a waltz in F major and turns it into something that earns its metaphor: 'Camino Cielo, where journeys end and start again' lands not as a bumper sticker but as a line you've actually walked toward. The fingerpicked acoustic and breathy vocal keep the verses grounded and close, then the layered harmonies in the chorus open the ceiling just enough to make the lift feel earned rather than manufactured. At nearly 185 BPM in 3/4, the shuffle has more forward momentum than you'd expect from something this contemplative, and it keeps the four minutes moving. Reminds me of early John Denver at his most plainspoken, minus the sentimentality.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "key: F major",
+      "time: 3/4",
+      "BPM: 184.6",
+      "lyric: 'Camino Cielo, where journeys end and start again'",
+      "layered vocal harmonies in chorus",
+      "fingerpicked acoustic guitar",
+      "duration: 4:08"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

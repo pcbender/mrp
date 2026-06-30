@@ -74,7 +74,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/stab--burn-me.mp3
     lyrics_text: 'Feel you staring, from the wall
 
       Eyes like heat, they see it all

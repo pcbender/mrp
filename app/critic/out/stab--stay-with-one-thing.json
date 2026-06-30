@@ -1,0 +1,105 @@
+{
+  "track_id": "stab--stay-with-one-thing",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Stay With One Thing.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--stay-with-one-thing.opus"
+  },
+  "lyrics": "I'm in the kitchen, but I'm not really here\nI'm reading something, but I'm not really clear\nI'm talking back, but I missed what you said\nMy body's moving and my mind's ahead\nI keep thinking I can hold it all\nBut I'm dropping pieces as I go\nI can't stay with one thing\n\nI start a sentence, then I stop to check\nA buzz, a ping, a \"quick thing,\" and I'm off the track\nCoffee gets cold, I reheat it twice\nI'm doing \"fine,\" I'm just paying a price\nI make a list, then I lose the list\nThen I scroll to calm down, and it doesn't\nI open a tab for a single fact\nAnd end up watching strangers feel something\n\nI'm in the kitchen, but I'm not really here\nI'm reading something, but I'm not really clear\nI'm talking back, but I missed what you said\nMy body's moving and my mind's ahead\nI keep thinking I can hold it all\nBut I'm dropping pieces as I go\nI can't stay with one thing\n\nI'm proud of being \"fast,\" it's my little trick\nBut now my thoughts don't land - they just kind of flick\nLike a lighter that won't catch\nLike a song I can't match\nAnd when I finally sit, it's like my brain gets mad\nIt starts inventing emergencies I never had\nI look at a tree outside the window and think, \"Nice\"\nThen my thumb wakes up and pays attention to my device\n\n(hold up)\nWhat if the tired isn't my job\nWhat if it's the switching\nThe constant \"now - n - w-now\"\nAnd never finishing\nI'm not lazy\nI'm scattered\nThere's a difference\n\nI'm in the kitchen, but I'm not really here\nI'm reading something, but I'm not really clear\nI'm talking back, but I missed what you said\nMy body's moving and my mind's ahead\nI keep thinking I can hold it all\nBut I'm dropping pieces as I go\nI can't stay with one thing\n\nJust one breath\nJust one sound\n(just one)\nAnd my mind still runs around",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 160.0,
+    "lufs": -13.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.02,
+        "label": "S1"
+      },
+      {
+        "start": 4.02,
+        "end": 28.77,
+        "label": "S2"
+      },
+      {
+        "start": 28.77,
+        "end": 49.34,
+        "label": "S3"
+      },
+      {
+        "start": 49.34,
+        "end": 82.08,
+        "label": "S4"
+      },
+      {
+        "start": 82.08,
+        "end": 99.4,
+        "label": "S5"
+      },
+      {
+        "start": 99.4,
+        "end": 115.4,
+        "label": "S6"
+      },
+      {
+        "start": 115.4,
+        "end": 148.93,
+        "label": "S7"
+      },
+      {
+        "start": 148.93,
+        "end": 160.0,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.936
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "pop"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a frantic and scattered emotional atmosphere, created by its dense, digital texture. A clear, processed female vocal sits atop layers of glitchy synth arpeggios, driving bass, and chopped samples that perfectly mirror the song's lyrical theme of a racing, unfocused mind. The energy is consistently high, propelled by a punchy electronic drum beat that gives the track a restless, hyperpop-influenced feel. A defining moment is the abrupt mid-song breakdown into a spoken-word section, which shatters the musical momentum and reinforces the concept of distraction before snapping back into the high-energy chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in B minor, 'Stay With One Thing' earns its tempo: the production physically enacts the lyric, with glitchy synth arpeggios and chopped samples scattering across a punchy drum bed the way your attention scatters across a phone screen. The writing is sharper than the premise might suggest, particularly the bridge's self-correction, 'I'm not lazy, I'm scattered, there's a difference,' which lands with the directness of early Alanis at her most confessional. The spoken-word breakdown that shatters the chorus momentum is a genuine structural risk, and it pays off, making the final return feel earned rather than automatic. At 2:40 it's lean and purposeful, a highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152",
+      "B minor",
+      "glitchy synth arpeggios",
+      "chopped samples",
+      "spoken-word breakdown",
+      "lyric: 'I'm not lazy, I'm scattered, there's a difference'",
+      "2:40 runtime"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

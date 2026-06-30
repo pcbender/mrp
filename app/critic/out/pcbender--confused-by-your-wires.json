@@ -1,0 +1,143 @@
+{
+  "track_id": "pcbender--confused-by-your-wires",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Confused By Your Wires.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--confused-by-your-wires.opus"
+  },
+  "lyrics": "Step up to the mic\nDig in for the night\nAin't no place for fright\nJust remember the lick\n\nThroat burns inside out\nRelax before the scream\nWhat makes this a dream\nLess certain than a doubt\n\nIn every face the crowd sways\nAnd weaves and bobs, but never stays\n\nConfused by your wires\nLost in the chords\nA melody unfounded\nYour harmony expires\nNo rewards\nNo rewards\n\nTuning out the static\nI still can’t find the key\nA beggar’s sympathy\nPretending I’m automatic\n\nFingers bleeding meaning\nThe amp can’t understand\nThe drummer breaks his hand\nBut no one hears him screaming\n\nIn every face the crowd sways\nAnd weaves and bobs, but never stays\n\nConfused by your wires\nLost in the chords\nA melody unfounded\nYour harmony expires\nNo rewards\nNo rewards\n\nEvery signal fades the same\nSilence holds the longest note\nAnd drowns the words I never wrote\nWhen every name forgets its fame\n\nIn every face the crowd sways\nAnd weaves and bobs, but never stays\n\nConfused by your wires\nLost in the chords\nA melody unfounded\nYour harmony expires\nNo rewards\nNo rewards\n\nNo rewards\nNo rewards\nNo rewards\nNo rewards",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 308.44,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.29,
+        "label": "S1"
+      },
+      {
+        "start": 9.29,
+        "end": 26.45,
+        "label": "S2"
+      },
+      {
+        "start": 26.45,
+        "end": 42.98,
+        "label": "S3"
+      },
+      {
+        "start": 42.98,
+        "end": 64.62,
+        "label": "S4"
+      },
+      {
+        "start": 64.62,
+        "end": 85.52,
+        "label": "S5"
+      },
+      {
+        "start": 85.52,
+        "end": 100.75,
+        "label": "S6"
+      },
+      {
+        "start": 100.75,
+        "end": 116.12,
+        "label": "S7"
+      },
+      {
+        "start": 116.12,
+        "end": 134.07,
+        "label": "S8"
+      },
+      {
+        "start": 134.07,
+        "end": 158.01,
+        "label": "S9"
+      },
+      {
+        "start": 158.01,
+        "end": 183.46,
+        "label": "S10"
+      },
+      {
+        "start": 183.46,
+        "end": 203.22,
+        "label": "S11"
+      },
+      {
+        "start": 203.22,
+        "end": 220.78,
+        "label": "S12"
+      },
+      {
+        "start": 220.78,
+        "end": 250.78,
+        "label": "S13"
+      },
+      {
+        "start": 250.78,
+        "end": 270.37,
+        "label": "S14"
+      },
+      {
+        "start": 270.37,
+        "end": 289.81,
+        "label": "S15"
+      },
+      {
+        "start": 289.81,
+        "end": 308.44,
+        "label": "S16"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.962,
+      "key": 0.859
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "nostalgic",
+      "tender",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "harmonica",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a warm, organic funk-rock track with a slightly tense yet soulful atmosphere, built around a core of electric guitar, bass, drums, and lead vocals. The energy is consistently high and driving, maintaining a confident, danceable feel that suggests a live performance. The production is clean and spacious, with each instrument occupying its own distinct place in the mix, creating a sound that is full without being dense. The track's defining quality is its virtuosic and expressive guitar work, which establishes the mood from the very beginning and culminates in fiery, intricate solos that elevate the song's energy.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender writes the musician's anxiety dream better than most, and 'Confused by Your Wires' earns that territory honestly. The lyric 'the amp can't understand / the drummer breaks his hand / but no one hears him screaming' lands like a bruise, and in E minor at a pace that hits harder than you expect for a track this emotionally precise, the guitar work gives the alienation some real teeth. The chorus piles up those 'no rewards' like unpaid debts, and by the time it cycles back the third time, the repetition feels earned rather than lazy. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "E minor key",
+      "BPM 172.3 described as driving pace",
+      "lyric: 'the amp can't understand / the drummer breaks his hand / but no one hears him screaming'",
+      "chorus repetition of 'no rewards'",
+      "guitar work from audio impression"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

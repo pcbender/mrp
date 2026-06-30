@@ -1,0 +1,134 @@
+{
+  "track_id": "lingua-aeternum--aim-for-true",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Aim For True.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--aim-for-true.opus"
+  },
+  "lyrics": "A line is drawn and then another\nEach dissolves into the other\nTension keeps a quiet fight\nBetween the meaning and what's right\n\nIt's never clear the play's the thing\nWhen endings come before beginnings\n\nSpells and incantations\nA call to some old muse\nSilent remonstrations\nTalent disabused\n\nAim for true\nAim for true\n\nThe margin fills with its corrections\nEach draft rewrites its own intentions\nYou reach to name the thing you meant\nAnd lose it in the argument\n\nIt's never clear the play's the thing\nWhen endings come before beginnings\n\nSpells and incantations\nA call to some old muse\nSilent remonstrations\nTalent disabused\n\nAim for true\nAim for true\n\nMaybe the point was never to win it\nOnly to start and stay inside it\nStrike the chord and let it catch\nThere's nothing here it has to match\nThe hand still shakes, the work's not done\nYou let it go and start again\nNot to be perfect\nJust to be true\n\nSpells and incantations\nA call to some old muse\nSilent remonstrations\nTalent disabused\n\nAim for true\nAim for true\n\nAim for true\nAim for true",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "C",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 268.7,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.85,
+        "label": "S1"
+      },
+      {
+        "start": 3.85,
+        "end": 31.23,
+        "label": "S2"
+      },
+      {
+        "start": 31.23,
+        "end": 48.07,
+        "label": "S3"
+      },
+      {
+        "start": 48.07,
+        "end": 76.32,
+        "label": "S4"
+      },
+      {
+        "start": 76.32,
+        "end": 92.58,
+        "label": "S5"
+      },
+      {
+        "start": 92.58,
+        "end": 117.66,
+        "label": "S6"
+      },
+      {
+        "start": 117.66,
+        "end": 142.22,
+        "label": "S7"
+      },
+      {
+        "start": 142.22,
+        "end": 159.43,
+        "label": "S8"
+      },
+      {
+        "start": 159.43,
+        "end": 183.99,
+        "label": "S9"
+      },
+      {
+        "start": 183.99,
+        "end": 199.81,
+        "label": "S10"
+      },
+      {
+        "start": 199.81,
+        "end": 217.62,
+        "label": "S11"
+      },
+      {
+        "start": 217.62,
+        "end": 241.56,
+        "label": "S12"
+      },
+      {
+        "start": 241.56,
+        "end": 262.99,
+        "label": "S13"
+      },
+      {
+        "start": 262.99,
+        "end": 268.7,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.923
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a tense and epic atmosphere by layering a powerful female vocal and a distinctive reedy wind instrument over a driving, ethnic-infused electronic rock texture. The energy is consistently high and cinematic, building from a propulsive verse into an explosive, anthemic chorus that feels both modern and ancient. The production is polished and massive, creating a wide stereo image where punchy drums and deep bass anchor the dense layers of synths and processed vocals without sacrificing clarity. A defining quality is the seamless fusion of traditional-sounding melodic motifs with aggressive, modern electronic production, a sound powerfully highlighted in the distorted instrumental break.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "In 3/4 time at a steady 117 BPM, 'Aim for True' turns the act of creative struggle into something you can actually feel in your chest. The lyric 'the hand still shakes, the work's not done / you let it go and start again' lands with the plainspoken weight of a John Hiatt confession, and the chorus hook earns every repeat through sheer economy: two words, no argument. The production balances drive and restraint well, keeping the mix clear even as the arrangement fills out, and the waltz meter gives the whole thing an inevitability that suits the theme. A highlight, and one of their more immediate offerings.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "117 BPM",
+      "lyric quote: 'the hand still shakes, the work's not done / you let it go and start again'",
+      "two-word chorus hook",
+      "John Hiatt comparison",
+      "LUFS -14.2 dB mix clarity"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

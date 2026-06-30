@@ -37,7 +37,7 @@ release:
     isrc: CAENV2562312
     duration: '3:45'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--hesitation-denies.mp3
     instrumental: false
     lyrics_text: 'Just before the closing door
 

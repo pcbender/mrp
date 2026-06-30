@@ -1,0 +1,124 @@
+{
+  "track_id": "michael-anthony-rose--aletheion",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Aletheion.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--aletheion.opus"
+  },
+  "lyrics": "Apa’s daughter stands before the Court of Opinion\nThe finest minds, the trusted few\n“I’m told there’s answers here. I am Aletheion.”\n“How does one know what’s true?”\n\nThe courtiers all leaned forward, quick to make a case\nEach certain, each composed\nBut every word rang brittle and too well rehearsed\nTheir pretense exposed\n\nNo wise man claims the truth\n\nAletheion…\nWilling to tune\nTo adjust\nTo embrace dissonance\nAletheion…\nResonance aligned with what is…\n\nApa’s daughter silenced their answers\nNot in defiance, but in care\n“For if I clutch a single answer\nI silence what isn’t there.”\n\nShe released her own conviction\nLet one bright thread go slack-\nFor a single string pulled tightly\nWill always answer back\n\nNo wise man claims the truth\n\nAletheion…\nWilling to tune\nTo adjust\nTo embrace dissonance\nAletheion…\nResonance aligned with what is…\n\nNo wise man claims the truth\n\nAletheion…\nWilling to tune\nTo adjust\nTo embrace dissonance\nAletheion…\nResonance aligned with what is…",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 238.43,
+    "lufs": -14.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.85,
+        "label": "S1"
+      },
+      {
+        "start": 4.85,
+        "end": 24.52,
+        "label": "S2"
+      },
+      {
+        "start": 24.52,
+        "end": 39.52,
+        "label": "S3"
+      },
+      {
+        "start": 39.52,
+        "end": 57.24,
+        "label": "S4"
+      },
+      {
+        "start": 57.24,
+        "end": 88.05,
+        "label": "S5"
+      },
+      {
+        "start": 88.05,
+        "end": 114.75,
+        "label": "S6"
+      },
+      {
+        "start": 114.75,
+        "end": 130.54,
+        "label": "S7"
+      },
+      {
+        "start": 130.54,
+        "end": 145.84,
+        "label": "S8"
+      },
+      {
+        "start": 145.84,
+        "end": 170.57,
+        "label": "S9"
+      },
+      {
+        "start": 170.57,
+        "end": 196.12,
+        "label": "S10"
+      },
+      {
+        "start": 196.12,
+        "end": 217.48,
+        "label": "S11"
+      },
+      {
+        "start": 217.48,
+        "end": 238.43,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.984,
+      "key": 0.796
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "defiant",
+      "tender",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track features a dense, polished progressive metal texture, establishing a dramatic and intellectually confrontational atmosphere. The energy is consistently high and driving, fueled by aggressive, palm-muted guitar riffs and a powerful, precise rhythm section. The production is very modern and clear, creating a full sonic landscape where every intricate instrumental part and the clean, theatrical vocals are well-defined and sit together cohesively. The most distinctive quality is the virtuosic and melodic guitar soloing, which showcases incredible technical proficiency and defines the song's character.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose builds this one around a genuinely unusual conceit: Aletheion, daughter of Apa, walks into the Court of Opinion not to win an argument but to dissolve the habit of winning arguments, and the lyric earns that idea cleanly with the image of a string pulled tightly that 'will always answer back.' The song sits at a measured 107 BPM in E major, but it doesn't feel patient so much as coiled, guitar work that shifts from precise, palm-muted drive into melodic soloing that carries real expressive weight. The chorus resolves on 'resonance aligned with what is,' and Rose delivers the line with enough conviction that the philosophical abstraction lands as feeling rather than lecture. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'a single string pulled tightly / will always answer back'",
+      "lyric: 'resonance aligned with what is'",
+      "107 BPM",
+      "E major",
+      "palm-muted guitar riffs",
+      "melodic guitar soloing"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

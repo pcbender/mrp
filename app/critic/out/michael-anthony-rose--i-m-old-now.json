@@ -1,0 +1,123 @@
+{
+  "track_id": "michael-anthony-rose--i-m-old-now",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/I'm Old Now.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--i-m-old-now.opus"
+  },
+  "lyrics": "Mm\nNo, that's not-\nYep, that's me\n\nCaught myself in the black phone screen\nArm half raised, just passing through\nBad light, wrong angle, tired face\nBut it wasn't bad light, it was true\nI stood there longer than I should\nLike I'd been called into another room\nSame kitchen, same coffee cup\nSame day, but something changed at noon\n\nNobody said a word\nNothing dramatic happened\nJust one small thought\nLanding where it hadn't\n\nI didn't trip, I didn't fall\nDidn't hear some distant call\nIt was quieter than that\nJust a shift I couldn't fight\nSomething in me turned and looked\nAnd didn't look away this time\nI stood there thinking, clear as day\nI'm old now\n\nI went upstairs for something small\nForgot it halfway up the steps\nLaughed it off like people do\nLike a harmless little bit\nBut later on while brushing teeth\nI watched my face arrange itself\nLike it was trying to stay polite\nWhile telling me something else\n\nNot dying, not done\nNot giving up the keys\nJust losing the right\nTo say this happens gradually\n\nI didn't trip, I didn't fall\nDidn't hear some distant call\nIt was quieter than that\nJust a shift I couldn't fight\nSomething in me turned and looked\nAnd didn't look away this time\nI stood there thinking, clear as day\nI'm old now\n\nI always thought it would arrive\nWith sirens, tests, some bigger proof\nBut no, it came like truth comes in\nPlain clothes, standing in my room\nAnd once you know it\nYou know it\nOnce it lands\nIt stays\n(yeah, it stays)\n\nI didn't trip, I didn't fall\nDidn't lose my name at all\nI'm still in here, I know that much\nBut something changed tonight\nAll the years I kept ahead\nAre suddenly at my side\nAnd I can say it if I have to…\nI'm old now\n\nMm\nI'm old now\nYeah\nI'm old now",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 254.95,
+    "lufs": -11.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 15.16,
+        "label": "S1"
+      },
+      {
+        "start": 15.16,
+        "end": 33.74,
+        "label": "S2"
+      },
+      {
+        "start": 33.74,
+        "end": 49.06,
+        "label": "S3"
+      },
+      {
+        "start": 49.06,
+        "end": 65.02,
+        "label": "S4"
+      },
+      {
+        "start": 65.02,
+        "end": 88.1,
+        "label": "S5"
+      },
+      {
+        "start": 88.1,
+        "end": 107.46,
+        "label": "S6"
+      },
+      {
+        "start": 107.46,
+        "end": 125.99,
+        "label": "S7"
+      },
+      {
+        "start": 125.99,
+        "end": 156.36,
+        "label": "S8"
+      },
+      {
+        "start": 156.36,
+        "end": 180.07,
+        "label": "S9"
+      },
+      {
+        "start": 180.07,
+        "end": 223.19,
+        "label": "S10"
+      },
+      {
+        "start": 223.19,
+        "end": 238.21,
+        "label": "S11"
+      },
+      {
+        "start": 238.21,
+        "end": 254.95,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.943
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with an intimate, reflective atmosphere, built around a present and conversational lead vocal. The texture is dynamic, starting sparse and personal before swelling into a full-band arrangement with warm, slightly overdriven electric guitars and a solid, grounded rhythm section. The production is clean and well-balanced, creating a sense of space that allows the emotional weight of the vocal and lyrics to remain the central focus. A defining quality of the track is its gradual, powerful build, which effectively mirrors the lyrical theme of a slow, dawning realization, culminating in a cathartic and melodic guitar solo that feels both resigned and liberated.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose opens this one with a mumbled false start, like he caught himself mid-thought, and that small gesture sets the tone perfectly: what follows is as unguarded as anything he's put down. The lyric does something genuinely difficult, finding the exact texture of aging's quiet arrival, not the dramatic kind but the kitchen-mirror kind, the moment when 'all the years I kept ahead / are suddenly at my side.' The track earns its 4/4 build honestly, starting spare and conversational before the guitars open up into something warm and slightly worn at the edges, and the guitar solo that closes it out feels less like a show of force than a long exhale. At 152 BPM in A major it has more forward momentum than the reflective mood might suggest, and that tension between the driving rhythm and the still, clear-eyed lyric is where the song lives. This is Rose at his most direct, and it holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'all the years I kept ahead / are suddenly at my side'",
+      "false-start opening as tonal device",
+      "BPM and key (A major, 152 BPM)",
+      "sparse-to-full-band build structure",
+      "closing guitar solo as emotional resolution"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

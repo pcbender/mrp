@@ -1,0 +1,111 @@
+{
+  "track_id": "pcbender--the-rats-are-in-the-roses",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Rats Are In The Roses.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--the-rats-are-in-the-roses.opus"
+  },
+  "lyrics": "Who is the Other\nA different kind of mother\nAn immigrant’s daughter\nA darker-shaded brother\n\nThe stuff inside the melting pot\nThe dreamers, rogues and have-me-nots\n\nThe rats are in the roses\nYour bias predisposes\nInhumanity exposes\nThe lie you think you know is\nThe rats are in the roses\n\nFear loves autocracy\nA rube who chants, “follow me\\!”\nAnd trades morals for dishonesty\nAbove the law and decency\n\nThe stuff inside the melting pot\nThe roses need or they will rot\n\nThe rats are in the roses\nYour bias predisposes\nInhumanity exposes\nThe lie you think you know is\nThe rats are in the roses\n\nA society forged\nWhen a morality is shared\nBy people who dare\nAnd show the courage\nTo stand and demand…\n“Not here\\!”\n\nThe stuff inside the melting pot\nIs all of us, have you forgotten\n\nThe rats are in the roses\nYour bias predisposes\nInhumanity exposes\nThe lie you think you know is\nThe rats are in the roses\n\nThe rats are in the roses",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 203.87,
+    "lufs": -13.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.77,
+        "label": "S1"
+      },
+      {
+        "start": 13.77,
+        "end": 39.5,
+        "label": "S2"
+      },
+      {
+        "start": 39.5,
+        "end": 74.07,
+        "label": "S3"
+      },
+      {
+        "start": 74.07,
+        "end": 101.01,
+        "label": "S4"
+      },
+      {
+        "start": 101.01,
+        "end": 124.44,
+        "label": "S5"
+      },
+      {
+        "start": 124.44,
+        "end": 141.53,
+        "label": "S6"
+      },
+      {
+        "start": 141.53,
+        "end": 164.0,
+        "label": "S7"
+      },
+      {
+        "start": 164.0,
+        "end": 194.35,
+        "label": "S8"
+      },
+      {
+        "start": 194.35,
+        "end": 203.87,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.947,
+      "key": 0.88
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track immediately presents an urgent and rebellious atmosphere, combining a dense wall of overdriven guitars with impassioned, edgy vocals. The energy is consistently high and driving, powered by a punchy and straightforward rock rhythm section that feels both tight and forceful. The production is clean and modern, allowing the powerful bass and drums to anchor the wide stereo field of guitars while keeping the lead vocal defined and present at the center of the mix. A distinctive quality is the anthemic lift of the chorus, where the melody broadens around a memorable lyrical hook, creating a powerful focal point that contrasts effectively with the more aggressive verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A protest song with real backbone: PCBender plants a pointed political metaphor in a 3/4 waltz feel that shouldn't work as hard rock but absolutely does, the triple meter giving the chorus an unexpected sway before the overdriven guitars push it into anthem territory. The hook lands on 'your bias predisposes / inhumanity exposes' with the kind of plainspoken conviction you get from John Hiatt when he's really angry about something, and the production keeps the vocal front and center so none of the argument gets lost in the wall of guitar. At 117 BPM in D major, the rhythm section is doing serious work underneath all that distortion, and the contrasting bridge, 'A society forged / when a morality is shared,' opens up just enough space before the final chorus closes the case. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature creating waltz-feel in a hard rock context",
+      "BPM 117.5",
+      "D major",
+      "quoted lyric: 'your bias predisposes / inhumanity exposes'",
+      "quoted lyric: 'A society forged / when a morality is shared'",
+      "chorus anthemic lift",
+      "overdriven guitar wall with centered vocal production",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

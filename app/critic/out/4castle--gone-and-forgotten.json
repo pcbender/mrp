@@ -1,0 +1,124 @@
+{
+  "track_id": "4castle--gone-and-forgotten",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Gone and Forgotten.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--gone-and-forgotten.opus"
+  },
+  "lyrics": "I walked the road where we once wandered\nThe stars were dim, the night felt hollow\nThe wind was calling out your old name\nBut time just sighed and would not answer\n\nGone and forgotten, lost in sorrow\nNothing to hold and nowhere to go\nI prayed forgiveness into the night\nThe face of regret, gone and forgotten\n\nThe years have blurred into a gray sky\nThe leaves have turned, but roots still hunger\nI built a fire to warm the silence\nBut flames can't burn away the sorrow\n\nGone and forgotten, lost in sorrow\nNothing to hold and nowhere to go\nI prayed forgiveness into the night\nThe face of regret, gone and forgotten\n\nThe hands of time unravel all we leave behind\nThey steal our dreams, forget the lies we tried to hide\n\nIf I could trade my voice for silence\nWould you still hear the words unsung\nIf I could fold the past like paper\nWould you rewrite the final ending\n\nGone and forgotten, lost in sorrow\nNothing to hold and nowhere to go\nI prayed forgiveness into the night\nThe face of regret, gone and forgotten\n\nThe face of regret, gone and forgotten",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "C",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 243.88,
+    "lufs": -14.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 12.42,
+        "label": "S1"
+      },
+      {
+        "start": 12.42,
+        "end": 27.42,
+        "label": "S2"
+      },
+      {
+        "start": 27.42,
+        "end": 44.42,
+        "label": "S3"
+      },
+      {
+        "start": 44.42,
+        "end": 64.37,
+        "label": "S4"
+      },
+      {
+        "start": 64.37,
+        "end": 79.85,
+        "label": "S5"
+      },
+      {
+        "start": 79.85,
+        "end": 99.17,
+        "label": "S6"
+      },
+      {
+        "start": 99.17,
+        "end": 116.36,
+        "label": "S7"
+      },
+      {
+        "start": 116.36,
+        "end": 148.38,
+        "label": "S8"
+      },
+      {
+        "start": 148.38,
+        "end": 174.73,
+        "label": "S9"
+      },
+      {
+        "start": 174.73,
+        "end": 194.19,
+        "label": "S10"
+      },
+      {
+        "start": 194.19,
+        "end": 223.21,
+        "label": "S11"
+      },
+      {
+        "start": 223.21,
+        "end": 243.88,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.962,
+      "key": 0.899
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This modern rock track builds from a spacious, melancholic atmosphere into a dense and emotionally charged wall of sound. The energy follows a classic quiet verse, loud chorus structure, creating a powerful and anthemic feel driven by heavy, distorted guitars and a driving rhythm section. The production quality is polished and clear, with wide guitars creating a massive sonic space while the vocals and punchy drums remain focused and articulate in the mix. The most distinctive quality is this stark dynamic contrast, where the explosive transition from the clean verse into the heavy chorus at 0:12 defines the song's emotional impact.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in C minor, 'Gone and Forgotten' earns its weight the old-fashioned way: a dynamic build that actually delivers. The verse breathes and grieves, and when the chorus hits at around the 0:12 mark, the guitars land with the kind of full-room weight you get from peak-era Heart, while the band locks into a groove that keeps the heaviness from feeling mechanical. The bridge couplet, 'the hands of time unravel all we leave behind / they steal our dreams, forget the lies we tried to hide,' is where the lyric rises above the grief-ballad template and stakes a real claim. A genuine highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "152 BPM",
+      "C minor",
+      "chorus entry at 0:12",
+      "bridge lyric quoted",
+      "Heart comparison",
+      "quiet verse to heavy chorus dynamic"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "track_id": "michael-anthony-rose--build-me-a-lie",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Build Me A Lie.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--build-me-a-lie.opus"
+  },
+  "lyrics": "You were the answer to my anger\nA promise in search of rage\nA home for every stranger\nThe key for every cage\n\nA Truth in need of a question\nThe lens for my aggression\n\nBuild me a lie and I’ll hide every crack\nMake it sound honest, believe it’s a fact\nStart with my fear, make the danger clear\nBuild me a lie and I’ll sleep…\nBelieving you care\n\nThe spotlight starts to falter\nAnd the script’s a page too thin\nThe crowd no longer sure\nYet everyone pretends\n\nA Truth in need of a question\nThe lens for your aggression\n\nBuild me a lie and I’ll hide every crack\nMake it sound honest, believe it’s a fact\nStart with my fear, make the danger clear\nBuild me a lie and I’ll sleep…\nBelieving you care\n\nNow I lay me down to sleep\nSafe and sound in my belief\nIf I should die before I wake\nFree me from my last mistake\n\nBuild me a lie and I’ll hide every crack\nMake it sound honest, believe it’s a fact\nStart with my fear, make the danger clear\nBuild me a lie and I’ll sleep…\nBelieving you care\n\nBuild me a lie\nBuild me a lie\nBuild me a lie\nBuild me a lie",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 340.26,
+    "lufs": -14.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.7,
+        "label": "S1"
+      },
+      {
+        "start": 11.7,
+        "end": 89.65,
+        "label": "S2"
+      },
+      {
+        "start": 89.65,
+        "end": 111.64,
+        "label": "S3"
+      },
+      {
+        "start": 111.64,
+        "end": 134.26,
+        "label": "S4"
+      },
+      {
+        "start": 134.26,
+        "end": 158.94,
+        "label": "S5"
+      },
+      {
+        "start": 158.94,
+        "end": 178.45,
+        "label": "S6"
+      },
+      {
+        "start": 178.45,
+        "end": 194.61,
+        "label": "S7"
+      },
+      {
+        "start": 194.61,
+        "end": 210.42,
+        "label": "S8"
+      },
+      {
+        "start": 210.42,
+        "end": 232.13,
+        "label": "S9"
+      },
+      {
+        "start": 232.13,
+        "end": 251.54,
+        "label": "S10"
+      },
+      {
+        "start": 251.54,
+        "end": 267.26,
+        "label": "S11"
+      },
+      {
+        "start": 267.26,
+        "end": 285.95,
+        "label": "S12"
+      },
+      {
+        "start": 285.95,
+        "end": 319.76,
+        "label": "S13"
+      },
+      {
+        "start": 319.76,
+        "end": 340.26,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.976,
+      "key": 0.843
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a soulful, blues-inflected electric guitar before exploding into a dense, high-energy rock anthem. The production is polished and powerful, creating a wide sonic space where a wall of distorted guitars, punchy drums, and a clear, commanding lead vocal all sit together effectively. The emotional atmosphere feels earnest and pleading, driven forward by the straight-ahead rock feel. A defining quality is the virtuosic, shred-style guitar work that frequently appears, adding a layer of technical flash to the song's powerful arrangement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a brisk 152 BPM in C major, 'Build Me a Lie' opens with a blues-stung guitar figure before Rose throws the doors open on a full-throttle rock arrangement that earns every decibel. The lyric does real work here: 'Start with my fear, make the danger clear' cuts through the noise and lands the theme of self-protective self-deception with uncommon directness, and the callback to the childhood prayer in the bridge gives the chorus a genuine emotional gut-punch. At nearly six minutes the song earns its runtime, with guitar work that has the same kind of technical confidence you hear in peak-era Santana, serving the song rather than showing off. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152",
+      "C major",
+      "opening blues guitar figure",
+      "lyric: 'Start with my fear, make the danger clear'",
+      "childhood prayer bridge",
+      "5:40 runtime",
+      "Santana comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

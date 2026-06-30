@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--gemini-rising",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Gemini Rising.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--gemini-rising.opus"
+  },
+  "lyrics": "I change my mind like seasons cross the sky\nOne minute laughing, next I wonder why\nI pose questions that are never asked\nAnd forget the answers just as fast\n\nDon't try to pin me down, I won't be still\nI live on impulse, powered by will\n\nI'm Gemini rising, chaos and grace\nA mirror with two different faces\nI'm lightning wrapped in skin and bone\nToo wild to cage, too bright alone\nI'm every version, all at once\nI burn, I dance, I don't explain\nYou'll never know me-but love me anyway\n\nI read your soul before you speak a word\nAnd tuck away the truths I never heard\nI crave connection, then I vanish fast\nA future dreamer tied to nothing past\n\nI don't do \"simple,\" I don't do \"same\"\nBut I will light your world aflame\n\nI'm Gemini rising, storm and star\nA walking question, here you are\nI'm rhythm bent around a thought\nA heart you almost-but never quite-caught\nI'm air and fire in motion made\nI shimmer, vanish, love, and fade\n\nI'm the whisper in your quiet\nThe spark that sets the riot\nA wave, a splash, a name not wrong\nI don't stay still, I don't stay long\nI'm the girl behind the glare\nWatch me disappear-\nI was never really there\n\nI'm Gemini rising, wild and true\nI'm everything-especially not for you\nA thousand voices in my head\nBut I speak the one I meant instead\nI'm every version, none are wrong\nA burst of light that doesn't stay long\n\nA ripple, a spark, then I'm gone\nA wave, a splash-moving on",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 220.0,
+    "lufs": -13.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 8.36,
+        "label": "S1"
+      },
+      {
+        "start": 8.36,
+        "end": 32.07,
+        "label": "S2"
+      },
+      {
+        "start": 32.07,
+        "end": 59.12,
+        "label": "S3"
+      },
+      {
+        "start": 59.12,
+        "end": 74.56,
+        "label": "S4"
+      },
+      {
+        "start": 74.56,
+        "end": 102.54,
+        "label": "S5"
+      },
+      {
+        "start": 102.54,
+        "end": 149.54,
+        "label": "S6"
+      },
+      {
+        "start": 149.54,
+        "end": 183.32,
+        "label": "S7"
+      },
+      {
+        "start": 183.32,
+        "end": 205.15,
+        "label": "S8"
+      },
+      {
+        "start": 205.15,
+        "end": 220.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.972
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with an intimate and thoughtful texture, led by a clean acoustic guitar and a forward, breathy female vocal that feels personal and direct. The song builds with a dramatic dynamic arc, transitioning from the sparse verses into an anthemic, high-energy chorus driven by a full drum kit and a wide wall of layered guitars. The production is polished and spacious, successfully managing the shift from a lean arrangement to a dense, powerful soundscape while keeping the vocal as the clear focal point. The most defining quality is this stark contrast between the quiet introspection of the verses and the declarative power of the choruses, creating a powerful sense of emotional release.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds 'Gemini Rising' around one of his cleanest structural instincts: strip the verses down to a breathy vocal over acoustic guitar, then let the chorus hit like a door thrown open, full drums and a wall of guitars rushing in at once. In 3/4 time at 123 BPM the song has a natural swell to it, and the lyric earns its big moments, especially the line 'a heart you almost, but never quite, caught,' which lands with exactly the kind of double-take a good hook needs. The C major key keeps it open and declarative, which suits the character being drawn. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time",
+      "123 BPM",
+      "C major",
+      "verse/chorus dynamic contrast",
+      "acoustic guitar to full band build",
+      "lyric quote: a heart you almost, but never quite, caught"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

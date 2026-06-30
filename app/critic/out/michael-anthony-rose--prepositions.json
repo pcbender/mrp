@@ -1,0 +1,107 @@
+{
+  "track_id": "michael-anthony-rose--prepositions",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Prepositions.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--prepositions.opus"
+  },
+  "lyrics": "",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 207.95,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 25.68,
+        "label": "S1"
+      },
+      {
+        "start": 25.68,
+        "end": 59.07,
+        "label": "S2"
+      },
+      {
+        "start": 59.07,
+        "end": 78.83,
+        "label": "S3"
+      },
+      {
+        "start": 78.83,
+        "end": 100.05,
+        "label": "S4"
+      },
+      {
+        "start": 100.05,
+        "end": 133.42,
+        "label": "S5"
+      },
+      {
+        "start": 133.42,
+        "end": 154.23,
+        "label": "S6"
+      },
+      {
+        "start": 154.23,
+        "end": 171.57,
+        "label": "S7"
+      },
+      {
+        "start": 171.57,
+        "end": 198.86,
+        "label": "S8"
+      },
+      {
+        "start": 198.86,
+        "end": 207.95,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.963,
+      "key": 0.956
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "electronic",
+      "acoustic"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a sophisticated and warm atmosphere, built upon a rich texture of electric piano, clean electric guitar, and a tight rhythm section. The energy is controlled and polished, maintaining a relaxed yet forward-moving feel that is characteristic of contemporary smooth jazz. The production quality is excellent, with each instrument occupying its own distinct space in the mix, creating a sound that is dense and full without feeling crowded. A defining characteristic is the intricate interplay and melodic handoffs between the guitar and piano, especially when the full ensemble solidifies the main groove after a more spacious introduction.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz at 143 BPM in A major sounds like a contradiction, but Rose makes it work: 'Prepositions' moves with a brisk, almost aerobic momentum while never losing the warmth that keeps 3/4 time feeling intimate rather than frantic. The real pleasure is in how the guitar and piano trade the melodic thread back and forth, each picking up mid-thought where the other left off, like two musicians who've been playing together long enough to finish each other's sentences. Clean, full, and quietly satisfying.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "143 BPM in 3/4",
+      "A major",
+      "guitar and piano melodic handoffs",
+      "nine-section structure with spacious intro solidifying into main groove"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

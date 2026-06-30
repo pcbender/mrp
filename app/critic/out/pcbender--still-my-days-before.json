@@ -1,0 +1,113 @@
+{
+  "track_id": "pcbender--still-my-days-before",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Still My Days Before.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--still-my-days-before.opus"
+  },
+  "lyrics": "A cat came calling in the night\nA cry, a song of pure delight\nI tried to sleep but yet could not\nAnd dared to lose my sense of fright\n\nAt first the dark obscured my thought\nBut soon enough returned my sight\nWhat seemed a cat was only fog\nA phantom of a dream forgot\n\nWas it real, or just the air\nWhispers woven from nowhere\n\nMy bed is still my days before\nGone too the things I once adored\nAnd years behind the shuttered door\nAnd years behind the shuttered door\n\nA dream of cats and not a dog\nPerhaps this is an epilogue\nI need a thing I can't ignore\nTo keep me from my monologue\n\nWas it real, or just the air\nWhispers woven from nowhere\n\nMy bed is still, my days before\nGone too the things I once adored\nAnd years behind the shuttered door\nAnd years behind the shuttered door\n\nAnd years behind the shuttered door…",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "D#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 219.8,
+    "lufs": -15.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 15.91,
+        "label": "S1"
+      },
+      {
+        "start": 15.91,
+        "end": 31.25,
+        "label": "S2"
+      },
+      {
+        "start": 31.25,
+        "end": 50.6,
+        "label": "S3"
+      },
+      {
+        "start": 50.6,
+        "end": 70.91,
+        "label": "S4"
+      },
+      {
+        "start": 70.91,
+        "end": 85.89,
+        "label": "S5"
+      },
+      {
+        "start": 85.89,
+        "end": 102.68,
+        "label": "S6"
+      },
+      {
+        "start": 102.68,
+        "end": 125.95,
+        "label": "S7"
+      },
+      {
+        "start": 125.95,
+        "end": 147.89,
+        "label": "S8"
+      },
+      {
+        "start": 147.89,
+        "end": 179.35,
+        "label": "S9"
+      },
+      {
+        "start": 179.35,
+        "end": 219.8,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.953,
+      "key": 0.969
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "country rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a melancholic and introspective atmosphere with a sparse texture of acoustic guitar, gentle piano, and a soft, breathy male vocal. The energy is consistently low and contemplative, maintaining a quiet, ballad-like feel that builds subtly with the introduction of light percussion and layered background harmonies. The production quality is clean and spacious, using a prominent reverb to create a sense of depth and allow each element, especially the lead vocal, to sit clearly within the mix. A defining quality is the dynamic shift into a more anthemic, harmonically rich chorus at 1:31, which provides an emotional swell before returning to the track's reflective core.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds 'Still My Days Before' around a central riddle, a night visitor that dissolves into fog, and the quiet devastation of the refrain lands harder than it has any right to: 'my bed is still, my days before / gone too the things I once adored.' The production earns that weight, sparse acoustic guitar and soft piano giving the vocal room to breathe before the chorus opens into something warmer and fuller at the 1:31 mark, a swell that calls to mind early Counting Crows at their most unguarded. At 117 BPM in D# major the track moves with a gentle forward pull rather than a crawl, which keeps the melancholy from curdling into self-pity. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric quote: 'my bed is still, my days before / gone too the things I once adored'",
+      "dynamic shift at 1:31",
+      "BPM 117 in D# major",
+      "sparse acoustic guitar and piano texture",
+      "Counting Crows comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

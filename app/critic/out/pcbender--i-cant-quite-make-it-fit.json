@@ -1,0 +1,108 @@
+{
+  "track_id": "pcbender--i-cant-quite-make-it-fit",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/I Can’t Quite Make It Fit.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--i-cant-quite-make-it-fit.opus"
+  },
+  "lyrics": "She says, “Baby, it’s simple,” with a look in her eye\nThen she changes the weather while I’m still asking why\nOne minute she’s thunder, next minute she’s silk\nI’m standing in the kitchen turning coffee into milk\n\nShe says I don't listen, I say she talks in smoke\nEvery answer's got a sparkle and a hidden little joke\nI’m trying to read the signal, trying to catch the drift\nBut every time I grab the handle, she gives it one more twist\n\nI can’t quite make it fit\nNo matter how I turn it\nThis piece of my life got a fire in it, baby\nAnd I can’t quite make it fit\nHer love, this world, my mind\nI’m looking for the edges, but they keep on moving\nAnd I can’t quite make it fit\n\nNow the TV keeps shouting like it knows what’s true\nEverybody’s drawing lines telling me what to do\nLeft side, right side, wrong side, righteous\nEverybody’s so certain, that’s what frightens us\n\nAnd my job feels shaky, and my back feels old\nGot a head full of questions and a hand I can’t quite hold\nThought I’d have a map by now, thought I’d know the way\nBut I’m improvising dinner just to get through one more day\n\nI can’t quite make it fit\nNo matter how I turn it\nThis piece of my life got a fire in it, baby\nAnd I can’t quite make it fit\nHer love, this world, my mind\nI’m looking for the edges, but they keep on moving\nAnd I can’t quite make it fit\n\nMaybe that’s the trouble\nMaybe that’s the trick\nLife ain’t a clean line, baby\nIt’s a jump and a slip\n\nShe ain’t a puzzle\nThis world ain’t square\nMaybe all this meaning\nWas never sitting there\n\nMaybe love is crooked\nMaybe truth can bend\nMaybe all I really need\nIs to stop needing it to end\n\nI can’t quite make it fit\nBut I’m dancing with it anyway\nGot one shoe on the ceiling\nAnd one foot in yesterday\n\nI can’t quite make it fit\nBut I’m laughing in the strain\nShe’s a beautiful mystery\nAnd this world’s a leaky brain\n\nI can’t quite make it fit\nMy plans, my heart, my pride\nBut the groove gets a little better\nWhen I quit trying to force the ride\n\nI can’t quite make it fit\nNo, I can’t quite make it fit\nBut if it don’t come together clean\nI’ll never make it fit",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 103.4,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 221.74,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 7.31,
+        "label": "S1"
+      },
+      {
+        "start": 7.31,
+        "end": 23.68,
+        "label": "S2"
+      },
+      {
+        "start": 23.68,
+        "end": 46.97,
+        "label": "S3"
+      },
+      {
+        "start": 46.97,
+        "end": 93.18,
+        "label": "S4"
+      },
+      {
+        "start": 93.18,
+        "end": 127.06,
+        "label": "S5"
+      },
+      {
+        "start": 127.06,
+        "end": 156.13,
+        "label": "S6"
+      },
+      {
+        "start": 156.13,
+        "end": 180.02,
+        "label": "S7"
+      },
+      {
+        "start": 180.02,
+        "end": 206.87,
+        "label": "S8"
+      },
+      {
+        "start": 206.87,
+        "end": 221.74,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.826
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "blues rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "drums",
+      "mandolin"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a playful, confident atmosphere, built on a high-energy funk-pop groove with a retro flair. The production is exceptionally clean and punchy, allowing the tight rhythm section, crisp brass stabs, and layered vocals to sit together in a dense but well-defined space. A defining quality of the track is the powerful, singalong chorus, which uses an infectious call-and-response between the lead vocal and the brass section to create a memorable hook. The dynamic breakdown near the end effectively builds tension, highlighting the song's clever arrangement before launching back into the final energetic chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender leans into a classic tension: the more you try to force the fit, the worse it gets, and he lets that paradox breathe across a steady 103 BPM groove in D major that never overreaches. The hook earns its keep, and the bridge lands the song's whole argument in four clean lines: 'Maybe love is crooked / Maybe truth can bend / Maybe all I really need / Is to stop needing it to end.' It's the kind of writing that sounds casual until you sit with it. Warm production, a chorus that holds the room, and enough grit in the guitar to keep it honest.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "103 BPM groove",
+      "D major",
+      "bridge lyric quote: 'Maybe love is crooked / Maybe truth can bend'",
+      "chorus hook",
+      "guitar tone"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

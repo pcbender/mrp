@@ -1,0 +1,113 @@
+{
+  "track_id": "michael-anthony-rose--full-size-person",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Full-Size Person.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--full-size-person.opus"
+  },
+  "lyrics": "No\nNo, not that\n\nI know the face they hand me now\nSoft edges, smaller appetite\nA version of me trimmed for comfort\nNeat enough not to make them think\nBut I've been alive too long for that\nToo long to shrink to fit the frame\nToo long to disappear politely\nJust to make them comfortable\n\nI'm not done being a full-size person\nI'm not done taking up my space\nYou don't get to round me off\nBecause it makes your life easier\nI may be slower, I may be sore\nI may have less to prove these days\nBut don't mistake worn down for gone\nNot me\n\nI can feel the pull toward silence\nToward the chair against the wall\nToward becoming manageable\nTo everybody after all\nBut something in me still gets up\nStill says my name like it means it\nStill wants the hard shape of my life\nBack inside my own two hands\n\nI'm not done being a full-size person\nI'm not done taking up my space\nYou don't get to round me off\nBecause it makes your life easier\nI may be slower, I may be sore\nI may have less to prove these days\nBut don't mistake worn down for gone\nNot me\n\nI can bend without surrender\nI can age without agreeing\nTo become less real\nLess sharp\nLess seen\n(less seen)\n\nI'm not done being a full-size person\nI'm not done stepping into frame\nYou don't get to write me gentle\nIf that's not who I am today\nI may be marked up, I may be tired\nI may not move the way I did\nBut don't mistake less easy for less alive\nNot me\n\nNot me\nYeah\nNot me",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 262.83,
+    "lufs": -12.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 26.98,
+        "label": "S1"
+      },
+      {
+        "start": 26.98,
+        "end": 45.72,
+        "label": "S2"
+      },
+      {
+        "start": 45.72,
+        "end": 101.29,
+        "label": "S3"
+      },
+      {
+        "start": 101.29,
+        "end": 118.42,
+        "label": "S4"
+      },
+      {
+        "start": 118.42,
+        "end": 161.61,
+        "label": "S5"
+      },
+      {
+        "start": 161.61,
+        "end": 196.42,
+        "label": "S6"
+      },
+      {
+        "start": 196.42,
+        "end": 212.28,
+        "label": "S7"
+      },
+      {
+        "start": 212.28,
+        "end": 232.2,
+        "label": "S8"
+      },
+      {
+        "start": 232.2,
+        "end": 252.19,
+        "label": "S9"
+      },
+      {
+        "start": 252.19,
+        "end": 262.83,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.978,
+      "key": 0.888
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track features a polished, modern rock texture, establishing an emotional atmosphere of defiant resilience through layers of powerful electric guitars and an earnest male lead vocal. The energy level is highly dynamic, shifting from a restrained, driving feel in the verses to an explosive, anthemic release in the choruses, creating a palpable sense of catharsis. The production is dense yet clear, with a wide stereo image where each instrument, from the tight rhythm section to the soaring guitars, occupies its own space without overwhelming the centrally placed, confident vocal. The song's most defining quality is this sharp dynamic contrast between verses and the massive, full-band choruses, which land with immense impact and encapsulate the track's assertive theme.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose has been circling the theme of dignity under pressure for a while, but 'Full-Size Person' is where he puts a fist through the wall. The verses run at a measured mid-tempo in E major, tight and coiled, before the choruses open up into something genuinely anthemic, a dynamic shift that earns every decibel. The lyric does the heavy lifting without flinching: 'don't mistake worn down for gone' lands like a clean punch, and the bridge's stripped-down repetition of 'less seen' before the final chorus hits as hard as anything John Hiatt wrote when he was at his most unguarded. This is Rose working at the level where craft and conviction stop being separate things.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "E major",
+      "mid-tempo verses / anthemic choruses dynamic contrast",
+      "quoted lyric: 'don't mistake worn down for gone'",
+      "quoted lyric: 'less seen' bridge repetition",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

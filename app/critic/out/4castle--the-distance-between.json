@@ -1,0 +1,113 @@
+{
+  "track_id": "4castle--the-distance-between",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Distance Between.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--the-distance-between.opus"
+  },
+  "lyrics": "Fingers drum on the glass divide\nTruth don't knock-it slips inside\nMirror, mirror empty square\nBeen that, done there, I don't care\n\nSo close we hum in parallel time\nOur rhythms sync but miss the rhyme\n\nYou mean what I say, I say what you mean\nEach preaching insight but not what's been\nYour beautiful noise, a critical scene\nWhat stands in our way is the distance between\n\nWhispers hum in static tone\nEchoes make the dark my own\nEvery scar's a map I fake\nTracing dreams I never wake\n\nSo close we hum in parallel time\nOur rhythms sync but miss the rhyme\n\nYou mean what I say, I say what you mean\nEach preaching insight but not what's been\nYour beautiful noise, a critical scene\nWhat stands in our way is the distance between\n\nThe critic sings in stabbing shouts\nTo fill the artist's heart with doubts\nBut in the hush between the drought-\nThe song survives. The doubt burns out\n\nYou mean what I say, I say what you mean\nEach preaching insight but not what's been\nYour beautiful noise, a critical scene\nWhat stands in our way is the distance between\n\nAin't there times when lines align\nWhere chance combines and rhymes shine",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 212.0,
+    "lufs": -14.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 8.66,
+        "label": "S1"
+      },
+      {
+        "start": 8.66,
+        "end": 27.72,
+        "label": "S2"
+      },
+      {
+        "start": 27.72,
+        "end": 44.68,
+        "label": "S3"
+      },
+      {
+        "start": 44.68,
+        "end": 77.21,
+        "label": "S4"
+      },
+      {
+        "start": 77.21,
+        "end": 100.01,
+        "label": "S5"
+      },
+      {
+        "start": 100.01,
+        "end": 117.56,
+        "label": "S6"
+      },
+      {
+        "start": 117.56,
+        "end": 133.4,
+        "label": "S7"
+      },
+      {
+        "start": 133.4,
+        "end": 162.4,
+        "label": "S8"
+      },
+      {
+        "start": 162.4,
+        "end": 207.75,
+        "label": "S9"
+      },
+      {
+        "start": 207.75,
+        "end": 212.0,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.948,
+      "key": 0.839
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a polished, high-energy rock track with a dense and layered texture, creating an atmosphere that feels both anthemic and emotionally charged. The production is clean and powerful, allowing the prominent lead vocal to cut through a rich arrangement of interlocking clean and distorted guitars, all anchored by a tight rhythm section. The mix feels full without being crowded, with each instrument occupying its own distinct space to contribute to the driving feel. A definitive feature is the virtuosic and melodic guitar solo, which provides a climactic peak and showcases the track's sophisticated musicianship.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The central lyric here does real work: 'You mean what I say, I say what you mean / each preaching insight but not what's been' captures the specific exhaustion of two people talking past each other while convinced they're connecting, and 4Castle builds a track around it that earns the sentiment. At a steady 107 BPM in G major, the song settles into a groove that feels like a conversation finding its rhythm, and the guitar solo that crests around the two-minute mark is the kind of melodic, purposeful climb that reminds you why the instrument matters in rock. 'The Distance Between' lands cleanly.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'You mean what I say, I say what you mean / each preaching insight but not what's been'",
+      "BPM: 107",
+      "Key: G major",
+      "guitar solo as climactic peak",
+      "lyric: 'The critic sings in stabbing shouts / to fill the artist's heart with doubts'"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

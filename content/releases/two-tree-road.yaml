@@ -73,7 +73,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--two-tree-road.mp3
     lyrics_text: 'Hot in the valley
 
       Gotta lose this city

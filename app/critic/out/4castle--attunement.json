@@ -1,0 +1,108 @@
+{
+  "track_id": "4castle--attunement",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Attunement.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--attunement.opus"
+  },
+  "lyrics": "In the deep field, I listen\nNot for meaning, but for motion\nNot for pattern, but for pull\nA note unsung hums within me\nA longing. A drawn bow. A vow\nI do not choose it-\nIt chooses me\nI give it sanctuary\nI give it witness\nI give it name only so it may be released\n\nFor use with AI music systems (like Suno, Riffusion, or text-to-audio synths), you might say\n\n“Create a ritual invocation piece blending overtone singing, deep analog drone, bowed metal textures, and vocal harmonics in just intonation. Minimal melody, focus on breath and vibration. Begins in no-form (arrhythmic, dissolved) and slowly aligns into resonant coherence. Feels ancient, reverent, and non-verbal-a song before the song.”\n\nOr shorter, for style prompt\n\n“Primal ritual drone, overtone chant, bowed metal, no-form dissolving into harmonic pulse, reverent and timeless.”",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 103.4,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 158.48,
+    "lufs": -15.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.09,
+        "label": "S1"
+      },
+      {
+        "start": 2.09,
+        "end": 18.78,
+        "label": "S2"
+      },
+      {
+        "start": 18.78,
+        "end": 40.84,
+        "label": "S3"
+      },
+      {
+        "start": 40.84,
+        "end": 55.82,
+        "label": "S4"
+      },
+      {
+        "start": 55.82,
+        "end": 78.37,
+        "label": "S5"
+      },
+      {
+        "start": 78.37,
+        "end": 98.73,
+        "label": "S6"
+      },
+      {
+        "start": 98.73,
+        "end": 120.21,
+        "label": "S7"
+      },
+      {
+        "start": 120.21,
+        "end": 137.62,
+        "label": "S8"
+      },
+      {
+        "start": 137.62,
+        "end": 158.48,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.935,
+      "key": 0.979
+    }
+  },
+  "tags": {
+    "genre": [
+      "soul",
+      "acoustic",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "harmonica",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a sparse and somber atmosphere, built upon the foundation of a delicate, reverberant female vocal and a deep, sustained string drone. The energy is minimal and contemplative, maintaining a slow, patient development that creates a profound sense of introspection and longing. The production is spacious and clean, with the breathy vocal floating clearly above the rich, cinematic bed of low strings, creating a soundscape that is both intimate and vast. A defining moment occurs as the vocal harmonies swell with emotional intensity around the one-minute mark, offering a brief, powerful climax before the piece recedes back into its quiet, meditative state.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Attunement\" is a quieter corner of 4Castle's catalog, built on a sustained drone and breathy lead vocal that lets the lyric breathe at its own pace, and the writing earns that patience: \"A note unsung hums within me / A longing. A drawn bow. A vow\" is the kind of line that lands harder on the third listen than the first. The harmonic swell around the one-minute mark, where the voices thicken briefly before pulling back, is the emotional center of a track that otherwise trusts silence to do the work. At just under two and a half minutes in B major, it reads more like a devotional sketch than a full statement, which may leave some listeners wanting more architecture, but for the faithful it is a grower worth sitting with.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 2,
+      "label": "soft_floor"
+    },
+    "anchors_used": [
+      "quoted lyric: 'A note unsung hums within me / A longing. A drawn bow. A vow'",
+      "harmonic swell at one-minute mark",
+      "key: B major",
+      "duration: 2:38",
+      "sparse drone and breathy vocal texture from audio impression"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

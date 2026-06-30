@@ -1,0 +1,104 @@
+{
+  "track_id": "stab--excess-fiasco",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Excess Fiasco.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--excess-fiasco.opus"
+  },
+  "lyrics": "Scroll past the rise-and-grind apostles\nSelling self-care from their throttles\nBlue light gospel, hustle priest-\nManifesting debt at least\n\nPlastic smiles, reality staged\nTruth is broke but beautifully aged\n\nWelcome to the Excess Fiasco\nCurated lives in a branded glow\nFilter the pain, monetize the mess-\nBurn it all down in a sponsored dress\nWe’re living loud, we’re dying slow-\nSwipe right into the undertow\nIt’s likes for love, and ads for grace-\nAn Excess Fiasco in your face\n\nBuy the shoes to earn the view\nThen run a marathon in glue\nMidnight deals and dopamine\nBags of joy with nothing in between\n\nA hundred boxes line the floor\nBut you still feel like less, not more\n\nWelcome to the Excess Fiasco\nCurated lives in a branded glow\nFilter the pain, monetize the mess-\nBurn it all down in a sponsored dress\nWe’re living loud, we’re dying slow-\nSwipe right into the undertow\nIt’s likes for love, and ads for grace-\nAn Excess Fiasco in your face\n\nOffice jungle, ping-pong pride\nYoga room where dreams subside\nClap for crumbs and praise the grind\nDon’t ever feel below the line\n\nClock out late and call it zen-\nYou’ll rest when it restarts again\n\nThis is the Excess Fiasco\nSelf-destruct with style and flow\nLaugh-track life, no time to feel-\nA carousel made out of steel\nWe’re living large in echo shows-\nBut no one hears how silence grows\nIt’s likes for love, and ads for grace-\nAn Excess Fiasco\nRight in your face",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 179.16,
+    "lufs": -15.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 21.69,
+        "label": "S1"
+      },
+      {
+        "start": 21.69,
+        "end": 40.77,
+        "label": "S2"
+      },
+      {
+        "start": 40.77,
+        "end": 75.4,
+        "label": "S3"
+      },
+      {
+        "start": 75.4,
+        "end": 100.4,
+        "label": "S4"
+      },
+      {
+        "start": 100.4,
+        "end": 126.78,
+        "label": "S5"
+      },
+      {
+        "start": 126.78,
+        "end": 142.73,
+        "label": "S6"
+      },
+      {
+        "start": 142.73,
+        "end": 174.66,
+        "label": "S7"
+      },
+      {
+        "start": 174.66,
+        "end": 179.16,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.974,
+      "key": 0.873
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This high-energy pop-punk track creates a satirical and urgent atmosphere with driving, distorted guitars and assertive female lead vocals. The feel is relentless and forward-moving, built on a punchy, insistent rhythm section that gives the song an anthemic quality. The production is modern and polished, presenting a dense yet clear mix where the bright vocals sit prominently above wide guitars and a tight, focused low end. A defining feature is the explosive, sing-along chorus, where stacked gang vocals amplify the catchy hook and deliver the song's critical message with maximum impact.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in a bright D major, 'Excess Fiasco' runs on pure forward momentum, and STAB uses every second of its three minutes to land a pointed takedown of influencer culture without ever slowing down to explain the joke. The chorus hits like a sledgehammer wrapped in candy: 'Filter the pain, monetize the mess, burn it all down in a sponsored dress' is the kind of line that earns its own bumper sticker, and the stacked gang vocals behind it give the hook the same crowd-sing lift you'd expect from prime-era Paramore or early Hole. The production is punchy and controlled, with guitars wide enough to fill a room but a low end tight enough to keep the whole thing from spilling over. A dependable cut that does its job and does it well.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "BPM: 152.0",
+      "Key: D major",
+      "Duration: 2:59",
+      "lyric: 'Filter the pain, monetize the mess, burn it all down in a sponsored dress'",
+      "stacked gang vocals in chorus",
+      "punchy rhythm section and wide guitars"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

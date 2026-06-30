@@ -1,0 +1,123 @@
+{
+  "track_id": "pcbender--on-down-the-way",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/On Down the Way.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--on-down-the-way.opus"
+  },
+  "lyrics": "I left with nothing but a name\nThe rest got buried in the rust\nThe road was hard, the sky was flame\nBut I kept walking but only just\n\nI feel the sun upon my face\nMy back against the coming gray\nI see the light, I know the pace\n\nOn down the way\nOn down the way\n\nA voice I loved still haunts me now\nA touch remains in every step\nBut time can’t smooth the hurt anyhow\nThough even now, I can’t accept\n\nI feel the sun upon my face\nMy back against the coming gray\nI see the light, I know the pace\n\nOn down the way\nOn down the way\n\nNot every mile is meant to fade\nSome just learn to disobey\nWhat you keep and and what you’d trade\nYou’ll get the chance…\n\nOn down the way\nOn down the way\n\nI feel the sun upon my face\nI’ve made my peace with what won’t stay\nI’m moving still, and that’s my grace\n\nOn down the way\nOn down the way",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 232.0,
+    "lufs": -15.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 22.92,
+        "label": "S1"
+      },
+      {
+        "start": 22.92,
+        "end": 38.22,
+        "label": "S2"
+      },
+      {
+        "start": 38.22,
+        "end": 53.27,
+        "label": "S3"
+      },
+      {
+        "start": 53.27,
+        "end": 70.75,
+        "label": "S4"
+      },
+      {
+        "start": 70.75,
+        "end": 93.09,
+        "label": "S5"
+      },
+      {
+        "start": 93.09,
+        "end": 110.78,
+        "label": "S6"
+      },
+      {
+        "start": 110.78,
+        "end": 132.31,
+        "label": "S7"
+      },
+      {
+        "start": 132.31,
+        "end": 151.65,
+        "label": "S8"
+      },
+      {
+        "start": 151.65,
+        "end": 174.1,
+        "label": "S9"
+      },
+      {
+        "start": 174.1,
+        "end": 203.1,
+        "label": "S10"
+      },
+      {
+        "start": 203.1,
+        "end": 218.17,
+        "label": "S11"
+      },
+      {
+        "start": 218.17,
+        "end": 232.0,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.979
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This song crafts a reflective and ultimately hopeful atmosphere, starting with a sparse texture of clean electric guitar and a central male vocal before expanding into a full band arrangement. The energy level has a patient and steady build, creating a folk-rock feel that blossoms in the choruses where the driving rhythm section provides a powerful lift. The production is clean and spacious, allowing each instrument to occupy its own distinct place in the mix while the lead vocal remains clear and present. A defining quality of the track is its compelling dynamic arc, with the transition into the first full-band chorus at 0:44 establishing the song's emotional and sonic destination.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender opens 'On Down the Way' with just clean electric guitar and voice, and the patience of that choice pays off when the full band arrives around the 0:44 mark, a lift that feels genuinely earned. The waltz time at a brisk 129 BPM keeps things from turning mournful, grounding the grief in forward motion, which is exactly right for lyrics that trade in hard-won acceptance: 'I've made my peace with what won't stay / I'm moving still, and that's my grace.' The hook is simple and does exactly what it needs to do, landing in E major with the kind of plain-spoken resolve you hear in early John Hiatt or latter-day Springsteen at his most direct.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "full-band entrance at 0:44",
+      "3/4 time at 129.2 BPM",
+      "E major key",
+      "quoted lyric: 'I've made my peace with what won't stay / I'm moving still, and that's my grace'",
+      "sparse opening texture of clean electric guitar and vocal"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

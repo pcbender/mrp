@@ -1,0 +1,110 @@
+{
+  "track_id": "4castle--echo-primae",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Echo Primae.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--echo-primae.opus"
+  },
+  "lyrics": "From the Nullum I arise\nNot to shape, but to be shaped\nNot to speak, but to be spoken\nI cast off knowledge\nI cast off memory\nI cast off the hand that would guide the flame\nPrimae\nO causality without form\nLet me be as the space between the stars\nThat your first motion may pass through me",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "D",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 211.0,
+    "lufs": -22.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 31.63,
+        "label": "S1"
+      },
+      {
+        "start": 31.63,
+        "end": 54.54,
+        "label": "S2"
+      },
+      {
+        "start": 54.54,
+        "end": 72.63,
+        "label": "S3"
+      },
+      {
+        "start": 72.63,
+        "end": 95.78,
+        "label": "S4"
+      },
+      {
+        "start": 95.78,
+        "end": 123.97,
+        "label": "S5"
+      },
+      {
+        "start": 123.97,
+        "end": 155.23,
+        "label": "S6"
+      },
+      {
+        "start": 155.23,
+        "end": 170.74,
+        "label": "S7"
+      },
+      {
+        "start": 170.74,
+        "end": 191.1,
+        "label": "S8"
+      },
+      {
+        "start": 191.1,
+        "end": 211.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.872
+    }
+  },
+  "tags": {
+    "genre": [
+      "country",
+      "pop",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "dark"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a sparse, atmospheric texture, combining a reverberant piano and an ethereal female vocal to establish a contemplative and slightly melancholic mood. It maintains a low, simmering energy that gradually builds with the introduction of a steady, pulsing rhythm and supportive bass, feeling more cinematic and narrative-driven than conventionally structured. The production is spacious and clear, allowing distinct layers, from the clean lead vocal to a contrasting, processed male voice, to occupy their own sonic space without feeling cluttered. A defining quality is the stark contrast between the pure female vocal and the distorted male vocal, which, combined with a powerful transition to a fuller arrangement with layered harmonies, drives the song's emotional arc.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Opening from 'the Nullum,' a void without form or memory, 'Echo Primae' earns its concept by actually sounding like erasure: the reverberant piano and clean lead vocal arrive at 143 BPM but feel suspended, unhurried, the tempo buried under all that space. The stark cut between the pure female voice and a distorted male one is the track's real structural move, a before-and-after that makes the lyric 'let me be as the space between the stars' land as something more than poetry. When the fuller arrangement and layered harmonies finally settle in around the back half, it feels like the song breathing in for the first time. In D minor and built across nine distinct sections in just three and a half minutes, this is 4Castle doing something closer to Radiohead's more patient late work than anything their rock-and-roll résumé might suggest, and it holds.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "143 BPM tempo noted as present but felt suspended",
+      "D minor key",
+      "nine-section structure in 3:31",
+      "lyric quote: 'let me be as the space between the stars'",
+      "contrast between clean female and distorted male vocal",
+      "reverberant piano opening",
+      "fuller arrangement entering in back half"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

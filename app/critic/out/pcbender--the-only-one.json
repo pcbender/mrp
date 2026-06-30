@@ -1,0 +1,116 @@
+{
+  "track_id": "pcbender--the-only-one",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Only One.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--the-only-one.opus"
+  },
+  "lyrics": "You say that I don't listen\nCan't hear a word you say\nInsensitive to what you're feeling\nAnd how I treat you is not okay\n\nAnd then you tell me that you love me\nAnd then you show me that you hate me\nAnd you'd be better off without me\nYes, ba-by. You're the only one (the only one)\n\nYour silence burns just like an ember\nA quiet war behind your eyes\nEvery word, a loaded question\nEvery touch feels like goodbye\n\nAnd then you tell me that you love me\nAnd then you show me that you hate me\nAnd you'd be better off without me\nYes, ba-by. You're the only one (the only one)\n\nWalking circles, lost in echoes\nRetracing steps we can't unwind\nDo we fight because we're breaking\nOr because we're still entwined\n\nMaybe love was never simple\nMaybe pain was built to last\nEvery wound, a fading symbol\nOf a future bound to crash\n\nAnd then you tell me that you love me\nAnd then you show me that you hate me\nAnd you'd be better off without me\nYes, ba-by. You're the only one (the only one)\n\nStill the only one…\nEven when we fall apart\nStill the only one…\nEven when we break our hearts",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 214.32,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.78,
+        "label": "S1"
+      },
+      {
+        "start": 6.78,
+        "end": 23.36,
+        "label": "S2"
+      },
+      {
+        "start": 23.36,
+        "end": 50.36,
+        "label": "S3"
+      },
+      {
+        "start": 50.36,
+        "end": 73.49,
+        "label": "S4"
+      },
+      {
+        "start": 73.49,
+        "end": 107.18,
+        "label": "S5"
+      },
+      {
+        "start": 107.18,
+        "end": 132.42,
+        "label": "S6"
+      },
+      {
+        "start": 132.42,
+        "end": 147.52,
+        "label": "S7"
+      },
+      {
+        "start": 147.52,
+        "end": 168.34,
+        "label": "S8"
+      },
+      {
+        "start": 168.34,
+        "end": 192.24,
+        "label": "S9"
+      },
+      {
+        "start": 192.24,
+        "end": 214.32,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.974
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a sparse, intimate texture, establishing an emotional and pensive atmosphere with a gentle male vocal and acoustic guitar. The energy builds dramatically from a quiet verse into a powerful, anthemic chorus driven by a full drum kit and layered background vocals. The production is clean and modern, skillfully handling the transition from a spacious verse to a dense, wide chorus where the lead vocal soars clearly above the mix. The defining quality of the track is this stark dynamic shift into the chorus, a transition that powerfully amplifies the song's lyrical tension and emotional core.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The tension in 'The Only One' lives in that verse-to-chorus drop: PCBender opens sparse and close, just voice and acoustic guitar, and then the drums and layered vocals hit and the whole thing opens up like a door kicked in. In D major at a brisk clip, the chorus lands hard on the contradiction at the song's center, 'you tell me that you love me / then you show me that you hate me,' which is the kind of plain-spoken lyric that only works when the music earns it, and here it does. The bridge pulls back just enough to let the outro breathe, and 'still the only one, even when we fall apart' sticks the way a good hook should. It has the same push-pull energy as Tom Petty working a classic rock radio format, and PCBender handles the dynamic shift with enough control that it never feels forced.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "verse-to-chorus dynamic shift",
+      "D major",
+      "quoted lyric: 'you tell me that you love me / then you show me that you hate me'",
+      "quoted lyric: 'still the only one, even when we fall apart'",
+      "acoustic guitar opening texture",
+      "layered background vocals in chorus",
+      "bridge pullback before outro",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

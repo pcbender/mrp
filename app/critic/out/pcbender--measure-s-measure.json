@@ -1,0 +1,165 @@
+{
+  "track_id": "pcbender--measure-s-measure",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Measure's Measure.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--measure-s-measure.opus"
+  },
+  "lyrics": "Love’s measure grows in silence\nIn moments the world can’t see\nNot in numbers, not in vows\nBut as “me” becomes a “we”\n\nIf love is but a song\nThen play\n\nMeasure’s measure is endless\nThe rule that can’t be made\nWe count, but never capture\nThe song that will not fade…\n\nLife’s measure waits in shadows\nIn waypoints that slip away\nNot in riches, not in years\nBut in how we live every day\n\nIf life is but a song\nThen play\n\nMeasure’s measure is endless\nThe rule that can’t be made\nWe count, but never capture\nThe song that will not fade…\n\nForever’s measure’s timeless\nA shape inscribed with a twist\nNot in hours, not in stars\nJust as long as you exist\n\nIf forever sings\nThen let it play\n\nMeasure’s measure is endless\nThe rule that can’t be made\nWe count, but never capture\nThe song that will not fade…\n\nMaybe wisdom lies in knowing\nWhen to set the rule aside\nTo let the mystery just be\nAnd let Now be our graceful guide\n\nMeasure’s measure is endless\nThe rule that can’t be made\nWe count, but never capture\nThe song that will not fade…\n\nIf forever sings\nThen let it play",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 382.0,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 14.12,
+        "label": "S1"
+      },
+      {
+        "start": 14.12,
+        "end": 38.92,
+        "label": "S2"
+      },
+      {
+        "start": 38.92,
+        "end": 54.2,
+        "label": "S3"
+      },
+      {
+        "start": 54.2,
+        "end": 86.49,
+        "label": "S4"
+      },
+      {
+        "start": 86.49,
+        "end": 106.77,
+        "label": "S5"
+      },
+      {
+        "start": 106.77,
+        "end": 125.81,
+        "label": "S6"
+      },
+      {
+        "start": 125.81,
+        "end": 150.56,
+        "label": "S7"
+      },
+      {
+        "start": 150.56,
+        "end": 166.09,
+        "label": "S8"
+      },
+      {
+        "start": 166.09,
+        "end": 181.19,
+        "label": "S9"
+      },
+      {
+        "start": 181.19,
+        "end": 221.89,
+        "label": "S10"
+      },
+      {
+        "start": 221.89,
+        "end": 240.26,
+        "label": "S11"
+      },
+      {
+        "start": 240.26,
+        "end": 255.33,
+        "label": "S12"
+      },
+      {
+        "start": 255.33,
+        "end": 272.53,
+        "label": "S13"
+      },
+      {
+        "start": 272.53,
+        "end": 289.04,
+        "label": "S14"
+      },
+      {
+        "start": 289.04,
+        "end": 304.09,
+        "label": "S15"
+      },
+      {
+        "start": 304.09,
+        "end": 319.34,
+        "label": "S16"
+      },
+      {
+        "start": 319.34,
+        "end": 334.41,
+        "label": "S17"
+      },
+      {
+        "start": 334.41,
+        "end": 349.46,
+        "label": "S18"
+      },
+      {
+        "start": 349.46,
+        "end": 374.19,
+        "label": "S19"
+      },
+      {
+        "start": 374.19,
+        "end": 382.0,
+        "label": "S20"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.974,
+      "key": 0.885
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a classic arena rock texture, layering clean, shimmering guitar arpeggios against powerful, distorted rhythm guitars to create a hopeful and anthemic atmosphere. The energy is dynamic, building from a more reflective verse into an explosive, driving chorus with a soaring vocal performance. The production quality is polished and spacious, allowing the dense instrumentation to feel wide and clear, with a prominent lead vocal sitting comfortably above the mix. A defining quality is the powerful dynamic lift into the chorus, where the full band kicks in, creating an immediate sense of emotional release and expansive energy.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 129 BPM in B minor, 'Measure's Measure' builds like a classic arena rock track that knows exactly when to open up: the shift from reflective verse into full-band chorus delivers the kind of emotional release that early U2 chased on their bigger records. The lyric 'we count, but never capture the song that will not fade' is the kind of line that earns its moment, and at six-plus minutes PCBender gives it room to breathe rather than overstaying its welcome. The shimmering arpeggios against the distorted rhythm guitars is a production choice that pays off every time the chorus kicks in. A genuine highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "129 BPM",
+      "B minor",
+      "6:22 duration",
+      "lyric: 'we count, but never capture the song that will not fade'",
+      "clean arpeggios vs distorted rhythm guitars",
+      "verse-to-chorus dynamic lift",
+      "U2 comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

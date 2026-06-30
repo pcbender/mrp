@@ -1,0 +1,8 @@
+---
+track_id: pcbender--pistachio
+impression: "This is a confident and swaggering funk-rock instrumental, built around a clean, articulate lead electric guitar that weaves melodic lines over a tight rhythm section. The energy is high and consistent, driven by a punchy, in-the-pocket groove from the bass and drums that creates an infectious and danceable feel. The mix is clear and spacious, allowing each instrument to occupy its own sonic space while still sounding cohesive, like a polished live studio performance. The track's defining quality is the dynamic interplay between the guitar's sophisticated, blues-inflected phrases and the rhythm section's sharp, punctuated stops, creating a constant sense of conversational back-and-forth."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+'Pistachio' is the album's peak, and it earns that position by doing something genuinely unlikely: running at a high tempo in 3/4 waltz time while somehow feeling like a funk-rock strut. It shouldn't work, but PCBender pulls it off with ease. The clean lead guitar does most of the talking, trading blues-inflected phrases with a rhythm section that locks in tight and punctuates hard, giving the whole thing the feel of a live studio conversation where everyone is listening. Coming off the major-key swagger of 'Wenge,' this track takes that energy and accelerates it, and the stops land with real confidence. It's the kind of track that rewards a second listen once you notice how much negative space the band is using. A fine showcase of PCBender's instinct for letting a guitar line breathe, and the moment the album has been building toward.

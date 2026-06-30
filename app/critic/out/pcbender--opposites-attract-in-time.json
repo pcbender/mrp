@@ -1,0 +1,134 @@
+{
+  "track_id": "pcbender--opposites-attract-in-time",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Opposites Attract In Time.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--opposites-attract-in-time.opus"
+  },
+  "lyrics": "War and peace\nProfit and poverty\nOpen and closed\nSlave and free\nCovert and overt\nFear and trust\nLoud and still\nAsh and dust\n\nThey don’t collide, they intertwine-\nInto the outer-\nOpposites attract in time\n\nLove and hate\nPush and pull\nTender and sharp\nEmpty and full\nSun and shadow\nRise and fall\nSilk and iron\nNothing and all\n\nThey twist, they tangle, never match-\nInto the outer-\nOpposites attract in time\n\nTruth and lies\nHigh and low\nFast and slow\nYes and no\nOrder and chaos\nKnife and thread\nBreath and silence\nLiving and dead\n\nNot black and white, but every crack-\nInto the outer-\nOpposites attract in time\n\nSacred and broken\nFlesh and flame\nKnown and nameless\nPride and shame\nStone and water\nGrace and lack\nWhat pulls apart\nStill circles back\n\nThe tether holds, the lines collapse-\nInto the outer-\nOpposites attract in time\n\nInto the outer\nOpposites attract in time",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 298.52,
+    "lufs": -13.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.23,
+        "label": "S1"
+      },
+      {
+        "start": 4.23,
+        "end": 25.15,
+        "label": "S2"
+      },
+      {
+        "start": 25.15,
+        "end": 42.45,
+        "label": "S3"
+      },
+      {
+        "start": 42.45,
+        "end": 60.12,
+        "label": "S4"
+      },
+      {
+        "start": 60.12,
+        "end": 85.66,
+        "label": "S5"
+      },
+      {
+        "start": 85.66,
+        "end": 100.7,
+        "label": "S6"
+      },
+      {
+        "start": 100.7,
+        "end": 115.84,
+        "label": "S7"
+      },
+      {
+        "start": 115.84,
+        "end": 147.14,
+        "label": "S8"
+      },
+      {
+        "start": 147.14,
+        "end": 162.35,
+        "label": "S9"
+      },
+      {
+        "start": 162.35,
+        "end": 177.61,
+        "label": "S10"
+      },
+      {
+        "start": 177.61,
+        "end": 215.06,
+        "label": "S11"
+      },
+      {
+        "start": 215.06,
+        "end": 238.86,
+        "label": "S12"
+      },
+      {
+        "start": 238.86,
+        "end": 294.61,
+        "label": "S13"
+      },
+      {
+        "start": 294.61,
+        "end": 298.52,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.953,
+      "key": 0.824
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "drums",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a rich, layered texture rooted in vintage funk and soul, creating an atmosphere that is both confident and uplifting. The energy is consistently high and driving, propelled by a tight rhythm section that establishes a deep, danceable pocket groove. The production is clean and spacious, allowing each instrument clarity within a dense, powerful ensemble sound that has a classic warmth. The track is defined by its impressive instrumental breaks, particularly an explosive organ solo that shifts the focus before the song culminates in an extended, fiery guitar jam for the outro.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "In 3/4 time at a steady 112 BPM, 'Opposites Attract in Time' finds PCBender doing what he does best: building a song from the inside out, letting the groove do the heavy lifting while the lyrics stack paradox on paradox until the hook lands with real weight. The G minor setting gives the verses a grounded tension that the chorus then releases cleanly, and the production stays spacious enough that you feel the rhythm section as much as hear it. 'Not black and white, but every crack' is the line that earns its keep, sharpening what could easily tip into cliche into something more honest about how contradiction actually works. A confident, well-constructed highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time",
+      "112 BPM",
+      "G minor",
+      "lyric: 'Not black and white, but every crack'",
+      "spacious production",
+      "rhythm section groove"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

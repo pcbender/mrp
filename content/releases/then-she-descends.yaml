@@ -62,7 +62,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--then-she-descends.mp3
     lyrics_text: 'I ache for her in quiet moments
 
       When the air forgets to move

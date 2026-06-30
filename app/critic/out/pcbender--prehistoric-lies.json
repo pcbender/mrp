@@ -1,0 +1,134 @@
+{
+  "track_id": "pcbender--prehistoric-lies",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Prehistoric Lies.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--prehistoric-lies.opus"
+  },
+  "lyrics": "I lit my name on a wall of stone\nWatched it dance in the firelight’s moan\nTold myself I’d found the spark divine\nBut I was just afraid of time\n\nYou’ve said it so long, you believe that it’s true\nAn endless obsession - the myth becomes you\nA factual fiction, the truth now denies\nYour stories are fables… Prehistoric Lies\n\nNow I preach through a wire and glass\nSelling faith by the megabyte mass\nEvery word I speak got a barcode price\nEvery god I build demands a sacrifice\n\nYou’ve said it so long, you believe that it’s true\nAn endless obsession - the myth becomes you\nA factual fiction, the truth now denies\nYour stories are fables… Prehistoric Lies\n\nNow I’m sifting through bones of belief\nDust and doubt all tangled beneath\nFound my heart still beating in disguise\nWrapped in skin of prehistoric lies\n\nYou’ve said it so long, you believe that it’s true\nAn endless obsession - the myth becomes you\nA factual fiction, the truth now denies\nYour stories are fables… Prehistoric Lies\n\nI dig through the noise for a human tone\nBut every echo sounds like my own\nMaybe the truth just fossilized\nMaybe I’m the lie I idolize\n\nYou’ve said it so long, you believe that it’s true\nAn endless obsession - the myth becomes you\nA factual fiction, the truth now denies\nWe’re born, we burn, we breathe… Prehistoric Lies",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 362.96,
+    "lufs": -13.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 16.39,
+        "label": "S1"
+      },
+      {
+        "start": 16.39,
+        "end": 31.42,
+        "label": "S2"
+      },
+      {
+        "start": 31.42,
+        "end": 73.96,
+        "label": "S3"
+      },
+      {
+        "start": 73.96,
+        "end": 95.16,
+        "label": "S4"
+      },
+      {
+        "start": 95.16,
+        "end": 118.72,
+        "label": "S5"
+      },
+      {
+        "start": 118.72,
+        "end": 134.03,
+        "label": "S6"
+      },
+      {
+        "start": 134.03,
+        "end": 151.84,
+        "label": "S7"
+      },
+      {
+        "start": 151.84,
+        "end": 231.36,
+        "label": "S8"
+      },
+      {
+        "start": 231.36,
+        "end": 258.3,
+        "label": "S9"
+      },
+      {
+        "start": 258.3,
+        "end": 276.02,
+        "label": "S10"
+      },
+      {
+        "start": 276.02,
+        "end": 303.02,
+        "label": "S11"
+      },
+      {
+        "start": 303.02,
+        "end": 324.24,
+        "label": "S12"
+      },
+      {
+        "start": 324.24,
+        "end": 345.81,
+        "label": "S13"
+      },
+      {
+        "start": 345.81,
+        "end": 362.96,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.966,
+      "key": 0.862
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "indie rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "harmonica",
+      "drums",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This soulful blues-rock track establishes a contemplative atmosphere with its clean, articulate electric guitar and expressive male vocals. The song maintains a relaxed, head-nodding groove, building in energy from the verse to a more passionate chorus and instrumental sections. The production feels spacious and organic, presenting a well-balanced mix where the foundational bass and drums create a solid pocket for the guitar and vocals to sit comfortably on top. A virtuosic and fiery guitar solo, full of rapid phrases and emotive bends, serves as the defining emotional peak of the song.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running six minutes in E minor at a clip that feels more urgent than the blues-rock tag suggests, 'Prehistoric Lies' earns its runtime through a lyric that keeps tightening its own noose: 'a factual fiction, the truth now denies' lands harder each time the chorus comes around, because PCBender has actually built toward it. The verses do real work, moving from cave walls to megabyte faith with a coherence that a lot of concept-driven rock fumbles, and the guitar solo that arrives late in the track, all bent phrases and earned heat, lands the way a good solo should: like a statement, not a decoration. This is PCBender at a high watermark, the kind of song that reminds you why the six-minute album cut still matters.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "E minor key",
+      "6:02 duration",
+      "quoted lyric: 'a factual fiction, the truth now denies'",
+      "quoted lyric: chorus progression from cave-wall imagery to megabyte faith",
+      "late-track guitar solo with bends",
+      "blues-rock structure with verse-to-chorus build"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

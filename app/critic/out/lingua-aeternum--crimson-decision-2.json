@@ -1,0 +1,123 @@
+{
+  "track_id": "lingua-aeternum--crimson-decision-2",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Crimson Decision - Lingua Aeternum.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--crimson-decision-2.opus"
+  },
+  "lyrics": "",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "F#",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 265.32,
+    "lufs": -16.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 15.35,
+        "label": "S1"
+      },
+      {
+        "start": 15.35,
+        "end": 31.21,
+        "label": "S2"
+      },
+      {
+        "start": 31.21,
+        "end": 74.81,
+        "label": "S3"
+      },
+      {
+        "start": 74.81,
+        "end": 111.97,
+        "label": "S4"
+      },
+      {
+        "start": 111.97,
+        "end": 126.99,
+        "label": "S5"
+      },
+      {
+        "start": 126.99,
+        "end": 145.38,
+        "label": "S6"
+      },
+      {
+        "start": 145.38,
+        "end": 166.72,
+        "label": "S7"
+      },
+      {
+        "start": 166.72,
+        "end": 196.88,
+        "label": "S8"
+      },
+      {
+        "start": 196.88,
+        "end": 214.37,
+        "label": "S9"
+      },
+      {
+        "start": 214.37,
+        "end": 233.2,
+        "label": "S10"
+      },
+      {
+        "start": 233.2,
+        "end": 250.43,
+        "label": "S11"
+      },
+      {
+        "start": 250.43,
+        "end": 265.32,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.871
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "uplifting",
+      "defiant",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a contemplative and tense atmosphere with a spacious arpeggiated piano before erupting into dense layers of distorted guitars and a soaring vocal. The energy is highly dynamic, building from a quiet introspection into an explosive, driving rock anthem with a sense of powerful urgency. The production is clean and modern, featuring a wide stereo image where punchy drums and massive guitars create a powerful foundation, allowing the lead vocal to sit clearly on top. A defining quality is the stark transition at 0:15 where the full band enters, immediately establishing the song’s dramatic range and emotional weight.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz-time rock build in F# minor at a crisp 123 BPM, 'Crimson Decision 2' earns its title: that piano arpeggiation in the opening fifteen seconds feels genuinely tense, and when the full band drops at the 0:15 mark, the payoff is immediate and clean. The 12-section structure keeps the piece restless without feeling disjointed, cycling through quiet and loud the way a good argument builds to its point. For an instrumental, it holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "123 BPM waltz-time (3/4)",
+      "F# minor key",
+      "15-second intro before full band entrance",
+      "12-section structure",
+      "piano arpeggiation opening"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

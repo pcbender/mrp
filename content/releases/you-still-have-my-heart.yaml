@@ -61,7 +61,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/stab--you-still-have-my-heart.mp3
     lyrics_text: 'The sky fades to grey, but your light never dims
 
       A memory etched like a song on the wind

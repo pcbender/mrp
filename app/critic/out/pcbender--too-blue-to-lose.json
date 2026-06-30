@@ -1,0 +1,113 @@
+{
+  "track_id": "pcbender--too-blue-to-lose",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Too Blue To Lose.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--too-blue-to-lose.opus"
+  },
+  "lyrics": "Woke up this mornin', rain pourin' down my soul\nSaid I woke up this mornin', rain pourin' down my soul\nAin't got no reason to stay, but nowhere else to go\n\nI'm too blue to lose, too tired to fight\nI'm too blue to lose, can't sleep at night\nI'm too blue to lose, can't turn out the light\nI'm so blue, I can't get losing right\n\nThat train keeps rollin', but it won't stop for me\nYeah, that train keeps rollin', but it won't stop for me\nLeft my love at the station, now I'm drownin' in misery\n\nI'm too blue to lose, too tired to fight\nI'm too blue to lose, can't sleep at night\nI'm too blue to lose, can't turn out the light\nI'm so blue, I can't get losing right\n\nLightning strikes, but I can't find no fire\nI walk these streets alone, with nothin' left but desire\nI'm so blue, I can't get losing right\n\nI'm too blue to lose, too tired to fight\nI'm too blue to lose, can't sleep at night\nI'm too blue to lose, can't turn out the light\nI'm so blue, I can't get losing right",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 240.0,
+    "lufs": -12.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 19.39,
+        "label": "S1"
+      },
+      {
+        "start": 19.39,
+        "end": 48.09,
+        "label": "S2"
+      },
+      {
+        "start": 48.09,
+        "end": 71.89,
+        "label": "S3"
+      },
+      {
+        "start": 71.89,
+        "end": 90.16,
+        "label": "S4"
+      },
+      {
+        "start": 90.16,
+        "end": 105.7,
+        "label": "S5"
+      },
+      {
+        "start": 105.7,
+        "end": 148.63,
+        "label": "S6"
+      },
+      {
+        "start": 148.63,
+        "end": 175.17,
+        "label": "S7"
+      },
+      {
+        "start": 175.17,
+        "end": 211.21,
+        "label": "S8"
+      },
+      {
+        "start": 211.21,
+        "end": 228.28,
+        "label": "S9"
+      },
+      {
+        "start": 228.28,
+        "end": 240.0,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.939
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "defiant"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a high-energy, modern blues-rock track with an atmosphere of defiant frustration. The feel is tight and driving, propelled by a locked-in rhythm section and a powerful, slightly gritty lead vocal. The production quality is polished and clear; the mix is dense with layered electric guitars, yet everything sits together with a professional sense of space and separation. The defining quality of the track is the virtuosic guitar work, featuring fiery solos full of fast licks, expressive bends, and classic blues phrasing that sets the tone from the very first measure.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender plants this one firmly in E major and rides it hard, with a locked-in rhythm section pushing a surprisingly brisk pace for a blues lament and guitar work that earns its space from the first measure. The hook does something clever with contradiction: 'I'm so blue, I can't get losing right' reframes heartbreak as a kind of absurdist incompetence, and it lands harder every time through. The solos are full of fast, expressive bends in the best Chicago-to-Texas tradition, more Stevie Ray than B.B. but clearly fluent in both. A dependable cut that does its job and does it well.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "E major key",
+      "BPM noted as driving pace",
+      "quoted lyric: 'I'm so blue, I can't get losing right'",
+      "guitar solos with fast licks and expressive bends",
+      "blues-rock structure with repeated hook chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

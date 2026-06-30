@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--active-illusion",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Active Illusion.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--active-illusion.opus"
+  },
+  "lyrics": "Morning light on separate cups\nSteam curls, rehearsed\nA silence hums between us\nWe both let it speak first\n\nShadows stretch across the floor\nThe sun grows cold\nYour laugh behind a door\nFades before it’s told\n\nWe keep pretending (Pretending)\nPlay the game by the rules (By the rules)\nWe fumble, stay quiet (Stay quite)\nAs the ending begins. (It’s ending)\n\nWe both want to fix it (Got to fix it)\nBut we don’t have the tools (No tools)\nAn active illusion (delusion)\nWhere no one wins (No one wins)\n\nYou disappear in distraction\nTogether, but not there\nA joke with no reaction\nThe night that we don’t share\n\nWe keep pretending (Pretending)\nPlay the game by the rules (By the rules)\nWe fumble, stay quiet (Stay quite)\nAs the ending begins. (It’s ending)\n\nWe both want to fix it (Got to fix it)\nBut we don’t have the tools (No tools)\nAn active illusion (delusion)\nWhere no one wins (No one wins)\n\nA spark beneath the silence\nA truth we almost name\nOne heartbeat of confession\nThen back into the game\n\nWe keep pretending (Pretending)\nPlay the game by the rules (By the rules)\nWe fumble, stay quiet (Stay quite)\nAs the ending begins. (It’s ending)\n\nWe both want to fix it (Got to fix it)\nBut we don’t have the tools (No tools)\nAn active illusion (delusion)\nWhere no one wins (No one wins)\n\nIt’s an active illusion\nIt’s an active illusion\nIt’s an active illusion",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "F#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 270.5,
+    "lufs": -12.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.36,
+        "label": "S1"
+      },
+      {
+        "start": 9.36,
+        "end": 31.76,
+        "label": "S2"
+      },
+      {
+        "start": 31.76,
+        "end": 50.13,
+        "label": "S3"
+      },
+      {
+        "start": 50.13,
+        "end": 71.01,
+        "label": "S4"
+      },
+      {
+        "start": 71.01,
+        "end": 98.8,
+        "label": "S5"
+      },
+      {
+        "start": 98.8,
+        "end": 148.86,
+        "label": "S6"
+      },
+      {
+        "start": 148.86,
+        "end": 191.98,
+        "label": "S7"
+      },
+      {
+        "start": 191.98,
+        "end": 215.55,
+        "label": "S8"
+      },
+      {
+        "start": 215.55,
+        "end": 240.05,
+        "label": "S9"
+      },
+      {
+        "start": 240.05,
+        "end": 256.49,
+        "label": "S10"
+      },
+      {
+        "start": 256.49,
+        "end": 270.5,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.842
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "blues",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates an intimate and slightly tense atmosphere, blending a warm texture of soulful vocals, an expressive blues guitar, and a mellow organ. The energy is relaxed yet simmering, driven by a tight rhythm section that establishes a deep, contemplative groove. The production quality is excellent, with a clean and spacious mix where every element, from the understated bassline to the \"vocal\" guitar fills, has its own clear pocket. The most distinctive quality is the conversational interplay between the lead vocal and the guitar, which culminates in a highly articulate and emotionally resonant solo that perfectly captures the song's feeling of quiet desperation.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The opening image earns its keep immediately: morning light, separate cups, steam curling while two people let the silence do the talking. PCBender builds 'Active Illusion' around that specific domestic dread, and the production matches it perfectly, a simmering F# minor groove that feels tighter than its 160-plus BPM would suggest, with a guitar that answers every vocal phrase like a second voice in the argument. The hook lands hard because it earns its confession: 'we both want to fix it, but we don't have the tools' is the kind of plain-spoken line John Hiatt might have let breathe, and PCBender gives it the same room. The guitar solo in the back half doesn't showboat; it aches, which is exactly right for a song about people who can't quite say the thing.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'morning light on separate cups'",
+      "lyric: 'we both want to fix it, but we don't have the tools'",
+      "F# minor key",
+      "BPM ~161",
+      "guitar-vocal conversational interplay",
+      "guitar solo emotional restraint"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

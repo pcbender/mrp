@@ -38,6 +38,6 @@ release:
     duration: '3:41'
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--what-s-best-2.mp3
     lyrics_text: null
     lyrics_source: null

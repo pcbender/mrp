@@ -1,0 +1,120 @@
+{
+  "track_id": "pcbender--verdigris",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Verdigris.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--verdigris.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 80.7,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 226.92,
+    "lufs": -13.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.02,
+        "label": "S1"
+      },
+      {
+        "start": 4.02,
+        "end": 28.1,
+        "label": "S2"
+      },
+      {
+        "start": 28.1,
+        "end": 43.1,
+        "label": "S3"
+      },
+      {
+        "start": 43.1,
+        "end": 63.9,
+        "label": "S4"
+      },
+      {
+        "start": 63.9,
+        "end": 84.43,
+        "label": "S5"
+      },
+      {
+        "start": 84.43,
+        "end": 101.36,
+        "label": "S6"
+      },
+      {
+        "start": 101.36,
+        "end": 122.79,
+        "label": "S7"
+      },
+      {
+        "start": 122.79,
+        "end": 146.08,
+        "label": "S8"
+      },
+      {
+        "start": 146.08,
+        "end": 164.3,
+        "label": "S9"
+      },
+      {
+        "start": 164.3,
+        "end": 200.95,
+        "label": "S10"
+      },
+      {
+        "start": 200.95,
+        "end": 226.92,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.986,
+      "key": 0.828
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track exudes a confident, upbeat blues-rock atmosphere, centered around a virtuosic and expressive lead electric guitar. The energy is consistently high, driven by a tight and groovy rhythm section that provides a solid, head-nodding foundation. The production is clean and well-balanced, creating a spacious sound where each instrument, especially the prominent lead guitar, has its own clear place in the mix. A defining feature is the guitar's seamless blend of fast, articulate licks and soulful, melodic phrasing, establishing a mood that is both sophisticated and fun.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "In 3/4 at a measured 80 BPM, 'Verdigris' has the unhurried swagger of a guitarist who knows exactly where every note is going. The lead electric guitar carries the whole thing, moving between quick articulate runs and longer melodic phrases that breathe and bend without showing off, and the rhythm section underneath keeps a groove tight enough that the waltz time never feels quaint. For an instrumental, it holds attention across eleven sections and nearly four minutes the way the best Jeff Beck or Robben Ford records do, letting feel do the work that words would otherwise carry. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "80.7 BPM",
+      "3/4 time",
+      "A major",
+      "11 sections",
+      "3:46 duration",
+      "lead guitar melodic phrasing vs. articulate runs",
+      "Jeff Beck / Robben Ford comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

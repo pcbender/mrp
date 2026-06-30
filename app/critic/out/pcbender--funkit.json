@@ -1,0 +1,123 @@
+{
+  "track_id": "pcbender--funkit",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Funkit.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--funkit.opus"
+  },
+  "lyrics": "Ladies and gentlemen\nCitizens of the groove\nWhen the news gets strange\nAnd the bills get bigger\nAnd your thinker won’t quit stinkin’\nThere is only one thing left to do\nFunk it\n\nAlarm clock screaming like the world’s on fire\nEverybody selling doom for a dollar higher\nTalking heads twitching on a flat-screen wall\nNobody knows nothing but they know it all\n\nGot a pocket full of worry and a head full of noise\nEvery false prophet got a brand-new toy\nLeft shoe missing and the rent’s due too\nWhole wide world gone cuckoo\n\nYou can clench your fist\nYou can bite your lip\nYou can try to make sense of a sinking ship\nOr you can shake that doubt till it falls off your bones\nLet the rhythm take over and carry you home\n\nFunk it\nWhen the whole thing’s shot\nFunk it\nGive it all you got\nFunk it\nWhen the truth gets thin\nThrow your hands up high and let the funk roll in\nFunk it\nWhen the wires all cross\nFunk it\nWhen you can’t stop the loss\nFunk it\nWhen it’s all too much\nPut some grease on your soul and strut\n\nBoss man smiling with a snake oil grin\nSays work twice harder just to barely win\nPoliticians dancing with a forked-up tongue\nSinging same old song while they rob the young\n\nYour phone keeps buzzing like a bad tattoo\nEverybody wants a little piece of you\nMind gone sideways, heart’s worn thin\nThat’s when the real ones funk within\n\nWhen the facts all blur\nAnd the fear runs thick\nWhen the whole damn system makes you feel seasick\nDon’t let the madness make a monument of you\nDrop it in the one and do what the people do\n\nFunk it\nWhen the whole thing’s shot\nFunk it\nGive it all you got\nFunk it\nWhen the truth gets thin\nThrow your hands up high and let the funk roll in\nFunk it\nWhen the wires all cross\nFunk it\nWhen you can’t stop the loss\nFunk it\nWhen it’s all too much\nPut some grease on your soul and strut\n\nFunk it to the left\nFunk it to the right\nFunk it in the morning\nFunk it all night\nFunk it for the broke\nFunk it for the beat\nFunk it for the people trying not to be beat\n\nWhen the map ain’t true\nAnd the road’s all bent\nWhen your last good dime’s already been spent\nWhen your brain says no but your hips say yes\nThat’s the spirit, baby\nNow funk that mess\n\nFunk it\nWhen the world’s insane\nFunk it\nDance away the pain\nFunk it\nLet the bad vibes spin\nWe ain’t going down, we’re funking through again\nFunk it\nWhen the room gets dark\nFunk it\nBe the lightning spark\nFunk it\nWhen it all goes nuts\nWe ain’t out of hope till the groove gives up\n\nYou can’t fix stupid\nYou can’t preach peace to a chainsaw\nYou can’t make a straight line out of a crooked age\nBut you can still move\nYou can still laugh\nYou can still love\nYou can still funk it",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 230.5,
+    "lufs": -13.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.85,
+        "label": "S1"
+      },
+      {
+        "start": 4.85,
+        "end": 21.34,
+        "label": "S2"
+      },
+      {
+        "start": 21.34,
+        "end": 51.92,
+        "label": "S3"
+      },
+      {
+        "start": 51.92,
+        "end": 72.35,
+        "label": "S4"
+      },
+      {
+        "start": 72.35,
+        "end": 87.33,
+        "label": "S5"
+      },
+      {
+        "start": 87.33,
+        "end": 113.62,
+        "label": "S6"
+      },
+      {
+        "start": 113.62,
+        "end": 164.95,
+        "label": "S7"
+      },
+      {
+        "start": 164.95,
+        "end": 188.55,
+        "label": "S8"
+      },
+      {
+        "start": 188.55,
+        "end": 211.0,
+        "label": "S9"
+      },
+      {
+        "start": 211.0,
+        "end": 227.81,
+        "label": "S10"
+      },
+      {
+        "start": 227.81,
+        "end": 230.5,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.936
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "indie rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a gritty, spoken word intro before exploding into a high-energy funk groove with a defiant and celebratory atmosphere. The energy is insistent and propulsive, carried by a tight rhythm section, punchy horns, and soulful call-and-response vocals that create an infectious, danceable feel. The production is modern and powerful, creating a dense yet spacious mix where the foundational bass and drums sit tightly together while allowing the vocal and instrumental layers to cut through with clarity. A defining quality is the track's central hook and title, which serves as a recurring, cathartic release and a powerful response to the lyrical frustrations expressed in the verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender opens with a spoken-word address to \"citizens of the groove\" before the rhythm section drops and the whole thing locks into a G-major strut at a crisp 108 BPM that doesn't let up for nearly four minutes. The hook is blunt and perfectly built: \"put some grease on your soul and strut\" lands every time because the track earns it, with punchy horns and a bass that sits deep in the pocket making the release feel physical rather than rhetorical. Lyrically it's sharp where a lot of protest-funk goes soft, trading in specific images like \"talking heads twitching on a flat-screen wall\" and \"your phone keeps buzzing like a bad tattoo\" rather than vague grievance. It sits comfortably in the company of James Brown's more pissed-off moments, and the final spoken-word coda, \"you can't make a straight line out of a crooked age, but you can still funk it,\" is the kind of closer that sticks.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "spoken-word intro",
+      "G major",
+      "107.7 BPM",
+      "hook lyric: put some grease on your soul and strut",
+      "lyric: talking heads twitching on a flat-screen wall",
+      "lyric: your phone keeps buzzing like a bad tattoo",
+      "final spoken-word coda lyric",
+      "punchy horns",
+      "bass pocket",
+      "3:50 duration"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

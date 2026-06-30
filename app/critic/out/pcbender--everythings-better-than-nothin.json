@@ -1,0 +1,115 @@
+{
+  "track_id": "pcbender--everythings-better-than-nothin",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Everything’s Better Than Nothin’.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--everythings-better-than-nothin.opus"
+  },
+  "lyrics": "Tried to walk the straight-line way\nSpoke in whispers, paid my dues\nWatched the dreamers drift away\nHeld their shadows ’til they flew\nAll my good intentions fade\nLike paint that’s been weathered\nIf virtue’s just a losing trade\nThen fortune’s looking better\n\nThey say you gotta be good\nDo the work, spend the time\nI’ve been doin’ all I should\nBut I still can’t find a dime\n\nIf being good ain’t good enough\nI’ll take my chance with luck-\n’Cause being lucky is better…\nEverything’s better than nothin’\n\nSaw a preacher count his coins\nWhile a beggar blessed the rain\nTraders toast their crooked gains\nAnd saints bear silent pain\nI’ve been waitin’ for a sign\nBut the heavens just dismiss\nIf grace won’t cross that line\nI’ll roll the dice and wish\n\nThey say you gotta be good\nDo the work, spend the time\nI’ve been doin’ all I should\nBut I still can’t find a dime\n\nIf being good ain’t good enough\nI’ll take my chance with luck-\n’Cause being lucky is better…\nEverything’s better than nothin’\n\nSo here’s to all the ones who tried\nAnd stumbled in the dust\nWe built our dreams, swallowed our pride\nStill fate betrayed our trust\nIf goodness buys no favor, friend\nThen I’ll just tempt the spin\nLet the wheel decide the end\nAnd see who cashes in\n\nThey say you gotta be good\nDo the work, spend the time\nI’ve been doin’ all I should\nBut I still can’t find a dime\n\nIf being good ain’t good enough\nI’ll take my chance with luck-\n’Cause being lucky is better…\nEverything’s better than nothin’\n\nThey say you gotta be good\nDo the work, spend the time\nI’ve been doin’ all I should\nBut I still can’t find a dime\n\nIf being good ain’t good enough\nI’ll take my chance with luck-\n’Cause being lucky is better…\nEverything’s better than nothin’\n\nEverything’s better than nothin’\nEverything’s better than nothin’\nEverything’s better than nothin’\nEverything’s better than nothin’",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "C",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 292.0,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.51,
+        "label": "S1"
+      },
+      {
+        "start": 1.51,
+        "end": 18.0,
+        "label": "S2"
+      },
+      {
+        "start": 18.0,
+        "end": 47.93,
+        "label": "S3"
+      },
+      {
+        "start": 47.93,
+        "end": 63.41,
+        "label": "S4"
+      },
+      {
+        "start": 63.41,
+        "end": 94.34,
+        "label": "S5"
+      },
+      {
+        "start": 94.34,
+        "end": 109.88,
+        "label": "S6"
+      },
+      {
+        "start": 109.88,
+        "end": 182.6,
+        "label": "S7"
+      },
+      {
+        "start": 182.6,
+        "end": 199.58,
+        "label": "S8"
+      },
+      {
+        "start": 199.58,
+        "end": 286.95,
+        "label": "S9"
+      },
+      {
+        "start": 286.95,
+        "end": 292.0,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.802
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "defiant"
+    ],
+    "instruments": [
+      "electric guitar",
+      "harmonica",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track features a dense, gritty blues-rock texture, creating a defiant and swaggering emotional atmosphere. The energy is consistently high and driving, propelled by a tight rhythm section that gives the song an infectious shuffle feel. The production is polished yet powerful, with the fiery lead guitar and assertive male vocals sitting clearly atop a punchy bass and drum foundation. The track's identity is defined by the explosive guitar solo and the catchy, anthemic chorus, where powerful background vocals respond to the lead singer's hook.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender plants a flag squarely in the tradition of working-man rock philosophy here, and the hook earns its keep: 'If being good ain't good enough / I'll take my chance with luck' lands with the kind of plain-spoken weight you get from John Hiatt or early Tom Petty when they stopped trying to be clever. The shuffle groove at 89 BPM in C minor keeps things driving without rushing, and the guitar solo hits like a genuine release rather than decoration. The anthemic chorus, stacked with background vocals pushing back against the lead, is the kind of thing that holds a room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'If being good ain't good enough / I'll take my chance with luck'",
+      "BPM: 89.1",
+      "Key: C minor",
+      "shuffle groove rhythm",
+      "guitar solo placement",
+      "background vocal interplay on chorus",
+      "John Hiatt / Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

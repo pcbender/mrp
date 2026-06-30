@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--this-love-grows",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/This Love Grows.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--this-love-grows.opus"
+  },
+  "lyrics": "The years have flown like whispers in the wind\nLines on our faces tell where we've been\nThrough the highs and lows, the laughter and the tears\nEvery moment we've shared feels like yesterday here\n\nWe've walked through the fire, danced in the rain\nBuilt a world together through the joy and the pain\n\nThis love grows, stronger than the years\nThrough every joy, every trial, every tear\nFrom the first hello to the life we've made\nThis love grows, and it'll never fade\n\nI see the sunrise in the spark of your eyes\nEvery promise kept, no need for goodbyes\nWith every wrinkle, there's a story we've told\nA bond unbroken as we grow old\n\nWe've weathered the seasons, stood hand in hand\nBuilt a home together, a life we planned\n\nThis love grows, stronger than the years\nThrough every joy, every trial, every tear\nFrom the first hello to the life we've made\nThis love grows, and it'll never fade\n\nTime is a thief, but it can't take away\nThe love in our hearts that's here to stay\nEvery step forward, every look behind\nThis love's the treasure we'll always find\n\nThis love grows, stronger than the years\nThrough every joy, every trial, every tear\nFrom the first hello to the life we've made\nThis love grows, and it'll never fade\n\nThis love grows, like the morning light\nForever shining, through the darkest night",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 235.28,
+    "lufs": -15.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 23.89,
+        "label": "S1"
+      },
+      {
+        "start": 23.89,
+        "end": 65.9,
+        "label": "S2"
+      },
+      {
+        "start": 65.9,
+        "end": 92.69,
+        "label": "S3"
+      },
+      {
+        "start": 92.69,
+        "end": 113.52,
+        "label": "S4"
+      },
+      {
+        "start": 113.52,
+        "end": 128.75,
+        "label": "S5"
+      },
+      {
+        "start": 128.75,
+        "end": 165.65,
+        "label": "S6"
+      },
+      {
+        "start": 165.65,
+        "end": 191.24,
+        "label": "S7"
+      },
+      {
+        "start": 191.24,
+        "end": 219.78,
+        "label": "S8"
+      },
+      {
+        "start": 219.78,
+        "end": 235.28,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.966,
+      "key": 0.931
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a heartfelt and nostalgic atmosphere, opening with a sparse texture of clean electric guitars and earnest male vocals that feel intimate and reflective. The energy builds dynamically, transitioning from a gentle ballad into a soaring, anthemic rock chorus with a full, driving band, creating a hopeful and expansive feel. The production is clean and spacious, allowing the lead vocal to sit prominently while maintaining clarity between the layered guitars, solid bass, and punchy drums. A defining quality is the powerful emotional lift into the first chorus, where the arrangement swells, establishing the song's grand, emotionally resonant core.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 129 BPM in A major, 'This Love Grows' earns its anthemic ambitions the honest way: the verse stays spare and intimate, clean guitar and a direct vocal, and when the chorus arrives it genuinely swells rather than just gets louder. The lyric 'time is a thief, but it can't take away the love in our hearts' lands with the kind of plain-spoken conviction that made early John Hiatt stick, and PCBender rides the same frequency here. It does exactly what it sets out to do, and it does it cleanly.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "129 BPM",
+      "A major",
+      "sparse verse to full chorus dynamic build",
+      "lyric quote: 'time is a thief, but it can't take away'",
+      "John Hiatt comparison",
+      "clean electric guitar opening"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

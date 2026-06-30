@@ -1,0 +1,129 @@
+{
+  "track_id": "michael-anthony-rose--rooms-keep-people",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Rooms Keep People.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--rooms-keep-people.opus"
+  },
+  "lyrics": "Mm-mm\nStill here\n\nThere's a dent in the hallway carpet\nWhere the table used to sit\nAnd if it's late enough at night\nI still expect to pass by it\nThe house keeps doing little things\nLike it forgot to move on too\nFloorboard creak, loose screen, old smell of rain\nAll of it pointing back to you\n\nSome rooms keep people in them\nLong after they are gone\nIn the air, the light, the timing\nIn the way the house goes on\nAnd I can stand there in the middle\nFeel the years come walking through\nI know I can't go back there\nBut I still do\n\nThere's a mug I should've thrown out\nAnd a coat hook hanging bare\nSometimes I still turn too quick\nLike someone's standing there\nMemory isn't kind or cruel\nIt just opens when it wants\nLeaves me holding two versions of my life\nAll at once\n\nSome rooms keep people in them\nLong after they are gone\nIn the air, the light, the timing\nIn the way the house goes on\nAnd I can stand there in the middle\nFeel the years come walking through\nI know I can't go back there\nBut I still do\n\nMm\nMm-mm\n\nI used to think remembering\nWas something I could choose\nNow it's more like weather moving in\nAnd filling up the rooms\n\nSome rooms keep people in them\nLong after they are gone\nIn the air, the light, the timing\nIn the way the house goes on\nAnd I can stand there in the middle\nFeel the years come walking through\nI know I can't go back there\nBut I still do\n\nStill do\nMm\nI still do",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 247.19,
+    "lufs": -17.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.09,
+        "label": "S1"
+      },
+      {
+        "start": 3.09,
+        "end": 23.24,
+        "label": "S2"
+      },
+      {
+        "start": 23.24,
+        "end": 42.93,
+        "label": "S3"
+      },
+      {
+        "start": 42.93,
+        "end": 60.95,
+        "label": "S4"
+      },
+      {
+        "start": 60.95,
+        "end": 89.79,
+        "label": "S5"
+      },
+      {
+        "start": 89.79,
+        "end": 107.83,
+        "label": "S6"
+      },
+      {
+        "start": 107.83,
+        "end": 124.34,
+        "label": "S7"
+      },
+      {
+        "start": 124.34,
+        "end": 147.73,
+        "label": "S8"
+      },
+      {
+        "start": 147.73,
+        "end": 170.36,
+        "label": "S9"
+      },
+      {
+        "start": 170.36,
+        "end": 190.17,
+        "label": "S10"
+      },
+      {
+        "start": 190.17,
+        "end": 210.07,
+        "label": "S11"
+      },
+      {
+        "start": 210.07,
+        "end": 239.77,
+        "label": "S12"
+      },
+      {
+        "start": 239.77,
+        "end": 247.19,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.986
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a deeply intimate and melancholic atmosphere, led by a close, breathy male vocal and a delicate finger-picked acoustic guitar. The production is clean and spacious, allowing the subtle layers of strings, bass, and soft percussion to add emotional weight without cluttering the arrangement. The energy remains low and reflective, with a key dynamic shift occurring in the chorus as the instrumentation gently swells, expanding the sonic landscape. This transition from a sparse verse to a fuller chorus effectively captures a feeling of nostalgia and the lingering presence of memories.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The lyric that stops you is the bridge: 'I used to think remembering / Was something I could choose / Now it's more like weather moving in / And filling up the rooms.' That reframe earns everything the song has been building toward. Rose writes grief the way John Prine wrote ordinary life, with specific, unshowy objects doing the emotional heavy lifting: the dent in the carpet where the table was, the bare coat hook, the mug that should have been thrown out. In A major at a pace that sits just fast enough to feel like a heartbeat, the arrangement opens from finger-picked quiet into a chorus that swells without ever crowding the vocal, and that restraint is the production's best choice. This is Rose at his most direct and most precise, a standout.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "bridge lyric quoted: 'I used to think remembering / Was something I could choose / Now it's more like weather moving in / And filling up the rooms'",
+      "specific objects: carpet dent, bare coat hook, mug",
+      "key: A major",
+      "BPM context: pace feels like a heartbeat",
+      "verse-to-chorus dynamic: finger-picked opening swelling into chorus without crowding vocal",
+      "John Prine comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

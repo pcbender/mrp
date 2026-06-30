@@ -1,0 +1,109 @@
+{
+  "track_id": "stab--that-s-the-point",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/That's The Point.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--that-s-the-point.opus"
+  },
+  "lyrics": "I don't need a big announcement\nI don't need a new personality\nI just need one small decision\nThat belongs to me\nSo I put the phone in a drawer\nNot like it's evil - just like it's loud\nAnd I stand there for a second\nLike I'm waiting for permission\nFrom the crowd\n\nNobody clapped\nNobody noticed\nThe world kept spinning like it always does\nAnd that's the point, I guess\n\nI'm stepping back for my own sake\nNot to prove anything, not to be great\nIf I disappear for a minute, I'm still real\nI'm just giving my brain a chance to heal\nYou can call it boring, you can call it strange\nI'm calling it a line I get to draw\nI'm allowed to log off\n\nI walk outside without headphones\nAnd it feels too open at first\nLike the sky is staring at me\nAnd I forgot how to converse\nBut then I hear my footsteps\nAnd I hear a bird I can't name\nAnd it's not a miracle\nIt's just… unedited\nAnd somehow that's enough\nTo change\n\nI keep expecting\nTo feel empty\nBut I'm starting to feel space\nBetween me and the hurry\n\nI'm stepping back for my own sake\nNot to prove anything, not to be great\nIf I disappear for a minute, I'm still real\nI'm just giving my brain a chance to heal\nYou can call it boring, you can call it strange\nI'm calling it a line I get to draw\nI'm allowed to log off\n\nMaybe Emerson was right about the noise\nNot the kind outside -\nThe kind that makes you forget your own voice\nAnd maybe Thoreau wasn't escaping\nMaybe he was practicing\nHow to be a person again\n(yeah)\nOne day at a time\n\nI'm stepping back for my own sake\nNot to prove anything, not to be great\nIf I disappear for a minute, I'm still real\nI'm just giving my brain a chance to heal\nYou can call it boring, you can call it strange\nI'm calling it a line I get to draw\nI'm allowed to log off\n\nDrawer closed\nShoes on\n(mm)\nThat's it",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 188.29,
+    "lufs": -12.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.51,
+        "label": "S1"
+      },
+      {
+        "start": 1.51,
+        "end": 17.32,
+        "label": "S2"
+      },
+      {
+        "start": 17.32,
+        "end": 37.89,
+        "label": "S3"
+      },
+      {
+        "start": 37.89,
+        "end": 61.32,
+        "label": "S4"
+      },
+      {
+        "start": 61.32,
+        "end": 88.91,
+        "label": "S5"
+      },
+      {
+        "start": 88.91,
+        "end": 118.17,
+        "label": "S6"
+      },
+      {
+        "start": 118.17,
+        "end": 153.76,
+        "label": "S7"
+      },
+      {
+        "start": 153.76,
+        "end": 185.11,
+        "label": "S8"
+      },
+      {
+        "start": 185.11,
+        "end": 188.29,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.952
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "pop",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a personal and reflective atmosphere, with a texture that shifts from a sparse, intimate verse to a dense, layered chorus. The song’s energy builds dynamically, moving from a gentle, conversational feel into a driving, full-band pop-rock anthem that creates a powerful sense of release. The production is clean and modern, creating a lot of space around the earnest lead vocal in the verses while expertly balancing the dense instrumentation of the chorus so nothing feels cluttered. A defining quality is this stark dynamic contrast between sections, perfectly encapsulating the song's theme of claiming personal space and autonomy.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in a bright D major, this could have been a straightforward digital-detox anthem, and in less careful hands it would have been. What saves it is the writing: 'I walk outside without headphones / And it feels too open at first' is the kind of line that earns its sentiment because it admits the awkwardness before it claims the revelation. The production earns its keep too, pulling back to near-silence in the verses so the chorus lands like a door swinging open. The Emerson-and-Thoreau bridge is a small risk that pays off, grounding the whole thing in something older and quieter than the scroll it's pushing back against. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152",
+      "D major",
+      "lyric: 'I walk outside without headphones / And it feels too open at first'",
+      "verse/chorus dynamic contrast",
+      "Emerson-Thoreau bridge",
+      "sparse verse production vs. full-band chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

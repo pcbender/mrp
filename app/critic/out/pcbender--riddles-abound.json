@@ -1,0 +1,129 @@
+{
+  "track_id": "pcbender--riddles-abound",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Riddles Abound.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--riddles-abound.opus"
+  },
+  "lyrics": "The cautious surrender you feel when it rains\nThe lightning recedes but the thunder remains\nThe sky still remembers, it echoes in veins\nA whisper of water, a promise of chains\n\nIn all of my playing I can't find the key\nThe notes on the score too fast to see\nThe melody hides in the cracks of the floor\nA shadow of sound that asks me for more\n\nThe rain pounds, the sky cracks\nThe time divides, no going back\nThe ground shakes, the branch snaps\nThe song collides, no fading track\n\nA silent progression resolves to the one\nThe ink is still wet but can't be undone\nThe paper remembers the heat of the sun\nIt captured the moment, though the moment has run\n\nRelief fills the lantern\nEscape feeds the flame\nThe flame bends the shadow\nThe shadow speaks your name\n\nIf I could explain the noise in my head\nA lullaby laden with endless dread\nThe frequency fractures, it splits at the seam\nYet buried in dread is the spark of a dream\n\nThe rain pounds, the sky cracks\nThe time divides, no going back\nThe ground shakes, the branch snaps\nThe song collides, no fading track\n\nNo answers profound\nNot this time around\nJust echoes that wander\nJust riddles abound\nJust echoes that wander\nJust riddles abound",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 329.52,
+    "lufs": -12.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 7.73,
+        "label": "S1"
+      },
+      {
+        "start": 7.73,
+        "end": 24.85,
+        "label": "S2"
+      },
+      {
+        "start": 24.85,
+        "end": 39.89,
+        "label": "S3"
+      },
+      {
+        "start": 39.89,
+        "end": 54.92,
+        "label": "S4"
+      },
+      {
+        "start": 54.92,
+        "end": 74.4,
+        "label": "S5"
+      },
+      {
+        "start": 74.4,
+        "end": 89.44,
+        "label": "S6"
+      },
+      {
+        "start": 89.44,
+        "end": 143.06,
+        "label": "S7"
+      },
+      {
+        "start": 143.06,
+        "end": 158.06,
+        "label": "S8"
+      },
+      {
+        "start": 158.06,
+        "end": 178.14,
+        "label": "S9"
+      },
+      {
+        "start": 178.14,
+        "end": 199.37,
+        "label": "S10"
+      },
+      {
+        "start": 199.37,
+        "end": 285.84,
+        "label": "S11"
+      },
+      {
+        "start": 285.84,
+        "end": 322.83,
+        "label": "S12"
+      },
+      {
+        "start": 322.83,
+        "end": 329.52,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.965,
+      "key": 0.888
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "emotional",
+      "tender",
+      "dark"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a high-energy, driving blues-rock track with a dense and powerful texture. The emotional atmosphere is intense and defiant, established immediately by a confident, wailing electric guitar intro that sets a fiery tone. The production is modern and clean, with a punchy, centered rhythm section that provides a solid foundation for the crunchy, multi-layered guitars and a clear, cutting lead vocal. The massive, call-and-response chorus vocals create a memorable hook, while the technically proficient and emotive guitar solo around 1:53 serves as a standout moment, showcasing the track's raw, virtuosic character.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender opens with a wailing guitar that wastes no time establishing the stakes, then drives the whole track at a pace that barely lets you breathe. The lyric \"buried in dread is the spark of a dream\" captures exactly what the song is doing structurally: tension that earns its release. The call-and-response chorus hits with the kind of communal lift you get from early Springsteen, and the guitar solo around the 1:53 mark is genuinely the kind of playing that makes you rewind. At 5:29, it earns every second.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "guitar solo at 1:53",
+      "quoted lyric: 'buried in dread is the spark of a dream'",
+      "call-and-response chorus",
+      "E minor key",
+      "172 BPM driving pace",
+      "5:29 duration"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

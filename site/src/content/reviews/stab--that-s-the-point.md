@@ -1,0 +1,8 @@
+---
+track_id: stab--that-s-the-point
+impression: "This track establishes a personal and reflective atmosphere, with a texture that shifts from a sparse, intimate verse to a dense, layered chorus. The song’s energy builds dynamically, moving from a gentle, conversational feel into a driving, full-band pop-rock anthem that creates a powerful sense of release. The production is clean and modern, creating a lot of space around the earnest lead vocal in the verses while expertly balancing the dense instrumentation of the chorus so nothing feels cluttered. A defining quality is this stark dynamic contrast between sections, perfectly encapsulating the song's theme of claiming personal space and autonomy."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+Positioned at the exact centre of fifteen tracks, 'That's the Point' earns its place as a structural anchor. After the pivot of 'Harder Than I Thought,' this one articulates what the turn was toward: not collapse, but intention. At a brisk pace in a bright major key, this could have been a straightforward digital-detox anthem, and in less careful hands it would have been. What saves it is the writing: 'I walk outside without headphones / And it feels too open at first' is the kind of line that earns its sentiment because it admits the awkwardness before it claims the revelation. The production earns its keep too, pulling back to near-silence in the verses so the chorus lands like a door swinging open. The Emerson-and-Thoreau bridge is a small risk that pays off, grounding the whole thing in something older and quieter than the scroll it's pushing back against. Centred here, it gives the album's second half somewhere to begin from.

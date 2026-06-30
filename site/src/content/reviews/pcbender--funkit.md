@@ -1,0 +1,8 @@
+---
+track_id: pcbender--funkit
+impression: "This track opens with a gritty, spoken word intro before exploding into a high-energy funk groove with a defiant and celebratory atmosphere. The energy is insistent and propulsive, carried by a tight rhythm section, punchy horns, and soulful call-and-response vocals that create an infectious, danceable feel. The production is modern and powerful, creating a dense yet spacious mix where the foundational bass and drums sit tightly together while allowing the vocal and instrumental layers to cut through with clarity. A defining quality is the track's central hook and title, which serves as a recurring, cathartic release and a powerful response to the lyrical frustrations expressed in the verses."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+PCBender opens with a spoken-word address to "citizens of the groove" before the rhythm section drops and the whole thing locks into a G-major strut at a crisp 108 BPM that doesn't let up for nearly four minutes. The hook is blunt and perfectly built: "put some grease on your soul and strut" lands every time because the track earns it, with punchy horns and a bass that sits deep in the pocket making the release feel physical rather than rhetorical. Lyrically it's sharp where a lot of protest-funk goes soft, trading in specific images like "talking heads twitching on a flat-screen wall" and "your phone keeps buzzing like a bad tattoo" rather than vague grievance. It sits comfortably in the company of James Brown's more pissed-off moments, and the final spoken-word coda, "you can't make a straight line out of a crooked age, but you can still funk it," is the kind of closer that sticks.

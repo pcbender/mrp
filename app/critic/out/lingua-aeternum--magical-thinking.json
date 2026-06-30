@@ -1,0 +1,115 @@
+{
+  "track_id": "lingua-aeternum--magical-thinking",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Magical Thinking.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--magical-thinking.opus"
+  },
+  "lyrics": "I tap the wood, I hold my breath\nI keep at bay the things unsaid\nA crow flew left-I crossed the street\nYou call it nonsense, I call it real\n\nYou see a world of chance and spin\nI see the signs that live within\nEach crack, each spill, each broken glass-\nA message whispered from the past\n\nThe world we see is not out there\nIt’s crafted by the things we fear\nAnd colored with what we hold dear\nAnd clarified when dreams appear\n\nI wake the day with sacred tome\nI move my hands, I’m not alone\nThe world may shift, but I remain\nInside the circle I maintain\n\nNot faith in luck, nor dread of wrath-\nBut rhythm laid across the path\nIn every motion, mark, and sound\nI tether meaning to the ground\n\nThe world we see is not out there\nIt’s crafted by the things we fear\nAnd colored with what we hold dear\nAnd clarified when dreams appear\n\nI don’t obey-I architect\nI bend the void with intellect\nI dream, and then I build the thing\nMy faith’s not blind-it’s echoing\n\nI speak the glyph, I strike the chord\nNot begging fate, but being lord\nTo cast a spell is not pretend-\nIt’s how all futures must begin\n\nThe world we see is not out there\nIt’s crafted by the things we fear\nAnd colored with what we hold dear\nAnd clarified when dreams appear\n\nThe world is wide, uncertain too\nEach voice calls out its point of view\nSo choose with care the one for you\nAs what we think does oft come true",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "F",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 269.16,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.45,
+        "label": "S1"
+      },
+      {
+        "start": 9.45,
+        "end": 42.79,
+        "label": "S2"
+      },
+      {
+        "start": 42.79,
+        "end": 68.41,
+        "label": "S3"
+      },
+      {
+        "start": 68.41,
+        "end": 108.3,
+        "label": "S4"
+      },
+      {
+        "start": 108.3,
+        "end": 133.14,
+        "label": "S5"
+      },
+      {
+        "start": 133.14,
+        "end": 156.67,
+        "label": "S6"
+      },
+      {
+        "start": 156.67,
+        "end": 171.67,
+        "label": "S7"
+      },
+      {
+        "start": 171.67,
+        "end": 195.05,
+        "label": "S8"
+      },
+      {
+        "start": 195.05,
+        "end": 212.97,
+        "label": "S9"
+      },
+      {
+        "start": 212.97,
+        "end": 269.16,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.935
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a dense, intricate texture of interlocking synth and guitar arpeggios, creating a modern progressive rock atmosphere that feels both intellectual and emotionally charged. The energy is consistently high, driven by a tight, punchy rhythm section that propels the song from complex verses into powerful, anthemic choruses with a confident and soaring feel. The production quality is polished and clear, allowing every layer in the dense arrangement to have its own space while contributing to a powerful, cohesive whole. A defining quality is the dynamic contrast between the almost digital precision of the instrumental motifs and the very human, impassioned delivery of the lead vocals, which culminates in a huge, climactic final chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 123 BPM in F minor, 'Magical Thinking' builds its argument the same way its lyrics do: brick by brick, with conviction. The interlocking guitar and synth arpeggios that open the track give way to a punchy rhythm section that makes the chorus land like a genuine statement, and the line 'I don't obey, I architect' is the kind of moment that earns the whole setup. The dynamic contrast between the almost clockwork precision of the instrumental motifs and the impassioned vocal delivery keeps it from feeling too tidy, and the climactic final chorus pays off everything the verses promised.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 123",
+      "F minor",
+      "interlocking guitar and synth arpeggios",
+      "punchy rhythm section",
+      "lyric: 'I don't obey, I architect'",
+      "climactic final chorus",
+      "dynamic contrast between precision and vocal delivery"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

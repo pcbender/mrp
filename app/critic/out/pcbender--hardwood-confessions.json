@@ -1,0 +1,114 @@
+{
+  "track_id": "pcbender--hardwood-confessions",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Hardwood Confessions.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--hardwood-confessions.opus"
+  },
+  "lyrics": "Hardwood Confessions\n(Acoustic narrative ballad - introspective and reverent)\n\nMahogany deck on a summer day\nWe knew that sailing was the only way\nWe’ll build a sloop, a 32 footer\nBut why you left I can’t remember\n\n“Cherry Coke” I called you then\nSummer’s crush made for exploring\nWe swore our love would ever last\nYou moved to someplace overcast\n\nAn unexpected rosewood neck\nStrings so tight they hurt like heck\nThe girls came close to hear me play\nMy boyish voice would soon give way\n\nHe came from nothing, an emigree\nAnd built a life he could not foresee\nHe farmed the land and built a home\nAnd set the seeds for what I’ve become\n\nOak chair creaked beneath his frame\nMy granddad’s hands were hard with blame\nBut in the silence after grace was said\nI saw a softness in the way he bowed his head\n\nThese are my hardwood confessions\nWhere silence speaks and echoes bend\nI learned from loss, I paid in questions\nBut every scar still helps me mend\nTruth in timber, voice in grain\nThese hardwood confessions still remain\n\nSo lay me down on floors that creak\nWhere every step still lets me speak\nNo saint, no sinner, just a man\nBuilt from hardwood… best I can",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 217.76,
+    "lufs": -15.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 22.59,
+        "label": "S1"
+      },
+      {
+        "start": 22.59,
+        "end": 52.31,
+        "label": "S2"
+      },
+      {
+        "start": 52.31,
+        "end": 95.39,
+        "label": "S3"
+      },
+      {
+        "start": 95.39,
+        "end": 119.77,
+        "label": "S4"
+      },
+      {
+        "start": 119.77,
+        "end": 140.39,
+        "label": "S5"
+      },
+      {
+        "start": 140.39,
+        "end": 155.36,
+        "label": "S6"
+      },
+      {
+        "start": 155.36,
+        "end": 175.26,
+        "label": "S7"
+      },
+      {
+        "start": 175.26,
+        "end": 190.78,
+        "label": "S8"
+      },
+      {
+        "start": 190.78,
+        "end": 207.61,
+        "label": "S9"
+      },
+      {
+        "start": 207.61,
+        "end": 217.76,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.965,
+      "key": 0.824
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "blues",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a warm, nostalgic atmosphere, built upon a sparse texture of clean acoustic guitar and a gentle, storytelling vocal. The feel is contemplative and grounded, with a low to medium energy that builds subtly from intimate verses into a more open, emotionally resonant chorus. The production quality is spacious and clean, allowing the delicate slide guitar fills and understated percussion to sit together beautifully without cluttering the mix. The song's defining quality is its patient, narrative arc, where the arrangement grows to support the lyrical concept of experiences building a life, feeling both personal and universal.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds 'Hardwood Confessions' the way the lyric promises: slowly, deliberately, from honest materials. The verses move through a life in shorthand, a summer crush, an immigrant grandfather, a guitar neck that 'hurt like heck,' and the images accumulate without announcing themselves, which is the whole trick. At 89 BPM in D major, the acoustic stays sparse long enough that when the arrangement finally opens up at the chorus, the payoff feels earned rather than decorated. 'Truth in timber, voice in grain' is the kind of line that sounds simple until you realize it's doing the work of the whole song.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 89.1",
+      "D major",
+      "lyric quote: 'hurt like heck'",
+      "lyric quote: 'Truth in timber, voice in grain'",
+      "sparse acoustic production opening into fuller chorus arrangement",
+      "patient narrative arc across verses"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--sunray",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Sunray.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--sunray.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 202.24,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.84,
+        "label": "S1"
+      },
+      {
+        "start": 10.84,
+        "end": 26.22,
+        "label": "S2"
+      },
+      {
+        "start": 26.22,
+        "end": 41.61,
+        "label": "S3"
+      },
+      {
+        "start": 41.61,
+        "end": 56.68,
+        "label": "S4"
+      },
+      {
+        "start": 56.68,
+        "end": 77.81,
+        "label": "S5"
+      },
+      {
+        "start": 77.81,
+        "end": 96.32,
+        "label": "S6"
+      },
+      {
+        "start": 96.32,
+        "end": 121.21,
+        "label": "S7"
+      },
+      {
+        "start": 121.21,
+        "end": 139.99,
+        "label": "S8"
+      },
+      {
+        "start": 139.99,
+        "end": 162.56,
+        "label": "S9"
+      },
+      {
+        "start": 162.56,
+        "end": 183.21,
+        "label": "S10"
+      },
+      {
+        "start": 183.21,
+        "end": 202.24,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.976,
+      "key": 0.852
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "blues rock",
+      "classic rock"
+    ],
+    "mood": [
+      "hopeful",
+      "uplifting",
+      "tender"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "mandolin"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a bright and relaxed pop-rock track, built around a clean, chorus-inflected electric guitar riff that establishes a cheerful and slightly bluesy atmosphere. The energy is consistently moderate, driven by a tight and groovy rhythm section that gives the song a confident, head-nodding feel. The production is spacious and polished, with excellent separation between the crisp drums, a warm bass guitar, and the layered electric guitars, allowing each part to be heard distinctly. The track's defining quality is the catchy, repetitive guitar figure that acts as the central hook, punctuated by tasteful melodic fills and a brief, dynamic pause at 0:28 that effectively builds anticipation.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Sunray lives up to its name: a clean, chorus-dipped guitar riff in E major locks in early and stays cheerful without turning saccharine, riding a 123 BPM groove that nods without rushing. The production earns its keep through sheer clarity, drums, bass, and layered guitars each sitting in their own pocket the way a well-mixed Tom Petty track breathes. A brief pause around the half-minute mark is the small moment that sells the whole thing, a quick exhale before the hook reasserts itself with a little more authority. Not the most ambitious thing in the catalog, but it's a confident, open-road cut that does exactly what it sets out to do.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "E major",
+      "123 BPM",
+      "chorus-inflected guitar riff",
+      "dynamic pause at 0:28",
+      "Tom Petty comparison",
+      "spacious production with distinct separation"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

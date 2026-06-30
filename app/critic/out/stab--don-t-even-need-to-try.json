@@ -1,0 +1,115 @@
+{
+  "track_id": "stab--don-t-even-need-to-try",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Don't Even Need To Try.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--don-t-even-need-to-try.opus"
+  },
+  "lyrics": "(One, two, three... smile)\n\nIt's a perfect angle and a really nice filter\nBut it feels like I'm leaning, like I'm out of kilter\nI'm looking at the screen and it's a bit of a lie\nI don't even need to try\n\nI spent twenty minutes picking out the right words\nJust to describe a lunch that I didn't even taste\nI'm polishing the edges, I'm hiding all the mess\nTrying to give the people something to impress\n(is it working?)\nBut the guy in the photo looks happier than me\nHe's living a life that I'll never quite see\n\nIt's a perfect angle and a really nice filter\nBut it feels like I'm leaning, like I'm out of kilter\nI'm looking at the screen and it's a bit of a lie\nI don't even need to try\n\nI'm checking the numbers like they're some kind of score\nBut as soon as they go up, I'm just wanting some more\nIt's a feedback loop, it's a hall made of glass\nWatching the best versions of myself just pass\n(they look good though)\n(yeah, they look real good)\nBut there's nothing behind them, it's just empty space\n\n(Stop)\n(Zoom in)\nCan you see the tired look around the eyes\nCan you see through all the clever little disguises\nProbably not\nNeither can I\n\nIt's a perfect angle and a really nice filter\nBut it feels like I'm leaning, like I'm out of kilter\nI'm looking at the screen and it's a bit of a lie\nI don't even need to try\n\n(Who is he?)\n(Not me)\n(I don't even need to try)",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 200.02,
+    "lufs": -10.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 7.04,
+        "label": "S1"
+      },
+      {
+        "start": 7.04,
+        "end": 27.54,
+        "label": "S2"
+      },
+      {
+        "start": 27.54,
+        "end": 54.61,
+        "label": "S3"
+      },
+      {
+        "start": 54.61,
+        "end": 71.84,
+        "label": "S4"
+      },
+      {
+        "start": 71.84,
+        "end": 87.98,
+        "label": "S5"
+      },
+      {
+        "start": 87.98,
+        "end": 106.42,
+        "label": "S6"
+      },
+      {
+        "start": 106.42,
+        "end": 135.42,
+        "label": "S7"
+      },
+      {
+        "start": 135.42,
+        "end": 154.18,
+        "label": "S8"
+      },
+      {
+        "start": 154.18,
+        "end": 181.25,
+        "label": "S9"
+      },
+      {
+        "start": 181.25,
+        "end": 200.02,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.963,
+      "key": 0.862
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "blues rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "nostalgic",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a polished, high-energy dance-pop feel, built on a foundation of a tight four-on-the-floor kick drum and a driving synth bass. The emotional atmosphere is a fascinating mix of bright, upbeat confidence on the surface and a more self-aware, almost melancholic introspection in the lyrics. The production quality is pristine and commercial, featuring a wide, spacious mix where the upfront, reverb-heavy lead vocal cuts through dense layers of shimmering synths, vocal harmonies, and rhythmic keyboard stabs. A distinctive moment occurs when the song breaks down into a spoken-word and more contemplative section, which cleverly contrasts with the otherwise relentless optimism before launching into a vibrant synth-led instrumental break.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The hook here is almost sneakily clever: STAB wraps a genuinely uncomfortable thesis, 'I'm looking at the screen and it's a bit of a lie,' inside a bright, four-on-the-floor pop-rock track running at a brisk 123 BPM, and the tension between the two is exactly the point. The breakdown, where the vocal drops to a near-whisper asking 'Can you see the tired look around the eyes,' lands like a cold splash before the final chorus rushes back in, and that structural contrast earns its keep. In B minor but dressed like a hit, it sits in the same territory as early Paramore learning to write radio pop without losing the edge.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 123.0",
+      "B minor key",
+      "lyric: 'I'm looking at the screen and it's a bit of a lie'",
+      "lyric: 'Can you see the tired look around the eyes'",
+      "spoken-word breakdown section",
+      "four-on-the-floor rhythm",
+      "structural contrast pre-final chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

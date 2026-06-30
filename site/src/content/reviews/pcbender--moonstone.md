@@ -1,0 +1,8 @@
+---
+track_id: pcbender--moonstone
+impression: "This track establishes a confident, blues-rock texture, with an expressive and slightly overdriven lead guitar creating a playful, feel-good atmosphere. The energy is consistently high, driven by a tight and funky rhythm section that provides a solid, head-nodding groove. The production is clean and well-balanced, allowing the virtuosic guitar to sit clearly in a spacious mix without overwhelming the punchy bass and drums. The track's defining quality is its sophisticated and dynamic guitar work, which weaves intricate melodic solos and rhythmic chordal stabs into a seamless, engaging performance."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+'Moonstone' closes the album on exactly the right note. At a fast, funky tempo in a minor key, it moves with an urgency that keeps you nodding from the first bar, anchored by a rhythm section tight enough to bounce a quarter off. The lead guitar work is overdriven but never messy, trading melodic runs for rhythmic chordal stabs and back again with the ease of someone who has done this long enough to make the hard parts look casual. As a closer, it mirrors the opener's swagger without repeating it, and the minor-key return to something close to where the album began gives the record a satisfying shape. The fifteen tracks have moved through waltz grooves, major-key swagger, slow blues, and quick shuffles, and 'Moonstone' gathers all of that into two minutes and fifty-five seconds of clean, confident motion. The kind of thing that reminds you of early Stevie Ray Vaughan records where the groove was the argument. It earns every second.

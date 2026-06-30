@@ -1,0 +1,113 @@
+{
+  "track_id": "stab--four-quarters",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Four Quarters.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--four-quarters.opus"
+  },
+  "lyrics": "Lay the symbol on the ground\nSpeak the words without the sound\nEyes closed tight against the dark\nThe past will always leave its mark\n\nA pentacle, the sun and the moon\nA hopeful hymn sung out of tune\n\nFour quarters\nEach a change that will not hold\nFour quarters\nThe past a debt, a future sold\nTo be the fool and let it go\nOn into the evermore\nFour quarters, falling down\n\nThe symbol drawn upside down\nThe words seem clear all around\nEyes now open to the dark\nLight that now provides the spark\n\nA pentacle, the sun and the moon\nA hymn sung now to attune\n\nFour quarters\nEach a change that will not hold\nFour quarters\nThe past a debt, a future sold\nTo be the fool and let it go\nOn into the evermore\nFour quarters, falling down\n\nHolding on and letting go\nAs if to manifest control\nThe deck is always stacked\nBut neither against nor for\nIt’s never win or lose\nJust the card we choose\n\nFour quarters\nEach a change that will not hold\nFour quarters\nThe past a debt, a future sold\nTo be the fool and let it go\nOn into the evermore\nFour quarters, falling down\n\nFour quarters, falling down\nFour quarters, falling down\nOn into the evermore\nFour quarters, falling down",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 269.0,
+    "lufs": -16.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.01,
+        "label": "S1"
+      },
+      {
+        "start": 9.01,
+        "end": 34.83,
+        "label": "S2"
+      },
+      {
+        "start": 34.83,
+        "end": 63.62,
+        "label": "S3"
+      },
+      {
+        "start": 63.62,
+        "end": 91.56,
+        "label": "S4"
+      },
+      {
+        "start": 91.56,
+        "end": 110.64,
+        "label": "S5"
+      },
+      {
+        "start": 110.64,
+        "end": 133.51,
+        "label": "S6"
+      },
+      {
+        "start": 133.51,
+        "end": 170.32,
+        "label": "S7"
+      },
+      {
+        "start": 170.32,
+        "end": 186.2,
+        "label": "S8"
+      },
+      {
+        "start": 186.2,
+        "end": 201.64,
+        "label": "S9"
+      },
+      {
+        "start": 201.64,
+        "end": 269.0,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.915
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a dark, mystical atmosphere with a breathy female lead vocal floating over a sparse, pulsing synth-pop arrangement. The energy builds methodically from a low, contemplative verse into a powerful and anthemic chorus, driven by bigger drums and expansive vocal layers that provide an emotional lift. The production quality is clean and modern, creating an immersive sense of space where the ambient synths and reverbs sit comfortably around the focused central vocal. The most distinctive quality is this dynamic swell into the chorus, which transforms the song from a quiet incantation into a cathartic, sweeping declaration.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a brisk 152 BPM in D major, 'Four Quarters' builds like a ritual that actually works: the verses move as quiet incantation, then the chorus opens up into something genuinely cathartic, carried by that line 'to be the fool and let it go' landing exactly where it needs to. The tarot and elemental imagery could easily tip into self-seriousness, but STAB keeps it grounded by letting the dynamic swell do the heavy lifting rather than the concept. It sits somewhere between the melodic confidence of mid-period Bangles and the kind of driving anthem Stevie Nicks might have cut if she'd leaned harder into the rock side of things. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152",
+      "D major",
+      "lyric: 'to be the fool and let it go'",
+      "verse-to-chorus dynamic swell",
+      "four-quarter structure reinforcing thematic content"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

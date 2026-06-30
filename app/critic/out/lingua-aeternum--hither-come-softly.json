@@ -1,0 +1,108 @@
+{
+  "track_id": "lingua-aeternum--hither-come-softly",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Hither Come Softly.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--hither-come-softly.opus"
+  },
+  "lyrics": "Hither come softly into the day\nWhere dreams leave fingerprints fading away\nBreathe through the ache of the waking trees\nWeave your lost longing back through the breeze\n\nHither come softly into the light\nShadow runs sharper just out of sight\nName every sorrow that wears your name\nKiss every fracture you tried to blame\n\nHither come softly remembering this\nThe soul’s first scar is the soul’s first kiss\nDraw toward the cracks we miss-\nAnd hither come softly into the bliss\n\nHither come softly into the dusk\nCradle the ember inside the husk\nSing to the silence that knows your voice\nAnchor your falling - and make it choice\n\nHither come softly into the night\nDance with the sorrow and call it right\nFloat through the deep where the broken sleep\nDream yourself whole, and fall into sleep\n\nHither come softly remembering this\nThe wound you bear is the door you kiss\nDraw toward the grace we miss-\nAnd hither come softly into the bliss\n\nWe beckon the life we fear to see\nNot knowing it always beckoned me\nCome hither softly, eternally\n\nHither come softly remembering this\nNot all that's lost was meant to exist\nDraw toward the breath we miss-\nAnd hither come softly into the bliss",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "C#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 183.64,
+    "lufs": -16.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.32,
+        "label": "S1"
+      },
+      {
+        "start": 5.32,
+        "end": 24.4,
+        "label": "S2"
+      },
+      {
+        "start": 24.4,
+        "end": 55.91,
+        "label": "S3"
+      },
+      {
+        "start": 55.91,
+        "end": 71.56,
+        "label": "S4"
+      },
+      {
+        "start": 71.56,
+        "end": 97.99,
+        "label": "S5"
+      },
+      {
+        "start": 97.99,
+        "end": 121.74,
+        "label": "S6"
+      },
+      {
+        "start": 121.74,
+        "end": 144.78,
+        "label": "S7"
+      },
+      {
+        "start": 144.78,
+        "end": 173.38,
+        "label": "S8"
+      },
+      {
+        "start": 173.38,
+        "end": 183.64,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.947,
+      "key": 0.933
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a deeply introspective and melancholic atmosphere, building from sparse, clean verses into dense, cathartic choruses. The energy level shifts dramatically, supported by a modern production where punchy drums and wide guitars create a powerful foundation without overwhelming the clear, present lead vocal. The arrangement feels meticulously crafted, using space and layers to guide the listener through a journey of reflection and emotional release. Its most defining quality is this powerful dynamic lift into the chorus, creating an anthemic sense of arrival that feels both vulnerable and resilient.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"The soul's first scar is the soul's first kiss\" lands the way the best chorus lines do: you hear it once and feel like you already knew it. In C# minor and moving at a crisp 123 BPM, the track earns its anthemic lift the honest way, building from spare, clean verses into a wide, punchy chorus that feels like relief rather than bombast. It's the kind of song that reminds you of early Coldplay at their most direct, before the production got too tidy. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'The soul's first scar is the soul's first kiss'",
+      "key: C# minor",
+      "BPM: 123",
+      "dynamic build from sparse verse to chorus",
+      "comparison to early Coldplay"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

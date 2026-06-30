@@ -1,0 +1,8 @@
+---
+track_id: 4castle--preternatural
+impression: "This track is a dense wall of high-energy, neoclassical-influenced shred rock. The atmosphere is aggressive and virtuosic, driven by a heavily saturated, mid-scooped electric guitar tone that sits front and center. The production is surprisingly clear for how dense it is, with punchy, tight drums cutting through the mix and a solid bass guitar providing a consistent low-end foundation. The defining quality is the relentless technicality of the guitar performance, established immediately in the opening seconds with a flashy, harmonized lick that sets an intense and exhilarating tone for the entire piece."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+'Preternatural' wastes no time: a harmonized guitar lick lands in the first few seconds and sets the terms for everything that follows, which is essentially two and a half minutes of Raven Cortez making a very convincing case that neoclassical shred has no ceiling. The production is punchy and clean, rare for music this dense, and Mack Bishop's bass holds the low end steady enough that the whole thing breathes even when the guitars are stacked to the rafters. It reads a bit like Racer X meeting early Whitesnake at a blues crossroads, and at 2:25 it leaves you wanting more rather than relieved it's over. Coming off the quiet, introspective ache of 'Next to Nothing,' this track functions as a jolt of pure kinetic energy, clearing emotional space and raising the pulse before the closer arrives. Its brevity is exactly right for where it sits: it resets the room without overstaying its welcome.

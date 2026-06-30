@@ -1,0 +1,131 @@
+{
+  "track_id": "pcbender--half-happenstance",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Half Happenstance.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--half-happenstance.opus"
+  },
+  "lyrics": "The fates released, no, not the cause\nDespite the stories you’ve been told\nMore blood than care is true because\nIt’s as you are, not what’s been sold\n\nAnd through the garden gate we pass\nThen contemplate without a glass\n\nIn every way the end betrays\nAnd struts and frets through all your days\nThe whisper stalled before it spoke\nHalf happenstance and beaver broke\n\nOh, Destiny, the temptress true\nShe offers you the hero’s gate\nAnd knows the fear inside of you\nNo cheer, no key, a day too late\n\nAnd through the garden gate we pass\nThen contemplate without a glass\n\n[Chorus\nIn every way the end betrays\nAnd dances madly through your maze\nThe whisper came, then silence woke\nHalf happenstance and beaver broke\n\nThe moon grows softer, day by day\nIs if she feels the coming night\nShe comforts those who’ve lost their way\nThen disappears beyond their sight\n\nAnd through the garden gate we pass\nThen contemplate without a glass\n\n[Chorus\nIn every way the end betrays\nThe fight gives out, the dream decays\nThe whisper lingers, words just choked\nHalf happenstance and beaver broke",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "F#",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 277.5,
+    "lufs": -14.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.63,
+        "label": "S1"
+      },
+      {
+        "start": 13.63,
+        "end": 29.07,
+        "label": "S2"
+      },
+      {
+        "start": 29.07,
+        "end": 44.07,
+        "label": "S3"
+      },
+      {
+        "start": 44.07,
+        "end": 59.07,
+        "label": "S4"
+      },
+      {
+        "start": 59.07,
+        "end": 88.28,
+        "label": "S5"
+      },
+      {
+        "start": 88.28,
+        "end": 105.12,
+        "label": "S6"
+      },
+      {
+        "start": 105.12,
+        "end": 120.42,
+        "label": "S7"
+      },
+      {
+        "start": 120.42,
+        "end": 135.7,
+        "label": "S8"
+      },
+      {
+        "start": 135.7,
+        "end": 166.14,
+        "label": "S9"
+      },
+      {
+        "start": 166.14,
+        "end": 189.15,
+        "label": "S10"
+      },
+      {
+        "start": 189.15,
+        "end": 209.79,
+        "label": "S11"
+      },
+      {
+        "start": 209.79,
+        "end": 254.49,
+        "label": "S12"
+      },
+      {
+        "start": 254.49,
+        "end": 277.5,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.908
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a gritty, soulful rock texture, establishing a determined and slightly weary emotional atmosphere. The energy is a powerful mid-tempo drive, propelled by a tight, organic-sounding rhythm section that feels both classic and immediate. The production creates a dense yet clear sonic space, with raw, overdriven guitars and a commanding lead vocal all blending cohesively without feeling cluttered. A definitive quality is the dynamic lift into the chorus, where the track expands into a more anthemic and emotionally resonant statement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender writes in waltz time here, 123 BPM in F# minor, and the three-beat pulse gives the fatalism in these lyrics room to breathe without turning mournful. The chorus lift, where the track opens up around 'in every way the end betrays,' earns its anthemic weight because the verses earn it first, the rhythm section staying tight and organic underneath overdriven guitars that feel worn-in rather than processed. The lyric 'half happenstance and beaver broke' is strange enough to stick, like something Tom Waits might have buried in a bridge and called it wisdom. This one holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "123 BPM",
+      "F# minor",
+      "3/4 waltz time",
+      "chorus lift at 'in every way the end betrays'",
+      "quoted lyric: 'half happenstance and beaver broke'",
+      "rhythm section texture",
+      "overdriven guitars",
+      "Tom Waits comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

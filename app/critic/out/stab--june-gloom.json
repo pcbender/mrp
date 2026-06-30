@@ -1,0 +1,114 @@
+{
+  "track_id": "stab--june-gloom",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/June Gloom - STAB.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--june-gloom.opus"
+  },
+  "lyrics": "California's been kinda boring\nA little bit of heartbreak\nAnd my friends are falling out\nAnd everybody's calling\nI've been so exhausted\n'Cause all my days are filled with doubt\nYeah\nMaybe I should take a break\nAnd get out of this place\n\nIt's June gloom\n\nNothing feels right\nNothing's going right\nAnd all I do is trip and lay in bed all night\nIt's June gloom\nIt's June gloom\nNothing feels right\nNothing's going right\nAnd all I do is trip and lay in bed all night\nIt's June gloom\nIt's June gloom\n\nThe fog in the sky got me feelin' sad inside\nGot me freakin' on this vibe and I don't know why\nAnd the sun don't shine and the moon don't rise\nAnd my whole damn life feels like a long goodbye\nMy heart's full of hatred\nBut I swear I'll fake it\nIt's been like this since I can remember\n\nIt's June gloom\n\nNothing feels right\nNothing's going right\nAnd all I do is trip and lay in bed all night\nIt's June gloom\nIt's June gloom\nNothing feels right\nNothing's going right\nAnd all I do is trip and lay in bed all night\nIt's June gloom\nIt's June gloom",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 186.52,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.1,
+        "label": "S1"
+      },
+      {
+        "start": 11.1,
+        "end": 27.98,
+        "label": "S2"
+      },
+      {
+        "start": 27.98,
+        "end": 43.63,
+        "label": "S3"
+      },
+      {
+        "start": 43.63,
+        "end": 59.88,
+        "label": "S4"
+      },
+      {
+        "start": 59.88,
+        "end": 75.67,
+        "label": "S5"
+      },
+      {
+        "start": 75.67,
+        "end": 92.11,
+        "label": "S6"
+      },
+      {
+        "start": 92.11,
+        "end": 113.06,
+        "label": "S7"
+      },
+      {
+        "start": 113.06,
+        "end": 161.17,
+        "label": "S8"
+      },
+      {
+        "start": 161.17,
+        "end": 176.45,
+        "label": "S9"
+      },
+      {
+        "start": 176.45,
+        "end": 186.52,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.824
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "blues rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "drums",
+      "lead vocals"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a tense atmosphere by contrasting its sparse, funk-influenced verses with a dense, chaotic chorus. It builds from a low-energy, contemplative state into a frantic, high-energy feel, driven by a powerful bassline and layered vocals that express a sense of being overwhelmed. The production is polished and modern, allowing the clean rhythm section to provide a tight foundation while vocals and synths create a swirling, anxious texture on top. A defining quality is the abrupt, full-band transition into the hook \"it's jungle,\" which perfectly encapsulates the song's central theme of internal turmoil.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "STAB leans into the SoCal malaise of June gloom with a track that earns its title: the verses are spare and a little restless, riding a clean rhythm section at a steady 117 BPM in B major, before the chorus opens up into something fuller and more chaotic, which is exactly the right move for a lyric like 'all I do is trip and lay in bed all night.' The contrast between those stripped-down verses and the dense, layered hook gives the song a genuine emotional arc, and the hook itself has the same kind of blunt, repetitive weight that early Veruca Salt used to turn frustration into a sing-along. 'My heart's full of hatred but I swear I'll fake it' is the sharpest line here, and STAB delivers it like she means both halves equally. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 117.5",
+      "key B major",
+      "lyric: 'all I do is trip and lay in bed all night'",
+      "lyric: 'my heart's full of hatred but I swear I'll fake it'",
+      "sparse verse to dense chorus contrast",
+      "Veruca Salt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

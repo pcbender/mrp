@@ -1,0 +1,110 @@
+{
+  "track_id": "lingua-aeternum--knots-and-needles",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Knots and Needles.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--knots-and-needles.opus"
+  },
+  "lyrics": "I twist the thread with shaking hands\nThe blood congeals and marks the head\nA loop emerges, form reveals\nThe stitch denies what shape converges\n\nI breathe beneath the weaving eyes\nIt pierces soft, but lands its teeth\n\nThe knot does not the needle drop\n\nA silent oath is sewn by hand\nThe thread recalls what once was cloth\nThe knot is loud, but silence falls\nEach circle drawn in shadowed shroud\n\nA tremble hides the seam its on\nA split between the stitch’s sides\n\nThe needle needs the knot again\n\nI chased the curve along the grain\nThe spiral wound, the will to serve\nThe echo knelt beside the sound\nAnd left its mark though never felt\n\nThe rhythm broke and lit the dark\nA loop misplaced in measured stroke\n\nThe knot does not the needle drop\n\nThe eye is small, but sees the most\nIt threads the thread, the knots and all\nThe needle bends but not ahead\nThe wound reveals what time pretends\n\nI hold the line between appeals\nThe seam repeats, the pulse is mine\n\nThe needle needs the knot again\n\nThe needle needs the knot to thread the needle\n\nThe needle needs the knot to thread the needle\n\nThe needle needs the knot to thread the needle",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 237.0,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.31,
+        "label": "S1"
+      },
+      {
+        "start": 13.31,
+        "end": 29.3,
+        "label": "S2"
+      },
+      {
+        "start": 29.3,
+        "end": 54.98,
+        "label": "S3"
+      },
+      {
+        "start": 54.98,
+        "end": 77.3,
+        "label": "S4"
+      },
+      {
+        "start": 77.3,
+        "end": 104.56,
+        "label": "S5"
+      },
+      {
+        "start": 104.56,
+        "end": 131.98,
+        "label": "S6"
+      },
+      {
+        "start": 131.98,
+        "end": 153.62,
+        "label": "S7"
+      },
+      {
+        "start": 153.62,
+        "end": 172.22,
+        "label": "S8"
+      },
+      {
+        "start": 172.22,
+        "end": 237.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.956,
+      "key": 0.943
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a dense and earnest atmosphere with its interwoven, driving electric guitars and a clear, forward-placed male vocal. The energy is consistently high and propulsive, maintaining a feeling of determined momentum from the introduction to the final note. The production quality is modern and spacious, balancing a full arrangement by allowing each instrument its own distinct place in a wide stereo field. A defining moment occurs in the final minute, where the main lyrical phrase is repeated with escalating intensity over a powerful instrumental swell, creating a memorable and anthemic climax.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 117.5 BPM in D major, 'Knots and Needles' moves with the kind of locked-in, forward-leaning drive that recalls early Silversun Pickups before they got too polished, and the lyric 'the knot does not the needle drop' lands as the sort of knotty, plain-spoken refrain that earns its repetition. The production is genuinely spacious, letting the guitars push without crowding the vocal, and the final minute delivers on everything the song sets up, that repeated 'the needle needs the knot to thread the needle' building into a full-room swell that closes the loop. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 117.5",
+      "D major",
+      "lyric: 'the knot does not the needle drop'",
+      "lyric: 'the needle needs the knot to thread the needle'",
+      "final-minute escalation from audio impression",
+      "spacious stereo production from audio impression",
+      "Silversun Pickups comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "track_id": "pcbender--nyanza",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Nyanza.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--nyanza.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 214.68,
+    "lufs": -13.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 7.11,
+        "label": "S1"
+      },
+      {
+        "start": 7.11,
+        "end": 36.48,
+        "label": "S2"
+      },
+      {
+        "start": 36.48,
+        "end": 55.7,
+        "label": "S3"
+      },
+      {
+        "start": 55.7,
+        "end": 72.59,
+        "label": "S4"
+      },
+      {
+        "start": 72.59,
+        "end": 89.09,
+        "label": "S5"
+      },
+      {
+        "start": 89.09,
+        "end": 105.33,
+        "label": "S6"
+      },
+      {
+        "start": 105.33,
+        "end": 122.25,
+        "label": "S7"
+      },
+      {
+        "start": 122.25,
+        "end": 146.15,
+        "label": "S8"
+      },
+      {
+        "start": 146.15,
+        "end": 173.69,
+        "label": "S9"
+      },
+      {
+        "start": 173.69,
+        "end": 193.21,
+        "label": "S10"
+      },
+      {
+        "start": 193.21,
+        "end": 214.68,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.894
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "blues",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This instrumental track presents a cool, bluesy atmosphere led by a fluid and expressive electric guitar. The overall texture is open and clean, with a simple rhythm section of bass and drums providing a relaxed, in-the-pocket groove for the lead instrument to soar over. The energy level is laid-back and contemplative, feeling like a soulful, late-night jam session rather than a high-octane performance. The production quality is excellent, creating a sense of live space with tasteful reverb that allows the guitar's warm, overdriven tone to sit prominently in the mix without crowding the other instruments. A defining quality of the track is the guitarist's vocal-like phrasing, particularly in the use of long, sustained string bends and rapid, descending runs that infuse the piece with emotion and technical flair.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "In 3/4 time at a loping 89 BPM, 'Nyanza' gives PCBender room to let the guitar breathe, and he makes the most of it: the long, vocal-like string bends carry the kind of conversational phrasing you hear in early Robben Ford, where the note choice matters more than the note count. The rhythm section stays deliberately understated, an open, in-the-pocket groove that keeps the lead guitar central without crowding it. Eleven sections in under four minutes means the piece moves through ideas without overstaying any of them, and the E major tonality keeps it warm rather than somber, even when the mood dips reflective. A dependable cut that rewards headphone listening.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "89.1 BPM",
+      "E major key",
+      "11-section structure",
+      "3:34 duration",
+      "sustained string bends and descending runs from audio impression",
+      "vocal-like phrasing noted in impression",
+      "Robben Ford comparison for phrasing style"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

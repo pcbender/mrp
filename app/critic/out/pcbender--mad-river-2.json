@@ -1,0 +1,120 @@
+{
+  "track_id": "pcbender--mad-river-2",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Mad River - PCBender.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--mad-river-2.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 267.6,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 28.65,
+        "label": "S1"
+      },
+      {
+        "start": 28.65,
+        "end": 53.06,
+        "label": "S2"
+      },
+      {
+        "start": 53.06,
+        "end": 70.01,
+        "label": "S3"
+      },
+      {
+        "start": 70.01,
+        "end": 105.56,
+        "label": "S4"
+      },
+      {
+        "start": 105.56,
+        "end": 125.6,
+        "label": "S5"
+      },
+      {
+        "start": 125.6,
+        "end": 151.6,
+        "label": "S6"
+      },
+      {
+        "start": 151.6,
+        "end": 178.42,
+        "label": "S7"
+      },
+      {
+        "start": 178.42,
+        "end": 201.76,
+        "label": "S8"
+      },
+      {
+        "start": 201.76,
+        "end": 218.66,
+        "label": "S9"
+      },
+      {
+        "start": 218.66,
+        "end": 251.52,
+        "label": "S10"
+      },
+      {
+        "start": 251.52,
+        "end": 267.6,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.957,
+      "key": 0.97
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a sparse, reflective texture, creating a melancholic and intimate atmosphere led by a clean acoustic guitar and a gentle, narrative male vocal. The energy is subdued and flowing, building gradually from an intimate folk ballad into a more expansive soft rock soundscape as the rhythm section enters. The production quality is polished and spacious, with generous reverb giving the vocals and instruments a sense of depth and separation within the mix. A defining characteristic is the dynamic lift into the choruses, where soaring, layered vocal harmonies provide a powerful, almost haunting emotional peak that contrasts with the reserved verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Mad River 2 is a waltz-time slow burn that earns its 4:27 by actually going somewhere. The track opens in spare, fingerpicked B major with the kind of patience that trusts the listener, and the payoff arrives when the rhythm section finally locks in and the harmonies stack above the mix with real lift. At 112 BPM in 3/4, it has the gentle forward roll of a late-period Tom Petty ballad, unhurried but never inert. A dependable cut that rewards the full listen.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "B major key",
+      "112 BPM",
+      "3/4 time",
+      "4:27 duration",
+      "sparse acoustic opening building to layered vocal harmonies",
+      "waltz-time rhythmic feel",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

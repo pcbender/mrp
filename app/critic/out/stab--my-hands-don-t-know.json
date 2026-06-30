@@ -1,0 +1,110 @@
+{
+  "track_id": "stab--my-hands-don-t-know",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/My Hands Don't Know.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--my-hands-don-t-know.opus"
+  },
+  "lyrics": "(My hands...)\n\nI'm standing in the kitchen and I'm shaking a bit\nI keep checking my pockets for the fix of it\nI feel like I'm missing a piece of my arm\nLike I'm walking around without a protective charm\n(it's cold)\nEveryone else is still in the loop\nWhile I'm out here jumping through a different hoop\n\nI'm reaching for a phone that I swore I wouldn't touch\nI didn't think I needed the validation this much\nI'm a ghost in the world and it's starting to show\nMy hands don't know what to do\n\nI wonder if they've noticed that I've gone away\nI wonder if I'm missing the big things they say\nThe isolation is a heavy, physical weight\nAnd I'm starting to think I've made a mistake\n(did I?)\n(am I crazy?)\nThe silence is starting to feel like a cage\n\nI'm reaching for a phone that I swore I wouldn't touch\nI didn't think I needed the validation this much\nI'm a ghost in the world and it's starting to show\nMy hands don't know what to do\n\n(The itch)\n(The shiver)\n(The cold, blue light)\nI'm staring at the wall in the middle of the night\nWondering if the struggle is worth the fight\n\nI'm reaching for a phone that I swore I wouldn't touch\nI didn't think I needed the validation this much\nI'm a ghost in the world and it's starting to show\nMy hands don't know what to do\n\n(What do I do?)\n(My hands...)\n(My hands don't know what to do)",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "D#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 190.0,
+    "lufs": -13.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.16,
+        "label": "S1"
+      },
+      {
+        "start": 4.16,
+        "end": 31.58,
+        "label": "S2"
+      },
+      {
+        "start": 31.58,
+        "end": 49.99,
+        "label": "S3"
+      },
+      {
+        "start": 49.99,
+        "end": 68.94,
+        "label": "S4"
+      },
+      {
+        "start": 68.94,
+        "end": 94.04,
+        "label": "S5"
+      },
+      {
+        "start": 94.04,
+        "end": 111.64,
+        "label": "S6"
+      },
+      {
+        "start": 111.64,
+        "end": 152.72,
+        "label": "S7"
+      },
+      {
+        "start": 152.72,
+        "end": 186.83,
+        "label": "S8"
+      },
+      {
+        "start": 186.83,
+        "end": 190.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.973,
+      "key": 0.897
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "defiant",
+      "tender",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates an anxious, intimate atmosphere with a close-miked, almost spoken-word vocal that erupts into a desperate and emotionally raw chorus. The song's energy is defined by its powerful dynamic shifts, building from a sparse, tense verse into an explosive, anthemic pop-rock feel driven by heavy, distorted guitars. The production is polished and modern, creating a spacious verse that contrasts sharply with the dense, impactful wall of sound in the chorus, where all elements sit tightly together. A defining moment is the transition into the first chorus, where the full band enters abruptly, establishing the hook and the song's central conflict between isolation and the need for connection.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a brisk 152 BPM in D# major, this one earns its keep on the strength of a chorus that lands like a door kicked open: the full band drops in hard after a close, almost confessional verse, and the contrast does exactly what it should. The hook, built around 'I'm a ghost in the world and it's starting to show,' captures phone-withdrawal anxiety with the kind of specificity that makes a lyric stick, and STAB's vocal sells the desperation without tipping into melodrama. It has the same dynamic punch as mid-period Paramore, verse held tight and then released all at once, and the bridge's parenthetical asides, 'the itch, the shiver, the cold blue light,' give it a texture that rewards a second listen. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152",
+      "key D# major",
+      "chorus drop/dynamic contrast",
+      "lyric: 'I'm a ghost in the world and it's starting to show'",
+      "bridge parentheticals: 'the itch, the shiver, the cold blue light'",
+      "close-miked verse vocal",
+      "Paramore comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

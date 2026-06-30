@@ -1,0 +1,123 @@
+{
+  "track_id": "michael-anthony-rose--some-days-still-break-me",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Some Days Still Break Me.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--some-days-still-break-me.opus"
+  },
+  "lyrics": "Yesterday I meant every word\nToday I can't carry half of them\nWoke up wrong, no great reason\nJust one of those thin-skinned mornings\nWhere the shirt fits strange\nAnd the mirror's mean\nAnd one small comment from a stranger\nTakes the whole day down with it\n\nSome days still break me\nThat's just true\nSome days everything I know\nFalls straight through\nSome days I'm steady\nSome days I'm through\nI can talk a good game when the light is right\nBut some days still break me\n\nI hate admitting that out loud\nAfter all the ground I thought I'd made\nPeople say it comes in waves\nMaybe that part's true\nBecause there are days I know myself\nAnd days I just get through\nAnd sometimes all I really have\nIs getting through till morning\n\nSome days still break me\nThat's just true\nSome days everything I know\nFalls straight through\nSome days I'm steady\nSome days I'm through\nI can talk a good game when the light is right\nBut some days still break me\n\nAnd I'm trying not to hate the part of me\nThat needs more mercy than I planned\nTrying not to turn one bad afternoon\nInto proof I am less than\nLess than\n(oh no)\nLess than\n\nSome days still break me\nThat's still true\nSome days everything I know\nFalls straight through\nSome days I hold together\nSome days I lose\nI can carry myself pretty well for a while\nBut some days still break me\n\nStill break me\nMm\nStill break me",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 206.81,
+    "lufs": -13.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.51,
+        "label": "S1"
+      },
+      {
+        "start": 1.51,
+        "end": 17.83,
+        "label": "S2"
+      },
+      {
+        "start": 17.83,
+        "end": 42.14,
+        "label": "S3"
+      },
+      {
+        "start": 42.14,
+        "end": 58.1,
+        "label": "S4"
+      },
+      {
+        "start": 58.1,
+        "end": 77.3,
+        "label": "S5"
+      },
+      {
+        "start": 77.3,
+        "end": 93.34,
+        "label": "S6"
+      },
+      {
+        "start": 93.34,
+        "end": 122.09,
+        "label": "S7"
+      },
+      {
+        "start": 122.09,
+        "end": 138.21,
+        "label": "S8"
+      },
+      {
+        "start": 138.21,
+        "end": 160.33,
+        "label": "S9"
+      },
+      {
+        "start": 160.33,
+        "end": 177.59,
+        "label": "S10"
+      },
+      {
+        "start": 177.59,
+        "end": 192.75,
+        "label": "S11"
+      },
+      {
+        "start": 192.75,
+        "end": 206.81,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.933
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a warm and intimate atmosphere, featuring a gentle texture of clean electric guitar, soft piano, and a heartfelt, forward-placed male vocal. The energy is consistently low and reflective, maintaining a laid-back, ballad-like feel driven by a simple, steady rhythm section. The production is clean and spacious, with well-balanced elements that create a cohesive and polished sound where every instrument has its own place. A defining quality is its dynamic subtlety, as seen in the transition at 0:40 where the chorus introduces subtle vocal harmonies and a fuller bassline, effectively swelling the emotional weight without disrupting the song's gentle nature.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose has always been good at the kind of honesty that sounds simple until you realize how hard it is to write, and 'Some Days Still Break Me' is that quality at its most distilled. The line 'I can talk a good game when the light is right' does more work than a whole verse of most songs, and the bridge, where he catches himself turning 'one bad afternoon into proof I am less than,' is quietly devastating. At a measured pace in A major, the production keeps everything close and warm, with the chorus earning its small swell through added harmonies and a fuller low end rather than any dramatic push. A highlight, and one that will mean something different to you on a bad morning than it does right now.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'I can talk a good game when the light is right'",
+      "lyric: 'one bad afternoon into proof I am less than'",
+      "key: A major",
+      "chorus swell via vocal harmonies and fuller bassline at transition point",
+      "BPM: 152.0 steady rhythm"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

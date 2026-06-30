@@ -152,7 +152,7 @@ release:
     isrc: CBEYJ2593224
     duration: '5:08'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--confused-by-your-wires.mp3
     links:
       apple_music: https://music.apple.com/us/album/confused-by-your-wires/1845588107?i=1845588109
       youtube: https://www.youtube.com/watch?v=LOvQEWERNkg
@@ -272,7 +272,7 @@ release:
     isrc: CBEYJ2593225
     duration: '4:52'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--everythings-better-than-nothin.mp3
     links:
       apple_music: https://music.apple.com/us/album/everythings-better-than-nothin/1845588107?i=1845588110
       youtube: https://www.youtube.com/watch?v=NqPoN-AI1oY
@@ -416,7 +416,7 @@ release:
     isrc: CBEYJ2593226
     duration: '4:49'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--inner-outer.mp3
     links:
       apple_music: https://music.apple.com/us/album/inner-outer/1845588107?i=1845588111
       youtube: https://www.youtube.com/watch?v=QcoXOdnj0c8
@@ -518,7 +518,7 @@ release:
     isrc: CBEYJ2593231
     duration: '4:42'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--maria-s-cup.mp3
     links:
       apple_music: https://music.apple.com/us/album/marias-cup/1845588107?i=1845588112
       youtube: https://www.youtube.com/watch?v=vhcYO0C_XEM
@@ -611,7 +611,7 @@ release:
     isrc: CBEYJ2593232
     duration: '4:08'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--july-surprise.mp3
     links:
       apple_music: https://music.apple.com/us/album/july-surprise/1845588107?i=1845588113
       youtube: https://www.youtube.com/watch?v=b9tzfZvYQag
@@ -690,7 +690,7 @@ release:
     isrc: CBEYJ2593228
     duration: '4:59'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--opposites-attract-in-time.mp3
     links:
       apple_music: https://music.apple.com/us/album/opposites-attract-in-time/1845588107?i=1845588114
       youtube: https://www.youtube.com/watch?v=cwV2lUYPys8
@@ -803,7 +803,7 @@ release:
     isrc: CBEYJ2593229
     duration: '4:30'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--active-illusion.mp3
     links:
       apple_music: https://music.apple.com/us/album/active-illusion/1845588107?i=1845588115
       youtube: https://www.youtube.com/watch?v=sKimRAgV9WQ
@@ -912,7 +912,7 @@ release:
     isrc: CBEYJ2593230
     duration: '6:03'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--prehistoric-lies.mp3
     links:
       apple_music: https://music.apple.com/us/album/prehistoric-lies/1845588107?i=1845588116
       youtube: https://www.youtube.com/watch?v=V4rOu38eulI
@@ -996,7 +996,7 @@ release:
     isrc: SE6I32525002
     duration: '5:30'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--riddles-abound.mp3
     links:
       apple_music: https://music.apple.com/us/album/riddles-abound/1845588107?i=1845588207
       youtube: https://www.youtube.com/watch?v=ah1zSCq7w6M

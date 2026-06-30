@@ -1,0 +1,124 @@
+{
+  "track_id": "pcbender--you-become-the-night",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/You Become The Night.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--you-become-the-night.opus"
+  },
+  "lyrics": "The overcast stillness takes its toll upon my prose\nA constant ticking of the clock acts as if it knows\nSome other senseless parable you shape until it flows\nIn the end it matters not - the music always goes\n\nWhen you finally decide to open your eyes\nLet go the dreams you keep locked inside\nThe fears overtake but the darkness provides\nWhere the truth that you fear has nowhere to hide\nYou become the night\nYou become the night\n\nYou feel the tether pulling tight, a thread the night bestows\nA silent force that shapes your name in ways you never chose\nYou fear the shape you’re turning into - only darkness knows\nBut even running from yourself still takes you where it goes\n\nWhen you finally decide to open your eyes\nLet go the dreams you keep locked inside\nThe fears overtake but the darkness provides\nWhere the truth that you fear has nowhere to hide\nYou become the night\nYou become the night\n\nHe told me I would find my voice before the waiting crowd\nBut not the where or when or how, just “speak your truth aloud”\nThese many years the echo stayed - both blessing and a shroud\nI lived my life and waited still, for what the night allowed\n\nWhen you finally decide to open your eyes\nLet go the dreams you keep locked inside\nThe fears overtake but the darkness provides\nWhere the truth that you fear has nowhere to hide\nYou become the night\nYou become the night",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 296.84,
+    "lufs": -15.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.51,
+        "label": "S1"
+      },
+      {
+        "start": 13.51,
+        "end": 44.68,
+        "label": "S2"
+      },
+      {
+        "start": 44.68,
+        "end": 63.97,
+        "label": "S3"
+      },
+      {
+        "start": 63.97,
+        "end": 88.24,
+        "label": "S4"
+      },
+      {
+        "start": 88.24,
+        "end": 126.43,
+        "label": "S5"
+      },
+      {
+        "start": 126.43,
+        "end": 143.41,
+        "label": "S6"
+      },
+      {
+        "start": 143.41,
+        "end": 172.06,
+        "label": "S7"
+      },
+      {
+        "start": 172.06,
+        "end": 210.63,
+        "label": "S8"
+      },
+      {
+        "start": 210.63,
+        "end": 231.87,
+        "label": "S9"
+      },
+      {
+        "start": 231.87,
+        "end": 265.75,
+        "label": "S10"
+      },
+      {
+        "start": 265.75,
+        "end": 282.63,
+        "label": "S11"
+      },
+      {
+        "start": 282.63,
+        "end": 296.84,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.877
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a rich, evolving texture, beginning with a spacious and introspective atmosphere defined by clean, delayed guitars and a breathy female vocal. The energy builds from a pensive mood into a powerful, anthemic rock feel, driven by crashing cymbals and wide, distorted guitars that create an immense sense of emotional release. The production is modern and expansive, with a well-defined stereo image where the central vocal is surrounded by layers of harmony and atmospheric guitar effects, creating a sound that is both dense and clear. A key distinctive quality is the powerful dynamic shift into the chorus, where the full band erupts, transforming the song from a quiet reflection into a soaring, cathartic statement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Written in 3/4 and built around a lyric that earns its weight, 'You Become the Night' opens with clean, delayed guitar and a quiet sense of reckoning before the chorus hits like a door blown open. The line 'the fears overtake but the darkness provides' is the kind of paradox that lands differently depending on where you are in life, and PCBender lets it breathe. That dynamic shift from introspection into the full-band surge is the track's best move, and he doesn't waste it.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "B major key",
+      "clean delayed guitar opening",
+      "lyric quote: 'the fears overtake but the darkness provides'",
+      "dynamic shift into chorus",
+      "112 BPM pacing"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "track_id": "lingua-aeternum--stone-warrior",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Stone Warrior.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--stone-warrior.opus"
+  },
+  "lyrics": "I was made to last forever\nChiseled hard and carved in pride\nTold to hold the line, not falter\nStrength was all I had inside\n\nWhen I hurt, I turned to silence\nTaught that pain should never show\nI buried every trembling moment\nBuilt a wall that wouldn’t grow\n\nI am the stone warrior, carved to stand\nStill in the storm, still in demand\nIf I crack, even just a bit, I might fall apart\nSo I hold my breath, and I hold my heart\n\nNow the weight I held is shifting\nAnd the silence starts to strain\nI want to scream, to sing, to soften\nBut I’m still afraid of rain\n\nBut feeling isn’t failure\nAnd tears don't mean I'm weak\nI was never meant to crumble\nBut I was always meant to speak\n\nI was the stone warrior, carved to stand\nBut now I breathe, now I expand\nIf I crack, even just a bit, I let in the light\nLet it fill my chest, let it set things right",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "F#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 301.24,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 33.37,
+        "label": "S1"
+      },
+      {
+        "start": 33.37,
+        "end": 50.6,
+        "label": "S2"
+      },
+      {
+        "start": 50.6,
+        "end": 97.15,
+        "label": "S3"
+      },
+      {
+        "start": 97.15,
+        "end": 112.57,
+        "label": "S4"
+      },
+      {
+        "start": 112.57,
+        "end": 185.76,
+        "label": "S5"
+      },
+      {
+        "start": 185.76,
+        "end": 206.43,
+        "label": "S6"
+      },
+      {
+        "start": 206.43,
+        "end": 285.86,
+        "label": "S7"
+      },
+      {
+        "start": 285.86,
+        "end": 301.24,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.916
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "dark",
+      "uplifting",
+      "energetic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a spacious and contemplative atmosphere, built on clean, arpeggiated electric guitars and a gentle piano that create a feeling of introspection. This calm intro quickly gives way to a powerful, anthemic modern rock feel, driven by a tight rhythm section and layered, distorted guitars that significantly elevate the energy. The production is polished and clear, managing a dense arrangement where punchy drums and heavy guitars support a prominent, earnest male vocal without sounding cluttered. A key defining moment is the sudden shift into the chorus around the one-minute mark, where the full band erupts with a massive wall of sound, establishing the song's core dynamic of quiet reflection versus powerful emotional release.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Stone Warrior\" earns its ambition: the move from clean arpeggiated guitar into the full-band eruption at the chorus hits with real force, and the lyric turn in the second chorus, \"if I crack, even just a bit, I let in the light,\" reframes the entire setup in a way that lands without feeling cheap. At 123 BPM in F# minor, the track has the momentum of classic arena rock but the emotional specificity of something more personal, closer to early Gaslight Anthem than anything classic-rock radio would have touched. Five minutes is room enough for the idea to breathe, and Lingua Aeternum fills it.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "chorus eruption at approximately one-minute mark",
+      "quoted lyric: 'if I crack, even just a bit, I let in the light'",
+      "BPM 123.0",
+      "F# minor key",
+      "clean arpeggiated guitar intro",
+      "duration 5:01"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

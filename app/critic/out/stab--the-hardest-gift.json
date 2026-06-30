@@ -1,0 +1,114 @@
+{
+  "track_id": "stab--the-hardest-gift",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Hardest Gift.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--the-hardest-gift.opus"
+  },
+  "lyrics": "Didn't see it coming, but I knew it deep down\nKept the door open, but you walked right out\nLeft a mess on the table, words on the floor\nTook a breath, took a minute, took a little bit more\n\nNow look at me, yeah, look at me now\nDidn't break, didn't burn, didn't drown\nWhat felt like fire, what knocked me flat\nLit me up, never looking back\n\nYou were the weight that I had to lift\nThe hit that hurt but gave me this\nThought it was heartbreak, thought it was theft\nBut losing you was the hardest gift\n\nTook a while just to clear my head\nKept the echo but lost what you said\nLeft me spinning, I couldn't stand\nBut I kept moving, now here I am\n\nNow look at me, yeah, look at me now\nDidn't break, didn't burn, didn't drown\nWhat felt like fire, what knocked me flat\nLit me up, never looking back\n\nYou were the weight that I had to lift\nThe hit that hurt but gave me this\nThought it was heartbreak, thought it was theft\nBut losing you was the hardest gift\n\nWrapped up my pain, tied it real tight\nSet it down, let it drift outside\nNow I dance, now I don't look back\nTook what I needed, left what I had\n\nYou were the weight that I had to lift\nThe hit that hurt but gave me this\nThought it was heartbreak, thought it was theft\nBut losing you was the hardest gift\n\nDidn't see it coming, but I knew it deep down\nGuess I should be saying thanks right now",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 193.8,
+    "lufs": -12.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.93,
+        "label": "S1"
+      },
+      {
+        "start": 1.93,
+        "end": 17.04,
+        "label": "S2"
+      },
+      {
+        "start": 17.04,
+        "end": 32.79,
+        "label": "S3"
+      },
+      {
+        "start": 32.79,
+        "end": 57.77,
+        "label": "S4"
+      },
+      {
+        "start": 57.77,
+        "end": 86.56,
+        "label": "S5"
+      },
+      {
+        "start": 86.56,
+        "end": 108.25,
+        "label": "S6"
+      },
+      {
+        "start": 108.25,
+        "end": 131.42,
+        "label": "S7"
+      },
+      {
+        "start": 131.42,
+        "end": 157.25,
+        "label": "S8"
+      },
+      {
+        "start": 157.25,
+        "end": 188.36,
+        "label": "S9"
+      },
+      {
+        "start": 188.36,
+        "end": 193.8,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.918
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "dark"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a polished, high-energy pop-rock anthem with a dense, driving texture. The atmosphere is one of defiant empowerment, led by a powerful female vocal that cuts through a thick wall of distorted guitars and a punchy, locked-in rhythm section. The production is modern and clean, with a very full and compressed sound where every element feels loud and present, creating a massive, stadium-ready feel. A distinctive quality is the powerful lyrical hook in the chorus, \"losing you was the hardest gift,\" which serves as a memorable and impactful centerpiece for the track's theme of resilience.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 143 BPM in E minor, 'The Hardest Gift' doesn't waste a second getting to the point: STAB opens on a thick wall of guitars and a rhythm section that locks in and doesn't let go. The chorus lands the way a good breakup-as-victory song should, with the central line 'losing you was the hardest gift' doing real emotional work without overselling it. It's the kind of hook that earns its stadium-ready production, recalling the cleaner end of early Paramore or a punchier Letters to Cleo. At three minutes and thirteen seconds it's tight, purposeful, and a highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 143.6",
+      "E minor key",
+      "duration 3:13",
+      "quoted lyric: 'losing you was the hardest gift'",
+      "dense distorted guitar texture from audio impression",
+      "Paramore and Letters to Cleo comparisons"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

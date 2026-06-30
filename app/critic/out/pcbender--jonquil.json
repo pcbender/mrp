@@ -1,0 +1,110 @@
+{
+  "track_id": "pcbender--jonquil",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Jonquil.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--jonquil.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 156.92,
+    "lufs": -13.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.11,
+        "label": "S1"
+      },
+      {
+        "start": 6.11,
+        "end": 26.91,
+        "label": "S2"
+      },
+      {
+        "start": 26.91,
+        "end": 41.98,
+        "label": "S3"
+      },
+      {
+        "start": 41.98,
+        "end": 61.23,
+        "label": "S4"
+      },
+      {
+        "start": 61.23,
+        "end": 76.44,
+        "label": "S5"
+      },
+      {
+        "start": 76.44,
+        "end": 101.22,
+        "label": "S6"
+      },
+      {
+        "start": 101.22,
+        "end": 116.96,
+        "label": "S7"
+      },
+      {
+        "start": 116.96,
+        "end": 145.54,
+        "label": "S8"
+      },
+      {
+        "start": 145.54,
+        "end": 156.92,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.898
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "blues",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a spirited and gritty blues-rock jam with a playful, confident atmosphere. The track features a driving, mid-high energy level, built on a tight rhythm section of bass and drums that creates a spacious, live-in-the-room production feel. The electric guitar, with its articulate and crunchy tone, sits clearly on top of the mix, leading the performance with intricate licks and expressive string bends. A defining quality of the track is the guitarist's technical yet conversational phrasing, especially during the rapid-fire melodic runs and double-stop fills that punctuate the main grooves.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz-time blues-rock instrumental is an unusual bet, but PCBender makes it pay: at 129 BPM in D major, 'Jonquil' has a spring-loaded momentum that shouldn't work in 3/4 and somehow feels completely natural. The electric guitar leads with the kind of crunchy, conversational phrasing you hear in early Robben Ford, all rapid-fire runs and double-stop fills that talk back to the rhythm section rather than just riding over it. At two and a half minutes it earns its length, cycling through nine tight sections without overstaying its welcome. A confident, well-built little instrumental that holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "129 BPM",
+      "D major",
+      "3/4 time signature",
+      "double-stop fills",
+      "nine sections",
+      "2:36 duration",
+      "Robben Ford comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

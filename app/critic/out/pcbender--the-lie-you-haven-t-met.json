@@ -1,0 +1,104 @@
+{
+  "track_id": "pcbender--the-lie-you-haven-t-met",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Lie You Haven't Met.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--the-lie-you-haven-t-met.opus"
+  },
+  "lyrics": "It’s the constant observation of the moment I can’t stand\nThe algorithmic hesitation slipping from my hand\nWe are boxcars riding shotgun as the engine tries in vain\nStraining, ever hopeful that there’s something to explain\n\nBe that as it may\nIs there something left to say\n\nWhy for\nHow come\nGive it up\nWill be done\nNo forgiveness. No regret\nBecome the lie you haven’t met\n\nI’ll meet you in the wasteland of the moments in between\nA seeming sympathetic more unconscious than a dream\nDon’t tell me how you’re feeling when your edge is never sharp\nYou are not a complex puzzle and you will not fall apart\n\nBe that as it may\nIs there something left to say\n\nWhy for\nHow come\nGive it up\nWill be done\nNo forgiveness. No regret\nBecome the lie you haven’t met\n\nThe blisters reflect the idle tapping, not the effort shown\nYou slide behind the mirrored door, remain the brief unknown\nI am the archer and the string, my arrow’s missing fletch\nThe aim is high, the mark obscure, the target is none such\n\nBe that as it may\nIs there something left to say\n\nWhy for\nHow come\nGive it up\nWill be done\nNo forgiveness. No regret\nBecome the lie you haven’t met",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 269.44,
+    "lufs": -15.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 23.8,
+        "label": "S1"
+      },
+      {
+        "start": 23.8,
+        "end": 43.44,
+        "label": "S2"
+      },
+      {
+        "start": 43.44,
+        "end": 58.84,
+        "label": "S3"
+      },
+      {
+        "start": 58.84,
+        "end": 75.67,
+        "label": "S4"
+      },
+      {
+        "start": 75.67,
+        "end": 119.1,
+        "label": "S5"
+      },
+      {
+        "start": 119.1,
+        "end": 141.66,
+        "label": "S6"
+      },
+      {
+        "start": 141.66,
+        "end": 191.61,
+        "label": "S7"
+      },
+      {
+        "start": 191.61,
+        "end": 269.44,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.887
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This modern rock track creates a contemplative atmosphere with its shimmering, layered electric guitar textures and an earnest lead vocal. The song's feel is built on a powerful dynamic arc, moving from restrained, thoughtful verses into driving, anthemic choruses that feel emotionally expansive. The production is clean and spacious, with a dense yet clear arrangement where the punchy drums and bass provide a solid foundation for the intricate guitars and soaring vocals. A distinctive quality is the powerful release in the choruses, where the vocal delivery becomes impassioned and the full band swells, giving the track its core emotional weight.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 129 BPM in A major, this one moves with a restrained urgency that pays off the moment the chorus opens up and PCBender lets the full band breathe. The lyric 'I am the archer and the string, my arrow's missing fletch' is the kind of line that earns a second listen on its own, and the production gives it room, clean and spacious without feeling sterile. The dynamic arc from those measured, searching verses into the anthemic release of 'Become the lie you haven't met' is the track's real argument, and it wins the case. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 129.2",
+      "A major",
+      "lyric: 'I am the archer and the string, my arrow's missing fletch'",
+      "lyric: 'Become the lie you haven't met'",
+      "verse-to-chorus dynamic arc",
+      "clean spacious production"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

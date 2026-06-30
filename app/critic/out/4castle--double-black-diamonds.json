@@ -1,0 +1,125 @@
+{
+  "track_id": "4castle--double-black-diamonds",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Double Black Diamonds.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--double-black-diamonds.opus"
+  },
+  "lyrics": "Cold wind rushin', heart starts to race\nOne step forward-ain't no time to waste\nYou pull me closer, whisper my name\nEdge of the world, but we're one and the same\nNo turning back, no second-guess\nWe ride the fire, nothing less\n\nOh, the rush, the fall, the ride\nEyes closed, arms open wide\n\nDouble black diamonds, wild and free\nHold on tight, just you and me\nCold on my face, but my temperature's rising\nYou're making me feel like Double black diamonds\n\nHeartbeat pounding, flying so fast\nWe carve the slope, leave fear in the past\nNo safe trails, no easy way down\nBut baby, I swear, I'll never touch the ground\n\nOh, the rush, the fall, the ride\nEyes closed, arms open wide\n\nDouble black diamonds, wild and free\nHold on tight, just you and me\nCold on my face, but my temperature's rising\nYou're making me feel like Double black diamonds\n\nBreathe it in, let the momentum take you\nLove's a storm, don't let it break you\nClose your eyes, feel the flame\nOnce you jump in, nothing's the same\n\nDouble black diamonds, wild and free\nHold on tight, just you and me\nCold on my face, but my temperature's rising\nYou're making me feel like Double black diamonds",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 236.76,
+    "lufs": -13.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.32,
+        "label": "S1"
+      },
+      {
+        "start": 5.32,
+        "end": 27.17,
+        "label": "S2"
+      },
+      {
+        "start": 27.17,
+        "end": 53.57,
+        "label": "S3"
+      },
+      {
+        "start": 53.57,
+        "end": 68.89,
+        "label": "S4"
+      },
+      {
+        "start": 68.89,
+        "end": 96.55,
+        "label": "S5"
+      },
+      {
+        "start": 96.55,
+        "end": 112.22,
+        "label": "S6"
+      },
+      {
+        "start": 112.22,
+        "end": 130.68,
+        "label": "S7"
+      },
+      {
+        "start": 130.68,
+        "end": 148.12,
+        "label": "S8"
+      },
+      {
+        "start": 148.12,
+        "end": 189.15,
+        "label": "S9"
+      },
+      {
+        "start": 189.15,
+        "end": 216.64,
+        "label": "S10"
+      },
+      {
+        "start": 216.64,
+        "end": 233.59,
+        "label": "S11"
+      },
+      {
+        "start": 233.59,
+        "end": 236.76,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.89
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track bursts with a polished, high-octane country rock texture, establishing an immediate atmosphere of exhilarating adventure. The energy is consistently upbeat and driving, carried by a confident groove that feels both powerful and fun. The production is clean and well-balanced, allowing the gritty electric guitars, punchy drums, and distinct male and female vocals to each occupy their own space without sounding crowded. The most defining quality is the anthemic lift in the chorus, where the female vocal soars over the instrumentation, creating a memorable and powerful peak.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 117.5 BPM in A major, 'Double Black Diamonds' locks into a confident country-rock groove and doesn't let go, with the chorus doing exactly what a great chorus should: it lifts. The line 'cold on my face, but my temperature's rising' earns its keep as a hook, and when the female lead crests over the full band on that refrain, the payoff is genuine. This is the kind of track that sounds like it was built for a wide-open drive with the windows down, nodding toward the anthemic clarity of early Heart without losing 4Castle's own fingerprints.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "117.5 BPM",
+      "A major",
+      "chorus lift",
+      "quoted lyric: 'cold on my face, but my temperature's rising'",
+      "female vocal peak in chorus",
+      "country-rock groove",
+      "Heart comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

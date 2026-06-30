@@ -1,0 +1,276 @@
+{
+  "album_id": "stab--the-messy-middle",
+  "release_slug": "the-messy-middle",
+  "title": "The Messy Middle",
+  "release_type": "album",
+  "artist": "STAB",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "tracklist": [
+    "stab--i-think-i-m-losing-my-place",
+    "stab--not-sure-this-is-me",
+    "stab--don-t-even-need-to-try",
+    "stab--stay-with-one-thing",
+    "stab--here-to-be-watched",
+    "stab--moving-too-fast",
+    "stab--harder-than-i-thought",
+    "stab--that-s-the-point",
+    "stab--my-hands-don-t-know",
+    "stab--what-to-do-with-me",
+    "stab--not-picking-up",
+    "stab--maybe-i-should",
+    "stab--doing-my-best",
+    "stab--here-right-now",
+    "stab--bring-it-with-me"
+  ],
+  "track_records": [
+    "/home/mrose/mrp/app/critic/out/stab--i-think-i-m-losing-my-place.json",
+    "/home/mrose/mrp/app/critic/out/stab--not-sure-this-is-me.json",
+    "/home/mrose/mrp/app/critic/out/stab--don-t-even-need-to-try.json",
+    "/home/mrose/mrp/app/critic/out/stab--stay-with-one-thing.json",
+    "/home/mrose/mrp/app/critic/out/stab--here-to-be-watched.json",
+    "/home/mrose/mrp/app/critic/out/stab--moving-too-fast.json",
+    "/home/mrose/mrp/app/critic/out/stab--harder-than-i-thought.json",
+    "/home/mrose/mrp/app/critic/out/stab--that-s-the-point.json",
+    "/home/mrose/mrp/app/critic/out/stab--my-hands-don-t-know.json",
+    "/home/mrose/mrp/app/critic/out/stab--what-to-do-with-me.json",
+    "/home/mrose/mrp/app/critic/out/stab--not-picking-up.json",
+    "/home/mrose/mrp/app/critic/out/stab--maybe-i-should.json",
+    "/home/mrose/mrp/app/critic/out/stab--doing-my-best.json",
+    "/home/mrose/mrp/app/critic/out/stab--here-right-now.json",
+    "/home/mrose/mrp/app/critic/out/stab--bring-it-with-me.json"
+  ],
+  "album_features": {
+    "total_runtime_s": 3009.1,
+    "bpm_curve": [
+      161.5,
+      112.3,
+      123.0,
+      152.0,
+      161.5,
+      152.0,
+      73.8,
+      152.0,
+      152.0,
+      152.0,
+      152.0,
+      152.0,
+      152.0,
+      152.0,
+      152.0
+    ],
+    "key_progression": [
+      "G major",
+      "E major",
+      "B minor",
+      "B minor",
+      "D major",
+      "C# major",
+      "G# major",
+      "D major",
+      "D# major",
+      "A# major",
+      "B minor",
+      "E major",
+      "A# major",
+      "A major",
+      "G# major"
+    ],
+    "mood_progression": [
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "defiant",
+      "tender",
+      "tender",
+      "defiant",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender"
+    ],
+    "rank_distribution": {
+      "2": 0,
+      "3": 1,
+      "4": 14,
+      "5": 0
+    },
+    "peak_track": "stab--i-think-i-m-losing-my-place",
+    "valley_tracks": [
+      "stab--bring-it-with-me"
+    ]
+  },
+  "cohesion": {
+    "palette_consistency": 0.7727,
+    "theme_threads": [
+      "i'm",
+      "it's",
+      "don't",
+      "like",
+      "feel",
+      "here",
+      "back",
+      "look"
+    ],
+    "verdict": "varied"
+  },
+  "review": {
+    "target": "album_blurb",
+    "review_text": "The Messy Middle is exactly what the title promises: STAB plants her flag in the uncertain, scrolling, self-doubting territory between who you were and who you're supposed to become, and she holds that ground for fifteen tracks without blinking. The opener 'I Think I'm Losing My Place' sets the terms immediately, a brisk, compulsive rush that tells you this record is going to be honest in ways that feel slightly uncomfortable, and the album largely delivers on that contract through standouts like 'Here To Be Watched' ('I hate how good I am at it' is a line that sticks to the inside of your skull) and the glitchy, physical urgency of 'Stay With One Thing.' Where it costs itself something is at the close: 'Bring It With Me' is a perfectly fine midtempo meditation, but as a send-off for an album this charged, it drifts rather than lands, and you feel the deflation. Fourteen strong songs and a closer that doesn't quite close is still a confident, cohesive record from an artist who knows exactly which wound she's pressing on.",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "strong"
+    },
+    "sum_vs_parts": "equal",
+    "persona_delivery": "expands",
+    "anchors_used": [
+      "I Think I'm Losing My Place",
+      "Here To Be Watched",
+      "Stay With One Thing",
+      "Bring It With Me",
+      "I hate how good I am at it"
+    ],
+    "status": "pending",
+    "model": "claude-sonnet-4-6"
+  },
+  "track_reviews_in_context": [
+    {
+      "track_id": "stab--i-think-i-m-losing-my-place",
+      "position": 1,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The album's strongest moment also happens to be its first, which is either a bold choice or a declaration of intent, and it turns out to be both. At a pace that mirrors its subject perfectly, 'I Think I'm Losing My Place' renders the compulsive, fidgety loop of phone-checking anxiety as pop-rock propulsion, and the lyric 'my focus is a mirror that someone just cracked' lands with the kind of specificity that elevates a relatable feeling into something you feel in your chest. The chorus hits with the same cathartic surge you get from early Paramore, tight and desperate all at once. STAB's vocal is the real anchor, moving from a near-whispered confession in the verses to a full-throated belt at the chorus break, and the spoken ad-libs ('don't look, don't check') add a layer of internal dialogue that keeps the two-minute-fifty runtime feeling rich. Opening here is a statement: this record is not easing you in. It's dropping you directly into the anxiety it means to examine, and everything that follows is shaped by that decision.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--not-sure-this-is-me",
+      "position": 2,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After the opener's sprint, 'Not Sure This Is Me' does something genuinely brave: it slows the pulse almost to a standstill. Written in 3/4 time at a pace that feels more like a slow heartbeat than a march, it sits with digital exhaustion in a way that's specific enough to sting, and the sequence needs exactly this kind of deceleration. STAB has built her name on full-throttle anthems, so the fact that this track works best at its quietest is the real surprise. 'I scroll past somebody's joy like it's a weather report' is a lyric that earns its place, and the bridge's almost-whispered 'maybe I've been borrowing myself' lands harder than any power chord could. The breakdown after the second chorus strips everything back to a glitchy rhythmic tick before the final hook rebuilds, the musical equivalent of the screen going dark. It's more Alanis Morissette's quieter self-reckonings than anything from The Runaways playbook, but STAB pulls it off with enough clarity and hook-craft that the stretch doesn't show. Placed here, it confirms that the opener wasn't a fluke: this record has range.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--don-t-even-need-to-try",
+      "position": 3,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The third track reintroduces momentum after the preceding track's introspective quiet, and the transition feels earned rather than abrupt. The hook here is almost sneakily clever: STAB wraps a genuinely uncomfortable thesis, 'I'm looking at the screen and it's a bit of a lie,' inside a bright, four-on-the-floor pop-rock track running at a brisk clip, and the tension between the two is exactly the point. The breakdown, where the vocal drops to a near-whisper asking 'Can you see the tired look around the eyes,' lands like a cold splash before the final chorus rushes back in, and that structural contrast earns its keep. Dressed in a bright major-key feel but written from a place of real unease, it sits in the same territory as early Paramore learning to write radio pop without losing the edge. Coming third, it settles into the album's rhythm before the sequence begins its long run of harder-hitting material, and it holds that position comfortably.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--stay-with-one-thing",
+      "position": 4,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "'Stay With One Thing' arrives at the point in the sequence where the album's central argument is becoming clear, and it sharpens that argument with the most physically enactive production yet. The glitchy synth arpeggios and chopped samples scatter across a punchy drum bed the way your attention scatters across a phone screen, which is the whole point. At a brisk pace in a minor key, the writing is sharper than the premise might suggest: the bridge's self-correction, 'I'm not lazy, I'm scattered, there's a difference,' lands with the directness of early Alanis at her most confessional. The spoken-word breakdown that shatters the chorus momentum is a genuine structural risk, and it pays off, making the final return feel earned rather than automatic. At 2:40 it's lean and purposeful. Sitting fourth in an album that opens with two strong contrasting statements and a third that bridges them, it confirms this is a record with something to say about the attention economy and the craft to say it without lecturing.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--here-to-be-watched",
+      "position": 5,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Arriving at the midpoint of the first half, 'Here to Be Watched' turns the album's focus outward for the first time. Where the first four tracks examine the private experience of distraction and digital exhaustion, this one looks at performance and visibility, and the pivot gives the sequence a necessary jolt of self-awareness. The hook lands exactly as hard as it needs to: 'I hate how good I am at it' is the kind of line that makes you stop scrolling, which is the point. STAB builds the song in a bright major key at a brisk clip, letting the verses sit close and conversational before the chorus opens up into something genuinely cathartic, and the stripped bridge, where she admits 'I miss my own face / the one that shows up when nobody's judging,' earns every decibel of the final push. It has the same confessional clarity Alanis brought to her best mid-90s work, but the production stays bright and punchy rather than grunge-adjacent. Placed here, it marks the end of the album's opening movement and sets up the harder sonic territory to come.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--moving-too-fast",
+      "position": 6,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "If 'Here to Be Watched' is the album looking in the mirror, 'Moving Too Fast' is the moment the mirror cracks. The distorted guitars and compressed, claustrophobic mix turn the doom-scroll experience into something you can actually feel in your chest, and arriving at track six the arrangement feels like a gear-change the sequence has been building toward. The chorus lands hard, 'I'm losing the game but I thought I was winning' delivered with just enough breathlessness that it sounds lived-in rather than written, and the sudden silence at the end is the smartest thirty seconds on the track. At a punishing pace in a bright major key, the tonal dissonance between the key and the content mirrors exactly what the lyric is describing. It's the kind of overstimulation anthem that Paramore or early Metric might have staked a whole album on, and STAB pulls it off in under three minutes. The silence at its end also does something useful for the track that follows: it creates the emptiness 'Harder Than I Thought' walks into.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--harder-than-i-thought",
+      "position": 7,
+      "standalone_rank": 4,
+      "context_rank": 5,
+      "context_note": "Arriving after the album's most claustrophobic, high-velocity track, the shift to a slow, close-miked guitar-and-voice opening earns extra weight as structural relief and emotional pivot; it functions as the album's turning point more than any standalone listen suggests.",
+      "review_text": "The transition here is one of the album's smartest decisions: after 'Moving Too Fast' ends in sudden silence, STAB walks into that silence with nothing but a close-mic'd guitar and a voice sitting right in your ear, and the effect is almost vertiginous. That the full band eventually crashes in at the chorus only underlines how carefully the sequence has been arranged: the quiet parts of this track are genuinely uncomfortable in a way they would not be if they appeared earlier, and the release when the full arrangement arrives hits like a door blown open. The chorus hook, 'right now it feels like standing in a room with my own mind,' lands on the kind of line that sounds simple until you realise you've been living inside it. At a slow, deliberate tempo, the pacing is smart enough to let the anxiety breathe rather than race. In standalone terms this is a strong track; in sequence terms it is the album's pivot, the moment the record stops accelerating and begins to turn inward, and that role earns it something extra.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--that-s-the-point",
+      "position": 8,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Positioned at the exact centre of fifteen tracks, 'That's the Point' earns its place as a structural anchor. After the pivot of 'Harder Than I Thought,' this one articulates what the turn was toward: not collapse, but intention. At a brisk pace in a bright major key, this could have been a straightforward digital-detox anthem, and in less careful hands it would have been. What saves it is the writing: 'I walk outside without headphones / And it feels too open at first' is the kind of line that earns its sentiment because it admits the awkwardness before it claims the revelation. The production earns its keep too, pulling back to near-silence in the verses so the chorus lands like a door swinging open. The Emerson-and-Thoreau bridge is a small risk that pays off, grounding the whole thing in something older and quieter than the scroll it's pushing back against. Centred here, it gives the album's second half somewhere to begin from.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--my-hands-don-t-know",
+      "position": 9,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The album's second half opens with a track that picks up the energy the centre just grounded, and the sequence is sharper for it. Running at a brisk pace, 'My Hands Don't Know' earns its keep on the strength of a chorus that lands like a door kicked open: the full band drops in hard after a close, almost confessional verse, and the contrast does exactly what it should. The hook, built around 'I'm a ghost in the world and it's starting to show,' captures phone-withdrawal anxiety with the kind of specificity that makes a lyric stick, and STAB's vocal sells the desperation without tipping into melodrama. It has the same dynamic punch as mid-period Paramore, verse held tight and then released all at once, and the bridge's parenthetical asides, 'the itch, the shiver, the cold blue light,' give it a texture that rewards a second listen. Coming after the album's contemplative midpoint, it reintroduces urgency without losing the self-awareness the record has spent eight tracks building.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--what-to-do-with-me",
+      "position": 10,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Track ten is where the album's second half starts to consolidate, and 'What To Do With Me' is exactly the right vehicle for that work. The production does exactly what the lyrics ask: the verses are nearly bare, just breath and piano, so when the chorus breaks open it feels less like a musical decision and more like the inside of someone's skull going loud all at once. STAB leans into the tension between the frantic pace and the subject matter, a song about the terror of stillness running at a clip that never quite lets you settle, which is the point. The lyric that lands hardest is 'I've been afraid of being small / afraid of being ordinary, afraid of being left,' and she earns it, because by the time it arrives the arrangement has made the emotional logic feel inevitable rather than confessional. It closes on a whispered 'stay,' no resolution, no bow tied, and that restraint is the best call on the track. In sequence it deepens what 'My Hands Don't Know' opened: the second half of this record is willing to sit with discomfort rather than resolve it too quickly.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--not-picking-up",
+      "position": 11,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After two tracks that sit with the terror of stillness and the fog of withdrawal, 'Not Picking Up' arrives like a window thrown open. At a brisk pace, STAB turns the simple act of not answering the phone into a full-throated declaration of selfhood, and the hook earns every bit of that ambition: 'I'm reclaiming the quiet, I'm claiming the throne' lands with the same clean defiance you get from early Go-Go's. The production keeps the arrangement open enough that the vocal does the heavy lifting it deserves, and the guitar solo that erupts after the second chorus is the surprise, genuinely fiery, not decorative, the kind of moment that reframes everything around it. In the album's larger arc, this is the moment STAB stops diagnosing the problem and starts inhabiting the answer, and placing it at track eleven gives the record's final act the forward momentum it needs to earn its closing stretch.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--maybe-i-should",
+      "position": 12,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The album's third act is now in full swing, and 'Maybe I Should' keeps that momentum exactly where the sequence needs it. STAB turns social-media withdrawal into a proper pop-rock hook here, and the conceit earns its runtime. The opening is stripped and close-miked, just enough space for the lyric to breathe before the full kit crashes in around the 45-second mark and the song shifts from bedroom confession to something close to a Bangles-era anthem. At a brisk pace in a bright major key, the chorus has real momentum behind it, and the line 'it's a beautiful light and it's easy to follow, even if the middle is a little bit hollow' does double duty as both earworm and argument. Coming after 'Not Picking Up' established the album's defiant register, this one gives that defiance a more rueful, self-aware edge, which is exactly the tonal calibration the final stretch needs before it turns toward resolution.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--doing-my-best",
+      "position": 13,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "By track thirteen the album has earned the right to say something direct, and 'Doing My Best' collects on that credit. Opening with just piano and a close-mic'd vocal before the chorus hits like a door swinging open, the full arrangement rushing in and making the release feel genuinely earned, this is STAB at her most vulnerable without losing the room. The lyric 'I can come back a hundred times and it still counts as grace' lands because the production proves it, the swelling harmonies arriving not as decoration but as the argument itself. The Emerson and Thoreau bridge is a swing that mostly connects, giving the track an intellectual backbone you don't often find in this corner of pop-rock. Sitting two tracks from the end, it prepares the emotional ground for the closing pair: this is the moment of acceptance the album has been circling since the opener's cracked mirror, and it arrives without fanfare or false comfort.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--here-right-now",
+      "position": 14,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The penultimate track in an album this carefully sequenced carries a particular weight, and 'Here Right Now' handles it with more grace than most. At a brisk pace, it moves with more momentum than its meditative lyrics suggest, and that tension is exactly what makes it work: STAB is singing about slowing down while the track quietly refuses to. The chorus hook, built around 'I don't have to fix my life today, I just have to meet it,' lands with the kind of plainspoken warmth you get from early Sheryl Crow, and the swell of background vocals that carries it home feels genuinely earned. Coming after 'Doing My Best' has said its piece about grace and self-forgiveness, this one extends that warmth into something more present-tense and immediate, less about reckoning than about showing up. It's the most grounded thing in her catalog, and positioned here it does the necessary work of making the closer feel like an arrival rather than just an ending.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "stab--bring-it-with-me",
+      "position": 15,
+      "standalone_rank": 3,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Closing an album that opened with compulsive urgency and cracked mirrors, 'Bring It With Me' has a specific job to do, and it does it with more subtlety than you might expect. STAB takes a genuine left turn here, trading the jangly attack you might expect for something closer to a midtempo meditation, and it pays off. The track has more forward motion than it lets on, but the production keeps everything spacious and warm, letting lines like 'I trust the part of me that returns / the part that stays soft / the part that stays open' land with real weight rather than sentiment. The chorus hook, 'I can bring it with me,' builds through layered harmonies that lift the whole thing the way a late-period Sheryl Crow chorus does, effortless and earned. In standalone terms it is a dependable cut that reveals range; in context it is the right ending, quieter and more assured than the record that preceded it, the sound of someone who has moved through everything the first fourteen tracks described and chosen to carry it gently rather than outrun it.",
+      "model": "claude-sonnet-4-6"
+    }
+  ]
+}

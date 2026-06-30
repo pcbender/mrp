@@ -1,0 +1,120 @@
+{
+  "track_id": "pcbender--wenge",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Wenge.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--wenge.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 213.8,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.74,
+        "label": "S1"
+      },
+      {
+        "start": 3.74,
+        "end": 19.27,
+        "label": "S2"
+      },
+      {
+        "start": 19.27,
+        "end": 34.3,
+        "label": "S3"
+      },
+      {
+        "start": 34.3,
+        "end": 62.28,
+        "label": "S4"
+      },
+      {
+        "start": 62.28,
+        "end": 91.58,
+        "label": "S5"
+      },
+      {
+        "start": 91.58,
+        "end": 114.15,
+        "label": "S6"
+      },
+      {
+        "start": 114.15,
+        "end": 132.14,
+        "label": "S7"
+      },
+      {
+        "start": 132.14,
+        "end": 147.49,
+        "label": "S8"
+      },
+      {
+        "start": 147.49,
+        "end": 174.82,
+        "label": "S9"
+      },
+      {
+        "start": 174.82,
+        "end": 196.23,
+        "label": "S10"
+      },
+      {
+        "start": 196.23,
+        "end": 213.8,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.981,
+      "key": 0.823
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This instrumental track presents a confident, swaggering atmosphere, built upon a tight funk-blues rock foundation. The energy is high and driving, with an infectious live-band feel that maintains a consistent, head-nodding groove from start to finish. The production is clean and well-balanced, creating a spacious mix where the crunchy lead guitar, articulate bass, and punchy drums each have their own clear place. The defining quality is the virtuosic and melodic electric guitar performance, which serves as the lead voice through a series of expressive, technically impressive solos and fills.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Wenge\" is PCBender doing what he does best: letting the guitar talk without a word spoken. At 89 BPM in A major, the track locks into a funk-blues strut that keeps its head-nodding groove all the way through 3:33, the rhythm section sitting back just enough to give the lead guitar room to stretch. What earns it is the guitar work itself, which moves through the eleven sections with the kind of melodic confidence you hear in early SRV or a loose, live-feeling Robben Ford set, each phrase answering the last rather than just showing off. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "89 BPM",
+      "A major",
+      "3:33 duration",
+      "11-section structure",
+      "funk-blues groove",
+      "lead guitar as melodic voice",
+      "SRV / Robben Ford comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

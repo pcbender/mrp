@@ -1,0 +1,128 @@
+{
+  "track_id": "pcbender--difference",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Difference.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--difference.opus"
+  },
+  "lyrics": "They march in straight lines, eyes fixed on the ground\nSoldiers of routine, comfort tightly wound\nI step to the side where the pavement cracks\nWhere weeds write green questions in the concrete tracks\n\nThey ask, \"Is it allowed?\" before they even breathe\nWeighing every heartbeat like it's begging for reprieve\nI ask, \"Is it alive?\" Does it wake me when I move\nIf not, I leave it sleeping in their temple of \"approve.\"\n\nI am different, not to be defiant\nBut because I will not sleep\nI have seen the hidden angles\nWhere their straight lines twist and weep\nIf they call my path rebellion\nLet them speak their easy truth\nI am only walking sideways\nTo protect my living youth\n\nThey trade their days for certainty, their nights for fitting in\nNever asking who they'd be if they stepped outside the spin\nI'd rather risk the exile of not matching any mold\nThan be praised for disappearing in a shape that leaves me cold\n\nI am different, not for drama\nNot to carve my name in stone\nBut because my inner weather\nDoesn't match their safety zone\nIf my sight unnerves their order\nLet them turn their gaze away\nI'll keep walking toward the places\nWhere my soul can misbehave\n\nTheir question: \"Who will love you\nIf you don't obey the script?\"\nMy answer: \"Those who see me\nNot the costume that I've ripped.\"\n\nI am different, not above you\nNot below you, just aside\nIn the thin and crooked pathways\nWhere the sleeping\nCome alive",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "D#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 287.8,
+    "lufs": -15.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.39,
+        "label": "S1"
+      },
+      {
+        "start": 3.39,
+        "end": 33.2,
+        "label": "S2"
+      },
+      {
+        "start": 33.2,
+        "end": 51.46,
+        "label": "S3"
+      },
+      {
+        "start": 51.46,
+        "end": 70.47,
+        "label": "S4"
+      },
+      {
+        "start": 70.47,
+        "end": 102.75,
+        "label": "S5"
+      },
+      {
+        "start": 102.75,
+        "end": 125.69,
+        "label": "S6"
+      },
+      {
+        "start": 125.69,
+        "end": 141.29,
+        "label": "S7"
+      },
+      {
+        "start": 141.29,
+        "end": 180.26,
+        "label": "S8"
+      },
+      {
+        "start": 180.26,
+        "end": 197.28,
+        "label": "S9"
+      },
+      {
+        "start": 197.28,
+        "end": 226.67,
+        "label": "S10"
+      },
+      {
+        "start": 226.67,
+        "end": 267.91,
+        "label": "S11"
+      },
+      {
+        "start": 267.91,
+        "end": 283.45,
+        "label": "S12"
+      },
+      {
+        "start": 283.45,
+        "end": 287.8,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.954,
+      "key": 0.82
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "dark",
+      "emotional",
+      "defiant"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a dense, aggressive texture, creating an atmosphere of technical defiance and high-octane energy. The feel is relentlessly driving, built on layers of tight, distorted guitars and a powerful, articulate rhythm section that propel the song forward. Production quality is modern and polished, managing to keep the lead vocals and intricate instrumental parts clear within a very full sonic space. A defining quality is the song's dynamic structure, effectively using shifts like the clean, atmospheric section around 0:56 to provide a moment of contemplation before the main intensity returns.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always written from the outside looking in, and 'Difference' captures that posture at its most articulate. The lyric lands its best punch early: 'I ask, is it alive? Does it wake me when I move' cuts through what could easily become a generic outsider anthem and finds something personal underneath. The track runs at a measured 89 BPM in D# major but never feels slow; the distorted guitars and locked-in rhythm section keep the pressure on, and the clean atmospheric break around the 56-second mark earns its place as a breath before the chorus comes back swinging. It has the same direct moral confidence as John Hiatt's better standalone-stance songs, the kind where the argument is made through feel as much as words.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'I ask, is it alive? Does it wake me when I move'",
+      "BPM: 89.1",
+      "Key: D# major",
+      "clean atmospheric section at ~0:56",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

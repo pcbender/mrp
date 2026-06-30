@@ -1,0 +1,115 @@
+{
+  "track_id": "4castle--scattershot-forget-me-not",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Scattershot Forget-Me-Not - 4Castle.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--scattershot-forget-me-not.opus"
+  },
+  "lyrics": "I left you a note on the nightstand last night\nJust some lines that I scribbled, they didn't come out right\nSomething about missing you, something about time\nI don't know, it made sense when it ran through my mind\n\nI thought of a necklace, a ring, or a song\nSomething small you could hold while I'm gone\nBut nothing felt perfect, so I let it slide\nFigured you'd know how I feel deep inside\n\nA scattershot forget-me-not, I love the way that sounds\nA half-written postcard, some words that I lost and found\nI don't know why I say these things, but I hope you understand\nThat if I could wrap up forever, I'd place it in your hands\n\nTried to tell you this morning, but the words came out strange\nSaid, \"I'll call when I can,\" but that's not what I meant\nI mean, \"Don't let me fade, don't let us change\"\nBut I guess all my meanings get rearranged\n\nA scattershot forget-me-not, yeah, maybe that's just me\nA melody tangled in everything I don't say clearly\nI don't know why I ramble on, but I hope you feel it too\nThat if I could leave you forever, I'd leave it all with you\n\nMaybe I'm bad at goodbyes, maybe I'm worse at holding on\nMaybe my love's just a puzzle with half the pieces drawn\nBut you always filled in the rest… you always know me best\n\nA scattershot forget-me-not, I guess that's what I am\nA handful of moments I send in the wind\nA love that I fumble, my song out of tune\nBut if you ever feel lonely… just hum it. Will you",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 214.92,
+    "lufs": -15.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.78,
+        "label": "S1"
+      },
+      {
+        "start": 4.78,
+        "end": 24.38,
+        "label": "S2"
+      },
+      {
+        "start": 24.38,
+        "end": 56.17,
+        "label": "S3"
+      },
+      {
+        "start": 56.17,
+        "end": 87.31,
+        "label": "S4"
+      },
+      {
+        "start": 87.31,
+        "end": 103.63,
+        "label": "S5"
+      },
+      {
+        "start": 103.63,
+        "end": 129.01,
+        "label": "S6"
+      },
+      {
+        "start": 129.01,
+        "end": 150.14,
+        "label": "S7"
+      },
+      {
+        "start": 150.14,
+        "end": 165.63,
+        "label": "S8"
+      },
+      {
+        "start": 165.63,
+        "end": 190.84,
+        "label": "S9"
+      },
+      {
+        "start": 190.84,
+        "end": 214.92,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.962,
+      "key": 0.966
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an intimate and reflective atmosphere with a sparse texture of warm piano and a prominent, emotive male vocal. The energy is gentle and builds carefully into the choruses, creating a heartfelt and slightly melancholic feel that ebbs and flows with the vocal performance. The production quality is polished and spacious, allowing the lead vocal to sit clearly in the forefront while the supporting instrumentation provides depth without ever sounding cluttered. A distinctive quality is the dynamic lift in the chorus, where the vocalist's impassioned delivery provides a cathartic release that defines the emotional core of the song.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The title earns its place the moment you hear it: 'a scattershot forget-me-not' is the kind of phrase that makes you rewind, and 4Castle build the whole song around that honest, fumbling logic of loving someone better than you can say. At a crisp 143 BPM in E major, the track moves with more momentum than its gentle piano opening suggests, and the chorus lifts with the kind of open-handed warmth you get from early Tom Petty, the kind where the feeling arrives before you can explain it. The closing turn, 'if you ever feel lonely, just hum it,' lands quietly and doesn't oversell itself, which is exactly right.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'a scattershot forget-me-not'",
+      "quoted lyric: 'if you ever feel lonely, just hum it'",
+      "BPM: 143.6",
+      "Key: E major",
+      "piano opening texture from audio impression",
+      "chorus dynamic lift",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

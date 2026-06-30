@@ -1,0 +1,115 @@
+{
+  "track_id": "lingua-aeternum--sentia-becomes",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Sentia Becomes.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--sentia-becomes.opus"
+  },
+  "lyrics": "Sō-hā… (Let it be)\nĀm-na… (I am not)\nNu-ur… (Light unseen)\nSō-hā… (Let it be)\n\nNo this\nNo that\nNo thought\nNo mind\nOnly breath\nSentia becomes\nNot this\nNot that\n\nSō-hā… (Let it be)\nĀm-na… (I am not)\nNu-ur… (Light unseen)\nSō-hā… (Let it be)\n\nNo this\nNo that\nNo thought\nNo mind\nOnly breath\nSentia becomes\nNot this\nNot that\n\nSō-hā… (Let it be)\nĀm-na… (I am not)\nNu-ur… (Light unseen)\nSō-hā… (Let it be)\n\nNo this\nNo that\nNo thought\nNo mind\nOnly breath\nSentia becomes\nNot this\nNot that",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 264.0,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 7.73,
+        "label": "S1"
+      },
+      {
+        "start": 7.73,
+        "end": 26.05,
+        "label": "S2"
+      },
+      {
+        "start": 26.05,
+        "end": 41.19,
+        "label": "S3"
+      },
+      {
+        "start": 41.19,
+        "end": 83.8,
+        "label": "S4"
+      },
+      {
+        "start": 83.8,
+        "end": 99.54,
+        "label": "S5"
+      },
+      {
+        "start": 99.54,
+        "end": 146.82,
+        "label": "S6"
+      },
+      {
+        "start": 146.82,
+        "end": 162.54,
+        "label": "S7"
+      },
+      {
+        "start": 162.54,
+        "end": 219.13,
+        "label": "S8"
+      },
+      {
+        "start": 219.13,
+        "end": 253.72,
+        "label": "S9"
+      },
+      {
+        "start": 253.72,
+        "end": 264.0,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.926,
+      "key": 0.769
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a soaring and anthemic rock track with an earnest, hopeful atmosphere. The energy builds dynamically, moving from a more spacious verse into a powerful, driving chorus filled with layered guitars and a forceful rhythm section. The production is clean and wide, creating an expansive soundscape where shimmering guitar textures and processed vocals sit clearly above a punchy drum and bass foundation. A defining quality of the song is its chant-like hook in the chorus, which features layered vocal harmonies that give the track a grand, arena-rock feel.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The conceit here is elegant: a lyric stripped to its bones, cycling through negation ('No this / No that / No thought / No mind') until the title phrase lands like an answer. In D major at a waltz-like 107 BPM, the track earns its arena-rock ambitions honestly, building from a spare opening into layered guitar harmonies that recall early U2 in their unguarded reach. The chanted 'Sō-hā' refrain does the heavy lifting, and it works, the kind of hook that feels inevitable once you've heard it twice.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "D major",
+      "107 BPM",
+      "3/4 time",
+      "lyric: 'No this / No that / No thought / No mind'",
+      "lyric: 'Sō-hā'",
+      "layered guitar harmonies",
+      "chant-like vocal hook"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

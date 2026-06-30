@@ -38,7 +38,7 @@ release:
     isrc: CAGOO2549383
     duration: '5:15'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--candle-deep.mp3
     instrumental: false
     lyrics_text: 'A candle deep
 

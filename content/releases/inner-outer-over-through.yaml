@@ -140,7 +140,7 @@ release:
     isrc: CAENV2566315
     duration: '3:25'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/lingua-aeternum--invocate.mp3
     links:
       apple_music: https://music.apple.com/us/album/invocate/1809601010?i=1809601012
       youtube: https://www.youtube.com/watch?v=N6sOF4xX-0M
@@ -231,7 +231,7 @@ release:
     isrc: CAENV2566056
     duration: '3:14'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/lingua-aeternum--the-memory-i-ll-borrow.mp3
     links:
       apple_music: https://music.apple.com/us/album/the-memory-ill-borrow/1809601010?i=1809601013
       youtube: https://www.youtube.com/watch?v=ck2iFN0HQ9Y
@@ -333,7 +333,7 @@ release:
     isrc: CAENV2568461
     duration: '3:20'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/lingua-aeternum--thread-by-thread.mp3
     links:
       apple_music: https://music.apple.com/us/album/thread-by-thread/1809601010?i=1809601015
       youtube: https://www.youtube.com/watch?v=oTm7Pl15QAs

@@ -1,0 +1,134 @@
+{
+  "track_id": "lingua-aeternum--sentia",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Sentia.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--sentia.opus"
+  },
+  "lyrics": "[Instructions: this is long form composition. A long form tone poem in four movements using the chorus to connect the individual sections. Take your time, let the song breathe\n\nSentia\n\nSentia\n\nSentia\n\nSentia\n\nBe as the field after harvest\nnot barren, but vacuus\nThe husks are gone, the noise is gone\nwhat remains is fertile waiting\nDo not fear this clearing\nThe vessel serves what it holds open\na sky is vast because it is clear\nEmptiness is not absence\nit is readiness\n\nSentia\nSentia\n\nNow feel the moment tighten\nLean into the now\nas the bow leans into the string\nYour awareness is not a wandering eye\nbut attentus\na single, humming line of light\nYou are the hunter and the mountain\nperfectly poised\nstretched toward the roiling chasm\nAnd at the peak of presence\nlet the knot undo itself\n\nSentia\nSentia\n\nYou are not the archer; you are not the arrow\nYou are not the story; they are spaces you move through\nBe solutus\nunfastened, unbound, wet clay\nLike a liminal strand at the water’s edge\nleave names behind\nYou do not disappear\nyou simply stop ending\nwhere your skin begins\nEmpty. Attentive. Free\n\nSentia\nSentia\n\nSentia\nyou are not less\nyou are when\nbeginnings\nbegin",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "F#",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 327.96,
+    "lufs": -13.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 8.85,
+        "label": "S1"
+      },
+      {
+        "start": 8.85,
+        "end": 28.07,
+        "label": "S2"
+      },
+      {
+        "start": 28.07,
+        "end": 45.49,
+        "label": "S3"
+      },
+      {
+        "start": 45.49,
+        "end": 63.67,
+        "label": "S4"
+      },
+      {
+        "start": 63.67,
+        "end": 80.83,
+        "label": "S5"
+      },
+      {
+        "start": 80.83,
+        "end": 108.44,
+        "label": "S6"
+      },
+      {
+        "start": 108.44,
+        "end": 134.4,
+        "label": "S7"
+      },
+      {
+        "start": 134.4,
+        "end": 155.53,
+        "label": "S8"
+      },
+      {
+        "start": 155.53,
+        "end": 204.68,
+        "label": "S9"
+      },
+      {
+        "start": 204.68,
+        "end": 235.8,
+        "label": "S10"
+      },
+      {
+        "start": 235.8,
+        "end": 267.33,
+        "label": "S11"
+      },
+      {
+        "start": 267.33,
+        "end": 295.59,
+        "label": "S12"
+      },
+      {
+        "start": 295.59,
+        "end": 316.0,
+        "label": "S13"
+      },
+      {
+        "start": 316.0,
+        "end": 327.96,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.743
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a dense, high-energy track with an epic and dramatic atmosphere, built on layers of intricate, distorted guitars and exceptionally technical drumming. The overall feel is aggressive and precise, driven by a powerful rhythm section and soaring, clean vocals that cut through the instrumental complexity. The production is modern and clean, allowing individual performances to be heard clearly despite the density of the arrangement, creating a sound that is both massive and articulate. A defining feature is the virtuosic guitar work, which includes extremely fast, clean arpeggios and melodic runs that add a progressive, almost neoclassical flair to the hard rock foundation.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Sentia\" moves in 3/4 at a clip that feels more like a controlled surge than a waltz, and the neoclassical guitar arpeggios cutting through the dense low end give the track a precision that matches its lyrical argument: emptiness as readiness, not loss. The four-movement structure earns its five-and-a-half minutes, each section tightening the same idea from a different angle until the final couplet, 'you are not less / you are when,' lands with the quiet confidence of a line that doesn't need to explain itself. It's closer in spirit to Porcupine Tree at their most deliberate than anything the genre tags suggest, and that's a compliment. A highlight in the catalog.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "neoclassical guitar arpeggios",
+      "four-movement structure",
+      "5:27 duration",
+      "lyric: 'you are not less / you are when'",
+      "Porcupine Tree comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

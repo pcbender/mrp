@@ -1,0 +1,126 @@
+{
+  "track_id": "4castle--void-of-intention",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Void of Intention - 4Castle.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--void-of-intention.opus"
+  },
+  "lyrics": "In silence, beyond the pale, I sit beside myself\nWaking, not thinking, void of intention\nBreath, the traveller, guides an empty mind\nA drop in an endless void",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 280.0,
+    "lufs": -16.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 44.72,
+        "label": "S1"
+      },
+      {
+        "start": 44.72,
+        "end": 65.48,
+        "label": "S2"
+      },
+      {
+        "start": 65.48,
+        "end": 85.96,
+        "label": "S3"
+      },
+      {
+        "start": 85.96,
+        "end": 111.39,
+        "label": "S4"
+      },
+      {
+        "start": 111.39,
+        "end": 149.95,
+        "label": "S5"
+      },
+      {
+        "start": 149.95,
+        "end": 166.81,
+        "label": "S6"
+      },
+      {
+        "start": 166.81,
+        "end": 188.43,
+        "label": "S7"
+      },
+      {
+        "start": 188.43,
+        "end": 216.53,
+        "label": "S8"
+      },
+      {
+        "start": 216.53,
+        "end": 231.5,
+        "label": "S9"
+      },
+      {
+        "start": 231.5,
+        "end": 254.0,
+        "label": "S10"
+      },
+      {
+        "start": 254.0,
+        "end": 269.49,
+        "label": "S11"
+      },
+      {
+        "start": 269.49,
+        "end": 280.0,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.931
+    }
+  },
+  "tags": {
+    "genre": [
+      "electronic",
+      "blues",
+      "soul"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "piano",
+      "strings",
+      "mandolin"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is an anthemic and emotionally uplifting track, built on a dense texture of shimmering, delayed guitars and driving rhythm. The energy is consistently high, creating a powerful pop-punk or emo-pop feel that is both propulsive and open. The production quality is polished and spacious, creating a stadium-like sound where layered guitars and vocals are washed in reverb, yet the core elements remain distinct and impactful. A defining quality is the track's excellent dynamic build, culminating in a melodic and soaring guitar solo that perfectly captures its heartfelt, energetic spirit.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a brisk 129 BPM in D major, 'Void of Intention' earns its title by doing the opposite: those shimmering, reverb-soaked guitars build with real purpose across twelve sections, and the lyric 'breath, the traveller, guides an empty mind' lands with the kind of quiet conviction that makes a four-minute-forty track feel exactly the right length. The guitar solo that crowns the back half is the kind of melodic, soaring statement that reminds you of the best moments on a Heart or early Santana record, less flash than feeling. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "129 BPM",
+      "D major",
+      "12-section structure",
+      "4:40 duration",
+      "lyric quote: 'breath, the traveller, guides an empty mind'",
+      "guitar solo placement in later sections",
+      "reverb-soaked guitars",
+      "Heart/Santana comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "track_id": "lingua-aeternum--the-color-of-wind",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Color of Wind.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--the-color-of-wind.opus"
+  },
+  "lyrics": "Pastel Incantation\nWords not spoken, only sensed\nDrummed on canvas in a tongue of breath\n\nSee not for the colors\nbut for how the colors blend\n\nPastel Absolution\nSin dissolves like sugar in rain\nForgiveness never names the end\n\nSee not for the colors\nbut for how the colors blend\n\nPastel Percussion\nStruck without sound, rhythm as shape\nEchoes fall before they send\n\nSee not for the colors\nbut for how the colors blend\n\nPastel Temptation\nSoft allure beneath restraint\nDesire hides in what it won’t defend\n\nSee not for the colors\nbut for how the colors blend\n\nPastel Salvation\nNo glory burst, no heaven’s gate\nJust mercy that does not pretend\n\nSee not for the colors\nbut for how the colors blend\n\nPastel Surrender\nNo edge, no end, no need to know\nThe gesture, not the message, is what we send\n\nSee not for the colors\nbut for how the colors blend",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "G#",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 211.24,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 20.67,
+        "label": "S1"
+      },
+      {
+        "start": 20.67,
+        "end": 37.55,
+        "label": "S2"
+      },
+      {
+        "start": 37.55,
+        "end": 56.15,
+        "label": "S3"
+      },
+      {
+        "start": 56.15,
+        "end": 77.53,
+        "label": "S4"
+      },
+      {
+        "start": 77.53,
+        "end": 98.66,
+        "label": "S5"
+      },
+      {
+        "start": 98.66,
+        "end": 119.98,
+        "label": "S6"
+      },
+      {
+        "start": 119.98,
+        "end": 141.22,
+        "label": "S7"
+      },
+      {
+        "start": 141.22,
+        "end": 211.24,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.931,
+      "key": 0.825
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a spacious and emotionally earnest atmosphere, building a dense texture from layers of arpeggiated synths, clean-toned guitars, and layered vocals. The energy is consistently high and driving, propelled by a powerful, straightforward rock drum beat that gives the piece an anthemic, forward-moving quality. The production is wide and polished: the central rhythm section provides a solid anchor while the instrumental and vocal layers are washed in reverb, creating a large, cohesive sonic space. A defining quality is the track's hypnotic nature, achieved through the insistent repetition of lyrical and melodic hooks over the unwavering instrumental foundation.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The waltz time at 89 BPM gives 'The Color of Wind' a gentle forward sway that suits the lyric's central idea perfectly: 'See not for the colors / but for how the colors blend' lands as both hook and thesis, repeated across six 'Pastel' movements until it stops being a phrase and starts being a reflex. The production is wide and confident, clean guitar arpeggios riding under layered vocals that build without ever crowding the center. It is not their most adventurous track, but the economy is a choice, and it pays off: Lingua Aeternum here is closer to Peter Gabriel's plainspoken devotional mode than to their more labyrinthine work, and the directness holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time at 89.1 BPM",
+      "lyric quote: 'See not for the colors / but for how the colors blend'",
+      "six 'Pastel' titled sections as structural anchor",
+      "clean guitar arpeggios from audio impression",
+      "Peter Gabriel comparison for tonal register"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

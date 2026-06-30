@@ -1,0 +1,133 @@
+{
+  "track_id": "lingua-aeternum--piercing-dread-of-light",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Piercing Dread of Light.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--piercing-dread-of-light.opus"
+  },
+  "lyrics": "I come when the light forgets\nWhen the fire burns down\nI wrap the world in dusk\nAnd make you think it's calm\n\nI hold the fears of the living\nI let your secrets speak\nA whispered, \"You're forgiven.\"\nThen bury what you seek\n\nI flinch\nI fade\nI am not brave\nI am not real\n\nI am a fraud, a trick of the night\nMaster of endings, thief of the right\nEach spin a new game\nThat ends just the same-\nI am darkness with no place to hide\nFrom the piercing dread of light\n\nBut then you lit a candle\nDidn't ask. Didn't wait\nThe walls I built dissolved\nI gave you back your fate\n\nI flinch\nI fade\nI am not brave\nI am not real\n\nI am a fraud, a trick of the night\nMaster of endings, thief of the right\nEach spin a new game\nThat ends just the same-\nI am darkness with no place to hide\nFrom the piercing dread of light\n\nI am not a force\nI'm the failure of one\nI am not a presence\nI'm what's left when it's gone\nI was never the answer\nI was never the start\nJust the crack\nBetween the light\nAnd your heart\n\nI am a fraud, a trick of the night\nMaster of endings, thief of the right\nEach spin a new game\nThat ends just the same-\nI am darkness with no place to hide\nFrom the piercing dread of light\n\nI am darkness with no place to hide\nFrom the piercing dread of light",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "G#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 312.12,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 25.33,
+        "label": "S1"
+      },
+      {
+        "start": 25.33,
+        "end": 57.31,
+        "label": "S2"
+      },
+      {
+        "start": 57.31,
+        "end": 74.19,
+        "label": "S3"
+      },
+      {
+        "start": 74.19,
+        "end": 92.97,
+        "label": "S4"
+      },
+      {
+        "start": 92.97,
+        "end": 117.52,
+        "label": "S5"
+      },
+      {
+        "start": 117.52,
+        "end": 146.15,
+        "label": "S6"
+      },
+      {
+        "start": 146.15,
+        "end": 165.12,
+        "label": "S7"
+      },
+      {
+        "start": 165.12,
+        "end": 190.47,
+        "label": "S8"
+      },
+      {
+        "start": 190.47,
+        "end": 215.27,
+        "label": "S9"
+      },
+      {
+        "start": 215.27,
+        "end": 232.99,
+        "label": "S10"
+      },
+      {
+        "start": 232.99,
+        "end": 250.89,
+        "label": "S11"
+      },
+      {
+        "start": 250.89,
+        "end": 275.16,
+        "label": "S12"
+      },
+      {
+        "start": 275.16,
+        "end": 292.11,
+        "label": "S13"
+      },
+      {
+        "start": 292.11,
+        "end": 312.12,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.973,
+      "key": 0.891
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a dense and powerful texture, built on layers of heavily distorted guitars and commanding lead vocals, which together create an epic and emotionally charged atmosphere. The energy is consistently high and driving, giving the song an anthemic, almost cinematic feel, particularly in the soaring and expansive choruses. The production quality is polished and modern; despite the density of the arrangement, individual elements like the punchy drums and clear lead vocals occupy their own space well, resulting in a wide and impactful soundscape. A defining quality is the dynamic use of layered backing vocals, which provide powerful harmonic support and create call-and-response textures that elevate the song's dramatic weight.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The hook lands hard: 'I am darkness with no place to hide / From the piercing dread of light' is the kind of chorus that earns its capital letters, and in G# minor at a steady 112 BPM the song has the muscular forward pull of classic arena rock without the self-congratulation. What sells it is the twist at the bridge, where the narrator stops claiming power and admits 'I am not a force / I'm the failure of one' -- that deflation is the emotional payoff the whole track is building toward, and the layered backing vocals that lift the final chorus feel genuinely earned rather than decorative. Lingua Aeternum is playing a bigger room here than usual, and they fill it.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'I am darkness with no place to hide / From the piercing dread of light'",
+      "quoted lyric: 'I am not a force / I'm the failure of one'",
+      "key: G# minor",
+      "BPM: 112",
+      "layered backing vocals and bridge structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

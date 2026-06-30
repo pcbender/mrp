@@ -1,0 +1,122 @@
+{
+  "track_id": "lingua-aeternum--gratitude-express",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Gratitude Express.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--gratitude-express.opus"
+  },
+  "lyrics": "Climb aboard with a heart wide open\nPack your dreams, keep hope your destination\nRolling past the days we missed\nWaving thanks with every twist\n\nOn the Gratitude Express\nNo ticket, just a yes\nEvery mile is a blessing\nFrom the start until the ending\nGot no baggage, just this song\nGrateful to be riding from now on\n\nFeelin’ fine on the Gratitude Express\nNo regrets on the Gratitude Express\n\nMet a child with eyes like summer\nTaught me joy like no other\nElder smiled with wrinkled grace\nSaid “Every stop leaves a trace”\n\nOn the Gratitude Express\nNo ticket, just a yes\nEvery mile is a blessing\nFrom the start until the ending\nGot no baggage, just this song\nGrateful to be riding from now on\n\nFeelin’ fine on the Gratitude Express\nNo regrets on the Gratitude Express\n\nSo many moments, small and bright\nLike lanterns in the night\nThey light the tracks behind, ahead\nWith every word I’ve ever said\n\nOn the Gratitude Express\nNo ticket, just a yes\nEvery mile is a blessing\nFrom the start until the ending\nGot no baggage, just this song\nGrateful to be riding from now on\n\nFeelin’ fine on the Gratitude Express\nNo regrets on the Gratitude Express\nSunshine ride on the Gratitude Express\nCome on board the Gratitude Express…",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 205.56,
+    "lufs": -13.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.55,
+        "label": "S1"
+      },
+      {
+        "start": 6.55,
+        "end": 29.35,
+        "label": "S2"
+      },
+      {
+        "start": 29.35,
+        "end": 47.65,
+        "label": "S3"
+      },
+      {
+        "start": 47.65,
+        "end": 63.34,
+        "label": "S4"
+      },
+      {
+        "start": 63.34,
+        "end": 82.15,
+        "label": "S5"
+      },
+      {
+        "start": 82.15,
+        "end": 98.89,
+        "label": "S6"
+      },
+      {
+        "start": 98.89,
+        "end": 125.74,
+        "label": "S7"
+      },
+      {
+        "start": 125.74,
+        "end": 144.5,
+        "label": "S8"
+      },
+      {
+        "start": 144.5,
+        "end": 159.82,
+        "label": "S9"
+      },
+      {
+        "start": 159.82,
+        "end": 187.83,
+        "label": "S10"
+      },
+      {
+        "start": 187.83,
+        "end": 205.56,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.973,
+      "key": 0.984
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a hopeful and anthemic atmosphere, building from clean, arpeggiated guitars into a full-band, driving rock texture. The energy is consistently high and propulsive, creating a forward-moving, motivational feel that is both earnest and powerful. The production is polished and spacious, with a tight rhythm section anchoring wide guitars and a clear lead vocal that sits confidently atop the mix without feeling crowded. The most distinctive quality is the powerful lift into the expansive, sing-along chorus, which serves as the track's emotional and energetic peak, perfectly delivering its positive message.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Lingua Aeternum stepping into straight-ahead anthemic rock is a genuine surprise, and 'Gratitude Express' earns it: a waltz-time ride at a brisk 152 BPM in D major, where arpeggiated guitar opens the track before the full band kicks in and the chorus simply lifts. 'No ticket, just a yes' lands as a hook because it's earned by the verse's setup, not just stated, and the sing-along 'Feelin' fine on the Gratitude Express' payoff has the same uncomplicated momentum you'd find in early Tom Petty at his most road-ready. The mood tags suggest melancholy, but this is mostly sunny side up, the 'small and bright / like lanterns in the night' bridge being the one moment where weight quietly acknowledges itself before the final chorus sweeps it forward.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "152 BPM",
+      "D major",
+      "3/4 waltz time",
+      "arpeggiated guitar opening",
+      "full-band chorus lift",
+      "quoted lyric: 'No ticket, just a yes'",
+      "quoted lyric: 'Feelin fine on the Gratitude Express'",
+      "quoted lyric: 'small and bright / like lanterns in the night'",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

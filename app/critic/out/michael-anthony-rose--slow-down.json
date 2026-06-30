@@ -1,0 +1,109 @@
+{
+  "track_id": "michael-anthony-rose--slow-down",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Slow Down.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--slow-down.opus"
+  },
+  "lyrics": "Everything updates before I blink\nEvery room is built for younger knees\nEvery screen is asking me to learn again\nEvery day gets faster on me\nI'm not asking anybody to stop\nI'm just trying not to disappear\nI keep reaching for the pace of it\nSlow down\n\nNew password, new plug, new rules\nNew phrase for what we used to call a lie\nSome kid with perfect posture tells me\n\"Actually, that's not how this works now, guy\"\nI smile like I'm easygoing\nLike I don't mind being taught\nBut there's a little heat behind my ribs\nAt how much ground gets lost\n\nEverything updates before I blink\nEvery room is built for younger knees\nEvery screen is asking me to learn again\nEvery day gets faster on me\nI'm not asking anybody to stop\nI'm just trying not to disappear\nI keep reaching for the pace of it\nSlow down\n\nMy body used to take instructions\nNow it files complaints all day\nSleep is thin, and stairs have opinions\nAnd names can drift a minute away\nThe songs I love are \"classic\" now\nWhich is one more word for old\nAnd every headline seems to say\nMove, adapt, keep up, don't fold\n\nI know the world owes me nothing\nI know that much is true\nBut it gets hard not to take it personal\nWhen it keeps moving through you\n(through you)\nWhen it keeps moving through you\n\nEverything updates before I blink\nEvery room is built for younger knees\nEvery face is fluent in a world\nThat doesn't check if I can read\nI'm not asking anybody to stop\nI'm just trying not to disappear\nI keep talking over all this motion\nSlow down\n\nSlow down\nJust a second\nSlow down",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 204.5,
+    "lufs": -11.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 16.09,
+        "label": "S1"
+      },
+      {
+        "start": 16.09,
+        "end": 31.18,
+        "label": "S2"
+      },
+      {
+        "start": 31.18,
+        "end": 46.3,
+        "label": "S3"
+      },
+      {
+        "start": 46.3,
+        "end": 78.41,
+        "label": "S4"
+      },
+      {
+        "start": 78.41,
+        "end": 93.53,
+        "label": "S5"
+      },
+      {
+        "start": 93.53,
+        "end": 120.58,
+        "label": "S6"
+      },
+      {
+        "start": 120.58,
+        "end": 164.07,
+        "label": "S7"
+      },
+      {
+        "start": 164.07,
+        "end": 182.14,
+        "label": "S8"
+      },
+      {
+        "start": 182.14,
+        "end": 204.5,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.978,
+      "key": 0.868
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a dense and urgent modern rock texture, creating an emotional atmosphere of determined frustration. The energy is consistently high and driving, pushed forward by layers of crunchy guitars and a propulsive rhythm section, giving the song a breathless, power-pop feel. The production is polished and full, creating a powerful wall of sound where the punchy drums and clear vocals still manage to cut through the mix without feeling cluttered. A defining quality is its relentless forward momentum, punctuated by an anthemic chorus and a fiery, melodic guitar solo that perfectly captures the feeling of trying to keep pace.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The cruel joke of 'Slow Down' is that it runs at 152 BPM while pleading for a breather, and Rose clearly knows it. In E major with a crunch that owes a debt to late-period Petty, the track locks you into its breathless drive even as the lyric is cataloguing everything that makes modern life feel like a treadmill set one click too fast. The writing is unusually precise: 'Every room is built for younger knees' lands harder than any generic lament, and 'Sleep is thin, and stairs have opinions' is the kind of line that makes you put down your phone. The guitar solo earns its place rather than just filling a section, and the final chorus shift, where 'every screen is asking me to learn again' becomes 'every face is fluent in a world that doesn't check if I can read,' is the kind of small revision that separates a good songwriter from a careless one. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152 contrasted with lyrical plea to slow down",
+      "E major / Petty-adjacent guitar crunch",
+      "lyric: 'Every room is built for younger knees'",
+      "lyric: 'Sleep is thin, and stairs have opinions'",
+      "final chorus lyric variation",
+      "guitar solo placement"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

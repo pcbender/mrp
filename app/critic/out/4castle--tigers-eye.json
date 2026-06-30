@@ -1,0 +1,114 @@
+{
+  "track_id": "4castle--tigers-eye",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Tiger’s Eye.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--tigers-eye.opus"
+  },
+  "lyrics": "Winds scream against the windowpane\nI used to run, I used to break\nBut you don't flinch, you don't change\nYou just breathe, you just stay\n\nI lose my way, I lose my fight\nBut you bring me back, you hold me right\n\nMy rock, my heart, my Tiger's Eye\nSteady flame when I get lost inside\nUnshaken, unchained, you shine\nMy rock, my heart, my Tiger's Eye\n\nYou see the parts I try to hide\nYou don't push, you just stand beside\nYou don't tell me how to be\nBut somehow, you still set me free\n\nI lose myself, I spin too fast\nBut you bring me back, you make it last\n\nMy rock, my heart, my Tiger's Eye\nSteady flame when I get lost inside\nUnshaken, unchained, you shine\nMy rock, my heart, my Tiger's Eye\n\nI've been a ghost, I've been a storm\nDrifting, wild, undefined\nBut somehow, you always know\nWhere I am, where I'll go\n\nMy rock, my heart, my Tiger's Eye\nHolding on when I come untied\nUnshaken, unchained, you shine\nMy rock, my heart, my Tiger's Eye\n\nMy rock, my heart… my Tiger's Eye…",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 76.0,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 193.48,
+    "lufs": -15.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.02,
+        "label": "S1"
+      },
+      {
+        "start": 3.02,
+        "end": 21.92,
+        "label": "S2"
+      },
+      {
+        "start": 21.92,
+        "end": 41.24,
+        "label": "S3"
+      },
+      {
+        "start": 41.24,
+        "end": 67.36,
+        "label": "S4"
+      },
+      {
+        "start": 67.36,
+        "end": 88.58,
+        "label": "S5"
+      },
+      {
+        "start": 88.58,
+        "end": 110.32,
+        "label": "S6"
+      },
+      {
+        "start": 110.32,
+        "end": 131.26,
+        "label": "S7"
+      },
+      {
+        "start": 131.26,
+        "end": 151.79,
+        "label": "S8"
+      },
+      {
+        "start": 151.79,
+        "end": 182.25,
+        "label": "S9"
+      },
+      {
+        "start": 182.25,
+        "end": 193.48,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.948,
+      "key": 0.958
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an intimate, vulnerable atmosphere with a close-mic'd female vocal and a clean, spacious electric guitar. The energy builds dramatically from a contemplative verse into an explosive, anthemic chorus, driven by powerful drums and dense vocal layers. The production quality is polished and modern, creating a wide, cinematic space where the lead vocal sits clearly on top of a rich arrangement of guitars, synths, and backing harmonies. The most defining quality is this stark dynamic shift, which gives the song a powerful, uplifting feel, centering its emotional weight on the soaring chorus hook.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 76 BPM in B major, 'Tiger's Eye' earns its emotional weight the old-fashioned way: a chorus that actually delivers on what the verse promises. The build from close-mic'd intimacy to full-band release is handled with real craft, and when the hook lands on 'steady flame when I get lost inside,' the vocal stack blooms into something that recalls Heart at their most unguarded. The lyric earns its directness too, with lines like 'you don't tell me how to be / but somehow, you still set me free' threading vulnerability without tipping into sentiment. A clean, confident highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 76, B major",
+      "chorus hook lyric: 'steady flame when I get lost inside'",
+      "verse lyric: 'you don't tell me how to be / but somehow, you still set me free'",
+      "dynamic shift from intimate verse to full-band chorus",
+      "vocal layering on chorus",
+      "Heart comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

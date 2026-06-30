@@ -1,0 +1,108 @@
+{
+  "track_id": "stab--here-to-be-watched",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Here To Be Watched.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--here-to-be-watched.opus"
+  },
+  "lyrics": "Smile\nHold it\nPost it\n(yeah)\n\nI catch myself adjusting the angle of my day\nLike the moment matters more if it looks a certain way\nI'll be laughing and a part of me will step aside\nTo check if I'm \"capturing it,\" like it's proof I'm alive\nI know it sounds dramatic, but it's small and it's constant\nA quiet little director in my head who's always talking\n\"Stand there. Say that. Don't look tired. Don't look mad.\"\nAnd somehow I forget to feel what I just had\n\nSomewhere in all this \"share,\"\nI lost the part that's just mine\nThe messy middle, the unplayed take\nThe unpolished line\n\nI'm learning how to look okay\nIn the middle of not being okay\nI'm learning how to turn my life into a highlight\nAnd I hate how good I am at it\nI want to show up without trying\nI want a moment I don't have to hold\nI'm tired of living like there's an audience -\nI'm not here to be watched\n\nI post a photo, then I check it like ten times\nNot because I care that much - because I'm chasing quiet\nLike if the world nods back, my nervous system settles\nBut it never lasts; it's a drink from an empty kettle\nEven when I'm alone, I'm thinking in captions\nTrying to make my feelings \"clean\" so they fit a pattern\nAnd the weirdest part is I don't mean to fake it\nI just forget that life is something I can't edit\n\nSomewhere in all this \"share,\"\nI lost the part that's just mine\nThe messy middle, the unplayed take\nThe unpolished line\n\nI'm learning how to look okay\nIn the middle of not being okay\nI'm learning how to turn my life into a highlight\nAnd I hate how good I am at it\nI want to show up without trying\nI want a moment I don't have to hold\nI'm tired of living like there's an audience -\nI'm not here to be watched\n\nIf I'm honest, I miss my own face\nThe one that shows up when nobody's judging\nThe one that sighs, the one that frowns\nThe one that doesn't explain itself\n(mm)\nI want that back\n\nI'm learning how to look okay\nIn the middle of not being okay\nI'm learning how to turn my life into a highlight\nAnd I hate how good I am at it\nI want to show up without trying\nI want a moment I don't have to hold\nI'm tired of living like there's an audience -\nI'm not here to be watched\n\nSmile\nLet it drop\n(oh)\nThat's better",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 201.0,
+    "lufs": -14.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.56,
+        "label": "S1"
+      },
+      {
+        "start": 1.56,
+        "end": 22.06,
+        "label": "S2"
+      },
+      {
+        "start": 22.06,
+        "end": 39.92,
+        "label": "S3"
+      },
+      {
+        "start": 39.92,
+        "end": 83.5,
+        "label": "S4"
+      },
+      {
+        "start": 83.5,
+        "end": 106.56,
+        "label": "S5"
+      },
+      {
+        "start": 106.56,
+        "end": 141.71,
+        "label": "S6"
+      },
+      {
+        "start": 141.71,
+        "end": 159.78,
+        "label": "S7"
+      },
+      {
+        "start": 159.78,
+        "end": 187.29,
+        "label": "S8"
+      },
+      {
+        "start": 187.29,
+        "end": 201.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.857
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a conflicted emotional atmosphere, shifting between the intimate, conversational texture of its verses and a driving, anthemic chorus filled with cathartic angst. The energy follows a classic pop arc, building from a mellow, thoughtful feel into a powerful, full-band arrangement that feels both polished and emotionally raw. The production is exceptionally clean and spacious, allowing the lead vocal to command attention while expertly layering harmonies and a tight rhythm section to create a dense, impactful sound during the dynamic peaks. A standout moment is the raw, stripped-back bridge, which provides a stark, vulnerable contrast before a processed vocal effect launches the song into its explosive and passionate final chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The hook in 'Here to Be Watched' lands exactly as hard as it needs to: 'I hate how good I am at it' is the kind of line that makes you stop scrolling, which is the point. STAB builds the song in D major at a brisk clip, letting the verses sit close and conversational before the chorus opens up into something genuinely cathartic, and the stripped bridge, where she admits 'I miss my own face / the one that shows up when nobody's judging,' earns every decibel of the final push. It has the same confessional clarity Alanis brought to her best mid-90s work, but the production stays bright and punchy rather than grunge-adjacent. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'I hate how good I am at it'",
+      "lyric: 'I miss my own face / the one that shows up when nobody's judging'",
+      "key: D major",
+      "structure: stripped bridge before final chorus",
+      "comparison: Alanis Morissette mid-90s"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -36,5 +36,5 @@ release:
     isrc: CACWV2656854
     duration: '4:50'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/michael-anthony-rose--avant-suite.mp3
     instrumental: true

@@ -1,0 +1,110 @@
+{
+  "track_id": "stab--bring-it-with-me",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Bring It With Me.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--bring-it-with-me.opus"
+  },
+  "lyrics": "Same world\nDifferent grip\n(mm)\n\nI'm back in the traffic, back in the errands\nBack in the little modern swarm\nBut something's different in my chest\nLike I've got a quieter center keeping me warm\nI still get pulled, I still get tempted\nI still feel that old quick itch\nBut now I can feel it happening\nAnd that small noticing is the switch\n\nI'm not running away from life\nI'm just showing up slower\nI can carry a little silence\nLike a hand on my shoulder\nThe noise can do what noise does\nI don't have to join the fight\nI'll take the calm with me and keep it close -\nI can bring it with me\n\nI think of Thoreau by the pond\nNot as a saint - just a guy making a point\nThat your attention is your life\nAnd you don't get a refund if you disappoint\nI think of Emerson saying trust yourself\nAnd I finally hear it as a practice, not a slogan\nI trust the part of me that returns\nThe part that stays soft\nThe part that stays open\n\nI'm not running away from life\nI'm just showing up slower\nI can carry a little silence\nLike a hand on my shoulder\nThe noise can do what noise does\nI don't have to join the fight\nI'll take the calm with me and keep it close -\nI can bring it with me\n\nSo if you see me quiet at a party\nOr staring out the window on the train\nI'm not lost, I'm not judging\nI'm just practicing again\nI'm listening for the real world\nUnder the static and the spin\nBecause it's always been here\nWaiting\nTo begin\n\nI'm not running away from life\nI'm just showing up slower\nI can carry a little silence\nLike a hand on my shoulder\nThe noise can do what noise does\nI don't have to join the fight\nI'll take the calm with me and keep it close -\nI can bring it with me\n\nSame world\nDifferent grip\n(mm)\nBring it with me",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "G#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 221.04,
+    "lufs": -14.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 23.01,
+        "label": "S1"
+      },
+      {
+        "start": 23.01,
+        "end": 40.36,
+        "label": "S2"
+      },
+      {
+        "start": 40.36,
+        "end": 64.18,
+        "label": "S3"
+      },
+      {
+        "start": 64.18,
+        "end": 82.18,
+        "label": "S4"
+      },
+      {
+        "start": 82.18,
+        "end": 103.51,
+        "label": "S5"
+      },
+      {
+        "start": 103.51,
+        "end": 127.36,
+        "label": "S6"
+      },
+      {
+        "start": 127.36,
+        "end": 167.18,
+        "label": "S7"
+      },
+      {
+        "start": 167.18,
+        "end": 210.81,
+        "label": "S8"
+      },
+      {
+        "start": 210.81,
+        "end": 221.04,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.962,
+      "key": 0.883
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "pop",
+      "soul"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates an introspective and calm atmosphere, built upon a sparse texture of clean electric guitars and a soft, intimate female vocal. The energy is deliberately paced, developing from a gentle opening into a steady, grounded groove that feels thoughtful and centered. The production quality is clean and spacious, with each instrument occupying its own sonic space while the vocal sits clearly and warmly in the mix, all glued together with a subtle reverb. A distinctive quality is the dynamic lift in the chorus, where layered harmonies and a more present beat create a feeling of gentle resolve, effectively translating the song's theme of finding quiet strength in a loud world.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "STAB takes a genuine left turn here, trading the jangly attack you might expect for something closer to a midtempo meditation, and it pays off. At 152 BPM in G# major the track has more forward motion than it lets on, but the production keeps everything spacious and warm, letting lines like 'I trust the part of me that returns / the part that stays soft / the part that stays open' land with real weight rather than sentiment. The chorus hook, 'I can bring it with me,' builds through layered harmonies that lift the whole thing the way a late-period Sheryl Crow chorus does, effortless and earned. It's a dependable cut that shows STAB has more range than her fiercest fans might expect.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "BPM 152",
+      "G# major",
+      "quoted lyric: 'I trust the part of me that returns'",
+      "quoted lyric: 'I can bring it with me'",
+      "chorus harmonic lift",
+      "spacious production",
+      "Sheryl Crow comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

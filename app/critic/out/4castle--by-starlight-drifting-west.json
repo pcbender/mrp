@@ -1,0 +1,114 @@
+{
+  "track_id": "4castle--by-starlight-drifting-west",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/By Starlight Drifting West - 4Castle.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--by-starlight-drifting-west.opus"
+  },
+  "lyrics": "Pulled the anchor, set the sails\nOcean whispers, moonlight pales\nStars are maps, but none I know\nTides are pulling, let me go\n\nNo lantern guides, no beacon bright\nOnly waves and wind tonight\n\nBy starlight, drifting west\nApproaching shadows, dispossessed\nA course uncharted, life's a test\nBy starlight, drifting west\n\nHorizon fades, the past won't speak\nThe sky is calm, the depths run deep\nOne wrong turn, the rocks below\nBut where they are, I'll never know\n\nNo lantern guides, no beacon bright\nOnly waves and wind tonight\n\nBy starlight, drifting west\nApproaching shadows, dispossessed\nA course uncharted, life's a test\nBy starlight, drifting west\n\nWhat waits beyond, a dream, a fall\nA whispered name I can't recall\nThe stars will shine, the tide won't stay\nBut either way, I drift away\n\nBy starlight, drifting west\nLost in longing, lost at best\nNo horizon, no regrets\nBy starlight, drifting west\n\nNo lantern guides, no beacon bright\nOnly waves and wind tonight…",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 197.0,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.99,
+        "label": "S1"
+      },
+      {
+        "start": 4.99,
+        "end": 27.21,
+        "label": "S2"
+      },
+      {
+        "start": 27.21,
+        "end": 52.01,
+        "label": "S3"
+      },
+      {
+        "start": 52.01,
+        "end": 69.98,
+        "label": "S4"
+      },
+      {
+        "start": 69.98,
+        "end": 87.4,
+        "label": "S5"
+      },
+      {
+        "start": 87.4,
+        "end": 111.08,
+        "label": "S6"
+      },
+      {
+        "start": 111.08,
+        "end": 129.96,
+        "label": "S7"
+      },
+      {
+        "start": 129.96,
+        "end": 149.79,
+        "label": "S8"
+      },
+      {
+        "start": 149.79,
+        "end": 186.08,
+        "label": "S9"
+      },
+      {
+        "start": 186.08,
+        "end": 197.0,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.959,
+      "key": 0.993
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a delicate and introspective texture, built around a clean, fingerpicked acoustic guitar and a breathy, intimate female vocal that creates a melancholic yet hopeful atmosphere. The energy is consistently low and contemplative, giving the song a gentle, drifting feel that evokes the sense of being lost on a vast, calm ocean. The production is spacious and polished, with each element sitting clearly in the mix; the subtle addition of bass and soft percussion in the chorus provides a supportive foundation without creating density. The most defining quality is the dynamic lift in the chorus, where layered vocal harmonies and a swelling underscore create a feeling of expansive openness, beautifully reinforcing the song's lyrical themes of navigation and uncertainty.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a brisk 161 BPM but wearing it lightly, 'By Starlight Drifting West' opens on fingerpicked acoustic guitar and a breathy lead vocal before the chorus opens up into full harmony, and that lift is the whole argument for the song. The line 'a course uncharted, life's a test' lands cleanly because the arrangement earns it, the voices stacking just as the bass and soft percussion settle in underneath. It's 4Castle at their most intimate, closer in spirit to early Fleetwood Mac than to their bigger prog moves, and the restraint suits them.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 161.5",
+      "fingerpicked acoustic guitar opening",
+      "chorus vocal harmonies with bass and soft percussion entrance",
+      "lyric: 'a course uncharted, life's a test'",
+      "C major key",
+      "comparison to early Fleetwood Mac"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

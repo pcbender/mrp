@@ -1,0 +1,140 @@
+{
+  "track_id": "pcbender--death",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Death.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--death.opus"
+  },
+  "lyrics": "Death waits like a lantern hung beyond the ridge\nA small, steady brightness at the final bridge\nNo claws in the shadows, no debtors' grim art\nJust the closing of windows around a beating heart\n\nI will not make a bargain, I will not plead for years\nI will not let its rumor dictate all my fears\nWhen breath becomes a hallway, and walls begin to thin\nI'll step across the threshold like I once stepped in\n\nDeath is my horizon\nEdge of breath and bone\nNot the end of freedom\nJust the place it stands alone\nI'll greet it like a stranger\nMet upon the road\nCuriosity in my eyes\nNo terror in my load\n\nIf all I am is ending, then all I was is dust\nBut something in my choosing outlives flesh and rust\nThe footprints of intention, the echoes of my song\nThese are the quiet reasons death and I belong\n\nDeath is my horizon\nNot a judge, not a thief\nJust the last soft unravelling\nOf this borrowed brief belief\nWhen it reaches out to take me\nI'll unclench my hands and see\nWhat remains of \"I\"\nWhen there is only \"be.\"\n\nDeath is my horizon\nEdge of breath and bone\nNot the end of freedom\nJust the place it stands alone\nI'll greet it like a stranger\nMet upon the road\nCuriosity in my eyes\nNo terror in my load\n\nI do not dread the border\nBorders are for maps\nThe road goes on without them",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 99.4,
+    "key": "C#",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 399.74,
+    "lufs": -13.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 28.14,
+        "label": "S1"
+      },
+      {
+        "start": 28.14,
+        "end": 57.38,
+        "label": "S2"
+      },
+      {
+        "start": 57.38,
+        "end": 89.35,
+        "label": "S3"
+      },
+      {
+        "start": 89.35,
+        "end": 105.53,
+        "label": "S4"
+      },
+      {
+        "start": 105.53,
+        "end": 134.16,
+        "label": "S5"
+      },
+      {
+        "start": 134.16,
+        "end": 178.96,
+        "label": "S6"
+      },
+      {
+        "start": 178.96,
+        "end": 204.38,
+        "label": "S7"
+      },
+      {
+        "start": 204.38,
+        "end": 235.13,
+        "label": "S8"
+      },
+      {
+        "start": 235.13,
+        "end": 274.69,
+        "label": "S9"
+      },
+      {
+        "start": 274.69,
+        "end": 309.03,
+        "label": "S10"
+      },
+      {
+        "start": 309.03,
+        "end": 335.57,
+        "label": "S11"
+      },
+      {
+        "start": 335.57,
+        "end": 361.47,
+        "label": "S12"
+      },
+      {
+        "start": 361.47,
+        "end": 377.53,
+        "label": "S13"
+      },
+      {
+        "start": 377.53,
+        "end": 392.56,
+        "label": "S14"
+      },
+      {
+        "start": 392.56,
+        "end": 399.74,
+        "label": "S15"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.937,
+      "key": 0.856
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "blues rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "defiant"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "mandolin"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track begins with a spacious and introspective atmosphere, led by a highly technical and processed electric guitar, before exploding into a dense, high-energy progressive metal arrangement. The overall feel is powerful and driving, characterized by virtuosic guitar work, a tight rhythm section, and anthemic, clean male vocals delivering a philosophical narrative. The production quality is polished and modern, with thick, wide guitars and punchy drums creating a powerful wall of sound that still provides clarity for the prominent vocals and intricate solos. The most distinctive quality is the track's dramatic dynamic shift from the ambient intro to the full-force metal riff, immediately establishing a broad and epic emotional range.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender opens 'Death' with a fingerpicked guitar intro that feels like a man sitting alone with a hard thought, then the track erupts into a wide, wall-of-sound riff that earns every second of its nearly seven minutes in 3/4 time. The waltz feel is exactly right for the subject: unhurried, inevitable, almost ceremonial. The chorus hook lands on the line 'not the end of freedom, just the place it stands alone,' and the melody there has the same plainspoken lift you get from John Hiatt at his most philosophical. 'The road goes on without them' is the kind of closing line that rewards the patient listener who stayed for the full run.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "6:39 duration",
+      "dynamic shift from intro to full arrangement",
+      "lyric: 'not the end of freedom, just the place it stands alone'",
+      "lyric: 'the road goes on without them'",
+      "John Hiatt comparison",
+      "C# major key"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

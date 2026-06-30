@@ -1,0 +1,119 @@
+{
+  "track_id": "lingua-aeternum--the-wayfinder",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Wayfinder.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--the-wayfinder.opus"
+  },
+  "lyrics": "Compass spinning, sky unwinds…\nI'm the Wayfinder\nInto the inside…\n\nI set my boots on open ground\nWith a compass that can't settle down\nI thought I traced the boundary clear\nBut all my steps just disappear\n\nThe caves grew deeper as I drew\nThe canyons wider than I knew\nI mapped the cracks, I named the stones\nBut lost the path back to my own\n\nI'm the Wayfinder, lost and blind\nCharting caves and canyons wide\nNo rope can hold, no star can guide\nI'm the Wayfinder\nInto the inside…\n\nI measured deep a canyon fair\nWith fractured stone beyond repair\nI staked the walls, I timed the fall\nBut found no way to bridge it all\n\nThe caves I marked with careful light\nStill swallowed years beyond my sight\nI mapped the faults, I named the scars\nBut every line still moved too far\n\nI'm the Wayfinder, torn and tied\nCharting caves and canyons wide\nNo rope can hold, no stone can hide\nI'm the Wayfinder\nInto the inside\n\nI dropped the compass in the dust\nLet go the rope, forgot the trust\nThe caves, the canyons, all grew still -\nI found no map\nI found my will\n\nI'm the Wayfinder, tested and tried\nLiving caves and canyons wide\nNo rope, no chart, no need to hide\nI'm the Wayfinder\nOut of the inside\n\nCompass still\nSky unwinds\nI walk the map I've left behind",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 204.08,
+    "lufs": -14.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.67,
+        "label": "S1"
+      },
+      {
+        "start": 3.67,
+        "end": 27.33,
+        "label": "S2"
+      },
+      {
+        "start": 27.33,
+        "end": 44.23,
+        "label": "S3"
+      },
+      {
+        "start": 44.23,
+        "end": 63.32,
+        "label": "S4"
+      },
+      {
+        "start": 63.32,
+        "end": 86.26,
+        "label": "S5"
+      },
+      {
+        "start": 86.26,
+        "end": 101.33,
+        "label": "S6"
+      },
+      {
+        "start": 101.33,
+        "end": 126.41,
+        "label": "S7"
+      },
+      {
+        "start": 126.41,
+        "end": 142.13,
+        "label": "S8"
+      },
+      {
+        "start": 142.13,
+        "end": 158.59,
+        "label": "S9"
+      },
+      {
+        "start": 158.59,
+        "end": 173.82,
+        "label": "S10"
+      },
+      {
+        "start": 173.82,
+        "end": 204.08,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.848
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents an angsty and searching atmosphere, driven by a dense texture of distorted guitars and a powerful, clean lead vocal. The energy is consistently high, feeling like an urgent, forward-moving rock anthem, especially as it explodes into the wide, soaring choruses. The production is modern and spacious, allowing the vocals to sit clearly atop the thick instrumental wall without sounding crowded, while the rhythm section provides a punchy and solid foundation. A distinctive quality is the powerful dynamic lift into the chorus at 0:46, where the vocals and guitars open up to create an epic, memorable hook that defines the song's emotional core.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The Wayfinder lands like a proper rock anthem: the chorus that opens up around 0:46 genuinely earns its lift, with the guitars widening and the vocal line soaring on 'I'm the Wayfinder, lost and blind' in a way that recalls early Foo Fighters at their most direct and unguarded. The lyric arc is smart, moving from obsessive cartography ('I mapped the faults, I named the scars') to surrender and self-possession, so the final verse payoff, 'I found no map / I found my will,' feels earned rather than announced. At a brisk 161 BPM in A major the track never drags, and the production keeps the thick guitar wall from burying the vocal clarity that the song needs to work. A highlight, and a strong entry point for anyone new to the circle.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "chorus lift at 0:46",
+      "lyric quote: 'I mapped the faults, I named the scars'",
+      "lyric quote: 'I found no map / I found my will'",
+      "BPM 161",
+      "A major",
+      "Foo Fighters comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "album_id": "michael-anthony-rose--i-m-still-here",
+  "release_slug": "i-m-still-here",
+  "title": "I'm Still Here",
+  "release_type": "album",
+  "artist": "Michael Anthony Rose",
+  "persona": "",
+  "tracklist": [
+    "michael-anthony-rose--i-m-old-now",
+    "michael-anthony-rose--slow-down",
+    "michael-anthony-rose--i-know-exactly-what-this-is",
+    "michael-anthony-rose--some-things-just-stop",
+    "michael-anthony-rose--rooms-keep-people",
+    "michael-anthony-rose--they-dont-know",
+    "michael-anthony-rose--thats-the-question",
+    "michael-anthony-rose--full-size-person",
+    "michael-anthony-rose--some-days-still-break-me",
+    "michael-anthony-rose--its-in-me-too",
+    "michael-anthony-rose--thats-enough",
+    "michael-anthony-rose--i-m-still-here"
+  ],
+  "track_records": [
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--i-m-old-now.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--slow-down.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--i-know-exactly-what-this-is.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--some-things-just-stop.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--rooms-keep-people.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--they-dont-know.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--thats-the-question.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--full-size-person.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--some-days-still-break-me.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--its-in-me-too.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--thats-enough.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--i-m-still-here.json"
+  ],
+  "album_features": {
+    "total_runtime_s": 2834.5,
+    "bpm_curve": [
+      152.0,
+      152.0,
+      184.6,
+      136.0,
+      129.2,
+      172.3,
+      129.2,
+      107.7,
+      152.0,
+      161.5,
+      152.0,
+      136.0
+    ],
+    "key_progression": [
+      "A major",
+      "E major",
+      "E major",
+      "C major",
+      "A major",
+      "C major",
+      "C# major",
+      "E major",
+      "A major",
+      "B major",
+      "E major",
+      "C# major"
+    ],
+    "mood_progression": [
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender"
+    ],
+    "rank_distribution": {
+      "2": 0,
+      "3": 0,
+      "4": 5,
+      "5": 7
+    },
+    "peak_track": "michael-anthony-rose--some-things-just-stop",
+    "valley_tracks": [
+      "michael-anthony-rose--i-m-old-now",
+      "michael-anthony-rose--slow-down",
+      "michael-anthony-rose--i-know-exactly-what-this-is",
+      "michael-anthony-rose--thats-the-question",
+      "michael-anthony-rose--some-days-still-break-me"
+    ]
+  },
+  "cohesion": {
+    "palette_consistency": 0.8714,
+    "theme_threads": [
+      "i'm",
+      "like",
+      "some",
+      "that's",
+      "there",
+      "don't",
+      "know",
+      "way"
+    ],
+    "verdict": "cohesive_statement"
+  },
+  "review": {
+    "target": "album_blurb",
+    "review_text": "Rose opens with a mumbled false start on 'I'm Old Now,' and that small, deliberate stumble tells you exactly what kind of record this is: nothing performed, nothing smoothed over, just a man taking honest stock. The album holds that register for twelve tracks without ever feeling monotonous, because the tempo and weight keep shifting quietly underneath, from the brisk pulse of 'I Know Exactly What This Is' to the slower, heavier settle of 'Full-Size Person' and the near-hymnal close of 'I'm Still Here.' What Rose has built here is one of those rare records where the sequencing does real work, with 'Some Things Just Stop' and 'Rooms Keep People' arriving back-to-back in the middle like the album's quiet center of gravity, and everything after them feeling earned rather than extended.",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "essential"
+    },
+    "sum_vs_parts": "greater",
+    "persona_delivery": "on_character",
+    "anchors_used": [
+      "I'm Old Now",
+      "I Know Exactly What This Is",
+      "Full-Size Person",
+      "I'm Still Here",
+      "Some Things Just Stop",
+      "Rooms Keep People"
+    ],
+    "status": "pending",
+    "model": "claude-sonnet-4-6"
+  },
+  "track_reviews_in_context": [
+    {
+      "track_id": "michael-anthony-rose--i-m-old-now",
+      "position": 1,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Rose opens this one with a mumbled false start, like he caught himself mid-thought, and that small gesture sets the tone for everything that follows: what comes next is as unguarded as anything he has put down. As an opener, it is a deliberate act of disarmament. There is no fanfare, no establishing shot, just a man standing in front of a kitchen mirror noticing that 'all the years I kept ahead are suddenly at my side.' The lyric does something genuinely difficult, finding the exact texture of aging's quiet arrival, not the dramatic kind but the everyday kind, and the track earns its build honestly, starting spare and conversational before the guitars open up into something warm and slightly worn at the edges. The guitar solo that closes it out feels less like a show of force than a long exhale. It runs with more forward momentum than the reflective mood might suggest, and that tension between the driving rhythm and the still, clear-eyed lyric is where the song lives. What it accomplishes as an opener is harder than it looks: it tells you exactly what kind of album you are in, and it makes you want to stay.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--slow-down",
+      "position": 2,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The cruel joke of 'Slow Down' is that it runs at a breathless clip while pleading for a breather, and Rose clearly knows it. In the wake of the opener's kitchen-mirror intimacy, this one widens the lens without losing the personal register: where 'I'm Old Now' is a man noticing himself, 'Slow Down' is that same man noticing the world he has to move through. The crunch owes a debt to late-period Petty, and the lyric is unusually precise: 'Every room is built for younger knees' lands harder than any generic lament, and 'Sleep is thin, and stairs have opinions' is the kind of line that makes you put down your phone. The guitar solo earns its place rather than just filling a section, and the final chorus shift, where 'every screen is asking me to learn again' becomes 'every face is fluent in a world that doesn't check if I can read,' is the kind of small revision that separates a good songwriter from a careless one. Back-to-back with the opener it could feel like too much of the same key, but the shift from interior to exterior saves it: two songs, same tempo, two different kinds of reckoning.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--i-know-exactly-what-this-is",
+      "position": 3,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After two songs content to sit with resignation, 'I Know Exactly What This Is' sharpens into something closer to refusal. Rose has always been good at quiet fury, and this one channels it through an arrangement built for impact: verses stripped nearly bare, the vocal forward and conversational, so that when the chorus crashes in with layered distorted guitars and stacked harmonies, the emotional math is already done. The bridge earns the song its title twice over: 'Don't make me smaller so you can feel kind / Don't call that care when it's control' is the clearest Rose has been about where patience ends and self-respect begins. At a pace that runs considerably hotter than it feels, the track never loses the weary, seen-it-all quality that makes the indignation credible rather than shrill. It arrives at exactly the right moment in the sequence, not to break the mood but to give it a spine. The album needed this voltage before it could earn the stillness that follows.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--some-things-just-stop",
+      "position": 4,
+      "standalone_rank": 5,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "This is the album's strongest moment, and it arrives exactly where it needs to: after the opening trio has established the territory, 'Some Things Just Stop' plants a flag in the middle of it. Rose writes about aging the way most people only think about it at 2am, not as decline but as inventory, and the detail that lands hardest is 'confidence was never perfect, but it used to come when called, now it waits out in the hallway like it doesn't live here now.' That line is the whole album in miniature. The song opens spare with close-miked vocal over acoustic guitar, and the arrangement earns its swells, building through piano and a full kit without ever crowding the lyric. At a more measured pace than the tracks before it, it lets the listener breathe for the first time, and that breathing room is not relief but attention: everything slows down so nothing can be missed. The quiet coda, 'No, it's not the same,' offers no resolution, just the fact of it, and that restraint is what makes it the record's center of gravity.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--rooms-keep-people",
+      "position": 5,
+      "standalone_rank": 5,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Following the album's emotional peak is a genuine structural challenge, and 'Rooms Keep People' meets it by shifting the subject without shifting the register. Where 'Some Things Just Stop' inventories what fades inside a person, this one turns outward, to the objects and spaces that hold the shape of who used to be there: the dent in the carpet where the table was, the bare coat hook, the mug that should have been thrown out. Rose writes grief the way John Prine wrote ordinary life, with specific, unshowy things doing the emotional heavy lifting. The lyric that stops you is the bridge: 'I used to think remembering was something I could choose / Now it's more like weather moving in and filling up the rooms.' That reframe earns everything the song has been building toward. The arrangement opens from finger-picked quiet into a chorus that swells without ever crowding the vocal, and that restraint is the production's best choice. As a follow-up to the album's centerpiece, it does not try to match it; it deepens it from a different angle, which is the smarter move.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--they-dont-know",
+      "position": 6,
+      "standalone_rank": 5,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "By track six, the album has spent considerable time turned inward, and 'They Don't Know' earns its place by opening the aperture. Rose starts from the outside looking in, observing youth from the remove of someone who has crossed a threshold they have not yet reached, before the bridge pivots the whole song: 'And maybe I was beautiful in exactly that same way, not because I understood life, just because I thought I had time.' That move from observer to subject is the whole record in two lines, and it lands with the force of recognition rather than regret. The song opens with acoustic guitar and a single voice, the verses breathing deliberately before the full band arrives at the chorus with a lift that feels earned, the kind of dynamic move that Springsteen used to make feel inevitable. At a pace that feels faster than the song sounds, there is a structural generosity here that the sequence needed: after two consecutive tracks of close, particular grief, this one offers a wider view and, unexpectedly, something close to tenderness.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--thats-the-question",
+      "position": 7,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Sitting at the album's midpoint, 'That's the Question' arrives just as the record has opened up with the wider view of 'They Don't Know,' and it uses that momentum to go somewhere quieter and more inward. The question Rose is asking here, who am I when I'm not needed, is one that most people sidestep their whole lives, and he plants it dead center and refuses to let you look away. The lyric 'Maybe work became my language / And the tools became my will' is the kind of plain-spoken precision you get from John Hiatt or early Guy Clark when they are working at their best. The production serves it well: spare in the verses, just enough lift in the choruses that the emotional weight lands without tipping into sentimentality. After the outward gaze of its predecessor, this one pulls the focus back to the first person singular, and that alternating rhythm of self and world is starting to feel like a deliberate structural strategy. It also sets up what comes next: once you have asked who you are when you are not needed, the album has no choice but to answer.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--full-size-person",
+      "position": 8,
+      "standalone_rank": 5,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After a run of songs that have been asking careful, patient questions, 'Full-Size Person' is the moment the album stops asking and starts insisting. Rose has been circling the theme of dignity under pressure throughout this record, but this is where he puts a fist through the wall. The verses run tight and coiled before the choruses open up into something genuinely anthemic, a dynamic shift that earns every decibel. The lyric does the heavy lifting without flinching: 'don't mistake worn down for gone' lands like a clean punch, and the bridge's stripped-down repetition of 'less seen' before the final chorus hits as hard as anything John Hiatt wrote when he was at his most unguarded. In the context of the album, this is the emotional turning point: the second half of the record has been building toward a different kind of reckoning than the first half offered, one less about loss and more about what survives it. 'Full-Size Person' is where that reckoning arrives. Everything after it has a different weight because of what this track established.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--some-days-still-break-me",
+      "position": 9,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Coming directly after the album's most assertive statement, 'Some Days Still Break Me' is not a retreat but a clarification. The honesty here is specifically the kind that refuses to let the anthem stand unchallenged: yes, 'Full-Size Person' said don't mistake worn down for gone, and this one says, quietly, that worn down is still real. The line 'I can talk a good game when the light is right' does more work than a whole verse of most songs, and the bridge, where Rose catches himself turning 'one bad afternoon into proof I am less than,' is quietly devastating. At a measured pace, the production keeps everything close and warm, with the chorus earning its small swell through added harmonies and a fuller low end rather than any dramatic push. The sequencing here is one of the album's shrewdest moves: placing a song this vulnerable after a song this declarative prevents the record from curdling into self-help. It will mean something different to you on a bad morning than it does right now.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--its-in-me-too",
+      "position": 10,
+      "standalone_rank": 5,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Rose has written self-examination songs before, but 'It's in Me Too' is the one where the ledger gets read out loud without flinching, and it arrives at exactly the right moment. The album has spent two tracks on what it feels like to be seen poorly by the world; now comes the harder turn, examining what the person at the center of all that indignation might owe in the other direction. The line 'I've used my pain like proof that I see deeper than the rest' is the kind of honesty that can collapse a song if the performance does not match it, but Rose earns it. The production delivers: a close-miked confession that breaks open into full-band declaration right when the lyric demands it, architecture closer to Springsteen at his most direct than anything indie or country. The restraint in the verses is real, not strategic, which is what makes the release genuine. As a penultimate passage into the album's final stretch, it clears the air of everything self-protective, which is exactly what the record needs before it can close.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--thats-enough",
+      "position": 11,
+      "standalone_rank": 5,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After 'It's in Me Too' stripped away the last of the self-protective instincts, 'That's Enough' arrives as the album's earned exhale. Rose has always been good at writing around a hard feeling instead of through it, but here he goes straight through, and it holds. The lyric refuses every comfortable lie the genre usually offers: not 'wiser for the damage,' not 'unbroken,' just 'here, and not ashamed,' which is a harder and more honest landing than most writers would dare. The song runs at a brisk pace for the subject matter, but the production earns it, opening spare and close-miked before the chorus fills out with layered guitars and what sounds like strings lifting the back half. That final pass through the chorus, where 'pretending nothing changed' shifts to 'pretending you were spared,' is the kind of small revision that rewards close listeners. As the penultimate track, it does not try to summarize or resolve the album's concerns; it simply demonstrates that Rose has arrived somewhere real. The closer has room to speak because this one did the last of the hard work.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "michael-anthony-rose--i-m-still-here",
+      "position": 12,
+      "standalone_rank": 5,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Rose builds this one from the simplest materials: a chipped mug, a bird on a crooked limb, rain against a window, and the line 'mostly it feels local' does more work than a whole album's worth of grand statements. As a closer, it earns its position not by summarizing what came before but by grounding it. Twelve tracks of inventory, indignation, self-examination, and quiet devastation arrive here, and the answer is not resolution but persistence: still here, still local, still specific. The track moves at a deliberate pace for what is essentially a ballad, and the production earns that tension, starting sparse and intimate before the chorus opens up with layered harmonies that feel genuinely earned rather than applied. The bridge, 'to lose and lose and still not leave the world entirely to someone else,' is where Rose lands his argument, and he lands it without flinching. This is the kind of song John Prine would have understood immediately: plain-spoken, specific, and quietly devastating in the best way. After everything this album asks of you, it is exactly the right place to stop.",
+      "model": "claude-sonnet-4-6"
+    }
+  ]
+}

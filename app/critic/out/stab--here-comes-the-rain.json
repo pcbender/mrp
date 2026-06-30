@@ -1,0 +1,104 @@
+{
+  "track_id": "stab--here-comes-the-rain",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Here Comes the Rain - STAB.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--here-comes-the-rain.opus"
+  },
+  "lyrics": "Cracked ground, open sky\nWaited years for a reason why\nDry roots, empty hands\nStill I stood on the endless sand\n\nThen the wind turned soft and strange\nSmell of hope on the edge of change\n\nHere comes the rain - no intention at all\nI open my arms and hope for the fall\nCould wash me clean or carry me far\nOr just show me what you really are\nHere comes the rain - I won't run this time\nI'll face what falls and call it mine\n\nClouds swell in the rising dust\nOld thoughts buried start to rust\nTruth comes slow as the flood begins\nIt doesn't ask - it just rushes in\n\nAnd every drop a choice I make\nTo build again or let it break\n\nHere comes the rain - no intention at all\nNo promise to rise, no warning call\nCould drown the past or be a spark\nOf something growing in the dark\nHere comes the rain - I'll let it fall\nWhatever it brings, I'll take it all\n\nIt's not the rain that writes the tale\nIt's what I think of storm and hail\nNot what it takes, but what remains\nNot what it breaks, but what sustains\n\nHere comes the rain - no intention at all\nNo curse, no crown, no rise, no fall\nCould wash me clean or leave a scar\nEither way, I've come this far\nHere comes the rain - I'm still here\nAnd every drop is crystal clear\n\nHere comes the rain - no intention at all",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "A",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 218.76,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.35,
+        "label": "S1"
+      },
+      {
+        "start": 2.35,
+        "end": 19.74,
+        "label": "S2"
+      },
+      {
+        "start": 19.74,
+        "end": 35.02,
+        "label": "S3"
+      },
+      {
+        "start": 35.02,
+        "end": 79.83,
+        "label": "S4"
+      },
+      {
+        "start": 79.83,
+        "end": 97.85,
+        "label": "S5"
+      },
+      {
+        "start": 97.85,
+        "end": 148.82,
+        "label": "S6"
+      },
+      {
+        "start": 148.82,
+        "end": 202.97,
+        "label": "S7"
+      },
+      {
+        "start": 202.97,
+        "end": 218.76,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.962,
+      "key": 0.851
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an atmosphere of determined, anthemic rock, balancing a feeling of weary resilience in the verses with powerful hope in the choruses. The energy builds dynamically from a steady, driving feel into an explosive, wide-open chorus, creating a powerful sense of emotional release. The production is polished and spacious, with clean, upfront female vocals sitting comfortably atop a dense wall of layered guitars and a punchy, centered rhythm section. A defining quality of the track is the powerful transition into the chorus at 0:46, where the arrangement swells to create a stadium-sized hook that perfectly captures the song's theme of facing a challenge head-on.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Written in waltz time at a measured 107 bpm, 'Here Comes the Rain' is the kind of song that earns its big moment by making you wait for it. The verses sit in dry, sparse A minor, STAB's voice steady and unadorned over a restrained arrangement, so when the chorus swells at that first drop, the release genuinely lands. The lyric does the heavy lifting without overselling it: 'Could wash me clean or carry me far / Or just show me what you really are' is the sort of line that sounds simple until you realize you've been thinking about it all day. This is STAB working in a more reflective register than usual, closer to early Sheryl Crow than The Runaways, and she pulls it off with enough conviction to make the stadium-sized production feel earned rather than borrowed.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 waltz time",
+      "107 bpm",
+      "A minor key",
+      "chorus entry and arrangement swell",
+      "quoted lyric: 'Could wash me clean or carry me far / Or just show me what you really are'",
+      "comparison to early Sheryl Crow"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

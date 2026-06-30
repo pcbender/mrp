@@ -1,0 +1,118 @@
+{
+  "track_id": "lingua-aeternum--one-day",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/One Day - Lingua Aeternum.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--one-day.opus"
+  },
+  "lyrics": "I dreamed in chords and scribbled lines\nMy voice too loud, my rhymes too blind\nBut every note I played was true\nI swore the world would listen too\n\nOne day I whispered\nThey’ll know my songs\n\nI found a job, gave up the flame\nThe melody became a different game\nI packed the life with family stuff\nSaid chasing stars was not enough\n\nOne day she smiled\nYou’ll sing again, just wait\n\nOne day is always waiting\nJust beyond the line\nIt calls from every version\nOf a younger mind\nWe chase, we stall, we carry\nThe spark we can’t define\nTill one day becomes this moment\nAnd the melody aligns\n\nThe mirror shows a softer face\nWith echoes I can’t quite replace\nI hum the song I used to play\nAnd wonder if I lost the way\n\nOne day she promised\nIs it too late\n\nI found it in a blue notebook\nThe lyrics true, the still strong hook\nAnd when I strummed that first refrain\nThe dream returned, just not the same\n\nOne day I smiled\nWas always now\n\nOne day is always waiting\nJust beyond the line\nIt calls from every version\nOf a younger mind\nWe chase, we stall, we carry\nThe spark we can’t define\nOne day IS this moment\nAnd the melody aligns",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 227.5,
+    "lufs": -15.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.49,
+        "label": "S1"
+      },
+      {
+        "start": 1.49,
+        "end": 17.16,
+        "label": "S2"
+      },
+      {
+        "start": 17.16,
+        "end": 32.16,
+        "label": "S3"
+      },
+      {
+        "start": 32.16,
+        "end": 48.65,
+        "label": "S4"
+      },
+      {
+        "start": 48.65,
+        "end": 86.1,
+        "label": "S5"
+      },
+      {
+        "start": 86.1,
+        "end": 110.5,
+        "label": "S6"
+      },
+      {
+        "start": 110.5,
+        "end": 127.57,
+        "label": "S7"
+      },
+      {
+        "start": 127.57,
+        "end": 154.25,
+        "label": "S8"
+      },
+      {
+        "start": 154.25,
+        "end": 173.15,
+        "label": "S9"
+      },
+      {
+        "start": 173.15,
+        "end": 207.89,
+        "label": "S10"
+      },
+      {
+        "start": 207.89,
+        "end": 227.5,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.951,
+      "key": 0.914
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a reflective, slightly melancholic atmosphere, featuring clean, chorus-laden electric guitars and a clear narrative vocal that builds into a full, anthemic rock texture. The energy has a powerful and dramatic arc, starting with a steady, driving feel that swells into forceful, uplifting choruses with distorted guitars and a strong backbeat. The production is polished and spacious, allowing the prominent lead vocal to sit clearly above a dense but well-defined arrangement of layered guitars and a tight rhythm section, creating a wide, stadium-rock sound. A defining moment occurs when the song pulls back to a simple, quiet vocal phrase, creating a stark dynamic contrast before launching back into its most emotionally resonant and intense chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A quiet-to-loud confessional built on a genuinely well-worn truth: the dream doesn't die, it just waits in a blue notebook. The lyric that earns it is the chorus pivot from 'one day IS this moment,' where the shift from future tense to present lands with the kind of weight that makes you feel the whole song was written to earn that single word. At 89 BPM in E major, the track has the unhurried patience of mid-period Tom Petty, and the production earns its stadium ambitions, pulling back to a bare vocal before the final chorus drops with real force. Lingua Aeternum writes from a mythic framework, but this one is bracingly human.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric quote: 'one day IS this moment'",
+      "BPM: 89.1",
+      "Key: E major",
+      "dynamic contrast: bare vocal before final chorus",
+      "comparison: mid-period Tom Petty"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

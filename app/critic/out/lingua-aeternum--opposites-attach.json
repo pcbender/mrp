@@ -1,0 +1,104 @@
+{
+  "track_id": "lingua-aeternum--opposites-attach",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Opposites Attach.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--opposites-attach.opus"
+  },
+  "lyrics": "War and peace\nProfit and poverty\nOpen and closed\nSlave and free\nCovert and overt\nFear and trust\nLoud and still\nAsh and dust\n\nThey don’t collide, they intertwine-\nInto the outer\nOpposites attract in time\n\nLove and hate\nPush and pull\nTender and sharp\nEmpty and full\nSun and shadow\nRise and fall\nSilk and iron\nNothing and all\n\nThey twist, they tangle, never match-\nInto the outer\nBut opposites attract\n\nTruth and lie\nHigh and low\nFast and slow\nYes and no\nOrder and chaos\nKnife and thread\nBreath and silence\nLiving and dead\n\nNot black and white, but every crack-\nInto the outer\nWhere opposites attract\n\nSacred and broken\nFlesh and flame\nKnown and nameless\nPride and shame\nStone and water\nGrace and lack\nWhat pulls apart\nStill circles back\n\nThe tether holds, the lines collapse-\nInto the outer\nWhen opposites attract\n\nInto the outer\nWhen opposites attract",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 257.36,
+    "lufs": -14.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.63,
+        "label": "S1"
+      },
+      {
+        "start": 10.63,
+        "end": 30.16,
+        "label": "S2"
+      },
+      {
+        "start": 30.16,
+        "end": 47.44,
+        "label": "S3"
+      },
+      {
+        "start": 47.44,
+        "end": 80.9,
+        "label": "S4"
+      },
+      {
+        "start": 80.9,
+        "end": 108.55,
+        "label": "S5"
+      },
+      {
+        "start": 108.55,
+        "end": 141.46,
+        "label": "S6"
+      },
+      {
+        "start": 141.46,
+        "end": 156.43,
+        "label": "S7"
+      },
+      {
+        "start": 156.43,
+        "end": 257.36,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.935,
+      "key": 0.91
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a vast, shimmering texture with layers of arpeggiated clean guitars and a wall of distorted power chords, establishing a powerful atmosphere that is both cathartic and emotionally yearning. The energy is consistently high and driving, propelled by a forceful rhythm section that gives the song a full-bodied, anthemic feel. The production is remarkably wide and clear for its density, allowing the various guitar parts and the airy, reverb-soaked vocals to occupy their own distinct space. A defining quality of the track is its explosive, open-sounding choruses, where the music swells into a massive soundscape, providing moments of intense emotional release that anchor the song's journey.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running in 3/4 at a brisk 117 BPM, 'Opposites Attract' finds Lingua Aeternum in full anthem mode: arpeggiated clean guitars build the verse with patience, then the chorus detonates into wide, distorted power chords that genuinely earn the release. The lyric pairs are almost liturgical in their sweep, 'breath and silence, living and dead,' and the waltz feel keeps that catalog of dualities from feeling like a list, giving each line a small, rolling momentum. The production is smart enough to keep the vocal reverb airy even when the guitars are stacked thick, so the climax breathes where a lesser mix would just compress. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "117 BPM",
+      "D major",
+      "arpeggiated clean guitars vs. distorted power chord choruses",
+      "lyric: 'breath and silence, living and dead'",
+      "vocal reverb in dense mix"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

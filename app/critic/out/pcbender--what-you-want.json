@@ -1,0 +1,104 @@
+{
+  "track_id": "pcbender--what-you-want",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/What You Want.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--what-you-want.opus"
+  },
+  "lyrics": "Oh, oh, yeah, yeah, yeah\nWhat you want will come your way\n\nSometimes the road feels long and rough\nAnd every step just ain’t enough\nBut the sun still shines behind the rain\nEvery storm will fade, the joy remains\nLift your head, don’t lose your sight\nWhat you want is within your light\n\nWhat you want, it’ll come in time\nLike the river flows, like the stars align\nDon’t you worry, it will be ok\nWhat you want will come your way\n\nThe world will spin, no matter how\nKeep your faith, just be here now\nThe seeds you plant will one day grow\nThe love you give will always show\nOne step forward, you’re on your way\nWhat you want is here to stay\n\nWhat you want, it’ll come in time\nLike the river flows, like the stars align\nDon’t you worry, it will be ok\nWhat you want will come your way\n\n(Hummed melody, softly sung)\nOh, oh, don’t fear the night\nThe dawn is near, the world’s alright\nTrust the rhythm, trust the flow\nWhat you want, let the feeling grow\n\nWhat you want, it’ll come in time\nLike the river flows, like the stars align\nDon’t you worry, it will be ok\nWhat you want will come your way\n\nOh, oh, yeah, yeah, yeah\nWhat you want will come your way",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "F",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 159.92,
+    "lufs": -15.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 8.38,
+        "label": "S1"
+      },
+      {
+        "start": 8.38,
+        "end": 25.08,
+        "label": "S2"
+      },
+      {
+        "start": 25.08,
+        "end": 55.68,
+        "label": "S3"
+      },
+      {
+        "start": 55.68,
+        "end": 70.84,
+        "label": "S4"
+      },
+      {
+        "start": 70.84,
+        "end": 87.21,
+        "label": "S5"
+      },
+      {
+        "start": 87.21,
+        "end": 107.53,
+        "label": "S6"
+      },
+      {
+        "start": 107.53,
+        "end": 144.66,
+        "label": "S7"
+      },
+      {
+        "start": 144.66,
+        "end": 159.92,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.983
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track features a warm, organic texture led by a strummed acoustic guitar and a sincere male lead vocal, creating an atmosphere that is both hopeful and encouraging. The song has a mid-level energy that builds dynamically, starting with a gentle, reflective verse and swelling into a full-band, driving feel for the anthemic chorus. The production is clean and well-balanced, allowing ample space for the vocals to sit clearly on top of the rhythm section and supporting harmonies without sounding crowded. A defining quality of the track is the powerful transition into the hook at 0:48, where the full arrangement kicks in, solidifying the song's uplifting and motivational message.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz-time anthem in F major that earns its optimism the old-fashioned way: a verse that actually sets something up before the chorus pays it off. The full-band kick at 0:48 lands with the kind of lift you get from early Tom Petty, and lines like 'the seeds you plant will one day grow' stay on the honest side of inspirational without tipping into greeting card. At 2:39 it knows exactly when to leave.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "waltz time (3/4)",
+      "F major",
+      "full-band entrance at 0:48",
+      "quoted lyric: 'the seeds you plant will one day grow'",
+      "duration 2:39",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

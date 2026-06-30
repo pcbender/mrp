@@ -1,0 +1,104 @@
+{
+  "track_id": "pcbender--for-the-love-of-a-woman",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/For The Love Of A Woman.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--for-the-love-of-a-woman.opus"
+  },
+  "lyrics": "\\#Verse\nWhy does the heart start running\nWhen the night is standing still\nWhy does the whisper linger\nWhen you don't know what you feel\nWhy does a memory tremble\nIn a place you've never been\n\\#Pre-chorus\nTell me why the smallest spark\nKeeps turning into flame\n\\#Chorus\nFor the love of a woman\nFor the love of a woman\n\\#Verse\nWhy does a promise break you\nWhen you swore you wouldn't bend\nWhy does a moment haunt you\nLike it's asking you again\nWhy does a simple longing\nFeel like something you can't end\n\\#Pre-chorus\nTell me why the quiet night\nWon't let your heart explain\n\\#Chorus\nFor the love of a woman\nFor the love of a woman\n\\#Verse\nWhy does the road go narrow\nRight when you need it wide\nWhy does the truth go silent\nWhen you're reaching for a sign\nWhy does her name keep rising\nLike a tide you can't divide\n\\#Pre-chorus\nTell me why the ache becomes\nThe thing you can't contain\n\\#Chorus\nFor the love of a woman\nFor the love of a woman",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "F",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 215.75,
+    "lufs": -13.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.51,
+        "label": "S1"
+      },
+      {
+        "start": 2.51,
+        "end": 22.48,
+        "label": "S2"
+      },
+      {
+        "start": 22.48,
+        "end": 42.56,
+        "label": "S3"
+      },
+      {
+        "start": 42.56,
+        "end": 78.81,
+        "label": "S4"
+      },
+      {
+        "start": 78.81,
+        "end": 132.47,
+        "label": "S5"
+      },
+      {
+        "start": 132.47,
+        "end": 159.38,
+        "label": "S6"
+      },
+      {
+        "start": 159.38,
+        "end": 207.63,
+        "label": "S7"
+      },
+      {
+        "start": 207.63,
+        "end": 215.75,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.87
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "emotional",
+      "dark",
+      "tender"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a spacious, searching atmosphere, built upon layered clean and overdriven electric guitars that create a sense of melancholic contemplation. The energy follows a classic rock arc, moving from a steady, thoughtful verse into a powerful, anthemic chorus with soaring, passionate vocals. The production is clean and well-balanced, providing a wide sonic landscape where the punchy drums, solid bass, and distinct guitar parts all sit together cohesively without feeling dense. The defining quality is the powerful emotional release in the chorus, \"For the love of a woman,\" which contrasts effectively with the more restrained verses and is later amplified by a fiery, blues-infused guitar solo.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender keeps the lyric framework deliberately spare, stacking a series of 'why does' questions across three verses until the emotional weight has nowhere to go but the chorus, and the payoff works: 'For the love of a woman' lands with the kind of blunt conviction that early Bad Company made a career out of. The clean-to-overdriven guitar move from verse to chorus is well-timed, and in F minor at a tempo that hits harder than its measured feel suggests, the track carries genuine momentum. A blues-tinged solo in the back half earns its place rather than just filling time.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'For the love of a woman'",
+      "lyric: 'why does' verse structure",
+      "F minor key",
+      "clean-to-overdriven guitar transition",
+      "blues guitar solo placement",
+      "Bad Company comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

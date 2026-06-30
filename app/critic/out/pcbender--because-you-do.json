@@ -1,0 +1,114 @@
+{
+  "track_id": "pcbender--because-you-do",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Because You Do.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--because-you-do.opus"
+  },
+  "lyrics": "No form that draws the cutting hand of time\nOf shadows long and by gone days behind\nThe dearest splay of confidence shattered\nMost sadly lost the things that do not matter\n\nI slipped the coil, made the beggars’ plea\nThat when I ask your charity is free\nI missed the line that’s never drawn in ink\nWhich separates the thing from what I think\n\nI go on though the ending’s always near\nWith cracked beliefs I cradle like they’re clear\nEach dawn I greet with hope I can’t defend-\nA stubborn flame that flickers to pretend\n\nOh, would the stars appear to sketch the night\nBring down the dark within the grasp of light\nAnd sing the tune assembled for the flight\nThat leaves us breathless, longing for what’s right\n\nI’ve seen what all a life can hope to see\nThe helplessness, the lies, the cowardly\nIt is not spite, just what I choose for me\nAnd yet, I know the best is yet to be\n\nI go on though the ending’s always near\nWith cracked beliefs I cradle like they’re clear\nEach dawn I greet with hope I can’t defend-\nA stubborn flame that flickers to pretend\n\nI go on though the ending’s always near\nWith cracked beliefs I cradle like they’re clear\nEach dawn I greet with hope I can’t defend-\nA stubborn flame that flickers to pretend\n\nBecause YOU do\nBecause YOU do",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "F#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 230.5,
+    "lufs": -15.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 21.18,
+        "label": "S1"
+      },
+      {
+        "start": 21.18,
+        "end": 38.59,
+        "label": "S2"
+      },
+      {
+        "start": 38.59,
+        "end": 53.71,
+        "label": "S3"
+      },
+      {
+        "start": 53.71,
+        "end": 74.16,
+        "label": "S4"
+      },
+      {
+        "start": 74.16,
+        "end": 95.16,
+        "label": "S5"
+      },
+      {
+        "start": 95.16,
+        "end": 121.79,
+        "label": "S6"
+      },
+      {
+        "start": 121.79,
+        "end": 139.25,
+        "label": "S7"
+      },
+      {
+        "start": 139.25,
+        "end": 168.37,
+        "label": "S8"
+      },
+      {
+        "start": 168.37,
+        "end": 187.9,
+        "label": "S9"
+      },
+      {
+        "start": 187.9,
+        "end": 230.5,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.958,
+      "key": 0.817
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a vast, melancholic atmosphere, layering clean, atmospheric guitars over a deep, pulsing rhythm section to evoke a sense of contemplative resignation. The energy follows a slow-burning arc, building from quiet, introspective verses into an immense and powerful rock chorus with an anthemic, determined feel. The production is spacious and cinematic, allowing each element to breathe while creating a dense, powerful wall of sound in the climactic sections. A defining quality is the dynamic lift into the chorus, where the song breaks open from its subdued state into a soaring, emotionally charged peak driven by passionate vocals and powerful instrumentation.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The line 'cracked beliefs I cradle like they're clear' is the kind of image that earns its keep, and PCBender builds the whole song around that tension between resignation and stubborn hope, letting the verses sit quietly in F# major before the chorus breaks open into something genuinely anthemic. At 112 BPM the pacing feels deliberate, almost patient, and the production rewards that restraint: the moment the wall of sound arrives, it lands with real weight. The two-word payoff at the end, 'Because YOU do,' is a gutsy simplification after all that lyrical density, and it works.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'cracked beliefs I cradle like they're clear'",
+      "lyric: 'Because YOU do'",
+      "key: F# major",
+      "BPM: 112",
+      "verse-to-chorus dynamic lift",
+      "two-word closing resolution"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

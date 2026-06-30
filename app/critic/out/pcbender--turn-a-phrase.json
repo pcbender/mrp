@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--turn-a-phrase",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Turn a Phrase.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--turn-a-phrase.opus"
+  },
+  "lyrics": "The song I sing is less than meets the eye\nThe words are meant to hear and wonder why\nIf at first you don't get me, then maybe\nIt is better to try again and see\n\nI borrowed lines from fortune cookies' grace\nThen twisted them to hide a second face\nA watched pot sings, a stitch might still delay-\nBut meaning shifts when phrased a certain way\n\nThese lines were bent, not broken\nEach word a clue, not a joke\nIf it catches in your throat-\nThat's the thread I hope you pull\nI turned a phrase, not just to play-\nBut to see what you'd unveil\nWhat stirred inside the sideways way\n(Inquire....) Follow the trail\n\nWe all turn a phrase, we all bend a line\nMake sense of the noise, one slant at a time\nWhat we mean and what we say\nDon't always walk the same way\nSo if a word feels strange, or cuts too close-\nAssume it's meant. Assume it knows\nNot just what's heard-but how it lands\nThe turn is yours to understand\n\nI said \"the truth will out\"-but not for free\nThe house always wins in honesty\nI gave you \"words to live by\"-on a lease\nAnd when you broke them, I just called it peace\n\nThese lines were bent, not broken\nEach word a clue, not a joke\nIf it catches in your throat-\nThat's the thread I hope you pull\nI turned a phrase, not just to play-\nBut to see what you'd unveil\nWhat stirred inside the sideways way\n(Inquire....) Follow the trail\n\nWe all turn a phrase, we all bend a line\nMake sense of the noise, one slant at a time\nWhat we mean and what we say\nDon't always walk the same way\nSo if a word feels strange, or cuts too close-\nAssume it's meant. Assume it knows\nNot just what's heard-but how it lands\nThe turn is yours to understand\n\nA whispered line can crack a kingdom's crown\nA chorus born in silence shakes the ground\nThe softest word can set the world ablaze-\nIf turned just right, a phrase becomes a wave\n\nThese lines were bent, not broken\nEach word a clue, not a joke\nIf it catches in your throat-\nThat's the thread I hope you pull\nI turned a phrase, not just to play-\nBut to see what you'd unveil\nWhat stirred inside the sideways way\n(Inquire....) Follow the trail\n\nWe all turn a phrase, we all bend a line\nMake sense of the noise, one slant at a time\nWhat we mean and what we say\nDon't always walk the same way\nSo if a word feels strange, or cuts too close-\nAssume it's meant. Assume it knows\nNot just what's heard-but how it lands\nThe turn is yours to understand\n\nThe meaning's not in what I said\nBut what you felt, and what it fed\nThe turn was never mine alone-\nYou brought the meaning all your own\n\nWe all turn a phrase, we all bend a line\nMake sense of the noise, one slant at a time\nWhat we mean and what we say\nDon't always walk the same way\nSo if a word feels strange, or cuts too close-\nAssume it's meant. Assume it knows\nNot just what's heard-but how it lands\nThe turn is yours to understand",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 103.4,
+    "key": "D#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 308.32,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.83,
+        "label": "S1"
+      },
+      {
+        "start": 1.83,
+        "end": 23.71,
+        "label": "S2"
+      },
+      {
+        "start": 23.71,
+        "end": 43.7,
+        "label": "S3"
+      },
+      {
+        "start": 43.7,
+        "end": 61.07,
+        "label": "S4"
+      },
+      {
+        "start": 61.07,
+        "end": 119.4,
+        "label": "S5"
+      },
+      {
+        "start": 119.4,
+        "end": 136.72,
+        "label": "S6"
+      },
+      {
+        "start": 136.72,
+        "end": 185.2,
+        "label": "S7"
+      },
+      {
+        "start": 185.2,
+        "end": 210.37,
+        "label": "S8"
+      },
+      {
+        "start": 210.37,
+        "end": 227.11,
+        "label": "S9"
+      },
+      {
+        "start": 227.11,
+        "end": 273.28,
+        "label": "S10"
+      },
+      {
+        "start": 273.28,
+        "end": 308.32,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.895
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a clever and thoughtful atmosphere, built on a tight, funky rhythm section and articulate, narrative-driven lead vocals. The energy is consistently upbeat, creating a feel that is both danceable and intellectually engaging, reminiscent of sophisticated pop-rock with a touch of jazz. The production is pristine and spacious, allowing the crisp guitars, punchy bass, and layered backing vocals to coexist clearly without ever sounding dense. A defining quality is the powerful chorus lift, where the harmony expands and the delivery becomes more anthemic, solidifying the song's central, memorable hook about altering phrases.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always had a knack for making a concept song feel inevitable rather than clever, and 'Turn a Phrase' is one of his better arguments for that. The lyric 'the truth will out, but not for free' lands like a good line should, casual on the surface and a little stinging once it settles, and the chorus lifts cleanly, the harmonies opening up just enough to give the hook room to breathe without tipping into bombast. At 103 BPM in D# minor the track keeps a groove that sits somewhere between Steely Dan's tighter mid-period work and John Hiatt at his most conversational, funky enough to move but never too slick to trust. The five-minute runtime earns itself; each return to the chorus feels like a slightly different read on the same material, which is exactly what the song is arguing for.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'the truth will out, but not for free'",
+      "BPM: 103.4",
+      "key: D# minor",
+      "chorus lift and harmony expansion",
+      "Steely Dan and John Hiatt comparisons",
+      "5:08 runtime"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

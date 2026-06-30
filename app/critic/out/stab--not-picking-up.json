@@ -1,0 +1,113 @@
+{
+  "track_id": "stab--not-picking-up",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Not Picking Up.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--not-picking-up.opus"
+  },
+  "lyrics": "(One. Two. One. Two.)\n\nI'm drawing a line around where I stand\nI'm taking back the hours and the work of my hands\nIt's okay if they wonder, it's okay if they ask\nI'm busy with a much more important task\n(like what?)\nLike learning to be here, in this chair, in this room\nWithout letting the whole world inside to consume\n\nThe door is shut tight and the windows are clear\nThere's nothing coming in that I don't want in here\nI'm reclaiming the quiet, I'm claiming the throne\nI'm not picking up the phone\n\nI'm making a space where the walls can just be\nWhere the only opinion that matters is me\nIt's not being lonely, it's being alone\nAnd I'm finally building a world of my own\n(my world)\n(my time)\nI'm drawing a map of the peace I can find\n\nThe door is shut tight and the windows are clear\nThere's nothing coming in that I don't want in here\nI'm reclaiming the quiet, I'm claiming the throne\nI'm not picking up the phone\n\n(Solid)\n(Square)\n(I'm actually here)\nI don't need the noise to know that I'm alive\nI don't need the signal to help me survive\n\nThe door is shut tight and the windows are clear\nThere's nothing coming in that I don't want in here\nI'm reclaiming the quiet, I'm claiming the throne\nI'm not picking up the phone\n\n(Not picking up)\n(I'm not there)\n(I'm not picking up the phone)",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 215.98,
+    "lufs": -13.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 0.35,
+        "label": "S1"
+      },
+      {
+        "start": 0.35,
+        "end": 17.11,
+        "label": "S2"
+      },
+      {
+        "start": 17.11,
+        "end": 33.25,
+        "label": "S3"
+      },
+      {
+        "start": 33.25,
+        "end": 49.04,
+        "label": "S4"
+      },
+      {
+        "start": 49.04,
+        "end": 70.19,
+        "label": "S5"
+      },
+      {
+        "start": 70.19,
+        "end": 94.81,
+        "label": "S6"
+      },
+      {
+        "start": 94.81,
+        "end": 122.49,
+        "label": "S7"
+      },
+      {
+        "start": 122.49,
+        "end": 171.71,
+        "label": "S8"
+      },
+      {
+        "start": 171.71,
+        "end": 195.23,
+        "label": "S9"
+      },
+      {
+        "start": 195.23,
+        "end": 215.98,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.905
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "lead vocals"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This pop-rock track establishes an empowering and defiant atmosphere, driven by a clean, twangy electric guitar riff and a confident female vocal performance. The energy is consistently upbeat and anthemic, building from controlled verses into a powerful, declarative chorus that feels like a personal manifesto. The production is modern and polished, featuring a vocal-forward mix where tight drums and a solid bass foundation create a clean, spacious arrangement for the guitars and layered vocals to shine. A surprisingly virtuosic and fiery guitar solo erupts after the second chorus, providing a moment of intense rock climax that defines the track's assertive character and instrumental prowess.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in B minor, STAB turns the simple act of not answering the phone into a full-throated declaration of selfhood, and the hook earns every bit of that ambition. The chorus line 'I'm reclaiming the quiet, I'm claiming the throne' lands with the same clean defiance you get from early Go-Go's, and the production keeps the arrangement open enough that the vocal does the heavy lifting it deserves. The guitar solo that erupts after the second chorus is the surprise: genuinely fiery, not decorative, the kind of moment that reframes everything around it. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152",
+      "B minor",
+      "chorus lyric: 'I'm reclaiming the quiet, I'm claiming the throne'",
+      "guitar solo placement after second chorus",
+      "vocal-forward production noted in audio impression"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

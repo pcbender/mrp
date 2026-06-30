@@ -1,0 +1,130 @@
+{
+  "track_id": "stab--raven-dark",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Raven Dark.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--raven-dark.opus"
+  },
+  "lyrics": "Raven Dark was of the One\nShe created herself to know the Other\n\nShe dreamed dimensions into being\nso the Other could exist\nShe cried and sparked vibration\ninto the silence\nShe forged the dust\nwith the force of her wings\n\nAnd she waited\n\nI see... (Raven Dark)\nI hear... (Raven Dark)\nI feel... (Raven Dark)\n\nWe sing... (Raven Dark)\nWe call... (Raven Dark)\nWe love... (Raven Dark)\n\nRaven Dark grew hungry\nfor experience\nShe plucked a feather from her tail\nand with her oldest voice\nsang life into the dust\nRaven Dark longed\nfor her song to be heard\nShe brought forth the first people\nso they could listen and love\n\nAnd she guides them still\n\nI see... (Raven Dark)\nI hear... (Raven Dark)\nI feel... (Raven Dark)\n\nWe sing... (Raven Dark)\nWe call... (Raven Dark)\nWe love... (Raven Dark)\n\nI see... (Raven Dark)\nI hear... (Raven Dark)\nI feel... (Raven Dark)\n\nWe sing... (Raven Dark)\nWe call... (Raven Dark)\nWe love... (Raven Dark)\n\nAnd she guides\nAnd she waits",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 273.91,
+    "lufs": -13.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.21,
+        "label": "S1"
+      },
+      {
+        "start": 13.21,
+        "end": 33.81,
+        "label": "S2"
+      },
+      {
+        "start": 33.81,
+        "end": 56.98,
+        "label": "S3"
+      },
+      {
+        "start": 56.98,
+        "end": 77.37,
+        "label": "S4"
+      },
+      {
+        "start": 77.37,
+        "end": 96.2,
+        "label": "S5"
+      },
+      {
+        "start": 96.2,
+        "end": 123.81,
+        "label": "S6"
+      },
+      {
+        "start": 123.81,
+        "end": 143.48,
+        "label": "S7"
+      },
+      {
+        "start": 143.48,
+        "end": 172.8,
+        "label": "S8"
+      },
+      {
+        "start": 172.8,
+        "end": 190.01,
+        "label": "S9"
+      },
+      {
+        "start": 190.01,
+        "end": 220.64,
+        "label": "S10"
+      },
+      {
+        "start": 220.64,
+        "end": 250.5,
+        "label": "S11"
+      },
+      {
+        "start": 250.5,
+        "end": 265.82,
+        "label": "S12"
+      },
+      {
+        "start": 265.82,
+        "end": 273.91,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.874
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "electronic",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "synthesizer",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a dark and mystical atmosphere, opening with a spacious, ethereal texture of spoken word and ambient synths before exploding into a high-energy, driving industrial rock feel. The production is modern and powerful, skillfully balancing wide, atmospheric synth layers with a dense, focused core of punchy drums, heavy guitars, and a clear, soaring female vocal. The most defining quality is the stark dynamic contrast, perfectly exemplified by the abrupt transition at 0:26 where the song’s initial calm is shattered by the full band’s powerful entry. A highly technical and melodic guitar solo section later provides a moment of impressive instrumental focus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "STAB reaches for something genuinely ambitious here, building a creation myth around a raven goddess in G minor at a mid-tempo 96 BPM, and the production earns the mythology: that cold-open of ambient synths and spoken word shatters into full-band impact around the 26-second mark with real conviction, the kind of dynamic gut-punch that Evanescence used to pull off on their best days. The call-and-response chorus, 'I see / I hear / I feel' answered by the chanted name, locks in a ritualistic groove that grows with each pass. The guitar solo section gives the track its beating heart, and the lyric 'she plucked a feather from her tail / and with her oldest voice / sang life into the dust' is quietly beautiful. A highlight, and proof STAB has more range than the pure rock-anthem mode suggests.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "G minor key",
+      "95.7 BPM",
+      "dynamic break at 0:26",
+      "call-and-response chorus structure",
+      "quoted lyric: 'she plucked a feather from her tail / and with her oldest voice / sang life into the dust'",
+      "guitar solo section",
+      "Evanescence comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}
