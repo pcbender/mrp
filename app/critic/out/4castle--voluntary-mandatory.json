@@ -1,0 +1,104 @@
+{
+  "track_id": "4castle--voluntary-mandatory",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Voluntary Mandatory.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--voluntary-mandatory.opus"
+  },
+  "lyrics": "Inbox ping, a cheerful tone\n\"Your voice will help us feel like home\\!\"\nFive quick questions, one to ten\n\"How valued do you feel again?\"\n\nAnonymous (your name's still there)\nBut \"please be honest” (if you dare)\n\nIt's voluntary mandatory\nDon't speak your mind-just tell the story\nClick the box that says you're proud\nThen smile and nod along out loud\nYour silence speaks. Your numbers track\nYou're safe to speak... but not to crack\n\nO-K-Rs and colored graphs\nThe kindness chart, the lunchroom laughs\nN-P-S at 84\nBut smiles don't live here anymore\nSelf E Val due by end of day\n\"What have you learned? What gets in your way?\"\n\nVolunteer service (mandatory grace)\nJust wear the shirt (there’s no escape)\n\nIt's voluntary mandatory\nWe need your voice-in inventory\nRate your purpose. Score your mind\nThen nod and check \"I feel aligned\"\nYou're free to share. We value tone\nYou're never quite alone\n\n\"Thanks for your honesty\\!\"\n\"Please elaborate on your lack of resilience.\"\n\"On a scale of 1 to 10, how aligned are you with the vision?\"\n\n“Explain your recent dip in engagement.\"\n\"And why is your productivity off?\" (This is a safe space)\n\nIt used to be we did our job\nBuilt things strong, no need to fawn\nBut now it's charts and silent war\nWhat matters now is keeping score\nThey don't need hands\nThey don't need will\nJust someone who can smile and fill\nThe boxes right, the circles clean\nA metric pings\nA face unseen",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "D#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 196.88,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 14.19,
+        "label": "S1"
+      },
+      {
+        "start": 14.19,
+        "end": 34.74,
+        "label": "S2"
+      },
+      {
+        "start": 34.74,
+        "end": 55.26,
+        "label": "S3"
+      },
+      {
+        "start": 55.26,
+        "end": 70.45,
+        "label": "S4"
+      },
+      {
+        "start": 70.45,
+        "end": 93.32,
+        "label": "S5"
+      },
+      {
+        "start": 93.32,
+        "end": 143.73,
+        "label": "S6"
+      },
+      {
+        "start": 143.73,
+        "end": 173.55,
+        "label": "S7"
+      },
+      {
+        "start": 173.55,
+        "end": 196.88,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.808
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This satirical indie-pop anthem pairs bouncy, synth-driven textures with a cynical yet deceptively cheerful corporate-themed emotional atmosphere. It carries a medium-high energy level, propelled by a snappy electronic drum beat and playful claps that give the track a theatrical, musical-like feel. The production is incredibly polished and clean, starting with a sparse arrangement before building in density with lush vocal harmonies and bright keyboard layers that still leave plenty of headroom. A notable moment is the spoken-word breakdown in the middle, where hushed voices ask corporate survey questions over a stripped-back beat, effectively contrasting the song's vibrant and satirical tone.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The genius of 'Voluntary Mandatory' is how cheerful it stays while gutting the modern workplace: at a brisk 161 BPM in bright D# major, those stacked harmonies and claps sound like an HR onboarding video that slowly curdles. The hook lands the thesis cold, 'Click the box that says you're proud / Then smile and nod along out loud,' and the spoken-word breakdown in the middle, where hushed voices ask 'Please elaborate on your lack of resilience' over a stripped-back beat, is the song's sharpest stroke. It's closer to Randy Newman's satirical streak than anything on the band's prog side, and the polish never undercuts the bite. A highlight, and proof they can write a hook that thinks.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "161.5 BPM",
+      "D# major",
+      "Click the box that says you're proud / Then smile and nod along out loud",
+      "spoken-word breakdown",
+      "Please elaborate on your lack of resilience",
+      "vocal harmonies and claps"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

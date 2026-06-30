@@ -1,0 +1,115 @@
+{
+  "track_id": "4castle--vision-values",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Vision & Values.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--vision-values.opus"
+  },
+  "lyrics": "At The Bend, we believe in vision. We believe in values\n\nBelieve… Achieve… Succeed…\n\nOur vision's bold, our purpose pure\nWe lead with light, our hearts are sure\nA world transformed, a better way-\nLet's innovate our truth today\n\nVision and values, strong and bright\nGuiding every PowerPoint slide\nChange the words, but not the game-\nTomorrow’s truth is yesterday’s lie…\nRe - framed\n\nA man worked here who lived those creeds\nGave all he had, met all our needs\nHis photo proud in “values week”-\nBy Friday night, they’d cleared his seat\n\nVision and values, strong and bright\nGuiding every PowerPoint slide\nChange the words, but not the game-\nTomorrow’s truth is yesterday’s lie…\nRe - framed\n\n(Is it real?) \"Doesn't have to be.\"\n(Will it land?) \"If the market believes.\"\n(Our values true?\") \"They're aligned with our K-P-I’s.\"\n\nVision and values, strong and bright\nGuiding every PowerPoint slide\nChange the words, but not the game-\nTomorrow’s truth is yesterday’s lie…\nRe - framed\n\nYou can't build culture\nfrom slogans and stock prices\nYou build it from how people\ntreat each other\nwhen no one's watching\n\nBut no one's watching anymore\nJust counting\n\nIt’s about the people…\nIt’s about the people…",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "F#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 216.0,
+    "lufs": -15.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 12.96,
+        "label": "S1"
+      },
+      {
+        "start": 12.96,
+        "end": 48.55,
+        "label": "S2"
+      },
+      {
+        "start": 48.55,
+        "end": 73.56,
+        "label": "S3"
+      },
+      {
+        "start": 73.56,
+        "end": 90.09,
+        "label": "S4"
+      },
+      {
+        "start": 90.09,
+        "end": 106.37,
+        "label": "S5"
+      },
+      {
+        "start": 106.37,
+        "end": 134.44,
+        "label": "S6"
+      },
+      {
+        "start": 134.44,
+        "end": 179.84,
+        "label": "S7"
+      },
+      {
+        "start": 179.84,
+        "end": 195.09,
+        "label": "S8"
+      },
+      {
+        "start": 195.09,
+        "end": 213.18,
+        "label": "S9"
+      },
+      {
+        "start": 213.18,
+        "end": 216.0,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.963,
+      "key": 0.892
+    }
+  },
+  "tags": {
+    "genre": [
+      "soul",
+      "pop rock",
+      "pop"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "The track presents a polished, anthemic synth-pop texture that creates an ironic, mock-inspirational atmosphere, blending soaring choral harmonies with cynical corporate satire. The energy level is moderately high and driving, propelled by a steady electronic beat and bright, optimistic synth lines that contrast sharply with the bleakly humorous lyrics. The production is clean and spacious, with a dense layer of gospel-style vocals sitting crisply on top of the electronic elements, mimicking the high-budget feel of a corporate promo video. A defining feature of the piece is this stark juxtaposition: the glorious, uplifting musical delivery perfectly parodies the artificial enthusiasm of corporate culture.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The joke here is that the music never winks: at a bright 143 BPM in F# major, those gospel-style harmonies soar in total earnest while the lyrics gut the corporate playbook they're celebrating. \"Vision and values, strong and bright / Guiding every PowerPoint slide\" is the kind of couplet that earns a real laugh, and the call-and-response bridge (\"Our values true?\" / \"They're aligned with our K-P-I's\") lands the satire cold. Best of all is the late turn when the arrangement drops out and the cynicism gives way to something genuine: \"You build it from how people treat each other when no one's watching.\" That tonal pivot, anthem to ache, is what makes this more than a novelty. A highlight, and a smarter one than its glossy surface lets on.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "143 BPM",
+      "F# major",
+      "Vision and values, strong and bright / Guiding every PowerPoint slide",
+      "Our values true? / They're aligned with our K-P-I's",
+      "You build it from how people treat each other when no one's watching",
+      "gospel-style harmonies",
+      "arrangement drop-out late turn"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

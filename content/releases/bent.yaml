@@ -37,7 +37,7 @@ release:
     isrc: CAGOO2558703
     duration: '4:59'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--mr-mckay.mp3
     links:
       apple_music: https://music.apple.com/us/album/mr-mckay/1816826240?i=1816826241
       youtube: https://www.youtube.com/watch?v=WugupYbT7_Y
@@ -159,7 +159,7 @@ release:
     isrc: CAGOO2558704
     duration: '4:02'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--the-bend.mp3
     links:
       apple_music: https://music.apple.com/us/album/the-bend/1816826240?i=1816826242
       youtube: https://www.youtube.com/watch?v=4hoiO6pgJKY
@@ -275,7 +275,7 @@ release:
     isrc: CAGOO2558715
     duration: '4:50'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--below-the-line.mp3
     links:
       apple_music: https://music.apple.com/us/album/below-the-line/1816826240?i=1816826243
       youtube: https://www.youtube.com/watch?v=mjBFbnIJ5Gs
@@ -421,7 +421,7 @@ release:
     isrc: CAGOO2558705
     duration: '3:55'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--friedmans-folly.mp3
     links:
       apple_music: https://music.apple.com/us/album/friedmans-folly/1816826240?i=1816826244
       youtube: https://www.youtube.com/watch?v=_JAelMj8x1w
@@ -512,7 +512,7 @@ release:
     isrc: CAGOO2558706
     duration: '4:07'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--authenticity-factory.mp3
     links:
       apple_music: https://music.apple.com/us/album/authenticity-factory/1816826240?i=1816826245
       youtube: https://www.youtube.com/watch?v=XJtVY8thCTA
@@ -611,7 +611,7 @@ release:
     isrc: CAGOO2558707
     duration: '3:17'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--voluntary-mandatory.mp3
     links:
       apple_music: https://music.apple.com/us/album/voluntary-mandatory/1816826240?i=1816826246
       youtube: https://www.youtube.com/watch?v=cMft9enCaFw
@@ -714,7 +714,7 @@ release:
     isrc: CAGOO2558708
     duration: '4:13'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--all-change-is-painful.mp3
     links:
       apple_music: https://music.apple.com/us/album/all-change-is-painful/1816826240?i=1816826247
       youtube: https://www.youtube.com/watch?v=Kc-EJ9C5ywY
@@ -829,7 +829,7 @@ release:
     isrc: CAGOO2558709
     duration: '5:33'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--human-capital.mp3
     links:
       apple_music: https://music.apple.com/us/album/human-capital/1816826240?i=1816826248
       youtube: https://www.youtube.com/watch?v=R-1yL0bdKJI
@@ -1012,7 +1012,7 @@ release:
     isrc: CAGOO2558710
     duration: '4:25'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--cracks-in-the-culture-deck.mp3
     links:
       apple_music: https://music.apple.com/us/album/cracks-in-the-culture-deck/1816826240?i=1816826249
       youtube: https://www.youtube.com/watch?v=mtdScNvhy2g
@@ -1113,7 +1113,7 @@ release:
     isrc: CAGOO2558711
     duration: '3:36'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--vision-values.mp3
     links:
       apple_music: https://music.apple.com/us/album/vision-values/1816826240?i=1816826340
       youtube: https://www.youtube.com/watch?v=X9JXczCIZ58
@@ -1210,7 +1210,7 @@ release:
     isrc: CAGOO2558712
     duration: '3:48'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--stock-price-jesus.mp3
     links:
       apple_music: https://music.apple.com/us/album/stock-price-jesus/1816826240?i=1816826341
       youtube: https://www.youtube.com/watch?v=-mMKWqHiwCk
@@ -1305,7 +1305,7 @@ release:
     isrc: CAGOO2558713
     duration: '4:10'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/4castle--at-what-cost.mp3
     links:
       apple_music: https://music.apple.com/us/album/at-what-cost/1816826240?i=1816826342
       youtube: https://www.youtube.com/watch?v=93TcQh6FTDQ
@@ -1423,7 +1423,7 @@ release:
     isrc: CAGOO2558714
     duration: '3:41'
     explicit: true
-    preview_audio: null
+    preview_audio: /samples/4castle--nightmares-return.mp3
     links:
       apple_music: https://music.apple.com/us/album/nightmares-return/1816826240?i=1816826343
       youtube: https://www.youtube.com/watch?v=Hkx6pTTSgXI

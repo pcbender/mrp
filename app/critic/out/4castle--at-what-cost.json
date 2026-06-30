@@ -1,0 +1,124 @@
+{
+  "track_id": "4castle--at-what-cost",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/At What Cost.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--at-what-cost.opus"
+  },
+  "lyrics": "Name's Bentley\nMost call me Bent\nWorked here since the floor was poured\nThey used to say we were a family\nThen a team\nThen just... The Bent\nGuess that stuck\n\nThirty-six years on this stretch of floor\nI've fixed this gate, this lock, that door\nI watched them come. I watched them go\nI swept the ruins of what we'd known\nThey called it progress. They changed the sign\nSaid \"We bend the future.\"-well, so did I\n\nWe hit the targets. We met the mark\nThey lit the fuse and praised the spark\nThey took their cut. We bore the cost\nAnd now I'm left to weigh what's lost\nI ask aloud, to ghost and frost-\nWe played the game... but at what cost\n\nI knew their names, before the scans\nBefore the charts replaced our hands\nWe hung our coats on numbered racks\nWe cheered when Mary's boy came back\nAnd every year, the list grew thin\nThey paved the lot and painted \"WIN\"\n\nWe hit the targets. We met the mark\nThey lit the fuse and praised the spark\nThey took their cut. We bore the cost\nAnd now I'm left to weigh what's lost\nI ask aloud, to ghost and frost-\nWe played the game... but at what cost\n\nThey got their growth\nThey rang that bell\nThey sold their lies\nAnd still slept well\nI locked the gates\nThe wind blew through\nAnd I remember what they won't do\n\nWe bend, we broke, we gave, we stayed\nWe traded time the rich repaid\nThey walked away when lines were crossed\nAnd left us holding all that's lost\nSo I sign off. I drop the key\nThe lights go dark behind me\nThe Bent remember what they lost-\nThey say it's paid\nBut at what cost\n\nAt what cost\nAt what cost",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "C#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 250.4,
+    "lufs": -16.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 22.22,
+        "label": "S1"
+      },
+      {
+        "start": 22.22,
+        "end": 58.7,
+        "label": "S2"
+      },
+      {
+        "start": 58.7,
+        "end": 75.44,
+        "label": "S3"
+      },
+      {
+        "start": 75.44,
+        "end": 96.99,
+        "label": "S4"
+      },
+      {
+        "start": 96.99,
+        "end": 117.89,
+        "label": "S5"
+      },
+      {
+        "start": 117.89,
+        "end": 151.05,
+        "label": "S6"
+      },
+      {
+        "start": 151.05,
+        "end": 169.55,
+        "label": "S7"
+      },
+      {
+        "start": 169.55,
+        "end": 185.6,
+        "label": "S8"
+      },
+      {
+        "start": 185.6,
+        "end": 202.71,
+        "label": "S9"
+      },
+      {
+        "start": 202.71,
+        "end": 220.57,
+        "label": "S10"
+      },
+      {
+        "start": 220.57,
+        "end": 238.17,
+        "label": "S11"
+      },
+      {
+        "start": 238.17,
+        "end": 250.4,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.935,
+      "key": 0.922
+    }
+  },
+  "tags": {
+    "genre": [
+      "soul",
+      "electronic",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "bass guitar",
+      "electric guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "The track opens with an intimate, melancholic atmosphere, featuring a sparse piano and a raw, narrative-driven vocal that establishes a deeply somber and reflective mood. It beautifully builds into a grand, theatrical ballad, driven by rich vocal harmonies, sweeping instrumentation, and a steady, dramatic rhythm that elevates the energy to an operatic, tragic climax. The production quality is highly polished, expertly balancing the space between dry, close-up verses and a dense, lushly reverberant chorus that fills the stereo field. A particularly striking feature is the sudden transition into the multi-layered vocal chorus, which acts as a powerful emotional release that defines the song's cinematic storytelling.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "This is 4Castle at their most patient. The song opens nearly bare, a spoken-feeling vocal and sparse piano introducing Bentley, the lifer who watched 'the floor was poured' and stayed thirty-six years, and it earns its slow burn into that big harmonized chorus around the minute mark. The hook does real work: 'They took their cut. We bore the cost' lands with the plainspoken weight of a Springsteen factory song, and the C# major brightness underneath the bitterness gives the whole thing a stubborn dignity rather than just gloom. The final turn, 'So I sign off. I drop the key,' is the kind of small gesture that says more than a guitar solo would, and the band is smart enough to let it. A highlight, and one of their most affecting story-songs.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "the floor was poured",
+      "They took their cut. We bore the cost",
+      "So I sign off. I drop the key",
+      "C# major",
+      "sparse piano open building to harmonized chorus",
+      "107.7 BPM slow burn"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

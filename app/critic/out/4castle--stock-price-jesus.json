@@ -1,0 +1,108 @@
+{
+  "track_id": "4castle--stock-price-jesus",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Stock Price Jesus.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--stock-price-jesus.opus"
+  },
+  "lyrics": "\"We did it\\! Stock price is at an all-time high.\"\n\"Our valuation reflects our vision.\"\n\nHe came with words like fire and flame\nSaid \"Sacrifice is part of the game.\"\nHe fed the Board on future dreams\nAnd turned our labor into schemes\n\n\"The Bend announces sweeping layoffs amid record market performance…\"\n\nAll rise for Stock Price Jesus\nHe walks on spreadsheets, multiplies believers\nHe bled our balance, numbered our days\nAnd left before the final phase\n\nDirk stood proud as the numbers soared\nHe thought their trust would be restored\nBut when the factories closed their doors\nMcKay ignored his frantic calls\n\n\"Unemployment hits small towns again as Wall Street soars…\"\n\nAll rise for Stock Price Jesus\nHe walks on spreadsheets, multiplies believers\nHe bled our cash, numbered our days\nAnd left The Bend ablaze\n\n(\"Productivity”) - Down\n(\"Morale”) - Shattered\n(\"Quality”) - Destroyed\n(\"Workforce”) - Gone\n(\"Sales”) - Gone\n(\"The Bend”) - broke\n\n\"Disruption isn't easy. But it's necessary.\"\n\"I've been approached by an exciting young tech firm…\"\n\"This next chapter… is going to change everything.\"\n\nAll praise to Stock Price Jesus\nHe came, he rose, he fleeced us\nAnother mark, another town-\nAnother company burning down\n\nHe will rise…\nEvery time…\nStock Price … Jesus…",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 69.8,
+    "key": "C#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 227.8,
+    "lufs": -15.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.38,
+        "label": "S1"
+      },
+      {
+        "start": 10.38,
+        "end": 30.84,
+        "label": "S2"
+      },
+      {
+        "start": 30.84,
+        "end": 56.4,
+        "label": "S3"
+      },
+      {
+        "start": 56.4,
+        "end": 98.41,
+        "label": "S4"
+      },
+      {
+        "start": 98.41,
+        "end": 116.91,
+        "label": "S5"
+      },
+      {
+        "start": 116.91,
+        "end": 149.68,
+        "label": "S6"
+      },
+      {
+        "start": 149.68,
+        "end": 172.2,
+        "label": "S7"
+      },
+      {
+        "start": 172.2,
+        "end": 187.29,
+        "label": "S8"
+      },
+      {
+        "start": 187.29,
+        "end": 227.8,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.948,
+      "key": 0.945
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This dramatic synth-pop power ballad blends theatrical storytelling with a lush, melancholic atmosphere, driven by rich keyboard pads and soaring vocal harmonies. The track maintains a steady, anthemic energy that builds gradually, channeling a mock-epic grandeur that feels both celebratory and tinged with corporate cynicism. The production is clean and spacious, allowing the prominent lead vocals to command the center of the mix while punchy drums and layered synths fill the stereo field without becoming overcrowded. A particularly striking transition occurs during the late-track spoken-word interlude, which strips away the melodic instrumentation before launching into a powerful, climatic final chorus featuring high-register vocal belts.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "4Castle turns a corporate satire into a slow-burning power ballad, and the conceit holds because they commit to it: \"He walks on spreadsheets, multiplies believers\" is the kind of line that earns its grandeur instead of winking at it. At a patient 70 BPM in C# major, the track builds with the mock-gospel swell of late-period Pink Floyd, and the late spoken-word interlude (\"Disruption isn't easy. But it's necessary.\") earns its keep by stripping the arrangement bare before the final high-register chorus comes crashing back. The clipped call-and-response section, \"(Productivity) - Down, (Morale) - Shattered,\" is the sharpest writing here, a bulletin of collapse delivered with a straight face. The theatrical scope means it asks for your full attention rather than handing you an instant hook, but it lands cleanly as a piece of storytelling.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "\"He walks on spreadsheets, multiplies believers\"",
+      "70 BPM, C# major",
+      "spoken-word interlude \"Disruption isn't easy. But it's necessary.\"",
+      "call-and-response \"(Productivity) - Down, (Morale) - Shattered\"",
+      "final high-register chorus after stripped-back interlude"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

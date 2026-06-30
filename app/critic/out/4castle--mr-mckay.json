@@ -1,0 +1,125 @@
+{
+  "track_id": "4castle--mr-mckay",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Mr. McKay.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--mr-mckay.opus"
+  },
+  "lyrics": "A meager man not born of wealth\nBut hungry for the crown\nWith teeth too white and eyes too still\nHe tears down those on high\nHe speaks in graphs and gospel tones\nThen bleeds the gold from gray\nAnd when the line begins to rise\nNow welcome Mr. McKay\n\nHe says: \"To the moon. Through the flame.\"\n\"You're not a person-just a name.\"\n\"There's joy in pain, and worth in strain-\nDisruption is the way.\"\nThey nod, they clap, they sign, they bend-\nThe cost you cannot weigh\nA thousand bent with just one click\nHe never needs to stay\n\nHis tongue is gold, his timing keen\nHe listens just enough\nReflects your dreams in polished terms\nAnd sells you futures rough\nHe rewrites mission statements clean\nTurns your purpose into play\nAnd when you start to doubt yourself\nYou're thinking his way\n\nHe says: \"To the moon. Through the flame.\"\n\"The numbers rise. You feel the same.\"\n\"Your loss is growth. Your job's a phase-\nThe market must obey.\"\nThey nod, they clap, they sign, they bend-\nEach echo, his display\nA thousand bent with just one click\nHe never needs to stay\n\nHe leaves before the boiling point\nJust as the cracks appear\nHe's always gone before the fall\nBut you will keep him near\nIn slogans hung on hallway walls\nAnd values none can say\nYou call it culture\nHe calls it prey\nYou called him boss-\nHe was decay\nThe poison\nStays\n\nThe desks sit empty, dreams half-built\nThe funding's dried away\nBut still his voice echoes the halls\n\"Tomorrow starts today\"\nThey're picking up the pieces now\nOf what he burned for fame\nWhile somewhere else he's found new marks\nWho've never heard his name",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 80.7,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 299.44,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.51,
+        "label": "S1"
+      },
+      {
+        "start": 1.51,
+        "end": 25.68,
+        "label": "S2"
+      },
+      {
+        "start": 25.68,
+        "end": 46.53,
+        "label": "S3"
+      },
+      {
+        "start": 46.53,
+        "end": 69.96,
+        "label": "S4"
+      },
+      {
+        "start": 69.96,
+        "end": 85.08,
+        "label": "S5"
+      },
+      {
+        "start": 85.08,
+        "end": 132.49,
+        "label": "S6"
+      },
+      {
+        "start": 132.49,
+        "end": 147.8,
+        "label": "S7"
+      },
+      {
+        "start": 147.8,
+        "end": 165.09,
+        "label": "S8"
+      },
+      {
+        "start": 165.09,
+        "end": 245.18,
+        "label": "S9"
+      },
+      {
+        "start": 245.18,
+        "end": 275.81,
+        "label": "S10"
+      },
+      {
+        "start": 275.81,
+        "end": 292.55,
+        "label": "S11"
+      },
+      {
+        "start": 292.55,
+        "end": 299.44,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.977,
+      "key": 0.832
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "drums",
+      "electric guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track blends a dark, theatrical atmosphere with a driving, retro-futuristic synth-pop energy. The production is exceptionally crisp and well-spaced, featuring a punchy bassline and sparkling synth arpeggios that dance around a prominent, cavernous baritone vocal. A powerful transition occurs when the brooding verses give way to a soaring, anthemic chorus, where layers of dense synth pads and energetic percussion amplify the song's dramatic intensity. The resulting sound is a perfect fusion of moody new wave aesthetics and polished modern production, making it both brooding and highly danceable.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Mr. McKay\" is 4Castle in storyteller mode, and the character study cuts deep: a B-minor portrait of the venture-capital messiah who \"speaks in graphs and gospel tones / then bleeds the gold from gray.\" At a deliberate 80 BPM the verses brood low under a cavernous baritone before the chorus opens up, that turn from \"To the moon. Through the flame\" landing with real theatrical lift. The best stroke is structural restraint: when the band drops to \"You called him boss, he was decay / The poison stays,\" they let the line hang instead of crowding it, and the near-five-minute runtime earns its slow burn rather than dragging. A highlight, and proof their lyrical bite is as sharp as their playing.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "B minor",
+      "80.7 BPM",
+      "\"speaks in graphs and gospel tones / then bleeds the gold from gray\"",
+      "\"To the moon. Through the flame\" chorus lift",
+      "\"You called him boss, he was decay / The poison stays\"",
+      "4:59 runtime",
+      "cavernous baritone vocal"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

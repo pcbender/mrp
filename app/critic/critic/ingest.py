@@ -29,13 +29,13 @@ def _check_ffmpeg() -> None:
 
 
 def _resolve_path(raw: str) -> Path:
-    """Copy /mnt/... paths to ext4 MASTERS_DIR via rsync; return local path."""
+    """Copy /mnt/... paths to ext4 MASTERS_DIR via shutil; return local path."""
     p = Path(raw)
     if str(p).startswith("/mnt/"):
         MASTERS_DIR.mkdir(parents=True, exist_ok=True)
         dest = MASTERS_DIR / p.name
         print(f"  Copying from Windows mount → {dest}")
-        subprocess.run(["rsync", "-a", "--progress", str(p), str(dest)], check=True)
+        shutil.copy2(p, dest)
         return dest
     return p.resolve()
 

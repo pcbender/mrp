@@ -1,0 +1,113 @@
+{
+  "track_id": "4castle--cracks-in-the-culture-deck",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Cracks in the Culture Deck.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--cracks-in-the-culture-deck.opus"
+  },
+  "lyrics": "The Culture Deck hangs by a pin\nThe plastic's worn, the slogans thin\n\"Integrity. Respect. Empowerment.\"\nThe ink has faded, meaning's spent\n\nWe used to quote it line by line\nNow no one looks. We just align\nIt's still displayed. It's still on file\nWe just stopped reading it awhile\n\nThere's a crack in the Culture Deck\nA tear between the words and their effect\nThey preach inclusion, cut in waves\nSay \"You're a leader\" on your grave\nThe values shimmer, soft and fake\nJust pretty frosting on the break\nYou hear the talk. You know the trick\nCulture's just... a PowerPoint click\n\nThey dropped a deck from somewhere bright\nFull of words that sounded right\nBut roots don't grow on mirrored glass\nAnd slogans fade too fast\n\nYou can't plant Eskimo belief\nIn desert grief\nThe map they drew don't match our ground\nSo nothing grows-but we pretend it's found\n\nYou can't print truth and tape it up\nYou can't declare what's never grown\nCulture isn't copy-paste\nIt's what we do when we're alone\nIt's not your vision. Not your deck\nIt's what survives your cuts and checks\nThe words you frame won't save your name\nWhen all we feel is not the same\n\nThere's a crack in the Culture Deck\nA loss of trust and no respect\nYou told us truth, then changed the frame\nWe stayed the same-you sold the name\nYou sold us vision, sold us pride\nThen watched us vanish side by side\nWhat's left ain't culture, mission, brand-\nJust faded ink\nAnd empty hands",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "C",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 264.88,
+    "lufs": -16.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 24.8,
+        "label": "S1"
+      },
+      {
+        "start": 24.8,
+        "end": 41.24,
+        "label": "S2"
+      },
+      {
+        "start": 41.24,
+        "end": 105.47,
+        "label": "S3"
+      },
+      {
+        "start": 105.47,
+        "end": 134.47,
+        "label": "S4"
+      },
+      {
+        "start": 134.47,
+        "end": 151.07,
+        "label": "S5"
+      },
+      {
+        "start": 151.07,
+        "end": 181.12,
+        "label": "S6"
+      },
+      {
+        "start": 181.12,
+        "end": 197.56,
+        "label": "S7"
+      },
+      {
+        "start": 197.56,
+        "end": 212.63,
+        "label": "S8"
+      },
+      {
+        "start": 212.63,
+        "end": 254.51,
+        "label": "S9"
+      },
+      {
+        "start": 254.51,
+        "end": 264.88,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.957,
+      "key": 0.945
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "bass guitar",
+      "electric guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a dark, melancholic synth drone and intimate vocals, building a brooding and tense emotional atmosphere. The energy levels shift dramatically during the transition into the chorus, exploding from a sparse, electronic-led verse into a high-octane alternative rock anthem with grinding distorted guitars and impassioned, gritty vocals. Professionally produced, the mix masterfully handles this contrast in density, maintaining excellent vocal clarity even when surrounded by the heavy, wall-of-sound instrumentation.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "4Castle aims its sharpest writing yet at corporate doublespeak, and the conceit holds: \"You can't plant Eskimo belief / in desert grief\" is the kind of line that earns its place in the chorus. The track works by contrast, opening on a brooding C-minor synth drone and intimate vocals before the chorus detonates into grinding, wall-of-sound guitars at a steady 112 BPM, and the mix keeps the vocal clear through all of it. The closing turn, \"What's left ain't culture, mission, brand / Just faded ink / and empty hands,\" lands the indictment without overplaying it. A highlight, and proof their songwriting can carry a heavy idea without sinking under it.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "You can't plant Eskimo belief / in desert grief",
+      "C minor",
+      "112 BPM",
+      "synth drone to wall-of-sound guitar contrast",
+      "What's left ain't culture, mission, brand / Just faded ink / and empty hands"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

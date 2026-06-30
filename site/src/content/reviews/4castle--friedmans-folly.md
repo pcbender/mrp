@@ -1,0 +1,8 @@
+---
+track_id: 4castle--friedmans-folly
+impression: "This track opens with a dark, melancholic, and deeply atmospheric texture, driven by a solemn, organ-like drone and an intimately close female vocal. The production masterfully contrasts this dry, up-front vocal presence with a vast, wet reverb tail on the instruments, creating a stark sense of isolation and physical space. A pivotal transition occurs near the midpoint, swelling the energy as rhythmic acoustic guitar, steady percussion, and layered choral harmonies join the arrangement. The density shifts from a sparse, eerie whisper to a rich, driving folk-gothic anthem that feels both communal and hauntingly cinematic."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+"Friedman's Folly" is a parable dressed as a song, and after the airless chill of "Below The Line" it brings the warmth and the people back: 4Castle let it build instead of forcing it. It opens stark, an organ-like drone under a close, dry vocal that sells the menace of "a meager man not born from wealth / with teeth too bright to trust." The real payoff comes around the midpoint, where acoustic guitar, steady percussion, and stacked harmonies swell the thing into something communal and gothic, a folk-anthem turn that earns its weight. The refrain, "The Bent built all but owned no part," lands like a worker's hymn, and the closing twist, "you can't eat yield, you can't drink growth," is the kind of plain-spoken gut-punch John Hiatt would respect. At a brisk pace in a bright-feeling key, the band trusts the slow reveal over the obvious hook, which makes this one a grower more than an instant grabber, but the patience pays off.

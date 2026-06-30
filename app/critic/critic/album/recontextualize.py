@@ -1,9 +1,10 @@
 """
-Recontextualize worker (WP-12) — Pass 3 per-track contextual reviews.
+Recontextualize worker (WP-12) — Pass 3 batch contextual reviews.
 
-For each track, re-passes the standalone review knowing sequence position,
-neighbors, and the Pass 2 album verdict. Writes to track_reviews_in_context
-on the AlbumRecord. Never modifies out/<track_id>.json.
+All standalone reviews plus the Pass 2 album synthesis are sent in a single
+API call. The model writes all contextual reviews simultaneously with full
+sequence awareness. Writes to track_reviews_in_context on the AlbumRecord.
+Never modifies out/<track_id>.json.
 
 Usage:
     python -m critic.album.recontextualize <release_slug> [--model dev|default|hero]
@@ -18,14 +19,13 @@ from pathlib import Path
 
 import anthropic
 
-from ..catalog import is_release_instrumental
+from ..catalog import get_release_tracks, is_release_instrumental
 from ..config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
 from ..schema import validate_context_review, warn_issues
-from .record import AlbumRecord, AlbumReview, TrackInContext
+from .record import AlbumRecord, TrackInContext
 
-_TIER_LABELS = {2: "soft_floor", 3: "solid", 4: "strong", 5: "essential"}
 _MODEL_ALIASES = {"dev": CRITIC_MODEL_DEV, "default": CRITIC_MODEL_DEFAULT, "hero": CRITIC_MODEL_HERO}
-_SYSTEM_PROMPT_PATH = Path(__file__).parent.parent / "prompts" / "track_context_system.md"
+_SYSTEM_PROMPT_PATH = Path(__file__).parent.parent / "prompts" / "track_context_batch_system.md"
 _PERSONAS_DIR = Path(__file__).parent.parent / "personas"
 
 
@@ -45,78 +45,77 @@ def _load_system_prompt(persona: str = "default", artist_name: str = "") -> str:
 def _build_user_message(
     record: AlbumRecord,
     findings: list[dict],
-    position: int,       # 1-based
     is_instrumental: bool = False,
 ) -> str:
-    idx = position - 1
-    track_id = record.tracklist[idx]
-    finding = findings[idx]
     af = record.album_features
     rv = record.review
-
-    short_name = track_id.split("--", 1)[-1]
     n = len(record.tracklist)
 
-    prev_name = record.tracklist[idx - 1].split("--", 1)[-1] if idx > 0 else None
-    next_name = record.tracklist[idx + 1].split("--", 1)[-1] if idx < n - 1 else None
+    _tracks = get_release_tracks(record.release_slug) or []
+    _title_map = {t["slug"]: t.get("title", t["slug"]) for t in _tracks}
 
-    standalone_rank = finding["review"]["verdict_tier"]["rank"]
-    standalone_text = finding["review"]["review_text"]
-
-    # Arc summary: mood and tempo trajectory across all tracks
-    arc_parts = []
-    for i, (tid, bpm, mood) in enumerate(zip(
-        record.tracklist, af.bpm_curve, af.mood_progression
-    ), start=1):
-        marker = f"→ [{i}]" if i == position else f"  [{i}]"
-        arc_parts.append(f"{marker} {tid.split('--', 1)[-1]}  ({bpm} BPM, {mood})")
+    def _title(tid: str) -> str:
+        return _title_map.get(tid.split("--", 1)[-1], tid.split("--", 1)[-1])
 
     parts = [
-        f"Track   : {short_name}  (position {position} of {n})",
-        f"Previous: {prev_name or '(opener)'}",
-        f"Next    : {next_name or '(closer — this is the last track)'}",
+        "=== ALBUM ===",
+        f"Artist       : {record.artist}",
+        f"Instrumental : {'yes — no lyrics on any track' if is_instrumental else 'no'}",
+        f"Verdict      : rank {rv.verdict_tier.rank} ({rv.verdict_tier.label})",
+        f"Sum vs parts : {rv.sum_vs_parts}",
+        f"Strongest    : {_title(af.peak_track)}",
         "",
-        "=== ALBUM CONTEXT ===",
-        f"Instrumental album: {'yes' if is_instrumental else 'no'}",
-        f"Album verdict    : {rv.verdict_tier.label} (rank {rv.verdict_tier.rank})",
-        f"Sum vs parts     : {rv.sum_vs_parts}",
-        f"Strongest track  : {af.peak_track.split('--', 1)[-1]}",
-        f"Rank spread      : {af.rank_distribution}",
+        f"=== ALL {n} TRACK STANDALONE REVIEWS (in sequence order) ===",
         "",
-        "Arc (→ marks this track):",
-        *arc_parts,
-        "",
-        "=== STANDALONE REVIEW ===",
-        f"Standalone rank  : {standalone_rank}",
-        standalone_text,
-        "",
+    ]
+
+    for i, (track_id, finding) in enumerate(zip(record.tracklist, findings), start=1):
+        title = _title(track_id)
+        rank = finding["review"]["verdict_tier"]["rank"]
+        review_text = finding["review"]["review_text"]
+        bpm = af.bpm_curve[i - 1] if (i - 1) < len(af.bpm_curve) else "?"
+        pos_label = "opener" if i == 1 else ("closer" if i == n else f"track {i} of {n}")
+        parts += [
+            f"[{i}/{n}] {title}  ({pos_label}, ~{bpm} BPM, standalone rank {rank})",
+            f"track_id: {track_id}",
+            review_text,
+            "",
+        ]
+
+    parts += [
         "---",
-        "Return JSON only — no markdown fences:",
-        '{"context_rank": N or null, "context_note": "...", "review_text": "..."}',
+        f"Return a JSON array of exactly {n} objects, one per track in the same order.",
+        "No markdown fences, no commentary before or after the array.",
     ]
 
     return "\n".join(parts)
 
 
-def _parse_response(text: str) -> dict:
+def _parse_response(text: str) -> list[dict]:
     text = text.strip()
     try:
-        return json.loads(text)
+        result = json.loads(text)
+        if isinstance(result, list):
+            return result
     except json.JSONDecodeError:
         pass
     match = re.search(r"```(?:json)?\s*(.*?)\s*```", text, re.DOTALL)
     if match:
         try:
-            return json.loads(match.group(1))
+            result = json.loads(match.group(1))
+            if isinstance(result, list):
+                return result
         except json.JSONDecodeError:
             pass
-    match = re.search(r"\{.*\}", text, re.DOTALL)
+    match = re.search(r"\[.*\]", text, re.DOTALL)
     if match:
         try:
-            return json.loads(match.group(0))
+            result = json.loads(match.group(0))
+            if isinstance(result, list):
+                return result
         except json.JSONDecodeError:
             pass
-    raise ValueError(f"Could not parse JSON from model response:\n{text}")
+    raise ValueError(f"Could not parse JSON array from model response:\n{text[:500]}")
 
 
 def recontextualize(
@@ -126,8 +125,8 @@ def recontextualize(
     persona: str = "default",
 ) -> list[TrackInContext]:
     """
-    Re-pass each track review in album context. Returns the full
-    track_reviews_in_context list. Does not touch any track JSON files.
+    Re-pass all track reviews in album context via a single API call.
+    Returns the full track_reviews_in_context list. Does not modify track JSON files.
     """
     if not ANTHROPIC_API_KEY:
         raise EnvironmentError("ANTHROPIC_API_KEY not set in .env")
@@ -136,43 +135,43 @@ def recontextualize(
     system = _load_system_prompt(persona, artist_name=record.artist)
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     is_instrumental = is_release_instrumental(record.release_slug)
+    n = len(record.tracklist)
+
+    user_msg = _build_user_message(record, findings, is_instrumental=is_instrumental)
+
+    print(f"  Sending all {n} tracks in one call…")
+    response = client.messages.create(
+        model=selected_model,
+        max_tokens=8192,
+        system=system,
+        messages=[{"role": "user", "content": user_msg}],
+    )
+
+    parsed_list = _parse_response(response.content[0].text)
+
+    if len(parsed_list) != n:
+        raise ValueError(f"Expected {n} items from model, got {len(parsed_list)}")
 
     results: list[TrackInContext] = []
-
-    for position, (track_id, finding) in enumerate(
-        zip(record.tracklist, findings), start=1
+    for position, (track_id, finding, item) in enumerate(
+        zip(record.tracklist, findings, parsed_list), start=1
     ):
-        short = track_id.split("--", 1)[-1]
-        print(f"  [{position}/{len(record.tracklist)}] {short}…")
-
         standalone_rank = finding["review"]["verdict_tier"]["rank"]
-        user_msg = _build_user_message(record, findings, position, is_instrumental=is_instrumental)
 
-        response = client.messages.create(
-            model=selected_model,
-            max_tokens=512,
-            system=system,
-            messages=[{"role": "user", "content": user_msg}],
-        )
-
-        parsed = _parse_response(response.content[0].text)
-
-        # Validate context_rank: must differ from standalone or be null
-        raw_cr = parsed.get("context_rank")
+        raw_cr = item.get("context_rank")
         if raw_cr is not None:
             context_rank = max(2, min(5, int(raw_cr)))
             if context_rank == standalone_rank:
-                # Model echoed standalone — treat as null
                 context_rank = None
                 context_note = ""
             else:
-                context_note = parsed.get("context_note", "")
+                context_note = item.get("context_note", "")
         else:
             context_rank = None
             context_note = ""
 
         tic_dict = {
-            "review_text": parsed.get("review_text", finding["review"]["review_text"]),
+            "review_text": item.get("review_text", finding["review"]["review_text"]),
             "standalone_rank": standalone_rank,
             "context_rank": context_rank,
             "context_note": context_note,
@@ -185,7 +184,7 @@ def recontextualize(
             standalone_rank=standalone_rank,
             context_rank=context_rank,
             context_note=context_note,
-            review_text=parsed.get("review_text", finding["review"]["review_text"]),
+            review_text=item.get("review_text", finding["review"]["review_text"]),
             model=selected_model,
         ))
 
@@ -194,7 +193,7 @@ def recontextualize(
 
 def _main() -> None:
     parser = argparse.ArgumentParser(description="MRP Critic — recontextualize worker")
-    parser.add_argument("release_slug", help="Release slug (e.g. tria)")
+    parser.add_argument("release_slug", help="Release slug (e.g. bent)")
     parser.add_argument("--model", choices=["dev", "default", "hero"], default="dev")
     parser.add_argument("--out", help="Track records directory")
     args = parser.parse_args()
@@ -228,30 +227,16 @@ def _main() -> None:
     print("[4/4] Recontextualizing tracks…")
     record.track_reviews_in_context = recontextualize(record, findings, model=args.model)
 
-    # Album summary header
     rv = record.review
     print(f"\n{'═' * 60}")
-    print(f"  ALBUM: {record.artist} — {args.release_slug}")
-    print(f"  Rank {rv.verdict_tier.rank} — {rv.verdict_tier.label}  |  "
-          f"sum_vs_parts: {rv.sum_vs_parts}  |  persona: {rv.persona_delivery}")
-    print(f"{'═' * 60}")
-    print(f"\n{rv.review_text}\n")
+    print(f"  {record.artist} — {args.release_slug}")
+    print(f"  Rank {rv.verdict_tier.rank} — {rv.verdict_tier.label}")
+    print(f"  Sum vs parts : {rv.sum_vs_parts}  |  Persona : {rv.persona_delivery}")
+    print(f"{'═' * 60}\n")
+    print(rv.review_text)
 
-    # All tracks: standalone vs contextual side by side
-    for t in record.track_reviews_in_context:
-        idx = t.position - 1
-        standalone_text = findings[idx]["review"]["review_text"]
-        shift_str = (
-            f"  context_rank → {t.context_rank} {'↑' if t.context_rank > t.standalone_rank else '↓'}  {t.context_note}"
-            if t.context_rank is not None
-            else "  context_rank → null"
-        )
-        short = t.track_id.split("--", 1)[-1]
-        print(f"{'─' * 60}")
-        print(f"  [{t.position}] {short}  (standalone rank {t.standalone_rank}){shift_str}")
-        print(f"{'─' * 60}")
-        print(f"STANDALONE:\n{standalone_text}")
-        print(f"\nCONTEXTUAL:\n{t.review_text}\n")
+    shift_count = sum(1 for t in record.track_reviews_in_context if t.context_rank is not None)
+    print(f"\nContext rank shifts: {shift_count} of {len(record.track_reviews_in_context)}")
 
 
 if __name__ == "__main__":
