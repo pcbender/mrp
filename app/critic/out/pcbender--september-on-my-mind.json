@@ -1,0 +1,120 @@
+{
+  "track_id": "pcbender--september-on-my-mind",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/September On My Mind.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--september-on-my-mind.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 203.92,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.75,
+        "label": "S1"
+      },
+      {
+        "start": 10.75,
+        "end": 42.7,
+        "label": "S2"
+      },
+      {
+        "start": 42.7,
+        "end": 68.73,
+        "label": "S3"
+      },
+      {
+        "start": 68.73,
+        "end": 95.74,
+        "label": "S4"
+      },
+      {
+        "start": 95.74,
+        "end": 113.71,
+        "label": "S5"
+      },
+      {
+        "start": 113.71,
+        "end": 129.82,
+        "label": "S6"
+      },
+      {
+        "start": 129.82,
+        "end": 146.87,
+        "label": "S7"
+      },
+      {
+        "start": 146.87,
+        "end": 161.91,
+        "label": "S8"
+      },
+      {
+        "start": 161.91,
+        "end": 176.94,
+        "label": "S9"
+      },
+      {
+        "start": 176.94,
+        "end": 198.97,
+        "label": "S10"
+      },
+      {
+        "start": 198.97,
+        "end": 203.92,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.984,
+      "key": 0.868
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "country rock"
+    ],
+    "mood": [
+      "uplifting",
+      "energetic",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a gritty, guitar-centric texture, creating an atmosphere of confident, bar-room swagger. The energy is high and driving, carried by a tight rhythm section that establishes an infectious blues-rock shuffle. The production is clean and powerful, allowing the raw, overdriven lead guitar to sit prominently in the mix without overwhelming the punchy bass and drums. The most distinctive quality is the virtuosic and melodic lead guitar work, full of expressive bends and fiery runs that define the track's electrifying personality.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz at 129 BPM is a bold move, and PCBender pulls it off by leaning into the swing of it rather than fighting the meter, letting the rhythm section lock into a shuffle groove that feels more roadhouse than ballroom. The lead guitar in E minor is the whole story here: expressive bends, quick melodic runs, and a tone with just enough grit to keep it honest, the kind of playing that reminds you of early Gary Moore when he still had Texas on his mind. At 3:23, it doesn't overstay its welcome, cycling through eleven sections that keep the ear guessing without ever losing the thread. A highlight from PCBender, and a strong argument that sometimes the song is just the guitar.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "129 BPM in 3/4 time",
+      "E minor key",
+      "blues-rock shuffle groove",
+      "lead guitar bends and runs",
+      "3:23 duration",
+      "11-section structure",
+      "Gary Moore comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--ides-of-march",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Ides of March.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--ides-of-march.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 178.6,
+    "lufs": -12.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.06,
+        "label": "S1"
+      },
+      {
+        "start": 5.06,
+        "end": 23.52,
+        "label": "S2"
+      },
+      {
+        "start": 23.52,
+        "end": 39.24,
+        "label": "S3"
+      },
+      {
+        "start": 39.24,
+        "end": 82.9,
+        "label": "S4"
+      },
+      {
+        "start": 82.9,
+        "end": 101.89,
+        "label": "S5"
+      },
+      {
+        "start": 101.89,
+        "end": 119.79,
+        "label": "S6"
+      },
+      {
+        "start": 119.79,
+        "end": 137.6,
+        "label": "S7"
+      },
+      {
+        "start": 137.6,
+        "end": 152.9,
+        "label": "S8"
+      },
+      {
+        "start": 152.9,
+        "end": 178.6,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.979,
+      "key": 0.851
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "blues"
+    ],
+    "mood": [
+      "uplifting",
+      "energetic",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track exudes a confident, swaggering atmosphere, built upon a dense and active texture of interlocking blues-rock guitar and a prominently melodic, walking bassline. The energy is consistently high and groovy, driven by a powerful shuffle feel that feels both tight and authentically human. The production is clean and well-balanced, allowing each element of the virtuosic performance to be heard clearly while maintaining a full, cohesive sound. A defining quality is the seamless interplay between the instruments, especially during the dynamic shift to a harmonized rock riff which provides a powerful lift before returning to the main groove.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 107 BPM in D major, 'Ides of March' locks into a shuffle groove that feels lived-in from the first bar, the kind of thing that makes you check whether you've heard it before even though you haven't. The walking bassline does real work here, not just holding the bottom but actively trading ideas with the guitar, and when the harmonized rock riff kicks in around the midpoint it delivers the lift a track like this earns rather than assumes. Under three minutes, all killer, no filler.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "107 BPM",
+      "D major",
+      "shuffle groove",
+      "walking bassline",
+      "harmonized rock riff midpoint lift",
+      "under three minutes runtime"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

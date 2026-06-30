@@ -18,6 +18,7 @@ from pathlib import Path
 
 import anthropic
 
+from ..catalog import is_release_instrumental
 from ..config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
 from ..schema import validate_context_review, warn_issues
 from .record import AlbumRecord, AlbumReview, TrackInContext
@@ -45,6 +46,7 @@ def _build_user_message(
     record: AlbumRecord,
     findings: list[dict],
     position: int,       # 1-based
+    is_instrumental: bool = False,
 ) -> str:
     idx = position - 1
     track_id = record.tracklist[idx]
@@ -75,6 +77,7 @@ def _build_user_message(
         f"Next    : {next_name or '(closer — this is the last track)'}",
         "",
         "=== ALBUM CONTEXT ===",
+        f"Instrumental album: {'yes' if is_instrumental else 'no'}",
         f"Album verdict    : {rv.verdict_tier.label} (rank {rv.verdict_tier.rank})",
         f"Sum vs parts     : {rv.sum_vs_parts}",
         f"Strongest track  : {af.peak_track.split('--', 1)[-1]}",
@@ -132,6 +135,7 @@ def recontextualize(
     selected_model = _MODEL_ALIASES.get(model or "dev", model or CRITIC_MODEL_DEV)
     system = _load_system_prompt(persona, artist_name=record.artist)
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    is_instrumental = is_release_instrumental(record.release_slug)
 
     results: list[TrackInContext] = []
 
@@ -142,7 +146,7 @@ def recontextualize(
         print(f"  [{position}/{len(record.tracklist)}] {short}…")
 
         standalone_rank = finding["review"]["verdict_tier"]["rank"]
-        user_msg = _build_user_message(record, findings, position)
+        user_msg = _build_user_message(record, findings, position, is_instrumental=is_instrumental)
 
         response = client.messages.create(
             model=selected_model,

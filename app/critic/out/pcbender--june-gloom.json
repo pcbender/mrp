@@ -1,0 +1,110 @@
+{
+  "track_id": "pcbender--june-gloom",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/June Gloom - PCBender.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--june-gloom.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 184.04,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.3,
+        "label": "S1"
+      },
+      {
+        "start": 2.3,
+        "end": 17.65,
+        "label": "S2"
+      },
+      {
+        "start": 17.65,
+        "end": 36.18,
+        "label": "S3"
+      },
+      {
+        "start": 36.18,
+        "end": 52.38,
+        "label": "S4"
+      },
+      {
+        "start": 52.38,
+        "end": 68.15,
+        "label": "S5"
+      },
+      {
+        "start": 68.15,
+        "end": 94.74,
+        "label": "S6"
+      },
+      {
+        "start": 94.74,
+        "end": 145.33,
+        "label": "S7"
+      },
+      {
+        "start": 145.33,
+        "end": 174.71,
+        "label": "S8"
+      },
+      {
+        "start": 174.71,
+        "end": 184.04,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.955,
+      "key": 0.848
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "blues rock",
+      "classic rock"
+    ],
+    "mood": [
+      "emotional",
+      "tender",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This instrumental track features a dense and aggressive texture, driven by harmonized, high-gain electric guitars and a powerful rhythm section, creating a virtuosic and intense emotional atmosphere. The energy is consistently high, with a fast, precise feel that emphasizes technical proficiency and a driving, head-banging groove. The production is modern and polished; despite the density of the layered guitars, each element has its own space, with punchy drums and a solid bass foundation cutting through clearly. The track is defined by its relentless display of guitar skill, especially the rapid-fire, melodic solos and intricate arpeggio runs that serve as the main focal point.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"June Gloom\" is a guitar showcase in waltz time, and that combination alone sets it apart in PCBender's catalog. At 117 BPM in 3/4, the track moves with a coiled, purposeful energy, the high-gain harmonized leads trading off against a rhythm section that keeps the whole thing grounded rather than chaotic. The rapid arpeggios and melodic solo runs across the middle sections are the main event, precise without feeling cold, and the production gives each layer room to breathe despite the density. A dependable cut that rewards anyone who wants to hear what this artist can do with six strings and a groove.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "117 BPM",
+      "3/4 time signature",
+      "E minor",
+      "harmonized high-gain electric guitars",
+      "arpeggios and melodic solo runs",
+      "9-section structure",
+      "punchy rhythm section"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

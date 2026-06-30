@@ -64,7 +64,7 @@ function cleanMarkdownText(value: string) {
     <div class="release-copy">
       <p class="eyebrow">{release.release_type}</p>
       <h2>{release.title}</h2>
-      {copyBlocks.map((block) => <p>{block}</p>)}
+      {!reviewEntry && copyBlocks.map((block) => <p>{block}</p>)}
       {reviewEntry && (
         <div class="track-review">
           {isAlbum ? (
@@ -112,7 +112,7 @@ function cleanMarkdownText(value: string) {
     </section>
   )}
 
-  {release.song && (release.song.lyrics_text || release.song.instrumental) && (
+  {release.song && release.song.lyrics_text && (
     <section class="lyrics">
       <h2>Lyrics</h2>
       <Lyrics lyricsText={release.song.lyrics_text} instrumental={release.song.instrumental} />

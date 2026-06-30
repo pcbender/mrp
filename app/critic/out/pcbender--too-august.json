@@ -1,0 +1,114 @@
+{
+  "track_id": "pcbender--too-august",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Too August.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--too-august.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 208.6,
+    "lufs": -12.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 15.3,
+        "label": "S1"
+      },
+      {
+        "start": 15.3,
+        "end": 44.12,
+        "label": "S2"
+      },
+      {
+        "start": 44.12,
+        "end": 70.66,
+        "label": "S3"
+      },
+      {
+        "start": 70.66,
+        "end": 86.56,
+        "label": "S4"
+      },
+      {
+        "start": 86.56,
+        "end": 106.32,
+        "label": "S5"
+      },
+      {
+        "start": 106.32,
+        "end": 124.23,
+        "label": "S6"
+      },
+      {
+        "start": 124.23,
+        "end": 148.49,
+        "label": "S7"
+      },
+      {
+        "start": 148.49,
+        "end": 164.14,
+        "label": "S8"
+      },
+      {
+        "start": 164.14,
+        "end": 179.65,
+        "label": "S9"
+      },
+      {
+        "start": 179.65,
+        "end": 208.6,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.963,
+      "key": 0.975
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "blues rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This instrumental track presents a warm and soulful atmosphere, led by a highly expressive electric guitar with a slightly overdriven, creamy tone. The energy is a confident, mid-level cruise, established by a tight rhythm section that provides a solid foundation for the improvisational feel of the guitar solo. The production quality is excellent, with a clean and spacious mix that allows the lead guitar to sit perfectly on top without overwhelming the groovy bass and crisp drums, creating the feel of a live-in-studio performance. The defining quality of the piece is the guitarist's virtuosic command of blues phrasing, seamlessly weaving together rapid-fire licks, sustained bends, and memorable melodic motifs.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz at 136 BPM in E major sounds like a contradiction, but PCBender makes it feel inevitable: the triple meter gives his blues phrasing room to breathe and lean, and the creamy overdriven guitar sits in a clean, spacious mix that keeps every bend and rapid-fire run audible without crowding the pocket. It plays like a live-in-studio take, the kind of thing John Mayer might have cut after hours with a Stevie Ray Vaughan record on the turntable. A confident, warm showcase that does its job and does it well.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "136 BPM waltz in 3/4",
+      "E major",
+      "overdriven creamy guitar tone",
+      "sustained bends and rapid-fire licks",
+      "clean spacious mix",
+      "live-in-studio feel"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

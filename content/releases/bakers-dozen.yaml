@@ -186,7 +186,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--january-kiss.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -201,7 +201,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--february-actuary.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -216,7 +216,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--ides-of-march.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -231,7 +231,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--april-all-day-long.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -246,7 +246,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--may-flowers.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -261,7 +261,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--june-gloom.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -276,7 +276,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--sparkles-in-july.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -291,7 +291,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--too-august.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -305,7 +305,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--september-on-my-mind.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -320,7 +320,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--october-boo-hoo.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -335,7 +335,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--november-i-never-remember.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -349,7 +349,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--slipping-into-december.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -364,7 +364,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--366.mp3
     lyrics_text: null
     lyrics_source: null
     links:
