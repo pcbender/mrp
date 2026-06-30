@@ -1,0 +1,98 @@
+{
+  "track_id": "pcbender--inner-fire",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Inner Fire.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--inner-fire.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 262.0,
+    "lufs": -15.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 12.42,
+        "label": "S1"
+      },
+      {
+        "start": 12.42,
+        "end": 40.96,
+        "label": "S2"
+      },
+      {
+        "start": 40.96,
+        "end": 73.26,
+        "label": "S3"
+      },
+      {
+        "start": 73.26,
+        "end": 88.61,
+        "label": "S4"
+      },
+      {
+        "start": 88.61,
+        "end": 115.43,
+        "label": "S5"
+      },
+      {
+        "start": 115.43,
+        "end": 202.25,
+        "label": "S6"
+      },
+      {
+        "start": 202.25,
+        "end": 262.0,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.979,
+      "key": 0.792
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "blues",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This instrumental track features a dense, high-gain rock texture, creating a confident and triumphant emotional atmosphere. The energy is consistently high, driven by a powerful rhythm section that gives the piece an aggressive yet playful feel. Production is clean and modern, allowing the virtuosic lead guitar to sit clearly atop a tight, punchy drum and bass foundation without sounding muddy. The track is defined by its neo-classical shred guitar solos, particularly the extended solo section starting around 0:42, which showcases impressive technicality through rapid-fire melodic runs.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 143 BPM in E minor, 'Inner Fire' earns its title: the opening builds with real purpose before the extended lead guitar solo kicks in around the 0:42 mark and simply takes over, all rapid-fire melodic runs and neo-classical authority that call to mind early Yngwie without the cold precision. The rhythm section stays locked and punchy throughout, giving the lead room to breathe and burn simultaneously. It's a showcase track, no question, and PCBender's phrasing has the kind of earned confidence you hear from players who've lived inside this tuning for decades.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "143 BPM",
+      "E minor",
+      "solo at 0:42",
+      "neo-classical shred phrasing",
+      "rhythm section foundation"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

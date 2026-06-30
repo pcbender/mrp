@@ -110,6 +110,25 @@ def get_release_tracks(release_slug: str) -> list[dict]:
     return []
 
 
+def is_release_instrumental(release_slug: str) -> bool:
+    """Return True if every track/song in the release has instrumental=True."""
+    path = _RELEASES_DIR / f"{release_slug}.yaml"
+    if not path.exists():
+        return False
+    data = _load_yaml(path)
+    rel = data.get("release", {})
+
+    tracks = rel.get("tracks", [])
+    if tracks:
+        return all(t.get("instrumental", False) for t in tracks)
+
+    song = rel.get("song", {})
+    if song:
+        return bool(song.get("instrumental", False))
+
+    return False
+
+
 def get_release_meta(release_slug: str) -> dict:
     """Return top-level release metadata (artist_id, title, release_date, etc.)."""
     path = _RELEASES_DIR / f"{release_slug}.yaml"

@@ -18,7 +18,7 @@ from pathlib import Path
 
 import anthropic
 
-from ..catalog import get_release_tracks
+from ..catalog import get_release_tracks, is_release_instrumental
 from ..config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
 from ..utils import scrub_emdash
 from ..schema import validate_album_review, warn_issues
@@ -45,7 +45,7 @@ def _load_system_prompt(artist_name: str, persona: str = "default") -> str:
     return template.replace("{persona_preamble}", preamble)
 
 
-def _build_user_message(record: AlbumRecord, findings: list[dict], target: str) -> str:
+def _build_user_message(record: AlbumRecord, findings: list[dict], target: str, is_instrumental: bool = False) -> str:
     af = record.album_features
     co = record.cohesion
 
@@ -84,12 +84,13 @@ def _build_user_message(record: AlbumRecord, findings: list[dict], target: str) 
     thin_warnings: list[str] = []
     if co.palette_consistency == 0.0 and len(record.tracklist) < 2:
         thin_warnings.append("palette consistency unavailable (fewer than 2 tracks)")
-    if not co.theme_threads:
-        thin_warnings.append("no lyrical theme threads detected (instrumental or no lyrics)")
+    if not is_instrumental and not co.theme_threads:
+        thin_warnings.append("no lyrical theme threads detected")
 
     parts = [
         f"Release: {record.artist} — {record.title}",
         f"Release type: {record.release_type}",
+        f"Instrumental: {'yes — no lyrics on any track' if is_instrumental else 'no'}",
         f"Format: {target}",
         *(["", "⚠  DATA NOTES (thin data — avoid asserting arcs for these):", *[f"  - {w}" for w in thin_warnings]] if thin_warnings else []),
         "",
@@ -161,7 +162,8 @@ def album_synthesize(
 
     selected_model = _MODEL_ALIASES.get(model or "dev", model or CRITIC_MODEL_DEV)
     system = _load_system_prompt(record.artist, persona)
-    user_msg = _build_user_message(record, findings, target)
+    is_instrumental = is_release_instrumental(record.release_slug)
+    user_msg = _build_user_message(record, findings, target, is_instrumental=is_instrumental)
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     response = client.messages.create(

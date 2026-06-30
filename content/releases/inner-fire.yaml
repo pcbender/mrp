@@ -37,5 +37,5 @@ release:
     isrc: CAGOO2500902
     duration: '4:22'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--inner-fire.mp3
     instrumental: true
