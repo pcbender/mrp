@@ -1,0 +1,120 @@
+{
+  "track_id": "michael-anthony-rose--avant-suite",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Avant Suite.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--avant-suite.opus"
+  },
+  "lyrics": "",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 86.1,
+    "key": "A",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 290.22,
+    "lufs": -14.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 19.13,
+        "label": "S1"
+      },
+      {
+        "start": 19.13,
+        "end": 43.63,
+        "label": "S2"
+      },
+      {
+        "start": 43.63,
+        "end": 90.09,
+        "label": "S3"
+      },
+      {
+        "start": 90.09,
+        "end": 105.35,
+        "label": "S4"
+      },
+      {
+        "start": 105.35,
+        "end": 120.72,
+        "label": "S5"
+      },
+      {
+        "start": 120.72,
+        "end": 170.5,
+        "label": "S6"
+      },
+      {
+        "start": 170.5,
+        "end": 187.55,
+        "label": "S7"
+      },
+      {
+        "start": 187.55,
+        "end": 208.38,
+        "label": "S8"
+      },
+      {
+        "start": 208.38,
+        "end": 235.73,
+        "label": "S9"
+      },
+      {
+        "start": 235.73,
+        "end": 269.72,
+        "label": "S10"
+      },
+      {
+        "start": 269.72,
+        "end": 290.22,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.969
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "uplifting"
+    ],
+    "instruments": [
+      "piano",
+      "bass guitar",
+      "synthesizer"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is an intimate and sophisticated jazz piano trio performance. The texture is open and conversational, featuring a lyrical piano, a walking upright bass, and delicate, brush-based drumming, which together create a relaxed and slightly melancholic atmosphere. The energy is mellow and flowing with a gentle, rolling swing feel that invites thoughtful listening. The production is clean and spacious, capturing the natural acoustic character of each instrument as if they were performing live in a small, well-treated room. A defining quality is the fluid, improvisational interplay between the musicians, particularly during the transition around 0:55 where the intensity subtly increases, revealing a more complex harmonic and rhythmic dialogue.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Eleven sections in under five minutes, in 3/4, at a waltz-like 86 BPM: 'Avant Suite' earns its name by refusing to settle. The piece moves through its A minor center with the kind of conversational looseness you hear in a Bill Evans trio at its most exploratory, the piano line lyrical without being sentimental, the upright bass keeping a walking pulse that holds the whole thing together. The shift around the 55-second mark is the real payoff, where the harmonic and rhythmic interplay opens up just enough to feel like a room suddenly getting bigger. A highlight, and a confident one.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "86.1 BPM waltz feel",
+      "A minor",
+      "11 sections in 4:50",
+      "transition at approximately 0:55",
+      "Bill Evans trio comparison",
+      "walking bass pulse"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

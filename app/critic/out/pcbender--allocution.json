@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--allocution",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Allocution.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--allocution.opus"
+  },
+  "lyrics": "I’ve come to say the final line\nTo lay you down, with words said kind\nThey say you're dead, and that is true\nBut I still feel the weight of you\n\nI spoke in threads, I praised your fame\nIgnored the parts that cut like blame\nI wore conviction like a crown\nBut always made a hollow sound\n\nThis is my allocution\nMy final claim to light\nI told the world my truth\nAnd hoped it sounded right\nBut now the silence answers\nWith something I can't fake\nThis is my allocution-\nAnd I may be too late\n\nYou spoke your truth, but I remain\nNot loud, not lost-and not a claim\nI do not beg. I do not bend\nI am the means, not just the end\n\nYou shouted facts like they were fire\nBut I am neither loud nor dire\nI am the hand, the root, the light\nWhat’s left after the endless fight\n\nThis is my allocution\nNot carved in stone or light\nI am the one that listens\nTo what you cannot write\nI am the quiet answer\nTo questions you won't ask\nThis is my allocution-\nNo spotlight, and no mask\n\nI am the simple way, like water over stone\nI never shout-I shape what’s left alone\nBut you-\nYou choose the noise, the brighter course\nAnd cursed the stream that held no force\nI offered ease\nYou asked for more\nAnd still I wait behind the door\n\nThis is the allocution\nNot to convince, but see\nNot to be right, but reckon\nWith what we'll never be\nThere is no clean conclusion\nNo sermon to recite\nOnly this allocution-\nTo say it\nAnd be quiet",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 260.5,
+    "lufs": -13.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.48,
+        "label": "S1"
+      },
+      {
+        "start": 6.48,
+        "end": 32.62,
+        "label": "S2"
+      },
+      {
+        "start": 32.62,
+        "end": 73.93,
+        "label": "S3"
+      },
+      {
+        "start": 73.93,
+        "end": 120.47,
+        "label": "S4"
+      },
+      {
+        "start": 120.47,
+        "end": 137.83,
+        "label": "S5"
+      },
+      {
+        "start": 137.83,
+        "end": 170.41,
+        "label": "S6"
+      },
+      {
+        "start": 170.41,
+        "end": 185.43,
+        "label": "S7"
+      },
+      {
+        "start": 185.43,
+        "end": 258.04,
+        "label": "S8"
+      },
+      {
+        "start": 258.04,
+        "end": 260.5,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.869
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "harmonica",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a spacious and slightly pensive atmosphere with clean, layered guitars before erupting into an emotionally charged, anthemic rock sound. The energy is highly dynamic, building from driving, palm-muted verses into powerful, open choruses that feel both resolute and declarative. The production is clean and modern, featuring a dense wall of guitars that leaves ample space for the commanding lead vocal to sit clearly at the front of the mix. A defining moment occurs in the bridge around 02:48, where the arrangement pulls back to a simple, vulnerable texture before a final, explosive return to the song's full intensity.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds 'Allocution' like a legal confession that turns into a reckoning, opening in spare B minor with clean palm-muted guitar before the chorus cracks open into something genuinely anthemic. The lyric lands its best punch in the bridge: 'I offered ease, you asked for more, and still I wait behind the door' is the kind of plain-spoken line that earns its weight, and the arrangement honors it by stripping back to almost nothing at 2:48 before the full band comes back in swinging. At 143 BPM the song moves with real urgency, but it never loses the tenderness the verses need. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "B minor key",
+      "143 BPM tempo",
+      "bridge lyric quote: 'I offered ease, you asked for more, and still I wait behind the door'",
+      "2:48 arrangement pullback",
+      "palm-muted verse texture",
+      "chorus dynamic contrast"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

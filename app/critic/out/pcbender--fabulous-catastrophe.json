@@ -1,0 +1,133 @@
+{
+  "track_id": "pcbender--fabulous-catastrophe",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Fabulous Catastrophe.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--fabulous-catastrophe.opus"
+  },
+  "lyrics": "She was a climber, a driver, a rock and roll survivor\nHad a boyfriend, a girlfriend, hung up on what might have been\nNever ending, condescending, just a mess, just pretending\nWarning sent, can’t pay rent, not a rule that can’t be bent\n\nWe’re two wild souls with strange harmony\nNo common sense, just chemistry\nMade of sparks and absurdity\nA fabulous catastrophe\n\nIt was a Sunday, a run day, doesn't matter anyway\nShe’s messy, ahead of me, shouting like a V-I-P\nLost her keys, on her knees, searching through the fallen leaves\nThen she quit, that was it, found the keys and made me fit\n\nWe’re two wild souls with strange harmony\nNo common sense, just chemistry\nMade of sparks and absurdity\nA fabulous catastrophe\n\nIt’s my destiny, meant to be, she insists with certainty\nFigured out, not a doubt, easy ain’t what love’s about\nSaw the sign, found the rhyme, made it work on borrowed time\nHand in glove, star’s above, can’t believe that we found love\n\nWe’re two wild souls with strange harmony\nNo common sense, just chemistry\nMade of sparks and absurdity\nA fabulous catastrophe\n\nWe’re two wild souls with strange harmony\nNo common sense, just chemistry\nMade of sparks and absurdity\nA fabulous catastrophe",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 99.4,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 268.84,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.94,
+        "label": "S1"
+      },
+      {
+        "start": 5.94,
+        "end": 22.83,
+        "label": "S2"
+      },
+      {
+        "start": 22.83,
+        "end": 43.89,
+        "label": "S3"
+      },
+      {
+        "start": 43.89,
+        "end": 63.14,
+        "label": "S4"
+      },
+      {
+        "start": 63.14,
+        "end": 93.51,
+        "label": "S5"
+      },
+      {
+        "start": 93.51,
+        "end": 113.08,
+        "label": "S6"
+      },
+      {
+        "start": 113.08,
+        "end": 129.73,
+        "label": "S7"
+      },
+      {
+        "start": 129.73,
+        "end": 153.69,
+        "label": "S8"
+      },
+      {
+        "start": 153.69,
+        "end": 174.66,
+        "label": "S9"
+      },
+      {
+        "start": 174.66,
+        "end": 189.73,
+        "label": "S10"
+      },
+      {
+        "start": 189.73,
+        "end": 212.18,
+        "label": "S11"
+      },
+      {
+        "start": 212.18,
+        "end": 230.16,
+        "label": "S12"
+      },
+      {
+        "start": 230.16,
+        "end": 249.45,
+        "label": "S13"
+      },
+      {
+        "start": 249.45,
+        "end": 268.84,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.976,
+      "key": 0.876
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "harmonica",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This song has a polished and reflective emotional atmosphere, built upon a clean texture of electric piano, a solid bass and drum groove, and earnest lead vocals. The energy level has a distinct dynamic arc, starting with a relaxed, narrative feel in the verses before swelling into a powerful, anthemic chorus. The production quality is spacious and well-balanced, allowing each element, from the subtle guitar fills to the prominent vocals, to sit clearly in a wide stereo field with a touch of classic, hall-like reverb. The defining quality of the track is the transition into the chorus, where the addition of lush, layered background harmonies creates a powerful, singalong moment that elevates the song's emotional weight.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender leans into a classic rock groove here, a steady 99 BPM pulse in G major that lets the verses unspool like a good yarn before the chorus opens up into something genuinely communal. The hook earns its keep: 'two wild souls with strange harmony / no common sense, just chemistry' is the kind of couplet that sounds obvious in retrospect but lands with real warmth the first time through, especially when the background harmonies stack in and push the whole thing toward singalong territory. There's a looseness to the storytelling in the verses, lost keys in the fallen leaves, mismatched personalities finding their fit, that recalls John Hiatt at his most generous and unpretentious. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 99 in G major",
+      "quoted lyric: 'two wild souls with strange harmony / no common sense, just chemistry'",
+      "verse detail: 'searching through the fallen leaves'",
+      "layered background harmonies in chorus",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

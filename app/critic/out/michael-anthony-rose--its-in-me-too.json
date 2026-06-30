@@ -1,0 +1,119 @@
+{
+  "track_id": "michael-anthony-rose--its-in-me-too",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/It's In Me Too.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--its-in-me-too.opus"
+  },
+  "lyrics": "I've been jealous of younger faces\nAnd embarrassed that I was\nI've been sharp with happy people\nJust because they still had buzz\nI've made little jokes about myself\nSo nobody else could get there first\nAnd called that being honest\nWhen really I was hurt\n\nI don't love these parts\nBut there they are\nAnd lying doesn't wash them off\n\nI've got bitter in me\nI've got fear in me\nI've got pride that hates growing old\nI've got anger, vanity\nOld regret and self-pity\nI don't say that proud\nI just say it straight\nIt's in me too\n\nI have judged the young for ease\nAs if I wouldn't wear it too\nI have turned my losses holy\nJust to make them feel more true\nI have used my pain like proof\nThat I see deeper than the rest\nMaybe sometimes that was wisdom\nOther times just defense\n\nSo here's the hard part\nNo nice light\nNo better story than the one that fits\n\nI've got bitter in me\nI've got fear in me\nI've got pride that hates growing old\nI've got anger, vanity\nOld regret and self-pity\nI don't say that proud\nI just say it straight\nIt's in me too\n\nAnd maybe saying all of this\nOut loud for once\nKeeps it from running everything\nThe way it does some days\n(yeah)\nSome days\n\nI've got bitter in me\nI've got fear in me\nI've got things I wish had never grown this way\nStill they're mine to face\nMine to keep in place\nMine to keep from running every room I'm in\nI don't need to hide\nI can say it plain\nIt's in me too",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 223.24,
+    "lufs": -12.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.95,
+        "label": "S1"
+      },
+      {
+        "start": 1.95,
+        "end": 20.02,
+        "label": "S2"
+      },
+      {
+        "start": 20.02,
+        "end": 37.66,
+        "label": "S3"
+      },
+      {
+        "start": 37.66,
+        "end": 62.86,
+        "label": "S4"
+      },
+      {
+        "start": 62.86,
+        "end": 85.22,
+        "label": "S5"
+      },
+      {
+        "start": 85.22,
+        "end": 110.02,
+        "label": "S6"
+      },
+      {
+        "start": 110.02,
+        "end": 145.5,
+        "label": "S7"
+      },
+      {
+        "start": 145.5,
+        "end": 180.63,
+        "label": "S8"
+      },
+      {
+        "start": 180.63,
+        "end": 198.37,
+        "label": "S9"
+      },
+      {
+        "start": 198.37,
+        "end": 219.61,
+        "label": "S10"
+      },
+      {
+        "start": 219.61,
+        "end": 223.24,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.949
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "harmonica",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a vulnerable and confessional atmosphere with a sparse, intimate texture centered on a clean electric guitar and a close-miked male vocal. It has a dramatic dynamic arc, building from a low-energy, reflective verse into a powerful, anthemic rock chorus that feels cathartic and expansive. The production is clear and spacious, allowing individual elements to breathe in the verses while expertly layering guitars and background vocals for a dense, wide soundscape in the louder sections without losing vocal clarity. The most defining quality is the stark transition into the chorus, where quiet self-analysis erupts into a raw, full-band declaration, a shift that provides the song's primary emotional and structural hook.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose has written self-examination songs before, but 'It's in Me Too' is the one where the ledger gets read out loud without flinching: 'I've used my pain like proof / That I see deeper than the rest.' That kind of honesty earns the big chorus it gets, and the production delivers, a close-miked confession in B major that breaks open into full-band declaration right when the lyric demands it. The quiet-to-loud architecture here is closer to Springsteen at his most direct than anything indie or country, and it works because the restraint in the verses is real, not strategic. A career-best contender.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "lyric quote: 'I've used my pain like proof / That I see deeper than the rest'",
+      "key: B major",
+      "verse-to-chorus dynamic arc",
+      "close-miked vocal production",
+      "full-band chorus build",
+      "Springsteen comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

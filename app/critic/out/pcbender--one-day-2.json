@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--one-day-2",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/One Day - PCBender.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--one-day-2.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 237.12,
+    "lufs": -16.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.34,
+        "label": "S1"
+      },
+      {
+        "start": 5.34,
+        "end": 25.68,
+        "label": "S2"
+      },
+      {
+        "start": 25.68,
+        "end": 47.81,
+        "label": "S3"
+      },
+      {
+        "start": 47.81,
+        "end": 67.36,
+        "label": "S4"
+      },
+      {
+        "start": 67.36,
+        "end": 86.45,
+        "label": "S5"
+      },
+      {
+        "start": 86.45,
+        "end": 101.91,
+        "label": "S6"
+      },
+      {
+        "start": 101.91,
+        "end": 126.43,
+        "label": "S7"
+      },
+      {
+        "start": 126.43,
+        "end": 159.52,
+        "label": "S8"
+      },
+      {
+        "start": 159.52,
+        "end": 175.01,
+        "label": "S9"
+      },
+      {
+        "start": 175.01,
+        "end": 203.64,
+        "label": "S10"
+      },
+      {
+        "start": 203.64,
+        "end": 237.12,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.966,
+      "key": 0.883
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a nostalgic and uplifting atmosphere, building from a sparse texture of clean electric guitar and reverberant piano into a full, anthemic pop-rock arrangement. The energy ebbs and flows through a classic verse-chorus dynamic, with introspective verses providing a thoughtful setup for the powerfully driving and emotionally resonant choruses. The production is polished and spacious, allowing the lead vocal to sit clearly above a well-balanced mix of punchy drums and layered guitars that never feel overly dense. A defining moment is the transition into the chorus at 01:28, where the song dramatically opens up with layered harmonies, delivering a powerful emotional release that serves as the song's centerpiece.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 143 BPM in a bright E major, 'One Day 2' builds with real patience, opening on clean electric guitar and reverberant piano before the full arrangement arrives and earns its weight. The transition around the 1:28 mark is the payoff, where layered harmonies push through and the track opens up the way a good anthem should, more Petty than bombast. PCBender keeps the production spacious enough that each instrument has room to breathe, and the dynamic between the quieter stretches and the driving choruses holds across nearly four minutes without overstaying. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "143 BPM",
+      "E major",
+      "1:28 transition",
+      "clean electric guitar and reverberant piano opening",
+      "layered harmonies",
+      "3:57 duration"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

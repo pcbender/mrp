@@ -1,0 +1,8 @@
+---
+track_id: pcbender--riddles-abound
+impression: "This is a high-energy, driving blues-rock track with a dense and powerful texture. The emotional atmosphere is intense and defiant, established immediately by a confident, wailing electric guitar intro that sets a fiery tone. The production is modern and clean, with a punchy, centered rhythm section that provides a solid foundation for the crunchy, multi-layered guitars and a clear, cutting lead vocal. The massive, call-and-response chorus vocals create a memorable hook, while the technically proficient and emotive guitar solo around 1:53 serves as a standout moment, showcasing the track's raw, virtuosic character."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+Closing an album after its peak is an art, and 'Riddles Abound' handles it cleanly. PCBender opens with a wailing guitar that wastes no time establishing the stakes, then drives the whole track at a pace that barely lets you breathe, which is exactly the right call after 'Prehistoric Lies' has spent six minutes tightening everything down. The lyric 'buried in dread is the spark of a dream' captures what the track is doing structurally: tension that earns its release. The call-and-response chorus hits with the kind of communal lift you get from early Springsteen, and the guitar solo around the ninety-second mark is genuinely the kind of playing that makes you rewind. At five and a half minutes, it earns every second. As a closer it doesn't try to top what came before; it opens the window and lets some air in, which is the right instinct, and the album lands on its feet.

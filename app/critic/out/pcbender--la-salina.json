@@ -1,0 +1,113 @@
+{
+  "track_id": "pcbender--la-salina",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/La Salina.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--la-salina.opus"
+  },
+  "lyrics": "Twelve hours down through the urban sprawl\nBackseat sweat, didn’t want to go at all\nHot wind, sand in my teeth\nLa Salina waited, dry and deep\n\nUncle tossed me keys, said, “You got five minutes, kid”\nShowed the clutch once, then he turned and hid\n“Just go,” he called, and I gripped the wheel\nKicked up dust like it wasn’t real\n\nLa Salina, where the road runs wide\nSalt in the air and nothing to hide\nNo map, no plan, no one to know\nJust a kid with a spark and the word: go\n\nNext morning Vicky said, “Mind if I ride?”\nShe laughed at my stalls, leaned in from the side\nTold me I looked cooler in motion\nAnd we flew like a wave on the ocean\n\nThat night the fire burned soft and slow\nShe caught my eye and whispered low\n“Wanna walk down where the tide runs cold?”\nMy uncle nodded-“Just go.”\n\nLa Salina, where the stillness hums\nAnd something begins when the silence comes\nWe kissed where the dark let the starlight show\nAnd I didn’t look back. I just… let go\n\nAfter that, she never left my side\nDune rides, beach walks, saltwater tide\nI’d glance at my uncle, he’d raise a beer\nDidn’t say much, but I’d always hear\n“Just go…”\n\nLa Salina, etched in sand and waves\nWhere I first felt the urge to misbehave\nStill hear that voice when I need to know\nWhat comes next when it’s time to grow-\nJust go…\n\nWe’d cross paths at weddings, at funerals too\nShe’d nod once, I’d nod back-that’s all we’d do\nNever spoke of the dunes or the kiss on the ride\nLa Salina stayed where the memory hides\n\nBut sometimes at night, when the warm winds blow-\nI still hear her laugh, and I think\nJust go",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 69.8,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 219.88,
+    "lufs": -15.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 25.61,
+        "label": "S1"
+      },
+      {
+        "start": 25.61,
+        "end": 40.87,
+        "label": "S2"
+      },
+      {
+        "start": 40.87,
+        "end": 68.5,
+        "label": "S3"
+      },
+      {
+        "start": 68.5,
+        "end": 85.98,
+        "label": "S4"
+      },
+      {
+        "start": 85.98,
+        "end": 106.56,
+        "label": "S5"
+      },
+      {
+        "start": 106.56,
+        "end": 132.66,
+        "label": "S6"
+      },
+      {
+        "start": 132.66,
+        "end": 157.27,
+        "label": "S7"
+      },
+      {
+        "start": 157.27,
+        "end": 173.1,
+        "label": "S8"
+      },
+      {
+        "start": 173.1,
+        "end": 207.52,
+        "label": "S9"
+      },
+      {
+        "start": 207.52,
+        "end": 219.88,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.954,
+      "key": 0.984
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a warm, intimate folk track built around a clean, fingerpicked acoustic guitar and a gentle, narrative male vocal, establishing a reflective and nostalgic atmosphere from the start. The energy level is relaxed and story-driven, with a steady, unhurried feel that evokes a sense of recounting a fond memory. The production quality is excellent: it is spacious and clear, with the crisp acoustic guitar and upfront vocals given plenty of room to breathe, while subtle harmonies and atmospheric elements add depth without cluttering the arrangement. The most defining quality is the song's gentle, unfolding narrative, which is punctuated by the memorable lift in the chorus (\"La Salina\") where vocal harmonies create an expansive, emotionally resonant moment.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 70 BPM in B major, 'La Salina' moves like memory itself: unhurried, slightly sun-bleached, and more vivid in certain moments than others. PCBender builds the whole thing around a clean fingerpicked guitar and a vocal that earns its intimacy, and the payoff is real when the chorus opens up with those harmonies lifting 'La Salina' into something bigger than the verse deserved to promise. The lyric does the heavy lifting here, tracing a first-love summer through the uncle's two-word philosophy, 'just go,' which PCBender returns to often enough that by the final verse it lands with genuine weight. Not every verse earns equal real estate, but the song knows where it's going, and it gets there cleanly.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 69.8 / B major",
+      "fingerpicked acoustic guitar texture",
+      "chorus vocal harmonies on 'La Salina'",
+      "recurring lyric 'just go'",
+      "narrative structure across 10 sections"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

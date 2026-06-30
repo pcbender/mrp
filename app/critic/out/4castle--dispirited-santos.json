@@ -1,0 +1,125 @@
+{
+  "track_id": "4castle--dispirited-santos",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Dispirited Santos.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--dispirited-santos.opus"
+  },
+  "lyrics": "I light a flame and call your name, the way my mother taught\nThrough beads and tears I bargain faith for miracles I sought\nBut all I hear is wax and wind, and echoes in the nave\nTell me, holy keeper, are there souls left to save\n\nWe heard your cries for centuries, each sorrow carved in stone\nBut heaven’s tired of promises that never found a home\nWe sang until the choirs slept, our grace began to fade\nSantos, child, the world you plead for was the one we made\n\nWe lived for you, died for you\nLaughed and cried with you\nDid all we could do for you\nBut nothing we gave\nHas ever gotten through\n\nThen why this hush of broken wings, this silence on the line\nI’ve kept my faith through famine years, through dust and salted wine\nYou whisper like a fallen star too distant to believe\nWas it us who stopped the prayer, or you who learned to leave\n\nNo wrath remains, no fire divine - just quiet in the pews\nWe lost the sound of listening first, then mirrored it in you\nYet if you hear the silence sing, you’ll know what we once knew\nThe prayer was never ours alone - Santos, it’s still in you\n\nWe lived for you, died for you\nLaughed and cried with you\nDid all we could do for you\nBut nothing we gave\nHas ever gotten through\n\nWe lived for you, died for you\nLaughed and cried with you\nDid all we could do for you\nBut nothing we gave\nHas ever gotten through",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 83.4,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 272.26,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.14,
+        "label": "S1"
+      },
+      {
+        "start": 2.14,
+        "end": 20.02,
+        "label": "S2"
+      },
+      {
+        "start": 20.02,
+        "end": 35.36,
+        "label": "S3"
+      },
+      {
+        "start": 35.36,
+        "end": 54.64,
+        "label": "S4"
+      },
+      {
+        "start": 54.64,
+        "end": 70.38,
+        "label": "S5"
+      },
+      {
+        "start": 70.38,
+        "end": 116.15,
+        "label": "S6"
+      },
+      {
+        "start": 116.15,
+        "end": 138.99,
+        "label": "S7"
+      },
+      {
+        "start": 138.99,
+        "end": 168.48,
+        "label": "S8"
+      },
+      {
+        "start": 168.48,
+        "end": 188.1,
+        "label": "S9"
+      },
+      {
+        "start": 188.1,
+        "end": 227.53,
+        "label": "S10"
+      },
+      {
+        "start": 227.53,
+        "end": 242.9,
+        "label": "S11"
+      },
+      {
+        "start": 242.9,
+        "end": 272.26,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.867
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a powerfully emotive rock ballad built on a foundation of crunchy, blues-inflected electric guitars and a driving rhythm section. The emotional atmosphere is one of dramatic, soulful pleading, conveyed through a compelling call-and-response vocal narrative between male and female leads. The production is clear and modern, giving each instrument its own distinct space while creating a dense, unified wall of sound in the soaring, anthemic choruses. A defining characteristic is the dynamic interplay between the two vocalists, which transforms the song into a dramatic dialogue, a quality further elevated by the track's intricate and expressive guitar solos.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Dispirited Santos\" builds its emotional weight on a question almost too large for a rock song to carry: what happens when the divine and the faithful both run out of answers? At 83 BPM in E minor, the track moves with the deliberate gravity of a processional, and the call-and-response between the two lead vocals gives the lyric its real teeth, turning the chorus into a genuine argument rather than a sentiment. The line \"we lost the sound of listening first, then mirrored it in you\" lands with the kind of plainspoken revelation you get from the best John Hiatt records. A career highlight, and the kind of track that rewards the faithful and pulls in newcomers alike.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "83 BPM tempo",
+      "E minor key",
+      "call-and-response vocal structure",
+      "lyric quote: 'we lost the sound of listening first, then mirrored it in you'",
+      "deliberate processional feel",
+      "blues-inflected guitar production",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

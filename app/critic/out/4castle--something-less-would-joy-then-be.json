@@ -1,0 +1,110 @@
+{
+  "track_id": "4castle--something-less-would-joy-then-be",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Something Less Would Joy Then Be.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--something-less-would-joy-then-be.opus"
+  },
+  "lyrics": "If joy were just a lover’s kiss\nThe tenderness of sweet caress\nOf hearts entwined without egress\nYet even this cannot quite be\n\n‘Cause something less would joy then be\nSomething less would joy then be\n\nIf joy were just a rising sun\nUnfolding light for everyone\nA golden hush the day begun\nYet even this cannot quite be\n\n‘Cause something less would joy then be\nSomething less would joy then be\n\nIf joy were just a voice in song\nA chorus wide, a note held long\nA trembling chord that shakes the sea\nYet even this cannot quite be\n\n‘Cause something less would joy then be\nSomething less would joy then be\n\nIf joy were just a peaceful place\nA quiet room, a soft embrace\nA hush where even dreams can flee\nYet even this cannot quite be\n\n‘Cause something less would joy then be\nSomething less would joy then be\n\nIf joy were just the grace of God\nA mercy given with a nod\nA light untouched by blasphemy\nYet even this cannot quite be\n\n‘Cause something less would joy then be\nSomething less would joy then be\n\nNot lover, light, nor song nor peace\nNot even what we think is grace\nBut joy the echo, not the sound\nThe shape we chase is never found",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "D",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 224.95,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.52,
+        "label": "S1"
+      },
+      {
+        "start": 11.52,
+        "end": 30.51,
+        "label": "S2"
+      },
+      {
+        "start": 30.51,
+        "end": 56.66,
+        "label": "S3"
+      },
+      {
+        "start": 56.66,
+        "end": 75.14,
+        "label": "S4"
+      },
+      {
+        "start": 75.14,
+        "end": 100.54,
+        "label": "S5"
+      },
+      {
+        "start": 100.54,
+        "end": 130.19,
+        "label": "S6"
+      },
+      {
+        "start": 130.19,
+        "end": 157.92,
+        "label": "S7"
+      },
+      {
+        "start": 157.92,
+        "end": 183.51,
+        "label": "S8"
+      },
+      {
+        "start": 183.51,
+        "end": 224.95,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.951
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "pop",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds from an intimate, sparse texture of finger-picked acoustic guitar and soft vocals into a much richer, full-band arrangement, creating a contemplative yet increasingly hopeful atmosphere. The energy builds methodically from a gentle folk ballad into a driving, mid-energy anthem, with a feel that is both earnest and emotionally expansive. The production is clean and well-balanced, maintaining a sense of space even as drums, bass, and layered electric guitars are introduced, allowing the prominent lead and harmony vocals to soar clearly above the mix. A defining quality is the song's powerful dynamic arc, where each chorus swells with greater intensity and instrumentation, culminating in a climactic final section that feels like a grand, declarative statement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The lyric lands its central paradox cleanly: joy is 'the echo, not the sound,' a shape we chase but never hold, and 4Castle earns that conclusion by building through five patient verses in D minor before the bottom drops out and the full band arrives. At 123 BPM the track moves with a steady, purposeful pulse, opening on finger-picked acoustic and a single voice before drums, bass, and electric guitars stack in, each chorus a notch fuller than the last until the final section feels genuinely declarative. It's the kind of dynamic arc that recalls early Fleetwood Mac ballads that refused to stay ballads, and the five-part harmony on that repeated hook 'something less would joy then be' is exactly the reason this band exists. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric quote: 'something less would joy then be'",
+      "lyric quote: 'the echo, not the sound'",
+      "key: D minor",
+      "BPM: 123",
+      "structure: sparse acoustic open building to full-band climax",
+      "five-part harmony on chorus",
+      "Fleetwood Mac comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

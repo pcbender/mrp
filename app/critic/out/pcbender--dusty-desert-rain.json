@@ -1,0 +1,129 @@
+{
+  "track_id": "pcbender--dusty-desert-rain",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Dusty Desert Rain.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--dusty-desert-rain.opus"
+  },
+  "lyrics": "The sky don’t beg before it cries\nIt just knows when to let go\nAnd I’ve been holding too many whys\nAfraid of what I’d sow\n\nA dusty desert rain falls hard upon my skin\nThe dry now riven, as the sandy stream begins\nThe hard releases tension, the life no longer strains\nA gentle force unleashes to carry off my sins\n\nThe dust remembers every name\nEach footprint and each vow\nBut even stones can shift their frame\nIf they just breathe somehow\n\nA dusty desert rain falls hard upon my skin\nThe dry now riven, as the sandy stream begins\nThe hard releases tension, the life no longer strains\nA gentle force unleashes to carry off my sins\n\nSo let the thunder find my peace\nLet lightning mark what’s true\nI’m not the one who needs release-\nThe rain is breaking through\n\nA dusty desert rain falls hard upon my skin\nThe dry now riven, as the sandy stream begins\nThe hard releases tension, the life no longer strains\nA gentle force unleashes to carry off my sins\n\nI don’t need answers, only sky\nA breath, a breeze, a way to mend\nWhat falls will fade, what stays will dry\nAnd rise to fall again\n\nA dusty desert rain falls hard upon my skin\nThe dry now riven, as the sandy stream begins\nThe hard releases tension, the life no longer strains\nA gentle force unleashes to carry off my sins",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 311.32,
+    "lufs": -16.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.49,
+        "label": "S1"
+      },
+      {
+        "start": 1.49,
+        "end": 17.51,
+        "label": "S2"
+      },
+      {
+        "start": 17.51,
+        "end": 32.69,
+        "label": "S3"
+      },
+      {
+        "start": 32.69,
+        "end": 55.38,
+        "label": "S4"
+      },
+      {
+        "start": 55.38,
+        "end": 93.27,
+        "label": "S5"
+      },
+      {
+        "start": 93.27,
+        "end": 109.3,
+        "label": "S6"
+      },
+      {
+        "start": 109.3,
+        "end": 163.7,
+        "label": "S7"
+      },
+      {
+        "start": 163.7,
+        "end": 179.82,
+        "label": "S8"
+      },
+      {
+        "start": 179.82,
+        "end": 256.67,
+        "label": "S9"
+      },
+      {
+        "start": 256.67,
+        "end": 275.3,
+        "label": "S10"
+      },
+      {
+        "start": 275.3,
+        "end": 290.83,
+        "label": "S11"
+      },
+      {
+        "start": 290.83,
+        "end": 306.06,
+        "label": "S12"
+      },
+      {
+        "start": 306.06,
+        "end": 311.32,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.973,
+      "key": 0.904
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an introspective, slightly melancholic atmosphere with its intricate acoustic guitar work and earnest lead vocal. The energy is highly dynamic, building from sparse, contemplative verses into a powerful and cathartic rock chorus that feels anthemic and emotionally expansive. The production quality is excellent: it maintains a sense of space and clarity even when the arrangement becomes dense with driving drums and layered electric guitars. The defining quality of the song is this powerful transition into the chorus, where the full band erupts, creating a powerful feeling of release that serves as the track's emotional centerpiece.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds 'Dusty Desert Rain' the way a good storm actually works: slowly, then all at once. The sparse acoustic opening gives the lyric room to breathe, and lines like 'the sky don't beg before it cries / it just knows when to let go' earn their weight before the full band arrives. When that chorus hits in E major, drums and layered electrics pushing hard against the 143 BPM count, the release feels genuinely earned rather than manufactured. At just over five minutes it earns every second.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "E major key",
+      "143 BPM",
+      "5:11 duration",
+      "lyric quote: 'the sky don't beg before it cries / it just knows when to let go'",
+      "sparse acoustic opening to full-band chorus structure",
+      "layered electric guitars in chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "track_id": "pcbender--come-up-and-see",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Come Up And See.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--come-up-and-see.opus"
+  },
+  "lyrics": "I see you hiding in the corner\nwith a drink in your hand\nA woman so hot, a real burner\nI need to head inland\n\nCome up and see (um bop bop, um bop bop, ahhh)\nHow good it can be (um bop bop, um bop bop, ahhh)\nCome up and see (um bop bop, um bop bop, ahhh)\nLet me set you free (um bop bop, um bop bop, ahhh)\nYou’ve been waiting too long\nFor a feeling this strong\nCome up and see\n\nYou catch my eye from across the room\nI’m closing, feelin’ lucky\n“A dance?” I ask. “Or do I presume?”\nWow, this girl is sexy\n\nCome up and see (um bop bop, um bop bop, ahhh)\nHow good it can be (um bop bop, um bop bop, ahhh)\nCome up and see (um bop bop, um bop bop, ahhh)\nLet me set you free (um bop bop, um bop bop, ahhh)\nYou’ve been waiting too long\nFor a feeling this strong\nCome up and see\n\nThe floor explodes, the music pulses\nOur body’s fit just right\nA kind of high, a rush of senses\nWe melt into the night\n\nCome up and see (um bop bop, um bop bop, ahhh)\nHow good it can be (um bop bop, um bop bop, ahhh)\nCome up and see (um bop bop, um bop bop, ahhh)\nLet me set you free (um bop bop, um bop bop, ahhh)\nYou’ve been waiting too long\nFor a feeling this strong\nCome up and see\n\nCome up and see\nHow good it can be\n\nCome up and see\nHow good it can be",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "A#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 213.09,
+    "lufs": -13.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.81,
+        "label": "S1"
+      },
+      {
+        "start": 2.81,
+        "end": 17.83,
+        "label": "S2"
+      },
+      {
+        "start": 17.83,
+        "end": 37.2,
+        "label": "S3"
+      },
+      {
+        "start": 37.2,
+        "end": 63.79,
+        "label": "S4"
+      },
+      {
+        "start": 63.79,
+        "end": 80.27,
+        "label": "S5"
+      },
+      {
+        "start": 80.27,
+        "end": 103.47,
+        "label": "S6"
+      },
+      {
+        "start": 103.47,
+        "end": 119.07,
+        "label": "S7"
+      },
+      {
+        "start": 119.07,
+        "end": 147.21,
+        "label": "S8"
+      },
+      {
+        "start": 147.21,
+        "end": 177.49,
+        "label": "S9"
+      },
+      {
+        "start": 177.49,
+        "end": 192.49,
+        "label": "S10"
+      },
+      {
+        "start": 192.49,
+        "end": 207.8,
+        "label": "S11"
+      },
+      {
+        "start": 207.8,
+        "end": 213.09,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.975,
+      "key": 0.891
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "soul"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a smooth, romantic atmosphere with its polished R&B texture. The arrangement features a clean, tight rhythm section, warm electric piano, and lush, layered vocal harmonies that provide a rich, supportive backdrop for the confident lead vocal. The production quality is high, with a great sense of space and clarity; each instrument sits comfortably in the mix, allowing the vocals to remain the clear focus. The feel is cool and laid-back, maintaining a steady, inviting energy that feels perfect for a slow dance. A distinctive moment of powerful emotional release happens with the soaring, high-register vocal ad-libs near the end of the song.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender leans into classic pickup-song territory here, and the track earns it: a steady 95.7 BPM groove in A# major that sits just right for a slow dance, with warm electric piano and layered vocal harmonies giving the whole thing a polished R&B sheen that sits closer to blue-eyed soul than his rougher rock work. The chorus hook, built around those \"um bop bop\" call-and-response lines, is unabashedly old-school, nodding to early Motown shuffle in the best way, and the vocals stay front and center throughout a clean, spacious mix. The verses are functional rather than memorable, and a line like \"Wow, this girl is sexy\" lands a little flat on paper, but in context the track's confident charm carries it past the awkward spots. A dependable cut that does its job and does it well.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "95.7 BPM",
+      "A# major",
+      "electric piano",
+      "layered vocal harmonies",
+      "um bop bop chorus hook",
+      "Wow this girl is sexy lyric quote",
+      "Motown shuffle comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

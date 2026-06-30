@@ -1,0 +1,110 @@
+{
+  "track_id": "4castle--venus-syndrome",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Venus Syndrome.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--venus-syndrome.opus"
+  },
+  "lyrics": "She emerged from the waves brushing foam from her chest\nInnocently smiling, she said \"Hi.\" I was impressed\nPerfect face, with a voice too low\nI knew in that moment I could not let her go\n\nToo good to be true, I thought I knew\nYou better be careful, or you'll find out too\n\nThought she was Venus, shining bright\nBut those looks are a helpless disguise\nUnder that mask, she's waiting to ignite\nGet too close and you'll pay the price - for Venus\n\nGot her name, got her number, got her socials, SNAP\nAsked her out, paid for dinner, then she went on the attack\nIf you ghost me, I will find you-I swear on your life\nAnd don't you ever, I mean NEVER say goodbye\n\nToo good to be true, I thought I knew\nYou better be careful, or you'll find out too\n\nThought she was Venus, shining bright\nBut those looks are a helpless disguise\nUnder that mask, she's waiting to ignite\nGet too close and you'll pay the price - for Venus\n\nWhen beauty opens any door, you don't hear \"No.\"\nYour fragile glow is poison, it pulls us to you\nI thought I might get lucky, get past your beauty show\nLike Venus, being hot is no virtue\n\nThought she was Venus, shining bright\nBut those looks are a helpless disguise\nUnder that mask, she's waiting to ignite\nGet too close and you'll pay the price - for Venus\n\nYou'll pay the price - for Venus\nYou'll pay the price - for Venus",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 213.72,
+    "lufs": -14.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.83,
+        "label": "S1"
+      },
+      {
+        "start": 4.83,
+        "end": 20.78,
+        "label": "S2"
+      },
+      {
+        "start": 20.78,
+        "end": 36.29,
+        "label": "S3"
+      },
+      {
+        "start": 36.29,
+        "end": 70.15,
+        "label": "S4"
+      },
+      {
+        "start": 70.15,
+        "end": 118.44,
+        "label": "S5"
+      },
+      {
+        "start": 118.44,
+        "end": 144.06,
+        "label": "S6"
+      },
+      {
+        "start": 144.06,
+        "end": 177.05,
+        "label": "S7"
+      },
+      {
+        "start": 177.05,
+        "end": 198.21,
+        "label": "S8"
+      },
+      {
+        "start": 198.21,
+        "end": 213.72,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.887
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "country rock",
+      "blues rock"
+    ],
+    "mood": [
+      "dark",
+      "emotional",
+      "tender"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a dense, high-gain rock texture, establishing a cautionary and intense emotional atmosphere right from the powerful opening guitar riff. The energy is consistently high and driving, propelled by a tight rhythm section and assertive, melodic male vocals that give the song an urgent and anthemic hard rock feel. The production is polished and punchy, with wide, layered guitars creating a powerful sonic wall while allowing the lead vocal to sit clearly and prominently in the mix. A key defining moment is the highly memorable and powerful chorus, where the hook \"Thought she was Venus\" and the shouted vocal punctuations create a major energetic peak.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 161 BPM in B minor, 'Venus Syndrome' hits like a wall the moment that opening guitar riff lands, and 4Castle never lets the pressure drop across its tight 3:33. The hook 'Thought she was Venus, shining bright' is the kind of chorus that earns its shout, and the bridge line 'being hot is no virtue' gives the cautionary tale enough wit to keep it from feeling like a grudge track. The production is punchy and direct, with layered guitars that push hard without burying the lead vocal, which sits right where it needs to be. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 161",
+      "B minor key",
+      "chorus hook: 'Thought she was Venus, shining bright'",
+      "bridge lyric: 'being hot is no virtue'",
+      "layered guitar production",
+      "lead vocal placement",
+      "3:33 duration"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

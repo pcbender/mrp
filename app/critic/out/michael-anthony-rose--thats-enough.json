@@ -1,0 +1,130 @@
+{
+  "track_id": "michael-anthony-rose--thats-enough",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/That's Enough.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--thats-enough.opus"
+  },
+  "lyrics": "All right\nHere we are\n\nI don't need the old excuses\nDon't need \"still young at heart\"\nDon't need every loss repainted\nAs some secret work of art\nSome things hurt and stay that way\nSome things leave and don't come back\nBut I can stand inside that knowledge\nWithout disappearing in it\n\nThere's a way to hold your head up\nWithout pretending nothing changed\nThere's a way to tell the truth\nAnd still remain yourself\nNot untouched\nNot above it\nNot somehow wiser for the damage\nJust here, in my own name\nThat's enough\n\nI don't need to win against time\nThat was never mine to do\nI just need to stop arguing\nWith what the mirror says now\nI have less ahead than I had once\nMore behind than I can hold\nBut I don't have to lie to stand up straight\nI can do that honest\n\nThere's a way to hold your head up\nWithout pretending nothing changed\nThere's a way to tell the truth\nAnd still remain yourself\nNot untouched\nNot above it\nNot somehow wiser for the damage\nJust here, in my own name\nThat's enough\n\nMaybe dignity is smaller\nThan the word once made it sound\nMaybe it's just staying human\nWhen everything gets fully seen\n(fully seen)\n\nThere's a way to hold your head up\nWithout pretending you were spared\nThere's a way to keep standing there\nWithout insisting you're the same\nNot unbroken\nNot beyond it\nNot immune to any of this\nJust here, and not ashamed\nThat's enough\n\nThat's enough\nYeah\nThat's enough",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 238.97,
+    "lufs": -12.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.3,
+        "label": "S1"
+      },
+      {
+        "start": 3.3,
+        "end": 21.83,
+        "label": "S2"
+      },
+      {
+        "start": 21.83,
+        "end": 37.06,
+        "label": "S3"
+      },
+      {
+        "start": 37.06,
+        "end": 53.06,
+        "label": "S4"
+      },
+      {
+        "start": 53.06,
+        "end": 78.85,
+        "label": "S5"
+      },
+      {
+        "start": 78.85,
+        "end": 94.57,
+        "label": "S6"
+      },
+      {
+        "start": 94.57,
+        "end": 110.94,
+        "label": "S7"
+      },
+      {
+        "start": 110.94,
+        "end": 127.32,
+        "label": "S8"
+      },
+      {
+        "start": 127.32,
+        "end": 152.58,
+        "label": "S9"
+      },
+      {
+        "start": 152.58,
+        "end": 171.32,
+        "label": "S10"
+      },
+      {
+        "start": 171.32,
+        "end": 190.89,
+        "label": "S11"
+      },
+      {
+        "start": 190.89,
+        "end": 224.1,
+        "label": "S12"
+      },
+      {
+        "start": 224.1,
+        "end": 238.97,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.931
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds from a sparse, intimate texture into a full-bodied, earnest arrangement, creating an emotional atmosphere of reflection and quiet resolve. The energy builds dynamically from gentle, introspective verses to a soaring, cathartic chorus, giving the song a feel of hopeful anthem. The production is clean and spacious, with a prominent lead vocal sitting warmly atop a well-balanced mix of piano, layered guitars, and a solid rhythm section. A distinctive feature is the powerful final chorus, which resolves the song's tension with a full, uplifting arrangement that embodies a sense of resilient self-acceptance.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose has always been good at writing around a hard feeling instead of through it, but here he goes straight through, and it holds. The lyric refuses every comfortable lie the genre usually offers: not 'wiser for the damage,' not 'unbroken,' just 'here, and not ashamed,' which is a harder and more honest landing than most writers would dare. The song runs in E major at a pace that feels brisk for the subject matter, but the production earns it, opening spare and close-miked before the chorus fills out with layered guitars and what sounds like strings lifting the back half. That final pass through the chorus, where 'pretending nothing changed' shifts to 'pretending you were spared,' is the kind of small revision that rewards close listeners. This is Rose doing what he does best, and doing it without flinching.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "lyric: 'not somehow wiser for the damage'",
+      "lyric: 'just here, and not ashamed'",
+      "lyric shift: 'pretending nothing changed' to 'pretending you were spared'",
+      "key: E major",
+      "BPM 152 noted as brisk for subject matter",
+      "sparse-to-full arrangement arc",
+      "strings in final chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

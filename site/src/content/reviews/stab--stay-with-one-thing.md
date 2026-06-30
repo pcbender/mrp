@@ -1,0 +1,8 @@
+---
+track_id: stab--stay-with-one-thing
+impression: "This track has a frantic and scattered emotional atmosphere, created by its dense, digital texture. A clear, processed female vocal sits atop layers of glitchy synth arpeggios, driving bass, and chopped samples that perfectly mirror the song's lyrical theme of a racing, unfocused mind. The energy is consistently high, propelled by a punchy electronic drum beat that gives the track a restless, hyperpop-influenced feel. A defining moment is the abrupt mid-song breakdown into a spoken-word section, which shatters the musical momentum and reinforces the concept of distraction before snapping back into the high-energy chorus."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+'Stay With One Thing' arrives at the point in the sequence where the album's central argument is becoming clear, and it sharpens that argument with the most physically enactive production yet. The glitchy synth arpeggios and chopped samples scatter across a punchy drum bed the way your attention scatters across a phone screen, which is the whole point. At a brisk pace in a minor key, the writing is sharper than the premise might suggest: the bridge's self-correction, 'I'm not lazy, I'm scattered, there's a difference,' lands with the directness of early Alanis at her most confessional. The spoken-word breakdown that shatters the chorus momentum is a genuine structural risk, and it pays off, making the final return feel earned rather than automatic. At 2:40 it's lean and purposeful. Sitting fourth in an album that opens with two strong contrasting statements and a third that bridges them, it confirms this is a record with something to say about the attention economy and the craft to say it without lecturing.

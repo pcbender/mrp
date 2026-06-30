@@ -1,0 +1,104 @@
+{
+  "track_id": "stab--maybe-i-should",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Maybe I Should.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--maybe-i-should.opus"
+  },
+  "lyrics": "(hey...)\n(remember me?)\n\nThe screen is glowing on the nightstand over there\nAnd I can feel it calling through the cold night air\n\"Just a quick check,\" says the voice in my head\n\"See what you've missed while you were lying in bed\"\n(just a peek)\nIt would be so easy, it would be so fast\nTo go back to the way things were in the past\n\nIt's a beautiful light and it's easy to follow\nEven if the middle is a little bit hollow\nI'm standing on the edge, I'm looking back in\nMaybe I should just check in\n\nThe convenience is tempting, the validation is sweet\nIt's a warm, digital blanket for the cold and the heat\nI'm missing the jokes and I'm missing the news\nAnd I'm starting to think I have something to lose\n(do I?)\n(maybe I do)\nIs it really that bad to just peek through the door\n\nIt's a beautiful light and it's easy to follow\nEven if the middle is a little bit hollow\nI'm standing on the edge, I'm looking back in\nMaybe I should just check in\n\n(Don't do it)\n(But look how it shines)\n(Don't do it)\n(But look at the lines)\nIt's a siren song playing in the palm of my hand\n\nIt's a beautiful light and it's easy to follow\nEven if the middle is a little bit hollow\nI'm standing on the edge, I'm looking back in\nMaybe I should just check in\n\n(Just check in)\n(One more time)\n(Maybe I should just check in)",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 183.0,
+    "lufs": -11.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 19.62,
+        "label": "S1"
+      },
+      {
+        "start": 19.62,
+        "end": 35.64,
+        "label": "S2"
+      },
+      {
+        "start": 35.64,
+        "end": 58.47,
+        "label": "S3"
+      },
+      {
+        "start": 58.47,
+        "end": 77.3,
+        "label": "S4"
+      },
+      {
+        "start": 77.3,
+        "end": 92.51,
+        "label": "S5"
+      },
+      {
+        "start": 92.51,
+        "end": 126.48,
+        "label": "S6"
+      },
+      {
+        "start": 126.48,
+        "end": 162.49,
+        "label": "S7"
+      },
+      {
+        "start": 162.49,
+        "end": 183.0,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.94
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "pop"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a sparse and intimate texture, creating an atmosphere of vulnerability centered around a breathy, close-miked female vocal. The energy builds dynamically from a quiet, contemplative feel into a driving, anthemic chorus, creating a powerful sense of emotional release. The production is polished and spacious, with the lead vocal sitting clearly in front of a wide mix of electronic drums, deep bass, and ambient synth pads. A defining moment is the transition at 0:45 where the full beat enters, dramatically shifting the song from a quiet ballad to an impactful pop track.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "STAB turns social-media withdrawal into a proper pop-rock hook here, and the conceit earns its runtime. The opening is stripped and close-miked, just enough space for the lyric to breathe before the full kit crashes in around the 45-second mark and the song shifts from bedroom confession to something close to a Bangles-era anthem. At 152 BPM in E major, the chorus has real momentum behind it, and the line 'it's a beautiful light and it's easy to follow, even if the middle is a little bit hollow' does double duty as both earworm and argument. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "45-second build drop",
+      "152 BPM",
+      "E major",
+      "quoted lyric: beautiful light / hollow",
+      "Bangles comparison",
+      "close-miked opening vocal"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

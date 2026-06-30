@@ -1,0 +1,124 @@
+{
+  "track_id": "michael-rose--biff-knocker",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Biff Knocker.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-rose--biff-knocker.opus"
+  },
+  "lyrics": "Step right in\nWipe your feet on the sawdust\nPay in cash\nKeep your questions small\nUnder this canvas\nI juggle your secrets\nI know every face that would rather not fall\n\nSee the smiling clowns with the red-lined pockets\nPainted grins\nLittle knives in their sleeves\nThey trip over shoes\nThen they trip your balance\nThey’ll laugh you blind while your wallet just leaves\n\nWelcome to Biff Knocker’s big top\nWhere saints wear greasepaint\nSinners sell popcorn\nEvery beast\nEvery freak\nEvery ice cold cop\nIs just another crooked soul in a borrowed uniform\nStep right up to your own reflection\nBent in the mirrors till you look like me\nWelcome to Biff Knocker’s big top\nWhere the cages are open\nBut nobody’s free\n\nThere’s the lion\nOld king of the backroom bargains\nGolden mane\nSharp teeth for the weak\nHe roars for meat\nBut he kills for favors\nLets the ring burn slow while the timid squeak\n\nHigh on the wire\nSee the sleeveless angels\nBalancing ledgers\nNot lives\nIn the air\nThey smile for the crowd\nEyes on the numbers\nFall into beds made of other folks’ prayers\n\nWelcome to Biff Knocker’s big top\nWhere saints wear greasepaint\nSinners sell popcorn\nEvery beast\nEvery freak\nEvery ice cold cop\nIs just another crooked soul in a borrowed uniform\nStep right up to your own reflection\nBent in the mirrors till you look like me\nWelcome to Biff Knocker’s big top\nWhere the cages are open\nBut nobody’s free\n\nI pat every pocket on the way to confession (shh)\nPull strings\nPull rings\nPull teeth from a smile\nYou call it a crime\nI call it collection\nI just pass the hat\nAnd keep it a while (oh yeah)\n\nWelcome to Biff Knocker’s big top\nWhere the kind ones vanish\nThe cruel take a bow\nEvery beast\nEvery freak\nEvery ice cold cop\nIs just an old habit dressed as here and now\nStep right up to your own reflection\nIf you look close\nYou’ll see company\nWelcome to Biff Knocker’s big top\nYou came for a show\nYou’re the act to me",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 265.62,
+    "lufs": -11.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 8.68,
+        "label": "S1"
+      },
+      {
+        "start": 8.68,
+        "end": 24.33,
+        "label": "S2"
+      },
+      {
+        "start": 24.33,
+        "end": 39.71,
+        "label": "S3"
+      },
+      {
+        "start": 39.71,
+        "end": 62.35,
+        "label": "S4"
+      },
+      {
+        "start": 62.35,
+        "end": 90.37,
+        "label": "S5"
+      },
+      {
+        "start": 90.37,
+        "end": 115.96,
+        "label": "S6"
+      },
+      {
+        "start": 115.96,
+        "end": 135.26,
+        "label": "S7"
+      },
+      {
+        "start": 135.26,
+        "end": 168.34,
+        "label": "S8"
+      },
+      {
+        "start": 168.34,
+        "end": 201.39,
+        "label": "S9"
+      },
+      {
+        "start": 201.39,
+        "end": 219.82,
+        "label": "S10"
+      },
+      {
+        "start": 219.82,
+        "end": 245.02,
+        "label": "S11"
+      },
+      {
+        "start": 245.02,
+        "end": 265.62,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.901
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track bursts open with a wailing, virtuosic trumpet solo that sets a chaotic, theatrical, and slightly menacing tone. The energy is consistently high, driven by a powerful big band arrangement with punchy horns, a driving rhythm section, and rambunctious piano, creating the feel of a dark, high-stakes circus. The production is dense and vibrant, with every instrument occupying its own distinct space while contributing to a powerful, unified wall of sound that supports a commanding lead vocal. A defining characteristic is the dynamic shift between the wild, full-ensemble choruses and the more grounded verses, creating a sense of dramatic push-and-pull that perfectly suits the song's showman-like atmosphere.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose builds 'Biff Knocker' around one of his sharpest conceits: the circus as a rigged moral economy, where everyone from the lion in the backroom to the angel on the wire is just working an angle. The big-band arrangement earns its density, with punchy brass cutting through a driving 4/4 groove and a piano that never lets the tempo breathe easy. What sells it is the chorus pivot, where the mirror-bending imagery lands the sucker punch: 'You came for a show, you're the act to me.' It's the kind of rhetorical flip that Springsteen used to pull in his Darkness-era character studies, and Rose makes it feel just as earned.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "lyric: 'You came for a show, you're the act to me'",
+      "lyric: 'Bent in the mirrors till you look like me'",
+      "big-band brass arrangement",
+      "driving 4/4 at 95.7 BPM",
+      "dynamic shift between verse and chorus",
+      "Springsteen Darkness-era comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

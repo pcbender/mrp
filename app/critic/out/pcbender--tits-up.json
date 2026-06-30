@@ -1,0 +1,105 @@
+{
+  "track_id": "pcbender--tits-up",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Tits Up.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--tits-up.opus"
+  },
+  "lyrics": "\"Ass hole crashed, tits up\"\n\nI found your texts, I know her name\nYou lied again, it's all the same\nYour clothes are packed, they're at the door\nDon't come crying anymore\n\nI gave you love, I gave you trust\nYou threw it out, you killed us\nNow I'm done, you had your fun\nShe deserves what you've become\n\nIt's tits up, you're outta luck\nTook my heart and fucked it up\nNo more tears, no more fights\nGet your shit and say goodbye-You're Tits Up\n\nYou swore to me, but then you lied\nNow go crawl back to where she hides\nDon't send your friends, don't waste my time\nYou made your choice, now pay the fine\n\nI gave you love, I gave you trust\nYou threw it out, you killed us\nNow I'm done, you had your fun\nShe deserves what you've become\n\nIt's tits up, you're outta luck\nTook my heart and fucked it up\nNo more tears, no more fights\nGet your shit and say goodbye-You're Tits Up\n\nDon't call me drunk, I've blocked your calls\nI don't forgive, I won't go back\nYou burned it down, you rotten slag\nGo sleep with the mess you laid\n\nIt's tits up, you're outta luck\nTook my heart and fucked it up\nNo more tears, no more fights\nGet your shit and say goodbye-You're Tits Up\n\nLocked the door, changed the key\nYou're just a ghost to me\nAnd If you think I'm sad and crying\nImagine me tits down on your best friend",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 182.0,
+    "lufs": -12.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.1,
+        "label": "S1"
+      },
+      {
+        "start": 13.1,
+        "end": 34.18,
+        "label": "S2"
+      },
+      {
+        "start": 34.18,
+        "end": 54.96,
+        "label": "S3"
+      },
+      {
+        "start": 54.96,
+        "end": 87.1,
+        "label": "S4"
+      },
+      {
+        "start": 87.1,
+        "end": 105.12,
+        "label": "S5"
+      },
+      {
+        "start": 105.12,
+        "end": 134.93,
+        "label": "S6"
+      },
+      {
+        "start": 134.93,
+        "end": 176.1,
+        "label": "S7"
+      },
+      {
+        "start": 176.1,
+        "end": 182.0,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.879
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a dense, aggressive texture built on heavily distorted guitars and a driving rhythm section, establishing a confrontational and defiant atmosphere. The energy is consistently high and explosive, with a feel that is pure pop-punk angst, fueled by powerful, shouted female vocals that convey a strong sense of betrayal and empowerment. The production features a modern \"wall of sound\" approach, creating a unified and powerful front, yet the lead vocal cuts through the dense mix with impressive clarity and attitude. A defining quality is the incredibly catchy and anthemic chorus hook, \"It's tits up,\" which delivers a memorable, rebellious punch that solidifies the song's identity.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a breathless 172 BPM in E minor, 'Tits Up' is the kind of breakup song that doesn't ask for sympathy, it demands the exit. The distorted guitar wall and punchy rhythm section hit immediately, but it's the chorus that earns its keep: 'Took my heart and fucked it up' lands with the blunt economy of early Alanis Morissette, and the final twist, 'imagine me tits down on your best friend,' is the line that'll stick with you long after the 3:02 runtime. PCBender keeps the production loud and unified without burying the vocal, which cuts through with real attitude. A clean, catchy gut-punch of a track.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "172 BPM tempo",
+      "E minor key",
+      "chorus lyric 'Took my heart and fucked it up'",
+      "closing lyric 'imagine me tits down on your best friend'",
+      "3:02 duration",
+      "distorted guitar production",
+      "vocal clarity in dense mix"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

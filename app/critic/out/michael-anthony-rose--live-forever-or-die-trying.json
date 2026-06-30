@@ -1,0 +1,130 @@
+{
+  "track_id": "michael-anthony-rose--live-forever-or-die-trying",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Live Forever Or Die Trying.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--live-forever-or-die-trying.opus"
+  },
+  "lyrics": "I mixed the mortar in the cold gray light\nScratched my name with a wet wood stick\nStacked the brick till the wall stood tight\nBuilt it for a son I haven't met\n\nI don't get to stay\nNone of us will\nStill I pour the day\nInto something I can't kill\n\nLive forever or die trying\nLay the stone and let it stand\nLive forever or die trying\nBuilt it with my own two hands\n\nCut the record in a basement room\nTape still spinning when I'm cold\nSomebody's kid will find it soon\nPress it loud and let it hold\n\nI don't get to stay\nNone of us will\nStill I pour the day\nInto something I can't kill\n\nLive forever or die trying\nLay the stone and let it stand\nLive forever or die trying\nBuilt it with my own two hands\n\nThe patient died\nThe operation worked\nI'm reaching for a thing\nI'll never hold\nThe question doesn't\nWant an answer back\nIt only wants to ask\nAnd not grow old\nSo ask it loud\n\nLive forever or die trying\nLay the stone and let it stand\nLive forever or die trying\nIt outlives these failing hands\nLive forever or die trying\nLive forever or die trying",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 266.5,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.17,
+        "label": "S1"
+      },
+      {
+        "start": 10.17,
+        "end": 43.61,
+        "label": "S2"
+      },
+      {
+        "start": 43.61,
+        "end": 60.53,
+        "label": "S3"
+      },
+      {
+        "start": 60.53,
+        "end": 90.23,
+        "label": "S4"
+      },
+      {
+        "start": 90.23,
+        "end": 105.21,
+        "label": "S5"
+      },
+      {
+        "start": 105.21,
+        "end": 122.67,
+        "label": "S6"
+      },
+      {
+        "start": 122.67,
+        "end": 137.74,
+        "label": "S7"
+      },
+      {
+        "start": 137.74,
+        "end": 152.79,
+        "label": "S8"
+      },
+      {
+        "start": 152.79,
+        "end": 189.47,
+        "label": "S9"
+      },
+      {
+        "start": 189.47,
+        "end": 211.72,
+        "label": "S10"
+      },
+      {
+        "start": 211.72,
+        "end": 237.01,
+        "label": "S11"
+      },
+      {
+        "start": 237.01,
+        "end": 260.6,
+        "label": "S12"
+      },
+      {
+        "start": 260.6,
+        "end": 266.5,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.975,
+      "key": 0.839
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This modern rock anthem opens with a wall of thick, distorted guitars, establishing a powerful and determined emotional atmosphere carried by a passionate, clear lead vocal. The track maintains a high, driving energy throughout, propelled by a tight rhythm section that gives it a propulsive, stadium-ready feel. The production is polished and dense, yet well-balanced, allowing the vocals to sit prominently above the layered guitars while punchy drums and a solid bass anchor the mix. A key defining quality is the explosive transition into the highly memorable chorus, where the anthemic lyric \"Live forever or die trying\" serves as a powerful and central hook.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose has been circling this territory for a while, but 'Live Forever or Die Trying' is where the ambition and the execution finally lock in together. The conceit is almost too on-the-nose until the bridge earns it: 'The patient died / The operation worked' reframes the whole song as a meditation on legacy rather than ego, and that's when the D major chorus stops feeling like a stadium gesture and starts feeling like a genuine reckoning. At 129 BPM the track hits with the same blunt-force confidence as early Springsteen or John Mellencamp at full gallop, and the production keeps the guitars dense without burying the vocal, which needs to carry lines like 'something I can't kill' at full emotional weight. This is the one you play first.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "lyric: 'The patient died / The operation worked'",
+      "lyric: 'something I can't kill'",
+      "chorus hook: 'Live forever or die trying'",
+      "BPM: 129.2",
+      "key: D major",
+      "bridge structure reframing theme",
+      "production balance: vocal above layered guitars"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "track_id": "michael-anthony-rose--i-will-bloom",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/I Will Bloom.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--i-will-bloom.opus"
+  },
+  "lyrics": "I learned the art of keeping still\nWhen every door was sealed with frost\nBut now I feel a restless rising thrill\nRecalls the things I thought I'd lost\n\nTilting toward the light\nSomething in me burns bright\nI will bloom before I'm through\nI will bloom before I'm through\n\nThe seed I buried in my doubt\nSends green shoots through the thawing clay\nThe patient earth finds out what spring's about\nAnd counts the lengthening of days\n\nTilting toward the light\nSomething in me burns bright\nI will bloom before I'm through\nI will bloom before I'm through\n\nI have waited far too long\nSomething stirs beneath my breathing\nI am not who I was before\nAnd I slowly close the door\n\nTilting toward the light\nSomething in me burns bright\nI will bloom before I'm through\nI will bloom before I'm through\n\nI will bloom before I'm through\nI will bloom before I'm through",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 194.6,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.16,
+        "label": "S1"
+      },
+      {
+        "start": 2.16,
+        "end": 17.16,
+        "label": "S2"
+      },
+      {
+        "start": 17.16,
+        "end": 35.74,
+        "label": "S3"
+      },
+      {
+        "start": 35.74,
+        "end": 65.78,
+        "label": "S4"
+      },
+      {
+        "start": 65.78,
+        "end": 83.96,
+        "label": "S5"
+      },
+      {
+        "start": 83.96,
+        "end": 115.84,
+        "label": "S6"
+      },
+      {
+        "start": 115.84,
+        "end": 148.77,
+        "label": "S7"
+      },
+      {
+        "start": 148.77,
+        "end": 165.58,
+        "label": "S8"
+      },
+      {
+        "start": 165.58,
+        "end": 186.11,
+        "label": "S9"
+      },
+      {
+        "start": 186.11,
+        "end": 194.6,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.971
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a smooth, spacious texture and a reflective, slightly melancholic atmosphere, driven by a clean electric guitar with a chorus effect and warm, intimate male vocals. The energy is relaxed and steady, creating a laid-back, soulful soft-rock feel that is contemplative rather than driving. The production quality is excellent: the mix is open and polished, with each element occupying its own space, allowing the round bass and crisp, simple drums to sit together cohesively. A distinctive moment occurs in the chorus (\"tilting toward the light\"), where the vocal melody and harmony lift, creating a palpable sense of hopeful release that defines the song's emotional journey.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose writes about dormancy and return with the patience the subject deserves, and the payoff is a chorus that actually earns its uplift: 'tilting toward the light / something in me burns bright' lands with the kind of open-hearted directness you get from John Hiatt or early Bonnie Raitt at their most plainspoken. The verse imagery is grounded too, 'the seed I buried in my doubt / sends green shoots through the thawing clay,' which keeps the song from floating into vague inspiration. In G major at a relaxed pace, with clean electric guitar sitting wide in a polished mix, this one holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'tilting toward the light / something in me burns bright'",
+      "quoted lyric: 'the seed I buried in my doubt / sends green shoots through the thawing clay'",
+      "key: G major",
+      "clean electric guitar with chorus effect",
+      "comparison to John Hiatt and Bonnie Raitt"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

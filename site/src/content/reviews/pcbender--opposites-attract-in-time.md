@@ -1,0 +1,8 @@
+---
+track_id: pcbender--opposites-attract-in-time
+impression: "This track has a rich, layered texture rooted in vintage funk and soul, creating an atmosphere that is both confident and uplifting. The energy is consistently high and driving, propelled by a tight rhythm section that establishes a deep, danceable pocket groove. The production is clean and spacious, allowing each instrument clarity within a dense, powerful ensemble sound that has a classic warmth. The track is defined by its impressive instrumental breaks, particularly an explosive organ solo that shifts the focus before the song culminates in an extended, fiery guitar jam for the outro."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+After the physical urgency of 'July Surprise,' 'Opposites Attract in Time' shifts the tempo back toward the waltz feel of the album's opening, and the shift registers as breathing room rather than a slowdown. PCBender does what he does best here: building a song from the inside out, letting the groove do the heavy lifting while the lyrics stack paradox on paradox until the hook lands with real weight. The grounded minor-key setting gives the verses a controlled tension that the chorus releases cleanly, and the production stays spacious enough that you feel the rhythm section as much as hear it. 'Not black and white, but every crack' is the line that earns its keep, sharpening what could tip into cliche into something more honest about how contradiction works. In the context of an album that has been trading in exactly that kind of honesty all along, this track lands as a well-placed affirmation before the final act.

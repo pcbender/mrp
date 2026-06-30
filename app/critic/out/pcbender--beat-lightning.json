@@ -1,0 +1,118 @@
+{
+  "track_id": "pcbender--beat-lightning",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Beat Lightning.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--beat-lightning.opus"
+  },
+  "lyrics": "Double down in chocolate town\nWhat goes around is lost not found\nSlipstream dreams in neon haze\nCounting backwards through the blaze\n\nTriple dare can't compare\nWhen nothing's there you're unaware\nCracked facade on Tuesday's face\nTruth evaporates without a trace\n\nIs the song already over\nOr just waiting to begin\nThe hush is loud, the echo thin-\nIs this the start, or just beat lightning\n\nSlipping riding peeping hiding\nReally only alley darkly\nSnapback shadow, tongue-tied thrill\nBuzzing wires that won't sit still\n\nBebop don't stop on top\nFour square don't care nearly there\nJukebox preacher in a static trance\nSpins one line then breaks the dance\n\nIs the song already over\nOr just waiting to begin\nThe hush is loud, the echo thin-\nIs this the start, or just beat lightning\n\nI look behind the darkness\nLike it's paint upon a wall\nThe billboards share their secrets\nWhich they swear I can't recall\n\nWhen the alley bares its soul\nAnd the dawn begins to stall\nAre the cobblestone confessions\nA reminder to us all\n\nIs the song already over\nOr just waiting to begin\nThe hush is loud, the echo thin-\nIs this the start, or just beat lightning\n\nThe wild mind returns the stare\nAnd splits the diff from here and there\nThe shimmer of the silence asks\nThe question once again\n\nIs the song already over\nOr just waiting to begin\nThe hush is loud, the echo thin-\nIs this the start, or just beat lightning\n\nI'm spent, money's gone\nNothin' left, gettin' on\nOne shoe tied, the other draggin'\nPast the dream that's still just laggin'\n\nBut broke men float when rhythm's tight-\nJust catch the beat and steal the night",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 103.4,
+    "key": "C#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 213.28,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 17.79,
+        "label": "S1"
+      },
+      {
+        "start": 17.79,
+        "end": 34.09,
+        "label": "S2"
+      },
+      {
+        "start": 34.09,
+        "end": 55.61,
+        "label": "S3"
+      },
+      {
+        "start": 55.61,
+        "end": 83.71,
+        "label": "S4"
+      },
+      {
+        "start": 83.71,
+        "end": 100.03,
+        "label": "S5"
+      },
+      {
+        "start": 100.03,
+        "end": 121.37,
+        "label": "S6"
+      },
+      {
+        "start": 121.37,
+        "end": 142.34,
+        "label": "S7"
+      },
+      {
+        "start": 142.34,
+        "end": 159.17,
+        "label": "S8"
+      },
+      {
+        "start": 159.17,
+        "end": 177.93,
+        "label": "S9"
+      },
+      {
+        "start": 177.93,
+        "end": 196.77,
+        "label": "S10"
+      },
+      {
+        "start": 196.77,
+        "end": 213.28,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.976,
+      "key": 0.914
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track projects a cool, contemplative atmosphere with a smooth neo-soul texture, built upon a tight rhythm section, clean electric guitar, and understated keyboards. The energy is consistently relaxed, creating a laid-back, head-nodding groove driven by a confident, conversational vocal delivery. The production quality is excellent: it feels spacious and clear, with each instrument occupying its own defined place, allowing the present vocals and solid low-end to sit comfortably within a cohesive mix. A defining characteristic is the dynamic interplay between the chilled, almost spoken-word verses and the harmonically richer, more melodic chorus, which provides a recurring emotional lift and focus for the song.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Beat Lightning\" finds PCBender in a cool, head-nodding groove at just over 103 BPM, built on a clean rhythm section and understated keyboards that give the whole thing room to breathe. The hook does the heavy lifting: \"the hush is loud, the echo thin\" is a genuinely good line, and the chorus rises out of the conversational verses with enough harmonic lift to feel earned each time it lands. The outro couplet, \"broke men float when rhythm's tight, just catch the beat and steal the night,\" closes the track with the kind of worn-in wisdom that fits PCBender's voice perfectly. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "103 BPM tempo",
+      "chorus lyric: 'the hush is loud, the echo thin'",
+      "outro lyric: 'broke men float when rhythm's tight / just catch the beat and steal the night'",
+      "dynamic shift between spoken-word verses and melodic chorus",
+      "clean rhythm section and understated keyboards"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

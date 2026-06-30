@@ -38,7 +38,7 @@ release:
     isrc: CALVP2537448
     duration: '4:20'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--allocution.mp3
     instrumental: false
     lyrics_text: 'I’ve come to say the final line
 

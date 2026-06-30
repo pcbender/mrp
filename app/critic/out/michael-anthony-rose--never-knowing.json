@@ -1,0 +1,125 @@
+{
+  "track_id": "michael-anthony-rose--never-knowing",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Never Knowing.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--never-knowing.opus"
+  },
+  "lyrics": "Album cover artwork: a hyperrealistic Tibetan sand mandala viewed from directly overhead (perfect 90-degree top-down POV). Intricate concentric geometry made of vividly colored sand grains (turquoise, saffron, crimson, lapis, white), razor-sharp detail of individual grains. In the exact center, the mandala is dissolving downward into a dark circular void as if a stopper was pulled from below: sand spirals inward, forming a subtle vortex and a clean round “drain” opening; the center is noticeably darker and deeper, with soft shadow falloff into the hole. Surrounding mandala remains pristine and symmetrical, with a gentle gradient of displaced sand toward the center. Studio-clean presentation on a neutral matte surface, dramatic but realistic lighting, high micro-contrast, ultra-detailed texture, cinematic realism, no people, no hands, no text, no logos, no border, album-cover composition with strong central focal point",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 86.1,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 256.76,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.33,
+        "label": "S1"
+      },
+      {
+        "start": 9.33,
+        "end": 37.64,
+        "label": "S2"
+      },
+      {
+        "start": 37.64,
+        "end": 64.02,
+        "label": "S3"
+      },
+      {
+        "start": 64.02,
+        "end": 80.5,
+        "label": "S4"
+      },
+      {
+        "start": 80.5,
+        "end": 97.73,
+        "label": "S5"
+      },
+      {
+        "start": 97.73,
+        "end": 122.83,
+        "label": "S6"
+      },
+      {
+        "start": 122.83,
+        "end": 150.93,
+        "label": "S7"
+      },
+      {
+        "start": 150.93,
+        "end": 184.55,
+        "label": "S8"
+      },
+      {
+        "start": 184.55,
+        "end": 205.68,
+        "label": "S9"
+      },
+      {
+        "start": 205.68,
+        "end": 225.37,
+        "label": "S10"
+      },
+      {
+        "start": 225.37,
+        "end": 240.35,
+        "label": "S11"
+      },
+      {
+        "start": 240.35,
+        "end": 256.76,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.94
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "soul"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a sparse, melancholic texture, featuring an intimate male vocal, a gentle electric piano, and a warm, supportive bass line that establishes a contemplative and slightly somber mood. The energy is low and steady, feeling like a reflective ballad that builds with patient, subtle layers, including a simple, soft drum groove. The production is exceptionally clean and spacious, allowing the reverb-treated vocals to sit intimately in the foreground while each instrument maintains its own distinct presence in the mix. The defining quality is the track's dynamic swell into the chorus, where layered vocal harmonies and increased emotional intensity create a poignant, powerful release that contrasts beautifully with the understated verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Never Knowing\" moves in waltz time at a deliberate 86 BPM, and Rose uses that unhurried triple meter the way a good confessional songwriter should: room to breathe, room to ache. The verses are stripped almost bare, electric piano and bass holding space beneath a vocal that sits close in the mix, reverb just wide enough to feel like memory rather than performance. When the chorus arrives and the harmonies stack up, it pays off cleanly, the kind of emotional release that reminds you of early Crowded House, where restraint in the verse makes the lift feel earned rather than manufactured. A quiet highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "86 BPM",
+      "3/4 waltz time",
+      "C major",
+      "electric piano texture",
+      "reverb-treated vocal placement",
+      "layered vocal harmonies in chorus",
+      "verse-to-chorus dynamic contrast"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

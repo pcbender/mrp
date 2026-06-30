@@ -1,0 +1,129 @@
+{
+  "track_id": "pcbender--with-preposition",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/With Preposition.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--with-preposition.opus"
+  },
+  "lyrics": "In love\nI couldn't see the walls\nOnly the candle\nOnly the fall\nOf love\nI saved every sign\nThe curve of a shoulder\nThe hour, the wine\n\nIn is a room\nOf is a ghost\nWith is the road\nI needed most\nTime has a window\nPlace has a door\nDirection is asking\nWhat love is for\n\nSay it slowly\nSay it true\nWhat am I\nBeside you\nNot your shadow\nNot your claim\nJust a hand\nBeside your name\n\nIn love\nWe vanished from view\nThe city kept moving\nBut I only knew you\nOf love\nWe made our museum\nTickets and photographs\nProof we had been\n\nIn is a room\nOf is a ghost\nWith is the road\nI needed most\nTime has a window\nPlace has a door\nDirection is asking\nWhat love is for\n\nEvery sentence\nNeeds somewhere to land\nEvery silence\nNeeds a hand\nNot behind you\nNot ahead\nLet the living\nWake the dead\n\nWith love\nThere's room to remain\nNo golden forever\nNo beautiful chain\nWith love\nWe move and we bend\nNot toward possession\nBut toward what can mend\n\nIn is a room\nOf is a ghost\nWith is the road\nI needed most\nTime has a window\nPlace has a door\nDirection is asking\nWhat love is for\n\nSo let the old words\nFall where they fall\nLove is not ownership\nLove is not all\nLove is the distance\nWe still travel through\nIn me, of me\nWith me and you\n\nIn love\nOf love\nWith love",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "F#",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 263.52,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 17.21,
+        "label": "S1"
+      },
+      {
+        "start": 17.21,
+        "end": 37.76,
+        "label": "S2"
+      },
+      {
+        "start": 37.76,
+        "end": 58.28,
+        "label": "S3"
+      },
+      {
+        "start": 58.28,
+        "end": 81.76,
+        "label": "S4"
+      },
+      {
+        "start": 81.76,
+        "end": 102.61,
+        "label": "S5"
+      },
+      {
+        "start": 102.61,
+        "end": 120.42,
+        "label": "S6"
+      },
+      {
+        "start": 120.42,
+        "end": 136.86,
+        "label": "S7"
+      },
+      {
+        "start": 136.86,
+        "end": 159.71,
+        "label": "S8"
+      },
+      {
+        "start": 159.71,
+        "end": 174.87,
+        "label": "S9"
+      },
+      {
+        "start": 174.87,
+        "end": 192.15,
+        "label": "S10"
+      },
+      {
+        "start": 192.15,
+        "end": 208.72,
+        "label": "S11"
+      },
+      {
+        "start": 208.72,
+        "end": 239.98,
+        "label": "S12"
+      },
+      {
+        "start": 239.98,
+        "end": 263.52,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.957,
+      "key": 0.91
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "soul",
+      "pop"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "emotional"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "piano",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a warm, intimate, and reflective atmosphere with a light, open texture featuring an acoustic jazz combo of piano, upright bass, brushed drums, and a clean electric guitar. The energy is low and laid-back, driven by a gentle, conversational swing feel and a soft, breathy female vocal that feels very personal. The production is excellent, creating a spacious and natural-sounding mix where each instrument has clarity and sits comfortably in its own place. The track is defined by its tasteful musicianship and interplay, highlighted by a lyrical and slightly bluesy guitar solo that reinforces the song's gentle, thoughtful mood.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender turns grammar into grief and grace here, building an entire meditation on love out of prepositions: 'In is a room / Of is a ghost / With is the road I needed most.' That conceit could tip into cleverness for its own sake, but the waltz-time groove keeps it human, the brushed swing feel loose enough that the lyric lands like a conversation rather than a lecture. The final turn, 'Love is not ownership / Love is not all / Love is the distance we still travel through,' earns its weight the way a good John Hiatt line does, plainspoken and quietly devastating. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'In is a room / Of is a ghost / With is the road I needed most'",
+      "lyric: 'Love is not ownership / Love is not all / Love is the distance we still travel through'",
+      "3/4 waltz time at 136 BPM",
+      "brushed swing feel from audio impression",
+      "F# minor key",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

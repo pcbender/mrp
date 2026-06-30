@@ -1,0 +1,124 @@
+{
+  "track_id": "michael-anthony-rose--they-dont-know",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/They Don't Know.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--they-dont-know.opus"
+  },
+  "lyrics": "I watch them talk with their whole bodies\nLike the floor was built to hold\nEvery plan they say out loud\nStill lands like something true\nAnd there's something almost holy\nIn the way they spend themselves\nNot because they know what matters\nJust because they haven't failed yet\n\nI don't hate them\nI don't sneer\nI just hear what isn't in\nThe words I overhear\n\nThey think time is somewhere distant\nSomething waiting down the line\nLike the losses all give warning\nLike the body always tries\nI can see what they can't see yet\nAnd I wouldn't hand it to them\nStill I watch them move through fire\nThey don't know they're in\n\nThere's a kindness in not telling\nEvery hard thing that I know\nNot because I'm guarding wisdom\nMore because it doesn't go\nWhere you point it when it's borrowed\nPeople learn what they can bear\nWhen the easy version breaks apart\nAnd leaves them standing there\n\nI don't hate them\nI don't sneer\nI just hear what isn't in\nThe words I overhear\n\nThey think time is somewhere distant\nSomething waiting down the line\nLike the losses all give warning\nLike the body always tries\nI can see what they can't see yet\nAnd I wouldn't hand it to them\nStill I watch them move through fire\nThey don't know they're in\n\nAnd maybe I was beautiful\nIn exactly that same way\nNot because I understood life\nJust because I thought I had time\nSo much time\n\nThey think time is somewhere distant\nSomething waiting down the line\nLike the losses all give warning\nLike the body always tries\nI can see what they can't see yet\nAnd I wouldn't hand it to them\nStill I watch them move through fire\nThey don't know they're in",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 245.1,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.04,
+        "label": "S1"
+      },
+      {
+        "start": 2.04,
+        "end": 25.96,
+        "label": "S2"
+      },
+      {
+        "start": 25.96,
+        "end": 41.19,
+        "label": "S3"
+      },
+      {
+        "start": 41.19,
+        "end": 63.51,
+        "label": "S4"
+      },
+      {
+        "start": 63.51,
+        "end": 81.11,
+        "label": "S5"
+      },
+      {
+        "start": 81.11,
+        "end": 96.97,
+        "label": "S6"
+      },
+      {
+        "start": 96.97,
+        "end": 114.78,
+        "label": "S7"
+      },
+      {
+        "start": 114.78,
+        "end": 161.84,
+        "label": "S8"
+      },
+      {
+        "start": 161.84,
+        "end": 188.55,
+        "label": "S9"
+      },
+      {
+        "start": 188.55,
+        "end": 214.46,
+        "label": "S10"
+      },
+      {
+        "start": 214.46,
+        "end": 235.38,
+        "label": "S11"
+      },
+      {
+        "start": 235.38,
+        "end": 245.1,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.966,
+      "key": 0.959
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This song has a warm, thoughtful atmosphere, starting with an intimate texture of acoustic guitar and a clear, narrative-driven male vocal. The energy builds dynamically from restrained, conversational verses into powerful, soaring choruses where a full rock band enters, creating an expansive and anthemic feel. The production is clean and spacious, with each instrument occupying its own sonic space, allowing the track to feel full and powerful without becoming dense or muddy. A distinctive quality is the emotional and dynamic shift into the chorus, where the personal observation transforms into a grand, harmonized statement, which is later mirrored by a poignant, self-reflective lyrical turn in the outro.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose opens in C major at a pace that feels faster than the song sounds, because the verses breathe so deliberately: acoustic guitar, a single voice, and lines like 'they watch them move through fire, they don't know they're in' delivered with the quiet authority of someone who has actually stood on the other side of that fire. When the full band arrives at the chorus, the lift is real, the kind of dynamic move that Springsteen used to make feel inevitable on 'The River.' What earns the song its weight is the bridge turn: 'And maybe I was beautiful in exactly that same way, not because I understood life, just because I thought I had time.' That pivot from observer to subject is the whole record in two lines.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "C major key",
+      "lyric: 'they watch them move through fire, they don't know they're in'",
+      "lyric: 'And maybe I was beautiful in exactly that same way, not because I understood life, just because I thought I had time'",
+      "verse-to-chorus dynamic build",
+      "acoustic guitar intro texture",
+      "Springsteen 'The River' comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

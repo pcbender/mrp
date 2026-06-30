@@ -1,0 +1,113 @@
+{
+  "track_id": "stab--between-the-bottle-and-goodbye",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Between the Bottle and Goodbye.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--between-the-bottle-and-goodbye.opus"
+  },
+  "lyrics": "Your boots unsteady on the floor\nYour voice is low, your hands are cold\nAnother night sleeping all alone\nEmpty excuses I don't hear\n\nYour voice shakes as you light one up\nWhiskey burns, but you don't care\nEven when you're here it's empty\nI'm chasing a memory that isn't there\n\nI've picked you up, I've watched you drown\nSick of begging, sick of lies\n\nBetween the bottle and goodbye\nI see the truth you hide inside\nYou picked your poison, I've made my choice\nBetween the bottle and goodbye\n\nYour promise shatters like broken glass\nEach drink means more than I do\nI swore I'd fight, I swore I'd stay\nBut I ain't dyin' to be right\n\nI've held you up, I've watched you drown\nSick of begging, sick of lies\n\nBetween the bottle and goodbye\nI see the truth you hide inside\nYou picked your poison, I've made my choice\nBetween the bottle and goodbye\n\nTook your words, took your nights\nTook the blame, made it right\nTook the fall, took the pain\nI've made the choice to make this end\n\nBetween the bottle and goodbye\nI see the truth you hide inside\nYou picked your poison, I've made my choice\nBetween the bottle and goodbye\n\nKeys in the door, smoke in the air\nAin't comin' back, don't even care\nBetween the bottle and goodbye\nI see the truth you hide inside\nYou picked your poison, I've made my choice\nBetween the bottle and goodbye\nKeys in the door, smoke in the air\nAin't comin' back, don't even care",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "D",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 222.32,
+    "lufs": -13.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.6,
+        "label": "S1"
+      },
+      {
+        "start": 4.6,
+        "end": 20.67,
+        "label": "S2"
+      },
+      {
+        "start": 20.67,
+        "end": 36.57,
+        "label": "S3"
+      },
+      {
+        "start": 36.57,
+        "end": 68.38,
+        "label": "S4"
+      },
+      {
+        "start": 68.38,
+        "end": 85.8,
+        "label": "S5"
+      },
+      {
+        "start": 85.8,
+        "end": 116.49,
+        "label": "S6"
+      },
+      {
+        "start": 116.49,
+        "end": 148.35,
+        "label": "S7"
+      },
+      {
+        "start": 148.35,
+        "end": 196.84,
+        "label": "S8"
+      },
+      {
+        "start": 196.84,
+        "end": 214.04,
+        "label": "S9"
+      },
+      {
+        "start": 214.04,
+        "end": 222.32,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.933
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track immediately establishes a fiery, confrontational atmosphere, with a raw, emotionally charged vocal performance layered over a thick texture of distorted guitars and a solid rhythm section. The energy is consistently high and driving, feeling like a modern country rock or pop-rock anthem of empowered finality. The production is dense and polished; the lead vocal cuts through a powerful wall of sound, while the drums have a big, spacious quality that gives the track an arena-ready feel. A defining quality is the dynamic shift in the bridge, which strips back the instrumentation momentarily to build tension before exploding into the final, most impactful chorus, perfectly delivering the song's resolute message.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a breathless 161 BPM in D minor, 'Between the Bottle and Goodbye' is STAB at her most unflinching, a breakup song that earns its anthemic sweep because the writing does the heavy lifting first. The lyric 'you picked your poison, I've made my choice' lands like a door slamming shut, and the bridge, which pulls the guitars back and lets the vocal stand nearly alone before the final chorus detonates, is the kind of structural move that separates a good rock track from a room-filling one. It sits somewhere between Sheryl Crow's toughest ballads and a Pretenders song where Chrissie Hynde has finally run out of patience, and that is very good company to keep.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 161",
+      "D minor",
+      "lyric: 'you picked your poison, I've made my choice'",
+      "bridge strip-back and final chorus build",
+      "Sheryl Crow / Pretenders comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

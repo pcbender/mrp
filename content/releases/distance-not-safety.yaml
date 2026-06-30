@@ -162,7 +162,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--cut-flowers.mp3
     lyrics_text: 'They sit in a glass by the window pane
 
       Fading slow in the August rain
@@ -337,7 +337,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--getting-through.mp3
     lyrics_text: 'The echoes linger in this empty room
 
       A shadow dances on the wall at night
@@ -422,7 +422,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--the-dreamer-and-the-dreamed.mp3
     lyrics_text: 'I met a man with eyes like fire
 
       Said, "You''ve been sleeping deep."
@@ -511,7 +511,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--double-black-diamonds.mp3
     lyrics_text: 'Cold wind rushin'', heart starts to race
 
       One step forward-ain''t no time to waste
@@ -591,7 +591,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--cat-s-claw.mp3
     lyrics_text: 'The ancestors walked where the red stone stands
 
       They learned of the bargain and the blood in the sand
@@ -680,7 +680,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--belligerent.mp3
     lyrics_text: 'Fists clenched, veins tight
 
       Dog''s curled up, sleeping through the fight
@@ -806,7 +806,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--delusion-of-truth.mp3
     lyrics_text: 'It''s not a sin, to think again
 
       It depends what you''ve seen
@@ -897,7 +897,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--venus-syndrome.mp3
     lyrics_text: 'She emerged from the waves brushing foam from her chest
 
       Innocently smiling, she said "Hi." I was impressed
@@ -978,7 +978,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/4castle--void-of-intention.mp3
     lyrics_text: 'In silence, beyond the pale, I sit beside myself
 
       Waking, not thinking, void of intention

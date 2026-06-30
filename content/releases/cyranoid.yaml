@@ -39,7 +39,7 @@ release:
     isrc: CBEYJ2560536
     duration: '7:10'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--cyranoid.mp3
     instrumental: false
     lyrics_text: 'It comes before I think the thought
 

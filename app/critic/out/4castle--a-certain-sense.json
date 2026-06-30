@@ -1,0 +1,119 @@
+{
+  "track_id": "4castle--a-certain-sense",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/A Certain Sense.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--a-certain-sense.opus"
+  },
+  "lyrics": "Lay down your gun\nYour end is near\nIt’s time to run\nAway from here\n\nLeave the regrets\nYou can’t ignore\nMercy rejects\nWhat you lied for\n\nThe bridge gets you over\nThe rage of the river\nThe loss of a lover\nThe subtle surrender\n\nYou will never remember\nUnless you dare to go there\nCrossing with a certain sense…\nOf uncertainty\n\nStep from the flame\nBefore it knows\nHow much of your shame\nThe father owns\n\nCount what you kept\nAnd what you sold\nThe promise wept\nBefore it grew cold\n\nThe bridge gets you over\nThe rage of the river\nThe loss of a lover\nThe subtle surrender\n\nYou will never remember\nUnless you dare to go there\nCrossing with a certain sense…\nOf uncertainty\n\nThe bridge gets you over\nThe rage of the river\nThe loss of a lover\nThe subtle surrender\n\nYou will never remember\nUnless you dare to go there\nCrossing with a certain sense…\nOf uncertainty\n\nCrossing with a certain sense of uncertainty",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "F",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 275.06,
+    "lufs": -14.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.32,
+        "label": "S1"
+      },
+      {
+        "start": 1.32,
+        "end": 18.27,
+        "label": "S2"
+      },
+      {
+        "start": 18.27,
+        "end": 38.61,
+        "label": "S3"
+      },
+      {
+        "start": 38.61,
+        "end": 62.39,
+        "label": "S4"
+      },
+      {
+        "start": 62.39,
+        "end": 123.55,
+        "label": "S5"
+      },
+      {
+        "start": 123.55,
+        "end": 140.2,
+        "label": "S6"
+      },
+      {
+        "start": 140.2,
+        "end": 180.19,
+        "label": "S7"
+      },
+      {
+        "start": 180.19,
+        "end": 203.34,
+        "label": "S8"
+      },
+      {
+        "start": 203.34,
+        "end": 247.9,
+        "label": "S9"
+      },
+      {
+        "start": 247.9,
+        "end": 266.45,
+        "label": "S10"
+      },
+      {
+        "start": 266.45,
+        "end": 275.06,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.975,
+      "key": 0.918
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "emotional",
+      "dark",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "drums",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a dense, polished texture, blending powerful distorted guitars with prominent 80s-style synthesizers to create a dramatic, anthemic atmosphere. The energy is consistently high and driving, propelled by a tight rhythm section and soaring male vocals that lend an urgent, determined feel to the song. The production quality is reminiscent of classic stadium rock, featuring a large sonic space where heavy reverb on the vocals and snare allows them to sit commandingly within a thick wall of sound. A defining quality of the track is the powerful pre-chorus build-up, which expertly creates tension before resolving into the huge, harmonized chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The title pays off: 'crossing with a certain sense of uncertainty' is the kind of line that earns its place in a chorus, and 4Castle build the whole track around that tension with discipline. At 117 BPM in F major, the song moves with real urgency, and the pre-chorus swell into the big harmonized hook lands the way a good anthem should, with enough room-filling reverb on the snare to make it feel earned rather than manufactured. The bridge imagery, 'the rage of the river, the loss of a lover, the subtle surrender,' stacks up beautifully and gives the repeated chorus more weight each time through. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'crossing with a certain sense of uncertainty'",
+      "BPM: 117.5",
+      "key: F major",
+      "pre-chorus build and harmonized chorus",
+      "quoted lyric: 'the rage of the river, the loss of a lover, the subtle surrender'",
+      "reverb on snare production choice"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

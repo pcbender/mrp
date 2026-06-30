@@ -37,7 +37,7 @@ release:
     isrc: SE5752602047
     duration: '2:50'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--i-think-i-m-losing-my-place.mp3
     links:
       apple_music: https://music.apple.com/us/album/i-think-im-losing-my-place/1873052569?i=1873052573
       spotify: https://open.spotify.com/track/4jyvFeVoi8bOTKbDNDLpiQ
@@ -124,7 +124,7 @@ release:
     isrc: SE5752602048
     duration: '3:18'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--not-sure-this-is-me.mp3
     links:
       apple_music: https://music.apple.com/us/album/not-sure-this-is-me/1873052569?i=1873052574
       spotify: https://open.spotify.com/track/4wZNCnaJWPdgGQOLDbxdcd
@@ -263,7 +263,7 @@ release:
     isrc: SE5752602049
     duration: '3:20'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--don-t-even-need-to-try.mp3
     links:
       apple_music: https://music.apple.com/us/album/dont-even-need-to-try/1873052569?i=1873052581
       spotify: https://open.spotify.com/track/7LKjBB0F150QXpUVFBkDZ4
@@ -355,7 +355,7 @@ release:
     isrc: SE5752602050
     duration: '2:40'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--stay-with-one-thing.mp3
     links:
       apple_music: https://music.apple.com/us/album/stay-with-one-thing/1873052569?i=1873052586
       spotify: https://open.spotify.com/track/2SPbsHHKIKKF9fo7ekYHi9
@@ -472,7 +472,7 @@ release:
     isrc: SE5752602051
     duration: '3:21'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--here-to-be-watched.mp3
     links:
       apple_music: https://music.apple.com/us/album/here-to-be-watched/1873052569?i=1873052587
       spotify: https://open.spotify.com/track/0FoYUuHqlkNWlStdgkgx81
@@ -618,7 +618,7 @@ release:
     isrc: SE5752602052
     duration: '2:54'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--moving-too-fast.mp3
     links:
       apple_music: https://music.apple.com/us/album/moving-too-fast/1873052569?i=1873052591
       spotify: https://open.spotify.com/track/6UMgKX0Lfe129j0riVAlkD
@@ -716,7 +716,7 @@ release:
     isrc: SE5752602053
     duration: '3:28'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--harder-than-i-thought.mp3
     links:
       apple_music: https://music.apple.com/us/album/harder-than-i-thought/1873052569?i=1873052593
       spotify: https://open.spotify.com/track/0i5M1cL3EGD90qvtU4VWcn
@@ -856,7 +856,7 @@ release:
     isrc: SE5752602054
     duration: '3:08'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--that-s-the-point.mp3
     links:
       apple_music: https://music.apple.com/us/album/thats-the-point/1873052569?i=1873052836
       spotify: https://open.spotify.com/track/29XpIGIfliYCF6I6n05ZRu
@@ -997,7 +997,7 @@ release:
     isrc: SE5752602055
     duration: '3:10'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--my-hands-don-t-know.mp3
     links:
       apple_music: https://music.apple.com/us/album/my-hands-dont-know/1873052569?i=1873052837
       spotify: https://open.spotify.com/track/3kUNo2oN6L5pWsmtyiXk7q
@@ -1087,7 +1087,7 @@ release:
     isrc: SE5752602056
     duration: '4:48'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--what-to-do-with-me.mp3
     links:
       apple_music: https://music.apple.com/us/album/what-to-do-with-me/1873052569?i=1873052839
       spotify: https://open.spotify.com/track/6vFxbLVFaYdSJfVRGX7ptL
@@ -1215,7 +1215,7 @@ release:
     isrc: SE5752602057
     duration: '3:36'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--not-picking-up.mp3
     links:
       apple_music: https://music.apple.com/us/album/not-picking-up/1873052569?i=1873052840
       spotify: https://open.spotify.com/track/3JEYUUaxSYhkbmpfMm8oLQ
@@ -1305,7 +1305,7 @@ release:
     isrc: SE5752602058
     duration: '3:03'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--maybe-i-should.mp3
     links:
       apple_music: https://music.apple.com/us/album/maybe-i-should/1873052569?i=1873052842
       spotify: https://open.spotify.com/track/6o1BbcOIy2ndonqtVFoDEs
@@ -1397,7 +1397,7 @@ release:
     isrc: SE5752602059
     duration: '3:52'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--doing-my-best.mp3
     links:
       apple_music: https://music.apple.com/us/album/doing-my-best/1873052569?i=1873052843
       spotify: https://open.spotify.com/track/6ICf8bipu4LaNeCBH5Rsss
@@ -1533,7 +1533,7 @@ release:
     isrc: SE5752602060
     duration: '2:58'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--here-right-now.mp3
     links:
       apple_music: https://music.apple.com/us/album/here-right-now/1873052569?i=1873052848
       spotify: https://open.spotify.com/track/5V18Lu2FXl6QETRfvlvS9B
@@ -1669,7 +1669,7 @@ release:
     isrc: SE5752602061
     duration: '3:41'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/stab--bring-it-with-me.mp3
     links:
       apple_music: https://music.apple.com/us/album/bring-it-with-me/1873052569?i=1873052851
       spotify: https://open.spotify.com/track/44BKy2EyRHZJVEocpgbmXS

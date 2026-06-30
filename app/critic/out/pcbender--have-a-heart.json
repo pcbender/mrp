@@ -1,0 +1,114 @@
+{
+  "track_id": "pcbender--have-a-heart",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Have a Heart.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--have-a-heart.opus"
+  },
+  "lyrics": "There I was, an average guy. I've been around\nThen I found The love of my life\n\nI want you to to be mine\nThen you say that I am\nBut only part time\nI should be happy when you're here, but I'm not\n\nHolding the phone, awaiting a ring\nI fall asleep\nHolding my own, and thinking of you\n\nI want you to to be mine\nThen you say that I am\nBut only part time\nI should be happy when you're here, but I'm not\n\nHave a heart\nIf you want me will you have a heart\nIf you leave me it will break my heart\nIf you love me will you have my heart\n\nHave a heart\nIf you want me will you have a heart\nIf you leave me it will break my heart\nIf you love me will you have my heart",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 221.68,
+    "lufs": -14.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 26.19,
+        "label": "S1"
+      },
+      {
+        "start": 26.19,
+        "end": 51.18,
+        "label": "S2"
+      },
+      {
+        "start": 51.18,
+        "end": 66.2,
+        "label": "S3"
+      },
+      {
+        "start": 66.2,
+        "end": 89.05,
+        "label": "S4"
+      },
+      {
+        "start": 89.05,
+        "end": 118.24,
+        "label": "S5"
+      },
+      {
+        "start": 118.24,
+        "end": 148.0,
+        "label": "S6"
+      },
+      {
+        "start": 148.0,
+        "end": 170.74,
+        "label": "S7"
+      },
+      {
+        "start": 170.74,
+        "end": 198.0,
+        "label": "S8"
+      },
+      {
+        "start": 198.0,
+        "end": 215.27,
+        "label": "S9"
+      },
+      {
+        "start": 215.27,
+        "end": 221.68,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.979,
+      "key": 0.916
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates an emotionally charged atmosphere, balancing feelings of romantic longing with palpable frustration. The energy is consistently high and driving, rooted in a pop-punk or alternative rock feel with powerful drums and layered, distorted guitars that build a sense of urgency. The production is dense and wide, creating a \"wall of sound\" where the instruments are tightly packed, though the lead vocal cuts through with clarity and passion. A defining quality is the explosive lift into the chorus, where a massive, singalong hook releases the tension built in the verses, making for a highly cathartic and memorable peak.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender keeps the premise simple and lets the hook do the heavy lifting: a guy who has the girl but not really, waiting by the phone in A major at a clip just north of 143 BPM that feels more urgent than the tempo suggests. The verses do their job setting up the emotional math, but the chorus is where the track earns its keep, that tripled 'have a heart' refrain hitting with the kind of cathartic release you get from early Cheap Trick or late-period Fountains of Wayne. The production packs the guitars dense and wide without burying the vocal, and the lift into the chorus lands every time.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "A major",
+      "143.6 BPM",
+      "chorus hook: 'have a heart' refrain",
+      "verse lyric: 'holding the phone, awaiting a ring'",
+      "dense layered guitar production",
+      "explosive chorus lift"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "track_id": "lingua-aeternum--mad-river",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Mad River - Lingua Aeternum.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--mad-river.opus"
+  },
+  "lyrics": "The Hupa knew for centuries\nMad River feeds on memories\nShe steals the things we leave behind\nThe fragments of a shattered mind\n\nShe murmurs names in canyon walls\nReplays regrets as water falls\nA cradle once, now grave and guide\nShe keeps the secrets I can’t hide\n\nAnd flow she must into the sea\nAs all things do, eventually\n\nThey marked my brow with smoke and fire\nA boy unmade for new desire\nThrough gravel’s teeth and willow’s breath\nI met the mouth that promised death\n\nShe coiled ‘round my shaking knees\nAnd whispered truths like rustling leaves\nShe said you’ll break, but still be free\nAnd vanished in the redwood trees\n\nAnd flow she must into the sea\nAs all things do, eventually\n\nThe years are clouds that never lift\nMy mind, a boat that’s come adrift\nI call her name, but find no sound\nJust water pulling me down\n\nShe visits now in flash and dream\nSoft laughter tangled in the stream\nShe took my thoughts and gave me peace\nBut left me longing for release\n\nAnd flow she must into the sea\nAs all things do, eventually\n\nAnd flow she must into the sea\nAs all things do, eventually",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 349.92,
+    "lufs": -15.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.19,
+        "label": "S1"
+      },
+      {
+        "start": 11.19,
+        "end": 39.4,
+        "label": "S2"
+      },
+      {
+        "start": 39.4,
+        "end": 60.4,
+        "label": "S3"
+      },
+      {
+        "start": 60.4,
+        "end": 76.37,
+        "label": "S4"
+      },
+      {
+        "start": 76.37,
+        "end": 127.25,
+        "label": "S5"
+      },
+      {
+        "start": 127.25,
+        "end": 142.55,
+        "label": "S6"
+      },
+      {
+        "start": 142.55,
+        "end": 177.01,
+        "label": "S7"
+      },
+      {
+        "start": 177.01,
+        "end": 243.28,
+        "label": "S8"
+      },
+      {
+        "start": 243.28,
+        "end": 268.89,
+        "label": "S9"
+      },
+      {
+        "start": 268.89,
+        "end": 349.92,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.882
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a spacious and reflective atmosphere, built on clean, layered electric guitars and a clear, emotive male vocal. The energy level grows from a steady, pensive drive in the verses to powerful, anthemic choruses, where distorted guitars and a solid rhythm section create a feeling of soaring release. The production is polished and well-balanced, allowing the dense layers of instrumentation to feel expansive and wide without overwhelming the lead vocal. The track is defined by its dramatic dynamic shifts, especially the impactful transition into the first full-force chorus, which serves as a powerful emotional centerpiece.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Mad River earns its running time by doing what the best grief-soaked rock does: it builds. The verses move at a brisk clip in D major, clean guitars and a restrained vocal carrying lyrics that are genuinely good, lines like 'she said you'll break, but still be free' landing with the plainspoken weight of early John Prine. Then the chorus opens up into full-force distortion and the whole thing lifts the way a late-period Tom Petty track lifts, not through tricks but through commitment. At nearly six minutes it threatens to overstay, but the final repeat of 'as all things do, eventually' pulls it back to something earned rather than indulgent. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "D major",
+      "quoted lyric: 'she said you'll break, but still be free'",
+      "quoted lyric: 'as all things do, eventually'",
+      "dynamic shift into full-chorus distortion",
+      "5:49 duration",
+      "comparison to John Prine and Tom Petty"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

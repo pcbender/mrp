@@ -1,0 +1,105 @@
+{
+  "track_id": "stab--i-think-i-m-losing-my-place",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/I Think I’m Losing My Place.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--i-think-i-m-losing-my-place.opus"
+  },
+  "lyrics": "(mhm)\n\nI checked my pocket twice in the last three minutes\nBut there's nothing there, just the weight of the air\nI'm sitting at the table, staring at the crumbs\nAnd I swear I felt a buzz against my thumb\n(did you hear that?)\nIt's like a ghost is tapping on my shoulder\nTrying to tell me something I already know\nI'm waiting for a word from someone I don't see\nWhile the actual room is closing in on me\n\nIt's a hum in the wall, it's a itch in my head\nIt's the things I haven't looked at, the things I haven't said\nI'm reaching for a shadow that isn't even there\nI think I'm losing my place\n\nThe light from the hallway is a weird shade of blue\nAnd I'm wondering what everyone is getting up to\nMy focus is a mirror that someone just cracked\nEvery time I try to settle, I get pulled right back\n(yeah, right back)\nI forgot how to just sit here and breathe\nWithout looking for a reason to leave\n\n(Don't look)\n(Don't check)\nBut the muscle memory is stronger than the rest\nIt's a reflex, a habit, a recurring test\nAnd I'm failing it, over and over again\n\nIt's a hum in the wall, it's a itch in my head\nIt's the things I haven't looked at, the things I haven't said\nI'm reaching for a shadow that isn't even there\nI think I'm losing my place\n\n(losing my place)\n(it's just static)\n(I think I'm losing my place)\n(static)",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 170.0,
+    "lufs": -13.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.65,
+        "label": "S1"
+      },
+      {
+        "start": 1.65,
+        "end": 18.13,
+        "label": "S2"
+      },
+      {
+        "start": 18.13,
+        "end": 34.95,
+        "label": "S3"
+      },
+      {
+        "start": 34.95,
+        "end": 50.41,
+        "label": "S4"
+      },
+      {
+        "start": 50.41,
+        "end": 79.64,
+        "label": "S5"
+      },
+      {
+        "start": 79.64,
+        "end": 100.61,
+        "label": "S6"
+      },
+      {
+        "start": 100.61,
+        "end": 167.04,
+        "label": "S7"
+      },
+      {
+        "start": 167.04,
+        "end": 170.0,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.854
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "electronic",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "harmonica",
+      "strings",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an anxious and restless atmosphere, built on a modern pop texture of tight drums, a driving synth bass, and intimate, breathy lead vocals. The energy builds dynamically from a fidgety, low-key verse into an explosive and frantic chorus, creating a compelling arc that feels both personal and overwhelming. The production is crisp and spacious, with layered vocal harmonies and effects creating a wide stereo field while the central kick and bass provide a powerful, focused core. A defining quality is the vocal performance itself, which shifts from confessional whispers to soaring belts, effectively using breath and ad-libs as rhythmic and emotional elements.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 161 BPM in G major, 'I Think I'm Losing My Place' runs at a pace that mirrors its subject perfectly: the compulsive, fidgety loop of phone-checking anxiety rendered as pop-rock propulsion. The lyric 'my focus is a mirror that someone just cracked' lands with the kind of specificity that elevates a relatable feeling into something you feel in your chest, and the chorus hits with the same cathartic surge you get from early Paramore, tight and desperate all at once. STAB's vocal is the real anchor here, moving from a near-whispered confession in the verses to a full-throated belt at the chorus break, and the spoken ad-libs ('don't look, don't check') add a layer of internal dialogue that keeps the two-minute-fifty runtime feeling rich. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 161.5",
+      "G major",
+      "lyric: 'my focus is a mirror that someone just cracked'",
+      "lyric: 'don't look / don't check'",
+      "vocal dynamic shift from whisper to belt",
+      "duration 2:50",
+      "Paramore comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

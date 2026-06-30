@@ -1,0 +1,120 @@
+{
+  "track_id": "pcbender--busy",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Busy.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--busy.opus"
+  },
+  "lyrics": "Too young to say no, the summing begins\nToys are laid down, they track when we win\nObedient, cheerful, thrifty and brave\nThe rules are recited until we behave\n\nWinners get rewarded, losers just ignored\nTheir deeds become legend, how many times they scored\nSuccess, the bargain that the wanting disappears\nWhen there’s nothing left to fear\n\nWe thrust the rest of life into these waning days\nKnowing that the end grows ever close\nNo time to linger, “I’m not done”, the nag of keeping busy\nToo few the hours spent on what we love the most\n\nWe fill the silence just to prove we’re here\nMeasure out the days in sweat and years\nHands stay moving, hearts stay out of sight\nLiving like the doing is the life\n\nWe thrust the rest of life into these waning days\nKnowing that the end grows ever close\nNo time to linger, “I’m not done”, the nag of keeping busy\nToo few the hours spent on what we love the most\n\nIf I stop now, will I disappear\nWho am I when there’s nothing left to clear\nJust a breath, just a moment, just this frame\nNothing earned - nothing needs a name\n\nWe thrust the rest of life into these waning days\nKnowing that the end grows ever close\nNo time to linger, “I’m not done”, the nag of keeping busy\nToo few the hours spent on what we love the most",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 86.1,
+    "key": "D",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 204.0,
+    "lufs": -18.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.36,
+        "label": "S1"
+      },
+      {
+        "start": 5.36,
+        "end": 23.08,
+        "label": "S2"
+      },
+      {
+        "start": 23.08,
+        "end": 45.19,
+        "label": "S3"
+      },
+      {
+        "start": 45.19,
+        "end": 77.07,
+        "label": "S4"
+      },
+      {
+        "start": 77.07,
+        "end": 110.83,
+        "label": "S5"
+      },
+      {
+        "start": 110.83,
+        "end": 130.17,
+        "label": "S6"
+      },
+      {
+        "start": 130.17,
+        "end": 149.16,
+        "label": "S7"
+      },
+      {
+        "start": 149.16,
+        "end": 164.14,
+        "label": "S8"
+      },
+      {
+        "start": 164.14,
+        "end": 179.26,
+        "label": "S9"
+      },
+      {
+        "start": 179.26,
+        "end": 199.51,
+        "label": "S10"
+      },
+      {
+        "start": 199.51,
+        "end": 204.0,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.95,
+      "key": 0.823
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop",
+      "country rock",
+      "country"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track features a sparse, intimate texture, built upon a clean, fingerpicked acoustic guitar and a breathy, forward female vocal, creating a melancholic and contemplative atmosphere. The energy is consistently low and gentle, with a flowing feel that is both soothing and slightly somber. The production is clean and spacious, allowing the simple arrangement to feel full without being dense, giving each element its own clear place in the mix. A distinctive quality is the subtle lift in vocal intensity during the chorus, which adds emotional weight without disrupting the track's overall quiet and reflective nature.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender lands somewhere between a folk confession and a country-rock meditation here, the fingerpicked acoustic holding steady at a deliberate 86 BPM in D minor while the lyric does the heavier lifting. The chorus earns its place: 'No time to linger, I'm not done, the nag of keeping busy / Too few the hours spent on what we love the most' is a line that actually stings, and the vocal rises just enough to give it weight without breaking the track's quiet restraint. The arrangement stays sparse throughout, which is a choice that mostly works, though listeners who want a fuller payoff may find the final chorus lands softer than the writing deserves. Still, the closer 'Nothing earned, nothing needs a name' is the kind of honest late-verse turn that keeps this well above the middling.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 86.1",
+      "D minor",
+      "fingerpicked acoustic guitar",
+      "chorus lyric quote",
+      "closing verse lyric quote",
+      "sparse arrangement",
+      "vocal lift in chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

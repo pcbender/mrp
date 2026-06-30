@@ -1,0 +1,109 @@
+{
+  "track_id": "stab--not-sure-this-is-me",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Not Sure This Is Me.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--not-sure-this-is-me.opus"
+  },
+  "lyrics": "I wake up and the room is bright before the sun\nNot from a window - just the little glowing one\nHeadlines, group chats, someone's photo of their lunch\nAnd my brain goes, \"Yeah, that's life,\" like it's not too much\nI've got a million tiny takes I never asked to hold\nI call it being \"in the loop,\" but I'm just being pulled\nEven my quiet has a soundtrack playing low\nLike I'm scared of what I'll hear if it goes\n\nIt's weird what starts to feel like home\nEven when it's wearing you down\nI don't remember choosing this\nI just remember it being around\n\nI thought this was just how people are\nAlways half here, always reaching\nI thought the buzz was my own heart\nBut it's the room that keeps speaking\nIf I'm honest, I don't know who I am\nWhen the screen goes dark and it's only me\nI'm trying to tell the difference now -\nI'm not sure this is me\n\nI scroll past somebody's joy like it's a weather report\nThen check my face in the camera like, \"Okay, look normal - go\"\nI've learned to answer fast, to never miss a beat\nTo keep a little smile ready, to stay light on my feet\nBut underneath I'm tired in a way I can't explain\nLike I've been running on a treadmill in my own brain\nI say I'm \"fine,\" and I mean it, and it's true\nBut fine is also what you say when you're numb too\n\nIt's weird what starts to feel like home\nEven when it's wearing you down\nI don't remember choosing this\nI just remember it being around\n\nI thought this was just how people are\nAlways half here, always reaching\nI thought the buzz was my own heart\nBut it's the room that keeps speaking\nIf I'm honest, I don't know who I am\nWhen the screen goes dark and it's only me\nI'm trying to tell the difference now -\nI'm not sure this is me\n\nSo what's mine\nNot the notifications, not the panic check\nNot the need to be seen so I don't feel left\nWhat's mine is smaller than that\nA breath. A chair. A body\n(hold up)\nMaybe I've been borrowing myself\n\nI thought this was just how people are\nAlways half here, always reaching\nI thought the buzz was my own heart\nBut it's the room that keeps speaking\nIf I'm honest, I don't know who I am\nWhen the screen goes dark and it's only me\nI'm trying to tell the difference now -\nI'm not sure this is me\n\nPhone face-down\nHands still twitching\n(mm)\nLike they miss the noise",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 197.72,
+    "lufs": -15.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.51,
+        "label": "S1"
+      },
+      {
+        "start": 2.51,
+        "end": 23.2,
+        "label": "S2"
+      },
+      {
+        "start": 23.2,
+        "end": 39.98,
+        "label": "S3"
+      },
+      {
+        "start": 39.98,
+        "end": 55.26,
+        "label": "S4"
+      },
+      {
+        "start": 55.26,
+        "end": 76.42,
+        "label": "S5"
+      },
+      {
+        "start": 76.42,
+        "end": 93.2,
+        "label": "S6"
+      },
+      {
+        "start": 93.2,
+        "end": 137.11,
+        "label": "S7"
+      },
+      {
+        "start": 137.11,
+        "end": 178.14,
+        "label": "S8"
+      },
+      {
+        "start": 178.14,
+        "end": 197.72,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.95,
+      "key": 0.887
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an anxious, introspective atmosphere, contrasting a tight, almost spoken-word verse with an explosive, full-throated pop-rock chorus. The energy escalates significantly from its contained beginnings, creating a powerful sense of emotional release and overwhelm. The production is polished and modern, allowing the clean lead vocal to cut through a dense mix of pulsing synths, tight drums, and rich vocal harmonies without feeling cluttered. A standout moment is the breakdown after the second chorus, where the instrumentation thins to a glitchy, rhythmic pulse, creating a vulnerable space before rebuilding into the final, anthemic hook.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "STAB has built her name on full-throttle anthems, so the fact that 'Not Sure This Is Me' works best at its quietest is the real surprise. Written in 3/4 time at a pace that feels more like a slow pulse than a march, the song sits with digital exhaustion in a way that's specific enough to sting: 'I scroll past somebody's joy like it's a weather report' is a lyric that earns its place, and the bridge's almost-whispered 'maybe I've been borrowing myself' lands harder than any power chord could. The breakdown after the second chorus strips everything back to a glitchy rhythmic tick before the final hook rebuilds, and that structural choice is doing real emotional work, the musical equivalent of the screen going dark. It's more Alanis Morissette's quieter self-reckonings than anything from The Runaways playbook, but STAB pulls it off with enough clarity and hook-craft that the stretch doesn't show.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "BPM 112.3 framed as slow pulse",
+      "lyric: 'I scroll past somebody's joy like it's a weather report'",
+      "lyric: 'maybe I've been borrowing myself'",
+      "post-second-chorus breakdown described in audio impression",
+      "comparison to Alanis Morissette"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

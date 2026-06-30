@@ -1,0 +1,110 @@
+{
+  "track_id": "lingua-aeternum--this-over-that",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/This Over That.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--this-over-that.opus"
+  },
+  "lyrics": "I heard a hundred voices speak\nEach chasing truth, each sounding weak\nA thousand hands, no one to hold\nA crowd of stories left untold\n\nI ran in circles, lost in names\nTried on their fears, played all their games\nBut every path I walked alone\nLed me back to flesh and bone\n\nMany over many\nTangled in the spin\nNo map, no mercy\nNo place to begin\nBut something stirred beneath the wall\nMany over many\nStill equals all\n\nYou looked at me like sky meets sea\nSo far apart, yet always free\nYou weren’t my half, you were my flame\nWe burned apart, we burned the same\n\nTwo over two\nNot fractions, not confined\nYou were you and I was I\nAnd still our threads entwined\nNo reduction, no divide\nJust the math we feel inside\nTwo over two\nAnd still we come out one\n\nNowhere left for doubt to stay\nThe mirror cleared, the noise gave way\nI saw myself without disguise\nThe storm had passed behind my eyes\n\nOne over one\nNo fight, no need\nJust roots and sky\nAnd breath to breathe\nNo veil between what is and seems\nJust silence humming through my dreams\nOne over one\nAnd everything aligns\n\nNo shape. No frame\nJust stillness with a name\nAll paths have bent\nAll moments spent\n\nAll over all…\nNo need to fall…\nI am… I am… I am…",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 199.5,
+    "lufs": -13.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.99,
+        "label": "S1"
+      },
+      {
+        "start": 5.99,
+        "end": 30.81,
+        "label": "S2"
+      },
+      {
+        "start": 30.81,
+        "end": 50.16,
+        "label": "S3"
+      },
+      {
+        "start": 50.16,
+        "end": 74.98,
+        "label": "S4"
+      },
+      {
+        "start": 74.98,
+        "end": 97.2,
+        "label": "S5"
+      },
+      {
+        "start": 97.2,
+        "end": 113.68,
+        "label": "S6"
+      },
+      {
+        "start": 113.68,
+        "end": 138.07,
+        "label": "S7"
+      },
+      {
+        "start": 138.07,
+        "end": 186.34,
+        "label": "S8"
+      },
+      {
+        "start": 186.34,
+        "end": 199.5,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.963,
+      "key": 0.947
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "piano",
+      "electric guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a sparse, intimate texture centered on a clean piano and a heartfelt male vocal, creating an atmosphere of introspection and searching. The energy builds with a steady, driving feel as drums and layered harmonies enter, transforming the song into a powerful pop-rock anthem during the choruses. The production quality is clean and spacious, allowing the prominent lead vocal to cut through a dense but well-organized mix of instruments. A definitive quality of the track is the dynamic swell into the chorus at 0:44, where the arrangement broadens significantly, providing a powerful emotional release that elevates the entire song.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Starting from a single piano and a searching vocal, 'This Over Many' builds its case methodically, cycling through three distinct emotional registers, each one tagged with its own fraction: the plural noise of many over many, the specific gravity of two over two, the quiet clarity of one over one. The lyric 'You weren't my half, you were my flame' is the kind of line that earns its chorus, and that chorus at the 44-second mark delivers, the arrangement broadening into something close to classic-rock release without losing the intimacy that made the setup worth the wait. At a brisk 172 BPM in C major, the track never feels rushed; it feels purposeful, like it knows exactly where it's going. Lingua Aeternum has always worked in systems and symbols, but this one translates the algebra into feeling with unusual directness.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "piano opening",
+      "vocal entry",
+      "lyric quote: You weren't my half, you were my flame",
+      "chorus swell at 0:44",
+      "172 BPM",
+      "C major",
+      "three-part lyrical structure: many/two/one"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

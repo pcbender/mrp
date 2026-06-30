@@ -1,0 +1,120 @@
+{
+  "track_id": "michael-anthony-rose--entraining",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Entraining.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--entraining.opus"
+  },
+  "lyrics": "Two clocks on the wall\nthe morning catches them\nstill swinging as one\n\nMoon pulls the sea\nthe small bone in the ear\nanswers, still\n\nA bow across one string\nbeside it, untouched\nanother sings\n\nFireflies over the hill\neach alone\nthen\nall at once\n\nTwo things kept apart\ngiven long enough\nthe gap begins to close\n\nA bridge full of strangers\nfalling into step\nthe swaying deepens\n\nThe children learn the room\nits rhythm, its hush\nbefore they learn their names\n\nI watched you sleep\nand my breath\nfound the rise and fall of yours\n\nTwo things kept apart\ngiven long enough\nthe gap begins to close\n\nThe planet turns\nlocked to its star\none face turned always to the sun\n\nTwo things kept apart\ngiven long enough\nthe gap begins to close",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "A",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 259.61,
+    "lufs": -13.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.08,
+        "label": "S1"
+      },
+      {
+        "start": 6.08,
+        "end": 31.0,
+        "label": "S2"
+      },
+      {
+        "start": 31.0,
+        "end": 48.72,
+        "label": "S3"
+      },
+      {
+        "start": 48.72,
+        "end": 74.4,
+        "label": "S4"
+      },
+      {
+        "start": 74.4,
+        "end": 93.97,
+        "label": "S5"
+      },
+      {
+        "start": 93.97,
+        "end": 116.17,
+        "label": "S6"
+      },
+      {
+        "start": 116.17,
+        "end": 143.8,
+        "label": "S7"
+      },
+      {
+        "start": 143.8,
+        "end": 185.88,
+        "label": "S8"
+      },
+      {
+        "start": 185.88,
+        "end": 213.39,
+        "label": "S9"
+      },
+      {
+        "start": 213.39,
+        "end": 237.8,
+        "label": "S10"
+      },
+      {
+        "start": 237.8,
+        "end": 259.61,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.897
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an intimate, soulful atmosphere with a texture of warm electric piano, crisp, live-sounding drums, and a prominent, melodic fretless bass. The energy is cool and laid-back, driven by a relaxed R&B groove that feels both tight and spacious. The production quality is high, creating a clean and open soundscape where the breathy male vocal sits comfortably atop the well-balanced instrumental arrangement. A defining quality is the conversational interplay between the articulate bass lines and the emotive vocal melody, creating a sophisticated and flowing musical dialogue.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose builds 'Entraining' around one of physics' quieter miracles: the way two oscillating things, left close enough, eventually fall into sync. In 3/4 time at a patient 117 BPM, the song itself does exactly that, a fretless bass and breathy vocal circling each other until they settle into the same groove. The lyric earns its central image steadily, moving from clocks and tides to a bow making an untouched string vibrate in sympathy, before landing where it always meant to: 'I watched you sleep / and my breath / found the rise and fall of yours.' That line does the work quietly, the way the best lines do. A standout cut.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "3/4 time",
+      "117 BPM",
+      "A minor",
+      "fretless bass texture from audio impression",
+      "quoted lyric: 'I watched you sleep / and my breath / found the rise and fall of yours'",
+      "bow-and-string verse as structural anchor",
+      "central metaphor of entrainment traced through song structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

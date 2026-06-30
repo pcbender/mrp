@@ -1,0 +1,124 @@
+{
+  "track_id": "pcbender--impossibly",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Impossibly.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--impossibly.opus"
+  },
+  "lyrics": "Through the silence, the unbegun\nShadows of stars before they burn\nEvery echo waits to be sung\nEvery dream leans toward return\n\nWhat was never, now is near-\nThe edge of nothing bends us here\n\nImpossibly-\nWe rise from the never into the now\nImpossibly-\nWe stand where no reason would allow\nImpossibly-\nThe word becomes the world somehow\n\nFragile as light, fierce as the flame\nWhat we could not, we now become\nThe weight of forever whispers your name\nThe moment arrives, impossibly done\n\nWhat was broken finds its song\nThe place we feared is where we belong\n\nImpossibly-\nWe rise from the never into the now\nImpossibly-\nWe stand where no reason would allow\nImpossibly-\nThe word becomes the world somehow\n\nThe further we reach, the more it recedes\nImpossibly sows the impossible seeds\nWhat we call limit is only disguise\nEvery horizon is waiting to rise\n\nImpossibly-\nThe silence unfolds, the song takes flight\nImpossibly-\nWe’re here in the heart of endless night\nImpossibly-\nWhat once was never becomes the light",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 277.0,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 0.84,
+        "label": "S1"
+      },
+      {
+        "start": 0.84,
+        "end": 41.22,
+        "label": "S2"
+      },
+      {
+        "start": 41.22,
+        "end": 63.07,
+        "label": "S3"
+      },
+      {
+        "start": 63.07,
+        "end": 78.51,
+        "label": "S4"
+      },
+      {
+        "start": 78.51,
+        "end": 118.7,
+        "label": "S5"
+      },
+      {
+        "start": 118.7,
+        "end": 140.48,
+        "label": "S6"
+      },
+      {
+        "start": 140.48,
+        "end": 155.97,
+        "label": "S7"
+      },
+      {
+        "start": 155.97,
+        "end": 182.97,
+        "label": "S8"
+      },
+      {
+        "start": 182.97,
+        "end": 211.97,
+        "label": "S9"
+      },
+      {
+        "start": 211.97,
+        "end": 241.74,
+        "label": "S10"
+      },
+      {
+        "start": 241.74,
+        "end": 275.18,
+        "label": "S11"
+      },
+      {
+        "start": 275.18,
+        "end": 277.0,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.975,
+      "key": 0.935
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "uplifting",
+      "emotional",
+      "energetic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a dense and epic texture, creating an emotional atmosphere of heroic triumph from the very start. The energy is consistently high and driving, propelled by powerful drums, soaring lead guitars, and passionate, anthemic vocals that feel grand and uplifting. The production is modern and polished, managing a very dense arrangement of synths, multiple guitars, and layered vocals by giving each element its own space within a vast, reverberant soundscape. A defining quality is the dynamic explosion into the massive, multi-tracked vocal chorus, which elevates the song's already grand scale and provides an incredibly powerful hook.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Impossibly\" swings for the rafters and mostly clears them: at 123 BPM in B major, the track moves with real urgency, and when that chorus hits, multi-tracked and wide open, the lift is genuine. The lyric earns its ambition too, with a line like \"the word becomes the world somehow\" landing as hard-won philosophy rather than empty uplift. PCBender's production keeps a dense arrangement from collapsing under its own weight, carving space for the soaring lead guitar against strings and layered vocals in a way that calls to mind the grandest moments of late-period U2 or Springsteen going full stadium. A standout cut.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "123 BPM",
+      "B major",
+      "multi-tracked chorus",
+      "lyric quote: the word becomes the world somehow",
+      "lead guitar against strings and layered vocals",
+      "U2 / Springsteen comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

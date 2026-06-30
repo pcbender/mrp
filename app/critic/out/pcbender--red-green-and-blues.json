@@ -1,0 +1,272 @@
+{
+  "album_id": "pcbender--red-green-and-blues",
+  "release_slug": "red-green-and-blues",
+  "title": "Red, Green and Blues",
+  "release_type": "album",
+  "artist": "PCBender",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "tracklist": [
+    "pcbender--cyclamen",
+    "pcbender--tumbleweed",
+    "pcbender--rufous",
+    "pcbender--olivine",
+    "pcbender--verdigris",
+    "pcbender--wenge",
+    "pcbender--pistachio",
+    "pcbender--sunray",
+    "pcbender--zaffre",
+    "pcbender--nyanza",
+    "pcbender--limerick",
+    "pcbender--thulian",
+    "pcbender--jonquil",
+    "pcbender--aureolin",
+    "pcbender--moonstone"
+  ],
+  "track_records": [
+    "/home/mrose/mrp/app/critic/out/pcbender--cyclamen.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--tumbleweed.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--rufous.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--olivine.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--verdigris.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--wenge.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--pistachio.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--sunray.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--zaffre.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--nyanza.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--limerick.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--thulian.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--jonquil.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--aureolin.json",
+    "/home/mrose/mrp/app/critic/out/pcbender--moonstone.json"
+  ],
+  "album_features": {
+    "total_runtime_s": 2973.5,
+    "bpm_curve": [
+      103.4,
+      161.5,
+      161.5,
+      95.7,
+      80.7,
+      89.1,
+      172.3,
+      123.0,
+      95.7,
+      89.1,
+      117.5,
+      80.7,
+      129.2,
+      99.4,
+      152.0
+    ],
+    "key_progression": [
+      "E minor",
+      "A minor",
+      "G# minor",
+      "A minor",
+      "A major",
+      "A major",
+      "E minor",
+      "E major",
+      "A major",
+      "E major",
+      "D major",
+      "F# minor",
+      "D major",
+      "D major",
+      "E minor"
+    ],
+    "mood_progression": [
+      "uplifting",
+      "uplifting",
+      "tender",
+      "nostalgic",
+      "tender",
+      "tender",
+      "tender",
+      "hopeful",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "uplifting"
+    ],
+    "rank_distribution": {
+      "2": 0,
+      "3": 4,
+      "4": 11,
+      "5": 0
+    },
+    "peak_track": "pcbender--cyclamen",
+    "valley_tracks": [
+      "pcbender--rufous",
+      "pcbender--sunray",
+      "pcbender--nyanza",
+      "pcbender--limerick"
+    ]
+  },
+  "cohesion": {
+    "palette_consistency": 0.9084,
+    "theme_threads": [],
+    "verdict": "cohesive_statement"
+  },
+  "review": {
+    "target": "album_blurb",
+    "review_text": "PCBender works entirely in guitar and groove on 'Red, Green and Blues,' fifteen instrumental tracks named for colors that range from the familiar to the obscure, and that naming instinct tells you something about the album's sensibility: specific, a little eccentric, unhurried. 'Cyclamen' opens with an easy swagger that sets the terms clearly, and the record mostly honors them, cycling through waltz-time blues-rock, funk-adjacent struts, and quieter reflective pieces without ever losing the thread of a craftsman who trusts his hands. The sequencing does real work here: the back half, from 'Thulian' through the closing run of 'Jonquil,' 'Aureolin,' and 'Moonstone,' builds a cumulative warmth that makes the album feel like more than a playlist of well-made guitar pieces. A tight, confident collection from an artist who knows exactly what he is.",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "strong"
+    },
+    "sum_vs_parts": "greater",
+    "persona_delivery": "on_character",
+    "anchors_used": [
+      "Cyclamen",
+      "Thulian",
+      "Jonquil",
+      "Aureolin",
+      "Moonstone",
+      "waltz-time blues-rock",
+      "naming for colors"
+    ],
+    "status": "pending",
+    "model": "claude-sonnet-4-6"
+  },
+  "track_reviews_in_context": [
+    {
+      "track_id": "pcbender--cyclamen",
+      "position": 1,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Opening an album is a statement of intent, and 'Cyclamen' makes the right one. It moves with a swagger that feels earned rather than performed, the rhythm section locked tight while a blues-inflected lead guitar does all the talking a vocalist would need to. The melodic hooks that surface mid-track are the kind that stick without announcing themselves, and the production keeps things spacious enough that every bend and phrase has room to breathe. For a track that clocks in under three minutes, it covers real ground and holds your attention the whole way. More importantly, it sets the terms of the album clearly: this is a record about guitar feel, groove, and confident understatement. Every track that follows operates on exactly that promise.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--tumbleweed",
+      "position": 2,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "'Tumbleweed' follows the opening statement with a small act of daring: a waltz at a brisk clip, and PCBender pulls it off. The track leans into that rolling three-quarter feel with a slightly overdriven lead guitar that phrases like it has somewhere to be and nowhere to be at the same time. The rhythm section keeps things honest and tight, giving the guitar room to stretch into the kind of SRV-adjacent lick work that sounds best when it's not trying too hard. That shift from the opener's swagger to this looser, more rolling gait is the first sign that the album is going to move through more tonal territory than it initially shows. At nearly four minutes across eleven sections, the track sustains its momentum without overstaying its welcome, a creditable feat for a purely instrumental piece built on feel rather than flash.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--rufous",
+      "position": 3,
+      "standalone_rank": 3,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Two waltz tracks in a row could be a liability, but 'Rufous' earns its placement by shifting the temperature rather than the method. Where 'Tumbleweed' was loose and rolling, 'Rufous' works the upper register with the kind of confident, unhurried bends you hear on classic Clapton or early Allman Brothers live cuts, and the minor-key tonality gives it a different emotional weight. The blistering run that arrives early in the track is its centerpiece, a moment of genuine technical fire that earns every second of the steady groove surrounding it. As the third track, it functions as confirmation: PCBender is not going to drift from the waltz form just yet, but he is finding real variety within it. 'Rufous' does its job and does it well.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--olivine",
+      "position": 4,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After three tracks in or near waltz time, 'Olivine' shifts the rhythm to a more relaxed, even-keel groove and the album opens up noticeably. It runs at a comfortable pace in a minor key, but carries itself like a track in no hurry to prove anything, which turns out to be its greatest asset. The lead guitar hooks are genuinely melodic, the organ sits warm and wide in the mix, and the rhythm section keeps it all from floating away. That organ is the detail that matters most at this point in the sequence: it broadens the sonic palette and signals that the album is bigger than its opening trio suggested. For an instrumental, it earns its nearly four minutes by cycling through enough variation to stay interesting without overreaching. Think early Allman Brothers in the pocket, or a John Mayall track that trusts the groove.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--verdigris",
+      "position": 5,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "'Verdigris' returns to 3/4 time but at a slower, more measured pace than the earlier waltz tracks, and the difference matters. Where 'Tumbleweed' and 'Rufous' moved with urgency, this one has the unhurried swagger of a guitarist who knows exactly where every note is going. The lead electric guitar moves between quick articulate runs and longer melodic phrases that breathe and bend without showing off, and the rhythm section underneath keeps a groove tight enough that the waltz time never feels quaint. By track five, the album's recurring use of 3/4 has stopped feeling like a habit and started feeling like a home key, a form that PCBender consistently finds new things to say inside. It holds attention across nearly four minutes the way the best Jeff Beck or Robben Ford records do, letting feel do the work that words would otherwise carry.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--wenge",
+      "position": 6,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Arriving at the album's midpoint, 'Wenge' shifts from waltz time into a funk-blues strut and the change lands with real impact. At a steady groove in a bright major key, the track locks into a head-nodding rhythm that the album has been building toward without telegraphing. The rhythm section sits back just enough to give the lead guitar room to stretch, and the guitar work moves through the eleven sections with the kind of melodic confidence you hear in early SRV or a loose, live-feeling Robben Ford set, each phrase answering the last rather than just showing off. After five tracks that were variously minor-key, waltz-driven, or reflective, this is the album's first full turn toward open-air groove, and it feels like a release valve. PCBender doing what he does best, and doing it at exactly the right moment.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--pistachio",
+      "position": 7,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "'Pistachio' is the album's peak, and it earns that position by doing something genuinely unlikely: running at a high tempo in 3/4 waltz time while somehow feeling like a funk-rock strut. It shouldn't work, but PCBender pulls it off with ease. The clean lead guitar does most of the talking, trading blues-inflected phrases with a rhythm section that locks in tight and punctuates hard, giving the whole thing the feel of a live studio conversation where everyone is listening. Coming off the major-key swagger of 'Wenge,' this track takes that energy and accelerates it, and the stops land with real confidence. It's the kind of track that rewards a second listen once you notice how much negative space the band is using. A fine showcase of PCBender's instinct for letting a guitar line breathe, and the moment the album has been building toward.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--sunray",
+      "position": 8,
+      "standalone_rank": 3,
+      "context_rank": 4,
+      "context_note": "Following the album's peak, Sunray's cheerful simplicity functions as necessary relief rather than a lesser track; it earns more at this position than it would elsewhere.",
+      "review_text": "'Sunray' arrives directly after the album's peak, and the timing is exactly right. A clean, chorus-dipped guitar riff locks in early and stays cheerful without turning saccharine, riding a mid-tempo groove that nods without rushing. The production earns its keep through sheer clarity, drums, bass, and layered guitars each sitting in their own pocket the way a well-mixed Tom Petty track breathes. What reads as modest ambition in isolation reads as considered sequencing here: after the high-tempo charge of 'Pistachio,' the album needed somewhere to exhale, and 'Sunray' provides that without dropping the energy or losing the listener. A brief pause around the half-minute mark is the small moment that sells the whole thing, a quick exhale before the hook reasserts itself with a little more authority. Not the most demanding track in the collection, but placed where it is, it does exactly what the album needs.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--zaffre",
+      "position": 9,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "If 'Sunray' was the exhale, 'Zaffre' is the album finding its footing again in the back half. A waltz-time blues rocker at a moderate pace in a major key, it grooves harder than a 3/4 signature has any right to. The electric guitar does the talking here, trading off between punchy rhythmic stabs and fluid melodic fills in a way that keeps the three minutes feeling genuinely conversational. The production is clean but not sterile, each instrument getting room to breathe without the mix losing its density. By this point in the record, the return to 3/4 feels like settling back into a preferred language rather than repetition. Fans of Stevie Ray Vaughan's tighter instrumental work will find themselves at home. A confident restatement of the album's core strengths at exactly the moment when the second half needed to prove itself.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--nyanza",
+      "position": 10,
+      "standalone_rank": 3,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Placed tenth in a fifteen-track sequence, 'Nyanza' takes on a different quality than it might elsewhere: it is the album's quietest moment in the back half, a loping waltz where PCBender gives the guitar the most room it has had since 'Verdigris.' The long, vocal-like string bends carry the kind of conversational phrasing you hear in early Robben Ford, where note choice matters more than note count. The rhythm section stays deliberately understated, keeping the lead guitar central without crowding it. After the compressed energy of 'Zaffre,' this track functions as a genuine breather, a reminder that the album's most interesting moves often happen at slower tempos. The warm major-key tonality keeps it from tipping into somber territory. A dependable cut that rewards headphone listening, and one that earns more credit in sequence than it might seem to in isolation.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--limerick",
+      "position": 11,
+      "standalone_rank": 3,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "'Limerick' is the shortest track on the album and one of the looser ones, a two-minute-forty romp that swings in 3/4 at a clip that feels closer to a barroom shuffle than a waltz. After the reflective mood of 'Nyanza,' the shift in tempo and attitude is exactly what the sequence needed. PCBender leans all the way into the looseness: the lead guitar trades soulful string bends for quick, fleet-fingered runs and back again with the easy confidence of someone who knows exactly how much rope to give a solo. It doesn't overstay its welcome, and that restraint is its own kind of skill. In the context of the album's back stretch, 'Limerick' functions as a palate cleanser, brief and buoyant, clearing the way for the more deliberate moves that follow.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--thulian",
+      "position": 12,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After the brevity and looseness of 'Limerick,' 'Thulian' arrives like a deep breath. A waltz-time blues instrumental in a minor key, it moves at a slow, measured pace that gives the lead guitar room to breathe, and PCBender uses every inch of it. The phrasing here is the story: fluid bends that resolve just late enough to sting, answered by a rhythm section that stays tight without crowding. It has the same unhurried confidence you hear on early Allman Brothers instrumentals, that sense that nobody is rushing because nobody needs to. The emotional weight here is the deepest the album reaches, and it lands all the harder for coming after 'Limerick's' easy swing. At under three minutes it earns its keep and leaves you wanting another pass, which is exactly the right condition to be in heading into the album's final stretch.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--jonquil",
+      "position": 13,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "'Jonquil' follows 'Thulian's' minor-key weight with a sharp change of pace, and the contrast is well-judged. A waltz-time blues-rock instrumental, it has a spring-loaded momentum that shouldn't work in 3/4 and somehow feels completely natural. The electric guitar leads with the kind of crunchy, conversational phrasing you hear in early Robben Ford, all rapid-fire runs and double-stop fills that talk back to the rhythm section rather than just riding over it. At two and a half minutes it earns its length, cycling through nine tight sections without overstaying its welcome. The brighter major-key feel and compressed energy function as a reawakening after the slower reflective depths of 'Thulian,' and the shift gives the final two tracks something to build from. A confident, well-built little instrumental that holds the room.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--aureolin",
+      "position": 14,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The penultimate track on any album carries a specific burden: it needs to sustain momentum without overreaching, and it needs to leave the closer with something to work with. 'Aureolin' handles that job with quiet assurance. At just under a hundred BPM in a major key, the track settles into a confident groove that never rushes itself, and the lead work is genuinely conversational, phrases that curl and resolve like someone thinking out loud. The production keeps everything clean and spacious without feeling sterile, and the bass sits low but felt. After the compressed sprint of 'Jonquil,' the extra space here feels deliberate, a final settling before the album ends. It stands on its own as one of the stronger tracks in the catalog, and in sequence it functions as the album drawing a long, satisfied breath before the close.",
+      "model": "claude-sonnet-4-6"
+    },
+    {
+      "track_id": "pcbender--moonstone",
+      "position": 15,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "'Moonstone' closes the album on exactly the right note. At a fast, funky tempo in a minor key, it moves with an urgency that keeps you nodding from the first bar, anchored by a rhythm section tight enough to bounce a quarter off. The lead guitar work is overdriven but never messy, trading melodic runs for rhythmic chordal stabs and back again with the ease of someone who has done this long enough to make the hard parts look casual. As a closer, it mirrors the opener's swagger without repeating it, and the minor-key return to something close to where the album began gives the record a satisfying shape. The fifteen tracks have moved through waltz grooves, major-key swagger, slow blues, and quick shuffles, and 'Moonstone' gathers all of that into two minutes and fifty-five seconds of clean, confident motion. The kind of thing that reminds you of early Stevie Ray Vaughan records where the groove was the argument. It earns every second.",
+      "model": "claude-sonnet-4-6"
+    }
+  ]
+}

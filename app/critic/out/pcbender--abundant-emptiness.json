@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--abundant-emptiness",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Abundant Emptiness.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--abundant-emptiness.opus"
+  },
+  "lyrics": "I gave away the weight I wore\nThe crowded room, the open door\nI wandered out beyond the noise\nAnd found a peace without a voice\n\nNo mirror, no map, no gold to chase\nJust you and me and open space\nThe questions stilled, the list grew thin\nAnd silence rose up from within\n\nAbundant emptiness\nA moment, not a place\nIt fades like morning mist\nBut leaves a warm embrace\nAnd when I find it next to you\nIt feels like subtle grace\n\nNo need to speak, you understand\nThe quiet fits us hand in hand\nWe watch the sky, we feel the air\nAnd everything we need is there\n\nAbundant emptiness\nA moment, not a place\nIt fades like morning mist\nBut leaves a warm embrace\nAnd when I find it next to you\nIt feels like subtle grace\n\nIt will pass, I know it must\nLike phantoms fading into mist\nNo center, no shell-just sky and sand\nAnd something more than I had planned\n\nAbundant emptiness\nStill echoing in me\nNot hollow, just complete\nAs far as eyes can see\nAnd when I hold it next to you\nIt's all I'll ever need\n\nLet it go. Let it stay\nYou and me and nothing else\nA perfect day",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 214.36,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.51,
+        "label": "S1"
+      },
+      {
+        "start": 1.51,
+        "end": 16.63,
+        "label": "S2"
+      },
+      {
+        "start": 16.63,
+        "end": 45.42,
+        "label": "S3"
+      },
+      {
+        "start": 45.42,
+        "end": 60.42,
+        "label": "S4"
+      },
+      {
+        "start": 60.42,
+        "end": 80.11,
+        "label": "S5"
+      },
+      {
+        "start": 80.11,
+        "end": 103.84,
+        "label": "S6"
+      },
+      {
+        "start": 103.84,
+        "end": 154.83,
+        "label": "S7"
+      },
+      {
+        "start": 154.83,
+        "end": 176.19,
+        "label": "S8"
+      },
+      {
+        "start": 176.19,
+        "end": 214.36,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.889
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "drums",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a warm, open texture and a reflective, ultimately uplifting emotional atmosphere, established by clean, bluesy electric guitar licks and a heartfelt lead vocal. The energy is moderate and cruising, propelled by a steady, grounded rhythm section that gives it a soulful soft-rock feel. Production is clean and spacious, creating a wide stereo image where each instrument sits clearly without the mix feeling dense. The most distinctive quality is the dynamic lift into the anthemic chorus on the lyric \"Abundant emptiness,\" which provides a powerful emotional release from the more contemplative verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 95 BPM in B minor, 'Abundant Emptiness' settles into a groove that feels like a long exhale, clean bluesy guitar lines carrying the verse with room to breathe before the chorus opens up into something genuinely anthemic. The lyric 'a moment, not a place' earns its weight, and PCBender delivers it with the kind of quiet conviction that makes the payoff land. Production is spacious without being sparse, and the dynamic lift into the title phrase gives the track its spine. A highlight in the catalog.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 95.7",
+      "B minor",
+      "chorus lift on 'Abundant emptiness'",
+      "lyric 'a moment, not a place'",
+      "clean bluesy guitar texture",
+      "spacious production"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -77,7 +77,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--riders-and-runners.mp3
     lyrics_text: 'Playing card characters speaking in echoes
 
       They justify motives by placing the blame

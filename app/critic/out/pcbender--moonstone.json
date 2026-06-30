@@ -1,0 +1,99 @@
+{
+  "track_id": "pcbender--moonstone",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Moonstone.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--moonstone.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 175.08,
+    "lufs": -12.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 7.99,
+        "label": "S1"
+      },
+      {
+        "start": 7.99,
+        "end": 33.92,
+        "label": "S2"
+      },
+      {
+        "start": 33.92,
+        "end": 57.07,
+        "label": "S3"
+      },
+      {
+        "start": 57.07,
+        "end": 89.54,
+        "label": "S4"
+      },
+      {
+        "start": 89.54,
+        "end": 118.24,
+        "label": "S5"
+      },
+      {
+        "start": 118.24,
+        "end": 141.76,
+        "label": "S6"
+      },
+      {
+        "start": 141.76,
+        "end": 175.08,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.927
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "uplifting",
+      "tender",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a confident, blues-rock texture, with an expressive and slightly overdriven lead guitar creating a playful, feel-good atmosphere. The energy is consistently high, driven by a tight and funky rhythm section that provides a solid, head-nodding groove. The production is clean and well-balanced, allowing the virtuosic guitar to sit clearly in a spacious mix without overwhelming the punchy bass and drums. The track's defining quality is its sophisticated and dynamic guitar work, which weaves intricate melodic solos and rhythmic chordal stabs into a seamless, engaging performance.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in E minor, 'Moonstone' moves with a funky urgency that keeps you nodding from the first bar, anchored by a rhythm section tight enough to bounce a quarter off. The real story is the lead guitar work: overdriven but never messy, it trades melodic runs for rhythmic chordal stabs and back again with the ease of someone who has done this long enough to make the hard parts look casual. For a 2:55 instrumental, it earns every second, the kind of thing that reminds you of early Stevie Ray Vaughan records where the groove was the argument. A clean, confident highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "152 BPM",
+      "E minor",
+      "2:55 duration",
+      "overdriven lead guitar",
+      "rhythmic chordal stabs vs melodic runs",
+      "Stevie Ray Vaughan comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

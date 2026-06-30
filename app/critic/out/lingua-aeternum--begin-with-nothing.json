@@ -1,0 +1,95 @@
+{
+  "track_id": "lingua-aeternum--begin-with-nothing",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Begin With Nothing.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--begin-with-nothing.opus"
+  },
+  "lyrics": "Ooh Ooh ooh\nOoh Ooh ooh\nOoh Ooh ooh\nOoh Ooh ooh\n(Ooh Ooh ooh) Follow the breath\nLet go of knowing\n(Ooh Ooh ooh) Unfold what's left\nBegin with nothing\n(Ooh Ooh ooh) Wait for the silence (Follow the breath)\nListen to air (Let go of knowing)\n(Ooh Ooh ooh) Absence is presence (Unfold what's left)\nBegin with nothing (Begin with nothing)\n(Ooh Ooh ooh) Form becomes motion (Wait for the silence)\nTime disappears (Listen to air)\n(Ooh Ooh ooh) Stillness is rising (Absence is presence)\nBegin with nothing (Begin with nothing)\n(Ooh Ooh ooh) End where you started (Form becomes motion)\nRelease the sound (Circle the question)\n(Ooh Ooh ooh) Stillness is rising (Stillness is rising)\nBegin with nothing (Begin with nothing)\nOoh Ooh ooh\nOoh Ooh ooh oh\nOoh Ooh ooh\nOoh Ooh ooh oh\nOoh Ooh ooh\nOoh Ooh ooh\n(Ooh Ooh ooh) End where you started (Form becomes motion)\nRelease the sound (Circle the question)\n(Ooh Ooh ooh) Stillness is rising (Stillness is rising)\nBegin with nothing (Begin with nothing)\n(Ooh Ooh ooh) End where you started (Form becomes motion)\nRelease the sound (Circle the question)\n(Ooh Ooh ooh) Stillness is rising (Stillness is rising)\nBegin with nothing (Begin with nothing)\n(Ooh Ooh ooh) End where you started\nRelease the sound\nBegin with nothing",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 265.04,
+    "lufs": -16.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 161.75,
+        "label": "S1"
+      },
+      {
+        "start": 161.75,
+        "end": 177.08,
+        "label": "S2"
+      },
+      {
+        "start": 177.08,
+        "end": 197.09,
+        "label": "S3"
+      },
+      {
+        "start": 197.09,
+        "end": 222.17,
+        "label": "S4"
+      },
+      {
+        "start": 222.17,
+        "end": 242.44,
+        "label": "S5"
+      },
+      {
+        "start": 242.44,
+        "end": 265.04,
+        "label": "S6"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.858
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "electronic",
+      "soul"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "emotional"
+    ],
+    "instruments": [
+      "bass guitar",
+      "electric guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track begins with a vast, ethereal texture of layered vocal pads, creating a deeply contemplative and almost spiritual atmosphere. A low-energy, free-flowing feel is established by the subsequent male lead and harmony vocals, which guide the listener through a narrative journey before the track gradually builds in intensity. The production quality is pristine, creating a wide stereo image where vocals and pads blend seamlessly into a spacious soundscape, while later electronic drums cut through with clarity and punch. A stark transition at 2:38 is the defining moment, where the ambient, vocal-led piece suddenly transforms into a driving electronic track, shifting the song from meditative to powerfully rhythmic.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The structure here is the statement: nearly three minutes of unfolding vocal rounds in 3/4, built on the mantra 'absence is presence / begin with nothing,' before the electronic drums crash in at 2:38 and reframe everything you just heard as a kind of held breath before the exhale. In E minor at a measured waltz pulse, the overlapping call-and-response lines ('end where you started / release the sound') work like a Philip Glass ostinato, circling until the repetition becomes the point. It lands cleanly.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "E minor key",
+      "2:38 structural shift to electronic drums",
+      "lyric: 'absence is presence / begin with nothing'",
+      "lyric: 'end where you started / release the sound'",
+      "Philip Glass comparison for ostinato feel",
+      "BPM ~96 described as measured waltz pulse"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

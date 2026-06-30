@@ -1,0 +1,8 @@
+---
+track_id: pcbender--this-love-grows
+impression: "This track presents a heartfelt and nostalgic atmosphere, opening with a sparse texture of clean electric guitars and earnest male vocals that feel intimate and reflective. The energy builds dynamically, transitioning from a gentle ballad into a soaring, anthemic rock chorus with a full, driving band, creating a hopeful and expansive feel. The production is clean and spacious, allowing the lead vocal to sit prominently while maintaining clarity between the layered guitars, solid bass, and punchy drums. A defining quality is the powerful emotional lift into the first chorus, where the arrangement swells, establishing the song's grand, emotionally resonant core."
+verdict_rank: 3
+verdict_label: "dependable"
+---
+
+'This Love Grows' sits in the penultimate slot, and that position suits it. It is the album's only track that settles into something more modest in its ambitions, doing exactly what it sets out to do and doing it cleanly rather than reaching for the kind of dramatic arc that surrounds it. The verse stays spare and intimate, clean guitar and a direct vocal, and when the chorus arrives it genuinely swells rather than just gets louder. The line 'time is a thief, but it can't take away the love in our hearts' lands with the kind of plain-spoken conviction that made early John Hiatt stick. Coming after 'Deb' and before the closing 'Winds of Change,' it functions as a quiet settling-in, the album taking stock before its final statement. It won't be the track most listeners reach for on repeat, but it does something useful here: it makes the closer feel earned rather than abrupt, and an album that went straight from 'Deb' to 'Winds of Change' would feel like it skipped a breath.

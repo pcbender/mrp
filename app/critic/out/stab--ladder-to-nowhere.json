@@ -1,0 +1,110 @@
+{
+  "track_id": "stab--ladder-to-nowhere",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Ladder to Nowhere.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--ladder-to-nowhere.opus"
+  },
+  "lyrics": "Cold metal kills aspirations\nThe silver steps made to betray\nEach answer asks another question\nWhile something says “Just one more day”\n\nAnd the spaces between my fingers tell the story once again\nOf my climb towards the top, not now, not if, but when\n\nI scale the ladder to nowhere and the oxygen is thin\nThe summit dances beyond the places I have been\nThe only way is up on the ladder to nowhere\n\nMemories of my frustrations\nCan’t deny they’re motivations\nThe silence of unanswered DMs\nPuts me into situations\n\nAnd the spaces between my fingers tell the story once again\nOf my climb towards the top, not now, not if, but when\n\nI scale the ladder to nowhere and the oxygen is thin\nThe summit dances beyond the places I have been\nThe only way is up on the ladder to nowhere\n\nConstellations rearrange Into unfamiliar skies\nThe highest step I'm chasing keeps changing its disguise\n\nI scale the ladder to nowhere and the oxygen is thin\nThe summit dances beyond the places I have been\nThe only way is up on the ladder to nowhere\n\nI’m on the ladder to nowhere\nThe ladder to nowhere\nI’m on the ladder to nowhere\nThe ladder to nowhere",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 229.68,
+    "lufs": -15.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 45.16,
+        "label": "S1"
+      },
+      {
+        "start": 45.16,
+        "end": 62.28,
+        "label": "S2"
+      },
+      {
+        "start": 62.28,
+        "end": 104.68,
+        "label": "S3"
+      },
+      {
+        "start": 104.68,
+        "end": 119.75,
+        "label": "S4"
+      },
+      {
+        "start": 119.75,
+        "end": 160.26,
+        "label": "S5"
+      },
+      {
+        "start": 160.26,
+        "end": 179.82,
+        "label": "S6"
+      },
+      {
+        "start": 179.82,
+        "end": 203.01,
+        "label": "S7"
+      },
+      {
+        "start": 203.01,
+        "end": 222.73,
+        "label": "S8"
+      },
+      {
+        "start": 222.73,
+        "end": 229.68,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.823
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "pop rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a spacious, arpeggiated synth before erupting into a dense, anthemic rock texture. The emotional atmosphere is one of determined angst and striving, carried by a powerful female lead vocal. The energy is high and driving throughout, characterized by a tight rhythm section and a wall of layered, distorted guitars that create a modern stadium rock feel. The production is polished and massive, with the vocals sitting clearly on top of the dense instrumentation. The defining moment is the explosive transition into the chorus, where the melody and lyrics soar, creating a powerful and memorable hook that captures the song's essence.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 123 BPM in a wide-open D major, 'Ladder to Nowhere' spends its first 45 seconds building on an arpeggiated synth before the rhythm section kicks the door down, and that transition earns every second of the setup. The chorus hook, 'the only way is up on the ladder to nowhere,' lands with the kind of melodic certainty you find on a Bangles A-side, and the bridge line 'the highest step I'm chasing keeps changing its disguise' gives the ambition-spiral theme a real lyrical kick. STAB's vocal sits right on top of a wall of layered guitars without ever getting buried, which is a production choice that pays off clean. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "123 BPM",
+      "D major",
+      "arpeggiated synth opening (S1 0s-45s)",
+      "chorus lyric: 'the only way is up on the ladder to nowhere'",
+      "bridge lyric: 'the highest step I'm chasing keeps changing its disguise'",
+      "vocal placement over layered guitars",
+      "Bangles comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

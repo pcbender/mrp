@@ -59,7 +59,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--sawmill-pond.mp3
     lyrics_text: 'I was seventeen with a rust-red truck
 
       Dust on my boots, heart full of luck

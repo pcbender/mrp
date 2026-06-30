@@ -1,0 +1,130 @@
+{
+  "track_id": "pcbender--pepper-pot",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Pepper Pot.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--pepper-pot.opus"
+  },
+  "lyrics": "We crowned the spark with borrowed names\nBuilt thrones from breath and passing flames\nA miracle by sheer decree\nUntil it begged for constancy\nWe drank it dry, we called it ours\nMeasured wonder out in hours\nWhat once could shake the firmament\nNow hums like background sentiment\n\nWe swear the loss is not our fault\nBlame time, the wheel, the fickle vault\nBut every hand that learns to choose\nLearns also how to overuse\n\nThe pepper pot goes ’round again\nUnmoved by all it might have been\nAs gilded things turn bare and wan\nThe ember dies, the gleam is gone\nThe pepper pot goes ’round again\n\nIcons fade to interface\nA holy thing reduced to pace\nThe rare repeats, the myth aligns\nWith mass-produced, convenient signs\nWe chase the heat we cannot hold\nMistake the new for purest gold\nEach revolution leaves a scar\nOn what we thought was who we are\n\nWe swear the loss is not our fault\nBlame time, the wheel, the fickle vault\nBut every hand that learns to choose\nLearns also how to overuse\n\nThe pepper pot goes ’round again\nUnmoved by all it might have been\nAs gilded things turn bare and wan\nThe ember dies, the gleam is gone\nThe pepper pot goes ’round again\n\nThe pepper pot goes ’round again\nUnmoved by all it might have been\nAs gilded things turn bare and wan\nThe ember dies, the gleam is gone\nThe pepper pot goes ’round again",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 299.17,
+    "lufs": -13.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.57,
+        "label": "S1"
+      },
+      {
+        "start": 9.57,
+        "end": 31.28,
+        "label": "S2"
+      },
+      {
+        "start": 31.28,
+        "end": 56.05,
+        "label": "S3"
+      },
+      {
+        "start": 56.05,
+        "end": 82.18,
+        "label": "S4"
+      },
+      {
+        "start": 82.18,
+        "end": 119.79,
+        "label": "S5"
+      },
+      {
+        "start": 119.79,
+        "end": 138.88,
+        "label": "S6"
+      },
+      {
+        "start": 138.88,
+        "end": 174.15,
+        "label": "S7"
+      },
+      {
+        "start": 174.15,
+        "end": 191.38,
+        "label": "S8"
+      },
+      {
+        "start": 191.38,
+        "end": 209.65,
+        "label": "S9"
+      },
+      {
+        "start": 209.65,
+        "end": 239.54,
+        "label": "S10"
+      },
+      {
+        "start": 239.54,
+        "end": 275.02,
+        "label": "S11"
+      },
+      {
+        "start": 275.02,
+        "end": 296.4,
+        "label": "S12"
+      },
+      {
+        "start": 296.4,
+        "end": 299.17,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.962,
+      "key": 0.9
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "uplifting",
+      "nostalgic",
+      "energetic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a high-energy blues-rock track with a crisp, layered texture that feels both groovy and a bit cynical. Propelled by a tight, syncopated rhythm section and articulate guitars, the song maintains a driving and confident feel throughout. The production is clean and well-balanced, allowing each instrument to occupy its own sonic space, with the vocals sitting clearly and authoritatively in the center of the mix. A defining moment is the explosive, virtuosic drum solo that opens the song, immediately grabbing the listener's attention and establishing a high standard of musicianship.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The drum solo that kicks off 'Pepper Pot' is a declaration of intent: this track means business from the first bar. At 112 BPM in B minor, the song locks into a tight, syncopated groove that carries PCBender's sharpest lyrical work in recent memory, the kind of writing where a line like 'every hand that learns to choose learns also how to overuse' lands with the blunt force of a good John Hiatt verse. The chorus image, a pepper pot going round and round, indifferent to its own diminishment, is the sort of central metaphor that earns repeat listens. A confident highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "drum solo opening",
+      "112 BPM tempo",
+      "B minor key",
+      "syncopated rhythm section",
+      "lyric: 'every hand that learns to choose / learns also how to overuse'",
+      "pepper pot chorus metaphor",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

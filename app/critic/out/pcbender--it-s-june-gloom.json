@@ -1,0 +1,114 @@
+{
+  "track_id": "pcbender--it-s-june-gloom",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/It's June Gloom.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--it-s-june-gloom.opus"
+  },
+  "lyrics": "Album cover artwork for an alt-rock single titled “June Gloom” by the artist “STAB”. Minimalist, desaturated coastal scene with a seamless gradient transition: pale sand dissolving into a calm steel-blue ocean dissolving into a flat gray sky, near-horizonless and almost indistinguishable boundaries. No sun, no dramatic lighting, no god rays; soft, uniform overcast illumination with zero highlights\n\nA solitary female figure wearing a simple bikini with a sheer, lightweight cover-up, sitting on a beach chair on the sand, centered, facing the camera. She looks gloomy and emotionally distant; heavy posture, shoulders slightly slumped, hands resting loosely, tired eyes, unsmiling expression. Keep the overall composition clean with large negative space; subject small-to-medium in frame (not filling the cover), lots of sky and empty space\n\nSubtle film grain, slight texture like fine art photography / analog scan, muted palette (cool grays, blue-gray, sand beige), quiet and bleak mood\n\nTypography integrated: “June Gloom” at the top (upper margin), large distressed condensed sans-serif with slight blur/ink-bleed; “STAB” smaller beneath it or top-right, spaced lettering. Only these two text elements; no logos, no extra words, no border",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 181.86,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 0.09,
+        "label": "S1"
+      },
+      {
+        "start": 0.09,
+        "end": 22.99,
+        "label": "S2"
+      },
+      {
+        "start": 22.99,
+        "end": 46.56,
+        "label": "S3"
+      },
+      {
+        "start": 46.56,
+        "end": 70.45,
+        "label": "S4"
+      },
+      {
+        "start": 70.45,
+        "end": 86.77,
+        "label": "S5"
+      },
+      {
+        "start": 86.77,
+        "end": 103.05,
+        "label": "S6"
+      },
+      {
+        "start": 103.05,
+        "end": 119.12,
+        "label": "S7"
+      },
+      {
+        "start": 119.12,
+        "end": 140.78,
+        "label": "S8"
+      },
+      {
+        "start": 140.78,
+        "end": 168.9,
+        "label": "S9"
+      },
+      {
+        "start": 168.9,
+        "end": 181.86,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.957,
+      "key": 0.901
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track sets a melancholic, introspective mood against an upbeat and infectious funk-pop groove. The energy is driven by a tight, punchy bass and drum foundation, with crisp, clean guitars providing rhythmic and melodic propulsion. The production is modern and polished, creating a dense yet spacious mix where layered vocal harmonies and subtle synth textures sit comfortably without feeling cluttered. A defining quality is the dynamic lift into the powerful, harmonically rich chorus, which effectively captures the song's central theme of summertime sadness.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Waltz time at 117 BPM is an unusual call for a summer-dread song, but PCBender makes it work: the three-beat lilt gives 'June Gloom' a woozy, overcast quality that straight four-four never could, like the fog itself is setting the tempo. The chorus opens up with real harmonic lift, the kind of chord movement that earns its emotional payoff rather than just asserting it, and the layered vocal blend there is the track's best moment. At three minutes it does not overstay its welcome, and the E major center keeps things from tipping into self-pity even when the mood goes gray. A dependable cut that trusts the groove to carry the feeling.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "117.5 BPM",
+      "E major key",
+      "chorus harmonic lift",
+      "3:01 duration",
+      "layered vocal harmonies from audio impression"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "track_id": "pcbender--maria-s-cup",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Maria's Cup.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--maria-s-cup.opus"
+  },
+  "lyrics": "She rises with the daylight\npours silence in her cup\nThe world begins its breathing\nand memory wakes her up\nThe dust still knows her footsteps\nthe walls still hum her prayer -\nShe whispers to the morning\n“My love, are you still there?”\n\nMaria’s cup - a vessel, she holds me in her heart\nMaria’s cup - a promise, each day a place to start\nShe sings within the hymn, a love without a coda\nAnd dare I try to walk her path and dream of Maricopa\n\nShe knelt beside the cypress\nthe tombstone and the flame\nShe wept for what was taken\nand rose to speak His name\nThe water turned to witness\nthe salt became her sign -\nShe carried every secret\nin the cup of the divine\n\nMaria’s cup - a vessel, she holds me in her heart\nMaria’s cup - a promise, each day a place to start\nShe sings within the hymn, a love without a coda\nAnd dare I try to walk her path and dream of Maricopa\n\nThe desert holds her shadow\nher story, bleached and wide\nThe wind repeats her promise\nwhere rivers long have died\nAnd somewhere past the sunrise\nwhere sound and silence blend\nMaria’s cup is waiting - for every soul to mend\n\nMaria’s cup - a vessel, she holds me in her heart\nMaria’s cup - a promise, each day a place to start\nShe sings within the hymn, a love without a coda\nAnd dare I try to walk her path and dream of Maricopa\n\nDream of Maricopa\nDream of Maricopa",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "F",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 282.2,
+    "lufs": -16.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.09,
+        "label": "S1"
+      },
+      {
+        "start": 2.09,
+        "end": 31.83,
+        "label": "S2"
+      },
+      {
+        "start": 31.83,
+        "end": 47.0,
+        "label": "S3"
+      },
+      {
+        "start": 47.0,
+        "end": 65.34,
+        "label": "S4"
+      },
+      {
+        "start": 65.34,
+        "end": 84.2,
+        "label": "S5"
+      },
+      {
+        "start": 84.2,
+        "end": 101.42,
+        "label": "S6"
+      },
+      {
+        "start": 101.42,
+        "end": 128.66,
+        "label": "S7"
+      },
+      {
+        "start": 128.66,
+        "end": 144.22,
+        "label": "S8"
+      },
+      {
+        "start": 144.22,
+        "end": 176.08,
+        "label": "S9"
+      },
+      {
+        "start": 176.08,
+        "end": 194.28,
+        "label": "S10"
+      },
+      {
+        "start": 194.28,
+        "end": 209.75,
+        "label": "S11"
+      },
+      {
+        "start": 209.75,
+        "end": 225.3,
+        "label": "S12"
+      },
+      {
+        "start": 225.3,
+        "end": 246.57,
+        "label": "S13"
+      },
+      {
+        "start": 246.57,
+        "end": 262.57,
+        "label": "S14"
+      },
+      {
+        "start": 262.57,
+        "end": 282.2,
+        "label": "S15"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.956,
+      "key": 0.822
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a warm, soulful texture that creates a reflective and somewhat reverent atmosphere, driven by a storytelling vocal performance, clean blues guitar, and supportive organ swells. The feel is a confident, mid-level groove that blends blues rock with a hint of gospel, maintaining a steady pulse that allows the emotional weight of the song to take center stage. The production quality is spacious and clear, with each element occupying its own distinct place in the mix, resulting in a balanced sound where the tight rhythm section and expressive vocals are featured prominently. A defining feature is the extended instrumental break, where the song transitions into an energetic organ and guitar jam that showcases impressive musicianship and elevates the track's dynamic intensity.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 89 BPM in F major, 'Maria's Cup' settles into a mid-tempo blues-rock groove that gives PCBender room to let the story breathe, and the story earns it: 'a love without a coda' lands like a line someone actually lived. The organ swells behind the chorus with a gospel warmth that feels earned rather than decorative, and when the extended instrumental break opens up in the back half, the guitar and organ trade off with the kind of loose confidence you hear on late-period Allman Brothers, players who trust each other enough to not rush. It's a highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 89.1",
+      "F major",
+      "lyric: 'a love without a coda'",
+      "extended instrumental break",
+      "organ swells",
+      "gospel texture",
+      "Allman Brothers comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

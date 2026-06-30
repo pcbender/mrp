@@ -1,0 +1,118 @@
+{
+  "track_id": "pcbender--unaccustomed-lullaby",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Unaccustomed Lullaby.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--unaccustomed-lullaby.opus"
+  },
+  "lyrics": "Everyone knows me, but no one cares\nI vanish the moment your breathing grows deep\nI cradle your grief though you’re barely aware\nYet I’m only remembered when you cannot sleep\n\nA melody forgotten until you need me\nI linger in silence where dreams come to be\n\nUnaccustomed Lullaby, unheard, I remain\nA gentle voice that whispers in the night and through the pain\nThough ridiculed and broken, I continue on to try\nIf I’ve soothed just one heart, then I’ve never lived a lie\n\nThey mocked my soft voice as a childish refrain\nDismissed me as trivial, tender, and weak\nBut still I return, again and again\nTo soften the shadows when nights grow bleak\n\nI ask for no glory, I’m meant not to shine\nYet still I keep singing-your sorrow, not mine\n\nUnaccustomed Lullaby, unheard, I still remain\nA fragile voice that whispers through the ache and through the rain\nThough ridiculed and broken, I continue on to try\nIf I’ve soothed just one heart, then I’ve never lived a lie\n\nI was never the star, never center stage\nJust a song at the margins, forgotten with age\nBut somewhere one soul still remembers my tune-\nA thread in the darkness, a soft silver rune\n\nUnaccustomed Lullaby, the world passes by\nBut if one heart has heard me, then I’ve learned to fly\nI’ll fade into silence, no thanks, no reply\nBut one heart is enough for this unaccustomed lullaby",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "D#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 246.0,
+    "lufs": -16.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 30.56,
+        "label": "S1"
+      },
+      {
+        "start": 30.56,
+        "end": 66.97,
+        "label": "S2"
+      },
+      {
+        "start": 66.97,
+        "end": 89.81,
+        "label": "S3"
+      },
+      {
+        "start": 89.81,
+        "end": 109.3,
+        "label": "S4"
+      },
+      {
+        "start": 109.3,
+        "end": 127.27,
+        "label": "S5"
+      },
+      {
+        "start": 127.27,
+        "end": 151.77,
+        "label": "S6"
+      },
+      {
+        "start": 151.77,
+        "end": 168.74,
+        "label": "S7"
+      },
+      {
+        "start": 168.74,
+        "end": 195.98,
+        "label": "S8"
+      },
+      {
+        "start": 195.98,
+        "end": 213.86,
+        "label": "S9"
+      },
+      {
+        "start": 213.86,
+        "end": 231.22,
+        "label": "S10"
+      },
+      {
+        "start": 231.22,
+        "end": 246.0,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.951,
+      "key": 0.905
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "strings",
+      "electric guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a sparse and intimate texture, creating a melancholic yet soothing atmosphere driven by a clean, fingerpicked acoustic guitar and a soft, breathy female vocal. The energy is consistently low and introspective, feeling very much like a personal folk ballad or a somber lullaby. The production is clean and spacious, with the centered, present vocal sitting comfortably atop the wide guitar, creating an immersive and personal listening experience. The defining quality of the piece is the raw, emotional vulnerability in the vocal performance, which carries the narrative and heart of the song with a quiet, captivating power.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The lyric does something quietly brave: it gives a voice to the lullaby itself, a melody that exists only in the margins, \"unheard\" and \"ridiculed,\" finding its purpose anyway. That conceit could tip into sentimentality, but the clean fingerpicked guitar and a vocal that stays small and close to the ear keep it honest. The chorus hook lands on the right word every time, and \"a thread in the darkness, a soft silver rune\" is the kind of line that earns its place. A highlight, and a patient one.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'a thread in the darkness, a soft silver rune'",
+      "lyric: 'unheard, I remain'",
+      "fingerpicked acoustic guitar texture",
+      "chorus hook structure",
+      "intimate close-mic vocal"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

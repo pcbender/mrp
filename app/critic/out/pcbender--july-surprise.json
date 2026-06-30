@@ -1,0 +1,123 @@
+{
+  "track_id": "pcbender--july-surprise",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/July Surprise.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--july-surprise.opus"
+  },
+  "lyrics": "I’ve been waiting at the station\nThe train’s gonna bring her home\nI’ve been waiting at the station\nThe train’s gonna bring her home\n\nI’ve been waiting for so long\nAnd I’m tired of being alone\n\nAnd when I see my baby’s eyes\nShe’s gonna get my July surprise\n\nI can hear the whistle blowing\nIt won’t be long now\nI can hear the whistle blowing\nIt won’t be long now\n\nI’ve gotta keep that woman near me\nI don’t know when, I don’t know how\n\nAnd when I see my baby’s eyes\nShe’s gonna feel my July surprise\n\nThe train’s at the station\nMy heart is on my sleeve\nThe train’s at the station\nMy heart is on my sleeve\n\nEach passenger keeps walking\nAs I stand in disbelief\n\nAnd when the train is empty\nI get my own July surprise\n\nI guess I should have known\nWhat the truth now denies\n\nBe careful with your heart\nOr you’ll get your own July surprise",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 247.96,
+    "lufs": -13.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.11,
+        "label": "S1"
+      },
+      {
+        "start": 1.11,
+        "end": 34.13,
+        "label": "S2"
+      },
+      {
+        "start": 34.13,
+        "end": 50.27,
+        "label": "S3"
+      },
+      {
+        "start": 50.27,
+        "end": 76.35,
+        "label": "S4"
+      },
+      {
+        "start": 76.35,
+        "end": 91.53,
+        "label": "S5"
+      },
+      {
+        "start": 91.53,
+        "end": 123.51,
+        "label": "S6"
+      },
+      {
+        "start": 123.51,
+        "end": 140.62,
+        "label": "S7"
+      },
+      {
+        "start": 140.62,
+        "end": 162.89,
+        "label": "S8"
+      },
+      {
+        "start": 162.89,
+        "end": 181.0,
+        "label": "S9"
+      },
+      {
+        "start": 181.0,
+        "end": 198.32,
+        "label": "S10"
+      },
+      {
+        "start": 198.32,
+        "end": 242.58,
+        "label": "S11"
+      },
+      {
+        "start": 242.58,
+        "end": 247.96,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.965,
+      "key": 0.868
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "blues rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a high-energy blues-rock track with a dense, guitar-forward texture and a powerful, soulful male vocal, creating an emotional atmosphere of intense anticipation and dramatic release. The piece is built on a tight, driving groove that feels both relentless and dynamic, supporting huge swells in energy between the verses and choruses. The production is clean yet packed, with the expressive lead guitar intentionally placed front and center, where it often feels like it's in a dynamic duel with the vocal for the spotlight. A defining moment is the virtuosic guitar solo around the two-minute mark, a fiery instrumental centerpiece filled with rapid-fire arpeggios that elevates the track's raw, performative power.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A train-station heartbreak that turns the waiting-room cliche into something that genuinely earns its gut-punch ending: the moment 'the train is empty' and the July surprise lands on him instead of her is the kind of lyrical pivot that sticks. Running at a driving 172 BPM in G minor, the track locks into a relentless blues-rock groove that feels physically urgent, like Springsteen's Nebraska-era restlessness filtered through a classic-rock production sensibility. The guitar solo around the two-minute mark is the performative peak, rapid-fire arpeggios in a full conversation with the vocal rather than just filling space. PCBender plays this one with enough conviction that the density of the arrangement never crowds out the emotional through-line.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "G minor key",
+      "172 BPM",
+      "lyric: 'when the train is empty / I get my own July surprise'",
+      "guitar solo at two-minute mark",
+      "Springsteen comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

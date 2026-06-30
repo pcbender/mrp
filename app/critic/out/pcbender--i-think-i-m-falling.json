@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--i-think-i-m-falling",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/I Think I’m Falling.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--i-think-i-m-falling.opus"
+  },
+  "lyrics": "Drifting through the silence, I can't find the ground\nEvery word unspoken, still echoes all around\n\nI'm caught between the shadows, the sun, and the rain\nLost within the echoes, the joy and the pain\nReaching for an answer, but it slips away\nEvery step I'm taking pulls me further astray\n\nI think I'm falling. I think I'm falling too fast again\nI think I'm falling. I think I'm falling too far again\nI think I'm falling. I think I'm falling too much again\nI think I'm falling. I think I'm falling apart\n\nThe stars are falling faster, the sky's caving in\nA thousand voices whisper, but none of them win\nThe ground feels like it's shifting, the air's growing thin\nI'm chasing after something, but I'm lost within\n\nI think I'm falling. I think I'm falling too fast again\nI think I'm falling. I think I'm falling too far again\nI think I'm falling. I think I'm falling too much again\nI think I'm falling. I think I'm falling apart\n\nHold me close, don't let me go\nI'm slipping through the cracks below\nThe light is faint, but I can see\nA part of you that's saving me\n\nI think I'm falling. I think I'm falling too fast again\nI think I'm falling. I think I'm falling too far again\nI think I'm falling. I think I'm falling too much again\nI think I'm falling. I think I'm falling apart\n\nBut maybe in the falling, I'll learn how to rise\nFind myself in the pieces, and reach for the skies",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 233.32,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.97,
+        "label": "S1"
+      },
+      {
+        "start": 3.97,
+        "end": 27.98,
+        "label": "S2"
+      },
+      {
+        "start": 27.98,
+        "end": 45.98,
+        "label": "S3"
+      },
+      {
+        "start": 45.98,
+        "end": 99.08,
+        "label": "S4"
+      },
+      {
+        "start": 99.08,
+        "end": 115.84,
+        "label": "S5"
+      },
+      {
+        "start": 115.84,
+        "end": 166.35,
+        "label": "S6"
+      },
+      {
+        "start": 166.35,
+        "end": 208.17,
+        "label": "S7"
+      },
+      {
+        "start": 208.17,
+        "end": 226.77,
+        "label": "S8"
+      },
+      {
+        "start": 226.77,
+        "end": 233.32,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.951,
+      "key": 0.981
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a stark and effective dynamic contrast, moving from a sparse, melancholic verse into a massive, emotionally charged chorus. The production is clean and modern, using a wide stereo space that culminates in a dense wall of sound, yet the lead vocal remains impressively clear and centered throughout. Its energy is defined by this dramatic arc, creating an anthemic and desperate feel that is both powerful and vulnerable. The most defining quality is the sharp transition from the quiet, intimate bridge into the final, cathartic chorus, providing a powerful and satisfying emotional payoff.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender writes the bridge first and earns the chorus second, and on 'I Think I'm Falling' that instinct pays off. The 3/4 waltz feel at 112 BPM gives the verses a gentle, off-kilter unsteadiness that mirrors the lyric perfectly, and when the song finally opens into 'Hold me close, don't let me go,' the shift from sparse and intimate to a wide, dense wall of sound lands with real force. The final couplet, 'maybe in the falling, I'll learn how to rise,' could tip into cliche, but the production earns it by the time you get there. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "112 BPM",
+      "bridge lyric 'Hold me close, don't let me go'",
+      "closing couplet 'maybe in the falling, I'll learn how to rise'",
+      "sparse-to-dense dynamic arc",
+      "lead vocal clarity"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

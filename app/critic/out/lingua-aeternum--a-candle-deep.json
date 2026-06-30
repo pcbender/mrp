@@ -1,0 +1,120 @@
+{
+  "track_id": "lingua-aeternum--a-candle-deep",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/A Candle Deep.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--a-candle-deep.opus"
+  },
+  "lyrics": "A candle deep\n\nSome walk with fire hidden low\nA glow within, a pulse they know\nIt's not for show, it doesn't blind\nBut lights the edges of the mind\nOthers pass with empty gaze\nLost in noise and shadowed days\n\nThey've never burned, so never yearn\nFor embers they can't discern\n\nA candle deep\nLight in eyes\nWhat you seek\nThey tantalize\nIf never had\nNor ever seen\nNo way to grasp\nWhat might have been…\nA candle deep\n\nTheir hands reach out for plastic stars\nWhile we trace constellations far\nThe weight of sight, the cost of knowing\nThe pull of tides forever flowing\nSome hearts beat loud with questions asked\nSome minds stay still in comfort masked\n\nTwo worlds that spiral, never touch\nOne seeing all, one missing much\n\nA candle deep\nLight in eyes\nWhat you seek\nThey tantalize\nIf never had\nNor ever seen\nNo way to grasp\nWhat might have been…\nA candle deep\n\nAre those who see and strive to be\nBetter served than those made empty\nWhen awareness brings its gravity\nAnd ignorance its cavity\nThe growing possibility\nA curse on all who ask… \"Maybe?\"\n\nA candle deep\nLight in eyes\nWhat you seek\nThey tantalize\nIf never had\nNor ever seen\nNo way to grasp\nWhat might have been…\nA candle deep\n\nThe light inside\nBoth gift and wound\nA torch we bear\nA weight assumed\nAnd sometimes in the deepest night\nWe envy those without the sight",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 302.8,
+    "lufs": -16.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.53,
+        "label": "S1"
+      },
+      {
+        "start": 1.53,
+        "end": 45.26,
+        "label": "S2"
+      },
+      {
+        "start": 45.26,
+        "end": 61.65,
+        "label": "S3"
+      },
+      {
+        "start": 61.65,
+        "end": 78.51,
+        "label": "S4"
+      },
+      {
+        "start": 78.51,
+        "end": 109.67,
+        "label": "S5"
+      },
+      {
+        "start": 109.67,
+        "end": 140.83,
+        "label": "S6"
+      },
+      {
+        "start": 140.83,
+        "end": 160.03,
+        "label": "S7"
+      },
+      {
+        "start": 160.03,
+        "end": 187.57,
+        "label": "S8"
+      },
+      {
+        "start": 187.57,
+        "end": 211.56,
+        "label": "S9"
+      },
+      {
+        "start": 211.56,
+        "end": 299.61,
+        "label": "S10"
+      },
+      {
+        "start": 299.61,
+        "end": 302.8,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.953,
+      "key": 0.902
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a dense, layered rock texture, creating an epic and anthemic emotional atmosphere driven by soaring lead vocals and wide, harmonized guitars. The energy is consistently high and powerful, with driving drums and a forward-leaning feel that suggests a modern progressive rock or alternative style. The production quality is clean and spacious, allowing each element, from the punchy kick and snare to the distinct vocal layers, to sit clearly within a full and polished mix. A defining quality of the track is the dynamic shift into the wide-open, memorable chorus, which provides a powerful emotional release from the more intricate verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "In G minor and a swaying 3/4, 'A Candle Deep' builds its thesis slowly and earns it: the chorus hook, 'If never had, nor ever seen / No way to grasp what might have been,' lands with the kind of open-chest relief you get from a great classic rock chorus, the guitars widening just as the lyric opens up. The verses do the harder work of the song, tracing the gap between those who carry an inner fire and those who never missed having one, and the bridge's turn, 'A curse on all who ask, maybe?' is the sharpest moment in the writing. At 136 BPM the track moves with more urgency than its waltz time suggests, and the production keeps everything clear and punchy without flattening the emotional weight. A highlight, and one of their more immediate entries.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "G minor key",
+      "3/4 time",
+      "136 BPM",
+      "quoted lyric: 'If never had, nor ever seen / No way to grasp what might have been'",
+      "quoted lyric: 'A curse on all who ask, maybe?'",
+      "chorus dynamic shift",
+      "guitar widening on chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

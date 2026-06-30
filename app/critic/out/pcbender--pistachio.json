@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--pistachio",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Pistachio.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--pistachio.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 213.2,
+    "lufs": -13.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.55,
+        "label": "S1"
+      },
+      {
+        "start": 6.55,
+        "end": 29.37,
+        "label": "S2"
+      },
+      {
+        "start": 29.37,
+        "end": 49.16,
+        "label": "S3"
+      },
+      {
+        "start": 49.16,
+        "end": 71.47,
+        "label": "S4"
+      },
+      {
+        "start": 71.47,
+        "end": 100.15,
+        "label": "S5"
+      },
+      {
+        "start": 100.15,
+        "end": 116.33,
+        "label": "S6"
+      },
+      {
+        "start": 116.33,
+        "end": 133.91,
+        "label": "S7"
+      },
+      {
+        "start": 133.91,
+        "end": 150.14,
+        "label": "S8"
+      },
+      {
+        "start": 150.14,
+        "end": 172.99,
+        "label": "S9"
+      },
+      {
+        "start": 172.99,
+        "end": 195.37,
+        "label": "S10"
+      },
+      {
+        "start": 195.37,
+        "end": 213.2,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.886
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a confident and swaggering funk-rock instrumental, built around a clean, articulate lead electric guitar that weaves melodic lines over a tight rhythm section. The energy is high and consistent, driven by a punchy, in-the-pocket groove from the bass and drums that creates an infectious and danceable feel. The mix is clear and spacious, allowing each instrument to occupy its own sonic space while still sounding cohesive, like a polished live studio performance. The track's defining quality is the dynamic interplay between the guitar's sophisticated, blues-inflected phrases and the rhythm section's sharp, punctuated stops, creating a constant sense of conversational back-and-forth.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 172 BPM in a driving 3/4 waltz, 'Pistachio' shouldn't work as a funk-rock strut, but PCBender pulls it off with ease. The clean lead guitar does most of the talking, trading blues-inflected phrases with a rhythm section that locks in tight and punctuates hard, giving the whole thing the feel of a live studio conversation where everyone is listening. It's the kind of track that rewards a second listen once you notice how much negative space the band is using, the stops landing with real confidence. A highlight for fans of instrumental groove and a fine showcase of PCBender's instinct for letting a guitar line breathe.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "172 BPM",
+      "3/4 time signature",
+      "clean lead electric guitar melodic phrases",
+      "blues-inflected phrasing",
+      "rhythmic stops and punctuation",
+      "live studio feel"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

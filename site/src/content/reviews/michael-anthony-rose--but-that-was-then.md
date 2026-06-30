@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--but-that-was-then
+impression: "This track opens with a warm, reflective texture centered around acoustic guitar and a clean, melodic electric guitar, creating a nostalgic and earnest atmosphere. The energy is dynamic, building from gentle, storyteller verses into swelling, full-band choruses that feel both powerful and heartfelt. The production is clean and spacious, with a well-defined low end and a clear lead vocal that sits comfortably in the center of the mix. A defining quality is the powerful emotional lift into the chorus, where the drums kick in with a more driving feel, perfectly underscoring the lyrical theme of looking back in time."
+verdict_rank: 5
+verdict_label: "standout"
+---
+
+Rose builds 'But That Was Then' through three distinct losses: the childhood dream of flight, a music career let go at dawn, and finally something heavier, a diagnosis that reframes everything before it. The lyric that turns the whole song is the last chorus shift, 'I was always meant to end / I wish I'd known this then,' and Rose earns it because the verses have done the patient, honest work of stacking regret without self-pity. In G major and at a tempo that feels brisk on paper but lands as purposeful in the room, the arrangement pulls the classic move of stripping back for verses and opening up for choruses, but the production has enough space in the mix that it never feels mechanical; the clean electric guitar line threading through the first section has the same clear-eyed warmth you get from early John Hiatt, and the drums kicking in at the chorus provide exactly the lift the lyric needs. At nearly six minutes this asks for your full attention, and it rewards it.

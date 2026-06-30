@@ -1,0 +1,126 @@
+{
+  "track_id": "michael-anthony-rose--nowhere-but-up",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Nowhere But Up.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--nowhere-but-up.opus"
+  },
+  "lyrics": "Look at the sunset in the west\nThe moon is still moving through the evening sky\nIlluminating\nThe answer is right before our eyes\nYou get what you need not what you want\nCaptivating\n\nThe answers are there\nLook and you’ll find your way\n\nNowhere but up\nNowhere but up\nNowhere but up\nNowhere but up\n\nAnd now the sun begins to rise\nThe stars are calling to your destiny\nNo evading\nLet the fear fall into the dark\nAs now the sun reclaims its place again\nNo denying\n\nThe answers are there\nLook and you’ll find your way\n\nNowhere but up\nNowhere but up\nNowhere but up\nNowhere but up\n\nThe answers are there\nLook and you’ll find your way\n\nNowhere but up\nNowhere but up\nNowhere but up\nNowhere but up",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 260.57,
+    "lufs": -14.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.25,
+        "label": "S1"
+      },
+      {
+        "start": 6.25,
+        "end": 32.39,
+        "label": "S2"
+      },
+      {
+        "start": 32.39,
+        "end": 47.83,
+        "label": "S3"
+      },
+      {
+        "start": 47.83,
+        "end": 81.36,
+        "label": "S4"
+      },
+      {
+        "start": 81.36,
+        "end": 112.15,
+        "label": "S5"
+      },
+      {
+        "start": 112.15,
+        "end": 127.22,
+        "label": "S6"
+      },
+      {
+        "start": 127.22,
+        "end": 156.2,
+        "label": "S7"
+      },
+      {
+        "start": 156.2,
+        "end": 184.37,
+        "label": "S8"
+      },
+      {
+        "start": 184.37,
+        "end": 208.38,
+        "label": "S9"
+      },
+      {
+        "start": 208.38,
+        "end": 224.7,
+        "label": "S10"
+      },
+      {
+        "start": 224.7,
+        "end": 253.17,
+        "label": "S11"
+      },
+      {
+        "start": 253.17,
+        "end": 260.57,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.912
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "background vocals"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a dense, high-gloss texture, creating an epic and triumphant atmosphere driven by layers of heavily distorted, harmonized guitars and a powerful, soaring male vocal. The energy is relentlessly high and driving from the very beginning, creating a powerful forward momentum that feels both aggressive and melodic. The production is modern and polished, managing a dense arrangement by allowing the punchy drums and clear lead vocals to sit prominently on top of a massive wall of rhythm guitars. A defining characteristic is the virtuosic and melodic guitar work, particularly during the intricate, fast-paced solos that punctuate the song's structure.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 143 BPM in E minor, \"Nowhere But Up\" hits hard from the first bar and doesn't let up, with harmonized guitars stacked into a wall of sound that earns every bit of its triumphant tone. The hook is blunt in the best way: Rose repeats the title like a mantra, and by the third chorus it feels less like a lyric than a commitment. The line \"let the fear fall into the dark\" is the emotional hinge the verses build toward, and the production, punchy drums up front and melodic guitar solos cutting through the density, gives it the lift it needs. Fans of early arena-era Whitesnake or the more propulsive side of Collective Soul will find something familiar and satisfying here.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 143.6",
+      "E minor key",
+      "repeated title hook as mantra",
+      "lyric: 'let the fear fall into the dark'",
+      "harmonized guitars",
+      "punchy drum mix",
+      "melodic guitar solos",
+      "Whitesnake/Collective Soul comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

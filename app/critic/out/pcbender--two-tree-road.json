@@ -1,0 +1,108 @@
+{
+  "track_id": "pcbender--two-tree-road",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Two Tree Road.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--two-tree-road.opus"
+  },
+  "lyrics": "Hot in the valley\nGotta lose this city\nGonna find a place to soothe my soul\nI could take the freeway\nBut there's just no way\nIt's gonna take me where I need to go\n\nI'm flying two tree road\nI'm flying two tree road\nNo matter where I go\nI'm flying two tree road\n\nThere's too much friction\nFor so little action\nMy compass spins - it really doesn't know\nI need satisfaction\nNot indecision\nQuestions cloud the runway, but I just go\n\nI'm flying two tree road\nI'm flying two tree road\nNo matter where I go\nI'm flying two tree road\n\nJust keep on flying\n\nIt's not about arriving\nIt's about the flying\nIt's about the moments left to chance\nThe road's dividing\nThere's no more hiding\nEvery turn makes all the difference\n\nI'm flying two tree road\nI'm flying two tree road\nNo matter where I go\nI'm flying two tree road\n\nI'm flying two tree road\nI'm flying two tree road\nNo matter where I go\nI'm flying two tree road",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 212.64,
+    "lufs": -14.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 17.51,
+        "label": "S1"
+      },
+      {
+        "start": 17.51,
+        "end": 41.24,
+        "label": "S2"
+      },
+      {
+        "start": 41.24,
+        "end": 73.86,
+        "label": "S3"
+      },
+      {
+        "start": 73.86,
+        "end": 90.07,
+        "label": "S4"
+      },
+      {
+        "start": 90.07,
+        "end": 122.72,
+        "label": "S5"
+      },
+      {
+        "start": 122.72,
+        "end": 141.43,
+        "label": "S6"
+      },
+      {
+        "start": 141.43,
+        "end": 160.89,
+        "label": "S7"
+      },
+      {
+        "start": 160.89,
+        "end": 206.73,
+        "label": "S8"
+      },
+      {
+        "start": 206.73,
+        "end": 212.64,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.972
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track projects an optimistic and anthemic atmosphere, built on a texture of clean and overdriven guitars that evoke a sense of freedom and escape. The song maintains a driving, high-energy feel, starting with a propulsive verse that explodes into a powerful, wide-open chorus. The production is polished and spacious, with a wide stereo image where all elements sit cleanly together, skillfully contrasting sparser verses with a dense, layered chorus to maximize dynamic impact. The defining feature is the huge, memorable chorus hook, \"I'm flying to three row road,\" which is further elevated by post-chorus vocalizations that cement the track's uplifting, singalong quality.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in a bright D major, 'Two Tree Road' is built for wide-open spaces, and PCBender earns every bit of that feeling. The chorus hook lands with real force, and the line 'It's not about arriving, it's about the flying' does the lyrical work cleanly, giving the song its thesis without overreaching. The production plays the contrast smartly, letting the verses breathe before the guitars stack up and the track opens into something genuinely singalong-worthy. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 152",
+      "D major",
+      "lyric quote: 'It's not about arriving, it's about the flying'",
+      "verse-to-chorus dynamic contrast",
+      "chorus hook"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

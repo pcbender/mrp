@@ -1,0 +1,129 @@
+{
+  "track_id": "stab--what-to-do-with-me",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/What To Do With Me.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--what-to-do-with-me.opus"
+  },
+  "lyrics": "No distractions\nJust me\n(oh)\n\nWhen I don't reach for the noise\nThe noise reaches for me\nOld conversations, old mistakes\nStuff I thought I \"moved past,\" suddenly awake\nI sit on the floor like I'm waiting for someone\nBut nobody's coming, and that's not the tragedy\nThe tragedy is I don't know how to sit\nWith the person I am when I'm not being busy\n\nI didn't know how loud I was inside\nUntil I stopped covering it up\nI didn't know how much I was avoiding\nWith jokes and plans and \"one more\" stuff\nI keep wishing for a reset button\nLike I can start as someone new\nBut it's just me in the quiet and -\nI don't know what to do with me\n\nI try to read, but the words slide off\nI try to walk, but I feel watched by my own thoughts\nI stare at the trees and they don't fix it\nThey just stand there, honest, and I can't mimic\nThen it hits me: I've been afraid of being small\nAfraid of being ordinary, afraid of being left\nSo I stay connected, stay informed, stay \"up\"\nSo I never have to ask what I actually want\n\nI didn't know how loud I was inside\nUntil I stopped covering it up\nI didn't know how much I was avoiding\nWith jokes and plans and \"one more\" stuff\nI keep wishing for a reset button\nLike I can start as someone new\nBut it's just me in the quiet and -\nI don't know what to do with me\n\nMaybe this is the real feed\nThe one I've been skipping\nThe fear, the shame, the sad parts\nThe parts that need listening\nSo I'm not going to fix it tonight\nI'm not going to win at healing\nI'm just going to sit here\nAnd let it be what it's been\n\nI didn't know how loud I was inside\nUntil I stopped covering it up\nI didn't know how much I was avoiding\nWith jokes and plans and \"one more\" stuff\nI keep wishing for a reset button\nLike I can start as someone new\nBut it's just me in the quiet and -\nI don't know what to do with me\n\n(whispered)\nStay\nJust stay",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "A#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 288.5,
+    "lufs": -15.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 27.54,
+        "label": "S1"
+      },
+      {
+        "start": 27.54,
+        "end": 45.44,
+        "label": "S2"
+      },
+      {
+        "start": 45.44,
+        "end": 68.71,
+        "label": "S3"
+      },
+      {
+        "start": 68.71,
+        "end": 85.26,
+        "label": "S4"
+      },
+      {
+        "start": 85.26,
+        "end": 100.31,
+        "label": "S5"
+      },
+      {
+        "start": 100.31,
+        "end": 117.93,
+        "label": "S6"
+      },
+      {
+        "start": 117.93,
+        "end": 146.15,
+        "label": "S7"
+      },
+      {
+        "start": 146.15,
+        "end": 180.65,
+        "label": "S8"
+      },
+      {
+        "start": 180.65,
+        "end": 197.39,
+        "label": "S9"
+      },
+      {
+        "start": 197.39,
+        "end": 214.25,
+        "label": "S10"
+      },
+      {
+        "start": 214.25,
+        "end": 248.59,
+        "label": "S11"
+      },
+      {
+        "start": 248.59,
+        "end": 263.78,
+        "label": "S12"
+      },
+      {
+        "start": 263.78,
+        "end": 288.5,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.987
+    }
+  },
+  "tags": {
+    "genre": [
+      "pop rock",
+      "indie rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "strings",
+      "electric guitar",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with an intimate and emotionally vulnerable atmosphere, built on a sparse texture of reverberant vocals and ambient piano. The energy level then builds dramatically, exploding into a dense and powerful chorus with a driving electronic beat and layered vocals that create a feeling of desperate catharsis. The production is modern and clean, skillfully managing the extreme dynamic range by creating space in the verses and allowing the lead vocal to cut through the saturated, powerful mix of the choruses. The most distinctive quality is this stark contrast between quiet intimacy and overwhelming intensity, which perfectly encapsulates the lyrical theme of a loud internal world.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The production does exactly what the lyrics ask: the verses are nearly bare, just breath and piano, so when the chorus breaks open it feels less like a musical decision and more like the inside of someone's skull going loud all at once. STAB leans into the tension between the frantic pace and the subject matter, a song about the terror of stillness running at a clip that never quite lets you settle, which is the point. The lyric that lands hardest is 'I've been afraid of being small / afraid of being ordinary, afraid of being left,' and she earns it, because by the time it arrives the arrangement has made the emotional logic feel inevitable rather than confessional. It closes on a whispered 'stay,' no resolution, no bow tied, and that restraint is the best call on the track.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "sparse piano verse vs. dense chorus dynamic",
+      "lyric quote: 'I've been afraid of being small / afraid of being ordinary, afraid of being left'",
+      "BPM 152 tension against stillness theme",
+      "whispered outro 'stay' as structural choice",
+      "A# major key",
+      "4:48 duration with 13-section structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

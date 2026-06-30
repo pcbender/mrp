@@ -1,0 +1,104 @@
+{
+  "track_id": "pcbender--nancy-dance-with-me",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Nancy (Dance With Me).wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--nancy-dance-with-me.opus"
+  },
+  "lyrics": "Forgotten perfume fills the air\nThe way you move ignites my skin\nA stolen touch, a reckless stare\nFeels like the night won't let us in\n\nOur bodies move, I lose my thoughts\nRemembered passion pulls me tight\nLike fire dancing slow and hot\nI'm aching for the coming night\n\nCome on, Nancy, dance with me\nRemember how we used to be\nWe need to feel wild and free\nSo come on, come on Nancy...-dance with me\n\nFamiliar skin in a new dress\nYour hips move to the grinding beat\nA heart revived by sweet caress\nWe dance as one in Autumn heat\n\nOur bodies move, I lose my thoughts\nRemembered passion pulls me tight\nLike fire dancing slow and hot\nI'm aching for the coming night\n\nCome on, Nancy, dance with me\nRemember how we used to be\nWe need to feel wild and free\nSo come on, come on Nancy...-dance with me\n\nWhat if we never let it die\nWhat if we never said goodbye\nWould all the lonely nights be shared\nOr just two broken strangers dancing here\n\nCome on, Nancy, dance with me\nRemember how we used to be\nWe need to feel wild and free\nSo come on, come on Nancy...-dance with me\n\nOne last song, one more flame\nYesterday fades, but tonight remains\nCome on, Nancy, dance with me",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 194.92,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 16.16,
+        "label": "S1"
+      },
+      {
+        "start": 16.16,
+        "end": 31.18,
+        "label": "S2"
+      },
+      {
+        "start": 31.18,
+        "end": 73.24,
+        "label": "S3"
+      },
+      {
+        "start": 73.24,
+        "end": 126.15,
+        "label": "S4"
+      },
+      {
+        "start": 126.15,
+        "end": 141.39,
+        "label": "S5"
+      },
+      {
+        "start": 141.39,
+        "end": 157.69,
+        "label": "S6"
+      },
+      {
+        "start": 157.69,
+        "end": 188.99,
+        "label": "S7"
+      },
+      {
+        "start": 188.99,
+        "end": 194.92,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.956,
+      "key": 0.905
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a polished, modern rock texture, creating an anthemic and slightly nostalgic atmosphere driven by crisp electric guitars and a confident male vocal. The energy is high and consistently danceable, propelled by a tight, punchy rhythm section that establishes a carefree, celebratory feel. The production quality is excellent: the mix is full and dynamic, yet maintains clarity, allowing the upfront vocals and layered guitars to sit together without sounding cluttered. A key defining quality is the powerful, sing-along chorus, which erupts with energy after a well-crafted pre-chorus builds anticipation, making it instantly memorable.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender writes a two-word hook that earns its repetition: 'dance with me' lands differently each time because the verse keeps reloading the stakes, moving from stolen glances to a bridge that asks the real question, 'What if we never let it die.' At 117.5 BPM in C major, the rhythm section locks in tight enough to justify the title without tipping into novelty, and the chorus erupts with the kind of lift that makes a room turn toward the speakers. The bridge is the quiet ace: two lines of doubt dropped into the middle of a celebration, then swept back into the dance before anyone can dwell on the answer.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "117.5 BPM",
+      "C major",
+      "bridge lyric 'What if we never let it die'",
+      "chorus lift",
+      "tight rhythm section",
+      "verse-chorus structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

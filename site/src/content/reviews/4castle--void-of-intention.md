@@ -1,0 +1,8 @@
+---
+track_id: 4castle--void-of-intention
+impression: "This is an anthemic and emotionally uplifting track, built on a dense texture of shimmering, delayed guitars and driving rhythm. The energy is consistently high, creating a powerful pop-punk or emo-pop feel that is both propulsive and open. The production quality is polished and spacious, creating a stadium-like sound where layered guitars and vocals are washed in reverb, yet the core elements remain distinct and impactful. A defining quality is the track's excellent dynamic build, culminating in a melodic and soaring guitar solo that perfectly captures its heartfelt, energetic spirit."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+Everything the album has built, the grief, the drive, the mythology, the rage, arrives here to be resolved without being explained. 'Void of Intention' earns its title by doing the opposite: those shimmering, reverb-soaked guitars build with real purpose across twelve sections, and the lyric 'breath, the traveller, guides an empty mind' lands with the kind of quiet conviction that makes a four-minute-forty track feel exactly the right length. At a brisk pace that mirrors 'Distance Not Safety' without replicating it, the closer completes a circle: where the album's second track insisted you carry the weight, this one suggests you might be allowed to set it down. The guitar solo that crowns the back half is the kind of melodic, soaring statement that reminds you of the best moments on a Heart or early Santana record, less flash than feeling. A worthy close to a collection that earns more as a whole than any single piece promises on its own.

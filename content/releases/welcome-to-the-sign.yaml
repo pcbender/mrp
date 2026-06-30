@@ -38,7 +38,7 @@ release:
     isrc: CAENV2535979
     duration: '3:32'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--welcome-to-the-sign.mp3
     instrumental: false
     lyrics_text: 'Welcome to the sign
 

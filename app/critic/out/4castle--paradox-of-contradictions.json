@@ -1,0 +1,118 @@
+{
+  "track_id": "4castle--paradox-of-contradictions",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Paradox of Contradictions.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--paradox-of-contradictions.opus"
+  },
+  "lyrics": "Dances in her sleep and cries with a smile\nGone in a breath but stays lost for a while\nSilences a room with a whisper so loud\nA ghost in the corner, the queen of the crowd\n\nA paradox of contradictions, always a surprise\nShe's a mystery in motion, a riddle in disguise\n\nThe sun in the night, the calm in the fight\nA shadow that dares be seen in the light\nA cynic who dreams emotionally\nA puzzle without the pieces, the lady for me\n\nWrites every word but forgets what they mean\nA delicate thread in a torn-up theme\nRuns from the love that's too close to chase\nA map with no lines, a time with no place\n\nA paradox of contradictions, always a surprise\nShe's a mystery in motion, a riddle in disguise\n\nThe sun in the night, the calm in the fight\nA shadow that dares be seen in the light\nA cynic who dreams emotionally\nA puzzle without the pieces, the lady for me\n\nA whisper you'll never hear twice\nA gambler who never rolls dice\nThe truth in a beautiful lie\nAnd I'm tangled up inside…\n\nThe sun in the night, the calm in the fight\nA shadow that dares be seen in the light\nA cynic who dreams emotionally\nA puzzle without the pieces, the lady for me\n\nA puzzle without the pieces, the lady for me",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 197.28,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.17,
+        "label": "S1"
+      },
+      {
+        "start": 11.17,
+        "end": 26.7,
+        "label": "S2"
+      },
+      {
+        "start": 26.7,
+        "end": 42.68,
+        "label": "S3"
+      },
+      {
+        "start": 42.68,
+        "end": 62.46,
+        "label": "S4"
+      },
+      {
+        "start": 62.46,
+        "end": 78.32,
+        "label": "S5"
+      },
+      {
+        "start": 78.32,
+        "end": 95.57,
+        "label": "S6"
+      },
+      {
+        "start": 95.57,
+        "end": 125.02,
+        "label": "S7"
+      },
+      {
+        "start": 125.02,
+        "end": 140.34,
+        "label": "S8"
+      },
+      {
+        "start": 140.34,
+        "end": 157.94,
+        "label": "S9"
+      },
+      {
+        "start": 157.94,
+        "end": 173.52,
+        "label": "S10"
+      },
+      {
+        "start": 173.52,
+        "end": 197.28,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.942
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This country-rock track builds an anthemic yet reflective atmosphere, layering clean and overdriven electric guitars over a solid rhythm section to support a clear, earnest male vocal. The song's energy is dynamic, moving from more restrained verses to an expansive, powerful chorus with a sing-along feel that provides a strong emotional release. The production quality is polished and spacious, creating a wide soundstage where all elements, including layered vocals and prominent guitars, have their own defined space. The chorus is a particularly memorable moment, serving as the track's energetic and melodic high point, defining its arena-ready character.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The central lyric here, 'a puzzle without the pieces, the lady for me,' is the kind of line that earns its repetition: it lands differently each time the chorus swings back around, which in B major at a relaxed mid-tempo feels surprisingly anthemic. The production gives every voice room to breathe, and when the harmonies stack up for the final chorus push, the band earns that arena-sized space they're reaching for. A grower that rewards the full listen.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "quoted lyric: 'a puzzle without the pieces, the lady for me'",
+      "key: B major",
+      "mid-tempo BPM ~96",
+      "chorus harmonic stack",
+      "final chorus build"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

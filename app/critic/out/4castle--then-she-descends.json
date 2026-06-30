@@ -1,0 +1,116 @@
+{
+  "track_id": "4castle--then-she-descends",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Then She Descends.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--then-she-descends.opus"
+  },
+  "lyrics": "I ache for her in quiet moments\nWhen the air forgets to move\nEvery breath just holds her absence\nAnd I don't know what to do\nI talk to walls like they can hold me\nI pace the floor and count the shadows\nBut every hour stretches longer\nUntil she comes at last\n\nThen she descends\nLike my heart remembers how to beat\nShe doesn't speak\nBut I feel her in my chest\nAnd all the waiting breaks like a wave\nThen she descends\n\nI lose myself before she finds me\nIn rooms that echo with her name\nI swear I see her in reflections\nBut when I reach, there's only pain\nSome nights I pray, some nights I bargain\nSome nights I just let it burn\nAnd every time I think I'm empty\nShe's my reason to return\n\nThen she descends\nAnd I forget what came before\nShe pulls me in\nAnd I let myself be lost\nIn the fire, in the flood, in the grace\nThen she descends\n\nI don't ask if she is real\nThat's not a question I can face\nI only know the way it feels\nWhen she is near, there's no escape\nShe is the calm, she is the fever\nThe only thing that makes me whole\nAnd when the silence starts to shatter-\nShe's already in my soul\n\nThen she descends\nAnd I surrender all I am\nShe doesn't stay\nBut she leaves me something whole\nA trace of light, a taste of time\nA broken man who dares to stand\nThen she descends\n\nThen she descends",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "G#",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 265.0,
+    "lufs": -15.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.55,
+        "label": "S1"
+      },
+      {
+        "start": 4.55,
+        "end": 22.96,
+        "label": "S2"
+      },
+      {
+        "start": 22.96,
+        "end": 39.92,
+        "label": "S3"
+      },
+      {
+        "start": 39.92,
+        "end": 65.43,
+        "label": "S4"
+      },
+      {
+        "start": 65.43,
+        "end": 87.05,
+        "label": "S5"
+      },
+      {
+        "start": 87.05,
+        "end": 104.72,
+        "label": "S6"
+      },
+      {
+        "start": 104.72,
+        "end": 128.66,
+        "label": "S7"
+      },
+      {
+        "start": 128.66,
+        "end": 173.85,
+        "label": "S8"
+      },
+      {
+        "start": 173.85,
+        "end": 189.13,
+        "label": "S9"
+      },
+      {
+        "start": 189.13,
+        "end": 265.0,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.857
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a sparse, atmospheric texture, using a clean electric guitar and an intimate male vocal to create an immediate sense of melancholic introspection. The song follows a powerful dynamic arc, building from a very low, contemplative energy into a dense, cinematic chorus that provides a cathartic emotional release. The production quality is polished and modern, allowing the mix to feel spacious in the verses and impressively full during the climactic sections without losing clarity. The defining quality is this dramatic swell into the chorus, where soaring synths and impactful drums transform the quiet longing into an epic, anthemic statement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz in G# major at a measured 112 BPM, 'Then She Descends' earns its title by actually delivering the drop it promises: the verses hold so much back, a spare clean guitar and a voice carrying lines like 'every hour stretches longer / until she comes at last,' that when the chorus opens up with swelling synths and the full kit coming in, it genuinely feels like the room expanding. The lyric 'a broken man who dares to stand' lands because the song has done the emotional work to get you there. This is 4Castle playing the long game, and the patience pays off.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "G# major",
+      "112 BPM",
+      "3/4 time",
+      "sparse clean electric guitar verse",
+      "synth and drum swell into chorus",
+      "lyric: 'every hour stretches longer / until she comes at last'",
+      "lyric: 'a broken man who dares to stand'",
+      "dynamic arc from contemplative verse to cinematic chorus"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

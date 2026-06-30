@@ -1,0 +1,133 @@
+{
+  "track_id": "pcbender--meaning",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Meaning.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--meaning.opus"
+  },
+  "lyrics": "Meaning isn't written on a tablet in the sky\nIt's the contour of your choices as your days go walking by\nIt's the echo of your courage in the places you were small\nIt's the way you learned to answer when your deepest self would call\n\nI roam between the person that I was and yet may be\nA tightrope made of moments stretched above a shifting sea\nIf there is a grand design, I've never seen the master plan\nOnly how the smallest kindness redraws the shape of man\n\nThe meaning of life\nIs the path I dare to claim\nTo be unrepeatably living\nIn this fragile, borrowed frame\nNot to solve some hidden riddle\nNot to earn a perfect grade\nBut to leave behind a pattern\nIn the choices I have made\n\nSome will build their meaning\nOut of power, praise, or fear\nMeasuring their value\nBy who kneels when they are near\nI will build my meaning\nFrom the lives that cross my own\nFrom the freedom I protect in them\nNot the throne I might have known\n\nThe meaning of life\nIs the distance that I roam\nBetween who I was yesterday\nAnd the self I call my home\nIf there is a final answer\nIt is whispered, never shown\nIn the way I walk each moment\nAs if it were my own\n\nOne brief crossing\nOne sovereign stride\nThe world unfolds\nOnly\nFrom inside",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "G",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 319.0,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 17.62,
+        "label": "S1"
+      },
+      {
+        "start": 17.62,
+        "end": 45.28,
+        "label": "S2"
+      },
+      {
+        "start": 45.28,
+        "end": 60.35,
+        "label": "S3"
+      },
+      {
+        "start": 60.35,
+        "end": 82.5,
+        "label": "S4"
+      },
+      {
+        "start": 82.5,
+        "end": 107.97,
+        "label": "S5"
+      },
+      {
+        "start": 107.97,
+        "end": 150.84,
+        "label": "S6"
+      },
+      {
+        "start": 150.84,
+        "end": 177.82,
+        "label": "S7"
+      },
+      {
+        "start": 177.82,
+        "end": 205.31,
+        "label": "S8"
+      },
+      {
+        "start": 205.31,
+        "end": 220.73,
+        "label": "S9"
+      },
+      {
+        "start": 220.73,
+        "end": 236.36,
+        "label": "S10"
+      },
+      {
+        "start": 236.36,
+        "end": 253.0,
+        "label": "S11"
+      },
+      {
+        "start": 253.0,
+        "end": 287.9,
+        "label": "S12"
+      },
+      {
+        "start": 287.9,
+        "end": 309.03,
+        "label": "S13"
+      },
+      {
+        "start": 309.03,
+        "end": 319.0,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.965,
+      "key": 0.961
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a spacious and contemplative texture, initially featuring a thoughtful male vocal over gentle piano and atmospheric pads. The energy builds dramatically from reflective verses into a soaring, anthemic rock chorus, creating an inspirational and powerful emotional arc. The production is clean and expansive, allowing the arrangement to swell from sparse instrumentation to a dense, stadium-sized wall of sound where layered guitars and a driving rhythm section sit together with clarity. The track's defining quality is its dynamic lift into the chorus, where the full band crashes in with immense force, transforming the song's mood from introspective to powerfully declarative.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender is asking nothing less than what makes a life worth living, and the answer he lands on, 'to be unrepeatably living in this fragile, borrowed frame,' earns its weight by the time the full band crashes in around the two-minute mark. The build from spare piano and vocal to that stadium-wide chorus is the real argument of the song, the production making good on what the lyrics are trying to prove. At 161 BPM in G minor, it moves faster than it feels, which is a credit to the arrangement; the verses breathe, and the payoff hits like a door opening. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'to be unrepeatably living in this fragile, borrowed frame'",
+      "chorus build timing around two-minute mark",
+      "BPM 161.5",
+      "G minor key",
+      "sparse piano/vocal to full band dynamic shift"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

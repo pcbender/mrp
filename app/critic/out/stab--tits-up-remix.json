@@ -1,0 +1,116 @@
+{
+  "track_id": "stab--tits-up-remix",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Tits Up (Remix).wav",
+    "proxy": "/home/mrose/audio/proxy/stab--tits-up-remix.opus"
+  },
+  "lyrics": "\"Ass hole crashed, tits up\"\n\nI found your texts, I know her name\nYou lied again, it's all the same\nYour clothes are packed, they're at the door\nDon't come crying anymore\n\nI gave you love, I gave you trust\nYou threw it out, you killed us\nNow I'm done, you had your fun\nShe deserves what you've become\n\nIt's tits up, you're outta luck\nTook my heart and fucked it up\nNo more tears, no more fights\nGet your shit and say goodbye-You're Tits Up\n\nYou swore to me, but then you lied\nNow go crawl back to where she hides\nDon't send your friends, don't waste my time\nYou made your choice, now pay the fine\n\nI gave you love, I gave you trust\nYou threw it out, you killed us\nNow I'm done, you had your fun\nShe deserves what you've become\n\nIt's tits up, you're outta luck\nTook my heart and fucked it up\nNo more tears, no more fights\nGet your shit and say goodbye-You're Tits Up\n\nDon't call me drunk, I've blocked your calls\nI don't forgive, I won't go back\nYou burned it down, you rotten slag\nGo sleep with the mess you laid\n\nIt's tits up, you're outta luck\nTook my heart and fucked it up\nNo more tears, no more fights\nGet your shit and say goodbye-You're Tits Up\n\nLocked the door, changed the key\nYou're just a ghost to me\nAnd If you think I'm sad and crying\nImagine me tits down on your best friend",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 89.1,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 179.32,
+    "lufs": -12.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.14,
+        "label": "S1"
+      },
+      {
+        "start": 2.14,
+        "end": 18.16,
+        "label": "S2"
+      },
+      {
+        "start": 18.16,
+        "end": 42.03,
+        "label": "S3"
+      },
+      {
+        "start": 42.03,
+        "end": 58.1,
+        "label": "S4"
+      },
+      {
+        "start": 58.1,
+        "end": 85.12,
+        "label": "S5"
+      },
+      {
+        "start": 85.12,
+        "end": 111.39,
+        "label": "S6"
+      },
+      {
+        "start": 111.39,
+        "end": 127.8,
+        "label": "S7"
+      },
+      {
+        "start": 127.8,
+        "end": 143.78,
+        "label": "S8"
+      },
+      {
+        "start": 143.78,
+        "end": 159.87,
+        "label": "S9"
+      },
+      {
+        "start": 159.87,
+        "end": 179.32,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.96,
+      "key": 0.91
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a dense, modern rock texture, immediately establishing an atmosphere of defiant anger and cathartic release. The energy is consistently high, driven by powerful, distorted guitars and a punchy, insistent rhythm section that gives it an urgent pop-punk feel. The production is polished and full, creating a wall of sound where the layered guitars sit wide while the clear, upfront lead vocal cuts through effectively. A definitive moment is the catchy, anthemic chorus at 0:42, where gang vocals and a memorable lyrical hook perfectly encapsulate the song's confrontational theme.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The remix of 'Tits Up' arrives lean and loud at just under three minutes, and it earns every second of that runtime. The chorus at 0:42 is the centre of gravity: gang vocals pile onto the hook 'took my heart and fucked it up' with enough weight to suggest early Paramore crashing a Bangles reunion, and the distorted guitars sit wide enough in the mix that the whole thing feels physically bigger than its parts. At 89 BPM in E minor, the tempo keeps the indignation believable rather than hysterical, and the closing lyric, 'imagine me tits down on your best friend,' lands as the best kind of mic-drop, a punchline that earns its place. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "chorus at 0:42",
+      "gang vocals",
+      "lyric: 'took my heart and fucked it up'",
+      "lyric: 'imagine me tits down on your best friend'",
+      "89 BPM",
+      "E minor",
+      "wide guitar mix",
+      "2:59 duration"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

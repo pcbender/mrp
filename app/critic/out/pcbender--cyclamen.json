@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--cyclamen",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Cyclamen.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--cyclamen.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 103.4,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 163.0,
+    "lufs": -12.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 12.56,
+        "label": "S1"
+      },
+      {
+        "start": 12.56,
+        "end": 39.01,
+        "label": "S2"
+      },
+      {
+        "start": 39.01,
+        "end": 54.33,
+        "label": "S3"
+      },
+      {
+        "start": 54.33,
+        "end": 81.8,
+        "label": "S4"
+      },
+      {
+        "start": 81.8,
+        "end": 105.12,
+        "label": "S5"
+      },
+      {
+        "start": 105.12,
+        "end": 123.25,
+        "label": "S6"
+      },
+      {
+        "start": 123.25,
+        "end": 141.71,
+        "label": "S7"
+      },
+      {
+        "start": 141.71,
+        "end": 157.55,
+        "label": "S8"
+      },
+      {
+        "start": 157.55,
+        "end": 163.0,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.877
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "blues"
+    ],
+    "mood": [
+      "uplifting",
+      "tender",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track projects a confident and swaggering atmosphere, built upon a dense funk-rock texture. The energy level is consistently high and driving, carried by a tight, punchy rhythm section that gives the piece an infectious, forward-leaning feel. The production is clean and spacious, allowing the gritty, articulate lead guitar to sit prominently in the mix without overwhelming the solid foundation of bass and drums. The music is defined by its virtuosic guitar performance, which is filled with expressive, blues-inflected solos and compelling melodic hooks that serve as the song's primary voice.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 103 BPM in E minor, 'Cyclamen' moves with a swagger that feels earned rather than performed, the rhythm section locked tight while a blues-inflected lead guitar does all the talking a vocalist would need to. The melodic hooks that surface mid-track are the kind that stick without announcing themselves, and the production keeps things spacious enough that every bend and phrase has room to breathe. For an instrumental that clocks in under three minutes, it covers real ground and holds your attention the whole way.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "103 BPM",
+      "E minor",
+      "2:43 duration",
+      "blues-inflected lead guitar",
+      "mid-track melodic hooks",
+      "spacious production mix"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

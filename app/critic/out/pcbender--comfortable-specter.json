@@ -1,0 +1,103 @@
+{
+  "track_id": "pcbender--comfortable-specter",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Comfortable Specter.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--comfortable-specter.opus"
+  },
+  "lyrics": "I was someone, once, you know\nA love, a name, a shadow thrown\nYou whisper to me in the dark\nLike I was always meant to leave a mark\n\nI should let you go, I should move on\nBut don't you need to know what went wrong\nSo I'll tell you stories, I'll weave them deep\nA lullaby for you to keep\n\nI'm the voice that lingers inside\nThe whisper that tells you who lied\nYou think I'm gone, but I stay-just close enough to tether\nA comfortable specter, haunting you forever\n\nNo one wept, no torches burned\nNo lovers lost, no pages turned\nBut you-oh, you, you still believe\nSo I let you rewrite me\n\nI should let you go, I should move on\nBut don't you need to know what went wrong\nSo I'll tell you stories, I'll weave them deep\nA lullaby for you to keep\n\nI'm the voice that lingers inside\nThe whisper that tells you who lied\nYou think I'm gone, but I stay-just close enough to tether\nA comfortable specter, haunting you forever\n\nBut what if I was no one\nWhat if I was nothing more\nA trace of dust, a silent room\nA lock with no forgotten door\nI swore they missed me, but did they\nI swore you needed me, but do you\nI swore I mattered, but did I\nWould you grieve me if you knew\n\nI'm the echo you welcome inside\nThe whisper that never quite lied\nYou think I stayed, but I fade-just quiet enough to sever\nA comfortable specter…\nNo longer forever\n\nShh… it's okay\nYou'll still remember me, won't you\nBut I'm already gone",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "C#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 223.36,
+    "lufs": -14.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.69,
+        "label": "S1"
+      },
+      {
+        "start": 6.69,
+        "end": 27.26,
+        "label": "S2"
+      },
+      {
+        "start": 27.26,
+        "end": 55.59,
+        "label": "S3"
+      },
+      {
+        "start": 55.59,
+        "end": 84.38,
+        "label": "S4"
+      },
+      {
+        "start": 84.38,
+        "end": 119.26,
+        "label": "S5"
+      },
+      {
+        "start": 119.26,
+        "end": 170.06,
+        "label": "S6"
+      },
+      {
+        "start": 170.06,
+        "end": 203.52,
+        "label": "S7"
+      },
+      {
+        "start": 203.52,
+        "end": 223.36,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.949,
+      "key": 0.848
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a sparse, reverberant texture, featuring a melancholic piano and a breathy, intimate vocal that establishes a haunting and introspective atmosphere. It follows a dramatic arc, building from a low-energy, ballad-like verse into an explosive, anthemic chorus with a powerful and cinematic feel driven by heavy drums and layered harmonies. The production quality is high, creating a wide stereo image that feels both spacious in the quiet moments and densely packed during the dynamic peaks, while always keeping the lead vocal clear and centered. A defining characteristic is the stark dynamic shift into the chorus around 0:55, where the full instrumentation crashes in, creating a powerful moment of emotional release that defines the song's narrative.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The conceit here is sharper than it first appears: the specter isn't a ghost haunting someone else, it's the narrator questioning whether they ever mattered at all, and that pivot in the bridge, 'I swore I mattered, but did I,' reframes everything that came before it. PCBender builds the track in C# minor at a tempo that feels more urgent than the ballad opening suggests, and the crash into full instrumentation around the 55-second mark earns its drama without overselling it. The outro, just a hushed 'Shh... it's okay,' lands with the quiet confidence of someone who knows when to stop talking.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'I swore I mattered, but did I'",
+      "lyric: 'Shh... it's okay'",
+      "C# minor key",
+      "dynamic shift at ~0:55",
+      "BPM 143.6 framed as more urgent than ballad opening suggests"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

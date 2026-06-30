@@ -195,7 +195,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--cyclamen.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -210,7 +210,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--tumbleweed.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -225,7 +225,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--rufous.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -240,7 +240,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--olivine.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -255,7 +255,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--verdigris.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -270,7 +270,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--wenge.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -285,7 +285,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--pistachio.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -300,7 +300,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--sunray.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -315,7 +315,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--zaffre.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -330,7 +330,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--nyanza.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -345,7 +345,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--limerick.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -360,7 +360,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--thulian.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -375,7 +375,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--jonquil.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -390,7 +390,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--aureolin.mp3
     lyrics_text: null
     lyrics_source: null
     links:
@@ -405,7 +405,7 @@ release:
     duration: null
     explicit: false
     instrumental: true
-    preview_audio: null
+    preview_audio: /samples/pcbender--moonstone.mp3
     lyrics_text: null
     lyrics_source: null
     links:

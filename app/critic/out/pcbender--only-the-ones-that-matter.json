@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--only-the-ones-that-matter",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Only The Ones That Matter.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--only-the-ones-that-matter.opus"
+  },
+  "lyrics": "She lingered in the gallery light\nTracing frames with trembling hands\nEach moment pinned like wings in glass\nA secret kept the world won’t understand\nShe turned to speak, but paused instead-\nSome things are louder left unsaid\n\nWe build with love, then watch it fade\nIn corners no parade will find\nBut those who see will always stay-\nThey carry what we leave behind\n\nThey don’t need signs or banners high\nNo roaring crowd to justify\nThey show up when the noise grows flatter-\nOnly the ones that matter\n\nWe built our trust on painted words\nHung meaning on a borrowed tone\nThey moved like stars, they spoke like saints-\nBut left us stranded and alone\nThe light we followed lost its shape\nAnd truth unraveled in its place\n\nWhat someone writes, or says aloud\nCan still be hollow underneath\nWe learned too late that flawless lines\nDon’t mean there’s honesty beneath\n\nThey held our dreams with practiced grace\nThen let them go without a trace\nThe truth was thinner than their patter-\nOnly the ones that matter\n\nThe room was dim, the air held still\nLike breath beneath a final thought\nThe years returned in gentle waves-\nNot all were kind, but none were lost\nI saw the faces, not the days-\nThe ones who shaped me, not their praise\n\nNot the titles, not the noise\nNot the medals or the plans-\nBut hands that held when I fell through\nAnd eyes that said, “I understand.”\n\nNot the tales they told in bronze and stone\nBut those who stayed when I was alone\nThey speak the truth before I scatter-\nOnly the ones that matter\n\nOnly the ones that matter\nOnly the ones that matter\nOnly the ones that matter",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "A",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 264.4,
+    "lufs": -16.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 24.08,
+        "label": "S1"
+      },
+      {
+        "start": 24.08,
+        "end": 39.5,
+        "label": "S2"
+      },
+      {
+        "start": 39.5,
+        "end": 57.56,
+        "label": "S3"
+      },
+      {
+        "start": 57.56,
+        "end": 84.5,
+        "label": "S4"
+      },
+      {
+        "start": 84.5,
+        "end": 109.55,
+        "label": "S5"
+      },
+      {
+        "start": 109.55,
+        "end": 125.16,
+        "label": "S6"
+      },
+      {
+        "start": 125.16,
+        "end": 154.51,
+        "label": "S7"
+      },
+      {
+        "start": 154.51,
+        "end": 181.0,
+        "label": "S8"
+      },
+      {
+        "start": 181.0,
+        "end": 207.66,
+        "label": "S9"
+      },
+      {
+        "start": 207.66,
+        "end": 224.63,
+        "label": "S10"
+      },
+      {
+        "start": 224.63,
+        "end": 264.4,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.971,
+      "key": 0.848
+    }
+  },
+  "tags": {
+    "genre": [
+      "country",
+      "acoustic",
+      "pop"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "uplifting"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "mandolin",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes an intimate and reflective atmosphere with a sparse texture featuring a clean, fingerpicked acoustic guitar and a soft, breathy female vocal. The energy is consistently calm and contemplative, giving it a gentle, narrative-driven folk feel. The production is spacious and clear, placing the central vocal and guitar elements close to the listener while tastefully adding subtle layers like a soft kick drum and pads to build momentum without creating density. A defining quality is the emotional honesty of the vocal performance, which, combined with the intricate guitar work, carries the song's narrative weight and creates a sense of profound, quiet sincerity.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender writes plainly and lands hard here: 'hands that held when I fell through / and eyes that said, I understand' is the kind of lyric that earns its chorus by the time it arrives. The fingerpicked guitar stays close and uncluttered throughout, letting a vocal performance of real emotional honesty carry the full weight of the song's argument about who actually shows up versus who performs devotion. At 152 BPM in A minor the track moves with quiet purpose, and the gradual layering of pads and a soft kick adds just enough lift without crowding what is essentially an intimate conversation. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'hands that held when I fell through / and eyes that said, I understand'",
+      "fingerpicked acoustic guitar texture",
+      "BPM: 152.0",
+      "key: A minor",
+      "gradual layering of pads and soft kick drum",
+      "emotional honesty of vocal performance"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

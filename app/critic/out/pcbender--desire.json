@@ -1,0 +1,129 @@
+{
+  "track_id": "pcbender--desire",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Desire.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--desire.opus"
+  },
+  "lyrics": "It's the \"Wanting\" we desire\nNot the thing…\n\nThere's a hunger in my bones that nobody could appease\nNot a touch, not a taste, not a thousand offered keys\nIt's the pull of some horizon where my name is still unknown\nWhere the self I haven't met yet waits to claim me as its own\n\nI don't chase the fleeting pleasures\nThat dissolve when night is through\nI am burning for becoming\nFor the \"me\" I can't yet view\n\nDesire is the fire that remakes me\nEvery time I shed my skin\nNot a craving, but a calling\nA beginning tucked within\nI don't want what I can hold\nSo much as who I might become\nDesire is the engine\nNot the sum\n\nEvery version I've outgrown is a ghost I kiss goodbye\nThanking it for all the ways it taught me how to die\nI am not the past reflections, nor the mirrors yet to be\nI am just the restless motion toward a wider kind of me\n\nI won't let my wanting shrink me\nInto greed or little wars\nI will let it be a compass\nPointing past my current shores\n\nDesire is the fire that remakes me\nNot a hunger born of lack\nIt's the current in the river\nPulling forward, never back\nI don't want the world to feed me\nI want room enough to grow\nDesire is the question\nNot the \"no.\"\n\nLet every wish that chains me\nFall away, unnamed\nLet every wish that wakes me\nBe the one I claim\n\nDesire is the fire that remakes me\nAs I shed what I outgrow\nIf I chase what dulls my spirit\nThen I'm choosing not to know\nI will want with open eyes\nLet the wanting make me new\nDesire is the doorway\nI walk through",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 83.4,
+    "key": "A#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 300.2,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.26,
+        "label": "S1"
+      },
+      {
+        "start": 9.26,
+        "end": 30.88,
+        "label": "S2"
+      },
+      {
+        "start": 30.88,
+        "end": 59.98,
+        "label": "S3"
+      },
+      {
+        "start": 59.98,
+        "end": 113.55,
+        "label": "S4"
+      },
+      {
+        "start": 113.55,
+        "end": 131.29,
+        "label": "S5"
+      },
+      {
+        "start": 131.29,
+        "end": 159.78,
+        "label": "S6"
+      },
+      {
+        "start": 159.78,
+        "end": 188.29,
+        "label": "S7"
+      },
+      {
+        "start": 188.29,
+        "end": 207.38,
+        "label": "S8"
+      },
+      {
+        "start": 207.38,
+        "end": 239.89,
+        "label": "S9"
+      },
+      {
+        "start": 239.89,
+        "end": 256.81,
+        "label": "S10"
+      },
+      {
+        "start": 256.81,
+        "end": 280.03,
+        "label": "S11"
+      },
+      {
+        "start": 280.03,
+        "end": 297.05,
+        "label": "S12"
+      },
+      {
+        "start": 297.05,
+        "end": 300.2,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.849
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a high-octane heavy metal track that projects an atmosphere of defiant ambition through its dense, modern texture. The energy is consistently high, creating a driving, anthemic feel with powerful, soaring vocals and multi-layered, distorted guitars. The production is polished and massive, creating a wall of sound where each element, especially the lead vocals and searing solos, still maintains clarity. A defining quality is the contrast between the heavy, rhythmic riffing and the highly technical, neoclassical guitar breaks, which establishes the track's epic scope from the beginning.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always known how to build a song around an idea that earns its runtime, and 'Desire' does exactly that, opening with a thesis that cuts right to the bone: 'It's the wanting we desire, not the thing.' At a measured 83 BPM in A# minor, the track gives that lyric room to breathe, the guitars carrying a blues-rock weight that keeps the emotional lift grounded rather than sentimental. The chorus lands with real conviction, framing desire not as craving but as a compass, and by the time the bridge arrives with 'Let every wish that wakes me be the one I claim,' you feel the song has actually earned that turn. A highlight in his catalog.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric quote: 'It's the wanting we desire, not the thing'",
+      "lyric quote: 'Let every wish that wakes me be the one I claim'",
+      "BPM: 83.4",
+      "Key: A# minor",
+      "blues-rock guitar weight",
+      "chorus framing desire as compass"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

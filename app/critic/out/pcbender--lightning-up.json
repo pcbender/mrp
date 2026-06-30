@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--lightning-up",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Lightning Up.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--lightning-up.opus"
+  },
+  "lyrics": "Something’s creeping up on me\nI can’t name what it is\nHe waits around each corner\nListening for my fall\nSome nights I start to wander-\nMy footsteps feel like his\nI recognize the cadence\nTime begins to crawl\n\n(Lightning up the night) The urge to awaken\n(Lightning up the night) The surge of emotion\n(Lightning up the night) The courage to be open\n(Lightning up the night) Lightning up the night\n\nSomething starts to shimmer\nJust beyond my reach\nA breath that isn’t taken\nTruth I left behind\nThe shadows shift around me\nLessons they could teach\nI feel him getting nearer-\nClearing out my mind\n\n(Lightning up the night) The urge to awaken\n(Lightning up the night) The surge of emotion\n(Lightning up the night) The courage to be open\n(Lightning up the night) Lightning up the night\n\nI’ve run from every mirror\nAfraid of what I’d find\nBut now the shape grows clearer-\nA spark that looks like mine\nThe darkness isn’t danger\nIt’s how a fire is born\nThe fear that walked beside me\nBecomes my lightning form\n\n(Lightning up the night) The urge to awaken\n(Lightning up the night) The surge of emotion\n(Lightning up the night) The courage to be open\n(Lightning up the night) Lightning up the night",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 244.0,
+    "lufs": -12.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.19,
+        "label": "S1"
+      },
+      {
+        "start": 10.19,
+        "end": 28.93,
+        "label": "S2"
+      },
+      {
+        "start": 28.93,
+        "end": 44.16,
+        "label": "S3"
+      },
+      {
+        "start": 44.16,
+        "end": 60.93,
+        "label": "S4"
+      },
+      {
+        "start": 60.93,
+        "end": 92.11,
+        "label": "S5"
+      },
+      {
+        "start": 92.11,
+        "end": 127.97,
+        "label": "S6"
+      },
+      {
+        "start": 127.97,
+        "end": 148.17,
+        "label": "S7"
+      },
+      {
+        "start": 148.17,
+        "end": 168.09,
+        "label": "S8"
+      },
+      {
+        "start": 168.09,
+        "end": 193.56,
+        "label": "S9"
+      },
+      {
+        "start": 193.56,
+        "end": 225.54,
+        "label": "S10"
+      },
+      {
+        "start": 225.54,
+        "end": 244.0,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.979,
+      "key": 0.912
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "folk rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "emotional"
+    ],
+    "instruments": [
+      "mandolin",
+      "harmonica",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a soulful and reflective atmosphere, driven by a tight reggae-influenced rhythm section and clean, rhythmic electric guitars. The energy has a steady, laid-back feel that builds into an uplifting and anthemic chorus, generating a sense of hopeful release. The production is clean and spacious, with a well-defined low end and a clear vocal that sits comfortably on top of the instrumental layers. A distinctive quality is the powerful emotional lift of the chorus, where the layered backing vocals provide a soaring, memorable hook that defines the song's optimistic message.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 152 BPM in E minor, 'Lightning Up the Night' moves with a locked-in, reggae-touched groove that keeps the verses taut before the chorus opens up into something genuinely anthemic. The payoff is earned: 'The darkness isn't danger, it's how a fire is born' is the kind of line that makes the whole song cohere, and the layered backing vocals on the chorus hook deliver the lift those words deserve. PCBender is working in classic-rock emotional territory here, the kind of catharsis that early U2 or Springsteen's Nebraska-era B-sides understood, and he pulls it off with a clean, spacious production that never crowds the feeling. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "152 BPM",
+      "E minor",
+      "reggae-influenced groove",
+      "layered backing vocals on chorus",
+      "quoted lyric: 'The darkness isn't danger, it's how a fire is born'",
+      "comparison to early U2 and Springsteen"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

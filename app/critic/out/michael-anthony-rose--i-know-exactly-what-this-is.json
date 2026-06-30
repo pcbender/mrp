@@ -1,0 +1,129 @@
+{
+  "track_id": "michael-anthony-rose--i-know-exactly-what-this-is",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/I Know Exactly What This Is.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--i-know-exactly-what-this-is.opus"
+  },
+  "lyrics": "A feeling of hidden anger\n\nShe called me \"hon\" at the counter\nLike I'd drift if not handled right\nGave me the slow voice, the careful smile\nLike I might bruise under fluorescent light\nI knew what she meant by it\nKnew what she had decided\nNot cruel enough to make a scene\nJust small enough to rot\n\nYou don't have to say it plain\nI can hear it anyway\nIn the tone, in the nod\nIn the way you look away\nLike I already know the script\nLike I should just take the hint\nYou can call it being nice\nI know exactly what this is\n\nAt the doctor, at the bank\nAt the store, online, in line\nAlways someone half my age\nActing like they've seen my life\nI can still play nice for them\nLaugh and let the moment pass\nBut some days I leave feeling\nFiled away behind the glass\n\nYou don't have to say it plain\nI can hear it anyway\nIn the tone, in the nod\nIn the way you look away\nLike I already know the script\nLike I should just take the hint\nYou can call it being nice\nI know exactly what this is\n\nI was somebody before this moment\nI am somebody in it still\nDon't make me smaller so you can feel kind\nDon't call that care when it's control\n\nYou don't have to say it plain\nI can hear it anyway\nIn the tone, in the nod\nIn the way you look away\nLike I already know the script\nLike I should just take the hint\nYou can call it being nice\nI know exactly what this is\n\nI know exactly what this is\nYeah\nI know exactly what this is",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 184.6,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 239.94,
+    "lufs": -12.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.25,
+        "label": "S1"
+      },
+      {
+        "start": 5.25,
+        "end": 23.29,
+        "label": "S2"
+      },
+      {
+        "start": 23.29,
+        "end": 47.58,
+        "label": "S3"
+      },
+      {
+        "start": 47.58,
+        "end": 70.84,
+        "label": "S4"
+      },
+      {
+        "start": 70.84,
+        "end": 90.21,
+        "label": "S5"
+      },
+      {
+        "start": 90.21,
+        "end": 106.46,
+        "label": "S6"
+      },
+      {
+        "start": 106.46,
+        "end": 129.45,
+        "label": "S7"
+      },
+      {
+        "start": 129.45,
+        "end": 149.54,
+        "label": "S8"
+      },
+      {
+        "start": 149.54,
+        "end": 170.32,
+        "label": "S9"
+      },
+      {
+        "start": 170.32,
+        "end": 194.54,
+        "label": "S10"
+      },
+      {
+        "start": 194.54,
+        "end": 215.71,
+        "label": "S11"
+      },
+      {
+        "start": 215.71,
+        "end": 236.31,
+        "label": "S12"
+      },
+      {
+        "start": 236.31,
+        "end": 239.94,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.892
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a dynamic country-rock track with a clean, modern production that balances narrative verses with an anthemic, high-energy chorus. The emotional atmosphere is one of weary frustration, driven by an upfront, storytelling vocal that sits clearly on top of the mix. The arrangement masterfully uses space, contrasting the sparse verses against a dense wall of layered, distorted guitars and powerful vocal harmonies in the chorus. A defining quality of the track is this stark dynamic shift, which effectively amplifies the lyrical tension between what is unsaid and what is understood.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose has always been good at quiet fury, and this one channels it into something that lands with real force. The trick is in the arrangement: verses stripped nearly bare, the vocal forward and conversational, so that when the chorus crashes in with layered distorted guitars and stacked harmonies, the emotional math is already done for you. The lyric does the heavy lifting, too, particularly the bridge: 'Don't make me smaller so you can feel kind / Don't call that care when it's control' is the kind of line that earns the song its title twice over. At a pace that runs considerably hotter than it feels, the track never loses the weary, seen-it-all quality that makes the indignation credible rather than shrill.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "sparse verse vs. dense chorus dynamic contrast",
+      "distorted guitars and vocal harmonies in chorus",
+      "bridge lyric: 'Don't make me smaller so you can feel kind / Don't call that care when it's control'",
+      "BPM 184.6 noted as running hotter than it feels",
+      "E major key",
+      "upfront storytelling vocal placement in mix"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

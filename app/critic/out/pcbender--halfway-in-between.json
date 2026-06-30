@@ -1,0 +1,123 @@
+{
+  "track_id": "pcbender--halfway-in-between",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Halfway In Between.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--halfway-in-between.opus"
+  },
+  "lyrics": "Golden light spills down the coastline\nRolling waves hum a lullaby\nFootsteps lost in shifting memory\nFading fast, like the evening sky\n\nThe wind speaks in whispers, gulls cry out loud\nAbandoned by choices, I'm smothered in doubt\n\nHalfway in between, LA and a dream\nDriving on the fault line of what was and what could be\nAmber woman burning bright, shadows in the tide\nStanding at the point where love and song collide\nI'm Halfway in between\n\nSpanish towers touch the sunrise\nGhosts still dance beneath the palms\nSilver swells and silent heartbeats\nA restless pulse, a fleeting alarm\n\nThe wind speaks in whispers, gulls cry out loud\nAbandoned by choices, I'm smothered in doubt\n\nHalfway in between, LA and a dream\nDriving on the fault line of what was and what could be\nAmber woman burning bright, shadows in the tide\nStanding at the point where love and song collide\nI'm Halfway in between\n\nLost in the shimmer of summers past\nFearing the undertow, stuck in the sand\n\nHalfway in between, LA and a dream\nDriving on the fault line of what was and what could be\nAmber woman burning bright, shadows in the tide\nStanding at the point where love and song collide\nI'm Halfway in between\n\nHalfway in between, LA and a dream\nDriving on the fault line of what was and what could be\nAmber woman burning bright, shadows in the tide\nStanding at the point where love and song collide\nI'm Halfway in between\n\nOh, amber woman - I'm halfway in between",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "D#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 240.0,
+    "lufs": -13.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 12.38,
+        "label": "S1"
+      },
+      {
+        "start": 12.38,
+        "end": 30.53,
+        "label": "S2"
+      },
+      {
+        "start": 30.53,
+        "end": 49.78,
+        "label": "S3"
+      },
+      {
+        "start": 49.78,
+        "end": 77.79,
+        "label": "S4"
+      },
+      {
+        "start": 77.79,
+        "end": 93.3,
+        "label": "S5"
+      },
+      {
+        "start": 93.3,
+        "end": 111.83,
+        "label": "S6"
+      },
+      {
+        "start": 111.83,
+        "end": 142.57,
+        "label": "S7"
+      },
+      {
+        "start": 142.57,
+        "end": 161.45,
+        "label": "S8"
+      },
+      {
+        "start": 161.45,
+        "end": 186.39,
+        "label": "S9"
+      },
+      {
+        "start": 186.39,
+        "end": 202.78,
+        "label": "S10"
+      },
+      {
+        "start": 202.78,
+        "end": 233.13,
+        "label": "S11"
+      },
+      {
+        "start": 233.13,
+        "end": 240.0,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.978,
+      "key": 0.842
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "emotional",
+      "tender",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a polished, modern rock track with a nostalgic and slightly melancholic atmosphere, built on a foundation of driving rhythms, clean electric guitars, and atmospheric keys. The energy dynamically shifts from an introspective verse to a powerful, soaring chorus, creating a feel reminiscent of classic heartland or arena rock. The production is wide and spacious, allowing the lead vocal to sit clearly above a dense but well-defined mix where all instruments have their own distinct place. A defining characteristic is the virtuosic, blues-infused guitar solo that opens the song, immediately establishing a high level of musicianship and setting an epic tone for the entire piece.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "That opening guitar solo lands like a statement of intent, blues-soaked and confident at 117.5 BPM, and the song earns it: 'driving on the fault line of what was and what could be' is the kind of chorus line that sticks because it actually means something. The verse imagery, Spanish towers, amber light, gulls over the California coast, builds a specific geography of longing, and when the whole thing lifts into the chorus it has the same chest-opening quality as peak Tom Petty. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "opening blues guitar solo",
+      "BPM 117.5",
+      "lyric: 'driving on the fault line of what was and what could be'",
+      "verse imagery: Spanish towers, amber woman, gulls",
+      "Tom Petty comparison for chorus lift"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

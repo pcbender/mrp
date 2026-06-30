@@ -1,0 +1,113 @@
+{
+  "track_id": "4castle--crimson-decision",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Crimson Decision - 4Castle.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--crimson-decision.opus"
+  },
+  "lyrics": "\\#Intro\nI am what stands in the dark and waits\n\\#Verse\nYou knew me as a child\nThe thing you feared at night\nI was patient with your silence\nNo promise to recite\nI watched through every turning\nNot judging, not involved\nYou called it indecision\nNo riddle, never solved\n\\#Chorus\nCrimson decision already made\nTo walk the path you can't evade\nEach moment stayed\nThe act delayed\nIt's always now\nIt's when, not how\nNo debt repaid\nBecome what you vowed\nTo be\n\\#Verse\nYou feared I'd break the vessel\nUnmake the life you knew\nThat choosing me would hollow\nWhat little light shone through\nSo you lived inside the maybe\nWhere safety wears a crown\nBut truth is never gentle\nWhen you can stop spinning 'round\n\\#Chorus\nCrimson decision already made\nTo walk the path you can't evade\nEach moment stayed\nThe act delayed\nIt's always now\nIt's when, not how\nNo debt repaid\nBecome what you vowed\nTo be\n\\#Verse\nYou stepped into the silence\nWhere you hoped you could remain\nNo longer seeking mercy\nNo longer needing blame\nYou wore me like a shadow\nThen saw I was your skin\nI was never near or far-\nI was always held within\n\\#Chorus\nCrimson decision already made\nTo walk the path you can't evade\nEach moment stayed\nThe act delayed\nIt's always now\nIt's when, not how\nNo debt repaid\nBecome what you vowed\nTo be\n\\#Outro\nI will remain\nI will remind\nI was always yours",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "A#",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 262.88,
+    "lufs": -15.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.95,
+        "label": "S1"
+      },
+      {
+        "start": 2.95,
+        "end": 18.69,
+        "label": "S2"
+      },
+      {
+        "start": 18.69,
+        "end": 52.62,
+        "label": "S3"
+      },
+      {
+        "start": 52.62,
+        "end": 68.66,
+        "label": "S4"
+      },
+      {
+        "start": 68.66,
+        "end": 101.8,
+        "label": "S5"
+      },
+      {
+        "start": 101.8,
+        "end": 127.83,
+        "label": "S6"
+      },
+      {
+        "start": 127.83,
+        "end": 170.04,
+        "label": "S7"
+      },
+      {
+        "start": 170.04,
+        "end": 197.63,
+        "label": "S8"
+      },
+      {
+        "start": 197.63,
+        "end": 214.44,
+        "label": "S9"
+      },
+      {
+        "start": 214.44,
+        "end": 262.88,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.943,
+      "key": 0.883
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This modern rock track creates an atmosphere of introspective determination, balancing a dense texture of layered guitars with a clear, earnest vocal performance. The energy is highly dynamic, building from driving, palm-muted verses into powerful, anthemic choruses with a propulsive and solid feel. The production is polished and spacious, allowing each element to occupy its own space in a wide stereo field without feeling cluttered, while the rhythm section provides a punchy, centered foundation. A defining characteristic is the powerful dynamic lift into the chorus at 01:11, where the arrangement swells and the vocal delivery intensifies, creating a moment of significant emotional release.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a brisk 136 BPM in a waltz-time signature, 'Crimson Decision' earns its momentum the hard way: a coiled, palm-muted verse that holds its breath until the chorus breaks open like a door kicked off its hinges. The lyric 'I was never near or far, I was always held within' lands the song's central idea cleanly, the kind of line that sounds inevitable once you've heard it. That lift at the first chorus, where the arrangement swells and the vocal stakes double, is the kind of dynamic payoff that reminds you why big rock production still matters. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "136 BPM",
+      "3/4 time signature",
+      "palm-muted verses",
+      "chorus dynamic lift at 01:11",
+      "lyric: 'I was never near or far, I was always held within'"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

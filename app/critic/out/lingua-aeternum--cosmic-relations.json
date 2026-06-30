@@ -1,0 +1,119 @@
+{
+  "track_id": "lingua-aeternum--cosmic-relations",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Cosmic Relations.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--cosmic-relations.opus"
+  },
+  "lyrics": "Fleet steps flicker through morning haze\nMessages carried on mirrored maze\nFire, water, blood and breath\nThe spark of life blowing through\n\nThe Gods align, they trace the vibrations…\nCosmic relations\nThe heavens are open\\\n\nLips of fire, eyes of bloom\nDesire awakens in velvet gloom\nTrident raised, tempest spun\nOceans kneel when rage is done\n\nThe Gods align, they trace the vibrations…\nCosmic relations\nThe heavens are open\\\n\nSteel on bone, heartbeat loud\nVictory dances beneath red cloud\nVault of stars, endless span\nSilence older than breath or man\n\nThe Gods align, they trace the vibrations…\nCosmic relations\nThe heavens are open\\\n\nCrown of storms, voice of flame\nLaw etched deep in heaven’s name\nSword of stone, seed in dust\nCycles turn because they must\n\nThe Gods align, they trace the vibrations…\nCosmic relations\nThe heavens are open\\\n\nThe heavens are open",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "A#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 286.24,
+    "lufs": -14.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 34.18,
+        "label": "S1"
+      },
+      {
+        "start": 34.18,
+        "end": 50.78,
+        "label": "S2"
+      },
+      {
+        "start": 50.78,
+        "end": 70.94,
+        "label": "S3"
+      },
+      {
+        "start": 70.94,
+        "end": 98.57,
+        "label": "S4"
+      },
+      {
+        "start": 98.57,
+        "end": 119.33,
+        "label": "S5"
+      },
+      {
+        "start": 119.33,
+        "end": 148.05,
+        "label": "S6"
+      },
+      {
+        "start": 148.05,
+        "end": 164.05,
+        "label": "S7"
+      },
+      {
+        "start": 164.05,
+        "end": 211.0,
+        "label": "S8"
+      },
+      {
+        "start": 211.0,
+        "end": 226.16,
+        "label": "S9"
+      },
+      {
+        "start": 226.16,
+        "end": 244.39,
+        "label": "S10"
+      },
+      {
+        "start": 244.39,
+        "end": 286.24,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.871
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "harmonica"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track establishes a grand, epic atmosphere with shimmering, layered guitars and powerful, soaring vocals. The energy is highly dynamic, building from a more reflective verse into a driving, triumphant chorus that feels both urgent and massive. The production is dense and polished, creating an immersive wall of sound where heavy guitars, powerful drums, and symphonic synths are well-balanced, allowing the lead vocal to cut through with clarity. A defining quality is the explosive transition into the chorus, where the full scope and power of the arrangement are unleashed, cementing the track's heroic and anthemic feel.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 161 BPM in A# minor, 'Cosmic Relations' moves fast and hits hard, with a chorus that opens up like a pressure valve releasing: 'The Gods align, they trace the vibrations' lands with the kind of lift you get from early U2 at their most unambiguous. The verses do real work too, stacking elemental imagery ('Steel on bone, heartbeat loud / Victory dances beneath red cloud') before each explosion into that anthemic refrain. The production earns its density, letting the vocal cut through the full wall of guitars and drums rather than getting swallowed by it. A highlight in their catalog, and a strong entry point for anyone new to the circle.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 161.5",
+      "key A# minor",
+      "chorus lyric 'The Gods align, they trace the vibrations'",
+      "verse lyric 'Steel on bone, heartbeat loud / Victory dances beneath red cloud'",
+      "explosive chorus transition from audio impression",
+      "vocal clarity through dense production"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

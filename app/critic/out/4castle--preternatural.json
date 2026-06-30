@@ -1,0 +1,105 @@
+{
+  "track_id": "4castle--preternatural",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Preternatural.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--preternatural.opus"
+  },
+  "lyrics": "",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 145.08,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.83,
+        "label": "S1"
+      },
+      {
+        "start": 5.83,
+        "end": 28.28,
+        "label": "S2"
+      },
+      {
+        "start": 28.28,
+        "end": 43.56,
+        "label": "S3"
+      },
+      {
+        "start": 43.56,
+        "end": 68.52,
+        "label": "S4"
+      },
+      {
+        "start": 68.52,
+        "end": 87.68,
+        "label": "S5"
+      },
+      {
+        "start": 87.68,
+        "end": 113.17,
+        "label": "S6"
+      },
+      {
+        "start": 113.17,
+        "end": 142.9,
+        "label": "S7"
+      },
+      {
+        "start": 142.9,
+        "end": 145.08,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.983,
+      "key": 0.904
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "uplifting",
+      "energetic",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "synthesizer"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track is a dense wall of high-energy, neoclassical-influenced shred rock. The atmosphere is aggressive and virtuosic, driven by a heavily saturated, mid-scooped electric guitar tone that sits front and center. The production is surprisingly clear for how dense it is, with punchy, tight drums cutting through the mix and a solid bass guitar providing a consistent low-end foundation. The defining quality is the relentless technicality of the guitar performance, established immediately in the opening seconds with a flashy, harmonized lick that sets an intense and exhilarating tone for the entire piece.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 129 BPM in E minor, 'Preternatural' wastes no time: a harmonized guitar lick lands in the first few seconds and sets the terms for everything that follows, which is essentially two and a half minutes of Raven Cortez making a very convincing case that neoclassical shred has no ceiling. The production is punchy and clean, rare for music this dense, and Mack Bishop's bass holds the low end steady enough that the whole thing breathes even when the guitars are stacked to the rafters. It reads a bit like Racer X meeting early Whitesnake at a blues crossroads, and at 2:25 it leaves you wanting more rather than relieved it's over. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "129 BPM",
+      "E minor",
+      "harmonized guitar lick in opening seconds",
+      "2:25 duration",
+      "bass foundation",
+      "dense but clear production",
+      "neoclassical shred character"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

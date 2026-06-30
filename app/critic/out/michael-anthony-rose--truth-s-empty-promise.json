@@ -1,0 +1,124 @@
+{
+  "track_id": "michael-anthony-rose--truth-s-empty-promise",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Truth's Empty Promise.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--truth-s-empty-promise.opus"
+  },
+  "lyrics": "Clark flew a lot in the old days\nHe was a fixer, of sorts\nInvested in the good old ways\nMore than the sum of his parts\n\nIn every town he'd ask around\n\"In what do you believe?\"\nThe answers shared a common sound\nTruth and Justice, God and Country\n\nHe had a box of memories\nAnd labeled it as Me\nHe filled it full of certainties\nBut, still, the box stayed empty\n\nNothing's gonna set him free\nTruth's Empty Promise - Change Eternally\n\nNow Clark has mostly gone to ground\nThere's just too much needs fixing\nEndless voices ever louder\nHe is witness, not believing\n\nHe can't help thinking \"Where'd it go?\"\n\"That sense that we were us.\"\nOnce we, then me, now hollow\nAs his Sunday suit gathers dust\n\nHe had a box of memories\nAnd labeled it as Me\nHe filled it full of certainties\nBut, still, the box stayed empty\n\nNothing's gonna set him free\nTruth's Empty Promise - Change Eternally\n\nHe had a box of memories\nAnd labeled it as Me\nHe filled it full of certainties\nBut, still, the box stayed empty\n\nNothing's gonna set him free\nTruth's Empty Promise - Change Eternally",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 80.7,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 251.74,
+    "lufs": -14.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.59,
+        "label": "S1"
+      },
+      {
+        "start": 11.59,
+        "end": 30.0,
+        "label": "S2"
+      },
+      {
+        "start": 30.0,
+        "end": 47.79,
+        "label": "S3"
+      },
+      {
+        "start": 47.79,
+        "end": 64.37,
+        "label": "S4"
+      },
+      {
+        "start": 64.37,
+        "end": 89.7,
+        "label": "S5"
+      },
+      {
+        "start": 89.7,
+        "end": 114.2,
+        "label": "S6"
+      },
+      {
+        "start": 114.2,
+        "end": 140.83,
+        "label": "S7"
+      },
+      {
+        "start": 140.83,
+        "end": 156.29,
+        "label": "S8"
+      },
+      {
+        "start": 156.29,
+        "end": 190.82,
+        "label": "S9"
+      },
+      {
+        "start": 190.82,
+        "end": 218.22,
+        "label": "S10"
+      },
+      {
+        "start": 218.22,
+        "end": 237.73,
+        "label": "S11"
+      },
+      {
+        "start": 237.73,
+        "end": 251.74,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.974,
+      "key": 0.898
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "country rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates an intimate and narrative atmosphere, built on a foundation of warm, fingerpicked acoustic guitars and a clear, earnest male vocal. The energy is contemplative and steady, evoking a classic folk-rock or Americana feel with a gentle rhythm section that allows the storytelling to take center stage. The production is clean and spacious, with each instrument occupying its own sonic territory, creating a balanced and polished mix where the vocals are the primary focus. A defining quality is the dynamic lift in the chorus, where the melody becomes more soaring, contrasted by a dramatic instrumental transition near the end that shifts the song's mood to a more cinematic and sparse conclusion.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Rose uses the figure of Clark, a fixer from an older America, to map something harder to name: the slow erosion of collective identity into private certainty that still leaves a box empty. The lyric 'Once we, then me, now hollow' does the heavy lifting with real economy, and the chorus hook, built around that contradiction in the title, earns its repetition. At a steady 80 BPM in G major, the warm fingerpicked guitar keeps things intimate without turning precious, and the dynamic lift into the chorus lands the way early Don Henley could, melody opening up just as the stakes rise. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'Once we, then me, now hollow'",
+      "chorus hook and title phrase 'Truth's Empty Promise'",
+      "BPM 80.7 and G major key",
+      "fingerpicked acoustic guitar texture",
+      "dynamic chorus lift",
+      "Don Henley comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

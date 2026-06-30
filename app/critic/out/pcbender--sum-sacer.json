@@ -1,0 +1,135 @@
+{
+  "track_id": "pcbender--sum-sacer",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Sum Sacer.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--sum-sacer.opus"
+  },
+  "lyrics": "The diner cold in deepest night, the welcome sign alight\nThe neon buzzed like it could fade, but still it burned so bright\nThe cook behind the counter stood-a half-familiar song\nI said, “Your sign says ‘We Are Closed’”\nHe said, “But you’ve been searching for so long.”\n\nHe waved me past the coat rack, and said, “Try the special plate.”\nI slid into a vinyl booth; the hour had gotten late\n“I guess you saw my headlights flash,” I said, “or felt my need.”\nHe placed the plate down, hot and full-\nAnd simply said, “Or not. And now you’re me.”\n\nAnd I asked him what it meant to stay\nWhen every road has led away\nHe showed me ink upon his arm-\nTwo words that caught and disarmed\nSum Sacer. I am Other\nSet apart, and not recovered\n\n“It isn’t fear, it isn’t fate,” he said with steady hands\n“It’s not a cult or calling card, or something someone planned.”\n“My name is Blue, and you’d be Tom. I’ve been waiting a long time\nThe road you took, it brought you here-\nThis counter’s yours. The keys, no longer mine.”\n\nI asked if he was holy then, a prophet or a ghost\nHe laughed and said, “I’m less than that, and somehow still the most.”\n“I am one who once believed the cry would make me whole\nBut when the answer never came-\nThat silence carved me soul from soul.”\n\nI cleaned the plate, he met my eyes\nI felt the weight, I knew the why\nThe words rang out, no longer grim-\nThey felt like truth, not hymn\nSum Sacer. I am other\nNot quite saint, not quite brother\n\nI am one who has been removed\nFrom the realm of men and given to the gods\nI didn’t ask to be received\nI only asked to not be lost\n\nSo if you find this diner’s glow\nWhen all your maps have let you go\nSit down and hear the gospel raw-\nThe kind that never saw applause\nSum Sacer. Not forsaken-\nJust the name you take when\nYou’ve stopped asking to be saved\nAnd start becoming… what you gave",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "D",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 353.0,
+    "lufs": -16.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 17.95,
+        "label": "S1"
+      },
+      {
+        "start": 17.95,
+        "end": 49.06,
+        "label": "S2"
+      },
+      {
+        "start": 49.06,
+        "end": 78.88,
+        "label": "S3"
+      },
+      {
+        "start": 78.88,
+        "end": 107.88,
+        "label": "S4"
+      },
+      {
+        "start": 107.88,
+        "end": 125.02,
+        "label": "S5"
+      },
+      {
+        "start": 125.02,
+        "end": 145.98,
+        "label": "S6"
+      },
+      {
+        "start": 145.98,
+        "end": 184.13,
+        "label": "S7"
+      },
+      {
+        "start": 184.13,
+        "end": 208.68,
+        "label": "S8"
+      },
+      {
+        "start": 208.68,
+        "end": 226.7,
+        "label": "S9"
+      },
+      {
+        "start": 226.7,
+        "end": 241.72,
+        "label": "S10"
+      },
+      {
+        "start": 241.72,
+        "end": 263.83,
+        "label": "S11"
+      },
+      {
+        "start": 263.83,
+        "end": 285.56,
+        "label": "S12"
+      },
+      {
+        "start": 285.56,
+        "end": 348.49,
+        "label": "S13"
+      },
+      {
+        "start": 348.49,
+        "end": 353.0,
+        "label": "S14"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.953,
+      "key": 0.858
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "classic rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This folk-rock ballad creates a melancholic and intimate atmosphere, opening with a sparse texture of accordion and acoustic guitar that sets a lonely, narrative stage. The song's energy builds organically from a gentle, storytelling feel into a fuller, more passionate band arrangement, maintaining a grounded and heartfelt quality throughout. The production is clean and spacious, with a forward vocal that feels personal and direct, while the well-balanced mix allows each instrument to support the story without feeling crowded. A defining quality is the recurring accordion melody, which gives the track a unique, world-weary character that underscores the themes of wandering and searching.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds 'Sum Sacer' like a short story you don't realize is about you until the last page. The song runs nearly six minutes in D minor, and it earns every one of them: a late-night diner, a cook named Blue, a transfer of purpose across a vinyl booth, and a Latin tattoo that becomes the whole thesis. The line 'that silence carved me soul from soul' is the kind of thing you write once in a career if you're lucky. Production-wise, the accordion threading through the arrangement gives it a worn, road-worn quality closer to early Waits or Prine than anything on country radio, and the way the band fills in gradually mirrors the story's own movement from solitude toward something like belonging. At a pace that runs faster than it feels, the track never rushes the narrative, which takes real discipline. A highlight, and one of his most considered pieces.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "D minor key",
+      "5:53 duration",
+      "lyric: 'that silence carved me soul from soul'",
+      "lyric: 'Sum Sacer. Not forsaken'",
+      "accordion motif noted in audio impression",
+      "14-section structure / gradual band build",
+      "BPM 161.5 running faster than it feels"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

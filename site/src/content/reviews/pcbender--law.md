@@ -1,0 +1,8 @@
+---
+track_id: pcbender--law
+impression: "This track opens with a maelstrom of technical guitar work, immediately establishing a dense, aggressive texture and a defiant, high-stakes emotional atmosphere. The energy is exceptionally high and unrelenting, driven by powerful, intricate drumming and layers of distorted guitars that create an urgent and assertive feel. The production is modern and polished, creating a massive sonic space where the clear, powerful vocals sit prominently atop the intense instrumentation without feeling cluttered. A defining quality is the dynamic contrast between the technically complex verses and the soaring, anthemic chorus, punctuated by a virtuosic and melodic guitar solo that showcases extreme musical skill."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+'Law' arrives right after 'Free' has spent six and a half minutes in a state of philosophical tension, and it answers that tension with momentum. The waltz-time groove at a brisk pace shouldn't feel as unstoppable as it does, but the 3/4 rhythm gives the whole thing a rolling, forward-leaning energy that carries the listener without pushing. The chorus lands the argument cleanly: 'I follow the laws that protect the weak / and I walk through the rest of the wall' is the kind of line that earns its anthemic treatment, and the production delivers, with vocals sitting right up front over layers of distorted guitar that push without burying the words. The guitar solo is the track's other peak, melodic enough to feel earned rather than decorative. It's the sort of principled, plainspoken rock that recalls prime-era John Hiatt or the more righteous end of early Tom Petty, and it consolidates the album's moral seriousness with something that moves.

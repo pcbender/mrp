@@ -1,0 +1,99 @@
+{
+  "track_id": "pcbender--sawmill-pond",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Sawmill Pond.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--sawmill-pond.opus"
+  },
+  "lyrics": "I was seventeen with a rust-red truck\nDust on my boots, heart full of luck\nThe summer sun lit the water gold\nAt Sawmill Pond, where secrets unfold\n\nShe showed up barefoot, hair like flame\nSaid her name soft - I never asked again\nWe dove in deep, both young and strong\nCarving forever what never felt wrong\n\nSawmill Pond, where the world stood still\nTime poured slow like the evening chill\nTwo shadows tangled on a drifting day\nNo map, no rules, just hearts at play\nI loved her once in the wild and the warm\nDown by the Sawmill Pond\n\nWe talked 'bout stars and leaving town\nBuilt castles in mud just to watch 'em drown\nShe kissed like fire, left like rain\nI never saw her face again\n\nSawmill Pond, where the echoes stay\nIn ripples of a long-lost day\nThe boy I was still haunts that shore\nWith her laugh caught in the open door\nI loved her once in the wild and the warm\nDown by the Sawmill Pond\n\nNow I'm older, lines in my skin\nStill hear her voice when the night drifts in\nRegret is gentle, but it never lets go\nThat summer when our hearts burned hot and slow\n\nSawmill Pond, in the hush of dusk\nMemory's ghost in a pickup truck\nTwo kids chasing what they couldn't keep\nWoke something in me I can never repeat\nI loved her once in the wild and the warm\nDown by the Sawmill Pond\n\nYeah, I loved her once\nAt Sawmill Pond",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 212.74,
+    "lufs": -14.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.93,
+        "label": "S1"
+      },
+      {
+        "start": 2.93,
+        "end": 19.88,
+        "label": "S2"
+      },
+      {
+        "start": 19.88,
+        "end": 40.08,
+        "label": "S3"
+      },
+      {
+        "start": 40.08,
+        "end": 85.08,
+        "label": "S4"
+      },
+      {
+        "start": 85.08,
+        "end": 160.47,
+        "label": "S5"
+      },
+      {
+        "start": 160.47,
+        "end": 188.92,
+        "label": "S6"
+      },
+      {
+        "start": 188.92,
+        "end": 212.74,
+        "label": "S7"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.966,
+      "key": 0.944
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track features a warm, dynamic texture that shifts from sparse, acoustic-led storytelling in the verses to a wide, anthemic rock soundscape in the choruses, creating a deeply nostalgic and bittersweet atmosphere. The energy builds significantly throughout, moving from a gentle, reflective feel to a driving, passionate release that feels both powerful and liberating. The production is polished and spacious, allowing the dense layers of electric guitar and powerful drums in the choruses to feel expansive without overwhelming the clear, earnest lead vocal. The song is defined by these dramatic dynamic shifts, which effectively mirror the theme of a quiet memory bursting with intense, youthful emotion.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender writes the kind of summer-memory song that earns its nostalgia by earning its details first: a rust-red truck, a girl who \"kissed like fire, left like rain,\" a mud castle built just to watch it drown. In E major and moving at a brisk clip, the track opens spare and acoustic before the chorus opens up into a wide, drums-forward rock swell that lands somewhere between John Mellencamp's heartland tenderness and early Tom Petty urgency. The production is smart enough to let those dynamic swings do the heavy lifting, so when the final chorus hits, it feels like the memory itself finally breaking the surface. A highlight, and one of his most complete songs.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: kissed like fire, left like rain",
+      "lyric: built castles in mud just to watch em drown",
+      "E major key",
+      "acoustic-to-electric dynamic shift",
+      "John Mellencamp / Tom Petty comparison",
+      "BPM context: brisk pace"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

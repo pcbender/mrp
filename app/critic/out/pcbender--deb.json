@@ -1,0 +1,104 @@
+{
+  "track_id": "pcbender--deb",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Deb.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--deb.opus"
+  },
+  "lyrics": "Deb lights up the room\nSimple smile beaming off the mirrored ball - Illuminating\nHer casual conquest is more than a game\nShe sees nothing more than the best in us all-Contemplating\n\nShe gives me a glance\nAnd I know she has stolen my heart\n\nMagical moving the room is still spinning\nFrom the force of her kindness and joy of her being\nI am swept up in silence and a little bit frightened\nThe adventure unfolding each day of my life with Deb\n\nDeb turns on a dime\nRefuses to listen when asked to repeat herself - Procrastination\nShe can't be bothered when asked to explain\nWhy everyone seems to be confused - Clarification\n\nShe squeezes my hand\nAnd I know I am part of her game\n\nMagical moving the room is still spinning\nFrom the force of her kindness and joy of her being\nI am swept up in silence and a little bit frightened\nThe adventure unfolding each day of my life with Deb\n\nDeb heads to the door\nFollowed by stares and sparks and an entourage - Prevaricating\nThey all hear what they want to believe\nHer silence mysterious as the new moon rising - Intoxicating\n\nShe opens the door\nAnd we step out into the cool night\n\nMagical moving the room is still spinning\nFrom the force of her kindness and joy of her being\nI am swept up in silence and a little bit frightened\nThe adventure unfolding each day of my life with Deb",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 92.3,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 193.28,
+    "lufs": -13.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.79,
+        "label": "S1"
+      },
+      {
+        "start": 2.79,
+        "end": 22.57,
+        "label": "S2"
+      },
+      {
+        "start": 22.57,
+        "end": 73.07,
+        "label": "S3"
+      },
+      {
+        "start": 73.07,
+        "end": 88.14,
+        "label": "S4"
+      },
+      {
+        "start": 88.14,
+        "end": 130.31,
+        "label": "S5"
+      },
+      {
+        "start": 130.31,
+        "end": 154.11,
+        "label": "S6"
+      },
+      {
+        "start": 154.11,
+        "end": 188.82,
+        "label": "S7"
+      },
+      {
+        "start": 188.82,
+        "end": 193.28,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.87
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track features a polished, modern rock texture centered around crunchy electric guitars, a driving rhythm section, and a clear lead vocal. The atmosphere is one of energetic admiration and excitement, creating a feel-good, celebratory mood from the very first note. The production quality is high, with a dense yet well-defined mix where all the elements sit together cohesively, allowing the lead vocal to cut through with clarity. A distinctive quality is the powerful, anthemic chorus, which acts as a major energy lift and a memorable, singalong hook for the entire piece.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A warm, good-natured portrait of a woman who lights up every room she enters, 'Deb' earns its chorus with genuine feeling rather than sentimentality. The track rolls in at a comfortable 92 BPM in D major, and PCBender leans into that mid-tempo confidence the same way Tom Petty used to, letting the crunchy electric guitar do the heavy lifting while the vocal stays conversational and then opens up wide on 'the adventure unfolding each day of my life with Deb.' That chorus is the engine here, an anthemic lift that lands every time it comes around. The lyrical conceit is smart too, pairing the three-verse character study with single-word parenthetical labels like 'Intoxicating' and 'Prevaricating' that give Deb a knowing complexity without overstating it.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "92 BPM",
+      "D major",
+      "chorus hook: 'the adventure unfolding each day of my life with Deb'",
+      "lyrical parentheticals: Intoxicating, Prevaricating",
+      "crunchy electric guitar production",
+      "Petty comparison for mid-tempo confidence"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

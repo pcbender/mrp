@@ -293,7 +293,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--the-only-one.mp3
     lyrics_text: 'You say that I don''t listen
 
       Can''t hear a word you say
@@ -376,7 +376,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--i-think-i-m-falling.mp3
     lyrics_text: 'Drifting through the silence, I can''t find the ground
 
       Every word unspoken, still echoes all around
@@ -451,7 +451,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--deb.mp3
     lyrics_text: 'Deb lights up the room
 
       Simple smile beaming off the mirrored ball - Illuminating
@@ -531,7 +531,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--this-love-grows.mp3
     lyrics_text: 'The years have flown like whispers in the wind
 
       Lines on our faces tell where we''ve been

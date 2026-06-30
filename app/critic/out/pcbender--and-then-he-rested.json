@@ -1,0 +1,117 @@
+{
+  "track_id": "pcbender--and-then-he-rested",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/And Then He Rested.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--and-then-he-rested.opus"
+  },
+  "lyrics": "Road dust scuffs his well worn boots\nA guitar case packed with worn-out truths\nCrowds cheered loud but the silence speaks\nNow he dreams of peace, not crowds or flights\n\nHotel pillows stiff as stone\nBright lights but he's all alone\nOld applause like footsteps fades\nNow time to pause the sweet charade\n\nAnd then he rested\nClosed his eyes\nUnder his roof\nBeneath his skies\nThe road fell silent\nThe chords went still\nHis heart found home and always will\n\nTales he sang carved deep within\nA life of echoes, a weary hymn\nPhone calls can’t relive the tale\nHe finished strong too tired to fail\n\nAnd then he rested\nClosed his eyes\nUnder his roof\nBeneath his skies\nThe stage grew dim\nThe chords fell still\nHis heart found home and always will\n\nEvery mile whispered stay, don't go\nBut the fans called for one more show\nAt last, the road loops back around\nSweet serenity now softly found\n\nAnd then he rested\nClosed his eyes\nUnder his roof\nBeneath his skies\nThe stage grew dim\nThe chords fell still\nHis heart found home and always will\n\nAnd then he rested\nAnd then he rested\nAnd then he rested\nHis heart came home and always will",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "A#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 232.92,
+    "lufs": -16.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 15.09,
+        "label": "S1"
+      },
+      {
+        "start": 15.09,
+        "end": 36.92,
+        "label": "S2"
+      },
+      {
+        "start": 36.92,
+        "end": 59.3,
+        "label": "S3"
+      },
+      {
+        "start": 59.3,
+        "end": 77.55,
+        "label": "S4"
+      },
+      {
+        "start": 77.55,
+        "end": 97.96,
+        "label": "S5"
+      },
+      {
+        "start": 97.96,
+        "end": 121.42,
+        "label": "S6"
+      },
+      {
+        "start": 121.42,
+        "end": 138.97,
+        "label": "S7"
+      },
+      {
+        "start": 138.97,
+        "end": 154.02,
+        "label": "S8"
+      },
+      {
+        "start": 154.02,
+        "end": 197.53,
+        "label": "S9"
+      },
+      {
+        "start": 197.53,
+        "end": 222.03,
+        "label": "S10"
+      },
+      {
+        "start": 222.03,
+        "end": 232.92,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.942,
+      "key": 0.939
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a reflective and weary atmosphere through its sparse, acoustic-driven texture and an intimate male storyteller vocal. The energy is consistently mellow and introspective, giving it the feel of a classic, road-weary ballad with a gentle, flowing rhythm. The production is clean and spacious, allowing the lead vocal and primary guitar to sit clearly in the front, while subtle instrumental layers and reverb add depth without creating density. A defining quality is the gentle swell into the chorus, where layered vocal harmonies lift the emotional weight and provide a poignant contrast to the understated verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always written best when he's writing from inside something real, and 'And Then He Rested' earns its place in that company. The verse imagery does the heavy lifting without overselling it: 'old applause like footsteps fades' lands with the quiet accuracy of someone who's actually stood in that silence. At a brisk 129 BPM in A# major, the track resists the drag that sinks most road-weary ballads, and the chorus lift, built on stacked vocal harmonies swelling out of a spare acoustic frame, gives the payoff genuine weight. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric quote: 'old applause like footsteps fades'",
+      "BPM 129.2 in A# major",
+      "chorus vocal harmonies lift",
+      "sparse acoustic verse texture"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

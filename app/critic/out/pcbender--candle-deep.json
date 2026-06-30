@@ -1,0 +1,140 @@
+{
+  "track_id": "pcbender--candle-deep",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Candle Deep.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--candle-deep.opus"
+  },
+  "lyrics": "A candle deep\n\nSome walk with fire hidden low\nA glow within, a pulse they know\nIt's not for show, it doesn't blind\nBut lights the edges of the mind\nOthers pass with empty gaze\nLost in noise and shadowed days\n\nThey've never burned, so never yearn\nFor embers they can't discern\n\nA candle deep\nLight in eyes\nWhat you seek\nThey tantalize\nIf never had\nNor ever seen\nNo way to grasp\nWhat might have been…\nA candle deep\n\nTheir hands reach out for plastic stars\nWhile we trace constellations far\nThe weight of sight, the cost of knowing\nThe pull of tides forever flowing\nSome hearts beat loud with questions asked\nSome minds stay still in comfort masked\n\nTwo worlds that spiral, never touch\nOne seeing all, one missing much\n\nA candle deep\nLight in eyes\nWhat you seek\nThey tantalize\nIf never had\nNor ever seen\nNo way to grasp\nWhat might have been…\nA candle deep\n\nAre those who see and strive to be\nBetter served than those made empty\nWhen awareness brings its gravity\nAnd ignorance its cavity\nThe growing possibility\nA curse on all who ask… \"Maybe?\"\n\nA candle deep\nLight in eyes\nWhat you seek\nThey tantalize\nIf never had\nNor ever seen\nNo way to grasp\nWhat might have been…\nA candle deep\n\nThe light inside\nBoth gift and wound\nA torch we bear\nA weight assumed\nAnd sometimes in the deepest night\nWe envy those without the sight",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 103.4,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 315.2,
+    "lufs": -17.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 21.22,
+        "label": "S1"
+      },
+      {
+        "start": 21.22,
+        "end": 36.87,
+        "label": "S2"
+      },
+      {
+        "start": 36.87,
+        "end": 53.73,
+        "label": "S3"
+      },
+      {
+        "start": 53.73,
+        "end": 72.07,
+        "label": "S4"
+      },
+      {
+        "start": 72.07,
+        "end": 96.53,
+        "label": "S5"
+      },
+      {
+        "start": 96.53,
+        "end": 121.32,
+        "label": "S6"
+      },
+      {
+        "start": 121.32,
+        "end": 137.04,
+        "label": "S7"
+      },
+      {
+        "start": 137.04,
+        "end": 153.25,
+        "label": "S8"
+      },
+      {
+        "start": 153.25,
+        "end": 174.5,
+        "label": "S9"
+      },
+      {
+        "start": 174.5,
+        "end": 206.05,
+        "label": "S10"
+      },
+      {
+        "start": 206.05,
+        "end": 237.82,
+        "label": "S11"
+      },
+      {
+        "start": 237.82,
+        "end": 262.76,
+        "label": "S12"
+      },
+      {
+        "start": 262.76,
+        "end": 283.38,
+        "label": "S13"
+      },
+      {
+        "start": 283.38,
+        "end": 299.49,
+        "label": "S14"
+      },
+      {
+        "start": 299.49,
+        "end": 315.2,
+        "label": "S15"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.946,
+      "key": 0.912
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "country rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a thoughtful and spacious texture, led by a warm piano and atmospheric pads that establish an earnest, searching emotional atmosphere. The energy follows a classic alt-rock arc, building from contemplative verses into a driving, anthemic chorus that feels both powerful and uplifting. The production quality is modern and clean, with punchy drums and a solid bass providing a strong foundation for layers of clean and overdriven guitars that add depth without creating a cluttered mix. A defining moment occurs in the bridge around 3:51, where the instrumentation strips back to a sparse piano figure beneath a rhythmic vocal delivery, creating an intimate point of reflection before the final, climactic chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz-time meditation on the cost of awareness, 'Candle Deep' earns its five-plus minutes by letting the question breathe: the closing couplet, 'sometimes in the deepest night / we envy those without the sight,' lands with the kind of earned weight you'd expect from John Prine or early Don Henley at their most philosophical. The production arc is well-judged, building from warm piano and open space into a full, punchy chorus, then pulling back to a stripped piano figure around the bridge that resets the emotional stakes before the final push. PCBender's instinct for structure in G major at a measured 103 BPM gives the song room to accumulate rather than rush, and the restraint pays off.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "closing lyric couplet quoted",
+      "bridge at approximately 3:51 with sparse piano",
+      "G major key",
+      "103 BPM tempo",
+      "3/4 waltz time",
+      "5:15 duration",
+      "John Prine and Don Henley comparisons"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

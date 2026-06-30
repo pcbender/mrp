@@ -1,0 +1,124 @@
+{
+  "track_id": "pcbender--rufous",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Rufous.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--rufous.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "G#",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 220.24,
+    "lufs": -13.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 8.52,
+        "label": "S1"
+      },
+      {
+        "start": 8.52,
+        "end": 30.7,
+        "label": "S2"
+      },
+      {
+        "start": 30.7,
+        "end": 47.37,
+        "label": "S3"
+      },
+      {
+        "start": 47.37,
+        "end": 66.08,
+        "label": "S4"
+      },
+      {
+        "start": 66.08,
+        "end": 81.92,
+        "label": "S5"
+      },
+      {
+        "start": 81.92,
+        "end": 111.97,
+        "label": "S6"
+      },
+      {
+        "start": 111.97,
+        "end": 130.84,
+        "label": "S7"
+      },
+      {
+        "start": 130.84,
+        "end": 146.47,
+        "label": "S8"
+      },
+      {
+        "start": 146.47,
+        "end": 166.63,
+        "label": "S9"
+      },
+      {
+        "start": 166.63,
+        "end": 185.32,
+        "label": "S10"
+      },
+      {
+        "start": 185.32,
+        "end": 201.99,
+        "label": "S11"
+      },
+      {
+        "start": 201.99,
+        "end": 220.24,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.976,
+      "key": 0.843
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a confident and soulful blues-rock instrumental with a vintage, live-session feel. The energy is consistently high, driven by a tight rhythm section and an expressive, overdriven electric guitar that performs intricate licks and soulful bends. The production is clean and well-balanced, creating a spacious mix where the lead guitar, organ, bass, and drums each have a distinct and present place. A defining moment occurs around 0:49 with a blistering, technically impressive guitar run that injects a surge of excitement into the otherwise cool, steady groove.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz at 161 BPM in G# minor sounds like a contradiction, but PCBender makes it feel inevitable: the 3/4 groove locks in tight while that overdriven lead guitar works the upper register with the kind of confident, unhurried bends you hear on classic Clapton or early Allman Brothers live cuts. The blistering run that arrives around the 0:49 mark is the track's centerpiece, a moment of genuine technical fire that earns every second of the steady groove surrounding it. 'Rufous' does its job and does it well.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "BPM 161.5",
+      "3/4 time",
+      "G# minor",
+      "0:49 guitar run",
+      "overdriven lead guitar",
+      "blues-rock waltz structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

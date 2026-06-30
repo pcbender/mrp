@@ -1,0 +1,106 @@
+{
+  "track_id": "stab--hana-on-the-way",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Hāna On The Way.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--hana-on-the-way.opus"
+  },
+  "lyrics": "This post-rock track opens with ocean waves and quiet harbor ambience, segueing into a syncopated pulsing bass motif, Tom-heavy, laidback drums balance the groove, Dreamy electric guitar and electric piano craft a floating, evolving soundscape, Expressive male baritone vocals trace a moody, exploratory melody across shifting harmonies, Sparse textures expand with subtle, slow-building instrumental interplay, focusing on restraint, The final verse softens, underscored by empathetic delivery, then dissolves into ambient ocean waves that fade into the distance. The lyric delivery is like a meditation as the singer discovers personal truths, introspection, confessional\n\nAn indie rock dark love song with industrial edges. The lyric delivery is like a meditation as the singer discovers personal truths, introspection and confessions",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 204.0,
+    "lufs": -14.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.8,
+        "label": "S1"
+      },
+      {
+        "start": 11.8,
+        "end": 34.6,
+        "label": "S2"
+      },
+      {
+        "start": 34.6,
+        "end": 65.57,
+        "label": "S3"
+      },
+      {
+        "start": 65.57,
+        "end": 87.7,
+        "label": "S4"
+      },
+      {
+        "start": 87.7,
+        "end": 115.84,
+        "label": "S5"
+      },
+      {
+        "start": 115.84,
+        "end": 132.75,
+        "label": "S6"
+      },
+      {
+        "start": 132.75,
+        "end": 154.99,
+        "label": "S7"
+      },
+      {
+        "start": 154.99,
+        "end": 204.0,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.974,
+      "key": 0.893
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "peaceful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a vast, ethereal atmosphere with spacious pads and a breathy, reverb-heavy female vocal, establishing a contemplative and almost spiritual mood from the start. The energy builds dramatically from this calm introduction into a powerful, driving alternative rock chorus, defined by a dense wall of distorted guitars and a feeling of anthemic release. The production expertly handles this dynamic shift, contrasting the sparse, open verses with a compressed, powerful chorus where the lead vocal still cuts through cleanly. A defining characteristic is this stark transition from serene ambiance to explosive rock, a powerful shift that forms the track's core emotional and sonic identity.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Hana on the Way\" opens with the sound of actual ocean waves before that syncopated bass motif pulls you into something quieter and more inward than STAB's usual full-throttle mode. In D major at a clipped 152 BPM, the track rides a tom-heavy groove while dreamy electric guitar and electric piano float above it, leaving room for a baritone vocal that feels less like performance and more like someone thinking out loud. The restraint is the point here, and it mostly earns it; the final verse in particular, where the arrangement softens and the delivery turns almost confessional, is the kind of moment that rewards a second listen. It's a grower, and a worthwhile one for anyone who wants to hear STAB trade the lightning bolt for something closer to a slow burn.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 2,
+      "label": "soft_floor"
+    },
+    "anchors_used": [
+      "ocean waves opening and closing",
+      "syncopated bass motif",
+      "tom-heavy groove",
+      "D major",
+      "152 BPM",
+      "baritone vocal described as confessional",
+      "final verse softening",
+      "electric guitar and electric piano combination"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

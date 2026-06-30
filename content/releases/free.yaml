@@ -144,7 +144,7 @@ release:
     isrc: SE5752541120
     duration: '5:03'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--law.mp3
     links:
       apple_music: https://music.apple.com/us/album/law/1860637805?i=1860637811
       youtube: https://www.youtube.com/watch?v=rnJBKm-khZc
@@ -228,7 +228,7 @@ release:
     isrc: SE5752541121
     duration: '5:22'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--love.mp3
     links:
       apple_music: https://music.apple.com/us/album/love/1860637805?i=1860637812
       youtube: https://www.youtube.com/watch?v=Ptwb6NeGRbg
@@ -342,7 +342,7 @@ release:
     isrc: SE5752541122
     duration: '5:18'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--god.mp3
     links:
       apple_music: https://music.apple.com/us/album/god/1860637805?i=1860637815
       youtube: https://www.youtube.com/watch?v=2SlM6_btv2w
@@ -448,7 +448,7 @@ release:
     isrc: SE5752541123
     duration: '6:40'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--death.mp3
     links:
       apple_music: https://music.apple.com/us/album/death/1860637805?i=1860637816
       youtube: https://www.youtube.com/watch?v=UzRc9HbibrM
@@ -545,7 +545,7 @@ release:
     isrc: SE5752541124
     duration: '5:00'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--desire.mp3
     links:
       apple_music: https://music.apple.com/us/album/desire/1860637805?i=1860637819
       youtube: https://www.youtube.com/watch?v=wi5DK50zXkU
@@ -658,7 +658,7 @@ release:
     isrc: SE5752541125
     duration: '4:48'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--difference.mp3
     links:
       apple_music: https://music.apple.com/us/album/difference/1860637805?i=1860638017
       youtube: https://www.youtube.com/watch?v=ASulp7ZfTcA
@@ -751,7 +751,7 @@ release:
     isrc: SE5752541126
     duration: '5:19'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--meaning.mp3
     links:
       apple_music: https://music.apple.com/us/album/meaning/1860637805?i=1860638018
       youtube: https://www.youtube.com/watch?v=KjMYkXEyGHc
@@ -843,7 +843,7 @@ release:
     isrc: SE5752541127
     duration: '7:14'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--sovereign.mp3
     links:
       apple_music: https://music.apple.com/us/album/sovereign/1860637805?i=1860638020
       youtube: https://www.youtube.com/watch?v=RvNFNG5egX4

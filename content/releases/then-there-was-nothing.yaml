@@ -38,7 +38,7 @@ release:
     isrc: CALVP2562048
     duration: '7:12'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--then-there-was-nothing.mp3
     instrumental: false
     lyrics_text: 'I walked along a misty pier
 

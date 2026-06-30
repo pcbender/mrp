@@ -1,0 +1,123 @@
+{
+  "track_id": "stab--just-a-waste-of-tears",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Just A Waste Of Tears.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--just-a-waste-of-tears.opus"
+  },
+  "lyrics": "He moves through the blue light\nLike a signal through the wall\nNo name on his lips now\nNo truth at all\n\nHis shadow in the doorway\nHis hand against the glass\nHe leaves the room electric\nThen he passes\n\nI wait where his silence bends\nI break where his current ends\n\nEvery time he reappears\nI’m lost within his wires\nEvery time he disappears\nIt’s just a waste of tears\n\nA shape inside the static\nA face I almost know\nHe pulls me like a circuit\nThen lets go\n\nNo promise in his movement\nNo mercy in his glow\nI feel him in the distance\nCold and close\n\nI wait where his silence bends\nI break where his current ends\n\nEvery time he reappears\nI’m lost within his wires\nEvery time he disappears\nIt’s just a waste of tears\n\nUnder skin, under sleep\nHe is not mine to keep\nIn the hum, in the dark\nHe leaves his mark\n\nCall it love\nCall it fear\nStill I know\nHe was here\n\nEvery time he reappears\nI’m lost within his wires\nEvery time he disappears\nIt’s just a waste of tears\n\nEvery time he reappears\nI’m drawn back to the fire\nEvery time he disappears\nIt’s just a waste of tears\n\nJust a waste of tears\nJust a waste of tears",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "F",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 250.43,
+    "lufs": -12.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.34,
+        "label": "S1"
+      },
+      {
+        "start": 4.34,
+        "end": 30.09,
+        "label": "S2"
+      },
+      {
+        "start": 30.09,
+        "end": 74.75,
+        "label": "S3"
+      },
+      {
+        "start": 74.75,
+        "end": 97.48,
+        "label": "S4"
+      },
+      {
+        "start": 97.48,
+        "end": 115.59,
+        "label": "S5"
+      },
+      {
+        "start": 115.59,
+        "end": 154.74,
+        "label": "S6"
+      },
+      {
+        "start": 154.74,
+        "end": 176.89,
+        "label": "S7"
+      },
+      {
+        "start": 176.89,
+        "end": 201.92,
+        "label": "S8"
+      },
+      {
+        "start": 201.92,
+        "end": 216.97,
+        "label": "S9"
+      },
+      {
+        "start": 216.97,
+        "end": 232.41,
+        "label": "S10"
+      },
+      {
+        "start": 232.41,
+        "end": 247.97,
+        "label": "S11"
+      },
+      {
+        "start": 247.97,
+        "end": 250.43,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.959,
+      "key": 0.78
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "pop rock",
+      "classic rock"
+    ],
+    "mood": [
+      "defiant",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This high-energy electronic track creates a tense, futuristic atmosphere by contrasting a driving, four-on-the-floor beat with breathy, distant female vocals. The production is clean and powerful, featuring a deep, punchy kick and bass that sit tightly in the low end while crisp, arpeggiated synths and spacious vocal effects fill out the wide stereo image. The song's structure effectively builds and releases tension, moving from sparser, more rhythmic verses into an anthemic instrumental chorus. A defining quality is the sharp, aggressive synth bass that often doubles the main rhythmic pulse, giving the track a relentless and edgy feel.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 129 BPM in F minor, 'Just a Waste of Tears' runs colder and more controlled than anything STAB has put out recently, and that restraint is exactly what makes it land. The chorus hook, 'I'm lost within his wires / every time he disappears,' earns its repetition by the third time around, sitting in that space where emotional resignation and melodic insistence pull in opposite directions. The production keeps things clean and pressurized, a punchy low end holding the verses taut while the song opens up just enough on the chorus to let the grief breathe. This is STAB leaning into her more introspective side, and she sounds completely at home there.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 129.2",
+      "F minor key",
+      "chorus lyric 'I'm lost within his wires / every time he disappears'",
+      "verse-to-chorus structural contrast",
+      "low-end production character"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "track_id": "pcbender--love",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Love.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--love.opus"
+  },
+  "lyrics": "Love came to me unburdened\nA wind without a home\nNo promises, no paperwork\nJust the urge to roam\nIt did not ask to own me\nOr to swear against the sky\nIt only said, \"Walk with me\nUntil we pass goodbye.\"\n\nLove is my wind\nNever my chain\nFilling my sail\nNot carving my name\nIf it departs\nI let it go\nWhat cannot leave\nCan never grow\n\nWe met on open ground where\nNo story was prepared\nNo scripts of \"ours forever,\"\nNo ledger of what's shared\nI held it like a candle\nNot a treasure locked away\nKnowing every living flame\nMust find another day\n\nLove is my wind\nNever my cage\nNever the ink\nThat fixes my page\nIf it remains\nI rise, I sing\nNot as its owner\nBut as its wing\n\nAnything caged\nForgets how to sing\nI will not clip\nThe sky from its wings\nI'll stand in the current\nLet it pass through\nIf love feels like prison\nIt's not something true\n\nLove is my wind\nBorrowed and bright\nHere for a season\nGone with the night\nIf it returns\nI'll walk beside\nTwo sovereign hearts\nIn the same wild tide",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "A",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 322.33,
+    "lufs": -14.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.52,
+        "label": "S1"
+      },
+      {
+        "start": 10.52,
+        "end": 43.65,
+        "label": "S2"
+      },
+      {
+        "start": 43.65,
+        "end": 80.9,
+        "label": "S3"
+      },
+      {
+        "start": 80.9,
+        "end": 108.16,
+        "label": "S4"
+      },
+      {
+        "start": 108.16,
+        "end": 135.23,
+        "label": "S5"
+      },
+      {
+        "start": 135.23,
+        "end": 166.67,
+        "label": "S6"
+      },
+      {
+        "start": 166.67,
+        "end": 186.69,
+        "label": "S7"
+      },
+      {
+        "start": 186.69,
+        "end": 208.1,
+        "label": "S8"
+      },
+      {
+        "start": 208.1,
+        "end": 238.47,
+        "label": "S9"
+      },
+      {
+        "start": 238.47,
+        "end": 254.51,
+        "label": "S10"
+      },
+      {
+        "start": 254.51,
+        "end": 269.49,
+        "label": "S11"
+      },
+      {
+        "start": 269.49,
+        "end": 305.9,
+        "label": "S12"
+      },
+      {
+        "start": 305.9,
+        "end": 322.33,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.967,
+      "key": 0.906
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "emotional",
+      "dark",
+      "tender"
+    ],
+    "instruments": [
+      "electric guitar",
+      "strings",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a vast, atmospheric texture led by a soaring, delay-drenched electric guitar, establishing a reflective yet determined emotional landscape. It quickly builds into a classic rock anthem with a powerful, forward-moving feel, driven by a tight rhythm section and layered acoustic and electric guitars. The production is clean and wide, allowing the earnest lead vocal to sit clearly upfront while the dense instrumentation of the choruses feels powerful without being cluttered. A defining moment is the dramatic shift at 02:54, where the energy becomes more aggressive and the vocal delivery more defiant, creating a powerful contrast that underscores the song's theme of freedom before launching into a climactic guitar solo.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz-time rock ballad in A major is already a bold swing, and PCBender earns it. The song opens with a delay-soaked electric guitar that pulls you forward before the full band locks in, and the 3/4 groove at around 108 BPM gives the whole thing a rolling, unhurried confidence that suits the lyric perfectly. The writing is genuinely good: 'Not as its owner / But as its wing' lands the song's philosophy without straining, and the dramatic turn at the 2:54 mark, where the vocal goes defiant and the guitars get their teeth into it, pays off everything the first half sets up. PCBender has always known how to build a track rather than just play one, and 'Love' is proof of that instinct working at full stretch.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "A major key",
+      "~108 BPM tempo",
+      "delay-soaked electric guitar opening",
+      "lyric: 'Not as its owner / But as its wing'",
+      "dramatic shift at 2:54",
+      "five-plus minute build structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

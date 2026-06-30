@@ -58,7 +58,7 @@ release:
     duration: null
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--gemini-rising.mp3
     lyrics_text: 'I change my mind like seasons cross the sky
 
       One minute laughing, next I wonder why

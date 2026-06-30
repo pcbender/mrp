@@ -1,0 +1,139 @@
+{
+  "track_id": "pcbender--inner-outer",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Inner Outer.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--inner-outer.opus"
+  },
+  "lyrics": "Inner\nOuter\nOver\nThrough\n\nA breath withheld\nA thought not spoken\nI fold beneath\nWhat stays unbroken\n\nInner\nOuter\nOver\nThrough\n\nOppressive space\nHectic mind\nDraining pace\nEver behind\n\nInner\nOuter\nOver\nThrough\n\nThe sky pulls wide\nMy voice thins out\nAbove the storm\nI name the doubt\n\nInner\nOuter\nOver\nThrough\n\nFace the dark\nExpose the heart\nRelease embark\nBecome impart\n\nInner\nOuter\nOver\nThrough\n\nInner\nOuter\nOver\nThrough",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "C",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 289.0,
+    "lufs": -15.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 8.15,
+        "label": "S1"
+      },
+      {
+        "start": 8.15,
+        "end": 34.71,
+        "label": "S2"
+      },
+      {
+        "start": 34.71,
+        "end": 54.43,
+        "label": "S3"
+      },
+      {
+        "start": 54.43,
+        "end": 72.07,
+        "label": "S4"
+      },
+      {
+        "start": 72.07,
+        "end": 87.63,
+        "label": "S5"
+      },
+      {
+        "start": 87.63,
+        "end": 104.54,
+        "label": "S6"
+      },
+      {
+        "start": 104.54,
+        "end": 121.14,
+        "label": "S7"
+      },
+      {
+        "start": 121.14,
+        "end": 148.54,
+        "label": "S8"
+      },
+      {
+        "start": 148.54,
+        "end": 169.85,
+        "label": "S9"
+      },
+      {
+        "start": 169.85,
+        "end": 205.36,
+        "label": "S10"
+      },
+      {
+        "start": 205.36,
+        "end": 222.17,
+        "label": "S11"
+      },
+      {
+        "start": 222.17,
+        "end": 240.98,
+        "label": "S12"
+      },
+      {
+        "start": 240.98,
+        "end": 259.83,
+        "label": "S13"
+      },
+      {
+        "start": 259.83,
+        "end": 284.49,
+        "label": "S14"
+      },
+      {
+        "start": 284.49,
+        "end": 289.0,
+        "label": "S15"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.842
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "blues rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "melancholic"
+    ],
+    "instruments": [
+      "bass guitar",
+      "acoustic guitar",
+      "electric guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track projects a confident and soulful atmosphere, carried by a tight, live-sounding funk and blues ensemble. The energy is high yet controlled, establishing a strong, head-nodding groove from the very beginning. The production is spacious and clear, with the punchy bass and drums providing a solid foundation while the expressive guitars and vocals sit perfectly on top. A defining quality is the dynamic contrast between the groovy, conversational verses and the fiery, virtuosic guitar solos that erupt with passion and technical skill.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender threads a tricky needle here: a 172 BPM waltz in C minor that swings harder than it broods, with a bass-and-drum pocket tight enough to anchor the restlessness the lyrics describe. The verses work like a pressure valve, each short stanza releasing a little more of what the opener sets up, 'a breath withheld, a thought not spoken,' and the guitar solo that erupts in the back half earns its moment because the build is patient. The line 'above the storm I name the doubt' is the kind of direct, unadorned writing that lands best when the track underneath it already has authority, and this one does.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "172 BPM waltz feel in 3/4",
+      "C minor key",
+      "lyric: 'a breath withheld, a thought not spoken'",
+      "lyric: 'above the storm I name the doubt'",
+      "guitar solo placement in back half",
+      "verse-as-pressure-valve structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

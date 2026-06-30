@@ -1,0 +1,120 @@
+{
+  "track_id": "4castle--coda-returns",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Coda Returns.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--coda-returns.opus"
+  },
+  "lyrics": "The conversations.json document contains a history of my chats. I want to extract all information from the document related to Lingua Aeternum. That includes chats, narrative text, descriptions, lyrics and images. The intention is to use this extracted information as the basis for a book. The output should be a glossary of terms or characters relevant to the Lingua Aeternum mythos with their description in a .docx format. An additional output should be an organized narrative representation for the story of the Lingua Aeternum from the Nullum forward. The narrative should also be in .docx format",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "D#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 229.55,
+    "lufs": -15.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.01,
+        "label": "S1"
+      },
+      {
+        "start": 11.01,
+        "end": 37.18,
+        "label": "S2"
+      },
+      {
+        "start": 37.18,
+        "end": 71.66,
+        "label": "S3"
+      },
+      {
+        "start": 71.66,
+        "end": 98.1,
+        "label": "S4"
+      },
+      {
+        "start": 98.1,
+        "end": 116.89,
+        "label": "S5"
+      },
+      {
+        "start": 116.89,
+        "end": 132.33,
+        "label": "S6"
+      },
+      {
+        "start": 132.33,
+        "end": 152.37,
+        "label": "S7"
+      },
+      {
+        "start": 152.37,
+        "end": 167.39,
+        "label": "S8"
+      },
+      {
+        "start": 167.39,
+        "end": 182.42,
+        "label": "S9"
+      },
+      {
+        "start": 182.42,
+        "end": 206.52,
+        "label": "S10"
+      },
+      {
+        "start": 206.52,
+        "end": 229.55,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.956,
+      "key": 0.904
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "folk rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "harmonica",
+      "piano",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a vast, ethereal texture, combining sparse, reverberant synth pads and haunting, wordless female vocals to create a melancholic yet sacred atmosphere. The energy is very low, unfolding with a patient, cinematic quality as it transitions into a clear lyrical section. The production is excellent, featuring an immense sense of space where the intimate lead vocal sits cleanly atop wide choral washes and deep, resonant synth bass. A defining characteristic is the dramatic swell around 01:23, where the layers build to a powerful emotional peak, followed by a sudden structural shift at 02:54 that introduces pulsing electronic elements, completely transforming the track's feel.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Coda Returns\" earns its title: at 161 BPM in D# minor, it moves with genuine urgency, but the most striking moment is that structural break near the three-minute mark, where the track drops its rock footing and pulses forward on something closer to electronic propulsion, a left turn that reframes everything you just heard. The choral wash underneath the lead vocal in the first half is exactly the kind of multi-voice architecture 4Castle does better than almost anyone working in this space right now, recalling early-era Kate Bush in its willingness to let texture carry emotional weight. Eleven sections in under four minutes sounds like a gamble, but the pacing holds, and the swell around the 1:23 mark lands with the kind of earned drama you get from bands who know how to build, not just accumulate. A highlight, and a useful front door for new listeners.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 161.5",
+      "D# minor key",
+      "structural shift at 02:54 / S11 pulsing electronic section",
+      "choral vocal texture",
+      "swell at 01:23",
+      "11-section structure in 3:49",
+      "Kate Bush comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

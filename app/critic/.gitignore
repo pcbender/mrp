@@ -1,4 +1,6 @@
 out/qa_report.*
+manifests/audit-*.md
+manifests/catalog-*.json
 __pycache__/
 *.pyc
 *.egg-info/

@@ -1,0 +1,105 @@
+{
+  "track_id": "pcbender--thulian",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Thulian.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--thulian.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 80.7,
+    "key": "F#",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 168.04,
+    "lufs": -13.1,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 16.6,
+        "label": "S1"
+      },
+      {
+        "start": 16.6,
+        "end": 42.05,
+        "label": "S2"
+      },
+      {
+        "start": 42.05,
+        "end": 64.13,
+        "label": "S3"
+      },
+      {
+        "start": 64.13,
+        "end": 79.78,
+        "label": "S4"
+      },
+      {
+        "start": 79.78,
+        "end": 102.63,
+        "label": "S5"
+      },
+      {
+        "start": 102.63,
+        "end": 123.23,
+        "label": "S6"
+      },
+      {
+        "start": 123.23,
+        "end": 147.19,
+        "label": "S7"
+      },
+      {
+        "start": 147.19,
+        "end": 168.04,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.988,
+      "key": 0.866
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "classic rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "uplifting",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a warm, organic texture, creating a soulful and confident atmosphere that feels like a live blues-rock performance. The energy is laid-back yet grooving, driven by a tight rhythm section that provides a solid foundation for the lead instrument. The production is clean and well-balanced, giving each instrument its own space while maintaining a cohesive, \"band-in-a-room\" sound. Ultimately, the piece is defined by the highly expressive and articulate lead guitar, whose fluid bends and intricate phrasing serve as the track's primary voice.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "A waltz-time blues instrumental in F# minor, 'Thulian' moves at a slow 80 BPM that gives the lead guitar room to breathe, and PCBender uses every inch of it. The phrasing here is the story: fluid bends that resolve just late enough to sting, answered by a rhythm section that stays tight without crowding. It has the same unhurried confidence you hear on early Allman Brothers instrumentals, that sense that nobody is rushing because nobody needs to. At under three minutes it earns its keep and leaves you wanting another pass.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "80.7 BPM",
+      "F# minor",
+      "3/4 time",
+      "2:48 duration",
+      "fluid bends and articulate lead guitar phrasing",
+      "waltz feel",
+      "Allman Brothers comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

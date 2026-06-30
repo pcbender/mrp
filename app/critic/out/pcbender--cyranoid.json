@@ -1,0 +1,161 @@
+{
+  "track_id": "pcbender--cyranoid",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Cyranoid.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--cyranoid.opus"
+  },
+  "lyrics": "It comes before I think the thought\nI disappear in what it says\nIt sounds like me, I know it’s not\nThe words arrive, my mouth obeys\n\nI am here, but never me\nI manifest an entity\nWhat you hear and what you see\nA shadow’s face where I should be\n\nThe real me shouts, I can’t resist\nEach sentence carves another scar\nA puppet’s dance by iron fist\nI wonder who we really are\n\nI am here, but never me\nI manifest an entity\nWhat you hear and what you see\nA shadow’s face where I should be\n\nWhen silence comes, it slips aside\nI shelter in my fractured mind\nNo where to run, no place to hide\nNo saving grace so I’m resigned\n\nI am here, but never me\nI manifest an entity\nWhat you hear and what you see\nA shadow’s face where I should be\n\nA shadow’s face where I should be",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "A",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 430.0,
+    "lufs": -14.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 23.31,
+        "label": "S1"
+      },
+      {
+        "start": 23.31,
+        "end": 41.03,
+        "label": "S2"
+      },
+      {
+        "start": 41.03,
+        "end": 56.38,
+        "label": "S3"
+      },
+      {
+        "start": 56.38,
+        "end": 82.43,
+        "label": "S4"
+      },
+      {
+        "start": 82.43,
+        "end": 115.52,
+        "label": "S5"
+      },
+      {
+        "start": 115.52,
+        "end": 132.63,
+        "label": "S6"
+      },
+      {
+        "start": 132.63,
+        "end": 147.82,
+        "label": "S7"
+      },
+      {
+        "start": 147.82,
+        "end": 165.72,
+        "label": "S8"
+      },
+      {
+        "start": 165.72,
+        "end": 195.37,
+        "label": "S9"
+      },
+      {
+        "start": 195.37,
+        "end": 210.7,
+        "label": "S10"
+      },
+      {
+        "start": 210.7,
+        "end": 237.47,
+        "label": "S11"
+      },
+      {
+        "start": 237.47,
+        "end": 260.6,
+        "label": "S12"
+      },
+      {
+        "start": 260.6,
+        "end": 282.26,
+        "label": "S13"
+      },
+      {
+        "start": 282.26,
+        "end": 312.22,
+        "label": "S14"
+      },
+      {
+        "start": 312.22,
+        "end": 358.89,
+        "label": "S15"
+      },
+      {
+        "start": 358.89,
+        "end": 375.88,
+        "label": "S16"
+      },
+      {
+        "start": 375.88,
+        "end": 396.85,
+        "label": "S17"
+      },
+      {
+        "start": 396.85,
+        "end": 421.67,
+        "label": "S18"
+      },
+      {
+        "start": 421.67,
+        "end": 430.0,
+        "label": "S19"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.945,
+      "key": 0.899
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "blues"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "defiant"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track builds from a clean, arpeggiated intro into a dense, multi-layered progressive rock soundscape, creating an atmosphere that is both powerful and anthemic. The energy is highly dynamic, contrasting a driving verse groove with explosive, high-energy choruses. The production is modern and polished, giving each instrument clarity and space within a wide stereo field, allowing the soaring lead vocal to cut through the tight rhythm section and layered guitars. A defining feature is the exceptional musicianship, highlighted by the virtuosic and highly melodic guitar solo that serves as a climactic centerpiece for the arrangement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The title is a real concept, a cyranoid being someone who speaks words fed to them by another, and PCBender leans into that unease with every line: 'It sounds like me, I know it's not / The words arrive, my mouth obeys.' Set in A minor at a measured waltz pulse, the song earns its seven-plus minutes through genuine structural ambition, building from a clean arpeggiated opening into a dense, full-band swell before a guitar solo that functions as the emotional peak the lyrics have been building toward. That solo is the kind of melodic centerpiece that sticks around after the track ends. The chorus hook, 'A shadow's face where I should be,' hits with the plainspoken dread of prime Roger Waters, and the defiant undertow in the vocal keeps it from collapsing into self-pity. A highlight, and one of the more conceptually committed things in the catalog.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "A minor key",
+      "3/4 waltz pulse at 112 BPM",
+      "7:10 runtime with 19 structural sections",
+      "clean arpeggiated intro building to full-band density",
+      "guitar solo as climactic centerpiece",
+      "quoted lyric: 'It sounds like me, I know it's not / The words arrive, my mouth obeys'",
+      "quoted lyric: 'A shadow's face where I should be'",
+      "Roger Waters comparison for plainspoken dread"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

@@ -38,7 +38,7 @@ release:
     isrc: SE6I32580413
     duration: '4:10'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/pcbender--song-for-august.mp3
     instrumental: false
     lyrics_text: 'It feels like you can’t listen
 

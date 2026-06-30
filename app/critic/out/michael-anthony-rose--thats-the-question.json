@@ -1,0 +1,123 @@
+{
+  "track_id": "michael-anthony-rose--thats-the-question",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/That's The Question.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--thats-the-question.opus"
+  },
+  "lyrics": "What am I for\nIf not that\n\nI spent my life being useful\nThat was the bargain all along\nShow up, fix it, carry what's heavy\nKeep it moving, don't let it stop\nAnd people love a steady hand\nUntil they don't need one anymore\nThen all that praise gets packed away\nWith the tools behind the door\n\nIf I can't do what I used to do\nIf I can't be who I've always been\nIf the need for me gets smaller\nWhat's left when that feeling ends\nDon't hand me something clean and easy\nDon't try to soften this\nWho am I when I'm not needed\nThat's the question\n\nThere are days the phone stays silent\nAnd I pretend the silence fits\nThere are days I offer help too fast\nJust to feel connected still\nTo something, someone, any proof\nI still matter in the room\nUnderneath that decent face\nThere's a fear I can't get through\n\nIf I can't do what I used to do\nIf I can't be who I've always been\nIf the need for me gets smaller\nWhat's left when that feeling ends\nDon't hand me something clean and easy\nDon't try to soften this\nWho am I when I'm not needed\nThat's the question\n\nMaybe work became my language\nAnd the tools became my will\nMaybe that's why this feels so close\nTo moving while standing still\n\nIf I can't do what I used to do\nIf I can't be who I've always been\nIf usefulness became my mirror\nWhat's left when that feeling ends\nDon't hand me something clean and easy\nDon't try to soften this\nWho am I when I'm not needed\nThat's the question\n\nThat's the question\nMm\nThat's the question",
+  "persona": "",
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "C#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 219.6,
+    "lufs": -14.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 25.31,
+        "label": "S1"
+      },
+      {
+        "start": 25.31,
+        "end": 40.63,
+        "label": "S2"
+      },
+      {
+        "start": 40.63,
+        "end": 57.17,
+        "label": "S3"
+      },
+      {
+        "start": 57.17,
+        "end": 73.49,
+        "label": "S4"
+      },
+      {
+        "start": 73.49,
+        "end": 97.48,
+        "label": "S5"
+      },
+      {
+        "start": 97.48,
+        "end": 112.59,
+        "label": "S6"
+      },
+      {
+        "start": 112.59,
+        "end": 135.51,
+        "label": "S7"
+      },
+      {
+        "start": 135.51,
+        "end": 158.71,
+        "label": "S8"
+      },
+      {
+        "start": 158.71,
+        "end": 180.51,
+        "label": "S9"
+      },
+      {
+        "start": 180.51,
+        "end": 199.23,
+        "label": "S10"
+      },
+      {
+        "start": 199.23,
+        "end": 214.41,
+        "label": "S11"
+      },
+      {
+        "start": 214.41,
+        "end": 219.6,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.956,
+      "key": 0.966
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "classic rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is an introspective acoustic ballad with a melancholic and reflective atmosphere, centered around a gentle, earnest male vocal that feels very close and personal. The track maintains a low to mid-energy feel, building dynamically from sparse, intimate verses into emotionally resonant choruses that swell with added bass and simple, supportive drums. The production is clean and spacious, prioritizing the clarity of the storyteller's vocal while thoughtfully layering instruments to create depth without feeling dense. A defining quality is the powerful lyrical hook in the chorus, \"Who am I when I'm not needed,\" which serves as the track's emotional and narrative core, underscored by the gentle but impactful dynamic shifts.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The question Rose is asking here, 'Who am I when I'm not needed,' is one that most people sidestep their whole lives, and he plants it dead center in C# major and refuses to let you look away. The lyric 'Maybe work became my language / And the tools became my will' is the kind of writing that earns a song its keep, the sort of plain-spoken precision you get from John Hiatt or early Guy Clark when they're working at their best. The production serves it well: spare in the verses, just enough lift in the choruses that the emotional weight lands without tipping into sentimentality. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "lyric: 'Who am I when I'm not needed'",
+      "lyric: 'Maybe work became my language / And the tools became my will'",
+      "key: C# major",
+      "sparse verse to swelling chorus structure",
+      "John Hiatt / Guy Clark comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

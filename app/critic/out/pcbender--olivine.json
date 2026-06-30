@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--olivine",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Olivine.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--olivine.opus"
+  },
+  "lyrics": "",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "A",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 239.04,
+    "lufs": -13.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.52,
+        "label": "S1"
+      },
+      {
+        "start": 11.52,
+        "end": 26.52,
+        "label": "S2"
+      },
+      {
+        "start": 26.52,
+        "end": 59.3,
+        "label": "S3"
+      },
+      {
+        "start": 59.3,
+        "end": 81.8,
+        "label": "S4"
+      },
+      {
+        "start": 81.8,
+        "end": 111.8,
+        "label": "S5"
+      },
+      {
+        "start": 111.8,
+        "end": 128.99,
+        "label": "S6"
+      },
+      {
+        "start": 128.99,
+        "end": 146.49,
+        "label": "S7"
+      },
+      {
+        "start": 146.49,
+        "end": 161.8,
+        "label": "S8"
+      },
+      {
+        "start": 161.8,
+        "end": 186.8,
+        "label": "S9"
+      },
+      {
+        "start": 186.8,
+        "end": 206.54,
+        "label": "S10"
+      },
+      {
+        "start": 206.54,
+        "end": 239.04,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.954,
+      "key": 0.848
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues rock",
+      "blues",
+      "classic rock"
+    ],
+    "mood": [
+      "nostalgic",
+      "energetic",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "mandolin"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This upbeat blues-rock instrumental creates a confident, feel-good atmosphere with its classic instrumentation. The texture is defined by the lively interplay between a gritty, melodic lead guitar and a warm, soulful organ, all held together by a tight rhythm section. The production feels spacious and energetic, with each instrument clearly defined yet cohesive, creating a sound that is both polished and raw. A defining quality is the song's reliance on strong instrumental hooks and impressive solos, which carry the track's freewheeling momentum from start to finish.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Olivine\" runs at a comfortable 95 BPM in A minor, but it carries itself like a track in no hurry to prove anything, which turns out to be its greatest asset. The lead guitar hooks are genuinely melodic, the organ sits warm and wide in the mix, and the rhythm section keeps it all from floating away. For an instrumental, it earns its nearly four minutes by cycling through enough variation across its eleven sections to stay interesting without overreaching. Think early Allman Brothers in the pocket, or a John Mayall track that trusts the groove. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "95 BPM",
+      "A minor",
+      "11 sections",
+      "organ in the mix",
+      "lead guitar melodic hooks",
+      "3:59 duration"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

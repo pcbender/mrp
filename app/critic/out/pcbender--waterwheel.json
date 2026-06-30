@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--waterwheel",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Waterwheel.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--waterwheel.opus"
+  },
+  "lyrics": "The Ellison and Verde meet\nIn deeply riven stone\nThen through the waterwheel they flow\nBeyond the gorge conjoined\n\nA spiral serpent marks the trail\nTowards the swimming hole\n“The Falls,” it’s called. Where locals play\nJust up around the knoll\n\nBeautiful falls, sorrow falls too…\nWaterwheel, ever calling\nFor you\n\nBeautiful falls, sorrow falls too…\nWaterwheel, ever calling\nFor you\n\nThe desert heat makes mountain air\nA welcome destination\nThey beeline up the two-lane road\nNo hint of hesitation\n\nA thunderstorm on blackened hills\nThe warning never heard\nFamily in celebration, now…\nDestroyed without a word\n\nBeautiful falls, sorrow falls too…\nWaterwheel, ever calling\nFor you\n\nBeautiful falls, sorrow falls too…\nWaterwheel, ever calling\nFor you\n\nThe canyon keeps its ancient shape\nNo memory, no blame\nThe waterwheel accepts it all\nAnd starts again the same\n\nBeautiful falls, sorrow falls too…\nWaterwheel, ever calling\nFor you\n\nBeautiful falls, sorrow falls too…\nWaterwheel, ever calling\nFor you",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 219.2,
+    "lufs": -16.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 28.84,
+        "label": "S1"
+      },
+      {
+        "start": 28.84,
+        "end": 56.26,
+        "label": "S2"
+      },
+      {
+        "start": 56.26,
+        "end": 87.17,
+        "label": "S3"
+      },
+      {
+        "start": 87.17,
+        "end": 105.81,
+        "label": "S4"
+      },
+      {
+        "start": 105.81,
+        "end": 133.63,
+        "label": "S5"
+      },
+      {
+        "start": 133.63,
+        "end": 152.3,
+        "label": "S6"
+      },
+      {
+        "start": 152.3,
+        "end": 169.25,
+        "label": "S7"
+      },
+      {
+        "start": 169.25,
+        "end": 188.55,
+        "label": "S8"
+      },
+      {
+        "start": 188.55,
+        "end": 219.2,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.945,
+      "key": 0.97
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "piano"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a sparse, melancholic texture, featuring a gentle piano and a warm, narrative male vocal that creates a somber and intimate atmosphere. The song builds methodically into powerful, anthemic choruses, where the energy lifts significantly without feeling rushed. The production is clean and spacious, allowing the lead vocal to sit clearly while layered harmonies and swelling instrumentation create a wide, emotive backdrop. A defining quality is the powerful, almost choral, layering of male vocals in the chorus, delivering a dramatic and emotionally resonant peak that contrasts beautifully with the understated verses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always known how to let a place carry the weight of a story, and Waterwheel earns that trust completely. The song pivots on a simple, devastating lyric, 'Beautiful falls, sorrow falls too,' and the contrast between the verses' quiet, piano-led intimacy and the choral surge of the chorus does exactly what the words ask it to: it holds beauty and grief in the same breath without flinching. At a clipped 143 BPM in B major the track never drags, but the real craft is structural, each verse tightening the narrative screw until the canyon-flash-flood tragedy lands with the inevitability of a folk ballad and the punch of classic rock. The final verse, 'The waterwheel accepts it all / And starts again the same,' resolves the grief not with comfort but with something harder and truer, the indifference of landscape, which is the kind of ending that stays with you.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 5,
+      "label": "standout"
+    },
+    "anchors_used": [
+      "lyric: 'Beautiful falls, sorrow falls too'",
+      "lyric: 'The waterwheel accepts it all / And starts again the same'",
+      "BPM 143.6",
+      "B major",
+      "piano-led verses vs choral chorus contrast",
+      "narrative arc: flash-flood tragedy"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

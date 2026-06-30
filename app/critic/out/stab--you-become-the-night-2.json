@@ -1,0 +1,125 @@
+{
+  "track_id": "stab--you-become-the-night-2",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/You Become The Night.wav",
+    "proxy": "/home/mrose/audio/proxy/stab--you-become-the-night-2.opus"
+  },
+  "lyrics": "",
+  "persona": "## STAB\n\nSTAB isn’t just a name-it’s a statement. A sonic force of nature, she channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines, and tight harmonies into anthems that hit hard and leave a mark. Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks with a rebellious edge, embracing the raw, unfiltered spirit of rock.\n\nHer music is a love letter to the golden age of girl bands, blending the infectious melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s tearing through anthemic choruses, throwing down sharp riffs, or tapping into her softer, more introspective side, STAB’s voice is unmistakable-powerful yet effortlessly cool.\n\nA signature artist under Maricopa Records, STAB thrives in the space where analog warmth meets AI-driven creativity, pushing boundaries while staying true to the timeless essence of rock 'n' roll. She’s not here to follow trends-she’s here to carve her own path, one catchy, defiant, and undeniably addictive track at a time.\n\nIf you’re looking for music that hits like a lightning bolt and stays in your head for days-STAB is already in your veins.\n\n[](https://open.spotify.com/artist/7zZ7MxU20RZAw2E1w4EsaE)[](https://music.apple.com/us/artist/stab/1495050512)[](https://music.youtube.com/channel/UCQkfMbYRs06q_SFW5PPSvWw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/STAB.jpg)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "B",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 296.84,
+    "lufs": -15.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.51,
+        "label": "S1"
+      },
+      {
+        "start": 13.51,
+        "end": 44.68,
+        "label": "S2"
+      },
+      {
+        "start": 44.68,
+        "end": 63.97,
+        "label": "S3"
+      },
+      {
+        "start": 63.97,
+        "end": 88.24,
+        "label": "S4"
+      },
+      {
+        "start": 88.24,
+        "end": 126.43,
+        "label": "S5"
+      },
+      {
+        "start": 126.43,
+        "end": 143.41,
+        "label": "S6"
+      },
+      {
+        "start": 143.41,
+        "end": 172.06,
+        "label": "S7"
+      },
+      {
+        "start": 172.06,
+        "end": 210.63,
+        "label": "S8"
+      },
+      {
+        "start": 210.63,
+        "end": 231.87,
+        "label": "S9"
+      },
+      {
+        "start": 231.87,
+        "end": 265.75,
+        "label": "S10"
+      },
+      {
+        "start": 265.75,
+        "end": 282.63,
+        "label": "S11"
+      },
+      {
+        "start": 282.63,
+        "end": 296.84,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.877
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "peaceful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a spacious and shimmering texture, using layered, reverbed guitars and an emotive female vocal to establish a contemplative, slightly melancholic atmosphere. The energy builds dramatically from these pensive verses into powerful, anthemic choruses, driven by a wall of distorted guitars and crashing drums that create a feeling of epic, emotional release. The production is polished and modern, maintaining clarity and a wide stereo image even during the densest sections, allowing the powerful low end and soaring vocals to coexist without conflict. A defining quality is the stark dynamic shift into the first chorus, where the full band explodes into the arrangement, immediately establishing the track's grand scale and emotional weight.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 112 BPM in 3/4, 'You Become the Night' moves with the unhurried sway of a slow waltz that knows exactly when to detonate. The structure earns its nearly five minutes: sparse, reverbed guitar opens things quietly in B major before the full band crashes in with a wall of distortion that lands like early Heart at full tilt. That dynamic contrast, whisper to roar and back again across twelve distinct sections, is the whole argument of the track, and STAB makes it convincingly. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "112 BPM",
+      "3/4 time",
+      "B major",
+      "12 sections",
+      "4:56 duration",
+      "dynamic shift from sparse guitar to distorted full-band",
+      "reverbed guitars in opening sections"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

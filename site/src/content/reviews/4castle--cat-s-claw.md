@@ -1,0 +1,8 @@
+---
+track_id: 4castle--cat-s-claw
+impression: "This track unfolds with a sparse and melancholic texture, built around an intimate female vocal and acoustic guitar that together create a mysterious, storytelling atmosphere. The energy is highly dynamic, starting as a gentle folk ballad before building into a powerful, driving rock feel in the choruses with the addition of full drums and sweeping strings. The production is clean and spacious, allowing the intimate vocal to remain clear and present while the layered instrumentation creates a wide, cinematic soundscape without feeling dense. A defining quality is the stark contrast between the contemplative verses and the explosive, almost anthemic chorus, where the emotional intensity and instrumental force peak in a memorable, dramatic release."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+The back half of the album opens with its most ambitious piece, and 'Cat's Claw' earns that positioning. Built around a Southwestern legend of a shaman's bargain gone wrong, it threads an ancient story into something universal with 'hopeful, we make the bargain, tho the ending is set,' and the band's five-part harmony is exactly the right vehicle for that fatalism. The verses settle into a spare, intimate folk-rock feel before the chorus opens up at a brisk clip into something close to classic rock anthemic, the kind of lift that calls to mind early Heart at their most declarative. Coming off 'Double Black Diamonds' and heading toward the harder tracks ahead, 'Cat's Claw' serves as the album's mythological center of gravity: the moment where the stakes feel oldest and the harmonies feel biggest.

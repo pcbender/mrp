@@ -1,0 +1,124 @@
+{
+  "track_id": "pcbender--on-the-way-that-comes-before",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/On the Way That Comes Before.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--on-the-way-that-comes-before.opus"
+  },
+  "lyrics": "You nursed a drink by candlelight\nAs rain made lace on cobblestone\nThe inn was old, the name half-flecked\nIn paint too faded to have known\n\nThe barkeep said, “You hike, you said\nThen take the left at Linden See\nNo signs-just fern and fallen pine…\nThere’s talk of women there..” -Idisi\n\nOn the way that comes before\n\nThe morning came with colder light\nYou walked alone beyond the hill\nPast mossy stones and rusted signs\nThe world grew older, older still\n\nThe trees leaned close, the path grew thin\nA silence pooled where birds don’t go\nAnd though no gate or marker stood-\nYou crossed beneath a breathless bough\n\nOn the way that comes before\n\nThey stood where roots entwined like veins\nIn robes the color dusk forgets\nWith wreaths of rowan, faces veiled\nAnd silence drawn like silhouettes\n\nOne raised her hand-but not to stop\nAs if to speak through stillness true\nYou felt the weight you’d never named\nBegin to lift… without adieu\n\nOn the way that comes before\n\nNo words were said, no rites performed\nNo hand was placed upon your chest\nBut something old slipped through your skin-\nRegret you hadn’t laid to rest\n\nThe names you wore, the roles you played\nThe ghosts that whispered in your sleep\nThey fell like threads cut from a loom\nToo fine to grieve, too deep to keep\n\nOn the way that comes before\n\nYou woke beneath a younger sky\nThe trail behind was overgrown\nThe trees looked on with kinder bark\nBut not a trace of what was shown\n\nYou passed the inn by lantern light\nThe barkeep gone, the sign askew\nAnd wondered if you’d ever left-\nOr if the Idisi walked with you\n\nOn the way that comes before\n\nOn the way that comes before\nOn the way that comes before\nOn the way that comes before",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "D#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 288.0,
+    "lufs": -16.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 29.47,
+        "label": "S1"
+      },
+      {
+        "start": 29.47,
+        "end": 45.93,
+        "label": "S2"
+      },
+      {
+        "start": 45.93,
+        "end": 70.82,
+        "label": "S3"
+      },
+      {
+        "start": 70.82,
+        "end": 86.54,
+        "label": "S4"
+      },
+      {
+        "start": 86.54,
+        "end": 112.92,
+        "label": "S5"
+      },
+      {
+        "start": 112.92,
+        "end": 128.73,
+        "label": "S6"
+      },
+      {
+        "start": 128.73,
+        "end": 148.68,
+        "label": "S7"
+      },
+      {
+        "start": 148.68,
+        "end": 166.81,
+        "label": "S8"
+      },
+      {
+        "start": 166.81,
+        "end": 220.22,
+        "label": "S9"
+      },
+      {
+        "start": 220.22,
+        "end": 244.65,
+        "label": "S10"
+      },
+      {
+        "start": 244.65,
+        "end": 281.96,
+        "label": "S11"
+      },
+      {
+        "start": 281.96,
+        "end": 288.0,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.944,
+      "key": 0.987
+    }
+  },
+  "tags": {
+    "genre": [
+      "soul",
+      "acoustic",
+      "folk rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "strings",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is an intimate and sparse folk track with a narrative, melancholic atmosphere, built around clean fingerpicked acoustic guitar and a gentle, clear male vocal. The energy remains consistently low and introspective, creating a calm, flowing feel that supports its storytelling focus. The production is very spacious and clean, allowing the primary vocal and guitar to sit closely with the listener while subtle, swelling strings add depth without becoming dense. A defining quality is the track's dynamic restraint, particularly during the instrumental bridge where mournful, layered strings create a cinematic feel that effectively resolves back into the final, quiet verse.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds this one like a folk ballad that knows exactly how long to let a silence sit. The fingerpicked guitar stays close and unhurried despite a tempo that pushes harder than the hushed delivery suggests, and the vocal rides that tension with real control. The lyric does the heavy lifting: 'They fell like threads cut from a loom / Too fine to grieve, too deep to keep' is the kind of line that earns its place in a song, and the string swell that follows earns its place right alongside it. The Idisi mythology gives the whole piece a weight that keeps it from drifting into generic folk-road-trip territory, and the final question, whether the traveler ever left or whether something ancient came home with him, lands cleanly because the song has done the work to make you care.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "fingerpicked acoustic guitar",
+      "BPM tension vs. hushed delivery",
+      "lyric: 'They fell like threads cut from a loom / Too fine to grieve, too deep to keep'",
+      "string swell in instrumental bridge",
+      "Idisi mythology as thematic anchor",
+      "closing lyrical question"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

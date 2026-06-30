@@ -1,0 +1,109 @@
+{
+  "track_id": "4castle--next-to-nothing",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Next to Nothing.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--next-to-nothing.opus"
+  },
+  "lyrics": "I've held fortunes in my hands\nWatched them slip like grains of sand\nI've chased the dream, I've played the game\nBut all I built won't know my name\n\nGold turns to dust, the towers fall\nWhat seemed so big was never there at all\n\nI've had it all and lost it too\nThe empty rooms, the hollow view\nI tried, I ran, I reached so high-\nAnd for all I've had… Next to nothing\n\nI've loved with everything I am\nSwore I'd never lose again\nBut love's a whisper, not a vow\nAnd where you stood, there's silence now\n\nLetters unsent, words left behind\nWhat once felt real was never mine\n\nI've held your hands, then let them go\nFelt the rush, then watched it slow\nI swore, I stayed, I begged, I tried-\nAnd for all I've loved… Next to nothing\n\nI've traced the years across my skin\nEach line, a place I've been\nI've built my life, I've made my plans\nBut time won't rest in open hands\n\nDays turn to years, the seasons blend\nWhat starts so strong will reach its end\n\nI've had my say, I've played my part\nA restless mind, a stubborn heart\nI lived, I lost, I laughed, I cried-\nAnd for all I've lived… Next to nothing\n\nBut maybe… next to nothing is where I start again",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "G#",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 187.84,
+    "lufs": -13.5,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 17.55,
+        "label": "S1"
+      },
+      {
+        "start": 17.55,
+        "end": 40.91,
+        "label": "S2"
+      },
+      {
+        "start": 40.91,
+        "end": 55.98,
+        "label": "S3"
+      },
+      {
+        "start": 55.98,
+        "end": 76.21,
+        "label": "S4"
+      },
+      {
+        "start": 76.21,
+        "end": 119.0,
+        "label": "S5"
+      },
+      {
+        "start": 119.0,
+        "end": 134.63,
+        "label": "S6"
+      },
+      {
+        "start": 134.63,
+        "end": 162.1,
+        "label": "S7"
+      },
+      {
+        "start": 162.1,
+        "end": 179.86,
+        "label": "S8"
+      },
+      {
+        "start": 179.86,
+        "end": 187.84,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.975,
+      "key": 0.807
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "pop rock",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a modern rock anthem with a powerful, emotionally charged atmosphere. The track is built on a dense texture of layered, wide-panned electric guitars and a driving rhythm section, creating a feeling of grand, reflective intensity. The production is clean and polished, allowing the soaring lead vocal to sit clearly atop the powerful instrumental wall of sound without getting lost. A defining quality of the track is its dramatic dynamic shift, especially the drop to near silence at 0:54, which emphasizes its epic scale and emotional weight.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "The thesis of 'Next to Nothing' is right there in the final line, 'maybe next to nothing is where I start again,' and the whole three minutes earns that turn. Built in G# minor at a steady mid-tempo pulse, the track opens with space and builds deliberately, and the drop to near-silence around the one-minute mark lands with real weight, not as a studio trick but as punctuation to the lyric. The lead vocal rides cleanly above a wide, layered guitar mix that leans closer to classic arena rock than anything preciously indie, and the repeated three-part confession structure, fortune, then love, then time, gives the song a cumulative ache that gets heavier with each pass. This is 4Castle leaning into economy rather than complexity, and the restraint pays off.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "final lyric: 'maybe next to nothing is where I start again'",
+      "G# minor key",
+      "drop to near-silence at approximately 0:54",
+      "95.7 BPM mid-tempo pulse",
+      "three-verse parallel confession structure",
+      "wide-panned layered guitar mix"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

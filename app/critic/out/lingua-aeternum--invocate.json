@@ -1,0 +1,109 @@
+{
+  "track_id": "lingua-aeternum--invocate",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Invocate.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--invocate.opus"
+  },
+  "lyrics": "Before it was, it never was\nThe jukebox plays before it’s pushed\nA look, a glance, another chance\nThe song repeats-an ancient dance\n\nDominos fall in all directions\nThe window sees its own reflections\nThe clock unwinds its second hand\nWe march in time without a band\n\nIt echoes in the act of trying\nThe shape is formed by what relays\nWe are the tune that hums itself\nThe thread in knots as it obeys\n\nEach beginning has beginnings\nAnd every ending still pretends\nNothing ever really starts\nIt only loops, then shifts and bends\nThe road behind is ever long\nThe path ahead pretends to end\nAnd we who choose to wander\nTrace the shape we apprehend\n\nNot cause, not fate and not effect\nThe mirror breaks but still reflects\nI move before I make the choice\nThe echo carves, it gives a voice\n\nIt echoes in the act of trying\nThe shape is formed by what relays\nWe are the tune that hums itself\nThe thread in knots as it obeys\n\nEach beginning has beginnings\nAnd every ending still pretends\nNothing ever really starts\nIt only loops, then shifts and bends\nThe road behind is ever long\nThe path ahead pretends to end\nAnd we who choose to wander\nTrace the shape we apprehend",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 204.88,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 2.14,
+        "label": "S1"
+      },
+      {
+        "start": 2.14,
+        "end": 32.51,
+        "label": "S2"
+      },
+      {
+        "start": 32.51,
+        "end": 47.72,
+        "label": "S3"
+      },
+      {
+        "start": 47.72,
+        "end": 65.55,
+        "label": "S4"
+      },
+      {
+        "start": 65.55,
+        "end": 122.07,
+        "label": "S5"
+      },
+      {
+        "start": 122.07,
+        "end": 137.72,
+        "label": "S6"
+      },
+      {
+        "start": 137.72,
+        "end": 159.68,
+        "label": "S7"
+      },
+      {
+        "start": 159.68,
+        "end": 187.13,
+        "label": "S8"
+      },
+      {
+        "start": 187.13,
+        "end": 204.88,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.969,
+      "key": 0.868
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a confident, blues-infused rock texture, creating an atmosphere that is both driving and thoughtfully introspective. The energy is consistently high and propulsive, carried by a tight, punchy rhythm section that gives the song a feeling of steady, forward motion. The production quality is modern and clear, providing a wide stereo image where the layered electric guitars and lead vocal have plenty of space to shine without making the mix feel dense. The most distinctive quality is the dynamic lift into the anthemic chorus, where the song opens up emotionally and a soaring vocal melody delivers a powerful, memorable hook.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 136 BPM in E minor, 'Invocate' moves with the kind of locked-in, forward-leaning drive that makes you feel like the song already knows where it's going before you do, which suits lyrics about acting before choosing rather well. The chorus opens up cleanly, the vocal melody lifts, and the line 'we are the tune that hums itself' lands with enough weight to justify the whole build. Blues-inflected guitar and a punchy rhythm section keep it grounded while the ideas get philosophical, a balance Lingua Aeternum doesn't always stick so cleanly. A genuine highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "136 BPM",
+      "E minor",
+      "lyric: 'we are the tune that hums itself'",
+      "anthemic chorus lift",
+      "blues-inflected guitar texture",
+      "punchy rhythm section"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

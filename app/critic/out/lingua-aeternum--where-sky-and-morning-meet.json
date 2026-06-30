@@ -1,0 +1,114 @@
+{
+  "track_id": "lingua-aeternum--where-sky-and-morning-meet",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Where Sky and Morning Meet.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--where-sky-and-morning-meet.opus"
+  },
+  "lyrics": "He waits in stillness\nAbove the canyon walls\nShe rises golden\nAs the daylight calls\n\nThey meet in hush\nJust before the heat\nNo need to speak\nThe cycle repeats\n\nSome say it’s light\nJust sky and sun\nBut I’ve seen them touch\nBefore she runs\n\nIt isn’t science\nIt isn’t retreat\nIt’s love\nWhere sky and morning meet\n\nShe trails color\nAcross his skin\nHe holds her\nWithout holding in\n\nNo vows to break\nNo promises kept\nJust that quiet moment\nBefore they part\n\nSome say it’s light\nJust sky and sun\nBut I’ve seen them touch\nBefore she runs\n\nIt isn’t myth\nBut it’s complete\nThis love\nWhere sky and morning meet\n\nYou and I-\nWe’re made for that hour\nBrief\nBright\nBecoming together",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 143.6,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 239.88,
+    "lufs": -14.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 22.22,
+        "label": "S1"
+      },
+      {
+        "start": 22.22,
+        "end": 37.83,
+        "label": "S2"
+      },
+      {
+        "start": 37.83,
+        "end": 55.57,
+        "label": "S3"
+      },
+      {
+        "start": 55.57,
+        "end": 74.49,
+        "label": "S4"
+      },
+      {
+        "start": 74.49,
+        "end": 92.49,
+        "label": "S5"
+      },
+      {
+        "start": 92.49,
+        "end": 109.62,
+        "label": "S6"
+      },
+      {
+        "start": 109.62,
+        "end": 125.9,
+        "label": "S7"
+      },
+      {
+        "start": 125.9,
+        "end": 146.52,
+        "label": "S8"
+      },
+      {
+        "start": 146.52,
+        "end": 164.35,
+        "label": "S9"
+      },
+      {
+        "start": 164.35,
+        "end": 239.88,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.963,
+      "key": 0.946
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "piano",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with a sparse, atmospheric texture, combining piano and delayed electric guitars to establish a pensive and reflective mood. The energy begins low and contemplative, gradually building into a steady, driving rock feel as the drums and bass enter, providing a sense of forward momentum. The production quality is clean and spacious, allowing the prominent male vocal to sit clearly in the mix while the layered guitars create a wide, enveloping soundscape. A defining moment occurs at 01:17, where the dynamics swell into a soaring, anthemic chorus that serves as the song's powerful emotional release.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "At 143 BPM in a bright E major, this one moves faster than it feels, the piano and delayed guitars holding things open and airy while the rhythm section quietly builds underneath. The lyric does real work: 'It isn't science / It isn't retreat / It's love / Where sky and morning meet' earns its plainness because the song has set up the image patiently, letting sunrise stand in for something harder to say. The swell that arrives around the 1:17 mark lands the way a good Tom Petty chorus lands, not flashy, just inevitable. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 143.6",
+      "E major",
+      "piano and delayed electric guitar texture",
+      "lyric quote: 'It isn't science / It isn't retreat / It's love / Where sky and morning meet'",
+      "dynamic swell at 01:17",
+      "Tom Petty chorus comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

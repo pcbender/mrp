@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--for-what-is-love",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/For What is Love.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--for-what-is-love.opus"
+  },
+  "lyrics": "For what is love if not the start\nThe moulding of a child’s heart\nA bond that forms the family\nThe pattern made to fall apart\n\nWe learn to love instinctively\nBefore we know what love will be\n\nFor what is love if not the morn\nFirst stepping through the open door\nThe heart’s in play, the trembling kiss\nThe search for that which we adore\n\nOne stolen breath, a moment’s bliss\nAn introduction to “I miss”\n\nFor what is love if not the day\nThe joy of life for two at play\nNew rules appear, the weight begins\nA pattern formed as soft as clay\n\nThe work, the joy, the quiet sins\nDivide the losses, share the wins\n\nFor what is love if not the night\nFamiliar hands and eyes alight\nThe pattern worn through years of care\nWhat dreams remain in fading light\n\nWe share the laughter, speak the prayer\nAnd hold on to the magic there\n\nFor what is love if not the end\nA fleeting hope we might extend\nWe turn our eyes toward the past\nAnd dare not face what might have been\n\nAnd in the end, the patterns last\nIt’s love we shared that matters most\n\nFor what is love\nFor what is love…",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 205.08,
+    "lufs": -15.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.32,
+        "label": "S1"
+      },
+      {
+        "start": 5.32,
+        "end": 22.94,
+        "label": "S2"
+      },
+      {
+        "start": 22.94,
+        "end": 45.23,
+        "label": "S3"
+      },
+      {
+        "start": 45.23,
+        "end": 67.57,
+        "label": "S4"
+      },
+      {
+        "start": 67.57,
+        "end": 89.77,
+        "label": "S5"
+      },
+      {
+        "start": 89.77,
+        "end": 122.16,
+        "label": "S6"
+      },
+      {
+        "start": 122.16,
+        "end": 153.67,
+        "label": "S7"
+      },
+      {
+        "start": 153.67,
+        "end": 178.12,
+        "label": "S8"
+      },
+      {
+        "start": 178.12,
+        "end": 205.08,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.937,
+      "key": 0.965
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "country",
+      "classic rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track unfolds with an intimate and contemplative atmosphere, built upon a sparse texture of fingerpicked acoustic guitar and a soft, forward-placed male vocal. The energy follows a deliberate and satisfying arc, starting very low and building methodically with the addition of bass, subtle percussion, and warm keyboard pads. The production is clean and spacious, allowing each new element to occupy its own sonic space without clutter, even as the arrangement swells to its peak. The most defining quality is this dynamic swell into the full, uplifting chorus, which provides a powerful emotional release and transforms the song from a personal reflection into a shared, anthemic statement.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds this one from almost nothing, a fingerpicked acoustic and a close-miked vocal that feels genuinely private, then earns every instrument it adds until the full arrangement arrives like a door swinging open. The lyric structures love as a single life in four movements, morning through night through end, and the payoff line 'It's love we shared that matters most' lands because the song has done the work to get there. At 117 BPM in C major, the tempo sits right at the edge of hymn and rock anthem, which is exactly where this belongs.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "fingerpicked acoustic opening",
+      "dynamic build from sparse to full arrangement",
+      "lyric quote: 'It's love we shared that matters most'",
+      "117 BPM tempo anchoring the hymn/anthem quality",
+      "C major",
+      "four-movement lyric structure (morning, day, night, end)"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

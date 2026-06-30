@@ -1,0 +1,110 @@
+{
+  "track_id": "lingua-aeternum--body-of-work",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Body Of Work.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--body-of-work.opus"
+  },
+  "lyrics": "I gave myself to the hammer and nail\nBent to the burden, too tired to fail\nBuilt without blueprints, became what I paid\nMy self defined by what I made\n\n(Body of work) Look at what I’ve done\n(Body of work) Look at who I’ve become\n(Body of work) Hear the songs I’ve sung\n(Body of work) Will it be enough in the end\n\nThey tell me the temple is body\nBut mine holds echoes inside me\nEach flaw a verse, each scar a hymn\nThis flesh was shaped by what’s been\n\n(Body of work) Look at what I’ve done\n(Body of work) Look at who I’ve become\n(Body of work) Hear the songs I’ve sung\n(Body of work) Let the silence answer, my friend\n\nNo one sees the hours I spent\nThe weight I carry, the truths I bent\nThe songs I sing you never hear\nStill I work, year after year\n\nI wasn’t saved by standing still\nI was shaped by breaking will\nNot perfect, not clean-but real\nAnd that’s the grace which now I feel\n\n(Body of work) Look at what I’ve done\n(Body of work) Look at who I’ve become\n(Body of work) Hear the songs I’ve sung\n(Body of work) I’d do it all again\n\nBody of work… body of work…\nStill becoming. Still begun",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 92.3,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 218.12,
+    "lufs": -14.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 1.49,
+        "label": "S1"
+      },
+      {
+        "start": 1.49,
+        "end": 36.46,
+        "label": "S2"
+      },
+      {
+        "start": 36.46,
+        "end": 66.62,
+        "label": "S3"
+      },
+      {
+        "start": 66.62,
+        "end": 87.38,
+        "label": "S4"
+      },
+      {
+        "start": 87.38,
+        "end": 119.0,
+        "label": "S5"
+      },
+      {
+        "start": 119.0,
+        "end": 154.2,
+        "label": "S6"
+      },
+      {
+        "start": 154.2,
+        "end": 171.48,
+        "label": "S7"
+      },
+      {
+        "start": 171.48,
+        "end": 206.45,
+        "label": "S8"
+      },
+      {
+        "start": 206.45,
+        "end": 218.12,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.962,
+      "key": 0.937
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates an earnest and determined atmosphere, building from a reflective texture of clean, arpeggiated guitars into an anthemic, full-band rock arrangement. The energy is dynamic, shifting from controlled verses to explosive, driving choruses that feel powerful and stadium-ready. The production is clean and spacious, with a tight, centered rhythm section supporting wide guitars and a clear lead vocal, while layered background harmonies add significant weight and density to the choruses. A defining quality is the track's emotional peak in the final chorus, where the declaration \"I'd do it all again\" provides a moment of powerful, cathartic release.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Body of Work\" earns its ambition: opening with clean arpeggiated guitar before the full band arrives and lifts the whole thing into something stadium-ready, it's the kind of build that actually pays off. The hook is direct without being simple, and \"each flaw a verse, each scar a hymn\" is the sort of line that lands harder the second time you hear it. At 92 BPM in D major, the tempo sits right in that Petty-esque sweet spot where the song can breathe and surge without losing momentum, and the layered harmonies that pile into the final chorus give the closing declaration, \"I'd do it all again,\" the weight it needs to close the argument. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "arpeggiated guitar opening into full-band build",
+      "92 BPM tempo",
+      "D major key",
+      "lyric quote: each flaw a verse, each scar a hymn",
+      "layered harmonies in final chorus",
+      "closing lyric: I'd do it all again",
+      "Tom Petty tempo comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

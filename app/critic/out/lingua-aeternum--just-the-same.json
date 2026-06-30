@@ -1,0 +1,114 @@
+{
+  "track_id": "lingua-aeternum--just-the-same",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Just the Same.wav",
+    "proxy": "/home/mrose/audio/proxy/lingua-aeternum--just-the-same.opus"
+  },
+  "lyrics": "When I think of you, I say I love you\nAnd often I would say I’m content\nBut lately I’ve begun to feel I'm drifting\nI fear this current leads me to the end\n\nTo swim, you have to choose\n\nOn the sea there is a ship without a mast\nAnchored in the harbor, sinking fast\nDrowning in my reasons, no time to change\nI pump myself until I’m dry and sail on just the same\n\nI thought of you as I passed the breakwater\nNo beacon lit, no voice to call me home\nYou never asked to be my destination\nBut I was never meant to sail alone\n\nTo swim, you have to choose\n\nOn the sea there is a ship without a mast\nAnchored in the harbor, sinking fast\nDrowning in my reasons, no time to change\nI pump myself until I’m dry and sail on just the same\n\nNo long goodbye, no what might be\nThe best of us I'll take with me\n\nOn the sea there is a ship without a mast\nAnchored in the harbor, sinking fast\nDrowning in my reasons, no time to change\nI pump myself until I’m dry and sail on just the same",
+  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 242.08,
+    "lufs": -17.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 24.96,
+        "label": "S1"
+      },
+      {
+        "start": 24.96,
+        "end": 48.55,
+        "label": "S2"
+      },
+      {
+        "start": 48.55,
+        "end": 69.52,
+        "label": "S3"
+      },
+      {
+        "start": 69.52,
+        "end": 100.43,
+        "label": "S4"
+      },
+      {
+        "start": 100.43,
+        "end": 119.05,
+        "label": "S5"
+      },
+      {
+        "start": 119.05,
+        "end": 142.13,
+        "label": "S6"
+      },
+      {
+        "start": 142.13,
+        "end": 168.79,
+        "label": "S7"
+      },
+      {
+        "start": 168.79,
+        "end": 208.21,
+        "label": "S8"
+      },
+      {
+        "start": 208.21,
+        "end": 223.47,
+        "label": "S9"
+      },
+      {
+        "start": 223.47,
+        "end": 242.08,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.954,
+      "key": 0.966
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "The track opens with a sparse and atmospheric texture, creating a contemplative and slightly somber mood with clean, arpeggiated electric guitars and a clear, intimate male vocal. The energy builds methodically from a gentle feel into a powerful alternative rock anthem, driven by the introduction of solid drums, layered background vocals, and increasingly present bass. The production is polished and wide, giving each element its own space in the mix, allowing the track to feel both full and uncluttered even in its densest moments. A defining feature is the powerful dynamic shift in the final act, where the music briefly pulls back to a quiet, reflective vocal before exploding into a passionate, full-band climax that serves as the track's emotional peak.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Just the Same\" earns its anthemic finish by doing the slow work first: a clean arpeggiated guitar figure opens the song with real restraint, and Lingua Aeternum lets that quietness sit long enough that when the full band arrives, the payoff feels earned rather than imposed. The central image of \"a ship without a mast, anchored in the harbor, sinking fast\" is the kind of lyric that snaps into focus the moment you hear it, specific and bleak enough to land but open enough to stay with you. At 136 BPM in E major, the song moves with the urgency of a classic-rock heartbreaker, somewhere between the mid-period Counting Crows and a leaner, more direct Goo Goo Dolls, and the pull-back to bare vocals just before the final chorus is exactly the right move. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "arpeggiated guitar opening",
+      "lyric: 'a ship without a mast, anchored in the harbor, sinking fast'",
+      "136 BPM",
+      "E major",
+      "dynamic pull-back before final chorus",
+      "Counting Crows / Goo Goo Dolls comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

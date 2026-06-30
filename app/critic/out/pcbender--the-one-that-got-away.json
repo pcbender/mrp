@@ -1,0 +1,119 @@
+{
+  "track_id": "pcbender--the-one-that-got-away",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The One That Got Away.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--the-one-that-got-away.opus"
+  },
+  "lyrics": "The sky was burning, colors fell apart\nI tried to hold you, but the wind was strong\nYour shadow's fading, slipping from my heart\nYou were a magic moment, a passing song\n\nYou're the one that got away\nI reach for you, but you're gone from sight\nLike the sun at the end of the day\nA dream that vanished into the night\nThe one that got away\n\nThe echoes linger, though the room is still\nI saw the signs, but I closed my eyes\nYour voice is calling, maybe it always will\nNow I'm chasing after someone who's never here\n\nYou're the one that got away\nI reach for you, but you're gone from sight\nLike the sun at the end of the day\nA dream that vanished into the night\nThe one that got away\n\nIf I could turn back time, you'd be here with me\nBut I can't forget what I will never see\nI need to let you go, erase the pain\nBut your memory is like a burning flame\n\nYou're the one that got away\nI reach for you, but you're gone from sight\nLike the tide at the end of the day\nA star that vanished into the night\nThe one that got away\n\nThe one that got away\nStill shining somewhere far away",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 213.48,
+    "lufs": -15.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 20.67,
+        "label": "S1"
+      },
+      {
+        "start": 20.67,
+        "end": 35.74,
+        "label": "S2"
+      },
+      {
+        "start": 35.74,
+        "end": 52.55,
+        "label": "S3"
+      },
+      {
+        "start": 52.55,
+        "end": 90.84,
+        "label": "S4"
+      },
+      {
+        "start": 90.84,
+        "end": 106.88,
+        "label": "S5"
+      },
+      {
+        "start": 106.88,
+        "end": 125.13,
+        "label": "S6"
+      },
+      {
+        "start": 125.13,
+        "end": 145.38,
+        "label": "S7"
+      },
+      {
+        "start": 145.38,
+        "end": 164.21,
+        "label": "S8"
+      },
+      {
+        "start": 164.21,
+        "end": 182.28,
+        "label": "S9"
+      },
+      {
+        "start": 182.28,
+        "end": 197.32,
+        "label": "S10"
+      },
+      {
+        "start": 197.32,
+        "end": 213.48,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.956,
+      "key": 0.921
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "country rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a modern pop ballad that creates a reflective and yearning atmosphere, building its texture from a sparse piano and vocal into a full, anthemic arrangement. The track has a distinct dynamic arc, contrasting the intimate, quiet feel of the verses with the powerful, driving energy of the choruses. The production is very clean, providing ample space for the lead vocal while managing the dramatic swell of the instrumentation without clutter. A defining quality of the track is the powerful transition from the quiet verse into the full-band chorus, a moment which instantly raises the emotional stakes and establishes the song's central hook.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender leans into classic heartbreak territory here, and the payoff is real: the jump from a spare verse into that full-band chorus hits with the kind of lift you hear in early Tom Petty, where the arrangement itself becomes the argument. At 161 BPM in G major the track moves faster than it feels, the momentum tucked neatly under the melody so the emotion lands first. The bridge lyric 'your memory is like a burning flame' is plainspoken enough to work, and the final chorus variation, swapping 'sun' for 'star,' is a small but satisfying gesture. A clean, confident pop-rock cut that does exactly what it sets out to do.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "161 BPM",
+      "G major",
+      "verse-to-chorus dynamic shift",
+      "bridge lyric quote",
+      "final chorus variation (sun/star swap)",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}
