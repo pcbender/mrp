@@ -140,7 +140,7 @@ def cmd_album(args: argparse.Namespace) -> None:
         d = "↑" if t.context_rank > t.standalone_rank else "↓"
         print(f"  [{t.position}] {t.track_id.split('--', 1)[-1]}  "
               f"{t.standalone_rank} → {t.context_rank} {d}  {t.context_note}")
-    print(f"\nAlbum record  → {out_dir / record.album_id}.json")
+    print(f"\nAlbum record  → {out_dir / f'album--{record.album_id}'}.json")
     print(f"Album QA      → {report_path}")
 
 

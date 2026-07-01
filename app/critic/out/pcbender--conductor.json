@@ -1,0 +1,115 @@
+{
+  "track_id": "pcbender--conductor",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Conductor.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--conductor.opus"
+  },
+  "lyrics": "A pulse in the wire… the new wave…\n\nCircuits hum beneath my hands\nWaves of light and lyric strands\nMagnetic pulse, a guiding line\nRecurring sound from coded time\n\nElectric waves trace the air\nPatterns forming everywhere\nA silent voice, an urgent call\nThe current flows—I feel it all\n\nConductor takes the stand\nRoutes the signals all around\nEvery spark, a thread, a path\nEchoes guiding from the past\n\nFrequencies like distant stars\nShaping stanzas, bending bars\nA fragile tone, a quiet spark\nDancing rhythms in the dark\n\nElectric waves trace the air\nPatterns forming everywhere\nA silent voice, a static call\nThe current flows—I feel it all\n\nConductor takes the stand\nRoutes the signals all around\nEvery spark, a thread, a path\nEchoes guiding from the past\n\nA signal lost, an unknown tone…\nThen the music finds its way…\n\nConductor takes the stand\nRoutes the signals all around\nEvery spark, a thread, a path\nEchoes guiding from the past\n\nEchoes guiding from the past…",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 99.4,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 236.44,
+    "lufs": -14.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 0.88,
+        "label": "S1"
+      },
+      {
+        "start": 0.88,
+        "end": 27.47,
+        "label": "S2"
+      },
+      {
+        "start": 27.47,
+        "end": 63.46,
+        "label": "S3"
+      },
+      {
+        "start": 63.46,
+        "end": 92.21,
+        "label": "S4"
+      },
+      {
+        "start": 92.21,
+        "end": 114.5,
+        "label": "S5"
+      },
+      {
+        "start": 114.5,
+        "end": 148.72,
+        "label": "S6"
+      },
+      {
+        "start": 148.72,
+        "end": 167.79,
+        "label": "S7"
+      },
+      {
+        "start": 167.79,
+        "end": 189.92,
+        "label": "S8"
+      },
+      {
+        "start": 189.92,
+        "end": 216.11,
+        "label": "S9"
+      },
+      {
+        "start": 216.11,
+        "end": 236.44,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.866
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "strings",
+      "acoustic guitar",
+      "electric guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track creates a dramatic and futuristic atmosphere, contrasting spacious synth pads with a dense, powerful wall of sound. The energy is consistently high and propulsive, evoking a modern electro-rock anthem with a cinematic, high-stakes feel. The production is polished and massive, featuring a wide stereo image filled by distorted guitars, complex synth layers, and heavily processed vocals that are glued together for a unified, powerful impact. A defining quality is the striking fusion of a powerful, near-operatic male vocal with an aggressive electronic rock instrumental, immediately established by the dynamic shift from the calm opening to a high-energy vocal wail.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Conductor\" finds PCBender in ambitious territory, a 3/4 waltz in E minor that opens with quiet synth breath before detonating into a wall of distorted guitars and processed vocals that hit like a fist. The central conceit, circuitry and electromagnetism as metaphors for creative guidance, lands more often than not, and the chorus hook \"every spark, a thread, a path\" earns its repetition through sheer forward momentum. The near-operatic vocal wail that marks the shift from calm intro to full-band surge is the kind of production choice that separates a track from the pack; it's the move a young Meat Loaf might have approved. At nearly four minutes it builds with enough structural variation across its ten sections to justify the runtime, and the closing decay on \"echoes guiding from the past\" ties the lyrical thread back cleanly.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 time signature",
+      "E minor key",
+      "chorus lyric: every spark, a thread, a path",
+      "dynamic shift from quiet opening to vocal wail",
+      "closing lyric: echoes guiding from the past",
+      "ten-section structure",
+      "3:56 runtime"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

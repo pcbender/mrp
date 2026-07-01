@@ -1,0 +1,109 @@
+{
+  "track_id": "pcbender--relay",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Relay.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--relay.opus"
+  },
+  "lyrics": "They paint my face in gold dust\nPush me into the light\nSay my name like a threat\nLike I ever meant something\nThe cameras hum, the crowd exhales\nA script I never wrote\n\nThis house is glass, the cracks run deep\nThey watch me smile, they hope I break\nI don't know the person they love\nBut she's worth more than me\nRELAY\n\nThey keep me moving, keep me talking\nA puppet with a diamond chain\nAnother city, another drink\nAnother stranger who swears they know me\n\nThe house lights fade, the music swells\nBut I swear, I was never here\n\nNot really. Not ever. Relay…\nNot really. Not ever. Relay…\nNot really. Not ever. Relay…\nNot really. Not ever. Relay…",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 92.3,
+    "key": "B",
+    "mode": "minor",
+    "time_signature": "3/4",
+    "duration_s": 219.32,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 5.53,
+        "label": "S1"
+      },
+      {
+        "start": 5.53,
+        "end": 26.77,
+        "label": "S2"
+      },
+      {
+        "start": 26.77,
+        "end": 50.81,
+        "label": "S3"
+      },
+      {
+        "start": 50.81,
+        "end": 71.15,
+        "label": "S4"
+      },
+      {
+        "start": 71.15,
+        "end": 92.04,
+        "label": "S5"
+      },
+      {
+        "start": 92.04,
+        "end": 132.75,
+        "label": "S6"
+      },
+      {
+        "start": 132.75,
+        "end": 162.42,
+        "label": "S7"
+      },
+      {
+        "start": 162.42,
+        "end": 207.61,
+        "label": "S8"
+      },
+      {
+        "start": 207.61,
+        "end": 219.32,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.942,
+      "key": 0.868
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track presents a dramatic and angsty atmosphere, built upon a dense texture of heavily distorted, layered guitars and a powerful, driving rhythm section. The energy level is consistently high and urgent, moving from propulsive verses to an explosive, anthemic chorus that feels theatrical and intense. The production is modern and polished, creating a massive wall of sound where wide guitars envelop the listener, while punchy drums and a clear, emotionally charged lead vocal sit tightly in the center. A defining moment is the dynamic explosion into the main chorus at 0:51, where the soaring vocal hook creates a memorable and powerful peak that anchors the song.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender has always been good at writing characters who are disappearing inside their own myth, and 'Relay' might be the sharpest version of that instinct yet. The waltz time at 92 BPM gives the whole thing a slightly off-kilter ceremonial feel, like a coronation nobody asked for, and the lyric 'I don't know the person they love / But she's worth more than me' lands with the kind of quiet devastation that most writers reach for and miss. When the chorus explodes at the 0:51 mark, the wall of distorted guitars and that centered, emotionally locked-in vocal hit like early Springsteen crossed with something more brittle and modern. In B minor with a runtime of under four minutes, it doesn't overstay, and the repeated 'Not really. Not ever.' outro earns its weight by then. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "3/4 waltz time at 92.3 BPM",
+      "B minor key",
+      "lyric: 'I don't know the person they love / But she's worth more than me'",
+      "dynamic chorus explosion at 0:51",
+      "repeated outro: 'Not really. Not ever. Relay'",
+      "3:39 runtime"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}
