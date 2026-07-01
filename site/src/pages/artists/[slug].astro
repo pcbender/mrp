@@ -24,23 +24,29 @@ const artistJsonLd = JSON.stringify({
   ...(artist.bio_short ? { "description": artist.bio_short } : {}),
   ...(sameAs.length ? { "sameAs": sameAs } : {})
 });
-const bioBlocks = String(artist.bio_long || "")
-  .split("## Releases")[0]
-  .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
-  .replace(/\[[^\]]*\]\([^)]+\)/g, "")
-  .split(/\n{2,}/)
-  .map((block) => block.trim())
-  .filter(Boolean)
-  .filter((block) => block !== `## ${artist.name}`)
-  .map((block) => {
-    if (block.startsWith("## ")) {
-      return { tag: "h2", text: cleanMarkdownText(block.slice(3)) };
-    }
-    if (block.startsWith("### ")) {
-      return { tag: "h3", text: cleanMarkdownText(block.slice(4)) };
-    }
-    return { tag: "p", text: cleanMarkdownText(block.replace(/\n+/g, " ")) };
-  });
+const bioBlocks = artist.promo_blurb
+  ? String(artist.promo_blurb)
+      .split(/\n{2,}/)
+      .map((block) => block.trim())
+      .filter(Boolean)
+      .map((block) => ({ tag: "p", text: cleanMarkdownText(block.replace(/\n+/g, " ")) }))
+  : String(artist.bio_long || "")
+      .split("## Releases")[0]
+      .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
+      .replace(/\[[^\]]*\]\([^)]+\)/g, "")
+      .split(/\n{2,}/)
+      .map((block) => block.trim())
+      .filter(Boolean)
+      .filter((block) => block !== `## ${artist.name}`)
+      .map((block) => {
+        if (block.startsWith("## ")) {
+          return { tag: "h2", text: cleanMarkdownText(block.slice(3)) };
+        }
+        if (block.startsWith("### ")) {
+          return { tag: "h3", text: cleanMarkdownText(block.slice(4)) };
+        }
+        return { tag: "p", text: cleanMarkdownText(block.replace(/\n+/g, " ")) };
+      });
 
 function cleanMarkdownText(value: string) {
   return String(value)
