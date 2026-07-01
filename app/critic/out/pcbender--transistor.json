@@ -1,0 +1,95 @@
+{
+  "track_id": "pcbender--transistor",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Transistor.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--transistor.opus"
+  },
+  "lyrics": "Now I see the light, there's no going back\nTransistor voices sing in harmony\nEvery sound's so tight, never losing the beat\n\nNo more waiting, no frustration, everything's in circulation\n\nThis much power breeds temptation, ease of use or imitation\nAll my words are singing back to me\n\nArt, or just a craft, simply flip a switch\nAny choice allowed, when the notes just fit\nHelps me write the tune, gets me in the groove\n\nNo more retakes, no misplacing, no more heartbeats hesitating\n\nAll these choices stoke creation, holding out for pure perfection\nAll my words are singing back to me\n\nSmaller, faster, smarter, cool\nA million choices pick the tool\nI bend the code, I break the rules\nI ride the wave, I play for you\n\nI want choices not frustration, writing with a sense of vision\nDreaming of a new sensation, running towards the adulation\nAll my words are singing back to me\n\nAll my words are singing back to me",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 172.3,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 173.16,
+    "lufs": -13.0,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.26,
+        "label": "S1"
+      },
+      {
+        "start": 13.26,
+        "end": 63.48,
+        "label": "S2"
+      },
+      {
+        "start": 63.48,
+        "end": 120.0,
+        "label": "S3"
+      },
+      {
+        "start": 120.0,
+        "end": 135.65,
+        "label": "S4"
+      },
+      {
+        "start": 135.65,
+        "end": 168.86,
+        "label": "S5"
+      },
+      {
+        "start": 168.86,
+        "end": 173.16,
+        "label": "S6"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.984,
+      "key": 0.816
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This is a polished and anthemic pop-rock track, creating an earnest and uplifting atmosphere with its layered electric guitars and a clear, forward male vocal. The energy is consistently high and propulsive, carried by a driving rhythm section that gives the song a powerful, stadium-ready feel. Its production is dense yet pristine, allowing the punchy drums and wide guitars to create a big soundscape while keeping the lead and harmony vocals well-defined in the mix. A distinctive quality is the dynamic build of the pre-chorus, where the arrangement swells with rising tension before exploding into the expansive, multi-tracked vocal hooks of the main chorus.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "Running at a brisk 172 BPM in E major, 'Transistor' is PCBender doing what he does best: building a rock track from the inside out until it feels inevitable. The pre-chorus swell is the real craft move here, tension coiling before the chorus cracks open into those wide, multi-tracked vocals, and the hook 'all my words are singing back to me' lands with the kind of earned clarity that early Tom Petty would recognize. The lyric itself is smart without being precious, wrestling honestly with the creative friction of modern tools and the question of whether convenience costs you something. At under three minutes, it doesn't overstay, and the dense-but-clean production keeps the guitars punching without burying the melody. A genuine highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "172 BPM",
+      "E major",
+      "pre-chorus dynamic build",
+      "multi-tracked chorus vocals",
+      "lyric: 'all my words are singing back to me'",
+      "duration 2:53",
+      "Tom Petty comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

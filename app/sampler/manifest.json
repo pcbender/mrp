@@ -1,29 +1,13 @@
 [
   {
     "track_id": "4castle--a-certain-sense",
-    "sample_path": "site/public/samples/4castle--a-certain-sense.mp3",
-    "preview_audio": "/samples/4castle--a-certain-sense.mp3",
-    "start_s": 245.06,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--a-certain-sense.mp3"
   },
   {
     "track_id": "4castle--a-long-hard-road",
-    "sample_path": "site/public/samples/4castle--a-long-hard-road.mp3",
-    "preview_audio": "/samples/4castle--a-long-hard-road.mp3",
-    "start_s": 152.51,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--a-long-hard-road.mp3"
   },
   {
     "track_id": "4castle--all-change-is-painful",
@@ -32,16 +16,8 @@
   },
   {
     "track_id": "4castle--and-the-gods-fell-down",
-    "sample_path": "site/public/samples/4castle--and-the-gods-fell-down.mp3",
-    "preview_audio": "/samples/4castle--and-the-gods-fell-down.mp3",
-    "start_s": 189.92,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--and-the-gods-fell-down.mp3"
   },
   {
     "track_id": "4castle--at-what-cost",
@@ -50,16 +26,8 @@
   },
   {
     "track_id": "4castle--attunement",
-    "sample_path": "site/public/samples/4castle--attunement.mp3",
-    "preview_audio": "/samples/4castle--attunement.mp3",
-    "start_s": 120.21,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--attunement.mp3"
   },
   {
     "track_id": "4castle--authenticity-factory",
@@ -68,16 +36,8 @@
   },
   {
     "track_id": "4castle--belligerent",
-    "sample_path": "site/public/samples/4castle--belligerent.mp3",
-    "preview_audio": "/samples/4castle--belligerent.mp3",
-    "start_s": 97.45,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--belligerent.mp3"
   },
   {
     "track_id": "4castle--below-the-line",
@@ -85,74 +45,29 @@
     "sample_path": "site/public/samples/4castle--below-the-line.mp3"
   },
   {
-    "track_id": "4castle--bent",
-    "status": "skipped",
-    "message": "no source field (album-level record)"
-  },
-  {
     "track_id": "4castle--bit-wise-resistance",
-    "sample_path": "site/public/samples/4castle--bit-wise-resistance.mp3",
-    "preview_audio": "/samples/4castle--bit-wise-resistance.mp3",
-    "start_s": 149.92,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--bit-wise-resistance.mp3"
   },
   {
     "track_id": "4castle--bobo-s-lair",
-    "sample_path": "site/public/samples/4castle--bobo-s-lair.mp3",
-    "preview_audio": "/samples/4castle--bobo-s-lair.mp3",
-    "start_s": 189.85,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--bobo-s-lair.mp3"
   },
   {
     "track_id": "4castle--by-starlight-drifting-west",
-    "sample_path": "site/public/samples/4castle--by-starlight-drifting-west.mp3",
-    "preview_audio": "/samples/4castle--by-starlight-drifting-west.mp3",
-    "start_s": 87.4,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--by-starlight-drifting-west.mp3"
   },
   {
     "track_id": "4castle--cat-s-claw",
-    "sample_path": "site/public/samples/4castle--cat-s-claw.mp3",
-    "preview_audio": "/samples/4castle--cat-s-claw.mp3",
-    "start_s": 124.95,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--cat-s-claw.mp3"
   },
   {
     "track_id": "4castle--coda-returns",
-    "sample_path": "site/public/samples/4castle--coda-returns.mp3",
-    "preview_audio": "/samples/4castle--coda-returns.mp3",
-    "start_s": 152.37,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--coda-returns.mp3"
   },
   {
     "track_id": "4castle--cracks-in-the-culture-deck",
@@ -161,55 +76,23 @@
   },
   {
     "track_id": "4castle--crimson-decision",
-    "sample_path": "site/public/samples/4castle--crimson-decision.mp3",
-    "preview_audio": "/samples/4castle--crimson-decision.mp3",
-    "start_s": 197.63,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--crimson-decision.mp3"
   },
   {
     "track_id": "4castle--cut-flowers",
-    "sample_path": "site/public/samples/4castle--cut-flowers.mp3",
-    "preview_audio": "/samples/4castle--cut-flowers.mp3",
-    "start_s": 128.62,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--cut-flowers.mp3"
   },
   {
     "track_id": "4castle--delusion-of-truth",
-    "sample_path": "site/public/samples/4castle--delusion-of-truth.mp3",
-    "preview_audio": "/samples/4castle--delusion-of-truth.mp3",
-    "start_s": 174.28,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--delusion-of-truth.mp3"
   },
   {
     "track_id": "4castle--dispirited-santos",
-    "sample_path": "site/public/samples/4castle--dispirited-santos.mp3",
-    "preview_audio": "/samples/4castle--dispirited-santos.mp3",
-    "start_s": 227.53,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--dispirited-santos.mp3"
   },
   {
     "track_id": "4castle--distance-not-safety",
@@ -218,29 +101,13 @@
   },
   {
     "track_id": "4castle--double-black-diamonds",
-    "sample_path": "site/public/samples/4castle--double-black-diamonds.mp3",
-    "preview_audio": "/samples/4castle--double-black-diamonds.mp3",
-    "start_s": 112.22,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--double-black-diamonds.mp3"
   },
   {
     "track_id": "4castle--echo-primae",
-    "sample_path": "site/public/samples/4castle--echo-primae.mp3",
-    "preview_audio": "/samples/4castle--echo-primae.mp3",
-    "start_s": 123.97,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -16.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--echo-primae.mp3"
   },
   {
     "track_id": "4castle--friedmans-folly",
@@ -249,68 +116,28 @@
   },
   {
     "track_id": "4castle--getting-through",
-    "sample_path": "site/public/samples/4castle--getting-through.mp3",
-    "preview_audio": "/samples/4castle--getting-through.mp3",
-    "start_s": 178.77,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--getting-through.mp3"
   },
   {
     "track_id": "4castle--gone-and-forgotten",
-    "sample_path": "site/public/samples/4castle--gone-and-forgotten.mp3",
-    "preview_audio": "/samples/4castle--gone-and-forgotten.mp3",
-    "start_s": 213.88,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--gone-and-forgotten.mp3"
   },
   {
     "track_id": "4castle--haymakers-and-body-blows",
-    "sample_path": "site/public/samples/4castle--haymakers-and-body-blows.mp3",
-    "preview_audio": "/samples/4castle--haymakers-and-body-blows.mp3",
-    "start_s": 150.49,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--haymakers-and-body-blows.mp3"
   },
   {
     "track_id": "4castle--here-comes-the-rain-2",
-    "sample_path": "site/public/samples/4castle--here-comes-the-rain-2.mp3",
-    "preview_audio": "/samples/4castle--here-comes-the-rain-2.mp3",
-    "start_s": 169.46,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--here-comes-the-rain-2.mp3"
   },
   {
     "track_id": "4castle--hesitation-denies",
-    "sample_path": "site/public/samples/4castle--hesitation-denies.mp3",
-    "preview_audio": "/samples/4castle--hesitation-denies.mp3",
-    "start_s": 32.21,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--hesitation-denies.mp3"
   },
   {
     "track_id": "4castle--human-capital",
@@ -319,29 +146,13 @@
   },
   {
     "track_id": "4castle--light-in-eyes",
-    "sample_path": "site/public/samples/4castle--light-in-eyes.mp3",
-    "preview_audio": "/samples/4castle--light-in-eyes.mp3",
-    "start_s": 211.53,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--light-in-eyes.mp3"
   },
   {
     "track_id": "4castle--montradei",
-    "sample_path": "site/public/samples/4castle--montradei.mp3",
-    "preview_audio": "/samples/4castle--montradei.mp3",
-    "start_s": 132.7,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--montradei.mp3"
   },
   {
     "track_id": "4castle--mr-mckay",
@@ -350,16 +161,8 @@
   },
   {
     "track_id": "4castle--next-to-nothing",
-    "sample_path": "site/public/samples/4castle--next-to-nothing.mp3",
-    "preview_audio": "/samples/4castle--next-to-nothing.mp3",
-    "start_s": 134.63,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--next-to-nothing.mp3"
   },
   {
     "track_id": "4castle--nightmares-return",
@@ -373,81 +176,33 @@
   },
   {
     "track_id": "4castle--paradox-of-contradictions",
-    "sample_path": "site/public/samples/4castle--paradox-of-contradictions.mp3",
-    "preview_audio": "/samples/4castle--paradox-of-contradictions.mp3",
-    "start_s": 95.57,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--paradox-of-contradictions.mp3"
   },
   {
     "track_id": "4castle--pixy-stix",
-    "sample_path": "site/public/samples/4castle--pixy-stix.mp3",
-    "preview_audio": "/samples/4castle--pixy-stix.mp3",
-    "start_s": 43.42,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--pixy-stix.mp3"
   },
   {
     "track_id": "4castle--preternatural",
-    "sample_path": "site/public/samples/4castle--preternatural.mp3",
-    "preview_audio": "/samples/4castle--preternatural.mp3",
-    "start_s": 68.52,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--preternatural.mp3"
   },
   {
     "track_id": "4castle--ready-almost",
-    "sample_path": "site/public/samples/4castle--ready-almost.mp3",
-    "preview_audio": "/samples/4castle--ready-almost.mp3",
-    "start_s": 254.34,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--ready-almost.mp3"
   },
   {
     "track_id": "4castle--scattershot-forget-me-not",
-    "sample_path": "site/public/samples/4castle--scattershot-forget-me-not.mp3",
-    "preview_audio": "/samples/4castle--scattershot-forget-me-not.mp3",
-    "start_s": 103.63,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--scattershot-forget-me-not.mp3"
   },
   {
     "track_id": "4castle--something-less-would-joy-then-be",
-    "sample_path": "site/public/samples/4castle--something-less-would-joy-then-be.mp3",
-    "preview_audio": "/samples/4castle--something-less-would-joy-then-be.mp3",
-    "start_s": 183.51,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--something-less-would-joy-then-be.mp3"
   },
   {
     "track_id": "4castle--stock-price-jesus",
@@ -461,120 +216,48 @@
   },
   {
     "track_id": "4castle--the-distance-between",
-    "sample_path": "site/public/samples/4castle--the-distance-between.mp3",
-    "preview_audio": "/samples/4castle--the-distance-between.mp3",
-    "start_s": 117.56,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--the-distance-between.mp3"
   },
   {
     "track_id": "4castle--the-dreamer-and-the-dreamed",
-    "sample_path": "site/public/samples/4castle--the-dreamer-and-the-dreamed.mp3",
-    "preview_audio": "/samples/4castle--the-dreamer-and-the-dreamed.mp3",
-    "start_s": 169.44,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--the-dreamer-and-the-dreamed.mp3"
   },
   {
     "track_id": "4castle--the-only-way-over",
-    "sample_path": "site/public/samples/4castle--the-only-way-over.mp3",
-    "preview_audio": "/samples/4castle--the-only-way-over.mp3",
-    "start_s": 250.75,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--the-only-way-over.mp3"
   },
   {
     "track_id": "4castle--the-turn-is-yours",
-    "sample_path": "site/public/samples/4castle--the-turn-is-yours.mp3",
-    "preview_audio": "/samples/4castle--the-turn-is-yours.mp3",
-    "start_s": 232.84,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--the-turn-is-yours.mp3"
   },
   {
     "track_id": "4castle--then-she-descends",
-    "sample_path": "site/public/samples/4castle--then-she-descends.mp3",
-    "preview_audio": "/samples/4castle--then-she-descends.mp3",
-    "start_s": 128.66,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--then-she-descends.mp3"
   },
   {
     "track_id": "4castle--tigers-eye",
-    "sample_path": "site/public/samples/4castle--tigers-eye.mp3",
-    "preview_audio": "/samples/4castle--tigers-eye.mp3",
-    "start_s": 88.58,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--tigers-eye.mp3"
   },
   {
     "track_id": "4castle--to-be-all",
-    "sample_path": "site/public/samples/4castle--to-be-all.mp3",
-    "preview_audio": "/samples/4castle--to-be-all.mp3",
-    "start_s": 305.55,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--to-be-all.mp3"
   },
   {
     "track_id": "4castle--umbra-ala",
-    "sample_path": "site/public/samples/4castle--umbra-ala.mp3",
-    "preview_audio": "/samples/4castle--umbra-ala.mp3",
-    "start_s": 160.61,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--umbra-ala.mp3"
   },
   {
     "track_id": "4castle--venus-syndrome",
-    "sample_path": "site/public/samples/4castle--venus-syndrome.mp3",
-    "preview_audio": "/samples/4castle--venus-syndrome.mp3",
-    "start_s": 144.06,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--venus-syndrome.mp3"
   },
   {
     "track_id": "4castle--vision-values",
@@ -583,16 +266,8 @@
   },
   {
     "track_id": "4castle--void-of-intention",
-    "sample_path": "site/public/samples/4castle--void-of-intention.mp3",
-    "preview_audio": "/samples/4castle--void-of-intention.mp3",
-    "start_s": 216.53,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--void-of-intention.mp3"
   },
   {
     "track_id": "4castle--voluntary-mandatory",
@@ -601,133 +276,118 @@
   },
   {
     "track_id": "4castle--what-s-best",
-    "sample_path": "site/public/samples/4castle--what-s-best.mp3",
-    "preview_audio": "/samples/4castle--what-s-best.mp3",
-    "start_s": 155.3,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/4castle--what-s-best.mp3"
+  },
+  {
+    "track_id": "album--4castle--bent",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--4castle--distance-not-safety",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--4castle--on-the-advent-of-a-dream",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--lingua-aeternum--inner-outer-over-through",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--michael-anthony-rose--i-m-still-here",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--pcbender--bakers-dozen",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--pcbender--circuiting",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--pcbender--free",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--pcbender--made-by-moving",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--pcbender--red-green-and-blues",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--pcbender--tria",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--pcbender--winds-of-change",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
+  },
+  {
+    "track_id": "album--stab--the-messy-middle",
+    "status": "skipped",
+    "message": "no source field (album-level record)"
   },
   {
     "track_id": "lingua-aeternum--a-candle-deep",
-    "sample_path": "site/public/samples/lingua-aeternum--a-candle-deep.mp3",
-    "preview_audio": "/samples/lingua-aeternum--a-candle-deep.mp3",
-    "start_s": 211.56,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--a-candle-deep.mp3"
   },
   {
     "track_id": "lingua-aeternum--aim-for-true",
-    "sample_path": "site/public/samples/lingua-aeternum--aim-for-true.mp3",
-    "preview_audio": "/samples/lingua-aeternum--aim-for-true.mp3",
-    "start_s": 238.7,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--aim-for-true.mp3"
   },
   {
     "track_id": "lingua-aeternum--begin-with-nothing",
-    "sample_path": "site/public/samples/lingua-aeternum--begin-with-nothing.mp3",
-    "preview_audio": "/samples/lingua-aeternum--begin-with-nothing.mp3",
-    "start_s": 222.17,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--begin-with-nothing.mp3"
   },
   {
     "track_id": "lingua-aeternum--body-of-work",
-    "sample_path": "site/public/samples/lingua-aeternum--body-of-work.mp3",
-    "preview_audio": "/samples/lingua-aeternum--body-of-work.mp3",
-    "start_s": 171.48,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--body-of-work.mp3"
   },
   {
     "track_id": "lingua-aeternum--cosmic-relations",
-    "sample_path": "site/public/samples/lingua-aeternum--cosmic-relations.mp3",
-    "preview_audio": "/samples/lingua-aeternum--cosmic-relations.mp3",
-    "start_s": 226.16,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--cosmic-relations.mp3"
   },
   {
     "track_id": "lingua-aeternum--crimson-decision-2",
-    "sample_path": "site/public/samples/lingua-aeternum--crimson-decision-2.mp3",
-    "preview_audio": "/samples/lingua-aeternum--crimson-decision-2.mp3",
-    "start_s": 214.37,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--crimson-decision-2.mp3"
   },
   {
     "track_id": "lingua-aeternum--gratitude-express",
-    "sample_path": "site/public/samples/lingua-aeternum--gratitude-express.mp3",
-    "preview_audio": "/samples/lingua-aeternum--gratitude-express.mp3",
-    "start_s": 98.89,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--gratitude-express.mp3"
   },
   {
     "track_id": "lingua-aeternum--hither-come-softly",
-    "sample_path": "site/public/samples/lingua-aeternum--hither-come-softly.mp3",
-    "preview_audio": "/samples/lingua-aeternum--hither-come-softly.mp3",
-    "start_s": 71.56,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--hither-come-softly.mp3"
   },
   {
     "track_id": "lingua-aeternum--indolent-heart",
-    "sample_path": "site/public/samples/lingua-aeternum--indolent-heart.mp3",
-    "preview_audio": "/samples/lingua-aeternum--indolent-heart.mp3",
-    "start_s": 89.75,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--indolent-heart.mp3"
   },
   {
     "track_id": "lingua-aeternum--inner-outer-over-through",
@@ -736,354 +396,138 @@
   },
   {
     "track_id": "lingua-aeternum--invocate",
-    "sample_path": "site/public/samples/lingua-aeternum--invocate.mp3",
-    "preview_audio": "/samples/lingua-aeternum--invocate.mp3",
-    "start_s": 159.68,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--invocate.mp3"
   },
   {
     "track_id": "lingua-aeternum--just-the-same",
-    "sample_path": "site/public/samples/lingua-aeternum--just-the-same.mp3",
-    "preview_audio": "/samples/lingua-aeternum--just-the-same.mp3",
-    "start_s": 212.08,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--just-the-same.mp3"
   },
   {
     "track_id": "lingua-aeternum--knots-and-needles",
-    "sample_path": "site/public/samples/lingua-aeternum--knots-and-needles.mp3",
-    "preview_audio": "/samples/lingua-aeternum--knots-and-needles.mp3",
-    "start_s": 0.0,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--knots-and-needles.mp3"
   },
   {
     "track_id": "lingua-aeternum--mad-river",
-    "sample_path": "site/public/samples/lingua-aeternum--mad-river.mp3",
-    "preview_audio": "/samples/lingua-aeternum--mad-river.mp3",
-    "start_s": 268.89,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--mad-river.mp3"
   },
   {
     "track_id": "lingua-aeternum--magical-thinking",
-    "sample_path": "site/public/samples/lingua-aeternum--magical-thinking.mp3",
-    "preview_audio": "/samples/lingua-aeternum--magical-thinking.mp3",
-    "start_s": 171.67,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--magical-thinking.mp3"
   },
   {
     "track_id": "lingua-aeternum--one-day",
-    "sample_path": "site/public/samples/lingua-aeternum--one-day.mp3",
-    "preview_audio": "/samples/lingua-aeternum--one-day.mp3",
-    "start_s": 197.5,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--one-day.mp3"
   },
   {
     "track_id": "lingua-aeternum--opposites-attach",
-    "sample_path": "site/public/samples/lingua-aeternum--opposites-attach.mp3",
-    "preview_audio": "/samples/lingua-aeternum--opposites-attach.mp3",
-    "start_s": 156.43,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--opposites-attach.mp3"
   },
   {
     "track_id": "lingua-aeternum--piercing-dread-of-light",
-    "sample_path": "site/public/samples/lingua-aeternum--piercing-dread-of-light.mp3",
-    "preview_audio": "/samples/lingua-aeternum--piercing-dread-of-light.mp3",
-    "start_s": 275.16,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--piercing-dread-of-light.mp3"
   },
   {
     "track_id": "lingua-aeternum--ramps-and-lanes",
-    "sample_path": "site/public/samples/lingua-aeternum--ramps-and-lanes.mp3",
-    "preview_audio": "/samples/lingua-aeternum--ramps-and-lanes.mp3",
-    "start_s": 154.85,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--ramps-and-lanes.mp3"
   },
   {
     "track_id": "lingua-aeternum--sentia",
-    "sample_path": "site/public/samples/lingua-aeternum--sentia.mp3",
-    "preview_audio": "/samples/lingua-aeternum--sentia.mp3",
-    "start_s": 235.8,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--sentia.mp3"
   },
   {
     "track_id": "lingua-aeternum--sentia-becomes",
-    "sample_path": "site/public/samples/lingua-aeternum--sentia-becomes.mp3",
-    "preview_audio": "/samples/lingua-aeternum--sentia-becomes.mp3",
-    "start_s": 99.54,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--sentia-becomes.mp3"
   },
   {
     "track_id": "lingua-aeternum--stone-warrior",
-    "sample_path": "site/public/samples/lingua-aeternum--stone-warrior.mp3",
-    "preview_audio": "/samples/lingua-aeternum--stone-warrior.mp3",
-    "start_s": 206.43,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--stone-warrior.mp3"
   },
   {
     "track_id": "lingua-aeternum--the-color-of-wind",
-    "sample_path": "site/public/samples/lingua-aeternum--the-color-of-wind.mp3",
-    "preview_audio": "/samples/lingua-aeternum--the-color-of-wind.mp3",
-    "start_s": 56.15,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--the-color-of-wind.mp3"
   },
   {
     "track_id": "lingua-aeternum--the-memory-i-ll-borrow",
-    "sample_path": "site/public/samples/lingua-aeternum--the-memory-i-ll-borrow.mp3",
-    "preview_audio": "/samples/lingua-aeternum--the-memory-i-ll-borrow.mp3",
-    "start_s": 63.53,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--the-memory-i-ll-borrow.mp3"
   },
   {
     "track_id": "lingua-aeternum--the-wayfinder",
-    "sample_path": "site/public/samples/lingua-aeternum--the-wayfinder.mp3",
-    "preview_audio": "/samples/lingua-aeternum--the-wayfinder.mp3",
-    "start_s": 158.59,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--the-wayfinder.mp3"
   },
   {
     "track_id": "lingua-aeternum--this-over-that",
-    "sample_path": "site/public/samples/lingua-aeternum--this-over-that.mp3",
-    "preview_audio": "/samples/lingua-aeternum--this-over-that.mp3",
-    "start_s": 169.5,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--this-over-that.mp3"
   },
   {
     "track_id": "lingua-aeternum--thread-by-thread",
-    "sample_path": "site/public/samples/lingua-aeternum--thread-by-thread.mp3",
-    "preview_audio": "/samples/lingua-aeternum--thread-by-thread.mp3",
-    "start_s": 170.0,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--thread-by-thread.mp3"
   },
   {
     "track_id": "lingua-aeternum--where-sky-and-morning-meet",
-    "sample_path": "site/public/samples/lingua-aeternum--where-sky-and-morning-meet.mp3",
-    "preview_audio": "/samples/lingua-aeternum--where-sky-and-morning-meet.mp3",
-    "start_s": 164.35,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/lingua-aeternum--where-sky-and-morning-meet.mp3"
   },
   {
     "track_id": "michael-anthony-rose--aletheion",
-    "sample_path": "site/public/samples/michael-anthony-rose--aletheion.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--aletheion.mp3",
-    "start_s": 88.05,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--aletheion.mp3"
   },
   {
     "track_id": "michael-anthony-rose--aroma-of-you",
-    "sample_path": "site/public/samples/michael-anthony-rose--aroma-of-you.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--aroma-of-you.mp3",
-    "start_s": 178.03,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--aroma-of-you.mp3"
   },
   {
     "track_id": "michael-anthony-rose--avant-suite",
-    "sample_path": "site/public/samples/michael-anthony-rose--avant-suite.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--avant-suite.mp3",
-    "start_s": 187.55,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--avant-suite.mp3"
   },
   {
     "track_id": "michael-anthony-rose--build-me-a-lie",
-    "sample_path": "site/public/samples/michael-anthony-rose--build-me-a-lie.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--build-me-a-lie.mp3",
-    "start_s": 111.64,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--build-me-a-lie.mp3"
   },
   {
     "track_id": "michael-anthony-rose--but-that-was-then",
-    "sample_path": "site/public/samples/michael-anthony-rose--but-that-was-then.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--but-that-was-then.mp3",
-    "start_s": 288.14,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--but-that-was-then.mp3"
   },
   {
     "track_id": "michael-anthony-rose--entraining",
-    "sample_path": "site/public/samples/michael-anthony-rose--entraining.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--entraining.mp3",
-    "start_s": 213.39,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--entraining.mp3"
   },
   {
     "track_id": "michael-anthony-rose--full-size-person",
-    "sample_path": "site/public/samples/michael-anthony-rose--full-size-person.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--full-size-person.mp3",
-    "start_s": 232.2,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -6.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--full-size-person.mp3"
   },
   {
     "track_id": "michael-anthony-rose--i-know-exactly-what-this-is",
-    "sample_path": "site/public/samples/michael-anthony-rose--i-know-exactly-what-this-is.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--i-know-exactly-what-this-is.mp3",
-    "start_s": 209.94,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--i-know-exactly-what-this-is.mp3"
   },
   {
     "track_id": "michael-anthony-rose--i-m-old-now",
-    "sample_path": "site/public/samples/michael-anthony-rose--i-m-old-now.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--i-m-old-now.mp3",
-    "start_s": 180.07,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -6.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--i-m-old-now.mp3"
   },
   {
     "track_id": "michael-anthony-rose--i-m-still-here",
@@ -1092,211 +536,83 @@
   },
   {
     "track_id": "michael-anthony-rose--i-will-bloom",
-    "sample_path": "site/public/samples/michael-anthony-rose--i-will-bloom.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--i-will-bloom.mp3",
-    "start_s": 164.6,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--i-will-bloom.mp3"
   },
   {
     "track_id": "michael-anthony-rose--its-in-me-too",
-    "sample_path": "site/public/samples/michael-anthony-rose--its-in-me-too.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--its-in-me-too.mp3",
-    "start_s": 110.02,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--its-in-me-too.mp3"
   },
   {
     "track_id": "michael-anthony-rose--live-forever-or-die-trying",
-    "sample_path": "site/public/samples/michael-anthony-rose--live-forever-or-die-trying.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--live-forever-or-die-trying.mp3",
-    "start_s": 236.5,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--live-forever-or-die-trying.mp3"
   },
   {
     "track_id": "michael-anthony-rose--never-knowing",
-    "sample_path": "site/public/samples/michael-anthony-rose--never-knowing.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--never-knowing.mp3",
-    "start_s": 205.68,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--never-knowing.mp3"
   },
   {
     "track_id": "michael-anthony-rose--nowhere-but-up",
-    "sample_path": "site/public/samples/michael-anthony-rose--nowhere-but-up.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--nowhere-but-up.mp3",
-    "start_s": 208.38,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--nowhere-but-up.mp3"
   },
   {
     "track_id": "michael-anthony-rose--prepositions",
-    "sample_path": "site/public/samples/michael-anthony-rose--prepositions.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--prepositions.mp3",
-    "start_s": 171.57,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--prepositions.mp3"
   },
   {
     "track_id": "michael-anthony-rose--rooms-keep-people",
-    "sample_path": "site/public/samples/michael-anthony-rose--rooms-keep-people.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--rooms-keep-people.mp3",
-    "start_s": 147.73,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -12.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--rooms-keep-people.mp3"
   },
   {
     "track_id": "michael-anthony-rose--slow-down",
-    "sample_path": "site/public/samples/michael-anthony-rose--slow-down.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--slow-down.mp3",
-    "start_s": 174.5,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -6.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--slow-down.mp3"
   },
   {
     "track_id": "michael-anthony-rose--some-days-still-break-me",
-    "sample_path": "site/public/samples/michael-anthony-rose--some-days-still-break-me.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--some-days-still-break-me.mp3",
-    "start_s": 160.33,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--some-days-still-break-me.mp3"
   },
   {
     "track_id": "michael-anthony-rose--some-things-just-stop",
-    "sample_path": "site/public/samples/michael-anthony-rose--some-things-just-stop.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--some-things-just-stop.mp3",
-    "start_s": 156.87,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--some-things-just-stop.mp3"
   },
   {
     "track_id": "michael-anthony-rose--thats-enough",
-    "sample_path": "site/public/samples/michael-anthony-rose--thats-enough.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--thats-enough.mp3",
-    "start_s": 171.32,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--thats-enough.mp3"
   },
   {
     "track_id": "michael-anthony-rose--thats-the-question",
-    "sample_path": "site/public/samples/michael-anthony-rose--thats-the-question.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--thats-the-question.mp3",
-    "start_s": 189.6,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--thats-the-question.mp3"
   },
   {
     "track_id": "michael-anthony-rose--the-bridge-gets-you-over",
-    "sample_path": "site/public/samples/michael-anthony-rose--the-bridge-gets-you-over.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--the-bridge-gets-you-over.mp3",
-    "start_s": 242.9,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--the-bridge-gets-you-over.mp3"
   },
   {
     "track_id": "michael-anthony-rose--they-dont-know",
-    "sample_path": "site/public/samples/michael-anthony-rose--they-dont-know.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--they-dont-know.mp3",
-    "start_s": 114.78,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--they-dont-know.mp3"
   },
   {
     "track_id": "michael-anthony-rose--truth-s-empty-promise",
-    "sample_path": "site/public/samples/michael-anthony-rose--truth-s-empty-promise.mp3",
-    "preview_audio": "/samples/michael-anthony-rose--truth-s-empty-promise.mp3",
-    "start_s": 218.22,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-anthony-rose--truth-s-empty-promise.mp3"
   },
   {
     "track_id": "michael-rose--biff-knocker",
-    "sample_path": "site/public/samples/michael-rose--biff-knocker.mp3",
-    "preview_audio": "/samples/michael-rose--biff-knocker.mp3",
-    "start_s": 219.82,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/michael-rose--biff-knocker.mp3"
   },
   {
     "track_id": "pcbender--366",
@@ -1305,42 +621,18 @@
   },
   {
     "track_id": "pcbender--a-dark-so-strong",
-    "sample_path": "site/public/samples/pcbender--a-dark-so-strong.mp3",
-    "preview_audio": "/samples/pcbender--a-dark-so-strong.mp3",
-    "start_s": 228.21,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--a-dark-so-strong.mp3"
   },
   {
     "track_id": "pcbender--abundant-emptiness",
-    "sample_path": "site/public/samples/pcbender--abundant-emptiness.mp3",
-    "preview_audio": "/samples/pcbender--abundant-emptiness.mp3",
-    "start_s": 80.11,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--abundant-emptiness.mp3"
   },
   {
     "track_id": "pcbender--active-illusion",
-    "sample_path": "site/public/samples/pcbender--active-illusion.mp3",
-    "preview_audio": "/samples/pcbender--active-illusion.mp3",
-    "start_s": 240.05,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--active-illusion.mp3"
   },
   {
     "track_id": "pcbender--aiteo",
@@ -1349,42 +641,18 @@
   },
   {
     "track_id": "pcbender--allocution",
-    "sample_path": "site/public/samples/pcbender--allocution.mp3",
-    "preview_audio": "/samples/pcbender--allocution.mp3",
-    "start_s": 185.43,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--allocution.mp3"
   },
   {
     "track_id": "pcbender--altitude",
-    "sample_path": "site/public/samples/pcbender--altitude.mp3",
-    "preview_audio": "/samples/pcbender--altitude.mp3",
-    "start_s": 200.25,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--altitude.mp3"
   },
   {
     "track_id": "pcbender--and-then-he-rested",
-    "sample_path": "site/public/samples/pcbender--and-then-he-rested.mp3",
-    "preview_audio": "/samples/pcbender--and-then-he-rested.mp3",
-    "start_s": 197.53,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--and-then-he-rested.mp3"
   },
   {
     "track_id": "pcbender--apa",
@@ -1398,183 +666,133 @@
   },
   {
     "track_id": "pcbender--aureolin",
-    "sample_path": "site/public/samples/pcbender--aureolin.mp3",
-    "preview_audio": "/samples/pcbender--aureolin.mp3",
-    "start_s": 34.32,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--bakers-dozen",
-    "status": "skipped",
-    "message": "no source field (album-level record)"
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--aureolin.mp3"
   },
   {
     "track_id": "pcbender--beat-lightning",
-    "sample_path": "site/public/samples/pcbender--beat-lightning.mp3",
-    "preview_audio": "/samples/pcbender--beat-lightning.mp3",
-    "start_s": 159.17,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--beat-lightning.mp3"
   },
   {
     "track_id": "pcbender--because-you-do",
-    "sample_path": "site/public/samples/pcbender--because-you-do.mp3",
-    "preview_audio": "/samples/pcbender--because-you-do.mp3",
-    "start_s": 168.37,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--because-you-do.mp3"
   },
   {
     "track_id": "pcbender--busy",
-    "sample_path": "site/public/samples/pcbender--busy.mp3",
-    "preview_audio": "/samples/pcbender--busy.mp3",
-    "start_s": 110.83,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -13.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--busy.mp3"
   },
   {
     "track_id": "pcbender--by-starlight-drifting-west-2",
-    "sample_path": "site/public/samples/pcbender--by-starlight-drifting-west-2.mp3",
-    "preview_audio": "/samples/pcbender--by-starlight-drifting-west-2.mp3",
-    "start_s": 86.15,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--by-starlight-drifting-west-2.mp3"
   },
   {
     "track_id": "pcbender--camino-cielo",
-    "sample_path": "site/public/samples/pcbender--camino-cielo.mp3",
-    "preview_audio": "/samples/pcbender--camino-cielo.mp3",
-    "start_s": 211.49,
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--camino-cielo.mp3"
+  },
+  {
+    "track_id": "pcbender--candle-deep",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--candle-deep.mp3"
+  },
+  {
+    "track_id": "pcbender--capacitor",
+    "sample_path": "site/public/samples/pcbender--capacitor.mp3",
+    "preview_audio": "/samples/pcbender--capacitor.mp3",
+    "start_s": 115.52,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
-    "measured_lufs_out": -13.0,
+    "measured_lufs_out": -9.4,
     "format": "mp3_128k",
     "status": "ok",
     "preview_audio_written": true
   },
   {
-    "track_id": "pcbender--candle-deep",
-    "sample_path": "site/public/samples/pcbender--candle-deep.mp3",
-    "preview_audio": "/samples/pcbender--candle-deep.mp3",
-    "start_s": 283.38,
+    "track_id": "pcbender--circuit",
+    "sample_path": "site/public/samples/pcbender--circuit.mp3",
+    "preview_audio": "/samples/pcbender--circuit.mp3",
+    "start_s": 253.38,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
-    "measured_lufs_out": -10.3,
+    "measured_lufs_out": -11.1,
     "format": "mp3_128k",
     "status": "ok",
     "preview_audio_written": true
   },
   {
     "track_id": "pcbender--come-up-and-see",
-    "sample_path": "site/public/samples/pcbender--come-up-and-see.mp3",
-    "preview_audio": "/samples/pcbender--come-up-and-see.mp3",
-    "start_s": 147.21,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--come-up-and-see.mp3"
   },
   {
     "track_id": "pcbender--comfortable-specter",
-    "sample_path": "site/public/samples/pcbender--comfortable-specter.mp3",
-    "preview_audio": "/samples/pcbender--comfortable-specter.mp3",
-    "start_s": 119.26,
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--comfortable-specter.mp3"
+  },
+  {
+    "track_id": "pcbender--conductor",
+    "sample_path": "site/public/samples/pcbender--conductor.mp3",
+    "preview_audio": "/samples/pcbender--conductor.mp3",
+    "start_s": 167.79,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
+    "measured_lufs_out": -10.6,
     "format": "mp3_128k",
     "status": "ok",
     "preview_audio_written": true
   },
   {
     "track_id": "pcbender--confused-by-your-wires",
-    "sample_path": "site/public/samples/pcbender--confused-by-your-wires.mp3",
-    "preview_audio": "/samples/pcbender--confused-by-your-wires.mp3",
-    "start_s": 116.12,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--confused-by-your-wires.mp3"
   },
   {
     "track_id": "pcbender--crimson-decision-3",
-    "sample_path": "site/public/samples/pcbender--crimson-decision-3.mp3",
-    "preview_audio": "/samples/pcbender--crimson-decision-3.mp3",
-    "start_s": 178.42,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--crimson-decision-3.mp3"
   },
   {
     "track_id": "pcbender--cyclamen",
-    "sample_path": "site/public/samples/pcbender--cyclamen.mp3",
-    "preview_audio": "/samples/pcbender--cyclamen.mp3",
-    "start_s": 123.25,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--cyclamen.mp3"
   },
   {
     "track_id": "pcbender--cyranoid",
-    "sample_path": "site/public/samples/pcbender--cyranoid.mp3",
-    "preview_audio": "/samples/pcbender--cyranoid.mp3",
-    "start_s": 282.26,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--cyranoid.mp3"
   },
   {
     "track_id": "pcbender--death",
-    "sample_path": "site/public/samples/pcbender--death.mp3",
-    "preview_audio": "/samples/pcbender--death.mp3",
-    "start_s": 335.57,
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--death.mp3"
+  },
+  {
+    "track_id": "pcbender--deb",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--deb.mp3"
+  },
+  {
+    "track_id": "pcbender--desire",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--desire.mp3"
+  },
+  {
+    "track_id": "pcbender--difference",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--difference.mp3"
+  },
+  {
+    "track_id": "pcbender--diode",
+    "sample_path": "site/public/samples/pcbender--diode.mp3",
+    "preview_audio": "/samples/pcbender--diode.mp3",
+    "start_s": 57.35,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
@@ -1584,69 +802,14 @@
     "preview_audio_written": true
   },
   {
-    "track_id": "pcbender--deb",
-    "sample_path": "site/public/samples/pcbender--deb.mp3",
-    "preview_audio": "/samples/pcbender--deb.mp3",
-    "start_s": 154.11,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--desire",
-    "sample_path": "site/public/samples/pcbender--desire.mp3",
-    "preview_audio": "/samples/pcbender--desire.mp3",
-    "start_s": 270.2,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--difference",
-    "sample_path": "site/public/samples/pcbender--difference.mp3",
-    "preview_audio": "/samples/pcbender--difference.mp3",
-    "start_s": 197.28,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
     "track_id": "pcbender--driving-the-clock",
-    "sample_path": "site/public/samples/pcbender--driving-the-clock.mp3",
-    "preview_audio": "/samples/pcbender--driving-the-clock.mp3",
-    "start_s": 177.33,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--driving-the-clock.mp3"
   },
   {
     "track_id": "pcbender--dusty-desert-rain",
-    "sample_path": "site/public/samples/pcbender--dusty-desert-rain.mp3",
-    "preview_audio": "/samples/pcbender--dusty-desert-rain.mp3",
-    "start_s": 256.67,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -12.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--dusty-desert-rain.mp3"
   },
   {
     "track_id": "pcbender--ego-eimi",
@@ -1655,16 +818,8 @@
   },
   {
     "track_id": "pcbender--elemental-fundamental",
-    "sample_path": "site/public/samples/pcbender--elemental-fundamental.mp3",
-    "preview_audio": "/samples/pcbender--elemental-fundamental.mp3",
-    "start_s": 112.73,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--elemental-fundamental.mp3"
   },
   {
     "track_id": "pcbender--esmen",
@@ -1678,42 +833,18 @@
   },
   {
     "track_id": "pcbender--ever-only-after",
-    "sample_path": "site/public/samples/pcbender--ever-only-after.mp3",
-    "preview_audio": "/samples/pcbender--ever-only-after.mp3",
-    "start_s": 179.19,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--ever-only-after.mp3"
   },
   {
     "track_id": "pcbender--everythings-better-than-nothin",
-    "sample_path": "site/public/samples/pcbender--everythings-better-than-nothin.mp3",
-    "preview_audio": "/samples/pcbender--everythings-better-than-nothin.mp3",
-    "start_s": 199.58,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--everythings-better-than-nothin.mp3"
   },
   {
     "track_id": "pcbender--fabulous-catastrophe",
-    "sample_path": "site/public/samples/pcbender--fabulous-catastrophe.mp3",
-    "preview_audio": "/samples/pcbender--fabulous-catastrophe.mp3",
-    "start_s": 212.18,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--fabulous-catastrophe.mp3"
   },
   {
     "track_id": "pcbender--february-actuary",
@@ -1722,29 +853,13 @@
   },
   {
     "track_id": "pcbender--for-the-love-of-a-woman",
-    "sample_path": "site/public/samples/pcbender--for-the-love-of-a-woman.mp3",
-    "preview_audio": "/samples/pcbender--for-the-love-of-a-woman.mp3",
-    "start_s": 78.81,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--for-the-love-of-a-woman.mp3"
   },
   {
     "track_id": "pcbender--for-what-is-love",
-    "sample_path": "site/public/samples/pcbender--for-what-is-love.mp3",
-    "preview_audio": "/samples/pcbender--for-what-is-love.mp3",
-    "start_s": 122.16,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--for-what-is-love.mp3"
   },
   {
     "track_id": "pcbender--free",
@@ -1753,126 +868,14 @@
   },
   {
     "track_id": "pcbender--funkit",
-    "sample_path": "site/public/samples/pcbender--funkit.mp3",
-    "preview_audio": "/samples/pcbender--funkit.mp3",
-    "start_s": 164.95,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--funkit.mp3"
   },
   {
-    "track_id": "pcbender--gemini-rising",
-    "sample_path": "site/public/samples/pcbender--gemini-rising.mp3",
-    "preview_audio": "/samples/pcbender--gemini-rising.mp3",
-    "start_s": 102.54,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--god",
-    "sample_path": "site/public/samples/pcbender--god.mp3",
-    "preview_audio": "/samples/pcbender--god.mp3",
-    "start_s": 284.68,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--half-happenstance",
-    "sample_path": "site/public/samples/pcbender--half-happenstance.mp3",
-    "preview_audio": "/samples/pcbender--half-happenstance.mp3",
-    "start_s": 135.7,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--halfway-in-between",
-    "sample_path": "site/public/samples/pcbender--halfway-in-between.mp3",
-    "preview_audio": "/samples/pcbender--halfway-in-between.mp3",
-    "start_s": 30.53,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--hardwood-confessions",
-    "sample_path": "site/public/samples/pcbender--hardwood-confessions.mp3",
-    "preview_audio": "/samples/pcbender--hardwood-confessions.mp3",
-    "start_s": 140.39,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--have-a-heart",
-    "sample_path": "site/public/samples/pcbender--have-a-heart.mp3",
-    "preview_audio": "/samples/pcbender--have-a-heart.mp3",
-    "start_s": 191.68,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--how-can-this-be-us",
-    "sample_path": "site/public/samples/pcbender--how-can-this-be-us.mp3",
-    "preview_audio": "/samples/pcbender--how-can-this-be-us.mp3",
-    "start_s": 192.59,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--how-many-gone",
-    "sample_path": "site/public/samples/pcbender--how-many-gone.mp3",
-    "preview_audio": "/samples/pcbender--how-many-gone.mp3",
-    "start_s": 174.96,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--i-cant-quite-make-it-fit",
-    "sample_path": "site/public/samples/pcbender--i-cant-quite-make-it-fit.mp3",
-    "preview_audio": "/samples/pcbender--i-cant-quite-make-it-fit.mp3",
-    "start_s": 156.13,
+    "track_id": "pcbender--fuse",
+    "sample_path": "site/public/samples/pcbender--fuse.mp3",
+    "preview_audio": "/samples/pcbender--fuse.mp3",
+    "start_s": 33.32,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
@@ -1882,17 +885,54 @@
     "preview_audio_written": true
   },
   {
+    "track_id": "pcbender--gemini-rising",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--gemini-rising.mp3"
+  },
+  {
+    "track_id": "pcbender--god",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--god.mp3"
+  },
+  {
+    "track_id": "pcbender--half-happenstance",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--half-happenstance.mp3"
+  },
+  {
+    "track_id": "pcbender--halfway-in-between",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--halfway-in-between.mp3"
+  },
+  {
+    "track_id": "pcbender--hardwood-confessions",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--hardwood-confessions.mp3"
+  },
+  {
+    "track_id": "pcbender--have-a-heart",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--have-a-heart.mp3"
+  },
+  {
+    "track_id": "pcbender--how-can-this-be-us",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--how-can-this-be-us.mp3"
+  },
+  {
+    "track_id": "pcbender--how-many-gone",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--how-many-gone.mp3"
+  },
+  {
+    "track_id": "pcbender--i-cant-quite-make-it-fit",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--i-cant-quite-make-it-fit.mp3"
+  },
+  {
     "track_id": "pcbender--i-think-i-m-falling",
-    "sample_path": "site/public/samples/pcbender--i-think-i-m-falling.mp3",
-    "preview_audio": "/samples/pcbender--i-think-i-m-falling.mp3",
-    "start_s": 115.84,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--i-think-i-m-falling.mp3"
   },
   {
     "track_id": "pcbender--ides-of-march",
@@ -1901,13 +941,18 @@
   },
   {
     "track_id": "pcbender--impossibly",
-    "sample_path": "site/public/samples/pcbender--impossibly.mp3",
-    "preview_audio": "/samples/pcbender--impossibly.mp3",
-    "start_s": 182.97,
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--impossibly.mp3"
+  },
+  {
+    "track_id": "pcbender--inductor",
+    "sample_path": "site/public/samples/pcbender--inductor.mp3",
+    "preview_audio": "/samples/pcbender--inductor.mp3",
+    "start_s": 62.39,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
+    "measured_lufs_out": -9.0,
     "format": "mp3_128k",
     "status": "ok",
     "preview_audio_written": true
@@ -1919,42 +964,18 @@
   },
   {
     "track_id": "pcbender--inner-outer",
-    "sample_path": "site/public/samples/pcbender--inner-outer.mp3",
-    "preview_audio": "/samples/pcbender--inner-outer.mp3",
-    "start_s": 121.14,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--inner-outer.mp3"
   },
   {
     "track_id": "pcbender--inner-outer-over-through-2",
-    "sample_path": "site/public/samples/pcbender--inner-outer-over-through-2.mp3",
-    "preview_audio": "/samples/pcbender--inner-outer-over-through-2.mp3",
-    "start_s": 125.06,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--inner-outer-over-through-2.mp3"
   },
   {
     "track_id": "pcbender--it-s-june-gloom",
-    "sample_path": "site/public/samples/pcbender--it-s-june-gloom.mp3",
-    "preview_audio": "/samples/pcbender--it-s-june-gloom.mp3",
-    "start_s": 151.86,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--it-s-june-gloom.mp3"
   },
   {
     "track_id": "pcbender--january-kiss",
@@ -1968,29 +989,13 @@
   },
   {
     "track_id": "pcbender--jonquil",
-    "sample_path": "site/public/samples/pcbender--jonquil.mp3",
-    "preview_audio": "/samples/pcbender--jonquil.mp3",
-    "start_s": 61.23,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--jonquil.mp3"
   },
   {
     "track_id": "pcbender--july-surprise",
-    "sample_path": "site/public/samples/pcbender--july-surprise.mp3",
-    "preview_audio": "/samples/pcbender--july-surprise.mp3",
-    "start_s": 181.0,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--july-surprise.mp3"
   },
   {
     "track_id": "pcbender--june-gloom",
@@ -1999,94 +1004,38 @@
   },
   {
     "track_id": "pcbender--la-salina",
-    "sample_path": "site/public/samples/pcbender--la-salina.mp3",
-    "preview_audio": "/samples/pcbender--la-salina.mp3",
-    "start_s": 85.98,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--la-salina.mp3"
   },
   {
     "track_id": "pcbender--law",
-    "sample_path": "site/public/samples/pcbender--law.mp3",
-    "preview_audio": "/samples/pcbender--law.mp3",
-    "start_s": 267.96,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--law.mp3"
   },
   {
     "track_id": "pcbender--lightning-up",
-    "sample_path": "site/public/samples/pcbender--lightning-up.mp3",
-    "preview_audio": "/samples/pcbender--lightning-up.mp3",
-    "start_s": 193.56,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--lightning-up.mp3"
   },
   {
     "track_id": "pcbender--limerick",
-    "sample_path": "site/public/samples/pcbender--limerick.mp3",
-    "preview_audio": "/samples/pcbender--limerick.mp3",
-    "start_s": 97.25,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--limerick.mp3"
   },
   {
     "track_id": "pcbender--long-hard-road",
-    "sample_path": "site/public/samples/pcbender--long-hard-road.mp3",
-    "preview_audio": "/samples/pcbender--long-hard-road.mp3",
-    "start_s": 152.16,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--long-hard-road.mp3"
   },
   {
     "track_id": "pcbender--love",
-    "sample_path": "site/public/samples/pcbender--love.mp3",
-    "preview_audio": "/samples/pcbender--love.mp3",
-    "start_s": 269.49,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--love.mp3"
   },
   {
     "track_id": "pcbender--mad-river-2",
-    "sample_path": "site/public/samples/pcbender--mad-river-2.mp3",
-    "preview_audio": "/samples/pcbender--mad-river-2.mp3",
-    "start_s": 105.56,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--mad-river-2.mp3"
   },
   {
     "track_id": "pcbender--made-by-moving",
@@ -2095,16 +1044,8 @@
   },
   {
     "track_id": "pcbender--maria-s-cup",
-    "sample_path": "site/public/samples/pcbender--maria-s-cup.mp3",
-    "preview_audio": "/samples/pcbender--maria-s-cup.mp3",
-    "start_s": 252.2,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -12.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--maria-s-cup.mp3"
   },
   {
     "track_id": "pcbender--may-flowers",
@@ -2113,107 +1054,43 @@
   },
   {
     "track_id": "pcbender--meaning",
-    "sample_path": "site/public/samples/pcbender--meaning.mp3",
-    "preview_audio": "/samples/pcbender--meaning.mp3",
-    "start_s": 287.9,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--meaning.mp3"
   },
   {
     "track_id": "pcbender--measure-s-measure",
-    "sample_path": "site/public/samples/pcbender--measure-s-measure.mp3",
-    "preview_audio": "/samples/pcbender--measure-s-measure.mp3",
-    "start_s": 289.04,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--measure-s-measure.mp3"
   },
   {
     "track_id": "pcbender--memory-assembly",
-    "sample_path": "site/public/samples/pcbender--memory-assembly.mp3",
-    "preview_audio": "/samples/pcbender--memory-assembly.mp3",
-    "start_s": 191.7,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--memory-assembly.mp3"
   },
   {
     "track_id": "pcbender--mispronouncing-anastasia",
-    "sample_path": "site/public/samples/pcbender--mispronouncing-anastasia.mp3",
-    "preview_audio": "/samples/pcbender--mispronouncing-anastasia.mp3",
-    "start_s": 363.86,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--mispronouncing-anastasia.mp3"
   },
   {
     "track_id": "pcbender--moonstone",
-    "sample_path": "site/public/samples/pcbender--moonstone.mp3",
-    "preview_audio": "/samples/pcbender--moonstone.mp3",
-    "start_s": 57.07,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--moonstone.mp3"
   },
   {
     "track_id": "pcbender--nancy-dance-with-me",
-    "sample_path": "site/public/samples/pcbender--nancy-dance-with-me.mp3",
-    "preview_audio": "/samples/pcbender--nancy-dance-with-me.mp3",
-    "start_s": 73.24,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--nancy-dance-with-me.mp3"
   },
   {
     "track_id": "pcbender--nearly-nothin-nowhere-fast",
-    "sample_path": "site/public/samples/pcbender--nearly-nothin-nowhere-fast.mp3",
-    "preview_audio": "/samples/pcbender--nearly-nothin-nowhere-fast.mp3",
-    "start_s": 67.41,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--nearly-nothin-nowhere-fast.mp3"
   },
   {
     "track_id": "pcbender--not-long-enough-for-me",
-    "sample_path": "site/public/samples/pcbender--not-long-enough-for-me.mp3",
-    "preview_audio": "/samples/pcbender--not-long-enough-for-me.mp3",
-    "start_s": 204.22,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--not-long-enough-for-me.mp3"
   },
   {
     "track_id": "pcbender--november-i-never-remember",
@@ -2222,16 +1099,8 @@
   },
   {
     "track_id": "pcbender--nyanza",
-    "sample_path": "site/public/samples/pcbender--nyanza.mp3",
-    "preview_audio": "/samples/pcbender--nyanza.mp3",
-    "start_s": 89.09,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--nyanza.mp3"
   },
   {
     "track_id": "pcbender--october-boo-hoo",
@@ -2240,91 +1109,48 @@
   },
   {
     "track_id": "pcbender--olivine",
-    "sample_path": "site/public/samples/pcbender--olivine.mp3",
-    "preview_audio": "/samples/pcbender--olivine.mp3",
-    "start_s": 81.8,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--olivine.mp3"
   },
   {
     "track_id": "pcbender--on-down-the-way",
-    "sample_path": "site/public/samples/pcbender--on-down-the-way.mp3",
-    "preview_audio": "/samples/pcbender--on-down-the-way.mp3",
-    "start_s": 132.31,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--on-down-the-way.mp3"
   },
   {
     "track_id": "pcbender--on-the-way-that-comes-before",
-    "sample_path": "site/public/samples/pcbender--on-the-way-that-comes-before.mp3",
-    "preview_audio": "/samples/pcbender--on-the-way-that-comes-before.mp3",
-    "start_s": 112.92,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--on-the-way-that-comes-before.mp3"
   },
   {
     "track_id": "pcbender--on-to-potter-s-field",
-    "sample_path": "site/public/samples/pcbender--on-to-potter-s-field.mp3",
-    "preview_audio": "/samples/pcbender--on-to-potter-s-field.mp3",
-    "start_s": 150.81,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--on-to-potter-s-field.mp3"
   },
   {
     "track_id": "pcbender--one-day-2",
-    "sample_path": "site/public/samples/pcbender--one-day-2.mp3",
-    "preview_audio": "/samples/pcbender--one-day-2.mp3",
-    "start_s": 86.45,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--one-day-2.mp3"
   },
   {
     "track_id": "pcbender--only-the-ones-that-matter",
-    "sample_path": "site/public/samples/pcbender--only-the-ones-that-matter.mp3",
-    "preview_audio": "/samples/pcbender--only-the-ones-that-matter.mp3",
-    "start_s": 224.63,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--only-the-ones-that-matter.mp3"
   },
   {
     "track_id": "pcbender--opposites-attract-in-time",
-    "sample_path": "site/public/samples/pcbender--opposites-attract-in-time.mp3",
-    "preview_audio": "/samples/pcbender--opposites-attract-in-time.mp3",
-    "start_s": 238.86,
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--opposites-attract-in-time.mp3"
+  },
+  {
+    "track_id": "pcbender--oscillator",
+    "sample_path": "site/public/samples/pcbender--oscillator.mp3",
+    "preview_audio": "/samples/pcbender--oscillator.mp3",
+    "start_s": 133.05,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
+    "measured_lufs_out": -10.9,
     "format": "mp3_128k",
     "status": "ok",
     "preview_audio_written": true
@@ -2336,35 +1162,24 @@
   },
   {
     "track_id": "pcbender--pepper-pot",
-    "sample_path": "site/public/samples/pcbender--pepper-pot.mp3",
-    "preview_audio": "/samples/pcbender--pepper-pot.mp3",
-    "start_s": 269.17,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--pepper-pot.mp3"
   },
   {
     "track_id": "pcbender--pistachio",
-    "sample_path": "site/public/samples/pcbender--pistachio.mp3",
-    "preview_audio": "/samples/pcbender--pistachio.mp3",
-    "start_s": 133.91,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--pistachio.mp3"
   },
   {
     "track_id": "pcbender--prehistoric-lies",
-    "sample_path": "site/public/samples/pcbender--prehistoric-lies.mp3",
-    "preview_audio": "/samples/pcbender--prehistoric-lies.mp3",
-    "start_s": 324.24,
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--prehistoric-lies.mp3"
+  },
+  {
+    "track_id": "pcbender--relay",
+    "sample_path": "site/public/samples/pcbender--relay.mp3",
+    "preview_audio": "/samples/pcbender--relay.mp3",
+    "start_s": 92.04,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
@@ -2374,67 +1189,10 @@
     "preview_audio_written": true
   },
   {
-    "track_id": "pcbender--red-green-and-blues",
-    "status": "skipped",
-    "message": "no source field (album-level record)"
-  },
-  {
-    "track_id": "pcbender--riddles-abound",
-    "sample_path": "site/public/samples/pcbender--riddles-abound.mp3",
-    "preview_audio": "/samples/pcbender--riddles-abound.mp3",
-    "start_s": 199.37,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--riders-and-runners",
-    "sample_path": "site/public/samples/pcbender--riders-and-runners.mp3",
-    "preview_audio": "/samples/pcbender--riders-and-runners.mp3",
-    "start_s": 41.52,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--rufous",
-    "sample_path": "site/public/samples/pcbender--rufous.mp3",
-    "preview_audio": "/samples/pcbender--rufous.mp3",
-    "start_s": 66.08,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--sawmill-pond",
-    "sample_path": "site/public/samples/pcbender--sawmill-pond.mp3",
-    "preview_audio": "/samples/pcbender--sawmill-pond.mp3",
-    "start_s": 85.08,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--scattershot-forget-me-not",
-    "sample_path": "site/public/samples/pcbender--scattershot-forget-me-not.mp3",
-    "preview_audio": "/samples/pcbender--scattershot-forget-me-not.mp3",
-    "start_s": 158.34,
+    "track_id": "pcbender--resistor",
+    "sample_path": "site/public/samples/pcbender--resistor.mp3",
+    "preview_audio": "/samples/pcbender--resistor.mp3",
+    "start_s": 95.99,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
@@ -2442,6 +1200,31 @@
     "format": "mp3_128k",
     "status": "ok",
     "preview_audio_written": true
+  },
+  {
+    "track_id": "pcbender--riddles-abound",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--riddles-abound.mp3"
+  },
+  {
+    "track_id": "pcbender--riders-and-runners",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--riders-and-runners.mp3"
+  },
+  {
+    "track_id": "pcbender--rufous",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--rufous.mp3"
+  },
+  {
+    "track_id": "pcbender--sawmill-pond",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--sawmill-pond.mp3"
+  },
+  {
+    "track_id": "pcbender--scattershot-forget-me-not",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--scattershot-forget-me-not.mp3"
   },
   {
     "track_id": "pcbender--seaward-sings",
@@ -2460,29 +1243,13 @@
   },
   {
     "track_id": "pcbender--song-for-august",
-    "sample_path": "site/public/samples/pcbender--song-for-august.mp3",
-    "preview_audio": "/samples/pcbender--song-for-august.mp3",
-    "start_s": 156.53,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -5.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--song-for-august.mp3"
   },
   {
     "track_id": "pcbender--sovereign",
-    "sample_path": "site/public/samples/pcbender--sovereign.mp3",
-    "preview_audio": "/samples/pcbender--sovereign.mp3",
-    "start_s": 393.09,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--sovereign.mp3"
   },
   {
     "track_id": "pcbender--sparkles-in-july",
@@ -2491,74 +1258,74 @@
   },
   {
     "track_id": "pcbender--still-my-days-before",
-    "sample_path": "site/public/samples/pcbender--still-my-days-before.mp3",
-    "preview_audio": "/samples/pcbender--still-my-days-before.mp3",
-    "start_s": 179.35,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--still-my-days-before.mp3"
   },
   {
     "track_id": "pcbender--sum-sacer",
-    "sample_path": "site/public/samples/pcbender--sum-sacer.mp3",
-    "preview_audio": "/samples/pcbender--sum-sacer.mp3",
-    "start_s": 184.13,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--sum-sacer.mp3"
   },
   {
     "track_id": "pcbender--sunray",
-    "sample_path": "site/public/samples/pcbender--sunray.mp3",
-    "preview_audio": "/samples/pcbender--sunray.mp3",
-    "start_s": 96.32,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--sunray.mp3"
   },
   {
     "track_id": "pcbender--the-lie-you-haven-t-met",
-    "sample_path": "site/public/samples/pcbender--the-lie-you-haven-t-met.mp3",
-    "preview_audio": "/samples/pcbender--the-lie-you-haven-t-met.mp3",
-    "start_s": 75.67,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--the-lie-you-haven-t-met.mp3"
   },
   {
     "track_id": "pcbender--the-one-that-got-away",
-    "sample_path": "site/public/samples/pcbender--the-one-that-got-away.mp3",
-    "preview_audio": "/samples/pcbender--the-one-that-got-away.mp3",
-    "start_s": 182.28,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--the-one-that-got-away.mp3"
   },
   {
     "track_id": "pcbender--the-only-one",
-    "sample_path": "site/public/samples/pcbender--the-only-one.mp3",
-    "preview_audio": "/samples/pcbender--the-only-one.mp3",
-    "start_s": 168.34,
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--the-only-one.mp3"
+  },
+  {
+    "track_id": "pcbender--the-rats-are-in-the-roses",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--the-rats-are-in-the-roses.mp3"
+  },
+  {
+    "track_id": "pcbender--then-there-was-nothing",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--then-there-was-nothing.mp3"
+  },
+  {
+    "track_id": "pcbender--this-love-grows",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--this-love-grows.mp3"
+  },
+  {
+    "track_id": "pcbender--thulian",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--thulian.mp3"
+  },
+  {
+    "track_id": "pcbender--tits-up",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--tits-up.mp3"
+  },
+  {
+    "track_id": "pcbender--too-august",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--too-august.mp3"
+  },
+  {
+    "track_id": "pcbender--too-blue-to-lose",
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--too-blue-to-lose.mp3"
+  },
+  {
+    "track_id": "pcbender--transistor",
+    "sample_path": "site/public/samples/pcbender--transistor.mp3",
+    "preview_audio": "/samples/pcbender--transistor.mp3",
+    "start_s": 63.48,
     "duration_s": 30.0,
     "selection": "peak_energy",
     "target_lufs": -14.0,
@@ -2568,248 +1335,64 @@
     "preview_audio_written": true
   },
   {
-    "track_id": "pcbender--the-rats-are-in-the-roses",
-    "sample_path": "site/public/samples/pcbender--the-rats-are-in-the-roses.mp3",
-    "preview_audio": "/samples/pcbender--the-rats-are-in-the-roses.mp3",
-    "start_s": 164.0,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--then-there-was-nothing",
-    "sample_path": "site/public/samples/pcbender--then-there-was-nothing.mp3",
-    "preview_audio": "/samples/pcbender--then-there-was-nothing.mp3",
-    "start_s": 198.04,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--this-love-grows",
-    "sample_path": "site/public/samples/pcbender--this-love-grows.mp3",
-    "preview_audio": "/samples/pcbender--this-love-grows.mp3",
-    "start_s": 128.75,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--thulian",
-    "sample_path": "site/public/samples/pcbender--thulian.mp3",
-    "preview_audio": "/samples/pcbender--thulian.mp3",
-    "start_s": 79.78,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--tits-up",
-    "sample_path": "site/public/samples/pcbender--tits-up.mp3",
-    "preview_audio": "/samples/pcbender--tits-up.mp3",
-    "start_s": 87.1,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--too-august",
-    "status": "cached",
-    "sample_path": "site/public/samples/pcbender--too-august.mp3"
-  },
-  {
-    "track_id": "pcbender--too-blue-to-lose",
-    "sample_path": "site/public/samples/pcbender--too-blue-to-lose.mp3",
-    "preview_audio": "/samples/pcbender--too-blue-to-lose.mp3",
-    "start_s": 210.0,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "pcbender--tria",
-    "status": "skipped",
-    "message": "no source field (album-level record)"
-  },
-  {
     "track_id": "pcbender--try-to-be-okay",
-    "sample_path": "site/public/samples/pcbender--try-to-be-okay.mp3",
-    "preview_audio": "/samples/pcbender--try-to-be-okay.mp3",
-    "start_s": 170.87,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--try-to-be-okay.mp3"
   },
   {
     "track_id": "pcbender--tumbleweed",
-    "sample_path": "site/public/samples/pcbender--tumbleweed.mp3",
-    "preview_audio": "/samples/pcbender--tumbleweed.mp3",
-    "start_s": 92.09,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--tumbleweed.mp3"
   },
   {
     "track_id": "pcbender--turn-a-phrase",
-    "sample_path": "site/public/samples/pcbender--turn-a-phrase.mp3",
-    "preview_audio": "/samples/pcbender--turn-a-phrase.mp3",
-    "start_s": 136.72,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--turn-a-phrase.mp3"
   },
   {
     "track_id": "pcbender--two-tree-road",
-    "sample_path": "site/public/samples/pcbender--two-tree-road.mp3",
-    "preview_audio": "/samples/pcbender--two-tree-road.mp3",
-    "start_s": 17.51,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--two-tree-road.mp3"
   },
   {
     "track_id": "pcbender--unaccustomed-lullaby",
-    "sample_path": "site/public/samples/pcbender--unaccustomed-lullaby.mp3",
-    "preview_audio": "/samples/pcbender--unaccustomed-lullaby.mp3",
-    "start_s": 213.86,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -12.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--unaccustomed-lullaby.mp3"
   },
   {
     "track_id": "pcbender--verdigris",
-    "sample_path": "site/public/samples/pcbender--verdigris.mp3",
-    "preview_audio": "/samples/pcbender--verdigris.mp3",
-    "start_s": 43.1,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--verdigris.mp3"
   },
   {
     "track_id": "pcbender--void-of-intention",
-    "sample_path": "site/public/samples/pcbender--void-of-intention.mp3",
-    "preview_audio": "/samples/pcbender--void-of-intention.mp3",
-    "start_s": 208.76,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--void-of-intention.mp3"
   },
   {
     "track_id": "pcbender--waterwheel",
-    "sample_path": "site/public/samples/pcbender--waterwheel.mp3",
-    "preview_audio": "/samples/pcbender--waterwheel.mp3",
-    "start_s": 169.25,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--waterwheel.mp3"
   },
   {
     "track_id": "pcbender--welcome-to-the-sign",
-    "sample_path": "site/public/samples/pcbender--welcome-to-the-sign.mp3",
-    "preview_audio": "/samples/pcbender--welcome-to-the-sign.mp3",
-    "start_s": 156.13,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--welcome-to-the-sign.mp3"
   },
   {
     "track_id": "pcbender--wenge",
-    "sample_path": "site/public/samples/pcbender--wenge.mp3",
-    "preview_audio": "/samples/pcbender--wenge.mp3",
-    "start_s": 19.27,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--wenge.mp3"
   },
   {
     "track_id": "pcbender--what-s-best-2",
-    "sample_path": "site/public/samples/pcbender--what-s-best-2.mp3",
-    "preview_audio": "/samples/pcbender--what-s-best-2.mp3",
-    "start_s": 110.97,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--what-s-best-2.mp3"
   },
   {
     "track_id": "pcbender--what-you-want",
-    "sample_path": "site/public/samples/pcbender--what-you-want.mp3",
-    "preview_audio": "/samples/pcbender--what-you-want.mp3",
-    "start_s": 55.68,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--what-you-want.mp3"
   },
   {
     "track_id": "pcbender--winds-of-change",
@@ -2818,475 +1401,182 @@
   },
   {
     "track_id": "pcbender--with-preposition",
-    "sample_path": "site/public/samples/pcbender--with-preposition.mp3",
-    "preview_audio": "/samples/pcbender--with-preposition.mp3",
-    "start_s": 208.72,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--with-preposition.mp3"
   },
   {
     "track_id": "pcbender--yesterday-s-delayed",
-    "sample_path": "site/public/samples/pcbender--yesterday-s-delayed.mp3",
-    "preview_audio": "/samples/pcbender--yesterday-s-delayed.mp3",
-    "start_s": 159.68,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.3,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--yesterday-s-delayed.mp3"
   },
   {
     "track_id": "pcbender--you-become-the-night",
-    "sample_path": "site/public/samples/pcbender--you-become-the-night.mp3",
-    "preview_audio": "/samples/pcbender--you-become-the-night.mp3",
-    "start_s": 231.87,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--you-become-the-night.mp3"
   },
   {
     "track_id": "pcbender--zaffre",
-    "sample_path": "site/public/samples/pcbender--zaffre.mp3",
-    "preview_audio": "/samples/pcbender--zaffre.mp3",
-    "start_s": 38.03,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/pcbender--zaffre.mp3"
   },
   {
     "track_id": "stab--between-the-bottle-and-goodbye",
-    "sample_path": "site/public/samples/stab--between-the-bottle-and-goodbye.mp3",
-    "preview_audio": "/samples/stab--between-the-bottle-and-goodbye.mp3",
-    "start_s": 20.67,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--between-the-bottle-and-goodbye.mp3"
   },
   {
     "track_id": "stab--bring-it-with-me",
-    "sample_path": "site/public/samples/stab--bring-it-with-me.mp3",
-    "preview_audio": "/samples/stab--bring-it-with-me.mp3",
-    "start_s": 167.18,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--bring-it-with-me.mp3"
   },
   {
     "track_id": "stab--bring-me-the-claws",
-    "sample_path": "site/public/samples/stab--bring-me-the-claws.mp3",
-    "preview_audio": "/samples/stab--bring-me-the-claws.mp3",
-    "start_s": 185.02,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--bring-me-the-claws.mp3"
   },
   {
     "track_id": "stab--burn-me",
-    "sample_path": "site/public/samples/stab--burn-me.mp3",
-    "preview_audio": "/samples/stab--burn-me.mp3",
-    "start_s": 112.48,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--burn-me.mp3"
   },
   {
     "track_id": "stab--doing-my-best",
-    "sample_path": "site/public/samples/stab--doing-my-best.mp3",
-    "preview_audio": "/samples/stab--doing-my-best.mp3",
-    "start_s": 105.98,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--doing-my-best.mp3"
   },
   {
     "track_id": "stab--don-t-even-need-to-try",
-    "sample_path": "site/public/samples/stab--don-t-even-need-to-try.mp3",
-    "preview_audio": "/samples/stab--don-t-even-need-to-try.mp3",
-    "start_s": 154.18,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -6.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--don-t-even-need-to-try.mp3"
   },
   {
     "track_id": "stab--excess-fiasco",
-    "sample_path": "site/public/samples/stab--excess-fiasco.mp3",
-    "preview_audio": "/samples/stab--excess-fiasco.mp3",
-    "start_s": 126.78,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--excess-fiasco.mp3"
   },
   {
     "track_id": "stab--four-quarters",
-    "sample_path": "site/public/samples/stab--four-quarters.mp3",
-    "preview_audio": "/samples/stab--four-quarters.mp3",
-    "start_s": 133.51,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--four-quarters.mp3"
   },
   {
     "track_id": "stab--hana-on-the-way",
-    "sample_path": "site/public/samples/stab--hana-on-the-way.mp3",
-    "preview_audio": "/samples/stab--hana-on-the-way.mp3",
-    "start_s": 87.7,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--hana-on-the-way.mp3"
   },
   {
     "track_id": "stab--harder-than-i-thought",
-    "sample_path": "site/public/samples/stab--harder-than-i-thought.mp3",
-    "preview_audio": "/samples/stab--harder-than-i-thought.mp3",
-    "start_s": 96.01,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -5.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--harder-than-i-thought.mp3"
   },
   {
     "track_id": "stab--here-comes-the-rain",
-    "sample_path": "site/public/samples/stab--here-comes-the-rain.mp3",
-    "preview_audio": "/samples/stab--here-comes-the-rain.mp3",
-    "start_s": 188.76,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.7,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--here-comes-the-rain.mp3"
   },
   {
     "track_id": "stab--here-right-now",
-    "sample_path": "site/public/samples/stab--here-right-now.mp3",
-    "preview_audio": "/samples/stab--here-right-now.mp3",
-    "start_s": 142.71,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--here-right-now.mp3"
   },
   {
     "track_id": "stab--here-to-be-watched",
-    "sample_path": "site/public/samples/stab--here-to-be-watched.mp3",
-    "preview_audio": "/samples/stab--here-to-be-watched.mp3",
-    "start_s": 171.0,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--here-to-be-watched.mp3"
   },
   {
     "track_id": "stab--i-think-i-m-losing-my-place",
-    "sample_path": "site/public/samples/stab--i-think-i-m-losing-my-place.mp3",
-    "preview_audio": "/samples/stab--i-think-i-m-losing-my-place.mp3",
-    "start_s": 100.61,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--i-think-i-m-losing-my-place.mp3"
   },
   {
     "track_id": "stab--june-gloom",
-    "sample_path": "site/public/samples/stab--june-gloom.mp3",
-    "preview_audio": "/samples/stab--june-gloom.mp3",
-    "start_s": 156.52,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--june-gloom.mp3"
   },
   {
     "track_id": "stab--just-a-waste-of-tears",
-    "sample_path": "site/public/samples/stab--just-a-waste-of-tears.mp3",
-    "preview_audio": "/samples/stab--just-a-waste-of-tears.mp3",
-    "start_s": 97.48,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--just-a-waste-of-tears.mp3"
   },
   {
     "track_id": "stab--ladder-to-nowhere",
-    "sample_path": "site/public/samples/stab--ladder-to-nowhere.mp3",
-    "preview_audio": "/samples/stab--ladder-to-nowhere.mp3",
-    "start_s": 179.82,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--ladder-to-nowhere.mp3"
   },
   {
     "track_id": "stab--maybe-i-should",
-    "sample_path": "site/public/samples/stab--maybe-i-should.mp3",
-    "preview_audio": "/samples/stab--maybe-i-should.mp3",
-    "start_s": 126.48,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -6.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--maybe-i-should.mp3"
   },
   {
     "track_id": "stab--moving-too-fast",
-    "sample_path": "site/public/samples/stab--moving-too-fast.mp3",
-    "preview_audio": "/samples/stab--moving-too-fast.mp3",
-    "start_s": 113.22,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--moving-too-fast.mp3"
   },
   {
     "track_id": "stab--my-hands-don-t-know",
-    "sample_path": "site/public/samples/stab--my-hands-don-t-know.mp3",
-    "preview_audio": "/samples/stab--my-hands-don-t-know.mp3",
-    "start_s": 152.72,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--my-hands-don-t-know.mp3"
   },
   {
     "track_id": "stab--no-longer-there",
-    "sample_path": "site/public/samples/stab--no-longer-there.mp3",
-    "preview_audio": "/samples/stab--no-longer-there.mp3",
-    "start_s": 153.11,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -11.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--no-longer-there.mp3"
   },
   {
     "track_id": "stab--not-picking-up",
-    "sample_path": "site/public/samples/stab--not-picking-up.mp3",
-    "preview_audio": "/samples/stab--not-picking-up.mp3",
-    "start_s": 122.49,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.5,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--not-picking-up.mp3"
   },
   {
     "track_id": "stab--not-sure-this-is-me",
-    "sample_path": "site/public/samples/stab--not-sure-this-is-me.mp3",
-    "preview_audio": "/samples/stab--not-sure-this-is-me.mp3",
-    "start_s": 137.11,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -10.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--not-sure-this-is-me.mp3"
   },
   {
     "track_id": "stab--raven-dark",
-    "sample_path": "site/public/samples/stab--raven-dark.mp3",
-    "preview_audio": "/samples/stab--raven-dark.mp3",
-    "start_s": 190.01,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.0,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--raven-dark.mp3"
   },
   {
     "track_id": "stab--stay-with-one-thing",
-    "sample_path": "site/public/samples/stab--stay-with-one-thing.mp3",
-    "preview_audio": "/samples/stab--stay-with-one-thing.mp3",
-    "start_s": 115.4,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.4,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--stay-with-one-thing.mp3"
   },
   {
     "track_id": "stab--that-s-the-point",
-    "sample_path": "site/public/samples/stab--that-s-the-point.mp3",
-    "preview_audio": "/samples/stab--that-s-the-point.mp3",
-    "start_s": 153.76,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--that-s-the-point.mp3"
   },
   {
     "track_id": "stab--the-hardest-gift",
-    "sample_path": "site/public/samples/stab--the-hardest-gift.mp3",
-    "preview_audio": "/samples/stab--the-hardest-gift.mp3",
-    "start_s": 86.56,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -8.8,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
-  },
-  {
-    "track_id": "stab--the-messy-middle",
-    "status": "skipped",
-    "message": "no source field (album-level record)"
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--the-hardest-gift.mp3"
   },
   {
     "track_id": "stab--tits-up-remix",
-    "sample_path": "site/public/samples/stab--tits-up-remix.mp3",
-    "preview_audio": "/samples/stab--tits-up-remix.mp3",
-    "start_s": 127.8,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--tits-up-remix.mp3"
   },
   {
     "track_id": "stab--tits-up-remix-2",
-    "sample_path": "site/public/samples/stab--tits-up-remix-2.mp3",
-    "preview_audio": "/samples/stab--tits-up-remix-2.mp3",
-    "start_s": 127.8,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -7.9,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--tits-up-remix-2.mp3"
   },
   {
     "track_id": "stab--what-to-do-with-me",
-    "sample_path": "site/public/samples/stab--what-to-do-with-me.mp3",
-    "preview_audio": "/samples/stab--what-to-do-with-me.mp3",
-    "start_s": 214.25,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.2,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--what-to-do-with-me.mp3"
   },
   {
     "track_id": "stab--you-become-the-night-2",
-    "sample_path": "site/public/samples/stab--you-become-the-night-2.mp3",
-    "preview_audio": "/samples/stab--you-become-the-night-2.mp3",
-    "start_s": 231.87,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.6,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--you-become-the-night-2.mp3"
   },
   {
     "track_id": "stab--you-still-have-my-heart",
-    "sample_path": "site/public/samples/stab--you-still-have-my-heart.mp3",
-    "preview_audio": "/samples/stab--you-still-have-my-heart.mp3",
-    "start_s": 114.78,
-    "duration_s": 30.0,
-    "selection": "peak_energy",
-    "target_lufs": -14.0,
-    "measured_lufs_out": -9.1,
-    "format": "mp3_128k",
-    "status": "ok",
-    "preview_audio_written": true
+    "status": "cached",
+    "sample_path": "site/public/samples/stab--you-still-have-my-heart.mp3"
   }
 ]

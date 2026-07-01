@@ -1,0 +1,103 @@
+{
+  "track_id": "pcbender--inductor",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Inductor.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--inductor.opus"
+  },
+  "lyrics": "Deep breath… Now let it out\n\nHe moves slow, but not behind\nEvery pulse aligns in time\nMagnetic pull, a measured thread\nBuilding something in his head\n\nFeel it winding through my skin\nHold it back, then breathe it in\nNot too fast, not too slow\nOne more step—I'll let it flow\n\nWind the coil, hold your fire\nLet it build, then take it higher\nEvery spark is locked inside\nWaiting, playing—now it rides\n\nFingers trace the circuit board\nPatterns shifting out of sync\nNot a wave, but not a wall\nIt bends before I even think\n\nFeel it winding through my skin\nHold it back, then breathe it in\nNot too fast, not too slow\nOne more step—I'll let it flow\n\nWind the coil, hold your fire\nLet it build, then take it higher\nEvery spark is locked inside\nWaiting, playing—now it rides\n\nDeep breath… Now let it out\nYou're just trying too hard…\n\nI can hear it, I can see\nSomething moving inside me…\n\nWind the coil, hold your fire\nLet it build, then take it higher\nEvery spark is locked inside\nWaiting, playing—now it rides\n\nDeep breath… Now let it out",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 112.3,
+    "key": "D",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 219.84,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 9.29,
+        "label": "S1"
+      },
+      {
+        "start": 9.29,
+        "end": 33.99,
+        "label": "S2"
+      },
+      {
+        "start": 33.99,
+        "end": 62.39,
+        "label": "S3"
+      },
+      {
+        "start": 62.39,
+        "end": 114.4,
+        "label": "S4"
+      },
+      {
+        "start": 114.4,
+        "end": 147.54,
+        "label": "S5"
+      },
+      {
+        "start": 147.54,
+        "end": 175.71,
+        "label": "S6"
+      },
+      {
+        "start": 175.71,
+        "end": 216.74,
+        "label": "S7"
+      },
+      {
+        "start": 216.74,
+        "end": 219.84,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.964,
+      "key": 0.932
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track merges tense electronic verses with an anthemic, powerful rock chorus, creating an atmosphere of futuristic, controlled aggression that constantly builds and releases. The feel is relentlessly driving and energetic, propelled by a tight rhythm section and soaring vocal melodies. The production is dense and modern, packing a wide stereo field with layers of distorted guitars, intricate synths, and processed vocals, yet every element sits clearly in the mix without feeling crowded. A distinctive quality is the aggressive, chant-like vocal hook, \"Wind the coil, hold your fire,\" which acts as a powerful, percussive counterpoint to the soaring, melodic choruses.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender builds 'Inductor' the way its title suggests: slow accumulation, then release. At 112 BPM in D minor, the verses stay coiled and tense before the chorus breaks wide open, and the chant-hook 'Wind the coil, hold your fire' works as both lyric and instruction, a percussive mantra that earns every payoff it promises. The production is dense without being cluttered, guitars and processed vocals sharing the same space cleanly, and the line 'It bends before I even think' lands with the kind of offhand precision that rewards a second listen. A genuine highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 112, D minor",
+      "chant-hook 'Wind the coil, hold your fire'",
+      "lyric quote 'It bends before I even think'",
+      "dense but uncluttered production note from audio impression",
+      "verse tension vs. chorus release structure"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

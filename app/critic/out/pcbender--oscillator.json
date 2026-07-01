@@ -1,0 +1,114 @@
+{
+  "track_id": "pcbender--oscillator",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Oscillator.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--oscillator.opus"
+  },
+  "lyrics": "Ohhh-whoa-whoa-whoa (ayy, ayy)\nYeahhh, yeahhh (skrrt)\nUh, uh, uh, uh (what?)\n\nAyy, we ain't gotta write no more (nope)\nJust say whateva, let the beat control (yeah)\nMake a lil' face, do a lil' dance (huh?)\nNow they all think they da man (wooo!)\n\nOscillate, it's too late (wobble)\nShake that thing, let it vibrate (brrr)\nOoh, make it move like an 808 (skrrt)\nWe don't have no words to say (nah)\n\nYo, never really got into school (nope)\nJust keep livin by the golden rule (dope)\nDon't make it don't have a fit (rope)\nWe just gotta keep up the grift (float)\n\nBa-da-da-da-da (woah)\nOoooh, ooooh (what?)\nSkee-yee-yee-see-yee (yuh)\nBop, bop, pop (huh?)\n\nSay nothin', but say it with style (style)\nTalk loud, they love when you wild (wild)\nNo bars, no pain, no weight (nah)\nJust ride the wave—right (woo!)\n\n(Ayy, ayy, ayy) We vibin', we vibin' (whoa)\n(Ayy, ayy, ayy) No thoughts, just timin' (yeah)\n(Ayy, ayy, ayy) Let the synth keep whinin' (uh)\n(Ayy, ayy, ayy) And we still keep climbin' (whew!)",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "F#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 180.4,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 13.96,
+        "label": "S1"
+      },
+      {
+        "start": 13.96,
+        "end": 33.81,
+        "label": "S2"
+      },
+      {
+        "start": 33.81,
+        "end": 51.27,
+        "label": "S3"
+      },
+      {
+        "start": 51.27,
+        "end": 71.38,
+        "label": "S4"
+      },
+      {
+        "start": 71.38,
+        "end": 88.47,
+        "label": "S5"
+      },
+      {
+        "start": 88.47,
+        "end": 108.74,
+        "label": "S6"
+      },
+      {
+        "start": 108.74,
+        "end": 133.05,
+        "label": "S7"
+      },
+      {
+        "start": 133.05,
+        "end": 148.45,
+        "label": "S8"
+      },
+      {
+        "start": 148.45,
+        "end": 170.04,
+        "label": "S9"
+      },
+      {
+        "start": 170.04,
+        "end": 180.4,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.975,
+      "key": 0.837
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "blues rock",
+      "pop"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "mandolin",
+      "piano",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track has a playful, slightly satirical texture, defined by heavily autotuned vocals that create a fun, confident, and very modern R&B atmosphere. The energy is upbeat and danceable, with a laid-back, \"vibey\" feel driven by a crisp trap-influenced beat and a groovy, prominent synth bass. The production is clean and spacious, with a punchy low end and clearly defined layers that allow the lead vocal and various synth melodies to sit comfortably on top of the mix without feeling cluttered. A distinctive feature is the instrumental break around 01:21, where a saxophone-like synth lead takes over, providing a fresh melodic contrast to the vocal-centric sections.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "PCBender leans fully into the bit here, and the bit is sharper than it first appears. 'Oscillate' runs a dry commentary on autopilot pop, with lines like 'we don't have no words to say' delivered over a crisp trap-influenced beat at around 108 BPM in F# major, the irony landing cleanly because the track is actually well-constructed. The saxophone-like synth break around the 1:21 mark is the production highlight, a punchy melodic detour that earns its place. For listeners who want their satire gift-wrapped in something genuinely danceable, this one holds the room.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "BPM 107.7",
+      "Key F# major",
+      "lyric: 'we don't have no words to say'",
+      "synth break at 1:21",
+      "trap-influenced beat",
+      "saxophone-like synth lead"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

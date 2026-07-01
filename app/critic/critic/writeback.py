@@ -39,7 +39,12 @@ def write_review(record_id: str, out_dir: Path | None = None, force: bool = Fals
 
     # Distinguish track records from album records
     is_album = "album_id" in record
-    slug = record.get("album_id") or record.get("track_id") or record_id
+    # Album records are prefixed "album--" to prevent collision when a track
+    # slug matches the release slug (e.g. title-track EPs like "free", "i-m-still-here").
+    if is_album:
+        slug = f"album--{record.get('album_id', record_id)}"
+    else:
+        slug = record.get("track_id") or record_id
 
     impression = scrub_emdash(record.get("impression", {}).get("text", "")) if not is_album else ""
 

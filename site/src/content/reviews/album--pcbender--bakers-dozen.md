@@ -1,5 +1,5 @@
 ---
-track_id: pcbender--bakers-dozen
+track_id: album--pcbender--bakers-dozen
 summary: "Baker's Dozen is PCBender doing what he does best: building a full guitar record from pure feel, no lyrics needed, no explanation required."
 verdict_rank: 3
 verdict_label: "solid"

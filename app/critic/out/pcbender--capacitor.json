@@ -1,0 +1,105 @@
+{
+  "track_id": "pcbender--capacitor",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Capacitor.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--capacitor.opus"
+  },
+  "lyrics": "When inspiration comes, I'll know…\n\nHe works inside the lonely show\nIdeas flair but seldom flow\nVoltage climbs behind his eyes\nA sparks release that never dies\n\nStored inside, a thought too fast\nOne brief touch—will it last\nPushing forward, past fatigue\nDrives the pulse, controls the speed\n\nKeep it tight, keep it clear\nLet it build, then disappear\nWhen inspiration fades, I'll know—\nUntil then… let it go\n\nHe twists the dial, bends the sound\nIt shakes the walls, they won't go down\nWorthless songs inside the fame\nWaiting for the checks to come\n\nStored inside, a thought too fast\nOne brief touch—will it last\nPushing forward, past fatigue\nDrives the pulse, controls the speed\n\nKeep it tight, keep it clear\nLet it build, then disappear\nWhen inspiration fades, I'll know—\nUntil then… let it go\n\nWe need more product\nMore sales\nWhen WAS your last hit\n\nWhen inspiration starts, I'll know—\n\nKeep it tight, keep it clear\nLet it build, then disappear\nWhen inspiration fades, I'll know—\nUntil then… let it go\n\nWhen the inspiration stops, I'll know—\nUntil then… let it go",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "D",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 197.44,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.1,
+        "label": "S1"
+      },
+      {
+        "start": 10.1,
+        "end": 39.01,
+        "label": "S2"
+      },
+      {
+        "start": 39.01,
+        "end": 65.69,
+        "label": "S3"
+      },
+      {
+        "start": 65.69,
+        "end": 89.61,
+        "label": "S4"
+      },
+      {
+        "start": 89.61,
+        "end": 115.52,
+        "label": "S5"
+      },
+      {
+        "start": 115.52,
+        "end": 158.48,
+        "label": "S6"
+      },
+      {
+        "start": 158.48,
+        "end": 187.52,
+        "label": "S7"
+      },
+      {
+        "start": 187.52,
+        "end": 197.44,
+        "label": "S8"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.865
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "drums"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track opens with a spacious, atmospheric texture before quickly building into a dense, driving modern rock arrangement, creating an emotional atmosphere of focused, creative urgency. The energy level is high and propulsive, defined by a tight rhythm section and wide, powerful guitars that give the song an anthemic, determined feel. The production is polished and modern: the lead vocal is clear and sits confidently atop the mix, while the instruments occupy their own distinct space, creating a powerful sound that remains clean and articulate. A particularly distinctive moment is the explosive chorus at 0:40, where the track's full power is unleashed in a cathartic release of the verse's building tension.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Worthless songs inside the fame / Waiting for the checks to come\" lands with the kind of wry self-awareness that only sounds easy to write, and it earns the song its credibility: this is PCBender processing the grind of creative life without dressing it up. The track opens spare in D major before the chorus at 0:40 unleashes a full-band surge that hits like early Foo Fighters finding their footing, guitars wide and the rhythm section locked tight at a mid-tempo 95 BPM that keeps the urgency honest. The hook \"keep it tight, keep it clear / let it build, then disappear\" does exactly what it promises, and the late pivot to a label-voice interjection, \"When WAS your last hit,\" is a smart structural jab that reframes everything before it. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "quoted lyric: 'Worthless songs inside the fame / Waiting for the checks to come'",
+      "quoted lyric: 'keep it tight, keep it clear / let it build, then disappear'",
+      "quoted lyric: 'When WAS your last hit'",
+      "key: D major",
+      "BPM: 95.7",
+      "chorus moment at 0:40",
+      "Foo Fighters comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

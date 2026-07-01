@@ -1,0 +1,114 @@
+{
+  "track_id": "pcbender--resistor",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Resistor.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--resistor.opus"
+  },
+  "lyrics": "Trading force for heat… once again…\n\nMelody sung not too fast\nMeasured steps, the volume blasts\nVoltage climbs, I pull it down\nHolding steady—balance found\n\nSteady hands define the wave\nLimit what the chorus craves\nNo excess, no reckless show\nOnly when I let it go\n\nOne more take, one more hour\nLet it build, then take it higher\nEvery spark is locked inside\nStopping, waiting—now it rides\n\nPatterns form inside the frame\nOrder builds within the game\nWires twist but stay in line\nRegulated, by design\n\nSteady hands define the wave\nLimit what the chorus craves\nNo excess, no reckless show\nOnly when I let it go\n\nOne more take, one more hour\nLet it build, then take it higher\nEvery spark is locked inside\nStopping, waiting—now it rides\n\nHold…\nSlow…\nLimit…\nStop…\n\nA creative force constrained is power denied\n\nOne more take, one more hour\nLet it build, then take it higher\nEvery spark is locked inside\nStopping, waiting—now it rides\n\nTrading force for heat… once again…",
+  "persona": "## PCBender\n\nRugged, wise, and deeply entrenched in the art of music-making, PCBender is more than just a musician—he’s a sonic craftsman. A guitar-slinging songwriter, producer, and storyteller, he embodies the soul of analog warmth, weaving together rich textures of classic rock, blues, and experimental soundscapes with a modern edge.\n\nWith a presence that carries the mystique of a seasoned explorer, PCBender is the Indiana Jones of music production—digging deep into the essence of sound, unearthing raw emotion, and shaping it into songs that resonate beyond time. His music is a fusion of grit and refinement, where worn-in guitar tones meet polished production, and every note feels like it was carved from experience.\n\nA producer at heart, he doesn’t just create songs—he builds them. Each track is an expedition through layers of melody, distortion, and lyrical depth, reflecting both his technical expertise and his philosopher’s approach to songwriting. Whether delivering anthemic riffs, cinematic storytelling, or stripped-down acoustic wisdom, PCBender brings an authenticity that makes listeners feel like they’re sitting in the studio with him, watching music come to life.\n\nAs a key figure in Maricopa Records, PCBender bridges the gap between analog and AI-driven creativity, proving that the heart of a song is never about how it’s made, but why.\n\nFor those who seek music with depth, texture, and soul—PCBender is your guide.\n\n[](https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg)[](https://music.apple.com/us/artist/pcbender/1793178641)[](https://music.youtube.com/channel/UCvNXkiIHQJM-uY4MT3gmKDw)![](https://www.maricoparecords.com/wp-content/uploads/2025/02/PCBender.png)\n## Releases",
+  "hard_facts": {
+    "bpm": 107.7,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 233.64,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.16,
+        "label": "S1"
+      },
+      {
+        "start": 3.16,
+        "end": 21.32,
+        "label": "S2"
+      },
+      {
+        "start": 21.32,
+        "end": 38.78,
+        "label": "S3"
+      },
+      {
+        "start": 38.78,
+        "end": 80.55,
+        "label": "S4"
+      },
+      {
+        "start": 80.55,
+        "end": 95.99,
+        "label": "S5"
+      },
+      {
+        "start": 95.99,
+        "end": 144.52,
+        "label": "S6"
+      },
+      {
+        "start": 144.52,
+        "end": 175.68,
+        "label": "S7"
+      },
+      {
+        "start": 175.68,
+        "end": 197.93,
+        "label": "S8"
+      },
+      {
+        "start": 197.93,
+        "end": 228.9,
+        "label": "S9"
+      },
+      {
+        "start": 228.9,
+        "end": 233.64,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.913
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "blues rock",
+      "indie rock"
+    ],
+    "mood": [
+      "emotional",
+      "tender",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "lead vocals",
+      "background vocals"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This hard rock track establishes a dense, powerful texture with wide, distorted guitars and a driving rhythm section, creating an atmosphere of controlled tension and confident forward momentum. The production is polished and modern, with each instrument occupying a clear space in a full, impactful mix; the lead vocals are prominent and well-defined, sitting cleanly above the thick instrumental layers. A standout quality is the dynamic build into the anthemic, soaring chorus, where the arrangement effectively releases the tension established in the verses. The track also features a melodic and technically proficient guitar solo, alongside a dramatic spoken-word bridge, which adds a compelling narrative layer before the final powerful section.",
+    "model": "gemini-2.5-pro"
+  },
+  "review": {
+    "target": "blurb",
+    "review_text": "\"Resistor\" works a satisfying metaphor: creative force held under pressure, the way a resistor converts voltage to heat, and PCBender earns that conceit by making the music behave the same way. The verses hold back at a measured 107 BPM in E minor, the chorus releases exactly what they've been rationing, and the spoken-word turn, 'a creative force constrained is power denied,' lands with the kind of plain authority John Hiatt manages at his most direct. The guitar solo is melodic without showing off, which is exactly what the track needs. A highlight.",
+    "status": "pending",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "107 BPM",
+      "E minor",
+      "spoken-word bridge quote",
+      "verse/chorus dynamic build",
+      "guitar solo character",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}
