@@ -16,6 +16,7 @@ from mrp.core.clone_site import clone_site, format_clone_site
 from mrp.core.deploy import format_deployment, stage_build
 from mrp.core.enrich_apple_music import format_enrich_apple_music, enrich_apple_music
 from mrp.core.enrich_links import format_enrich_links, enrich_links
+from mrp.core.enrich_isrc import format_enrich_isrc, enrich_isrc
 from mrp.core.enrich_lyrics import format_enrich_lyrics, enrich_lyrics
 from mrp.core.enrich_youtube import format_enrich_youtube, enrich_youtube
 from mrp.core.import_site import DEFAULT_SOURCE, format_import, import_site
@@ -164,6 +165,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Seconds between YouTube Data API requests (default: 0.2s).",
     )
 
+    enrich_isrc_parser = subparsers.add_parser(
+        "enrich-isrc",
+        help="Backfill missing ISRC values from the Spotify Web API.",
+    )
+    add_global_options(enrich_isrc_parser, suppress_defaults=True)
+    enrich_isrc_parser.add_argument(
+        "--delay",
+        type=float,
+        default=None,
+        help="Seconds between Spotify requests (default: 1.5s).",
+    )
+
     enrich_lyrics_parser = subparsers.add_parser(
         "enrich-lyrics",
         help="Backfill song.lyrics_text by matching titles against a local snapshot of fetched lyrics docs.",
@@ -290,6 +303,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "enrich-apple-music":
         print(format_enrich_apple_music(result))
         return
+    if result["command"] == "enrich-isrc":
+        print(format_enrich_isrc(result))
+        return
     if result["command"] == "enrich-youtube":
         print(format_enrich_youtube(result))
         return
@@ -391,6 +407,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = promote_spotify(args.repo, artists_path=args.artists, releases_path=args.releases, client=promote_client)
     elif args.command == "enrich-links":
         result = enrich_links(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
+    elif args.command == "enrich-isrc":
+        result = enrich_isrc(args.repo, delay_seconds=args.delay or 1.5, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "enrich-apple-music":
         result = enrich_apple_music(args.repo, delay_seconds=args.delay, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "enrich-youtube":

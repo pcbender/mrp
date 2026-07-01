@@ -13,26 +13,18 @@ release:
   catalog_number: null
   cover_image: site/public/assets/migrated/1c2f916bb6b5-Abundant-Emptiness-1.png
   hero_image: null
-  summary: “_Abundant Emptiness_” is a soulful contradiction-lush with feeling, yet
-    carved from silence. With smooth grooves, retro synths, and falsetto harmonies
-    floating above a steady, mid-tempo beat, **PCBender **crafts a sound that’s both
-    romantic and introspective.
-  description: '## Abundant Emptiness
-
-
-    “_Abundant Emptiness_” is a soulful contradiction-lush with feeling, yet carved
-    from silence. With smooth grooves, retro synths, and falsetto harmonies floating
-    above a steady, mid-tempo beat, **PCBender **crafts a sound that’s both romantic
-    and introspective.
-
-
-    This is a slow dance with longing-playful on the surface, but quietly profound
-    underneath. Blending soft rock with blue-eyed soul, "_Abundant Emptiness_" explores
-    the space between connection and solitude, presence and absence… and makes it
-    sound like velvet.
-
-
-    [](https://open.spotify.com/album/3Ju0OduQEGPiFqzVjqJowz?si=oTYfWFipT5Sx47rdHM4bRg)[](https://music.apple.com/us/album/abundant-emptiness/1804468866?i=1804468867)[](https://music.youtube.com/watch?v=zCOead7gHQY&si=OjLrzNvLPvFa-AZk)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/Abundant-Emptiness-1.png)'
+  summary: "\u201C_Abundant Emptiness_\u201D is a soulful contradiction-lush with\
+    \ feeling, yet carved from silence. With smooth grooves, retro synths, and falsetto\
+    \ harmonies floating above a steady, mid-tempo beat, **PCBender **crafts a sound\
+    \ that\u2019s both romantic and introspective."
+  description: "## Abundant Emptiness\n\n\u201C_Abundant Emptiness_\u201D is a soulful\
+    \ contradiction-lush with feeling, yet carved from silence. With smooth grooves,\
+    \ retro synths, and falsetto harmonies floating above a steady, mid-tempo beat,\
+    \ **PCBender **crafts a sound that\u2019s both romantic and introspective.\n\n\
+    This is a slow dance with longing-playful on the surface, but quietly profound\
+    \ underneath. Blending soft rock with blue-eyed soul, \"_Abundant Emptiness_\"\
+    \ explores the space between connection and solitude, presence and absence\u2026\
+    \ and makes it sound like velvet.\n\n[](https://open.spotify.com/album/3Ju0OduQEGPiFqzVjqJowz?si=oTYfWFipT5Sx47rdHM4bRg)[](https://music.apple.com/us/album/abundant-emptiness/1804468866?i=1804468867)[](https://music.youtube.com/watch?v=zCOead7gHQY&si=OjLrzNvLPvFa-AZk)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/Abundant-Emptiness-1.png)"
   credits:
     primary_artist: PCBender
     songwriter: Michael Anthony Rose
@@ -55,7 +47,7 @@ release:
     number: null
     title: Abundant Emptiness
     slug: abundant-emptiness
-    isrc: null
+    isrc: CAENV2505540
     duration: null
     explicit: false
     instrumental: false
