@@ -1,0 +1,13 @@
+pyproject.toml
+mrp_promoter.egg-info/PKG-INFO
+mrp_promoter.egg-info/SOURCES.txt
+mrp_promoter.egg-info/dependency_links.txt
+mrp_promoter.egg-info/entry_points.txt
+mrp_promoter.egg-info/requires.txt
+mrp_promoter.egg-info/top_level.txt
+promoter/__init__.py
+promoter/cli.py
+promoter/config.py
+promoter/gather.py
+promoter/generate.py
+promoter/writeback.py
