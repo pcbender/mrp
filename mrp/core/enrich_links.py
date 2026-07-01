@@ -62,6 +62,13 @@ def enrich_links(
             skipped_no_spotify += 1
             continue
 
+        # Odesli works best with track URLs. For singles, prefer the track-level
+        # Spotify URL stored under song.links.spotify over the album URL.
+        if release.get("model") == "song":
+            song_spotify = (release.get("song", {}).get("links") or {}).get("spotify")
+            if song_spotify:
+                spotify_url = song_spotify
+
         if index > 0:
             time.sleep(delay_seconds)
 
