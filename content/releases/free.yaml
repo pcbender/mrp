@@ -223,7 +223,7 @@ release:
       From the weight of my own freedom'
     lyrics_source: https://docs.google.com/document/d/184veN1qE-6dYN231EVTKNSsFRmPtlGYaPSDJRxKUDpE/edit
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 3
     title: Love
     slug: love
@@ -339,7 +339,7 @@ release:
       In the same wild tide'
     lyrics_source: https://docs.google.com/document/d/184veN1qE-6dYN231EVTKNSsFRmPtlGYaPSDJRxKUDpE/edit
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 4
     title: God
     slug: god
@@ -544,7 +544,7 @@ release:
       The road goes on without them'
     lyrics_source: https://docs.google.com/document/d/184veN1qE-6dYN231EVTKNSsFRmPtlGYaPSDJRxKUDpE/edit
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 6
     title: Desire
     slug: desire
@@ -844,7 +844,7 @@ release:
       From inside'
     lyrics_source: https://docs.google.com/document/d/184veN1qE-6dYN231EVTKNSsFRmPtlGYaPSDJRxKUDpE/edit
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 9
     title: Sovereign
     slug: sovereign
@@ -1013,4 +1013,4 @@ release:
       I chose to claim'
     lyrics_source: https://docs.google.com/document/d/184veN1qE-6dYN231EVTKNSsFRmPtlGYaPSDJRxKUDpE/edit
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz

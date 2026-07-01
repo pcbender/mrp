@@ -264,7 +264,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=SSTNsoW0kfU&si=X8xrvEi6XmOoBOiH
       youtube: https://www.youtube.com/watch?v=SSTNsoW0kfU
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 2
     title: Scattershot Forget-Me-Not
     slug: scattershot-forget-me-not
@@ -848,7 +848,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=cAxQSn_P-iM&si=Hd6HP5XaK_ZIYyHC
       youtube: https://www.youtube.com/watch?v=mkJ3uAEADPU
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 9
     title: Bit Wise Resistance
     slug: bit-wise-resistance
@@ -923,7 +923,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=cCOCS53GtnY&si=IakTkSztoToN7Uq7
       youtube: https://www.youtube.com/watch?v=cCOCS53GtnY
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 10
     title: Next to Nothing
     slug: next-to-nothing

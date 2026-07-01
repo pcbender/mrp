@@ -219,7 +219,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=mc7saVI4IUU&si=2e9a77qayWMFO2Dr
       youtube: https://www.youtube.com/watch?v=mc7saVI4IUU
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 3
     title: Rufous
     slug: rufous
@@ -236,7 +236,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=IXa0HwU9_Cc&si=Fgn6X3v8h33AACZF
       youtube: https://www.youtube.com/watch?v=IXa0HwU9_Cc
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 4
     title: Olivine
     slug: olivine
@@ -253,7 +253,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=4wuFDjxW6b8&si=_huKOze2tGxKbb5E
       youtube: https://www.youtube.com/watch?v=4wuFDjxW6b8
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 5
     title: Verdigris
     slug: verdigris
@@ -270,7 +270,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=FK_syE2lJTs&si=1yQ3xIqcw6XDacrj
       youtube: https://www.youtube.com/watch?v=FK_syE2lJTs
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 6
     title: Wenge
     slug: wenge
@@ -287,7 +287,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=EGFx7gLSk_s&si=cagoxZtkhYaE5-7D
       youtube: https://www.youtube.com/watch?v=EGFx7gLSk_s
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 7
     title: Pistachio
     slug: pistachio
@@ -304,7 +304,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=N20Uz12rSGw&si=FhrmS0y-Tkl24IOI
       youtube: https://www.youtube.com/watch?v=N20Uz12rSGw
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 8
     title: Sunray
     slug: sunray
@@ -336,7 +336,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=gdDnq85zPas&si=8kzZ6ZixhtZ_86Ou
       youtube: https://www.youtube.com/watch?v=gdDnq85zPas
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 10
     title: Nyanza
     slug: nyanza
@@ -353,7 +353,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=71nBNgOMm8s&si=UhvAQATsTGPJpuxL
       youtube: https://www.youtube.com/watch?v=71nBNgOMm8s
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 11
     title: Limerick
     slug: limerick
@@ -370,7 +370,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=zgl_nEN7b_Y&si=t3XRMp01ZWblDrdq
       youtube: https://www.youtube.com/watch?v=zgl_nEN7b_Y
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 12
     title: Thulian
     slug: thulian
@@ -387,7 +387,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=ghEqDSEdhzQ&si=_1QoAoC29Mxm-cDG
       youtube: https://www.youtube.com/watch?v=ghEqDSEdhzQ
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 13
     title: Jonquil
     slug: jonquil
@@ -404,7 +404,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=pAmFNGPRI9g&si=UxDhUGt2bKZEM8G4
       youtube: https://www.youtube.com/watch?v=pAmFNGPRI9g
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 14
     title: Aureolin
     slug: aureolin
@@ -436,4 +436,4 @@ release:
       youtube_music: https://music.youtube.com/watch?v=S_833lAnCaM&si=tCxtVG4uVT8OaQ_L
       youtube: https://www.youtube.com/watch?v=S_833lAnCaM
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz

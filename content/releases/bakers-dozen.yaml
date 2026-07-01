@@ -240,7 +240,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=2ndZa515aPU&si=CBNI_7RyWF_EsslE
       youtube: https://www.youtube.com/watch?v=2ndZa515aPU
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 5
     title: May Flowers
     slug: may-flowers
@@ -257,7 +257,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=bIRmZii65Xs&si=9v718t9AaQq31a9L
       youtube: https://www.youtube.com/watch?v=bIRmZii65Xs
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 6
     title: June Gloom
     slug: june-gloom
@@ -274,7 +274,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=0WWix9RLoMs&si=HKCgtqs9MgPHjdDd
       youtube: https://www.youtube.com/watch?v=0WWix9RLoMs
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 7
     title: Sparkles In July
     slug: sparkles-in-july
@@ -305,7 +305,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=cHYjWKLKb14&si=FAdZb6Hb2-QX7XQh
       youtube: https://www.youtube.com/watch?v=cHYjWKLKb14
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 9
     title: September On My Mind
     slug: september-on-my-mind
@@ -322,7 +322,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=Fa-0VO-iDDg&si=V8oAGOXLyUe6i1II
       youtube: https://www.youtube.com/watch?v=Fa-0VO-iDDg
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 10
     title: October Boo Hoo
     slug: october-boo-hoo
@@ -339,7 +339,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=I6Le0z1ckYY&si=WIv461VaZh_jTAnM
       youtube: https://www.youtube.com/watch?v=I6Le0z1ckYY
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 11
     title: November I Never Remember
     slug: november-i-never-remember
@@ -355,7 +355,7 @@ release:
       youtube_music: https://music.youtube.com/watch?v=i8yBumRUCv8&si=hnxzreeu0bvWH0sp
       youtube: https://www.youtube.com/watch?v=i8yBumRUCv8
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 12
     title: Slipping Into December
     slug: slipping-into-december
@@ -372,7 +372,7 @@ release:
       youtube: https://www.youtube.com/watch?v=FW_K9UoVmYI
       youtube_music: https://music.youtube.com/watch?v=FW_K9UoVmYI
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 13
     title: '366'
     slug: '366'
@@ -389,4 +389,4 @@ release:
       youtube_music: https://music.youtube.com/watch?v=BlEQwR1C1i8&si=1-WY8dPfZEHroyan
       youtube: https://www.youtube.com/watch?v=BlEQwR1C1i8
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz

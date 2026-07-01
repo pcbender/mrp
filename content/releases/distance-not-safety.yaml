@@ -252,7 +252,7 @@ release:
       youtube: https://www.youtube.com/watch?v=v1AxTHi7rsw
       youtube_music: https://music.youtube.com/watch?v=v1AxTHi7rsw
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 2
     title: Distance Not Safety
     slug: distance-not-safety

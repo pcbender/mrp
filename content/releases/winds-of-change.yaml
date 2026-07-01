@@ -445,7 +445,7 @@ release:
       youtube: https://www.youtube.com/watch?v=ZB62Rj3trow
       youtube_music: https://music.youtube.com/watch?v=ZB62Rj3trow
     hints:
-      meter_feel: compound
+      meter_feel: not a waltz
   - number: 5
     title: Deb
     slug: deb
