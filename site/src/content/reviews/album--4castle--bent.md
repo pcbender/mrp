@@ -1,5 +1,5 @@
 ---
-track_id: 4castle--bent
+track_id: album--4castle--bent
 summary: "Bent is a concept record about the modern workplace, and 4Castle treat it the way a good novelist treats a villain: with enough patience to let the rot show itself."
 verdict_rank: 4
 verdict_label: "strong"

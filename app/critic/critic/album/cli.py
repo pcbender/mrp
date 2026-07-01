@@ -57,7 +57,9 @@ def run_album(
     print(f"[4/4] Recontextualising tracks…")
     record.track_reviews_in_context = recontextualize(record, findings, model=model, persona=persona)
 
-    out_path = out_dir / f"{record.album_id}.json"
+    # Prefix with "album--" to prevent collision when a title-track slug
+    # matches the release slug (e.g. pcbender--free is both album and track).
+    out_path = out_dir / f"album--{record.album_id}.json"
     out_path.write_text(record.to_json())
     print(f"\nAlbum record → {out_path}")
 

@@ -1,5 +1,5 @@
 ---
-track_id: stab--the-messy-middle
+track_id: album--stab--the-messy-middle
 summary: "The Messy Middle is exactly what the title promises: STAB plants her flag in the uncertain, scrolling, self-doubting territory between who you were and who you're supposed to become, and she holds that ground for fifteen tracks without blinking."
 verdict_rank: 4
 verdict_label: "strong"

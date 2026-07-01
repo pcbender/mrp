@@ -21,8 +21,8 @@ const hasCredits = Boolean(release.credits?.songwriter || release.credits?.produ
 
 const isAlbum = Boolean(release.tracks?.length);
 const reviewId = release.song?.slug
-  ? `${release.artist_id}--${release.song.slug}`   // single
-  : `${release.artist_id}--${release.slug}`;        // album / EP
+  ? `${release.artist_id}--${release.song.slug}`          // single: track review
+  : `album--${release.artist_id}--${release.slug}`;       // album / EP: album review
 const reviewEntry = await getEntry("reviews", reviewId).catch(() => null);
 const { Content: ReviewContent } = reviewEntry ? await reviewEntry.render() : {};
 

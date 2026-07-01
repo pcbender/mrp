@@ -1,5 +1,5 @@
 ---
-track_id: pcbender--red-green-and-blues
+track_id: album--pcbender--red-green-and-blues
 summary: "PCBender works entirely in guitar and groove on 'Red, Green and Blues,' fifteen instrumental tracks named for colors that range from the familiar to the obscure, and that naming instinct tells you something about the album's sensibility: specific, a little eccentric, unhurried."
 verdict_rank: 4
 verdict_label: "strong"

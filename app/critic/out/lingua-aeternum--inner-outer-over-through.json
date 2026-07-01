@@ -1,124 +1,15 @@
 {
-  "album_id": "lingua-aeternum--inner-outer-over-through",
-  "release_slug": "inner-outer-over-through",
-  "title": "Inner Outer Over Through",
-  "release_type": "ep",
-  "artist": "Lingua Aeternum",
-  "persona": "## Lingua Aeternum\n\n**Lingua Aeternum is not a band. It is a circle. A rite. A resonance.**\n\nDrawn from the deep well of myth, mathematics, and memory, Lingua Aeternum conjures sound as invocation-music as sacred act. Each composition is a Canto: a sung glyph, a spell etched in breath and vibration. The performers are not musicians but Cantors-practitioners of the Harmonic Algebraic Language of Alignment (HALA), where melody is meaning, rhythm is ritual, and silence speaks louder than words.\n\nTheir music defies genre. You may hear echoes of post-rock, ambient drone, ancient chants, or electronic pulses-but no label holds. Instead, the listener is drawn inward, through spiraling harmonics and layered whispers, toward a place beyond translation. This is not art for consumption. It is art for **transformation**.\n\nLingua Aeternum records under the guidance of Maricopa Records, but they do not record songs-they distill **intentions**, encoded through the Wheel, spoken into being by resonance alone.\n\n- To hear is to remember.\n\n- To remember is to become.\n\n- _Let the glyphs guide you._\n\n[](https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ)[](https://music.apple.com/us/artist/lingua-aeternum/1809011711)[](https://www.youtube.com/channel/UCzrA7rNe15AiX1LXZTGUQqg)![](https://www.maricoparecords.com/wp-content/uploads/2025/04/LA_Profile_square.png)\n## Releases",
-  "tracklist": [
-    "lingua-aeternum--inner-outer-over-through",
-    "lingua-aeternum--invocate",
-    "lingua-aeternum--the-memory-i-ll-borrow",
-    "lingua-aeternum--thread-by-thread"
-  ],
-  "track_records": [
-    "/home/mrose/mrp/app/critic/out/lingua-aeternum--inner-outer-over-through.json",
-    "/home/mrose/mrp/app/critic/out/lingua-aeternum--invocate.json",
-    "/home/mrose/mrp/app/critic/out/lingua-aeternum--the-memory-i-ll-borrow.json",
-    "/home/mrose/mrp/app/critic/out/lingua-aeternum--thread-by-thread.json"
-  ],
-  "album_features": {
-    "total_runtime_s": 822.2,
-    "bpm_curve": [
-      117.5,
-      136.0,
-      117.5,
-      92.3
-    ],
-    "key_progression": [
-      "D major",
-      "E minor",
-      "E minor",
-      "B minor"
-    ],
-    "mood_progression": [
-      "tender",
-      "tender",
-      "tender",
-      "tender"
-    ],
-    "rank_distribution": {
-      "2": 0,
-      "3": 2,
-      "4": 2,
-      "5": 0
-    },
-    "peak_track": "lingua-aeternum--invocate",
-    "valley_tracks": [
-      "lingua-aeternum--inner-outer-over-through",
-      "lingua-aeternum--thread-by-thread"
-    ]
-  },
-  "cohesion": {
-    "palette_consistency": 0.9354,
-    "theme_threads": [
-      "behind",
-      "ever",
-      "never",
-      "time",
-      "bends",
-      "chance",
-      "dance",
-      "echo"
-    ],
-    "verdict": "cohesive_statement"
+  "track_id": "lingua-aeternum--inner-outer-over-through",
+  "impression": {
+    "text": "This track establishes a melancholic yet propulsive atmosphere, built on a foundation of a tight drum machine, a syncopated bassline, and wide, atmospheric synth pads. The energy is steady and persistent, with a classic rock feel that creates a forward-moving, reflective quality. The production is clean and polished with a distinct retro quality, characterized by a dense mix where the reverb-heavy snare and layered, breathy male vocals sit comfortably together. The recurring, hypnotic vocal refrain of \"inner, outer, over, through\" serves as the track's central, defining hook, anchoring its contemplative and cyclical nature.",
+    "model": "gemini-2.5-pro"
   },
   "review": {
-    "target": "album_blurb",
-    "review_text": "Four tracks, fourteen minutes, and a BPM arc that deliberately winds down from the opener's mid-tempo churn to the closer's slow exhale: this EP knows exactly what it is doing with its brief runtime. 'Invocate' is the hinge the whole thing turns on, its locked-in forward drive giving the collection its pulse before 'The Memory I'll Borrow' eases back into something looser and more reflective. The thematic thread, words like 'echo,' 'time,' and 'bends' surfacing across all four tracks, keeps the set feeling less like a playlist and more like a single sustained thought. 'Thread by Thread' lands the EP quietly rather than conclusively, that chorus hook about what's broken speaking loudest doing just enough to make the fadeout feel earned rather than unfinished.",
+    "review_text": "The four-word mantra at the center of this track, 'Inner, Outer, Over, Through,' earns its repetition the hard way: each pass lands slightly differently as the verses peel back another layer of the speaker's inner static. The song moves at a brisk clip with the propulsive confidence of mid-period U2, delay-soaked guitars opening wide while a reverberant snare keeps things honest. The line 'Above the storm / I name the doubt' is the emotional hinge the whole piece pivots on, and the production gives it the space it deserves. As an opener, it sets the terms clearly: this is a record about naming things, about calling doubt and longing by their right names and seeing what happens next. 'Invocate' picks up the thread immediately, and the transition feels less like a segue than a logical acceleration. A clean, anthemic start that earns what follows.",
     "verdict_tier": {
       "rank": 3,
-      "label": "solid"
+      "label": ""
     },
-    "sum_vs_parts": "equal",
-    "persona_delivery": "on_character",
-    "anchors_used": [
-      "Invocate",
-      "The Memory I'll Borrow",
-      "Thread by Thread",
-      "BPM arc",
-      "thematic thread: echo/time/bends",
-      "chorus hook: what's broken speaks the loudest"
-    ],
-    "status": "pending",
-    "model": "claude-sonnet-4-6"
-  },
-  "track_reviews_in_context": [
-    {
-      "track_id": "lingua-aeternum--inner-outer-over-through",
-      "position": 1,
-      "standalone_rank": 3,
-      "context_rank": null,
-      "context_note": "",
-      "review_text": "The four-word mantra at the center of this track, 'Inner, Outer, Over, Through,' earns its repetition the hard way: each pass lands slightly differently as the verses peel back another layer of the speaker's inner static. The song moves at a brisk clip with the propulsive confidence of mid-period U2, delay-soaked guitars opening wide while a reverberant snare keeps things honest. The line 'Above the storm / I name the doubt' is the emotional hinge the whole piece pivots on, and the production gives it the space it deserves. As an opener, it sets the terms clearly: this is a record about naming things, about calling doubt and longing by their right names and seeing what happens next. 'Invocate' picks up the thread immediately, and the transition feels less like a segue than a logical acceleration. A clean, anthemic start that earns what follows.",
-      "model": "claude-sonnet-4-6"
-    },
-    {
-      "track_id": "lingua-aeternum--invocate",
-      "position": 2,
-      "standalone_rank": 4,
-      "context_rank": null,
-      "context_note": "",
-      "review_text": "Coming out of the opener's deliberate naming of doubt, 'Invocate' shifts the album's weight from introspection to momentum, and the shift feels earned. Moving at a faster, more locked-in clip, it drives forward with the kind of certainty that suits lyrics about acting before choosing rather well. The chorus opens up cleanly, the vocal melody lifts, and the line 'we are the tune that hums itself' lands with enough weight to justify the whole build. Blues-inflected guitar and a punchy rhythm section keep it grounded while the ideas get philosophical, a balance Lingua Aeternum doesn't always stick so cleanly. At the album's midpoint it functions as the peak, the moment where everything the first track was reaching toward suddenly arrives. 'The Memory I'll Borrow' has a high bar to clear coming next, and the fact that it mostly clears it says something. A genuine highlight.",
-      "model": "claude-sonnet-4-6"
-    },
-    {
-      "track_id": "lingua-aeternum--the-memory-i-ll-borrow",
-      "position": 3,
-      "standalone_rank": 4,
-      "context_rank": null,
-      "context_note": "",
-      "review_text": "Following the album's most driven moment, 'The Memory I'll Borrow' could easily feel like a comedown, but it sidesteps that trap by shifting the energy sideways rather than down. It moves at a loose, almost funky confidence before the chorus opens up into something genuinely anthemic, layered vocals pushing the hook past the point of no return. The lyric 'I traded my shadow for a spark in the haze' lands exactly where the bridge needs to land, stripping the track back to near-silence before the final chorus earns its release. Where 'Invocate' leans philosophical and forward-charging, this one feels more personal and direct, closer to John Hiatt or early Counting Crows than anything cloistered or ritualistic. For a group whose persona leans toward the ceremonial and abstract, that directness is a genuine surprise. It also does the necessary work of preparing the listener for the closer's more reflective tone. A highlight, and a good place to start for anyone new to the catalog.",
-      "model": "claude-sonnet-4-6"
-    },
-    {
-      "track_id": "lingua-aeternum--thread-by-thread",
-      "position": 4,
-      "standalone_rank": 3,
-      "context_rank": null,
-      "context_note": "",
-      "review_text": "After two consecutive highlights, 'Thread by Thread' takes the album's temperature down a notch, slowing to a deliberate pace and letting the full-band energy from the previous tracks settle into something more considered. It is exactly what a closer needs to be: a space where the collection's accumulated feeling can resolve without forcing it. The chorus hook earns its keep the old-fashioned way, with the lyric 'what's broken speaks the loudest part / what's missing makes the work of art' landing with the kind of plain-spoken conviction that Springsteen built whole albums around. The dynamic build from spare verse to full-band surge is handled cleanly, the vocal staying centered and clear even when the guitars pile up behind it. In the context of an album about naming and acting and remembering, a closing statement about incompleteness as craft feels like the right place to land. A dependable closer that does its job and does it well.",
-      "model": "claude-sonnet-4-6"
-    }
-  ]
+    "status": "pending"
+  }
 }
