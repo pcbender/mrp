@@ -73,6 +73,7 @@ class TrackFinding:
     source: SourceRecord
     lyrics: str = ""
     persona: str = ""
+    hints: dict = field(default_factory=dict)
     hard_facts: HardFacts = field(default_factory=HardFacts)
     tags: Tags = field(default_factory=Tags)
     impression: Impression = field(default_factory=Impression)

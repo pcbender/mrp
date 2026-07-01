@@ -84,6 +84,14 @@ def _build_user_message(
         f"Structure ({len(hf.sections)} sections): {sections_str}",
     ]
 
+    if finding.hints:
+        hint_lines = [f"{k}: {v}" for k, v in finding.hints.items()]
+        parts += [
+            "",
+            "=== HINTS (authoritative — supplied by the artist/label; do not contradict) ===",
+            *hint_lines,
+        ]
+
     if finding.tags.genre or finding.tags.mood or finding.tags.instruments:
         parts += [
             "",

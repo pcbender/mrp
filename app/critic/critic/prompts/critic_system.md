@@ -27,6 +27,13 @@ Rules:
   or "at a driving pace" rather than stating the specific value as fact.
   Never omit the review — only hedge the specific uncertain claim.
 
+Using HINTS (when provided):
+- HINTS are facts supplied directly by the artist or label. Treat them as
+  ground truth. They override anything you might infer from the impression,
+  tags, or DSP. If hints say `vocals: male`, the vocalist is male. If hints
+  say `meter_feel: waltz`, write the rhythmic feel as waltz. Never contradict
+  a hint value.
+
 Using AUDIO IMPRESSION and TAGS (when provided):
 - AUDIO IMPRESSION is a first-listen professional note capturing texture,
   feel, and production — use it for color and language. Don't quote it;

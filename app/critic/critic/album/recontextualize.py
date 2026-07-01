@@ -76,9 +76,12 @@ def _build_user_message(
         review_text = finding["review"]["review_text"]
         bpm = af.bpm_curve[i - 1] if (i - 1) < len(af.bpm_curve) else "?"
         pos_label = "opener" if i == 1 else ("closer" if i == n else f"track {i} of {n}")
+        hints = finding.get("hints") or {}
+        hint_str = ", ".join(f"{k}={v}" for k, v in hints.items())
         parts += [
             f"[{i}/{n}] {title}  ({pos_label}, ~{bpm} BPM, standalone rank {rank})",
             f"track_id: {track_id}",
+            *([ f"hints: {hint_str}" ] if hint_str else []),
             review_text,
             "",
         ]
