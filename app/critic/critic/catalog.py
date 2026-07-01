@@ -65,6 +65,10 @@ def get_hints(track_slug: str, release_slug: str | None = None) -> dict:
             continue
         data = _load_yaml(path)
         rel = data.get("release", {})
+        # Single (model=song): hints live under release.song
+        if rel.get("model") == "song" and rel.get("song", {}).get("slug") == track_slug:
+            return rel["song"].get("hints") or {}
+        # Multi-track release: search tracks array
         for track in rel.get("tracks", []):
             if track.get("slug") == track_slug:
                 return track.get("hints") or {}

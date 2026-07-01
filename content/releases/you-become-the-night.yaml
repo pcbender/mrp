@@ -39,6 +39,8 @@ release:
     duration: '5:05'
     explicit: false
     preview_audio: /samples/pcbender--you-become-the-night.mp3
+    hints:
+      vocals: male
     instrumental: false
     lyrics_text: 'The overcast stillness takes its toll upon my prose
 
