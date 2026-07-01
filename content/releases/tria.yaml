@@ -385,6 +385,8 @@ release:
 
       Becomes the script we can''t erase'
     lyrics_source: https://docs.google.com/document/d/1usRIdY8q75ZzruPxyMwdiCr_vHP08KGJI8r9h8lN7Jg/edit
+    hints:
+      meter_feel: compound
   - number: 5
     title: Esti
     slug: esti

@@ -444,6 +444,8 @@ release:
       spotify: https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39
       youtube: https://www.youtube.com/watch?v=ZB62Rj3trow
       youtube_music: https://music.youtube.com/watch?v=ZB62Rj3trow
+    hints:
+      meter_feel: compound
   - number: 5
     title: Deb
     slug: deb

@@ -263,6 +263,8 @@ release:
       apple_music: https://music.apple.com/us/album/on-the-advent-of-a-dream/1802973212?i=1802973213
       youtube_music: https://music.youtube.com/watch?v=SSTNsoW0kfU&si=X8xrvEi6XmOoBOiH
       youtube: https://www.youtube.com/watch?v=SSTNsoW0kfU
+    hints:
+      meter_feel: compound
   - number: 2
     title: Scattershot Forget-Me-Not
     slug: scattershot-forget-me-not
@@ -845,6 +847,8 @@ release:
       apple_music: https://music.apple.com/us/album/pixy-stix/1802973212?i=1802973220
       youtube_music: https://music.youtube.com/watch?v=cAxQSn_P-iM&si=Hd6HP5XaK_ZIYyHC
       youtube: https://www.youtube.com/watch?v=mkJ3uAEADPU
+    hints:
+      meter_feel: compound
   - number: 9
     title: Bit Wise Resistance
     slug: bit-wise-resistance
@@ -918,6 +922,8 @@ release:
       apple_music: https://music.apple.com/us/album/bit-wise-resistance/1802973212?i=1802973221
       youtube_music: https://music.youtube.com/watch?v=cCOCS53GtnY&si=IakTkSztoToN7Uq7
       youtube: https://www.youtube.com/watch?v=cCOCS53GtnY
+    hints:
+      meter_feel: compound
   - number: 10
     title: Next to Nothing
     slug: next-to-nothing
