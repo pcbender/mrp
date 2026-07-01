@@ -26,6 +26,7 @@ release:
     apple_music: https://music.apple.com/us/album/a-certain-sense-single/6766367708
     youtube: https://www.youtube.com/watch?v=yFQYvdOrIv0
     youtube_music: https://music.youtube.com/watch?v=yFQYvdOrIv0
+    pandora: https://www.pandora.com/AL:66162337
   seo:
     title: A Certain Sense by 4Castle
     description: A Certain Sense by 4Castle on Maricopa Records.
@@ -40,95 +41,17 @@ release:
     explicit: false
     preview_audio: /samples/4castle--a-certain-sense.mp3
     instrumental: false
-    lyrics_text: 'Lay down your gun
-
-      Your end is near
-
-      It’s time to run
-
-      Away from here
-
-
-      Leave the regrets
-
-      You can’t ignore
-
-      Mercy rejects
-
-      What you lied for
-
-
-      The bridge gets you over
-
-      The rage of the river
-
-      The loss of a lover
-
-      The subtle surrender
-
-
-      You will never remember
-
-      Unless you dare to go there
-
-      Crossing with a certain sense…
-
-      Of uncertainty
-
-
-      Step from the flame
-
-      Before it knows
-
-      How much of your shame
-
-      The father owns
-
-
-      Count what you kept
-
-      And what you sold
-
-      The promise wept
-
-      Before it grew cold
-
-
-      The bridge gets you over
-
-      The rage of the river
-
-      The loss of a lover
-
-      The subtle surrender
-
-
-      You will never remember
-
-      Unless you dare to go there
-
-      Crossing with a certain sense…
-
-      Of uncertainty
-
-
-      The bridge gets you over
-
-      The rage of the river
-
-      The loss of a lover
-
-      The subtle surrender
-
-
-      You will never remember
-
-      Unless you dare to go there
-
-      Crossing with a certain sense…
-
-      Of uncertainty
-
-
-      Crossing with a certain sense of uncertainty'
+    lyrics_text: "Lay down your gun\nYour end is near\nIt\u2019s time to run\nAway\
+      \ from here\n\nLeave the regrets\nYou can\u2019t ignore\nMercy rejects\nWhat\
+      \ you lied for\n\nThe bridge gets you over\nThe rage of the river\nThe loss\
+      \ of a lover\nThe subtle surrender\n\nYou will never remember\nUnless you dare\
+      \ to go there\nCrossing with a certain sense\u2026\nOf uncertainty\n\nStep from\
+      \ the flame\nBefore it knows\nHow much of your shame\nThe father owns\n\nCount\
+      \ what you kept\nAnd what you sold\nThe promise wept\nBefore it grew cold\n\n\
+      The bridge gets you over\nThe rage of the river\nThe loss of a lover\nThe subtle\
+      \ surrender\n\nYou will never remember\nUnless you dare to go there\nCrossing\
+      \ with a certain sense\u2026\nOf uncertainty\n\nThe bridge gets you over\nThe\
+      \ rage of the river\nThe loss of a lover\nThe subtle surrender\n\nYou will never\
+      \ remember\nUnless you dare to go there\nCrossing with a certain sense\u2026\
+      \nOf uncertainty\n\nCrossing with a certain sense of uncertainty"
     lyrics_source: https://docs.google.com/document/d/1KZ1mdog5HQC91HxuIq62BsiyXzLO31qVAbx5VX7TV-k/edit

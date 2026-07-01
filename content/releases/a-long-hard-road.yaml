@@ -26,6 +26,7 @@ release:
     apple_music: https://music.apple.com/us/album/a-long-hard-road-single/1868460898
     youtube: https://www.youtube.com/watch?v=FgpsjBVUW68
     youtube_music: https://music.youtube.com/watch?v=FgpsjBVUW68
+    pandora: https://www.pandora.com/AL:59553189
   seo:
     title: A Long Hard Road by 4Castle
     description: A Long Hard Road by 4Castle on Maricopa Records.
@@ -40,73 +41,18 @@ release:
     explicit: false
     preview_audio: /samples/4castle--a-long-hard-road.mp3
     instrumental: false
-    lyrics_text: 'Listen, oh traveller, gather your mind
-
-      Lay down your burdens, ignore the signs
-
-      Loosen your grasp and love just the same
-
-      Life is a gift, not something you tame
-
-
-      It’s a long (Long)
-
-      It’s a long (Long)
-
-      It’s a long (Long)
-
-      It’s a long hard road…
-
-      That leads to the end
-
-
-      You long for the lovely, turn from the pain
-
-      Build castles from sand and hope they remain
-
-      You plot and you plan, leave nothing to chance
-
-      What feels like a loss is part of the dance
-
-
-      It’s a long (Long)
-
-      It’s a long (Long)
-
-      It’s a long (Long)
-
-      It’s a long hard road…
-
-      That leads to the end
-
-
-      The boots that I wear are worn to the sole
-
-      My stride has grown soft with miles to go
-
-      Again and again, I asked the gods, "Why?"
-
-      The lack of an answer is the truest reply
-
-
-      It’s a long (Long)
-
-      It’s a long (Long)
-
-      It’s a long (Long)
-
-      It’s a long hard road…
-
-      That leads to the end
-
-
-      It’s a long (Long)
-
-      It’s a long (Long)
-
-      It’s a long (Long)
-
-      It’s a long hard road…
-
-      That leads to the end'
+    lyrics_text: "Listen, oh traveller, gather your mind\nLay down your burdens, ignore\
+      \ the signs\nLoosen your grasp and love just the same\nLife is a gift, not something\
+      \ you tame\n\nIt\u2019s a long (Long)\nIt\u2019s a long (Long)\nIt\u2019s a\
+      \ long (Long)\nIt\u2019s a long hard road\u2026\nThat leads to the end\n\nYou\
+      \ long for the lovely, turn from the pain\nBuild castles from sand and hope\
+      \ they remain\nYou plot and you plan, leave nothing to chance\nWhat feels like\
+      \ a loss is part of the dance\n\nIt\u2019s a long (Long)\nIt\u2019s a long (Long)\n\
+      It\u2019s a long (Long)\nIt\u2019s a long hard road\u2026\nThat leads to the\
+      \ end\n\nThe boots that I wear are worn to the sole\nMy stride has grown soft\
+      \ with miles to go\nAgain and again, I asked the gods, \"Why?\"\nThe lack of\
+      \ an answer is the truest reply\n\nIt\u2019s a long (Long)\nIt\u2019s a long\
+      \ (Long)\nIt\u2019s a long (Long)\nIt\u2019s a long hard road\u2026\nThat leads\
+      \ to the end\n\nIt\u2019s a long (Long)\nIt\u2019s a long (Long)\nIt\u2019s\
+      \ a long (Long)\nIt\u2019s a long hard road\u2026\nThat leads to the end"
     lyrics_source: https://docs.google.com/document/d/1JS70xjTn_soRIVL23Hvn7ilOX0r9m31NupAKFqbT0RM/edit
