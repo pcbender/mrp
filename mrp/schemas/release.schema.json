@@ -123,7 +123,11 @@
         "preview_audio": {"type": ["string", "null"]},
         "lyrics_text": {"type": ["string", "null"]},
         "lyrics_source": {"type": ["string", "null"]},
-        "links": {"$ref": "#/$defs/links"}
+        "links": {"$ref": "#/$defs/links"},
+        "hints": {
+          "type": "object",
+          "additionalProperties": {"type": "string"}
+        }
       }
     }
   }

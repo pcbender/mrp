@@ -1,0 +1,2 @@
+[console_scripts]
+promoter = promoter.cli:main

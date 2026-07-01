@@ -24,23 +24,38 @@ const artistJsonLd = JSON.stringify({
   ...(artist.bio_short ? { "description": artist.bio_short } : {}),
   ...(sameAs.length ? { "sameAs": sameAs } : {})
 });
-const bioBlocks = String(artist.bio_long || "")
-  .split("## Releases")[0]
-  .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
-  .replace(/\[[^\]]*\]\([^)]+\)/g, "")
-  .split(/\n{2,}/)
-  .map((block) => block.trim())
-  .filter(Boolean)
-  .filter((block) => block !== `## ${artist.name}`)
-  .map((block) => {
-    if (block.startsWith("## ")) {
-      return { tag: "h2", text: cleanMarkdownText(block.slice(3)) };
-    }
-    if (block.startsWith("### ")) {
-      return { tag: "h3", text: cleanMarkdownText(block.slice(4)) };
-    }
-    return { tag: "p", text: cleanMarkdownText(block.replace(/\n+/g, " ")) };
-  });
+function renderPromoMarkdown(text: string): string {
+  return text
+    .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const bioBlocks = artist.promo_blurb
+  ? String(artist.promo_blurb)
+      .split(/\n{2,}/)
+      .map((block) => block.trim())
+      .filter(Boolean)
+      .map((block) => ({ tag: "p", html: renderPromoMarkdown(block.replace(/\n+/g, " ")) }))
+  : String(artist.bio_long || "")
+      .split("## Releases")[0]
+      .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
+      .replace(/\[[^\]]*\]\([^)]+\)/g, "")
+      .split(/\n{2,}/)
+      .map((block) => block.trim())
+      .filter(Boolean)
+      .filter((block) => block !== `## ${artist.name}`)
+      .map((block) => {
+        if (block.startsWith("## ")) {
+          return { tag: "h2", text: cleanMarkdownText(block.slice(3)) };
+        }
+        if (block.startsWith("### ")) {
+          return { tag: "h3", text: cleanMarkdownText(block.slice(4)) };
+        }
+        return { tag: "p", text: cleanMarkdownText(block.replace(/\n+/g, " ")) };
+      });
 
 function cleanMarkdownText(value: string) {
   return String(value)
@@ -69,7 +84,9 @@ function cleanMarkdownText(value: string) {
       <p class="eyebrow">Artist</p>
       <h1>{artist.name}</h1>
       {bioBlocks.map((block) =>
-        block.tag === "h2" ? <h2>{block.text}</h2> : block.tag === "h3" ? <h3>{block.text}</h3> : <p>{block.text}</p>
+        "html" in block
+          ? <p set:html={block.html} />
+          : block.tag === "h2" ? <h2>{block.text}</h2> : block.tag === "h3" ? <h3>{block.text}</h3> : <p>{block.text}</p>
       )}
       <StreamingLinks links={links} />
     </div>
@@ -160,10 +177,10 @@ function cleanMarkdownText(value: string) {
 
   .artist-profile-card > img {
     width: 100%;
-    aspect-ratio: 1;
+    height: auto;
+    max-width: 100%;
     border: 1px solid var(--line);
     border-radius: 4px;
-    object-fit: cover;
     background: var(--panel);
   }
 
