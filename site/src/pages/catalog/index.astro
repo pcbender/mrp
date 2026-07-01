@@ -10,6 +10,8 @@ const songs = getVisibleReleases().flatMap((release) => {
   const releaseDate = release.release_date || "";
   const upc = release.upc || "";
 
+  const releaseType = release.release_type || "";
+
   if (release.model === "song" && release.song) {
     return [{
       artistName,
@@ -17,6 +19,7 @@ const songs = getVisibleReleases().flatMap((release) => {
       title: release.song.title || release.title,
       isrc: release.song.isrc || "",
       releaseDate,
+      releaseType,
       upc,
       href: `/releases/${release.slug}/`,
     }];
@@ -28,6 +31,7 @@ const songs = getVisibleReleases().flatMap((release) => {
     title: track.title,
     isrc: track.isrc || "",
     releaseDate,
+    releaseType,
     upc,
     href: `/releases/${release.slug}/${track.slug}/`,
   }));
@@ -36,6 +40,7 @@ const songs = getVisibleReleases().flatMap((release) => {
 );
 
 const artists = Array.from(new Set(songs.map((s) => s.artistName))).sort((a, b) => a.localeCompare(b));
+const types = Array.from(new Set(songs.map((s) => s.releaseType).filter(Boolean))).sort();
 const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).filter(Boolean))).sort().reverse();
 ---
 
@@ -51,6 +56,15 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
           <span>Search</span>
           <input type="search" name="search" autocomplete="off" placeholder="Title or artist" data-catalog-search />
         </label>
+        {types.length > 1 && (
+          <label>
+            <span>Type</span>
+            <select name="type" data-catalog-type>
+              <option value="">All types</option>
+              {types.map((t) => <option value={t}>{t}</option>)}
+            </select>
+          </label>
+        )}
         {artists.length > 1 && (
           <label>
             <span>Artist</span>
@@ -81,7 +95,7 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
         <label>
           <span>Show</span>
           <select name="page-size" data-catalog-page-size>
-            <option value="25">25</option>
+            <option value="25" selected>25</option>
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="0">All</option>
@@ -114,6 +128,7 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
               <tr
                 data-catalog-row
                 data-catalog-search={`${song.title} ${song.artistName}`.toLowerCase()}
+                data-catalog-type={song.releaseType}
                 data-catalog-artist={song.artistName}
                 data-catalog-date={song.releaseDate}
                 data-catalog-title={song.title.toLowerCase()}
@@ -139,6 +154,7 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
     const tbody = browser.querySelector("[data-catalog-tbody]");
     const rows = Array.from(browser.querySelectorAll("[data-catalog-row]"));
     const search = browser.querySelector("[data-catalog-search]");
+    const type = browser.querySelector("[data-catalog-type]");
     const artist = browser.querySelector("[data-catalog-artist]");
     const year = browser.querySelector("[data-catalog-year]");
     const sort = browser.querySelector("[data-catalog-sort]");
@@ -153,9 +169,11 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
 
     function matches(row) {
       const q = (search.value || "").toLowerCase().trim();
+      const sel_type = type ? type.value : "";
       const sel_artist = artist ? artist.value : "";
       const sel_year = year ? year.value : "";
       if (q && !row.dataset.catalogSearch.includes(q)) return false;
+      if (sel_type && row.dataset.catalogType !== sel_type) return false;
       if (sel_artist && row.dataset.catalogArtist !== sel_artist) return false;
       if (sel_year && !row.dataset.catalogDate.startsWith(sel_year)) return false;
       return true;
@@ -193,7 +211,7 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
 
     browser.addEventListener("input", (e) => { if (e.target === search) { page = 1; render(); } });
     browser.addEventListener("change", (e) => {
-      if ([artist, year, sort, pageSize].includes(e.target)) { page = 1; render(); }
+      if ([type, artist, year, sort, pageSize].includes(e.target)) { page = 1; render(); }
     });
     prev.addEventListener("click", () => { page = Math.max(1, page - 1); render(); });
     next.addEventListener("click", () => { page += 1; render(); });
@@ -205,6 +223,76 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
   .catalog-browser {
     display: grid;
     gap: 20px;
+  }
+
+  /* Control bar — mirrors ReleaseBrowser.astro styles which are scoped there */
+  .release-browser-controls {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: flex-end;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+  }
+
+  .release-browser-controls label {
+    display: grid;
+    gap: 6px;
+    flex: 0.65 0 78px;
+    min-width: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .release-browser-search {
+    flex: 1.6 0 160px;
+  }
+
+  .release-browser-controls input,
+  .release-browser-controls select {
+    width: 100%;
+    min-height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 9px 10px;
+    background: #ffffff;
+    color: var(--ink);
+    font: inherit;
+  }
+
+  .release-browser-summary,
+  .release-browser-pages {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .release-browser-summary {
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .release-browser-pages .button {
+    background: var(--panel);
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .release-browser-pages .button:disabled {
+    cursor: default;
+    opacity: 0.42;
+  }
+
+  .release-browser-empty {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
   }
 
   .catalog-table-wrap {
@@ -270,6 +358,20 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
   @media (max-width: 760px) {
     .catalog-browser {
       padding: 0 20px;
+    }
+
+    .release-browser-controls {
+      flex-wrap: wrap;
+    }
+
+    .release-browser-controls label,
+    .release-browser-search {
+      flex: 1 0 100%;
+    }
+
+    .release-browser-summary {
+      align-items: flex-start;
+      flex-direction: column;
     }
   }
 </style>
