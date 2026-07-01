@@ -13,6 +13,8 @@ export interface ArtistRecord {
   name: string;
   image?: string | null;
   bio_short?: string | null;
+  bio_long?: string | null;
+  promo_blurb?: string | null;
   links?: Record<string, string | null>;
 }
 
@@ -91,7 +93,7 @@ export function artistCards(): ArtistCardModel[] {
       image: artist.image,
       releaseCount: count,
       latestReleaseDate,
-      bioSummary: cleanSummary(artist.bio_short || artist.bio_long || ""),
+      bioSummary: cleanSummary(artist.promo_blurb || artist.bio_short || artist.bio_long || ""),
       summary: `${count} public release${count === 1 ? "" : "s"}`
     };
   }).sort(compareArtistCardsByLatestRelease);
