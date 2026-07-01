@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import { getArtists, getVisibleReleases } from "../../lib/content.js";
 
 const artistMap = new Map(getArtists().map((a) => [a.id, a.name]));
@@ -40,14 +39,13 @@ const artists = Array.from(new Set(songs.map((s) => s.artistName))).sort((a, b) 
 const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).filter(Boolean))).sort().reverse();
 ---
 
-<BaseLayout paneled={false} title="Song Catalog | Maricopa Records" description="Full song catalog for Maricopa Records — titles, ISRCs, and release data.">
-  <div class="catalog-page page-grid">
-    <header class="catalog-header">
-      <Breadcrumbs items={[{ label: "Catalog" }]} />
-      <h1>Song Catalog</h1>
-    </header>
-
-    <div class="catalog-browser" data-catalog-browser>
+<BaseLayout paneled={true} title="Catalog | Maricopa Records" description="Full song catalog for Maricopa Records — titles, ISRCs, and release data.">
+  <section class="page-heading centered-page">
+    <p class="eyebrow">Catalog</p>
+    <p>Every song in the Maricopa Records catalog</p>
+  </section>
+  <section class="page-grid centered-page">
+  <div class="catalog-browser" data-catalog-browser>
       <form class="release-browser-controls" data-catalog-controls>
         <label class="release-browser-search">
           <span>Search</span>
@@ -132,7 +130,7 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
       </div>
       <p class="empty-state release-browser-empty" data-catalog-empty hidden>No songs match those controls.</p>
     </div>
-  </div>
+  </section>
 </BaseLayout>
 
 <script>
@@ -204,21 +202,6 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
 </script>
 
 <style>
-  .catalog-page {
-    width: min(100% - clamp(40px, 8vw, 112px), 1180px);
-    margin: 0 auto;
-    padding: clamp(24px, 4vw, 48px) 0;
-    display: grid;
-    gap: 28px;
-  }
-
-  .catalog-header h1 {
-    margin: 8px 0 0;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-
   .catalog-browser {
     display: grid;
     gap: 20px;
@@ -285,15 +268,6 @@ const years = Array.from(new Set(songs.map((s) => s.releaseDate.slice(0, 4)).fil
   }
 
   @media (max-width: 760px) {
-    .catalog-page {
-      width: 100%;
-      padding: 20px 0;
-    }
-
-    .catalog-header {
-      padding: 0 20px;
-    }
-
     .catalog-browser {
       padding: 0 20px;
     }
