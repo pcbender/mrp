@@ -1,0 +1,16 @@
+[
+  {
+    "audio": "/mnt/c/Masters/You Become The Night - PCBender.wav",
+    "release_slug": "you-become-the-night",
+    "track_slug": "you-become-the-night",
+    "artist_slug": "pcbender",
+    "target": "blurb"
+  },
+  {
+    "audio": "/mnt/c/Masters/You Become The Night - STAB.wav",
+    "release_slug": "you-become-the-night-2",
+    "track_slug": "you-become-the-night-2",
+    "artist_slug": "stab",
+    "target": "blurb"
+  }
+]

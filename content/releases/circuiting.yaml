@@ -242,6 +242,8 @@ release:
 
       Echoes guiding from the past…'
     lyrics_source: https://docs.google.com/document/d/1F71PZpLx-qKx0lWXTNbS4uoq37wNm95S7ZDMOu8HS2o/edit
+    hints:
+      meter_feel: not a waltz
   - number: 2
     title: Resistor
     slug: resistor
@@ -768,6 +770,8 @@ release:
 
       Not really. Not ever. Relay…'
     lyrics_source: https://docs.google.com/document/d/1BLKBVEpQO9Gu7_e7-TL2qPjfgjPoLvQkANc4I2Qrypc/edit
+    hints:
+      meter_feel: not a waltz
   - number: 8
     title: Fuse
     slug: fuse

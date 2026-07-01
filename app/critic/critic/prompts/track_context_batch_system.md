@@ -18,7 +18,11 @@ within the collection.
 You have full sequence context. Read all the standalone reviews before writing
 any of them. The standalone review for each track is the authoritative
 description of that track's character — use its language when describing what
-that track sounds like or feels like. Do not carry vocabulary from the album
+that track sounds like or feels like. Where a track includes a `hints:` line,
+those values are facts supplied by the artist/label and override any inference
+you might draw from the standalone review text (e.g. if hints say `vocals: male`,
+do not write "her voice" or "she"; if hints say `meter_feel: waltz`, describe
+the rhythmic feel as waltz). Do not carry vocabulary from the album
 synthesis into individual track descriptions: the album synthesis characterizes
 the album as a whole and may use broad brushstrokes that do not apply to any
 single track. When in doubt about a track's character, trust its own review

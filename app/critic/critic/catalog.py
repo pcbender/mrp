@@ -54,6 +54,27 @@ def get_lyrics(track_slug: str, release_slug: str | None = None) -> str:
     return ""
 
 
+def get_hints(track_slug: str, release_slug: str | None = None) -> dict:
+    """Return hints dict for a track, or {} if none defined."""
+    candidates = (
+        [_RELEASES_DIR / f"{release_slug}.yaml"] if release_slug
+        else sorted(_RELEASES_DIR.glob("*.yaml"))
+    )
+    for path in candidates:
+        if not path.exists():
+            continue
+        data = _load_yaml(path)
+        rel = data.get("release", {})
+        # Single (model=song): hints live under release.song
+        if rel.get("model") == "song" and rel.get("song", {}).get("slug") == track_slug:
+            return rel["song"].get("hints") or {}
+        # Multi-track release: search tracks array
+        for track in rel.get("tracks", []):
+            if track.get("slug") == track_slug:
+                return track.get("hints") or {}
+    return {}
+
+
 def get_persona(artist_slug: str) -> str:
     """Return artist bio_long (falls back to bio_short) from artist YAML."""
     for ext in (".yaml", ".json"):

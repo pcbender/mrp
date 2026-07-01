@@ -512,6 +512,8 @@ release:
 
       Through'
     lyrics_source: https://docs.google.com/document/d/10sJpl1c5avlKbEch9SA-VBCe-_OH4Td38Jqw2wghesU/edit
+    hints:
+      meter_feel: not a waltz
   - number: 5
     title: Maria's Cup
     slug: maria-s-cup
@@ -797,6 +799,8 @@ release:
 
       Opposites attract in time'
     lyrics_source: https://docs.google.com/document/d/1_mdk0jXqGYBwSDS1yx9nS3JRfFdU1QGo7y_aXtTakKc/edit
+    hints:
+      meter_feel: not a waltz
   - number: 8
     title: Active Illusion
     slug: active-illusion

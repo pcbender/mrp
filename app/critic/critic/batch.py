@@ -27,7 +27,7 @@ import textwrap
 import traceback
 from pathlib import Path
 
-from .catalog import get_artist_name, get_lyrics, get_persona, get_release_meta
+from .catalog import get_artist_name, get_hints, get_lyrics, get_persona, get_release_meta
 from .config import OUT_DIR
 from .usage import tracker
 from .dsp import extract_dsp
@@ -42,7 +42,7 @@ def _hydrate(data: dict) -> TrackFinding:
     from .record import Confidence, HardFacts, Impression, Review, Section, SourceRecord, Tags, VerdictTier
 
     f = TrackFinding(**{k: v for k, v in data.items()
-                        if k in {"track_id", "lyrics", "persona", "source",
+                        if k in {"track_id", "lyrics", "persona", "hints", "source",
                                  "hard_facts", "tags", "impression", "review"}})
     if isinstance(f.source, dict):
         f.source = SourceRecord(**f.source)
@@ -100,6 +100,7 @@ def run_batch(
             finding, arr = ingest(audio, track_id=track_id)
             finding.lyrics = get_lyrics(track_slug, release_slug=release_slug)
             finding.persona = get_persona(artist_slug) if artist_slug else ""
+            finding.hints = get_hints(track_slug, release_slug=release_slug)
 
             print("  DSP…")
             finding.hard_facts = extract_dsp(arr)
