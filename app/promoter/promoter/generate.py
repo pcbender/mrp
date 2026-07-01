@@ -39,8 +39,9 @@ def generate_blurb(
 
     release_blocks = []
     for rel in recent_releases:
+        url = f"/releases/{rel['slug']}/"
         block = [
-            f"Release: {rel['title']} ({rel['release_type']}, {rel['release_date']})",
+            f"Release: {rel['title']} ({rel['release_type']}, {rel['release_date']}) — URL: {url}",
         ]
         if rel.get("review_text"):
             block.append(f"Critic review:\n{rel['review_text']}")
