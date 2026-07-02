@@ -24,6 +24,12 @@
       hx-target="#save-result"
       hx-swap="innerHTML">Validate</button>
     <a href="/releases" class="btn btn-secondary">← List</a>
+    {% if release.status != 'live' %}
+    <form method="post" action="/releases/{{ slug }}/delete" style="display:inline"
+          onsubmit="return confirm('Delete {{ release.title }}? This cannot be undone.')">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+    {% endif %}
   </div>
 </div>
 
@@ -81,15 +87,28 @@
         </div>
         <div class="form-field">
           <label>Label</label>
-          <input type="text" name="label" value="{{ release.label or '' }}">
+          <select name="label">
+            <option value="">— none —</option>
+            <option value="Maricopa Records" {% if release.label == 'Maricopa Records' %}selected{% endif %}>Maricopa Records</option>
+          </select>
         </div>
         <div class="form-field">
           <label>Publisher</label>
-          <input type="text" name="publisher" value="{{ release.publisher or '' }}">
+          <select name="publisher">
+            <option value="">— none —</option>
+            <option value="Maricopa Publishing" {% if release.publisher == 'Maricopa Publishing' %}selected{% endif %}>Maricopa Publishing</option>
+          </select>
         </div>
         <div class="form-field full">
           <label>Cover Image Path <span class="required">*</span></label>
-          <input type="text" name="cover_image" value="{{ release.cover_image or '' }}">
+          <div style="display:flex;gap:.75rem;align-items:flex-start">
+            {% if release.cover_image %}
+            <img src="/pub/{{ release.cover_image | replace('site/public/', '') }}"
+                 style="width:64px;height:64px;object-fit:cover;border-radius:var(--radius);flex-shrink:0;border:1px solid var(--border)"
+                 onerror="this.style.display='none'">
+            {% endif %}
+            <input type="text" name="cover_image" value="{{ release.cover_image or '' }}" style="flex:1">
+          </div>
         </div>
         <div class="form-field full">
           <label>Hero Image Path</label>
@@ -190,8 +209,8 @@
       </details>
 
       <div class="form-field full" style="margin-top:1rem">
-        <label>Style</label>
-        <input type="text" name="song_style" value="{{ song.style or '' }}" placeholder="e.g. slow blues, male vocals, organ, melancholic">
+        <label>Style <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(Suno style prompt — used by Critic)</span></label>
+        <textarea name="song_style" rows="3" placeholder="e.g. slow blues ballad, male vocals, electric guitar, melancholic, 80s production">{{ song.style or '' }}</textarea>
       </div>
       <div class="form-field full" style="margin-top:.75rem">
         <label>Lyrics (Formatted)</label>
@@ -239,7 +258,7 @@
               <td><input type="text" name="track_{{ i }}_duration" value="{{ t.duration or '' }}" style="width:60px" placeholder="3:20"></td>
               <td style="text-align:center"><input type="checkbox" name="track_{{ i }}_explicit" {% if t.explicit %}checked{% endif %}></td>
               <td style="text-align:center"><input type="checkbox" name="track_{{ i }}_instrumental" {% if t.instrumental %}checked{% endif %}></td>
-              <td><input type="text" name="track_{{ i }}_style" value="{{ t.style or '' }}" style="min-width:180px" placeholder="e.g. upbeat rock"></td>
+              <td><input type="text" name="track_{{ i }}_style" value="{{ t.style or '' }}" style="min-width:180px" placeholder="Suno style prompt"></td>
             </tr>
             {% endfor %}
           </tbody>
@@ -260,7 +279,11 @@
               <textarea name="track_{{ i }}_lyrics_text" rows="6">{{ t.lyrics_text or '' }}</textarea>
             </div>
             <div class="form-field full">
-              <label>Lyrics Raw</label>
+              <label>Style <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(Suno style prompt — used by Critic)</span></label>
+              <textarea name="track_{{ i }}_style" rows="3" placeholder="e.g. slow blues ballad, male vocals, electric guitar, melancholic">{{ t.style or '' }}</textarea>
+            </div>
+            <div class="form-field full">
+              <label>Lyrics Raw <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(Suno tags + AI hints, stripped from Google import)</span></label>
               <textarea name="track_{{ i }}_lyrics_raw" rows="5">{{ t.lyrics_raw or '' }}</textarea>
             </div>
             <div class="form-field full">

@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+{% block page_title %} — New Release (Manual){% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">New Release <small>Manual</small></h1>
+  <a href="/releases/new" class="btn btn-secondary">← Import from Spotify</a>
+</div>
+
+<div class="form-card" style="max-width:520px;">
+  <div class="form-body">
+    <form action="/releases" method="post">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>Title <span class="required">*</span></label>
+          <input type="text" name="title" required autofocus placeholder="e.g. For The Love Of A Woman">
+        </div>
+        <div class="form-field">
+          <label>Artist <span class="required">*</span></label>
+          <select name="artist_id" required>
+            {% for a in artists %}
+            <option value="{{ a.id }}">{{ a.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Release Type <span class="required">*</span></label>
+          <select name="release_type">
+            <option value="single">Single</option>
+            <option value="ep">EP</option>
+            <option value="album">Album</option>
+          </select>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:1rem">Slug will be auto-generated from the title.</p>
+      <button type="submit" class="btn btn-primary">Create Draft</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

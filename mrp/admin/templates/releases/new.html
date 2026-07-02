@@ -9,48 +9,27 @@
 
 <div class="form-card" style="max-width:520px;">
   <div class="form-body">
-    <form action="/releases" method="post">
-      <div class="form-row">
-        <div class="form-field full">
-          <label>Title <span class="required">*</span></label>
-          <input type="text" name="title" required autofocus placeholder="e.g. For The Love Of A Woman">
-        </div>
-        <div class="form-field">
-          <label>Artist <span class="required">*</span></label>
-          <select name="artist_id" required>
-            {% for a in artists %}
-            <option value="{{ a.id }}">{{ a.name }}</option>
-            {% endfor %}
-          </select>
-        </div>
-        <div class="form-field">
-          <label>Model <span class="required">*</span></label>
-          <select name="model" id="new-model" onchange="syncType(this)">
-            <option value="song">Song (Single)</option>
-            <option value="album">Album / EP</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label>Release Type <span class="required">*</span></label>
-          <select name="release_type" id="new-type">
-            <option value="single">Single</option>
-          </select>
-        </div>
+    <form hx-post="/releases/import/preview"
+          hx-target="#step2"
+          hx-swap="innerHTML"
+          hx-indicator="#preview-spinner">
+      <div class="form-field full">
+        <label>Spotify URL <span class="required">*</span></label>
+        <input type="url" name="spotify_url" required autofocus
+               placeholder="https://open.spotify.com/album/…">
+        <small style="color:var(--muted)">Album or track URL — artist and track list are pulled automatically.</small>
       </div>
-      <p style="font-size:12px;color:var(--muted);margin-bottom:1rem">Slug will be auto-generated from the title.</p>
-      <button type="submit" class="btn btn-primary">Create Draft</button>
+      <div style="display:flex;align-items:center;gap:1rem;margin-top:1rem">
+        <button type="submit" class="btn btn-primary">Look up →</button>
+        <span id="preview-spinner" class="htmx-indicator spinner"></span>
+      </div>
     </form>
   </div>
 </div>
 
-<script>
-  function syncType(sel) {
-    const t = document.getElementById('new-type');
-    if (sel.value === 'song') {
-      t.innerHTML = '<option value="single">Single</option>';
-    } else {
-      t.innerHTML = '<option value="ep">EP</option><option value="album">Album</option>';
-    }
-  }
-</script>
+<div id="step2" style="margin-top:1.5rem"></div>
+
+<p style="margin-top:2rem;font-size:12px;color:var(--muted)">
+  <a href="/releases/new/manual" style="color:var(--muted)">Create manually without Spotify →</a>
+</p>
 {% endblock %}

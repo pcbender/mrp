@@ -41,5 +41,9 @@ async def root():
 
 
 def run_server(repo: str | Path, host: str = "127.0.0.1", port: int = 8000) -> None:
-    os.environ.setdefault("MRP_REPO", str(Path(repo).resolve()))
+    repo_path = Path(repo).resolve()
+    os.environ.setdefault("MRP_REPO", str(repo_path))
+    pub_dir = repo_path / "site" / "public"
+    if pub_dir.is_dir():
+        app.mount("/pub", StaticFiles(directory=str(pub_dir)), name="site-public")
     uvicorn.run(app, host=host, port=port, log_level="info")
