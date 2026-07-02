@@ -5,7 +5,7 @@ release:
   artist_id: 4castle
   model: album
   release_type: album
-  status: staged
+  status: live
   release_date: '2025-05-26'
   label: null
   publisher: null

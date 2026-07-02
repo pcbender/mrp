@@ -5,7 +5,7 @@ release:
   artist_id: stab
   model: song
   release_type: single
-  status: staged
+  status: live
   release_date: '2025-05-07'
   label: null
   publisher: null
