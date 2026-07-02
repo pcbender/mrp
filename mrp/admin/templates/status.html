@@ -1,0 +1,81 @@
+{% extends "_base.html" %}
+{% block page_title %} — Status{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Pipeline Status</h1>
+  <button
+    class="btn btn-secondary"
+    hx-post="/jobs/enrich-links"
+    hx-target="#job-result"
+    hx-swap="innerHTML">Run Enrich Links</button>
+</div>
+
+<div id="job-result" style="margin-bottom:1rem"></div>
+
+{% set stage_names = [
+  ('validation', 'Validation'),
+  ('build', 'Build'),
+  ('staging_deployment', 'Staging Deploy'),
+  ('production_deployment', 'Prod Deploy'),
+  ('verification', 'Verification'),
+  ('approval', 'Approval'),
+  ('publish', 'Publish'),
+  ('rollback', 'Rollback'),
+] %}
+
+<div class="status-grid">
+  {% for key, label in stage_names %}
+  {% set report = latest[key] %}
+  <div class="status-card">
+    <div class="status-card-label">{{ label }}</div>
+    {% if report %}
+      <div class="status-card-value">
+        <span class="badge badge-{{ report.status or 'draft' }}">{{ report.status or '—' }}</span>
+      </div>
+      <div class="status-card-sub">{{ report.generated_at[:10] if report.generated_at else '—' }}</div>
+    {% else %}
+      <div class="status-card-value" style="color:var(--muted)">—</div>
+      <div class="status-card-sub">no report</div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+{% if result.rollback_available %}
+<div class="flash flash-warn">A rollback target is available.</div>
+{% endif %}
+
+<h2 style="font-size:16px;font-weight:700;margin-bottom:.75rem">Report Details</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Status</th>
+        <th>Build ID</th>
+        <th>Date</th>
+        <th>Target</th>
+        <th>Report</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for key, label in stage_names %}
+      {% set report = latest[key] %}
+      <tr>
+        <td style="font-weight:600">{{ label }}</td>
+        {% if report %}
+        <td><span class="badge badge-{{ report.status or 'draft' }}">{{ report.status or '—' }}</span></td>
+        <td class="td-mono">{{ report.build_id or '—' }}</td>
+        <td class="td-mono">{{ report.generated_at[:10] if report.generated_at else '—' }}</td>
+        <td class="td-mono">{{ report.target or '—' }}</td>
+        <td class="td-mono" style="font-size:11px">{{ report.report_path or '—' }}</td>
+        {% else %}
+        <td colspan="5" style="color:var(--muted)">No report found</td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

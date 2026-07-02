@@ -5,10 +5,10 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: staged
+  status: live
   release_date: '2025-04-19'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: 056870954455
   catalog_number: null
   cover_image: site/public/assets/releases/inner-outer-over-through-2/cover.jpg

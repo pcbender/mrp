@@ -1,0 +1,74 @@
+{% extends "_base.html" %}
+{% block page_title %} — Releases{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Releases <small>{{ releases|length }} of {{ total }}</small></h1>
+  <a href="/releases/new" class="btn btn-primary">+ New Release</a>
+</div>
+
+<div class="filters">
+  <div class="filter-group">
+    <label>Search</label>
+    <input
+      type="text"
+      name="q"
+      value="{{ q }}"
+      placeholder="Title or artist…"
+      class="input-wide"
+      hx-get="/releases"
+      hx-trigger="input changed delay:300ms"
+      hx-target="#releases-body"
+      hx-swap="innerHTML"
+      hx-include="[name='status_filter'],[name='model_filter']">
+  </div>
+  <div class="filter-group">
+    <label>Status</label>
+    <select
+      name="status_filter"
+      hx-get="/releases"
+      hx-trigger="change"
+      hx-target="#releases-body"
+      hx-swap="innerHTML"
+      hx-include="[name='q'],[name='model_filter']">
+      <option value="">All statuses</option>
+      {% for s in statuses %}
+      <option value="{{ s }}" {% if s == status_filter %}selected{% endif %}>{{ s }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Model</label>
+    <select
+      name="model_filter"
+      hx-get="/releases"
+      hx-trigger="change"
+      hx-target="#releases-body"
+      hx-swap="innerHTML"
+      hx-include="[name='q'],[name='status_filter']">
+      <option value="">All types</option>
+      <option value="song" {% if model_filter == 'song' %}selected{% endif %}>Song (Single)</option>
+      <option value="album" {% if model_filter == 'album' %}selected{% endif %}>Album / EP</option>
+    </select>
+  </div>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Type</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th>Platforms</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="releases-body">
+      {% include "releases/_table_body.html" %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

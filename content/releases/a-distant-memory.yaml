@@ -1,0 +1,193 @@
+release:
+  id: a-distant-memory
+  slug: a-distant-memory
+  title: A Distant Memory
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2026-06-25'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048221598'
+  catalog_number: null
+  cover_image: site/public/assets/releases/a-distant-memory/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/5jLbTklHDM04nHOUMdVNf4
+    apple_music: null
+    youtube: null
+    youtube_music: null
+    tidal: null
+    amazon_music: null
+    deezer: null
+    soundcloud: null
+    bandcamp: null
+    pandora: null
+  song:
+    number: 1
+    title: A Distant Memory
+    slug: a-distant-memory
+    isrc: CAENV2670726
+    duration: '3:25'
+    explicit: false
+    instrumental: false
+    preview_audio: null
+    links:
+      spotify: https://open.spotify.com/track/6MFoNaVnVDOkpm6quVIhJi
+      apple_music: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: avant-garde experimental jazz, experimental, clean/modern jazz fusion
+    lyrics_raw: '[Adlib]
+
+      One
+
+      Two
+
+      Three
+
+      Four
+
+      [Verse]
+
+      In the cold sunlight
+
+      Memories holding me
+
+      Barely
+
+      The days multiply
+
+      You''re out there and I''m still waiting
+
+      [Chorus]
+
+      I''ve been waiting
+
+      For the day that I see you again
+
+      [Bridge]
+
+      Your face is a distant memory
+
+      Your face is a distant memory
+
+      Your face is a distant memory
+
+      [Verse]
+
+      When the night air wanes
+
+      I see your face as it dissipates
+
+      Over fields of grain
+
+      The sun comes up and it''s another day
+
+      [Adlib]
+
+      One
+
+      Two
+
+      Three
+
+      Four
+
+      [Verse]
+
+      The wind blows cold again
+
+      Memories warming me
+
+      Barely
+
+      The days multiply
+
+      Pieces of you slip from my mind
+
+      [Chorus]
+
+      I''ve been counting
+
+      The days that I will see you again'
+    lyrics_text: 'One
+
+      Two
+
+      Three
+
+      Four
+
+      In the cold sunlight
+
+      Memories holding me
+
+      Barely
+
+      The days multiply
+
+      You''re out there and I''m still waiting
+
+      I''ve been waiting
+
+      For the day that I see you again
+
+      Your face is a distant memory
+
+      Your face is a distant memory
+
+      Your face is a distant memory
+
+      When the night air wanes
+
+      I see your face as it dissipates
+
+      Over fields of grain
+
+      The sun comes up and it''s another day
+
+      One
+
+      Two
+
+      Three
+
+      Four
+
+      The wind blows cold again
+
+      Memories warming me
+
+      Barely
+
+      The days multiply
+
+      Pieces of you slip from my mind
+
+      I''ve been counting
+
+      The days that I will see you again'
+    lyrics_source: null
+    hints: {}
+  seo:
+    title: A Distant Memory
+    description: A Distant Memory on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/A Distant Memory.wav
+  hero_image: null
+  summary: null
+  description: null
+  credits:
+    primary_artist: null
+    songwriter: null
+    lyrics: null
+    producer: null
+    mastering: null

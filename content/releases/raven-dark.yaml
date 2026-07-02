@@ -5,10 +5,10 @@ release:
   artist_id: stab
   model: song
   release_type: single
-  status: staged
+  status: live
   release_date: '2026-05-07'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '991043729501'
   catalog_number: null
   cover_image: site/public/assets/releases/raven-dark/cover.jpg

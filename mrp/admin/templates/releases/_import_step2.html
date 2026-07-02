@@ -1,0 +1,75 @@
+<form action="/releases/import" method="post"
+      hx-post="/releases/import"
+      hx-target="#step2"
+      hx-swap="innerHTML"
+      hx-indicator="#import-spinner">
+
+  <input type="hidden" name="album_id" value="{{ album_id }}">
+
+  <div class="form-card">
+    <div class="form-body">
+      <div style="display:flex;gap:1rem;align-items:flex-start;margin-bottom:1rem">
+        {% if cover_url %}
+        <img src="{{ cover_url }}" style="width:72px;height:72px;object-fit:cover;border-radius:var(--radius);flex-shrink:0">
+        {% endif %}
+        <div>
+          <div style="font-size:18px;font-weight:600">{{ title }}</div>
+          <div style="color:var(--muted);font-size:13px">{{ artist_name }} · {{ release_type }} · {{ release_date or 'date unknown' }}</div>
+        </div>
+      </div>
+
+      {% if is_single %}
+      <!-- Single: one set of fields -->
+      <input type="hidden" name="track_count" value="1">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>Style <span style="font-weight:400;font-size:11px;color:var(--muted)">(Suno style prompt — used by Critic)</span></label>
+          <textarea name="track_0_style" rows="3" placeholder="e.g. slow blues ballad, male vocals, electric guitar, melancholic"></textarea>
+        </div>
+        <div class="form-field full">
+          <label>Lyrics Raw <span style="font-weight:400;font-size:11px;color:var(--muted)">(Suno tags + AI hints)</span></label>
+          <textarea name="track_0_lyrics_raw" rows="6" placeholder="Paste raw Suno output here…"></textarea>
+        </div>
+        <div class="form-field full">
+          <label>Master File</label>
+          <input type="text" name="track_0_master_path" placeholder="/mnt/c/Masters/…">
+        </div>
+      </div>
+
+      {% else %}
+      <!-- Album / EP: per-track rows -->
+      <input type="hidden" name="track_count" value="{{ tracks|length }}">
+      <p style="font-size:12px;color:var(--muted);margin-bottom:1rem">{{ tracks|length }} tracks — fill style, lyrics, and master path for each.</p>
+      {% for t in tracks %}
+      <details style="border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.5rem">
+        <summary style="padding:.6rem .75rem;cursor:pointer;font-weight:600;font-size:13px">
+          {{ loop.index }}. {{ t.title }}
+          {% if t.duration %}<span style="color:var(--muted);font-weight:400"> · {{ t.duration }}</span>{% endif %}
+        </summary>
+        <div style="padding:.75rem;border-top:1px solid var(--border)">
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Style</label>
+              <textarea name="track_{{ loop.index0 }}_style" rows="2" placeholder="Suno style prompt…"></textarea>
+            </div>
+            <div class="form-field full">
+              <label>Lyrics Raw</label>
+              <textarea name="track_{{ loop.index0 }}_lyrics_raw" rows="5" placeholder="Paste raw Suno output here…"></textarea>
+            </div>
+            <div class="form-field full">
+              <label>Master File</label>
+              <input type="text" name="track_{{ loop.index0 }}_master_path" placeholder="/mnt/c/Masters/…">
+            </div>
+          </div>
+        </div>
+      </details>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:1rem;margin-top:.5rem">
+    <button type="submit" class="btn btn-primary">Create Release</button>
+    <span id="import-spinner" class="htmx-indicator spinner"></span>
+  </div>
+</form>

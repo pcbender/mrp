@@ -5,10 +5,10 @@ release:
   artist_id: stab
   model: album
   release_type: album
-  status: staged
+  status: live
   release_date: '2026-01-29'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '7300348367388'
   catalog_number: null
   cover_image: site/public/assets/releases/the-messy-middle/cover.jpg

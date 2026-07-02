@@ -5,10 +5,10 @@ release:
   artist_id: lingua-aeternum
   model: song
   release_type: single
-  status: staged
+  status: live
   release_date: '2025-04-18'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: 056870941974
   catalog_number: null
   cover_image: site/public/assets/releases/the-memory-i-ll-borrow/cover.jpg

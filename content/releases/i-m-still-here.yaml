@@ -5,10 +5,10 @@ release:
   artist_id: michael-anthony-rose
   model: album
   release_type: album
-  status: staged
+  status: live
   release_date: '2026-05-19'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '7333583407885'
   catalog_number: null
   cover_image: site/public/assets/releases/i-m-still-here/cover.jpg

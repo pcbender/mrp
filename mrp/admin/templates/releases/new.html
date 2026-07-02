@@ -1,0 +1,35 @@
+{% extends "_base.html" %}
+{% block page_title %} — New Release{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">New Release</h1>
+  <a href="/releases" class="btn btn-secondary">← Back</a>
+</div>
+
+<div class="form-card" style="max-width:520px;">
+  <div class="form-body">
+    <form hx-post="/releases/import/preview"
+          hx-target="#step2"
+          hx-swap="innerHTML"
+          hx-indicator="#preview-spinner">
+      <div class="form-field full">
+        <label>Spotify URL <span class="required">*</span></label>
+        <input type="url" name="spotify_url" required autofocus
+               placeholder="https://open.spotify.com/album/…">
+        <small style="color:var(--muted)">Album or track URL — artist and track list are pulled automatically.</small>
+      </div>
+      <div style="display:flex;align-items:center;gap:1rem;margin-top:1rem">
+        <button type="submit" class="btn btn-primary">Look up →</button>
+        <span id="preview-spinner" class="htmx-indicator spinner"></span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="step2" style="margin-top:1.5rem"></div>
+
+<p style="margin-top:2rem;font-size:12px;color:var(--muted)">
+  <a href="/releases/new/manual" style="color:var(--muted)">Create manually without Spotify →</a>
+</p>
+{% endblock %}

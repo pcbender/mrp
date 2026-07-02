@@ -63,7 +63,8 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "allow_auto_publish": {"type": "boolean"}
+            "allow_auto_publish": {"type": "boolean"},
+            "master_path": {"type": ["string", "null"]}
           }
         }
       },
@@ -122,7 +123,9 @@
         "instrumental": {"type": "boolean"},
         "preview_audio": {"type": ["string", "null"]},
         "lyrics_text": {"type": ["string", "null"]},
+        "lyrics_raw": {"type": ["string", "null"]},
         "lyrics_source": {"type": ["string", "null"]},
+        "style": {"type": ["string", "null"]},
         "links": {"$ref": "#/$defs/links"},
         "hints": {
           "type": "object",

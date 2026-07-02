@@ -1,0 +1,19 @@
+{% for r in releases %}
+<tr>
+  <td class="td-title"><a href="/releases/{{ r.slug }}/edit">{{ r.title }}</a></td>
+  <td class="td-mono">{{ r.artist_id }}</td>
+  <td>{{ r.release_type }}</td>
+  <td><span class="badge badge-{{ r.status }}">{{ r.status }}</span></td>
+  <td class="td-mono">{{ r.release_date or '—' }}</td>
+  <td>
+    <div class="platform-dots" title="{{ r.platform_count }} platforms linked">
+      {% for i in range(10) %}
+        <span class="dot {% if i < r.platform_count %}on{% endif %}"></span>
+      {% endfor %}
+    </div>
+  </td>
+  <td><a href="/releases/{{ r.slug }}/edit" class="btn btn-secondary btn-sm">Edit</a></td>
+</tr>
+{% else %}
+<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:2rem">No releases match the current filter.</td></tr>
+{% endfor %}

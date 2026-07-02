@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from mrp.admin.server import run_server
+
+if __name__ == "__main__":
+    import argparse
+    p = argparse.ArgumentParser(description="MRP Admin Web UI")
+    p.add_argument("--host", default="127.0.0.1")
+    p.add_argument("--port", type=int, default=8000)
+    p.add_argument("--repo", default=".")
+    args = p.parse_args()
+    run_server(args.repo, host=args.host, port=args.port)

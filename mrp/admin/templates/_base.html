@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MRP Admin{% block page_title %}{% endblock %}</title>
+  <script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.min.js" defer></script>
+  <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-brand"><span>MRP</span> Admin</div>
+    <nav>
+      <div class="nav-group">
+        <div class="nav-label">Content</div>
+        <a href="/releases" {% if request.url.path.startswith('/releases') or request.url.path == '/missing-links' %}class="active"{% endif %}>Releases</a>
+        <a href="/status" {% if request.url.path == '/status' %}class="active"{% endif %}>Status</a>
+        <a href="/missing-links" {% if request.url.path == '/missing-links' %}class="active"{% endif %}>Missing Links</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-label">Tools</div>
+        <a href="/critic" {% if request.url.path == '/critic' %}class="active"{% endif %}>Critic</a>
+        <a href="/promoter" {% if request.url.path == '/promoter' %}class="active"{% endif %}>Promoter</a>
+        <a href="/sampler" {% if request.url.path == '/sampler' %}class="active"{% endif %}>Sampler</a>
+      </div>
+    </nav>
+  </aside>
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

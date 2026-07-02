@@ -5,10 +5,10 @@ release:
   artist_id: lingua-aeternum
   model: album
   release_type: ep
-  status: staged
+  status: live
   release_date: '2025-04-20'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: 056870953052
   catalog_number: null
   cover_image: site/public/assets/releases/inner-outer-over-through/cover.jpg

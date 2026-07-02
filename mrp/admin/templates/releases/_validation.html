@@ -1,0 +1,15 @@
+{% if errors %}
+<div class="validation-errors" id="validation-result">
+  {% for e in errors %}
+  <div class="err-row">
+    <span class="err-field">{{ e.field }}</span>{{ e.message }}
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="flash flash-ok" id="validation-result">
+  {% if status == 'ok' %}Validation passed — no errors.
+  {% else %}Saved successfully.
+  {% endif %}
+</div>
+{% endif %}

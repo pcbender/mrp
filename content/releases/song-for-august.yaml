@@ -5,10 +5,10 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: staged
+  status: live
   release_date: '2025-10-22'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '7300346650833'
   catalog_number: null
   cover_image: site/public/assets/releases/song-for-august/cover.jpg
