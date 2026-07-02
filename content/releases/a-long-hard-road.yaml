@@ -7,8 +7,8 @@ release:
   release_type: single
   status: live
   release_date: '2026-01-12'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '7300348037199'
   catalog_number: null
   cover_image: site/public/assets/releases/a-long-hard-road/cover.jpg

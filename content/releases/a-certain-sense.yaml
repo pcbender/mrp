@@ -7,8 +7,8 @@ release:
   release_type: single
   status: live
   release_date: '2026-05-04'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '7333583124461'
   catalog_number: null
   cover_image: site/public/assets/releases/a-certain-sense/cover.jpg

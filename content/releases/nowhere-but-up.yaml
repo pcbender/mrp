@@ -7,8 +7,8 @@ release:
   release_type: single
   status: live
   release_date: '2026-03-14'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '991043186335'
   catalog_number: null
   cover_image: site/public/assets/releases/nowhere-but-up/cover.jpg

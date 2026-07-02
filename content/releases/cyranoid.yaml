@@ -7,8 +7,8 @@ release:
   release_type: single
   status: live
   release_date: '2025-09-17'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: 057829615465
   catalog_number: null
   cover_image: site/public/assets/releases/cyranoid/cover.jpg

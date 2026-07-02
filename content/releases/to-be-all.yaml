@@ -7,8 +7,8 @@ release:
   release_type: single
   status: live
   release_date: '2026-05-18'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '991043839408'
   catalog_number: null
   cover_image: site/public/assets/releases/to-be-all/cover.jpg

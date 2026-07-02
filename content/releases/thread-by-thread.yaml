@@ -7,8 +7,8 @@ release:
   release_type: single
   status: live
   release_date: '2025-04-20'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: 056870941929
   catalog_number: null
   cover_image: site/public/assets/releases/thread-by-thread/cover.jpg

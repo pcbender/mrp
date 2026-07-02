@@ -7,8 +7,8 @@ release:
   release_type: single
   status: live
   release_date: '2025-11-12'
-  label: null
-  publisher: null
+  label: Maricopa Records
+  publisher: Maricopa Publishing
   upc: '7300347004505'
   catalog_number: null
   cover_image: site/public/assets/releases/half-happenstance/cover.jpg
