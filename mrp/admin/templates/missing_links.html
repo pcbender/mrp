@@ -1,0 +1,49 @@
+{% extends "_base.html" %}
+{% block page_title %} — Missing Links{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Missing Platform Links <small>{{ rows|length }} releases</small></h1>
+  <button
+    class="btn btn-primary"
+    hx-post="/jobs/enrich-links"
+    hx-target="#job-result"
+    hx-swap="innerHTML">Run Enrich Links</button>
+</div>
+
+<div id="job-result" style="margin-bottom:1rem"></div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Release</th>
+        <th>Artist</th>
+        {% for k in platform_keys %}
+        <th style="font-size:10px;padding:.4rem .35rem;text-align:center">{{ k.split('_')[0][:4] }}</th>
+        {% endfor %}
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+      <tr>
+        <td class="td-title"><a href="/releases/{{ r.slug }}/edit">{{ r.title }}</a></td>
+        <td class="td-mono">{{ r.artist_id }}</td>
+        {% for k in platform_keys %}
+        <td style="text-align:center">
+          <span class="missing-dot {% if k in r.present %}present{% else %}absent{% endif %}"
+            title="{{ k }}: {% if k in r.present %}linked{% else %}missing{% endif %}"></span>
+        </td>
+        {% endfor %}
+        <td><a href="/releases/{{ r.slug }}/edit" class="btn btn-secondary btn-sm">Edit</a></td>
+      </tr>
+      {% else %}
+      <tr><td colspan="{{ platform_keys|length + 3 }}" style="text-align:center;color:var(--muted);padding:2rem">
+        All releases have complete platform links. 🎉
+      </td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

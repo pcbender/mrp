@@ -1,0 +1,43 @@
+{% set job_id = job.id %}
+{% set job_status = job.status %}
+
+<div class="job-result"
+  {% if job_status in ('pending', 'running') %}
+  hx-get="/jobs/{{ job_id }}"
+  hx-trigger="every 2s"
+  hx-swap="outerHTML"
+  {% endif %}>
+
+  {% if job_status in ('pending', 'running') %}
+  <div class="job-running">
+    <span class="spinner"></span>
+    <span>{{ job.command }} — {{ job_status }}…</span>
+    <span style="font-size:11px;color:var(--muted);margin-left:auto">{{ job_id }}</span>
+  </div>
+
+  {% elif job_status == 'done' %}
+  <div class="flash flash-ok" style="margin-bottom:0">
+    <strong>{{ job.command }}</strong> completed
+    {% if output and output is mapping %}
+      — {{ output.summary.releases_patched if output.summary else '' }} releases patched
+    {% endif %}
+    <span style="font-size:11px;color:#166534;margin-left:auto;float:right">{{ job.completed_at[:10] if job.completed_at else '' }}</span>
+  </div>
+  {% if output and output is mapping and output.get('patched') %}
+  <ul style="font-size:12px;margin-top:.5rem;padding-left:1rem">
+    {% for p in output.patched[:10] %}
+    <li>{{ p.path }} — added: {{ p.added.keys()|list|join(', ') }}</li>
+    {% endfor %}
+    {% if output.patched|length > 10 %}
+    <li style="color:var(--muted)">…and {{ output.patched|length - 10 }} more</li>
+    {% endif %}
+  </ul>
+  {% endif %}
+
+  {% else %}
+  <div class="flash flash-error" style="margin-bottom:0">
+    <strong>{{ job.command }}</strong> failed
+    {% if output %}: <span style="font-family:monospace;font-size:12px">{{ output if output is string else '' }}</span>{% endif %}
+  </div>
+  {% endif %}
+</div>

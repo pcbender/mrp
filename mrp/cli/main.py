@@ -217,6 +217,14 @@ def build_parser() -> argparse.ArgumentParser:
     clone_compare_parser.add_argument("--source", default=str(DEFAULT_MIGRATION_SOURCE))
     clone_compare_parser.add_argument("--target")
 
+    admin_parser = subparsers.add_parser("admin", help="Admin web UI commands.")
+    add_global_options(admin_parser, suppress_defaults=True)
+    admin_subparsers = admin_parser.add_subparsers(dest="admin_command", required=True)
+    serve_parser = admin_subparsers.add_parser("serve", help="Start the local admin web server.")
+    add_global_options(serve_parser, suppress_defaults=True)
+    serve_parser.add_argument("--host", default="127.0.0.1", help="Host to bind (default: 127.0.0.1).")
+    serve_parser.add_argument("--port", type=int, default=8000, help="Port to listen on (default: 8000).")
+
     return parser
 
 
@@ -430,6 +438,10 @@ def main(argv: Sequence[str] | None = None) -> int:
         result = clone_rewrites(args.repo)
     elif args.command == "clone-compare":
         result = clone_compare(args.repo, source=args.source, target=args.target)
+    elif args.command == "admin" and args.admin_command == "serve":
+        from mrp.admin.server import run_server
+        run_server(args.repo, host=args.host, port=args.port)
+        return EXIT_SUCCESS
     else:
         result = placeholder_result(args)
     emit(result, bool(getattr(args, "json", False)))

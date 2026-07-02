@@ -1,0 +1,314 @@
+{% extends "_base.html" %}
+{% block page_title %} — Edit {{ release.title }}{% endblock %}
+
+{% block content %}
+{% set is_song = release.model == 'song' %}
+{% set links = release.links or {} %}
+{% set credits = release.credits or {} %}
+{% set seo = release.seo or {} %}
+{% set automation = release.automation or {} %}
+{% set song = release.song or {} %}
+{% set song_links = song.links or {} %}
+{% set tracks = release.tracks or [] %}
+
+<div class="page-header">
+  <h1 class="page-title">
+    {{ release.title }}
+    <small>{{ release.artist_id }} · {{ release.release_type }}</small>
+  </h1>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+    <button form="edit-form" type="submit" class="btn btn-primary">Save</button>
+    <button
+      class="btn btn-secondary"
+      hx-get="/releases/{{ slug }}/validate"
+      hx-target="#save-result"
+      hx-swap="innerHTML">Validate</button>
+    <a href="/releases" class="btn btn-secondary">← List</a>
+  </div>
+</div>
+
+<div id="save-result" style="min-height:1px"></div>
+
+<form id="edit-form" method="post" action="/releases/{{ slug }}"
+  hx-post="/releases/{{ slug }}"
+  hx-target="#save-result"
+  hx-swap="innerHTML">
+
+  <!-- Info -->
+  <details class="form-card" open>
+    <summary>Info</summary>
+    <div class="form-body">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>Title <span class="required">*</span></label>
+          <input type="text" name="title" value="{{ release.title or '' }}" required>
+        </div>
+        <div class="form-field">
+          <label>Artist ID <span class="required">*</span></label>
+          <select name="artist_id">
+            {% for a in artists %}
+            <option value="{{ a.id }}" {% if a.id == release.artist_id %}selected{% endif %}>{{ a.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Status <span class="required">*</span></label>
+          <select name="status">
+            {% for s in statuses %}
+            <option value="{{ s }}" {% if s == release.status %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Model</label>
+          <input type="text" name="model" value="{{ release.model or '' }}" readonly style="background:var(--bg)">
+        </div>
+        <div class="form-field">
+          <label>Release Type</label>
+          <input type="text" name="release_type" value="{{ release.release_type or '' }}" readonly style="background:var(--bg)">
+        </div>
+        <div class="form-field">
+          <label>Release Date</label>
+          <input type="date" name="release_date" value="{{ release.release_date or '' }}">
+        </div>
+        <div class="form-field">
+          <label>UPC</label>
+          <input type="text" name="upc" value="{{ release.upc or '' }}" placeholder="057914189314">
+        </div>
+        <div class="form-field">
+          <label>Catalog Number</label>
+          <input type="text" name="catalog_number" value="{{ release.catalog_number or '' }}">
+        </div>
+        <div class="form-field">
+          <label>Label</label>
+          <input type="text" name="label" value="{{ release.label or '' }}">
+        </div>
+        <div class="form-field">
+          <label>Publisher</label>
+          <input type="text" name="publisher" value="{{ release.publisher or '' }}">
+        </div>
+        <div class="form-field full">
+          <label>Cover Image Path <span class="required">*</span></label>
+          <input type="text" name="cover_image" value="{{ release.cover_image or '' }}">
+        </div>
+        <div class="form-field full">
+          <label>Hero Image Path</label>
+          <input type="text" name="hero_image" value="{{ release.hero_image or '' }}">
+        </div>
+        <div class="form-field full">
+          <label>Summary</label>
+          <textarea name="summary" rows="2">{{ release.summary or '' }}</textarea>
+        </div>
+        <div class="form-field full">
+          <label>Description (Markdown)</label>
+          <textarea name="description" rows="5">{{ release.description or '' }}</textarea>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <!-- Links -->
+  <details class="form-card">
+    <summary>Streaming Links</summary>
+    <div class="form-body">
+      <div class="form-row">
+        {% for k in platform_keys %}
+        <div class="form-field">
+          <label>{{ k.replace('_', ' ').title() }}</label>
+          <input type="url" name="links_{{ k }}" value="{{ links[k] if links[k] else '' }}" placeholder="https://…">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+
+  <!-- Credits -->
+  <details class="form-card">
+    <summary>Credits</summary>
+    <div class="form-body">
+      <div class="form-row">
+        {% for k in ['primary_artist', 'songwriter', 'lyrics', 'producer', 'mastering'] %}
+        <div class="form-field">
+          <label>{{ k.replace('_', ' ').title() }}</label>
+          <input type="text" name="credits_{{ k }}" value="{{ credits[k] if credits[k] else '' }}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+
+  <!-- Song / Tracks -->
+  {% if is_song %}
+  <details class="form-card" open>
+    <summary>Song</summary>
+    <div class="form-body">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Track Title <span class="required">*</span></label>
+          <input type="text" name="song_title" value="{{ song.title or '' }}" required>
+        </div>
+        <div class="form-field">
+          <label>Slug <span class="required">*</span></label>
+          <input type="text" name="song_slug" value="{{ song.slug or '' }}" required>
+        </div>
+        <div class="form-field">
+          <label>ISRC</label>
+          <input type="text" name="song_isrc" value="{{ song.isrc or '' }}" placeholder="CBF8B2553735">
+        </div>
+        <div class="form-field">
+          <label>Duration</label>
+          <input type="text" name="song_duration" value="{{ song.duration or '' }}" placeholder="3:36">
+        </div>
+        <div class="form-field">
+          <label>Preview Audio</label>
+          <input type="text" name="song_preview_audio" value="{{ song.preview_audio or '' }}">
+        </div>
+        <div class="form-field">
+          <label>Track Number</label>
+          <input type="number" name="song_number" value="{{ song.number or 1 }}" min="0">
+        </div>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" id="song_explicit" name="song_explicit" {% if song.explicit %}checked{% endif %}>
+        <label for="song_explicit">Explicit</label>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" id="song_instrumental" name="song_instrumental" {% if song.instrumental %}checked{% endif %}>
+        <label for="song_instrumental">Instrumental</label>
+      </div>
+
+      <details style="margin-top:1rem">
+        <summary style="font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;list-style:none">Track Streaming Links</summary>
+        <div class="form-row" style="margin-top:.75rem">
+          {% for k in platform_keys %}
+          <div class="form-field">
+            <label>{{ k.replace('_', ' ').title() }}</label>
+            <input type="url" name="song_links_{{ k }}" value="{{ song_links[k] if song_links[k] else '' }}" placeholder="https://…">
+          </div>
+          {% endfor %}
+        </div>
+      </details>
+
+      <div class="form-field full" style="margin-top:1rem">
+        <label>Style</label>
+        <input type="text" name="song_style" value="{{ song.style or '' }}" placeholder="e.g. slow blues, male vocals, organ, melancholic">
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Lyrics (Formatted)</label>
+        <textarea name="song_lyrics_text" rows="10">{{ song.lyrics_text or '' }}</textarea>
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Lyrics Raw</label>
+        <textarea name="song_lyrics_raw" rows="8">{{ song.lyrics_raw or '' }}</textarea>
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Lyrics Source URL</label>
+        <input type="url" name="song_lyrics_source" value="{{ song.lyrics_source or '' }}">
+      </div>
+    </div>
+  </details>
+
+  {% else %}
+  <!-- Album tracks -->
+  <details class="form-card" open>
+    <summary>Tracks ({{ tracks|length }})</summary>
+    <div class="form-body">
+      <input type="hidden" name="track_count" value="{{ tracks|length }}">
+      <div style="overflow-x:auto">
+        <table class="tracks-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Slug</th>
+              <th>ISRC</th>
+              <th>Duration</th>
+              <th>Explicit</th>
+              <th>Instrumental</th>
+              <th>Style</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for t in tracks %}
+            {% set i = loop.index0 %}
+            <tr>
+              <td><input type="number" name="track_{{ i }}_number" value="{{ t.number or loop.index }}" style="width:50px"></td>
+              <td><input type="text" name="track_{{ i }}_title" value="{{ t.title or '' }}" style="min-width:160px" required></td>
+              <td><input type="text" name="track_{{ i }}_slug" value="{{ t.slug or '' }}" style="min-width:140px"></td>
+              <td><input type="text" name="track_{{ i }}_isrc" value="{{ t.isrc or '' }}" style="min-width:110px"></td>
+              <td><input type="text" name="track_{{ i }}_duration" value="{{ t.duration or '' }}" style="width:60px" placeholder="3:20"></td>
+              <td style="text-align:center"><input type="checkbox" name="track_{{ i }}_explicit" {% if t.explicit %}checked{% endif %}></td>
+              <td style="text-align:center"><input type="checkbox" name="track_{{ i }}_instrumental" {% if t.instrumental %}checked{% endif %}></td>
+              <td><input type="text" name="track_{{ i }}_style" value="{{ t.style or '' }}" style="min-width:180px" placeholder="e.g. upbeat rock"></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Per-track lyrics (accordion) -->
+      {% for t in tracks %}
+      {% set i = loop.index0 %}
+      <details style="margin-top:.5rem;border:1px solid var(--border);border-radius:var(--radius)">
+        <summary style="padding:.5rem .75rem;cursor:pointer;font-size:12px;font-weight:600">
+          Track {{ t.number or loop.index }}: {{ t.title or '(untitled)' }} — lyrics & links
+        </summary>
+        <div style="padding:.75rem">
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Lyrics (Formatted)</label>
+              <textarea name="track_{{ i }}_lyrics_text" rows="6">{{ t.lyrics_text or '' }}</textarea>
+            </div>
+            <div class="form-field full">
+              <label>Lyrics Raw</label>
+              <textarea name="track_{{ i }}_lyrics_raw" rows="5">{{ t.lyrics_raw or '' }}</textarea>
+            </div>
+            <div class="form-field full">
+              <label>Lyrics Source URL</label>
+              <input type="url" name="track_{{ i }}_lyrics_source" value="{{ t.lyrics_source or '' }}">
+            </div>
+            <div class="form-field full">
+              <label>Preview Audio</label>
+              <input type="text" name="track_{{ i }}_preview_audio" value="{{ t.preview_audio or '' }}">
+            </div>
+          </div>
+          {% set tl = t.links or {} %}
+          <div class="form-row" style="margin-top:.5rem">
+            {% for k in platform_keys %}
+            <div class="form-field">
+              <label>{{ k.replace('_', ' ').title() }}</label>
+              <input type="url" name="track_{{ i }}_links_{{ k }}" value="{{ tl[k] if tl[k] else '' }}" placeholder="https://…">
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+  </details>
+  {% endif %}
+
+  <!-- SEO -->
+  <details class="form-card">
+    <summary>SEO</summary>
+    <div class="form-body">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>SEO Title <span class="required">*</span></label>
+          <input type="text" name="seo_title" value="{{ seo.title or '' }}" required>
+        </div>
+        <div class="form-field full">
+          <label>SEO Description <span class="required">*</span></label>
+          <textarea name="seo_description" rows="2">{{ seo.description or '' }}</textarea>
+        </div>
+      </div>
+      <div class="check-row" style="margin-top:.5rem">
+        <input type="checkbox" id="allow_auto_publish" name="allow_auto_publish"
+          {% if automation.allow_auto_publish %}checked{% endif %}>
+        <label for="allow_auto_publish">Allow auto-publish</label>
+      </div>
+    </div>
+  </details>
+
+</form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+{% block page_title %} — {{ app.name }}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">{{ app.name }}</h1>
+</div>
+
+<div class="stub-card">
+  <div class="badge-coming">Coming in v0.2</div>
+  <h2>{{ app.name }}</h2>
+  <p>{{ app.description }}</p>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+    Installed at <code style="font-family:monospace">{{ app.path }}</code> — run via its own CLI for now:
+  </p>
+  <ul class="stub-commands">
+    {% for cmd in app.commands %}
+    <li>{{ cmd }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
