@@ -311,6 +311,29 @@
   </details>
   {% endif %}
 
+  <!-- Pipeline -->
+  <details class="form-card">
+    <summary>Pipeline</summary>
+    <div class="form-body">
+      <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+        Each step runs in the background. Odesli, Apple Music, and YouTube need their respective
+        API keys in your <code>.env</code>. Critic and Sampler need <code>automation.master_path</code>
+        set above and the <code>critic</code> CLI in your PATH. Promoter generates a promo blurb for the artist.
+      </p>
+      <div class="pipeline-steps">
+        {% for ps in pipeline_steps %}
+        {% set step = ps.id %}
+        {% set step_label = ps.label %}
+        {% set job = pipeline_status.get(ps.id) %}
+        {% set critic_settings = {} %}
+        <div id="pipeline-step-{{ step }}" class="pipeline-step">
+          {% include "releases/_pipeline_step.html" %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+
   <!-- SEO -->
   <details class="form-card">
     <summary>SEO</summary>

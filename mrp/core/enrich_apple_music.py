@@ -13,10 +13,13 @@ from mrp.core.release import slugify
 
 DEFAULT_DELAY_SECONDS = 1.0
 COLLECTION_SUFFIX_PATTERN = re.compile(r"\s*-\s*(single|ep)$", re.IGNORECASE)
+FEAT_PATTERN = re.compile(r"\s*\(feat\.[^)]*\)", re.IGNORECASE)
 
 
 def _title_key(title: str) -> str:
-    return slugify(COLLECTION_SUFFIX_PATTERN.sub("", title or ""))
+    cleaned = COLLECTION_SUFFIX_PATTERN.sub("", title or "")
+    cleaned = FEAT_PATTERN.sub("", cleaned)
+    return slugify(cleaned)
 
 
 def _load_records(directory: Path, key: str) -> list[tuple[Path, dict[str, Any], dict[str, Any]]]:

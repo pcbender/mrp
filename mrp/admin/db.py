@@ -66,6 +66,18 @@ def update_job(
         conn.commit()
 
 
+def get_latest_job_by_command(command: str) -> dict[str, Any] | None:
+    with _connect() as conn:
+        row = conn.execute(
+            "SELECT id, command, status, started_at, completed_at, output "
+            "FROM jobs WHERE command = ? ORDER BY rowid DESC LIMIT 1",
+            [command],
+        ).fetchone()
+    if row is None:
+        return None
+    return dict(zip(["id", "command", "status", "started_at", "completed_at", "output"], row))
+
+
 def get_job(job_id: str) -> dict[str, Any] | None:
     with _connect() as conn:
         row = conn.execute(
