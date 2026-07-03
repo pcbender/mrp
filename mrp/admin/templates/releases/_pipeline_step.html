@@ -2,68 +2,66 @@
 {% set is_done    = job and job.status == 'done' %}
 {% set is_error   = job and job.status == 'error' %}
 
-<div id="pipeline-step-{{ step }}" class="pipeline-step"
-  {% if is_running %}
-  hx-get="/releases/{{ slug }}/pipeline/{{ step }}/poll/{{ job.id }}"
-  hx-trigger="every 2s"
-  hx-swap="outerHTML"
-  {% endif %}>
+<span class="pipeline-step-label">{{ step_label }}</span>
 
-  <span class="pipeline-step-label">{{ step_label }}</span>
+{% if is_running %}
+  <span class="pipeline-step-status">
+    <span class="spinner"></span>
+    <span style="font-size:12px;color:var(--muted)">running…</span>
+  </span>
+  {# Hidden poller — polls and replaces the stable outer wrapper's innerHTML #}
+  <span style="display:none"
+    hx-get="/releases/{{ slug }}/pipeline/{{ step }}/poll/{{ job.id }}"
+    hx-trigger="every 2s"
+    hx-target="#pipeline-step-{{ step }}"
+    hx-swap="innerHTML"></span>
 
-  {% if is_running %}
-    <span class="pipeline-step-status">
-      <span class="spinner"></span>
-      <span style="font-size:12px;color:var(--muted)">running…</span>
-    </span>
+{% elif is_done %}
+  <span class="badge badge-live pipeline-step-status">done</span>
+  <span class="pipeline-step-time">{{ job.completed_at[:10] if job.completed_at else '' }}</span>
 
-  {% elif is_done %}
-    <span class="badge badge-live pipeline-step-status">done</span>
-    <span class="pipeline-step-time">{{ job.completed_at[:10] if job.completed_at else '' }}</span>
-
-  {% elif is_error %}
-    <span class="badge badge-failed pipeline-step-status">failed</span>
-    {% if job.output %}
-    <span class="pipeline-step-error" title="{{ job.output | e }}">{{ job.output[:120] | e }}</span>
-    {% endif %}
-
-  {% else %}
-    <span class="pipeline-step-status" style="color:var(--muted);font-size:12px">never run</span>
+{% elif is_error %}
+  <span class="badge badge-failed pipeline-step-status">failed</span>
+  {% if job.output %}
+  <span class="pipeline-step-error" title="{{ job.output | e }}">{{ job.output[:120] | e }}</span>
   {% endif %}
 
-  {% if not is_running %}
-  <form method="post" action="/releases/{{ slug }}/pipeline/{{ step }}"
-        hx-post="/releases/{{ slug }}/pipeline/{{ step }}"
-        hx-target="#pipeline-step-{{ step }}"
-        hx-swap="outerHTML"
-        style="margin-left:auto;flex-shrink:0;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap">
+{% else %}
+  <span class="pipeline-step-status" style="color:var(--muted);font-size:12px">never run</span>
+{% endif %}
 
-    {% if step == 'critic' %}
-    {% set cs = critic_settings or {} %}
-    <select name="critic_model" class="pipeline-select" title="AI model">
-      {% for m, mlabel in [('dev','dev — Haiku/Flash'), ('default','default — Sonnet/Pro'), ('hero','hero — Opus/Flash')] %}
-      <option value="{{ m }}" {% if (cs.get('critic_model') or 'dev') == m %}selected{% endif %}>{{ mlabel }}</option>
-      {% endfor %}
-    </select>
-    <select name="critic_persona" class="pipeline-select" title="Critic persona">
-      {% for p in ['default', 'pundit', 'liner'] %}
-      <option value="{{ p }}" {% if (cs.get('critic_persona') or 'default') == p %}selected{% endif %}>{{ p }}</option>
-      {% endfor %}
-    </select>
-    <select name="critic_target" class="pipeline-select" title="Output target">
-      {% for t in ['blurb', 'liner'] %}
-      <option value="{{ t }}" {% if (cs.get('critic_target') or 'blurb') == t %}selected{% endif %}>{{ t }}</option>
-      {% endfor %}
-    </select>
-    <select name="critic_target_tier" class="pipeline-select" title="Target tier (optional)">
-      <option value="">tier: auto</option>
-      {% for tier in [2, 3, 4, 5] %}
-      <option value="{{ tier }}">tier {{ tier }}</option>
-      {% endfor %}
-    </select>
-    {% endif %}
+{% if not is_running %}
+<form method="post" action="/releases/{{ slug }}/pipeline/{{ step }}"
+      hx-post="/releases/{{ slug }}/pipeline/{{ step }}"
+      hx-target="#pipeline-step-{{ step }}"
+      hx-swap="innerHTML"
+      style="margin-left:auto;flex-shrink:0;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap">
 
-    <button type="submit" class="btn btn-secondary btn-sm">{{ 'Re-run' if job else 'Run' }}</button>
-  </form>
+  {% if step == 'critic' %}
+  {% set cs = critic_settings or {} %}
+  <select name="critic_model" class="pipeline-select" title="AI model">
+    {% for m, mlabel in [('dev','dev — Haiku/Flash'), ('default','default — Sonnet/Pro'), ('hero','hero — Opus/Flash')] %}
+    <option value="{{ m }}" {% if (cs.get('critic_model') or 'dev') == m %}selected{% endif %}>{{ mlabel }}</option>
+    {% endfor %}
+  </select>
+  <select name="critic_persona" class="pipeline-select" title="Critic persona">
+    {% for p in ['default', 'pundit', 'liner'] %}
+    <option value="{{ p }}" {% if (cs.get('critic_persona') or 'default') == p %}selected{% endif %}>{{ p }}</option>
+    {% endfor %}
+  </select>
+  <select name="critic_target" class="pipeline-select" title="Output target">
+    {% for t in ['blurb', 'liner'] %}
+    <option value="{{ t }}" {% if (cs.get('critic_target') or 'blurb') == t %}selected{% endif %}>{{ t }}</option>
+    {% endfor %}
+  </select>
+  <select name="critic_target_tier" class="pipeline-select" title="Target tier (optional)">
+    <option value="">tier: auto</option>
+    {% for tier in [2, 3, 4, 5] %}
+    <option value="{{ tier }}">tier {{ tier }}</option>
+    {% endfor %}
+  </select>
   {% endif %}
-</div>
+
+  <button type="submit" class="btn btn-secondary btn-sm">{{ 'Re-run' if job else 'Run' }}</button>
+</form>
+{% endif %}

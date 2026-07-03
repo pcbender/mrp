@@ -326,7 +326,9 @@
         {% set step_label = ps.label %}
         {% set job = pipeline_status.get(ps.id) %}
         {% set critic_settings = {} %}
-        {% include "releases/_pipeline_step.html" %}
+        <div id="pipeline-step-{{ step }}" class="pipeline-step">
+          {% include "releases/_pipeline_step.html" %}
+        </div>
         {% endfor %}
       </div>
     </div>

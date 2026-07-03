@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -304,7 +305,12 @@ async def pipeline_launch(request: Request, slug: str, step: str):
                 pass
 
     job_id = job_runner.launch(f"{slug}/{step}", fn, root, slug, **kwargs)
-    job = db.get_job(job_id)
+    # Brief wait for fast steps (e.g. Apple Music) that finish before the response goes out
+    for _ in range(5):
+        job = db.get_job(job_id)
+        if job and job["status"] not in ("pending", "running"):
+            break
+        time.sleep(0.15)
     return _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
         "slug": slug,
         "step": step,
