@@ -1,0 +1,43 @@
+{% set is_running = job and job.status in ('pending', 'running') %}
+{% set is_done    = job and job.status == 'done' %}
+{% set is_error   = job and job.status == 'error' %}
+
+<div id="pipeline-step-{{ step }}" class="pipeline-step"
+  {% if is_running %}
+  hx-get="/releases/{{ slug }}/pipeline/{{ step }}/poll/{{ job.id }}"
+  hx-trigger="every 2s"
+  hx-swap="outerHTML"
+  {% endif %}>
+
+  <span class="pipeline-step-label">{{ step_label }}</span>
+
+  {% if is_running %}
+    <span class="pipeline-step-status">
+      <span class="spinner"></span>
+      <span style="font-size:12px;color:var(--muted)">running…</span>
+    </span>
+
+  {% elif is_done %}
+    <span class="badge badge-live pipeline-step-status">done</span>
+    <span class="pipeline-step-time">{{ job.completed_at[:10] if job.completed_at else '' }}</span>
+
+  {% elif is_error %}
+    <span class="badge badge-failed pipeline-step-status">failed</span>
+    {% if job.output %}
+    <span class="pipeline-step-error" title="{{ job.output | e }}">{{ job.output[:120] | e }}</span>
+    {% endif %}
+
+  {% else %}
+    <span class="pipeline-step-status" style="color:var(--muted);font-size:12px">never run</span>
+  {% endif %}
+
+  {% if not is_running %}
+  <form method="post" action="/releases/{{ slug }}/pipeline/{{ step }}"
+        hx-post="/releases/{{ slug }}/pipeline/{{ step }}"
+        hx-target="#pipeline-step-{{ step }}"
+        hx-swap="outerHTML"
+        style="margin-left:auto;flex-shrink:0">
+    <button type="submit" class="btn btn-secondary btn-sm">{{ 'Re-run' if job else 'Run' }}</button>
+  </form>
+  {% endif %}
+</div>

@@ -10,6 +10,8 @@ from fastapi import APIRouter, Form, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
+from mrp.admin import db, pipeline as pipe
+from mrp.admin import jobs as job_runner
 from mrp.admin.deps import get_repo_root
 from mrp.core.migrate_site import load_structured_record, serialize_structured_record
 from mrp.core.release import slugify
@@ -36,6 +38,16 @@ PLATFORM_KEYS = [
 ]
 
 STATUSES = ["draft", "staged", "verified", "approved", "live", "failed", "archived"]
+
+PIPELINE_STEPS = [
+    ("odesli",       "Streaming Links (Odesli)", pipe.enrich_odesli),
+    ("apple-music",  "Apple Music",              pipe.enrich_apple_music),
+    ("youtube",      "YouTube",                  pipe.enrich_youtube),
+    ("critic",       "Critic",                   pipe.run_critic),
+    ("sampler",      "Sampler",                  pipe.run_sampler),
+    ("promoter",     "Promoter",                 pipe.run_promoter),
+]
+_PIPELINE_MAP = {step: (label, fn) for step, label, fn in PIPELINE_STEPS}
 
 
 def _is_htmx(request: Request) -> bool:
@@ -202,12 +214,18 @@ async def release_edit(request: Request, slug: str):
     data = load_structured_record(path)
     rel = data.get("release", {})
     artists = _load_artists(root)
+    pipeline_status = {
+        step: db.get_latest_job_by_command(f"{slug}/{step}")
+        for step, _label, _fn in PIPELINE_STEPS
+    }
     return _templates.TemplateResponse(request, "releases/edit.html", {
         "slug": slug,
         "release": rel,
         "artists": artists,
         "statuses": STATUSES,
         "platform_keys": PLATFORM_KEYS,
+        "pipeline_steps": [{"id": s, "label": l} for s, l, _ in PIPELINE_STEPS],
+        "pipeline_status": pipeline_status,
     })
 
 
@@ -262,6 +280,38 @@ async def release_validate(request: Request, slug: str):
     return _templates.TemplateResponse(request, "releases/_validation.html", {
         "errors": errors,
         "status": result.get("status"),
+    })
+
+
+@router.post("/releases/{slug}/pipeline/{step}", response_class=HTMLResponse)
+async def pipeline_launch(request: Request, slug: str, step: str):
+    if step not in _PIPELINE_MAP:
+        return HTMLResponse(f'<div class="flash flash-error">Unknown pipeline step: {step}</div>', status_code=400)
+    label, fn = _PIPELINE_MAP[step]
+    root = get_repo_root()
+    job_id = job_runner.launch(f"{slug}/{step}", fn, root, slug)
+    job = db.get_job(job_id)
+    return _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
+        "slug": slug,
+        "step": step,
+        "step_label": label,
+        "job": job,
+    })
+
+
+@router.get("/releases/{slug}/pipeline/{step}/poll/{job_id}", response_class=HTMLResponse)
+async def pipeline_poll(request: Request, slug: str, step: str, job_id: str):
+    if step not in _PIPELINE_MAP:
+        return HTMLResponse('<div class="flash flash-error">Unknown step</div>', status_code=400)
+    label = _PIPELINE_MAP[step][0]
+    job = db.get_job(job_id)
+    if job is None:
+        return HTMLResponse('<div class="flash flash-error">Job not found</div>', status_code=404)
+    return _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
+        "slug": slug,
+        "step": step,
+        "step_label": label,
+        "job": job,
     })
 
 
