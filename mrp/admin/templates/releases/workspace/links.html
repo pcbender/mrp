@@ -1,0 +1,45 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+<div class="form-card" style="border-top-left-radius:0">
+  <div class="form-body">
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Wrapper links to the full release on each streaming service. Services appear at
+      different times after release day — re-run enrichment as needed, or mark a
+      platform <em>not expected</em> if it will never carry this release.
+    </p>
+    <div class="link-board">
+      {% for platform in platform_keys %}
+      <div id="link-row-{{ platform }}">
+        {% with url = links.get(platform), is_na = platform in links_na %}
+        {% include "releases/workspace/_link_row.html" %}
+        {% endwith %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div class="form-card">
+  <details open>
+    <summary style="font-size:13px;font-weight:700;padding:.85rem 1.25rem;cursor:pointer;list-style:none">Enrichment</summary>
+    <div class="form-body">
+      <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+        Each step runs in the background and only fills empty platforms.
+        Odesli needs a Spotify link; LANDR needs the UPC; Apple Music and YouTube
+        need their API keys in <code>.env</code>.
+      </p>
+      <div class="pipeline-steps">
+        {% for ps in link_steps %}
+        {% set step = ps.id %}
+        {% set step_label = ps.label %}
+        {% set job = pipeline_status.get(ps.id) %}
+        <div id="pipeline-step-{{ step }}" class="pipeline-step">
+          {% include "releases/_pipeline_step.html" %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+</div>
+{% endblock %}

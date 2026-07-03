@@ -1,0 +1,24 @@
+{% set state = 'na' if is_na else ('found' if url else 'missing') %}
+<div class="link-row {{ 'is-na' if is_na else '' }}">
+  <span class="link-row-name">{{ platform.replace('_', ' ').title() }}</span>
+  <span class="link-pill {{ state }}">{{ 'N/A' if state == 'na' else state }}</span>
+
+  <form hx-post="/releases/{{ slug }}/links/{{ platform }}"
+        hx-target="#link-row-{{ platform }}"
+        hx-swap="innerHTML"
+        style="display:flex;flex:1;gap:.4rem;align-items:center">
+    <input type="url" name="url" value="{{ url or '' }}" placeholder="https://…"
+           {% if is_na %}disabled{% endif %}>
+    <button type="submit" class="btn btn-secondary btn-sm" {% if is_na %}disabled{% endif %}>Save</button>
+  </form>
+
+  <form hx-post="/releases/{{ slug }}/links/{{ platform }}/na"
+        hx-target="#link-row-{{ platform }}"
+        hx-swap="innerHTML"
+        style="flex-shrink:0">
+    <button type="submit" class="btn btn-secondary btn-sm"
+            title="{{ 'Platform will never carry this release' if not is_na else 'Clear the not-expected mark' }}">
+      {{ 'Expected again' if is_na else 'Not expected' }}
+    </button>
+  </form>
+</div>

@@ -64,7 +64,8 @@
           "additionalProperties": false,
           "properties": {
             "allow_auto_publish": {"type": "boolean"},
-            "master_path": {"type": ["string", "null"]}
+            "master_path": {"type": ["string", "null"]},
+            "links_na": {"type": "array", "items": {"type": "string"}}
           }
         }
       },
@@ -127,6 +128,7 @@
         "lyrics_raw": {"type": ["string", "null"]},
         "lyrics_source": {"type": ["string", "null"]},
         "style": {"type": ["string", "null"]},
+        "master_path": {"type": ["string", "null"]},
         "links": {"$ref": "#/$defs/links"},
         "hints": {
           "type": "object",

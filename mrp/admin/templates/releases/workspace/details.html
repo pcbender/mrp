@@ -1,0 +1,128 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+{% set credits = release.credits or {} %}
+{% set seo = release.seo or {} %}
+{% set automation = release.automation or {} %}
+
+<form hx-post="/releases/{{ slug }}/details"
+      hx-target="#save-result"
+      hx-swap="innerHTML">
+
+  <div class="form-card" style="border-top-left-radius:0">
+    <div class="form-body">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:.75rem">
+        <button type="submit" class="btn btn-primary">Save Details</button>
+      </div>
+      <div class="form-row">
+        <div class="form-field full">
+          <label>Title <span class="required">*</span></label>
+          <input type="text" name="title" value="{{ release.title or '' }}" required>
+        </div>
+        <div class="form-field">
+          <label>Artist ID <span class="required">*</span></label>
+          <select name="artist_id">
+            {% for a in artists %}
+            <option value="{{ a.id }}" {% if a.id == release.artist_id %}selected{% endif %}>{{ a.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Status <span class="required">*</span></label>
+          <select name="status">
+            {% for s in statuses %}
+            <option value="{{ s }}" {% if s == release.status %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Model</label>
+          <input type="text" value="{{ release.model or '' }}" readonly style="background:var(--bg)">
+        </div>
+        <div class="form-field">
+          <label>Release Type</label>
+          <input type="text" value="{{ release.release_type or '' }}" readonly style="background:var(--bg)">
+        </div>
+        <div class="form-field">
+          <label>Release Date</label>
+          <input type="date" name="release_date" value="{{ release.release_date or '' }}">
+        </div>
+        <div class="form-field">
+          <label>UPC</label>
+          <input type="text" name="upc" value="{{ release.upc or '' }}" placeholder="057914189314">
+        </div>
+        <div class="form-field">
+          <label>Catalog Number</label>
+          <input type="text" name="catalog_number" value="{{ release.catalog_number or '' }}">
+        </div>
+        <div class="form-field">
+          <label>Label</label>
+          <select name="label">
+            <option value="">— none —</option>
+            <option value="Maricopa Records" {% if release.label == 'Maricopa Records' %}selected{% endif %}>Maricopa Records</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Publisher</label>
+          <select name="publisher">
+            <option value="">— none —</option>
+            <option value="Maricopa Publishing" {% if release.publisher == 'Maricopa Publishing' %}selected{% endif %}>Maricopa Publishing</option>
+          </select>
+        </div>
+        <div class="form-field full">
+          <label>Cover Image Path <span class="required">*</span></label>
+          <input type="text" name="cover_image" value="{{ release.cover_image or '' }}">
+        </div>
+        <div class="form-field full">
+          <label>Hero Image Path</label>
+          <input type="text" name="hero_image" value="{{ release.hero_image or '' }}">
+        </div>
+        <div class="form-field full">
+          <label>Summary</label>
+          <textarea name="summary" rows="2">{{ release.summary or '' }}</textarea>
+        </div>
+        <div class="form-field full">
+          <label>Description (Markdown)</label>
+          <textarea name="description" rows="5">{{ release.description or '' }}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <details class="form-card">
+    <summary>Credits</summary>
+    <div class="form-body">
+      <div class="form-row">
+        {% for k in ['primary_artist', 'songwriter', 'lyrics', 'producer', 'mastering'] %}
+        <div class="form-field">
+          <label>{{ k.replace('_', ' ').title() }}</label>
+          <input type="text" name="credits_{{ k }}" value="{{ credits[k] if credits[k] else '' }}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+
+  <details class="form-card">
+    <summary>SEO</summary>
+    <div class="form-body">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>SEO Title <span class="required">*</span></label>
+          <input type="text" name="seo_title" value="{{ seo.title or '' }}" required>
+        </div>
+        <div class="form-field full">
+          <label>SEO Description <span class="required">*</span></label>
+          <textarea name="seo_description" rows="2">{{ seo.description or '' }}</textarea>
+        </div>
+      </div>
+      <div class="check-row" style="margin-top:.5rem">
+        <input type="checkbox" id="allow_auto_publish" name="allow_auto_publish"
+          {% if automation.allow_auto_publish %}checked{% endif %}>
+        <label for="allow_auto_publish">Allow auto-publish</label>
+      </div>
+    </div>
+  </details>
+
+</form>
+{% endblock %}

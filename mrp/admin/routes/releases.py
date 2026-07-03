@@ -6,7 +6,6 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-import jsonschema
 from fastapi import APIRouter, Form, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
@@ -14,32 +13,20 @@ from fastapi.templating import Jinja2Templates
 from mrp.admin import db, pipeline as pipe
 from mrp.admin import jobs as job_runner
 from mrp.admin.deps import get_repo_root
+from mrp.admin.workspace import (
+    PLATFORM_KEYS,
+    STATUSES,
+    bool_field as _bool_field,
+    str_or_none as _str_or_none,
+    validate_release_dict as _validate_release_dict,
+)
 from mrp.core.migrate_site import load_structured_record, serialize_structured_record
 from mrp.core.release import slugify
 from mrp.core.validate import validate_repository
 
-_SCHEMA_PATH = Path(__file__).parent.parent.parent / "schemas" / "release.schema.json"
-
-
-def _validate_release_dict(data: dict) -> list[dict]:
-    schema = json.loads(_SCHEMA_PATH.read_text())
-    validator = jsonschema.Draft202012Validator(schema)
-    errors = []
-    for err in validator.iter_errors(data):
-        field = ".".join(str(p) for p in err.absolute_path) or "(root)"
-        errors.append({"field": field, "message": err.message, "severity": "error"})
-    return errors
-
 router = APIRouter()
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
 _templates.env.filters["fromjson"] = lambda s: json.loads(s) if s else {}
-
-PLATFORM_KEYS = [
-    "spotify", "apple_music", "itunes_store", "youtube", "youtube_music",
-    "tidal", "amazon_music", "deezer", "soundcloud", "bandcamp", "pandora",
-]
-
-STATUSES = ["draft", "staged", "verified", "approved", "live", "failed", "archived"]
 
 PIPELINE_STEPS = [
     ("odesli",       "Streaming Links (Odesli)", pipe.enrich_odesli),
@@ -141,7 +128,7 @@ async def release_create(
         )
     skeleton = _new_release_skeleton(slug, title, artist_id, model, release_type)
     path.write_text(serialize_structured_record(path, {"release": skeleton}))
-    return RedirectResponse(url=f"/releases/{slug}/edit", status_code=303)
+    return RedirectResponse(url=f"/releases/{slug}/details", status_code=303)
 
 
 @router.get("/releases/new/manual", response_class=HTMLResponse)
@@ -205,56 +192,13 @@ async def release_import(
         slug = _do_spotify_import(root, album_id, per_track)
     except Exception as exc:
         return HTMLResponse(f'<div class="flash flash-error">{exc}</div>', status_code=400)
-    return RedirectResponse(url=f"/releases/{slug}/edit", status_code=303)
+    return RedirectResponse(url=f"/releases/{slug}/details", status_code=303)
 
 
 @router.get("/releases/{slug}/edit", response_class=HTMLResponse)
 async def release_edit(request: Request, slug: str):
-    root = get_repo_root()
-    path = root / "content" / "releases" / f"{slug}.yaml"
-    if not path.exists():
-        return HTMLResponse(f"Release <b>{slug}</b> not found.", status_code=404)
-    data = load_structured_record(path)
-    rel = data.get("release", {})
-    artists = _load_artists(root)
-    pipeline_status = {
-        step: db.get_latest_job_by_command(f"{slug}/{step}")
-        for step, _label, _fn in PIPELINE_STEPS
-    }
-    return _templates.TemplateResponse(request, "releases/edit.html", {
-        "slug": slug,
-        "release": rel,
-        "artists": artists,
-        "statuses": STATUSES,
-        "platform_keys": PLATFORM_KEYS,
-        "pipeline_steps": [{"id": s, "label": l} for s, l, _ in PIPELINE_STEPS],
-        "pipeline_status": pipeline_status,
-    })
-
-
-@router.post("/releases/{slug}", response_class=HTMLResponse)
-async def release_save(request: Request, slug: str):
-    root = get_repo_root()
-    path = root / "content" / "releases" / f"{slug}.yaml"
-    if not path.exists():
-        return HTMLResponse(f"Release <b>{slug}</b> not found.", status_code=404)
-
-    original_data = load_structured_record(path)
-    original = original_data.get("release", {})
-    form = await request.form()
-    updated = _form_to_release(dict(form), original)
-    data = {"release": updated}
-
-    errors = _validate_release_dict(data)
-    if errors:
-        return _templates.TemplateResponse(request, "releases/_validation.html", {
-            "errors": errors,
-        }, status_code=422)
-
-    path.write_text(serialize_structured_record(path, data))
-    response = HTMLResponse('<div class="flash flash-ok">Saved successfully.</div>')
-    response.headers["HX-Trigger"] = "releaseSaved"
-    return response
+    # Legacy URL — the giant edit form was replaced by the workspace.
+    return RedirectResponse(url=f"/releases/{slug}/details", status_code=303)
 
 
 @router.post("/releases/{slug}/delete", response_class=HTMLResponse)
@@ -392,117 +336,6 @@ def _load_artists(root: Path) -> list[dict[str, Any]]:
         a = data.get("artist", {})
         result.append({"id": a.get("id", path.stem), "name": a.get("name", path.stem)})
     return result
-
-
-def _str_or_none(v: Any) -> str | None:
-    s = str(v).strip() if v is not None else ""
-    return s or None
-
-
-def _bool_field(form: dict, key: str) -> bool:
-    return form.get(key) in {"on", "true", "1", True}
-
-
-def _form_to_release(form: dict, original: dict) -> dict:
-    rel = dict(original)
-
-    # Top-level scalars
-    for key in ["title", "title_ascii", "artist_id", "model", "release_type", "status",
-                "release_date", "label", "publisher", "upc", "catalog_number",
-                "cover_image", "hero_image", "summary", "description"]:
-        if key in form:
-            rel[key] = _str_or_none(form[key])
-
-    # Ensure required strings stay non-null
-    for key in ["title", "artist_id", "model", "release_type", "status", "cover_image"]:
-        if not rel.get(key) and key in form:
-            rel[key] = form[key]
-
-    # Links
-    links = dict(rel.get("links") or {})
-    for k in PLATFORM_KEYS:
-        field = f"links_{k}"
-        if field in form:
-            links[k] = _str_or_none(form[field])
-    rel["links"] = links
-
-    # Credits
-    credits = dict(rel.get("credits") or {})
-    for k in ["primary_artist", "songwriter", "lyrics", "producer", "mastering"]:
-        field = f"credits_{k}"
-        if field in form:
-            credits[k] = _str_or_none(form[field])
-    rel["credits"] = credits
-
-    # SEO
-    seo = dict(rel.get("seo") or {})
-    if "seo_title" in form:
-        seo["title"] = form["seo_title"] or ""
-    if "seo_description" in form:
-        seo["description"] = form["seo_description"] or ""
-    rel["seo"] = seo
-
-    # Automation
-    automation = dict(rel.get("automation") or {})
-    automation["allow_auto_publish"] = _bool_field(form, "allow_auto_publish")
-    rel["automation"] = automation
-
-    # Song (model:song)
-    if rel.get("model") == "song":
-        song = dict(rel.get("song") or {})
-        for k in ["title", "slug", "isrc", "duration", "preview_audio",
-                   "lyrics_text", "lyrics_raw", "lyrics_source", "style"]:
-            field = f"song_{k}"
-            if field in form:
-                song[k] = _str_or_none(form[field])
-        song["explicit"] = _bool_field(form, "song_explicit")
-        song["instrumental"] = _bool_field(form, "song_instrumental")
-        if "song_number" in form:
-            try:
-                song["number"] = int(form["song_number"]) if form["song_number"] else None
-            except (ValueError, TypeError):
-                song["number"] = None
-        song_links = dict((song.get("links") or {}))
-        for k in PLATFORM_KEYS:
-            field = f"song_links_{k}"
-            if field in form:
-                song_links[k] = _str_or_none(form[field])
-        song["links"] = song_links
-        rel["song"] = song
-
-    # Tracks (model:album)
-    elif rel.get("model") == "album":
-        try:
-            track_count = int(form.get("track_count", 0))
-        except (ValueError, TypeError):
-            track_count = 0
-        tracks = list(rel.get("tracks") or [])
-        for i in range(track_count):
-            track = dict(tracks[i]) if i < len(tracks) else {}
-            for k in ["title", "slug", "isrc", "duration", "preview_audio",
-                       "lyrics_text", "lyrics_raw", "lyrics_source", "style"]:
-                field = f"track_{i}_{k}"
-                if field in form:
-                    track[k] = _str_or_none(form[field])
-            track["explicit"] = _bool_field(form, f"track_{i}_explicit")
-            track["instrumental"] = _bool_field(form, f"track_{i}_instrumental")
-            try:
-                track["number"] = int(form[f"track_{i}_number"]) if form.get(f"track_{i}_number") else i + 1
-            except (ValueError, TypeError):
-                track["number"] = i + 1
-            track_links = dict((track.get("links") or {}))
-            for k in PLATFORM_KEYS:
-                field = f"track_{i}_links_{k}"
-                if field in form:
-                    track_links[k] = _str_or_none(form[field])
-            track["links"] = track_links
-            if i < len(tracks):
-                tracks[i] = track
-            else:
-                tracks.append(track)
-        rel["tracks"] = tracks
-
-    return rel
 
 
 def _spotify_album_id(url: str, spotify: Any) -> str:
