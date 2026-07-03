@@ -128,14 +128,32 @@ def enrich_youtube(root: Path, slug: str) -> dict[str, Any]:
     if yt is None:
         raise ValueError("No YOUTUBE_API_KEY in environment")
 
-    uploads = yt.get_uploads_playlist_id(channel_id)
-    videos = yt.get_playlist_videos(uploads) if uploads else []
-    videos_by_key = {_title_key(v.get("title") or ""): v for v in videos}
+    # Lazy-load channel uploads only if we need title-matching as a fallback
+    _videos_by_key: dict | None = None
+    def _by_title(title: str) -> dict | None:
+        nonlocal _videos_by_key
+        if _videos_by_key is None:
+            uploads = yt.get_uploads_playlist_id(channel_id)
+            videos = yt.get_playlist_videos(uploads) if uploads else []
+            _videos_by_key = {_title_key(v.get("title") or ""): v for v in videos}
+        return _videos_by_key.get(_title_key(title))
+
+    def _find_video(isrc: str | None, title: str) -> dict | None:
+        if isrc:
+            hit = yt.search_by_isrc(isrc)
+            if hit:
+                return hit
+        return _by_title(title)
 
     added: dict[str, str] = {}
     target_links = release.setdefault("links", {})
 
-    video = videos_by_key.get(_title_key(release.get("title") or ""))
+    if release.get("model") == "song":
+        song = release.get("song") or {}
+        video = _find_video(song.get("isrc"), release.get("title") or "")
+    else:
+        video = _find_video(None, release.get("title") or "")
+
     if video:
         if not target_links.get("youtube"):
             target_links["youtube"] = f"https://www.youtube.com/watch?v={video['videoId']}"
@@ -149,7 +167,7 @@ def enrich_youtube(root: Path, slug: str) -> dict[str, Any]:
         for track in tracks:
             if not isinstance(track, dict):
                 continue
-            tv = videos_by_key.get(_title_key(track.get("title") or ""))
+            tv = _find_video(track.get("isrc"), track.get("title") or "")
             if not tv:
                 continue
             tl = track.setdefault("links", {})
@@ -260,6 +278,95 @@ def run_sampler(root: Path, slug: str) -> dict[str, Any]:
         )
         results.append({"track_id": track_id, "ok": r.returncode == 0})
     return {"tracks": results}
+
+
+def enrich_landr(root: Path, slug: str) -> dict[str, Any]:
+    import re
+    import html
+    from urllib.parse import urlparse, urljoin
+    import requests
+
+    path, data, release = _load_release(root, slug)
+
+    upc = release.get("upc") or ""
+    if not upc:
+        raise ValueError("No UPC on this release — add it in the Info section first")
+
+    landr_url = f"https://artists.landr.com/{upc}"
+    resp = requests.get(landr_url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+    resp.raise_for_status()
+
+    # Classify from the raw (un-cleaned) URL so query params are visible.
+    # iTunes Store uses music.apple.com?app=itunes — same domain as Apple Music,
+    # only distinguishable before the query string is stripped. youtube_music
+    # must precede youtube to avoid the wrong key on music.youtube.com.
+    _STORE_PATTERNS = [
+        (re.compile(r"open\.spotify\.com/album/"), "spotify"),
+        (re.compile(r"music\.apple\.com"), "apple_music"),
+        (re.compile(r"music\.youtube\.com"), "youtube_music"),
+        (re.compile(r"(?:www\.)?youtube\.com/watch"), "youtube"),
+        (re.compile(r"(?:listen\.)?tidal\.com"), "tidal"),
+        (re.compile(r"music\.amazon\.com|amazon\.com/music"), "amazon_music"),
+        (re.compile(r"(?:www\.)?deezer\.com"), "deezer"),
+        (re.compile(r"soundcloud\.com"), "soundcloud"),
+        (re.compile(r"\.bandcamp\.com"), "bandcamp"),
+        (re.compile(r"(?:www\.)?pandora\.com"), "pandora"),
+    ]
+
+    def _classify(raw: str) -> str | None:
+        if "music.apple.com" in raw and "app=itunes" in raw:
+            return "itunes_store"
+        for pat, key in _STORE_PATTERNS:
+            if pat.search(raw):
+                return key
+        return None
+
+    # Platforms LANDR may expose that have no schema key — surfaced as warnings
+    KNOWN_EXTRAS: list[tuple[re.Pattern, str]] = []
+
+    # Extract all href values from <a> tags
+    href_pattern = re.compile(r'<a[^>]+href=["\']([^"\']+)["\']', re.IGNORECASE)
+    hrefs = href_pattern.findall(resp.text)
+
+    # Strip tracking params but preserve app= (identifies iTunes Store vs Apple Music)
+    _TRACKING = frozenset([
+        "utm_source", "utm_medium", "utm_content", "utm_campaign",
+        "at", "ct", "itscg", "itsct", "tag", "linkCode", "ascsubtag", "go", "src", "lId", "ie",
+        "cId", "sr", "ls",
+    ])
+
+    def clean_url(raw: str) -> str:
+        from urllib.parse import parse_qs, urlencode
+        decoded = html.unescape(raw)
+        p = urlparse(decoded)
+        kept = {k: v for k, v in parse_qs(p.query).items() if k not in _TRACKING}
+        return p._replace(query=urlencode(kept, doseq=True), fragment="").geturl()
+
+    seen: dict[str, str] = {}
+    extra_links: dict[str, str] = {}
+    for raw in hrefs:
+        if not raw.startswith("http"):
+            continue
+        decoded = html.unescape(raw)
+        key = _classify(decoded)
+        if key:
+            if key not in seen:
+                seen[key] = clean_url(decoded)
+        else:
+            for pat, xkey in KNOWN_EXTRAS:
+                if xkey not in extra_links and pat.search(decoded):
+                    extra_links[xkey] = clean_url(decoded)
+                    break
+
+    target_links = release.setdefault("links", {})
+    added: dict[str, str] = {}
+    for key, url in seen.items():
+        if not target_links.get(key):
+            target_links[key] = url
+            added[key] = url
+
+    path.write_text(serialize_structured_record(path, data))
+    return {"added": added, "total": len(added), "extra_links": extra_links, "landr_url": landr_url}
 
 
 def run_promoter(root: Path, slug: str) -> dict[str, Any]:

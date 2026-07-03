@@ -35,7 +35,7 @@ _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templ
 _templates.env.filters["fromjson"] = lambda s: json.loads(s) if s else {}
 
 PLATFORM_KEYS = [
-    "spotify", "apple_music", "youtube", "youtube_music",
+    "spotify", "apple_music", "itunes_store", "youtube", "youtube_music",
     "tidal", "amazon_music", "deezer", "soundcloud", "bandcamp", "pandora",
 ]
 
@@ -43,6 +43,7 @@ STATUSES = ["draft", "staged", "verified", "approved", "live", "failed", "archiv
 
 PIPELINE_STEPS = [
     ("odesli",       "Streaming Links (Odesli)", pipe.enrich_odesli),
+    ("landr",        "LANDR Promo Links",        pipe.enrich_landr),
     ("apple-music",  "Apple Music",              pipe.enrich_apple_music),
     ("youtube",      "YouTube",                  pipe.enrich_youtube),
     ("critic",       "Critic",                   pipe.run_critic),
