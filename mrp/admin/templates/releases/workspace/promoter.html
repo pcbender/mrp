@@ -1,0 +1,63 @@
+{% extends "releases/workspace/_shell.html" %}
+{% from "releases/workspace/_ws_macros.html" import ws_row with context %}
+
+{% block stage %}
+<div class="form-card" style="border-top-left-radius:0">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Generate</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Updates <strong>{{ artist_id }}</strong>'s profile from recent releases and their
+      critic reviews. Generation writes directly to the artist record — review and
+      edit below, then Save to mark it human-reviewed.
+    </p>
+
+    <div id="promoter-settings" style="display:flex;gap:.5rem;margin-bottom:.75rem">
+      <select name="promoter_model" class="pipeline-select" title="AI model">
+        <option value="default">default — Gemini Pro</option>
+        <option value="dev">dev — Gemini Flash</option>
+      </select>
+    </div>
+
+    <div class="pipeline-steps">
+      <div class="pipeline-step">
+        {{ ws_row('promoter-blurb', 'Promo blurb', blurb_job) }}
+      </div>
+      <div class="pipeline-step">
+        {{ ws_row('promoter-bio', 'Artist bio (short + long)', bio_job) }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">
+      Review &amp; Save
+      {% if artist.bio_auto_generated %}
+      <span class="review-pill pending" title="Bio was AI-generated and not yet human-reviewed">auto-generated</span>
+      {% else %}
+      <span class="review-pill approved">human-reviewed</span>
+      {% endif %}
+    </h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Saving marks the bio as human-reviewed (<code>bio_auto_generated: false</code>).
+    </p>
+    <form hx-post="/releases/{{ slug }}/promoter/save"
+          hx-target="#save-result" hx-swap="innerHTML">
+      <div class="form-field full" style="margin-bottom:.75rem">
+        <label>Promo Blurb</label>
+        <textarea name="promo_blurb" rows="5" style="font-family:inherit;font-size:13px">{{ artist.promo_blurb or '' }}</textarea>
+      </div>
+      <div class="form-field full" style="margin-bottom:.75rem">
+        <label>Bio Short</label>
+        <textarea name="bio_short" rows="3" style="font-family:inherit;font-size:13px">{{ artist.bio_short or '' }}</textarea>
+      </div>
+      <div class="form-field full" style="margin-bottom:.75rem">
+        <label>Bio Long</label>
+        <textarea name="bio_long" rows="10" style="font-family:inherit;font-size:13px">{{ artist.bio_long or '' }}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Artist Profile</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

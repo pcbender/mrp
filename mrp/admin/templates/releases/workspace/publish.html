@@ -1,0 +1,86 @@
+{% extends "releases/workspace/_shell.html" %}
+{% from "releases/workspace/_ws_macros.html" import ws_row with context %}
+
+{% set STEP_DESCRIPTIONS = {
+  'validate': 'Schema-check all content records',
+  'build':    'Astro static build (runs validate first)',
+  'stage':    'Copy latest passed build to the target',
+  'verify':   'Check the deployed target: pages, images, links',
+  'approve':  'Record approval of the verified build',
+  'publish':  'Archive current production, deploy, verify, mark release live',
+  'rollback': 'Restore the previous production archive',
+} %}
+
+{% block stage %}
+<!-- Latest reports -->
+<div class="form-card" style="border-top-left-radius:0">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Pipeline Status</h2>
+    {% if recommended %}
+    <p style="font-size:13px;margin-bottom:.75rem">
+      Recommended next step: <strong style="color:var(--primary)">{{ recommended }}</strong>
+    </p>
+    {% elif release.status == 'live' %}
+    <p style="font-size:13px;margin-bottom:.75rem;color:var(--success)">This release is live.</p>
+    {% endif %}
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr><th>Report</th><th>Status</th><th>Build</th><th>Target</th><th>When</th></tr></thead>
+        <tbody>
+          {% for key, label in [
+            ('validation', 'Validation'), ('build', 'Build'),
+            ('staging_deployment', 'Staging deploy'), ('verification', 'Verification'),
+            ('approval', 'Approval'), ('publish', 'Publish'), ('rollback', 'Rollback')] %}
+          {% set rep = latest_reports.get(key) %}
+          <tr>
+            <td>{{ label }}</td>
+            <td>
+              {% if rep %}
+              <span class="badge {{ 'badge-live' if rep.status in ('passed','approved','published','rolled_back') else 'badge-failed' }}">{{ rep.status }}</span>
+              {% else %}<span style="color:var(--muted);font-size:12px">—</span>{% endif %}
+            </td>
+            <td class="td-mono">{{ rep.build_id if rep and rep.build_id else '' }}</td>
+            <td class="td-mono">{{ rep.target if rep and rep.target else '' }}</td>
+            <td class="td-mono">{{ rep.generated_at[:16].replace('T',' ') if rep and rep.generated_at else '' }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Step runners -->
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Run Steps</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Steps run in the background against this release. Publish requires a passed
+      verification and a recorded approval; it marks the release <code>live</code> on success.
+    </p>
+
+    <div id="stage-settings" style="display:flex;gap:.5rem;align-items:center;margin-bottom:.75rem">
+      <label style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted)">Stage target</label>
+      <select name="stage_target" class="pipeline-select">
+        {% for t in targets %}
+        <option value="{{ t }}" {% if t == 'local-staging' %}selected{% endif %}>{{ t }}</option>
+        {% endfor %}
+      </select>
+      {% if target_errors %}
+      <span class="pipeline-step-error" title="{{ target_errors | join('; ') }}">targets config has errors</span>
+      {% endif %}
+    </div>
+
+    <div class="pipeline-steps">
+      {% for s in pub_steps %}
+      {% if s != 'rollback' or rollback_available %}
+      <div class="pipeline-step {% if s == recommended %}pipeline-step-recommended{% endif %}">
+        {{ ws_row('pub-' + s, s, pub_jobs.get(s)) }}
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin:-.2rem 0 .2rem .75rem">{{ STEP_DESCRIPTIONS[s] }}</p>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

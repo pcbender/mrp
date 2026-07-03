@@ -186,23 +186,27 @@ def run_critic(
     persona: str = "default",
     target: str = "blurb",
     target_tier: int | None = None,
+    track_slug: str | None = None,
 ) -> dict[str, Any]:
+    """Pass 1: per-track standalone review. track_slug limits to one track."""
+    from mrp.admin.critic_io import critic_bin
+    from mrp.admin.workspace import effective_master_path, track_units
+
     path, data, release = _load_release(root, slug)
-
-    automation = release.get("automation") or {}
-    master_path = automation.get("master_path")
-    if not master_path:
-        raise ValueError(
-            "No automation.master_path — set the master file path in the Automation section first"
-        )
-
     critic_cwd = root / "app" / "critic"
+    bin_path = critic_bin(root)
 
-    def _args(mp: str, track_slug: str) -> list[str]:
+    units = track_units(release)
+    if track_slug is not None:
+        units = [u for u in units if u["slug"] == track_slug]
+        if not units:
+            raise ValueError(f"Track not found: {track_slug}")
+
+    def _args(mp: str, tslug: str) -> list[str]:
         cmd = [
-            "critic", "review", str(mp),
+            bin_path, "review", str(mp),
             "--release-slug", slug,
-            "--track-slug", track_slug,
+            "--track-slug", tslug,
             "--model", model,
             "--persona", persona,
             "--target", target,
@@ -211,73 +215,133 @@ def run_critic(
             cmd += ["--target-tier", str(target_tier)]
         return cmd
 
-    if release.get("model") == "song":
-        song = release.get("song") or {}
-        track_slug = song.get("slug") or slug
-        result = subprocess.run(
-            _args(str(master_path), track_slug),
-            capture_output=True, text=True, cwd=str(critic_cwd),
-        )
-        ok = result.returncode == 0
-        return {
-            "ok": ok,
-            "track_slug": track_slug,
-            "model": model,
-            "persona": persona,
-            "target": target,
-            "stdout": result.stdout[-2000:],
-            "stderr": result.stderr[-500:] if not ok else "",
-        }
-
-    # Album: run per-track
-    tracks = release.get("tracks") or []
-    raw_paths = master_path if isinstance(master_path, list) else [master_path]
     results = []
-    for i, track in enumerate(tracks):
-        track_slug = track.get("slug") or f"track-{i + 1}"
-        mp = raw_paths[i] if i < len(raw_paths) else raw_paths[0]
+    for unit in units:
+        mp = effective_master_path(release, unit["index"], unit["track"])
+        if not mp:
+            results.append({"track_slug": unit["slug"], "ok": False,
+                            "error": "no master_path — set it in the track editor"})
+            continue
         r = subprocess.run(
-            _args(str(mp), track_slug),
+            _args(mp, unit["slug"]),
             capture_output=True, text=True, cwd=str(critic_cwd),
         )
-        results.append({"track_slug": track_slug, "ok": r.returncode == 0})
-    return {"tracks": results, "total": len(tracks), "model": model, "persona": persona, "target": target}
+        entry: dict[str, Any] = {"track_slug": unit["slug"], "ok": r.returncode == 0}
+        if r.returncode != 0:
+            entry["error"] = (r.stderr or r.stdout)[-500:]
+        results.append(entry)
+
+    ok_count = sum(1 for r in results if r["ok"])
+    return {
+        "tracks": results, "total": len(results), "ok_count": ok_count,
+        "model": model, "persona": persona, "target": target,
+    }
 
 
-def run_sampler(root: Path, slug: str) -> dict[str, Any]:
+def run_critic_album(
+    root: Path,
+    slug: str,
+    target: str = "album_blurb",
+    model: str = "default",
+    persona: str = "default",
+) -> dict[str, Any]:
+    """Pass 2+3: album synthesis + recontextualized track reviews."""
+    from mrp.admin.critic_io import critic_bin
+
+    _path, _data, release = _load_release(root, slug)
+    if release.get("model") != "album":
+        raise ValueError("Album review only applies to EP/album releases")
+
+    result = subprocess.run(
+        [critic_bin(root), "album", slug,
+         "--target", target, "--model", model, "--persona", persona],
+        capture_output=True, text=True, cwd=str(root / "app" / "critic"),
+    )
+    ok = result.returncode == 0
+    return {
+        "ok": ok,
+        "target": target,
+        "model": model,
+        "persona": persona,
+        "stdout": result.stdout[-2000:],
+        "stderr": result.stderr[-800:] if not ok else "",
+    }
+
+
+def run_writeback(root: Path, slug: str) -> dict[str, Any]:
+    """Write approved/publishable critic reviews to site/src/content/reviews/.
+
+    critic writeback itself does not gate on review status, so the gate
+    lives here: only records marked approved or publishable are written.
+    """
+    from mrp.admin.critic_io import (
+        album_record_id, critic_bin, load_record, track_record_id,
+    )
+    from mrp.admin.workspace import track_units
+
+    _path, _data, release = _load_release(root, slug)
+    artist_id = release.get("artist_id") or ""
+
+    candidates = [track_record_id(artist_id, u["slug"]) for u in track_units(release)]
+    if release.get("model") == "album":
+        candidates.append(album_record_id(artist_id, slug))
+
+    written, skipped, failed = [], [], []
+    for record_id in candidates:
+        record = load_record(root, record_id)
+        status = ((record or {}).get("review") or {}).get("status")
+        if record is None or status not in ("approved", "publishable"):
+            skipped.append({"id": record_id, "status": status or "missing"})
+            continue
+        r = subprocess.run(
+            [critic_bin(root), "writeback", "--track", record_id, "--force"],
+            capture_output=True, text=True, cwd=str(root / "app" / "critic"),
+        )
+        if r.returncode == 0:
+            written.append(record_id)
+        else:
+            failed.append({"id": record_id, "error": (r.stderr or r.stdout)[-300:]})
+
+    return {"written": written, "skipped": skipped, "failed": failed,
+            "total": len(written)}
+
+
+def run_sampler(
+    root: Path,
+    slug: str,
+    track_slug: str | None = None,
+    force: bool = False,
+) -> dict[str, Any]:
+    """Generate 30s preview snippets. track_slug limits to one track."""
+    from mrp.admin.workspace import track_units
+
     path, data, release = _load_release(root, slug)
     artist_id = release.get("artist_id") or ""
 
-    if release.get("model") == "song":
-        song = release.get("song") or {}
-        track_slug = song.get("slug") or slug
-        track_id = f"{artist_id}--{track_slug}"
+    units = track_units(release)
+    if track_slug is not None:
+        units = [u for u in units if u["slug"] == track_slug]
+        if not units:
+            raise ValueError(f"Track not found: {track_slug}")
+
+    results = []
+    for unit in units:
+        track_id = f"{artist_id}--{unit['slug']}"
         critic_out = root / "app" / "critic" / "out" / f"{track_id}.json"
         if not critic_out.is_file():
-            raise ValueError(
-                f"No critic output at {critic_out.relative_to(root)} — run Critic first"
-            )
-        result = subprocess.run(
-            [sys.executable, str(root / "app" / "sampler" / "cli.py"), "--track", track_id],
-            capture_output=True, text=True, cwd=str(root),
-        )
-        return {
-            "ok": result.returncode == 0,
-            "track_id": track_id,
-            "stdout": result.stdout[-2000:],
-        }
+            results.append({"track_id": track_id, "ok": False,
+                            "error": "no critic record — run Critic first"})
+            continue
+        cmd = [sys.executable, str(root / "app" / "sampler" / "cli.py"), "--track", track_id]
+        if force:
+            cmd.append("--force")
+        r = subprocess.run(cmd, capture_output=True, text=True, cwd=str(root))
+        entry: dict[str, Any] = {"track_id": track_id, "ok": r.returncode == 0}
+        if r.returncode != 0:
+            entry["error"] = (r.stderr or r.stdout)[-300:]
+        results.append(entry)
 
-    tracks = release.get("tracks") or []
-    results = []
-    for track in tracks:
-        track_slug = track.get("slug") or ""
-        track_id = f"{artist_id}--{track_slug}"
-        r = subprocess.run(
-            [sys.executable, str(root / "app" / "sampler" / "cli.py"), "--track", track_id],
-            capture_output=True, text=True, cwd=str(root),
-        )
-        results.append({"track_id": track_id, "ok": r.returncode == 0})
-    return {"tracks": results}
+    return {"tracks": results, "total": sum(1 for r in results if r["ok"])}
 
 
 def enrich_landr(root: Path, slug: str) -> dict[str, Any]:
@@ -369,20 +433,66 @@ def enrich_landr(root: Path, slug: str) -> dict[str, Any]:
     return {"added": added, "total": len(added), "extra_links": extra_links, "landr_url": landr_url}
 
 
-def run_promoter(root: Path, slug: str) -> dict[str, Any]:
+def run_promoter(root: Path, slug: str, mode: str = "blurb", model: str = "default") -> dict[str, Any]:
+    """Run promoter blurb or bio for the release's artist (writes artist YAML)."""
+    from mrp.admin.critic_io import promoter_bin
+
     path, data, release = _load_release(root, slug)
     artist_id = release.get("artist_id") or ""
     if not artist_id:
         raise ValueError("No artist_id on this release")
+    if mode not in ("blurb", "bio"):
+        raise ValueError(f"Unknown promoter mode: {mode}")
 
+    cmd = [promoter_bin(root), mode, "--artist", artist_id, "--model", model]
+    if mode == "bio":
+        cmd.append("--force")
     result = subprocess.run(
-        ["promoter", "blurb", "--artist", artist_id],
-        capture_output=True, text=True, cwd=str(root / "app" / "promoter"),
+        cmd, capture_output=True, text=True, cwd=str(root / "app" / "promoter"),
     )
     ok = result.returncode == 0
     return {
         "ok": ok,
+        "mode": mode,
         "artist_id": artist_id,
+        "model": model,
         "stdout": result.stdout[-3000:],
         "stderr": result.stderr[-500:] if not ok else "",
     }
+
+
+# --- Build/Publish pipeline wrappers -----------------------------------------
+
+def pub_validate(root: Path, slug: str) -> dict[str, Any]:
+    from mrp.core.validate import validate_repository
+    return validate_repository(root, release=slug)
+
+
+def pub_build(root: Path, slug: str) -> dict[str, Any]:
+    from mrp.core.build import build_repository
+    return build_repository(root, release=slug)
+
+
+def pub_stage(root: Path, slug: str, target: str = "local-staging") -> dict[str, Any]:
+    from mrp.core.deploy import stage_build
+    return stage_build(root, target=target)
+
+
+def pub_verify(root: Path, slug: str, target: str = "staging") -> dict[str, Any]:
+    from mrp.core.verify import verify_target
+    return verify_target(root, target=target, release=slug)
+
+
+def pub_approve(root: Path, slug: str) -> dict[str, Any]:
+    from mrp.core.approve import approve
+    return approve(root, release=slug)
+
+
+def pub_publish(root: Path, slug: str) -> dict[str, Any]:
+    from mrp.core.publish import publish
+    return publish(root, release=slug)
+
+
+def pub_rollback(root: Path, slug: str) -> dict[str, Any]:
+    from mrp.core.rollback import rollback
+    return rollback(root, yes=True)
