@@ -32,6 +32,7 @@ def _validate_release_dict(data: dict) -> list[dict]:
 
 router = APIRouter()
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
+_templates.env.filters["fromjson"] = lambda s: json.loads(s) if s else {}
 
 PLATFORM_KEYS = [
     "spotify", "apple_music", "youtube", "youtube_music",

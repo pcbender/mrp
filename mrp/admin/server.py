@@ -16,19 +16,7 @@ from mrp.admin.routes import apps, jobs, releases, status
 _STATIC_DIR = Path(__file__).parent / "static"
 _TEMPLATES_DIR = Path(__file__).parent / "templates"
 
-import json as _json
-
 templates = Jinja2Templates(directory=str(_TEMPLATES_DIR))
-
-
-def _fromjson(s: str) -> object:
-    try:
-        return _json.loads(s) if s else {}
-    except (ValueError, TypeError):
-        return {}
-
-
-templates.env.filters["fromjson"] = _fromjson
 
 
 @asynccontextmanager
