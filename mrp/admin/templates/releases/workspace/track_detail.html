@@ -1,0 +1,126 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+{% set track_links = track.links or {} %}
+<p style="font-size:12px;margin-bottom:.75rem">
+  <a href="/releases/{{ slug }}/tracks" style="color:var(--primary);text-decoration:none">← All tracks</a>
+  <span style="color:var(--muted)"> / Track {{ track.number or '' }}: {{ track.title }}</span>
+</p>
+
+<form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}"
+      hx-target="#save-result"
+      hx-swap="innerHTML">
+
+  <div class="form-card">
+    <div class="form-body">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:.75rem">
+        <button type="submit" class="btn btn-primary">Save Track</button>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Track Title <span class="required">*</span></label>
+          <input type="text" name="track_title" value="{{ track.title or '' }}" required>
+        </div>
+        <div class="form-field">
+          <label>Slug <span class="required">*</span></label>
+          <input type="text" name="track_slug" value="{{ track.slug or '' }}" required>
+        </div>
+        <div class="form-field">
+          <label>Track Number</label>
+          <input type="number" name="track_number" value="{{ track.number or 1 }}" min="0">
+        </div>
+        <div class="form-field">
+          <label>ISRC</label>
+          <input type="text" name="track_isrc" value="{{ track.isrc or '' }}">
+        </div>
+        <div class="form-field">
+          <label>Duration</label>
+          <input type="text" name="track_duration" value="{{ track.duration or '' }}" placeholder="3:36">
+        </div>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" id="track_explicit" name="track_explicit" {% if track.explicit %}checked{% endif %}>
+        <label for="track_explicit">Explicit</label>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" id="track_instrumental" name="track_instrumental" {% if track.instrumental %}checked{% endif %}>
+        <label for="track_instrumental">Instrumental</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="form-body">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>Master File Path</label>
+          <input type="text" name="track_master_path" value="{{ track.master_path or '' }}"
+                 placeholder="{{ master_fallback or '/mnt/c/Masters/…' }}">
+          {% if not track.master_path and master_fallback %}
+          <span style="font-size:11px;color:var(--muted)">Falling back to release-level master: <code>{{ master_fallback }}</code></span>
+          {% endif %}
+        </div>
+        <div class="form-field full">
+          <label>Preview Audio (snippet)</label>
+          <input type="text" name="track_preview_audio" value="{{ track.preview_audio or '' }}">
+          {% if track.preview_audio %}
+          {% set audio_src = track.preview_audio | replace('site/public/', '') %}
+          <audio controls preload="none" style="width:100%;margin-top:.4rem"
+                 src="/pub/{{ audio_src.lstrip('/') }}"></audio>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="form-body">
+      <div class="form-field full">
+        <label>Style <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(Suno style prompt — used by Critic)</span></label>
+        <textarea name="track_style" rows="3">{{ track.style or '' }}</textarea>
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Lyrics (Formatted)</label>
+        <textarea name="track_lyrics_text" rows="10">{{ track.lyrics_text or '' }}</textarea>
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Lyrics Raw</label>
+        <textarea name="track_lyrics_raw" rows="6">{{ track.lyrics_raw or '' }}</textarea>
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Lyrics Source URL</label>
+        <input type="url" name="track_lyrics_source" value="{{ track.lyrics_source or '' }}">
+      </div>
+    </div>
+  </div>
+
+  <details class="form-card">
+    <summary>Track Streaming Links</summary>
+    <div class="form-body">
+      <div class="form-row">
+        {% for k in platform_keys %}
+        <div class="form-field">
+          <label>{{ k.replace('_', ' ').title() }}</label>
+          <input type="url" name="track_links_{{ k }}" value="{{ track_links[k] if track_links[k] else '' }}" placeholder="https://…">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+
+</form>
+
+<div class="form-card">
+  <div class="form-body">
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.5rem">
+      Generate the 30-second snippet from the most intense section of the master.
+      Requires a critic record for this track.
+    </p>
+    <div class="pipeline-steps">
+      <div id="pipeline-step-sampler" class="pipeline-step">
+        {% include "releases/_pipeline_step.html" %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

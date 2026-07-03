@@ -1,0 +1,51 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+<div class="table-wrap" style="border-top-left-radius:0">
+  <table class="track-matrix">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Track</th>
+        <th style="text-align:center">Metadata</th>
+        <th style="text-align:center">Lyrics</th>
+        <th style="text-align:center">Master</th>
+        <th style="text-align:center">Snippet</th>
+        <th style="text-align:center">Review</th>
+        <th style="text-align:center">Links</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in track_rows %}
+      <tr>
+        <td class="td-mono">{{ row.track.number or loop.index }}</td>
+        <td class="td-title">
+          <a href="/releases/{{ slug }}/tracks/{{ row.slug }}">{{ row.title }}</a>
+        </td>
+        <td class="cell-check" title="{{ row.fields_filled }}/{{ row.fields_total }} fields">
+          <span class="cell-dot {{ 'on' if row.metadata else 'off' }}"></span>
+        </td>
+        <td class="cell-check" title="{{ 'lyrics present' if row.lyrics else 'no lyrics' }}">
+          <span class="cell-dot {{ 'on' if row.lyrics else 'off' }}"></span>
+        </td>
+        <td class="cell-check" title="{{ row.master_path or 'no master path' }}">
+          <span class="cell-dot {{ 'on' if row.master else 'off' }}"></span>
+        </td>
+        <td class="cell-check" title="{{ row.track.preview_audio or 'no snippet' }}">
+          <span class="cell-dot {{ 'on' if row.snippet else 'off' }}"></span>
+        </td>
+        <td class="cell-check" title="{{ 'critic record exists' if row.review else 'not reviewed' }}">
+          <span class="cell-dot {{ 'on' if row.review else 'off' }}"></span>
+        </td>
+        <td style="text-align:center" class="td-mono">{{ row.links_count }}/{{ platform_keys | length }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="8" style="text-align:center;color:var(--muted);padding:1.5rem">No tracks.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p style="font-size:12px;color:var(--muted);margin-top:.5rem">
+  Click a track to edit its metadata, lyrics, master path, links, and snippet.
+</p>
+{% endblock %}

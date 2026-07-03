@@ -1,0 +1,9 @@
+{% for stage_id, stage_label in stages %}
+{% set st = stage_status.get(stage_id, {}) %}
+<a class="stage-tab {{ 'active' if stage_id == active_stage else '' }}"
+   href="/releases/{{ slug }}/{{ stage_id }}">
+  <span class="stage-dot {{ st.get('state', 'todo') }}"></span>
+  {{ stage_label }}
+  {% if st.get('detail') %}<small>{{ st.detail }}</small>{% endif %}
+</a>
+{% endfor %}

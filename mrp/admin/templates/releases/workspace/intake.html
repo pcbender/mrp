@@ -1,0 +1,38 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+{% set links = release.links or {} %}
+<div class="form-card" style="border-top-left-radius:0">
+  <div class="form-body">
+    <p style="font-size:12px;color:var(--muted);margin-bottom:1rem">
+      Import provenance for this release. New releases start from a Spotify link at
+      <a href="/releases/new" style="color:var(--primary)">New Release</a>.
+    </p>
+    <div style="display:flex;gap:1.25rem;align-items:flex-start;flex-wrap:wrap">
+      {% if release.cover_image %}
+      <img src="/pub/{{ release.cover_image | replace('site/public/', '') }}"
+           style="width:120px;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border)"
+           onerror="this.style.display='none'" alt="">
+      {% endif %}
+      <table style="width:auto;font-size:13px">
+        <tbody>
+          <tr><td class="td-mono" style="padding:.3rem .75rem .3rem 0">Spotify</td>
+              <td style="padding:.3rem 0">{% if links.spotify %}<a href="{{ links.spotify }}" target="_blank" rel="noopener" style="color:var(--primary)">{{ links.spotify }}</a>{% else %}<span style="color:var(--muted)">—</span>{% endif %}</td></tr>
+          <tr><td class="td-mono" style="padding:.3rem .75rem .3rem 0">UPC</td>
+              <td style="padding:.3rem 0">{{ release.upc or '—' }}</td></tr>
+          <tr><td class="td-mono" style="padding:.3rem .75rem .3rem 0">Catalog #</td>
+              <td style="padding:.3rem 0">{{ release.catalog_number or '—' }}</td></tr>
+          <tr><td class="td-mono" style="padding:.3rem .75rem .3rem 0">Release date</td>
+              <td style="padding:.3rem 0">{{ release.release_date or '—' }}</td></tr>
+          <tr><td class="td-mono" style="padding:.3rem .75rem .3rem 0">Model / type</td>
+              <td style="padding:.3rem 0">{{ release.model }} / {{ release.release_type }}</td></tr>
+          <tr><td class="td-mono" style="padding:.3rem .75rem .3rem 0">Record</td>
+              <td style="padding:.3rem 0"><code style="font-size:12px">{{ yaml_path }}</code></td></tr>
+          <tr><td class="td-mono" style="padding:.3rem .75rem .3rem 0">Last modified</td>
+              <td style="padding:.3rem 0">{{ yaml_mtime }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

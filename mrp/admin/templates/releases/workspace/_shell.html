@@ -1,0 +1,42 @@
+{% extends "_base.html" %}
+{% block page_title %} — {{ release.title }}{% endblock %}
+
+{% block content %}
+<div class="workspace-header">
+  {% if release.cover_image %}
+  <img class="workspace-cover" src="/pub/{{ release.cover_image | replace('site/public/', '') }}"
+       onerror="this.style.display='none'" alt="">
+  {% endif %}
+  <div class="workspace-title">
+    <h1 class="page-title">{{ release.title }}</h1>
+    <div class="workspace-meta">
+      {{ release.artist_id }} · {{ release.release_type }}
+      <span class="badge badge-{{ release.status }}">{{ release.status }}</span>
+    </div>
+  </div>
+  <div class="workspace-actions">
+    <button class="btn btn-secondary btn-sm"
+      hx-get="/releases/{{ slug }}/validate"
+      hx-target="#save-result"
+      hx-swap="innerHTML">Validate</button>
+    {% if release.status != 'live' %}
+    <form method="post" action="/releases/{{ slug }}/delete" style="display:inline"
+          onsubmit="return confirm('Delete {{ release.title }}? This cannot be undone.')">
+      <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+    </form>
+    {% endif %}
+    <a href="/releases" class="btn btn-secondary btn-sm">← List</a>
+  </div>
+</div>
+
+<nav id="stage-tabs"
+     hx-get="/releases/{{ slug }}/tabs"
+     hx-trigger="releaseSaved from:body"
+     hx-swap="innerHTML">
+  {% include "releases/workspace/_stage_tabs.html" %}
+</nav>
+
+<div id="save-result" style="min-height:1px;margin-bottom:.5rem"></div>
+
+{% block stage %}{% endblock %}
+{% endblock %}
