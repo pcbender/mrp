@@ -106,7 +106,8 @@
         "apple_music": {"type": ["string", "null"]},
         "youtube_music": {"type": ["string", "null"]},
         "bandcamp": {"type": ["string", "null"]},
-        "soundcloud": {"type": ["string", "null"]}
+        "soundcloud": {"type": ["string", "null"]},
+        "itunes_store": {"type": ["string", "null"]}
       }
     },
     "song": {

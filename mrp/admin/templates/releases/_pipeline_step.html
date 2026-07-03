@@ -28,6 +28,16 @@
   {% elif parsed.get('tracks') %}
     <span style="font-size:11px;color:var(--success)">{{ parsed.tracks | length }} track(s) processed</span>
   {% endif %}
+  {% if parsed.get('extra_links') %}
+    <span class="pipeline-extra-links" title="Links found but not added — no schema key for these platforms">
+      &#9888; {{ parsed.extra_links.keys() | join(', ') }}
+    </span>
+  {% endif %}
+  {% if parsed.get('total') %}
+    <a href="" onclick="location.reload();return false;"
+       style="font-size:11px;color:var(--primary);text-decoration:none;margin-left:.25rem"
+       title="Pipeline wrote new links to YAML — reload to see them in the form">&#8635; reload</a>
+  {% endif %}
   {% endif %}
 
 {% elif is_error %}

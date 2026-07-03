@@ -360,6 +360,10 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   font-size: 11px; color: var(--danger); font-family: monospace;
   flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
+.pipeline-extra-links {
+  font-size: 11px; color: var(--warning, #b45309); font-weight: 600;
+  cursor: help; white-space: nowrap;
+}
 
 /* ── Missing links ── */
 .missing-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }

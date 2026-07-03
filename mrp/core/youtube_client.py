@@ -50,6 +50,23 @@ class YouTubeClient:
             return response.json()
         return {}
 
+    def search_by_isrc(self, isrc: str) -> dict[str, Any] | None:
+        """Return the first music video matching the ISRC, or None if not found."""
+        data = self._get("search", {
+            "part": "id,snippet",
+            "q": f'"{isrc}"',
+            "maxResults": 1,
+            "type": "video",
+            "videoCategoryId": "10",
+        })
+        items = data.get("items") or []
+        if not items:
+            return None
+        item = items[0]
+        video_id = (item.get("id") or {}).get("videoId")
+        title = (item.get("snippet") or {}).get("title")
+        return {"videoId": video_id, "title": title} if video_id else None
+
     def get_uploads_playlist_id(self, channel_id: str) -> str | None:
         data = self._get("channels", {"part": "contentDetails", "id": channel_id})
         items = data.get("items") or []

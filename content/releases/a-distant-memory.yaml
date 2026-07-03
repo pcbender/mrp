@@ -16,13 +16,14 @@ release:
     spotify: https://open.spotify.com/album/5jLbTklHDM04nHOUMdVNf4
     apple_music: https://music.apple.com/us/album/a-distant-memory-feat-maricopa-players-single/6784058751
     youtube: null
-    youtube_music: null
-    tidal: null
-    amazon_music: null
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_kqcGk2RL9xXgRCx5FCzdZHTPJ1UA0mxs4
+    tidal: http://www.tidal.com/album/536638516
+    amazon_music: https://music.amazon.com/albums/B0H6KX7DMC
     deezer: null
     soundcloud: null
     bandcamp: null
     pandora: null
+    itunes_store: https://music.apple.com/us/album/6784058751?app=itunes
   song:
     number: 1
     title: A Distant Memory
@@ -43,6 +44,7 @@ release:
       soundcloud: null
       bandcamp: null
       pandora: null
+      itunes_store: null
     style: avant-garde experimental jazz, experimental, clean/modern jazz fusion
     lyrics_raw: '[Adlib]
 
