@@ -1,0 +1,20 @@
+{% macro ws_row(step, label, job) %}
+{% with ctx2 = ws_ctx(slug, step, label, job) %}
+<span class="pipeline-step-label" style="flex:0 0 auto">{{ label }}</span>
+<div id="{{ ctx2.dom_id }}" style="flex:1;display:flex;align-items:center;gap:.75rem">
+  {% with step=ctx2.step, step_label=ctx2.step_label, dom_id=ctx2.dom_id, settings_sel=ctx2.settings_sel, job=ctx2.job %}
+  {% include "releases/workspace/_ws_job.html" %}
+  {% endwith %}
+</div>
+{% endwith %}
+{% endmacro %}
+
+{% macro ws_cell(step, job) %}
+{% with ctx2 = ws_ctx(slug, step, '', job) %}
+<div id="{{ ctx2.dom_id }}" style="display:flex;align-items:center;gap:.5rem">
+  {% with step=ctx2.step, step_label=ctx2.step_label, dom_id=ctx2.dom_id, settings_sel=ctx2.settings_sel, job=ctx2.job %}
+  {% include "releases/workspace/_ws_job.html" %}
+  {% endwith %}
+</div>
+{% endwith %}
+{% endmacro %}
