@@ -19,6 +19,16 @@
 {% elif is_done %}
   <span class="badge badge-live pipeline-step-status">done</span>
   <span class="pipeline-step-time">{{ job.completed_at[:10] if job.completed_at else '' }}</span>
+  {% if job.output %}
+  {% set parsed = job.output | fromjson %}
+  {% if parsed.get('total') == 0 %}
+    <span style="font-size:11px;color:var(--muted)">nothing new</span>
+  {% elif parsed.get('total') %}
+    <span style="font-size:11px;color:var(--success)">+{{ parsed.total }} added</span>
+  {% elif parsed.get('tracks') %}
+    <span style="font-size:11px;color:var(--success)">{{ parsed.tracks | length }} track(s) processed</span>
+  {% endif %}
+  {% endif %}
 
 {% elif is_error %}
   <span class="badge badge-failed pipeline-step-status">failed</span>
