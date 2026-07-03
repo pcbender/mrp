@@ -289,13 +289,28 @@ async def pipeline_launch(request: Request, slug: str, step: str):
         return HTMLResponse(f'<div class="flash flash-error">Unknown pipeline step: {step}</div>', status_code=400)
     label, fn = _PIPELINE_MAP[step]
     root = get_repo_root()
-    job_id = job_runner.launch(f"{slug}/{step}", fn, root, slug)
+
+    kwargs: dict = {}
+    if step == "critic":
+        form = await request.form()
+        kwargs["model"] = str(form.get("critic_model", "dev"))
+        kwargs["persona"] = str(form.get("critic_persona", "default"))
+        kwargs["target"] = str(form.get("critic_target", "blurb"))
+        tier = form.get("critic_target_tier", "")
+        if tier:
+            try:
+                kwargs["target_tier"] = int(str(tier))
+            except ValueError:
+                pass
+
+    job_id = job_runner.launch(f"{slug}/{step}", fn, root, slug, **kwargs)
     job = db.get_job(job_id)
     return _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
         "slug": slug,
         "step": step,
         "step_label": label,
         "job": job,
+        "critic_settings": kwargs if step == "critic" else {},
     })
 
 
@@ -307,11 +322,23 @@ async def pipeline_poll(request: Request, slug: str, step: str, job_id: str):
     job = db.get_job(job_id)
     if job is None:
         return HTMLResponse('<div class="flash flash-error">Job not found</div>', status_code=404)
+    critic_settings: dict = {}
+    if step == "critic" and job.get("output"):
+        try:
+            out = json.loads(job["output"])
+            critic_settings = {
+                "critic_model":   out.get("model", "dev"),
+                "critic_persona": out.get("persona", "default"),
+                "critic_target":  out.get("target", "blurb"),
+            }
+        except (ValueError, TypeError):
+            pass
     return _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
         "slug": slug,
         "step": step,
         "step_label": label,
         "job": job,
+        "critic_settings": critic_settings,
     })
 
 

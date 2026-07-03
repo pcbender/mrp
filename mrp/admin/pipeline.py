@@ -161,7 +161,14 @@ def enrich_youtube(root: Path, slug: str) -> dict[str, Any]:
     return {"added": added, "total": len(added)}
 
 
-def run_critic(root: Path, slug: str) -> dict[str, Any]:
+def run_critic(
+    root: Path,
+    slug: str,
+    model: str = "dev",
+    persona: str = "default",
+    target: str = "blurb",
+    target_tier: int | None = None,
+) -> dict[str, Any]:
     path, data, release = _load_release(root, slug)
 
     automation = release.get("automation") or {}
@@ -173,19 +180,33 @@ def run_critic(root: Path, slug: str) -> dict[str, Any]:
 
     critic_cwd = root / "app" / "critic"
 
+    def _args(mp: str, track_slug: str) -> list[str]:
+        cmd = [
+            "critic", "review", str(mp),
+            "--release-slug", slug,
+            "--track-slug", track_slug,
+            "--model", model,
+            "--persona", persona,
+            "--target", target,
+        ]
+        if target_tier is not None:
+            cmd += ["--target-tier", str(target_tier)]
+        return cmd
+
     if release.get("model") == "song":
         song = release.get("song") or {}
         track_slug = song.get("slug") or slug
         result = subprocess.run(
-            ["critic", "review", str(master_path),
-             "--release-slug", slug,
-             "--track-slug", track_slug],
+            _args(str(master_path), track_slug),
             capture_output=True, text=True, cwd=str(critic_cwd),
         )
         ok = result.returncode == 0
         return {
             "ok": ok,
             "track_slug": track_slug,
+            "model": model,
+            "persona": persona,
+            "target": target,
             "stdout": result.stdout[-2000:],
             "stderr": result.stderr[-500:] if not ok else "",
         }
@@ -198,13 +219,11 @@ def run_critic(root: Path, slug: str) -> dict[str, Any]:
         track_slug = track.get("slug") or f"track-{i + 1}"
         mp = raw_paths[i] if i < len(raw_paths) else raw_paths[0]
         r = subprocess.run(
-            ["critic", "review", str(mp),
-             "--release-slug", slug,
-             "--track-slug", track_slug],
+            _args(str(mp), track_slug),
             capture_output=True, text=True, cwd=str(critic_cwd),
         )
         results.append({"track_slug": track_slug, "ok": r.returncode == 0})
-    return {"tracks": results, "total": len(tracks)}
+    return {"tracks": results, "total": len(tracks), "model": model, "persona": persona, "target": target}
 
 
 def run_sampler(root: Path, slug: str) -> dict[str, Any]:

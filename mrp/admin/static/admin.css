@@ -355,6 +355,7 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .pipeline-step-label { font-weight: 600; flex: 0 0 200px; }
 .pipeline-step-status { display: flex; align-items: center; gap: .4rem; flex: 0 0 auto; }
 .pipeline-step-time { font-size: 11px; color: var(--muted); }
+.pipeline-select { width: auto; padding: .2rem .4rem; font-size: 12px; }
 .pipeline-step-error {
   font-size: 11px; color: var(--danger); font-family: monospace;
   flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;

@@ -325,6 +325,7 @@
         {% set step = ps.id %}
         {% set step_label = ps.label %}
         {% set job = pipeline_status.get(ps.id) %}
+        {% set critic_settings = {} %}
         {% include "releases/_pipeline_step.html" %}
         {% endfor %}
       </div>

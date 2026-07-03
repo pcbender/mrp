@@ -36,7 +36,33 @@
         hx-post="/releases/{{ slug }}/pipeline/{{ step }}"
         hx-target="#pipeline-step-{{ step }}"
         hx-swap="outerHTML"
-        style="margin-left:auto;flex-shrink:0">
+        style="margin-left:auto;flex-shrink:0;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap">
+
+    {% if step == 'critic' %}
+    {% set cs = critic_settings or {} %}
+    <select name="critic_model" class="pipeline-select" title="AI model">
+      {% for m, mlabel in [('dev','dev — Haiku/Flash'), ('default','default — Sonnet/Pro'), ('hero','hero — Opus/Flash')] %}
+      <option value="{{ m }}" {% if (cs.get('critic_model') or 'dev') == m %}selected{% endif %}>{{ mlabel }}</option>
+      {% endfor %}
+    </select>
+    <select name="critic_persona" class="pipeline-select" title="Critic persona">
+      {% for p in ['default', 'pundit', 'liner'] %}
+      <option value="{{ p }}" {% if (cs.get('critic_persona') or 'default') == p %}selected{% endif %}>{{ p }}</option>
+      {% endfor %}
+    </select>
+    <select name="critic_target" class="pipeline-select" title="Output target">
+      {% for t in ['blurb', 'liner'] %}
+      <option value="{{ t }}" {% if (cs.get('critic_target') or 'blurb') == t %}selected{% endif %}>{{ t }}</option>
+      {% endfor %}
+    </select>
+    <select name="critic_target_tier" class="pipeline-select" title="Target tier (optional)">
+      <option value="">tier: auto</option>
+      {% for tier in [2, 3, 4, 5] %}
+      <option value="{{ tier }}">tier {{ tier }}</option>
+      {% endfor %}
+    </select>
+    {% endif %}
+
     <button type="submit" class="btn btn-secondary btn-sm">{{ 'Re-run' if job else 'Run' }}</button>
   </form>
   {% endif %}
