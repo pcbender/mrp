@@ -1,6 +1,6 @@
 ---
 track_id: 4castle--to-be-all
-impression: "This track has a polished and expansive 80s pop-rock texture, creating an atmosphere that is both dreamlike and anthemic. The energy builds from a serene, relaxed feel in the verses into a driving, confident groove for the choruses, propelled by a punchy, gated drum sound. The production is clean and wide, skillfully balancing a dense arrangement of synths, clean electric guitars, and prominent drums so that each element occupies its own space. A defining quality is the powerful dynamic lift into the chorus, where the layered vocals create a massive, uplifting hook that feels like soaring through an open sky."
+summary: "The lyric at the center of this one does the heavy lifting: 'The lake is still the lake."
 verdict_rank: 5
 verdict_label: "standout"
 ---
