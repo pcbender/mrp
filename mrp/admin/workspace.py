@@ -1,7 +1,8 @@
 """Shared workspace helpers: stage registry, completion indicators, form utilities.
 
 The release workspace presents each release as a set of workflow-stage screens
-(intake → details → links → tracks → critic → promoter → publish → monitoring).
+(intake → details → links → tracks → critic → sampler → promoter → publish →
+monitoring).
 This module owns the stage registry and the cheap heuristics that drive the
 per-stage completion dots in the workspace header.
 """
@@ -28,6 +29,7 @@ STAGES = [
     ("links",      "Links"),
     ("tracks",     "Tracks"),
     ("critic",     "Critic"),
+    ("sampler",    "Sampler"),
     ("promoter",   "Promoter"),
     ("publish",    "Build / Publish"),
     ("monitoring", "Monitoring"),
@@ -175,6 +177,33 @@ def _critic_status(release: dict, root: Path) -> dict:
     return {"state": state, "detail": f"{reviewed}/{len(rows)}"}
 
 
+def _promoter_status(root: Path, release: dict) -> dict:
+    """Done when the artist has a promo blurb and a human-reviewed bio."""
+    import yaml
+
+    artist_path = root / "content" / "artists" / f"{release.get('artist_id') or ''}.yaml"
+    if not artist_path.is_file():
+        return {"state": "todo", "detail": "no artist"}
+    artist = (yaml.safe_load(artist_path.read_text()) or {}).get("artist") or {}
+    blurb = bool(artist.get("promo_blurb"))
+    bio = bool(artist.get("bio_short") or artist.get("bio_long"))
+    reviewed = artist.get("bio_auto_generated") is False
+    if blurb and bio and reviewed:
+        return {"state": "done", "detail": ""}
+    if blurb or bio:
+        return {"state": "partial", "detail": "unreviewed" if not reviewed else "incomplete"}
+    return {"state": "todo", "detail": ""}
+
+
+def _sampler_status(release: dict) -> dict:
+    units = track_units(release)
+    if not units:
+        return {"state": "todo", "detail": "0 tracks"}
+    cut = sum(1 for u in units if u["track"].get("preview_audio"))
+    state = "done" if cut == len(units) else ("partial" if cut else "todo")
+    return {"state": state, "detail": f"{cut}/{len(units)}"}
+
+
 def _publish_status(release: dict) -> dict:
     status = release.get("status") or "draft"
     if status == "live":
@@ -186,18 +215,14 @@ def _publish_status(release: dict) -> dict:
 
 def stage_statuses(root: Path, slug: str, release: dict) -> dict[str, dict]:
     """Compute {stage_id: {"state": done|partial|todo, "detail": str}} for the header."""
-    from mrp.admin import db
-
-    promoter_job = db.get_latest_job_by_command(f"{slug}/promoter")
-    promoter_state = "done" if promoter_job and promoter_job.get("status") == "done" else "todo"
-
     return {
         "intake": {"state": "done", "detail": ""},
         "details": _details_status(release),
         "links": _links_status(release),
         "tracks": _tracks_status(release, root),
         "critic": _critic_status(release, root),
-        "promoter": {"state": promoter_state, "detail": ""},
+        "sampler": _sampler_status(release),
+        "promoter": _promoter_status(root, release),
         "publish": _publish_status(release),
         "monitoring": {"state": "todo", "detail": ""},
     }

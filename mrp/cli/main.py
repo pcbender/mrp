@@ -86,7 +86,10 @@ def build_parser() -> argparse.ArgumentParser:
     add_global_options(status_parser, suppress_defaults=True)
     add_common_command_options(status_parser, "status")
 
-    publish_parser = subparsers.add_parser("publish", help="Publish an approved build to local production.")
+    publish_parser = subparsers.add_parser(
+        "publish",
+        help="Publish an approved build to local production; --target also pushes it to a remote target.",
+    )
     add_global_options(publish_parser, suppress_defaults=True)
     add_common_command_options(publish_parser, "publish")
 
@@ -401,6 +404,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             release=args.release,
             build=args.build,
             auto_approve=bool(getattr(args, "auto_approve", False)),
+            remote_target=getattr(args, "target", None),
         )
     elif args.command == "rollback":
         result = rollback(args.repo, to=args.to, yes=bool(getattr(args, "yes", False)))

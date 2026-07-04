@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 
 import yaml
 
-from mrp.core.deploy import load_targets, validate_target
+from mrp.core.deploy import load_targets, validate_rsync_target, validate_target
 from mrp.core.output import path_from_report
 
 
@@ -18,18 +18,12 @@ PLACEHOLDER_PATTERNS = ["TODO", "TBD", "FIXME", "lorem ipsum", "example.com", "I
 TEXT_EXTENSIONS = {".html", ".css", ".js", ".json", ".xml", ".txt", ".php"}
 EXCLUDED_MIGRATION_PATHS = ["cart", "checkout", "my-account", "account", "payment", "shop"]
 BASELINE_V01_ROUTES = {"/", "/about-us/", "/artists/", "/contact/", "/posts/", "/releases/"}
-CLONE_KNOWN_MARKERS = [
-    {
-        "route": "/artists/pcbender/",
-        "marker": "mystique",
-        "description": "PCBender artist bio",
-    },
-    {
-        "route": "/artists/pcbender/circuiting/",
-        "marker": "Circuiting is not just an album",
-        "description": "Circuiting release page",
-    },
-]
+# WP-migration parity markers. The original entries asserted fixed prose on
+# /artists/pcbender/ and /artists/pcbender/circuiting/, but those pages are
+# native now and their copy is editorially dynamic (promoter blurbs, critic
+# reviews), so pinned text is guaranteed to drift. Add entries only for true
+# clone passthrough pages whose content must never change.
+CLONE_KNOWN_MARKERS: list[dict[str, str]] = []
 
 
 def verify_target(repo: str | Path, target: str | None = None, release: str | None = None) -> dict[str, Any]:
@@ -55,15 +49,39 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
         add_error(result, "config", f"Unknown verify target: {target_name}")
         return finish(root, generated_at, result)
 
-    safety = validate_target(root, target_name, targets[target_name])
-    result["target_path"] = safety.get("target_path")
-    result["environment"] = safety.get("environment")
-    if safety["status"] != "passed":
-        add_error(result, "safety", safety["message"])
-        return finish(root, generated_at, result)
-
-    target_path = path_from_report(root, safety["target_path"])
+    target_config = targets[target_name]
     deployment = latest_deployment(root, target_name)
+
+    if target_config.get("type") == "rsync":
+        # A remote filesystem cannot be walked, so verify the remote marker
+        # over SSH, then run the content checks against the exact build that
+        # was rsynced to the target.
+        safety = validate_rsync_target(target_name, target_config)
+        result["target_path"] = safety.get("target_path")
+        result["environment"] = safety.get("environment")
+        if safety["status"] != "passed":
+            add_error(result, "safety", safety["message"])
+            return finish(root, generated_at, result)
+        if not deployment:
+            add_error(result, "deployment",
+                      f"No successful deployment found for {target_name}; run the stage step first.")
+            return finish(root, generated_at, result)
+        if not deployment.get("build_path"):
+            add_error(result, "deployment", "Deployment report does not identify a build to verify.")
+            return finish(root, generated_at, result)
+        target_path = path_from_report(root, deployment["build_path"])
+        if not target_path.is_dir():
+            add_error(result, "deployment", f"Deployed build no longer exists: {target_path}")
+            return finish(root, generated_at, result)
+    else:
+        safety = validate_target(root, target_name, target_config)
+        result["target_path"] = safety.get("target_path")
+        result["environment"] = safety.get("environment")
+        if safety["status"] != "passed":
+            add_error(result, "safety", safety["message"])
+            return finish(root, generated_at, result)
+        target_path = path_from_report(root, safety["target_path"])
+
     result["build_id"] = deployment.get("build_id")
     result["build_report_path"] = deployment.get("build_report_path")
     result["deployment_report_path"] = deployment.get("report_path")
