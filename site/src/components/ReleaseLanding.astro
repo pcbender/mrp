@@ -25,7 +25,6 @@ const songCredits = Object.fromEntries(
 const creditSource = { ...(release.credits || {}), ...songCredits };
 const hasCredits = Boolean(creditSource.songwriter || creditSource.producer || creditSource.mastering);
 
-const isAlbum = Boolean(release.tracks?.length);
 const reviewId = release.song?.slug
   ? `${release.artist_id}--${release.song.slug}`          // single: track review
   : `album--${release.artist_id}--${release.slug}`;       // album / EP: album review
@@ -71,23 +70,9 @@ function cleanMarkdownText(value: string) {
       <p class="eyebrow">{release.release_type}</p>
       <h2>{release.title}</h2>
       {!reviewEntry && copyBlocks.map((block) => <p>{block}</p>)}
-      {reviewEntry && (
+      {reviewEntry && ReviewContent && (
         <div class="track-review">
-          {isAlbum ? (
-            ReviewContent && <div class="review-body"><ReviewContent /></div>
-          ) : (
-            <>
-              {reviewEntry.data.impression && (
-                <p class="impression">{reviewEntry.data.impression}</p>
-              )}
-              {ReviewContent && (
-                <details class="review-more">
-                  <summary>More</summary>
-                  <div class="review-body"><ReviewContent /></div>
-                </details>
-              )}
-            </>
-          )}
+          <div class="review-body"><ReviewContent /></div>
         </div>
       )}
       {release.song?.preview_audio && (
@@ -232,14 +217,6 @@ function cleanMarkdownText(value: string) {
     text-align: left;
   }
 
-  .impression {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-    font-style: italic;
-    line-height: 1.7;
-  }
-
   .review-body {
     font-size: 1rem;
     line-height: 1.75;
@@ -247,28 +224,6 @@ function cleanMarkdownText(value: string) {
 
   .review-body :global(p) {
     margin: 0 0 1em;
-  }
-
-  .review-more {
-    width: 100%;
-  }
-
-  .review-more summary {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--muted);
-    list-style: none;
-    user-select: none;
-  }
-
-  .review-more summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .review-more[open] summary {
-    margin-bottom: 12px;
   }
 
   .track-list {
