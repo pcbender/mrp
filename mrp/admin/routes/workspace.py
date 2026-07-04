@@ -127,13 +127,6 @@ async def details_save(request: Request, slug: str):
                     copyright_[k] = None
         rel["copyright"] = copyright_
 
-    credits = dict(rel.get("credits") or {})
-    for k in ["primary_artist", "songwriter", "lyrics", "producer", "mastering"]:
-        field = f"credits_{k}"
-        if field in form:
-            credits[k] = str_or_none(form[field])
-    rel["credits"] = credits
-
     seo = dict(rel.get("seo") or {})
     if "seo_title" in form:
         seo["title"] = form["seo_title"] or ""
@@ -561,6 +554,15 @@ async def track_save(request: Request, slug: str, track_slug: str):
         if field in form:
             links[k] = str_or_none(form[field])
     track["links"] = links
+
+    if any(f"track_credits_{k}" in form for k in
+           ["primary_artist", "songwriter", "lyrics", "producer", "mastering"]):
+        credits = dict(track.get("credits") or {})
+        for k in ["primary_artist", "songwriter", "lyrics", "producer", "mastering"]:
+            field = f"track_credits_{k}"
+            if field in form:
+                credits[k] = str_or_none(form[field])
+        track["credits"] = credits
 
     errors = validate_release_dict(data)
     if errors:

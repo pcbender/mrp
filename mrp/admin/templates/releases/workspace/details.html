@@ -1,7 +1,6 @@
 {% extends "releases/workspace/_shell.html" %}
 
 {% block stage %}
-{% set credits = release.credits or {} %}
 {% set seo = release.seo or {} %}
 {% set automation = release.automation or {} %}
 {% set copyright = release.copyright or {} %}
@@ -122,20 +121,6 @@
       </div>
     </div>
   </div>
-
-  <details class="form-card">
-    <summary>Credits</summary>
-    <div class="form-body">
-      <div class="form-row">
-        {% for k in ['primary_artist', 'songwriter', 'lyrics', 'producer', 'mastering'] %}
-        <div class="form-field">
-          <label>{{ k.replace('_', ' ').title() }}</label>
-          <input type="text" name="credits_{{ k }}" value="{{ credits[k] if credits[k] else '' }}">
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </details>
 
   <details class="form-card">
     <summary>SEO</summary>

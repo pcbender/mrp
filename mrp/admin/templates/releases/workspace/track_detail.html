@@ -95,6 +95,21 @@
   </div>
 
   <details class="form-card">
+    <summary>Credits</summary>
+    <div class="form-body">
+      {% set track_credits = track.credits or {} %}
+      <div class="form-row">
+        {% for k in ['primary_artist', 'songwriter', 'lyrics', 'producer', 'mastering'] %}
+        <div class="form-field">
+          <label>{{ k.replace('_', ' ').title() }}</label>
+          <input type="text" name="track_credits_{{ k }}" value="{{ track_credits[k] if track_credits[k] else '' }}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+
+  <details class="form-card">
     <summary>Track Streaming Links</summary>
     <div class="form-body">
       <div class="form-row">

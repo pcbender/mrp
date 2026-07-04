@@ -140,6 +140,7 @@
         "lyrics_source": {"type": ["string", "null"]},
         "style": {"type": ["string", "null"]},
         "master_path": {"type": ["string", "null"]},
+        "credits": {"$ref": "#/$defs/credits"},
         "links": {"$ref": "#/$defs/links"},
         "hints": {
           "type": "object",
