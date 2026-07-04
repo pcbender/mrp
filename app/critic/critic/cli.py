@@ -20,7 +20,15 @@ from .audit import _main as _audit_main
 from .eval import approve as eval_approve, calibrate as eval_calibrate
 from .pipeline import show as pipeline_show
 from .batch import run_batch, write_report
-from .catalog import get_artist_name, get_lyrics, get_persona, get_release_meta
+from .catalog import (
+    get_artist_name,
+    get_hints,
+    get_lyrics,
+    get_lyrics_raw,
+    get_persona,
+    get_release_meta,
+    get_style,
+)
 from .config import OUT_DIR, critic_model_for, impression_model_for
 from .writeback import cmd_writeback as _cmd_writeback
 from .dsp import extract_dsp
@@ -47,6 +55,9 @@ def cmd_review(args: argparse.Namespace) -> None:
     persona = get_persona(artist_slug) if artist_slug else ""
     artist_name = get_artist_name(artist_slug) if artist_slug else artist_slug
     finding.lyrics = lyrics
+    finding.lyrics_raw = get_lyrics_raw(args.track_slug, release_slug=args.release_slug)
+    finding.style = get_style(args.track_slug, release_slug=args.release_slug)
+    finding.hints = get_hints(args.track_slug, release_slug=args.release_slug)
     finding.persona = persona
 
     if not lyrics:

@@ -75,7 +75,7 @@ def _build_user_message(
         "=== ARTIST PERSONA ===",
         finding.persona or "(none)",
         "",
-        "=== LYRICS ===",
+        "=== LYRICS (published text — quote from here) ===",
         finding.lyrics or "(instrumental — no lyrics)",
         "",
         "=== HARD FACTS ===",
@@ -83,6 +83,21 @@ def _build_user_message(
         f"Duration: {duration_str}  |  LUFS: {hf.lufs} dB  |  Detection: {conf_str}",
         f"Structure ({len(hf.sections)} sections): {sections_str}",
     ]
+
+    if finding.style:
+        parts += [
+            "",
+            "=== STYLE PROMPT (the production brief the track was generated to) ===",
+            finding.style,
+        ]
+
+    if finding.lyrics_raw:
+        parts += [
+            "",
+            "=== RAW LYRICS (generation script — bracketed tags are production",
+            "directions, not sung text) ===",
+            finding.lyrics_raw,
+        ]
 
     if finding.hints:
         hint_lines = [f"{k}: {v}" for k, v in finding.hints.items()]

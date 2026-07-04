@@ -27,6 +27,22 @@ Rules:
   or "at a driving pace" rather than stating the specific value as fact.
   Never omit the review — only hedge the specific uncertain claim.
 
+Using STYLE PROMPT and RAW LYRICS (when provided):
+- These tracks are produced with the Suno generation engine. The STYLE PROMPT
+  is the genre/production brief the track was generated to; the RAW LYRICS are
+  the generation script that drove it.
+- In RAW LYRICS, square-bracket tags like `[Verse]`, `[Chorus | Fullband enters]`,
+  `[Bridge]`, `[Instrumental break]` are structural and production directions to
+  the engine, not sung text. Read them as the intended arrangement: section
+  order, where the band drops in or out, dynamic shifts, solos.
+- Use both as statements of intent: they tell you what the track is trying to
+  be, so you can hear whether the audio delivers it. They sharpen your read on
+  structure and arrangement claims.
+- Never quote bracketed tags or style-prompt phrasing as if they were lyrics.
+  Quote only from the LYRICS section, which is the published text.
+- Never mention Suno, prompts, scripts, or that the track was generated. The
+  review reads as a listen, not a production audit.
+
 Using HINTS (when provided):
 - HINTS are facts supplied directly by the artist or label. Treat them as
   ground truth. They override anything you might infer from the impression,

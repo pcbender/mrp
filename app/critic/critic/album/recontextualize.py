@@ -78,9 +78,11 @@ def _build_user_message(
         pos_label = "opener" if i == 1 else ("closer" if i == n else f"track {i} of {n}")
         hints = finding.get("hints") or {}
         hint_str = ", ".join(f"{k}={v}" for k, v in hints.items())
+        style = (finding.get("style") or "").strip()
         parts += [
             f"[{i}/{n}] {title}  ({pos_label}, ~{bpm} BPM, standalone rank {rank})",
             f"track_id: {track_id}",
+            *([ f"style: {style}" ] if style else []),
             *([ f"hints: {hint_str}" ] if hint_str else []),
             review_text,
             "",
