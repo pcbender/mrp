@@ -100,7 +100,7 @@ async def details_save(request: Request, slug: str):
     form = dict(await request.form())
 
     for key in ["title", "artist_id", "status", "release_date", "label", "publisher",
-                "upc", "catalog_number", "cover_image", "hero_image", "summary",
+                "upc", "catalog_number", "language", "cover_image", "summary",
                 "description"]:
         if key in form:
             rel[key] = str_or_none(form[key])
@@ -108,6 +108,24 @@ async def details_save(request: Request, slug: str):
     for key in ["title", "artist_id", "cover_image"]:
         if not rel.get(key) and key in form:
             rel[key] = form[key]
+
+    # Copyright block (LANDR-tracked ownership/year fields)
+    if any(f"copyright_{k}" in form for k in
+           ["composition_owner", "composition_year", "recording_owner", "recording_year"]):
+        copyright_ = dict(rel.get("copyright") or {})
+        for k in ["composition_owner", "recording_owner"]:
+            field = f"copyright_{k}"
+            if field in form:
+                copyright_[k] = str_or_none(form[field])
+        for k in ["composition_year", "recording_year"]:
+            field = f"copyright_{k}"
+            if field in form:
+                raw = str(form[field]).strip()
+                try:
+                    copyright_[k] = int(raw) if raw else None
+                except ValueError:
+                    copyright_[k] = None
+        rel["copyright"] = copyright_
 
     credits = dict(rel.get("credits") or {})
     for k in ["primary_artist", "songwriter", "lyrics", "producer", "mastering"]:
@@ -131,6 +149,59 @@ async def details_save(request: Request, slug: str):
         return _validation_errors(request, errors)
     path.write_text(serialize_structured_record(path, data))
     return _save_ok()
+
+
+_HERO_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+
+
+@router.post("/releases/{slug}/hero-image", response_class=HTMLResponse)
+async def hero_image_upload(request: Request, slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.exists():
+        return _not_found(slug)
+
+    form = await request.form()
+    upload = form.get("hero_file")
+    if upload is None or not getattr(upload, "filename", ""):
+        return HTMLResponse('<div class="flash flash-error">No file selected.</div>', status_code=400)
+
+    ext = Path(upload.filename).suffix.lower()
+    if ext == ".jpeg":
+        ext = ".jpg"
+    if ext not in _HERO_EXTENSIONS:
+        return HTMLResponse(
+            f'<div class="flash flash-error">Unsupported image type: {ext or "(none)"} — use jpg, png, or webp.</div>',
+            status_code=400,
+        )
+
+    contents = await upload.read()
+    if not contents:
+        return HTMLResponse('<div class="flash flash-error">Empty file.</div>', status_code=400)
+
+    dest_dir = root / "site" / "public" / "assets" / "releases" / slug
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    # Remove any previous hero with a different extension so only one remains
+    for old_ext in _HERO_EXTENSIONS:
+        old = dest_dir / f"hero{old_ext}"
+        if old.exists() and old_ext != ext:
+            old.unlink()
+    dest = dest_dir / f"hero{ext}"
+    dest.write_bytes(contents)
+
+    data = load_structured_record(path)
+    rel = data.get("release") or {}
+    rel["hero_image"] = str(dest.relative_to(root))
+    errors = validate_release_dict(data)
+    if errors:
+        return _validation_errors(request, errors)
+    path.write_text(serialize_structured_record(path, data))
+
+    response = HTMLResponse(
+        f'<div class="flash flash-ok">Hero image uploaded ({len(contents) // 1024} KB) → <code>{rel["hero_image"]}</code></div>'
+    )
+    response.headers["HX-Trigger"] = "releaseSaved"
+    return response
 
 
 @router.post("/releases/{slug}/links/{platform}", response_class=HTMLResponse)

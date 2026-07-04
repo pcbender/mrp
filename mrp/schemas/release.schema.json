@@ -38,6 +38,17 @@
         "publisher": {"type": ["string", "null"]},
         "upc": {"type": ["string", "null"]},
         "catalog_number": {"type": ["string", "null"]},
+        "language": {"type": ["string", "null"]},
+        "copyright": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "composition_owner": {"type": ["string", "null"]},
+            "composition_year": {"type": ["integer", "null"]},
+            "recording_owner": {"type": ["string", "null"]},
+            "recording_year": {"type": ["integer", "null"]}
+          }
+        },
         "cover_image": {"type": "string", "minLength": 1},
         "hero_image": {"type": ["string", "null"]},
         "summary": {"type": ["string", "null"]},
