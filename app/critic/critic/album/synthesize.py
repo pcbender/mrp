@@ -62,7 +62,10 @@ def _build_user_message(record: AlbumRecord, findings: list[dict], target: str, 
     _tracks = get_release_tracks(record.release_slug) or []
     _title_map = {t["slug"]: t.get("title", t["slug"]) for t in _tracks}
 
-    # Per-track table for the model
+    # Per-track blocks for the model: full standalone review plus the creative
+    # context (style, hints, lyrics) so the album read works from what each
+    # track is, not a one-line excerpt.
+    n = len(record.tracklist)
     track_lines = []
     for i, (tid, bpm, key, mood, finding) in enumerate(zip(
         record.tracklist,
@@ -75,11 +78,20 @@ def _build_user_message(record: AlbumRecord, findings: list[dict], target: str, 
         label = _TIER_LABELS.get(rank, "")
         slug = tid.split("--", 1)[-1]
         track_title = _title_map.get(slug, slug)
-        excerpt = finding["review"]["review_text"][:120].rstrip() + "…"
-        track_lines.append(
-            f"  {i}. {track_title}  |  {bpm} BPM, {key}, {mood}  |  rank {rank} ({label})\n"
-            f"     ↳ {excerpt}"
-        )
+        style = (finding.get("style") or "").strip()
+        hints = finding.get("hints") or {}
+        hint_str = ", ".join(f"{k}={v}" for k, v in hints.items())
+        lyrics = (finding.get("lyrics") or "").strip()
+        if len(lyrics) > 900:
+            lyrics = lyrics[:900].rstrip() + "\n[… lyrics truncated]"
+        track_lines += [
+            f"[{i}/{n}] {track_title}  |  {bpm} BPM, {key}, {mood}  |  rank {rank} ({label})",
+            *([f"style: {style}"] if style else []),
+            *([f"hints: {hint_str}"] if hint_str else []),
+            f"standalone review: {finding['review']['review_text']}",
+            *(["lyrics:", lyrics] if lyrics else []),
+            "",
+        ]
 
     # Thin-data warning: flag when cohesion metrics couldn't be computed
     thin_warnings: list[str] = []

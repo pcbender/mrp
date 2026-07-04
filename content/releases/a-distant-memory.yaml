@@ -5,7 +5,7 @@ release:
   artist_id: michael-anthony-rose
   model: song
   release_type: single
-  status: draft
+  status: live
   release_date: '2026-06-25'
   label: Maricopa Records
   publisher: Maricopa Publishing
@@ -32,7 +32,7 @@ release:
     duration: '3:25'
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/michael-anthony-rose--a-distant-memory.mp3
     links:
       spotify: https://open.spotify.com/track/6MFoNaVnVDOkpm6quVIhJi
       apple_music: null
@@ -177,14 +177,24 @@ release:
 
       The days that I will see you again'
     lyrics_source: null
-    hints: {}
+    hints:
+      Vocals: Female
+      Genre: Alternative
+      Feel: Jazzy
+    master_path: null
+    credits:
+      primary_artist: null
+      songwriter: Michael Anthony Rose
+      lyrics: Kellen
+      producer: Michael Anthony Rose
+      mastering: Michael Anthony Rose
   seo:
     title: A Distant Memory
     description: A Distant Memory on Maricopa Records.
   automation:
     allow_auto_publish: false
     master_path: /mnt/c/Masters/A Distant Memory.wav
-  hero_image: null
+  hero_image: site/public/assets/releases/a-distant-memory/hero.jpg
   summary: null
   description: null
   credits:
@@ -193,3 +203,9 @@ release:
     lyrics: null
     producer: null
     mastering: null
+  language: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null

@@ -80,6 +80,11 @@
         <textarea name="track_style" rows="3">{{ track.style or '' }}</textarea>
       </div>
       <div class="form-field full" style="margin-top:.75rem">
+        <label>Hints <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(one <code>Name: value</code> per line — ground truth for the Critic, e.g. <code>Vocals: Male</code>)</span></label>
+        <textarea name="track_hints" rows="3" placeholder="Vocals: Male&#10;Feel: Heavy&#10;Genre: Alternative">{% for k, v in (track.hints or {}).items() %}{{ k }}: {{ v }}
+{% endfor %}</textarea>
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
         <label>Lyrics (Formatted)</label>
         <textarea name="track_lyrics_text" rows="10">{{ track.lyrics_text or '' }}</textarea>
       </div>
@@ -127,16 +132,11 @@
 
 <div class="form-card">
   <div class="form-body">
-    <p style="font-size:12px;color:var(--muted);margin-bottom:.5rem">
-      Generate the 30-second snippet from the most intense section of the master.
-      Requires a critic record for this track. Re-running replaces the existing snippet.
+    <p style="font-size:12px;color:var(--muted)">
+      Snippets are cut on the
+      <a href="/releases/{{ slug }}/sampler">Sampler tab</a> — play the master,
+      mark the range, create the snippet.
     </p>
-    <div class="pipeline-steps">
-      <div class="pipeline-step">
-        {% from "releases/workspace/_ws_macros.html" import ws_row with context %}
-        {{ ws_row('sampler/' + track_slug, 'Sampler (30s snippet)', sampler_job) }}
-      </div>
-    </div>
   </div>
 </div>
 {% endblock %}

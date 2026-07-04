@@ -46,8 +46,6 @@ def write_review(record_id: str, out_dir: Path | None = None, force: bool = Fals
     else:
         slug = record.get("track_id") or record_id
 
-    impression = scrub_emdash(record.get("impression", {}).get("text", "")) if not is_album else ""
-
     # Prefer Pass 3 contextual review when one exists for this track
     tic = _find_contextual_review(record_id, source_dir) if not is_album else None
     raw_review_text = (tic["review_text"] if tic else None) or record.get("review", {}).get("review_text", "")
@@ -58,9 +56,9 @@ def write_review(record_id: str, out_dir: Path | None = None, force: bool = Fals
     verdict_rank = (tic.get("context_rank") if tic else None) or verdict.get("rank")
     verdict_label = verdict.get("label", "")
 
-    # For album records: extract first sentence as card summary
+    # First sentence of the final review text becomes the release-card blurb
     summary = ""
-    if is_album and review_text:
+    if review_text:
         end = review_text.find(". ")
         summary = review_text[: end + 1].strip() if end != -1 else review_text[:200].strip()
 
@@ -74,8 +72,6 @@ def write_review(record_id: str, out_dir: Path | None = None, force: bool = Fals
                 "path": str(out_path.relative_to(REPO_ROOT))}
 
     lines = ["---", f"track_id: {slug}"]
-    if impression:
-        lines.append(f"impression: {_yaml_str(impression)}")
     if summary:
         lines.append(f"summary: {_yaml_str(summary)}")
     if verdict_rank is not None:

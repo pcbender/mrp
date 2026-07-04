@@ -6,7 +6,7 @@ import time
 from pathlib import Path
 
 from fastapi import APIRouter, Request
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
 from mrp.admin import critic_io, db, pipeline as pipe
@@ -75,6 +75,16 @@ def _validation_errors(request: Request, errors: list[dict]) -> HTMLResponse:
     return _templates.TemplateResponse(
         request, "releases/_validation.html", {"errors": errors}, status_code=422
     )
+
+
+@router.get("/releases/{slug}/status-badge", response_class=HTMLResponse)
+async def status_badge(slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.exists():
+        return _not_found(slug)
+    status = ((load_structured_record(path)).get("release") or {}).get("status") or "draft"
+    return HTMLResponse(f'<span class="badge badge-{status}">{status}</span>')
 
 
 @router.get("/releases/{slug}/tabs", response_class=HTMLResponse)
@@ -318,6 +328,15 @@ def _ws_dispatch(step: str, form: dict):
         tslug = step.split("/", 1)[1]
         return (f"Sampler — {tslug}", pipe.run_sampler,
                 {"track_slug": tslug, "force": True})
+    if step.startswith("snip/"):
+        tslug = step.split("/", 1)[1]
+        try:
+            start_s = float(str(form.get("snip_start", "")))
+            end_s = float(str(form.get("snip_end", "")))
+        except ValueError:
+            start_s, end_s = 0.0, 0.0  # run_snip rejects the empty range with a clear message
+        return (f"Snippet — {tslug}", pipe.run_snip,
+                {"track_slug": tslug, "start_s": start_s, "end_s": end_s})
     if step == "promoter-blurb":
         return ("Promo blurb", pipe.run_promoter,
                 {"mode": "blurb", "model": str(form.get("promoter_model", "default"))})
@@ -330,7 +349,8 @@ def _ws_dispatch(step: str, form: dict):
         if fn is None:
             return None
         kwargs = {}
-        if name == "stage":
+        if name in ("stage", "verify"):
+            # Both must act on the target chosen in the stage settings picker
             kwargs["target"] = str(form.get("stage_target", "local-staging"))
         return (f"Pipeline — {name}", fn, kwargs)
     return None
@@ -342,7 +362,9 @@ def _ws_job_ctx(slug: str, step: str, label: str, job: dict | None) -> dict:
         settings_sel = "#critic-settings"
     elif step == "critic-album":
         settings_sel = "#album-settings"
-    elif step == "pub-stage":
+    elif step.startswith("snip/"):
+        settings_sel = "#snip-settings-" + step.split("/", 1)[1]
+    elif step in ("pub-stage", "pub-verify"):
         settings_sel = "#stage-settings"
     elif step.startswith("promoter-"):
         settings_sel = "#promoter-settings"
@@ -374,9 +396,12 @@ async def ws_job_launch(request: Request, slug: str, step: str):
         if job and job["status"] not in ("pending", "running"):
             break
         time.sleep(0.15)
-    return _templates.TemplateResponse(
+    response = _templates.TemplateResponse(
         request, "releases/workspace/_ws_job.html", _ws_job_ctx(slug, step, label, job)
     )
+    if job and job["status"] == "done":
+        response.headers["HX-Trigger"] = "releaseSaved"
+    return response
 
 
 @router.get("/releases/{slug}/ws-poll/{job_id}", response_class=HTMLResponse)
@@ -386,9 +411,14 @@ async def ws_job_poll(request: Request, slug: str, job_id: str, step: str = ""):
         return HTMLResponse("Job not found", status_code=404)
     dispatched = _ws_dispatch(step, {})
     label = dispatched[0] if dispatched else step
-    return _templates.TemplateResponse(
+    response = _templates.TemplateResponse(
         request, "releases/workspace/_ws_job.html", _ws_job_ctx(slug, step, label, job)
     )
+    # Completed jobs may have changed release data (status ladder, preview_audio,
+    # critic records) — refresh the header badge and stage tabs once.
+    if job["status"] == "done":
+        response.headers["HX-Trigger"] = "releaseSaved"
+    return response
 
 
 # --- Critic review edits ------------------------------------------------------
@@ -493,6 +523,31 @@ async def promoter_save(request: Request, slug: str):
     return HTMLResponse('<div class="flash flash-ok">Artist profile saved (marked human-reviewed).</div>')
 
 
+# --- Master audio (streamed to the sampler stage player) ---------------------
+
+_MASTER_MEDIA_TYPES = {
+    ".wav": "audio/wav", ".mp3": "audio/mpeg", ".flac": "audio/flac",
+    ".aif": "audio/aiff", ".aiff": "audio/aiff", ".m4a": "audio/mp4",
+}
+
+
+@router.get("/releases/{slug}/master-audio/{track_slug}")
+async def master_audio(slug: str, track_slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.exists():
+        return _not_found(slug)
+    release = (load_structured_record(path)).get("release") or {}
+    unit = next((u for u in track_units(release) if u["slug"] == track_slug), None)
+    if unit is None:
+        return HTMLResponse(f"Track <b>{track_slug}</b> not found.", status_code=404)
+    master = effective_master_path(release, unit["index"], unit["track"])
+    if not master or not Path(master).is_file():
+        return HTMLResponse(f"Master not found: {master}", status_code=404)
+    media_type = _MASTER_MEDIA_TYPES.get(Path(master).suffix.lower(), "application/octet-stream")
+    return FileResponse(master, media_type=media_type)
+
+
 # --- Track detail (must register before the generic {stage} route) ----------
 
 @router.get("/releases/{slug}/tracks/{track_slug}", response_class=HTMLResponse)
@@ -510,7 +565,6 @@ async def track_detail(request: Request, slug: str, track_slug: str):
         "track": unit["track"],
         "track_slug": track_slug,
         "master_fallback": effective_master_path(release, unit["index"], unit["track"]),
-        "sampler_job": db.get_latest_job_by_command(f"{slug}/sampler/{track_slug}"),
         "ws_ctx": _ws_job_ctx,
     })
     return _templates.TemplateResponse(request, "releases/workspace/track_detail.html", ctx)
@@ -555,6 +609,19 @@ async def track_save(request: Request, slug: str, track_slug: str):
             links[k] = str_or_none(form[field])
     track["links"] = links
 
+    if "track_hints" in form:
+        hints: dict[str, str] = {}
+        for line in str(form["track_hints"]).splitlines():
+            if ":" not in line:
+                continue
+            name, _, value = line.partition(":")
+            if name.strip() and value.strip():
+                hints[name.strip()] = value.strip()
+        if hints:
+            track["hints"] = hints
+        else:
+            track.pop("hints", None)
+
     if any(f"track_credits_{k}" in form for k in
            ["primary_artist", "songwriter", "lyrics", "producer", "mastering"]):
         credits = dict(track.get("credits") or {})
@@ -595,6 +662,8 @@ async def stage_page(request: Request, slug: str, stage: str):
 
     if stage == "critic":
         return _critic_stage(request, root, slug, ctx)
+    if stage == "sampler":
+        return _sampler_stage(request, root, slug, ctx)
     if stage == "promoter":
         return _promoter_stage(request, root, slug, ctx)
     if stage == "publish":
@@ -697,6 +766,29 @@ def _critic_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLRes
     return _templates.TemplateResponse(request, "releases/workspace/critic.html", ctx)
 
 
+def _sampler_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLResponse:
+    release = ctx["release"]
+    artist_id = release.get("artist_id") or ""
+    critic_out = root / "app" / "critic" / "out"
+
+    units = []
+    for u in track_units(release):
+        t = u["track"]
+        master = effective_master_path(release, u["index"], t)
+        units.append({
+            **u,
+            "master_path": master,
+            "master_exists": bool(master) and Path(master).is_file(),
+            "has_critic_record": (critic_out / f"{artist_id}--{u['slug']}.json").is_file(),
+            "preview_audio": t.get("preview_audio"),
+            "snip_job": db.get_latest_job_by_command(f"{slug}/snip/{u['slug']}"),
+            "auto_job": db.get_latest_job_by_command(f"{slug}/sampler/{u['slug']}"),
+        })
+
+    ctx.update({"units": units, "ws_ctx": _ws_job_ctx})
+    return _templates.TemplateResponse(request, "releases/workspace/sampler.html", ctx)
+
+
 def _promoter_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLResponse:
     release = ctx["release"]
     artist_id = release.get("artist_id") or ""
@@ -720,6 +812,15 @@ def _publish_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLRe
 
     st = core_status(root, release=slug)
     latest = st.get("latest") or {}
+
+    # Rollback reports are repo-wide (core doesn't scope them to a release).
+    # Only show one that postdates this release's latest publish — an older
+    # rollback is history from a previous publish cycle, not this one.
+    rollback = latest.get("rollback")
+    pub_report = latest.get("publish")
+    if rollback and (not pub_report or (rollback.get("generated_at") or "")
+                     <= (pub_report.get("generated_at") or "")):
+        latest = {**latest, "rollback": None}
 
     # Recommended next step: first link in the chain missing or failed
     chain = [

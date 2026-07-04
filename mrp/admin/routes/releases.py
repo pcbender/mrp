@@ -257,13 +257,16 @@ async def pipeline_launch(request: Request, slug: str, step: str):
         if job and job["status"] not in ("pending", "running"):
             break
         time.sleep(0.15)
-    return _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
+    response = _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
         "slug": slug,
         "step": step,
         "step_label": label,
         "job": job,
         "critic_settings": kwargs if step == "critic" else {},
     })
+    if job and job["status"] == "done":
+        response.headers["HX-Trigger"] = "releaseSaved"
+    return response
 
 
 @router.get("/releases/{slug}/pipeline/{step}/poll/{job_id}", response_class=HTMLResponse)
@@ -285,13 +288,16 @@ async def pipeline_poll(request: Request, slug: str, step: str, job_id: str):
             }
         except (ValueError, TypeError):
             pass
-    return _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
+    response = _templates.TemplateResponse(request, "releases/_pipeline_step.html", {
         "slug": slug,
         "step": step,
         "step_label": label,
         "job": job,
         "critic_settings": critic_settings,
     })
+    if job["status"] == "done":
+        response.headers["HX-Trigger"] = "releaseSaved"
+    return response
 
 
 @router.get("/missing-links", response_class=HTMLResponse)

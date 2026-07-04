@@ -21,6 +21,7 @@ def publish(
     release: str | None = None,
     build: str | None = None,
     auto_approve: bool = False,
+    remote_target: str | None = None,
 ) -> dict[str, Any]:
     root = Path(repo).resolve()
     generated_at = now_utc()
@@ -72,6 +73,17 @@ def publish(
         add_error(result, "verification", "Production verification failed.")
         result["verification_errors"] = verification.get("errors", [])
         return finish(root, generated_at, result)
+
+    # Push the same verified build to the remote production host. Runs before
+    # the release goes live so a failed push leaves it approved, not live.
+    if remote_target:
+        result["remote_target"] = remote_target
+        remote = stage_build(root, build=build_id, target=remote_target)
+        result["remote_deployment_report_path"] = remote.get("report_path")
+        if remote["status"] != "passed":
+            add_error(result, "remote_deployment",
+                      remote.get("message") or f"Remote deployment to {remote_target} failed.")
+            return finish(root, generated_at, result)
 
     if result["release"]:
         update_release_status(root, result["release"], "live")

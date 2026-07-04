@@ -11,7 +11,9 @@
     <h1 class="page-title">{{ release.title }}</h1>
     <div class="workspace-meta">
       {{ release.artist_id }} · {{ release.release_type }}
-      <span class="badge badge-{{ release.status }}">{{ release.status }}</span>
+      <span hx-get="/releases/{{ slug }}/status-badge"
+            hx-trigger="releaseSaved from:body"
+            hx-swap="innerHTML"><span class="badge badge-{{ release.status }}">{{ release.status }}</span></span>
     </div>
   </div>
   <div class="workspace-actions">

@@ -20,11 +20,16 @@
   {% set parsed = job.output | fromjson %}
   {% if parsed.get('status') %}
     <span style="font-size:11px;color:{{ 'var(--success)' if parsed.status in ('passed','published','approved','ok','rolled_back') else 'var(--danger)' }}">{{ parsed.status }}</span>
+    {% if parsed.status not in ('passed','published','approved','ok','rolled_back') and parsed.get('errors') %}
+    <span class="pipeline-step-error" title="{{ parsed.errors | map(attribute='message') | join('; ') | e }}">{{ parsed.errors[0].message }}</span>
+    {% elif parsed.status not in ('passed','published','approved','ok','rolled_back') and parsed.get('message') %}
+    <span class="pipeline-step-error" title="{{ parsed.message | e }}">{{ parsed.message }}</span>
+    {% endif %}
   {% elif parsed.get('ok_count') is not none and parsed.get('tracks') %}
     <span style="font-size:11px;color:var(--success)">{{ parsed.ok_count }}/{{ parsed.tracks | length }} ok</span>
-  {% elif parsed.get('written') is defined %}
+  {% elif parsed.get('written') is not none %}
     <span style="font-size:11px;color:var(--success)">{{ parsed.written | length }} written, {{ parsed.skipped | length }} skipped</span>
-  {% elif parsed.get('ok') is defined %}
+  {% elif parsed.get('ok') is not none %}
     <span style="font-size:11px;color:{{ 'var(--success)' if parsed.ok else 'var(--danger)' }}">{{ 'ok' if parsed.ok else 'failed' }}</span>
   {% endif %}
   {% endif %}
@@ -48,7 +53,7 @@
       hx-swap="innerHTML"
       {% if settings_sel %}hx-include="{{ settings_sel }}"{% endif %}
       {% if step == 'pub-rollback' %}hx-confirm="Roll production back to the previous archive?"{% endif %}
-      {% if step == 'pub-publish' %}hx-confirm="Publish to production?"{% endif %}
+      {% if step == 'pub-publish' %}hx-confirm="Publish to production? This deploys to local prod and pushes to the remote production host when one is configured."{% endif %}
       style="margin-left:auto;flex-shrink:0">
   <button type="submit" class="btn btn-secondary btn-sm">{{ 'Re-run' if job else 'Run' }}</button>
 </form>

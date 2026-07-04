@@ -341,7 +341,116 @@ def run_sampler(
             entry["error"] = (r.stderr or r.stdout)[-300:]
         results.append(entry)
 
-    return {"tracks": results, "total": sum(1 for r in results if r["ok"])}
+    ok_count = sum(1 for r in results if r["ok"])
+    if results and ok_count == 0:
+        raise RuntimeError(results[0].get("error") or "sampler failed for every track")
+    return {"tracks": results, "ok_count": ok_count, "total": ok_count}
+
+
+def _snip_encode(
+    source_path: str,
+    start_s: float,
+    duration_s: float,
+    output_path: Path,
+    target_lufs: float = -14.0,
+) -> None:
+    """Two-pass loudnorm on the excerpt, then encode stereo 128k MP3.
+
+    Mirrors app/sampler/cli.py — kept local because app/ is not an importable
+    package from the admin process.
+    """
+    import json as _json
+    import re as _re
+
+    fade_out_start = max(0.0, duration_s - 1.5)
+    af_base = (
+        f"afade=t=in:st=0:d=0.3,"
+        f"afade=t=out:st={fade_out_start}:d=1.5,"
+        f"loudnorm=I={target_lufs}:TP=-1:LRA=11"
+    )
+
+    pass1 = subprocess.run(
+        ["ffmpeg", "-y", "-ss", str(start_s), "-t", str(duration_s),
+         "-i", source_path,
+         "-af", af_base + ":print_format=json",
+         "-f", "null", "-"],
+        capture_output=True, text=True,
+    )
+    af_pass2 = af_base  # fall back to single-pass if measurement parsing fails
+    match = _re.search(r'\{\s*"input_i"\s*:.+?\}', pass1.stderr, _re.DOTALL)
+    if match:
+        try:
+            lnorm = _json.loads(match.group(0))
+            af_pass2 = (
+                af_base
+                + f":measured_I={lnorm['input_i']}"
+                + f":measured_LRA={lnorm['input_lra']}"
+                + f":measured_TP={lnorm['input_tp']}"
+                + f":measured_thresh={lnorm['input_thresh']}"
+                + f":offset={lnorm['target_offset']}"
+                + ":linear=true"
+            )
+        except (ValueError, KeyError):
+            pass
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    pass2 = subprocess.run(
+        ["ffmpeg", "-y", "-ss", str(start_s), "-t", str(duration_s),
+         "-i", source_path,
+         "-af", af_pass2,
+         "-ac", "2", "-c:a", "libmp3lame", "-b:a", "128k",
+         str(output_path)],
+        capture_output=True, text=True,
+    )
+    if pass2.returncode != 0:
+        raise RuntimeError(f"ffmpeg encode failed: {pass2.stderr[-300:]}")
+
+
+def run_snip(
+    root: Path,
+    slug: str,
+    track_slug: str,
+    start_s: float,
+    end_s: float,
+    target_lufs: float = -14.0,
+) -> dict[str, Any]:
+    """Cut a user-chosen [start, end] snippet from the master and set preview_audio."""
+    from mrp.admin.workspace import effective_master_path, track_units
+
+    path, data, release = _load_release(root, slug)
+    artist_id = release.get("artist_id") or ""
+
+    unit = next((u for u in track_units(release) if u["slug"] == track_slug), None)
+    if unit is None:
+        raise ValueError(f"Track not found: {track_slug}")
+    master = effective_master_path(release, unit["index"], unit["track"])
+    if not master:
+        raise ValueError("No master path on this track — set it on the Tracks tab first")
+    if not Path(master).is_file():
+        raise ValueError(f"Master not found: {master}")
+
+    duration = end_s - start_s
+    if start_s < 0 or duration < 3:
+        raise ValueError("Range must be at least 3 seconds")
+    if duration > 60:
+        raise ValueError("Range must be 60 seconds or less — previews should stay short")
+
+    track_id = f"{artist_id}--{track_slug}"
+    output_path = root / "site" / "public" / "samples" / f"{track_id}.mp3"
+    _snip_encode(master, start_s, duration, output_path, target_lufs)
+
+    preview_url = f"/samples/{track_id}.mp3"
+    unit["track"]["preview_audio"] = preview_url
+    path.write_text(serialize_structured_record(path, data))
+
+    return {
+        "status": "ok",
+        "track_id": track_id,
+        "start_s": round(start_s, 2),
+        "duration_s": round(duration, 2),
+        "preview_audio": preview_url,
+        "sample_path": str(output_path.relative_to(root)),
+    }
 
 
 def enrich_landr(root: Path, slug: str) -> dict[str, Any]:
@@ -463,6 +572,27 @@ def run_promoter(root: Path, slug: str, mode: str = "blurb", model: str = "defau
 
 # --- Build/Publish pipeline wrappers -----------------------------------------
 
+_STATUS_LADDER = ["draft", "staged", "verified", "approved", "live"]
+
+
+def _advance_release_status(root: Path, slug: str, new_status: str) -> str:
+    """Move the release forward on the lifecycle ladder as pipeline steps succeed.
+
+    Forward-only: never regresses, never touches live/archived (those belong to
+    publish/rollback). "failed" may re-enter the ladder at any rung.
+    """
+    path, data, release = _load_release(root, slug)
+    current = release.get("status") or "draft"
+    if current in ("live", "archived"):
+        return current
+    if (current in _STATUS_LADDER
+            and _STATUS_LADDER.index(current) >= _STATUS_LADDER.index(new_status)):
+        return current
+    release["status"] = new_status
+    path.write_text(serialize_structured_record(path, data))
+    return new_status
+
+
 def pub_validate(root: Path, slug: str) -> dict[str, Any]:
     from mrp.core.validate import validate_repository
     return validate_repository(root, release=slug)
@@ -470,27 +600,44 @@ def pub_validate(root: Path, slug: str) -> dict[str, Any]:
 
 def pub_build(root: Path, slug: str) -> dict[str, Any]:
     from mrp.core.build import build_repository
-    return build_repository(root, release=slug)
+    # Draft releases are excluded from site builds, so a build requested for
+    # this release implies promotion — it must be staged before the build runs.
+    status = _advance_release_status(root, slug, "staged")
+    result = build_repository(root, release=slug)
+    result["release_status"] = status
+    return result
 
 
 def pub_stage(root: Path, slug: str, target: str = "local-staging") -> dict[str, Any]:
     from mrp.core.deploy import stage_build
-    return stage_build(root, target=target)
+    result = stage_build(root, target=target)
+    if result.get("status") == "passed":
+        result["release_status"] = _advance_release_status(root, slug, "staged")
+    return result
 
 
 def pub_verify(root: Path, slug: str, target: str = "staging") -> dict[str, Any]:
     from mrp.core.verify import verify_target
-    return verify_target(root, target=target, release=slug)
+    result = verify_target(root, target=target, release=slug)
+    if result.get("status") == "passed":
+        result["release_status"] = _advance_release_status(root, slug, "verified")
+    return result
 
 
 def pub_approve(root: Path, slug: str) -> dict[str, Any]:
     from mrp.core.approve import approve
-    return approve(root, release=slug)
+    result = approve(root, release=slug)
+    if result.get("status") == "approved":
+        result["release_status"] = _advance_release_status(root, slug, "approved")
+    return result
 
 
 def pub_publish(root: Path, slug: str) -> dict[str, Any]:
+    from mrp.core.deploy import load_targets
     from mrp.core.publish import publish
-    return publish(root, release=slug)
+    targets, _ = load_targets(root)
+    remote = "remote-production" if "remote-production" in targets else None
+    return publish(root, release=slug, remote_target=remote)
 
 
 def pub_rollback(root: Path, slug: str) -> dict[str, Any]:

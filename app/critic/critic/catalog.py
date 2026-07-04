@@ -54,8 +54,8 @@ def get_lyrics(track_slug: str, release_slug: str | None = None) -> str:
     return ""
 
 
-def get_hints(track_slug: str, release_slug: str | None = None) -> dict:
-    """Return hints dict for a track, or {} if none defined."""
+def _find_track(track_slug: str, release_slug: str | None = None) -> dict:
+    """Return the raw track/song dict for a slug, or {} if not found."""
     candidates = (
         [_RELEASES_DIR / f"{release_slug}.yaml"] if release_slug
         else sorted(_RELEASES_DIR.glob("*.yaml"))
@@ -65,14 +65,30 @@ def get_hints(track_slug: str, release_slug: str | None = None) -> dict:
             continue
         data = _load_yaml(path)
         rel = data.get("release", {})
-        # Single (model=song): hints live under release.song
-        if rel.get("model") == "song" and rel.get("song", {}).get("slug") == track_slug:
-            return rel["song"].get("hints") or {}
+        # Single (model=song): the song lives at release.song
+        song = rel.get("song") or {}
+        if song and (song.get("slug") == track_slug or rel.get("slug") == track_slug):
+            return song
         # Multi-track release: search tracks array
         for track in rel.get("tracks", []):
             if track.get("slug") == track_slug:
-                return track.get("hints") or {}
+                return track
     return {}
+
+
+def get_hints(track_slug: str, release_slug: str | None = None) -> dict:
+    """Return hints dict for a track, or {} if none defined."""
+    return _find_track(track_slug, release_slug).get("hints") or {}
+
+
+def get_lyrics_raw(track_slug: str, release_slug: str | None = None) -> str:
+    """Return the raw generation script (lyrics with Suno structural tags)."""
+    return _find_track(track_slug, release_slug).get("lyrics_raw") or ""
+
+
+def get_style(track_slug: str, release_slug: str | None = None) -> str:
+    """Return the Suno style prompt the track was generated with."""
+    return _find_track(track_slug, release_slug).get("style") or ""
 
 
 def get_persona(artist_slug: str) -> str:

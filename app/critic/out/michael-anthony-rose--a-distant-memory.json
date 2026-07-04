@@ -1,0 +1,122 @@
+{
+  "track_id": "michael-anthony-rose--a-distant-memory",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/A Distant Memory.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--a-distant-memory.opus"
+  },
+  "lyrics": "One\nTwo\nThree\nFour\nIn the cold sunlight\nMemories holding me\nBarely\nThe days multiply\nYou're out there and I'm still waiting\nI've been waiting\nFor the day that I see you again\nYour face is a distant memory\nYour face is a distant memory\nYour face is a distant memory\nWhen the night air wanes\nI see your face as it dissipates\nOver fields of grain\nThe sun comes up and it's another day\nOne\nTwo\nThree\nFour\nThe wind blows cold again\nMemories warming me\nBarely\nThe days multiply\nPieces of you slip from my mind\nI've been counting\nThe days that I will see you again",
+  "lyrics_raw": "[Adlib]\nOne\nTwo\nThree\nFour\n[Verse]\nIn the cold sunlight\nMemories holding me\nBarely\nThe days multiply\nYou're out there and I'm still waiting\n[Chorus]\nI've been waiting\nFor the day that I see you again\n[Bridge]\nYour face is a distant memory\nYour face is a distant memory\nYour face is a distant memory\n[Verse]\nWhen the night air wanes\nI see your face as it dissipates\nOver fields of grain\nThe sun comes up and it's another day\n[Adlib]\nOne\nTwo\nThree\nFour\n[Verse]\nThe wind blows cold again\nMemories warming me\nBarely\nThe days multiply\nPieces of you slip from my mind\n[Chorus]\nI've been counting\nThe days that I will see you again",
+  "style": "avant-garde experimental jazz, experimental, clean/modern jazz fusion",
+  "persona": "Michael Anthony Rose is a songwriter of rare and unflinching honesty. In his hands, the everyday becomes the elemental, as he chronicles the inner landscape of a life in progress. His lyrics favor the concrete and the conversational, finding universal truth in specific, lived-in details: a reflection in a dark phone screen, the lingering scent of a loved one, a casual remark from a stranger that lands with unintended weight. This directness creates an immediate and deeply felt connection, inviting the listener into a space of shared vulnerability and recognition.\n\nRose’s work is preoccupied with the passage of time, memory, and the complex realities of selfhood. He charts the territory between the person one was and the person one becomes, exploring the subtle shifts and sudden realizations that define a life. From the wistful recounting of abandoned dreams in “But That Was Then” to the defiant self-assertion of “Full-Size Person,” he confronts the vulnerabilities and quiet dignities of aging without sentimentality. This personal excavation sits alongside a philosophical curiosity, as songs like “Aletheion” and “Build Me A Lie” question the nature of belief itself, weighing the comfort of certainty against the difficult grace of openness.\n\nYet for all its introspection, the emotional register of his music is wide and varied. The melancholy of looking back is balanced by the anthemic, forward-looking determination of songs like “Live Forever Or Die Trying,” a testament to creating a legacy that will outlast the self. Quiet moments of doubt give way to the tender, sensory intimacy of a love song like “Aroma Of You,” proving that even as some things are lost, others deepen and endure. His work is a full-spectrum portrait of experience, acknowledging that bitterness, hope, regret, and resilience can and do coexist.\n\nUltimately, the music of Michael Anthony Rose is an act of witness. It does not offer easy answers or simple comforts. Instead, it offers something more valuable: presence. It is an invitation to stand within the intricate, beautiful, and sometimes dissolving patterns of a life and to find that the simple act of paying attention is its own form of grace. These are songs that meet you where you are, hold their gaze, and quietly affirm that being here is enough.",
+  "hints": {
+    "Vocals": "Female",
+    "Genre": "Alternative",
+    "Feel": "Jazzy"
+  },
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 204.8,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 10.84,
+        "label": "S1"
+      },
+      {
+        "start": 10.84,
+        "end": 32.74,
+        "label": "S2"
+      },
+      {
+        "start": 32.74,
+        "end": 56.24,
+        "label": "S3"
+      },
+      {
+        "start": 56.24,
+        "end": 77.9,
+        "label": "S4"
+      },
+      {
+        "start": 77.9,
+        "end": 107.65,
+        "label": "S5"
+      },
+      {
+        "start": 107.65,
+        "end": 130.29,
+        "label": "S6"
+      },
+      {
+        "start": 130.29,
+        "end": 145.84,
+        "label": "S7"
+      },
+      {
+        "start": 145.84,
+        "end": 168.99,
+        "label": "S8"
+      },
+      {
+        "start": 168.99,
+        "end": 185.88,
+        "label": "S9"
+      },
+      {
+        "start": 185.88,
+        "end": 204.8,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.974,
+      "key": 0.964
+    }
+  },
+  "tags": {
+    "genre": [
+      "blues",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "hopeful",
+      "emotional"
+    ],
+    "instruments": [
+      "electric guitar",
+      "mandolin",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track blends reflective nostalgia with a driving, mid-tempo groove, wrapping intimate, airy vocals in a melancholic yet danceable indie-pop atmosphere. The production is clean and spacious, featuring a punchy rhythm section and a deep, pulsing bassline that supports the warm acoustic guitar strums and shimmering synth layers without overcrowding the mix. The lead vocals are beautifully processed with a sense of depth and reverb, sitting prominently at the forefront while delicate harmonies weave in and out to enhance the emotional weight of the lyrics. A standout moment occurs during the dramatic transition around 1:44, where the song swells into a dynamic instrumental break filled with vibrant synth textures and expressive guitar licks before settling back into its heartfelt groove.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "\"A Distant Memory\" opens with a counted-off \"one, two, three, four\" that sets a brisk 4/4 in C major, and from there Rose lets a female vocal float above a clean, roomy groove that leans more toward jazzy indie-pop than any straight ballad. The writing works its usual patient magic in small phrases: \"Memories holding me / Barely\" earns its line break, and the swap from \"holding me\" to \"warming me\" between verses is the kind of quiet turn Rose does better than most. The repeated \"Your face is a distant memory\" risks wearing thin over three passes, but the arrangement rescues it with a genuine swell around 1:44, where the band opens up into a bright instrumental break before easing back into the pulse. It reminds me a little of Aimee Mann working over a warmer rhythm section: restrained on the surface, aching underneath. Not the most immediate thing in his catalog, but it rewards a second and third pass. A grower, and worthy of a listen.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 2,
+      "label": "soft_floor"
+    },
+    "anchors_used": [
+      "counted \"one, two, three, four\" intro",
+      "123 BPM / 4/4 in C major",
+      "\"Memories holding me / Barely\"",
+      "\"holding me\" to \"warming me\" verse variation",
+      "\"Your face is a distant memory\" repeated three times",
+      "instrumental swell around 1:44",
+      "female vocal, jazzy indie-pop feel"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

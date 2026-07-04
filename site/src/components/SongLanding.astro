@@ -44,17 +44,9 @@ const nextTrack = trackIndex < sortedTracks.length - 1 ? sortedTracks[trackIndex
     <div class="release-copy">
       <p class="eyebrow">From {release.title}</p>
       <h2>{track.title}</h2>
-      {reviewEntry && (
+      {reviewEntry && ReviewContent && (
         <div class="track-review">
-          {reviewEntry.data.impression && (
-            <p class="impression">{reviewEntry.data.impression}</p>
-          )}
-          {ReviewContent && (
-            <details class="review-more">
-              <summary>More</summary>
-              <div class="review-body"><ReviewContent /></div>
-            </details>
-          )}
+          <div class="review-body"><ReviewContent /></div>
         </div>
       )}
       {track.preview_audio && (
@@ -311,14 +303,6 @@ const nextTrack = trackIndex < sortedTracks.length - 1 ? sortedTracks[trackIndex
     text-align: left;
   }
 
-  .impression {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-    font-style: italic;
-    line-height: 1.7;
-  }
-
   .review-body {
     font-size: 1rem;
     line-height: 1.75;
@@ -326,28 +310,6 @@ const nextTrack = trackIndex < sortedTracks.length - 1 ? sortedTracks[trackIndex
 
   .review-body :global(p) {
     margin: 0 0 1em;
-  }
-
-  .review-more {
-    width: 100%;
-  }
-
-  .review-more summary {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--muted);
-    list-style: none;
-    user-select: none;
-  }
-
-  .review-more summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .review-more[open] summary {
-    margin-bottom: 12px;
   }
 
   @media (max-width: 760px) {

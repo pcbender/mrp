@@ -1,0 +1,117 @@
+{% extends "releases/workspace/_shell.html" %}
+{% from "releases/workspace/_ws_macros.html" import ws_row with context %}
+
+{% block stage %}
+<div class="form-card" style="border-top-left-radius:0">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Snippets</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:0">
+      Play the master and hit <strong>Mark start</strong> / <strong>Mark end</strong> at the
+      section you want (3&ndash;60s), then <strong>Create snippet</strong>. The range is cut,
+      loudness-normalized to &minus;14&nbsp;LUFS, faded, and saved as the track's
+      <code>preview_audio</code>. Auto-select needs a critic record (DSP/CLAP analysis).
+    </p>
+  </div>
+</div>
+
+{% for u in units %}
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">
+      {{ u.track.number or loop.index }}. {{ u.title }}
+    </h2>
+
+    {% if u.master_path and u.master_exists %}
+    <p style="font-size:11px;color:var(--muted);margin-bottom:.5rem"><code>{{ u.master_path }}</code></p>
+    <audio id="master-{{ u.slug }}" controls preload="none" style="width:100%;margin-bottom:.6rem"
+           src="/releases/{{ slug }}/master-audio/{{ u.slug }}"></audio>
+
+    <div id="snip-settings-{{ u.slug }}"
+         style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:.6rem">
+      <button type="button" class="btn btn-secondary btn-sm"
+              onclick="snipMark('{{ u.slug }}', 'start')">&#9210; Mark start</button>
+      <button type="button" class="btn btn-secondary btn-sm"
+              onclick="snipMark('{{ u.slug }}', 'end')">&#9209; Mark end</button>
+      <label style="font-size:11px;color:var(--muted)">start
+        <input type="number" name="snip_start" value="" min="0" step="0.1"
+               style="width:5.5rem" oninput="snipDuration('{{ u.slug }}')"></label>
+      <label style="font-size:11px;color:var(--muted)">end
+        <input type="number" name="snip_end" value="" min="0" step="0.1"
+               style="width:5.5rem" oninput="snipDuration('{{ u.slug }}')"></label>
+      <span id="snip-dur-{{ u.slug }}" style="font-size:11px;color:var(--muted)"></span>
+      <button type="button" class="btn btn-secondary btn-sm"
+              onclick="snipPreview('{{ u.slug }}')">&#9654; Preview range</button>
+    </div>
+
+    <div class="pipeline-step" style="margin-bottom:.4rem">
+      {{ ws_row('snip/' + u.slug, 'Create snippet', u.snip_job) }}
+    </div>
+    {% elif u.master_path %}
+    <p class="flash flash-error" style="font-size:12px">
+      Master not found on disk: <code>{{ u.master_path }}</code>
+    </p>
+    {% else %}
+    <p class="flash flash-error" style="font-size:12px">
+      No master path — set it on the <a href="/releases/{{ slug }}/tracks/{{ u.slug }}">track</a> first.
+    </p>
+    {% endif %}
+
+    {% if u.has_critic_record %}
+    <div class="pipeline-step" style="margin-bottom:.4rem">
+      {{ ws_row('sampler/' + u.slug, 'Auto-select (critic analysis)', u.auto_job) }}
+    </div>
+    {% endif %}
+
+    {% if u.preview_audio %}
+    <p style="font-size:11px;color:var(--muted);margin:.5rem 0 .25rem">
+      Current snippet — <code>{{ u.preview_audio }}</code>
+    </p>
+    <audio controls preload="none" style="width:100%"
+           src="/pub/{{ u.preview_audio.lstrip('/') }}"></audio>
+    {% else %}
+    <p style="font-size:11px;color:var(--muted);margin-top:.5rem">No snippet yet.</p>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+
+<script>
+function snipInput(slug, field) {
+  return document.querySelector('#snip-settings-' + CSS.escape(slug) + ' input[name=snip_' + field + ']');
+}
+function snipDuration(slug) {
+  const start = parseFloat(snipInput(slug, 'start').value);
+  const end = parseFloat(snipInput(slug, 'end').value);
+  const el = document.getElementById('snip-dur-' + slug);
+  if (isNaN(start) || isNaN(end) || end <= start) { el.textContent = ''; return; }
+  const d = end - start;
+  el.textContent = d.toFixed(1) + 's';
+  el.style.color = (d < 3 || d > 60) ? 'var(--danger)' : 'var(--muted)';
+}
+function snipMark(slug, field) {
+  const audio = document.getElementById('master-' + slug);
+  snipInput(slug, field).value = audio.currentTime.toFixed(1);
+  if (field === 'start' && !snipInput(slug, 'end').value) {
+    snipInput(slug, 'end').value = (audio.currentTime + 30).toFixed(1);
+  }
+  snipDuration(slug);
+}
+function snipPreview(slug) {
+  const audio = document.getElementById('master-' + slug);
+  const start = parseFloat(snipInput(slug, 'start').value);
+  const end = parseFloat(snipInput(slug, 'end').value);
+  if (isNaN(start)) return;
+  audio.currentTime = start;
+  audio.play();
+  if (!isNaN(end) && end > start) {
+    const stopAt = function () {
+      if (audio.currentTime >= end) {
+        audio.pause();
+        audio.removeEventListener('timeupdate', stopAt);
+      }
+    };
+    audio.addEventListener('timeupdate', stopAt);
+  }
+}
+</script>
+{% endblock %}
