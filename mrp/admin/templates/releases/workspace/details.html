@@ -1,17 +1,19 @@
 {% extends "releases/workspace/_shell.html" %}
 
 {% block stage %}
-{% set credits = release.credits or {} %}
 {% set seo = release.seo or {} %}
 {% set automation = release.automation or {} %}
+{% set copyright = release.copyright or {} %}
 
 <form hx-post="/releases/{{ slug }}/details"
       hx-target="#save-result"
       hx-swap="innerHTML">
 
+  <!-- Release — the LANDR-tracked identity of this release -->
   <div class="form-card" style="border-top-left-radius:0">
     <div class="form-body">
-      <div style="display:flex;justify-content:flex-end;margin-bottom:.75rem">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+        <h2 style="font-size:14px">Release</h2>
         <button type="submit" class="btn btn-primary">Save Details</button>
       </div>
       <div class="form-row">
@@ -19,6 +21,54 @@
           <label>Title <span class="required">*</span></label>
           <input type="text" name="title" value="{{ release.title or '' }}" required>
         </div>
+        <div class="form-field">
+          <label>Catalog Number</label>
+          <input type="text" name="catalog_number" value="{{ release.catalog_number or '' }}" placeholder="LR-3173695">
+        </div>
+        <div class="form-field">
+          <label>Language</label>
+          <input type="text" name="language" value="{{ release.language or '' }}" placeholder="en" maxlength="10">
+        </div>
+        <div class="form-field">
+          <label>UPC</label>
+          <input type="text" name="upc" value="{{ release.upc or '' }}" placeholder="991048269026">
+        </div>
+        <div class="form-field">
+          <label>Label</label>
+          <select name="label">
+            <option value="">— none —</option>
+            <option value="Maricopa Records" {% if release.label == 'Maricopa Records' %}selected{% endif %}>Maricopa Records</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>&copy; Composition Owner</label>
+          <input type="text" name="copyright_composition_owner"
+                 value="{{ copyright.composition_owner or '' }}" placeholder="Maricopa Records">
+        </div>
+        <div class="form-field">
+          <label>&copy; Year of Composition</label>
+          <input type="number" name="copyright_composition_year"
+                 value="{{ copyright.composition_year or '' }}" min="1900" max="2100" placeholder="2026">
+        </div>
+        <div class="form-field">
+          <label>&copy; Master Recording Owner</label>
+          <input type="text" name="copyright_recording_owner"
+                 value="{{ copyright.recording_owner or '' }}" placeholder="Maricopa Records">
+        </div>
+        <div class="form-field">
+          <label>&copy; Year of Recording</label>
+          <input type="number" name="copyright_recording_year"
+                 value="{{ copyright.recording_year or '' }}" min="1900" max="2100" placeholder="2026">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site — MRP-specific fields -->
+  <div class="form-card">
+    <div class="form-body">
+      <h2 style="font-size:14px;margin-bottom:.75rem">Site</h2>
+      <div class="form-row">
         <div class="form-field">
           <label>Artist ID <span class="required">*</span></label>
           <select name="artist_id">
@@ -48,21 +98,6 @@
           <input type="date" name="release_date" value="{{ release.release_date or '' }}">
         </div>
         <div class="form-field">
-          <label>UPC</label>
-          <input type="text" name="upc" value="{{ release.upc or '' }}" placeholder="057914189314">
-        </div>
-        <div class="form-field">
-          <label>Catalog Number</label>
-          <input type="text" name="catalog_number" value="{{ release.catalog_number or '' }}">
-        </div>
-        <div class="form-field">
-          <label>Label</label>
-          <select name="label">
-            <option value="">— none —</option>
-            <option value="Maricopa Records" {% if release.label == 'Maricopa Records' %}selected{% endif %}>Maricopa Records</option>
-          </select>
-        </div>
-        <div class="form-field">
           <label>Publisher</label>
           <select name="publisher">
             <option value="">— none —</option>
@@ -70,12 +105,10 @@
           </select>
         </div>
         <div class="form-field full">
-          <label>Cover Image Path <span class="required">*</span></label>
+          <label>Cover Image Path <span class="required">*</span>
+            <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(down-sized image from the Spotify import)</span>
+          </label>
           <input type="text" name="cover_image" value="{{ release.cover_image or '' }}">
-        </div>
-        <div class="form-field full">
-          <label>Hero Image Path</label>
-          <input type="text" name="hero_image" value="{{ release.hero_image or '' }}">
         </div>
         <div class="form-field full">
           <label>Summary</label>
@@ -88,20 +121,6 @@
       </div>
     </div>
   </div>
-
-  <details class="form-card">
-    <summary>Credits</summary>
-    <div class="form-body">
-      <div class="form-row">
-        {% for k in ['primary_artist', 'songwriter', 'lyrics', 'producer', 'mastering'] %}
-        <div class="form-field">
-          <label>{{ k.replace('_', ' ').title() }}</label>
-          <input type="text" name="credits_{{ k }}" value="{{ credits[k] if credits[k] else '' }}">
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </details>
 
   <details class="form-card">
     <summary>SEO</summary>
@@ -125,4 +144,36 @@
   </details>
 
 </form>
+
+<!-- Hero image — full-size source art, uploaded (not the Spotify thumbnail) -->
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Hero Image</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Full-size source release image. The cover image above is the down-sized
+      version from Spotify; upload the original artwork here.
+    </p>
+    <div style="display:flex;gap:1rem;align-items:flex-start;flex-wrap:wrap">
+      {% if release.hero_image %}
+      <img src="/pub/{{ release.hero_image | replace('site/public/', '') }}"
+           style="width:120px;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--border);flex-shrink:0"
+           onerror="this.style.display='none'" alt="">
+      {% endif %}
+      <div style="flex:1;min-width:260px">
+        {% if release.hero_image %}
+        <p style="font-size:12px;margin-bottom:.5rem"><code>{{ release.hero_image }}</code></p>
+        {% endif %}
+        <form hx-post="/releases/{{ slug }}/hero-image"
+              hx-target="#save-result"
+              hx-swap="innerHTML"
+              hx-encoding="multipart/form-data"
+              style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+          <input type="file" name="hero_file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                 style="font-size:12px">
+          <button type="submit" class="btn btn-secondary btn-sm">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

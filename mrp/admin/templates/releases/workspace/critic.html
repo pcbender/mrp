@@ -1,0 +1,185 @@
+{% extends "releases/workspace/_shell.html" %}
+{% from "releases/workspace/_ws_macros.html" import ws_row, ws_cell with context %}
+
+{% block stage %}
+<!-- Pass 1: standalone track reviews -->
+<div class="form-card" style="border-top-left-radius:0">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Pass 1 — Track Reviews</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Standalone review per track: audio analysis + AI review. Requires each track's
+      master path. Edit and approve each review before writeback.
+    </p>
+
+    <div id="critic-settings" style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem">
+      <select name="critic_model" class="pipeline-select" title="AI model">
+        {% for m, ml in [('dev','dev — Haiku/Flash'), ('default','default — Sonnet/Pro'), ('hero','hero — Opus/Flash')] %}
+        <option value="{{ m }}">{{ ml }}</option>
+        {% endfor %}
+      </select>
+      <select name="critic_persona" class="pipeline-select" title="Critic persona">
+        {% for p in ['default', 'pundit', 'liner'] %}<option value="{{ p }}">{{ p }}</option>{% endfor %}
+      </select>
+      <select name="critic_target" class="pipeline-select" title="Output target">
+        {% for t in ['blurb', 'liner'] %}<option value="{{ t }}">{{ t }}</option>{% endfor %}
+      </select>
+      <select name="critic_target_tier" class="pipeline-select" title="Target tier">
+        <option value="">tier: auto</option>
+        {% for tier in [2, 3, 4, 5] %}<option value="{{ tier }}">tier {{ tier }}</option>{% endfor %}
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Track</th><th>Review</th><th>Rank</th><th style="min-width:280px">Run</th><th></th></tr>
+        </thead>
+        <tbody>
+          {% for u in units %}
+          {% set s = u.summary %}
+          <tr>
+            <td class="td-mono">{{ u.track.number or loop.index }}</td>
+            <td class="td-title">{{ u.title }}</td>
+            <td>
+              {% if s.exists %}
+              <span class="review-pill {{ s.status }}">{{ s.status }}</span>
+              {% else %}
+              <span class="review-pill none">none</span>
+              {% endif %}
+            </td>
+            <td class="td-mono">{% if s.rank %}{{ s.rank }} — {{ s.label }}{% endif %}</td>
+            <td>{{ ws_cell('critic-track/' + u.slug, u.job) }}</td>
+            <td>
+              {% if s.exists %}
+              <a href="/releases/{{ slug }}/critic?track={{ u.slug }}" class="btn btn-secondary btn-sm">Edit</a>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% if units | length > 1 %}
+    <div class="pipeline-step" style="margin-top:.75rem">
+      {{ ws_row('critic-all', 'Run all tracks', critic_all_job) }}
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Review editor -->
+{% if editor %}
+{% set s = editor.summary %}
+<div class="form-card" id="review-editor">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Edit — {{ editor.title }}</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Rank {{ s.rank }} ({{ s.label }}) · target: {{ s.target }} · model: {{ s.model }} ·
+      status: <span class="review-pill {{ s.status }}">{{ s.status }}</span>
+    </p>
+    <form hx-post="/releases/{{ slug }}/critic/review/{{ editor.slug }}"
+          hx-target="#save-result" hx-swap="innerHTML">
+      <textarea name="review_text" rows="8" style="font-family:inherit;font-size:13px">{{ s.review_text }}</textarea>
+      <div style="display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap">
+        <button type="submit" name="action" value="save" class="btn btn-secondary">Save edits</button>
+        <button type="submit" name="action" value="approve" class="btn btn-primary">Save &amp; Approve</button>
+        <button type="submit" name="action" value="publishable" class="btn btn-primary">Save &amp; Mark Publishable</button>
+        {% if s.status != 'pending' %}
+        <button type="submit" name="action" value="pending" class="btn btn-secondary">Back to pending</button>
+        {% endif %}
+        <a href="/releases/{{ slug }}/critic" class="btn btn-secondary" style="margin-left:auto">Close</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endif %}
+
+<!-- Pass 2+3: album review -->
+{% if album %}
+{% set a = album.summary %}
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Pass 2+3 — Album Review &amp; Context</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Synthesizes the album-level review from the track reviews, then re-reads each
+      track in the context of the full arc. Run after all track reviews exist.
+    </p>
+
+    <div id="album-settings" style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem">
+      <select name="album_target" class="pipeline-select" title="Album target">
+        {% for t in ['album_blurb', 'album_long'] %}<option value="{{ t }}">{{ t }}</option>{% endfor %}
+      </select>
+      <select name="critic_model" class="pipeline-select" title="AI model">
+        {% for m in ['default', 'dev', 'hero'] %}<option value="{{ m }}">{{ m }}</option>{% endfor %}
+      </select>
+      <select name="critic_persona" class="pipeline-select" title="Persona">
+        {% for p in ['default', 'pundit', 'liner'] %}<option value="{{ p }}">{{ p }}</option>{% endfor %}
+      </select>
+    </div>
+
+    <div class="pipeline-step" style="margin-bottom:1rem">
+      {{ ws_row('critic-album', 'Album pass', album.job) }}
+    </div>
+
+    {% if a.exists %}
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.5rem">
+      Rank {{ a.rank }} ({{ a.label }}) · {{ a.target }} ·
+      sum vs parts: {{ album.record.review.sum_vs_parts }} ·
+      cohesion: {{ album.record.cohesion.verdict if album.record.cohesion else '—' }} ·
+      status: <span class="review-pill {{ a.status }}">{{ a.status }}</span>
+    </p>
+    <form hx-post="/releases/{{ slug }}/critic/album-review"
+          hx-target="#save-result" hx-swap="innerHTML" style="margin-bottom:1rem">
+      <textarea name="review_text" rows="8" style="font-family:inherit;font-size:13px">{{ a.review_text }}</textarea>
+      <div style="display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap">
+        <button type="submit" name="action" value="save" class="btn btn-secondary">Save edits</button>
+        <button type="submit" name="action" value="approve" class="btn btn-primary">Save &amp; Approve</button>
+        <button type="submit" name="action" value="publishable" class="btn btn-primary">Save &amp; Mark Publishable</button>
+      </div>
+    </form>
+
+    <details>
+      <summary style="font-size:12px;font-weight:600;cursor:pointer;color:var(--muted)">
+        Contextual track reviews ({{ album.tics | length }}) — override standalone reviews at writeback
+      </summary>
+      <div style="display:flex;flex-direction:column;gap:.75rem;margin-top:.75rem">
+        {% for tic in album.tics %}
+        <div style="border:1px solid var(--border);border-radius:var(--radius);padding:.75rem">
+          <p style="font-size:12px;margin-bottom:.4rem">
+            <strong>{{ tic.position }}. {{ tic.tslug }}</strong>
+            <span class="td-mono" style="color:var(--muted)">
+              rank {{ tic.standalone_rank }}{% if tic.context_rank %} → {{ tic.context_rank }}{% endif %}
+            </span>
+            {% if tic.context_note %}<span style="color:var(--muted)">— {{ tic.context_note }}</span>{% endif %}
+          </p>
+          <form hx-post="/releases/{{ slug }}/critic/context/{{ tic.tslug }}"
+                hx-target="#save-result" hx-swap="innerHTML">
+            <textarea name="review_text" rows="4" style="font-size:12px">{{ tic.review_text }}</textarea>
+            <button type="submit" class="btn btn-secondary btn-sm" style="margin-top:.4rem">Save</button>
+          </form>
+        </div>
+        {% endfor %}
+      </div>
+    </details>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+<!-- Writeback -->
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Writeback</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Writes <strong>approved or publishable</strong> reviews to
+      <code>site/src/content/reviews/</code>. Pending records are skipped.
+      Contextual (Pass&nbsp;3) reviews take precedence over standalone ones.
+      Currently approved: <strong>{{ approved_count }}/{{ record_total }}</strong> records.
+    </p>
+    <div class="pipeline-step">
+      {{ ws_row('writeback', 'Writeback', writeback_job) }}
+    </div>
+  </div>
+</div>
+{% endblock %}

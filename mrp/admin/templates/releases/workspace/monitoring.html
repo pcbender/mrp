@@ -1,0 +1,53 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+<div class="form-card" style="border-top-left-radius:0">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Link Health</h2>
+    {% if missing %}
+    <p style="font-size:13px;margin-bottom:.5rem">
+      Still missing {{ missing | length }} platform link{{ 's' if missing | length != 1 }}:
+    </p>
+    <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem">
+      {% for p in missing %}
+      <span class="link-pill missing">{{ p.replace('_', ' ') }}</span>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="font-size:13px;color:var(--success);margin-bottom:.75rem">
+      All expected platform links are present. ✓
+    </p>
+    {% endif %}
+    {% if links_na %}
+    <p style="font-size:12px;color:var(--muted)">
+      Marked not expected: {{ links_na | join(', ') }}
+      — manage on the <a href="/releases/{{ slug }}/links" style="color:var(--primary)">Links</a> stage.
+    </p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Re-check Services</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
+      Services list releases on their own schedules — some appear days or weeks
+      after release day. Re-run these periodically until the board is green
+      (or mark stragglers not expected). Enrichment never overwrites existing links.
+    </p>
+    <div class="pipeline-steps">
+      {% for ps in link_steps %}
+      {% set step = ps.id %}
+      {% set step_label = ps.label %}
+      {% set job = pipeline_status.get(ps.id) %}
+      <div id="pipeline-step-{{ step }}" class="pipeline-step">
+        {% include "releases/_pipeline_step.html" %}
+      </div>
+      {% endfor %}
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-top:.75rem">
+      Catalog-wide report: <a href="/missing-links" style="color:var(--primary)">Missing Links</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

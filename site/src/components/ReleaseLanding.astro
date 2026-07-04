@@ -17,7 +17,13 @@ const artistHref = `/artists/${release.artist_id}/`;
 const copyBlocks = releaseCopyBlocks(release);
 const streamingLinks = releaseSocialLinks(release);
 const coverUrl = releaseCoverUrl(release);
-const hasCredits = Boolean(release.credits?.songwriter || release.credits?.producer || release.credits?.mastering);
+// Per-track credits (release.song for singles) take precedence over the
+// legacy release-level block.
+const songCredits = Object.fromEntries(
+  Object.entries(release.song?.credits || {}).filter(([, v]) => v)
+);
+const creditSource = { ...(release.credits || {}), ...songCredits };
+const hasCredits = Boolean(creditSource.songwriter || creditSource.producer || creditSource.mastering);
 
 const isAlbum = Boolean(release.tracks?.length);
 const reviewId = release.song?.slug
@@ -118,7 +124,7 @@ function cleanMarkdownText(value: string) {
       <Lyrics lyricsText={release.song.lyrics_text} instrumental={release.song.instrumental} />
       {release.song.lyrics_text && (
         <footer class="lyrics-footer">
-          <p>Written by {release.credits?.lyrics || artistName}</p>
+          <p>Written by {creditSource.lyrics || artistName}</p>
           <p>Lyrics © {release.release_date?.slice(0, 4)} Maricopa Publishing. All rights reserved.</p>
           <p>Published by Maricopa Publishing. Displayed by permission.</p>
           <p>For licensing: <a href="/licensing-custom-songs/music-licensing">maricoparecords.com/licensing</a></p>
@@ -130,9 +136,9 @@ function cleanMarkdownText(value: string) {
   {hasCredits && (
     <section class="prose">
       <h2>Credits</h2>
-      {release.credits?.songwriter && <p>Songwriter: {release.credits.songwriter}</p>}
-      {release.credits?.producer && <p>Producer: {release.credits.producer}</p>}
-      {release.credits?.mastering && <p>Mastering: {release.credits.mastering}</p>}
+      {creditSource.songwriter && <p>Songwriter: {creditSource.songwriter}</p>}
+      {creditSource.producer && <p>Producer: {creditSource.producer}</p>}
+      {creditSource.mastering && <p>Mastering: {creditSource.mastering}</p>}
     </section>
   )}
 </article>

@@ -95,6 +95,21 @@
   </div>
 
   <details class="form-card">
+    <summary>Credits</summary>
+    <div class="form-body">
+      {% set track_credits = track.credits or {} %}
+      <div class="form-row">
+        {% for k in ['primary_artist', 'songwriter', 'lyrics', 'producer', 'mastering'] %}
+        <div class="form-field">
+          <label>{{ k.replace('_', ' ').title() }}</label>
+          <input type="text" name="track_credits_{{ k }}" value="{{ track_credits[k] if track_credits[k] else '' }}">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </details>
+
+  <details class="form-card">
     <summary>Track Streaming Links</summary>
     <div class="form-body">
       <div class="form-row">
@@ -114,11 +129,12 @@
   <div class="form-body">
     <p style="font-size:12px;color:var(--muted);margin-bottom:.5rem">
       Generate the 30-second snippet from the most intense section of the master.
-      Requires a critic record for this track.
+      Requires a critic record for this track. Re-running replaces the existing snippet.
     </p>
     <div class="pipeline-steps">
-      <div id="pipeline-step-sampler" class="pipeline-step">
-        {% include "releases/_pipeline_step.html" %}
+      <div class="pipeline-step">
+        {% from "releases/workspace/_ws_macros.html" import ws_row with context %}
+        {{ ws_row('sampler/' + track_slug, 'Sampler (30s snippet)', sampler_job) }}
       </div>
     </div>
   </div>
