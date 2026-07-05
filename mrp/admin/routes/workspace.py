@@ -17,8 +17,11 @@ from mrp.admin.workspace import (
     STAGES,
     STAGE_IDS,
     STATUSES,
+    artist_artifact_moves,
+    artist_record_path,
     bool_field,
     effective_master_path,
+    migrate_artist_artifacts,
     stage_statuses,
     str_or_none,
     track_completion,
@@ -65,10 +68,39 @@ def _not_found(slug: str) -> HTMLResponse:
     return HTMLResponse(f"Release <b>{slug}</b> not found.", status_code=404)
 
 
-def _save_ok() -> HTMLResponse:
-    response = HTMLResponse('<div class="flash flash-ok">Saved successfully.</div>')
+def _save_ok(actions: list[str] | None = None) -> HTMLResponse:
+    detail = ""
+    if actions:
+        items = "".join(f"<li><code>{a}</code></li>" for a in actions)
+        detail = (f"<ul style='margin:.4rem 0 0 1.25rem;font-size:12px'>{items}</ul>")
+    response = HTMLResponse(
+        f'<div class="flash flash-ok">Saved successfully.{detail}</div>')
     response.headers["HX-Trigger"] = "releaseSaved"
     return response
+
+
+def _artist_change_confirm(
+    slug: str, old_id: str, new_id: str, moves: list[tuple[Path, Path]]
+) -> HTMLResponse:
+    """Two-step confirmation for an artist_id change (nothing saved yet)."""
+    if moves:
+        items = "".join(
+            f"<li><code>{src.name}</code> → <code>{dst.name}</code></li>"
+            for src, dst in moves)
+    else:
+        items = "<li>no existing files need renaming</li>"
+    return HTMLResponse(
+        '<div class="flash flash-warn">'
+        f"<p><strong>Change artist &ldquo;{old_id}&rdquo; &rarr; &ldquo;{new_id}&rdquo;?</strong> "
+        "Critic records, review files, and preview samples are keyed by artist id. "
+        "Confirming will rename these files and update preview URLs:</p>"
+        f"<ul style='margin:.4rem 0 .6rem 1.25rem;font-size:12px'>{items}</ul>"
+        f'<form hx-post="/releases/{slug}/details" hx-target="#save-result" '
+        f'hx-swap="innerHTML" hx-include="#details-form">'
+        f'<input type="hidden" name="confirm_artist_change" value="{old_id}">'
+        '<button type="submit" class="btn btn-primary">'
+        "Yes — change artist and migrate files</button>"
+        "</form></div>")
 
 
 def _validation_errors(request: Request, errors: list[dict]) -> HTMLResponse:
@@ -108,6 +140,7 @@ async def details_save(request: Request, slug: str):
     data = load_structured_record(path)
     rel = data.get("release") or {}
     form = dict(await request.form())
+    old_artist = str(rel.get("artist_id") or "")
 
     for key in ["title", "artist_id", "status", "release_date", "label", "publisher",
                 "upc", "catalog_number", "language", "cover_image", "summary",
@@ -147,11 +180,28 @@ async def details_save(request: Request, slug: str):
     automation = rel.setdefault("automation", {})
     automation["allow_auto_publish"] = bool_field(form, "allow_auto_publish")
 
+    # Artist change gate: critic records, review files, and samples are all
+    # keyed {artist_id}--{slug}, so this needs an explicit confirmation and a
+    # migration of the downstream artifacts.
+    migration_actions: list[str] = []
+    new_artist = str(rel.get("artist_id") or "")
+    if old_artist and new_artist != old_artist:
+        if artist_record_path(root, new_artist) is None:
+            return _validation_errors(request, [{
+                "field": "artist_id", "severity": "error",
+                "message": f"No artist record found for '{new_artist}'",
+            }])
+        if str(form.get("confirm_artist_change") or "") != old_artist:
+            moves = artist_artifact_moves(root, rel, old_artist, new_artist)
+            return _artist_change_confirm(slug, old_artist, new_artist, moves)
+
     errors = validate_release_dict(data)
     if errors:
         return _validation_errors(request, errors)
+    if old_artist and new_artist != old_artist:
+        migration_actions = migrate_artist_artifacts(root, rel, old_artist, new_artist)
     path.write_text(serialize_structured_record(path, data))
-    return _save_ok()
+    return _save_ok(migration_actions)
 
 
 _HERO_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
@@ -358,8 +408,10 @@ def _ws_dispatch(step: str, form: dict):
 
 def _ws_job_ctx(slug: str, step: str, label: str, job: dict | None) -> dict:
     settings_sel = ""
-    if step.startswith("critic-track/") or step == "critic-all":
-        settings_sel = "#critic-settings"
+    if step.startswith("critic-track/"):
+        # Per-track settings live next to each row; critic-all has no form and
+        # relies on the settings saved on each track (track.critic).
+        settings_sel = "#critic-settings-" + step.split("/", 1)[1]
     elif step == "critic-album":
         settings_sel = "#album-settings"
     elif step.startswith("snip/"):
@@ -507,8 +559,8 @@ async def promoter_save(request: Request, slug: str):
         return _not_found(slug)
     data = load_structured_record(path)
     artist_id = (data.get("release") or {}).get("artist_id") or ""
-    artist_path = root / "content" / "artists" / f"{artist_id}.yaml"
-    if not artist_path.exists():
+    artist_path = artist_record_path(root, artist_id)
+    if artist_path is None:
         return HTMLResponse(f"Artist <b>{artist_id}</b> not found.", status_code=404)
 
     artist_data = load_structured_record(artist_path)
@@ -792,9 +844,9 @@ def _sampler_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLRe
 def _promoter_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLResponse:
     release = ctx["release"]
     artist_id = release.get("artist_id") or ""
-    artist_path = root / "content" / "artists" / f"{artist_id}.yaml"
+    artist_path = artist_record_path(root, artist_id)
     artist = {}
-    if artist_path.exists():
+    if artist_path is not None:
         artist = (load_structured_record(artist_path)).get("artist") or {}
     ctx.update({
         "artist": artist,

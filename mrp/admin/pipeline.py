@@ -18,11 +18,14 @@ def _load_release(root: Path, slug: str) -> tuple[Path, dict, dict]:
 
 
 def _load_artist(root: Path, artist_id: str) -> dict:
-    path = root / "content" / "artists" / f"{artist_id}.yaml"
-    if not path.exists():
-        return {}
-    data = load_structured_record(path)
-    return data.get("artist") or {}
+    # Artist records are YAML; tolerate legacy JSON records too
+    # (load_structured_record handles both).
+    for ext in (".yaml", ".json"):
+        path = root / "content" / "artists" / f"{artist_id}{ext}"
+        if path.exists():
+            data = load_structured_record(path)
+            return data.get("artist") or {}
+    return {}
 
 
 def enrich_odesli(root: Path, slug: str) -> dict[str, Any]:
@@ -188,7 +191,12 @@ def run_critic(
     target_tier: int | None = None,
     track_slug: str | None = None,
 ) -> dict[str, Any]:
-    """Pass 1: per-track standalone review. track_slug limits to one track."""
+    """Pass 1: per-track standalone review. track_slug limits to one track.
+
+    A single-track run is an explicit settings choice, so it is saved on the
+    track (track.critic) and reused by later runs — including critic-all,
+    where each track's saved settings override the call-level defaults.
+    """
     from mrp.admin.critic_io import critic_bin
     from mrp.admin.workspace import effective_master_path, track_units
 
@@ -201,29 +209,41 @@ def run_critic(
         units = [u for u in units if u["slug"] == track_slug]
         if not units:
             raise ValueError(f"Track not found: {track_slug}")
+        settings: dict[str, Any] = {"model": model, "persona": persona, "target": target}
+        if target_tier is not None:
+            settings["target_tier"] = target_tier
+        units[0]["track"]["critic"] = settings
+        path.write_text(serialize_structured_record(path, data))
 
-    def _args(mp: str, tslug: str) -> list[str]:
+    def _args(mp: str, tslug: str, cs: dict) -> list[str]:
         cmd = [
             bin_path, "review", str(mp),
             "--release-slug", slug,
             "--track-slug", tslug,
-            "--model", model,
-            "--persona", persona,
-            "--target", target,
+            "--model", cs["model"],
+            "--persona", cs["persona"],
+            "--target", cs["target"],
         ]
-        if target_tier is not None:
-            cmd += ["--target-tier", str(target_tier)]
+        if cs.get("target_tier") is not None:
+            cmd += ["--target-tier", str(cs["target_tier"])]
         return cmd
 
     results = []
     for unit in units:
+        saved = unit["track"].get("critic") or {}
+        cs = {
+            "model": saved.get("model") or model,
+            "persona": saved.get("persona") or persona,
+            "target": saved.get("target") or target,
+            "target_tier": saved.get("target_tier", target_tier),
+        }
         mp = effective_master_path(release, unit["index"], unit["track"])
         if not mp:
             results.append({"track_slug": unit["slug"], "ok": False,
                             "error": "no master_path — set it in the track editor"})
             continue
         r = subprocess.run(
-            _args(mp, unit["slug"]),
+            _args(mp, unit["slug"], cs),
             capture_output=True, text=True, cwd=str(critic_cwd),
         )
         entry: dict[str, Any] = {"track_slug": unit["slug"], "ok": r.returncode == 0}
@@ -302,8 +322,14 @@ def run_writeback(root: Path, slug: str) -> dict[str, Any]:
         else:
             failed.append({"id": record_id, "error": (r.stderr or r.stdout)[-300:]})
 
-    return {"written": written, "skipped": skipped, "failed": failed,
-            "total": len(written)}
+    result: dict[str, Any] = {"written": written, "skipped": skipped,
+                              "failed": failed, "total": len(written)}
+    if not written and (skipped or failed):
+        bits = [f"{s['id']} is {s['status']}" for s in skipped]
+        bits += [f"{f['id']} failed" for f in failed]
+        result["message"] = ("nothing written — " + "; ".join(bits)
+                             + ". Only approved or publishable reviews are written.")
+    return result
 
 
 def run_sampler(

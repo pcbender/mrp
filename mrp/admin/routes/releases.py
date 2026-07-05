@@ -334,7 +334,9 @@ async def missing_links(request: Request):
 def _load_artists(root: Path) -> list[dict[str, Any]]:
     artists_dir = root / "content" / "artists"
     result = []
-    for path in sorted(artists_dir.glob("*.yaml")):
+    # Artist records are YAML; tolerate legacy JSON records too
+    # (load_structured_record handles both).
+    for path in sorted(list(artists_dir.glob("*.yaml")) + list(artists_dir.glob("*.json"))):
         try:
             data = load_structured_record(path)
         except Exception:

@@ -5,7 +5,8 @@
 {% set automation = release.automation or {} %}
 {% set copyright = release.copyright or {} %}
 
-<form hx-post="/releases/{{ slug }}/details"
+<form id="details-form"
+      hx-post="/releases/{{ slug }}/details"
       hx-target="#save-result"
       hx-swap="innerHTML">
 
@@ -72,6 +73,12 @@
         <div class="form-field">
           <label>Artist ID <span class="required">*</span></label>
           <select name="artist_id">
+            {# Never let the browser default to the first option: if the current
+               artist has no dropdown entry, keep it selectable as-is. #}
+            {% set known_ids = artists | map(attribute='id') | list %}
+            {% if release.artist_id and release.artist_id not in known_ids %}
+            <option value="{{ release.artist_id }}" selected>{{ release.artist_id }} (no artist record)</option>
+            {% endif %}
             {% for a in artists %}
             <option value="{{ a.id }}" {% if a.id == release.artist_id %}selected{% endif %}>{{ a.name }}</option>
             {% endfor %}

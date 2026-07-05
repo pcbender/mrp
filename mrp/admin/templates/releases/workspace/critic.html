@@ -8,26 +8,9 @@
     <h2 style="font-size:14px;margin-bottom:.25rem">Pass 1 — Track Reviews</h2>
     <p style="font-size:12px;color:var(--muted);margin-bottom:.75rem">
       Standalone review per track: audio analysis + AI review. Requires each track's
-      master path. Edit and approve each review before writeback.
+      master path. Settings are saved per track when you run a review and reused
+      on later runs. Edit and approve each review before writeback.
     </p>
-
-    <div id="critic-settings" style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem">
-      <select name="critic_model" class="pipeline-select" title="AI model">
-        {% for m, ml in [('dev','dev — Haiku/Flash'), ('default','default — Sonnet/Pro'), ('hero','hero — Opus/Flash')] %}
-        <option value="{{ m }}">{{ ml }}</option>
-        {% endfor %}
-      </select>
-      <select name="critic_persona" class="pipeline-select" title="Critic persona">
-        {% for p in ['default', 'pundit', 'liner'] %}<option value="{{ p }}">{{ p }}</option>{% endfor %}
-      </select>
-      <select name="critic_target" class="pipeline-select" title="Output target">
-        {% for t in ['blurb', 'liner'] %}<option value="{{ t }}">{{ t }}</option>{% endfor %}
-      </select>
-      <select name="critic_target_tier" class="pipeline-select" title="Target tier">
-        <option value="">tier: auto</option>
-        {% for tier in [2, 3, 4, 5] %}<option value="{{ tier }}">tier {{ tier }}</option>{% endfor %}
-      </select>
-    </div>
 
     <div class="table-wrap">
       <table>
@@ -37,6 +20,7 @@
         <tbody>
           {% for u in units %}
           {% set s = u.summary %}
+          {% set cs = u.track.critic or {} %}
           <tr>
             <td class="td-mono">{{ u.track.number or loop.index }}</td>
             <td class="td-title">{{ u.title }}</td>
@@ -48,7 +32,26 @@
               {% endif %}
             </td>
             <td class="td-mono">{% if s.rank %}{{ s.rank }} — {{ s.label }}{% endif %}</td>
-            <td>{{ ws_cell('critic-track/' + u.slug, u.job) }}</td>
+            <td>
+              <div id="critic-settings-{{ u.slug }}" style="display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.4rem">
+                <select name="critic_model" class="pipeline-select" title="AI model (dev — Haiku/Flash, default — Sonnet/Pro, hero — Opus/Flash)">
+                  {% for m in ['dev', 'default', 'hero'] %}
+                  <option value="{{ m }}"{% if cs.get('model', 'dev') == m %} selected{% endif %}>{{ m }}</option>
+                  {% endfor %}
+                </select>
+                <select name="critic_persona" class="pipeline-select" title="Critic persona">
+                  {% for p in ['default', 'pundit', 'liner'] %}<option value="{{ p }}"{% if cs.get('persona', 'default') == p %} selected{% endif %}>{{ p }}</option>{% endfor %}
+                </select>
+                <select name="critic_target" class="pipeline-select" title="Output target">
+                  {% for t in ['blurb', 'liner'] %}<option value="{{ t }}"{% if cs.get('target', 'blurb') == t %} selected{% endif %}>{{ t }}</option>{% endfor %}
+                </select>
+                <select name="critic_target_tier" class="pipeline-select" title="Target tier">
+                  <option value="">tier: auto</option>
+                  {% for tier in [2, 3, 4, 5] %}<option value="{{ tier }}"{% if cs.get('target_tier') == tier %} selected{% endif %}>tier {{ tier }}</option>{% endfor %}
+                </select>
+              </div>
+              {{ ws_cell('critic-track/' + u.slug, u.job) }}
+            </td>
             <td>
               {% if s.exists %}
               <a href="/releases/{{ slug }}/critic?track={{ u.slug }}" class="btn btn-secondary btn-sm">Edit</a>
@@ -64,6 +67,9 @@
     <div class="pipeline-step" style="margin-top:.75rem">
       {{ ws_row('critic-all', 'Run all tracks', critic_all_job) }}
     </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:.25rem">
+      Run all uses each track's saved settings (dev / default / blurb when a track has none).
+    </p>
     {% endif %}
   </div>
 </div>

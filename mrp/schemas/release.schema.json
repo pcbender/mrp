@@ -145,6 +145,16 @@
         "hints": {
           "type": "object",
           "additionalProperties": {"type": "string"}
+        },
+        "critic": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "model": {"type": "string"},
+            "persona": {"type": "string"},
+            "target": {"type": "string"},
+            "target_tier": {"type": ["integer", "null"]}
+          }
         }
       }
     }

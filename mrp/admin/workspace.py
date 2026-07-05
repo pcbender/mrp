@@ -56,6 +56,16 @@ def bool_field(form: dict, key: str) -> bool:
     return form.get(key) in {"on", "true", "1", True}
 
 
+def artist_record_path(root: Path, artist_id: str) -> Path | None:
+    """Path of an artist record — YAML preferred, legacy JSON fallback.
+    None when the artist has no record."""
+    for ext in (".yaml", ".json"):
+        path = root / "content" / "artists" / f"{artist_id}{ext}"
+        if path.exists():
+            return path
+    return None
+
+
 def track_units(release: dict) -> list[dict]:
     """Normalize song vs album into a uniform list of track units.
 
@@ -94,6 +104,79 @@ def effective_master_path(release: dict, index: int, track: dict) -> str | None:
     if isinstance(legacy, list):
         return legacy[index] if index < len(legacy) else None
     return legacy or None
+
+
+# Artist change migration ------------------------------------------------------
+#
+# Critic records (app/critic/out/), review markdown (site/src/content/reviews/)
+# and preview samples (site/public/samples/) are all keyed {artist_id}--{slug}.
+# Changing a release's artist_id orphans every one of them, so the change is
+# gated in the Details save and these helpers re-key the files.
+
+_ARTIFACT_DIRS = [
+    (Path("app") / "critic" / "out", ".json"),
+    (Path("site") / "src" / "content" / "reviews", ".md"),
+    (Path("site") / "public" / "samples", ".mp3"),
+]
+
+
+def artist_artifact_moves(
+    root: Path, release: dict, old_id: str, new_id: str
+) -> list[tuple[Path, Path]]:
+    """Existing files an artist_id change must re-key, as (src, dst) pairs."""
+    ids = [(f"{old_id}--{u['slug']}", f"{new_id}--{u['slug']}")
+           for u in track_units(release)]
+    if release.get("model") == "album":
+        rslug = release.get("slug") or ""
+        ids.append((f"album--{old_id}--{rslug}", f"album--{new_id}--{rslug}"))
+    moves = []
+    for rel_dir, ext in _ARTIFACT_DIRS:
+        for old_key, new_key in ids:
+            src = root / rel_dir / f"{old_key}{ext}"
+            if src.exists():
+                moves.append((src, root / rel_dir / f"{new_key}{ext}"))
+    return moves
+
+
+def migrate_artist_artifacts(
+    root: Path, release: dict, old_id: str, new_id: str
+) -> list[str]:
+    """Re-key downstream artifacts after an artist_id change.
+
+    Renames the files, rewrites embedded ids (track_id/album_id in critic
+    records and review frontmatter), and patches preview_audio URLs on the
+    release dict (caller persists the release). Returns human-readable actions.
+    """
+    actions: list[str] = []
+    for src, dst in artist_artifact_moves(root, release, old_id, new_id):
+        if src.suffix == ".json":
+            # Only re-key the record ids; source/proxy paths still point at
+            # real files on disk and must not be rewritten.
+            rec = json.loads(src.read_text(encoding="utf-8"))
+            def _rekey(v: str) -> str:
+                return v.replace(f"{old_id}--", f"{new_id}--", 1)
+            for key in ("track_id", "album_id"):
+                if isinstance(rec.get(key), str):
+                    rec[key] = _rekey(rec[key])
+            for tic in rec.get("track_reviews_in_context") or []:
+                if isinstance(tic, dict) and isinstance(tic.get("track_id"), str):
+                    tic["track_id"] = _rekey(tic["track_id"])
+            src.write_text(json.dumps(rec, indent=2, ensure_ascii=False),
+                           encoding="utf-8")
+        elif src.suffix == ".md":
+            text = src.read_text(encoding="utf-8")
+            src.write_text(
+                text.replace(f"track_id: {old_id}--", f"track_id: {new_id}--", 1),
+                encoding="utf-8")
+        src.replace(dst)
+        actions.append(f"{src.relative_to(root)} → {dst.name}")
+    for u in track_units(release):
+        pa = u["track"].get("preview_audio") or ""
+        if pa.startswith(f"/samples/{old_id}--"):
+            u["track"]["preview_audio"] = pa.replace(
+                f"/samples/{old_id}--", f"/samples/{new_id}--", 1)
+            actions.append(f"preview_audio → {u['track']['preview_audio']}")
+    return actions
 
 
 # Per-stage detail heuristics ------------------------------------------------
@@ -179,12 +262,12 @@ def _critic_status(release: dict, root: Path) -> dict:
 
 def _promoter_status(root: Path, release: dict) -> dict:
     """Done when the artist has a promo blurb and a human-reviewed bio."""
-    import yaml
+    from mrp.core.migrate_site import load_structured_record
 
-    artist_path = root / "content" / "artists" / f"{release.get('artist_id') or ''}.yaml"
-    if not artist_path.is_file():
+    artist_path = artist_record_path(root, release.get("artist_id") or "")
+    if artist_path is None:
         return {"state": "todo", "detail": "no artist"}
-    artist = (yaml.safe_load(artist_path.read_text()) or {}).get("artist") or {}
+    artist = load_structured_record(artist_path).get("artist") or {}
     blurb = bool(artist.get("promo_blurb"))
     bio = bool(artist.get("bio_short") or artist.get("bio_long"))
     reviewed = artist.get("bio_auto_generated") is False

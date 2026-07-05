@@ -28,7 +28,11 @@
   {% elif parsed.get('ok_count') is not none and parsed.get('tracks') %}
     <span style="font-size:11px;color:var(--success)">{{ parsed.ok_count }}/{{ parsed.tracks | length }} ok</span>
   {% elif parsed.get('written') is not none %}
-    <span style="font-size:11px;color:var(--success)">{{ parsed.written | length }} written, {{ parsed.skipped | length }} skipped</span>
+    {% set wb_bad = not parsed.written and (parsed.skipped or parsed.get('failed')) %}
+    <span style="font-size:11px;color:{{ 'var(--danger)' if wb_bad else 'var(--success)' }}">{{ parsed.written | length }} written, {{ parsed.skipped | length }} skipped{% if parsed.get('failed') %}, {{ parsed.failed | length }} failed{% endif %}</span>
+    {% if parsed.get('message') %}
+    <span class="pipeline-step-error" title="{{ parsed.message | e }}">{{ parsed.message }}</span>
+    {% endif %}
   {% elif parsed.get('ok') is not none %}
     <span style="font-size:11px;color:{{ 'var(--success)' if parsed.ok else 'var(--danger)' }}">{{ 'ok' if parsed.ok else 'failed' }}</span>
   {% endif %}
