@@ -12,9 +12,9 @@ release:
   upc: 057914420059
   catalog_number: null
   cover_image: site/public/assets/releases/on-to-potter-s-field/cover.jpg
-  hero_image: null
-  summary: ''
-  description: ''
+  hero_image: site/public/assets/releases/on-to-potter-s-field/hero.jpg
+  summary: null
+  description: null
   credits:
     primary_artist: PCBender
     songwriter: Michael Anthony Rose
@@ -26,6 +26,7 @@ release:
     apple_music: https://music.apple.com/us/album/on-to-potters-field-single/1863797490
     youtube: https://www.youtube.com/watch?v=jXoxTVM6BRM
     youtube_music: https://music.youtube.com/watch?v=jXoxTVM6BRM
+    itunes_store: https://music.apple.com/us/album/1863797490?app=itunes
   seo:
     title: On To Potter's Field by PCBender
     description: On To Potter's Field by PCBender on Maricopa Records.
@@ -40,36 +41,68 @@ release:
     explicit: false
     preview_audio: /samples/pcbender--on-to-potter-s-field.mp3
     instrumental: false
-    lyrics_text: 'A slow, solemn minor-key song with a dignified, restrained tone.
-      Tempo \~68 BPM. The verses use this progression Am - Dm - G - C - F - Bdim -
-      E - Am for 4 beats, creating a sense of inevitability and moral descent. Sparse
-      piano introduces the track. Drums enter late and minimally, using floor toms
-      and soft mallets. Verses are delivered in a calm, almost spoken baritone, controlled
-      and unemotional. Pre-choruses subtly intensify with rising string tension and
-      harmonic motion. Choruses use the same progression as the verse but each chord
-      lasts 2 beats. Open slightly with fuller harmony but remain somber and restrained-no
-      triumph, no release. Instrumental section lets the progression cycle slowly,
-      emphasizing gravity and reflection. Final chorus fades rather than resolves,
-      leaving the listener suspended in quiet reckoning
-
-
-      This slow, solemn, post-rock minor-key piece opens with sparse, poignant piano
-      articulating the Am - Dm - G - C - F - Bdim - E - Am cycle, each chord 4 beats.
-      Calm, almost spoken baritone sits above, while minimal floor toms and snare
-      arrive late. Pre-choruses add rising clean guitar and modulate into E Major
-      for harmonic momentum. Choruses compress the verse’s chords to 2 beats, gently
-      expanding harmony but maintaining restraint. An instrumental passage dwells
-      gravely on the cycle, and the final chorus fades unresolved, suspending the
-      listener in quiet, tense atmosphere
-
-
-      This slow, solemn, post-rock minor-key piece opens with sparse, poignant piano
-      articulating the Am - Dm - G - C - F - Bdim - E - Am cycle, each chord 4 beats.
-      Calm, almost spoken baritone sits above, while minimal floor toms and snare
-      arrive late. Pre-choruses add rising clean guitar and modulate into E Major
-      for harmonic momentum. Choruses compress the verse’s chords to 2 beats, gently
-      expanding harmony but maintaining restraint. An instrumental passage dwells
-      gravely on the cycle, and the final chorus fades unresolved, suspending the
-      listener in quiet, tense atmosphere. Minimal reverb or echo. No embellishment;
-      let the lyrics have their say'
+    lyrics_text: "Just like the brazen giant of Greek fame,\nWith conquering limbs\
+      \ astride from land to land;\nHere at our sea-washed, sunset gates shall stand\n\
+      An amoral man with a torch, whose flame\nIs as poisoned lightning, and his name\n\
+      Father of Exiles. From his craven hand\nFlows world-wide venom; his wild eyes\
+      \ command\nThe air-bridged harbor that twin cities frame.\n\n\u201CKeep, stolen\
+      \ lands, our storied pomp!\u201D cries he\nWith vile lips. \u201CGive me your\
+      \ tired, your poor,\nYour huddled masses yearning to breathe free,\nThe wretched\
+      \ refuse of your teeming shore.\nI\u2019ll send the hopeless, the beneath-us\
+      \ back to thee,\nAnd snuff my lamp behind the shuttered door!\u201D\n\nAlas,\
+      \ poor Lazarus\nLook at where we\u2019ve come\nEach and every one of us\nMoves\
+      \ on to Potter\u2019s Field"
     lyrics_source: https://docs.google.com/document/d/1WHqeWsiFarnvmNFWE4xWMk6Lwk6IexbmREV4v3_sUag/edit
+    master_path: /home/mrose/audio/masters/On To Potter's Field.wav
+    lyrics_raw: "[Intro | gentle arpeggios of the chord progression]\n\n[Verse]\n\
+      Just like the brazen giant of Greek fame\nWith conquering limbs astride from\
+      \ land to land\nHere at our sea-washed, sunset gates shall stand\nAn amoral\
+      \ man with a torch\n\n[Pre-chorus]\nHis flame is as poisoned lightning\nAnd\
+      \ his name - Father of Exiles\nFrom his craven hand flows world-wide venom\n\
+      His wild eyes command the air-bridged harbor\nThat twin cities frame\n\n[Chorus]\n\
+      Alas, poor Lazarus\nLook at where we\u2019ve come\nEach and every one of us\n\
+      Moves on to Potter\u2019s Field\n\n[Verse]\n\u201CKeep, stolen lands, our storied\
+      \ pomp!\u201D\nCries he with vile lips\n\u201CGive me your tired, your poor,\
+      \ your huddled masses\nYearning to breathe free\u201D\n\n[Pre-chorus]\nThe wretched\
+      \ refuse of your teeming shore\nI\u2019ll send the hopeless, the beneath-us\
+      \ back to thee\nAnd snuff my lamp\nBehind the shuttered door!\u201D\n\n[Chorus]\n\
+      Alas, poor Lazarus\nLook at where we\u2019ve come\nEach and every one of us\n\
+      Moves on to Potter\u2019s Field\n\n[Instrumental]\n\n[Chorus]\nAlas, poor Lazarus\n\
+      Look at where we\u2019ve come\nEach and every one of us\nMoves on to Potter\u2019\
+      s Field\n\n[Fade out]"
+    style: "This slow, solemn, post-rock minor-key piece opens with sparse, poignant\
+      \ piano articulating the Am - Dm - G - C - F - Bdim - E - Am cycle, each chord\
+      \ 4 beats, Calm, almost spoken baritone sits above, while minimal floor toms\
+      \ and snare arrive late, Pre-choruses add rising clean guitar and modulate into\
+      \ E Major for harmonic momentum, Choruses compress the verse\u2019s chords to\
+      \ 2 beats, gently expanding harmony but maintaining restraint, An instrumental\
+      \ passage dwells gravely on the cycle, and the final chorus fades unresolved,\
+      \ suspending the listener in quiet, tense atmosphere, Minimal reverb or echo,\
+      \ No embellishment; let the lyrics have their say"
+    links:
+      spotify: null
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    credits:
+      primary_artist: PCBender
+      songwriter: Michael Anthony Rose
+      lyrics: Michael Anthony Rose, Emma Lazarus
+      producer: Michael Anthony Rose
+      mastering: null
+    hints:
+      Vocals: Male
+      Style: Gospel Rock
+  language: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null
