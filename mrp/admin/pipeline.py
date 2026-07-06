@@ -479,13 +479,185 @@ def run_snip(
     }
 
 
-def enrich_landr(root: Path, slug: str) -> dict[str, Any]:
-    import re
-    import html
-    from urllib.parse import urlparse, urljoin
+# How long after release_date we keep expecting a platform link to appear.
+# Past its window, a missing platform is auto-marked N/A (automation.links_na)
+# and stops being chased; the Links tab N/A toggle un-marks it, which resumes
+# attempts on the next run.
+LINK_PATIENCE_DAYS = {
+    "spotify": 2,
+    "apple_music": 14, "itunes_store": 14, "deezer": 14, "tidal": 14, "amazon_music": 14,
+    "youtube": 45, "youtube_music": 45,
+    "pandora": 90, "soundcloud": 90, "bandcamp": 90,
+}
+
+
+def _unresolved_platforms(release: dict[str, Any]) -> list[str]:
+    from mrp.admin.workspace import PLATFORM_KEYS
+
+    links = release.get("links") or {}
+    na = set((release.get("automation") or {}).get("links_na") or [])
+    return [k for k in PLATFORM_KEYS if not links.get(k) and k not in na]
+
+
+def enrich_missing_links(root: Path) -> dict[str, Any]:
+    """Converging bulk pass over every release: expire platforms past their
+    patience window into links_na, then chase the rest through the sources in
+    reliability order (distributor promo, Apple, YouTube, Odesli last)."""
+    from datetime import date
+
+    APPLE_KEYS = {"apple_music", "itunes_store"}
+    YT_KEYS = {"youtube", "youtube_music"}
+    SOURCES = [
+        ("promo", enrich_promo_links, None),
+        ("apple-music", enrich_apple_music, APPLE_KEYS),
+        ("youtube", enrich_youtube, YT_KEYS),
+        ("odesli", enrich_odesli, None),
+    ]
+
+    today = date.today()
+    patched: list[dict[str, Any]] = []
+    expired: dict[str, list[str]] = {}
+    errors: dict[str, list[str]] = {}
+    settled = 0
+
+    for path in sorted((root / "content" / "releases").glob("*.yaml")):
+        slug = path.stem
+        try:
+            data = load_structured_record(path)
+        except Exception:
+            continue
+        release = data.get("release")
+        if not isinstance(release, dict):
+            continue
+
+        active = _unresolved_platforms(release)
+        if not active:
+            settled += 1
+            continue
+
+        age_days = None
+        try:
+            age_days = (today - date.fromisoformat(str(release.get("release_date")))).days
+        except (TypeError, ValueError):
+            pass  # undated releases never expire, only get lookups
+        if age_days is not None:
+            past_window = [k for k in active if age_days > LINK_PATIENCE_DAYS[k]]
+            if past_window:
+                automation = release.setdefault("automation", {})
+                automation["links_na"] = sorted(
+                    set(automation.get("links_na") or []) | set(past_window)
+                )
+                path.write_text(serialize_structured_record(path, data))
+                expired[slug] = past_window
+                active = [k for k in active if k not in past_window]
+        if not active:
+            continue
+
+        # Each source saves the YAML itself; re-read remaining slots between
+        # sources so later (less reliable) ones only chase what's still empty.
+        added: dict[str, str] = {}
+        for name, fn, targets in SOURCES:
+            if not active:
+                break
+            if targets is not None and not (targets & set(active)):
+                continue
+            try:
+                result = fn(root, slug)
+                added.update(result.get("added") or {})
+            except Exception as exc:
+                errors.setdefault(slug, []).append(f"{name}: {exc}")
+            active = _unresolved_platforms(_load_release(root, slug)[2])
+
+        if added:
+            patched.append({"path": f"content/releases/{slug}.yaml", "added": added})
+
+    return {
+        "summary": {
+            "releases_patched": len(patched),
+            "links_added": sum(len(p["added"]) for p in patched),
+            "platforms_expired": sum(len(v) for v in expired.values()),
+            "releases_settled": settled,
+            "errors": len(errors),
+        },
+        "patched": patched,
+        "expired": expired,
+        "errors": errors,
+    }
+
+
+def enrich_promo_links(root: Path, slug: str) -> dict[str, Any]:
+    """Backfill store links from the release's distributor promo page:
+    LANDR (scraped by UPC) or Amuse (smart-link API by artist/title slug)."""
+    path, data, release = _load_release(root, slug)
+
+    distributor = release.get("distributor")
+    if distributor == "landr":
+        seen, extra_links, promo_url = _landr_store_links(release)
+    elif distributor == "amuse":
+        seen, extra_links, promo_url = _amuse_store_links(release)
+    else:
+        raise ValueError(
+            "No distributor on this release — set it in the Details tab first"
+        )
+
+    if not seen:
+        raise ValueError(f"No store links found at {promo_url} — wrong page for this release?")
+
+    target_links = release.setdefault("links", {})
+    added: dict[str, str] = {}
+    for key, url in seen.items():
+        if not target_links.get(key):
+            target_links[key] = url
+            added[key] = url
+
+    path.write_text(serialize_structured_record(path, data))
+    return {"added": added, "total": len(added), "extra_links": extra_links, "promo_url": promo_url}
+
+
+def _amuse_store_links(release: dict[str, Any]) -> tuple[dict[str, str], dict[str, str], str]:
     import requests
 
-    path, data, release = _load_release(root, slug)
+    from mrp.admin.workspace import PLATFORM_KEYS
+
+    kind = "track" if release.get("model") == "song" else "album"
+    amuse_slug = f"{release.get('artist_id')}-{release.get('slug')}"
+    promo_url = f"https://share.amuse.io/{kind}/{amuse_slug}"
+    api_url = f"https://promo-api.amuse.io/api/smart-link/{kind}/{amuse_slug}/"
+
+    resp = requests.get(api_url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+    if resp.status_code == 404:
+        raise ValueError(
+            f"Amuse smart link not found: {promo_url} — artist/title slug may not match Amuse's"
+        )
+    resp.raise_for_status()
+    payload = resp.json()
+
+    # The smart link is looked up by slug, not UPC — make sure it's our release
+    upc = str(release.get("upc") or "")
+    found_upc = str(payload.get("upc") or "")
+    if upc and found_upc and upc != found_upc:
+        raise ValueError(
+            f"UPC mismatch at {promo_url}: release has {upc}, Amuse returned {found_upc}"
+        )
+
+    seen: dict[str, str] = {}
+    extra_links: dict[str, str] = {}
+    for dsp in payload.get("dsps") or []:
+        store, url = dsp.get("store"), dsp.get("url")
+        if not store or not url:
+            continue
+        if store in PLATFORM_KEYS:
+            seen.setdefault(store, url)
+        else:
+            extra_links.setdefault(store, url)
+    return seen, extra_links, promo_url
+
+
+def _landr_store_links(release: dict[str, Any]) -> tuple[dict[str, str], dict[str, str], str]:
+    import re
+    import html
+    from urllib.parse import urlparse
+    import requests
 
     upc = release.get("upc") or ""
     if not upc:
@@ -557,15 +729,7 @@ def enrich_landr(root: Path, slug: str) -> dict[str, Any]:
                     extra_links[xkey] = clean_url(decoded)
                     break
 
-    target_links = release.setdefault("links", {})
-    added: dict[str, str] = {}
-    for key, url in seen.items():
-        if not target_links.get(key):
-            target_links[key] = url
-            added[key] = url
-
-    path.write_text(serialize_structured_record(path, data))
-    return {"added": added, "total": len(added), "extra_links": extra_links, "landr_url": landr_url}
+    return seen, extra_links, landr_url
 
 
 def run_promoter(root: Path, slug: str, mode: str = "blurb", model: str = "default") -> dict[str, Any]:

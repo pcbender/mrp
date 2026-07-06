@@ -10,7 +10,7 @@ from fastapi.templating import Jinja2Templates
 from mrp.admin import db
 from mrp.admin import jobs as job_runner
 from mrp.admin.deps import get_repo_root
-from mrp.core.enrich_links import enrich_links
+from mrp.admin.pipeline import enrich_missing_links
 
 router = APIRouter(prefix="/jobs")
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
@@ -19,7 +19,7 @@ _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templ
 @router.post("/enrich-links", response_class=HTMLResponse)
 async def launch_enrich_links(request: Request):
     root = get_repo_root()
-    job_id = job_runner.launch("enrich-links", enrich_links, root)
+    job_id = job_runner.launch("enrich-missing-links", enrich_missing_links, root)
     return _templates.TemplateResponse(request, "jobs/_result.html", {
         "job": db.get_job(job_id),
     })

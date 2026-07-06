@@ -8,7 +8,7 @@
     class="btn btn-primary"
     hx-post="/jobs/enrich-links"
     hx-target="#job-result"
-    hx-swap="innerHTML">Run Enrich Links</button>
+    hx-swap="innerHTML">Run Missing Links</button>
 </div>
 
 <div id="job-result" style="margin-bottom:1rem"></div>
@@ -32,8 +32,8 @@
         <td class="td-mono">{{ r.artist_id }}</td>
         {% for k in platform_keys %}
         <td style="text-align:center">
-          <span class="missing-dot {% if k in r.present %}present{% else %}absent{% endif %}"
-            title="{{ k }}: {% if k in r.present %}linked{% else %}missing{% endif %}"></span>
+          <span class="missing-dot {% if k in r.present %}present{% elif k in r.na %}na{% else %}absent{% endif %}"
+            title="{{ k }}: {% if k in r.present %}linked{% elif k in r.na %}N/A{% else %}missing{% endif %}"></span>
         </td>
         {% endfor %}
         <td><a href="/releases/{{ r.slug }}/edit" class="btn btn-secondary btn-sm">Edit</a></td>

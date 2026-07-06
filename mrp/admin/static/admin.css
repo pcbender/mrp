@@ -369,6 +369,7 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .missing-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
 .missing-dot.absent { background: #fca5a5; }
 .missing-dot.present { background: #86efac; }
+.missing-dot.na { background: #d1d5db; }
 
 /* ── Release workspace ── */
 .workspace-header {

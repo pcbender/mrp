@@ -18,8 +18,14 @@
   {% elif job_status == 'done' %}
   <div class="flash flash-ok" style="margin-bottom:0">
     <strong>{{ job.command }}</strong> completed
-    {% if output and output is mapping %}
-      — {{ output.summary.releases_patched if output.summary else '' }} releases patched
+    {% if output and output is mapping and output.summary %}
+      — {{ output.summary.releases_patched }} releases patched
+      {%- if output.summary.links_added is defined -%}
+        , {{ output.summary.links_added }} links added,
+        {{ output.summary.platforms_expired }} expired to N/A,
+        {{ output.summary.releases_settled }} already settled
+        {%- if output.summary.errors %}, {{ output.summary.errors }} with errors{% endif %}
+      {%- endif %}
     {% endif %}
     <span style="font-size:11px;color:#166534;margin-left:auto;float:right">{{ job.completed_at[:10] if job.completed_at else '' }}</span>
   </div>
@@ -30,6 +36,26 @@
     {% endfor %}
     {% if output.patched|length > 10 %}
     <li style="color:var(--muted)">…and {{ output.patched|length - 10 }} more</li>
+    {% endif %}
+  </ul>
+  {% endif %}
+  {% if output and output is mapping and output.get('expired') %}
+  <ul style="font-size:12px;margin-top:.5rem;padding-left:1rem;color:var(--muted)">
+    {% for slug, platforms in (output.expired.items()|list)[:10] %}
+    <li>{{ slug }} — expired to N/A: {{ platforms|join(', ') }}</li>
+    {% endfor %}
+    {% if output.expired|length > 10 %}
+    <li>…and {{ output.expired|length - 10 }} more</li>
+    {% endif %}
+  </ul>
+  {% endif %}
+  {% if output and output is mapping and output.get('errors') %}
+  <ul style="font-size:12px;margin-top:.5rem;padding-left:1rem;color:#b91c1c">
+    {% for slug, errs in (output.errors.items()|list)[:10] %}
+    <li>{{ slug }} — {{ errs|join('; ') }}</li>
+    {% endfor %}
+    {% if output.errors|length > 10 %}
+    <li>…and {{ output.errors|length - 10 }} more</li>
     {% endif %}
   </ul>
   {% endif %}
