@@ -36,11 +36,7 @@ release:
   automation:
     allow_auto_publish: false
     links_na:
-    - amazon_music
-    - apple_music
     - deezer
-    - itunes_store
-    - tidal
   song:
     number: 1
     title: It's June Gloom

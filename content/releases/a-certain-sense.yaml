@@ -36,7 +36,6 @@ release:
     allow_auto_publish: false
     links_na:
     - amazon_music
-    - deezer
     - itunes_store
     - tidal
   song:

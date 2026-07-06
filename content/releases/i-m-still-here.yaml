@@ -38,7 +38,6 @@ release:
     - amazon_music
     - deezer
     - itunes_store
-    - tidal
   tracks:
   - number: 1
     title: I'm Old Now

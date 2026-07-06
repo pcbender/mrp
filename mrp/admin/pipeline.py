@@ -51,6 +51,7 @@ def enrich_odesli(root: Path, slug: str) -> dict[str, Any]:
             links[our_key] = url
             added[our_key] = url
 
+    _strip_linked_na(release)
     path.write_text(serialize_structured_record(path, data))
     return {"added": added, "total": len(added), "slug": slug}
 
@@ -105,6 +106,7 @@ def enrich_apple_music(root: Path, slug: str) -> dict[str, Any]:
         except Exception as exc:
             added["_track_error"] = str(exc)
 
+    _strip_linked_na(release)
     path.write_text(serialize_structured_record(path, data))
     return {"added": {k: v for k, v in added.items() if not k.startswith("_")}, "total": len(added)}
 
@@ -178,6 +180,7 @@ def enrich_youtube(root: Path, slug: str) -> dict[str, Any]:
                 tl["youtube"] = f"https://www.youtube.com/watch?v={tv['videoId']}"
                 added[f"track:{track.get('slug')}.youtube"] = tl["youtube"]
 
+    _strip_linked_na(release)
     path.write_text(serialize_structured_record(path, data))
     return {"added": added, "total": len(added)}
 
@@ -499,11 +502,26 @@ def _unresolved_platforms(release: dict[str, Any]) -> list[str]:
     return [k for k in PLATFORM_KEYS if not links.get(k) and k not in na]
 
 
+def _strip_linked_na(release: dict[str, Any]) -> None:
+    """A platform with a real link must not stay marked N/A — a found link
+    wins over an earlier expiry or manual give-up."""
+    automation = release.get("automation") or {}
+    na = automation.get("links_na")
+    if not na:
+        return
+    links = release.get("links") or {}
+    automation["links_na"] = [k for k in na if not links.get(k)]
+    if not automation["links_na"]:
+        automation.pop("links_na")
+
+
 def enrich_missing_links(root: Path) -> dict[str, Any]:
     """Converging bulk pass over every release: expire platforms past their
     patience window into links_na, then chase the rest through the sources in
     reliability order (distributor promo, Apple, YouTube, Odesli last)."""
     from datetime import date
+
+    from mrp.core.odesli_client import OdesliRateLimitedError
 
     APPLE_KEYS = {"apple_music", "itunes_store"}
     YT_KEYS = {"youtube", "youtube_music"}
@@ -519,6 +537,7 @@ def enrich_missing_links(root: Path) -> dict[str, Any]:
     expired: dict[str, list[str]] = {}
     errors: dict[str, list[str]] = {}
     settled = 0
+    odesli_down = False
 
     for path in sorted((root / "content" / "releases").glob("*.yaml")):
         slug = path.stem
@@ -559,11 +578,18 @@ def enrich_missing_links(root: Path) -> dict[str, Any]:
         for name, fn, targets in SOURCES:
             if not active:
                 break
+            if name == "odesli" and odesli_down:
+                continue
             if targets is not None and not (targets & set(active)):
                 continue
             try:
                 result = fn(root, slug)
                 added.update(result.get("added") or {})
+            except OdesliRateLimitedError as exc:
+                odesli_down = True
+                errors.setdefault(slug, []).append(
+                    f"{name}: {exc} — skipping Odesli for the rest of this run"
+                )
             except Exception as exc:
                 errors.setdefault(slug, []).append(f"{name}: {exc}")
             active = _unresolved_platforms(_load_release(root, slug)[2])
@@ -578,6 +604,7 @@ def enrich_missing_links(root: Path) -> dict[str, Any]:
             "platforms_expired": sum(len(v) for v in expired.values()),
             "releases_settled": settled,
             "errors": len(errors),
+            "odesli_rate_limited": odesli_down,
         },
         "patched": patched,
         "expired": expired,
@@ -610,6 +637,7 @@ def enrich_promo_links(root: Path, slug: str) -> dict[str, Any]:
             target_links[key] = url
             added[key] = url
 
+    _strip_linked_na(release)
     path.write_text(serialize_structured_record(path, data))
     return {"added": added, "total": len(added), "extra_links": extra_links, "promo_url": promo_url}
 
@@ -618,27 +646,43 @@ def _amuse_store_links(release: dict[str, Any]) -> tuple[dict[str, str], dict[st
     import requests
 
     from mrp.admin.workspace import PLATFORM_KEYS
+    from mrp.core.release import slugify
 
     kind = "track" if release.get("model") == "song" else "album"
-    amuse_slug = f"{release.get('artist_id')}-{release.get('slug')}"
-    promo_url = f"https://share.amuse.io/{kind}/{amuse_slug}"
-    api_url = f"https://promo-api.amuse.io/api/smart-link/{kind}/{amuse_slug}/"
+    artist_id = release.get("artist_id") or ""
 
-    resp = requests.get(api_url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
-    if resp.status_code == 404:
-        raise ValueError(
-            f"Amuse smart link not found: {promo_url} — artist/title slug may not match Amuse's"
-        )
-    resp.raise_for_status()
-    payload = resp.json()
+    # Amuse deletes apostrophes where our slugifier hyphenates ("I'm" ->
+    # "im", not "i-m") and never carries our -N slug-collision suffix, so
+    # derive their slug from the title first; our release slug is the
+    # fallback. The UPC cross-check below keeps a twin-titled release from
+    # slipping through on either candidate.
+    title_slug = slugify(str(release.get("title") or "").replace("'", "").replace("’", ""))
+    candidates: list[str] = []
+    for s in (title_slug, release.get("slug")):
+        if s and f"{artist_id}-{s}" not in candidates:
+            candidates.append(f"{artist_id}-{s}")
 
-    # The smart link is looked up by slug, not UPC — make sure it's our release
     upc = str(release.get("upc") or "")
-    found_upc = str(payload.get("upc") or "")
-    if upc and found_upc and upc != found_upc:
-        raise ValueError(
-            f"UPC mismatch at {promo_url}: release has {upc}, Amuse returned {found_upc}"
-        )
+    payload = None
+    promo_url = ""
+    tried: list[str] = []
+    for amuse_slug in candidates:
+        promo_url = f"https://share.amuse.io/{kind}/{amuse_slug}"
+        api_url = f"https://promo-api.amuse.io/api/smart-link/{kind}/{amuse_slug}/"
+        resp = requests.get(api_url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+        if resp.status_code == 404:
+            tried.append(f"{promo_url} (not found)")
+            continue
+        resp.raise_for_status()
+        payload = resp.json()
+        found_upc = str(payload.get("upc") or "")
+        if upc and found_upc and upc != found_upc:
+            tried.append(f"{promo_url} (UPC {found_upc}, ours {upc})")
+            payload = None
+            continue
+        break
+    if payload is None:
+        raise ValueError("Amuse smart link not found — tried: " + "; ".join(tried))
 
     seen: dict[str, str] = {}
     extra_links: dict[str, str] = {}
