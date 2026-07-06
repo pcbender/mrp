@@ -271,6 +271,9 @@ release:
   automation:
     allow_auto_publish: false
     master_path: /mnt/c/Masters/The Singer Behind The Counter.wav
+    links_na:
+    - deezer
+    - youtube
   hero_image: site/public/assets/releases/the-singer-behind-the-counter/hero.jpg
   distributor: landr
   language: null

@@ -26,11 +26,21 @@ release:
     spotify: https://open.spotify.com/album/4aZ9znFmozosco1OGLT8TP
     youtube: https://www.youtube.com/watch?v=GJFFz1L6vco
     youtube_music: https://music.youtube.com/watch?v=GJFFz1L6vco
+    apple_music: https://music.apple.com/us/album/1895890731?app=music
+    itunes_store: https://music.apple.com/us/album/1895890731?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GZ1RB752?ref=dmm_acq_soc_us_u_lfire_lp_x_e6272db99e2f3152ab7fde141eb8c3bb
+    tidal: http://www.tidal.com/album/520284019
   seo:
     title: With Preposition by PCBender
     description: With Preposition by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - apple_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: With Preposition

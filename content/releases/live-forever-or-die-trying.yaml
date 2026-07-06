@@ -26,11 +26,21 @@ release:
     spotify: https://open.spotify.com/album/3NUvQ4hmP89MULDSrMIAuJ
     youtube: https://www.youtube.com/watch?v=irmt3uWqe80
     youtube_music: https://music.youtube.com/watch?v=irmt3uWqe80
+    apple_music: https://music.apple.com/us/album/6780921886?app=music
+    itunes_store: https://music.apple.com/us/album/6780921886?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0H5L6H8TL?ref=dmm_acq_soc_us_u_lfire_lp_x_0f5cda6a8e3b14ab73873f3b9c79986a
+    tidal: http://www.tidal.com/album/533965195
   seo:
     title: Live Forever Or Die Trying by Michael Anthony Rose
     description: Live Forever Or Die Trying by Michael Anthony Rose on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - apple_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: Live Forever Or Die Trying

@@ -26,11 +26,21 @@ release:
     spotify: https://open.spotify.com/album/3tuEBEMG8cFeVW7PgwfhoY
     youtube: https://www.youtube.com/watch?v=f-er90jFmQI
     youtube_music: https://music.youtube.com/watch?v=f-er90jFmQI
+    apple_music: https://music.apple.com/us/album/6768453735?app=music
+    itunes_store: https://music.apple.com/us/album/6768453735?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0H1DZRBWR?ref=dmm_acq_soc_us_u_lfire_lp_x_92536e65626c76a3926fcb8cbed7c509
+    tidal: http://www.tidal.com/album/523649026
   seo:
     title: Aroma Of You by Michael Anthony Rose
     description: Aroma Of You by Michael Anthony Rose on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - apple_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: Aroma Of You

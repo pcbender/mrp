@@ -26,11 +26,21 @@ release:
     spotify: https://open.spotify.com/album/79LEYkZ8OtMN8o32xiWqIs
     youtube: https://www.youtube.com/watch?v=68mojQ0W8-E
     youtube_music: https://music.youtube.com/watch?v=68mojQ0W8-E
+    apple_music: https://music.apple.com/us/album/1895439985?app=music
+    itunes_store: https://music.apple.com/us/album/1895439985?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GYG1V8K5?ref=dmm_acq_soc_us_u_lfire_lp_x_8adb708d9e1b756d18eb8bca5cf6ce30
+    tidal: http://www.tidal.com/album/518953718
   seo:
     title: June Gloom by STAB
     description: June Gloom by STAB on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - apple_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: June Gloom

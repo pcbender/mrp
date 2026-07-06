@@ -68,6 +68,14 @@ release:
     description: Too Blue To Lose by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   song:
     number: null
     title: Too Blue To Lose

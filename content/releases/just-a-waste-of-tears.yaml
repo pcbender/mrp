@@ -27,11 +27,18 @@ release:
     apple_music: https://music.apple.com/us/album/just-a-waste-of-tears-single/1892876452
     youtube: https://www.youtube.com/watch?v=swQKOxHPfPM
     youtube_music: https://music.youtube.com/watch?v=swQKOxHPfPM
+    deezer: https://www.deezer.com/track/3956177591
+    pandora: https://www.pandora.com/AL:64974076
   seo:
     title: Just A Waste Of Tears by STAB
     description: Just A Waste Of Tears by STAB on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: Just A Waste Of Tears

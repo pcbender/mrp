@@ -32,6 +32,14 @@ release:
     description: Build Me A Lie by Michael Anthony Rose on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   song:
     number: 1
     title: Build Me A Lie

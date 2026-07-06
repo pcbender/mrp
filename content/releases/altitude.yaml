@@ -33,6 +33,13 @@ release:
     description: Altitude by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - soundcloud
+    - tidal
   song:
     number: 1
     title: Altitude

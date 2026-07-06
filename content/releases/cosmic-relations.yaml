@@ -33,6 +33,13 @@ release:
     description: Cosmic Relations by Lingua Aeternum on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   song:
     number: 1
     title: Cosmic Relations

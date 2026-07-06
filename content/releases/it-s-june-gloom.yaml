@@ -26,11 +26,21 @@ release:
     spotify: https://open.spotify.com/album/18hXklBXPtPsYWbUsiYxOh
     youtube: https://www.youtube.com/watch?v=LPOFgyRzma4
     youtube_music: https://music.youtube.com/watch?v=LPOFgyRzma4
+    apple_music: https://music.apple.com/us/album/1895440329?app=music
+    itunes_store: https://music.apple.com/us/album/1895440329?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GYG3C3NQ?ref=dmm_acq_soc_us_u_lfire_lp_x_60b616b13fe7b645cc68feea308cad27
+    tidal: http://www.tidal.com/album/518953251
   seo:
     title: It's June Gloom by PCBender
     description: It's June Gloom by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - apple_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: It's June Gloom

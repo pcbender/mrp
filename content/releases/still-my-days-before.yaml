@@ -52,6 +52,14 @@ release:
     description: Still My Days Before by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   song:
     number: null
     title: Still My Days Before

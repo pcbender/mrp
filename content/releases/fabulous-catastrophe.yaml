@@ -27,11 +27,19 @@ release:
     apple_music: https://music.apple.com/us/album/fabulous-catastrophe-single/1895054790
     youtube: https://www.youtube.com/watch?v=qHi6uRtlCE8
     youtube_music: https://music.youtube.com/watch?v=qHi6uRtlCE8
+    itunes_store: https://music.apple.com/us/album/1895054790?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GY1YWXYQ?ref=dmm_acq_soc_us_u_lfire_lp_x_a8bafcb790b6ab51502fa977f13c9013
+    tidal: http://www.tidal.com/album/517952008
   seo:
     title: Fabulous Catastrophe by PCBender
     description: Fabulous Catastrophe by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: Fabulous Catastrophe

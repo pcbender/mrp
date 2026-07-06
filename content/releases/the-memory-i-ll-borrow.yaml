@@ -32,6 +32,14 @@ release:
     description: The Memory I'll Borrow by Lingua Aeternum on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   song:
     number: 1
     title: The Memory I'll Borrow

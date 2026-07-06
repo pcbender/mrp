@@ -27,11 +27,19 @@ release:
     apple_music: https://music.apple.com/us/album/ready-almost-single/6769173581
     youtube: https://www.youtube.com/watch?v=IVJJppq1gNk
     youtube_music: https://music.youtube.com/watch?v=IVJJppq1gNk
+    itunes_store: https://music.apple.com/us/album/6769173581?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0H1NS5LYP?ref=dmm_acq_soc_us_u_lfire_lp_x_119442e2f09bb3a87421bf9e11386ad2
+    tidal: http://www.tidal.com/album/524435776
   seo:
     title: Ready Almost by 4Castle
     description: Ready Almost by 4Castle on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: Ready Almost

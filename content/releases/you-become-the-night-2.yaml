@@ -31,6 +31,12 @@ release:
     description: You Become The Night by STAB on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - apple_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: You Become The Night

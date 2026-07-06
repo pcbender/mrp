@@ -32,6 +32,14 @@ release:
     description: What's Best by 4Castle on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   song:
     number: 1
     title: What's Best

@@ -175,6 +175,14 @@ release:
     description: On the Advent of a Dream by 4Castle on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   tracks:
   - number: 1
     title: On the Advent of a Dream

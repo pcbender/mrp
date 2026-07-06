@@ -69,6 +69,15 @@ release:
     description: Tits Up (Remix) by STAB on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
+    - youtube
   song:
     number: null
     title: Tits Up (Remix)

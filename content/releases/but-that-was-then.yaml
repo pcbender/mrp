@@ -27,11 +27,19 @@ release:
     apple_music: https://music.apple.com/us/album/but-that-was-then-single/1892154917
     youtube: https://www.youtube.com/watch?v=eXyHLbTPZWM
     youtube_music: https://music.youtube.com/watch?v=eXyHLbTPZWM
+    itunes_store: https://music.apple.com/us/album/1892154917?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GWNRK456?ref=dmm_acq_soc_us_u_lfire_lp_x_c6e9a360ef65a6d138b57b6560b6017a
+    tidal: http://www.tidal.com/album/514643830
   seo:
     title: But That Was Then by Michael Anthony Rose
     description: But That Was Then by Michael Anthony Rose on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: But That Was Then
