@@ -172,7 +172,6 @@ release:
     master_path: /mnt/c/Masters/Footsteps Again.wav
     links_na:
     - amazon_music
-    - deezer
     - itunes_store
     - tidal
   distributor: amuse
