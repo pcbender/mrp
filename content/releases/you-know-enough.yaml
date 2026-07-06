@@ -1,0 +1,215 @@
+release:
+  id: you-know-enough
+  slug: you-know-enough
+  title: You Know Enough
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: live
+  release_date: '2026-06-25'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048221697'
+  catalog_number: null
+  cover_image: site/public/assets/releases/you-know-enough/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/2BUsszHwLy0S1rCDY1B9vg
+    apple_music: https://music.apple.com/us/album/6784063679?app=music
+    itunes_store: https://music.apple.com/us/album/6784063679?app=itunes
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mJKTopyvMLLmbpNkDzq2Ae4u-TRTQArHw
+    amazon_music: https://music.amazon.com/albums/B0H6L72XMJ?ref=dmm_acq_soc_us_u_lfire_lp_x_90692131f2c79fc6e144d8449f9e9ccf
+    tidal: http://www.tidal.com/album/536641965
+  song:
+    number: 1
+    title: You Know Enough
+    slug: you-know-enough
+    isrc: CAENV2670729
+    duration: '4:29'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--you-know-enough.mp3
+    links:
+      spotify: https://open.spotify.com/track/7IZEiDAhJ7CS1vnuUePTnJ
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: indie rock with weight alt rock foundation around 82 bpm somber and restrained
+      clean lightly driven electric guitars carry slow arpeggiated figures and ringing
+      chords a low piano shadowing underneath controlled drum kit sits back with a
+      steady restrained pulse never filling into bombast warm rounded bass holds the
+      low end weathered male baritone plain spoken and conversational dry and close
+      holds back even in the choruses dynamics stay controlled throughout the song
+      Indie pop, Synthpop, Electropop and builds tension without release never peaking
+      or exploding warm intimate production light room ambience vintage tape warmth
+      muted and weighty
+    lyrics_raw: '[Intro | clean arpeggiated electric guitar | low piano shadow | restrained]
+
+      [Verse 1 | weathered baritone | dry close vocal | sparse guitar | brushed kit]
+
+      I carried the weight like a yoke on a stone
+
+      The family curse on flesh and bone
+
+      I picked up his tools, tried on his shoes
+
+      Slept with a bat I could never use
+
+      [Chorus | plain-spoken hook | controlled | full band sits back]
+
+      Sometimes the answer is to let go of the question
+
+      And peace comes from knowing that you know enough
+
+      [Verse 2 | restrained vocal | warm bass enters | steady kit]
+
+      Funny or smart or good with your fists
+
+      Jokes always worked but answers were best
+
+      It felt good to be needed, but wanted was better
+
+      It paid to be a good listener
+
+      [Chorus | low harmony shadow under lead | still controlled]
+
+      Sometimes the answer is to let go of the question
+
+      And peace comes from knowing that you know enough
+
+      [Verse 3 | intimate vocal | piano steps forward | sparse]
+
+      I was attracted to women and things that were broken
+
+      ''Cause I knew that I could fix them
+
+      When the pieces were solid and she was finally happy
+
+      Then maybe she would love me
+
+      [Chorus | fuller harmonies | low organ swells in underneath | building]
+
+      Sometimes the answer is to let go of the question
+
+      And peace comes from knowing that you know enough
+
+      [Bridge | organ swells | drums tighten | building restrained tension]
+
+      He asked it too - I see that now
+
+      Lay awake and never worked out how
+
+      The bat by the bed was his father''s before
+
+      Nobody swings it. Nobody''s sure
+
+      [stripped back | organ lingers | bass and voice | exhale]
+
+      So I set it down beside the bed
+
+      Quit the questions running through my head
+
+      No swing, no fix, no reasons in a row
+
+      Just the quiet I was scared to know
+
+      [Final Chorus | stacked soft harmonies | organ pad | second guitar layer | controlled,
+      never explodes]
+
+      Sometimes the answer is to let go of the question
+
+      And peace comes from knowing that you know enough (you know enough)
+
+      [Outro | guitar figure resolves | organ fades | sparse]'
+    lyrics_text: 'I carried the weight like a yoke on a stone
+
+      The family curse on flesh and bone
+
+      I picked up his tools, tried on his shoes
+
+      Slept with a bat I could never use
+
+      Sometimes the answer is to let go of the question
+
+      And peace comes from knowing that you know enough
+
+      Funny or smart or good with your fists
+
+      Jokes always worked but answers were best
+
+      It felt good to be needed, but wanted was better
+
+      It paid to be a good listener
+
+      Sometimes the answer is to let go of the question
+
+      And peace comes from knowing that you know enough
+
+      I was attracted to women and things that were broken
+
+      ''Cause I knew that I could fix them
+
+      When the pieces were solid and she was finally happy
+
+      Then maybe she would love me
+
+      Sometimes the answer is to let go of the question
+
+      And peace comes from knowing that you know enough
+
+      He asked it too - I see that now
+
+      Lay awake and never worked out how
+
+      The bat by the bed was his father''s before
+
+      Nobody swings it. Nobody''s sure
+
+      So I set it down beside the bed
+
+      Quit the questions running through my head
+
+      No swing, no fix, no reasons in a row
+
+      Just the quiet I was scared to know
+
+      Sometimes the answer is to let go of the question
+
+      And peace comes from knowing that you know enough (you know enough)'
+    lyrics_source: null
+    hints:
+      Vocals: Male
+      Feel: Folk Rock
+      Notes: Harmony in the chorus
+    master_path: null
+    credits:
+      primary_artist: Michael Anthony Rose
+      songwriter: Michael Anthony Rose
+      lyrics: Michael Anthony Rose
+      producer: Michael Anthony Rose
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+  seo:
+    title: You Know Enough
+    description: You Know Enough on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/You Know Enough.wav
+  hero_image: site/public/assets/releases/you-know-enough/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null

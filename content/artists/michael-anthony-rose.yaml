@@ -5,42 +5,36 @@ artist:
   type: null
   label: Maricopa Records
   default_publisher: Maricopa Publishing
-  bio_short: Michael Anthony Rose writes songs that look time squarely in the eye,
-    transforming the quiet moments of life and loss into profoundly human statements.
-    His unflinching, confessional lyrics find meaning not in grand gestures but in
-    the stark, honest details of aging, memory, and the search for durable truth.
-    This is music for anyone who wants to feel seen in their own complex story.
-  bio_long: "Michael Anthony Rose is a songwriter of rare and unflinching honesty.\
-    \ In his hands, the everyday becomes the elemental, as he chronicles the inner\
-    \ landscape of a life in progress. His lyrics favor the concrete and the conversational,\
-    \ finding universal truth in specific, lived-in details: a reflection in a dark\
-    \ phone screen, the lingering scent of a loved one, a casual remark from a stranger\
-    \ that lands with unintended weight. This directness creates an immediate and\
-    \ deeply felt connection, inviting the listener into a space of shared vulnerability\
-    \ and recognition.\n\nRose\u2019s work is preoccupied with the passage of time,\
-    \ memory, and the complex realities of selfhood. He charts the territory between\
-    \ the person one was and the person one becomes, exploring the subtle shifts and\
-    \ sudden realizations that define a life. From the wistful recounting of abandoned\
-    \ dreams in \u201CBut That Was Then\u201D to the defiant self-assertion of \u201C\
-    Full-Size Person,\u201D he confronts the vulnerabilities and quiet dignities of\
-    \ aging without sentimentality. This personal excavation sits alongside a philosophical\
-    \ curiosity, as songs like \u201CAletheion\u201D and \u201CBuild Me A Lie\u201D\
-    \ question the nature of belief itself, weighing the comfort of certainty against\
-    \ the difficult grace of openness.\n\nYet for all its introspection, the emotional\
-    \ register of his music is wide and varied. The melancholy of looking back is\
-    \ balanced by the anthemic, forward-looking determination of songs like \u201C\
-    Live Forever Or Die Trying,\u201D a testament to creating a legacy that will outlast\
-    \ the self. Quiet moments of doubt give way to the tender, sensory intimacy of\
-    \ a love song like \u201CAroma Of You,\u201D proving that even as some things\
-    \ are lost, others deepen and endure. His work is a full-spectrum portrait of\
-    \ experience, acknowledging that bitterness, hope, regret, and resilience can\
-    \ and do coexist.\n\nUltimately, the music of Michael Anthony Rose is an act of\
-    \ witness. It does not offer easy answers or simple comforts. Instead, it offers\
-    \ something more valuable: presence. It is an invitation to stand within the intricate,\
-    \ beautiful, and sometimes dissolving patterns of a life and to find that the\
-    \ simple act of paying attention is its own form of grace. These are songs that\
-    \ meet you where you are, hold their gaze, and quietly affirm that being here\
-    \ is enough."
+  bio_short: "Michael Anthony Rose charts the complex landscape of a life in progress.\
+    \ His songs are unflinchingly honest dispatches about time, memory, and defiant\
+    \ hope, moving from quiet, confessional storytelling to anthemic, philosophical\
+    \ questions. Rose\u2019s music is for anyone who has ever looked in the mirror\
+    \ and asked how they got here, and what comes next."
+  bio_long: "Michael Anthony Rose is a songwriter who confronts the passage of time\
+    \ with uncommon honesty and lyrical depth. His work for Maricopa Records is a\
+    \ potent blend of intimate confession and expansive philosophical inquiry, charting\
+    \ the territory where youthful dreams meet the complex realities of an adult life.\
+    \ He doesn't shy away from difficult questions about identity, purpose, and mortality,\
+    \ instead turning them into the very foundation of his art.\n\nAcross his songs,\
+    \ Rose maps a journey from the boundless certainty of youth to the hard won wisdom\
+    \ of experience. He writes about the ghosts of abandoned ambitions, the ache of\
+    \ memory, and the universal human drive to build something that will outlast a\
+    \ single lifetime. Yet his examinations are not limited to personal history. He\
+    \ often zooms out to question the very nature of truth, belief, and the comfortable\
+    \ lies we tell ourselves to get through the day, creating a body of work that\
+    \ is as intellectually engaging as it is emotionally resonant.\n\nHis lyrical\
+    \ voice is uniquely versatile, capable of both sharp, concrete observation and\
+    \ vast, metaphorical exploration. Rose captures the sudden, quiet shock of realizing\
+    \ you\u2019re old, the subtle indignation of being patronized, and the lingering\
+    \ presence of lost loved ones in the architecture of a home. This is not a sentimental\
+    \ accounting but a clear eyed inventory of a life, one that has the courage to\
+    \ admit to bitterness, fear, and fragility alongside a fierce refusal to be diminished\
+    \ or disappear.\n\nThe music of Michael Anthony Rose is a companion for the journey.\
+    \ It doesn\u2019t offer easy answers but instead provides something more valuable:\
+    \ the resonant truth of a shared human experience. It is a testament to the idea\
+    \ that there is profound meaning to be found not in winning the fight against\
+    \ time, but in staying present to witness it all, the broken and the beautiful,\
+    \ and in continuing to stand, honestly, in the here and now."
   image: /assets/artists/michael-anthony-rose/cover.jpg
   links:
     spotify: https://open.spotify.com/artist/1bpeEWD8VsTewFr5FKOKv0
@@ -51,14 +45,14 @@ artist:
     instagram: null
   visibility: public
   bio_auto_generated: false
-  promo_blurb: Michael Anthony Rose writes profoundly human songs that look time squarely
-    in the eye. His unflinching, confessional lyrics transform the quiet moments of
-    life and loss into statements of stark, honest detail, exploring aging, memory,
-    and the search for durable truth. His latest album, [*I'm Still Here*](/releases/i-m-still-here/),
-    is a work of deliberate stock-taking from a writer with nothing to hide. The record
-    is anchored by recent singles that showcase his range, from the patient intimacy
-    of ["Entraining"](/releases/entraining/) to the driving, full-throated confidence
-    of ["Live Forever Or Die Trying"](/releases/live-forever-or-die-trying/), a powerful
-    reckoning with the meaning of legacy. This is music for anyone who wants to feel
-    seen in their own complex story, offering a clear-eyed look at the moments that
-    define a life.
+  promo_blurb: Michael Anthony Rose writes unflinching songs that transform the quiet
+    moments of life and loss into profoundly human statements. His music finds its
+    power not in grand gestures, but in the honest details of aging, memory, and the
+    search for durable truth. His recent singles showcase this range, from the driving
+    rock of ["Live Forever Or Die Trying"](/releases/live-forever-or-die-trying/),
+    which meditates on legacy with confident force, to the steady folk pulse of ["You
+    Know Enough"](/releases/you-know-enough/), a plain-spoken confession about family
+    and self-acceptance. The collection is rounded out by the warm, jazzy groove of
+    ["A Distant Memory"](/releases/a-distant-memory/), a track that explores the ache
+    beneath a restrained surface. This is music that holds its gaze, inviting listeners
+    to feel seen in their own complex stories.

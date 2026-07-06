@@ -1,0 +1,137 @@
+{
+  "track_id": "michael-anthony-rose--you-know-enough",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/You Know Enough.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--you-know-enough.opus"
+  },
+  "lyrics": "I carried the weight like a yoke on a stone\nThe family curse on flesh and bone\nI picked up his tools, tried on his shoes\nSlept with a bat I could never use\nSometimes the answer is to let go of the question\nAnd peace comes from knowing that you know enough\nFunny or smart or good with your fists\nJokes always worked but answers were best\nIt felt good to be needed, but wanted was better\nIt paid to be a good listener\nSometimes the answer is to let go of the question\nAnd peace comes from knowing that you know enough\nI was attracted to women and things that were broken\n'Cause I knew that I could fix them\nWhen the pieces were solid and she was finally happy\nThen maybe she would love me\nSometimes the answer is to let go of the question\nAnd peace comes from knowing that you know enough\nHe asked it too - I see that now\nLay awake and never worked out how\nThe bat by the bed was his father's before\nNobody swings it. Nobody's sure\nSo I set it down beside the bed\nQuit the questions running through my head\nNo swing, no fix, no reasons in a row\nJust the quiet I was scared to know\nSometimes the answer is to let go of the question\nAnd peace comes from knowing that you know enough (you know enough)",
+  "lyrics_raw": "[Intro | clean arpeggiated electric guitar | low piano shadow | restrained]\n[Verse 1 | weathered baritone | dry close vocal | sparse guitar | brushed kit]\nI carried the weight like a yoke on a stone\nThe family curse on flesh and bone\nI picked up his tools, tried on his shoes\nSlept with a bat I could never use\n[Chorus | plain-spoken hook | controlled | full band sits back]\nSometimes the answer is to let go of the question\nAnd peace comes from knowing that you know enough\n[Verse 2 | restrained vocal | warm bass enters | steady kit]\nFunny or smart or good with your fists\nJokes always worked but answers were best\nIt felt good to be needed, but wanted was better\nIt paid to be a good listener\n[Chorus | low harmony shadow under lead | still controlled]\nSometimes the answer is to let go of the question\nAnd peace comes from knowing that you know enough\n[Verse 3 | intimate vocal | piano steps forward | sparse]\nI was attracted to women and things that were broken\n'Cause I knew that I could fix them\nWhen the pieces were solid and she was finally happy\nThen maybe she would love me\n[Chorus | fuller harmonies | low organ swells in underneath | building]\nSometimes the answer is to let go of the question\nAnd peace comes from knowing that you know enough\n[Bridge | organ swells | drums tighten | building restrained tension]\nHe asked it too - I see that now\nLay awake and never worked out how\nThe bat by the bed was his father's before\nNobody swings it. Nobody's sure\n[stripped back | organ lingers | bass and voice | exhale]\nSo I set it down beside the bed\nQuit the questions running through my head\nNo swing, no fix, no reasons in a row\nJust the quiet I was scared to know\n[Final Chorus | stacked soft harmonies | organ pad | second guitar layer | controlled, never explodes]\nSometimes the answer is to let go of the question\nAnd peace comes from knowing that you know enough (you know enough)\n[Outro | guitar figure resolves | organ fades | sparse]",
+  "style": "indie rock with weight alt rock foundation around 82 bpm somber and restrained clean lightly driven electric guitars carry slow arpeggiated figures and ringing chords a low piano shadowing underneath controlled drum kit sits back with a steady restrained pulse never filling into bombast warm rounded bass holds the low end weathered male baritone plain spoken and conversational dry and close holds back even in the choruses dynamics stay controlled throughout the song Indie pop, Synthpop, Electropop and builds tension without release never peaking or exploding warm intimate production light room ambience vintage tape warmth muted and weighty",
+  "persona": "Michael Anthony Rose is a songwriter of rare and unflinching honesty. In his hands, the everyday becomes the elemental, as he chronicles the inner landscape of a life in progress. His lyrics favor the concrete and the conversational, finding universal truth in specific, lived-in details: a reflection in a dark phone screen, the lingering scent of a loved one, a casual remark from a stranger that lands with unintended weight. This directness creates an immediate and deeply felt connection, inviting the listener into a space of shared vulnerability and recognition.\n\nRose’s work is preoccupied with the passage of time, memory, and the complex realities of selfhood. He charts the territory between the person one was and the person one becomes, exploring the subtle shifts and sudden realizations that define a life. From the wistful recounting of abandoned dreams in “But That Was Then” to the defiant self-assertion of “Full-Size Person,” he confronts the vulnerabilities and quiet dignities of aging without sentimentality. This personal excavation sits alongside a philosophical curiosity, as songs like “Aletheion” and “Build Me A Lie” question the nature of belief itself, weighing the comfort of certainty against the difficult grace of openness.\n\nYet for all its introspection, the emotional register of his music is wide and varied. The melancholy of looking back is balanced by the anthemic, forward-looking determination of songs like “Live Forever Or Die Trying,” a testament to creating a legacy that will outlast the self. Quiet moments of doubt give way to the tender, sensory intimacy of a love song like “Aroma Of You,” proving that even as some things are lost, others deepen and endure. His work is a full-spectrum portrait of experience, acknowledging that bitterness, hope, regret, and resilience can and do coexist.\n\nUltimately, the music of Michael Anthony Rose is an act of witness. It does not offer easy answers or simple comforts. Instead, it offers something more valuable: presence. It is an invitation to stand within the intricate, beautiful, and sometimes dissolving patterns of a life and to find that the simple act of paying attention is its own form of grace. These are songs that meet you where you are, hold their gaze, and quietly affirm that being here is enough.",
+  "hints": {
+    "Vocals": "Male",
+    "Feel": "Folk Rock",
+    "Notes": "Harmony in the chorus"
+  },
+  "hard_facts": {
+    "bpm": 161.5,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 269.35,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 11.38,
+        "label": "S1"
+      },
+      {
+        "start": 11.38,
+        "end": 36.5,
+        "label": "S2"
+      },
+      {
+        "start": 36.5,
+        "end": 54.06,
+        "label": "S3"
+      },
+      {
+        "start": 54.06,
+        "end": 77.72,
+        "label": "S4"
+      },
+      {
+        "start": 77.72,
+        "end": 101.08,
+        "label": "S5"
+      },
+      {
+        "start": 101.08,
+        "end": 127.71,
+        "label": "S6"
+      },
+      {
+        "start": 127.71,
+        "end": 146.24,
+        "label": "S7"
+      },
+      {
+        "start": 146.24,
+        "end": 183.6,
+        "label": "S8"
+      },
+      {
+        "start": 183.6,
+        "end": 198.6,
+        "label": "S9"
+      },
+      {
+        "start": 198.6,
+        "end": 217.13,
+        "label": "S10"
+      },
+      {
+        "start": 217.13,
+        "end": 237.4,
+        "label": "S11"
+      },
+      {
+        "start": 237.4,
+        "end": 252.38,
+        "label": "S12"
+      },
+      {
+        "start": 252.38,
+        "end": 269.35,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.873
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "classic rock",
+      "country"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "The track features a warm, organic acoustic texture that fosters a deeply intimate and reflective emotional atmosphere. It carries a gentle, laid-back energy, driving forward with a steady, relaxed rhythm that feels comforting and grounded. The production is spacious and clean, with delicate acoustic guitar fingerpicking and centered, breathy male vocals sitting prominently in the mix, supported by a subtle bassline and light percussion that never crowds the arrangement. A particularly defining quality is the introduction of lush, soft vocal harmonies during the chorus, which beautifully elevate the track's emotional weight and create a pleasing sense of depth.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "There's a bat by the bed in this one, his father's before him, and nobody in the family has ever swung it. That image does the heavy lifting here, and Rose knows better than to explain it. The verses move in a plain-spoken baritone, close and dry, cataloging the coping strategies of a life ('Funny or smart or good with your fists / Jokes always worked but answers were best') until the confession lands where you least expect it: 'I was attracted to women and things that were broken / 'Cause I knew that I could fix them.' The chorus never lifts into anthem, and it shouldn't; the payoff is that soft harmony stacking behind 'you know enough,' a small warmth arriving right as the bridge sets the weight down. The steady, relaxed folk-rock pulse keeps the whole thing grounded rather than heavy. It runs long and stays deliberately even in dynamics, so it asks a little patience, but the writing earns it. A highlight, and one that holds its gaze.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "The bat by the bed was his father's before",
+      "Funny or smart or good with your fists / Jokes always worked but answers were best",
+      "I was attracted to women and things that were broken / 'Cause I knew that I could fix them",
+      "you know enough",
+      "chorus harmony",
+      "steady relaxed folk-rock pulse",
+      "controlled dynamics / never explodes"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}
