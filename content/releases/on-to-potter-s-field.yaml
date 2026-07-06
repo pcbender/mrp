@@ -32,6 +32,13 @@ release:
     description: On To Potter's Field by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - pandora
+    - soundcloud
+    - tidal
   song:
     number: 1
     title: On To Potter's Field
@@ -41,44 +48,140 @@ release:
     explicit: false
     preview_audio: /samples/pcbender--on-to-potter-s-field.mp3
     instrumental: false
-    lyrics_text: "Just like the brazen giant of Greek fame,\nWith conquering limbs\
-      \ astride from land to land;\nHere at our sea-washed, sunset gates shall stand\n\
-      An amoral man with a torch, whose flame\nIs as poisoned lightning, and his name\n\
-      Father of Exiles. From his craven hand\nFlows world-wide venom; his wild eyes\
-      \ command\nThe air-bridged harbor that twin cities frame.\n\n\u201CKeep, stolen\
-      \ lands, our storied pomp!\u201D cries he\nWith vile lips. \u201CGive me your\
-      \ tired, your poor,\nYour huddled masses yearning to breathe free,\nThe wretched\
-      \ refuse of your teeming shore.\nI\u2019ll send the hopeless, the beneath-us\
-      \ back to thee,\nAnd snuff my lamp behind the shuttered door!\u201D\n\nAlas,\
-      \ poor Lazarus\nLook at where we\u2019ve come\nEach and every one of us\nMoves\
-      \ on to Potter\u2019s Field"
+    lyrics_text: 'Just like the brazen giant of Greek fame,
+
+      With conquering limbs astride from land to land;
+
+      Here at our sea-washed, sunset gates shall stand
+
+      An amoral man with a torch, whose flame
+
+      Is as poisoned lightning, and his name
+
+      Father of Exiles. From his craven hand
+
+      Flows world-wide venom; his wild eyes command
+
+      The air-bridged harbor that twin cities frame.
+
+
+      “Keep, stolen lands, our storied pomp!” cries he
+
+      With vile lips. “Give me your tired, your poor,
+
+      Your huddled masses yearning to breathe free,
+
+      The wretched refuse of your teeming shore.
+
+      I’ll send the hopeless, the beneath-us back to thee,
+
+      And snuff my lamp behind the shuttered door!”
+
+
+      Alas, poor Lazarus
+
+      Look at where we’ve come
+
+      Each and every one of us
+
+      Moves on to Potter’s Field'
     lyrics_source: https://docs.google.com/document/d/1WHqeWsiFarnvmNFWE4xWMk6Lwk6IexbmREV4v3_sUag/edit
     master_path: /home/mrose/audio/masters/On To Potter's Field.wav
-    lyrics_raw: "[Intro | gentle arpeggios of the chord progression]\n\n[Verse]\n\
-      Just like the brazen giant of Greek fame\nWith conquering limbs astride from\
-      \ land to land\nHere at our sea-washed, sunset gates shall stand\nAn amoral\
-      \ man with a torch\n\n[Pre-chorus]\nHis flame is as poisoned lightning\nAnd\
-      \ his name - Father of Exiles\nFrom his craven hand flows world-wide venom\n\
-      His wild eyes command the air-bridged harbor\nThat twin cities frame\n\n[Chorus]\n\
-      Alas, poor Lazarus\nLook at where we\u2019ve come\nEach and every one of us\n\
-      Moves on to Potter\u2019s Field\n\n[Verse]\n\u201CKeep, stolen lands, our storied\
-      \ pomp!\u201D\nCries he with vile lips\n\u201CGive me your tired, your poor,\
-      \ your huddled masses\nYearning to breathe free\u201D\n\n[Pre-chorus]\nThe wretched\
-      \ refuse of your teeming shore\nI\u2019ll send the hopeless, the beneath-us\
-      \ back to thee\nAnd snuff my lamp\nBehind the shuttered door!\u201D\n\n[Chorus]\n\
-      Alas, poor Lazarus\nLook at where we\u2019ve come\nEach and every one of us\n\
-      Moves on to Potter\u2019s Field\n\n[Instrumental]\n\n[Chorus]\nAlas, poor Lazarus\n\
-      Look at where we\u2019ve come\nEach and every one of us\nMoves on to Potter\u2019\
-      s Field\n\n[Fade out]"
-    style: "This slow, solemn, post-rock minor-key piece opens with sparse, poignant\
-      \ piano articulating the Am - Dm - G - C - F - Bdim - E - Am cycle, each chord\
-      \ 4 beats, Calm, almost spoken baritone sits above, while minimal floor toms\
-      \ and snare arrive late, Pre-choruses add rising clean guitar and modulate into\
-      \ E Major for harmonic momentum, Choruses compress the verse\u2019s chords to\
-      \ 2 beats, gently expanding harmony but maintaining restraint, An instrumental\
-      \ passage dwells gravely on the cycle, and the final chorus fades unresolved,\
-      \ suspending the listener in quiet, tense atmosphere, Minimal reverb or echo,\
-      \ No embellishment; let the lyrics have their say"
+    lyrics_raw: '[Intro | gentle arpeggios of the chord progression]
+
+
+      [Verse]
+
+      Just like the brazen giant of Greek fame
+
+      With conquering limbs astride from land to land
+
+      Here at our sea-washed, sunset gates shall stand
+
+      An amoral man with a torch
+
+
+      [Pre-chorus]
+
+      His flame is as poisoned lightning
+
+      And his name - Father of Exiles
+
+      From his craven hand flows world-wide venom
+
+      His wild eyes command the air-bridged harbor
+
+      That twin cities frame
+
+
+      [Chorus]
+
+      Alas, poor Lazarus
+
+      Look at where we’ve come
+
+      Each and every one of us
+
+      Moves on to Potter’s Field
+
+
+      [Verse]
+
+      “Keep, stolen lands, our storied pomp!”
+
+      Cries he with vile lips
+
+      “Give me your tired, your poor, your huddled masses
+
+      Yearning to breathe free”
+
+
+      [Pre-chorus]
+
+      The wretched refuse of your teeming shore
+
+      I’ll send the hopeless, the beneath-us back to thee
+
+      And snuff my lamp
+
+      Behind the shuttered door!”
+
+
+      [Chorus]
+
+      Alas, poor Lazarus
+
+      Look at where we’ve come
+
+      Each and every one of us
+
+      Moves on to Potter’s Field
+
+
+      [Instrumental]
+
+
+      [Chorus]
+
+      Alas, poor Lazarus
+
+      Look at where we’ve come
+
+      Each and every one of us
+
+      Moves on to Potter’s Field
+
+
+      [Fade out]'
+    style: This slow, solemn, post-rock minor-key piece opens with sparse, poignant
+      piano articulating the Am - Dm - G - C - F - Bdim - E - Am cycle, each chord
+      4 beats, Calm, almost spoken baritone sits above, while minimal floor toms and
+      snare arrive late, Pre-choruses add rising clean guitar and modulate into E
+      Major for harmonic momentum, Choruses compress the verse’s chords to 2 beats,
+      gently expanding harmony but maintaining restraint, An instrumental passage
+      dwells gravely on the cycle, and the final chorus fades unresolved, suspending
+      the listener in quiet, tense atmosphere, Minimal reverb or echo, No embellishment;
+      let the lyrics have their say
     links:
       spotify: null
       apple_music: null
@@ -100,6 +203,10 @@ release:
     hints:
       Vocals: Male
       Style: Gospel Rock
+    critic:
+      model: hero
+      persona: liner
+      target: liner
   language: null
   copyright:
     composition_owner: null

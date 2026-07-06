@@ -452,7 +452,9 @@ async def ws_job_launch(request: Request, slug: str, step: str):
         request, "releases/workspace/_ws_job.html", _ws_job_ctx(slug, step, label, job)
     )
     if job and job["status"] == "done":
-        response.headers["HX-Trigger"] = "releaseSaved"
+        response.headers["HX-Trigger"] = (
+            "releaseSaved, promoterSaved" if step.startswith("promoter-")
+            else "releaseSaved")
     return response
 
 
@@ -467,9 +469,12 @@ async def ws_job_poll(request: Request, slug: str, job_id: str, step: str = ""):
         request, "releases/workspace/_ws_job.html", _ws_job_ctx(slug, step, label, job)
     )
     # Completed jobs may have changed release data (status ladder, preview_audio,
-    # critic records) — refresh the header badge and stage tabs once.
+    # critic records) — refresh the header badge and stage tabs once. Promoter
+    # jobs also refresh the Review & Save panel with the generated text.
     if job["status"] == "done":
-        response.headers["HX-Trigger"] = "releaseSaved"
+        response.headers["HX-Trigger"] = (
+            "releaseSaved, promoterSaved" if step.startswith("promoter-")
+            else "releaseSaved")
     return response
 
 
@@ -572,7 +577,28 @@ async def promoter_save(request: Request, slug: str):
     if "bio_short" in form or "bio_long" in form:
         artist["bio_auto_generated"] = False  # human-reviewed
     artist_path.write_text(serialize_structured_record(artist_path, artist_data))
-    return HTMLResponse('<div class="flash flash-ok">Artist profile saved (marked human-reviewed).</div>')
+    response = HTMLResponse(
+        '<div class="flash flash-ok">Artist profile saved (marked human-reviewed).</div>')
+    # promoterSaved refreshes the Review & Save panel; releaseSaved the tabs/badge
+    response.headers["HX-Trigger"] = "releaseSaved, promoterSaved"
+    return response
+
+
+@router.get("/releases/{slug}/promoter/profile", response_class=HTMLResponse)
+async def promoter_profile(request: Request, slug: str):
+    """Review & Save panel fragment — re-fetched after promoter jobs and saves."""
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.exists():
+        return _not_found(slug)
+    release = (load_structured_record(path)).get("release") or {}
+    artist_path = artist_record_path(root, release.get("artist_id") or "")
+    artist = {}
+    if artist_path is not None:
+        artist = load_structured_record(artist_path).get("artist") or {}
+    return _templates.TemplateResponse(
+        request, "releases/workspace/_promoter_profile.html",
+        {"slug": slug, "artist": artist})
 
 
 # --- Master audio (streamed to the sampler stage player) ---------------------

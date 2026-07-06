@@ -1,0 +1,128 @@
+{
+  "track_id": "4castle--a-good-day-to-be",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/A Good Day To Be.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--a-good-day-to-be.opus"
+  },
+  "lyrics": "cat distracted\none eye closed\nthe sun remembering\nafter dark\nbroom sweeping\na clean floor\nthe sound of steps\nunheard\n\ngrass still wet\none bird searches\nthe road bends away\na good day to be\nbefore the wind changes\n\nsmell of cumin\nthe kitchen window open\nrain finding the dust\nalready dry\nshadows longer\nwind chimes ring\nthe crickets\nkeep their distance\n\ngrass still wet\none bird searches\nthe road bends away\na good day to be\nbefore the wind changes\n\na deep breath\nlight through the curtain\nblanket on the floor\n\ngrass still wet\none bird searches\nthe road bends away\na good day to be\nbefore the wind changes",
+  "lyrics_raw": "[Intro | fingerpicked nylon-string guitar | distant wind chimes | sparse]\n[Verse 1 | warm intimate vocal | guitar and recorder | unhurried phrasing]\ncat distracted\none eye closed\nthe sun remembering\nafter dark\n\nbroom sweeping\na clean floor\nthe sound of steps\nunheard\n\n[Chorus | gentle lift | piano countermelody | soft single voice]\ngrass still wet\none bird searches\nthe road bends away\na good day to be\nbefore the wind changes\n\n[Verse 2 | guitar and recorder | gentle upright bass enters | patient]\nsmell of cumin\nthe kitchen window open\nrain finding the dust\nalready dry\n\nshadows longer\nwind chimes ring\nthe crickets\nkeep their distance\n\n[Chorus | warmer | quiet harmony added | recorder and piano weave]\ngrass still wet\none bird searches\nthe road bends away\na good day to be\nbefore the wind changes\n\n[Bridge | stripped back | voice and single guitar | hold the space]\na deep breath\nlight through the curtain\nblanket on the floor\n\n[Final Chorus | fullest yet still soft | layered harmonies | chimes swell | settles]\ngrass still wet\none bird searches\nthe road bends away\na good day to be\nbefore the wind changes\n[Outro | guitar and chimes fade | room tone]",
+  "style": "minimalist folk, indie folk, warm acoustic, conversational/lo-fi organic production",
+  "persona": "## 4Castle\n\nThe Future of Rock, The Power of Harmony\n\n**4Castle **is a genre-defying, five-piece supergroup under Maricopa Records, built on a foundation of powerful vocal harmonies, intricate musicianship, and fearless innovation. Rooted in rock, but unbound by limitations, their music fuses elements of progressive rock, funk, Latin rhythms, blues, and folk, delivering a sound that is both technically complex and emotionally resonant.\n\n### **A Band Like No Other**\n\nEach member of **4Castle **brings a distinct voice-both musically and vocally-to the mix:\n🎸 **Raven Cortez**(Lead Guitar, Vocals) – A fiery virtuoso with Latin and blues influences, weaving face-melting solos into every performance.\n🎸 **Skylar “Sky” Monroe**(Rhythm Guitar, Vocals) – The poetic soul of the band, crafting melodic foundations and lyrically rich storytelling.\n🎹 **Jonah Vega**(Keyboards, Vocals) – The sonic architect, layering psychedelic synths, Hammond organ swells, and cinematic orchestrations.\n🎸 **Malcolm “Mack” Bishop**(Bass, Vocals) – The groove master, blending funk, jazz, and progressive rock into fluid, deep-pocket basslines.\n🥁 **Eli “Fox” Foster **(Drums, Vocals) – The wild heartbeat, pushing the band forward with thunderous fills, polyrhythmic grooves, and explosive energy.\n\n### **What Defines 4Castle?**\n\n- **Multi-Layered Vocal Harmonies**– All five members **sing**, creating **rich, choral-like textures**that elevate every song.\n\n- **Complex Arrangements & Bold Songwriting**– Each track is an **immersive journey**, balancing **technical mastery with raw emotion**.\n\n- **Rhythmic Power & Innovation**– From **tight funk grooves to shifting time signatures**, their music **moves you-literally and figuratively**.\n\n- **Lyrically Challenging Yet Accessible**– Their songs explore **deep themes of life, change, and resilience**, wrapped in **memorable hooks and melodies**.\n\n### **4Castle’s Sound**\n\nImagine putting Emerson, Lake & Palmer, Heart, Led Zeppelin, Sly Stone, and Carlos Santana in a blender. The result? **4Castle**. Their music pays homage to the greats while pushing rock’s boundaries into the future.\n\n### **Join the Journey**\n\nWith Maricopa Records, **4Castle **is set to redefine what a modern rock band can be. Expect genre-bending albums, electrifying performances, and music that resonates across generations.\n\n🚀 Follow **4Castle **as they build their legacy-one song, one harmony, and one unforgettable moment at a time.\n\n[](https://open.spotify.com/artist/4Cmxf7xuTHzf7UahMK2xJh)[](https://music.apple.com/us/artist/4castle/1801052673)![](https://www.maricoparecords.com/wp-content/uploads/2025/03/5-rooks-in-a-dark-setting-1.png)\n## Releases",
+  "hints": {
+    "Vocals": "Female",
+    "Notes": "Guitar solos surround the bridge"
+  },
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 211.73,
+    "lufs": -13.9,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 14.12,
+        "label": "S1"
+      },
+      {
+        "start": 14.12,
+        "end": 30.6,
+        "label": "S2"
+      },
+      {
+        "start": 30.6,
+        "end": 48.25,
+        "label": "S3"
+      },
+      {
+        "start": 48.25,
+        "end": 72.21,
+        "label": "S4"
+      },
+      {
+        "start": 72.21,
+        "end": 89.61,
+        "label": "S5"
+      },
+      {
+        "start": 89.61,
+        "end": 104.75,
+        "label": "S6"
+      },
+      {
+        "start": 104.75,
+        "end": 128.43,
+        "label": "S7"
+      },
+      {
+        "start": 128.43,
+        "end": 149.95,
+        "label": "S8"
+      },
+      {
+        "start": 149.95,
+        "end": 179.7,
+        "label": "S9"
+      },
+      {
+        "start": 179.7,
+        "end": 200.99,
+        "label": "S10"
+      },
+      {
+        "start": 200.99,
+        "end": 211.73,
+        "label": "S11"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.963,
+      "key": 0.972
+    }
+  },
+  "tags": {
+    "genre": [
+      "soul",
+      "blues",
+      "acoustic"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "hopeful"
+    ],
+    "instruments": [
+      "acoustic guitar",
+      "electric guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track envelops the listener in a warm, intimate, and dreamy emotional atmosphere, led by delicate, breathy female vocals and soft acoustic guitar arpeggios. The energy level remains wonderfully low and relaxed, establishing a comforting chill-pop feel that is both soothing and nostalgic. Professionally produced with excellent spatial awareness, the mix maintains a sparse, pristine density where every subtle element, like the airy synth pads and crisp, laidback percussion, sits cleanly in the stereo field. A defining highlight is the seamless integration of a gentle, rhythmic groove that smoothly lifts the song's energy without disrupting its serene, ethereal character.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "This is 4Castle at rest, and it suits them. Where the band usually stacks five voices and shifts time signatures, here they hold the space with fingerpicked nylon-string guitar and a single breathy female lead, the whole thing built out of tiny observations: \"cat distracted / one eye closed,\" \"smell of cumin / the kitchen window open.\" The pace never feels rushed because the phrasing hangs back, and the chorus, \"a good day to be / before the wind changes,\" lands as the quiet thesis of the record, gentle enough that you almost miss how much it's carrying. Listen for the guitar figures that frame the bridge around the two-and-a-half-minute mark, where the arrangement thins to voice and single guitar before the harmonies steal back in; it's the closest this track comes to showing off, and it does it by pulling back. Not the showcase for their virtuosity, and it isn't trying to be, but it's a grower that rewards a second, closer listen.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "136 BPM",
+      "C major",
+      "nylon-string fingerpicking",
+      "cat distracted / one eye closed",
+      "smell of cumin / the kitchen window open",
+      "a good day to be / before the wind changes",
+      "bridge stripped to voice and guitar",
+      "female lead vocal",
+      "guitar figures surrounding the bridge"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

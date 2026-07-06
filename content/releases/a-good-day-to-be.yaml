@@ -1,0 +1,244 @@
+release:
+  id: a-good-day-to-be
+  slug: a-good-day-to-be
+  title: A Good Day To Be
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: live
+  release_date: '2026-06-30'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048269026'
+  catalog_number: null
+  cover_image: site/public/assets/releases/a-good-day-to-be/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/4f7EGkQblHKgyx9kKCJU98
+    apple_music: https://music.apple.com/us/album/6785690259?app=music
+    itunes_store: https://music.apple.com/us/album/6785690259?app=itunes
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_nZJ66ZzErIMdriw7rBp_3FFUDwFIZ744Y
+    amazon_music: https://music.amazon.com/albums/B0H6ZBHNVF?ref=dmm_acq_soc_us_u_lfire_lp_x_f0c81091f461fcb4edf441135718c33e
+    tidal: http://www.tidal.com/album/538457998
+  song:
+    number: 1
+    title: A Good Day To Be
+    slug: a-good-day-to-be
+    isrc: CAENV2678285
+    duration: '3:32'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/4castle--a-good-day-to-be.mp3
+    links:
+      spotify: https://open.spotify.com/track/2aLsaH3UDcXvOHPrTW0RGW
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: minimalist folk, indie folk, warm acoustic, conversational/lo-fi organic
+      production
+    lyrics_raw: '[Intro | fingerpicked nylon-string guitar | distant wind chimes |
+      sparse]
+
+      [Verse 1 | warm intimate vocal | guitar and recorder | unhurried phrasing]
+
+      cat distracted
+
+      one eye closed
+
+      the sun remembering
+
+      after dark
+
+
+      broom sweeping
+
+      a clean floor
+
+      the sound of steps
+
+      unheard
+
+
+      [Chorus | gentle lift | piano countermelody | soft single voice]
+
+      grass still wet
+
+      one bird searches
+
+      the road bends away
+
+      a good day to be
+
+      before the wind changes
+
+
+      [Verse 2 | guitar and recorder | gentle upright bass enters | patient]
+
+      smell of cumin
+
+      the kitchen window open
+
+      rain finding the dust
+
+      already dry
+
+
+      shadows longer
+
+      wind chimes ring
+
+      the crickets
+
+      keep their distance
+
+
+      [Chorus | warmer | quiet harmony added | recorder and piano weave]
+
+      grass still wet
+
+      one bird searches
+
+      the road bends away
+
+      a good day to be
+
+      before the wind changes
+
+
+      [Bridge | stripped back | voice and single guitar | hold the space]
+
+      a deep breath
+
+      light through the curtain
+
+      blanket on the floor
+
+
+      [Final Chorus | fullest yet still soft | layered harmonies | chimes swell |
+      settles]
+
+      grass still wet
+
+      one bird searches
+
+      the road bends away
+
+      a good day to be
+
+      before the wind changes
+
+      [Outro | guitar and chimes fade | room tone]'
+    lyrics_text: 'cat distracted
+
+      one eye closed
+
+      the sun remembering
+
+      after dark
+
+      broom sweeping
+
+      a clean floor
+
+      the sound of steps
+
+      unheard
+
+
+      grass still wet
+
+      one bird searches
+
+      the road bends away
+
+      a good day to be
+
+      before the wind changes
+
+
+      smell of cumin
+
+      the kitchen window open
+
+      rain finding the dust
+
+      already dry
+
+      shadows longer
+
+      wind chimes ring
+
+      the crickets
+
+      keep their distance
+
+
+      grass still wet
+
+      one bird searches
+
+      the road bends away
+
+      a good day to be
+
+      before the wind changes
+
+
+      a deep breath
+
+      light through the curtain
+
+      blanket on the floor
+
+
+      grass still wet
+
+      one bird searches
+
+      the road bends away
+
+      a good day to be
+
+      before the wind changes'
+    lyrics_source: null
+    hints:
+      Vocals: Female
+      Notes: Guitar solos surround the bridge
+    master_path: null
+    credits:
+      primary_artist: 4Castle
+      songwriter: Michael Anthony Rose
+      lyrics: Michael Anthony Rose
+      producer: Michael Anthony Rose
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+  seo:
+    title: A Good Day To Be
+    description: A Good Day To Be on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/A Good Day To Be.wav
+    links_na:
+    - bandcamp
+    - deezer
+    - pandora
+    - soundcloud
+    - youtube
+  hero_image: site/public/assets/releases/a-good-day-to-be/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null
