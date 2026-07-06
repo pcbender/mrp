@@ -122,6 +122,18 @@ def track(title: str, slug: str, number: int | None) -> dict[str, Any]:
     }
 
 
+def infer_distributor(upc: str | None) -> str | None:
+    """Infer distributor from the UPC block (ground-truthed 2026-07-06 against
+    the full catalog): 12-digit UPCs in the 05xxxx/99xxxx blocks are LANDR;
+    13-digit 73xxxx (Sweden GS1, Amuse's block) are Amuse."""
+    digits = str(upc or "").strip()
+    if len(digits) == 12 and digits[:2] in ("05", "99"):
+        return "landr"
+    if len(digits) == 13 and digits.startswith("73"):
+        return "amuse"
+    return None
+
+
 def slugify(value: str) -> str:
     normalized = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
     slug = re.sub(r"[^a-z0-9]+", "-", normalized.lower()).strip("-")

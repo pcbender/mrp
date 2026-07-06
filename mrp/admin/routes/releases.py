@@ -21,7 +21,7 @@ from mrp.admin.workspace import (
     validate_release_dict as _validate_release_dict,
 )
 from mrp.core.migrate_site import load_structured_record, serialize_structured_record
-from mrp.core.release import slugify
+from mrp.core.release import infer_distributor, slugify
 from mrp.core.validate import validate_repository
 
 router = APIRouter()
@@ -30,7 +30,7 @@ _templates.env.filters["fromjson"] = lambda s: json.loads(s) if s else {}
 
 PIPELINE_STEPS = [
     ("odesli",       "Streaming Links (Odesli)", pipe.enrich_odesli),
-    ("landr",        "LANDR Promo Links",        pipe.enrich_landr),
+    ("promo",        "Distributor Promo Links",  pipe.enrich_promo_links),
     ("apple-music",  "Apple Music",              pipe.enrich_apple_music),
     ("youtube",      "YouTube",                  pipe.enrich_youtube),
     ("critic",       "Critic",                   pipe.run_critic),
@@ -314,7 +314,8 @@ async def missing_links(request: Request):
         if not isinstance(rel, dict):
             continue
         links = rel.get("links") or {}
-        missing = [k for k in PLATFORM_KEYS if not links.get(k)]
+        na = set((rel.get("automation") or {}).get("links_na") or [])
+        missing = [k for k in PLATFORM_KEYS if not links.get(k) and k not in na]
         if missing:
             rows.append({
                 "slug": path.stem,
@@ -322,6 +323,7 @@ async def missing_links(request: Request):
                 "artist_id": rel.get("artist_id", ""),
                 "missing": missing,
                 "present": [k for k in PLATFORM_KEYS if links.get(k)],
+                "na": sorted(na),
             })
     return _templates.TemplateResponse(request, "missing_links.html", {
         "rows": rows,
@@ -385,6 +387,7 @@ def _do_spotify_import(
 
     release["label"] = "Maricopa Records"
     release["publisher"] = "Maricopa Publishing"
+    release["distributor"] = infer_distributor(release.get("upc"))
     release["status"] = "draft"
 
     title = release.get("title", "")
@@ -449,6 +452,7 @@ def _new_release_skeleton(
         "release_date": None,
         "label": None,
         "publisher": None,
+        "distributor": None,
         "upc": None,
         "catalog_number": None,
         "cover_image": f"site/public/assets/releases/{slug}/cover.jpg",

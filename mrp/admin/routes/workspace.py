@@ -34,10 +34,10 @@ router = APIRouter()
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
 _templates.env.filters["fromjson"] = lambda s: json.loads(s) if s else {}
 
-LINK_STEPS = ["odesli", "landr", "apple-music", "youtube"]
+LINK_STEPS = ["odesli", "promo", "apple-music", "youtube"]
 LINK_STEP_LABELS = {
     "odesli": "Streaming Links (Odesli)",
-    "landr": "LANDR Promo Links",
+    "promo": "Distributor Promo Links",
     "apple-music": "Apple Music",
     "youtube": "YouTube",
 }
