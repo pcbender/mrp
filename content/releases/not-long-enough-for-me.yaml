@@ -27,11 +27,21 @@ release:
     apple_music: https://music.apple.com/us/album/not-long-enough-for-me-single/1893100934
     youtube: https://www.youtube.com/watch?v=QjmduI7HCiE
     youtube_music: https://music.youtube.com/watch?v=QjmduI7HCiE
+    itunes_store: https://music.apple.com/us/album/1893100934?app=itunes
+    deezer: https://www.deezer.com/album/960449661?app_id=140685&utm_term=prod
+    amazon_music: https://music.amazon.com/albums/B0GX25T76N?ref=dmm_acq_soc_us_u_lfire_lp_x_b9742cfeba005e8a684599d93fad06ae
+    tidal: http://www.tidal.com/album/515523601
+    pandora: https://pandora.app.link/?%24desktop_url=https%3A%2F%2Fwww.pandora.com%2Fartist%2Fpcbender%2Fnot-long-enough-for-me%2FALV4htP6JkbjJz9&%24ios_deeplink_path=pandorav4%3A%2F%2Fbackstage%2Falbum%3Ftoken%3DAL%3A65020760&%24android_deeplink_path=pandorav4%3A%2F%2Fbackstage%2Falbum%3Ftoken%3DAL%3A65020760&~channel=Partner+Catalog+Search+API+-+Linkfire&part=lf&corr=b9742cfeba005e8a684599d93fad06ae&partnerName=Linkfire&~campaign=Partner+Customer+ID+-+2741b1db-60b4-4886-894c-e03351a2e241&sharedId=b9742cfeba005e8a684599d93fad06ae
   seo:
     title: Not Long Enough For Me by PCBender
     description: Not Long Enough For Me by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: Not Long Enough For Me

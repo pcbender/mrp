@@ -188,6 +188,15 @@ release:
     description: Red, Green and Blues by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
+    - youtube
   tracks:
   - number: 1
     title: Cyclamen

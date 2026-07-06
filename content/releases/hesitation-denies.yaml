@@ -31,6 +31,15 @@ release:
     description: Hesitation Denies by 4Castle on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - apple_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   song:
     number: 1
     title: Hesitation Denies

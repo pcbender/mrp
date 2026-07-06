@@ -155,6 +155,13 @@ release:
     description: Distance Not Safety by 4Castle on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
   tracks:
   - number: 1
     title: Cut Flowers

@@ -35,6 +35,11 @@ release:
     description: Sentia by Lingua Aeternum on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - bandcamp
+    - deezer
+    - pandora
+    - soundcloud
   song:
     number: 1
     title: Sentia

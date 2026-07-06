@@ -27,11 +27,19 @@ release:
     apple_music: https://music.apple.com/us/album/the-only-way-over-single/6780084133
     youtube: https://www.youtube.com/watch?v=VZ9eHfuO090
     youtube_music: https://music.youtube.com/watch?v=VZ9eHfuO090
+    itunes_store: https://music.apple.com/us/album/6780084133?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0H57BTSXD?ref=dmm_acq_soc_us_u_lfire_lp_x_1e9d290af1418e5527b2cbbb4ab98e67
+    tidal: http://www.tidal.com/album/533336705
   seo:
     title: The Only Way Over by 4Castle
     description: The Only Way Over by 4Castle on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: The Only Way Over

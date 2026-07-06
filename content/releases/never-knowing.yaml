@@ -26,11 +26,22 @@ release:
     spotify: https://open.spotify.com/album/5x0nxD5nFqOphFMIoLTdPO
     youtube: https://www.youtube.com/watch?v=aMppyXQtFAY
     youtube_music: https://music.youtube.com/watch?v=aMppyXQtFAY
+    apple_music: https://music.apple.com/us/album/1893743570?app=music
+    itunes_store: https://music.apple.com/us/album/1893743570?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GXCFHVMR?ref=dmm_acq_soc_us_u_lfire_lp_x_a40968578185580f07a088288da68725
+    tidal: http://www.tidal.com/album/516225263
+    pandora: https://pandora.app.link/?%24desktop_url=https%3A%2F%2Fwww.pandora.com%2Fartist%2Fandrew-michael-storm%2Fnever-knowing%2FALdJczbqn2mlVvX&%24ios_deeplink_path=pandorav4%3A%2F%2Fbackstage%2Falbum%3Ftoken%3DAL%3A60395087&%24android_deeplink_path=pandorav4%3A%2F%2Fbackstage%2Falbum%3Ftoken%3DAL%3A60395087&~channel=Partner+Catalog+Search+API+-+Linkfire&part=lf&corr=a40968578185580f07a088288da68725&partnerName=Linkfire&~campaign=Partner+Customer+ID+-+2b6fa68c-e8b3-4d8d-8bba-0497c27a2530&sharedId=a40968578185580f07a088288da68725
   seo:
     title: Never Knowing by Michael Anthony Rose
     description: Never Knowing by Michael Anthony Rose on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - apple_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: Never Knowing

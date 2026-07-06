@@ -27,11 +27,19 @@ release:
     apple_music: https://music.apple.com/us/album/the-bridge-gets-you-over-single/6766359376
     youtube: https://www.youtube.com/watch?v=_mSYo2PZrpA
     youtube_music: https://music.youtube.com/watch?v=_mSYo2PZrpA
+    itunes_store: https://music.apple.com/us/album/6766359376?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GZJD5HZT?ref=dmm_acq_soc_us_u_lfire_lp_x_d2aa3c7d2e3e3f940b703c5de2a51df5
+    tidal: http://www.tidal.com/album/521575308
   seo:
     title: The Bridge Gets You Over by Michael Anthony Rose
     description: The Bridge Gets You Over by Michael Anthony Rose on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: The Bridge Gets You Over

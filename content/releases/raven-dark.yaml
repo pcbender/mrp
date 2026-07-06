@@ -27,11 +27,19 @@ release:
     apple_music: https://music.apple.com/us/album/raven-dark-single/6767339040
     youtube: https://www.youtube.com/watch?v=g1nb0HKxlhE
     youtube_music: https://music.youtube.com/watch?v=g1nb0HKxlhE
+    itunes_store: https://music.apple.com/us/album/6767339040?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GZX359SZ?ref=dmm_acq_soc_us_u_lfire_lp_x_3220a80d3a46d75dc74f98a60568f627
+    tidal: http://www.tidal.com/album/522500534
   seo:
     title: Raven Dark by STAB
     description: Raven Dark by STAB on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: Raven Dark

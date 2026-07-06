@@ -32,6 +32,14 @@ release:
     description: Made By Moving by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - bandcamp
+    - deezer
+    - itunes_store
+    - pandora
+    - soundcloud
+    - tidal
   tracks:
   - number: 1
     title: Made By Moving

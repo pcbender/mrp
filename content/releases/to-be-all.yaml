@@ -27,11 +27,19 @@ release:
     apple_music: https://music.apple.com/us/album/to-be-all-single/6770593067
     youtube: https://www.youtube.com/watch?v=K-wfXodL0o4
     youtube_music: https://music.youtube.com/watch?v=K-wfXodL0o4
+    itunes_store: https://music.apple.com/us/album/6770593067?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0H27BMMJ8?ref=dmm_acq_soc_us_u_lfire_lp_x_87e5cfc16649335cb1b837f2b1ae3983
+    tidal: http://www.tidal.com/album/525911569
   seo:
     title: To Be All by 4Castle
     description: To Be All by 4Castle on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - amazon_music
+    - deezer
+    - itunes_store
+    - tidal
   song:
     number: 1
     title: To Be All
