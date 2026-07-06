@@ -1,0 +1,179 @@
+release:
+  id: footsteps-again
+  slug: footsteps-again
+  title: Footsteps Again
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: live
+  release_date: '2026-05-29'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '7333583617482'
+  catalog_number: null
+  cover_image: site/public/assets/releases/footsteps-again/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/3TLU0UOuDQsSallCbngZhz
+    apple_music: https://music.apple.com/us/album/footsteps-again-single/6774493774
+  song:
+    number: 1
+    title: Footsteps Again
+    slug: footsteps-again
+    isrc: SE6SA2620449
+    duration: '3:19'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/pcbender--footsteps-again.mp3
+    links:
+      spotify: https://open.spotify.com/track/3T1BxQeBpdbsVtckdAYKmV
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: indie folk, folk, acoustic, minimalist
+    lyrics_raw: '[Intro]
+
+      [palm-muted acoustic guitar eighth notes, kick drum on 1 and 3]
+
+      [Verse 1]
+
+      [baritone male vocals]
+
+      Light on the kettle
+
+      The steam finds it [acoustic guitar melodic flourish]
+
+      Before I do
+
+      [Chorus]
+
+      [bass guitar enters with sustained notes]
+
+      [high-pitched synth pad swell]
+
+      [Verse 2]
+
+      Shadows
+
+      Tucked under everything
+
+      Nowhere left to fall
+
+      [Chorus]
+
+      [synth pad swell]
+
+      [Verse 3]
+
+      Lamps on one by one
+
+      The hills going blue
+
+      From the road
+
+      Their yellow [acoustic guitar melodic flourish]
+
+      Does not reach
+
+      [Bridge]
+
+      [vocals drop out]
+
+      [acoustic guitar continues eighth note pulse]
+
+      [kick drum and bass continue]
+
+      [Verse 4]
+
+      Footsteps overhead
+
+      A chair pulled out
+
+      Water running
+
+      Then nothing
+
+      Then footsteps again
+
+      [Outro]
+
+      Footsteps again
+
+      Footsteps again
+
+      [instruments fade out gradually]
+
+      [final kick drum hit]'
+    lyrics_text: 'Light on the kettle
+
+      The steam finds it
+
+      Before I do
+
+
+      Shadows
+
+      Tucked under everything
+
+      Nowhere left to fall
+
+
+      Lamps on one by one
+
+      The hills going blue
+
+      From the road
+
+      Their yellow
+
+      Does not reach
+
+
+      Footsteps overhead
+
+      A chair pulled out
+
+      Water running
+
+      Then nothing
+
+      Then footsteps again
+
+      Footsteps again
+
+      Footsteps again'
+    lyrics_source: null
+    hints:
+      Vocal: Male
+    master_path: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+  seo:
+    title: Footsteps Again
+    description: Footsteps Again on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/Footsteps Again.wav
+  distributor: amuse
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null
