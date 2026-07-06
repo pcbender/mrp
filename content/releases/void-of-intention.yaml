@@ -9,6 +9,7 @@ release:
   release_date: '2025-03-16'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 056870485157
   catalog_number: null
   cover_image: site/public/assets/releases/void-of-intention/cover.jpg

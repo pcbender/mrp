@@ -9,6 +9,7 @@ release:
   release_date: '2025-04-20'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 056870953052
   catalog_number: null
   cover_image: site/public/assets/releases/inner-outer-over-through/cover.jpg

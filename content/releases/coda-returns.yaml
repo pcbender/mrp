@@ -9,6 +9,7 @@ release:
   release_date: '2025-04-15'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 056870905228
   catalog_number: null
   cover_image: site/public/assets/releases/coda-returns/cover.jpg

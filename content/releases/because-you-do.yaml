@@ -9,6 +9,7 @@ release:
   release_date: '2025-07-14'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591974456'
   catalog_number: null
   cover_image: site/public/assets/releases/because-you-do/cover.jpg

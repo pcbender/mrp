@@ -9,6 +9,7 @@ release:
   release_date: '2026-06-30'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '991048269026'
   catalog_number: null
   cover_image: site/public/assets/releases/a-good-day-to-be/cover.jpg

@@ -10,6 +10,7 @@ release:
   release_date: '2025-06-17'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591695177'
   catalog_number: null
   cover_image: site/public/assets/releases/tria/cover.jpg

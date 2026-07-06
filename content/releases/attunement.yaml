@@ -9,6 +9,7 @@ release:
   release_date: '2025-04-12'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 056870869148
   catalog_number: null
   cover_image: site/public/assets/releases/attunement/cover.jpg

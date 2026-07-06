@@ -9,6 +9,7 @@ release:
   release_date: '2025-04-20'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 056870965871
   catalog_number: null
   cover_image: site/public/assets/releases/just-the-same/cover.jpg

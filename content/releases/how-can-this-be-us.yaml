@@ -9,6 +9,7 @@ release:
   release_date: '2026-01-29'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 057914752853
   catalog_number: null
   cover_image: site/public/assets/releases/how-can-this-be-us/cover.jpg

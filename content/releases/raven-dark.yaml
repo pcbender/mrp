@@ -9,6 +9,7 @@ release:
   release_date: '2026-05-07'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '991043729501'
   catalog_number: null
   cover_image: site/public/assets/releases/raven-dark/cover.jpg

@@ -9,6 +9,7 @@ release:
   release_date: '2025-04-02'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 056870737898
   catalog_number: null
   cover_image: site/public/assets/releases/what-s-best-2/cover.jpg

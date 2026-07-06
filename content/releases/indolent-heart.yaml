@@ -9,6 +9,7 @@ release:
   release_date: '2025-05-01'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591104495'
   catalog_number: null
   cover_image: site/public/assets/releases/indolent-heart/cover.jpg

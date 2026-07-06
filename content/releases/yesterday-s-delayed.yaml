@@ -9,6 +9,7 @@ release:
   release_date: '2025-10-01'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: amuse
   upc: '7300346330018'
   catalog_number: null
   cover_image: site/public/assets/releases/yesterday-s-delayed/cover.jpg

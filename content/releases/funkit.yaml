@@ -9,6 +9,7 @@ release:
   release_date: '2026-03-18'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '991043225973'
   catalog_number: null
   cover_image: site/public/assets/releases/funkit/cover.jpg

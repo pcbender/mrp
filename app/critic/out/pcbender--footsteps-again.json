@@ -1,0 +1,120 @@
+{
+  "track_id": "pcbender--footsteps-again",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Footsteps Again.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--footsteps-again.opus"
+  },
+  "lyrics": "Light on the kettle\nThe steam finds it\nBefore I do\n\nShadows\nTucked under everything\nNowhere left to fall\n\nLamps on one by one\nThe hills going blue\nFrom the road\nTheir yellow\nDoes not reach\n\nFootsteps overhead\nA chair pulled out\nWater running\nThen nothing\nThen footsteps again\nFootsteps again\nFootsteps again",
+  "lyrics_raw": "[Intro]\n[palm-muted acoustic guitar eighth notes, kick drum on 1 and 3]\n[Verse 1]\n[baritone male vocals]\nLight on the kettle\nThe steam finds it [acoustic guitar melodic flourish]\nBefore I do\n[Chorus]\n[bass guitar enters with sustained notes]\n[high-pitched synth pad swell]\n[Verse 2]\nShadows\nTucked under everything\nNowhere left to fall\n[Chorus]\n[synth pad swell]\n[Verse 3]\nLamps on one by one\nThe hills going blue\nFrom the road\nTheir yellow [acoustic guitar melodic flourish]\nDoes not reach\n[Bridge]\n[vocals drop out]\n[acoustic guitar continues eighth note pulse]\n[kick drum and bass continue]\n[Verse 4]\nFootsteps overhead\nA chair pulled out\nWater running\nThen nothing\nThen footsteps again\n[Outro]\nFootsteps again\nFootsteps again\n[instruments fade out gradually]\n[final kick drum hit]",
+  "style": "indie folk, folk, acoustic, minimalist",
+  "persona": "PCBender writes songs that navigate the highways and heartaches of a life in motion. As a lyricist, he is a chronicler of both the external and internal landscape, treating the open road not just as a physical space but as a metaphor for the endless search for meaning. His work is a restless travelogue of the soul, capturing moments of fleeting connection in dusty towns, the weight of memory on a solitary drive, and the quiet resolve needed to keep moving toward an unknown horizon. He interrogates the world with a storyteller’s eye for detail and a philosopher’s comfort with unanswerable questions, grounding expansive ideas in the concrete grit of lived experience.\n\nThe thematic scope of PCBender’s work is remarkably wide. He writes about love with a profound sense of its complexity, portraying it as a beautiful mystery that can’t quite be made to fit, a chaotic dance between two souls, or a quiet bond that grows stronger through the years. Yet, his gaze often turns outward, delivering sharp, incisive social critiques that condemn inhumanity and challenge the stories a society tells itself. These moments of lucid commentary give way to deeply introspective and spiritual explorations of freedom, identity, and the nature of existence itself. His songs grapple with what it means to be sovereign, to find a personal god in the details of the everyday, and to walk a path defined by one’s own choices rather than by borrowed rules.\n\nThis thematic range is matched by a dynamic and versatile lyrical voice. PCBender can be disarmingly direct, offering plainspoken narratives of youthful romance or brutally frank postmortems of failed relationships. In the next moment, his language becomes dense, poetic, and abstract, building entire worlds from extended metaphors about music technology or the paradoxes of time. Whether his lyrics are confessional or conceptual, they are united by an undercurrent of searching. They are songs for thinkers, for wanderers, and for anyone who has ever looked at the map of their own life and felt the pull of the road not yet taken.\n\nIn the world of PCBender’s music, a definitive answer is less important than a compelling question, and the journey itself is the only true destination. His songs don't offer easy resolutions but instead create a space for contemplation, providing a soundtrack for the long, hard road that ultimately leads us back to ourselves. It is music that rewards close listening, revealing new layers of meaning with every mile that passes.",
+  "hints": {
+    "Vocal": "Male"
+  },
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "A#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 198.56,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 26.33,
+        "label": "S1"
+      },
+      {
+        "start": 26.33,
+        "end": 49.18,
+        "label": "S2"
+      },
+      {
+        "start": 49.18,
+        "end": 65.46,
+        "label": "S3"
+      },
+      {
+        "start": 65.46,
+        "end": 81.5,
+        "label": "S4"
+      },
+      {
+        "start": 81.5,
+        "end": 102.68,
+        "label": "S5"
+      },
+      {
+        "start": 102.68,
+        "end": 119.3,
+        "label": "S6"
+      },
+      {
+        "start": 119.3,
+        "end": 135.49,
+        "label": "S7"
+      },
+      {
+        "start": 135.49,
+        "end": 161.03,
+        "label": "S8"
+      },
+      {
+        "start": 161.03,
+        "end": 186.08,
+        "label": "S9"
+      },
+      {
+        "start": 186.08,
+        "end": 198.56,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.966,
+      "key": 0.944
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "melancholic",
+      "emotional"
+    ],
+    "instruments": [
+      "strings",
+      "bass guitar",
+      "electric guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "The track opens with a sparse, melancholic acoustic guitar and intimate, raw vocals, establishing a deeply introspective and spacious emotional atmosphere. A notable shift occurs around the one-minute mark, where the song transitions from a delicate acoustic folk ballad into a rich indie-electronica landscape with the introduction of a steady, pulsing beat and shimmering synthesizer textures. The overall energy remains relaxed and dreamy, shifting seamlessly from a quiet, solitary feel to a more driving, hypnotic groove. In terms of production, there is an impressive use of stereo depth, allowing the echoing vocal layers and lush synth pads to sit comfortably around the central rhythm section without ever feeling overcrowded. The haunting vocal repetitions near the end act as a powerful defining element, sealing the track's wistful, cinematic quality.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "This one earns its patience. It starts where most PCBender songs end, in the small hours of a rented room: light catching the kettle, steam that finds the warmth before he does. The palm-muted acoustic pulse holds steady at a walking 117 through the first minute, baritone close-miked and unhurried, before the synth pads swell in and the kick settles onto the low end. That shift, from bare folk to a hypnotic groove, is the whole trick of the record, and it lands because he doesn't oversell it: A#, no drama, just accumulation. The closing figure is the real payoff. Cut the vocal loose, let the eighth notes carry the pulse, and return to those overheard sounds through the floor: 'A chair pulled out / Water running / Then nothing / Then footsteps again.' Repeated three times as the instruments dissolve, it reads less like a chorus than eavesdropping on another life above your own, the way Radiohead lets a phrase hollow out into pattern. There's not much here for the listener who wants a hook to hold onto, and it takes the full three minutes to bloom, but the reward is real. A grower, and one that rewards the second pass.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "Light on the kettle / The steam finds it / Before I do",
+      "A chair pulled out / Water running / Then nothing / Then footsteps again",
+      "117 BPM walking pulse",
+      "A# major",
+      "palm-muted acoustic to synth-pad shift at one minute",
+      "kick on 1 and 3",
+      "closing footsteps repetition with instruments fading out"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

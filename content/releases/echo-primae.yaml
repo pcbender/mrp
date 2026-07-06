@@ -9,6 +9,7 @@ release:
   release_date: '2025-04-11'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 056870858258
   catalog_number: null
   cover_image: site/public/assets/releases/echo-primae/cover.jpg

@@ -9,6 +9,7 @@ release:
   release_date: '2025-05-10'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591243668'
   catalog_number: null
   cover_image: site/public/assets/releases/mad-river/cover.jpg

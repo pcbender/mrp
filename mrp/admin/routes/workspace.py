@@ -143,8 +143,8 @@ async def details_save(request: Request, slug: str):
     old_artist = str(rel.get("artist_id") or "")
 
     for key in ["title", "artist_id", "status", "release_date", "label", "publisher",
-                "upc", "catalog_number", "language", "cover_image", "summary",
-                "description"]:
+                "distributor", "upc", "catalog_number", "language", "cover_image",
+                "summary", "description"]:
         if key in form:
             rel[key] = str_or_none(form[key])
     # Required strings must stay non-null even when submitted blank

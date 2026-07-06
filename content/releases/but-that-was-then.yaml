@@ -9,6 +9,7 @@ release:
   release_date: '2026-04-09'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '991043442356'
   catalog_number: null
   cover_image: site/public/assets/releases/but-that-was-then/cover.jpg

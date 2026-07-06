@@ -9,6 +9,7 @@ release:
   release_date: '2026-05-10'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '991043750161'
   catalog_number: null
   cover_image: site/public/assets/releases/truth-s-empty-promise/cover.jpg
