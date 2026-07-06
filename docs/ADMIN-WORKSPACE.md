@@ -1,0 +1,73 @@
+# Admin Workspace
+
+The admin web UI is the primary way releases are worked from draft to live.
+It is a local FastAPI + Jinja2 + HTMX app (no build step) started with:
+
+```bash
+scripts/mrp admin serve
+# → http://127.0.0.1:8000
+```
+
+Python changes require a server restart; templates live-reload.
+
+## Release workspace
+
+Each release gets a workspace at `/releases/{slug}/{stage}` with a persistent
+header (cover, title, artist, status badge) and stage tabs:
+
+| Stage | Purpose |
+|---|---|
+| `intake` | Read-only provenance (Spotify link, UPC, dates, YAML path) |
+| `details` | Release metadata, credits, SEO. Artist ID changes are gated with a confirm panel and migrate all downstream artifacts |
+| `links` | Per-platform link board + enrichment jobs (Odesli, LANDR, Apple Music, YouTube); platforms can be marked not-expected (`automation.links_na`) |
+| `tracks` | Track matrix + per-track editor (lyrics, style, hints, master path, per-track links) |
+| `critic` | AI review pipeline with per-track saved settings (`track.critic`: model/persona/target/tier); review → approve → writeback |
+| `sampler` | Play the master in-browser, mark start/end, cut a −14 LUFS preview snippet via ffmpeg |
+| `promoter` | Regenerates the artist's promo blurb and bios from recent releases + reviews; human review marks `bio_auto_generated: false` |
+| `publish` | build → stage → verify → approve → publish controls |
+| `monitoring` | Thin stub (roadmap item) |
+
+## Job mechanism
+
+Long-running steps run as background jobs: `POST /releases/{slug}/ws/{step}`
+launches a thread, state persists in SQLite at `~/.mrp/admin.db` keyed
+`{slug}/{step}`, and an HTMX fragment polls until done. Completed jobs fire a
+`releaseSaved` HX-Trigger (promoter steps also fire `promoterSaved`) so the
+header, tabs, and stage panels refresh live.
+
+All YAML IO goes through `load_structured_record` / `serialize_structured_record`.
+Saves are slice-saves: each stage patches only the keys it owns, so concurrent
+edits to other sections survive.
+
+## Artifact keying
+
+Every downstream artifact is keyed `{artist_id}--{track_slug}`:
+
+- critic records: `app/critic/out/{key}.json` (album pass: `album--{artist_id}--{release_slug}`)
+- published reviews: `site/src/content/reviews/{key}.md` (frontmatter `track_id`)
+- preview snippets: `site/public/samples/{key}.mp3` (referenced by `preview_audio` in the release YAML)
+
+Because of this, changing a release's `artist_id` on the Details stage
+triggers a confirmation workflow that renames/re-keys all of these
+(`artist_artifact_moves` / `migrate_artist_artifacts` in `mrp/admin/workspace.py`).
+
+Artist records live at `content/artists/{id}.yaml`; resolve them only via
+`artist_record_path()` in `mrp/admin/workspace.py`.
+
+## Critic pipeline
+
+Three passes: per-track review → album pass → contextual reviews. Prompts
+include the style prompt, raw lyrics (Suno-style tags are production
+directions, not lyrics), and `hints` (human ground truth — trust these over
+audio-tagging output). Reviews land as `pending`; writeback only writes
+reviews with status `approved` or `publishable`. Critic and promoter
+binaries are invoked via absolute paths under `app/critic/.venv/bin/` —
+they are not on PATH.
+
+## Status ladder
+
+Release status advances forward-only with the publish steps
+(`_advance_release_status` in `mrp/admin/pipeline.py`):
+build → `staged`, verify → `verified`, approve → `approved`, publish → `live`.
+Drafts are excluded from site builds. Deployment targets and credentials are
+documented in [Site_Deployment.md](Site_Deployment.md).

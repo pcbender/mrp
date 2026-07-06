@@ -1,7 +1,8 @@
 # Content Model
 
-MRP content lives under `content/` and is designed to be edited by humans or
-agents, then validated before build/deploy.
+MRP content lives under `content/` and is designed to be edited by humans,
+agents, or the admin UI, then validated against `mrp/schemas/*.schema.json`
+before build/deploy. The schemas are the authority; this doc is orientation.
 
 ## Site
 
@@ -10,31 +11,27 @@ name, publisher name, contact email, and timezone.
 
 ## Artists
 
-Artist records live in `content/artists/`.
+Artist records live in `content/artists/{id}.yaml`
+(`mrp/schemas/artist.schema.json`). Required: `artist.id`, `artist.name`,
+`artist.visibility`. Artist IDs are lowercase slugs used in URLs
+(`/artists/{id}/`) and as the key prefix for all downstream release
+artifacts (see `docs/ADMIN-WORKSPACE.md`).
 
-Required fields:
-
-- `artist.id`
-- `artist.name`
-- `artist.visibility`
-
-Artist IDs are lowercase slugs and are used in generated artist URLs:
-
-```text
-/artists/{artist.id}/
-```
+Beyond identity and platform `links` (artist pages on Spotify, Apple Music,
+YouTube — the enrichment commands key off these), artist records carry the
+promoter-managed profile: `promo_blurb`, `bio_short`, `bio_long`, and
+`bio_auto_generated` (true until a human reviews and saves).
 
 ## Releases
 
-Release records live in `content/releases/`. MRP v0.1 has two models:
+Release records live in `content/releases/{slug}.yaml`
+(`mrp/schemas/release.schema.json`). Two models:
 
-- `song`: one song/single. `release_type` must be `single`.
-- `album`: multi-track release. `release_type` is `ep` or `album`.
+- `song`: one single. `release_type: single`, track fields under `song:`.
+- `album`: multi-track. `release_type: ep` or `album`, tracks under `tracks:`.
 
-EPs and albums share the same template shape with `tracks`; the release type
-distinguishes the public category.
-
-Example draft single:
+Skeleton of the current shape (see any live release for a full example,
+e.g. `content/releases/on-to-potter-s-field.yaml`):
 
 ```yaml
 release:
@@ -44,68 +41,48 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: draft
-  release_date:
+  status: draft            # ladder: draft → staged → verified → approved → live
+  release_date: '2026-01-01'
   label: Maricopa Records
   publisher: Maricopa Publishing
   upc:
-  catalog_number:
-  cover_image: assets/releases/signal-path/cover.jpg
+  cover_image: site/public/assets/releases/signal-path/cover.jpg
   hero_image:
-  summary: ""
-  description: ""
-  credits:
-    primary_artist: pcbender
-    songwriter:
-    producer:
-    mastering:
-  links:
+  summary:
+  description:
+  credits: { primary_artist:, songwriter:, lyrics:, producer:, mastering: }
+  links:                   # release-level streaming links (11 platforms)
     spotify:
     apple_music:
-    youtube_music:
-    bandcamp:
-    soundcloud:
-    landing_page:
-  seo:
-    title: Signal Path by pcbender
-    description: Signal Path by pcbender on Maricopa Records.
+    # ...
+  seo: { title:, description: }
   automation:
     allow_auto_publish: false
+    links_na: []           # platforms this release is not expected on
   song:
-    number:
+    number: 1
     title: Signal Path
     slug: signal-path
     isrc:
     duration:
     explicit: false
-    preview_audio:
-    lyrics_excerpt:
+    preview_audio:         # /samples/{artist_id}--{slug}.mp3, written by sampler
+    master_path:           # absolute path to the master WAV, used by sampler/critic
+    lyrics_text:           # official lyrics (poem form)
+    lyrics_raw:            # production text incl. Suno-style [section] tags
+    style:                 # style/production prompt
+    hints: {}              # human ground truth for the critic, e.g. Vocals: Male
+    links: {}              # per-track streaming links
+    credits: {}            # per-track credit overrides
+    critic: {}             # saved critic settings: model/persona/target/target_tier
 ```
 
-Create a draft from the CLI:
+Create a draft from the CLI (`scripts/mrp release create --artist pcbender
+--title "Signal Path" --type single`) or through the admin UI. Both refuse to
+overwrite an existing release and validate the generated draft.
 
-```bash
-scripts/mrp release create --artist pcbender --title "Signal Path" --type single
-```
+## Legacy content
 
-The command writes `content/releases/{slug}.yaml`, creates
-`assets/releases/{slug}/`, refuses overwrite, and validates the generated draft.
-
-## WordPress Static Clone
-
-WXR-derived clone content lives under `content/clone/` and is separate from the
-curated MRP publishing records:
-
-- `content/clone/pages/` stores static pages, artist pages, and release pages.
-- `content/clone/posts/` stores blog/news posts.
-- `content/clone/assets/manifest.yaml` tracks WordPress assets referenced by
-  cloned HTML.
-
-Clone records use a single `clone` schema with `kind` distinguishing
-`static_page`, `artist_page`, `release_page`, and `blog_post`. The record keeps
-the WordPress source ID, post type, post status, source link, canonical path,
-aliases, and raw WXR `content_html`.
-
-This model is intentionally not the same as `content/artists/` or
-`content/releases/`. The clone layer preserves WordPress page content for the
-Astro static clone; the publishing layer remains the curated MRP release model.
+`content/clone/`, `content/pages/`, and `content/posts/` hold frozen
+WordPress-migration output — a different, closed content model. See
+[CONTENT-PIPELINE.md](CONTENT-PIPELINE.md); do not create new records there.
