@@ -1,0 +1,283 @@
+release:
+  id: the-singer-behind-the-counter
+  slug: the-singer-behind-the-counter
+  title: The Singer Behind The Counter
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: live
+  release_date: '2026-05-21'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991043863687'
+  catalog_number: null
+  cover_image: site/public/assets/releases/the-singer-behind-the-counter/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/4ZA6hvnW4SyDy8VZomx2O1
+    apple_music: https://music.apple.com/us/album/6771576571?app=music
+    itunes_store: https://music.apple.com/us/album/6771576571?app=itunes
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mVvJdED6MaVFe6oZejLq4uGzeohfxhrMI
+    amazon_music: https://music.amazon.com/albums/B0H2G98KGC?ref=dmm_acq_soc_us_u_lfire_lp_x_19926028f46fe8d742e0193b31e1ae00
+    tidal: http://www.tidal.com/album/526675453
+  song:
+    number: 1
+    title: The Singer Behind The Counter
+    slug: the-singer-behind-the-counter
+    isrc: CAENV2617203
+    duration: '3:53'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/pcbender--the-singer-behind-the-counter.mp3
+    links:
+      spotify: https://open.spotify.com/track/3DRHhgo5SxETVj2u4Z8Zkl
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: Americana, rock, 1980s-inspired synth/analog pop-rock
+    lyrics_raw: '[Verse]
+
+      I''m a baker in the morning
+
+      At the local grocery store
+
+      I''m a singer in the evening
+
+      Two nights a week, sometimes more
+
+
+      The smell of yeast and bacon grease
+
+      Meets the growing morning light
+
+      While the baking pays the bills
+
+      My mind drifts to the songs I''ll sing
+
+
+      [Pre-Chorus]
+
+      Later on tonight
+
+
+      [Chorus]
+
+      I like to work when it feels honest
+
+      I love a song when it sounds like mine
+
+      I''m the singer behind the counter
+
+      And I''m doing fine
+
+
+      [Verse]
+
+      The bar in town is Payton''s Place
+
+      Tables, chairs, a tiny stage
+
+      Just enough for the three of us
+
+      And a tip jar full of change
+
+
+      We play a mix of has-been hits
+
+      A little bit of everything
+
+      Some dance, some leave, no regrets
+
+      Every time I get to sing
+
+
+      [Pre-Chorus]
+
+      It''s a good night
+
+
+      [Chorus]
+
+      I like to work when it feels honest
+
+      I love a song when it sounds like mine
+
+      I''m the singer behind the counter
+
+      And I''m doing fine
+
+
+      [Bridge]
+
+      Some mornings come too early
+
+      Some nights my voice is gone
+
+      A hundred little details checked
+
+      Before the show goes on
+
+      Some days I just feel heavy
+
+      Like I have to stop the grind
+
+      But when the bread is done
+
+      Or the song is sung
+
+      She says "You did good"
+
+      And that''s enough
+
+
+      [Chorus]
+
+      I like to work when it feels honest
+
+      I love a song when it sounds like mine
+
+      I''m the singer behind the counter
+
+      And I''m still doing fine
+
+
+      [Outro]
+
+      Yeah…
+
+      Yeah…
+
+      I’m doing fine
+
+
+      [End]'
+    lyrics_text: 'I''m a baker in the morning
+
+      At the local grocery store
+
+      I''m a singer in the evening
+
+      Two nights a week, sometimes more
+
+      The smell of yeast and bacon grease
+
+      Meets the growing morning light
+
+      While the baking pays the bills
+
+      My mind drifts to the songs I''ll sing
+
+
+      Later on tonight
+
+
+      I like to work when it feels honest
+
+      I love a song when it sounds like mine
+
+      I''m the singer behind the counter
+
+      And I''m doing fine
+
+
+      The bar in town is Payton''s Place
+
+      Tables, chairs, a tiny stage
+
+      Just enough for the three of us
+
+      And a tip jar full of change
+
+      We play a mix of has-been hits
+
+      A little bit of everything
+
+      Some dance, some leave, no regrets
+
+      Every time I get to sing
+
+
+      It''s a good night
+
+
+      I like to work when it feels honest
+
+      I love a song when it sounds like mine
+
+      I''m the singer behind the counter
+
+      And I''m doing fine
+
+
+      Some mornings come too early
+
+      Some nights my voice is gone
+
+      A hundred little details checked
+
+      Before the show goes on
+
+      Some days I just feel heavy
+
+      Like I have to stop the grind
+
+      But when the bread is done
+
+      Or the song is sung
+
+      She says "You did good"
+
+      And that''s enough
+
+
+      I like to work when it feels honest
+
+      I love a song when it sounds like mine
+
+      I''m the singer behind the counter
+
+      And I''m still doing fine
+
+
+      Yeah…
+
+      Yeah…
+
+      I’m doing fine'
+    lyrics_source: null
+    hints:
+      Vocals: Male
+      Style: Slightly country
+    master_path: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+  seo:
+    title: The Singer Behind The Counter
+    description: The Singer Behind The Counter on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/The Singer Behind The Counter.wav
+  hero_image: site/public/assets/releases/the-singer-behind-the-counter/hero.jpg
+  distributor: landr
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null

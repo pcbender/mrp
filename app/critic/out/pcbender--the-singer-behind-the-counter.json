@@ -1,0 +1,117 @@
+{
+  "track_id": "pcbender--the-singer-behind-the-counter",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Singer Behind The Counter.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--the-singer-behind-the-counter.opus"
+  },
+  "lyrics": "I'm a baker in the morning\nAt the local grocery store\nI'm a singer in the evening\nTwo nights a week, sometimes more\nThe smell of yeast and bacon grease\nMeets the growing morning light\nWhile the baking pays the bills\nMy mind drifts to the songs I'll sing\n\nLater on tonight\n\nI like to work when it feels honest\nI love a song when it sounds like mine\nI'm the singer behind the counter\nAnd I'm doing fine\n\nThe bar in town is Payton's Place\nTables, chairs, a tiny stage\nJust enough for the three of us\nAnd a tip jar full of change\nWe play a mix of has-been hits\nA little bit of everything\nSome dance, some leave, no regrets\nEvery time I get to sing\n\nIt's a good night\n\nI like to work when it feels honest\nI love a song when it sounds like mine\nI'm the singer behind the counter\nAnd I'm doing fine\n\nSome mornings come too early\nSome nights my voice is gone\nA hundred little details checked\nBefore the show goes on\nSome days I just feel heavy\nLike I have to stop the grind\nBut when the bread is done\nOr the song is sung\nShe says \"You did good\"\nAnd that's enough\n\nI like to work when it feels honest\nI love a song when it sounds like mine\nI'm the singer behind the counter\nAnd I'm still doing fine\n\nYeah…\nYeah…\nI’m doing fine",
+  "lyrics_raw": "[Verse]\nI'm a baker in the morning\nAt the local grocery store\nI'm a singer in the evening\nTwo nights a week, sometimes more\n\nThe smell of yeast and bacon grease\nMeets the growing morning light\nWhile the baking pays the bills\nMy mind drifts to the songs I'll sing\n\n[Pre-Chorus]\nLater on tonight\n\n[Chorus]\nI like to work when it feels honest\nI love a song when it sounds like mine\nI'm the singer behind the counter\nAnd I'm doing fine\n\n[Verse]\nThe bar in town is Payton's Place\nTables, chairs, a tiny stage\nJust enough for the three of us\nAnd a tip jar full of change\n\nWe play a mix of has-been hits\nA little bit of everything\nSome dance, some leave, no regrets\nEvery time I get to sing\n\n[Pre-Chorus]\nIt's a good night\n\n[Chorus]\nI like to work when it feels honest\nI love a song when it sounds like mine\nI'm the singer behind the counter\nAnd I'm doing fine\n\n[Bridge]\nSome mornings come too early\nSome nights my voice is gone\nA hundred little details checked\nBefore the show goes on\nSome days I just feel heavy\nLike I have to stop the grind\nBut when the bread is done\nOr the song is sung\nShe says \"You did good\"\nAnd that's enough\n\n[Chorus]\nI like to work when it feels honest\nI love a song when it sounds like mine\nI'm the singer behind the counter\nAnd I'm still doing fine\n\n[Outro]\nYeah…\nYeah…\nI’m doing fine\n\n[End]",
+  "style": "Americana, rock, 1980s-inspired synth/analog pop-rock",
+  "persona": "PCBender writes songs that feel like maps of an unfinished journey. His work, a striking debut for Maricopa Records, is marked by a restless, searching quality, chronicling the paths we take both on dusty roads and through the landscapes of the heart. This is music that moves, constantly weighing the pull of the horizon against the grace of standing still. With a voice that is at once confessional and philosophical, PCBender grapples with the beautiful, messy work of being human, asking not for solutions but for the courage to face the questions.\n\nThematic threads of movement, memory, and meaning are woven through every song. Lyrics frequently evoke the road as a central metaphor, a place of loss and self-discovery where every mile is meant to teach, not just to fade. This physical journey mirrors an internal one, a persistent search for an authentic, sovereign self in a world of confusing signals and borrowed truths. Whether confronting the social decay of bigotry in \"The Rats Are In The Roses\" or untangling the beautiful mystery of a relationship in \"I Can’t Quite Make It Fit,\" his songwriting remains grounded in a profound, unflinching honesty. He finds truth not in grand pronouncements but in \"hardwood confessions\" and the quiet understanding that life is a dance you learn while you’re already on the floor.\n\nThe emotional and stylistic range of PCBender’s work is remarkable. He shifts seamlessly from the narrative balladry of a storyteller, spinning tales of desert heat and formative first loves, to the abstract, metaphorical language of a poet exploring the very wiring of creativity and consciousness. His pen can be pointed and political, tender and romantic, or brutally direct in the face of heartbreak. The lyrics balance concrete imagery, like salt-flats and coastlines, with abstract inquiry, creating songs that are both intellectually stimulating and deeply felt. This is world-weary music that hasn't given up on hope, infused with a belief that the lack of an answer can be the truest reply.\n\nUltimately, the world of PCBender is one of rich texture and profound curiosity. His songs are invitations to lean into the riddles, to find peace in the imperfection, and to honor the pattern of choices that define a life. They are hymns for the over-thinkers, anthems for the independent, and lullabies for the lost. For any listener who has ever felt like they were halfway between a place and a dream, PCBender’s music offers not a destination, but a vital and resonant companion for the road ahead.",
+  "hints": {
+    "Vocals": "Male",
+    "Style": "Slightly country"
+  },
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "G",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 233.21,
+    "lufs": -14.4,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 3.9,
+        "label": "S1"
+      },
+      {
+        "start": 3.9,
+        "end": 33.55,
+        "label": "S2"
+      },
+      {
+        "start": 33.55,
+        "end": 49.39,
+        "label": "S3"
+      },
+      {
+        "start": 49.39,
+        "end": 90.3,
+        "label": "S4"
+      },
+      {
+        "start": 90.3,
+        "end": 105.93,
+        "label": "S5"
+      },
+      {
+        "start": 105.93,
+        "end": 146.73,
+        "label": "S6"
+      },
+      {
+        "start": 146.73,
+        "end": 161.77,
+        "label": "S7"
+      },
+      {
+        "start": 161.77,
+        "end": 191.05,
+        "label": "S8"
+      },
+      {
+        "start": 191.05,
+        "end": 233.21,
+        "label": "S9"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.968,
+      "key": 0.952
+    }
+  },
+  "tags": {
+    "genre": [
+      "country rock",
+      "indie rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "nostalgic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "strings"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This country-rock track exudes a warm, nostalgic, and uplifting atmosphere, blending earnest storytelling with a feel-good, anthemic energy. The song maintains a steady, driving momentum that balances relaxed, reflective verse sections with powerful, celebratory choruses designed to get listeners singing along. The production is polished and beautifully balanced: the lead vocals sit crystal-clear in the center of the mix, supported by crisp acoustic strumming, soaring electric guitar leads, and a punchy, spacious rhythm section. A defining feature of the track is the smooth transition between the intimate verses and the full-band choruses, showcasing a dynamic arrangement that feels both grand and deeply personal.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "Here's a working portrait that never reaches for anything grander than the truth of its own days: a baker before dawn, a singer at Payton's Place two nights a week, a tip jar full of change. At 136 in G major, it moves with an easy, driving lope, and the arrangement earns its keep by keeping the verses close and letting the full band open up on the chorus. That hook, 'I like to work when it feels honest / I love a song when it sounds like mine,' is the whole ethic of the record in two lines, plainspoken enough to sing back the first time through. The bridge is where it quietly lands the plane: 'Some days I just feel heavy / like I have to stop the grind,' answered by 'She says You did good / and that's enough,' a small domestic grace note that keeps the song from tipping into self-pity. It shares some DNA with John Hiatt at his most grounded, more content with its lot than restless. Not the boldest swing on the album, and the outro's repeated 'I'm doing fine' leans on comfort rather than surprise, but it holds the room and does its job well.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "136 BPM",
+      "G major",
+      "I like to work when it feels honest / I love a song when it sounds like mine",
+      "Some days I just feel heavy / like I have to stop the grind",
+      "She says You did good / and that's enough",
+      "verse-to-chorus dynamic shift",
+      "tip jar full of change",
+      "outro repetition of I'm doing fine"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

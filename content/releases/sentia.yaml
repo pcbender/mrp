@@ -26,6 +26,10 @@ release:
     spotify: https://open.spotify.com/album/5yY9JNEuCvvbs6Oji9SOPD
     youtube: https://www.youtube.com/watch?v=rBOr88eY4V0
     youtube_music: https://music.youtube.com/watch?v=rBOr88eY4V0
+    apple_music: https://music.apple.com/us/album/1810057330?app=music
+    itunes_store: https://music.apple.com/us/album/1810057330?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0GVQ382NV?ref=dmm_acq_soc_us_u_lfire_lp_x_dac953b2e91387efa30c019623ab0019
+    tidal: http://www.tidal.com/album/512274971
   seo:
     title: Sentia by Lingua Aeternum
     description: Sentia by Lingua Aeternum on Maricopa Records.
@@ -40,108 +44,60 @@ release:
     explicit: false
     preview_audio: /samples/lingua-aeternum--sentia.mp3
     instrumental: false
-    lyrics_text: '[Instructions: this is long form composition. A long form tone poem
-      in four movements using the chorus to connect the individual sections. Take
-      your time, let the song breathe
-
-
-      Sentia
-
-
-      Sentia
-
-
-      Sentia
-
-
-      Sentia
-
-
-      Be as the field after harvest
-
-      not barren, but vacuus
-
-      The husks are gone, the noise is gone
-
-      what remains is fertile waiting
-
-      Do not fear this clearing
-
-      The vessel serves what it holds open
-
-      a sky is vast because it is clear
-
-      Emptiness is not absence
-
-      it is readiness
-
-
-      Sentia
-
-      Sentia
-
-
-      Now feel the moment tighten
-
-      Lean into the now
-
-      as the bow leans into the string
-
-      Your awareness is not a wandering eye
-
-      but attentus
-
-      a single, humming line of light
-
-      You are the hunter and the mountain
-
-      perfectly poised
-
-      stretched toward the roiling chasm
-
-      And at the peak of presence
-
-      let the knot undo itself
-
-
-      Sentia
-
-      Sentia
-
-
-      You are not the archer; you are not the arrow
-
-      You are not the story; they are spaces you move through
-
-      Be solutus
-
-      unfastened, unbound, wet clay
-
-      Like a liminal strand at the water’s edge
-
-      leave names behind
-
-      You do not disappear
-
-      you simply stop ending
-
-      where your skin begins
-
-      Empty. Attentive. Free
-
-
-      Sentia
-
-      Sentia
-
-
-      Sentia
-
-      you are not less
-
-      you are when
-
-      beginnings
-
-      begin'
+    lyrics_text: "[Instructions: this is long form composition. A long form tone poem\
+      \ in four movements using the chorus to connect the individual sections. Take\
+      \ your time, let the song breathe.\n[Intro]\n[acoustic guitar plays the melody\
+      \ of the first movement in the key of E]\nSentia\n[lite drums join while synth\
+      \ plays the melody of the second movement in the key of A]\nSentia\n[bass playing\
+      \ fifths joins while a cello plays the melody of the third movement in the key\
+      \ of G]\nSentia\n[the quartet plays the melody of the coda in the key of F#\
+      \ minor]\nSentia\n[movement 1]\n[based on the movement 1 melody introduced in\
+      \ the intro with variations]\nBe as the field after harvest\nnot barren, but\
+      \ vacuus.\nThe husks are gone, the noise is gone;\nwhat remains is fertile waiting.\n\
+      Do not fear this clearing.\nThe vessel serves what it holds open;\na sky is\
+      \ vast because it is clear.\nEmptiness is not absence\nit is readiness.\n[Chorus]\n\
+      [an intervallic rising vocal line, slow and deliberate]\nSentia\nSentia\n[Solo\
+      \ | Clean Electric guitar]\n[Give the listener time to ponder]\n[movement 2]\n\
+      [based on the movement 2 melody introduced in the intro with variations]\nNow\
+      \ feel the moment tighten.\nLean into the now\nas the bow leans into the string.\n\
+      Your awareness is not a wandering eye,\nbut attentus\na single, humming line\
+      \ of light.\nYou are the hunter and the mountain,\nperfectly poised,\nstretched\
+      \ toward the roiling chasm.\nAnd at the peak of presence,\nlet the knot undo\
+      \ itself.\n[Chorus]\n[an intervallic rising vocal line, slow and deliberate]\n\
+      Sentia\nSentia\n[Solo | synth]\n[Give the listener time to ponder]\n[Movement\
+      \ 3]\n[based on the movement 3 melody introduced in the intro with variations]\n\
+      You are not the archer; you are not the arrow.\nYou are not the story; they\
+      \ are spaces you move through.\nBe solutus \nunfastened, unbound, wet clay.\n\
+      Like a liminal strand at the water’s edge,\nleave names behind.\nYou do not\
+      \ disappear;\nyou simply stop ending\nwhere your skin begins.\nEmpty. Attentive.\
+      \ Free.\n[Chorus]\n[an intervallic rising vocal line, slow and deliberate]\n\
+      Sentia\nSentia\n[Solo | Distorted Electric guitar]\n[Give the listener time\
+      \ to ponder]\n[Coda]\n[based on the coda melody introduced in the intro with\
+      \ variations]\nSentia\nyou are not less;\nyou are when\nbeginnings\nbegin\n\
+      [Solo | Synth]\n[Weaving lines of guitar and synth fade out]"
     lyrics_source: https://docs.google.com/document/d/1cgXEshiigWcuYrAdm717rO-SJii4eIo4MTTH_P_wdS8/edit
+    master_path: /mnt/c/Masters/Sentia.wav
+    lyrics_raw: null
+    style: progressive rock, prog rock, math rock
+    links:
+      spotify: null
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
