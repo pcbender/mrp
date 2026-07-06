@@ -9,6 +9,7 @@ release:
   release_date: '2026-06-14'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '991048114180'
   catalog_number: null
   cover_image: site/public/assets/releases/the-only-way-over/cover.jpg

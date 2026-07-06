@@ -9,6 +9,7 @@ release:
   release_date: '2026-01-08'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: amuse
   upc: '7300347955319'
   catalog_number: null
   cover_image: site/public/assets/releases/waterwheel/cover.jpg

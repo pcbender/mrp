@@ -36,6 +36,7 @@
         "release_date": {"type": ["string", "null"], "format": "date"},
         "label": {"type": ["string", "null"]},
         "publisher": {"type": ["string", "null"]},
+        "distributor": {"type": ["string", "null"]},
         "upc": {"type": ["string", "null"]},
         "catalog_number": {"type": ["string", "null"]},
         "language": {"type": ["string", "null"]},

@@ -9,6 +9,7 @@ release:
   release_date: '2025-05-03'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591136908'
   catalog_number: null
   cover_image: site/public/assets/releases/opposites-attach/cover.jpg

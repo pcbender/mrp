@@ -9,6 +9,7 @@ release:
   release_date: '2025-10-11'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 057829798878
   catalog_number: null
   cover_image: site/public/assets/releases/made-by-moving/cover.jpg

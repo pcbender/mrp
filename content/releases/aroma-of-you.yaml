@@ -9,6 +9,7 @@ release:
   release_date: '2026-05-11'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '991043771531'
   catalog_number: null
   cover_image: site/public/assets/releases/aroma-of-you/cover.jpg

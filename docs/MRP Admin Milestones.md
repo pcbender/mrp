@@ -53,3 +53,9 @@ published to production end-to-end through the UI.
 
 - Add Distributor field to the release model and make the pipeline
   distributor-aware (link update LANDR vs Amuse)
+- Backfill is automatic from UPC blocks (ground-truthed 2026-07-06 against
+  known releases in every block): 12-digit UPCs with 05xxxx/99xxxx prefixes
+  → LANDR (149 releases); 13-digit 73xxxx (Sweden GS1) → Amuse (23).
+  Spotify's API has no distributor field — `label`/`copyrights` are
+  distributor-submitted text, so UPC is the only reliable signal.
+  Sole exception: `tits-up-remix` has no UPC and needs a manual tag.

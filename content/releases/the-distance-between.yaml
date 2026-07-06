@@ -9,6 +9,7 @@ release:
   release_date: '2025-06-14'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591660397'
   catalog_number: null
   cover_image: site/public/assets/releases/the-distance-between/cover.jpg

@@ -509,7 +509,7 @@ def load_structured_record(path: Path) -> dict[str, Any]:
 def serialize_structured_record(path: Path, data: dict[str, Any]) -> str:
     if path.suffix == ".json":
         return json.dumps(data, indent=2, sort_keys=False) + "\n"
-    return yaml.safe_dump(data, sort_keys=False, allow_unicode=False)
+    return yaml.safe_dump(data, sort_keys=False, allow_unicode=True)
 
 
 def first_nonempty_paragraph(markdown: str, title: str | None = None) -> str:

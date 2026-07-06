@@ -9,6 +9,7 @@ release:
   release_date: '2026-05-13'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '991043792024'
   catalog_number: null
   cover_image: site/public/assets/releases/ready-almost/cover.jpg

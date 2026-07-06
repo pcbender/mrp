@@ -9,6 +9,7 @@ release:
   release_date: '2025-06-03'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591510715'
   catalog_number: null
   cover_image: site/public/assets/releases/ever-only-after/cover.jpg

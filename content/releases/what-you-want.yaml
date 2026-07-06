@@ -9,6 +9,7 @@ release:
   release_date: '2025-04-25'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591032019'
   catalog_number: null
   cover_image: site/public/assets/releases/what-you-want/cover.jpg

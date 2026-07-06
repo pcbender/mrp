@@ -9,6 +9,7 @@ release:
   release_date: '2025-05-22'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591391451'
   catalog_number: null
   cover_image: site/public/assets/releases/candle-deep/cover.jpg

@@ -9,6 +9,7 @@ release:
   release_date: '2025-08-01'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: 057829182400
   catalog_number: null
   cover_image: site/public/assets/releases/seaward-sings/cover.jpg

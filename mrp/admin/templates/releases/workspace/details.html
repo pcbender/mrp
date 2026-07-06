@@ -42,6 +42,14 @@
           </select>
         </div>
         <div class="form-field">
+          <label>Distributor <span class="required">*</span></label>
+          <select name="distributor" required>
+            <option value="" disabled {% if not release.distributor %}selected{% endif %}>&mdash; select &mdash;</option>
+            <option value="landr" {% if release.distributor == 'landr' %}selected{% endif %}>LANDR</option>
+            <option value="amuse" {% if release.distributor == 'amuse' %}selected{% endif %}>Amuse</option>
+          </select>
+        </div>
+        <div class="form-field">
           <label>&copy; Composition Owner</label>
           <input type="text" name="copyright_composition_owner"
                  value="{{ copyright.composition_owner or '' }}" placeholder="Maricopa Records">

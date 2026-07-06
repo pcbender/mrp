@@ -9,6 +9,7 @@ release:
   release_date: '2025-05-07'
   label: Maricopa Records
   publisher: Maricopa Publishing
+  distributor: landr
   upc: '990591198487'
   catalog_number: null
   cover_image: site/public/assets/releases/ladder-to-nowhere/cover.jpg
