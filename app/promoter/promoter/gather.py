@@ -51,6 +51,14 @@ def get_recent_releases(artist_slug: str, n: int = 3) -> list[dict]:
     return releases[:n]
 
 
+def get_release(slug: str) -> dict:
+    """Return the release dict (inner 'release' key) or {} if not found."""
+    path = RELEASES_DIR / f"{slug}.yaml"
+    if not path.exists():
+        return {}
+    return _load(path).get("release", {})
+
+
 def get_critic_text(release_slug: str, artist_slug: str) -> str:
     """
     Return the best available critic text for a release:

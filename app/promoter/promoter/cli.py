@@ -4,15 +4,18 @@ promoter CLI
 Commands:
     promoter blurb --artist <slug> [--releases N] [--model dev|default] [--dry-run]
     promoter bio   --artist <slug> [--model dev|default] [--dry-run]
+    promoter kit   --release <slug> [--model dev|default] [--out <path>]
 """
 from __future__ import annotations
 
 import argparse
+import json
 import sys
+from pathlib import Path
 
 from .config import MODEL_DEFAULT, model_for
-from .gather import get_all_lyrics, get_artist, get_critic_text, get_recent_releases
-from .generate import generate_bio, generate_blurb
+from .gather import get_all_lyrics, get_artist, get_critic_text, get_recent_releases, get_release
+from .generate import generate_bio, generate_blurb, generate_kit
 from .writeback import write_bio, write_promo_blurb
 
 
@@ -105,6 +108,37 @@ def cmd_bio(args: argparse.Namespace) -> None:
     print(f"  ✓  Written to {path}")
 
 
+def cmd_kit(args: argparse.Namespace) -> None:
+    release = get_release(args.release)
+    if not release:
+        print(f"  ✗  Release '{args.release}' not found", file=sys.stderr)
+        sys.exit(1)
+    artist_id = release.get("artist_id", "")
+    artist = get_artist(artist_id)
+    if not artist:
+        print(f"  ✗  Artist '{artist_id}' not found", file=sys.stderr)
+        sys.exit(1)
+
+    print(f"  release: {release.get('title', args.release)}")
+    print(f"  artist : {artist.get('name', artist_id)}")
+    review_text = get_critic_text(args.release, artist_id)
+    print(f"  critic text: {'yes' if review_text else 'none'}")
+
+    model = model_for(args.model)
+    print(f"  calling {model}…")
+    kit = generate_kit(artist, release, review_text, model=model)
+    kit["_meta"] = {"release": args.release, "artist_id": artist_id, "model": model}
+
+    payload = json.dumps(kit, indent=2, ensure_ascii=False)
+    if args.out:
+        out_path = Path(args.out)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(payload)
+        print(f"  ✓  Written to {out_path}")
+    else:
+        print(payload)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="promoter", description="MRP Promoter")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -123,11 +157,19 @@ def main() -> None:
     p_bio.add_argument("--force", action="store_true", help="Overwrite existing bio")
     p_bio.add_argument("--dry-run", action="store_true")
 
+    # kit
+    p_kit = sub.add_parser("kit", help="Generate per-platform promo copy for a release")
+    p_kit.add_argument("--release", required=True)
+    p_kit.add_argument("--model", default="default", choices=["dev", "default"])
+    p_kit.add_argument("--out", default="", help="Write kit JSON here instead of stdout")
+
     args = parser.parse_args()
     if args.command == "blurb":
         cmd_blurb(args)
     elif args.command == "bio":
         cmd_bio(args)
+    elif args.command == "kit":
+        cmd_kit(args)
 
 
 if __name__ == "__main__":

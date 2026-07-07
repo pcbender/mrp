@@ -51,4 +51,7 @@ def run_server(repo: str | Path, host: str = "127.0.0.1", port: int = 8000) -> N
     pub_dir = repo_path / "site" / "public"
     if pub_dir.is_dir():
         app.mount("/pub", StaticFiles(directory=str(pub_dir)), name="site-public")
+    processed_dir = repo_path / "assets" / "processed"
+    processed_dir.mkdir(parents=True, exist_ok=True)
+    app.mount("/processed", StaticFiles(directory=str(processed_dir)), name="processed")
     uvicorn.run(app, host=host, port=port, log_level="info")

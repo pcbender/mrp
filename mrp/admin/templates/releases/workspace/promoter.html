@@ -25,9 +25,17 @@
       <div class="pipeline-step">
         {{ ws_row('promoter-bio', 'Artist bio (short + long)', bio_job) }}
       </div>
+      <div class="pipeline-step">
+        {{ ws_row('promoter-kit', 'Promo kit (copy + video short)', kit_job) }}
+      </div>
     </div>
   </div>
 </div>
 
 {% include "releases/workspace/_promoter_profile.html" %}
+
+<div id="promo-kit-panel"
+  hx-get="/releases/{{ slug }}/promoter/kit"
+  hx-trigger="load, promoterSaved from:body"
+  hx-swap="innerHTML"></div>
 {% endblock %}

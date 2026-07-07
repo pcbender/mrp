@@ -804,6 +804,161 @@ def run_promoter(root: Path, slug: str, mode: str = "blurb", model: str = "defau
     }
 
 
+def _preview_audio_path(root: Path, release: dict[str, Any]) -> Path:
+    """Resolve the release's snippet mp3 (first track with a preview on albums)."""
+    tracks = [release["song"]] if release.get("song") else (release.get("tracks") or [])
+    for track in tracks:
+        preview = track.get("preview_audio")
+        if preview:
+            path = root / "site" / "public" / str(preview).lstrip("/")
+            if path.is_file():
+                return path
+    raise ValueError("No snippet audio yet — cut one on the Tracks tab (Snip) first")
+
+
+def _vertical_composite(cover: Path) -> list[str]:
+    """ffmpeg args compositing the cover over its own blurred 1080x1920 fill."""
+    return [
+        "-filter_complex",
+        "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
+        "boxblur=40:5,eq=brightness=-0.12[bg];"
+        "[0:v]scale=920:920:force_original_aspect_ratio=increase,crop=920:920[fg];"
+        "[bg][fg]overlay=(W-w)/2:(H-h)/2,format=yuv420p[v]",
+    ]
+
+
+def _render_video_short(cover: Path, audio: Path, output: Path) -> None:
+    result = subprocess.run(
+        ["ffmpeg", "-y", "-loop", "1", "-i", str(cover), "-i", str(audio),
+         *_vertical_composite(cover),
+         "-map", "[v]", "-map", "1:a",
+         "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+         "-c:a", "aac", "-b:a", "192k", "-shortest",
+         str(output)],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"ffmpeg video short failed: {result.stderr[-300:]}")
+
+
+def _render_image(cover: Path, output: Path, composite: bool) -> None:
+    if composite:
+        args = [*_vertical_composite(cover), "-map", "[v]"]
+    else:
+        args = ["-vf", "scale=1080:1080:force_original_aspect_ratio=increase,crop=1080:1080"]
+    result = subprocess.run(
+        ["ffmpeg", "-y", "-i", str(cover), *args, "-frames:v", "1", "-q:v", "2", str(output)],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"ffmpeg image render failed: {result.stderr[-300:]}")
+
+
+def _kit_smart_link(release: dict[str, Any]) -> str | None:
+    from mrp.core.release import slugify
+
+    distributor = release.get("distributor")
+    if distributor == "landr" and release.get("upc"):
+        return f"https://artists.landr.com/{release['upc']}"
+    if distributor == "amuse":
+        kind = "track" if release.get("model") == "song" else "album"
+        title_slug = slugify(str(release.get("title") or "").replace("'", "").replace("’", ""))
+        artist_id = release.get("artist_id") or ""
+        if title_slug and artist_id:
+            return f"https://share.amuse.io/{kind}/{artist_id}-{title_slug}"
+    return None
+
+
+def run_promo_kit(root: Path, slug: str, model: str = "default") -> dict[str, Any]:
+    """Assemble the Phase 1 promo kit for a release: LLM per-platform copy
+    (promoter CLI, artist-voice guided), a 9:16 video short (cover + snippet),
+    cover crops, the link block, and the Spotify/Apple manual checklist.
+    Everything lands in assets/processed/promo/{slug}/ (gitignored)."""
+    import json
+    from datetime import UTC, datetime
+
+    from mrp.admin.critic_io import promoter_bin
+
+    _path, _data, release = _load_release(root, slug)
+    artist_id = release.get("artist_id") or ""
+    if not artist_id:
+        raise ValueError("No artist_id on this release")
+    artist = _load_artist(root, artist_id)
+    title = release.get("title") or slug
+
+    # cover_image appears in two forms in the catalog: with and without the
+    # site/public/ prefix
+    cover_rel = str(release.get("cover_image") or f"assets/releases/{slug}/cover.jpg").lstrip("/")
+    cover = root / cover_rel
+    if not cover.is_file():
+        cover = root / "site" / "public" / cover_rel
+    if not cover.is_file():
+        raise ValueError(f"Cover art not found: {cover_rel}")
+    snippet = _preview_audio_path(root, release)
+
+    kit_dir = root / "assets" / "processed" / "promo" / slug
+    kit_dir.mkdir(parents=True, exist_ok=True)
+
+    copy_path = kit_dir / "copy.json"
+    result = subprocess.run(
+        [promoter_bin(root), "kit", "--release", slug, "--model", model, "--out", str(copy_path)],
+        capture_output=True, text=True, cwd=str(root / "app" / "promoter"),
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"Kit copy generation failed: {(result.stderr or result.stdout)[-400:]}")
+    copy = json.loads(copy_path.read_text())
+    meta = copy.pop("_meta", {})
+    hashtags = copy.pop("hashtags", [])
+
+    _render_video_short(cover, snippet, kit_dir / "short.mp4")
+    _render_image(cover, kit_dir / "cover-square.jpg", composite=False)
+    _render_image(cover, kit_dir / "cover-story.jpg", composite=True)
+
+    links = {k: v for k, v in (release.get("links") or {}).items() if v}
+    smart_link = _kit_smart_link(release)
+
+    checklist = [
+        {"label": "Spotify — playlist pitch", "url": "https://artists.spotify.com",
+         "detail": copy.get("playlist_pitch", "")},
+        {"label": "Spotify — Artist Pick", "url": "https://artists.spotify.com",
+         "detail": copy.get("artist_pick", "")},
+        {"label": "Spotify — Canvas", "url": "https://artists.spotify.com",
+         "detail": f"Upload a Canvas loop for {title} (8s vertical video)."},
+        {"label": "Apple Music for Artists", "url": "https://artists.apple.com",
+         "detail": "Grab the shareable milestone/promo assets from the Promote tab."},
+    ]
+
+    manifest = {
+        "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "slug": slug,
+        "title": title,
+        "artist_id": artist_id,
+        "artist_name": artist.get("name") or artist_id,
+        "model": meta.get("model") or model,
+        "copy": copy,
+        "hashtags": hashtags,
+        "smart_link": smart_link,
+        "links": links,
+        "checklist": checklist,
+        "files": {
+            "video": "short.mp4",
+            "cover_square": "cover-square.jpg",
+            "cover_story": "cover-story.jpg",
+        },
+    }
+    (kit_dir / "kit.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
+
+    return {
+        "ok": True,
+        "slug": slug,
+        "kit_dir": str(kit_dir.relative_to(root)),
+        "copy_fields": len(copy),
+        "hashtags": len(hashtags),
+        "video": "short.mp4",
+        "model": manifest["model"],
+    }
+
+
 # --- Build/Publish pipeline wrappers -----------------------------------------
 
 _STATUS_LADDER = ["draft", "staged", "verified", "approved", "live"]

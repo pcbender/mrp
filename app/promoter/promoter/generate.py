@@ -58,6 +58,86 @@ def generate_blurb(
     return _call_gemini(system, user, model)
 
 
+KIT_COPY_KEYS = [
+    "instagram", "facebook", "bluesky", "x", "threads",
+    "youtube_description", "playlist_pitch", "artist_pick",
+]
+
+
+def generate_kit(
+    artist: dict,
+    release: dict,
+    review_text: str,
+    model: str = MODEL_DEFAULT,
+) -> dict:
+    """
+    Generate per-platform promo copy for one release.
+    Returns a dict with KIT_COPY_KEYS plus "hashtags" (list of strings).
+    """
+    artist_name = artist.get("name", "")
+    system = (_PROMPTS_DIR / "kit_system.md").read_text().replace("{artist_name}", artist_name)
+
+    tracks = release.get("tracks") or ([release["song"]] if release.get("song") else [])
+    track_titles = ", ".join(t.get("title", "") for t in tracks if t.get("title"))
+
+    voice_parts = [f"Artist: {artist_name}"]
+    if artist.get("bio_short"):
+        voice_parts.append(f"Bio:\n{artist['bio_short']}")
+    if artist.get("promo_blurb"):
+        voice_parts.append(f"Current promo blurb (voice reference):\n{artist['promo_blurb']}")
+
+    release_parts = [
+        f"Release: {release.get('title', '')} ({release.get('release_type', '')},"
+        f" released {release.get('release_date') or 'unreleased'})",
+        f"Tracks: {track_titles}",
+    ]
+    if release.get("summary"):
+        release_parts.append(f"Summary: {release['summary']}")
+    if release.get("description"):
+        release_parts.append(f"Description:\n{release['description']}")
+    if review_text:
+        release_parts.append(f"Critic review:\n{review_text}")
+    else:
+        release_parts.append("(no critic review yet)")
+
+    user = "\n\n".join(voice_parts + release_parts)
+    raw = _call_gemini(system, user, model)
+    kit = _parse_kit_response(raw)
+
+    missing = [k for k in KIT_COPY_KEYS if not str(kit.get(k) or "").strip()]
+    if missing:
+        raise ValueError(f"Kit generation incomplete — missing: {', '.join(missing)}")
+    tags = kit.get("hashtags")
+    if not isinstance(tags, list):
+        tags = [t for t in str(tags or "").split() if t.startswith("#")]
+    kit["hashtags"] = [str(t).strip() for t in tags if str(t).strip()]
+    return kit
+
+
+def _parse_kit_response(raw: str) -> dict:
+    """Parse the JSON kit, tolerating markdown fences the model may add."""
+    import json as _json
+    import re as _re
+
+    try:
+        return _json.loads(raw)
+    except _json.JSONDecodeError:
+        pass
+    match = _re.search(r"```(?:json)?\s*(.*?)\s*```", raw, _re.DOTALL)
+    if match:
+        try:
+            return _json.loads(match.group(1))
+        except _json.JSONDecodeError:
+            pass
+    match = _re.search(r"\{.*\}", raw, _re.DOTALL)
+    if match:
+        try:
+            return _json.loads(match.group(0))
+        except _json.JSONDecodeError:
+            pass
+    raise ValueError(f"Could not parse JSON kit from model response:\n{raw[:400]}")
+
+
 def generate_bio(
     artist_name: str,
     artist_type: str,
