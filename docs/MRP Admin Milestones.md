@@ -30,32 +30,56 @@ published to production end-to-end through the UI.
 - Split blurb vs liner: critic records share a single `review_text` field
   for both (and `album_blurb` vs `album_long`)
 - Monitoring stage is a stub — decide what thin-but-useful looks like
-- Re-run `enrich-links` across the catalog (per-track + pandora support
-  landed after the last full run)
+- ~~Re-run `enrich-links` across the catalog~~ Done 2026-07-06/07: replaced by
+  the converging "Run Missing Links" job (patience windows from release_date,
+  expiry into `automation.links_na`, promo→Apple→YouTube→Odesli source order,
+  Odesli circuit breaker). First full run settled the back catalog: 75 links
+  added, 1142 slots settled (PRs #61–#63)
 
 ## MRP Admin v0.3
 
-- Artist editor (promoter stage covers bios/blurbs; full record editing
-  still requires hand-editing YAML)
+- ~~Artist editor~~ Done 2026-07-07 (PR #65): list + create + full editor
+  (identity, bios, links board), schema-validated before write
+- ~~Post editor~~ Done 2026-07-07 (PR #65): full CRUD; new posts get
+  `source.system: admin` (schema extended); migrated-WP provenance preserved
+  on edit. Note: the site renders posts regardless of status — status is
+  workflow bookkeeping, not a publish gate (possible follow-up in
+  `site/src/lib/content.js`)
 - Social promo package generator (posts, video shorts)
 - Approval queue for website/social/artist updates
 - Show pipeline logs/reports
-- Post editor
 
 ## MRP Admin v0.4
 
-- LANDR/Amuse CSV import
-- Analytics database
+- ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports
+  LANDR royalty CSVs + Amuse XLSX (rolling-range) exports from the
+  `/mnt/c/Docs` drop folder; header-signature detection, SHA-256 row-hash
+  dedupe so overlapping monthly downloads are no-ops
+- ~~Analytics database~~ Done 2026-07-07 (PR #66): normalized `royalty_rows`
+  in `~/.mrp/metrics.db` (outside git, shared by both checkouts), UPC/ISRC
+  on every row for future catalog joins; proof report: Streams by Artist
+  with distributor split + net USD
 - Top songs / platform / revenue tables
 - Promo claim helper, e.g. "Seaward Sings is currently our #1 streamed song"
 
-## MRP Admin v0.5
+## MRP Admin v0.5 — Complete
 
-- Add Distributor field to the release model and make the pipeline
-  distributor-aware (link update LANDR vs Amuse)
+- ~~Add Distributor field to the release model and make the pipeline
+  distributor-aware~~ Done 2026-07-06/07 (PRs #60–#63): schema + 173-release
+  backfill, required dropdown on the Details tab, inference from UPC at
+  Spotify import, and the combined "Distributor Promo Links" job (LANDR
+  scrape vs Amuse smart-link API, UPC cross-checked)
 - Backfill is automatic from UPC blocks (ground-truthed 2026-07-06 against
   known releases in every block): 12-digit UPCs with 05xxxx/99xxxx prefixes
   → LANDR (149 releases); 13-digit 73xxxx (Sweden GS1) → Amuse (23).
   Spotify's API has no distributor field — `label`/`copyrights` are
   distributor-submitted text, so UPC is the only reliable signal.
   Sole exception: `tits-up-remix` has no UPC and needs a manual tag.
+
+
+## TODO List
+- ~~git integration~~ Done 2026-07-07 (PR #64): Changes page — review diffs,
+  Approve & Push commits content/assets pathspecs to main (validation gate,
+  branch guard, pull --ff-only). Runtime split: admin runs from the
+  `~/mrp-admin` clone pinned to main; dev tree stays free for branches
+- New Release workflow loads entire site into the content section
