@@ -1,0 +1,103 @@
+{% extends "_base.html" %}
+{% block page_title %} — Metrics{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Metrics <small>streams &amp; royalties</small></h1>
+</div>
+
+{% if flash %}
+<div class="flash flash-{{ flash.cls }}">{{ flash.text }}</div>
+{% endif %}
+
+<div class="form-card" style="max-width:640px;">
+  <div class="form-body">
+    <form action="/metrics/import" method="post">
+      <div class="approve-bar">
+        <input type="text" name="folder" value="{{ folder }}" title="Drop folder to scan">
+        <button type="submit" class="btn btn-primary">Import Reports</button>
+      </div>
+      <p style="font-size:12px;color:var(--muted)">
+        Scans the folder for LANDR royalty CSVs and Amuse XLSX exports (recognized by their
+        headers). Re-importing overlapping files is safe — duplicate rows are skipped.
+      </p>
+    </form>
+  </div>
+</div>
+
+{% if result %}
+<div class="table-wrap" style="margin-bottom:1.5rem">
+  <table>
+    <thead>
+      <tr><th>File</th><th>Distributor</th><th>Rows</th><th>New</th><th>Duplicates</th><th>Ignored</th></tr>
+    </thead>
+    <tbody>
+      {% for f in result.files %}
+      <tr>
+        <td class="td-mono">{{ f.file }}</td>
+        <td>{{ f.distributor }}</td>
+        <td>{{ f.rows_seen }}</td>
+        <td>{{ f.inserted }}</td>
+        <td>{{ f.skipped }}</td>
+        <td>{{ f.ignored }}</td>
+      </tr>
+      {% endfor %}
+      {% for name in result.unrecognized %}
+      <tr><td class="td-mono">{{ name }}</td><td colspan="5" style="color:var(--muted)">unrecognized format — skipped</td></tr>
+      {% endfor %}
+      {% for err in result.errors %}
+      <tr><td colspan="6" style="color:var(--danger)">{{ err }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+<h2 style="font-size:15px;font-weight:700;margin-bottom:.6rem">Streams by Artist</h2>
+<div class="table-wrap" style="margin-bottom:1.5rem">
+  <table>
+    <thead>
+      <tr><th>Artist</th><th>LANDR</th><th>Amuse</th><th>Total Streams</th><th>Net (USD)</th><th>Periods</th></tr>
+    </thead>
+    <tbody>
+      {% for a in artists %}
+      <tr>
+        <td class="td-title">{{ a.artist }}</td>
+        <td>{{ "{:,}".format(a.landr) }}</td>
+        <td>{{ "{:,}".format(a.amuse) }}</td>
+        <td><strong>{{ "{:,}".format(a.total) }}</strong></td>
+        <td>{{ "%.2f"|format(a.net) }}</td>
+        <td class="td-mono">{{ a.first_period or "?" }} → {{ a.last_period or "?" }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6" style="text-align:center;color:var(--muted);padding:2rem">
+        No metrics imported yet — drop the monthly reports in the folder above and hit Import.
+      </td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if imports %}
+<h2 style="font-size:15px;font-weight:700;margin-bottom:.6rem">Recent Imports</h2>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>When</th><th>File</th><th>Distributor</th><th>Rows</th><th>New</th><th>Duplicates</th></tr>
+    </thead>
+    <tbody>
+      {% for i in imports %}
+      <tr>
+        <td class="td-mono">{{ i.imported_at }}</td>
+        <td class="td-mono">{{ i.source_file }}</td>
+        <td>{{ i.distributor }}</td>
+        <td>{{ i.rows_seen }}</td>
+        <td>{{ i.rows_inserted }}</td>
+        <td>{{ i.rows_skipped }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}
