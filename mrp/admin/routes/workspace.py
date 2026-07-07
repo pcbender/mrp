@@ -9,7 +9,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
-from mrp.admin import critic_io, db, pipeline as pipe
+from mrp.admin import critic_io, db, nim, pipeline as pipe
 from mrp.admin import jobs as job_runner
 from mrp.admin.deps import get_repo_root
 from mrp.admin.workspace import (
@@ -32,7 +32,18 @@ from mrp.core.migrate_site import load_structured_record, serialize_structured_r
 
 router = APIRouter()
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
-_templates.env.filters["fromjson"] = lambda s: json.loads(s) if s else {}
+
+
+def _fromjson(value: str) -> dict:
+    if not value:
+        return {}
+    try:
+        return json.loads(value)
+    except (TypeError, ValueError):
+        return {}
+
+
+_templates.env.filters["fromjson"] = _fromjson
 
 LINK_STEPS = ["odesli", "promo", "apple-music", "youtube"]
 LINK_STEP_LABELS = {
@@ -396,6 +407,8 @@ def _ws_dispatch(step: str, form: dict):
     if step == "promoter-kit":
         return ("Promo kit", pipe.run_promo_kit,
                 {"model": str(form.get("promoter_model", "default"))})
+    if step == "promoter-animated-cover":
+        return ("Animated cover", pipe.run_promo_kit_animated_cover, {})
     if step.startswith("pub-"):
         name = step[4:]
         fn = _PUB_FNS.get(name)
@@ -899,6 +912,8 @@ def _promoter_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLR
         "blurb_job": db.get_latest_job_by_command(f"{slug}/promoter-blurb"),
         "bio_job": db.get_latest_job_by_command(f"{slug}/promoter-bio"),
         "kit_job": db.get_latest_job_by_command(f"{slug}/promoter-kit"),
+        "animated_job": db.get_latest_job_by_command(f"{slug}/promoter-animated-cover"),
+        "nim_connected": nim.connected(),
         "ws_ctx": _ws_job_ctx,
     })
     return _templates.TemplateResponse(request, "releases/workspace/promoter.html", ctx)

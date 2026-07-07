@@ -20,9 +20,21 @@
         <video controls preload="metadata" src="{{ base }}/{{ kit.files.video }}"></video>
         <div class="kit-media-links">
           <a href="{{ base }}/{{ kit.files.video }}" download>video</a>
+          {% if kit.files.animated_video %}
+          <a href="{{ base }}/{{ kit.files.animated_video }}" download>animated</a>
+          {% endif %}
           <a href="{{ base }}/{{ kit.files.cover_square }}" download>square</a>
           <a href="{{ base }}/{{ kit.files.cover_story }}" download>story</a>
         </div>
+        {% if kit.files.animated_video %}
+        <div class="kit-animated">
+          <div class="kit-card-head">Animated Cover</div>
+          <video controls preload="metadata" src="{{ base }}/{{ kit.files.animated_video }}"></video>
+          {% if kit.animated_cover %}
+          <p>{{ kit.animated_cover.model }} via Nim</p>
+          {% endif %}
+        </div>
+        {% endif %}
       </div>
 
       <div class="kit-copy">

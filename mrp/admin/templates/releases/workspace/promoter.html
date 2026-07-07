@@ -16,6 +16,15 @@
         <option value="default">default — Gemini Pro</option>
         <option value="dev">dev — Gemini Flash</option>
       </select>
+      {% if nim_connected %}
+      <span class="badge badge-live">Nim connected</span>
+      {% else %}
+      <a class="btn btn-secondary btn-sm"
+         href="/nim/connect?return_to=/releases/{{ slug }}/promoter">Connect Nim</a>
+      {% endif %}
+      <button type="button" class="btn btn-secondary btn-sm"
+        hx-get="/nim/credits" hx-target="#nim-credits" hx-swap="innerHTML">Check credits</button>
+      <span id="nim-credits"></span>
     </div>
 
     <div class="pipeline-steps">
@@ -27,6 +36,9 @@
       </div>
       <div class="pipeline-step">
         {{ ws_row('promoter-kit', 'Promo kit (copy + video short)', kit_job) }}
+      </div>
+      <div class="pipeline-step">
+        {{ ws_row('promoter-animated-cover', 'Animated cover video', animated_job) }}
       </div>
     </div>
   </div>

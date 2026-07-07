@@ -841,6 +841,20 @@ def _render_video_short(cover: Path, audio: Path, output: Path) -> None:
         raise RuntimeError(f"ffmpeg video short failed: {result.stderr[-300:]}")
 
 
+def _mux_visual_with_audio(visual: Path, audio: Path, output: Path) -> None:
+    result = subprocess.run(
+        ["ffmpeg", "-y", "-stream_loop", "-1", "-i", str(visual), "-i", str(audio),
+         "-map", "0:v:0", "-map", "1:a:0",
+         "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,format=yuv420p",
+         "-r", "30", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+         "-c:a", "aac", "-b:a", "192k", "-shortest",
+         str(output)],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"ffmpeg animated short failed: {result.stderr[-300:]}")
+
+
 def _render_image(cover: Path, output: Path, composite: bool) -> None:
     if composite:
         args = [*_vertical_composite(cover), "-map", "[v]"]
@@ -956,6 +970,65 @@ def run_promo_kit(root: Path, slug: str, model: str = "default") -> dict[str, An
         "hashtags": len(hashtags),
         "video": "short.mp4",
         "model": manifest["model"],
+    }
+
+
+def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
+    import json
+    from datetime import UTC, datetime
+
+    from mrp.admin import nim
+
+    _path, _data, release = _load_release(root, slug)
+    artist = _load_artist(root, release.get("artist_id") or "")
+    cover_rel = str(release.get("cover_image") or f"assets/releases/{slug}/cover.jpg").lstrip("/")
+    cover = root / cover_rel
+    if not cover.is_file():
+        cover = root / "site" / "public" / cover_rel
+    if not cover.is_file():
+        raise ValueError(f"Cover art not found: {cover_rel}")
+    snippet = _preview_audio_path(root, release)
+
+    kit_dir = root / "assets" / "processed" / "promo" / slug
+    kit_path = kit_dir / "kit.json"
+    if not kit_path.exists():
+        raise ValueError("Run Promo kit first so the animated video can attach to its manifest.")
+    manifest = json.loads(kit_path.read_text())
+
+    prompt = nim.animated_cover_prompt(release, artist)
+    visual_path = kit_dir / "nim-visual.mp4"
+    output_path = kit_dir / "animated-short.mp4"
+    generation = nim.generate_animated_cover_visual(
+        repo=root,
+        cover=cover,
+        output=visual_path,
+        prompt=prompt,
+    )
+    _mux_visual_with_audio(visual_path, snippet, output_path)
+
+    manifest.setdefault("files", {})["animated_video"] = "animated-short.mp4"
+    manifest.setdefault("files", {})["nim_visual"] = "nim-visual.mp4"
+    manifest["animated_cover"] = {
+        "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "provider": "nim",
+        "adapter": generation.get("adapter"),
+        "model": generation.get("model") or nim.DEFAULT_MODEL_NAME,
+        "model_id": generation.get("model_id") or nim.DEFAULT_MODEL_ID,
+        "prompt": prompt,
+    }
+    if generation.get("workflow_id"):
+        manifest["animated_cover"]["workflow_id"] = generation["workflow_id"]
+    if generation.get("prompt_id"):
+        manifest["animated_cover"]["prompt_id"] = generation["prompt_id"]
+    kit_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
+
+    return {
+        "ok": True,
+        "slug": slug,
+        "kit_dir": str(kit_dir.relative_to(root)),
+        "video": "animated-short.mp4",
+        "visual": "nim-visual.mp4",
+        "model": manifest["animated_cover"]["model"],
     }
 
 
