@@ -36,7 +36,7 @@
             <button type="button" class="btn btn-secondary btn-sm"
               onclick="kitCopy(this, '{{ key }}')">Copy</button>
           </div>
-          <textarea id="kit-{{ key }}" readonly rows="{{ 8 if key in ('instagram', 'facebook') else 4 }}">{{ kit.copy[key] }}</textarea>
+          <textarea id="kit-{{ key }}" readonly rows="{{ 8 if key in ('instagram', 'facebook') else 4 }}">{{ kit['copy'][key] }}</textarea>
         </div>
         {% endfor %}
 
