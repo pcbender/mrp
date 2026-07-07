@@ -1,0 +1,89 @@
+{% if not kit %}
+<div class="form-card">
+  <div class="form-body" style="color:var(--muted);font-size:13px">
+    No promo kit yet — run <strong>Promo kit</strong> above to generate
+    per-platform copy, a 9:16 video short, and the Spotify/Apple checklist.
+  </div>
+</div>
+{% else %}
+<div class="form-card" id="promo-kit">
+  <div class="form-body">
+    <h2 style="font-size:14px;margin-bottom:.25rem">Promo Kit</h2>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:.9rem">
+      Generated {{ kit.generated_at }} with {{ kit.model }} — files in
+      <code>{{ kit.slug }}</code>'s kit folder. Copy is a draft in
+      {{ kit.artist_name }}'s voice: review before posting.
+    </p>
+
+    <div class="kit-grid">
+      <div class="kit-media">
+        <video controls preload="metadata" src="{{ base }}/{{ kit.files.video }}"></video>
+        <div class="kit-media-links">
+          <a href="{{ base }}/{{ kit.files.video }}" download>video</a>
+          <a href="{{ base }}/{{ kit.files.cover_square }}" download>square</a>
+          <a href="{{ base }}/{{ kit.files.cover_story }}" download>story</a>
+        </div>
+      </div>
+
+      <div class="kit-copy">
+        {% for key, label in [
+          ("instagram", "Instagram"), ("facebook", "Facebook"),
+          ("threads", "Threads"), ("bluesky", "Bluesky"), ("x", "X"),
+          ("youtube_description", "YouTube description")] %}
+        <div class="kit-card">
+          <div class="kit-card-head">
+            <span>{{ label }}</span>
+            <button type="button" class="btn btn-secondary btn-sm"
+              onclick="kitCopy(this, '{{ key }}')">Copy</button>
+          </div>
+          <textarea id="kit-{{ key }}" readonly rows="{{ 8 if key in ('instagram', 'facebook') else 4 }}">{{ kit.copy[key] }}</textarea>
+        </div>
+        {% endfor %}
+
+        <div class="kit-card">
+          <div class="kit-card-head">
+            <span>Hashtags</span>
+            <button type="button" class="btn btn-secondary btn-sm"
+              onclick="kitCopy(this, 'hashtags')">Copy</button>
+          </div>
+          <textarea id="kit-hashtags" readonly rows="2">{{ kit.hashtags | join(' ') }}</textarea>
+        </div>
+
+        <div class="kit-card">
+          <div class="kit-card-head">
+            <span>Links</span>
+            <button type="button" class="btn btn-secondary btn-sm"
+              onclick="kitCopy(this, 'links')">Copy</button>
+          </div>
+          <textarea id="kit-links" readonly rows="4">{% if kit.smart_link %}{{ kit.smart_link }}
+{% endif %}{% for k, v in kit.links.items() %}{{ k }}: {{ v }}
+{% endfor %}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:.9rem 0 .4rem">
+      Manual actions (no API — do these in the artist apps)
+    </h3>
+    <div class="pipeline-steps">
+      {% for item in kit.checklist %}
+      <div class="pipeline-step" style="align-items:flex-start">
+        <span class="pipeline-step-label"><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.label }}</a></span>
+        <span style="flex:1;font-size:12px;color:var(--muted)">{{ item.detail }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+function kitCopy(btn, key) {
+  const el = document.getElementById("kit-" + key);
+  navigator.clipboard.writeText(el.value).then(() => {
+    const old = btn.textContent;
+    btn.textContent = "Copied ✓";
+    setTimeout(() => { btn.textContent = old; }, 1200);
+  });
+}
+</script>
+{% endif %}

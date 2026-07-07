@@ -393,6 +393,9 @@ def _ws_dispatch(step: str, form: dict):
     if step == "promoter-bio":
         return ("Artist bio", pipe.run_promoter,
                 {"mode": "bio", "model": str(form.get("promoter_model", "default"))})
+    if step == "promoter-kit":
+        return ("Promo kit", pipe.run_promo_kit,
+                {"model": str(form.get("promoter_model", "default"))})
     if step.startswith("pub-"):
         name = step[4:]
         fn = _PUB_FNS.get(name)
@@ -599,6 +602,22 @@ async def promoter_profile(request: Request, slug: str):
     return _templates.TemplateResponse(
         request, "releases/workspace/_promoter_profile.html",
         {"slug": slug, "artist": artist})
+
+
+@router.get("/releases/{slug}/promoter/kit", response_class=HTMLResponse)
+async def promoter_kit(request: Request, slug: str):
+    """Promo kit panel fragment — re-fetched after promoter jobs complete."""
+    root = get_repo_root()
+    kit_path = root / "assets" / "processed" / "promo" / slug / "kit.json"
+    kit = None
+    if kit_path.exists():
+        try:
+            kit = json.loads(kit_path.read_text())
+        except ValueError:
+            kit = None
+    return _templates.TemplateResponse(
+        request, "releases/workspace/_promo_kit.html",
+        {"slug": slug, "kit": kit, "base": f"/processed/promo/{slug}"})
 
 
 # --- Master audio (streamed to the sampler stage player) ---------------------
@@ -879,6 +898,7 @@ def _promoter_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLR
         "artist_id": artist_id,
         "blurb_job": db.get_latest_job_by_command(f"{slug}/promoter-blurb"),
         "bio_job": db.get_latest_job_by_command(f"{slug}/promoter-bio"),
+        "kit_job": db.get_latest_job_by_command(f"{slug}/promoter-kit"),
         "ws_ctx": _ws_job_ctx,
     })
     return _templates.TemplateResponse(request, "releases/workspace/promoter.html", ctx)

@@ -12,7 +12,7 @@ ARTISTS_DIR = _MRP_ROOT / "content" / "artists"
 RELEASES_DIR = _MRP_ROOT / "content" / "releases"
 CRITIC_OUT_DIR = _MRP_ROOT / "app" / "critic" / "out"
 
-MODEL_DEV = "gemini-2.0-flash"
+MODEL_DEV = "gemini-2.5-flash"  # 2.0-flash retired by Google (404 as of 2026-07)
 MODEL_DEFAULT = "gemini-2.5-pro"
 
 _MODELS = {"dev": MODEL_DEV, "default": MODEL_DEFAULT}
