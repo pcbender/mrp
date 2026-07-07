@@ -62,12 +62,15 @@ more expressive video options as explicit, user-triggered upgrades:
 
 - **Static cover** — current default and fallback: deterministic ffmpeg render
   from release cover + sampler snippet; no external dependency
-- **Animated cover** — optional Nim-powered cover animation: generate a silent
-  9:16 visual bed from the release cover, then mux the canonical sampler
-  snippet locally with ffmpeg; requires explicit Nim connection
-- **Concept visual** — later higher-creativity mode: generate visuals from
-  release title, artist voice, critic/promo copy, lyrics, and hints, then
-  attach the same canonical snippet audio locally
+- ~~**Animated cover**~~ Done 2026-07-07 (PR #69): Nim-powered cover animation
+  via the admin's own MCP client (OAuth discovery + dynamic client
+  registration, token in `~/.mrp`); Seedance 2 Fast silent 9:16 bed, local
+  ffmpeg loop + snippet mux; Connect Nim / Check credits on the Promoter tab
+- **Concept visual** — high-end mode 3, spec captured 2026-07-07 in
+  `Promotions Plan.md` ("Mode 3 spec — Concept Visual"): Gemini concept
+  brief → Nim artist-look image (likeness-consistent wardrobe/setting/hair
+  per release; proven with STAB) → Nim video render + local snippet mux,
+  human gate between every stage
 
 ## MRP Admin v0.4
 

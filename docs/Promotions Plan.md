@@ -70,6 +70,68 @@ copy ready to paste into playlist pitches, Canvas reminder, Artist Pick
 suggestion, deep links into the artist apps. Automating the *preparation*
 of manual work is most of its cost.
 
+## Promoter video generation — three modes
+
+A sub-track of the Promo Kit pillar. Numbering is the *video mode*, not the
+plan phase below: each mode is a strictly richer, strictly more expensive
+video for the same slot in the kit, and the cheaper modes remain as
+defaults/fallbacks.
+
+1. **Static cover** — shipped with the kit (PR #67). Deterministic ffmpeg
+   render: cover over blurred self-fill + Sampler snippet. Free, local.
+2. **Animated cover** — shipped 2026-07-07 (PR #69). Nim (via its MCP
+   server, OAuth DCR from the admin — see `ADMIN-WORKSPACE.md`) animates
+   the cover into a silent 5 s 9:16 visual bed (Seedance 2 Fast, 150
+   credits); ffmpeg loops it and muxes the canonical snippet locally.
+3. **Concept visual** — the high-end mode. Design below; not yet built.
+
+### Mode 3 spec — Concept Visual
+
+Premise: the virtual artists are closer to video game characters than to
+photographed humans, and the artist likeness is part of the brand. Promo
+material must reuse the *same likeness* with new settings, wardrobe, and
+hair per release — never the same artist photo everywhere.
+
+Proven 2026-07-07 with STAB: Nano Banana Pro Edit (Nim's
+identity-preservation editor) took her canonical record image and produced
+a desert-highway golden-hour look and a neon-alley night look — different
+outfit, hair, and setting, instantly recognizable face and render style.
+23 credits and ~35 s per 2K image.
+
+Three stages, each behind a human gate, ordered so all creative iteration
+happens before credits are spent:
+
+- **Stage A — Concept brief** (Gemini via `app/promoter`, ~free).
+  Inputs: `lyrics_text`, `style`, `hints`, critic review, artist
+  bio/`promo_blurb`, release title/description. Output: a structured brief
+  — visual narrative, a *look* spec (setting / wardrobe / hair), motion
+  prompt(s) as a shot list, negative constraints. Rendered as an editable
+  panel on the Promoter tab (same review pattern as bios); regenerate or
+  hand-edit freely.
+- **Stage B — Artist look** (Nim Nano Banana Pro Edit, ~23 credits/image).
+  Renders the artist's canonical `image` into the brief's look. Review the
+  image; re-roll individual looks cheaply until on-brand.
+- **Stage C — Video render** (Nim video model, 150+ credits). Approved
+  look image + release cover go in as `fileInputs` with the brief's motion
+  prompt; silent 9:16 visual bed; the existing local ffmpeg mux attaches
+  the Sampler snippet (same path as mode 2). v1: one clip, looped.
+  Designed-for upgrade: multi-scene — 2–3 shots from the brief's shot list
+  cut to cover the 30 s snippet, killing the loop seam.
+
+Supporting decisions:
+
+- Model tier mirrors the critic convention: Seedance 2 Fast for drafts
+  (30 credits/s), premium (full Seedance / Veo) for hero renders. The
+  render button shows the live credit estimate (`models_explore` price)
+  before anything fires.
+- Ballpark per release: one Gemini call + ~25 credits (look) + 150–450
+  credits (video) depending on tier and scene count.
+- Generated looks land in the kit folder (`assets/processed/promo/{slug}/`,
+  gitignored) with provenance in `kit.json`; a look worth keeping as a
+  durable brand asset can be promoted into the site assets by hand.
+- Artist records already carry everything needed: all 6 artists have
+  `image`, 257/298 tracks have `lyrics_text` (checked 2026-07-07).
+
 ## Phases (each useful on its own)
 
 - **Phase 1 — Promo Kit generator.** No external APIs, no credentials, no
