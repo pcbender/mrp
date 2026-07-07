@@ -21,6 +21,10 @@
         <a href="/changes" {% if request.url.path.startswith('/changes') %}class="active"{% endif %}>Changes</a>
       </div>
       <div class="nav-group">
+        <div class="nav-label">Analytics</div>
+        <a href="/metrics" {% if request.url.path.startswith('/metrics') %}class="active"{% endif %}>Metrics</a>
+      </div>
+      <div class="nav-group">
         <div class="nav-label">Tools</div>
         <a href="/critic" {% if request.url.path == '/critic' %}class="active"{% endif %}>Critic</a>
         <a href="/promoter" {% if request.url.path == '/promoter' %}class="active"{% endif %}>Promoter</a>
