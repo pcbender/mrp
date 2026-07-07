@@ -26,6 +26,8 @@ release:
     spotify: https://open.spotify.com/album/5CbGAYITvnrSvO5hym8BTj
     youtube: https://www.youtube.com/watch?v=kCNtysSwxkA
     youtube_music: https://music.youtube.com/watch?v=kCNtysSwxkA
+    apple_music: https://music.apple.com/us/album/you-become-the-night/1892487252?i=1892487253
+    deezer: https://www.deezer.com/track/3954069401
   seo:
     title: You Become The Night by STAB
     description: You Become The Night by STAB on Maricopa Records.
@@ -33,8 +35,6 @@ release:
     allow_auto_publish: false
     links_na:
     - amazon_music
-    - apple_music
-    - deezer
     - itunes_store
     - tidal
   song:

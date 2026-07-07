@@ -29,6 +29,7 @@ release:
     youtube_music: https://music.youtube.com/watch?v=3RcK60jhmjM
     tidal: https://listen.tidal.com/album/526137434
     pandora: https://www.pandora.com/AL:66592945
+    deezer: https://www.deezer.com/album/986198341
   seo:
     title: I'm Still Here by Michael Anthony Rose
     description: I'm Still Here by Michael Anthony Rose on Maricopa Records.
@@ -36,7 +37,6 @@ release:
     allow_auto_publish: false
     links_na:
     - amazon_music
-    - deezer
     - itunes_store
   tracks:
   - number: 1
