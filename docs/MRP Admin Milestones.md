@@ -46,7 +46,11 @@ published to production end-to-end through the UI.
   workflow bookkeeping, not a publish gate (possible follow-up in
   `site/src/lib/content.js`)
 - Social promo package generator (posts, video shorts) — plan captured in
-  `Promotions Plan.md` (2026-07-07); Phase 1 = per-release promo kit
+  `Promotions Plan.md` (2026-07-07). ~~Phase 1: per-release promo kit~~ Done
+  2026-07-07 (PR #67): promoter-kit job on the Promoter stage — voice-guided
+  per-platform copy, 9:16 video short (cover + snippet), crops, smart link,
+  Spotify/Apple checklist. Phases 2–4 (queue/calendar/claims, connectors,
+  feedback loop) open
 - Approval queue for website/social/artist updates — Phase 2 of
   `Promotions Plan.md` (queue + calendar + claim engine)
 - Show pipeline logs/reports
