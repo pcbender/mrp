@@ -1,0 +1,61 @@
+{% if flash %}
+<div class="flash flash-{{ flash.cls }}">{{ flash.text }}</div>
+{% endif %}
+
+{% if validation_errors %}
+<div class="validation-errors">
+  {% for err in validation_errors %}
+  <div class="err-row"><span class="err-field">{{ err.path }}</span>{{ err.message }}</div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if not on_main %}
+<div class="flash flash-warn">
+  This checkout is on <strong>{{ branch }}</strong> — approvals only commit on
+  <strong>{{ commit_branch }}</strong>. Switch branches to approve.
+</div>
+{% endif %}
+
+{% if changes %}
+<form hx-post="/changes/approve" hx-target="#changes-panel" hx-swap="innerHTML">
+  <div class="approve-bar">
+    <input type="text" name="message" class="input-wide" maxlength="200"
+      placeholder="Commit message (default: admin: content updates)">
+    <button type="submit" class="btn btn-primary" {% if not on_main %}disabled{% endif %}>
+      Approve &amp; Push ({{ changes|length }})
+    </button>
+  </div>
+
+  {% for c in changes %}
+  <div class="change-card">
+    <div class="change-card-head">
+      <input type="checkbox" name="files" value="{{ c.path }}" checked
+        id="chg-{{ loop.index }}" title="Include in commit">
+      <span class="badge change-{{ c.label }}">{{ c.label }}</span>
+      <label for="chg-{{ loop.index }}" class="change-path">{{ c.path }}</label>
+      <button type="button" class="btn btn-secondary btn-sm"
+        name="discard_path" value="{{ c.path }}"
+        hx-post="/changes/discard" hx-target="#changes-panel" hx-swap="innerHTML"
+        hx-confirm="Discard all changes to {{ c.path }}? This cannot be undone.">
+        Discard
+      </button>
+    </div>
+    <details class="change-diff">
+      <summary>diff</summary>
+      {% if c.diff.binary %}
+      <div class="diff-note">Binary file ({{ c.diff.size }} bytes) — no text diff.</div>
+      {% else %}
+      <pre class="diff">{% for line in c.diff.lines %}<span class="diff-{{ line.cls }}">{{ line.text }}</span>
+{% endfor %}</pre>
+      {% if c.diff.truncated %}<div class="diff-note">Diff truncated — showing first {{ c.diff.lines|length }} lines.</div>{% endif %}
+      {% endif %}
+    </details>
+  </div>
+  {% endfor %}
+</form>
+{% else %}
+<div class="table-wrap" style="padding:2rem;text-align:center;color:var(--muted)">
+  No pending content or asset changes. The working tree matches <strong>{{ branch or "HEAD" }}</strong>. ✨
+</div>
+{% endif %}

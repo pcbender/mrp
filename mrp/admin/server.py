@@ -11,7 +11,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 from mrp.admin import db
-from mrp.admin.routes import apps, jobs, releases, status, workspace
+from mrp.admin.routes import apps, changes, jobs, releases, status, workspace
 
 _STATIC_DIR = Path(__file__).parent / "static"
 _TEMPLATES_DIR = Path(__file__).parent / "templates"
@@ -32,6 +32,7 @@ app.mount("/static", StaticFiles(directory=str(_STATIC_DIR)), name="static")
 app.include_router(releases.router)
 app.include_router(workspace.router)
 app.include_router(status.router)
+app.include_router(changes.router)
 app.include_router(jobs.router)
 app.include_router(apps.router)
 

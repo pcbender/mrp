@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+{% block page_title %} — Changes{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Changes <small>content &amp; assets vs. git</small></h1>
+</div>
+
+<div id="changes-panel">
+  {% include "changes/_panel.html" %}
+</div>
+{% endblock %}

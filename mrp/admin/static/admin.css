@@ -371,6 +371,45 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .missing-dot.present { background: #86efac; }
 .missing-dot.na { background: #d1d5db; }
 
+/* ── Changes page ── */
+.approve-bar {
+  display: flex; gap: .75rem; align-items: center;
+  margin-bottom: 1rem; flex-wrap: wrap;
+}
+.approve-bar input { flex: 1; min-width: 260px; }
+.change-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  margin-bottom: .6rem;
+}
+.change-card-head {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .55rem .85rem;
+}
+.change-card-head input[type="checkbox"] { width: 15px; height: 15px; cursor: pointer; flex-shrink: 0; }
+.change-path { font-family: monospace; font-size: 12px; flex: 1; min-width: 0; overflow-wrap: anywhere; cursor: pointer; }
+.change-modified { background: #dbeafe; color: #1d4ed8; }
+.change-new     { background: #d1fae5; color: #065f46; }
+.change-added   { background: #d1fae5; color: #065f46; }
+.change-deleted { background: #fee2e2; color: #b91c1c; }
+.change-renamed { background: #fef3c7; color: #92400e; }
+.change-diff summary {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); cursor: pointer; padding: .3rem .85rem;
+  border-top: 1px solid var(--border);
+}
+.diff {
+  font-family: monospace; font-size: 12px; line-height: 1.45;
+  background: #0f1117; color: #d1d5db; padding: .75rem 1rem;
+  overflow-x: auto; white-space: pre;
+}
+.diff span { display: block; }
+.diff-add  { color: #6ee7b7; }
+.diff-del  { color: #fca5a5; }
+.diff-hunk { color: #93c5fd; }
+.diff-meta { color: #6b7280; }
+.diff-note { font-size: 11px; color: var(--muted); padding: .35rem .85rem .6rem; }
+
 /* ── Release workspace ── */
 .workspace-header {
   display: flex; align-items: center; gap: 1rem;
