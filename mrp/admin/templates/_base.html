@@ -16,6 +16,7 @@
         <a href="/releases" {% if request.url.path.startswith('/releases') or request.url.path == '/missing-links' %}class="active"{% endif %}>Releases</a>
         <a href="/status" {% if request.url.path == '/status' %}class="active"{% endif %}>Status</a>
         <a href="/missing-links" {% if request.url.path == '/missing-links' %}class="active"{% endif %}>Missing Links</a>
+        <a href="/changes" {% if request.url.path.startswith('/changes') %}class="active"{% endif %}>Changes</a>
       </div>
       <div class="nav-group">
         <div class="nav-label">Tools</div>
