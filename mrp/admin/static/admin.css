@@ -199,6 +199,14 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .badge-live      { background: #16a34a; color: #fff; }
 .badge-failed    { background: #fee2e2; color: #b91c1c; }
 .badge-archived  { background: #f3f4f6; color: #6b7280; }
+.badge-review    { background: #fef3c7; color: #92400e; }
+.badge-ready     { background: #d1fae5; color: #065f46; }
+
+/* artist visibility */
+.vis-public   { background: #d1fae5; color: #065f46; }
+.vis-draft    { background: #e5e7eb; color: #374151; }
+.vis-hidden   { background: #fef3c7; color: #92400e; }
+.vis-archived { background: #f3f4f6; color: #6b7280; }
 
 /* ── Platform dots ── */
 .platform-dots { display: flex; gap: 4px; flex-wrap: wrap; }

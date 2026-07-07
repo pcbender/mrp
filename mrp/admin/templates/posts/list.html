@@ -1,0 +1,38 @@
+{% extends "_base.html" %}
+{% block page_title %} — Posts{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Posts <small>{{ rows|length }}</small></h1>
+  <a href="/posts/new" class="btn btn-primary">+ New Post</a>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Published</th>
+        <th>Path</th>
+        <th>Source</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+      <tr>
+        <td class="td-title"><a href="/posts/{{ r.slug }}">{{ r.title }}</a></td>
+        <td><span class="badge badge-{{ r.status }}">{{ r.status }}</span></td>
+        <td>{{ r.published_at or "—" }}</td>
+        <td class="td-mono">{{ r.path }}</td>
+        <td class="td-mono">{{ r.source }}</td>
+        <td><a href="/posts/{{ r.slug }}" class="btn btn-secondary btn-sm">Edit</a></td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6" style="text-align:center;color:var(--muted);padding:2rem">No posts yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

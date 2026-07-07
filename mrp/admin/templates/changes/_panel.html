@@ -5,7 +5,7 @@
 {% if validation_errors %}
 <div class="validation-errors">
   {% for err in validation_errors %}
-  <div class="err-row"><span class="err-field">{{ err.path }}</span>{{ err.message }}</div>
+  <div class="err-row"><span class="err-field">{{ err.field }}</span>{{ err.message }}</div>
   {% endfor %}
 </div>
 {% endif %}

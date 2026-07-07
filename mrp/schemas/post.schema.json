@@ -56,7 +56,7 @@
       "required": ["system", "id"],
       "additionalProperties": false,
       "properties": {
-        "system": {"type": "string", "enum": ["wordpress"]},
+        "system": {"type": "string", "enum": ["wordpress", "admin"]},
         "id": {"type": "string", "minLength": 1},
         "type": {"type": ["string", "null"]},
         "status": {"type": ["string", "null"]},
