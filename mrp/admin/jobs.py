@@ -27,4 +27,8 @@ def _run(job_id: str, fn: Callable[..., Any], args: tuple, kwargs: dict) -> None
         result = fn(*args, **kwargs)
         db.update_job(job_id, "done", output=json.dumps(result, default=str), completed_at=_now())
     except Exception as exc:  # noqa: BLE001
-        db.update_job(job_id, "error", output=str(exc), completed_at=_now())
+        if hasattr(exc, "job_output"):
+            output = json.dumps(exc.job_output(), default=str)
+        else:
+            output = str(exc)
+        db.update_job(job_id, "error", output=output, completed_at=_now())

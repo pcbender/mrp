@@ -55,6 +55,20 @@ published to production end-to-end through the UI.
   `Promotions Plan.md` (queue + calendar + claim engine)
 - Show pipeline logs/reports
 
+### Promoter Video Generation — Three Modes
+
+The Promoter tab should preserve the current static ffmpeg path while adding
+more expressive video options as explicit, user-triggered upgrades:
+
+- **Static cover** — current default and fallback: deterministic ffmpeg render
+  from release cover + sampler snippet; no external dependency
+- **Animated cover** — optional Nim-powered cover animation: generate a silent
+  9:16 visual bed from the release cover, then mux the canonical sampler
+  snippet locally with ffmpeg; requires explicit Nim connection
+- **Concept visual** — later higher-creativity mode: generate visuals from
+  release title, artist voice, critic/promo copy, lyrics, and hints, then
+  attach the same canonical snippet audio locally
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports

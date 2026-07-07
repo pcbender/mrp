@@ -44,7 +44,14 @@
 {% elif is_error %}
   <span class="badge badge-failed pipeline-step-status">failed</span>
   {% if job.output %}
+  {% set parsed = job.output | fromjson %}
+  {% if parsed.get('status') == 'auth_required' and parsed.get('service') == 'nim' %}
+  <span class="pipeline-step-error" title="{{ parsed.message | e }}">{{ parsed.message }}</span>
+  <a class="btn btn-secondary btn-sm"
+     href="/nim/connect?return_to=/releases/{{ slug }}/promoter">Connect Nim</a>
+  {% else %}
   <span class="pipeline-step-error" title="{{ job.output | e }}">{{ job.output[:150] | e }}</span>
+  {% endif %}
   {% endif %}
 
 {% else %}
