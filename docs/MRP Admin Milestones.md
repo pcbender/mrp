@@ -45,8 +45,10 @@ published to production end-to-end through the UI.
   on edit. Note: the site renders posts regardless of status — status is
   workflow bookkeeping, not a publish gate (possible follow-up in
   `site/src/lib/content.js`)
-- Social promo package generator (posts, video shorts)
-- Approval queue for website/social/artist updates
+- Social promo package generator (posts, video shorts) — plan captured in
+  `Promotions Plan.md` (2026-07-07); Phase 1 = per-release promo kit
+- Approval queue for website/social/artist updates — Phase 2 of
+  `Promotions Plan.md` (queue + calendar + claim engine)
 - Show pipeline logs/reports
 
 ## MRP Admin v0.4
