@@ -1,0 +1,27 @@
+{% extends "_base.html" %}
+{% block page_title %} — New Post{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">New Post</h1>
+  <a href="/posts" class="btn btn-secondary">← Posts</a>
+</div>
+
+<div class="form-card" style="max-width:520px;">
+  <div class="form-body">
+    <form action="/posts" method="post">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>Title <span class="required">*</span></label>
+          <input type="text" name="title" required autofocus placeholder="e.g. Behind the Album">
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:1rem">
+        Slug and URL path are generated from the title and fixed after creation.
+        The post starts as a <strong>draft</strong> and opens for editing next.
+      </p>
+      <button type="submit" class="btn btn-primary">Create Draft</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+{% block page_title %} — Artists{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">Artists <small>{{ rows|length }}</small></h1>
+  <a href="/artists/new" class="btn btn-primary">+ New Artist</a>
+</div>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Visibility</th>
+        <th>Releases</th>
+        <th>Links</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+      <tr>
+        <td class="td-title"><a href="/artists/{{ r.id }}">{{ r.name }}</a></td>
+        <td class="td-mono">{{ r.id }}</td>
+        <td>{{ r.type }}</td>
+        <td><span class="badge vis-{{ r.visibility }}">{{ r.visibility }}</span></td>
+        <td>{{ r.releases }}</td>
+        <td>{{ r.links }}</td>
+        <td><a href="/artists/{{ r.id }}" class="btn btn-secondary btn-sm">Edit</a></td>
+      </tr>
+      {% else %}
+      <tr><td colspan="7" style="text-align:center;color:var(--muted);padding:2rem">No artists yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "_base.html" %}
+{% block page_title %} — New Artist{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">New Artist</h1>
+  <a href="/artists" class="btn btn-secondary">← Artists</a>
+</div>
+
+<div class="form-card" style="max-width:520px;">
+  <div class="form-body">
+    <form action="/artists" method="post">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>Name <span class="required">*</span></label>
+          <input type="text" name="name" required autofocus placeholder="e.g. Lingua Aeternum">
+        </div>
+        <div class="form-field">
+          <label>ID (slug)</label>
+          <input type="text" name="artist_id" placeholder="auto from name" pattern="[a-z0-9][a-z0-9-]*">
+        </div>
+        <div class="form-field">
+          <label>Type</label>
+          <select name="artist_type">
+            {% for t in types %}
+            <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:1rem">
+        Created as <strong>draft</strong> visibility with label defaults — the full record opens for editing next.
+      </p>
+      <button type="submit" class="btn btn-primary">Create Artist</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
