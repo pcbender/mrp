@@ -5,9 +5,14 @@ import os
 import shutil
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any
+from typing import IO, Any
 
 from mrp.core.output import archive_root, site_out_root
+
+try:
+    import fcntl
+except ImportError:  # Windows: proceed unlocked, concurrent prunes fail safe on dest-exists checks
+    fcntl = None  # type: ignore[assignment]
 
 DEFAULT_HISTORY_ROOT = Path("/mnt/nas/mrp-history")
 HISTORY_MARKER = ".mrp-history-root"
@@ -66,67 +71,137 @@ def prune_outputs(
     builds_root = out_root / "builds" / "staging"
     cache_root = out_root / "cache"
 
-    # The history root doubles as the NAS mount point; when the share is not
-    # mounted the path can still exist as an empty stub directory on the local
-    # disk. The marker file distinguishes the real archive from a stub so we
-    # never "move" 60G back onto the disk we are trying to relieve.
-    if not (history / HISTORY_MARKER).is_file():
+    # Multiple repo clones (dev checkout, admin clone) share one output root;
+    # serialize prunes across them so two runs never race on the same moves.
+    lock_file = acquire_prune_lock(out_root)
+    if lock_file is None:
         result.update(
             {
-                "status": "failed",
-                "stage": "safety",
-                "message": (
-                    f"History root {history} is unavailable (marker {HISTORY_MARKER} not found). "
-                    "Is the NAS mounted? Nothing was pruned."
-                ),
+                "status": "skipped",
+                "stage": "lock",
+                "message": "Another prune is already running against this output root; nothing was pruned.",
             }
         )
         result["report_path"] = write_prune_report(root, generated_at, result)
         return result
 
-    build_ids = sorted(p.name for p in builds_root.iterdir() if p.is_dir()) if builds_root.is_dir() else []
-    protected = deployed_build_ids(root)
-    kept = set(build_ids[-keep:]) | (protected & set(build_ids))
-    result["kept_builds"] = sorted(kept)
-    result["protected_builds"] = sorted(protected & set(build_ids))
+    try:
+        # The history root doubles as the NAS mount point; when the share is not
+        # mounted the path can still exist as an empty stub directory on the local
+        # disk. The marker file distinguishes the real archive from a stub so we
+        # never "move" 60G back onto the disk we are trying to relieve.
+        if not (history / HISTORY_MARKER).is_file():
+            result.update(
+                {
+                    "status": "failed",
+                    "stage": "safety",
+                    "message": (
+                        f"History root {history} is unavailable (marker {HISTORY_MARKER} not found). "
+                        "Is the NAS mounted? Nothing was pruned."
+                    ),
+                }
+            )
+            result["report_path"] = write_prune_report(root, generated_at, result)
+            return result
 
-    to_move = [build_id for build_id in build_ids if build_id not in kept]
-    cache_ids = sorted(p.name for p in cache_root.iterdir() if p.is_dir()) if cache_root.is_dir() else []
-    cache_to_move = [cache_id for cache_id in cache_ids if cache_id not in kept]
+        build_ids = sorted(p.name for p in builds_root.iterdir() if p.is_dir()) if builds_root.is_dir() else []
+        # Deployment reports live in each clone's gitignored reports/ tree, so a
+        # prune run from one clone cannot see the other's deployments. The target
+        # directories in the shared output root carry their own build-manifest,
+        # which every clone can see; protect from both.
+        protected = deployed_build_ids(root) | target_build_ids(out_root)
+        kept = set(build_ids[-keep:]) | (protected & set(build_ids))
+        result["kept_builds"] = sorted(kept)
+        result["protected_builds"] = sorted(protected & set(build_ids))
 
-    for build_id in to_move:
-        moved = move_to_history(builds_root / build_id, history / "builds" / "staging", dry_run, result["errors"])
-        if moved:
-            result["moved_builds"].append(build_id)
-    for cache_id in cache_to_move:
-        moved = move_to_history(cache_root / cache_id, history / "cache", dry_run, result["errors"])
-        if moved:
-            result["moved_caches"].append(cache_id)
+        to_move = [build_id for build_id in build_ids if build_id not in kept]
+        cache_ids = sorted(p.name for p in cache_root.iterdir() if p.is_dir()) if cache_root.is_dir() else []
+        cache_to_move = [cache_id for cache_id in cache_ids if cache_id not in kept]
 
-    # Production rollback archives: rollback always restores the newest
-    # archive, so keeping the newest N preserves every rollback path it uses.
-    archives_root = archive_root(root)
-    archive_ids = sorted(p.name for p in archives_root.glob("production-*") if p.is_dir()) if archives_root.is_dir() else []
-    result["kept_archives"] = archive_ids[-keep:]
-    for archive_id in archive_ids[:-keep]:
-        moved = move_to_history(archives_root / archive_id, history / "archive", dry_run, result["errors"])
-        if moved:
-            result["moved_archives"].append(archive_id)
+        for build_id in to_move:
+            moved = move_to_history(builds_root / build_id, history / "builds" / "staging", dry_run, result["errors"])
+            if moved:
+                result["moved_builds"].append(build_id)
+        for cache_id in cache_to_move:
+            moved = move_to_history(cache_root / cache_id, history / "cache", dry_run, result["errors"])
+            if moved:
+                result["moved_caches"].append(cache_id)
 
-    verb = "Would move" if dry_run else "Moved"
-    result.update(
-        {
-            "status": "failed" if result["errors"] else "passed",
-            "stage": "complete",
-            "message": (
-                f"{verb} {len(result['moved_builds'])} build(s), {len(result['moved_caches'])} cache "
-                f"workspace(s) and {len(result['moved_archives'])} production archive(s) to {history}; "
-                f"kept {len(kept)} build(s) and {len(result['kept_archives'])} archive(s)."
-            ),
-        }
-    )
-    result["report_path"] = write_prune_report(root, generated_at, result)
-    return result
+        # Production rollback archives: rollback always restores the newest
+        # archive, so keeping the newest N preserves every rollback path it uses.
+        archives_root = archive_root(root)
+        archive_ids = sorted(p.name for p in archives_root.glob("production-*") if p.is_dir()) if archives_root.is_dir() else []
+        result["kept_archives"] = archive_ids[-keep:]
+        for archive_id in archive_ids[:-keep]:
+            moved = move_to_history(archives_root / archive_id, history / "archive", dry_run, result["errors"])
+            if moved:
+                result["moved_archives"].append(archive_id)
+
+        verb = "Would move" if dry_run else "Moved"
+        result.update(
+            {
+                "status": "failed" if result["errors"] else "passed",
+                "stage": "complete",
+                "message": (
+                    f"{verb} {len(result['moved_builds'])} build(s), {len(result['moved_caches'])} cache "
+                    f"workspace(s) and {len(result['moved_archives'])} production archive(s) to {history}; "
+                    f"kept {len(kept)} build(s) and {len(result['kept_archives'])} archive(s)."
+                ),
+            }
+        )
+        result["report_path"] = write_prune_report(root, generated_at, result)
+        return result
+    finally:
+        release_prune_lock(lock_file)
+
+
+def acquire_prune_lock(out_root: Path) -> IO[str] | None:
+    """Take an exclusive non-blocking lock on the shared output root.
+
+    Returns the open lock file handle (kept open to hold the lock), or None
+    when another prune already holds it. Without fcntl the lock degrades to a
+    no-op sentinel; concurrent moves still fail safe on dest-exists checks.
+    """
+    lock_path = out_root / ".prune.lock"
+    try:
+        lock_file = open(lock_path, "w")
+    except OSError:
+        return None
+    if fcntl is None:
+        return lock_file
+    try:
+        fcntl.flock(lock_file, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        lock_file.close()
+        return None
+    return lock_file
+
+
+def release_prune_lock(lock_file: IO[str]) -> None:
+    try:
+        if fcntl is not None:
+            fcntl.flock(lock_file, fcntl.LOCK_UN)
+    finally:
+        lock_file.close()
+
+
+def target_build_ids(out_root: Path) -> set[str]:
+    """Build ids currently deployed to local targets under the output root.
+
+    Every deployed copy (prod/, staging/) carries the build-manifest.json of
+    the build it came from. Unlike per-clone deployment reports this is
+    visible to every repo clone sharing the output root.
+    """
+    ids: set[str] = set()
+    for manifest_path in out_root.glob("*/build-manifest.json"):
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        build_id = manifest.get("build_id")
+        if build_id:
+            ids.add(build_id)
+    return ids
 
 
 def deployed_build_ids(root: Path) -> set[str]:
