@@ -116,11 +116,11 @@ def test_enrich_apple_music_never_overwrites_existing_value(tmp_path):
 def test_enrich_apple_music_skips_artists_without_apple_link(tmp_path):
     repo = content_repo(tmp_path)
     reset_apple_music_links(repo / "content/releases/made-by-moving.yaml")
-    artist_path = repo / "content/artists/pcbender.json"
+    artist_path = repo / "content/artists/pcbender.yaml"
 
-    artist_data = json.loads(artist_path.read_text())
+    artist_data = yaml.safe_load(artist_path.read_text())
     artist_data["artist"]["links"]["apple_music"] = None
-    artist_path.write_text(json.dumps(artist_data, indent=2))
+    artist_path.write_text(yaml.safe_dump(artist_data, sort_keys=False, allow_unicode=True))
 
     client = FakeAppleMusicClient(albums_by_artist_id={"1793178641": [made_by_moving_album()]})
 

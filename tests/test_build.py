@@ -51,7 +51,8 @@ def test_build_creates_external_staging_artifact_and_report(tmp_path):
     assert (build_path / "the-future-of-ai-in-music/index.html").is_file()
     assert (build_path / "posts/index.html").is_file()
     assert (build_path / "releases/circuiting/index.html").is_file()
-    assert not (build_path / "catalog/index.html").exists()
+    # The song catalog page (7c343d9) is built but deliberately unlisted.
+    assert (build_path / "catalog/index.html").is_file()
     sitemap = (build_path / "sitemap.xml").read_text()
     assert "https://www.maricoparecords.com/catalog/" not in sitemap
     assert "https://www.maricoparecords.com/licensing-custom-songs/music-licensing/" in sitemap
