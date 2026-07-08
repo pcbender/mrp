@@ -166,8 +166,28 @@ def build_repository(
             "total_bytes": manifest["total_bytes"],
         }
     )
+    result["prune"] = auto_prune(root)
     result["report_path"] = write_build_report(root, build_id, result)
     return result
+
+
+def auto_prune(root: Path) -> dict[str, Any] | None:
+    if os.environ.get("MRP_PRUNE_DISABLE") == "1":
+        return None
+    from mrp.core.prune import prune_outputs
+
+    try:
+        prune = prune_outputs(root)
+    except Exception as exc:  # noqa: BLE001 - housekeeping must never fail the build
+        return {"status": "failed", "message": f"Auto-prune failed: {exc}"}
+    return {
+        "status": prune["status"],
+        "message": prune["message"],
+        "moved_builds": len(prune["moved_builds"]),
+        "moved_caches": len(prune["moved_caches"]),
+        "moved_archives": len(prune["moved_archives"]),
+        "report_path": prune.get("report_path"),
+    }
 
 
 def base_result(root: Path, build_id: str, generated_at: str, release: str | None) -> dict[str, Any]:
@@ -277,4 +297,7 @@ def format_build(result: dict[str, Any]) -> str:
         lines.append(f"Output: {result['build_path']}")
     if result.get("message"):
         lines.append(result["message"])
+    prune = result.get("prune")
+    if prune:
+        lines.append(f"Prune: {prune['message']}")
     return "\n".join(lines)
