@@ -30,6 +30,7 @@ from mrp.core.promote_spotify import (
     format_promote_spotify,
     promote_spotify,
 )
+from mrp.core.prune import format_prune, prune_outputs
 from mrp.core.publish import format_publish, publish
 from mrp.core.spotify_client import SpotifyClient
 from mrp.core.release import create_release, format_release_create
@@ -92,6 +93,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     add_global_options(publish_parser, suppress_defaults=True)
     add_common_command_options(publish_parser, "publish")
+
+    prune_parser = subparsers.add_parser(
+        "prune",
+        help="Move old build snapshots and cache workspaces to the history root (NAS).",
+    )
+    add_global_options(prune_parser, suppress_defaults=True)
+    prune_parser.add_argument(
+        "--keep",
+        type=int,
+        help="How many recent builds to keep locally (default: MRP_PRUNE_KEEP or 5).",
+    )
 
     rollback_parser = subparsers.add_parser("rollback", help="Rollback local production.")
     add_global_options(rollback_parser, suppress_defaults=True)
@@ -341,6 +353,9 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
     if result["command"] == "publish":
         print(format_publish(result))
         return
+    if result["command"] == "prune":
+        print(format_prune(result))
+        return
     if result["command"] == "rollback":
         print(format_rollback(result))
         return
@@ -406,6 +421,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             auto_approve=bool(getattr(args, "auto_approve", False)),
             remote_target=getattr(args, "target", None),
         )
+    elif args.command == "prune":
+        result = prune_outputs(args.repo, keep=args.keep, dry_run=bool(getattr(args, "dry_run", False)))
     elif args.command == "rollback":
         result = rollback(args.repo, to=args.to, yes=bool(getattr(args, "yes", False)))
     elif args.command == "release" and args.release_command == "create":
@@ -466,6 +483,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "publish" and result["status"] == "failed":
         if result["errors"] and result["errors"][0]["field"] == "safety":
             return EXIT_UNSAFE
+        return EXIT_FAILURE
+    if args.command == "prune" and result["status"] == "failed":
+        if result.get("stage") == "safety":
+            return EXIT_UNSAFE
+        if result.get("stage") == "config":
+            return EXIT_CONFIG
         return EXIT_FAILURE
     if args.command == "rollback":
         if result["status"] == "confirmation_required":
