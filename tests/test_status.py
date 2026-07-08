@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import yaml
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -77,10 +79,20 @@ def force_release_status(repo: Path, slug: str, status: str) -> None:
     # This fixture's deployment/approval reports simulate a fully published
     # release; pin the copied release's status so the test doesn't depend on
     # the real catalog's current lifecycle state for `slug`.
-    path = repo / "content" / "releases" / f"{slug}.json"
-    data = json.loads(path.read_text())
-    data["release"]["status"] = status
-    path.write_text(json.dumps(data, indent=2) + "\n")
+    for extension in ("json", "yaml", "yml"):
+        path = repo / "content" / "releases" / f"{slug}.{extension}"
+        if path.exists():
+            break
+    else:
+        raise AssertionError(f"Missing fixture release: {slug}")
+    if path.suffix == ".json":
+        data = json.loads(path.read_text())
+        data["release"]["status"] = status
+        path.write_text(json.dumps(data, indent=2) + "\n")
+    else:
+        data = yaml.safe_load(path.read_text())
+        data["release"]["status"] = status
+        path.write_text(yaml.safe_dump(data, sort_keys=False, allow_unicode=True))
 
 
 def test_status_human_output_is_useful(tmp_path):

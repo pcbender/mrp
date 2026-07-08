@@ -95,6 +95,15 @@ def album(
 
 def test_known_artist_matches_existing_release_and_proposes_isrc_patch(tmp_path):
     repo = content_repo(tmp_path)
+    # The live circuiting record has since been enriched with a UPC and full
+    # ISRCs; strip them from the copy so the missing-ISRC backfill scenario
+    # this test exercises stays reproducible.
+    circuiting_path = repo / "content/releases/circuiting.yaml"
+    record = yaml.safe_load(circuiting_path.read_text())
+    record["release"].pop("upc", None)
+    for existing_track in record["release"].get("tracks") or []:
+        existing_track.pop("isrc", None)
+    circuiting_path.write_text(yaml.safe_dump(record, sort_keys=False, allow_unicode=True))
     roster_path = write_roster(repo, [{"artist_id": "pcbender", "spotify_url": None}])
 
     pcbender_id = "0aivrU155laeOcIoT4AhPo"
@@ -139,7 +148,7 @@ def test_known_artist_matches_existing_release_and_proposes_isrc_patch(tmp_path)
     releases = yaml.safe_load((repo / "content/import-review/spotify-releases.yaml").read_text())
     matched = releases["candidates"][0]["release"]
     assert matched["review_status"] == "matched_existing"
-    assert matched["existing_path"] == "content/releases/circuiting.json"
+    assert matched["existing_path"] == "content/releases/circuiting.yaml"
     patch_isrcs = {p["title"]: p["isrc"] for p in matched["proposed_patch"]["tracks_isrc"]}
     assert patch_isrcs == {"Conductor": "USXXX0000001", "Resistor": "USXXX0000002"}
 

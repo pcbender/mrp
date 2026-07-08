@@ -29,6 +29,27 @@ def json_command(*args: str, repo: Path, site_out_root: Path) -> dict:
     return json.loads(result.stdout)
 
 
+def json_command_tolerant(*args: str, repo: Path, site_out_root: Path) -> dict:
+    """Like json_command but lets the command exit nonzero; the caller
+    inspects the parsed report to decide which failures are acceptable."""
+    result = run_mrp("--json", *args, repo=repo, site_out_root=site_out_root)
+    assert result.stdout, result.stderr
+    return json.loads(result.stdout)
+
+
+# Routes in clone-compare's frozen REPRESENTATIVE_ROUTES fixture that have
+# since been promoted from clone passthrough to native Astro pages. Their
+# rendered output legitimately diverges from the captured WordPress source,
+# so comparison failures confined to these routes are expected. clone-compare
+# itself is a frozen migration tool and must not be updated.
+NATIVIZED_ROUTES = {
+    "/",
+    "/artists/pcbender/",
+    "/artists/pcbender/circuiting/",
+    "/2025/02/26/the-future-of-ai-in-music/",
+}
+
+
 def ensure_staging_marker(site_out_root: Path) -> None:
     staging = site_out_root / "staging"
     staging.mkdir(parents=True, exist_ok=True)
@@ -47,7 +68,7 @@ def test_v012_wxr_static_clone_end_to_end(tmp_path, isolated_repo):
     build = json_command("build", repo=isolated_repo, site_out_root=site_out_root)
     stage = json_command("stage", "--target", "local-staging", "--build", build["build_id"], repo=isolated_repo, site_out_root=site_out_root)
     verification = json_command("verify", "--target", "local-staging", repo=isolated_repo, site_out_root=site_out_root)
-    comparison = json_command("clone-compare", "--target", "local-staging", "--source", str(SOURCE), repo=isolated_repo, site_out_root=site_out_root)
+    comparison = json_command_tolerant("clone-compare", "--target", "local-staging", "--source", str(SOURCE), repo=isolated_repo, site_out_root=site_out_root)
 
     report = {
         "command": "v0.1.2-wxr-static-clone-e2e",
@@ -115,7 +136,7 @@ def test_v012_wxr_static_clone_end_to_end(tmp_path, isolated_repo):
     assert build["status"] == "passed"
     assert stage["status"] == "passed"
     assert verification["status"] == "passed"
-    assert comparison["status"] == "completed"
+    assert comparison["status"] in {"completed", "failed"}
     assert report["summary"]["clone_pages"] == 47
     assert report["summary"]["clone_posts"] == 3
     assert report["summary"]["verification_clone_routes"] == 50
@@ -123,5 +144,11 @@ def test_v012_wxr_static_clone_end_to_end(tmp_path, isolated_repo):
     assert report["summary"]["comparison_routes"] == 5
     assert not report["failures"]["validation"]
     assert not report["failures"]["verification"]
-    assert not report["failures"]["comparison"]
+    # Comparison failures are acceptable only on routes promoted to native
+    # pages; every route still served as clone passthrough must match the
+    # WordPress capture.
+    unexpected = [f for f in report["failures"]["comparison"] if f["route"] not in NATIVIZED_ROUTES]
+    assert unexpected == []
+    passthrough = {c["route"]: c["status"] for c in comparison["comparisons"] if c["route"] not in NATIVIZED_ROUTES}
+    assert passthrough and all(status == "passed" for status in passthrough.values()), passthrough
     assert report_path.is_file()

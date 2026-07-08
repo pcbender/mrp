@@ -109,12 +109,12 @@ def test_enrich_youtube_never_overwrites_existing_value(tmp_path):
 def test_enrich_youtube_skips_artists_without_channel_link(tmp_path):
     repo = content_repo(tmp_path)
     reset_youtube_links(repo / "content/releases/made-by-moving.yaml")
-    artist_path = repo / "content/artists/pcbender.json"
-    import json
+    artist_path = repo / "content/artists/pcbender.yaml"
 
-    artist_data = json.loads(artist_path.read_text())
+    artist_data = yaml.safe_load(artist_path.read_text())
     artist_data["artist"]["links"]["youtube"] = None
-    artist_path.write_text(json.dumps(artist_data, indent=2))
+    artist_data["artist"]["links"]["youtube_music"] = None
+    artist_path.write_text(yaml.safe_dump(artist_data, sort_keys=False, allow_unicode=True))
 
     client = FakeYouTubeClient(
         uploads_playlist_by_channel={PCBENDER_CHANNEL: PCBENDER_UPLOADS},

@@ -51,8 +51,8 @@ def verified_repo(tmp_path: Path) -> Path:
     for name in ["artists", "releases", "pages", "posts"]:
         shutil.rmtree(repo / "content" / name)
         (repo / "content" / name).mkdir()
-    shutil.copy2(ROOT / "content/artists/pcbender.json", repo / "content/artists/pcbender.json")
-    shutil.copy2(ROOT / "content/releases/circuiting.json", repo / "content/releases/circuiting.json")
+    shutil.copy2(ROOT / "content/artists/pcbender.yaml", repo / "content/artists/pcbender.yaml")
+    shutil.copy2(ROOT / "content/releases/circuiting.yaml", repo / "content/releases/circuiting.yaml")
     (repo / "deploy").mkdir(parents=True)
     (repo / "reports" / "verification").mkdir(parents=True)
     target.mkdir(parents=True)
@@ -371,7 +371,9 @@ def test_verify_clone_surface_passes_for_routes_assets_and_markers(tmp_path):
     assert payload["clone"]["routes_checked"] == 2
     assert payload["clone"]["asset_records_checked"] == 1
     assert payload["clone"]["rendered_wp_asset_refs_checked"] == 1
-    assert payload["clone"]["known_markers_checked"] == 2
+    # CLONE_KNOWN_MARKERS is intentionally empty: the original marker pages
+    # are native now and their copy drifts editorially.
+    assert payload["clone"]["known_markers_checked"] == 0
 
 
 def test_verify_missing_clone_route_fails(tmp_path):
@@ -398,19 +400,30 @@ def test_verify_missing_rendered_clone_asset_fails(tmp_path):
     assert any(error["field"] == "clone.asset" for error in payload["errors"])
 
 
-def test_verify_missing_clone_marker_fails(tmp_path):
-    repo = clone_verified_repo(tmp_path)
-    write_file(
-        staging_path(repo) / "artists/pcbender/index.html",
-        '<article class="wp-clone-content" data-clone-kind="artist_page">PCBender</article>',
-    )
+def test_verify_known_marker_mechanism_flags_missing_text(tmp_path, monkeypatch):
+    # CLONE_KNOWN_MARKERS ships empty, so exercise the mechanism with an
+    # injected marker instead of pinning live page prose.
+    from mrp.core import verify as verify_module
 
-    result = run_mrp("--repo", str(repo), "--json", "verify", "--target", "staging", site_out_root=site_out_root(repo))
+    marker = {
+        "route": "/artists/pcbender/",
+        "marker": "mystique",
+        "description": "pcbender artist page",
+    }
+    monkeypatch.setattr(verify_module, "CLONE_KNOWN_MARKERS", [marker])
+    target = tmp_path / "staging"
+    write_file(target / "artists/pcbender/index.html", '<article class="wp-clone-content">PCBender</article>')
 
-    assert result.returncode == 1
-    payload = json.loads(result.stdout)
-    assert payload["status"] == "failed"
-    assert any(error["field"] == "clone.marker" for error in payload["errors"])
+    result = {"checks": [], "errors": []}
+    checked = verify_module.check_clone_known_markers(result, target)
+
+    assert checked == 1
+    assert any(error["field"] == "clone.marker" for error in result["errors"])
+
+    write_file(target / "artists/pcbender/index.html", '<article class="wp-clone-content">mystique</article>')
+    result = {"checks": [], "errors": []}
+    verify_module.check_clone_known_markers(result, target)
+    assert result["errors"] == []
 
 
 def test_verify_excluded_clone_path_fails(tmp_path):
