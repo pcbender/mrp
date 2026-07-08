@@ -130,6 +130,40 @@ def test_prune_moves_orphaned_cache_workspaces(tmp_path, monkeypatch):
     assert (history / "cache" / "20260601T000000000000Z-failed").is_dir()
 
 
+def test_prune_moves_old_production_archives(tmp_path, monkeypatch):
+    build_ids = [f"2026070{i}T000000000000Z-site" for i in range(1, 4)]
+    repo, out_root, history = make_environment(tmp_path, monkeypatch, build_ids)
+    archive_ids = [f"production-2026070{i}T000000Z" for i in range(1, 8)]
+    for archive_id in archive_ids:
+        archive_dir = out_root / "archive" / archive_id
+        archive_dir.mkdir(parents=True)
+        (archive_dir / "index.html").write_text("<html></html>\n")
+
+    result = prune_outputs(repo, keep=5)
+
+    assert result["status"] == "passed"
+    assert result["moved_archives"] == archive_ids[:2]
+    assert result["kept_archives"] == archive_ids[2:]
+    for archive_id in archive_ids[:2]:
+        assert not (out_root / "archive" / archive_id).exists()
+        assert (history / "archive" / archive_id / "index.html").is_file()
+    for archive_id in archive_ids[2:]:
+        assert (out_root / "archive" / archive_id).is_dir()
+
+
+def test_prune_ignores_non_archive_directories_in_archive_root(tmp_path, monkeypatch):
+    build_ids = ["20260701T000000000000Z-site"]
+    repo, out_root, _ = make_environment(tmp_path, monkeypatch, build_ids)
+    stray = out_root / "archive" / "manual-backup"
+    stray.mkdir(parents=True)
+
+    result = prune_outputs(repo, keep=1)
+
+    assert result["status"] == "passed"
+    assert result["moved_archives"] == []
+    assert stray.is_dir()
+
+
 def test_prune_rejects_keep_below_one(tmp_path, monkeypatch):
     build_ids = ["20260701T000000000000Z-site"]
     repo, _, _ = make_environment(tmp_path, monkeypatch, build_ids)

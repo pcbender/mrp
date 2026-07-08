@@ -7,7 +7,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-from mrp.core.output import site_out_root
+from mrp.core.output import archive_root, site_out_root
 
 DEFAULT_HISTORY_ROOT = Path("/mnt/nas/mrp-history")
 HISTORY_MARKER = ".mrp-history-root"
@@ -40,6 +40,8 @@ def prune_outputs(
         "protected_builds": [],
         "moved_builds": [],
         "moved_caches": [],
+        "kept_archives": [],
+        "moved_archives": [],
         "errors": [],
     }
 
@@ -101,14 +103,25 @@ def prune_outputs(
         if moved:
             result["moved_caches"].append(cache_id)
 
+    # Production rollback archives: rollback always restores the newest
+    # archive, so keeping the newest N preserves every rollback path it uses.
+    archives_root = archive_root(root)
+    archive_ids = sorted(p.name for p in archives_root.glob("production-*") if p.is_dir()) if archives_root.is_dir() else []
+    result["kept_archives"] = archive_ids[-keep:]
+    for archive_id in archive_ids[:-keep]:
+        moved = move_to_history(archives_root / archive_id, history / "archive", dry_run, result["errors"])
+        if moved:
+            result["moved_archives"].append(archive_id)
+
     verb = "Would move" if dry_run else "Moved"
     result.update(
         {
             "status": "failed" if result["errors"] else "passed",
             "stage": "complete",
             "message": (
-                f"{verb} {len(result['moved_builds'])} build(s) and {len(result['moved_caches'])} cache "
-                f"workspace(s) to {history}; kept {len(kept)} build(s)."
+                f"{verb} {len(result['moved_builds'])} build(s), {len(result['moved_caches'])} cache "
+                f"workspace(s) and {len(result['moved_archives'])} production archive(s) to {history}; "
+                f"kept {len(kept)} build(s) and {len(result['kept_archives'])} archive(s)."
             ),
         }
     )

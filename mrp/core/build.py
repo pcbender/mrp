@@ -185,6 +185,7 @@ def auto_prune(root: Path) -> dict[str, Any] | None:
         "message": prune["message"],
         "moved_builds": len(prune["moved_builds"]),
         "moved_caches": len(prune["moved_caches"]),
+        "moved_archives": len(prune["moved_archives"]),
         "report_path": prune.get("report_path"),
     }
 
