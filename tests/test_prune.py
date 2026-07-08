@@ -1,3 +1,4 @@
+import fcntl
 import json
 from pathlib import Path
 
@@ -162,6 +163,62 @@ def test_prune_ignores_non_archive_directories_in_archive_root(tmp_path, monkeyp
     assert result["status"] == "passed"
     assert result["moved_archives"] == []
     assert stray.is_dir()
+
+
+def test_prune_protects_builds_deployed_from_another_clone(tmp_path, monkeypatch):
+    build_ids = [f"2026070{i}T000000000000Z-site" for i in range(1, 8)]
+    repo, out_root, _ = make_environment(tmp_path, monkeypatch, build_ids)
+    prod = out_root / "prod"
+    prod.mkdir()
+    (prod / "build-manifest.json").write_text(json.dumps({"build_id": build_ids[0]}))
+
+    result = prune_outputs(repo, keep=5)
+
+    assert result["status"] == "passed"
+    assert build_ids[0] in result["protected_builds"]
+    assert (out_root / "builds" / "staging" / build_ids[0]).is_dir()
+    assert result["moved_builds"] == [build_ids[1]]
+
+
+def test_prune_ignores_corrupt_target_manifest(tmp_path, monkeypatch):
+    build_ids = [f"2026070{i}T000000000000Z-site" for i in range(1, 8)]
+    repo, out_root, _ = make_environment(tmp_path, monkeypatch, build_ids)
+    prod = out_root / "prod"
+    prod.mkdir()
+    (prod / "build-manifest.json").write_text("not json")
+
+    result = prune_outputs(repo, keep=5)
+
+    assert result["status"] == "passed"
+    assert result["moved_builds"] == build_ids[:2]
+
+
+def test_prune_skips_when_another_prune_holds_the_lock(tmp_path, monkeypatch):
+    build_ids = [f"2026070{i}T000000000000Z-site" for i in range(1, 8)]
+    repo, out_root, history = make_environment(tmp_path, monkeypatch, build_ids)
+    with open(out_root / ".prune.lock", "w") as competing:
+        fcntl.flock(competing, fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+        result = prune_outputs(repo, keep=5)
+
+    assert result["status"] == "skipped"
+    assert result["stage"] == "lock"
+    assert result["moved_builds"] == []
+    for build_id in build_ids:
+        assert (out_root / "builds" / "staging" / build_id).is_dir()
+    assert not (history / "builds").exists()
+
+
+def test_prune_releases_lock_for_subsequent_runs(tmp_path, monkeypatch):
+    build_ids = [f"2026070{i}T000000000000Z-site" for i in range(1, 8)]
+    repo, _, _ = make_environment(tmp_path, monkeypatch, build_ids)
+
+    first = prune_outputs(repo, keep=5)
+    second = prune_outputs(repo, keep=5)
+
+    assert first["status"] == "passed"
+    assert second["status"] == "passed"
+    assert second["moved_builds"] == []
 
 
 def test_prune_rejects_keep_below_one(tmp_path, monkeypatch):
