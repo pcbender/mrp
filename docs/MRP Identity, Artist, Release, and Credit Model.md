@@ -1,3 +1,5 @@
+# This is a relational model and is not cannoical. Do not use unless directed" 
+
 # MRP Identity, Artist, Release, and Credit Model
 
 MRP should distinguish between **people**, **public personas**, **artist projects**, **membership**, and **release/track-specific participation**. The current “artist” concept should be treated as an **Artist Project**, not as a person. This keeps the model flexible enough to support solo artists, virtual artists, bands, aliases, featured artists, fictional identities, publishing credits, likeness assets, and track-specific PR details.
