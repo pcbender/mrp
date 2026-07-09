@@ -222,6 +222,10 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   margin-bottom: 1rem;
 }
 
+.form-actions {
+  margin: .5rem 0 1.5rem;
+}
+
 .form-card summary {
   font-size: 13px;
   font-weight: 700;

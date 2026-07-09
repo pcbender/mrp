@@ -20,6 +20,7 @@ _SCHEMA_PATH = Path(__file__).parents[2] / "schemas" / "artist.schema.json"
 ARTIST_TYPES = ["solo", "band", "project"]
 VISIBILITIES = ["public", "draft", "hidden", "archived"]
 MEMBER_STATUSES = ["current", "former", "guest"]
+MEMBER_IMAGE_EXTENSIONS = {".jpg", ".png", ".webp", ".gif"}
 LINK_KEYS = [
     "spotify", "apple_music", "youtube", "youtube_music", "bandcamp",
     "soundcloud", "instagram", "facebook", "tiktok", "website",
@@ -83,6 +84,31 @@ def _member_rows(members: list | None) -> list[dict[str, Any]]:
             "has_likeness": bool(member.get("likeness_notes")),
         })
     return rows
+
+
+async def _store_member_image(root: Path, artist_id: str, slug: str,
+                              upload: Any) -> tuple[str | None, str | None]:
+    """Save an uploaded member image under site/public/assets/artists/{id}/.
+
+    Returns (site-relative path, None) on success or (None, error message).
+    """
+    ext = Path(upload.filename).suffix.lower()
+    if ext == ".jpeg":
+        ext = ".jpg"
+    if ext not in MEMBER_IMAGE_EXTENSIONS:
+        return None, f"Unsupported image type: {ext or '(none)'} — use jpg, png, webp, or gif."
+    contents = await upload.read()
+    if not contents:
+        return None, "Empty image file."
+    dest_dir = root / "site" / "public" / "assets" / "artists" / artist_id
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    # Keep a single image per member slug — drop any other-extension leftover.
+    for old_ext in MEMBER_IMAGE_EXTENSIONS:
+        old = dest_dir / f"{slug}{old_ext}"
+        if old.exists() and old_ext != ext:
+            old.unlink()
+    (dest_dir / f"{slug}{ext}").write_bytes(contents)
+    return f"/assets/artists/{artist_id}/{slug}{ext}", None
 
 
 def _find_member(artist: dict[str, Any], slug: str) -> dict[str, Any] | None:
@@ -292,7 +318,8 @@ async def member_create(request: Request, artist_id: str):
         return HTMLResponse(f"Artist <b>{artist_id}</b> not found.", status_code=404)
     data = load_structured_record(path)
     artist = data.get("artist") or {}
-    member = _member_from_form(dict(await request.form()))
+    form = await request.form()
+    member = _member_from_form(dict(form))
 
     if not member["name"] or not member["slug"]:
         return _errors_response(request, artist, member, True,
@@ -302,6 +329,14 @@ async def member_create(request: Request, artist_id: str):
     errors = _duplicate_slug_error(path, members, member["slug"])
     if errors:
         return _errors_response(request, artist, member, True, errors)
+
+    upload = form.get("member_image_file")
+    if upload is not None and getattr(upload, "filename", ""):
+        image_path, err = await _store_member_image(root, artist_id, member["slug"], upload)
+        if err:
+            return _errors_response(request, artist, member, True,
+                                    [{"field": "members.image", "message": err}])
+        member["image"] = image_path
 
     members.append(member)
     artist["members"] = members
@@ -343,7 +378,8 @@ async def member_save(request: Request, artist_id: str, slug: str):
     if index is None:
         return HTMLResponse(f"Member <b>{slug}</b> not found.", status_code=404)
 
-    member = _member_from_form(dict(await request.form()), fallback_slug=slug)
+    form = await request.form()
+    member = _member_from_form(dict(form), fallback_slug=slug)
     if not member["name"] or not member["slug"]:
         return _errors_response(request, artist, member, False,
                                 [{"field": "members", "message": "Name and slug are required."}])
@@ -351,6 +387,14 @@ async def member_save(request: Request, artist_id: str, slug: str):
     errors = _duplicate_slug_error(path, members, member["slug"], ignore_index=index)
     if errors:
         return _errors_response(request, artist, member, False, errors)
+
+    upload = form.get("member_image_file")
+    if upload is not None and getattr(upload, "filename", ""):
+        image_path, err = await _store_member_image(root, artist_id, member["slug"], upload)
+        if err:
+            return _errors_response(request, artist, member, False,
+                                    [{"field": "members.image", "message": err}])
+        member["image"] = image_path
 
     members[index] = member
     artist["members"] = members
