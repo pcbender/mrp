@@ -55,6 +55,7 @@
         "summary": {"type": ["string", "null"]},
         "description": {"type": ["string", "null"]},
         "credits": {"$ref": "#/$defs/credits"},
+        "featuring": {"$ref": "#/$defs/featuring"},
         "links": {"$ref": "#/$defs/links"},
         "seo": {
           "type": "object",
@@ -100,6 +101,26 @@
     }
   },
   "$defs": {
+    "featuring": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"}
+    },
+    "performer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role"],
+      "properties": {
+        "member": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "artist": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "role": {"type": "string", "minLength": 1},
+        "note": {"type": ["string", "null"]}
+      },
+      "oneOf": [
+        {"required": ["member"], "not": {"required": ["artist"]}},
+        {"required": ["artist"], "not": {"required": ["member"]}}
+      ]
+    },
     "credits": {
       "type": "object",
       "additionalProperties": {"type": ["string", "null"]},
@@ -142,6 +163,12 @@
         "style": {"type": ["string", "null"]},
         "master_path": {"type": ["string", "null"]},
         "credits": {"$ref": "#/$defs/credits"},
+        "featuring": {"$ref": "#/$defs/featuring"},
+        "performers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/performer"}
+        },
         "links": {"$ref": "#/$defs/links"},
         "hints": {
           "type": "object",

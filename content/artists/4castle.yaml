@@ -2,7 +2,7 @@ artist:
   id: 4castle
   name: 4Castle
   sort_name: 4Castle
-  type: project
+  type: band
   label: Maricopa Records
   default_publisher: Maricopa Publishing
   bio_short: "The work of 4Castle, a new project on Maricopa Records, is a vast and\
@@ -66,3 +66,69 @@ artist:
     latest work to hear a band that finds equal strength in both the roar and the
     whisper.
   bio_auto_generated: false
+  members:
+    - slug: raven-cortez
+      name: Raven Cortez
+      roles: [lead guitar, vocals]
+      status: current
+      display_order: 1
+      image: null
+      likeness_notes: null
+      bio: |
+        Raven Cortez grew up in San Juan, Puerto Rico, where the sounds of salsa, bomba, and jazz filled the air. As a child, she was drawn to classical guitar, but everything changed when she saw a video of Carlos Santana at Woodstock—the fire, the soul, the raw expression of his playing. She begged for an electric guitar and spent endless nights mimicking Santana's phrasing, Eddie Van Halen's speed, and Prince's stage presence.
+
+        After moving to Los Angeles as a teenager, she carved out a name in underground rock clubs, where her intensely melodic yet unpredictable solos made her a rising force. She briefly worked as a session guitarist, contributing to Latin rock albums and even ghostwriting solos for pop acts. However, Raven longed for a band where she could be fully herself—blending her Latin roots with the progressive complexity and hard rock fire that fueled her playing.
+
+        Now, as 4Castle's lead guitarist and one of their vocalists, she brings raw energy, intricate lead work, and fiery charisma to the band's sound. Her stage presence is magnetic—when she plays, you feel every note like a conversation.
+    - slug: mack-bishop
+      name: Malcolm "Mack" Bishop
+      roles: [bass, vocals]
+      status: current
+      display_order: 2
+      image: null
+      likeness_notes: null
+      bio: |
+        Born and raised in Chicago, Mack Bishop grew up surrounded by music. His father was a jazz saxophonist, and his mother played gospel organ in church. But Mack found his true calling the day he heard Sly Stone's "Thank You (Falettinme Be Mice Elf Agin)"—the slap bassline changed his life. He became obsessed with funk grooves, mastering the slaps of Bootsy Collins, the jazz phrasing of Jaco Pastorius, and the rock-solid presence of John Paul Jones.
+
+        By his early 20s, Mack had already toured with R&B and funk acts, playing everywhere from tiny blues clubs to massive festival stages. He built a reputation as the guy who could hold down the groove no matter how wild things got. When 4Castle formed, Raven knew she needed a bassist who wasn't just a rhythm player—but someone who could make the bass sing.
+
+        Mack is the foundation of 4Castle's rhythm section, combining tight, funk-driven basslines with moments of soaring melodic runs that break out unexpectedly. His deep, smooth vocals add another layer to the band's rich harmonies.
+    - slug: fox-foster
+      name: Eli "Fox" Foster
+      roles: [drums, vocals]
+      status: current
+      display_order: 3
+      image: null
+      likeness_notes: null
+      bio: |
+        Raised in Austin, Texas, Fox Foster was the kind of kid who couldn't sit still—his parents gave him drumsticks before he could even walk. His early life revolved around gospel drumming in church, but as he got older, he discovered progressive rock, jazz fusion, and punk. His biggest revelation? Billy Cobham's "Spectrum"—a perfect blend of jazz fluidity and raw rock power.
+
+        Fox's playing style is relentless—a fusion of John Bonham's heaviness, Stewart Copeland's syncopation, and Tony Williams' jazz unpredictability. Before joining 4Castle, he was a session drummer, playing on alt-rock, jazz fusion, and even electronic records. His ability to jump between styles effortlessly made him the ideal backbone for a band that refuses to be confined to one genre.
+
+        With 4Castle, Fox keeps the band's sound rhythmically adventurous while providing a high-energy, stadium-worthy pulse. His powerful harmonies and backing vocals add even more depth to the band's signature layered vocals.
+    - slug: jonah-vega
+      name: Jonah Vega
+      roles: [keyboards, vocals]
+      status: current
+      display_order: 4
+      image: null
+      likeness_notes: null
+      bio: |
+        Jonah Vega grew up in East LA, surrounded by a mix of Latin jazz, psychedelic rock, and classical music. His father was a composer, his mother a pianist, and from an early age, he was drawn to synthesizers and organ sounds. While other kids were learning guitar riffs, Jonah was figuring out how to stack Moog synth layers like Rick Wakeman.
+
+        After studying music theory and sound design, Jonah found himself in demand as a session keyboardist, working on film scores, indie rock records, and electronic productions. But he always dreamed of a band where keyboards weren't just a background instrument—where they could be as vital as guitars.
+
+        In 4Castle, Jonah is the sonic sculptor, using keyboards to add orchestral grandeur, unexpected synth textures, and searing Hammond organ solos. He's also a gifted vocal arranger, helping shape the band's rich harmonies.
+    - slug: sky-monroe
+      name: Skylar "Sky" Monroe
+      roles: [rhythm guitar, vocals]
+      status: current
+      display_order: 5
+      image: null
+      likeness_notes: null
+      bio: |
+        Born in Seattle, Sky Monroe grew up during the post-grunge era, absorbing the sounds of Heart, Fleetwood Mac, and folk revival artists. A natural songwriter, she started performing in coffeehouses as a teenager, blending intricate open-tuned guitar playing with introspective, storytelling lyrics.
+
+        While she was never a shredder, Sky's strength lies in her songwriting and arrangement skills—crafting melodic, emotionally rich compositions that anchor 4Castle's complex arrangements. Her soft-yet-powerful voice adds an essential layer to the band's harmonies, giving them a signature vocal blend.
+
+        She's also the band's lyrical backbone, writing deeply poetic yet accessible lyrics that challenge listeners while still hitting them emotionally.

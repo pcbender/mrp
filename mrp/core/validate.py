@@ -86,6 +86,8 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
     errors.extend(validate_duplicates(posts, "post", "slug"))
     errors.extend(validate_duplicates(clone_pages + clone_posts, "clone", "id"))
     errors.extend(validate_artist_references(releases, artists))
+    errors.extend(validate_member_slugs(artists))
+    errors.extend(validate_member_and_feature_references(releases, artists))
     errors.extend(validate_asset_manifest(root, asset_manifest_path, asset_manifest))
     errors.extend(validate_release_assets(root, releases))
 
@@ -194,6 +196,111 @@ def validate_artist_references(
                     f"Release references missing artist_id: {artist_id}",
                 )
             )
+    return errors
+
+
+def validate_member_slugs(artists: list[dict[str, Any]]) -> list[dict[str, str]]:
+    """Member slugs must be unique within one artist's members list."""
+    errors: list[dict[str, str]] = []
+    for record in artists:
+        seen: set[str] = set()
+        members = record["data"].get("artist", {}).get("members") or []
+        for index, member in enumerate(members):
+            slug = member.get("slug")
+            if not slug:
+                continue
+            if slug in seen:
+                errors.append(
+                    error_record(
+                        record["path"],
+                        f"artist.members.{index}.slug",
+                        f"Duplicate member slug within artist: {slug}",
+                    )
+                )
+            seen.add(slug)
+    return errors
+
+
+def _release_songs(release: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
+    """Yield (field_prefix, song) for a release's single song and/or track list."""
+    songs: list[tuple[str, dict[str, Any]]] = []
+    song = release.get("song")
+    if isinstance(song, dict):
+        songs.append(("release.song", song))
+    tracks = release.get("tracks")
+    if isinstance(tracks, list):
+        for index, track in enumerate(tracks):
+            if isinstance(track, dict):
+                songs.append((f"release.tracks.{index}", track))
+    return songs
+
+
+def validate_member_and_feature_references(
+    releases: list[dict[str, Any]],
+    artists: list[dict[str, Any]],
+) -> list[dict[str, str]]:
+    """Resolve structured attribution references across files.
+
+    - featuring ids (release- and track-level) and performers[].artist must
+      match an existing artist record.
+    - performers[].member must match a member slug on the release's owning
+      artist (release.artist_id).
+    """
+    artist_ids = {record["data"].get("artist", {}).get("id") for record in artists}
+    members_by_artist: dict[str, set[str]] = {}
+    for record in artists:
+        artist = record["data"].get("artist", {})
+        slugs = {m.get("slug") for m in (artist.get("members") or []) if m.get("slug")}
+        members_by_artist[artist.get("id")] = slugs
+
+    errors: list[dict[str, str]] = []
+    for record in releases:
+        release = record["data"].get("release", {})
+        path = record["path"]
+        owning_artist_id = release.get("artist_id")
+
+        for index, feat in enumerate(release.get("featuring") or []):
+            if feat not in artist_ids:
+                errors.append(
+                    error_record(
+                        path,
+                        f"release.featuring.{index}",
+                        f"featuring references missing artist: {feat}",
+                    )
+                )
+
+        for prefix, song in _release_songs(release):
+            for index, feat in enumerate(song.get("featuring") or []):
+                if feat not in artist_ids:
+                    errors.append(
+                        error_record(
+                            path,
+                            f"{prefix}.featuring.{index}",
+                            f"featuring references missing artist: {feat}",
+                        )
+                    )
+            for index, performer in enumerate(song.get("performers") or []):
+                artist_ref = performer.get("artist")
+                if artist_ref is not None and artist_ref not in artist_ids:
+                    errors.append(
+                        error_record(
+                            path,
+                            f"{prefix}.performers.{index}.artist",
+                            f"performer references missing artist: {artist_ref}",
+                        )
+                    )
+                member_ref = performer.get("member")
+                if member_ref is not None and member_ref not in members_by_artist.get(
+                    owning_artist_id, set()
+                ):
+                    errors.append(
+                        error_record(
+                            path,
+                            f"{prefix}.performers.{index}.member",
+                            f"performer references unknown member '{member_ref}' "
+                            f"for artist {owning_artist_id}",
+                        )
+                    )
     return errors
 
 
