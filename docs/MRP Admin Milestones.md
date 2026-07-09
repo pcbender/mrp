@@ -55,6 +55,16 @@ published to production end-to-end through the UI.
     `mrp/admin/routes/artists.py`, `mrp/admin/templates/artists/`.
     Still open: fill 4Castle members' `likeness_notes` + `image` (null) for
     the Concept Visual stage
+- ~~**Release attribution editor**~~ Done 2026-07-09: the release editor now
+  exposes the `featuring` / `performers` fields from PR #73. Release-level
+  `featuring` (comma-separated artist IDs, datalist-assisted) on the Details
+  tab; per-track `featuring` + a `performers` editor (add/remove rows, each
+  a member-or-artist + role + optional note) on the track detail page. Saves
+  run the schema check plus cross-file guards that resolve featured artists
+  and performer artists against `content/artists/` and performer members
+  against the release's owning band — mirroring `mrp/core/validate.py`.
+  Files: `mrp/admin/routes/workspace.py`,
+  `mrp/admin/templates/releases/workspace/{details,track_detail}.html`
 - ~~Post editor~~ Done 2026-07-07 (PR #65): full CRUD; new posts get
   `source.system: admin` (schema extended); migrated-WP provenance preserved
   on edit. Note: the site renders posts regardless of status — status is

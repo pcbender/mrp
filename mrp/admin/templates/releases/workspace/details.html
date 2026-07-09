@@ -137,6 +137,23 @@
     </div>
   </div>
 
+  <!-- Attribution — featured acts with their own catalog page -->
+  <div class="form-card">
+    <div class="form-body">
+      <h2 style="font-size:14px;margin-bottom:.75rem">Attribution</h2>
+      <div class="form-field full">
+        <label>Featuring
+          <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(comma-separated artist IDs — featured acts with their own catalog page; renders as &ldquo;feat. X&rdquo;. Per-track features live on each track.)</span>
+        </label>
+        <input type="text" name="featuring" list="artist-id-options"
+               value="{{ (release.featuring or []) | join(', ') }}" placeholder="stab">
+        <datalist id="artist-id-options">
+          {% for a in artists %}<option value="{{ a.id }}">{{ a.name }}</option>{% endfor %}
+        </datalist>
+      </div>
+    </div>
+  </div>
+
   <details class="form-card">
     <summary>SEO</summary>
     <div class="form-body">
