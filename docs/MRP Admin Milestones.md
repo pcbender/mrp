@@ -105,4 +105,12 @@ more expressive video options as explicit, user-triggered upgrades:
   Approve & Push commits content/assets pathspecs to main (validation gate,
   branch guard, pull --ff-only). Runtime split: admin runs from the
   `~/mrp-admin` clone pinned to main; dev tree stays free for branches
+- Git operations follow-up (make the Changes page the real push path so we
+  stop dropping to a shell): the admin only pulls at approve time and only
+  `--ff-only`, so `~/mrp-admin` can silently fall behind `origin/main` after a
+  dev-side merge, and a failed pre-pull still commits → a diverged clone whose
+  push fails and needs manual reconcile. Wanted: a "behind/ahead origin/main"
+  indicator on the Changes page (fetch on load), and a decision on
+  pull-on-load vs. surfacing divergence before Approve. Keeps the two clones,
+  one truth invariant honest without shell surgery.
 - New Release workflow loads entire site into the content section
