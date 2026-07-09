@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArtistReleaseList from "../../components/ArtistReleaseList.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import StreamingLinks from "../../components/StreamingLinks.astro";
-import { getArtistById, getArtists } from "../../lib/content.js";
+import { getArtistById, getArtists, artistMembers } from "../../lib/content.js";
 import { artistStreamingLinks, releasesForArtist } from "../../lib/catalog";
 
 export function getStaticPaths() {
@@ -13,6 +13,7 @@ export function getStaticPaths() {
 const artist = getArtistById(Astro.params.slug);
 const releases = releasesForArtist(artist.id);
 const links = artistStreamingLinks(artist);
+const members = artistMembers(artist);
 
 const sameAs = Object.values(artist.links || {}).filter(Boolean);
 const artistJsonLd = JSON.stringify({
@@ -92,6 +93,35 @@ function cleanMarkdownText(value: string) {
     </div>
     <img src={artist.image || "/assets/maricopa-mark.svg"} alt={artist.name} width="320" height="320" />
   </section>
+  {members.length > 0 && (
+    <section class="member-list">
+      <div class="section-heading">
+        <p class="eyebrow">Members</p>
+        <h2>Band members</h2>
+      </div>
+      <ul>
+        {members.map((member) => (
+          <li class="member-card">
+            <img
+              src={member.image || "/assets/maricopa-mark.svg"}
+              alt={member.name}
+              width="160"
+              height="160"
+              loading="lazy"
+            />
+            <div class="member-info">
+              <h3>{member.name}</h3>
+              {member.roles?.length > 0 && <p class="member-roles">{member.roles.join(", ")}</p>}
+              {member.bio && String(member.bio).split(/\n{2,}/).map((para) => (
+                <p class="member-bio">{para.trim()}</p>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
   <ArtistReleaseList artistName={artist.name} releases={releases} />
 </BaseLayout>
 
@@ -192,6 +222,76 @@ function cleanMarkdownText(value: string) {
     .artist-profile-card > div {
       justify-items: start;
       text-align: left;
+    }
+  }
+
+  .member-list {
+    display: grid;
+    gap: 28px;
+    width: min(100% - clamp(40px, 8vw, 112px), 980px);
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 42px) 0 clamp(42px, 7vw, 84px);
+  }
+
+  .member-list ul {
+    display: grid;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .member-card {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+  }
+
+  .member-card > img {
+    width: 96px;
+    height: 96px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    object-fit: cover;
+    background: var(--panel);
+  }
+
+  .member-info {
+    display: grid;
+    gap: 6px;
+  }
+
+  .member-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  .member-roles {
+    margin: 0;
+    color: var(--red);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .member-bio {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 560px) {
+    .member-card {
+      grid-template-columns: 1fr;
+      justify-items: start;
     }
   }
 </style>

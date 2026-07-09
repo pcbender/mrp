@@ -1,4 +1,4 @@
-# This is a relational model and is not cannoical. Do not use unless directed" 
+# This is a relational model and is not canonical. Do not use unless directed" 
 
 # MRP Identity, Artist, Release, and Credit Model
 

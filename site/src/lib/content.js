@@ -26,8 +26,24 @@ function readRecords(relativeDir, rootKey) {
     .filter(Boolean);
 }
 
+export function getAllArtists() {
+  return readRecords("content/artists", "artist");
+}
+
 export function getArtists() {
-  return readRecords("content/artists", "artist").filter((artist) => artist.visibility === "public");
+  return getAllArtists().filter((artist) => artist.visibility === "public");
+}
+
+export function artistMembers(artist) {
+  return [...(artist?.members || [])]
+    .filter((member) => member.status !== "former")
+    .sort((left, right) => (left.display_order ?? Infinity) - (right.display_order ?? Infinity));
+}
+
+export function featuredArtists(ids) {
+  if (!Array.isArray(ids) || ids.length === 0) return [];
+  const byId = new Map(getAllArtists().map((artist) => [artist.id, artist]));
+  return [...new Set(ids)].map((id) => ({ id, name: byId.get(id)?.name || id }));
 }
 
 export function getAllReleases() {

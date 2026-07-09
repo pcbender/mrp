@@ -22,6 +22,29 @@ YouTube — the enrichment commands key off these), artist records carry the
 promoter-managed profile: `promo_blurb`, `bio_short`, `bio_long`, and
 `bio_auto_generated` (true until a human reviews and saves).
 
+### Members (bands)
+
+A band artist (`type: band`) may carry an optional `members` array. Members
+are **embedded** in the band's artist record — they are not standalone files
+and have no URLs of their own. Each member:
+
+```yaml
+members:
+  - slug: raven-cortez        # required; ^[a-z0-9][a-z0-9-]*$, unique within the band
+    name: Raven Cortez        # required
+    roles: [lead guitar, vocals]  # optional
+    status: current           # optional: current | former | guest
+    display_order: 1          # optional; sort order on the artist page
+    image:                    # optional; site-relative path
+    likeness_notes:           # optional; visual-identity prompt notes for
+                              # generation consistency (promoter pipeline)
+    bio:                      # optional; blank lines separate paragraphs
+```
+
+The artist page renders `current`/`guest` members (name, roles, bio, image),
+ordered by `display_order`. A member slug is referenced from a release only
+within that member's own band (see `performers` below).
+
 ## Releases
 
 Release records live in `content/releases/{slug}.yaml`
@@ -80,6 +103,37 @@ release:
 Create a draft from the CLI (`scripts/mrp release create --artist pcbender
 --title "Signal Path" --type single`) or through the admin UI. Both refuse to
 overwrite an existing release and validate the generated draft.
+
+### Featuring and performers (attribution)
+
+Two optional structured fields sit alongside the free-string `credits` map
+(which is what pages still print for songwriter/producer/etc.):
+
+- `featuring` — an array of **artist ids** naming featured acts that have
+  their own catalog presence (e.g. a PCBender single featuring `stab`).
+  Allowed at the release level and inside `song`. The release/song page
+  renders "feat. X" linking to `/artists/{id}/`.
+- `performers` — an array inside `song` (per track) giving who played what.
+  Each entry has a required `role`, an optional `note`, and **exactly one**
+  of `member` (a member slug on the release's own `artist_id` band) or
+  `artist` (an artist id). This data feeds the promoter pipeline; it is not
+  rendered on the site yet.
+
+```yaml
+release:
+  artist_id: pcbender
+  featuring: [stab]
+  song:
+    performers:
+      - artist: stab
+        role: vocals
+      - member: raven-cortez      # only valid when artist_id is that band
+        role: guitar
+```
+
+`validate` resolves every `featuring` id and `performers[].artist` against
+`content/artists/`, every `performers[].member` against the owning band's
+`members`, and enforces unique member slugs.
 
 ## Legacy content
 

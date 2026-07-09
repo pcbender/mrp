@@ -2,7 +2,7 @@
 import Breadcrumbs from "./Breadcrumbs.astro";
 import Lyrics from "./Lyrics.astro";
 import StreamingLinks from "./StreamingLinks.astro";
-import { releaseCoverUrl } from "../lib/content.js";
+import { releaseCoverUrl, featuredArtists } from "../lib/content.js";
 import { trackStreamingLinks } from "../lib/catalog";
 import { getEntry } from "astro:content";
 
@@ -14,6 +14,7 @@ interface Props {
 
 const { release, track, artist } = Astro.props;
 const artistName = artist?.name || release.artist_id;
+const featured = featuredArtists(track.featuring || []);
 const artistHref = `/artists/${release.artist_id}/`;
 const releaseHref = `/releases/${release.slug}/`;
 const streamingLinks = trackStreamingLinks(track);
@@ -44,6 +45,11 @@ const nextTrack = trackIndex < sortedTracks.length - 1 ? sortedTracks[trackIndex
     <div class="release-copy">
       <p class="eyebrow">From {release.title}</p>
       <h2>{track.title}</h2>
+      {featured.length > 0 && (
+        <p class="feat">feat. {featured.map((f, i) => (
+          <>{i > 0 ? ", " : ""}<a href={`/artists/${f.id}/`}>{f.name}</a></>
+        ))}</p>
+      )}
       {reviewEntry && ReviewContent && (
         <div class="track-review">
           <div class="review-body"><ReviewContent /></div>
@@ -175,6 +181,20 @@ const nextTrack = trackIndex < sortedTracks.length - 1 ? sortedTracks[trackIndex
     margin: 0;
     color: var(--muted);
     font-size: 1.08rem;
+  }
+
+  .feat {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .feat a {
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .feat a:hover {
+    text-decoration: underline;
   }
 
   .sample-player {

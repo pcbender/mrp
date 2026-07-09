@@ -2,7 +2,7 @@
 import Breadcrumbs from "./Breadcrumbs.astro";
 import Lyrics from "./Lyrics.astro";
 import StreamingLinks from "./StreamingLinks.astro";
-import { releaseCoverUrl } from "../lib/content.js";
+import { releaseCoverUrl, featuredArtists } from "../lib/content.js";
 import { releaseSocialLinks, trackStreamingLinks } from "../lib/catalog";
 import { getEntry } from "astro:content";
 
@@ -14,6 +14,10 @@ interface Props {
 const { release, artist } = Astro.props;
 const artistName = artist?.name || release.artist_id;
 const artistHref = `/artists/${release.artist_id}/`;
+const featured = featuredArtists([
+  ...(release.featuring || []),
+  ...(release.song?.featuring || []),
+]);
 const copyBlocks = releaseCopyBlocks(release);
 const streamingLinks = releaseSocialLinks(release);
 const coverUrl = releaseCoverUrl(release);
@@ -69,6 +73,11 @@ function cleanMarkdownText(value: string) {
     <div class="release-copy">
       <p class="eyebrow">{release.release_type}</p>
       <h2>{release.title}</h2>
+      {featured.length > 0 && (
+        <p class="feat">feat. {featured.map((f, i) => (
+          <>{i > 0 ? ", " : ""}<a href={`/artists/${f.id}/`}>{f.name}</a></>
+        ))}</p>
+      )}
       {!reviewEntry && copyBlocks.map((block) => <p>{block}</p>)}
       {reviewEntry && ReviewContent && (
         <div class="track-review">
@@ -203,6 +212,20 @@ function cleanMarkdownText(value: string) {
     margin: 0;
     color: var(--muted);
     font-size: 1.08rem;
+  }
+
+  .feat {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .feat a {
+    color: var(--red);
+    text-decoration: none;
+  }
+
+  .feat a:hover {
+    text-decoration: underline;
   }
 
   .sample-player {
