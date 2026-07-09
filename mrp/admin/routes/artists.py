@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from html import escape as _escape
 from pathlib import Path
 from typing import Any
 
@@ -157,14 +158,25 @@ def _member_form_context(artist: dict[str, Any], member: dict[str, Any],
     }
 
 
-def _errors_response(request: Request, artist: dict[str, Any], member: dict[str, Any],
-                     is_new: bool, errors: list) -> HTMLResponse:
-    context = _member_form_context(
-        artist, member, is_new,
-        flash={"cls": "error", "text": "Not saved — the record failed validation."},
-        errors=errors,
+def _errors_response(errors: list) -> HTMLResponse:
+    """Render just the flash + error list into #save-result (not the whole page)."""
+    rows = "".join(
+        f'<div class="err-row"><span class="err-field">{_escape(str(e.get("field", "")))}</span>'
+        f'{_escape(str(e.get("message", "")))}</div>'
+        for e in errors
     )
-    return _templates.TemplateResponse(request, "artists/member_form.html", context, status_code=422)
+    return HTMLResponse(
+        '<div class="flash flash-error">Not saved — the record failed validation.</div>'
+        f'<div class="validation-errors">{rows}</div>',
+        status_code=422,
+    )
+
+
+def _member_saved_redirect(artist_id: str) -> HTMLResponse:
+    """On a successful member save, load the artist editor."""
+    response = HTMLResponse('<div class="flash flash-ok">Saved.</div>')
+    response.headers["HX-Redirect"] = f"/artists/{artist_id}"
+    return response
 
 
 @router.get("", response_class=HTMLResponse)
@@ -322,20 +334,18 @@ async def member_create(request: Request, artist_id: str):
     member = _member_from_form(dict(form))
 
     if not member["name"] or not member["slug"]:
-        return _errors_response(request, artist, member, True,
-                                [{"field": "members", "message": "Name and slug are required."}])
+        return _errors_response([{"field": "members", "message": "Name and slug are required."}])
 
     members = list(artist.get("members") or [])
     errors = _duplicate_slug_error(path, members, member["slug"])
     if errors:
-        return _errors_response(request, artist, member, True, errors)
+        return _errors_response(errors)
 
     upload = form.get("member_image_file")
     if upload is not None and getattr(upload, "filename", ""):
         image_path, err = await _store_member_image(root, artist_id, member["slug"], upload)
         if err:
-            return _errors_response(request, artist, member, True,
-                                    [{"field": "members.image", "message": err}])
+            return _errors_response([{"field": "members.image", "message": err}])
         member["image"] = image_path
 
     members.append(member)
@@ -343,12 +353,10 @@ async def member_create(request: Request, artist_id: str):
     data["artist"] = artist
     errors = validate_schema(path, data, _SCHEMA_PATH)
     if errors:
-        return _errors_response(request, artist, member, True, errors)
+        return _errors_response(errors)
 
     path.write_text(serialize_structured_record(path, data))
-    response = HTMLResponse('<div class="flash flash-ok">Member added.</div>')
-    response.headers["HX-Redirect"] = f"/artists/{artist_id}/members/{member['slug']}"
-    return response
+    return _member_saved_redirect(artist_id)
 
 
 @router.get("/{artist_id}/members/{slug}", response_class=HTMLResponse)
@@ -381,19 +389,17 @@ async def member_save(request: Request, artist_id: str, slug: str):
     form = await request.form()
     member = _member_from_form(dict(form), fallback_slug=slug)
     if not member["name"] or not member["slug"]:
-        return _errors_response(request, artist, member, False,
-                                [{"field": "members", "message": "Name and slug are required."}])
+        return _errors_response([{"field": "members", "message": "Name and slug are required."}])
 
     errors = _duplicate_slug_error(path, members, member["slug"], ignore_index=index)
     if errors:
-        return _errors_response(request, artist, member, False, errors)
+        return _errors_response(errors)
 
     upload = form.get("member_image_file")
     if upload is not None and getattr(upload, "filename", ""):
         image_path, err = await _store_member_image(root, artist_id, member["slug"], upload)
         if err:
-            return _errors_response(request, artist, member, False,
-                                    [{"field": "members.image", "message": err}])
+            return _errors_response([{"field": "members.image", "message": err}])
         member["image"] = image_path
 
     members[index] = member
@@ -401,16 +407,10 @@ async def member_save(request: Request, artist_id: str, slug: str):
     data["artist"] = artist
     errors = validate_schema(path, data, _SCHEMA_PATH)
     if errors:
-        return _errors_response(request, artist, member, False, errors)
+        return _errors_response(errors)
 
     path.write_text(serialize_structured_record(path, data))
-    if member["slug"] != slug:
-        response = HTMLResponse('<div class="flash flash-ok">Saved — slug changed.</div>')
-        response.headers["HX-Redirect"] = f"/artists/{artist_id}/members/{member['slug']}"
-        return response
-    context = _member_form_context(
-        artist, member, is_new=False, flash={"cls": "ok", "text": f"Saved {member['slug']}."})
-    return _templates.TemplateResponse(request, "artists/member_form.html", context)
+    return _member_saved_redirect(artist_id)
 
 
 @router.post("/{artist_id}/members/{slug}/delete", response_class=HTMLResponse)
