@@ -4,13 +4,24 @@ The admin routes are HTMX form handlers; these cover the pure form-parsing,
 row-summary, and duplicate-slug logic without needing a live server.
 """
 
+import asyncio
 from pathlib import Path
 
 from mrp.admin.routes.artists import (
     _duplicate_slug_error,
     _member_from_form,
     _member_rows,
+    _store_member_image,
 )
+
+
+class _FakeUpload:
+    def __init__(self, filename: str, data: bytes):
+        self.filename = filename
+        self._data = data
+
+    async def read(self) -> bytes:
+        return self._data
 
 
 def test_member_from_form_parses_roles_and_status():
@@ -82,3 +93,32 @@ def test_duplicate_slug_error_ignores_self_index():
     assert _duplicate_slug_error(Path("a.yaml"), members, "raven", ignore_index=0) == []
     # editing index 1 but renaming onto raven -> collision
     assert _duplicate_slug_error(Path("a.yaml"), members, "raven", ignore_index=1)
+
+
+def test_store_member_image_saves_and_normalizes_ext(tmp_path):
+    upload = _FakeUpload("Portrait.JPEG", b"imgbytes")
+    path, err = asyncio.run(_store_member_image(tmp_path, "4castle", "raven-cortez", upload))
+    assert err is None
+    assert path == "/assets/artists/4castle/raven-cortez.jpg"
+    dest = tmp_path / "site/public/assets/artists/4castle/raven-cortez.jpg"
+    assert dest.read_bytes() == b"imgbytes"
+
+
+def test_store_member_image_rejects_unsupported_ext(tmp_path):
+    path, err = asyncio.run(_store_member_image(tmp_path, "4castle", "x", _FakeUpload("x.txt", b"z")))
+    assert path is None
+    assert "Unsupported" in err
+
+
+def test_store_member_image_rejects_empty(tmp_path):
+    path, err = asyncio.run(_store_member_image(tmp_path, "4castle", "x", _FakeUpload("x.png", b"")))
+    assert path is None
+    assert "Empty" in err
+
+
+def test_store_member_image_replaces_other_extension(tmp_path):
+    asyncio.run(_store_member_image(tmp_path, "4castle", "x", _FakeUpload("a.png", b"1")))
+    asyncio.run(_store_member_image(tmp_path, "4castle", "x", _FakeUpload("a.webp", b"2")))
+    d = tmp_path / "site/public/assets/artists/4castle"
+    assert not (d / "x.png").exists()
+    assert (d / "x.webp").read_bytes() == b"2"
