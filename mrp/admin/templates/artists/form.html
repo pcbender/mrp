@@ -104,4 +104,54 @@
 
   <button type="submit" class="btn btn-primary">Save Artist</button>
 </form>
+
+{% if show_members %}
+<details class="form-card" open>
+  <summary>Band Members</summary>
+  <div class="form-body">
+    <div class="table-wrap">
+      <table class="track-matrix">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Member</th>
+            <th>Roles</th>
+            <th style="text-align:center">Status</th>
+            <th style="text-align:center" title="Roles">Rol</th>
+            <th style="text-align:center" title="Bio">Bio</th>
+            <th style="text-align:center" title="Image">Img</th>
+            <th style="text-align:center" title="Likeness notes">Lik</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in member_rows %}
+          <tr>
+            <td class="td-mono">{{ row.display_order if row.display_order is not none else loop.index }}</td>
+            <td class="td-title">
+              <a href="/artists/{{ artist.id }}/members/{{ row.slug }}">{{ row.name }}</a>
+            </td>
+            <td>{{ row.roles or '—' }}</td>
+            <td style="text-align:center" class="td-mono">{{ row.status }}</td>
+            <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_roles else 'off' }}"></span></td>
+            <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_bio else 'off' }}"></span></td>
+            <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_image else 'off' }}"></span></td>
+            <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_likeness else 'off' }}"></span></td>
+          </tr>
+          {% else %}
+          <tr><td colspan="8" style="text-align:center;color:var(--muted);padding:1.25rem">
+            No members yet.
+          </td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.75rem">
+      <span style="font-size:12px;color:var(--muted)">
+        Click a member to edit roles, bio, image, and likeness notes.
+      </span>
+      <a href="/artists/{{ artist.id }}/members/new" class="btn btn-secondary">+ New member</a>
+    </div>
+  </div>
+</details>
+{% endif %}
 {% endblock %}

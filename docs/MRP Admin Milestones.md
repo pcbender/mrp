@@ -40,22 +40,21 @@ published to production end-to-end through the UI.
 
 - ~~Artist editor~~ Done 2026-07-07 (PR #65): list + create + full editor
   (identity, bios, links board), schema-validated before write
-  - **Band members editor** (follow-up, opened 2026-07-09): the schema,
-    cross-file lint, and public rendering for band `members` shipped in
-    PR #73, but the admin artist form does not yet expose them — members
-    are edited as YAML directly (saving an artist preserves an existing
-    `members` block; it just can't be edited in the UI). Add a members
-    sub-editor to the artist form, modeled on the **tracks** experience
-    (`/releases/{slug}/tracks` + `/releases/{slug}/tracks/{track_slug}`):
-    a list/matrix of members with completeness dots (roles, bio, image,
-    likeness_notes) linking to a per-member detail form; add/remove/reorder
-    (`display_order`); slug + `status` (current/former/guest) controls;
-    HTMX save that validates the whole artist record (schema + unique-slug
-    lint) before writing via `serialize_structured_record`. Fields:
-    `slug`, `name`, `roles`, `status`, `display_order`, `image`,
-    `likeness_notes`, `bio`. Files: `mrp/admin/routes/artists.py`,
-    `mrp/admin/templates/artists/`. Immediate need: fill 4Castle members'
-    `likeness_notes` + `image` (still null) for the Concept Visual stage
+  - ~~**Band members editor**~~ Done 2026-07-09: the schema, cross-file
+    lint, and public rendering for band `members` shipped in PR #73; this
+    adds the admin editing surface. A **Band Members** card on the artist
+    form (shown for bands / any artist with members) lists members with
+    completeness dots (roles, bio, image, likeness_notes) linking to a
+    per-member detail editor, modeled on the tracks experience. Full CRUD:
+    add (`/artists/{id}/members/new` → `POST /members`), edit + slug-change
+    (`GET|POST /artists/{id}/members/{slug}`), delete (drops the `members`
+    key when the last one goes, honoring `minItems:1`). HTMX save validates
+    the whole artist record (schema + unique-slug guard) before writing via
+    `serialize_structured_record`. Fields: `slug`, `name`, `roles`,
+    `status`, `display_order`, `image`, `likeness_notes`, `bio`. Files:
+    `mrp/admin/routes/artists.py`, `mrp/admin/templates/artists/`.
+    Still open: fill 4Castle members' `likeness_notes` + `image` (null) for
+    the Concept Visual stage
 - ~~Post editor~~ Done 2026-07-07 (PR #65): full CRUD; new posts get
   `source.system: admin` (schema extended); migrated-WP provenance preserved
   on edit. Note: the site renders posts regardless of status — status is
