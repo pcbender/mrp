@@ -114,6 +114,77 @@
     </div>
   </details>
 
+  <details class="form-card" {% if track.performers or track.featuring %}open{% endif %}>
+    <summary>Performers &amp; Features</summary>
+    <div class="form-body">
+      <input type="hidden" name="performers_present" value="1">
+      <div class="form-field full">
+        <label>Featuring
+          <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(comma-separated artist IDs featured on this track — renders as &ldquo;feat. X&rdquo;)</span>
+        </label>
+        <input type="text" name="track_featuring" list="track-artist-options"
+               value="{{ (track.featuring or []) | join(', ') }}" placeholder="stab">
+      </div>
+
+      <label style="margin-top:.75rem;display:block">Performers
+        <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(who played what — pick <em>member</em> for a band member of this release&rsquo;s artist, or <em>artist</em> for another catalog act)</span>
+      </label>
+      <div class="table-wrap">
+        <table class="track-matrix">
+          <thead>
+            <tr><th style="width:8rem">Type</th><th>Member / Artist</th><th>Role</th><th>Note</th><th style="width:2rem"></th></tr>
+          </thead>
+          <tbody id="performers-body">
+            {% for p in track.performers or [] %}
+            <tr>
+              <td>
+                <select name="performer_kind">
+                  <option value="member" {% if p.get('member') %}selected{% endif %}>member</option>
+                  <option value="artist" {% if p.get('artist') %}selected{% endif %}>artist</option>
+                </select>
+              </td>
+              <td><input type="text" name="performer_ref" list="track-perf-options" value="{{ p.get('member') or p.get('artist') or '' }}"></td>
+              <td><input type="text" name="performer_role" value="{{ p.get('role') or '' }}" placeholder="lead vocals"></td>
+              <td><input type="text" name="performer_note" value="{{ p.get('note') or '' }}"></td>
+              <td><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()" title="Remove">&times;</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="btn btn-secondary btn-sm" style="margin-top:.5rem"
+              onclick="addPerformerRow()">+ Add performer</button>
+
+      <template id="performer-row-tpl">
+        <tr>
+          <td>
+            <select name="performer_kind">
+              <option value="member">member</option>
+              <option value="artist">artist</option>
+            </select>
+          </td>
+          <td><input type="text" name="performer_ref" list="track-perf-options"></td>
+          <td><input type="text" name="performer_role" placeholder="lead vocals"></td>
+          <td><input type="text" name="performer_note"></td>
+          <td><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()" title="Remove">&times;</button></td>
+        </tr>
+      </template>
+      <datalist id="track-artist-options">
+        {% for a in artist_options %}<option value="{{ a.id }}">{{ a.name }}</option>{% endfor %}
+      </datalist>
+      <datalist id="track-perf-options">
+        {% for m in member_options %}<option value="{{ m.slug }}">{{ m.name }} (member)</option>{% endfor %}
+        {% for a in artist_options %}<option value="{{ a.id }}">{{ a.name }} (artist)</option>{% endfor %}
+      </datalist>
+      <script>
+        function addPerformerRow() {
+          const tpl = document.getElementById('performer-row-tpl');
+          document.getElementById('performers-body').appendChild(tpl.content.cloneNode(true));
+        }
+      </script>
+    </div>
+  </details>
+
   <details class="form-card">
     <summary>Track Streaming Links</summary>
     <div class="form-body">

@@ -58,6 +58,73 @@ def _release_path(root: Path, slug: str) -> Path:
     return root / "content" / "releases" / f"{slug}.yaml"
 
 
+# --- Attribution: featuring / performers -------------------------------------
+
+def _parse_id_list(value: object) -> list[str]:
+    """Split a comma/newline-separated string into a clean id list."""
+    return [part.strip() for part in str(value or "").replace("\n", ",").split(",") if part.strip()]
+
+
+def _build_performers(kinds: list, refs: list, roles: list, notes: list) -> list[dict]:
+    """Zip the parallel performer-row arrays into performer objects.
+
+    Each row yields exactly one of member/artist (per the kind select),
+    a required role, and an optional note. Fully-blank rows are skipped.
+    """
+    performers: list[dict] = []
+    for kind, ref, role, note in zip(kinds, refs, roles, notes):
+        ref, role, note = str(ref).strip(), str(role).strip(), str(note).strip()
+        if not ref and not role:
+            continue
+        entry: dict = {("artist" if kind == "artist" else "member"): ref, "role": role}
+        if note:
+            entry["note"] = note
+        performers.append(entry)
+    return performers
+
+
+def _artist_member_slugs(root: Path, artist_id: str | None) -> set[str]:
+    """Member slugs defined on the release's owning artist record."""
+    if not artist_id:
+        return set()
+    path = artist_record_path(root, artist_id)
+    if path is None:
+        return set()
+    artist = (load_structured_record(path).get("artist") or {})
+    return {m.get("slug") for m in (artist.get("members") or []) if m.get("slug")}
+
+
+def _featuring_ref_errors(root: Path, prefix: str, ids: list[str]) -> list[dict]:
+    errors = []
+    for index, feat in enumerate(ids):
+        if artist_record_path(root, feat) is None:
+            errors.append({
+                "field": f"{prefix}.featuring.{index}", "severity": "error",
+                "message": f"featuring references missing artist: {feat}",
+            })
+    return errors
+
+
+def _performer_ref_errors(root: Path, prefix: str, performers: list[dict],
+                          member_slugs: set[str], owning_artist: str | None) -> list[dict]:
+    errors = []
+    for index, performer in enumerate(performers):
+        artist_ref = performer.get("artist")
+        if artist_ref and artist_record_path(root, artist_ref) is None:
+            errors.append({
+                "field": f"{prefix}.performers.{index}.artist", "severity": "error",
+                "message": f"performer references missing artist: {artist_ref}",
+            })
+        member_ref = performer.get("member")
+        if member_ref and member_ref not in member_slugs:
+            errors.append({
+                "field": f"{prefix}.performers.{index}.member", "severity": "error",
+                "message": f"performer references unknown member '{member_ref}' "
+                           f"for artist {owning_artist}",
+            })
+    return errors
+
+
 def _workspace_ctx(root: Path, slug: str, active_stage: str) -> dict | None:
     path = _release_path(root, slug)
     if not path.exists():
@@ -188,6 +255,13 @@ async def details_save(request: Request, slug: str):
         seo["description"] = form["seo_description"] or ""
     rel["seo"] = seo
 
+    if "featuring" in form:
+        featuring = _parse_id_list(form["featuring"])
+        if featuring:
+            rel["featuring"] = featuring
+        else:
+            rel.pop("featuring", None)
+
     automation = rel.setdefault("automation", {})
     automation["allow_auto_publish"] = bool_field(form, "allow_auto_publish")
 
@@ -207,6 +281,7 @@ async def details_save(request: Request, slug: str):
             return _artist_change_confirm(slug, old_artist, new_artist, moves)
 
     errors = validate_release_dict(data)
+    errors += _featuring_ref_errors(root, "release", rel.get("featuring") or [])
     if errors:
         return _validation_errors(request, errors)
     if old_artist and new_artist != old_artist:
@@ -670,12 +745,19 @@ async def track_detail(request: Request, slug: str, track_slug: str):
     unit = next((u for u in track_units(release) if u["slug"] == track_slug), None)
     if unit is None:
         return HTMLResponse(f"Track <b>{track_slug}</b> not found.", status_code=404)
+    from mrp.admin.routes.releases import _load_artists
+    owning_path = artist_record_path(root, release.get("artist_id"))
+    owning_artist = (load_structured_record(owning_path).get("artist") or {}) if owning_path else {}
+    member_options = [{"slug": m.get("slug"), "name": m.get("name")}
+                      for m in (owning_artist.get("members") or []) if m.get("slug")]
     ctx.update({
         "unit": unit,
         "track": unit["track"],
         "track_slug": track_slug,
         "master_fallback": effective_master_path(release, unit["index"], unit["track"]),
         "ws_ctx": _ws_job_ctx,
+        "artist_options": _load_artists(root),
+        "member_options": member_options,
     })
     return _templates.TemplateResponse(request, "releases/workspace/track_detail.html", ctx)
 
@@ -693,7 +775,8 @@ async def track_save(request: Request, slug: str, track_slug: str):
     if unit is None:
         return HTMLResponse(f"Track <b>{track_slug}</b> not found.", status_code=404)
     track = unit["track"]
-    form = dict(await request.form())
+    form_data = await request.form()
+    form = dict(form_data)
 
     for k in ["title", "slug", "isrc", "duration", "preview_audio", "master_path",
               "lyrics_text", "lyrics_raw", "lyrics_source", "style"]:
@@ -741,7 +824,31 @@ async def track_save(request: Request, slug: str, track_slug: str):
                 credits[k] = str_or_none(form[field])
         track["credits"] = credits
 
+    if "track_featuring" in form:
+        featuring = _parse_id_list(form["track_featuring"])
+        if featuring:
+            track["featuring"] = featuring
+        else:
+            track.pop("featuring", None)
+
+    # Performers arrive as parallel arrays (one entry per row); getlist keeps
+    # the repeated values that dict(form) would collapse.
+    if "performers_present" in form:
+        performers = _build_performers(
+            form_data.getlist("performer_kind"), form_data.getlist("performer_ref"),
+            form_data.getlist("performer_role"), form_data.getlist("performer_note"))
+        if performers:
+            track["performers"] = performers
+        else:
+            track.pop("performers", None)
+
+    field_prefix = ("release.song" if rel.get("model") == "song"
+                    else f"release.tracks.{unit['index']}")
     errors = validate_release_dict(data)
+    errors += _featuring_ref_errors(root, field_prefix, track.get("featuring") or [])
+    errors += _performer_ref_errors(
+        root, field_prefix, track.get("performers") or [],
+        _artist_member_slugs(root, rel.get("artist_id")), rel.get("artist_id"))
     if errors:
         return _validation_errors(request, errors)
     path.write_text(serialize_structured_record(path, data))
