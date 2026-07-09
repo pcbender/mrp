@@ -1,0 +1,87 @@
+{% extends "_base.html" %}
+{% block page_title %} — {{ artist.name }} member{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">
+    {{ artist.name }} <small class="td-mono">/ {{ 'new member' if is_new else member.slug }}</small>
+  </h1>
+  <a href="/artists/{{ artist.id }}" class="btn btn-secondary">← {{ artist.name }}</a>
+</div>
+
+<div id="save-result">
+{% if flash %}<div class="flash flash-{{ flash.cls }}">{{ flash.text }}</div>{% endif %}
+{% if errors %}
+<div class="validation-errors">
+  {% for err in errors %}
+  <div class="err-row"><span class="err-field">{{ err.field }}</span>{{ err.message }}</div>
+  {% endfor %}
+</div>
+{% endif %}
+</div>
+
+<form {% if is_new %}hx-post="/artists/{{ artist.id }}/members"{% else %}hx-post="/artists/{{ artist.id }}/members/{{ member.slug }}"{% endif %}
+      hx-target="#save-result" hx-swap="innerHTML">
+  <div class="form-card">
+    <div class="form-body">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:.75rem">
+        <button type="submit" class="btn btn-primary">{{ 'Add Member' if is_new else 'Save Member' }}</button>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Name <span class="required">*</span></label>
+          <input type="text" name="member_name" value="{{ member.name or '' }}" required>
+        </div>
+        <div class="form-field">
+          <label>Slug <span class="required">*</span></label>
+          <input type="text" name="member_slug" value="{{ member.slug or '' }}"
+                 placeholder="raven-cortez" required>
+        </div>
+        <div class="form-field">
+          <label>Status</label>
+          <select name="member_status">
+            {% for s in statuses %}
+            <option value="{{ s }}" {% if (member.status or 'current') == s %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Display Order</label>
+          <input type="number" name="member_display_order"
+                 value="{{ member.display_order if member.display_order is not none else '' }}" min="0">
+        </div>
+        <div class="form-field full">
+          <label>Roles <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(comma-separated, e.g. <code>lead guitar, vocals</code>)</span></label>
+          <input type="text" name="member_roles" value="{{ member.roles | join(', ') if member.roles else '' }}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="form-body">
+      <div class="form-field full">
+        <label>Image <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(site-relative path)</span></label>
+        <input type="text" name="member_image" value="{{ member.image or '' }}"
+               placeholder="/assets/artists/{{ artist.id }}/…">
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Likeness Notes <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(visual-identity prompt notes for generation consistency)</span></label>
+        <textarea name="member_likeness_notes" rows="4">{{ member.likeness_notes or '' }}</textarea>
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Bio <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(blank line separates paragraphs)</span></label>
+        <textarea name="member_bio" rows="12">{{ member.bio or '' }}</textarea>
+      </div>
+    </div>
+  </div>
+</form>
+
+{% if not is_new %}
+<form method="post" action="/artists/{{ artist.id }}/members/{{ member.slug }}/delete"
+      onsubmit="return confirm('Remove {{ member.name }} from {{ artist.name }}?');"
+      style="margin-top:1rem">
+  <button type="submit" class="btn btn-danger">Delete Member</button>
+</form>
+{% endif %}
+{% endblock %}

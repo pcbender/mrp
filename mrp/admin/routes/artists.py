@@ -19,6 +19,7 @@ _SCHEMA_PATH = Path(__file__).parents[2] / "schemas" / "artist.schema.json"
 
 ARTIST_TYPES = ["solo", "band", "project"]
 VISIBILITIES = ["public", "draft", "hidden", "archived"]
+MEMBER_STATUSES = ["current", "former", "guest"]
 LINK_KEYS = [
     "spotify", "apple_music", "youtube", "youtube_music", "bandcamp",
     "soundcloud", "instagram", "facebook", "tiktok", "website",
@@ -55,9 +56,89 @@ def _form_context(artist: dict[str, Any], flash: dict[str, str] | None = None,
         "types": ARTIST_TYPES,
         "visibilities": VISIBILITIES,
         "link_keys": link_keys,
+        "member_rows": _member_rows(artist.get("members")),
+        "show_members": artist.get("type") == "band" or bool(artist.get("members")),
         "flash": flash,
         "errors": errors or [],
     }
+
+
+def _member_sort_key(member: dict[str, Any]) -> tuple[int, str]:
+    order = member.get("display_order")
+    return (order if isinstance(order, int) else 9999, str(member.get("name") or ""))
+
+
+def _member_rows(members: list | None) -> list[dict[str, Any]]:
+    rows = []
+    for member in sorted(members or [], key=_member_sort_key):
+        rows.append({
+            "slug": member.get("slug"),
+            "name": member.get("name"),
+            "roles": ", ".join(member.get("roles") or []),
+            "status": member.get("status") or "current",
+            "display_order": member.get("display_order"),
+            "has_roles": bool(member.get("roles")),
+            "has_bio": bool(member.get("bio")),
+            "has_image": bool(member.get("image")),
+            "has_likeness": bool(member.get("likeness_notes")),
+        })
+    return rows
+
+
+def _find_member(artist: dict[str, Any], slug: str) -> dict[str, Any] | None:
+    for member in artist.get("members") or []:
+        if member.get("slug") == slug:
+            return member
+    return None
+
+
+def _member_from_form(form: dict[str, Any], fallback_slug: str = "") -> dict[str, Any]:
+    def clean(key: str) -> str | None:
+        value = str(form.get(key) or "").strip()
+        return value or None
+
+    name = clean("member_name")
+    slug = slugify(str(form.get("member_slug") or "").strip() or (name or fallback_slug))
+    roles = [r.strip() for r in str(form.get("member_roles") or "").split(",") if r.strip()]
+    status = str(form.get("member_status") or "").strip() or None
+    order_raw = str(form.get("member_display_order") or "").strip()
+    try:
+        display_order = int(order_raw) if order_raw else None
+    except ValueError:
+        display_order = None
+    return {
+        "slug": slug,
+        "name": name,
+        "roles": roles,
+        "status": status if status in MEMBER_STATUSES else None,
+        "display_order": display_order,
+        "image": clean("member_image"),
+        "likeness_notes": clean("member_likeness_notes"),
+        "bio": clean("member_bio"),
+    }
+
+
+def _member_form_context(artist: dict[str, Any], member: dict[str, Any],
+                         is_new: bool, flash: dict[str, str] | None = None,
+                         errors: list | None = None) -> dict[str, Any]:
+    return {
+        "artist": artist,
+        "member": member,
+        "is_new": is_new,
+        "statuses": MEMBER_STATUSES,
+        "flash": flash,
+        "errors": errors or [],
+    }
+
+
+def _errors_response(request: Request, artist: dict[str, Any], member: dict[str, Any],
+                     is_new: bool, errors: list) -> HTMLResponse:
+    context = _member_form_context(
+        artist, member, is_new,
+        flash={"cls": "error", "text": "Not saved — the record failed validation."},
+        errors=errors,
+    )
+    return _templates.TemplateResponse(request, "artists/member_form.html", context, status_code=422)
 
 
 @router.get("", response_class=HTMLResponse)
@@ -170,3 +251,137 @@ async def artist_save(request: Request, artist_id: str):
     path.write_text(serialize_structured_record(path, data))
     context = _form_context(artist, flash={"cls": "ok", "text": f"Saved {artist_id}."})
     return _templates.TemplateResponse(request, "artists/form.html", context)
+
+
+# --- Band members ------------------------------------------------------------
+
+def _duplicate_slug_error(path: Path, members: list, slug: str,
+                          ignore_index: int | None = None) -> list:
+    for index, member in enumerate(members):
+        if index == ignore_index:
+            continue
+        if member.get("slug") == slug:
+            return [{
+                "field": "members.slug",
+                "message": f"Another member already uses the slug '{slug}'.",
+                "file_path": str(path),
+                "severity": "error",
+            }]
+    return []
+
+
+@router.get("/{artist_id}/members/new", response_class=HTMLResponse)
+async def member_new(request: Request, artist_id: str):
+    root = get_repo_root()
+    path = _artist_path(root, artist_id)
+    if not path.exists():
+        return HTMLResponse(f"Artist <b>{artist_id}</b> not found.", status_code=404)
+    artist = load_structured_record(path).get("artist") or {}
+    blank = {"slug": "", "name": "", "roles": [], "status": "current",
+             "display_order": len(artist.get("members") or []) + 1,
+             "image": None, "likeness_notes": None, "bio": None}
+    return _templates.TemplateResponse(
+        request, "artists/member_form.html", _member_form_context(artist, blank, is_new=True))
+
+
+@router.post("/{artist_id}/members", response_class=HTMLResponse)
+async def member_create(request: Request, artist_id: str):
+    root = get_repo_root()
+    path = _artist_path(root, artist_id)
+    if not path.exists():
+        return HTMLResponse(f"Artist <b>{artist_id}</b> not found.", status_code=404)
+    data = load_structured_record(path)
+    artist = data.get("artist") or {}
+    member = _member_from_form(dict(await request.form()))
+
+    if not member["name"] or not member["slug"]:
+        return _errors_response(request, artist, member, True,
+                                [{"field": "members", "message": "Name and slug are required."}])
+
+    members = list(artist.get("members") or [])
+    errors = _duplicate_slug_error(path, members, member["slug"])
+    if errors:
+        return _errors_response(request, artist, member, True, errors)
+
+    members.append(member)
+    artist["members"] = members
+    data["artist"] = artist
+    errors = validate_schema(path, data, _SCHEMA_PATH)
+    if errors:
+        return _errors_response(request, artist, member, True, errors)
+
+    path.write_text(serialize_structured_record(path, data))
+    response = HTMLResponse('<div class="flash flash-ok">Member added.</div>')
+    response.headers["HX-Redirect"] = f"/artists/{artist_id}/members/{member['slug']}"
+    return response
+
+
+@router.get("/{artist_id}/members/{slug}", response_class=HTMLResponse)
+async def member_detail(request: Request, artist_id: str, slug: str):
+    root = get_repo_root()
+    path = _artist_path(root, artist_id)
+    if not path.exists():
+        return HTMLResponse(f"Artist <b>{artist_id}</b> not found.", status_code=404)
+    artist = load_structured_record(path).get("artist") or {}
+    member = _find_member(artist, slug)
+    if member is None:
+        return HTMLResponse(f"Member <b>{slug}</b> not found.", status_code=404)
+    return _templates.TemplateResponse(
+        request, "artists/member_form.html", _member_form_context(artist, member, is_new=False))
+
+
+@router.post("/{artist_id}/members/{slug}", response_class=HTMLResponse)
+async def member_save(request: Request, artist_id: str, slug: str):
+    root = get_repo_root()
+    path = _artist_path(root, artist_id)
+    if not path.exists():
+        return HTMLResponse(f"Artist <b>{artist_id}</b> not found.", status_code=404)
+    data = load_structured_record(path)
+    artist = data.get("artist") or {}
+    members = list(artist.get("members") or [])
+    index = next((i for i, m in enumerate(members) if m.get("slug") == slug), None)
+    if index is None:
+        return HTMLResponse(f"Member <b>{slug}</b> not found.", status_code=404)
+
+    member = _member_from_form(dict(await request.form()), fallback_slug=slug)
+    if not member["name"] or not member["slug"]:
+        return _errors_response(request, artist, member, False,
+                                [{"field": "members", "message": "Name and slug are required."}])
+
+    errors = _duplicate_slug_error(path, members, member["slug"], ignore_index=index)
+    if errors:
+        return _errors_response(request, artist, member, False, errors)
+
+    members[index] = member
+    artist["members"] = members
+    data["artist"] = artist
+    errors = validate_schema(path, data, _SCHEMA_PATH)
+    if errors:
+        return _errors_response(request, artist, member, False, errors)
+
+    path.write_text(serialize_structured_record(path, data))
+    if member["slug"] != slug:
+        response = HTMLResponse('<div class="flash flash-ok">Saved — slug changed.</div>')
+        response.headers["HX-Redirect"] = f"/artists/{artist_id}/members/{member['slug']}"
+        return response
+    context = _member_form_context(
+        artist, member, is_new=False, flash={"cls": "ok", "text": f"Saved {member['slug']}."})
+    return _templates.TemplateResponse(request, "artists/member_form.html", context)
+
+
+@router.post("/{artist_id}/members/{slug}/delete", response_class=HTMLResponse)
+async def member_delete(request: Request, artist_id: str, slug: str):
+    root = get_repo_root()
+    path = _artist_path(root, artist_id)
+    if not path.exists():
+        return HTMLResponse(f"Artist <b>{artist_id}</b> not found.", status_code=404)
+    data = load_structured_record(path)
+    artist = data.get("artist") or {}
+    members = [m for m in (artist.get("members") or []) if m.get("slug") != slug]
+    if members:
+        artist["members"] = members
+    else:
+        artist.pop("members", None)  # members has minItems:1 — drop the key when empty
+    data["artist"] = artist
+    path.write_text(serialize_structured_record(path, data))
+    return RedirectResponse(url=f"/artists/{artist_id}", status_code=303)
