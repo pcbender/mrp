@@ -71,6 +71,7 @@ def _load_all_tracks(root: Path) -> list[dict[str, Any]]:
                 "artist_name": names.get(artist_id, artist_id),
                 "track_slug": slug,
                 "title": song.get("title", slug),
+                "isrc": song.get("isrc") or "",
                 "number": song.get("number"),
                 "duration": song.get("duration") or "",
                 "explicit": bool(song.get("explicit")),
@@ -82,6 +83,46 @@ def _load_all_tracks(root: Path) -> list[dict[str, Any]]:
               reverse=False)
     rows.sort(key=lambda r: r["release_date"] or "0000", reverse=True)
     return rows
+
+
+# Sortable columns → the row field they sort on. '#' (number) is deliberately
+# excluded per the catalog spec; the blank actions column is not sortable.
+_SORT_FIELDS = {
+    "title": "title",
+    "isrc": "isrc",
+    "artist": "artist_name",
+    "release": "release_title",
+    "duration": "duration",
+}
+
+
+def _duration_seconds(value: str) -> int:
+    """Parse 'm:ss' / 'h:mm:ss' into seconds for numeric duration sorting.
+
+    Blank or unparseable durations sort first in ascending order.
+    """
+    if not value:
+        return -1
+    seconds = 0
+    for part in str(value).split(":"):
+        try:
+            seconds = seconds * 60 + int(part)
+        except ValueError:
+            return -1
+    return seconds
+
+
+def _sort_tracks(rows: list[dict], sort: str, direction: str) -> list[dict]:
+    """Sort by a clicked column. Unknown/empty `sort` keeps the default order."""
+    if sort not in _SORT_FIELDS:
+        return rows
+    reverse = direction == "desc"
+    if sort == "duration":
+        return sorted(rows, key=lambda r: _duration_seconds(r["duration"]), reverse=reverse)
+    field = _SORT_FIELDS[sort]
+    # Empty strings sort last in ascending order regardless of direction.
+    return sorted(rows, key=lambda r: (not r.get(field), str(r.get(field) or "").lower()),
+                  reverse=reverse)
 
 
 def _filter_tracks(rows: list[dict], q: str, artist_f: str) -> list[dict]:
@@ -100,10 +141,17 @@ def _filter_tracks(rows: list[dict], q: str, artist_f: str) -> list[dict]:
 
 
 @router.get("/catalog", response_class=HTMLResponse)
-async def catalog_list(request: Request, q: str = "", artist_filter: str = ""):
+async def catalog_list(
+    request: Request,
+    q: str = "",
+    artist_filter: str = "",
+    sort: str = "",
+    dir: str = "asc",
+):
     root = get_repo_root()
     rows = _load_all_tracks(root)
     filtered = _filter_tracks(rows, q, artist_filter)
+    filtered = _sort_tracks(filtered, sort, dir)
     # Artist options: only artists that actually own tracks, sorted by name.
     seen = {(r["artist_id"], r["artist_name"]) for r in rows}
     artists = sorted(({"id": aid, "name": name} for aid, name in seen),
@@ -113,6 +161,8 @@ async def catalog_list(request: Request, q: str = "", artist_filter: str = ""):
         "total": len(rows),
         "q": q,
         "artist_filter": artist_filter,
+        "sort": sort if sort in _SORT_FIELDS else "",
+        "dir": "desc" if dir == "desc" else "asc",
         "artists": artists,
     }
     if _is_htmx(request):
