@@ -192,7 +192,12 @@ async def release_import(
         slug = _do_spotify_import(root, album_id, per_track)
     except Exception as exc:
         return HTMLResponse(f'<div class="flash flash-error">{exc}</div>', status_code=400)
-    return RedirectResponse(url=f"/releases/{slug}/details", status_code=303)
+    # This form is submitted via hx-post into #step2, so a 303 would be
+    # followed by htmx and the target page (nav included) swapped into the
+    # panel. Use HX-Redirect for a real browser navigation to the workspace.
+    response = HTMLResponse('<div class="flash flash-ok">Release created.</div>')
+    response.headers["HX-Redirect"] = f"/releases/{slug}/details"
+    return response
 
 
 @router.get("/releases/{slug}/edit", response_class=HTMLResponse)

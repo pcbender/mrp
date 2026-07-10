@@ -138,4 +138,9 @@ more expressive video options as explicit, user-triggered upgrades:
   indicator on the Changes page (fetch on load), and a decision on
   pull-on-load vs. surfacing divergence before Approve. Keeps the two clones,
   one truth invariant honest without shell surgery.
-- New Release workflow loads entire site into the content section
+- ~~New Release workflow loads entire site into the content section~~ Fixed
+  2026-07-10: the Spotify import step-2 form ("Create Release") posts via
+  htmx into `#step2`, so its `303` redirect was followed by htmx and the full
+  workspace page (nav included) was swapped into the panel. Now returns an
+  `HX-Redirect` header for a real browser navigation to
+  `/releases/{slug}/details` (same pattern as the member-save fix, PR #77).
