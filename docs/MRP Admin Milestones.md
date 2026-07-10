@@ -38,6 +38,14 @@ published to production end-to-end through the UI.
 
 ## MRP Admin v0.3
 
+- ~~Catalog page~~ Done 2026-07-10: a **Catalog** nav item (`/catalog`) that
+  flattens every track across all releases into one searchable list (title,
+  artist, release, #, duration; explicit/instrumental flags). Free-text
+  search over track/artist/release plus an artist filter, mirroring the
+  Releases-list HTMX pattern; each row links to the per-track workspace
+  editor (`/releases/{slug}/tracks/{track_slug}`). Read-only list — no track
+  writes. Files: `mrp/admin/routes/catalog.py`,
+  `mrp/admin/templates/catalog/`, `tests/test_admin_catalog.py`
 - ~~Artist editor~~ Done 2026-07-07 (PR #65): list + create + full editor
   (identity, bios, links board), schema-validated before write
   - ~~**Band members editor**~~ Done 2026-07-09: the schema, cross-file

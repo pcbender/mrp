@@ -1,0 +1,16 @@
+{% for t in tracks %}
+<tr>
+  <td class="td-title">
+    <a href="/releases/{{ t.release_slug }}/tracks/{{ t.track_slug }}">{{ t.title }}</a>
+    {% if t.explicit %}<span class="badge" title="Explicit">E</span>{% endif %}
+    {% if t.instrumental %}<span class="badge" title="Instrumental">Instr.</span>{% endif %}
+  </td>
+  <td class="td-mono">{{ t.artist_name }}</td>
+  <td><a href="/releases/{{ t.release_slug }}/details">{{ t.release_title }}</a></td>
+  <td class="td-mono">{{ t.number if t.number is not none else '—' }}</td>
+  <td class="td-mono">{{ t.duration or '—' }}</td>
+  <td><a href="/releases/{{ t.release_slug }}/tracks/{{ t.track_slug }}" class="btn btn-secondary btn-sm">Edit</a></td>
+</tr>
+{% else %}
+<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:2rem">No tracks match the current filter.</td></tr>
+{% endfor %}
