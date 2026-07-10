@@ -1,0 +1,388 @@
+release:
+  id: you-don-t-say
+  slug: you-don-t-say
+  title: You Don't Say
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2026-07-08'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048366114'
+  catalog_number: null
+  cover_image: site/public/assets/releases/you-don-t-say/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/3ipLG4iGgpqAxmFkNgoBYO
+    apple_music: https://music.apple.com/us/album/you-dont-say-single/6789217212
+  song:
+    number: 1
+    title: You Don't Say
+    slug: you-don-t-say
+    isrc: CAENV2695002
+    duration: '6:41'
+    explicit: false
+    instrumental: false
+    preview_audio: null
+    links:
+      spotify: https://open.spotify.com/track/1vV0uKH32lGWTzFwLYzTx6
+    style: Rock, Progressive Rock with Art Rock influences, 88 BPM. Begins with clean
+      fingerpicked electric guitar, fretless bass, piano, and restrained drums before
+      expanding into Mellotron, Hammond organ, shifting time signatures (7/8, 4/4,
+      5/4), and soaring lead guitar. Warm analog production with wide stereo imaging.
+      Expressive baritone lead vocal that grows from conversational restraint into
+      powerful emotional release. Dynamic arrangements with quiet-loud contrasts,
+      extended instrumental passages, layered harmonies, contrapuntal guitar and keyboard
+      interplay, dramatic bridge, climactic guitar solo, and a final unresolved cadence
+      that leaves the last phrase hanging.
+    lyrics_raw: '[Intro | restrained vocal | sparse piano]
+
+      "You don''t say..."
+
+      Everybody laughs—
+
+      same old phrase,
+
+      same old shrug.
+
+
+      One more conversation
+
+      that never starts.
+
+
+      [Verse 1 | clean guitar | reflective]
+
+      You don''t say "I''m sorry"
+
+      when the room gives you the chance.
+
+      You don''t say "I''m frightened"
+
+      though it''s written in your hands.
+
+      You answer every question
+
+      except the one that''s true.
+
+      The longest trip between us
+
+      is four words overdue.
+
+
+      [Pre-Chorus | rising tension | bass enters]
+
+      You fill the air with weather,
+
+      traffic, work, the news...
+
+      Anything that keeps
+
+      the silence safe for you.
+
+
+      [Chorus | full band | layered harmonies]
+
+      You don''t say...
+
+      Please stay.
+
+      You don''t say...
+
+      I need you.
+
+      The loudest words
+
+      are sometimes the ones
+
+      you never say.
+
+
+      [Instrumental | odd-meter development | guitar and Hammond]
+
+
+      [Verse 2 | fuller arrangement]
+
+      We counted years by birthdays,
+
+      by rent receipts and keys.
+
+      Never by the sentences
+
+      that died before release.
+
+      Every missing answer
+
+      left another open door.
+
+      Nobody slammed it shut...
+
+      we just stopped walking through.
+
+
+      [Build | syncopation | growing intensity]
+
+      What disappears first?
+
+      The touch—
+
+      or the language?
+
+      What breaks first?
+
+      The promise—
+
+      or the habit?
+
+
+      [Chorus | bigger drums | stacked harmonies]
+
+      You don''t say...
+
+      I''m sorry.
+
+      You don''t say...
+
+      Don''t go.
+
+      The loudest words
+
+      are sometimes the ones
+
+      you never know
+
+      until they''re gone.
+
+
+      [Bridge | spoken word over pedal-point]
+
+      Funny thing...
+
+      People think silence
+
+      means peace.
+
+      Sometimes it''s surrender.
+
+      Sometimes it''s fear.
+
+      Sometimes it''s love...
+
+      that never learned
+
+      how to pronounce itself.
+
+
+      [Guitar Solo | expressive melodic lead | modulation]
+
+
+      [Final Chorus | climactic | layered arrangement | gang vocals on final refrain]
+
+      You don''t say...
+
+      Please stay.
+
+      You don''t say...
+
+      I love you.
+
+      Every goodbye
+
+      began as something
+
+      left unsaid.
+
+
+      You don''t say...
+
+      No...
+
+      You don''t.
+
+
+      [Outro | stripped back | piano and clean guitar]
+
+      The last word
+
+      never spoken
+
+      still echoes
+
+      after
+
+      everything else
+
+      has gone quiet.
+
+
+      "You don''t say..."'
+    lyrics_text: '"You don''t say..."
+
+      Everybody laughs—
+
+      same old phrase
+
+      same old shrug
+
+      One more conversation
+
+      that never starts
+
+
+      You don''t say "I''m sorry"
+
+      when the room gives you the chance
+
+      You don''t say "I''m frightened"
+
+      though it''s written in your hands
+
+      You answer every question
+
+      except the one that''s true
+
+      The longest trip between us
+
+      is four words overdue
+
+
+      You fill the air with weather
+
+      traffic, work, the news
+
+      Anything that keeps
+
+      the silence safe for you
+
+
+      You don''t say
+
+      Please stay
+
+      You don''t say
+
+      I need you
+
+      The loudest words
+
+      are sometimes the ones
+
+      you never say
+
+
+      We counted years by birthdays
+
+      by rent receipts and keys
+
+      Never by the sentences
+
+      that died before release
+
+      Every missing answer
+
+      left another open door
+
+      Nobody slammed it shut
+
+      we just stopped walking through
+
+
+      What disappears first
+
+      The touch—
+
+      or the language
+
+      What breaks first
+
+      The promise—
+
+      or the habit
+
+
+      You don''t say
+
+      I''m sorry
+
+      You don''t say
+
+      Don''t go
+
+      The loudest words
+
+      are sometimes the ones
+
+      you never know
+
+      until they''re gone
+
+
+      Funny thing
+
+      People think silence
+
+      means peace
+
+      Sometimes it''s surrender
+
+      Sometimes it''s fear
+
+      Sometimes it''s love
+
+      that never learned
+
+      how to pronounce itself
+
+
+      You don''t say
+
+      Please stay
+
+      You don''t say
+
+      I love you
+
+      Every goodbye
+
+      began as something
+
+      left unsaid
+
+      You don''t say
+
+      No
+
+      You don''t
+
+
+      The last word
+
+      never spoken
+
+      still echoes
+
+      after
+
+      everything else
+
+      has gone quiet
+
+      "You don''t say..."'
+    lyrics_source: null
+    hints: {}
+  distributor: landr
+  seo:
+    title: You Don't Say
+    description: You Don't Say on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/You Don't Say.wav
+  hero_image: site/public/assets/releases/you-don-t-say/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null
