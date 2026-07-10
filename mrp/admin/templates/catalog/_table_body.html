@@ -1,16 +1,49 @@
-{% for t in tracks %}
-<tr>
-  <td class="td-title">
-    <a href="/releases/{{ t.release_slug }}/tracks/{{ t.track_slug }}">{{ t.title }}</a>
-    {% if t.explicit %}<span class="badge" title="Explicit">E</span>{% endif %}
-    {% if t.instrumental %}<span class="badge" title="Instrumental">Instr.</span>{% endif %}
-  </td>
-  <td class="td-mono">{{ t.artist_name }}</td>
-  <td><a href="/releases/{{ t.release_slug }}/details">{{ t.release_title }}</a></td>
-  <td class="td-mono">{{ t.number if t.number is not none else '—' }}</td>
-  <td class="td-mono">{{ t.duration or '—' }}</td>
-  <td><a href="/releases/{{ t.release_slug }}/tracks/{{ t.track_slug }}" class="btn btn-secondary btn-sm">Edit</a></td>
-</tr>
-{% else %}
-<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:2rem">No tracks match the current filter.</td></tr>
-{% endfor %}
+{# Current sort state travels with the filter controls so search/artist
+   changes preserve the active column ordering. #}
+<input type="hidden" name="sort" value="{{ sort }}">
+<input type="hidden" name="dir" value="{{ dir }}">
+
+{% macro sort_th(key, label) %}
+  {% set next_dir = 'desc' if (sort == key and dir == 'asc') else 'asc' %}
+  <th class="sortable"
+      style="cursor:pointer;user-select:none;white-space:nowrap"
+      hx-get="/catalog?sort={{ key }}&dir={{ next_dir }}"
+      hx-target="#catalog-table"
+      hx-swap="innerHTML"
+      hx-include="[name='q'],[name='artist_filter']">
+    {{ label }}{% if sort == key %} <span aria-hidden="true">{{ '▲' if dir == 'asc' else '▼' }}</span>{% endif %}
+  </th>
+{% endmacro %}
+
+<table id="catalog-table-el">
+  <thead>
+    <tr>
+      {{ sort_th('title', 'Track') }}
+      {{ sort_th('isrc', 'ISRC') }}
+      {{ sort_th('artist', 'Artist') }}
+      {{ sort_th('release', 'Release') }}
+      <th>#</th>
+      {{ sort_th('duration', 'Duration') }}
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for t in tracks %}
+    <tr>
+      <td class="td-title">
+        <a href="/releases/{{ t.release_slug }}/tracks/{{ t.track_slug }}">{{ t.title }}</a>
+        {% if t.explicit %}<span class="badge" title="Explicit">E</span>{% endif %}
+        {% if t.instrumental %}<span class="badge" title="Instrumental">Instr.</span>{% endif %}
+      </td>
+      <td class="td-mono">{{ t.isrc or '—' }}</td>
+      <td class="td-mono">{{ t.artist_name }}</td>
+      <td><a href="/releases/{{ t.release_slug }}/details">{{ t.release_title }}</a></td>
+      <td class="td-mono">{{ t.number if t.number is not none else '—' }}</td>
+      <td class="td-mono">{{ t.duration or '—' }}</td>
+      <td><a href="/releases/{{ t.release_slug }}/tracks/{{ t.track_slug }}" class="btn btn-secondary btn-sm">Edit</a></td>
+    </tr>
+    {% else %}
+    <tr><td colspan="7" style="text-align:center;color:var(--muted);padding:2rem">No tracks match the current filter.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
