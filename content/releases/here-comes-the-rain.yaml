@@ -6,7 +6,7 @@ release:
   model: song
   release_type: single
   status: live
-  release_date: '2025-03-29'
+  release_date: '2025-03-21'
   label: Maricopa Records
   publisher: Maricopa Publishing
   distributor: landr
@@ -63,7 +63,7 @@ release:
     number: 1
     title: Here Comes the Rain
     slug: here-comes-the-rain
-    isrc: CACWV2595550
+    isrc: CACWV2595555
     duration: '3:22'
     explicit: false
     instrumental: false
