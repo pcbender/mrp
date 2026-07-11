@@ -75,6 +75,18 @@
       </td></tr>
       {% endfor %}
     </tbody>
+    {% if artists %}
+    <tfoot>
+      <tr style="border-top:2px solid var(--border);font-weight:700">
+        <td class="td-title">Grand total</td>
+        <td>{{ "{:,}".format(artists | sum(attribute='landr')) }}</td>
+        <td>{{ "{:,}".format(artists | sum(attribute='amuse')) }}</td>
+        <td>{{ "{:,}".format(artists | sum(attribute='total')) }}</td>
+        <td>{{ "%.2f"|format(artists | sum(attribute='net')) }}</td>
+        <td></td>
+      </tr>
+    </tfoot>
+    {% endif %}
   </table>
 </div>
 
