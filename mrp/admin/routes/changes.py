@@ -6,7 +6,7 @@ from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-from mrp.admin import gitops
+from mrp.admin import changes_meta, gitops
 from mrp.admin.deps import get_repo_root
 from mrp.core.validate import validate_repository
 
@@ -20,6 +20,7 @@ def _panel_context(root: Path, flash: dict[str, str] | None = None,
                    validation_errors: list[dict[str, str]] | None = None) -> dict:
     branch = gitops.current_branch(root)
     changes = gitops.data_changes(root)
+    changes_meta.annotate_changes(root, changes)
     for change in changes:
         try:
             change["diff"] = gitops.file_diff(root, change["path"], change["untracked"])
@@ -30,6 +31,8 @@ def _panel_context(root: Path, flash: dict[str, str] | None = None,
         "on_main": branch == gitops.COMMIT_BRANCH,
         "commit_branch": gitops.COMMIT_BRANCH,
         "changes": changes,
+        "eligibility": changes_meta.eligibility_summary(changes),
+        "generated_message": changes_meta.generate_commit_message(changes),
         "flash": flash,
         "validation_errors": validation_errors or [],
     }
@@ -40,6 +43,19 @@ async def changes_page(request: Request):
     root = get_repo_root()
     context = _panel_context(root)
     return _templates.TemplateResponse(request, "changes.html", context)
+
+
+@router.get("/badge", response_class=HTMLResponse)
+async def changes_badge(request: Request):
+    """Nav indicator: managed-change count, or empty when the tree is clean."""
+    root = get_repo_root()
+    try:
+        count = len(gitops.data_changes(root))
+    except gitops.GitError:
+        count = 0
+    if not count:
+        return HTMLResponse("")
+    return HTMLResponse(f'<span class="nav-badge">{count}</span>')
 
 
 @router.post("/approve", response_class=HTMLResponse)
