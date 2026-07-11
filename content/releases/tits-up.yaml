@@ -84,7 +84,7 @@ release:
     slug: tits-up
     isrc: CAHQJ2571580
     duration: '3:02'
-    explicit: false
+    explicit: true
     instrumental: false
     preview_audio: /samples/pcbender--tits-up.mp3
     lyrics_text: '"Ass hole crashed, tits up"
@@ -172,3 +172,22 @@ release:
     lyrics_source: https://docs.google.com/document/d/1-8qgfzRQPPn5HGN_WJzZv3u4YuUnrzuiEsxipJsUpz4/edit
     links:
       spotify: https://open.spotify.com/track/3BMylaTLYwcsy1Ol8zgBaS
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    master_path: null
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
