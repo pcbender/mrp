@@ -60,11 +60,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Gemini Rising
     slug: gemini-rising
     isrc: CAENV2500867
-    duration: null
+    duration: '3:40'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--gemini-rising.mp3
@@ -156,3 +156,5 @@ release:
 
       A wave, a splash-moving on'
     lyrics_source: https://docs.google.com/document/d/1CctjdpiY2fxHc_8dc7CFgjKlyTriUV1yj4q8SKHujN4/edit
+    links:
+      spotify: https://open.spotify.com/track/2swREYOtgQbE42W54Vg0XP

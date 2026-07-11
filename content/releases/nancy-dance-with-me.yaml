@@ -77,11 +77,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Nancy (Dance With Me)
     slug: nancy-dance-with-me
     isrc: CAHQJ2571604
-    duration: null
+    duration: '3:15'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--nancy-dance-with-me.mp3
@@ -163,3 +163,5 @@ release:
 
       Come on, Nancy, dance with me'
     lyrics_source: https://docs.google.com/document/d/1ZBc8h8SRGGkF3NRZESDYwl5tWPScV5m_zdARsadPGTE/edit
+    links:
+      spotify: https://open.spotify.com/track/1ISLbqopL6d0HfXbMC56Fe

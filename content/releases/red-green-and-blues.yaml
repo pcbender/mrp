@@ -202,7 +202,7 @@ release:
     title: Cyclamen
     slug: cyclamen
     isrc: CACWV2534820
-    duration: null
+    duration: '2:43'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--cyclamen.mp3
@@ -217,7 +217,7 @@ release:
     title: Tumbleweed
     slug: tumbleweed
     isrc: CACWV2534821
-    duration: null
+    duration: '3:48'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--tumbleweed.mp3
@@ -234,7 +234,7 @@ release:
     title: Rufous
     slug: rufous
     isrc: CACWV2534822
-    duration: null
+    duration: '3:40'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--rufous.mp3
@@ -251,7 +251,7 @@ release:
     title: Olivine
     slug: olivine
     isrc: CACWV2534823
-    duration: null
+    duration: '3:59'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--olivine.mp3
@@ -268,7 +268,7 @@ release:
     title: Verdigris
     slug: verdigris
     isrc: CACWV2534824
-    duration: null
+    duration: '3:47'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--verdigris.mp3
@@ -285,7 +285,7 @@ release:
     title: Wenge
     slug: wenge
     isrc: CACWV2534825
-    duration: null
+    duration: '3:34'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--wenge.mp3
@@ -302,7 +302,7 @@ release:
     title: Pistachio
     slug: pistachio
     isrc: CACWV2534826
-    duration: null
+    duration: '3:33'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--pistachio.mp3
@@ -319,7 +319,7 @@ release:
     title: Sunray
     slug: sunray
     isrc: CACWV2534827
-    duration: null
+    duration: '3:22'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--sunray.mp3
@@ -334,7 +334,7 @@ release:
     title: Zaffre
     slug: zaffre
     isrc: CACWV2534828
-    duration: null
+    duration: '3:03'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--zaffre.mp3
@@ -351,7 +351,7 @@ release:
     title: Nyanza
     slug: nyanza
     isrc: CACWV2534829
-    duration: null
+    duration: '3:35'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--nyanza.mp3
@@ -368,7 +368,7 @@ release:
     title: Limerick
     slug: limerick
     isrc: CACWV2534830
-    duration: null
+    duration: '2:40'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--limerick.mp3
@@ -385,7 +385,7 @@ release:
     title: Thulian
     slug: thulian
     isrc: CACWV2534831
-    duration: null
+    duration: '2:48'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--thulian.mp3
@@ -402,7 +402,7 @@ release:
     title: Jonquil
     slug: jonquil
     isrc: CACWV2534832
-    duration: null
+    duration: '2:37'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--jonquil.mp3
@@ -419,7 +419,7 @@ release:
     title: Aureolin
     slug: aureolin
     isrc: CACWV2534833
-    duration: null
+    duration: '3:30'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--aureolin.mp3
@@ -434,7 +434,7 @@ release:
     title: Moonstone
     slug: moonstone
     isrc: CACWV2534834
-    duration: null
+    duration: '2:55'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--moonstone.mp3

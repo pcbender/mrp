@@ -61,11 +61,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Still My Days Before
     slug: still-my-days-before
     isrc: CAENV2514552
-    duration: null
+    duration: '3:40'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--still-my-days-before.mp3
@@ -126,3 +126,5 @@ release:
 
       And years behind the shuttered door…'
     lyrics_source: https://docs.google.com/document/d/1og-g1c8CUV8YDNbLvvOULA2FMsJStmlpcZ9OXNvCHxU/edit
+    links:
+      spotify: https://open.spotify.com/track/1jwUWObthVHQh9xcf0k6SN

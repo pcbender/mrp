@@ -79,11 +79,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Tits Up
     slug: tits-up
     isrc: CAHQJ2571580
-    duration: null
+    duration: '3:02'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--tits-up.mp3
@@ -170,3 +170,5 @@ release:
 
       Imagine me tits down on your best friend'
     lyrics_source: https://docs.google.com/document/d/1-8qgfzRQPPn5HGN_WJzZv3u4YuUnrzuiEsxipJsUpz4/edit
+    links:
+      spotify: https://open.spotify.com/track/3BMylaTLYwcsy1Ol8zgBaS

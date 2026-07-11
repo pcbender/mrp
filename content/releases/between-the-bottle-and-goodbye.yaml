@@ -76,11 +76,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Between the Bottle and Goodbye
     slug: between-the-bottle-and-goodbye
     isrc: CACWV2505597
-    duration: null
+    duration: '3:42'
     explicit: false
     instrumental: false
     preview_audio: /samples/stab--between-the-bottle-and-goodbye.mp3
@@ -173,3 +173,5 @@ release:
 
       Ain''t comin'' back, don''t even care'
     lyrics_source: https://docs.google.com/document/d/1qnqU9Fz8WpCytPnzOUt596ptlEQiopHfhyqUflAoc-4/edit
+    links:
+      spotify: https://open.spotify.com/track/4nKU7cetq5waSZbfNnleSI

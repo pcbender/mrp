@@ -60,11 +60,11 @@ release:
     - tidal
     - youtube
   song:
-    number: null
+    number: 1
     title: Here Comes the Rain
     slug: here-comes-the-rain
     isrc: CACWV2595550
-    duration: null
+    duration: '3:22'
     explicit: false
     instrumental: false
     preview_audio: /samples/stab--here-comes-the-rain.mp3
@@ -146,3 +146,5 @@ release:
 
       Here comes the rain - no intention at all'
     lyrics_source: https://docs.google.com/document/d/1J03bChOl4THGSqaQ3lAQf0xw9XGlQO7ciMORMfwG2cU/edit
+    links:
+      spotify: https://open.spotify.com/track/0RF4A3KJjOUfSaHcniaeZi

@@ -64,11 +64,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Then She Descends
     slug: then-she-descends
     isrc: CAENV2511953
-    duration: null
+    duration: '4:25'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--then-she-descends.mp3
@@ -166,3 +166,5 @@ release:
 
       Then she descends'
     lyrics_source: https://docs.google.com/document/d/11NILhBNp-LFr5KTuL55DJHmeZvJlOVqi7Hx4ZuBioDw/edit
+    links:
+      spotify: https://open.spotify.com/track/70eOM8CR6VkI89Vmg9wAPo

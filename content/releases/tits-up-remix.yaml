@@ -79,11 +79,11 @@ release:
     - tidal
     - youtube
   song:
-    number: null
+    number: 1
     title: Tits Up (Remix)
     slug: tits-up-remix
     isrc: CAHQJ2571234
-    duration: null
+    duration: '2:59'
     explicit: false
     instrumental: false
     preview_audio: /samples/stab--tits-up-remix.mp3
@@ -170,3 +170,5 @@ release:
 
       Imagine me tits down on your best friend'
     lyrics_source: https://docs.google.com/document/d/1-8qgfzRQPPn5HGN_WJzZv3u4YuUnrzuiEsxipJsUpz4/edit
+    links:
+      spotify: https://open.spotify.com/track/3QZm7yiPWckKCOzHC678xK

@@ -172,7 +172,7 @@ release:
     title: Conductor
     slug: conductor
     isrc: CAHQJ2594887
-    duration: null
+    duration: '3:56'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--conductor.mp3
@@ -259,7 +259,7 @@ release:
     title: Resistor
     slug: resistor
     isrc: CAHQJ2594888
-    duration: null
+    duration: '3:54'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--resistor.mp3
@@ -351,7 +351,7 @@ release:
     title: Capacitor
     slug: capacitor
     isrc: CAHQJ2594889
-    duration: null
+    duration: '3:17'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--capacitor.mp3
@@ -443,7 +443,7 @@ release:
     title: Inductor
     slug: inductor
     isrc: CAHQJ2594890
-    duration: null
+    duration: '3:40'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--inductor.mp3
@@ -533,7 +533,7 @@ release:
     title: Diode
     slug: diode
     isrc: CAHQJ2594891
-    duration: null
+    duration: '3:40'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--diode.mp3
@@ -667,7 +667,7 @@ release:
     title: Transistor
     slug: transistor
     isrc: CAHQJ2594892
-    duration: null
+    duration: '2:53'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--transistor.mp3
@@ -727,7 +727,7 @@ release:
     title: Relay
     slug: relay
     isrc: CAHQJ2594893
-    duration: null
+    duration: '3:39'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--relay.mp3
@@ -787,7 +787,7 @@ release:
     title: Fuse
     slug: fuse
     isrc: CAHQJ2594894
-    duration: null
+    duration: '3:16'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--fuse.mp3
@@ -837,7 +837,7 @@ release:
     title: Oscillator
     slug: oscillator
     isrc: CAHQJ2594895
-    duration: null
+    duration: '3:00'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--oscillator.mp3
@@ -909,7 +909,7 @@ release:
     title: Circuit
     slug: circuit
     isrc: CAHQJ2594896
-    duration: null
+    duration: '5:28'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--circuit.mp3

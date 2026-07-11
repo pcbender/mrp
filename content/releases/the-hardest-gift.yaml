@@ -79,11 +79,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: The Hardest Gift
     slug: the-hardest-gift
     isrc: CAHQJ2586236
-    duration: null
+    duration: '3:14'
     explicit: false
     instrumental: false
     preview_audio: /samples/stab--the-hardest-gift.mp3
@@ -163,3 +163,5 @@ release:
 
       Guess I should be saying thanks right now'
     lyrics_source: https://docs.google.com/document/d/1666aJdw12TkNbX-WTNbnyzfQCsSNeApMhqPO6cw-DYQ/edit
+    links:
+      spotify: https://open.spotify.com/track/7IMI7XWnisNm8cvi4SfE9K

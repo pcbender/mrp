@@ -77,11 +77,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Too Blue To Lose
     slug: too-blue-to-lose
     isrc: CACWV2505630
-    duration: null
+    duration: '4:00'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--too-blue-to-lose.mp3
@@ -132,3 +132,5 @@ release:
 
       I''m so blue, I can''t get losing right'
     lyrics_source: https://docs.google.com/document/d/1dYxXUl0CaYKzpSwCybOW0XH_HyitHX6mtKnDd-uxKCY/edit
+    links:
+      spotify: https://open.spotify.com/track/7mDZn6bio519DnEOkaeGeV

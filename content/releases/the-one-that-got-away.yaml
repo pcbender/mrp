@@ -69,11 +69,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: The One That Got Away
     slug: the-one-that-got-away
     isrc: CACWV2526890
-    duration: null
+    duration: '3:33'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--the-one-that-got-away.mp3
@@ -141,3 +141,5 @@ release:
 
       Still shining somewhere far away'
     lyrics_source: https://docs.google.com/document/d/1PPisK2iPzysZfyjbCmSrQfBm2-Ir3IMLEXq4Ad3P530/edit
+    links:
+      spotify: https://open.spotify.com/track/282JyWP14yakfu3qFrl7rT

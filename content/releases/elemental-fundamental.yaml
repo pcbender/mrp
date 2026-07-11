@@ -60,11 +60,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Elemental Fundamental
     slug: elemental-fundamental
     isrc: CAENV2503770
-    duration: null
+    duration: '3:48'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--elemental-fundamental.mp3
@@ -149,3 +149,5 @@ release:
 
       And the song will never die'
     lyrics_source: https://docs.google.com/document/d/1wVRIy17R4nIeCQb7gBm0BonDDC2R4tYBAFR56vcwObY/edit
+    links:
+      spotify: https://open.spotify.com/track/6jwUrK0csvhGl9sm8WUQEg

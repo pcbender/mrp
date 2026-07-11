@@ -142,7 +142,7 @@ release:
     title: Two Tree Road
     slug: two-tree-road
     isrc: CAHQJ2563286
-    duration: null
+    duration: '3:33'
     explicit: false
     instrumental: false
     preview_audio: null
@@ -231,7 +231,7 @@ release:
     title: Joni
     slug: joni
     isrc: CAHQJ2565569
-    duration: null
+    duration: '2:27'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--joni.mp3
@@ -299,7 +299,7 @@ release:
     title: The Only One
     slug: the-only-one
     isrc: CAHQJ2565564
-    duration: null
+    duration: '3:34'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--the-only-one.mp3
@@ -382,7 +382,7 @@ release:
     title: I Think I'm Falling
     slug: i-think-i-m-falling
     isrc: CAHQJ2565565
-    duration: null
+    duration: '3:53'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--i-think-i-m-falling.mp3
@@ -459,7 +459,7 @@ release:
     title: Deb
     slug: deb
     isrc: CAHQJ2565566
-    duration: null
+    duration: '3:13'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--deb.mp3
@@ -539,7 +539,7 @@ release:
     title: This Love Grows
     slug: this-love-grows
     isrc: CAHQJ2565567
-    duration: null
+    duration: '3:55'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--this-love-grows.mp3
@@ -619,7 +619,7 @@ release:
     title: Winds of Change
     slug: winds-of-change
     isrc: CAHQJ2565568
-    duration: null
+    duration: '5:48'
     explicit: false
     instrumental: false
     preview_audio: null

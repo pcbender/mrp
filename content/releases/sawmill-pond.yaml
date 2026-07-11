@@ -61,11 +61,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Sawmill Pond
     slug: sawmill-pond
     isrc: CAENV2513592
-    duration: null
+    duration: '3:33'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--sawmill-pond.mp3
@@ -148,3 +148,5 @@ release:
 
       At Sawmill Pond'
     lyrics_source: https://docs.google.com/document/d/16JyLIwd683fxklQhpoEzN3IRs7H5W8h5JaIq0r9FQlg/edit
+    links:
+      spotify: https://open.spotify.com/track/3UqQZdrEMNGO32t3BJ9Qds

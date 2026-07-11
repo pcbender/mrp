@@ -66,11 +66,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Scattershot Forget-Me-Not
     slug: scattershot-forget-me-not
     isrc: CACWV2588617
-    duration: null
+    duration: '3:15'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--scattershot-forget-me-not.mp3
@@ -134,3 +134,5 @@ release:
 
       But if you ever feel lonely… just hum it. Will you'
     lyrics_source: https://docs.google.com/document/d/1yTm5Ntx73237F7XTIevUqj6nVq2y9x1FJ1fjNWSxpA0/edit
+    links:
+      spotify: https://open.spotify.com/track/5XLIFpkxz7bl7GLusnOAsT

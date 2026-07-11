@@ -63,11 +63,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: You Still Have My Heart
     slug: you-still-have-my-heart
     isrc: CACWV2525747
-    duration: null
+    duration: '3:29'
     explicit: false
     instrumental: false
     preview_audio: /samples/stab--you-still-have-my-heart.mp3
@@ -137,3 +137,5 @@ release:
 
       "You still have my heart…"'
     lyrics_source: https://docs.google.com/document/d/1LEc5MgLEvc8Xwk3KAQxMslTvXotVCCOdtsBRVvHgI7E/edit
+    links:
+      spotify: https://open.spotify.com/track/6mf8OT7Msi0W2IZFcK2ySM

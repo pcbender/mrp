@@ -69,11 +69,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Gone and Forgotten
     slug: gone-and-forgotten
     isrc: CACWV2568180
-    duration: null
+    duration: '4:04'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--gone-and-forgotten.mp3
@@ -138,3 +138,5 @@ release:
 
       The face of regret, gone and forgotten'
     lyrics_source: https://docs.google.com/document/d/1XGHvRMwtYCJPd7O_tGko9YeP7Unf28qtCSz43LHwoW4/edit
+    links:
+      spotify: https://open.spotify.com/track/6wkONt40USrfFeVEIU5jfi

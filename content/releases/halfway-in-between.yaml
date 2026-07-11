@@ -79,11 +79,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Halfway In Between
     slug: halfway-in-between
     isrc: CAHQJ2598091
-    duration: null
+    duration: '4:00'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--halfway-in-between.mp3
@@ -166,3 +166,5 @@ release:
 
       Oh, amber woman - I''m halfway in between'
     lyrics_source: https://docs.google.com/document/d/1bWevwZ41CpS0rHDFa-nNtORSyO1ZmNexDaZt1hOveRg/edit
+    links:
+      spotify: https://open.spotify.com/track/0P6wiEf5jJIElHti5laEee

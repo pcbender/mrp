@@ -64,11 +64,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Comfortable Specter
     slug: comfortable-specter
     isrc: CACWV2594039
-    duration: null
+    duration: '3:43'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--comfortable-specter.mp3
@@ -160,3 +160,5 @@ release:
 
       But I''m already gone'
     lyrics_source: https://docs.google.com/document/d/1AmLEEn3kQO-afzowfzBAVDEPqr1edhDDHrJZTh4cboA/edit
+    links:
+      spotify: https://open.spotify.com/track/67gSYa1tyG5pRS9sTx7XBA

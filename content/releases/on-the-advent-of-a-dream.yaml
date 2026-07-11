@@ -188,7 +188,7 @@ release:
     title: On the Advent of a Dream
     slug: on-the-advent-of-a-dream
     isrc: CACWV2586250
-    duration: null
+    duration: '3:39'
     explicit: false
     instrumental: false
     preview_audio: null
@@ -278,7 +278,7 @@ release:
     title: Scattershot Forget-Me-Not
     slug: scattershot-forget-me-not
     isrc: CACWV2586254
-    duration: null
+    duration: '3:35'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--scattershot-forget-me-not.mp3
@@ -351,7 +351,7 @@ release:
     title: And the Gods Fell Down
     slug: and-the-gods-fell-down
     isrc: CACWV2586245
-    duration: null
+    duration: '3:40'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--and-the-gods-fell-down.mp3
@@ -430,7 +430,7 @@ release:
     title: By Starlight Drifting West
     slug: by-starlight-drifting-west
     isrc: CACWV2586247
-    duration: null
+    duration: '3:17'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--by-starlight-drifting-west.mp3
@@ -511,7 +511,7 @@ release:
     title: Tiger’s Eye
     slug: tigers-eye
     isrc: CACWV2586255
-    duration: null
+    duration: '3:13'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--tigers-eye.mp3
@@ -590,7 +590,7 @@ release:
     title: Haymakers and Body Blows
     slug: haymakers-and-body-blows
     isrc: CACWV2586248
-    duration: null
+    duration: '3:05'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--haymakers-and-body-blows.mp3
@@ -679,7 +679,7 @@ release:
     title: Paradox of Contradictions
     slug: paradox-of-contradictions
     isrc: CACWV2586251
-    duration: null
+    duration: '3:17'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--paradox-of-contradictions.mp3
@@ -758,7 +758,7 @@ release:
     title: Pixy Stix
     slug: pixy-stix
     isrc: CACWV2586252
-    duration: null
+    duration: '3:20'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--pixy-stix.mp3
@@ -862,7 +862,7 @@ release:
     title: Bit Wise Resistance
     slug: bit-wise-resistance
     isrc: CACWV2586246
-    duration: null
+    duration: '3:00'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--bit-wise-resistance.mp3
@@ -937,7 +937,7 @@ release:
     title: Next to Nothing
     slug: next-to-nothing
     isrc: CACWV2586249
-    duration: null
+    duration: '3:08'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--next-to-nothing.mp3
@@ -1021,7 +1021,7 @@ release:
     title: Preternatural
     slug: preternatural
     isrc: CACWV2586253
-    duration: null
+    duration: '2:25'
     explicit: false
     instrumental: true
     preview_audio: /samples/4castle--preternatural.mp3
@@ -1036,7 +1036,7 @@ release:
     title: Gone and Forgotten
     slug: gone-and-forgotten
     isrc: CACWV2568180
-    duration: null
+    duration: '4:04'
     explicit: false
     instrumental: false
     preview_audio: null

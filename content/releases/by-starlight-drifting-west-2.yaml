@@ -67,11 +67,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: By Starlight Drifting West
     slug: by-starlight-drifting-west-2
     isrc: CACWV2586308
-    duration: null
+    duration: '3:09'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--by-starlight-drifting-west-2.mp3
@@ -143,3 +143,5 @@ release:
 
       Only waves and wind tonight…'
     lyrics_source: https://docs.google.com/document/d/1v4YTjWw43eqZg471S0QNRweRaehXmNnrFpRCohbKawo/edit
+    links:
+      spotify: https://open.spotify.com/track/4NTwmHl1XXu13DO7ESxNqh

@@ -76,11 +76,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Have A Heart
     slug: have-a-heart
     isrc: CAHQJ2573597
-    duration: null
+    duration: '3:42'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--have-a-heart.mp3
@@ -131,3 +131,5 @@ release:
 
       If you love me will you have my heart'
     lyrics_source: https://docs.google.com/document/d/1bwDog_sKJhGyt8RqZ_R3jFO6D9FVH-LVX2TXF_LYtHs/edit
+    links:
+      spotify: https://open.spotify.com/track/4aruzhK2Q1NZvSaCdD1BJr

@@ -75,11 +75,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Two Tree Road
     slug: two-tree-road
     isrc: CAHQJ2563286
-    duration: null
+    duration: '3:33'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--two-tree-road.mp3
@@ -160,3 +160,5 @@ release:
 
       I''m flying two tree road'
     lyrics_source: https://docs.google.com/document/d/1AX0sQ2r5MP_QAk2PUC31-Nx1HPDks2-5fPzStrBvxUo/edit
+    links:
+      spotify: https://open.spotify.com/track/4ODe6aP49AVRz8dw3qCZZz

@@ -79,11 +79,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Riders And Runners
     slug: riders-and-runners
     isrc: CAHQJ2573353
-    duration: null
+    duration: '3:59'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--riders-and-runners.mp3
@@ -159,3 +159,5 @@ release:
 
       When the riders turn and run'
     lyrics_source: https://docs.google.com/document/d/1iohnPDdS_zx9MNB2WBM7-eSI2-lcm259g2fHc6GgP_8/edit
+    links:
+      spotify: https://open.spotify.com/track/3rGZUFxWB5SyuxJ9mmE8PZ

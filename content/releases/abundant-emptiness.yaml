@@ -61,11 +61,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Abundant Emptiness
     slug: abundant-emptiness
     isrc: CAENV2505540
-    duration: null
+    duration: '3:34'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--abundant-emptiness.mp3
@@ -150,3 +150,5 @@ release:
 
       A perfect day'
     lyrics_source: https://docs.google.com/document/d/1IoDmsA865VttcvZlMvj3Y4XOdfQXYrIZpGY5lxRw6Hw/edit
+    links:
+      spotify: https://open.spotify.com/track/346CeXtB4HhOOvJohqVOhi

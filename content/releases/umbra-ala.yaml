@@ -60,11 +60,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Umbra Ala
     slug: umbra-ala
     isrc: CAENV2500587
-    duration: null
+    duration: '3:42'
     explicit: false
     instrumental: false
     preview_audio: /samples/4castle--umbra-ala.mp3
@@ -142,3 +142,5 @@ release:
 
       Many ways… swings the gate'
     lyrics_source: https://docs.google.com/document/d/1s0kqMa-6St4Z7fOODy-C6r66tPPJjvN5xOaXpWPYvag/edit
+    links:
+      spotify: https://open.spotify.com/track/1yCj116c8m9c4csm9T4bnW

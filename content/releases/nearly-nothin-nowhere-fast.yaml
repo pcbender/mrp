@@ -63,11 +63,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Nearly Nothin’ Nowhere Fast
     slug: nearly-nothin-nowhere-fast
     isrc: CAENV2511735
-    duration: null
+    duration: '3:23'
     explicit: false
     instrumental: false
     preview_audio: /samples/pcbender--nearly-nothin-nowhere-fast.mp3
@@ -150,3 +150,5 @@ release:
 
       But I sure took my time NOT gettin'' there'
     lyrics_source: https://docs.google.com/document/d/1moHdWcxYRcRNm3DFIB3NyyC0MEUYUmYIR6LWdnDVvcw/edit
+    links:
+      spotify: https://open.spotify.com/track/4pHPCG8oWyGw54rzopZi3w

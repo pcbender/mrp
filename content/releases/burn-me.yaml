@@ -76,11 +76,11 @@ release:
     - soundcloud
     - tidal
   song:
-    number: null
+    number: 1
     title: Burn Me
     slug: burn-me
     isrc: CAHQJ2586034
-    duration: null
+    duration: '3:05'
     explicit: false
     instrumental: false
     preview_audio: /samples/stab--burn-me.mp3
@@ -182,3 +182,5 @@ release:
 
       Burn me'
     lyrics_source: https://docs.google.com/document/d/1NeFxvOQTnMgKvaT0ZHwBsrWr0G3LpmhHiYs47cKhntk/edit
+    links:
+      spotify: https://open.spotify.com/track/5ujqIxLi27WEMCVOifRzbd

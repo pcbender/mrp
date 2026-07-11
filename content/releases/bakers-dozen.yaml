@@ -192,7 +192,7 @@ release:
     title: January Kiss
     slug: january-kiss
     isrc: CACWV2531937
-    duration: null
+    duration: '2:54'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--january-kiss.mp3
@@ -207,7 +207,7 @@ release:
     title: February Actuary
     slug: february-actuary
     isrc: CACWV2531952
-    duration: null
+    duration: '3:08'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--february-actuary.mp3
@@ -222,7 +222,7 @@ release:
     title: Ides of March
     slug: ides-of-march
     isrc: CACWV2531953
-    duration: null
+    duration: '2:59'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--ides-of-march.mp3
@@ -237,7 +237,7 @@ release:
     title: April All Day Long
     slug: april-all-day-long
     isrc: CACWV2531954
-    duration: null
+    duration: '3:59'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--april-all-day-long.mp3
@@ -254,7 +254,7 @@ release:
     title: May Flowers
     slug: may-flowers
     isrc: CACWV2531955
-    duration: null
+    duration: '3:17'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--may-flowers.mp3
@@ -271,7 +271,7 @@ release:
     title: June Gloom
     slug: june-gloom
     isrc: CACWV2531956
-    duration: null
+    duration: '3:04'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--june-gloom.mp3
@@ -288,7 +288,7 @@ release:
     title: Sparkles In July
     slug: sparkles-in-july
     isrc: CACWV2531957
-    duration: null
+    duration: '3:34'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--sparkles-in-july.mp3
@@ -303,7 +303,7 @@ release:
     title: Too August
     slug: too-august
     isrc: CACWV2531958
-    duration: null
+    duration: '3:29'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--too-august.mp3
@@ -319,7 +319,7 @@ release:
     title: September On My Mind
     slug: september-on-my-mind
     isrc: CACWV2531960
-    duration: null
+    duration: '3:24'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--september-on-my-mind.mp3
@@ -336,7 +336,7 @@ release:
     title: October Boo Hoo
     slug: october-boo-hoo
     isrc: CACWV2531961
-    duration: null
+    duration: '2:47'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--october-boo-hoo.mp3
@@ -353,7 +353,7 @@ release:
     title: November I Never Remember
     slug: november-i-never-remember
     isrc: CACWV2531962
-    duration: null
+    duration: '3:23'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--november-i-never-remember.mp3
@@ -369,7 +369,7 @@ release:
     title: Slipping Into December
     slug: slipping-into-december
     isrc: CACWV2531963
-    duration: null
+    duration: '3:33'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--slipping-into-december.mp3
@@ -386,7 +386,7 @@ release:
     title: '366'
     slug: '366'
     isrc: CACWV2531964
-    duration: null
+    duration: '2:26'
     explicit: false
     instrumental: true
     preview_audio: /samples/pcbender--366.mp3
