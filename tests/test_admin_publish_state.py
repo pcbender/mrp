@@ -103,6 +103,60 @@ def test_edit_after_verify_invalidates_it(tmp_path):
     assert publish_state.workflow_status(root)["staging_verified"] is False
 
 
+def _stage_and_verify(root):
+    """Helper: put root into a staged+verified state at its current signature."""
+    sig = publish_state.working_signature(root)
+    publish_state.record_staging(root, sig, "build-1", "r-stage", "passed")
+    publish_state.mark_staging_verified(root, sig)
+    return sig
+
+
+# --- production + can_commit -------------------------------------------------
+
+def test_production_requires_and_reaches_can_commit(tmp_path):
+    root = _repo(tmp_path)
+    (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: A\n")
+    sig = _stage_and_verify(root)
+    # Before production deploy: not committable.
+    assert publish_state.workflow_status(root)["can_commit"] is False
+    publish_state.record_production(root, sig, "build-1", "r-deploy", "r-verify", "passed")
+    assert publish_state.mark_production_verified(root, sig) is True
+    wf = publish_state.workflow_status(root)
+    assert wf["production_verified"] is True
+    assert wf["can_commit"] is True
+
+
+def test_edit_after_production_verify_invalidates_whole_ladder(tmp_path):
+    root = _repo(tmp_path)
+    (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: A\n")
+    sig = _stage_and_verify(root)
+    publish_state.record_production(root, sig, "build-1", "d", "v", "passed")
+    publish_state.mark_production_verified(root, sig)
+    # Any further edit invalidates staging + production verification.
+    (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: Z\n")
+    wf = publish_state.workflow_status(root)
+    assert wf["staging_verified"] is False
+    assert wf["production_verified"] is False
+    assert wf["can_commit"] is False
+    assert wf["production_stale"] is True
+
+
+def test_production_verify_rejected_for_wrong_signature(tmp_path):
+    root = _repo(tmp_path)
+    (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: A\n")
+    sig = _stage_and_verify(root)
+    publish_state.record_production(root, sig, "build-1", "d", "v", "passed")
+    assert publish_state.mark_production_verified(root, "deadbeefdeadbeef") is False
+
+
+def test_clear_state_removes_workflow(tmp_path):
+    root = _repo(tmp_path)
+    (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: A\n")
+    _stage_and_verify(root)
+    publish_state.clear_state(root)
+    assert publish_state.load_state(root) == {}
+
+
 def test_state_keyed_by_root(tmp_path):
     root = _repo(tmp_path)
     publish_state.save_state(root, {"staging": {"build_id": "b"}})

@@ -585,3 +585,27 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   display: inline-block; animation: mrp-spin .7s linear infinite;
 }
 @keyframes mrp-spin { to { transform: rotate(360deg); } }
+
+/* Changes page — Phase 3 publish ladder */
+.publish-ladder { list-style: none; margin: 0; padding: 0; }
+.publish-ladder .rung {
+  display: flex; gap: .7rem; align-items: flex-start;
+  padding: .7rem 0; border-top: 1px solid var(--border);
+}
+.publish-ladder .rung:first-child { border-top: 0; }
+.rung-num {
+  flex-shrink: 0; width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+  background: var(--border); color: var(--muted);
+}
+.rung-active .rung-num { background: var(--primary, #2563eb); color: #fff; }
+.rung-done .rung-num   { background: #16a34a; color: #fff; }
+.rung-locked { opacity: .55; }
+.rung-main { flex: 1; min-width: 0; }
+.rung-title { font-size: 13px; font-weight: 700; margin-bottom: .3rem; }
+.rung-body { font-size: 13px; }
+.rung-locked-msg { color: var(--muted); font-size: 12px; }
+.commit-form { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.commit-note { font-size: 11px; color: var(--muted); margin-top: .35rem; }
+.changes-heading { font-size: 13px; font-weight: 700; margin: 1.1rem 0 .5rem; color: var(--muted); }

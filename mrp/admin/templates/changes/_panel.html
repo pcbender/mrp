@@ -12,16 +12,16 @@
 
 {% if not on_main %}
 <div class="flash flash-warn">
-  This checkout is on <strong>{{ branch }}</strong> — approvals only commit on
-  <strong>{{ commit_branch }}</strong>. Switch branches to approve.
+  This checkout is on <strong>{{ branch }}</strong> — the final commit only lands on
+  <strong>{{ commit_branch }}</strong>. Switch branches to commit.
 </div>
 {% endif %}
 
 {% if changes and eligibility and not eligibility.all_eligible %}
 <div class="flash flash-warn">
   <strong>{{ eligibility.blocker_count }} change{{ 's' if eligibility.blocker_count != 1 else '' }}</strong>
-  {{ 'are' if eligibility.blocker_count != 1 else 'is' }} not publish-eligible yet — these will block
-  staging/production publishing until resolved:
+  {{ 'are' if eligibility.blocker_count != 1 else 'is' }} not publish-eligible — these block
+  staging/production until resolved:
   <ul style="margin:.4rem 0 0 1.1rem">
     {% for title, reason in eligibility.blocked_releases.items() %}
     <li><strong>{{ title }}</strong> — {{ reason }}</li>
@@ -34,61 +34,50 @@
 <div class="publish-section">
   <div class="publish-head">
     <h2 class="publish-title">Publish</h2>
-    <span class="publish-sub">Deploy the working tree to staging → verify → (Phase 3) production → commit.</span>
+    <span class="publish-sub">Staging → verify → production → verify → commit. Nothing is committed to git until both are verified.</span>
   </div>
-  <div id="stage-area">
-    {% include "changes/_stage_status.html" %}
+  <div id="publish-ladder">
+    {% include "changes/_publish_ladder.html" %}
   </div>
 </div>
 
-<form hx-post="/changes/approve" hx-target="#changes-panel" hx-swap="innerHTML">
-  <div class="approve-bar">
-    <input type="text" name="message" class="input-wide" maxlength="200"
-      value="{{ generated_message }}" placeholder="Commit message">
-    <button type="submit" class="btn btn-primary" {% if not on_main %}disabled{% endif %}>
-      Approve &amp; Push ({{ changes|length }})
+<h2 class="changes-heading">{{ changes|length }} pending change{{ 's' if changes|length != 1 else '' }}</h2>
+{% for c in changes %}
+<div class="change-card">
+  <div class="change-card-head">
+    <span class="badge change-{{ c.label }}">{{ c.label }}</span>
+    <span class="change-path">{{ c.path }}</span>
+    {% if c.eligible %}
+    <span class="elig-badge elig-ok" title="Publish-eligible">eligible</span>
+    {% else %}
+    <span class="elig-badge elig-blocked" title="{{ c.reason }}">blocked</span>
+    {% endif %}
+    <button type="button" class="btn btn-secondary btn-sm"
+      hx-post="/changes/discard" hx-target="#changes-panel" hx-swap="innerHTML"
+      hx-vals='{"discard_path": "{{ c.path }}"}'
+      hx-confirm="Discard all changes to {{ c.path }}? This cannot be undone.">
+      Discard
     </button>
   </div>
-
-  {% for c in changes %}
-  <div class="change-card">
-    <div class="change-card-head">
-      <input type="checkbox" name="files" value="{{ c.path }}" checked
-        id="chg-{{ loop.index }}" title="Include in commit">
-      <span class="badge change-{{ c.label }}">{{ c.label }}</span>
-      <label for="chg-{{ loop.index }}" class="change-path">{{ c.path }}</label>
-      {% if c.eligible %}
-      <span class="elig-badge elig-ok" title="Publish-eligible">eligible</span>
-      {% else %}
-      <span class="elig-badge elig-blocked" title="{{ c.reason }}">blocked</span>
-      {% endif %}
-      <button type="button" class="btn btn-secondary btn-sm"
-        name="discard_path" value="{{ c.path }}"
-        hx-post="/changes/discard" hx-target="#changes-panel" hx-swap="innerHTML"
-        hx-confirm="Discard all changes to {{ c.path }}? This cannot be undone.">
-        Discard
-      </button>
-    </div>
-    <div class="change-entity">
-      <span class="entity-kind">{{ c.kind }}</span>
-      {% if c.entity_title %}<strong>{{ c.entity_title }}</strong>{% endif %}
-      {% if c.artist_name %}<span class="entity-artist">· {{ c.artist_name }}</span>{% endif %}
-      {% if c.release_status %}<span class="entity-status">· {{ c.release_status }}</span>{% endif %}
-      {% if not c.eligible %}<span class="entity-reason">— {{ c.reason }}</span>{% endif %}
-    </div>
-    <details class="change-diff">
-      <summary>diff</summary>
-      {% if c.diff.binary %}
-      <div class="diff-note">Binary file ({{ c.diff.size }} bytes) — no text diff.</div>
-      {% else %}
-      <pre class="diff">{% for line in c.diff.lines %}<span class="diff-{{ line.cls }}">{{ line.text }}</span>
-{% endfor %}</pre>
-      {% if c.diff.truncated %}<div class="diff-note">Diff truncated — showing first {{ c.diff.lines|length }} lines.</div>{% endif %}
-      {% endif %}
-    </details>
+  <div class="change-entity">
+    <span class="entity-kind">{{ c.kind }}</span>
+    {% if c.entity_title %}<strong>{{ c.entity_title }}</strong>{% endif %}
+    {% if c.artist_name %}<span class="entity-artist">· {{ c.artist_name }}</span>{% endif %}
+    {% if c.release_status %}<span class="entity-status">· {{ c.release_status }}</span>{% endif %}
+    {% if not c.eligible %}<span class="entity-reason">— {{ c.reason }}</span>{% endif %}
   </div>
-  {% endfor %}
-</form>
+  <details class="change-diff">
+    <summary>diff</summary>
+    {% if c.diff.binary %}
+    <div class="diff-note">Binary file ({{ c.diff.size }} bytes) — no text diff.</div>
+    {% else %}
+    <pre class="diff">{% for line in c.diff.lines %}<span class="diff-{{ line.cls }}">{{ line.text }}</span>
+{% endfor %}</pre>
+    {% if c.diff.truncated %}<div class="diff-note">Diff truncated — showing first {{ c.diff.lines|length }} lines.</div>{% endif %}
+    {% endif %}
+  </details>
+</div>
+{% endfor %}
 {% else %}
 <div class="table-wrap" style="padding:2rem;text-align:center;color:var(--muted)">
   No pending content or asset changes. The working tree matches <strong>{{ branch or "HEAD" }}</strong>. ✨
