@@ -511,3 +511,45 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .review-pill.approved    { background: #d1fae5; color: #065f46; }
 .review-pill.publishable { background: #16a34a; color: #fff; }
 .pipeline-step-recommended { border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary); }
+
+/* Changes page — nav indicator + eligibility + affected entity */
+.nav-badge {
+  display: inline-block;
+  margin-left: .4rem;
+  min-width: 1.15rem;
+  padding: 0 .35rem;
+  border-radius: 999px;
+  background: var(--primary, #2563eb);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.15rem;
+  text-align: center;
+}
+.elig-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  padding: .05rem .4rem;
+  border-radius: 4px;
+}
+.elig-ok      { background: #ecfdf5; color: #047857; border: 1px solid #6ee7b7; }
+.elig-blocked { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+.change-entity {
+  font-size: 12px;
+  color: var(--muted);
+  margin: .15rem 0 .1rem 1.75rem;
+  display: flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.change-entity .entity-kind {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--primary, #2563eb);
+  text-transform: uppercase;
+}
+.change-entity strong { color: var(--fg, inherit); }
+.change-entity .entity-reason { color: #b91c1c; }

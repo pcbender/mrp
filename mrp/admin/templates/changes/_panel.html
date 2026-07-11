@@ -17,11 +17,24 @@
 </div>
 {% endif %}
 
+{% if changes and eligibility and not eligibility.all_eligible %}
+<div class="flash flash-warn">
+  <strong>{{ eligibility.blocker_count }} change{{ 's' if eligibility.blocker_count != 1 else '' }}</strong>
+  {{ 'are' if eligibility.blocker_count != 1 else 'is' }} not publish-eligible yet — these will block
+  staging/production publishing until resolved:
+  <ul style="margin:.4rem 0 0 1.1rem">
+    {% for title, reason in eligibility.blocked_releases.items() %}
+    <li><strong>{{ title }}</strong> — {{ reason }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
 {% if changes %}
 <form hx-post="/changes/approve" hx-target="#changes-panel" hx-swap="innerHTML">
   <div class="approve-bar">
     <input type="text" name="message" class="input-wide" maxlength="200"
-      placeholder="Commit message (default: admin: content updates)">
+      value="{{ generated_message }}" placeholder="Commit message">
     <button type="submit" class="btn btn-primary" {% if not on_main %}disabled{% endif %}>
       Approve &amp; Push ({{ changes|length }})
     </button>
@@ -34,12 +47,24 @@
         id="chg-{{ loop.index }}" title="Include in commit">
       <span class="badge change-{{ c.label }}">{{ c.label }}</span>
       <label for="chg-{{ loop.index }}" class="change-path">{{ c.path }}</label>
+      {% if c.eligible %}
+      <span class="elig-badge elig-ok" title="Publish-eligible">eligible</span>
+      {% else %}
+      <span class="elig-badge elig-blocked" title="{{ c.reason }}">blocked</span>
+      {% endif %}
       <button type="button" class="btn btn-secondary btn-sm"
         name="discard_path" value="{{ c.path }}"
         hx-post="/changes/discard" hx-target="#changes-panel" hx-swap="innerHTML"
         hx-confirm="Discard all changes to {{ c.path }}? This cannot be undone.">
         Discard
       </button>
+    </div>
+    <div class="change-entity">
+      <span class="entity-kind">{{ c.kind }}</span>
+      {% if c.entity_title %}<strong>{{ c.entity_title }}</strong>{% endif %}
+      {% if c.artist_name %}<span class="entity-artist">· {{ c.artist_name }}</span>{% endif %}
+      {% if c.release_status %}<span class="entity-status">· {{ c.release_status }}</span>{% endif %}
+      {% if not c.eligible %}<span class="entity-reason">— {{ c.reason }}</span>{% endif %}
     </div>
     <details class="change-diff">
       <summary>diff</summary>
