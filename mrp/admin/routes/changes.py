@@ -1,12 +1,15 @@
 from __future__ import annotations
 
+import json
+import time
 from pathlib import Path
 
 from fastapi import APIRouter, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
-from mrp.admin import changes_meta, gitops
+from mrp.admin import changes_meta, db, gitops, publish_state
+from mrp.admin import jobs as job_runner
 from mrp.admin.deps import get_repo_root
 from mrp.core.validate import validate_repository
 
@@ -26,15 +29,41 @@ def _panel_context(root: Path, flash: dict[str, str] | None = None,
             change["diff"] = gitops.file_diff(root, change["path"], change["untracked"])
         except gitops.GitError as exc:
             change["diff"] = {"binary": False, "lines": [{"cls": "meta", "text": str(exc)}], "truncated": False}
+    eligibility = changes_meta.eligibility_summary(changes)
     return {
         "branch": branch,
         "on_main": branch == gitops.COMMIT_BRANCH,
         "commit_branch": gitops.COMMIT_BRANCH,
         "changes": changes,
-        "eligibility": changes_meta.eligibility_summary(changes),
+        "eligibility": eligibility,
+        "can_stage": eligibility["all_eligible"],
         "generated_message": changes_meta.generate_commit_message(changes),
+        "workflow": publish_state.workflow_status(root),
+        "affected_pages": publish_state.affected_pages(changes, publish_state.STAGING_URL),
         "flash": flash,
         "validation_errors": validation_errors or [],
+    }
+
+
+def _stage_ctx(root: Path, job: dict | None = None, job_id: str | None = None,
+               verify_error: str | None = None) -> dict:
+    """Context for the staging status/job snippets (recomputes live state)."""
+    changes = gitops.data_changes(root)
+    changes_meta.annotate_changes(root, changes)
+    job_result: dict = {}
+    if job and job.get("status") == "done" and job.get("output"):
+        try:
+            job_result = json.loads(job["output"])
+        except (ValueError, TypeError):
+            job_result = {}
+    return {
+        "job": job,
+        "job_id": job_id,
+        "job_result": job_result,
+        "verify_error": verify_error,
+        "can_stage": changes_meta.eligibility_summary(changes)["all_eligible"],
+        "workflow": publish_state.workflow_status(root),
+        "affected_pages": publish_state.affected_pages(changes, publish_state.STAGING_URL),
     }
 
 
@@ -56,6 +85,56 @@ async def changes_badge(request: Request):
     if not count:
         return HTMLResponse("")
     return HTMLResponse(f'<span class="nav-badge">{count}</span>')
+
+
+@router.post("/stage", response_class=HTMLResponse)
+async def changes_stage(request: Request):
+    """Build the whole site and deploy the working tree to staging (no commit)."""
+    root = get_repo_root()
+    changes = gitops.data_changes(root)
+    changes_meta.annotate_changes(root, changes)
+    if not changes:
+        ctx = _panel_context(root, flash={"cls": "warn", "text": "Nothing to stage — the working tree is clean."})
+        return _templates.TemplateResponse(request, "changes/_panel.html", ctx)
+
+    eligibility = changes_meta.eligibility_summary(changes)
+    if not eligibility["all_eligible"]:
+        blocked = ", ".join(eligibility["blocked_releases"].keys())
+        ctx = _panel_context(root, flash={
+            "cls": "error",
+            "text": f"Blocked — make eligible (approved/live) or discard first: {blocked}",
+        })
+        return _templates.TemplateResponse(request, "changes/_panel.html", ctx)
+
+    signature = publish_state.working_signature(root)
+    job_id = job_runner.launch("changes/stage", publish_state.run_staging_deploy, str(root), signature)
+    for _ in range(5):
+        job = db.get_job(job_id)
+        if job and job["status"] not in ("pending", "running"):
+            break
+        time.sleep(0.15)
+    return _templates.TemplateResponse(request, "changes/_stage_job.html",
+                                       _stage_ctx(root, job=job, job_id=job_id))
+
+
+@router.get("/stage/poll/{job_id}", response_class=HTMLResponse)
+async def changes_stage_poll(request: Request, job_id: str):
+    root = get_repo_root()
+    job = db.get_job(job_id)
+    if job is None:
+        return HTMLResponse('<div class="flash flash-error">Job not found.</div>', status_code=404)
+    return _templates.TemplateResponse(request, "changes/_stage_job.html",
+                                       _stage_ctx(root, job=job, job_id=job_id))
+
+
+@router.post("/verify-staging", response_class=HTMLResponse)
+async def changes_verify_staging(request: Request):
+    root = get_repo_root()
+    signature = publish_state.working_signature(root)
+    ok = publish_state.mark_staging_verified(root, signature)
+    err = None if ok else "Could not verify — staging is out of date. Redeploy to staging first."
+    return _templates.TemplateResponse(request, "changes/_stage_status.html",
+                                       _stage_ctx(root, verify_error=err))
 
 
 @router.post("/approve", response_class=HTMLResponse)

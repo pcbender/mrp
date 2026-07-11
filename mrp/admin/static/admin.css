@@ -553,3 +553,35 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 }
 .change-entity strong { color: var(--fg, inherit); }
 .change-entity .entity-reason { color: #b91c1c; }
+
+/* Changes page — Phase 2 publish / staging workflow */
+.publish-section {
+  border: 1px solid var(--border);
+  border-radius: var(--radius, 8px);
+  padding: .85rem 1rem;
+  margin-bottom: 1.1rem;
+  background: var(--panel, #fafafa);
+}
+.publish-head { display: flex; align-items: baseline; gap: .6rem; margin-bottom: .6rem; flex-wrap: wrap; }
+.publish-title { font-size: 14px; font-weight: 700; margin: 0; }
+.publish-sub { font-size: 12px; color: var(--muted); }
+.stage-state { font-size: 13px; margin-bottom: .5rem; }
+.stage-ok      { color: #047857; font-weight: 600; }
+.stage-pending { color: var(--fg, inherit); }
+.stage-stale   { color: #b45309; font-weight: 600; }
+.stage-blocked { color: #b91c1c; }
+.stage-running { color: var(--muted); display: flex; align-items: center; gap: .5rem; }
+.stage-actions { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.affected-pages { margin-top: .6rem; font-size: 12px; color: var(--muted); }
+.affected-pages .affected-label { margin-right: .35rem; }
+.affected-pages a {
+  display: inline-block; margin-right: .5rem;
+  font-family: ui-monospace, monospace; color: var(--primary, #2563eb); text-decoration: none;
+}
+.affected-pages a:hover { text-decoration: underline; }
+.spinner {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--border); border-top-color: var(--primary, #2563eb);
+  display: inline-block; animation: mrp-spin .7s linear infinite;
+}
+@keyframes mrp-spin { to { transform: rotate(360deg); } }

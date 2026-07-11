@@ -1,0 +1,18 @@
+{% if job and job.status in ("pending", "running") %}
+<div class="stage-state stage-running"
+     hx-get="/changes/stage/poll/{{ job_id }}" hx-trigger="load delay:2s" hx-swap="outerHTML">
+  <span class="spinner"></span> Building the site &amp; deploying to staging… (build + rsync)
+</div>
+{% elif job and job.status == "error" %}
+<div class="flash flash-error">Staging deploy failed: {{ job.output }}</div>
+{% include "changes/_stage_status.html" %}
+{% else %}
+{% if job_result.status == "passed" %}
+<div class="flash flash-ok">Deployed to staging (build {{ job_result.build_id }}).</div>
+{% else %}
+<div class="flash flash-error">
+  Staging deploy failed at <strong>{{ job_result.stage or "?" }}</strong>: {{ job_result.message or "unknown error" }}
+</div>
+{% endif %}
+{% include "changes/_stage_status.html" %}
+{% endif %}
