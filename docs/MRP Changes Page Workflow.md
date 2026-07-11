@@ -96,5 +96,14 @@ publishing events rather than every corrective iteration.
   entity + eligibility display, and generated commit message. No deploy changes.
   Code: `mrp/admin/changes_meta.py`, `mrp/admin/routes/changes.py`,
   `mrp/admin/templates/changes/_panel.html`, `_base.html` nav.
-* **Phase 2 (planned)** — Push to Staging + Verify Staging + invalidation.
+* **Phase 2 (done 2026-07-11)** — a **Publish** section on the Changes page:
+  **Push to Staging** builds the whole site and rsyncs the working tree to the
+  `remote-staging` target via a background job (poll UI), gated so it refuses
+  when any pending change is ineligible. **Verify Staging** records the
+  verification against a working-tree signature; any later edit invalidates
+  staging + verification (a "staging is out of date" nudge). Affected public
+  pages are linked. State persists in `~/.mrp/changes-workflow.json` keyed by
+  repo root. Staging URL from `MRP_STAGING_URL`. Code:
+  `mrp/admin/publish_state.py`, `routes/changes.py`,
+  `templates/changes/_stage_status.html` + `_stage_job.html`.
 * **Phase 3 (planned)** — Push to Production + Verify + Approve, Commit, and Push.

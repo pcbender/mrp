@@ -31,6 +31,16 @@
 {% endif %}
 
 {% if changes %}
+<div class="publish-section">
+  <div class="publish-head">
+    <h2 class="publish-title">Publish</h2>
+    <span class="publish-sub">Deploy the working tree to staging → verify → (Phase 3) production → commit.</span>
+  </div>
+  <div id="stage-area">
+    {% include "changes/_stage_status.html" %}
+  </div>
+</div>
+
 <form hx-post="/changes/approve" hx-target="#changes-panel" hx-swap="innerHTML">
   <div class="approve-bar">
     <input type="text" name="message" class="input-wide" maxlength="200"

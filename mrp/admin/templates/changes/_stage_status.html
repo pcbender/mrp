@@ -1,0 +1,38 @@
+{% set wf = workflow %}
+{% if verify_error %}<div class="flash flash-error">{{ verify_error }}</div>{% endif %}
+
+{% if wf.staging_verified %}
+<div class="stage-state stage-ok">✓ Staging deployed &amp; verified (build {{ wf.staging.build_id }}).</div>
+<div class="stage-actions">
+  <a class="btn btn-secondary btn-sm" href="{{ wf.staging_url }}" target="_blank" rel="noopener">Open staging ↗</a>
+  {# Phase 3: "Push to Production" appears here once staging is verified. #}
+</div>
+
+{% elif wf.staged_current %}
+<div class="stage-state stage-pending">Deployed to staging (build {{ wf.staging.build_id }}). Review it, then verify.</div>
+<div class="stage-actions">
+  <a class="btn btn-secondary btn-sm" href="{{ wf.staging_url }}" target="_blank" rel="noopener">Open staging ↗</a>
+  <form hx-post="/changes/verify-staging" hx-target="#stage-area" hx-swap="innerHTML" style="display:inline">
+    <button class="btn btn-primary btn-sm" type="submit">Verify Staging</button>
+  </form>
+</div>
+
+{% else %}
+{% if wf.staging_stale %}
+<div class="stage-state stage-stale">⚠ Staging is out of date — content changed since the last deploy. Redeploy to staging.</div>
+{% endif %}
+{% if can_stage %}
+<form hx-post="/changes/stage" hx-target="#stage-area" hx-swap="innerHTML">
+  <button class="btn btn-primary" type="submit">Push to Staging</button>
+</form>
+{% else %}
+<div class="stage-state stage-blocked">Resolve the blocked changes above before pushing to staging.</div>
+{% endif %}
+{% endif %}
+
+{% if affected_pages %}
+<div class="affected-pages">
+  <span class="affected-label">Affected pages:</span>
+  {% for p in affected_pages %}<a href="{{ p.url }}" target="_blank" rel="noopener" title="{{ p.label }}">{{ p.path }}</a>{% endfor %}
+</div>
+{% endif %}
