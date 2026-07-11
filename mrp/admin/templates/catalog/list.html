@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="page-header">
-  <h1 class="page-title">Catalog <small>{{ tracks|length }} of {{ total }} tracks</small></h1>
+  <h1 class="page-title">Catalog <small id="catalog-count">{{ tracks|length }} of {{ total }} tracks</small></h1>
 </div>
 
 <div class="filters">
@@ -19,7 +19,7 @@
       hx-trigger="input changed delay:300ms"
       hx-target="#catalog-table"
       hx-swap="innerHTML"
-      hx-include="[name='artist_filter'],[name='sort'],[name='dir']">
+      hx-include="[name='artist_filter'],[name='dist_filter'],[name='sort'],[name='dir']">
   </div>
   <div class="filter-group">
     <label>Artist</label>
@@ -29,11 +29,25 @@
       hx-trigger="change"
       hx-target="#catalog-table"
       hx-swap="innerHTML"
-      hx-include="[name='q'],[name='sort'],[name='dir']">
+      hx-include="[name='q'],[name='dist_filter'],[name='sort'],[name='dir']">
       <option value="">All artists</option>
       {% for a in artists %}
       <option value="{{ a.id }}" {% if a.id == artist_filter %}selected{% endif %}>{{ a.name }}</option>
       {% endfor %}
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Distributor</label>
+    <select
+      name="dist_filter"
+      hx-get="/catalog"
+      hx-trigger="change"
+      hx-target="#catalog-table"
+      hx-swap="innerHTML"
+      hx-include="[name='q'],[name='artist_filter'],[name='sort'],[name='dir']">
+      <option value="">All</option>
+      <option value="landr" {% if dist_filter == 'landr' %}selected{% endif %}>LANDR</option>
+      <option value="amuse" {% if dist_filter == 'amuse' %}selected{% endif %}>Amuse</option>
     </select>
   </div>
 </div>
