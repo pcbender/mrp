@@ -22,6 +22,7 @@ STATE_PATH = STATE_DIR / "changes-workflow.json"
 STAGING_URL = os.environ.get("MRP_STAGING_URL", "https://staging.maricoparecords.com").rstrip("/")
 PRODUCTION_URL = os.environ.get("MRP_PRODUCTION_URL", "https://www.maricoparecords.com").rstrip("/")
 STAGING_TARGET = "remote-staging"
+PRODUCTION_TARGET = "remote-production"
 
 
 def _now() -> str:
@@ -107,24 +108,82 @@ def mark_staging_verified(root: Path, signature: str) -> bool:
     return True
 
 
+def record_production(root: Path, signature: str, build_id: str | None,
+                      deploy_report: str | None, verify_report: str | None,
+                      status: str) -> None:
+    """Persist a completed production deploy (same build that was staged)."""
+    state = load_state(root)
+    state["production"] = {
+        "signature": signature,
+        "build_id": build_id,
+        "deploy_report": deploy_report,
+        "verify_report": verify_report,
+        "status": status,
+        "deployed_at": _now(),
+        "verified": False,
+        "verified_signature": None,
+    }
+    save_state(root, state)
+
+
+def mark_production_verified(root: Path, signature: str) -> bool:
+    """Mark production verified iff its deploy matches the given (current) signature."""
+    state = load_state(root)
+    production = state.get("production")
+    if not production or production.get("signature") != signature or not signature:
+        return False
+    production["verified"] = True
+    production["verified_signature"] = signature
+    save_state(root, state)
+    return True
+
+
+def clear_state(root: Path) -> None:
+    """Drop all workflow state for this root (e.g. after a successful commit)."""
+    data = _load_all()
+    if data.pop(str(root.resolve()), None) is not None:
+        _save_all(data)
+
+
 # --- derived status for the panel -------------------------------------------
 
 def workflow_status(root: Path) -> dict[str, Any]:
-    """Current staging state relative to the live working-tree signature."""
+    """Staging + production state relative to the live working-tree signature.
+
+    Every "verified" flag is only honored while its signature still matches the
+    current tree, so any edit silently invalidates the whole ladder.
+    """
     signature = working_signature(root)
-    staging = (load_state(root).get("staging")) or {}
+    state = load_state(root)
+    staging = state.get("staging") or {}
+    production = state.get("production") or {}
+
     staged_current = bool(signature and staging.get("status") == "passed"
                           and staging.get("signature") == signature)
     staging_stale = bool(staging.get("build_id") and staging.get("signature") != signature)
     staging_verified = bool(staged_current and staging.get("verified")
                             and staging.get("verified_signature") == signature)
+
+    prod_current = bool(signature and production.get("status") == "passed"
+                        and production.get("signature") == signature)
+    production_stale = bool(production.get("build_id") and production.get("signature") != signature)
+    production_verified = bool(prod_current and production.get("verified")
+                               and production.get("verified_signature") == signature)
+
     return {
         "signature": signature,
         "staging": staging,
+        "production": production,
         "staged_current": staged_current,
         "staging_stale": staging_stale,
         "staging_verified": staging_verified,
+        "prod_current": prod_current,
+        "production_stale": production_stale,
+        "production_verified": production_verified,
+        "can_commit": bool(staging_verified and production_verified),
         "staging_url": STAGING_URL,
+        "production_url": PRODUCTION_URL,
+        "staged_build_id": staging.get("build_id"),
     }
 
 
@@ -168,4 +227,43 @@ def run_staging_deploy(root_str: str, signature: str) -> dict[str, Any]:
     }
     if deploy.get("status") == "passed":
         record_staging(root, signature, build.get("build_id"), deploy.get("report_path"), "passed")
+    return result
+
+
+def run_production_deploy(root_str: str, signature: str, build_id: str | None) -> dict[str, Any]:
+    """Background-job body: rsync the *already-staged* build to production, then
+    run verify_target as a safety net. Records production state on success.
+    """
+    from mrp.core.deploy import stage_build
+    from mrp.core.verify import verify_target
+
+    root = Path(root_str)
+    if not build_id:
+        return {"stage": "build", "status": "failed",
+                "message": "No staged build to promote — deploy to staging first."}
+
+    deploy = stage_build(root, build=build_id, target=PRODUCTION_TARGET)
+    result = {
+        "stage": "deploy",
+        "status": deploy.get("status"),
+        "build_id": build_id,
+        "target": deploy.get("target"),
+        "message": deploy.get("message"),
+        "report": deploy.get("report_path"),
+    }
+    if deploy.get("status") != "passed":
+        return result
+
+    verification = verify_target(root, target=PRODUCTION_TARGET)
+    result["verify_status"] = verification.get("status")
+    result["verify_report"] = verification.get("report_path")
+    if verification.get("status") != "passed":
+        result["status"] = "failed"
+        result["stage"] = "verify"
+        result["message"] = "Production verification failed."
+        result["verify_errors"] = verification.get("errors", [])
+        return result
+
+    record_production(root, signature, build_id, deploy.get("report_path"),
+                      verification.get("report_path"), "passed")
     return result

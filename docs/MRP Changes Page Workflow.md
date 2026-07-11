@@ -106,4 +106,20 @@ publishing events rather than every corrective iteration.
   repo root. Staging URL from `MRP_STAGING_URL`. Code:
   `mrp/admin/publish_state.py`, `routes/changes.py`,
   `templates/changes/_stage_status.html` + `_stage_job.html`.
-* **Phase 3 (planned)** — Push to Production + Verify + Approve, Commit, and Push.
+* **Phase 3 (done 2026-07-11)** — the publish surface is now a three-rung
+  **ladder** (staging → production → commit) rendered in `#publish-ladder`:
+  **Push to Production** promotes the *same staged+verified build* to the
+  `remote-production` target and runs `verify_target` (marker + content) as a
+  safety net; **Verify Production** is the human sign-off. The final
+  **Approve, Commit, and Push** rung unlocks only when both staging and
+  production are verified against the current signature — it validates,
+  commits the whole verified working tree to `main` with the reviewed
+  message, pushes, and clears workflow state. Any edit invalidates the whole
+  ladder (signature drift). Production URL from `MRP_PRODUCTION_URL`. We reuse
+  `publish()`'s safety helpers (marker check via `stage_build`, `verify_target`)
+  rather than `publish()` itself, since it is release-centric; release status
+  is left untouched. Note: the archive/rollback snapshot in `publish()` is a
+  local-production feature and is **not** wired for the remote rsync path.
+  Code: `mrp/admin/publish_state.py`, `routes/changes.py`,
+  `templates/changes/_publish_ladder.html` (replaces the Phase-2 stage
+  partials).
