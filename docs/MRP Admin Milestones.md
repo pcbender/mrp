@@ -146,6 +146,21 @@ more expressive video options as explicit, user-triggered upgrades:
   indicator on the Changes page (fetch on load), and a decision on
   pull-on-load vs. surfacing divergence before Approve. Keeps the two clones,
   one truth invariant honest without shell surgery.
+- ~~Changes page → controlled publishing workflow~~ Done 2026-07-11 (PRs
+  #82–#84): the Changes page is now a staging → verify → production → verify →
+  commit ladder (`docs/MRP Changes Page Workflow.md`). Nav change indicator,
+  per-change entity + publish eligibility (release must be approved/live),
+  generated commit messages, background staging/production deploys with
+  signature-based verification/invalidation, and a gated "Approve, Commit,
+  and Push" that only commits once both environments are verified. Proven
+  live end-to-end (commit `9674e8f`).
+- Changes publish follow-up — **remote-production rollback**: the ladder
+  reuses `publish()`'s safety helpers but its archive/restore snapshot is
+  *local-production* only, so a remote rsync deploy has no automatic
+  point-in-time snapshot to roll back to. Options: rsync-pull a snapshot of
+  the remote docroot before each deploy, or keep the last-good build
+  server-side for a one-command restore. Add a "Roll back production" control
+  once a snapshot exists.
 - ~~New Release workflow loads entire site into the content section~~ Fixed
   2026-07-10: the Spotify import step-2 form ("Create Release") posts via
   htmx into `#step2`, so its `303` redirect was followed by htmx and the full
