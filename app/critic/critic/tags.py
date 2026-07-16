@@ -45,12 +45,19 @@ def _get_model():
             warnings.simplefilter("ignore")
             _sink = io.StringIO()
             _prev = sys.stdout
+            # laion_clap calls training.params.parse_args() at model-load time,
+            # which reads the process sys.argv. Under `critic review …` those
+            # args are unrecognized and argparse would sys.exit(2), killing the
+            # whole pipeline. Hide our argv so it parses clean defaults.
+            _prev_argv = sys.argv
             sys.stdout = _sink
+            sys.argv = sys.argv[:1]
             try:
                 _model = laion_clap.CLAP_Module(enable_fusion=False, amodel="HTSAT-tiny")
                 _model.load_ckpt()
             finally:
                 sys.stdout = _prev
+                sys.argv = _prev_argv
     return _model
 
 
@@ -83,7 +90,9 @@ def extract_tags(audio_path: str | Path) -> Tags:
     """
     try:
         model = _get_model()
-    except Exception as exc:
+    except (Exception, SystemExit) as exc:
+        # SystemExit guards the case where a dependency (e.g. laion_clap)
+        # calls sys.exit() during model load; tags are optional, so degrade.
         print(f"  ⚠  CLAP unavailable: {exc}")
         return Tags()
 
