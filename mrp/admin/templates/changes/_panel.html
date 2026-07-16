@@ -12,8 +12,17 @@
 
 {% if not on_main %}
 <div class="flash flash-warn">
-  This checkout is on <strong>{{ branch }}</strong> — the final commit only lands on
+  This checkout is on <strong>{{ branch }}</strong> — commits only land on
   <strong>{{ commit_branch }}</strong>. Switch branches to commit.
+</div>
+{% endif %}
+
+{% if unpushed %}
+<div class="flash flash-warn">
+  <strong>{{ unpushed }} commit{{ 's' if unpushed != 1 else '' }}</strong> on {{ commit_branch }}
+  {{ 'are' if unpushed != 1 else 'is' }} not yet on origin.
+  <button class="btn btn-primary btn-sm" style="margin-left:.6rem"
+    hx-post="/changes/push" hx-target="#changes-panel" hx-swap="innerHTML">Push to origin</button>
 </div>
 {% endif %}
 
@@ -21,7 +30,7 @@
 <div class="flash flash-warn">
   <strong>{{ eligibility.blocker_count }} change{{ 's' if eligibility.blocker_count != 1 else '' }}</strong>
   {{ 'are' if eligibility.blocker_count != 1 else 'is' }} not publish-eligible — these block
-  staging/production until resolved:
+  staging/production until made eligible, committed, or discarded (committing to git is always allowed):
   <ul style="margin:.4rem 0 0 1.1rem">
     {% for title, reason in eligibility.blocked_releases.items() %}
     <li><strong>{{ title }}</strong> — {{ reason }}</li>
@@ -33,14 +42,31 @@
 {% if changes %}
 <div class="publish-section">
   <div class="publish-head">
+    <h2 class="publish-title">Commit</h2>
+    <span class="publish-sub">Save the pending changes to git — commits to <strong>{{ commit_branch }}</strong> and pushes. Independent of publishing; drafts are welcome.</span>
+  </div>
+  {% if on_main %}
+  <form hx-post="/changes/approve" hx-target="#changes-panel" hx-swap="innerHTML" class="commit-form">
+    <input type="text" name="message" class="input-wide" maxlength="200" value="{{ generated_message }}">
+    <button type="submit" class="btn btn-primary">Approve, Commit &amp; Push ({{ changes|length }})</button>
+  </form>
+  {% else %}
+  <div class="stage-state stage-blocked">Switch to {{ commit_branch }} to commit.</div>
+  {% endif %}
+</div>
+{% endif %}
+
+<div class="publish-section">
+  <div class="publish-head">
     <h2 class="publish-title">Publish</h2>
-    <span class="publish-sub">Staging → verify → production → verify → commit. Nothing is committed to git until both are verified.</span>
+    <span class="publish-sub">Whole-site deploy of the current content: staging → verify → production → verify. Runs the same with or without pending changes.</span>
   </div>
   <div id="publish-ladder">
     {% include "changes/_publish_ladder.html" %}
   </div>
 </div>
 
+{% if changes %}
 <h2 class="changes-heading">{{ changes|length }} pending change{{ 's' if changes|length != 1 else '' }}</h2>
 {% for c in changes %}
 <div class="change-card">

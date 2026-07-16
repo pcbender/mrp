@@ -1,8 +1,11 @@
-"""Phase-2 workflow state for the Changes publishing pipeline.
+"""Workflow state for the Changes publishing pipeline.
 
-Tracks the staging (and, in Phase 3, production) deploy + verification state of
-the *working tree*, keyed to a content signature so that any edit after a
-verify silently invalidates it. State is persisted outside git in
+Tracks the staging and production deploy + verification state of the managed
+content tree, keyed to a content-state signature so that any edit after a
+verify silently invalidates it. The signature covers the *effective* content
+(index blobs overlaid with working-tree edits), so committing pending changes
+does not invalidate a verified deploy — publishing and git commit are
+independent (Phase 4). State is persisted outside git in
 ``~/.mrp/changes-workflow.json``, keyed by repo root (the metrics.db pattern).
 """
 from __future__ import annotations
@@ -30,27 +33,39 @@ def _now() -> str:
 
 
 def working_signature(root: Path) -> str:
-    """A stable short hash of the current managed working-tree changes.
+    """A stable short hash of the managed content state (content/ + assets/).
 
-    Empty string when the tree is clean. Any content edit, add, or delete
-    under content/ or assets/ changes the signature.
+    Covers the *effective* content: every indexed file's blob overlaid with
+    working-tree edits, adds, and deletes. Because git blob hashes are
+    content-addressed, committing pending changes leaves the signature
+    unchanged — staged/verified state survives a commit. Any content edit,
+    add, or delete changes it. Empty only when there is no managed content.
     """
-    changes = gitops.data_changes(root)
-    parts: list[str] = []
-    for c in sorted(changes, key=lambda x: x["path"]):
+    try:
+        indexed = gitops._git(root, "ls-files", "-s", "--", *gitops.DATA_PATHSPECS).stdout
+    except gitops.GitError:
+        indexed = ""
+    blobs: dict[str, str] = {}
+    for line in indexed.splitlines():
+        # "<mode> <blob-sha> <stage>\t<path>"
+        meta, _, path = line.partition("\t")
+        fields = meta.split()
+        if path and len(fields) >= 2:
+            blobs[path] = fields[1]
+    for c in gitops.data_changes(root):
         path = c["path"]
         fpath = root / path
         if c.get("label") == "deleted" or not fpath.exists():
-            parts.append(f"{path}:DELETED")
+            blobs.pop(path, None)
             continue
         try:
-            blob = gitops._git(root, "hash-object", "--", path).stdout.strip()
+            blobs[path] = gitops._git(root, "hash-object", "--", path).stdout.strip()
         except gitops.GitError:
-            blob = str(fpath.stat().st_mtime)
-        parts.append(f"{path}:{c.get('label')}:{blob}")
-    if not parts:
+            blobs[path] = str(fpath.stat().st_mtime)
+    if not blobs:
         return ""
-    return hashlib.sha256("\n".join(parts).encode()).hexdigest()[:16]
+    joined = "\n".join(f"{path}:{blob}" for path, blob in sorted(blobs.items()))
+    return hashlib.sha256(joined.encode()).hexdigest()[:16]
 
 
 # --- persistence -------------------------------------------------------------
@@ -139,7 +154,7 @@ def mark_production_verified(root: Path, signature: str) -> bool:
 
 
 def clear_state(root: Path) -> None:
-    """Drop all workflow state for this root (e.g. after a successful commit)."""
+    """Drop all workflow state for this root (manual reset; commits keep state)."""
     data = _load_all()
     if data.pop(str(root.resolve()), None) is not None:
         _save_all(data)
@@ -148,10 +163,12 @@ def clear_state(root: Path) -> None:
 # --- derived status for the panel -------------------------------------------
 
 def workflow_status(root: Path) -> dict[str, Any]:
-    """Staging + production state relative to the live working-tree signature.
+    """Staging + production state relative to the live content signature.
 
     Every "verified" flag is only honored while its signature still matches the
-    current tree, so any edit silently invalidates the whole ladder.
+    current content state, so any edit silently invalidates the whole ladder —
+    but a commit of that same content does not (the signature is invariant
+    across commits).
     """
     signature = working_signature(root)
     state = load_state(root)
@@ -180,7 +197,6 @@ def workflow_status(root: Path) -> dict[str, Any]:
         "prod_current": prod_current,
         "production_stale": production_stale,
         "production_verified": production_verified,
-        "can_commit": bool(staging_verified and production_verified),
         "staging_url": STAGING_URL,
         "production_url": PRODUCTION_URL,
         "staged_build_id": staging.get("build_id"),

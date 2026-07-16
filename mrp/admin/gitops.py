@@ -158,3 +158,36 @@ def approve(root: Path, paths: list[str], message: str) -> dict[str, Any]:
         result["push"] = detail[-1] if detail else "push failed"
 
     return result
+
+
+def push_main(root: Path) -> dict[str, Any]:
+    """Push local commits on the commit branch to origin (retry after a failed
+    approve push). Returns {"pull": ..., "push": ...} with None meaning success.
+    """
+    branch = current_branch(root)
+    if branch != COMMIT_BRANCH:
+        raise GitError(f"On branch '{branch}' — push only runs on {COMMIT_BRANCH}.")
+
+    result: dict[str, Any] = {"pull": None, "push": None}
+
+    pull = _git(root, "pull", "--ff-only", check=False)
+    if pull.returncode != 0:
+        detail = (pull.stderr or pull.stdout).strip().splitlines()
+        result["pull"] = detail[-1] if detail else "pull failed"
+
+    push = _git(root, "push", "origin", COMMIT_BRANCH, check=False)
+    if push.returncode != 0:
+        detail = (push.stderr or push.stdout).strip().splitlines()
+        result["push"] = detail[-1] if detail else "push failed"
+
+    return result
+
+
+def unpushed_count(root: Path) -> int:
+    """Commits on the local commit branch not yet on origin (0 when unknown)."""
+    proc = _git(root, "rev-list", "--count",
+                f"origin/{COMMIT_BRANCH}..{COMMIT_BRANCH}", check=False)
+    try:
+        return int(proc.stdout.strip())
+    except ValueError:
+        return 0

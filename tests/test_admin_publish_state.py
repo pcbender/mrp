@@ -1,7 +1,8 @@
-"""Unit tests for the Phase-2 publish workflow state.
+"""Unit tests for the publish workflow state.
 
-Covers the working-tree signature (drift detection), staging state
-persistence, verification validity vs. signature, and affected-page URLs.
+Covers the content-state signature (drift detection + commit invariance),
+staging state persistence, verification validity vs. signature, and
+affected-page URLs.
 """
 
 import subprocess
@@ -35,19 +36,61 @@ def _isolate_state(tmp_path, monkeypatch):
 
 # --- working_signature -------------------------------------------------------
 
-def test_signature_empty_when_clean(tmp_path):
+def test_signature_stable_and_nonempty_when_clean(tmp_path):
     root = _repo(tmp_path)
+    sig = publish_state.working_signature(root)
+    assert sig
+    assert publish_state.working_signature(root) == sig
+
+
+def test_signature_empty_without_managed_content(tmp_path):
+    root = tmp_path / "empty"
+    root.mkdir()
+    _git(root, "init", "-q")
     assert publish_state.working_signature(root) == ""
 
 
 def test_signature_changes_on_edit(tmp_path):
     root = _repo(tmp_path)
+    sig0 = publish_state.working_signature(root)
     (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: A\n")
     sig1 = publish_state.working_signature(root)
-    assert sig1
+    assert sig1 and sig1 != sig0
     (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: B\n")
     sig2 = publish_state.working_signature(root)
     assert sig2 and sig2 != sig1
+
+
+def test_signature_invariant_across_commit(tmp_path):
+    root = _repo(tmp_path)
+    (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: A\n")
+    (root / "content" / "releases" / "y.yaml").write_text("release:\n  slug: y\n")
+    before = publish_state.working_signature(root)
+    _git(root, "add", "-A")
+    _git(root, "commit", "-qm", "edit + add")
+    assert publish_state.working_signature(root) == before
+
+
+def test_signature_delete_invariant_across_commit(tmp_path):
+    root = _repo(tmp_path)
+    clean = publish_state.working_signature(root)
+    (root / "content" / "releases" / "x.yaml").unlink()
+    deleted = publish_state.working_signature(root)
+    assert deleted != clean
+    _git(root, "add", "-A")
+    _git(root, "commit", "-qm", "delete x")
+    assert publish_state.working_signature(root) == deleted
+
+
+def test_verified_state_survives_commit(tmp_path):
+    root = _repo(tmp_path)
+    (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: A\n")
+    sig = publish_state.working_signature(root)
+    publish_state.record_staging(root, sig, "b", "r", "passed")
+    publish_state.mark_staging_verified(root, sig)
+    _git(root, "add", "-A")
+    _git(root, "commit", "-qm", "commit mid-ladder")
+    assert publish_state.workflow_status(root)["staging_verified"] is True
 
 
 # --- staging state + workflow_status ----------------------------------------
@@ -111,19 +154,16 @@ def _stage_and_verify(root):
     return sig
 
 
-# --- production + can_commit -------------------------------------------------
+# --- production ----------------------------------------------------------------
 
-def test_production_requires_and_reaches_can_commit(tmp_path):
+def test_production_verify_reached_after_staging(tmp_path):
     root = _repo(tmp_path)
     (root / "content" / "releases" / "x.yaml").write_text("release:\n  slug: x\n  title: A\n")
     sig = _stage_and_verify(root)
-    # Before production deploy: not committable.
-    assert publish_state.workflow_status(root)["can_commit"] is False
+    assert publish_state.workflow_status(root)["production_verified"] is False
     publish_state.record_production(root, sig, "build-1", "r-deploy", "r-verify", "passed")
     assert publish_state.mark_production_verified(root, sig) is True
-    wf = publish_state.workflow_status(root)
-    assert wf["production_verified"] is True
-    assert wf["can_commit"] is True
+    assert publish_state.workflow_status(root)["production_verified"] is True
 
 
 def test_edit_after_production_verify_invalidates_whole_ladder(tmp_path):
@@ -137,7 +177,6 @@ def test_edit_after_production_verify_invalidates_whole_ladder(tmp_path):
     wf = publish_state.workflow_status(root)
     assert wf["staging_verified"] is False
     assert wf["production_verified"] is False
-    assert wf["can_commit"] is False
     assert wf["production_stale"] is True
 
 

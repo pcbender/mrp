@@ -28,6 +28,12 @@ should:
 This eligibility check occurs before the **Push to Staging** step. Non-release
 content (artists, posts, pages) and unattributable assets are always eligible.
 
+Eligibility gates **publishing only** — committing to Git is always allowed
+(Phase 4). Draft work commits freely; the public site build excludes releases
+whose status is not public, so committed drafts do not render. Committing (or
+discarding) an ineligible pending change is also how it stops blocking the
+publish ladder for everything else.
+
 ## Changes page workflow
 
 ### 1. Review changes
@@ -46,8 +52,8 @@ than a canned string. Examples:
 * `Publish A Good Day to Be`
 * `Update 3 releases and 1 artist profile`
 
-The message stays editable and appears near the final approval action, because
-no commit is created until staging and production have been verified.
+The message stays editable and appears with the **Commit** action, which is
+available whenever there are pending changes (validation-gated).
 
 ### 3. Push to staging
 
@@ -68,21 +74,30 @@ deployment invalidates the staging and production verification state.
 
 ### 5. Approve, Commit, and Push
 
-Only after both staging and production are deployed and explicitly verified does
-the final action become available. It confirms the releases remain eligible,
-creates the Git commit with the reviewed message, pushes to the configured repo,
-and records the verified production state as the approved repository state.
+Committing is **independent of the publish ladder** (Phase 4 — this supersedes
+the original commit-last design). The **Approve, Commit & Push** action is
+available whenever there are pending managed changes: it validates the
+repository, commits the changes to `main` with the reviewed message, and
+pushes. No deploy or verification is required first, and drafts commit freely.
 
-Button label: **Approve, Commit, and Push**. Git records completed, verified
-publishing events rather than every corrective iteration.
+Because the workflow signature is content-based (invariant across commits),
+committing does **not** invalidate a staged/verified deploy, and the ladder can
+publish a clean tree (commit first, then publish — the recommended order, so
+production only serves committed content). If the push fails, the commit is
+safe locally and the page shows an unpushed-commits indicator with a **Push to
+origin** retry button.
 
 ## v1 design decisions (2026-07-11)
 
 * **Whole-tree deploy** — the site build is whole-tree (Astro rebuilds all of
   `content/`), so v1 does not do true per-file exclusion. The eligibility check
-  is a **hard gate**: if any pending managed change belongs to an ineligible
-  release, publishing is blocked until it is made eligible or discarded.
-  (Isolated per-selection builds via a temp worktree are a possible v2.)
+  is a **hard gate on publishing**: if any pending managed change belongs to an
+  ineligible release, staging/production is blocked until it is made eligible,
+  committed, or discarded. (Isolated per-selection builds via a temp worktree
+  are a possible v2.) Caveat: releases in mid-pipeline statuses (`staged`,
+  `verified`) *do* render in builds — a whole-tree deploy while one is
+  committed mid-workspace-pipeline publishes its page early. This pre-dates
+  Phase 4 (committed content was never gated) and is accepted for v1.
 * **Selection** in v1 scopes the Git commit and what the gate reports; deploy
   publishes the working tree.
 * **Production via `publish()`** — reuses the existing production path (marker
@@ -123,3 +138,19 @@ publishing events rather than every corrective iteration.
   Code: `mrp/admin/publish_state.py`, `routes/changes.py`,
   `templates/changes/_publish_ladder.html` (replaces the Phase-2 stage
   partials).
+* **Phase 4 (done 2026-07-16)** — **commit decoupled from the ladder.** The
+  original commit-last design tied saving work to git to a full
+  build/stage/verify/production/verify pass, which (a) made draft content
+  uncommittable (the eligibility gate blocked rung 1, the ladder blocked
+  rung 3), (b) let one draft block committing everything else, and (c) put
+  uncommitted content live on production before git recorded it. Now:
+  **Commit** is its own section, available whenever changes exist
+  (validation-gated only); the ladder is two rungs (staging → production) and
+  gates only on eligibility of *pending* changes; the workflow signature is
+  content-state based (`git ls-files -s` blobs overlaid with working-tree
+  hashes), so committing never invalidates a verified deploy and a clean tree
+  can be published (commit-first is the recommended order); a failed push
+  leaves an unpushed-commits banner with a **Push to origin** retry
+  (`/changes/push`, `gitops.push_main`). Code: `publish_state.py`,
+  `gitops.py`, `routes/changes.py`, `templates/changes/_panel.html`,
+  `_publish_ladder.html`.

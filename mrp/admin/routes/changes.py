@@ -33,10 +33,12 @@ def _panel_context(root: Path, flash: dict[str, str] | None = None,
         except gitops.GitError as exc:
             change["diff"] = {"binary": False, "lines": [{"cls": "meta", "text": str(exc)}], "truncated": False}
     eligibility = changes_meta.eligibility_summary(changes)
+    on_main = branch == gitops.COMMIT_BRANCH
     return {
         "branch": branch,
-        "on_main": branch == gitops.COMMIT_BRANCH,
+        "on_main": on_main,
         "commit_branch": gitops.COMMIT_BRANCH,
+        "unpushed": gitops.unpushed_count(root) if on_main else 0,
         "changes": changes,
         "eligibility": eligibility,
         "can_stage": eligibility["all_eligible"],
@@ -65,7 +67,6 @@ def _ladder_ctx(root: Path, stage_job: dict | None = None, stage_job_id: str | N
 
     return {
         "changes": changes,
-        "generated_message": changes_meta.generate_commit_message(changes),
         "can_stage": changes_meta.eligibility_summary(changes)["all_eligible"],
         "workflow": publish_state.workflow_status(root),
         "affected": publish_state.affected_pages(changes, ""),
@@ -110,20 +111,24 @@ async def changes_badge(request: Request):
 
 @router.post("/stage", response_class=HTMLResponse)
 async def changes_stage(request: Request):
-    """Build the whole site and deploy the working tree to staging (no commit)."""
+    """Build the whole site and deploy the current content to staging.
+
+    Works on a clean tree too (publishing committed content); pending changes
+    owned by non-eligible releases still block the deploy.
+    """
     root = get_repo_root()
     changes = gitops.data_changes(root)
     changes_meta.annotate_changes(root, changes)
-    if not changes:
-        return _templates.TemplateResponse(request, LADDER_TEMPLATE,
-                                           _ladder_ctx(root, error="Nothing to stage — the working tree is clean."))
     eligibility = changes_meta.eligibility_summary(changes)
     if not eligibility["all_eligible"]:
         blocked = ", ".join(eligibility["blocked_releases"].keys())
         return _templates.TemplateResponse(request, LADDER_TEMPLATE, _ladder_ctx(
-            root, error=f"Blocked — make eligible (approved/live) or discard first: {blocked}"))
+            root, error=f"Blocked — make eligible (approved/live), commit, or discard first: {blocked}"))
 
     signature = publish_state.working_signature(root)
+    if not signature:
+        return _templates.TemplateResponse(request, LADDER_TEMPLATE,
+                                           _ladder_ctx(root, error="Nothing to publish — no managed content found."))
     job_id = job_runner.launch("changes/stage", publish_state.run_staging_deploy, str(root), signature)
     job = _await_job(job_id)
     return _templates.TemplateResponse(request, LADDER_TEMPLATE,
@@ -183,10 +188,13 @@ async def changes_verify_production(request: Request):
     return _templates.TemplateResponse(request, LADDER_TEMPLATE, _ladder_ctx(root, verify_error=err))
 
 
-# --- Approve, Commit, and Push (final rung) ---------------------------------
+# --- Approve, Commit, and Push (independent of the publish ladder) -----------
 
 @router.post("/approve", response_class=HTMLResponse)
 async def changes_approve(request: Request):
+    """Commit pending managed changes to main and push. Version control only —
+    publishing runs through the ladder separately, and drafts commit freely
+    (the site build excludes non-public releases)."""
     root = get_repo_root()
     form = await request.form()
     changes = gitops.data_changes(root)
@@ -195,20 +203,6 @@ async def changes_approve(request: Request):
 
     if not changes:
         ctx = _panel_context(root, flash={"cls": "warn", "text": "Nothing to commit — the working tree is clean."})
-        return _templates.TemplateResponse(request, PANEL_TEMPLATE, ctx)
-
-    workflow = publish_state.workflow_status(root)
-    if not workflow["can_commit"]:
-        ctx = _panel_context(root, flash={
-            "cls": "error",
-            "text": "Deploy and verify staging and production before committing.",
-        })
-        return _templates.TemplateResponse(request, PANEL_TEMPLATE, ctx)
-
-    eligibility = changes_meta.eligibility_summary(changes)
-    if not eligibility["all_eligible"]:
-        blocked = ", ".join(eligibility["blocked_releases"].keys())
-        ctx = _panel_context(root, flash={"cls": "error", "text": f"Blocked — not eligible: {blocked}"})
         return _templates.TemplateResponse(request, PANEL_TEMPLATE, ctx)
 
     validation = validate_repository(root)
@@ -227,18 +221,35 @@ async def changes_approve(request: Request):
         ctx = _panel_context(root, flash={"cls": "error", "text": str(exc)})
         return _templates.TemplateResponse(request, PANEL_TEMPLATE, ctx)
 
-    publish_state.clear_state(root)
     parts = [f"Committed {result['commit']} ({len(files)} file{'s' if len(files) != 1 else ''})"]
     cls = "ok"
     if result["push"] is None:
         parts.append("pushed to origin/main.")
     else:
-        parts.append(f"push failed: {result['push']} — the commit is safe locally; approve again later to retry.")
+        parts.append(f"push failed: {result['push']} — the commit is safe locally; use Push to retry.")
         cls = "warn"
     if result["pull"]:
         parts.append(f"(pre-pull note: {result['pull']})")
     ctx = _panel_context(root, flash={"cls": cls, "text": " ".join(parts)})
     return _templates.TemplateResponse(request, PANEL_TEMPLATE, ctx)
+
+
+@router.post("/push", response_class=HTMLResponse)
+async def changes_push(request: Request):
+    """Retry pushing local commits on main to origin (after a failed approve push)."""
+    root = get_repo_root()
+    try:
+        result = gitops.push_main(root)
+    except gitops.GitError as exc:
+        return _templates.TemplateResponse(request, PANEL_TEMPLATE,
+                                           _panel_context(root, flash={"cls": "error", "text": str(exc)}))
+    if result["push"] is None:
+        flash = {"cls": "ok", "text": "Pushed to origin/main."}
+    else:
+        flash = {"cls": "warn", "text": f"Push failed: {result['push']} — the commits remain safe locally."}
+    if result["pull"]:
+        flash["text"] += f" (pre-pull note: {result['pull']})"
+    return _templates.TemplateResponse(request, PANEL_TEMPLATE, _panel_context(root, flash=flash))
 
 
 @router.post("/discard", response_class=HTMLResponse)
