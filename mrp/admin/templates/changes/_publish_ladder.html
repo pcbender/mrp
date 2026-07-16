@@ -67,8 +67,9 @@
           <div class="flash flash-error">Production deploy errored: {{ prod_job.output }}</div>
           {% endif %}
           {% if wf.production_verified %}
-          <div class="stage-state stage-ok">✓ Deployed &amp; verified (build {{ wf.production.build_id }}).</div>
+          <div class="stage-state stage-ok">✓ Deployed &amp; verified (build {{ wf.production.build_id }}) — this content is live.</div>
           <a class="btn btn-secondary btn-sm" href="{{ wf.production_url }}" target="_blank" rel="noopener">Open production ↗</a>
+          {% if changes %}<div class="commit-note">Published but not yet committed — use <strong>Approve, Commit &amp; Push</strong> above to record it in git.</div>{% endif %}
           {% elif wf.prod_current %}
           <div class="stage-state stage-pending">Deployed (build {{ wf.production.build_id }}). Review it, then verify.</div>
           <div class="stage-actions">
@@ -84,25 +85,6 @@
             {% for p in affected %}<a href="{{ wf.production_url }}{{ p.path }}" target="_blank" rel="noopener" title="{{ p.label }}">{{ p.path }}</a>{% endfor %}
           </div>
           {% endif %}
-        {% endif %}
-      </div>
-    </div>
-  </li>
-
-  {# ---- Rung 3: Approve, Commit, and Push ---- #}
-  <li class="rung {% if wf.can_commit %}rung-active{% else %}rung-locked{% endif %}">
-    <div class="rung-num">3</div>
-    <div class="rung-main">
-      <div class="rung-title">Approve, Commit &amp; Push</div>
-      <div class="rung-body">
-        {% if not wf.can_commit %}
-        <div class="rung-locked-msg">Deploy &amp; verify production first.</div>
-        {% else %}
-        <form hx-post="/changes/approve" hx-target="#changes-panel" hx-swap="innerHTML" class="commit-form">
-          <input type="text" name="message" class="input-wide" maxlength="200" value="{{ generated_message }}">
-          <button type="submit" class="btn btn-primary">Approve, Commit, and Push ({{ changes|length }})</button>
-        </form>
-        <div class="commit-note">Commits the verified working tree to <strong>main</strong> and pushes — recording this verified state.</div>
         {% endif %}
       </div>
     </div>
