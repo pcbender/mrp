@@ -15,6 +15,10 @@ release:
   links:
     spotify: https://open.spotify.com/album/3ipLG4iGgpqAxmFkNgoBYO
     apple_music: https://music.apple.com/us/album/you-dont-say-single/6789217212
+    itunes_store: https://music.apple.com/us/album/6789217212?app=itunes
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_k8RBg2MQgXhyOup0wOjjNuz3L-a3DIonw
+    amazon_music: https://music.amazon.com/albums/B0H88K4W64?ref=dmm_acq_soc_us_u_lfire_lp_x_07abb4478c834a44e6c86750f533f1bf
+    tidal: http://www.tidal.com/album/541564338
   song:
     number: 1
     title: You Don't Say
@@ -23,9 +27,19 @@ release:
     duration: '6:41'
     explicit: false
     instrumental: false
-    preview_audio: null
+    preview_audio: /samples/michael-anthony-rose--you-don-t-say.mp3
     links:
       spotify: https://open.spotify.com/track/1vV0uKH32lGWTzFwLYzTx6
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     style: Rock, Progressive Rock with Art Rock influences, 88 BPM. Begins with clean
       fingerpicked electric guitar, fretless bass, piano, and restrained drums before
       expanding into Mellotron, Hammond organ, shifting time signatures (7/8, 4/4,
@@ -369,7 +383,17 @@ release:
 
       "You don''t say..."'
     lyrics_source: null
-    hints: {}
+    master_path: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
   distributor: landr
   seo:
     title: You Don't Say
