@@ -7,9 +7,13 @@
     <span class="spinner"></span>
     <span style="font-size:12px;color:var(--muted)">running…</span>
   </span>
+  {# Self-chaining poll: each swapped-in copy re-triggers on load. This is the
+     robust htmx idiom for a poller that replaces its own container — `every`
+     binds a rate-timer to an element the swap immediately destroys, which does
+     not re-arm reliably; `load delay` fires once per insertion and chains. #}
   <span style="display:none"
     hx-get="/releases/{{ slug }}/ws-poll/{{ job.id }}?step={{ step }}"
-    hx-trigger="every 2s"
+    hx-trigger="load delay:2s"
     hx-target="#{{ dom_id }}"
     hx-swap="innerHTML"></span>
 
