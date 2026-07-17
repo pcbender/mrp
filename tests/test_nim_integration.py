@@ -375,6 +375,6 @@ def test_generate_identity_image_requires_nim_token(tmp_path, monkeypatch):
     monkeypatch.setenv("MRP_STATE_DIR", str(tmp_path / "state"))
     ref = tmp_path / "ref.jpg"
     ref.write_bytes(b"ref")
-    with pytest.raises(nim.NimAuthRequiredError):
+    with pytest.raises(nim.NimAuthRequiredError, match="identity images"):
         nim.generate_identity_image(repo=tmp_path, references=[ref],
                                     output_dir=tmp_path / "cand", prompt="x")

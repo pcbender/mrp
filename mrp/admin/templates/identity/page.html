@@ -1,0 +1,150 @@
+{% extends "_base.html" %}
+{% block page_title %} — {{ artist.name }} image refresh{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1 class="page-title">
+    {{ target_member.name if target_member else artist.name }}
+    <small class="td-mono">identity refresh</small>
+  </h1>
+  <div class="identity-header-actions">
+    {% if target_member %}
+    <a href="/artists/{{ artist.id }}/refresh" class="btn btn-secondary">Band Image</a>
+    <a href="/artists/{{ artist.id }}/members/{{ target_member.slug }}" class="btn btn-secondary">Member Profile</a>
+    {% else %}
+    <a href="/artists/{{ artist.id }}" class="btn btn-secondary">Artist Profile</a>
+    {% endif %}
+  </div>
+</div>
+
+{% if flash %}<div class="flash flash-{{ flash.cls }}">{{ flash.text }}</div>{% endif %}
+
+<div class="identity-layout">
+  <section class="identity-source-panel" aria-label="Current identity">
+    {% set subject = target_member if target_member else artist %}
+    <div class="identity-source-block">
+      <h2>Public Image</h2>
+      {% if subject.image %}
+      {% set public_src = '/' + subject.image.replace('site/public/', '').lstrip('/') %}
+      <img src="/pub{{ public_src }}" alt="{{ subject.name }} public image" class="identity-source-image">
+      <code>{{ subject.image }}</code>
+      {% else %}
+      <div class="identity-image-empty">No public image</div>
+      {% endif %}
+    </div>
+
+    {% if artist.type != 'band' or target_member %}
+    <div class="identity-source-block">
+      <h2>Base Reference</h2>
+      {% if subject.reference_image %}
+      <img src="/repo-assets/{{ subject.reference_image.replace('assets/', '', 1) }}"
+           alt="{{ subject.name }} reference" class="identity-source-image">
+      <code>{{ subject.reference_image }}</code>
+      {% else %}
+      <div class="flash flash-warn">Reference image required.</div>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="identity-source-block">
+      <h2>Nim</h2>
+      {% if nim_connected %}
+      <span class="badge badge-live">connected</span>
+      {% else %}
+      <a class="btn btn-secondary btn-sm" href="/nim/connect?return_to={{ return_to }}">Connect Nim</a>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="identity-workspace">
+    <form class="form-card identity-generate-form"
+          hx-post="/artists/{{ artist.id }}/refresh/generate"
+          hx-target="#identity-result"
+          hx-swap="innerHTML"
+          hx-encoding="multipart/form-data">
+      <div class="form-body">
+        {% if target_member %}
+        <input type="hidden" name="target_member" value="{{ target_member.slug }}">
+        <div class="identity-target-line">
+          <span class="badge badge-ready">member</span>
+          <strong>{{ target_member.name }}</strong>
+          <span>{{ target_member.roles | join(', ') }}</span>
+        </div>
+        {% elif artist.type == 'band' %}
+        <div class="form-field full">
+          <label>Members</label>
+          <div class="identity-member-grid">
+            {% for member in members %}
+            <label class="identity-member-option {{ 'is-disabled' if not member.has_reference else '' }}">
+              <input type="checkbox" name="member_slugs" value="{{ member.slug }}"
+                     {% if member.selected %}checked{% endif %}
+                     {% if not member.has_reference %}disabled{% endif %}>
+              {% if member.reference_image %}
+              <img src="/repo-assets/{{ member.reference_image.replace('assets/', '', 1) }}"
+                   alt="{{ member.name }} reference">
+              {% else %}
+              <span class="identity-member-placeholder">No ref</span>
+              {% endif %}
+              <span>
+                <strong>{{ member.name }}</strong>
+                <small>{{ member.status or 'current' }}</small>
+              </span>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="form-row identity-settings-row">
+          <div class="form-field">
+            <label for="identity-count">Candidates</label>
+            <select name="count" id="identity-count">
+              {% for n in range(1, max_candidates + 1) %}
+              <option value="{{ n }}" {% if n == 1 %}selected{% endif %}>{{ n }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="form-field identity-credit-field">
+            <label>Estimated Cost</label>
+            <output id="identity-credit-total">{{ credits_per_image }} credits</output>
+          </div>
+        </div>
+
+        <div class="form-field full">
+          <label for="identity-references">Additional References</label>
+          <input id="identity-references" type="file" name="reference_files"
+                 accept="image/jpeg,image/png,image/webp,image/gif" multiple>
+        </div>
+
+        <div class="form-field full">
+          <label for="identity-prompt">Creative Direction</label>
+          <textarea id="identity-prompt" name="prompt" rows="5"
+                    placeholder="Wardrobe, setting, lighting, expression, and composition"></textarea>
+        </div>
+
+        <div class="form-actions identity-generate-actions">
+          <span class="identity-model">{{ model_name }} · {{ image_aspect }} · {{ image_resolution }}</span>
+          <button type="submit" class="btn btn-primary"
+                  {% if not nim_connected %}disabled title="Connect Nim first"{% endif %}>
+            Generate
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div id="identity-result" aria-live="polite"></div>
+  </section>
+</div>
+
+<script>
+  (() => {
+    const select = document.getElementById('identity-count');
+    const output = document.getElementById('identity-credit-total');
+    const unit = {{ credits_per_image }};
+    if (!select || !output) return;
+    const update = () => { output.textContent = `${Number(select.value) * unit} credits`; };
+    select.addEventListener('change', update);
+    update();
+  })();
+</script>
+{% endblock %}

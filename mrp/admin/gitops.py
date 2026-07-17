@@ -1,9 +1,9 @@
 """Git operations for the admin Changes page.
 
-Scoped strictly to the data pathspecs (content/, assets/) so admin commits can
-never sweep in code changes, and the user's staged work elsewhere in the tree
-is left untouched (pathspec-limited `git commit -- <paths>` uses a temporary
-index).
+Scoped strictly to the data pathspecs (content/, assets/, and public assets)
+so admin commits can never sweep in code changes, and the user's staged work
+elsewhere in the tree is left untouched (pathspec-limited `git commit --
+<paths>` uses a temporary index).
 """
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-DATA_PATHSPECS = ("content", "assets")
+DATA_PATHSPECS = ("content", "assets", "site/public/assets")
 COMMIT_BRANCH = "main"
 MAX_DIFF_LINES = 400
 
@@ -51,7 +51,8 @@ def is_data_path(path: str) -> bool:
     parts = Path(path).parts
     if not parts or Path(path).is_absolute() or ".." in parts:
         return False
-    return parts[0] in DATA_PATHSPECS
+    # Prefix match per pathspec — specs may span segments (site/public/assets).
+    return any(path == spec or path.startswith(spec + "/") for spec in DATA_PATHSPECS)
 
 
 def data_changes(root: Path) -> list[dict[str, Any]]:

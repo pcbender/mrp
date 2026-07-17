@@ -6,7 +6,12 @@
   <h1 class="page-title">
     {{ artist.name }} <small class="td-mono">/ {{ 'new member' if is_new else member.slug }}</small>
   </h1>
-  <a href="/artists/{{ artist.id }}" class="btn btn-secondary">← {{ artist.name }}</a>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+    {% if not is_new and member.reference_image %}
+    <a href="/artists/{{ artist.id }}/refresh?member={{ member.slug }}" class="btn btn-secondary">Refresh Image</a>
+    {% endif %}
+    <a href="/artists/{{ artist.id }}" class="btn btn-secondary">← {{ artist.name }}</a>
+  </div>
 </div>
 
 <div id="save-result">

@@ -1,0 +1,63 @@
+<div class="identity-review"
+     {% if job.status in ('pending', 'running') %}
+     hx-get="/artists/{{ artist_id }}/refresh/poll/{{ job.id }}"
+     hx-trigger="load delay:1s"
+     hx-target="this"
+     hx-swap="outerHTML"
+     {% endif %}>
+  {% if job.status in ('pending', 'running') %}
+  <div class="job-result job-running">
+    <span class="spinner"></span>
+    <span>Generating {{ 'member' if target_member else 'artist' }} candidates</span>
+    <span class="td-mono identity-job-id">{{ job.id }}</span>
+  </div>
+
+  {% elif job.status == 'done' and candidates %}
+  <div class="identity-review-header">
+    <h2>Candidates</h2>
+    {% if output is mapping %}
+    <span>{{ candidates | length }} rendered · {{ output.references }} reference{{ '' if output.references == 1 else 's' }}</span>
+    {% endif %}
+  </div>
+  <div class="identity-candidate-grid">
+    {% for candidate in candidates %}
+    <article class="identity-candidate" id="identity-candidate-{{ loop.index }}">
+      <img src="{{ candidate.url }}" alt="Generated identity candidate {{ loop.index }}">
+      <div class="identity-candidate-meta">
+        <code title="{{ candidate.name }}">{{ candidate.name }}</code>
+        <div class="identity-candidate-actions">
+          <form method="post" action="/artists/{{ artist_id }}/refresh/publish">
+            <input type="hidden" name="candidate" value="{{ candidate.file }}">
+            <input type="hidden" name="target_member" value="{{ target_member or '' }}">
+            <button type="submit" class="btn btn-primary">Publish</button>
+          </form>
+          <form hx-post="/artists/{{ artist_id }}/refresh/discard"
+                hx-target="#identity-candidate-{{ loop.index }}"
+                hx-swap="outerHTML"
+                hx-confirm="Discard this candidate?">
+            <input type="hidden" name="candidate" value="{{ candidate.file }}">
+            <input type="hidden" name="target_member" value="{{ target_member or '' }}">
+            <button type="submit" class="btn btn-secondary">Discard</button>
+          </form>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% elif job.status == 'done' %}
+  <div class="flash flash-error">Generation completed without usable candidates.</div>
+
+  {% else %}
+  <div class="flash flash-error">
+    {% if output is mapping and output.status == 'auth_required' %}
+    {{ output.message }}
+    <a class="btn btn-secondary btn-sm" href="/nim/connect?return_to={{ return_to }}">Connect Nim</a>
+    {% elif output is string %}
+    {{ output }}
+    {% else %}
+    Identity generation failed.
+    {% endif %}
+  </div>
+  {% endif %}
+</div>
