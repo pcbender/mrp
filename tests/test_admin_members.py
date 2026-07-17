@@ -12,6 +12,7 @@ from mrp.admin.routes.artists import (
     _member_from_form,
     _member_rows,
     _store_identity_image,
+    _store_member_reference_image,
 )
 
 
@@ -122,3 +123,25 @@ def test_store_identity_image_replaces_other_extension(tmp_path):
     d = tmp_path / "site/public/assets/artists/4castle"
     assert not (d / "x.png").exists()
     assert (d / "x.webp").read_bytes() == b"2"
+
+
+def test_member_from_form_parses_reference_image():
+    member = _member_from_form({"member_name": "X", "member_slug": "x",
+                                "member_reference_image": "assets/artists/b/members/x.jpg"})
+    assert member["reference_image"] == "assets/artists/b/members/x.jpg"
+    blank = _member_from_form({"member_name": "X", "member_slug": "x",
+                               "member_reference_image": "  "})
+    assert blank["reference_image"] is None
+
+
+def test_store_member_reference_image_lands_in_members_subdir(tmp_path):
+    path, err = asyncio.run(
+        _store_member_reference_image(tmp_path, "4castle", "raven-cortez",
+                                      _FakeUpload("base.JPEG", b"ref")))
+    assert err is None
+    assert path == "assets/artists/4castle/members/raven-cortez.jpg"
+    dest = tmp_path / "assets/artists/4castle/members/raven-cortez.jpg"
+    assert dest.read_bytes() == b"ref"
+    # Clear of the artist's own reference.* and the published site tree.
+    assert not (tmp_path / "assets/artists/4castle/reference.jpg").exists()
+    assert not (tmp_path / "site").exists()

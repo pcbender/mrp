@@ -61,7 +61,7 @@
   <div class="form-card">
     <div class="form-body">
       <div class="form-field full">
-        <label>Image</label>
+        <label>Image <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(public — shown on the artist page)</span></label>
         {% if member.image %}
         {% set img_src = '/' + member.image.replace('site/public/', '').lstrip('/') %}
         <img src="/pub{{ img_src }}" alt="{{ member.name }}"
@@ -69,11 +69,26 @@
         {% endif %}
         <input type="file" name="member_image_file" accept="image/jpeg,image/png,image/webp,image/gif">
         <span style="font-size:11px;color:var(--muted)">
-          {% if is_new %}Choose a file to upload — it lands in <code>assets/artists/{{ artist.id }}/</code> when you add the member.
-          {% else %}Upload to replace. Lands in <code>assets/artists/{{ artist.id }}/{{ member.slug }}.*</code>.{% endif %}
+          {% if is_new %}Choose a file to upload — it lands in <code>site/public/assets/artists/{{ artist.id }}/</code> when you add the member.
+          {% else %}Upload to replace. Lands in <code>site/public/assets/artists/{{ artist.id }}/{{ member.slug }}.*</code>.{% endif %}
         </span>
         <input type="text" name="member_image" value="{{ member.image or '' }}"
                placeholder="/assets/artists/{{ artist.id }}/… (or set a path manually)"
+               style="margin-top:.4rem">
+      </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Reference Image <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(internal base likeness — kept in git, never published)</span></label>
+        {% if member.reference_image %}
+        <img src="/repo-assets/{{ member.reference_image.replace('assets/', '', 1) }}" alt="{{ member.name }} reference"
+             style="max-width:160px;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.5rem">
+        {% endif %}
+        <input type="file" name="member_reference_image_file" accept="image/jpeg,image/png,image/webp,image/gif">
+        <span style="font-size:11px;color:var(--muted)">
+          {% if is_new %}Choose a file to upload — it lands in <code>assets/artists/{{ artist.id }}/members/</code> when you add the member.
+          {% else %}Upload to replace. Lands in <code>assets/artists/{{ artist.id }}/members/{{ member.slug }}.*</code>.{% endif %}
+        </span>
+        <input type="text" name="member_reference_image" value="{{ member.reference_image or '' }}"
+               placeholder="assets/artists/{{ artist.id }}/members/{{ member.slug or '…' }}.jpg (repo-relative)"
                style="margin-top:.4rem">
       </div>
       <div class="form-field full" style="margin-top:.75rem">

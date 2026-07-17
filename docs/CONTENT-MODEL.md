@@ -22,11 +22,21 @@ YouTube — the enrichment commands key off these), artist records carry the
 promoter-managed profile: `promo_blurb`, `bio_short`, `bio_long`, and
 `bio_auto_generated` (true until a human reviews and saves).
 
-An artist record may also carry `likeness_notes` — visual-identity prompt
-notes for generation consistency (promoter pipeline), never rendered on the
-public site. For solo/project/persona acts this is the act's own likeness;
-for bands it can hold band-wide visual language, while per-person likeness
-lives on `members[].likeness_notes` (see below).
+An artist record may also carry the internal likeness pair, never rendered
+on the public site:
+
+- `reference_image` — repo-relative path (convention:
+  `assets/artists/{id}/reference.{ext}`; members use
+  `assets/artists/{id}/members/{slug}.{ext}`) to the base likeness
+  reference. It lives under the git-tracked `assets/` tree — not
+  `site/public/` — so it is versioned and rides the admin Changes
+  workflow but is never published. The public `image` is refreshed over
+  time by generating new renders *from* this reference.
+- `likeness_notes` — visual-identity prompt notes for generation
+  consistency (promoter pipeline). For solo/project/persona acts this is
+  the act's own likeness; for bands it can hold band-wide visual language,
+  while per-person likeness lives on `members[].likeness_notes` (see
+  below).
 
 ### Members (bands)
 
@@ -41,7 +51,10 @@ members:
     roles: [lead guitar, vocals]  # optional
     status: current           # optional: current | former | guest
     display_order: 1          # optional; sort order on the artist page
-    image:                    # optional; site-relative path
+    image:                    # optional; site-relative path (public)
+    reference_image:          # optional; repo-relative path under
+                              # assets/artists/{id}/members/ — internal
+                              # base likeness, git-tracked, never published
     likeness_notes:           # optional; visual-identity prompt notes for
                               # generation consistency (promoter pipeline)
     bio:                      # optional; blank lines separate paragraphs
