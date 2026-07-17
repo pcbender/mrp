@@ -2,7 +2,7 @@ artist:
   id: michael-anthony-rose
   name: Michael Anthony Rose
   sort_name: Michael Anthony Rose
-  type: null
+  type: solo
   label: Maricopa Records
   default_publisher: Maricopa Publishing
   bio_short: Michael Anthony Rose writes songs that feel like discovered truths, mapping
@@ -11,42 +11,35 @@ artist:
     for meaning, offering listeners a rare and profound companion for life’s most
     essential questions. Rose’s work is a testament to the resilience found not in
     loud pronouncements, but in quiet observation and hard-won dignity.
-  bio_long: 'Michael Anthony Rose is a songwriter of rare insight and startling honesty.
-    On his debut for Maricopa Records, he uses direct, unadorned language to explore
-    the most profound human experiences: the gulf between who we were and who we are,
-    the search for truth in a world of convenient fictions, and the quiet defiance
-    of living an authentic life. His songs are less stories than they are confessions,
-    built from the concrete details of a lived experience, where a reflection in a
-    phone screen or the memory of a dream can trigger a lifetime of contemplation.
-    Rose doesn''t just sing about life; he holds a mirror up to it, capturing the
-    small, resonant moments of realization that define us.
-
-
-    The central preoccupations of Rose''s work are time and memory. His lyrics trace
-    the lines from lost childhood potential to the stark realities of aging, questioning
-    what we build to outlast ourselves and what we must learn to let go. He writes
-    with a philosopher''s curiosity and a diarist''s intimacy, exploring the comfort
-    of a shared lie in one song and the freedom of embracing dissonance in the next.
-    This is music that navigates regret, loss, and mortality with a steady, empathetic
-    gaze, always returning to the challenge of being present for the life one actually
-    has, not the one that was planned.
-
-
-    Throughout his work, Rose reveals a vast emotional landscape. His voice moves
-    from the raw vulnerability of admitting fear and bitterness to the quiet strength
-    of asserting one’s own space and worth. He sings of intimate connection with a
-    sensory richness and of profound disconnection with a heartbreaking clarity. His
-    perspective is that of a seasoned witness, one who sees the innocence in younger
-    generations without envy and accepts the limitations of his own body without surrender.
-    He finds resilience not by ignoring the damage, but by standing within it and
-    refusing to be diminished.
-
-
-    In the songs of Michael Anthony Rose, listeners will not find easy answers or
-    false comfort. Instead, they will find a voice that speaks with clarity and courage
-    to the complexities of a full-size life. It is an invitation to stop arguing with
-    the truth, to witness the ordinary light of the day, and to find that being here,
-    honestly and without shame, is more than enough.'
+  bio_long: "Michael Anthony Rose is a songwriter of rare insight and startling honesty.\
+    \ On his debut for Maricopa Records, he uses direct, unadorned language to explore\
+    \ the most profound human experiences: the gulf between who we were and who we\
+    \ are, the search for truth in a world of convenient fictions, and the quiet defiance\
+    \ of living an authentic life. His songs are less stories than they are confessions,\
+    \ built from the concrete details of a lived experience, where a reflection in\
+    \ a phone screen or the memory of a dream can trigger a lifetime of contemplation.\
+    \ Rose doesn't just sing about life; he holds a mirror up to it, capturing the\
+    \ small, resonant moments of realization that define us.\r\n\r\nThe central preoccupations\
+    \ of Rose's work are time and memory. His lyrics trace the lines from lost childhood\
+    \ potential to the stark realities of aging, questioning what we build to outlast\
+    \ ourselves and what we must learn to let go. He writes with a philosopher's curiosity\
+    \ and a diarist's intimacy, exploring the comfort of a shared lie in one song\
+    \ and the freedom of embracing dissonance in the next. This is music that navigates\
+    \ regret, loss, and mortality with a steady, empathetic gaze, always returning\
+    \ to the challenge of being present for the life one actually has, not the one\
+    \ that was planned.\r\n\r\nThroughout his work, Rose reveals a vast emotional\
+    \ landscape. His voice moves from the raw vulnerability of admitting fear and\
+    \ bitterness to the quiet strength of asserting one’s own space and worth. He\
+    \ sings of intimate connection with a sensory richness and of profound disconnection\
+    \ with a heartbreaking clarity. His perspective is that of a seasoned witness,\
+    \ one who sees the innocence in younger generations without envy and accepts the\
+    \ limitations of his own body without surrender. He finds resilience not by ignoring\
+    \ the damage, but by standing within it and refusing to be diminished.\r\n\r\n\
+    In the songs of Michael Anthony Rose, listeners will not find easy answers or\
+    \ false comfort. Instead, they will find a voice that speaks with clarity and\
+    \ courage to the complexities of a full-size life. It is an invitation to stop\
+    \ arguing with the truth, to witness the ordinary light of the day, and to find\
+    \ that being here, honestly and without shame, is more than enough."
   image: /assets/artists/michael-anthony-rose/cover.jpg
   links:
     spotify: https://open.spotify.com/artist/1bpeEWD8VsTewFr5FKOKv0
@@ -55,6 +48,10 @@ artist:
     youtube: https://www.youtube.com/channel/UC4qhZ-vNfzzS_9JLjxqgTZw
     bandcamp: null
     instagram: null
+    soundcloud: null
+    facebook: null
+    tiktok: null
+    website: null
   visibility: public
   bio_auto_generated: false
   promo_blurb: Michael Anthony Rose charts the complex landscape of a life in progress.
@@ -67,3 +64,5 @@ artist:
     indie-pop sound, turning small phrases into resonant emotional moments. Taken
     together, these dispatches offer a candid look at how we become who we are. Rose's
     music is for anyone asking how they got here, and what to make of the road ahead.
+  reference_image: assets/artists/michael-anthony-rose/reference.jpg
+  likeness_notes: null

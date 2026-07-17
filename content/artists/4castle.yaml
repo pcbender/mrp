@@ -80,6 +80,7 @@ artist:
     status: current
     display_order: 1
     image: /assets/artists/4castle/raven-cortez.jpg
+    reference_image: assets/artists/4castle/members/raven-cortez.jpg
     likeness_notes: null
     bio: "Raven Cortez grew up in San Juan, Puerto Rico, where the sounds of salsa,\
       \ bomba, and jazz filled the air. As a child, she was drawn to classical guitar,\
@@ -104,6 +105,7 @@ artist:
     status: current
     display_order: 2
     image: /assets/artists/4castle/mack-bishop.jpg
+    reference_image: assets/artists/4castle/members/mack-bishop.jpg
     likeness_notes: null
     bio: "Born and raised in Chicago, Mack Bishop grew up surrounded by music. His\
       \ father was a jazz saxophonist, and his mother played gospel organ in church.\
@@ -127,6 +129,7 @@ artist:
     status: current
     display_order: 3
     image: /assets/artists/4castle/fox-foster.jpg
+    reference_image: assets/artists/4castle/members/fox-foster.jpg
     likeness_notes: null
     bio: "Raised in Austin, Texas, Fox Foster was the kind of kid who couldn't sit\
       \ still—his parents gave him drumsticks before he could even walk. His early\
@@ -149,6 +152,7 @@ artist:
     status: current
     display_order: 4
     image: /assets/artists/4castle/jonah-vega.jpg
+    reference_image: assets/artists/4castle/members/jonah-vega.jpg
     likeness_notes: null
     bio: "Jonah Vega grew up in East LA, surrounded by a mix of Latin jazz, psychedelic\
       \ rock, and classical music. His father was a composer, his mother a pianist,\
@@ -170,6 +174,7 @@ artist:
     status: current
     display_order: 5
     image: /assets/artists/4castle/sky-monroe.jpg
+    reference_image: assets/artists/4castle/members/sky-monroe.jpg
     likeness_notes: null
     bio: "Born in Seattle, Sky Monroe grew up during the post-grunge era, absorbing\
       \ the sounds of Heart, Fleetwood Mac, and folk revival artists. A natural songwriter,\
