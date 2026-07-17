@@ -22,6 +22,7 @@
         "bio_auto_generated": {"type": ["boolean", "null"]},
         "promo_blurb": {"type": ["string", "null"]},
         "image": {"type": ["string", "null"]},
+        "reference_image": {"type": ["string", "null"]},
         "likeness_notes": {"type": ["string", "null"]},
         "links": {
           "type": "object",
@@ -47,6 +48,7 @@
         "roles": {"type": "array", "items": {"type": "string"}},
         "bio": {"type": ["string", "null"]},
         "image": {"type": ["string", "null"]},
+        "reference_image": {"type": ["string", "null"]},
         "likeness_notes": {"type": ["string", "null"]},
         "status": {"type": ["string", "null"], "enum": ["current", "former", "guest", null]},
         "display_order": {"type": ["integer", "null"]}

@@ -56,4 +56,6 @@ def run_server(repo: str | Path, host: str = "127.0.0.1", port: int = 8000) -> N
     processed_dir = repo_path / "assets" / "processed"
     processed_dir.mkdir(parents=True, exist_ok=True)
     app.mount("/processed", StaticFiles(directory=str(processed_dir)), name="processed")
+    assets_dir = repo_path / "assets"
+    app.mount("/repo-assets", StaticFiles(directory=str(assets_dir)), name="repo-assets")
     uvicorn.run(app, host=host, port=port, log_level="info")

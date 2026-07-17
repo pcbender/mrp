@@ -56,7 +56,7 @@
           <input type="text" name="default_publisher" value="{{ artist.default_publisher or '' }}">
         </div>
         <div class="form-field full">
-          <label>Image</label>
+          <label>Image <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(public — shown on the site; refresh over time from the reference)</span></label>
           {% if artist.image %}
           {% set img_src = '/' + artist.image.replace('site/public/', '').lstrip('/') %}
           <img src="/pub{{ img_src }}" alt="{{ artist.name }}"
@@ -64,10 +64,24 @@
           {% endif %}
           <input type="file" name="image_file" accept="image/jpeg,image/png,image/webp,image/gif">
           <span style="font-size:11px;color:var(--muted)">
-            Upload to replace. Lands in <code>assets/artists/{{ artist.id }}/{{ artist.id }}.*</code>.
+            Upload to replace. Lands in <code>site/public/assets/artists/{{ artist.id }}/{{ artist.id }}.*</code>.
           </span>
           <input type="text" name="image" value="{{ artist.image or '' }}"
                  placeholder="/assets/artists/{{ artist.id }}/… (or set a path manually)"
+                 style="margin-top:.4rem">
+        </div>
+        <div class="form-field full">
+          <label>Reference Image <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(internal base likeness — kept in git, never published)</span></label>
+          {% if artist.reference_image %}
+          <img src="/repo-assets/{{ artist.reference_image.replace('assets/', '', 1) }}" alt="{{ artist.name }} reference"
+               style="max-width:160px;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.5rem">
+          {% endif %}
+          <input type="file" name="reference_image_file" accept="image/jpeg,image/png,image/webp,image/gif">
+          <span style="font-size:11px;color:var(--muted)">
+            Upload to replace. Lands in <code>assets/artists/{{ artist.id }}/reference.*</code>.
+          </span>
+          <input type="text" name="reference_image" value="{{ artist.reference_image or '' }}"
+                 placeholder="assets/artists/{{ artist.id }}/reference.jpg (repo-relative)"
                  style="margin-top:.4rem">
         </div>
         <div class="form-field full">
@@ -137,6 +151,7 @@
             <th style="text-align:center" title="Roles">Rol</th>
             <th style="text-align:center" title="Bio">Bio</th>
             <th style="text-align:center" title="Image">Img</th>
+            <th style="text-align:center" title="Reference image">Ref</th>
             <th style="text-align:center" title="Likeness notes">Lik</th>
           </tr>
         </thead>
@@ -152,10 +167,11 @@
             <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_roles else 'off' }}"></span></td>
             <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_bio else 'off' }}"></span></td>
             <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_image else 'off' }}"></span></td>
+            <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_reference else 'off' }}"></span></td>
             <td class="cell-check"><span class="cell-dot {{ 'on' if row.has_likeness else 'off' }}"></span></td>
           </tr>
           {% else %}
-          <tr><td colspan="8" style="text-align:center;color:var(--muted);padding:1.25rem">
+          <tr><td colspan="9" style="text-align:center;color:var(--muted);padding:1.25rem">
             No members yet.
           </td></tr>
           {% endfor %}

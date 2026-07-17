@@ -28,8 +28,8 @@ LINK_KEYS = [
 ]
 _TEXT_FIELDS = [
     "name", "sort_name", "type", "label", "default_publisher",
-    "bio_short", "bio_long", "promo_blurb", "image", "likeness_notes",
-    "visibility",
+    "bio_short", "bio_long", "promo_blurb", "image", "reference_image",
+    "likeness_notes", "visibility",
 ]
 
 
@@ -83,18 +83,18 @@ def _member_rows(members: list | None) -> list[dict[str, Any]]:
             "has_roles": bool(member.get("roles")),
             "has_bio": bool(member.get("bio")),
             "has_image": bool(member.get("image")),
+            "has_reference": bool(member.get("reference_image")),
             "has_likeness": bool(member.get("likeness_notes")),
         })
     return rows
 
 
-async def _store_identity_image(root: Path, artist_id: str, slug: str,
-                                upload: Any) -> tuple[str | None, str | None]:
-    """Save an uploaded identity image under site/public/assets/artists/{id}/.
+async def _write_image(dest_dir: Path, basename: str,
+                       upload: Any) -> tuple[str | None, str | None]:
+    """Validate and write an upload as {basename}.{ext} in dest_dir.
 
-    Used for both member images (slug = member slug) and the artist's own
-    image (slug = artist id). Returns (site-relative path, None) on success
-    or (None, error message).
+    Keeps a single image per basename — drops any other-extension leftover.
+    Returns (filename, None) on success or (None, error message).
     """
     ext = Path(upload.filename).suffix.lower()
     if ext == ".jpeg":
@@ -104,15 +104,57 @@ async def _store_identity_image(root: Path, artist_id: str, slug: str,
     contents = await upload.read()
     if not contents:
         return None, "Empty image file."
-    dest_dir = root / "site" / "public" / "assets" / "artists" / artist_id
     dest_dir.mkdir(parents=True, exist_ok=True)
-    # Keep a single image per member slug — drop any other-extension leftover.
     for old_ext in MEMBER_IMAGE_EXTENSIONS:
-        old = dest_dir / f"{slug}{old_ext}"
+        old = dest_dir / f"{basename}{old_ext}"
         if old.exists() and old_ext != ext:
             old.unlink()
-    (dest_dir / f"{slug}{ext}").write_bytes(contents)
-    return f"/assets/artists/{artist_id}/{slug}{ext}", None
+    (dest_dir / f"{basename}{ext}").write_bytes(contents)
+    return f"{basename}{ext}", None
+
+
+async def _store_identity_image(root: Path, artist_id: str, slug: str,
+                                upload: Any) -> tuple[str | None, str | None]:
+    """Save a public identity image under site/public/assets/artists/{id}/.
+
+    Used for both member images (slug = member slug) and the artist's own
+    public image (slug = artist id). Returns (site-relative path, None) on
+    success or (None, error message).
+    """
+    name, err = await _write_image(
+        root / "site" / "public" / "assets" / "artists" / artist_id, slug, upload)
+    if err:
+        return None, err
+    return f"/assets/artists/{artist_id}/{name}", None
+
+
+async def _store_reference_image(root: Path, artist_id: str,
+                                 upload: Any) -> tuple[str | None, str | None]:
+    """Save the base likeness reference under assets/artists/{id}/.
+
+    Reference images are git-tracked (the Changes page's data pathspecs cover
+    assets/) but never published — the site build only serves site/public/.
+    Returns (repo-relative path, None) on success or (None, error message).
+    """
+    name, err = await _write_image(root / "assets" / "artists" / artist_id, "reference", upload)
+    if err:
+        return None, err
+    return f"assets/artists/{artist_id}/{name}", None
+
+
+async def _store_member_reference_image(root: Path, artist_id: str, slug: str,
+                                        upload: Any) -> tuple[str | None, str | None]:
+    """Save a member's base likeness reference under assets/artists/{id}/members/.
+
+    The members/ subdirectory keeps member references clear of the artist's
+    own reference.* file. Same git-tracked, never-published contract as
+    _store_reference_image.
+    """
+    name, err = await _write_image(
+        root / "assets" / "artists" / artist_id / "members", slug, upload)
+    if err:
+        return None, err
+    return f"assets/artists/{artist_id}/members/{name}", None
 
 
 def _find_member(artist: dict[str, Any], slug: str) -> dict[str, Any] | None:
@@ -143,6 +185,7 @@ def _member_from_form(form: dict[str, Any], fallback_slug: str = "") -> dict[str
         "status": status if status in MEMBER_STATUSES else None,
         "display_order": display_order,
         "image": clean("member_image"),
+        "reference_image": clean("member_reference_image"),
         "likeness_notes": clean("member_likeness_notes"),
         "bio": clean("member_bio"),
     }
@@ -279,17 +322,23 @@ async def artist_save(request: Request, artist_id: str):
             links[key[5:]] = str(value).strip() or None
     artist["links"] = links
 
-    upload = form.get("image_file")
-    if upload is not None and getattr(upload, "filename", ""):
-        image_path, err = await _store_identity_image(root, artist_id, artist_id, upload)
-        if err:
-            context = _form_context(
-                artist,
-                flash={"cls": "error", "text": "Not saved — the image upload failed."},
-                errors=[{"field": "image", "message": err}],
-            )
-            return _templates.TemplateResponse(request, "artists/form.html", context, status_code=422)
-        artist["image"] = image_path
+    for field, input_name, store in (
+        ("image", "image_file",
+         lambda up: _store_identity_image(root, artist_id, artist_id, up)),
+        ("reference_image", "reference_image_file",
+         lambda up: _store_reference_image(root, artist_id, up)),
+    ):
+        upload = form.get(input_name)
+        if upload is not None and getattr(upload, "filename", ""):
+            image_path, err = await store(upload)
+            if err:
+                context = _form_context(
+                    artist,
+                    flash={"cls": "error", "text": "Not saved — the image upload failed."},
+                    errors=[{"field": field, "message": err}],
+                )
+                return _templates.TemplateResponse(request, "artists/form.html", context, status_code=422)
+            artist[field] = image_path
     data["artist"] = artist
 
     errors = validate_schema(path, data, _SCHEMA_PATH)
@@ -332,7 +381,7 @@ async def member_new(request: Request, artist_id: str):
     artist = load_structured_record(path).get("artist") or {}
     blank = {"slug": "", "name": "", "roles": [], "status": "current",
              "display_order": len(artist.get("members") or []) + 1,
-             "image": None, "likeness_notes": None, "bio": None}
+             "image": None, "reference_image": None, "likeness_notes": None, "bio": None}
     return _templates.TemplateResponse(
         request, "artists/member_form.html", _member_form_context(artist, blank, is_new=True))
 
@@ -362,6 +411,13 @@ async def member_create(request: Request, artist_id: str):
         if err:
             return _errors_response([{"field": "members.image", "message": err}])
         member["image"] = image_path
+
+    upload = form.get("member_reference_image_file")
+    if upload is not None and getattr(upload, "filename", ""):
+        image_path, err = await _store_member_reference_image(root, artist_id, member["slug"], upload)
+        if err:
+            return _errors_response([{"field": "members.reference_image", "message": err}])
+        member["reference_image"] = image_path
 
     members.append(member)
     artist["members"] = members
@@ -416,6 +472,13 @@ async def member_save(request: Request, artist_id: str, slug: str):
         if err:
             return _errors_response([{"field": "members.image", "message": err}])
         member["image"] = image_path
+
+    upload = form.get("member_reference_image_file")
+    if upload is not None and getattr(upload, "filename", ""):
+        image_path, err = await _store_member_reference_image(root, artist_id, member["slug"], upload)
+        if err:
+            return _errors_response([{"field": "members.reference_image", "message": err}])
+        member["reference_image"] = image_path
 
     members[index] = member
     artist["members"] = members
