@@ -1,13 +1,13 @@
-"""Nim integration for animated promo covers.
+"""Nim integration for generated media (animated promo covers, identity images).
 
 Nim's only programmable surface is its MCP server (https://mcp.nim.video/mcp).
 This module is a minimal MCP client over streamable HTTP: OAuth via RFC 9728
 protected-resource discovery + RFC 7591 dynamic client registration (no
 pre-provisioned client id exists for Nim), then JSON-RPC tools/call for
-media_upload -> generate_video -> get_generation_status.
+media_upload -> generate_video/generate_image -> get_generation_status.
 
 MRP keeps token storage, auth UX, prompt construction, and final ffmpeg audio
-muxing local and deterministic; Nim only produces the silent visual bed.
+muxing local and deterministic; Nim only produces the raw media.
 """
 
 from __future__ import annotations
@@ -36,6 +36,17 @@ DEFAULT_MODEL_RESOLUTION = "720p"
 DEFAULT_MODEL_ASPECT = "9:16"
 # Seedance 2 Fast, 5 s @ 720p (30 credits/s per Nim's price estimate)
 DEFAULT_MODEL_CREDITS = 150
+
+# Identity refresh images: Nano Banana Pro Edit — Nim's model for edits that
+# must preserve facial identity/likeness across multi-reference composites.
+DEFAULT_IMAGE_MODEL_ID = "3c1b1c5b-c1d6-44a8-b986-3068820f4927"
+DEFAULT_IMAGE_MODEL_NAME = "Nano Banana Pro Edit"
+DEFAULT_IMAGE_MODEL_ASPECT = "1:1"
+DEFAULT_IMAGE_MODEL_RESOLUTION = "2K"
+# total per image @ 2K per Nim's price estimate
+DEFAULT_IMAGE_MODEL_CREDITS = 23
+MAX_IMAGE_BATCH = 4
+MAX_IMAGE_REFERENCES = 8  # generate_image fileInputs cap
 
 PROTOCOL_VERSION = "2025-06-18"
 # Cloudflare fronts mcp.nim.video and rejects default Python UAs (error 1010)
@@ -454,7 +465,7 @@ _IMAGE_TYPES = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png"
                 ".webp": "image/webp", ".gif": "image/gif"}
 
 
-def _upload_cover(session: _McpSession, cover: Path) -> str:
+def _upload_image(session: _McpSession, cover: Path) -> str:
     result = session.call_tool("media_upload", {})
     upload_url = result.get("upload_url") or result.get("uploadUrl")
     if not upload_url:
@@ -481,7 +492,8 @@ def _upload_cover(session: _McpSession, cover: Path) -> str:
     return str(file_url)
 
 
-_MEDIA_KEYS = ("mediaUrl", "media_url", "videoUrl", "video_url")
+_MEDIA_KEYS = ("mediaUrl", "media_url", "videoUrl", "video_url",
+               "imageUrl", "image_url")
 
 
 def _find_media_url(obj: Any, keys: tuple[str, ...] = _MEDIA_KEYS) -> str | None:
@@ -545,7 +557,7 @@ def generate_animated_cover_visual(
     session = _McpSession(mcp_url(repo), access_token)
     session.initialize()
 
-    file_url = _upload_cover(session, cover)
+    file_url = _upload_image(session, cover)
     generation = session.call_tool("generate_video", {
         "model_id": model_id,
         "model_name": model_name,
@@ -573,4 +585,117 @@ def generate_animated_cover_visual(
         "model_id": model_id,
         "workflow_id": workflow_id,
         "prompt_id": prompt_id,
+    }
+
+
+def _workflow_refs(generation: dict[str, Any]) -> list[tuple[Any, Any]]:
+    """(workflow_id, prompt_id) pairs from a generate_* result.
+
+    batchSize > 1 enqueues one workflow per variation; Nim's response shape
+    for the batch list is not pinned down, so accept a list under a few
+    plausible keys before falling back to the single-workflow keys.
+    """
+    refs: list[tuple[Any, Any]] = []
+    for key in ("workflows", "generations", "prompts", "items"):
+        items = generation.get(key)
+        if isinstance(items, list):
+            for item in items:
+                if isinstance(item, dict):
+                    wid = item.get("workflowId") or item.get("workflow_id")
+                    pid = item.get("promptId") or item.get("prompt_id")
+                    if wid or pid:
+                        refs.append((wid, pid))
+            if refs:
+                return refs
+    wids = generation.get("workflowIds") or generation.get("workflow_ids")
+    if isinstance(wids, list) and wids:
+        return [(wid, None) for wid in wids]
+    wid = generation.get("workflowId") or generation.get("workflow_id")
+    pid = generation.get("promptId") or generation.get("prompt_id")
+    if wid or pid:
+        return [(wid, pid)]
+    return []
+
+
+def _candidate_name(media_url: str, fallback: Any, index: int) -> str:
+    """Filename for a downloaded candidate — keep Nim's GUID basename when
+    the media URL has a usable one, so the archived-in-git copy stays
+    traceable to the generation."""
+    base = re.sub(r"[^A-Za-z0-9._-]", "", Path(urlsplit(media_url).path).name)
+    if base and Path(base).suffix.lower() in _IMAGE_TYPES:
+        return base
+    stem = re.sub(r"[^A-Za-z0-9._-]", "", str(fallback or ""))
+    return f"{stem or f'candidate-{index}'}.png"
+
+
+def generate_identity_image(
+    *,
+    repo: Path,
+    references: list[Path],
+    output_dir: Path,
+    prompt: str,
+    count: int = 1,
+    model_id: str = DEFAULT_IMAGE_MODEL_ID,
+    model_name: str = DEFAULT_IMAGE_MODEL_NAME,
+    aspect: str = DEFAULT_IMAGE_MODEL_ASPECT,
+    resolution: str = DEFAULT_IMAGE_MODEL_RESOLUTION,
+) -> dict[str, Any]:
+    """Generate likeness-consistent candidate images from reference images.
+
+    Uploads every reference, runs one generate_image call (batchSize=count),
+    then polls each variation's workflow and downloads the results into
+    output_dir under their Nim GUID basenames. Candidates are staging files —
+    the caller decides what, if anything, gets published or archived.
+    """
+    if not references:
+        raise NimGenerationError("No reference images to generate from.")
+    if len(references) > MAX_IMAGE_REFERENCES:
+        raise NimGenerationError(
+            f"Too many reference images ({len(references)} > {MAX_IMAGE_REFERENCES}).")
+    missing = [str(ref) for ref in references if not ref.is_file()]
+    if missing:
+        raise NimGenerationError(f"Reference image not found: {', '.join(missing)}")
+    if not 1 <= count <= MAX_IMAGE_BATCH:
+        raise NimGenerationError(f"Candidate count must be 1-{MAX_IMAGE_BATCH}.")
+
+    access_token = _access_token()
+    session = _McpSession(mcp_url(repo), access_token)
+    session.initialize()
+
+    file_urls = [_upload_image(session, ref) for ref in references]
+    generation = session.call_tool("generate_image", {
+        "model_id": model_id,
+        "model_name": model_name,
+        "prompt": prompt,
+        "fileInputs": file_urls,
+        "requestedAspectRatio": aspect,
+        "resolution": resolution,
+        "batchSize": count,
+    })
+    if generation.get("status") == "insufficient_credits":
+        raise NimGenerationError("Nim has insufficient credits — top up at nim.video and rerun.")
+    workflows = _workflow_refs(generation)
+    if not workflows:
+        raise NimGenerationError(
+            f"Nim generate_image did not return a workflow id: {str(generation)[:200]}")
+
+    candidates = []
+    for index, (workflow_id, prompt_id) in enumerate(workflows):
+        media_url = _poll_media_url(session, workflow_id, prompt_id)
+        output = output_dir / _candidate_name(media_url, workflow_id or prompt_id, index)
+        _download(media_url, output)
+        if not output.is_file() or output.stat().st_size == 0:
+            raise NimGenerationError("Nim media download produced an empty file.")
+        candidates.append({
+            "file": str(output),
+            "name": output.name,
+            "workflow_id": workflow_id,
+            "prompt_id": prompt_id,
+        })
+    return {
+        "adapter": "mcp",
+        "model": model_name,
+        "model_id": model_id,
+        "requested": count,
+        "candidates": candidates,
     }

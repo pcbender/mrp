@@ -280,3 +280,101 @@ def test_run_promo_kit_animated_cover_updates_manifest(tmp_path, monkeypatch):
     assert manifest["files"]["nim_visual"] == "nim-visual.mp4"
     assert manifest["animated_cover"]["provider"] == "nim"
     assert "No text overlays" in manifest["animated_cover"]["prompt"]
+
+
+# --- identity image generation ------------------------------------------------
+
+def test_workflow_refs_batch_list_and_fallbacks():
+    batch = {"workflows": [{"workflowId": "wf-1", "promptId": "p-1"},
+                           {"workflowId": "wf-2", "promptId": "p-2"}]}
+    assert nim._workflow_refs(batch) == [("wf-1", "p-1"), ("wf-2", "p-2")]
+    plural = {"workflowIds": ["wf-1", "wf-2"]}
+    assert nim._workflow_refs(plural) == [("wf-1", None), ("wf-2", None)]
+    single = {"workflowId": "wf-9", "promptId": "p-9"}
+    assert nim._workflow_refs(single) == [("wf-9", "p-9")]
+    assert nim._workflow_refs({"status": "queued"}) == []
+
+
+def test_candidate_name_keeps_guid_basename():
+    url = "https://media.nim.video/gen/0b7e5c9a-1f.png?sig=abc%2F123"
+    assert nim._candidate_name(url, "wf-1", 0) == "0b7e5c9a-1f.png"
+    # No usable extension in the URL -> fall back to the workflow id.
+    assert nim._candidate_name("https://media.nim.video/gen/blob", "wf 1!", 2) == "wf1.png"
+    assert nim._candidate_name("https://media.nim.video/gen/blob", None, 2) == "candidate-2.png"
+
+
+class _FakeIdentitySession:
+    """Stands in for _McpSession in generate_identity_image tests."""
+
+    calls: list[tuple[str, dict]] = []
+    generate_result: dict = {}
+
+    def __init__(self, url, token):
+        pass
+
+    def initialize(self):
+        pass
+
+    def call_tool(self, name, args, timeout=120):
+        type(self).calls.append((name, args))
+        return type(self).generate_result
+
+
+def test_generate_identity_image_batch_downloads_all(tmp_path, monkeypatch):
+    refs = []
+    for name in ("a.jpg", "b.jpg"):
+        ref = tmp_path / name
+        ref.write_bytes(b"ref")
+        refs.append(ref)
+
+    _FakeIdentitySession.calls = []
+    _FakeIdentitySession.generate_result = {
+        "workflows": [{"workflowId": "wf-1", "promptId": "p-1"},
+                      {"workflowId": "wf-2", "promptId": "p-2"}]}
+    monkeypatch.setattr(nim, "_access_token", lambda: "tok")
+    monkeypatch.setattr(nim, "_McpSession", _FakeIdentitySession)
+    monkeypatch.setattr(nim, "_upload_image", lambda session, path: f"https://files.nim/{path.name}")
+    monkeypatch.setattr(nim, "_poll_media_url",
+                        lambda session, wid, pid, **kw: f"https://media.nim/{wid}-0af3.png")
+
+    def fake_download(url, output):
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_bytes(b"img")
+
+    monkeypatch.setattr(nim, "_download", fake_download)
+
+    result = nim.generate_identity_image(
+        repo=tmp_path, references=refs, output_dir=tmp_path / "cand",
+        prompt="new wardrobe", count=2)
+
+    (name, args), = [c for c in _FakeIdentitySession.calls if c[0] == "generate_image"]
+    assert args["fileInputs"] == ["https://files.nim/a.jpg", "https://files.nim/b.jpg"]
+    assert args["batchSize"] == 2
+    assert args["requestedAspectRatio"] == "1:1"
+    assert args["model_id"] == nim.DEFAULT_IMAGE_MODEL_ID
+    assert [c["name"] for c in result["candidates"]] == ["wf-1-0af3.png", "wf-2-0af3.png"]
+    for candidate in result["candidates"]:
+        assert (tmp_path / "cand" / candidate["name"]).read_bytes() == b"img"
+
+
+def test_generate_identity_image_validates_inputs(tmp_path):
+    ref = tmp_path / "ref.jpg"
+    ref.write_bytes(b"ref")
+    with pytest.raises(nim.NimGenerationError, match="No reference"):
+        nim.generate_identity_image(repo=tmp_path, references=[], output_dir=tmp_path,
+                                    prompt="x")
+    with pytest.raises(nim.NimGenerationError, match="count must be 1-4"):
+        nim.generate_identity_image(repo=tmp_path, references=[ref], output_dir=tmp_path,
+                                    prompt="x", count=5)
+    with pytest.raises(nim.NimGenerationError, match="not found"):
+        nim.generate_identity_image(repo=tmp_path, references=[tmp_path / "nope.jpg"],
+                                    output_dir=tmp_path, prompt="x")
+
+
+def test_generate_identity_image_requires_nim_token(tmp_path, monkeypatch):
+    monkeypatch.setenv("MRP_STATE_DIR", str(tmp_path / "state"))
+    ref = tmp_path / "ref.jpg"
+    ref.write_bytes(b"ref")
+    with pytest.raises(nim.NimAuthRequiredError):
+        nim.generate_identity_image(repo=tmp_path, references=[ref],
+                                    output_dir=tmp_path / "cand", prompt="x")
