@@ -33,7 +33,7 @@ def _now() -> str:
 
 
 def working_signature(root: Path) -> str:
-    """A stable short hash of the managed content state (content/ + assets/).
+    """A stable short hash of the managed content state.
 
     Covers the *effective* content: every indexed file's blob overlaid with
     working-tree edits, adds, and deletes. Because git blob hashes are

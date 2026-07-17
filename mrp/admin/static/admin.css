@@ -336,6 +336,120 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .spinner { width: 14px; height: 14px; border: 2px solid var(--border); border-top-color: var(--primary); border-radius: 50%; animation: spin .7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ── Identity refresh ── */
+.identity-header-actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+.identity-layout {
+  display: grid;
+  grid-template-columns: minmax(190px, 240px) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.identity-source-panel { display: flex; flex-direction: column; gap: 1.25rem; }
+.identity-source-block { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+.identity-source-block h2, .identity-review-header h2 { font-size: 13px; }
+.identity-source-block code, .identity-candidate code {
+  color: var(--muted);
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.identity-source-image, .identity-image-empty {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.identity-image-empty {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+.identity-generate-form { margin-bottom: 1rem; }
+.identity-member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: .6rem;
+}
+.identity-member-option {
+  display: grid;
+  grid-template-columns: 16px 44px minmax(0, 1fr);
+  align-items: center;
+  gap: .5rem;
+  min-height: 58px;
+  padding: .45rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.identity-member-option:has(input:checked) { border-color: var(--primary); background: #eff6ff; }
+.identity-member-option.is-disabled { opacity: .5; cursor: not-allowed; }
+.identity-member-option img, .identity-member-placeholder {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--bg);
+}
+.identity-member-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 9px;
+}
+.identity-member-option span:last-child { min-width: 0; display: flex; flex-direction: column; }
+.identity-member-option strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.identity-member-option small { color: var(--muted); }
+.identity-settings-row { grid-template-columns: minmax(120px, 180px) minmax(120px, 180px); }
+.identity-credit-field output { min-height: 34px; display: flex; align-items: center; font-weight: 600; }
+.identity-target-line { display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; }
+.identity-target-line > span:last-child { color: var(--muted); }
+.identity-generate-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 0;
+}
+.identity-model { color: var(--muted); font-size: 11px; }
+.identity-job-id { margin-left: auto; font-size: 11px; }
+.identity-review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin: 1rem 0 .6rem;
+}
+.identity-review-header span { color: var(--muted); font-size: 12px; }
+.identity-candidate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.identity-candidate {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.identity-candidate > img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--bg); }
+.identity-candidate-meta { display: flex; flex-direction: column; gap: .65rem; padding: .7rem; }
+.identity-candidate-actions { display: flex; gap: .5rem; }
+.identity-candidate-actions form { flex: 1; }
+.identity-candidate-actions .btn { width: 100%; justify-content: center; }
+.identity-table-action { display: block; font-size: 10px; font-weight: 400; color: var(--primary); }
+
+@media (max-width: 760px) {
+  .identity-layout { grid-template-columns: 1fr; }
+  .identity-source-panel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .identity-source-block:last-child { grid-column: 1 / -1; }
+  .identity-member-grid { grid-template-columns: 1fr; }
+}
+
 /* ── App stub ── */
 .stub-card {
   background: var(--surface);

@@ -658,7 +658,11 @@ def generate_identity_image(
     if not 1 <= count <= MAX_IMAGE_BATCH:
         raise NimGenerationError(f"Candidate count must be 1-{MAX_IMAGE_BATCH}.")
 
-    access_token = _access_token()
+    try:
+        access_token = _access_token()
+    except NimAuthRequiredError as exc:
+        raise NimAuthRequiredError(
+            "Connect Nim before generating identity images.") from exc
     session = _McpSession(mcp_url(repo), access_token)
     session.initialize()
 
