@@ -18,7 +18,7 @@
 </div>
 {% endif %}
 
-<form action="/artists/{{ artist.id }}" method="post">
+<form action="/artists/{{ artist.id }}" method="post" enctype="multipart/form-data">
   <details class="form-card" open>
     <summary>Identity</summary>
     <div class="form-body">
@@ -57,7 +57,22 @@
         </div>
         <div class="form-field full">
           <label>Image</label>
-          <input type="text" name="image" value="{{ artist.image or '' }}" placeholder="/assets/…">
+          {% if artist.image %}
+          {% set img_src = '/' + artist.image.replace('site/public/', '').lstrip('/') %}
+          <img src="/pub{{ img_src }}" alt="{{ artist.name }}"
+               style="max-width:160px;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:.5rem">
+          {% endif %}
+          <input type="file" name="image_file" accept="image/jpeg,image/png,image/webp,image/gif">
+          <span style="font-size:11px;color:var(--muted)">
+            Upload to replace. Lands in <code>assets/artists/{{ artist.id }}/{{ artist.id }}.*</code>.
+          </span>
+          <input type="text" name="image" value="{{ artist.image or '' }}"
+                 placeholder="/assets/artists/{{ artist.id }}/… (or set a path manually)"
+                 style="margin-top:.4rem">
+        </div>
+        <div class="form-field full">
+          <label>Likeness Notes <span style="font-weight:400;text-transform:none;font-size:11px;color:var(--muted)">(visual-identity prompt notes for generation consistency)</span></label>
+          <textarea name="likeness_notes" rows="4">{{ artist.likeness_notes or '' }}</textarea>
         </div>
       </div>
     </div>

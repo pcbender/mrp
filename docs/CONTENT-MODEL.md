@@ -22,6 +22,12 @@ YouTube — the enrichment commands key off these), artist records carry the
 promoter-managed profile: `promo_blurb`, `bio_short`, `bio_long`, and
 `bio_auto_generated` (true until a human reviews and saves).
 
+An artist record may also carry `likeness_notes` — visual-identity prompt
+notes for generation consistency (promoter pipeline), never rendered on the
+public site. For solo/project/persona acts this is the act's own likeness;
+for bands it can hold band-wide visual language, while per-person likeness
+lives on `members[].likeness_notes` (see below).
+
 ### Members (bands)
 
 A band artist (`type: band`) may carry an optional `members` array. Members

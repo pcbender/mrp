@@ -28,7 +28,8 @@ LINK_KEYS = [
 ]
 _TEXT_FIELDS = [
     "name", "sort_name", "type", "label", "default_publisher",
-    "bio_short", "bio_long", "promo_blurb", "image", "visibility",
+    "bio_short", "bio_long", "promo_blurb", "image", "likeness_notes",
+    "visibility",
 ]
 
 
@@ -87,11 +88,13 @@ def _member_rows(members: list | None) -> list[dict[str, Any]]:
     return rows
 
 
-async def _store_member_image(root: Path, artist_id: str, slug: str,
-                              upload: Any) -> tuple[str | None, str | None]:
-    """Save an uploaded member image under site/public/assets/artists/{id}/.
+async def _store_identity_image(root: Path, artist_id: str, slug: str,
+                                upload: Any) -> tuple[str | None, str | None]:
+    """Save an uploaded identity image under site/public/assets/artists/{id}/.
 
-    Returns (site-relative path, None) on success or (None, error message).
+    Used for both member images (slug = member slug) and the artist's own
+    image (slug = artist id). Returns (site-relative path, None) on success
+    or (None, error message).
     """
     ext = Path(upload.filename).suffix.lower()
     if ext == ".jpeg":
@@ -275,6 +278,18 @@ async def artist_save(request: Request, artist_id: str):
         if key.startswith("link_"):
             links[key[5:]] = str(value).strip() or None
     artist["links"] = links
+
+    upload = form.get("image_file")
+    if upload is not None and getattr(upload, "filename", ""):
+        image_path, err = await _store_identity_image(root, artist_id, artist_id, upload)
+        if err:
+            context = _form_context(
+                artist,
+                flash={"cls": "error", "text": "Not saved — the image upload failed."},
+                errors=[{"field": "image", "message": err}],
+            )
+            return _templates.TemplateResponse(request, "artists/form.html", context, status_code=422)
+        artist["image"] = image_path
     data["artist"] = artist
 
     errors = validate_schema(path, data, _SCHEMA_PATH)
@@ -343,7 +358,7 @@ async def member_create(request: Request, artist_id: str):
 
     upload = form.get("member_image_file")
     if upload is not None and getattr(upload, "filename", ""):
-        image_path, err = await _store_member_image(root, artist_id, member["slug"], upload)
+        image_path, err = await _store_identity_image(root, artist_id, member["slug"], upload)
         if err:
             return _errors_response([{"field": "members.image", "message": err}])
         member["image"] = image_path
@@ -397,7 +412,7 @@ async def member_save(request: Request, artist_id: str, slug: str):
 
     upload = form.get("member_image_file")
     if upload is not None and getattr(upload, "filename", ""):
-        image_path, err = await _store_member_image(root, artist_id, member["slug"], upload)
+        image_path, err = await _store_identity_image(root, artist_id, member["slug"], upload)
         if err:
             return _errors_response([{"field": "members.image", "message": err}])
         member["image"] = image_path
