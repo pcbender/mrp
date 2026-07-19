@@ -149,10 +149,15 @@ def recontextualize(
     response = call_claude(
         client,
         model=selected_model,
-        max_tokens=8192,
+        max_tokens=16384,
         system=system,
         messages=[{"role": "user", "content": user_msg}],
     )
+    if response.stop_reason == "max_tokens":
+        raise ValueError(
+            f"Recontextualize response truncated at max_tokens for {n} tracks — "
+            "raise max_tokens in recontextualize()"
+        )
 
     parsed_list = _parse_response(response.content[0].text)
 
