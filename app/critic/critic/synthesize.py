@@ -181,6 +181,11 @@ def synthesize(
         messages=[{"role": "user", "content": user_msg}],
     )
 
+    if response.stop_reason == "max_tokens":
+        raise ValueError(
+            "Track review response truncated at max_tokens — "
+            "raise max_tokens in synthesize()"
+        )
     raw = response.content[0].text
     parsed = _parse_response(raw)
     tier = _enforce_floor(parsed.get("verdict_tier", {}))
