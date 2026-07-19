@@ -182,7 +182,7 @@ def album_synthesize(
     response = call_claude(
         client,
         model=selected_model,
-        max_tokens=1024,
+        max_tokens=8192,
         system=system,
         messages=[{"role": "user", "content": user_msg}],
     )
