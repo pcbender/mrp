@@ -423,13 +423,12 @@ def _do_spotify_import(
             track["style"] = t.get("style")
             track["lyrics_raw"] = t.get("lyrics_raw")
             track["lyrics_text"] = _clean(t.get("lyrics_raw"))
+            # Schema-canonical location; automation.master_path is a legacy
+            # single-string fallback and was never allowed to hold a list.
+            track["master_path"] = t.get("master_path") or None
             track.setdefault("lyrics_source", None)
             track.setdefault("hints", {})
-        master_paths = [t.get("master_path") for t in per_track if t.get("master_path")]
-        automation = {"allow_auto_publish": False}
-        if master_paths:
-            automation["master_path"] = master_paths[0] if len(master_paths) == 1 else master_paths
-        release["automation"] = automation
+        release["automation"] = {"allow_auto_publish": False}
 
     cover_url = mapped.get("cover_url")
     if cover_url:
