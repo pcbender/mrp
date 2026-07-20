@@ -8,6 +8,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from collections.abc import Callable
 from typing import Any, Literal
 
 import librosa
@@ -913,10 +914,15 @@ def analyze_track(
     *,
     font_path: Path | None = None,
     force: bool = False,
+    progress: Callable[[str], None] | None = None,
 ) -> dict[str, Any]:
     prepared = prepare_track(repo, release_slug, track_slug, font_path=font_path)
     try:
-        run = analyze_project(prepared.runtime_manifest_path, force=force)
+        run = analyze_project(
+            prepared.runtime_manifest_path,
+            force=force,
+            progress=progress,
+        )
     except (SpirophonicValidationError, SpirophonicAnalysisError) as exc:
         raise MRPVideoAdapterError(str(exc)) from exc
     _record_artifact(
@@ -1009,6 +1015,8 @@ def render_track(
     end_seconds: float | None = None,
     force: bool = False,
     dry_run: bool = False,
+    progress: Callable[[str], None] | None = None,
+    cancel_check: Callable[[], bool] | None = None,
 ) -> dict[str, Any]:
     prepared = prepare_track(repo, release_slug, track_slug, font_path=font_path)
     output = prepared.workspace.renders_dir / f"{prepared.track_key}.mp4"
@@ -1019,6 +1027,7 @@ def render_track(
                 draft=draft,
                 start_seconds=start_seconds,
                 end_seconds=end_seconds,
+                progress=progress,
             )
             return {
                 "preflight": prepared.summary(),
@@ -1031,6 +1040,8 @@ def render_track(
             start_seconds=start_seconds,
             end_seconds=end_seconds,
             force=force,
+            progress=progress,
+            cancel_check=cancel_check,
         )
     except (
         SpirophonicValidationError,

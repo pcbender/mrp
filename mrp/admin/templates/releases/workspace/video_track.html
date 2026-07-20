@@ -1,0 +1,102 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+<p style="font-size:12px;margin-bottom:.75rem">
+  <a href="/releases/{{ slug }}/video" style="color:var(--primary);text-decoration:none">← Video matrix</a>
+  <span style="color:var(--muted)"> / {{ track.title }}</span>
+</p>
+
+<div id="video-save-result"></div>
+<div class="form-card">
+  <div class="form-body">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+      <div>
+        <h2 style="margin:0">Assets</h2>
+        <p style="font-size:12px;color:var(--muted);margin:.2rem 0 0">
+          Import assets by local path. Stems are optional and may repeat a semantic role.
+        </p>
+      </div>
+      <span class="badge badge-{{ 'live' if asset_report.status == 'passed' else 'failed' }}">{{ asset_report.status }}</span>
+    </div>
+    <div class="video-check-grid">
+      {% for check in asset_report.checks %}
+      <div class="video-check {{ 'ok' if check.ok else 'bad' }}">
+        <span class="cell-dot {{ 'on' if check.ok else 'off' }}"></span>
+        <strong>{{ check.name }}</strong>
+        <span title="{{ check.detail }}">{{ check.detail }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/assets"
+      hx-target="#video-save-result" hx-swap="innerHTML">
+  <div class="form-card">
+    <div class="form-body">
+      <div class="form-field full">
+        <label>Master audio path</label>
+        <input type="text" name="master_path" value="{{ track.master_path or '' }}" placeholder="{{ master_fallback or '/path/to/master.wav' }}">
+        {% if not track.master_path and master_fallback %}
+        <span style="font-size:11px;color:var(--muted)">
+          Video preparation is track-scoped. Import the legacy release master explicitly: <code>{{ master_fallback }}</code>
+        </span>
+        {% endif %}
+      </div>
+      <div class="table-wrap" style="margin-top:.75rem">
+        <table class="track-matrix">
+          <thead><tr><th>ID</th><th>Label</th><th>Role</th><th>Path</th><th>Enabled</th><th></th></tr></thead>
+          <tbody id="video-stems">
+            {% for stem in track.stems or [] %}
+            <tr>
+              <td><input name="stem_id" value="{{ stem.id }}" required></td>
+              <td><input name="stem_label" value="{{ stem.label or '' }}"></td>
+              <td><select name="stem_role">{% for role in stem_roles %}<option value="{{ role }}" {% if stem.role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select></td>
+              <td><input name="stem_path" value="{{ stem.path }}" required></td>
+              <td><select name="stem_enabled"><option value="true" {% if stem.enabled is not false %}selected{% endif %}>yes</option><option value="false" {% if stem.enabled is false %}selected{% endif %}>no</option></select></td>
+              <td><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()">&times;</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="btn btn-secondary btn-sm" style="margin-top:.5rem" onclick="addVideoStem()">+ Import stem</button>
+      <button type="submit" class="btn btn-primary btn-sm" style="margin-top:.5rem">Save assets</button>
+    </div>
+  </div>
+</form>
+
+<template id="video-stem-template">
+  <tr>
+    <td><input name="stem_id" placeholder="lead-vocal" required></td>
+    <td><input name="stem_label" placeholder="Lead vocal"></td>
+    <td><select name="stem_role">{% for role in stem_roles %}<option value="{{ role }}">{{ role }}</option>{% endfor %}</select></td>
+    <td><input name="stem_path" placeholder="/path/to/stem.wav" required></td>
+    <td><select name="stem_enabled"><option value="true">yes</option><option value="false">no</option></select></td>
+    <td><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('tr').remove()">&times;</button></td>
+  </tr>
+</template>
+<script>
+  function addVideoStem() {
+    const template = document.getElementById('video-stem-template');
+    document.getElementById('video-stems').appendChild(template.content.cloneNode(true));
+  }
+</script>
+
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="margin-bottom:.25rem">Jobs</h2>
+    <p style="font-size:12px;color:var(--muted);margin:0 0 .75rem">
+      Preparation validates and links the tracked project. Analysis and rendering run in isolated child processes.
+    </p>
+    <div class="video-job-grid">
+      {% for kind in ['prepare', 'analyze', 'render'] %}
+      <div id="video-job-{{ kind }}">
+        {% set job = video_jobs[kind] %}
+        {% include "releases/workspace/_video_job.html" %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

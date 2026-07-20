@@ -1,8 +1,8 @@
 """Shared workspace helpers: stage registry, completion indicators, form utilities.
 
 The release workspace presents each release as a set of workflow-stage screens
-(intake → details → links → tracks → critic → sampler → promoter → publish →
-monitoring).
+(intake → details → links → tracks → optional video → critic → sampler →
+promoter → publish → monitoring).
 This module owns the stage registry and the cheap heuristics that drive the
 per-stage completion dots in the workspace header.
 """
@@ -30,6 +30,7 @@ STAGES = [
     ("details",    "Details"),
     ("links",      "Links"),
     ("tracks",     "Tracks"),
+    ("video",      "Video"),
     ("critic",     "Critic"),
     ("sampler",    "Sampler"),
     ("promoter",   "Promoter"),
@@ -308,11 +309,14 @@ def _publish_status(release: dict) -> dict:
 
 def stage_statuses(root: Path, slug: str, release: dict) -> dict[str, dict]:
     """Compute {stage_id: {"state": done|partial|todo, "detail": str}} for the header."""
+    from mrp.admin.video_workspace import video_stage_status
+
     return {
         "intake": {"state": "done", "detail": ""},
         "details": _details_status(release),
         "links": _links_status(release),
         "tracks": _tracks_status(release, root),
+        "video": video_stage_status(root, slug, release),
         "critic": _critic_status(release, root),
         "sampler": _sampler_status(release),
         "promoter": _promoter_status(root, release),

@@ -131,6 +131,13 @@ aggregates repeated semantic stem roles deterministically, records input hashes
 and preflight results, detects stale artifacts, and exposes prepare, analyze,
 align, preview, and render commands under `scripts/mrp video track ...`.
 
+Milestone 4 was implemented 2026-07-20 on the same branch: the optional Video
+stage now provides a per-track readiness matrix, local-path master/stem editing,
+and media/tool validation. Prepare, analysis, and full-render work runs in
+persistent child-process jobs with HTMX progress polling, heartbeats,
+cancellation, per-track render exclusivity, artifact/log references, and
+interruption recovery after an admin restart.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports

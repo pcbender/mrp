@@ -482,6 +482,21 @@ track using MRP-owned data and artifact conventions.
 
 ### Milestone 4: Video jobs and workspace shell
 
+Status 2026-07-20: implemented on `feat/music-video-designer-plan`. MRP Admin
+now exposes an optional Video stage immediately after Tracks, with a per-track
+readiness/artifact matrix and a path-based asset editor for masters and any
+number of optional semantic stems. Lightweight route-side checks cover tools,
+files, audio decodability/duration agreement, artwork dimensions, lyrics, and
+font readiness without importing the renderer stack at admin startup.
+
+Video preparation, analysis, and full rendering run in isolated Python child
+processes. A dedicated SQLite job record and append-only JSONL event log retain
+percentage, phase/message, heartbeat, timestamps, result/artifact/log
+references, cancellation state, and terminal outcome. HTMX polls the job
+fragment, one active full render is allowed per track, and admin startup either
+reattaches monitoring to a matching live worker or records the missing worker
+as interrupted.
+
 - Add the optional Video stage and per-track status matrix.
 - Add process-backed jobs, progress, polling, cancellation, and interruption
   recovery.
