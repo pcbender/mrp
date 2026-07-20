@@ -15,7 +15,7 @@ import librosa
 import numpy as np
 import soundfile as sf
 import yaml
-from PIL import Image, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 from pydantic import Field, ValidationError, model_validator
 
 from mrp.video.alignment import SpirophonicAlignmentError, align_project
@@ -46,6 +46,8 @@ from mrp.video.render_manifest import SpirophonicManifestError
 from mrp.video.renderer import (
     SpirophonicRendererError,
     load_render_context,
+    render_dimensions,
+    render_frame,
     render_frame_file,
 )
 from mrp.video.verification import SpirophonicVerificationError
@@ -752,6 +754,24 @@ def _record_artifact(
     _write_json(index_path, value)
 
 
+def _advance_preview_status(
+    repo: Path,
+    release_slug: str,
+    track_slug: str | None,
+) -> None:
+    """Advance only an explicitly cast track after a current preview succeeds."""
+    selection = _select_track(repo, release_slug, track_slug)
+    current = selection.track.get("music_video")
+    if not isinstance(current, dict):
+        return
+    if current.get("status") not in {"cast", "previewed"}:
+        return
+    video = dict(current)
+    video["status"] = "previewed"
+    selection.track["music_video"] = video
+    _write_yaml(selection.release_path, selection.document)
+
+
 def prepare_track(
     repo: Path,
     release_slug: str,
@@ -1001,9 +1021,121 @@ def preview_track(
         prepared,
         kind="preview",
         path=result.output_path,
-        details=result.summary(),
+        details={"preview_type": "frame", **result.summary()},
     )
+    _advance_preview_status(repo, release_slug, track_slug)
     return {"preflight": prepared.summary(), "preview": result.summary()}
+
+
+def contact_sheet_track(
+    repo: Path,
+    release_slug: str,
+    track_slug: str | None = None,
+    *,
+    font_path: Path | None = None,
+    columns: int = 3,
+    force: bool = False,
+    progress: Callable[[str], None] | None = None,
+) -> dict[str, Any]:
+    """Render one deterministic representative frame for every lyric section."""
+    if columns < 1 or columns > 6:
+        raise MRPVideoAdapterError("contact-sheet columns must be between 1 and 6")
+    prepared = prepare_track(repo, release_slug, track_slug, font_path=font_path)
+    output = prepared.workspace.previews_dir / "contact-sheet.png"
+    if output.exists() and not force:
+        raise MRPVideoAdapterError(
+            f"contact sheet already exists: {output}; use --force to overwrite"
+        )
+    try:
+        context = load_render_context(prepared.runtime_manifest_path, progress=progress)
+        width, height, fps = render_dimensions(context.project, draft=True)
+        thumb_width = min(360, width)
+        thumb_height = max(1, round(height * thumb_width / width))
+        label_height = 34
+        gutter = 12
+        sections = list(context.lyrics.sections)
+        rows = (len(sections) + columns - 1) // columns
+        sheet = Image.new(
+            "RGB",
+            (
+                gutter + columns * (thumb_width + gutter),
+                gutter + rows * (thumb_height + label_height + gutter),
+            ),
+            context.project.video.background,
+        )
+        draw = ImageDraw.Draw(sheet)
+        font = ImageFont.load_default()
+        cells: list[dict[str, Any]] = []
+        for index, section in enumerate(sections):
+            if progress is not None:
+                progress(
+                    f"Rendering contact-sheet section {index + 1} of {len(sections)}"
+                )
+            requested_time = section.start + (section.end - section.start) / 2
+            frame_index = round(requested_time * fps)
+            time_seconds = min(frame_index / fps, context.analysis.duration)
+            frame = render_frame(
+                context,
+                time_seconds,
+                frame_index,
+                width=width,
+                height=height,
+            )
+            image = Image.fromarray(frame, mode="RGB")
+            if image.size != (thumb_width, thumb_height):
+                image = image.resize(
+                    (thumb_width, thumb_height),
+                    Image.Resampling.LANCZOS,
+                )
+            column = index % columns
+            row = index // columns
+            left = gutter + column * (thumb_width + gutter)
+            top = gutter + row * (thumb_height + label_height + gutter)
+            sheet.paste(image, (left, top))
+            label = section.label or section.type.replace("_", " ").title()
+            draw.text(
+                (left + 4, top + thumb_height + 8),
+                f"{label}  {time_seconds:.3f}s",
+                fill="#ffffff",
+                font=font,
+            )
+            cells.append(
+                {
+                    "section_id": section.id,
+                    "section_type": section.type,
+                    "time_seconds": time_seconds,
+                    "frame_index": frame_index,
+                }
+            )
+        temporary = output.with_name(f".{output.name}.{os.getpid()}.tmp")
+        try:
+            sheet.save(temporary, format="PNG", optimize=True)
+            os.replace(temporary, output)
+        finally:
+            temporary.unlink(missing_ok=True)
+    except (
+        OSError,
+        SpirophonicValidationError,
+        SpirophonicAnalysisError,
+        SpirophonicRendererError,
+    ) as exc:
+        raise MRPVideoAdapterError(str(exc)) from exc
+    summary = {
+        "output_path": str(output),
+        "section_count": len(cells),
+        "columns": columns,
+        "width": sheet.width,
+        "height": sheet.height,
+        "cells": cells,
+    }
+    _record_artifact(
+        prepared,
+        kind="preview",
+        path=output,
+        details={"preview_type": "contact_sheet", **summary},
+    )
+    _advance_preview_status(repo, release_slug, track_slug)
+    return {"preflight": prepared.summary(), "contact_sheet": summary}
 
 
 def render_track(

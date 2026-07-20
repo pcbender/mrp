@@ -1,0 +1,221 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% macro optional_number(name, label, value, step='0.01') -%}
+<div class="form-field">
+  <label>{{ label }}</label>
+  <input type="number" step="{{ step }}" name="style_{{ name }}" value="{{ value if value is not none else '' }}" placeholder="inherit">
+</div>
+{%- endmacro %}
+
+{% block stage %}
+<p class="video-breadcrumb">
+  <a href="/releases/{{ slug }}/tracks/{{ track_slug }}/video">← {{ track.title }}</a>
+  <span> / Section casting</span>
+</p>
+
+<div id="video-casting-result"></div>
+
+{% if casting_error %}
+<div class="form-card"><div class="form-body">
+  <h2>Casting is not ready</h2>
+  {% for problem in casting_error %}<div class="flash flash-error">{{ problem }}</div>{% endfor %}
+  <p class="video-help">Prepare the track and finish reviewed timing before opening the casting editor.</p>
+</div></div>
+{% else %}
+<div class="video-casting-layout">
+  <aside class="form-card video-scene-list">
+    <div class="form-body">
+      <h2>Scenes</h2>
+      <p class="video-help">Each timed section resolves to a fixed cast.</p>
+      {% for scene in casting.sections %}
+      <a class="video-scene-link {{ 'active' if scene.id == casting.selected_section.id else '' }}"
+         href="?section={{ scene.id }}&scope={{ casting.scope }}">
+        <span><strong>{{ scene.label }}</strong><small>{{ scene.id }} · {{ '%.2f'|format(scene.start) }}–{{ '%.2f'|format(scene.end) }}s</small></span>
+        <span class="badge badge-{{ 'live' if scene.overridden else 'draft' }}">{{ scene.trace_count }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </aside>
+
+  <div>
+    <div class="form-card">
+      <div class="form-body">
+        <div class="video-cast-heading">
+          <div>
+            <h2>{{ casting.selected_section.label or casting.selected_section.type|replace('_', ' ')|title }}</h2>
+            <p class="video-help">{{ casting.selected_section.id }} · {{ casting.composition_source }}</p>
+          </div>
+          <div class="video-scope-tabs">
+            <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'type' else 'btn-secondary' }}"
+               href="?section={{ casting.selected_section.id }}&scope=type">{{ casting.selected_section.type }} default</a>
+            <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'section' else 'btn-secondary' }}"
+               href="?section={{ casting.selected_section.id }}&scope=section">exact section</a>
+          </div>
+        </div>
+        {% if not cast_status_ok %}
+        <div class="flash flash-error">Review and save timing before saving visual casts.</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting"
+          hx-target="#video-casting-result" hx-swap="innerHTML">
+      <input type="hidden" name="section_id" value="{{ casting.selected_section.id }}">
+      <input type="hidden" name="section_type" value="{{ casting.selected_section.type }}">
+      <input type="hidden" name="scope" value="{{ casting.scope }}">
+
+      <div class="form-card"><div class="form-body">
+        <h2>Project look</h2>
+        <div class="form-grid">
+          <div class="form-field"><label>Audio mapping</label><select name="mapping_preset">
+            {% for preset in casting.presets.mapping %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.mapping_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}
+          </select></div>
+          <div class="form-field"><label>Palette</label><select name="palette_preset">
+            {% for preset in casting.presets.palette %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.palette_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}
+          </select></div>
+          <div class="form-field"><label>Unconfigured sections</label><select name="auto_casting">
+            <option value="true" {% if casting.project.visuals.auto_casting %}selected{% endif %}>deterministic auto cast</option>
+            <option value="false" {% if not casting.project.visuals.auto_casting %}selected{% endif %}>global layer fallback</option>
+          </select></div>
+        </div>
+      </div></div>
+
+      <div class="form-card"><div class="form-body">
+        <div class="video-cast-heading"><div><h2>Scene response</h2><p class="video-help">Blank controls inherit the global response.</p></div></div>
+        <div class="video-role-picker">
+          <strong>Visible roles</strong>
+          {% for role in ['master', 'drums', 'bass', 'vocals', 'instruments'] %}
+          <label><input type="checkbox" name="style_visible_roles" value="{{ role }}" {% if casting.style.visible_roles and role in casting.style.visible_roles %}checked{% endif %}> {{ role }}</label>
+          {% endfor %}
+        </div>
+        <div class="form-grid video-style-grid">
+          {{ optional_number('layer_fraction', 'Layer fraction', casting.style.layer_fraction) }}
+          {{ optional_number('scale', 'Scale', casting.style.scale) }}
+          {{ optional_number('motion', 'Motion', casting.style.motion) }}
+          {{ optional_number('color_intensity', 'Color intensity', casting.style.color_intensity) }}
+          {{ optional_number('onset_response', 'Onset response', casting.style.onset_response) }}
+          {{ optional_number('rotation_direction', 'Rotation direction', casting.style.rotation_direction) }}
+          {{ optional_number('palette_shift', 'Palette shift', casting.style.palette_shift) }}
+          {{ optional_number('lyrics_opacity', 'Lyrics opacity', casting.style.lyrics_opacity) }}
+          {{ optional_number('spatial_spread', 'Spatial spread', casting.style.spatial_spread) }}
+          {{ optional_number('anchor_drift', 'Anchor drift', casting.style.anchor_drift, '0.001') }}
+          {{ optional_number('trace_speed', 'Trace speed', casting.style.trace_speed) }}
+          {{ optional_number('trail_length', 'Trail length', casting.style.trail_length) }}
+          {{ optional_number('beat_gain', 'Beat gain', casting.style.beat_gain) }}
+          {{ optional_number('intensity_gain', 'Intensity gain', casting.style.intensity_gain) }}
+        </div>
+      </div></div>
+
+      <div class="form-card"><div class="form-body">
+        <div class="video-cast-heading">
+          <div><h2>Traces</h2><p class="video-help">Geometry and audio drivers are saved directly in the versioned project.</p></div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="addVideoTrace()">+ Add trace</button>
+        </div>
+        <div id="video-traces">
+          {% for trace in casting.composition.traces %}
+          <fieldset class="video-trace-card">
+            <legend><span>Trace {{ loop.index }}</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button></legend>
+            <div class="form-grid video-trace-grid">
+              <div class="form-field"><label>ID</label><input name="trace_id" value="{{ trace.id }}" required></div>
+              <div class="form-field"><label>Role</label><select name="trace_role">{% for role in ['master','drums','bass','vocals','instruments'] %}<option value="{{ role }}" {% if trace.role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select></div>
+              <div class="form-field"><label>Color</label><input type="color" name="color" value="{{ trace.color }}"></div>
+              <div class="form-field"><label>Depth</label><select name="depth"><option value="background" {% if trace.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if trace.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
+              <div class="form-field"><label>Fixed radius</label><input type="number" step="0.1" name="fixed_radius" value="{{ trace.geometry.fixed_radius }}" required></div>
+              <div class="form-field"><label>Moving radius</label><input type="number" step="0.1" name="moving_radius" value="{{ trace.geometry.moving_radius }}" required></div>
+              <div class="form-field"><label>Pen offset</label><input type="number" step="0.1" name="pen_offset" value="{{ trace.geometry.pen_offset }}" required></div>
+              <div class="form-field"><label>Geometry</label><select name="geometry_rotation"><option value="inside" {% if trace.geometry.rotation == 'inside' %}selected{% endif %}>inside</option><option value="outside" {% if trace.geometry.rotation == 'outside' %}selected{% endif %}>outside</option></select></div>
+              <div class="form-field"><label>Samples</label><input type="number" name="samples" value="{{ trace.geometry.samples }}" required></div>
+              <div class="form-field"><label>Anchor X</label><input type="number" step="0.01" name="anchor_x" value="{{ trace.anchor_x }}" required></div>
+              <div class="form-field"><label>Anchor Y</label><input type="number" step="0.01" name="anchor_y" value="{{ trace.anchor_y }}" required></div>
+              <div class="form-field"><label>Base scale</label><input type="number" step="0.01" name="base_scale" value="{{ trace.base_scale }}" required></div>
+              <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="opacity" value="{{ trace.opacity }}" required></div>
+              <div class="form-field"><label>Line width</label><input type="number" step="0.1" name="line_width" value="{{ trace.line_width }}" required></div>
+              <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="rotation_speed" value="{{ trace.rotation_degrees_per_second }}" required></div>
+              <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="hue_shift" value="{{ trace.hue_shift_degrees }}" required></div>
+              <div class="form-field"><label>Blend</label><select name="blend_mode"><option value="screen" {% if trace.blend_mode == 'screen' %}selected{% endif %}>screen</option><option value="normal" {% if trace.blend_mode == 'normal' %}selected{% endif %}>normal</option></select></div>
+              <div class="form-field"><label>Cycles / second</label><input type="number" step="0.001" name="cycles_per_second" value="{{ trace.trace.cycles_per_second }}" required></div>
+              <div class="form-field"><label>Trail fraction</label><input type="number" step="0.01" name="trail_fraction" value="{{ trace.trace.trail_fraction }}" required></div>
+              <div class="form-field"><label>Ghost count</label><input type="number" name="ghost_count" value="{{ trace.trace.ghost_count }}" required></div>
+              <div class="form-field"><label>Ghost spacing</label><input type="number" step="0.01" name="ghost_spacing" value="{{ trace.trace.ghost_spacing }}" required></div>
+              <div class="form-field"><label>Head radius</label><input type="number" step="0.1" name="head_radius" value="{{ trace.trace.head_radius }}" required></div>
+              {% for driver, value in [('scale', trace.drivers.scale), ('opacity', trace.drivers.opacity), ('color', trace.drivers.color), ('pulse', trace.drivers.pulse)] %}
+              <div class="form-field"><label>{{ driver|title }} driver</label><select name="driver_{{ driver }}"><option value="">none</option>{% for signal in ['master.energy','master.accent','drums.energy','drums.accent','bass.energy','bass.accent','vocals.energy','vocals.accent','instruments.energy','instruments.accent'] %}<option value="{{ signal }}" {% if value == signal %}selected{% endif %}>{{ signal }}</option>{% endfor %}</select></div>
+              {% endfor %}
+            </div>
+          </fieldset>
+          {% endfor %}
+        </div>
+        <div class="video-cast-actions">
+          <button class="btn btn-primary" name="action" value="save" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Save cast</button>
+          <button class="btn btn-secondary" name="action" value="auto" type="submit" formnovalidate {% if not cast_status_ok %}disabled{% endif %}>Reset to deterministic auto</button>
+          <button class="btn btn-danger" name="action" value="clear" type="submit" formnovalidate {% if not cast_status_ok %}disabled{% endif %}>Clear {{ casting.scope }} cast</button>
+        </div>
+      </div></div>
+    </form>
+
+    <div class="form-card"><div class="form-body">
+      <h2>Frame previews</h2>
+      <p class="video-help">Both jobs run in the isolated renderer process and record the current project fingerprint.</p>
+      <div class="video-job-grid">
+        <div id="video-job-frame">{% set job = frame_job %}{% set kind = 'frame' %}{% set preview_time = casting.selected_section.start + (casting.selected_section.end - casting.selected_section.start) / 2 %}{% include "releases/workspace/_video_job.html" %}</div>
+        <div id="video-job-contact">{% set job = contact_job %}{% set kind = 'contact' %}{% include "releases/workspace/_video_job.html" %}</div>
+      </div>
+    </div></div>
+
+    {% if casting.gallery %}
+    <div class="form-card"><div class="form-body">
+      <h2>Preview history</h2>
+      <div class="video-preview-gallery">
+        {% for preview in casting.gallery %}
+        <figure class="{{ 'stale' if preview.stale else '' }}">
+          <img src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/previews/{{ preview.name }}" alt="{{ preview.preview_type }} preview">
+          <figcaption><strong>{{ preview.preview_type|replace('_', ' ') }}</strong>{% if preview.time_seconds is not none %} · {{ '%.3f'|format(preview.time_seconds) }}s{% endif %}<span class="badge badge-{{ 'failed' if preview.stale else 'live' }}">{{ 'stale' if preview.stale else 'current' }}</span></figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+    </div></div>
+    {% endif %}
+  </div>
+</div>
+
+<template id="video-trace-template">
+  <fieldset class="video-trace-card">
+    <legend><span>New trace</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button></legend>
+    <div class="form-grid video-trace-grid">
+      <div class="form-field"><label>ID</label><input name="trace_id" value="new-trace" required></div>
+      <div class="form-field"><label>Role</label><select name="trace_role"><option>master</option><option>drums</option><option>bass</option><option selected>vocals</option><option>instruments</option></select></div>
+      <div class="form-field"><label>Color</label><input type="color" name="color" value="#ff5fd2"></div>
+      <div class="form-field"><label>Depth</label><select name="depth"><option>background</option><option selected>foreground</option></select></div>
+      <div class="form-field"><label>Fixed radius</label><input type="number" step="0.1" name="fixed_radius" value="180" required></div>
+      <div class="form-field"><label>Moving radius</label><input type="number" step="0.1" name="moving_radius" value="60" required></div>
+      <div class="form-field"><label>Pen offset</label><input type="number" step="0.1" name="pen_offset" value="100" required></div>
+      <div class="form-field"><label>Geometry</label><select name="geometry_rotation"><option selected>inside</option><option>outside</option></select></div>
+      <div class="form-field"><label>Samples</label><input type="number" name="samples" value="900" required></div>
+      <div class="form-field"><label>Anchor X</label><input type="number" step="0.01" name="anchor_x" value="0.5" required></div>
+      <div class="form-field"><label>Anchor Y</label><input type="number" step="0.01" name="anchor_y" value="0.5" required></div>
+      <div class="form-field"><label>Base scale</label><input type="number" step="0.01" name="base_scale" value="1" required></div>
+      <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="opacity" value="0.8" required></div>
+      <div class="form-field"><label>Line width</label><input type="number" step="0.1" name="line_width" value="2" required></div>
+      <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="rotation_speed" value="0" required></div>
+      <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="hue_shift" value="0" required></div>
+      <div class="form-field"><label>Blend</label><select name="blend_mode"><option selected>screen</option><option>normal</option></select></div>
+      <div class="form-field"><label>Cycles / second</label><input type="number" step="0.001" name="cycles_per_second" value="0.08" required></div>
+      <div class="form-field"><label>Trail fraction</label><input type="number" step="0.01" name="trail_fraction" value="0.24" required></div>
+      <div class="form-field"><label>Ghost count</label><input type="number" name="ghost_count" value="1" required></div>
+      <div class="form-field"><label>Ghost spacing</label><input type="number" step="0.01" name="ghost_spacing" value="0.08" required></div>
+      <div class="form-field"><label>Head radius</label><input type="number" step="0.1" name="head_radius" value="3" required></div>
+      {% for driver in ['scale', 'opacity', 'color', 'pulse'] %}<div class="form-field"><label>{{ driver|title }} driver</label><select name="driver_{{ driver }}"><option value="">none</option>{% for signal in ['master.energy','master.accent','drums.energy','drums.accent','bass.energy','bass.accent','vocals.energy','vocals.accent','instruments.energy','instruments.accent'] %}<option value="{{ signal }}">{{ signal }}</option>{% endfor %}</select></div>{% endfor %}
+    </div>
+  </fieldset>
+</template>
+<script>
+  function addVideoTrace() {
+    const template = document.getElementById('video-trace-template');
+    const clone = template.content.cloneNode(true);
+    const count = document.querySelectorAll('#video-traces fieldset').length + 1;
+    clone.querySelector('input[name="trace_id"]').value = `trace-${count}`;
+    document.getElementById('video-traces').appendChild(clone);
+  }
+</script>
+{% endif %}
+{% endblock %}

@@ -12,7 +12,7 @@ from typer.testing import CliRunner
 
 from mrp.video.choreography import choreography_at
 from mrp.video.cli import app
-from mrp.video.project import ProjectManifest
+from mrp.video.project import ProjectManifest, load_project_manifest
 from mrp.video.renderer import (
     SpirophonicRendererError,
     _weighted_compositions,
@@ -196,6 +196,54 @@ def test_renderer_is_deterministic_and_seeded() -> None:
     assert not np.array_equal(first, another_seed)
     digest = hashlib.sha256(first.tobytes()).hexdigest()
     assert digest == "b94401ba693f046413208be2422c661defc3723d11b963302147ae77d5b5e68d"
+
+
+def test_saved_exact_section_cast_reproduces_the_same_frame(tmp_path: Path) -> None:
+    payload = _project().model_dump(mode="json", exclude_none=True)
+    payload["visuals"]["composition_overrides"] = {
+        "instrumental": {
+            "casting": {"source": "manual", "seed": 4821},
+            "traces": [
+                {
+                    "id": "saved-hero",
+                    "role": "bass",
+                    "geometry": {
+                        "fixed_radius": 310,
+                        "moving_radius": 47,
+                        "pen_offset": 221,
+                        "rotation": "outside",
+                        "samples": 1600,
+                    },
+                    "trace": {
+                        "cycles_per_second": 0.031,
+                        "trail_fraction": 0.61,
+                        "ghost_count": 3,
+                    },
+                    "color": "#4c78ff",
+                    "anchor_x": 0.31,
+                    "anchor_y": 0.42,
+                    "base_scale": 1.7,
+                }
+            ],
+        }
+    }
+    path = tmp_path / "saved-project.yaml"
+    path.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
+    loaded = load_project_manifest(path)
+    context = build_render_context(
+        loaded,
+        _analysis_bundle(),
+        _aligned_sections(),
+        root=FONT_PATH.parent,
+    )
+
+    first = render_frame(context, 4.5, 45, width=320, height=180)
+    second = render_frame(context, 4.5, 45, width=320, height=180)
+
+    assert context.section_compositions["instrumental"].key == "section:instrumental"
+    assert context.section_compositions["instrumental"].layers[0].config.id == "saved-hero"
+    np.testing.assert_array_equal(first, second)
+    assert not np.array_equal(first, render_frame(_context(), 4.5, 45, width=320, height=180))
 
 
 def test_disabling_auto_casting_preserves_the_global_layer_renderer() -> None:

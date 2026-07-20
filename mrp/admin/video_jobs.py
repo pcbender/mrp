@@ -7,6 +7,7 @@ an append-only JSONL event log so an admin restart can recover their state.
 from __future__ import annotations
 
 import json
+import math
 import os
 import signal
 import sqlite3
@@ -23,7 +24,7 @@ from mrp.admin import db
 
 ACTIVE_STATUSES = {"pending", "running"}
 TERMINAL_STATUSES = {"done", "error", "cancelled", "interrupted"}
-JOB_KINDS = {"prepare", "analyze", "align", "render"}
+JOB_KINDS = {"prepare", "analyze", "align", "frame", "contact", "render"}
 POLL_SECONDS = 0.2
 CANCEL_GRACE_SECONDS = 5.0
 
@@ -241,10 +242,17 @@ def launch(
     track_slug: str,
     track_key: str,
     kind: str,
+    *,
+    time_seconds: float | None = None,
 ) -> str:
     """Launch one video operation in an isolated Python child process."""
     if kind not in JOB_KINDS:
         raise VideoJobError(f"unknown video job kind: {kind}")
+    if kind == "frame":
+        if time_seconds is None or not math.isfinite(time_seconds) or time_seconds < 0:
+            raise VideoJobError("frame jobs require a finite non-negative time")
+    elif time_seconds is not None:
+        raise VideoJobError(f"{kind} jobs do not accept a frame time")
     repo = root.resolve()
     job_id = uuid.uuid4().hex[:12]
     job_dir = repo / "assets" / "processed" / "video" / track_key / "logs" / "jobs"
@@ -254,6 +262,8 @@ def launch(
     log_relative = log_path.relative_to(repo).as_posix()
     events_relative = events_path.relative_to(repo).as_posix()
     command_name = f"video/{release_slug}/{track_slug}/{kind}"
+    if time_seconds is not None:
+        command_name += f"@{time_seconds:.6f}"
     try:
         db.create_video_job(
             job_id=job_id,
@@ -288,6 +298,8 @@ def launch(
         "--events",
         str(events_path),
     ]
+    if time_seconds is not None:
+        command.extend(["--time", f"{time_seconds:.6f}"])
     try:
         with log_path.open("ab") as log:
             process = subprocess.Popen(

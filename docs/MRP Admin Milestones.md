@@ -145,6 +145,14 @@ Validated edits are saved atomically to the versioned aligned-lyrics artifact;
 uncertain or unmatched cues require explicit review before the track becomes
 `timed`, and structure directives cannot appear as displayed lyric cues.
 
+Milestone 6 was implemented 2026-07-20 on the same branch: every timed section
+can now use deterministic auto casting, a section-type default, or an exact
+section override. The editor provides trace CRUD plus geometry, placement,
+color, depth, motion, audio-driver, beat, and intensity controls, all saved
+atomically to the versioned track project. Isolated frame/contact-sheet jobs
+record the project fingerprint; casting edits immediately mark previous
+validation and previews stale while retaining them for comparison.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports

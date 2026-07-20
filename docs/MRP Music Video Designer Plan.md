@@ -530,6 +530,22 @@ before visual work begins, with structure tags excluded from display cues.
 
 ### Milestone 6: Section-casting editor
 
+Status 2026-07-20: implemented on `feat/music-video-designer-plan`. The
+per-track casting page resolves every timed section through the renderer's
+deterministic auto cast, a case-insensitive section-type default, or an exact
+section override. Operators can switch scope, materialize/reset automatic
+casts, add or remove traces, and edit geometry, anchors, scale, color, depth,
+motion, trace behavior, audio drivers, beat response, and intensity controls.
+All decisions are validated through the shared renderer contracts and saved
+atomically in the track's versioned `project.yaml`.
+
+Frame and all-section contact-sheet previews run as isolated process jobs.
+Their artifact records include the current input fingerprint, while a casting
+save marks the previous preflight stale without deleting earlier previews or
+renders. The admin-only gallery labels old output stale, and a successful
+current preview advances a cast track to `previewed`. A renderer test reloads
+an exact-section cast from YAML and proves repeated frame pixels are identical.
+
 - Add auto casting, section/type selection, trace CRUD, parameter controls,
   contact sheets, and frame previews.
 - Save casts to the versioned project and invalidate stale previews/renders.

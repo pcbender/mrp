@@ -360,6 +360,23 @@ def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, mon
     )
     assert db.get_video_job(align_job_id)["kind"] == "align"
     assert launches[1][0][3] == "align"
+    frame_job_id = video_jobs.launch(
+        tmp_path,
+        "release",
+        "track",
+        "artist--track",
+        "frame",
+        time_seconds=12.345,
+    )
+    assert db.get_video_job(frame_job_id)["command"].endswith("frame@12.345000")
+    assert launches[2][0][-2:] == ["--time", "12.345000"]
+    contact_job_id = video_jobs.launch(
+        tmp_path, "release", "track", "artist--track", "contact"
+    )
+    assert db.get_video_job(contact_job_id)["kind"] == "contact"
+    assert launches[3][0][3] == "contact"
+    with pytest.raises(video_jobs.VideoJobError, match="require.*time"):
+        video_jobs.launch(tmp_path, "release", "track", "artist--track", "frame")
     with pytest.raises(video_jobs.VideoJobConflict, match="active full render"):
         video_jobs.launch(tmp_path, "release", "track", "artist--track", "render")
 

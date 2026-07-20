@@ -10,6 +10,12 @@ from fastapi.templating import Jinja2Templates
 
 from mrp.admin import db, video_jobs
 from mrp.admin.deps import get_repo_root
+from mrp.admin.video_casting import (
+    CastingEditorError,
+    load_casting,
+    previews_path,
+    save_casting,
+)
 from mrp.admin.video_timing import TimingEditorError, load_timing, save_timing
 from mrp.admin.video_workspace import (
     STEM_ROLES,
@@ -77,6 +83,11 @@ def _job_template(
     kind: str = "",
     error: str | None = None,
 ) -> HTMLResponse:
+    preview_time = None
+    if job and job.get("kind") == "frame":
+        marker, separator, value = str(job.get("command") or "").rpartition("@")
+        if separator and marker:
+            preview_time = value
     return _templates.TemplateResponse(
         request,
         "releases/workspace/_video_job.html",
@@ -86,6 +97,7 @@ def _job_template(
             "slug": slug,
             "track_slug": track_slug,
             "kind": kind,
+            "preview_time": preview_time,
         },
         status_code=409 if error else 200,
     )
@@ -248,6 +260,147 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
     return response
 
 
+@router.get(
+    "/releases/{slug}/tracks/{track_slug}/video/casting",
+    response_class=HTMLResponse,
+)
+async def video_casting(
+    request: Request,
+    slug: str,
+    track_slug: str,
+    section: str | None = None,
+    scope: str = "type",
+):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    key = track_key(ctx["release"], unit["track"])
+    casting_error = None
+    try:
+        casting = load_casting(
+            root,
+            ctx["release"],
+            unit["track"],
+            section_id=section,
+            scope=scope,
+        )
+    except CastingEditorError as exc:
+        casting = None
+        casting_error = list(exc.problems)
+    status = str((unit["track"].get("music_video") or {}).get("status") or "draft")
+    ctx.update(
+        {
+            "unit": unit,
+            "track": unit["track"],
+            "track_slug": track_slug,
+            "track_key": key,
+            "casting": casting,
+            "casting_error": casting_error,
+            "cast_status_ok": status in {"timed", "cast", "previewed", "rendered"},
+            "frame_job": db.get_latest_video_job(key, "frame"),
+            "contact_job": db.get_latest_video_job(key, "contact"),
+        }
+    )
+    return _templates.TemplateResponse(request, "releases/workspace/video_casting.html", ctx)
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/casting",
+    response_class=HTMLResponse,
+)
+async def video_casting_save(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.is_file():
+        return _not_found(track_slug)
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    unit = _unit(release, track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    current_status = str(
+        (unit["track"].get("music_video") or {}).get("status") or "draft"
+    )
+    if current_status not in {"timed", "cast", "previewed", "rendered"}:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {
+                        "field": "casting",
+                        "message": "Finish and review section timing before saving a cast.",
+                        "severity": "error",
+                    }
+                ]
+            },
+            status_code=409,
+        )
+    form = await request.form()
+    fields = {str(name): form.getlist(name) for name in form.keys()}
+    try:
+        result = save_casting(root, release, unit["track"], fields)
+    except CastingEditorError as exc:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {"field": "casting", "message": problem, "severity": "error"}
+                    for problem in exc.problems
+                ]
+            },
+            status_code=422,
+        )
+    video = dict(unit["track"].get("music_video") or {})
+    video.setdefault(
+        "project",
+        f"assets/source/video/{track_key(release, unit['track'])}/project.yaml",
+    )
+    video["status"] = "cast"
+    unit["track"]["music_video"] = video
+    errors = validate_release_dict(data)
+    if errors:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {"errors": errors},
+            status_code=422,
+        )
+    path.write_text(serialize_structured_record(path, data), encoding="utf-8")
+    selected = result["selected_section"]
+    response = HTMLResponse('<div class="flash flash-ok">Section cast saved.</div>')
+    response.headers["HX-Redirect"] = (
+        f"/releases/{slug}/tracks/{track_slug}/video/casting"
+        f"?section={selected.id}&scope={result['scope']}"
+    )
+    return response
+
+
+@router.get(
+    "/releases/{slug}/tracks/{track_slug}/video/previews/{name}",
+)
+async def video_preview_image(slug: str, track_slug: str, name: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    if Path(name).name != name or Path(name).suffix.casefold() not in {".png", ".jpg", ".jpeg"}:
+        return HTMLResponse("Preview image not found.", status_code=404)
+    path = previews_path(root, ctx["release"], unit["track"]) / name
+    if not path.is_file():
+        return HTMLResponse("Preview image not found.", status_code=404)
+    media_type = "image/png" if path.suffix.casefold() == ".png" else "image/jpeg"
+    return FileResponse(path, media_type=media_type)
+
+
 @router.post("/releases/{slug}/tracks/{track_slug}/video/assets", response_class=HTMLResponse)
 async def video_assets_save(request: Request, slug: str, track_slug: str):
     root = get_repo_root()
@@ -335,8 +488,42 @@ async def video_job_launch(request: Request, slug: str, track_slug: str, kind: s
     if unit is None:
         return _not_found(track_slug)
     key = track_key(ctx["release"], unit["track"])
+    if kind in {"frame", "contact"}:
+        status = str(
+            (unit["track"].get("music_video") or {}).get("status") or "draft"
+        )
+        if status not in {"cast", "previewed", "rendered"}:
+            return _job_template(
+                request,
+                None,
+                slug=slug,
+                track_slug=track_slug,
+                kind=kind,
+                error="Save a reviewed section cast before rendering previews.",
+            )
+    time_seconds = None
+    if kind == "frame":
+        form = await request.form()
+        try:
+            time_seconds = float(str(form.get("time_seconds") or ""))
+        except ValueError:
+            return _job_template(
+                request,
+                None,
+                slug=slug,
+                track_slug=track_slug,
+                kind=kind,
+                error="Frame time must be a number.",
+            )
     try:
-        job_id = video_jobs.launch(root, slug, track_slug, key, kind)
+        job_id = video_jobs.launch(
+            root,
+            slug,
+            track_slug,
+            key,
+            kind,
+            time_seconds=time_seconds,
+        )
     except (video_jobs.VideoJobConflict, video_jobs.VideoJobError) as exc:
         return _job_template(
             request,

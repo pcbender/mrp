@@ -76,6 +76,8 @@ class ProgressMapper:
         phase = {
             "analyze": "analysis",
             "align": "alignment",
+            "frame": "preview",
+            "contact": "preview",
             "render": "render",
         }.get(self.action, "preflight")
         percent = self.writer.progress
@@ -97,6 +99,12 @@ class ProgressMapper:
             phase, percent = "alignment", 82.0
         elif "writing editable" in lower:
             phase, percent = "alignment", 97.0
+        elif "contact-sheet section" in lower:
+            phase = "preview"
+            match = re.search(r"section (\d+) of (\d+)", lower)
+            if match:
+                current, total = (int(value) for value in match.groups())
+                percent = 20.0 + current / total * 75.0
         elif "render plan" in lower:
             phase, percent = "planning", 18.0
         elif "streaming" in lower:
@@ -125,6 +133,10 @@ def _relative_artifact(root: Path, result: dict[str, Any], action: str) -> str |
         value = (result.get("analysis") or {}).get("cache_path")
     elif action == "align":
         value = (result.get("alignment") or {}).get("output_path")
+    elif action == "frame":
+        value = (result.get("preview") or {}).get("output_path")
+    elif action == "contact":
+        value = (result.get("contact_sheet") or {}).get("output_path")
     else:
         value = (result.get("render") or {}).get("output_path")
     if not value:
@@ -139,12 +151,16 @@ def _relative_artifact(root: Path, result: dict[str, Any], action: str) -> str |
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run one MRP track-video worker job.")
-    parser.add_argument("action", choices=("prepare", "analyze", "align", "render"))
+    parser.add_argument(
+        "action",
+        choices=("prepare", "analyze", "align", "frame", "contact", "render"),
+    )
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--release", required=True)
     parser.add_argument("--track", required=True)
     parser.add_argument("--job-id", required=True)
     parser.add_argument("--events", type=Path, required=True)
+    parser.add_argument("--time", type=float)
     return parser
 
 
@@ -179,7 +195,9 @@ def main(argv: list[str] | None = None) -> int:
         from mrp.video.workspace import (
             align_track,
             analyze_track,
+            contact_sheet_track,
             prepare_track,
+            preview_track,
             render_track,
         )
 
@@ -201,6 +219,24 @@ def main(argv: list[str] | None = None) -> int:
             )
         elif args.action == "align":
             result = align_track(
+                root,
+                args.release,
+                args.track,
+                force=True,
+                progress=progress,
+            )
+        elif args.action == "frame":
+            if args.time is None:
+                raise ValueError("frame jobs require --time")
+            result = preview_track(
+                root,
+                args.release,
+                args.track,
+                time_seconds=args.time,
+                force=True,
+            )
+        elif args.action == "contact":
+            result = contact_sheet_track(
                 root,
                 args.release,
                 args.track,

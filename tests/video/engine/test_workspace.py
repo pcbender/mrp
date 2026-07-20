@@ -14,6 +14,7 @@ from mrp.video.workspace import (
     MRPVideoAdapterError,
     align_track,
     analyze_track,
+    contact_sheet_track,
     prepare_track,
     preview_track,
     render_track,
@@ -297,6 +298,26 @@ def test_track_alignment_preview_and_render_use_mrp_artifact_paths(
     assert "assets/processed/video/fixture-artist--fixture-track/previews" in str(
         preview_path
     )
+    contact = contact_sheet_track(
+        repo,
+        "fixture-release",
+        font_path=FONT_PATH,
+        force=True,
+    )
+    contact_path = Path(contact["contact_sheet"]["output_path"])
+    first_contact = contact_path.read_bytes()
+    repeated_contact = contact_sheet_track(
+        repo,
+        "fixture-release",
+        font_path=FONT_PATH,
+        force=True,
+    )
+    assert (
+        Path(repeated_contact["contact_sheet"]["output_path"]).read_bytes()
+        == first_contact
+    )
+    assert contact["contact_sheet"]["section_count"] == 2
+    assert contact_path.name == "contact-sheet.png"
     rendered = render_track(
         repo,
         "fixture-release",

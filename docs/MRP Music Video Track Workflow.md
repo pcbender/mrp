@@ -132,6 +132,34 @@ track's `music_video.status` to `timed`. Bracketed structure directives are
 section metadata and the shared renderer contract rejects them as displayed
 lyric cues.
 
+## Admin section-casting editor
+
+After reviewed timing advances a track to `timed`, the per-track Video page
+links to `/releases/{release}/tracks/{track}/video/casting`. Every aligned
+section is a stable scene. Resolution order is exact section override, then a
+case-insensitive section-type default, then the deterministic auto cast (or the
+global-layer fallback when auto casting is disabled).
+
+The editor can materialize an auto cast, clear back to inheritance, or save a
+manual composition containing one to twelve traces. Each trace exposes its
+role, hypotrochoid/epitrochoid geometry, anchor, scale, color, depth, opacity,
+line and rotation behavior, cyclic trail, ghosts, and optional scale/opacity/
+color/pulse audio drivers. Scene-level controls cover visible roles, spatial
+and motion response, lyric opacity, trace/trail response, beat gain, and
+intensity gain. Section-type settings apply consistently to repeated forms;
+exact-section settings permit deliberately different scene geometry.
+
+Saves validate the complete shared project contract and atomically replace the
+versioned `project.yaml`. The previous preflight becomes `stale`, so no preview
+or render made from the former project is treated as current. Generated files
+are retained for comparison and remain below `assets/processed/video/`.
+
+Selected-time frames and one-frame-per-section contact sheets run through the
+same isolated process-job system as analysis and alignment. Preview artifacts
+record the input fingerprint and are served only through the admin route. A
+successful preview of the current cast advances `cast` to `previewed`; changing
+the cast returns the track to `cast` and requires fresh preflight/rendering.
+
 ## Privacy and dependency boundary
 
 The track workflow lives entirely in `mrp.video`. It does not import MRP Admin,
