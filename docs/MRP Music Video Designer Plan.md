@@ -465,6 +465,12 @@ code, and Spirophonic has no second production renderer.
 
 ### Milestone 3: MRP project adapter and artifact lifecycle
 
+Status 2026-07-20: implemented on `feat/music-video-designer-plan`. The
+track-scoped CLI, symbolic versioned project, ignored runtime workspace,
+deterministic semantic aggregation, input fingerprints, stale-artifact index,
+and preflight reports are documented in
+[MRP Music Video Track Workflow](<MRP Music Video Track Workflow.md>).
+
 - Convert release/track data into renderer project models.
 - Add semantic aggregation for multiple stems per role.
 - Create versioned project/alignment files and ignored processed directories.

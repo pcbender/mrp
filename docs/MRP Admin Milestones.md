@@ -125,6 +125,12 @@ compatible, the headless renderer and parity suite now live in `mrp.video`, and
 Python renderer is intentionally a separate post-merge change; the Spirophonic
 React application remains untouched.
 
+Milestone 3 was implemented 2026-07-20 on the same branch: a release/track
+adapter now creates symbolic versioned projects and ignored runtime manifests,
+aggregates repeated semantic stem roles deterministically, records input hashes
+and preflight results, detects stale artifacts, and exposes prepare, analyze,
+align, preview, and render commands under `scripts/mrp video track ...`.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports

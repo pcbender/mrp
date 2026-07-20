@@ -24,6 +24,7 @@ from mrp.video.renderer import (
     render_frame_file,
     render_frame_sequence,
 )
+from mrp.video.track_cli import track_app
 from mrp.video.verification import (
     SpirophonicVerificationError,
     verify_with_render_manifest,
@@ -35,6 +36,7 @@ app = typer.Typer(
 )
 console = Console()
 error_console = Console(stderr=True)
+app.add_typer(track_app, name="track")
 
 
 @app.callback()
