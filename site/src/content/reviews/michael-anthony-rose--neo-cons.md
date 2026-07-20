@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--neo-cons
+summary: "Here the album turns from the private empire outward to public power, and Rose is in full theatrical mode."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+Here the album turns from the private empire outward to public power, and Rose is in full theatrical mode. "Neo-Cons" runs on a driving pulse in E minor, its analog sequence and reverb-thick snare building a machine that gets colder as it gets grander. The genius is structural: the piece is a coup staged in miniature, the Doctor beginning as the patrons' chosen vessel and ending as the man who owns the system. Listen to how "And yours already has a name" hardens into "And mine already owns the name," then "And mine will be the only name," the possessive creeping forward each cycle. The bridge, where the meter tightens and the military snare drops out under "Because power requires discipline," answered with the flat "No. Power requires power," is the hinge the whole thing turns on. Donin's bass-baritone asides land the sharpest lines, "A student hears the lesson, a ruler hears the loophole," delivered like a footnote that reads the room better than anyone in it. If the song asks a lot of a first listen, and the density of the catechism verses can feel more clever than felt, the payoff is real: the upward modulation into the final chorus, patrons forced into backing harmony, has the same cornered inevitability as the best moments of The Wall. The closing radio bit, "People like crazy," is the kind of button most writers would overplay and Rose lets land dry, and it points straight into the next track. A highlight, and one of the most fully realized pieces of theater on the record.

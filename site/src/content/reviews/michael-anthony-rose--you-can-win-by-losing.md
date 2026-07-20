@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--you-can-win-by-losing
+summary: "The deal struck, the machinery now turns to holding power, and here is Rose at his most theatrical, which suits him."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+The deal struck, the machinery now turns to holding power, and here is Rose at his most theatrical, which suits him. The song opens on chips-on-felt piano, a crooked casino shuffle in 3/4 at a steady clip, all brushed snare and comic muted brass, and then it quietly militarizes: by the time the group vocals lock in, the tempo hasn't moved but the weight has doubled, floor toms and distorted bass carrying a chant you can feel in your sternum. Structurally it's a dialogue, a baritone public-speaking voice against a raspy low aside, and the exchanges land like a closed loop of logic tightening around itself. 'First, say fairness means your victory / Second, say defeat confirms the crime' unrolls a seven-step numbered pre-chorus that reads like a manual, and the payoff hook, 'Lose it loud enough / And the loss becomes the proof,' is the sharpest thing on the record, the kind of line that keeps returning long after the piano comes back detuned at the end. The call-and-response finale, with its 'We were robbed!' answering each phrase, tips fully into cabaret spectacle, closer to Randy Newman's meanest character studies than to anything confessional. It runs long, and a listener who wants the intimacy of Rose's quieter work may find the satire pitched loud throughout; the final one-word answer, 'Win,' is a chilling button on it all. A highlight, and easily his most ambitious arrangement to date.

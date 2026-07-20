@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--first-things-first
+summary: "With the country shut down, the regime demands its loyalty oaths, and this is a five-and-a-half-minute chamber opera of coup and pledge that trades Rose's usual diarist's intimacy for something colder and much larger."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+With the country shut down, the regime demands its loyalty oaths, and this is a five-and-a-half-minute chamber opera of coup and pledge that trades Rose's usual diarist's intimacy for something colder and much larger. The engine is that relentless marching floor tom under an organ pedal and anvil hits, and the arrangement plays a clever geometry: the mix stays clenched and mono-narrow for the spoken loyalty ceremonies, then blows wide for the ensemble chorus, "Put your name beneath the man / First things first / Give your office to his hand." The finest writing here is the smallest, the Donin Black exchange, where "Respect was never / Part of the method" lands the whole moral of the piece in a single dry line before the door closes and the gunshot answers. That the pledges snap along at a driving clip in what registers as a bright major key, against such grim content, is the trick that makes it unsettling rather than merely loud. If it asks a lot of the listener, the density and the sheer body count of characters can blur on a first pass, it rewards the second and third listens, and the synthetic-voice coda about the witness who "can be cloned" is genuinely chilling, and points toward the machine voices about to take over the record. Closer to Roger Waters' The Wall in scope than to anything else here, and it holds the room.

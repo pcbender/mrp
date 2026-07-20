@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--doctorate
+summary: "The title the parents pinned to his gown finally arrives, and Doctorate is the ceremony that makes it official, Rose stepping fully out of the confessional and into costume, and the disguise fits better than you'd expect."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+The title the parents pinned to his gown finally arrives, and Doctorate is the ceremony that makes it official, Rose stepping fully out of the confessional and into costume, and the disguise fits better than you'd expect. A commencement organ and a snare flourish set the ceremony, then the whole thing charges ahead at a manic clip in G minor, upright piano hammering under a self-satisfied baritone who plays both the man conferring the degree and the man receiving it. The satire is razored and specific: 'Dean of Strategic Denial, Chair of Blame and Countertrial' lands like Randy Newman writing for a Sondheim villain, and the chorus hook, 'If paper bears the title / then paper makes it real,' is the kind of line that indicts a whole culture in eleven words. The masterstroke is the ceremonial breakdown near the four-minute mark: everything drops away for a dry contralto reciting 'Twelve crates arrived / no books came out,' the Nanny's witness returning yet again as the one honest voice in the building, before the arrangement swells back into that oversized final chorus and the camera-shutter outro. At five-plus minutes the joke does stretch, and a second full run through the chorus tests its own welcome; this rewards the listener who sits with the whole arc rather than the one dipping in for a hook. But as a piece of character writing set to music, it holds the room. Proof Rose can wear a mask and still tell the truth.

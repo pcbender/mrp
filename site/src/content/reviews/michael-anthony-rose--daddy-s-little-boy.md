@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--daddy-s-little-boy
+summary: "After the Overture's whispered \"Doctor, doctor,\" this is where the album narrows from spectacle to a single cradle, a nursery rhyme with a knife in it."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+After the Overture's whispered "Doctor, doctor," this is where the album narrows from spectacle to a single cradle, a nursery rhyme with a knife in it. The music box that opens the track is a lullaby's promise, and Rose lets that sweetness curdle by degrees: the parents' duet swells around "Call him Doctor, call him now / Pin the title to his gown," the kind of chorus that sounds like celebration until you hear it's a sentence being handed down. The masterstroke is the Nanny, sung in a plain, unhurried contralto that carries the whole moral weight of the thing, and marks the first appearance of a witness this record will keep returning to. Her bridge is where the song stops performing and simply tells the truth: "Did I love him / That was not the trade / A carpenter measures / Cuts and planes." That's writing that trusts the listener to flinch on their own. The domestic aside about the snails and the magnifying glass is a small, terrible foreshadowing, and the payoff lands in the final line, where the boy inverts his parents' command into "I'll become what I require of you," the cage closing from the inside. If there's a caveat, it's that at four and a half minutes the piece asks for your full attention rather than rewarding a casual play; the repeated choruses build the trap deliberately, and the reward comes at the whispered ending, "The room smelled sweet. Then scorched." A grim, precise, cinematic thing that holds the room, and sets the man the rest of the album will follow.

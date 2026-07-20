@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--division-of-assets
+summary: "The album's whole arc of appetite reaches its logical end here: the planet itself, carved up in the language of a settlement contract."
+verdict_rank: 5
+verdict_label: "standout"
+---
+
+The album's whole arc of appetite reaches its logical end here: the planet itself, carved up in the language of a settlement contract. This is a six-minute operetta of atrocity, and Rose builds it as a duet between a high baritone and a profundo bass, two men dividing the world over a bandoneon and low strings that keep collapsing from an imperial waltz into the cold 4/4 of a boardroom. The genius is in the diction: nobody raises a voice. The regime choir chants "Balance is restored / Every asset has a chair" with the same serenity you'd hear in a hymn, and by the final chorus that chair-and-heir refrain has curdled into "File the dead beneath 'secured,'" the melody untouched, the meaning gutted. The roll call of ministers answering "Assigned" to Energy, Food, Medicine is where the piece earns its dread, deadpan clerks turning survival into inventory. And Rose knows exactly when to let a human voice in: the nanny's retrospective verse, sung plain, about children bringing home maps with "no country names, just numbered zones" is the one moment the machinery cracks, and it lands harder for arriving so late. If it asks a lot, it repays every minute. That closing line, a single hand drum growing under the word "Puerto Rico," is the only mercy on offer, and it's devastating, and it opens the door for the two human tracks that close the record. The album's other peak, and it earns it.

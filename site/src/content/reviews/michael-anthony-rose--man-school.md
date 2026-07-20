@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--man-school
+summary: "The boy made in the cradle is now sent off to be finished, and Man School is the machine that finishes him: a five-and-a-half-minute miniature opera about a boarding school that manufactures monsters, and Rose commits to the concept without a wink of irony."
+verdict_rank: 3
+verdict_label: "dependable"
+---
+
+The boy made in the cradle is now sent off to be finished, and Man School is the machine that finishes him: a five-and-a-half-minute miniature opera about a boarding school that manufactures monsters, and Rose commits to the concept without a wink of irony. The framing is severe from the first bar: rigid marching toms, a detuned boys' ensemble chanting "No boy leaves unbroken / No bruise goes to waste" in heavy unison, all locked to a driving 4/4 in what sounds like a bleak minor key. The masterstroke is the ceremony at the center, where the meter buckles into a queasy waltz and the boys sing "In each bowl, his excrement / In every seat, a familiar part" with a straight face; it's grotesque and it's supposed to be. The turn lands when the young narrator climbs the chair and delivers the line the whole piece has been building toward, "You paid to watch me win. / You don't decide when I have lost," and the industrial machinery briefly gives way before the full band crashes back in. It runs long and the relentlessness asks something of the listener; the payoff of that final chorus, "A man controls disgrace," rewards the patience. Closer to Roger Waters staging a nightmare than to anything else in Rose's catalog, this is a grower and a piece for the faithful, but its nerve is undeniable.

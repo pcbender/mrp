@@ -1,0 +1,116 @@
+{
+  "track_id": "michael-anthony-rose--overture",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Overture.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--overture.opus"
+  },
+  "lyrics": "Outlandia, shoulders back\nHold the pose and hide the crack\nChin up high and banners spread\nMind the paint above your head\n\nFrom Madhatin’s silver towers\nTo the pines that teach us power\n\nEvery child receives the claim\nEvery building bears the name\n\nThe greatest country that ever lived\nCertified gold for the privileged\nPerfect soil and perfect blood\nPay no mind beneath the mud\n\nBuy the flag\nBless the deal\nSign below\nMake it real\n\nOne nation under management\nOne future under seal\n\nOutlandia, take your place\nEvery mirror shows your face\nIf the facts refuse the plan\nBuild another where they stand\n\nMm - mm\nMm - mm\nMm - mm - mm\n\nA woman warms a bottle\nA driver clears the gate\nA father names an infant\nFor the man he must create\n\nGreatest\nCleanest\nRichest\nBest\nMeasure every beating chest\nGreatest\nStrongest\nFirst in line\nEverything is yours -\n\n- on borrowed time\nDoctor\nDoctor\nClose your eyes",
+  "lyrics_raw": "[Intro | instrumental | five-note brass fanfare]\n\n[Pipe organ enters]\n\n[National Ensemble | formal unison]\nOutlandia, shoulders back\n Hold the pose and hide the crack\n Chin up high and banners spread\n Mind the paint above your head\n\n[Marching snare enters]\n\n[High Voices]\nFrom Madhatin’s silver towers\n To the pines that teach us power\n\n[Low Voices]\nEvery child receives the claim\n Every building bears the name\n\n[Full Ensemble]\nThe greatest country that ever lived!\n Certified gold for the privileged\n Perfect soil and perfect blood\n Pay no mind beneath the mud\n\n[Instrumental Break | calliope and distorted guitar]\n\n[Commercial Quartet | bright clipped phrasing]\nBuy the flag\n Bless the deal\n Sign below\n Make it real\n\n[Military Voices]\nOne nation under management\n One future under seal\n\n[Full Ensemble | expanding harmony]\nOutlandia, take your place\n Every mirror shows your face\n If the facts refuse the plan\n Build another where they stand\n\n[Break | brass cuts out]\n\n[Nanny | wordless contralto]\nMm - mm\n Mm - mm\n Mm - mm - mm\n\n[Low Ensemble | restrained]\nA woman warms a bottle\n A driver clears the gate\n A father names an infant\n For the man he must create\n\n[Build | organ, guitars, junk percussion]\n\n[Full Ensemble | increasingly forceful]\nGreatest\n Cleanest\n Richest\n Best\nMeasure every beating chest\nGreatest\n Strongest\n First in line\nEverything is yours -\n\n[Sudden Break]\n- on borrowed time\n\nDoctor\nDoctor\nClose your eyes",
+  "style": "Rock, progressive art-rock overture at 96 BPM, alternating stately 4/4 with crooked 6/8. Patriotic brass and pipe organ collide with calliope, distorted electric guitar, marching snare, low analog synth, and metallic junk percussion. Mixed theatrical ensemble sings clipped national slogans while a plain contralto wordless motif threads underneath. Warm tape saturation, wide stereo, abrupt scene cuts, ominous music-box ending.",
+  "persona": "Michael Anthony Rose is a songwriter of rare insight and startling honesty. On his debut for Maricopa Records, he uses direct, unadorned language to explore the most profound human experiences: the gulf between who we were and who we are, the search for truth in a world of convenient fictions, and the quiet defiance of living an authentic life. His songs are less stories than they are confessions, built from the concrete details of a lived experience, where a reflection in a phone screen or the memory of a dream can trigger a lifetime of contemplation. Rose doesn't just sing about life; he holds a mirror up to it, capturing the small, resonant moments of realization that define us.\r\n\r\nThe central preoccupations of Rose's work are time and memory. His lyrics trace the lines from lost childhood potential to the stark realities of aging, questioning what we build to outlast ourselves and what we must learn to let go. He writes with a philosopher's curiosity and a diarist's intimacy, exploring the comfort of a shared lie in one song and the freedom of embracing dissonance in the next. This is music that navigates regret, loss, and mortality with a steady, empathetic gaze, always returning to the challenge of being present for the life one actually has, not the one that was planned.\r\n\r\nThroughout his work, Rose reveals a vast emotional landscape. His voice moves from the raw vulnerability of admitting fear and bitterness to the quiet strength of asserting one’s own space and worth. He sings of intimate connection with a sensory richness and of profound disconnection with a heartbreaking clarity. His perspective is that of a seasoned witness, one who sees the innocence in younger generations without envy and accepts the limitations of his own body without surrender. He finds resilience not by ignoring the damage, but by standing within it and refusing to be diminished.\r\n\r\nIn the songs of Michael Anthony Rose, listeners will not find easy answers or false comfort. Instead, they will find a voice that speaks with clarity and courage to the complexities of a full-size life. It is an invitation to stop arguing with the truth, to witness the ordinary light of the day, and to find that being here, honestly and without shame, is more than enough.",
+  "hints": {},
+  "hard_facts": {
+    "bpm": 95.7,
+    "key": "E",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 261.72,
+    "lufs": -14.3,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 6.04,
+        "label": "S1"
+      },
+      {
+        "start": 6.04,
+        "end": 47.11,
+        "label": "S2"
+      },
+      {
+        "start": 47.11,
+        "end": 65.76,
+        "label": "S3"
+      },
+      {
+        "start": 65.76,
+        "end": 86.22,
+        "label": "S4"
+      },
+      {
+        "start": 86.22,
+        "end": 122.62,
+        "label": "S5"
+      },
+      {
+        "start": 122.62,
+        "end": 141.78,
+        "label": "S6"
+      },
+      {
+        "start": 141.78,
+        "end": 165.63,
+        "label": "S7"
+      },
+      {
+        "start": 165.63,
+        "end": 182.86,
+        "label": "S8"
+      },
+      {
+        "start": 182.86,
+        "end": 200.9,
+        "label": "S9"
+      },
+      {
+        "start": 200.9,
+        "end": 235.15,
+        "label": "S10"
+      },
+      {
+        "start": 235.15,
+        "end": 255.12,
+        "label": "S11"
+      },
+      {
+        "start": 255.12,
+        "end": 261.72,
+        "label": "S12"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.972,
+      "key": 0.891
+    }
+  },
+  "tags": {
+    "genre": [],
+    "mood": [],
+    "instruments": [],
+    "model": ""
+  },
+  "impression": {
+    "text": "This track presents a grandiose, dystopian theatrical atmosphere, blending militaristic march rhythms with heavy, industrial synth-pop textures. The energy is consistently high and dramatic, driven by bold brass fanfares, a pounding electronic beat, and contrasting vocal sections that alternate between an authoritative, spoken-word male delivery and sweeping, cinematic choral lines. The production is dense and grandly scaled, yet maintains a clean sense of space where the punchy low-end percussion sits comfortably beneath the bright synth layers and theatrical vocals. A particularly striking transition occurs toward the end of the song, where the bombastic instrumentation drops out to reveal a minimalist, ticking clock pulse beneath a soft, haunting vocal refrain.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "As an opening statement, \"Overture\" tells you exactly what kind of record you're holding: theatrical, unsettled, willing to weaponize a brass fanfare. It runs on that five-note fanfare and a pipe organ, then keeps yanking the rug, the stately E-minor 4/4 giving way to the crooked lurch of the 6/8 sections, calliope and distorted guitar colliding like a parade float that's come off its rails. The genius is in the phrasing of the slogans, \"One nation under management / One future under seal,\" clipped and cheerful in a way that lands harder than any shout could. Rose (and the full ensemble he conjures here) builds the whole thing toward that final drop, where the bombast cuts out and a ticking pulse carries \"Everything is yours - on borrowed time\" into the whispered \"Doctor, doctor, close your eyes,\" a music-box coda that reframes everything before it. It's dense, more spectacle than song, and the sheer scale means the emotional intimacy Rose is known for gets a little buried under the pageantry. But as scene-setting goes, this holds the room and dares you to keep listening.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "five-note brass fanfare",
+      "E minor 4/4 alternating with 6/8",
+      "One nation under management / One future under seal",
+      "Everything is yours - on borrowed time",
+      "Doctor, doctor, close your eyes",
+      "calliope and distorted guitar",
+      "music-box ticking coda"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

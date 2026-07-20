@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--all-means-necessary
+summary: "The campaign goes behind closed doors, and this is the boldest swing on the record, and it mostly connects: a spy-rock playlet in E minor that stages a backroom deal as musical theater, with the two voices, a gravel-baritone campaign man and a clear-accented visitor, trading lines like chess moves before the low ensemble drops into that vocoded refrain."
+verdict_rank: 2
+verdict_label: "soft_floor"
+---
+
+The campaign goes behind closed doors, and this is the boldest swing on the record, and it mostly connects: a spy-rock playlet in E minor that stages a backroom deal as musical theater, with the two voices, a gravel-baritone campaign man and a clear-accented visitor, trading lines like chess moves before the low ensemble drops into that vocoded refrain. The pre-choruses do the real heavy lifting here, where the writing tightens into something almost liturgical: "No handshake for the camera / No signature or seal / No promise spoken plainly / No term a court can feel." Rose's central conceit, that the modern con isn't rigging the count but rewriting the counted, lands hardest in verse two: "We can show each man a country / Built exactly from his fear." At nearly six minutes it asks patience, and the long dialogue stretches lean more on your ear for the theater than on hook or melody, so this plays better as a headphone piece than a room-filler, a deliberate cooldown after the arena lift of I'm In. The final flourish, that eager "Doctor, congratulations" giving way to Hail to the Chief, is the kind of cold last laugh Rose has always been good at. Not the most immediate cut on the album, but for the faithful it rewards the sit.

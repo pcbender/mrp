@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--i-m-in
+summary: "The rally becomes a campaign, and I'm In is the album's most ambitious swing yet: a five-and-a-half-minute piece of theatrical pop-rock built like a scene from a stage musical, driving at a brisk clip in A# major with punchy drums, brass stabs, and massed campaign-choir vocals."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+The rally becomes a campaign, and I'm In is the album's most ambitious swing yet: a five-and-a-half-minute piece of theatrical pop-rock built like a scene from a stage musical, driving at a brisk clip in A# major with punchy drums, brass stabs, and massed campaign-choir vocals. The genius is in the architecture. Rose opens on the plain contralto of the Nanny reporting a death in flat, procedural language ("The compactor ran at 8:15 / The route continued until noon"), then lets the whole thing curdle into an anthem about building a movement rather than a party. That "I'm in / Put my name across the door" hook has real gospel lift, the kind of chorus that would fill an arena and mean the exact opposite of what an arena chorus usually means. The masterstroke is the sudden cold cut in the final third, where everything drops to celesta and a single restrained alto reading an envelope: "Very, very small hands" answered by a remembered voice, "He will kill you, too." That the note gets folded into the pages of 1984 and the public music slams back in is the sort of dramatic move most songwriters wouldn't attempt. If it asks a lot of the casual listener, and it does, the reward is a fully realized little opera about how a name eats a person alive. This one holds the room.
