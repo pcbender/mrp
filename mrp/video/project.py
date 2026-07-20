@@ -459,6 +459,15 @@ class ProjectManifest(ContractModel):
 class LyricLine(ContractModel):
     text: NonBlankText
 
+    @model_validator(mode="after")
+    def structure_tags_are_not_cues(self) -> "LyricLine":
+        stripped = self.text.strip()
+        if stripped.startswith("[") and stripped.endswith("]"):
+            raise ValueError(
+                "structure tags must be section labels, not displayed lyric cues"
+            )
+        return self
+
 
 class LyricSection(ContractModel):
     id: NonBlankText
@@ -488,6 +497,7 @@ class AlignedLyricLine(LyricLine):
     end: float = Field(gt=0)
     confidence: float | None = Field(default=None, ge=0, le=1)
     status: Literal["matched", "uncertain", "unmatched"] | None = None
+    reviewed: bool | None = None
 
     @model_validator(mode="after")
     def end_follows_start(self) -> "AlignedLyricLine":
@@ -502,6 +512,7 @@ class AlignedLyricSection(ContractModel):
     label: NonBlankText | None = None
     start: float = Field(ge=0)
     end: float = Field(gt=0)
+    reviewed: bool | None = None
     lines: list[AlignedLyricLine] = Field(default_factory=list)
 
     @model_validator(mode="after")

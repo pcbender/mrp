@@ -507,6 +507,20 @@ jobs without leaving MRP Admin.
 
 ### Milestone 5: Timing editor
 
+Status 2026-07-20: implemented on `feat/music-video-designer-plan`. Alignment
+is available as an isolated Video job and writes the existing track-scoped,
+versioned `lyrics.aligned.yaml` contract. The timing page presents native master
+audio playback plus a synchronized scrubber, section and lyric-cue boundaries,
+confidence/status badges, range previews, playhead capture, and explicit review
+state for sections and lines. Saves preserve canonical text, section identities,
+alignment provenance, confidence, and match status while atomically validating
+ordered, non-overlapping timing against the master duration.
+
+Nullable review markers keep all earlier aligned files valid. Uncertain and
+unmatched cues must be explicitly reviewed before the track advances from
+`draft` to `timed`. Bracketed structure directives remain section metadata and
+are rejected by the renderer contract if presented as lyric cue text.
+
 - Add section generation, alignment, confidence review, and manual timing edits.
 - Add audio scrubbing and boundary controls with minimal vanilla JavaScript.
 - Save reviewed timing as versioned source.

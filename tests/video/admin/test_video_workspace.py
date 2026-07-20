@@ -272,6 +272,7 @@ def test_video_track_page_renders_assets_and_job_controls(tmp_path: Path, monkey
     assert "Import assets by local path" in body
     assert "Run prepare" in body
     assert "Run analyze" in body
+    assert "Run align" in body
     assert "Run render" in body
 
 
@@ -354,6 +355,11 @@ def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, mon
     assert command[1:3] == ["-m", "mrp.video.worker"]
     assert "--job-id" in command
     assert kwargs["start_new_session"] is True
+    align_job_id = video_jobs.launch(
+        tmp_path, "release", "track", "artist--track", "align"
+    )
+    assert db.get_video_job(align_job_id)["kind"] == "align"
+    assert launches[1][0][3] == "align"
     with pytest.raises(video_jobs.VideoJobConflict, match="active full render"):
         video_jobs.launch(tmp_path, "release", "track", "artist--track", "render")
 

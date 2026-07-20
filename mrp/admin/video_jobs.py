@@ -23,7 +23,7 @@ from mrp.admin import db
 
 ACTIVE_STATUSES = {"pending", "running"}
 TERMINAL_STATUSES = {"done", "error", "cancelled", "interrupted"}
-JOB_KINDS = {"prepare", "analyze", "render"}
+JOB_KINDS = {"prepare", "analyze", "align", "render"}
 POLL_SECONDS = 0.2
 CANCEL_GRACE_SECONDS = 5.0
 

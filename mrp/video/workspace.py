@@ -943,6 +943,7 @@ def align_track(
     force: bool = False,
     retranscribe: bool = False,
     client: Any | None = None,
+    progress: Callable[[str], None] | None = None,
 ) -> dict[str, Any]:
     prepared = prepare_track(repo, release_slug, track_slug, font_path=font_path)
     try:
@@ -951,6 +952,7 @@ def align_track(
             force=force,
             retranscribe=retranscribe,
             client=client,
+            progress=progress,
         )
     except (
         SpirophonicValidationError,

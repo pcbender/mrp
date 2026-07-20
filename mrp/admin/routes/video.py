@@ -5,12 +5,19 @@ import re
 from pathlib import Path
 
 from fastapi import APIRouter, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from mrp.admin import db, video_jobs
 from mrp.admin.deps import get_repo_root
-from mrp.admin.video_workspace import STEM_ROLES, track_key, validate_assets, video_track_rows
+from mrp.admin.video_timing import TimingEditorError, load_timing, save_timing
+from mrp.admin.video_workspace import (
+    STEM_ROLES,
+    resolve_asset,
+    track_key,
+    validate_assets,
+    video_track_rows,
+)
 from mrp.admin.workspace import (
     STAGES,
     STATUSES,
@@ -24,6 +31,14 @@ from mrp.core.migrate_site import load_structured_record, serialize_structured_r
 router = APIRouter()
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
 _STEM_ID = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+_AUDIO_MEDIA_TYPES = {
+    ".wav": "audio/wav",
+    ".mp3": "audio/mpeg",
+    ".flac": "audio/flac",
+    ".aif": "audio/aiff",
+    ".aiff": "audio/aiff",
+    ".m4a": "audio/mp4",
+}
 
 
 def _release_path(root: Path, slug: str) -> Path:
@@ -104,11 +119,133 @@ async def video_track(request: Request, slug: str, track_slug: str):
             "asset_report": validate_assets(root, ctx["release"], unit),
             "video_jobs": {
                 kind: db.get_latest_video_job(key, kind)
-                for kind in ("prepare", "analyze", "render")
+                for kind in ("prepare", "analyze", "align", "render")
             },
         }
     )
     return _templates.TemplateResponse(request, "releases/workspace/video_track.html", ctx)
+
+
+@router.get(
+    "/releases/{slug}/tracks/{track_slug}/video/timing",
+    response_class=HTMLResponse,
+)
+async def video_timing(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    key = track_key(ctx["release"], unit["track"])
+    timing_error = None
+    try:
+        timing = load_timing(root, ctx["release"], unit["track"])
+    except TimingEditorError as exc:
+        timing = None
+        timing_error = list(exc.problems)
+    master = resolve_asset(root, unit["track"].get("master_path"))
+    ctx.update(
+        {
+            "unit": unit,
+            "track": unit["track"],
+            "track_slug": track_slug,
+            "track_key": key,
+            "timing": timing,
+            "timing_error": timing_error,
+            "audio_available": bool(master and master.is_file()),
+            "align_job": db.get_latest_video_job(key, "align"),
+        }
+    )
+    return _templates.TemplateResponse(request, "releases/workspace/video_timing.html", ctx)
+
+
+@router.get("/releases/{slug}/tracks/{track_slug}/video/audio")
+async def video_audio(slug: str, track_slug: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    master = resolve_asset(root, unit["track"].get("master_path"))
+    if master is None or not master.is_file():
+        return HTMLResponse("Track master is not available.", status_code=404)
+    media_type = _AUDIO_MEDIA_TYPES.get(
+        master.suffix.casefold(), "application/octet-stream"
+    )
+    return FileResponse(master, media_type=media_type)
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/timing",
+    response_class=HTMLResponse,
+)
+async def video_timing_save(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.is_file():
+        return _not_found(track_slug)
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    unit = _unit(release, track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    form = await request.form()
+    field_names = (
+        "section_id",
+        "section_start",
+        "section_end",
+        "section_reviewed",
+        "line_key",
+        "line_start",
+        "line_end",
+        "line_reviewed",
+    )
+    fields = {name: form.getlist(name) for name in field_names}
+    try:
+        result = save_timing(root, release, unit["track"], fields)
+    except TimingEditorError as exc:
+        errors = [
+            {"field": "timing", "message": problem, "severity": "error"}
+            for problem in exc.problems
+        ]
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {"errors": errors},
+            status_code=422,
+        )
+
+    video = dict(unit["track"].get("music_video") or {})
+    video.setdefault(
+        "project",
+        f"assets/source/video/{track_key(release, unit['track'])}/project.yaml",
+    )
+    current_status = str(video.get("status") or "draft")
+    if current_status in {"draft", "timed"}:
+        video["status"] = (
+            "timed" if result["summary"]["review_complete"] else "draft"
+        )
+    unit["track"]["music_video"] = video
+    errors = validate_release_dict(data)
+    if errors:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {"errors": errors},
+            status_code=422,
+        )
+    path.write_text(serialize_structured_record(path, data), encoding="utf-8")
+    response = HTMLResponse(
+        '<div class="flash flash-ok">Timing and review state saved.</div>'
+    )
+    response.headers["HX-Redirect"] = (
+        f"/releases/{slug}/tracks/{track_slug}/video/timing"
+    )
+    return response
 
 
 @router.post("/releases/{slug}/tracks/{track_slug}/video/assets", response_class=HTMLResponse)

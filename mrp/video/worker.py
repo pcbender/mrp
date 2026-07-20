@@ -73,7 +73,11 @@ class ProgressMapper:
         if self.cancelled.is_set():
             raise WorkerCancelled("Cancellation requested")
         lower = message.casefold()
-        phase = "analysis" if self.action == "analyze" else "render"
+        phase = {
+            "analyze": "analysis",
+            "align": "alignment",
+            "render": "render",
+        }.get(self.action, "preflight")
         percent = self.writer.progress
         if "validating" in lower:
             phase, percent = "preflight", 5.0
@@ -87,6 +91,12 @@ class ProgressMapper:
             phase, percent = "analysis", min(88.0, 38.0 + self.analysis_step * 8.0)
         elif "cached analysis" in lower:
             phase, percent = "analysis", 90.0
+        elif "whisper" in lower or "transcription" in lower:
+            phase, percent = "transcription", max(percent, 55.0)
+        elif "matching canonical" in lower:
+            phase, percent = "alignment", 82.0
+        elif "writing editable" in lower:
+            phase, percent = "alignment", 97.0
         elif "render plan" in lower:
             phase, percent = "planning", 18.0
         elif "streaming" in lower:
@@ -113,6 +123,8 @@ def _relative_artifact(root: Path, result: dict[str, Any], action: str) -> str |
         value = result.get("project")
     elif action == "analyze":
         value = (result.get("analysis") or {}).get("cache_path")
+    elif action == "align":
+        value = (result.get("alignment") or {}).get("output_path")
     else:
         value = (result.get("render") or {}).get("output_path")
     if not value:
@@ -127,7 +139,7 @@ def _relative_artifact(root: Path, result: dict[str, Any], action: str) -> str |
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run one MRP track-video worker job.")
-    parser.add_argument("action", choices=("prepare", "analyze", "render"))
+    parser.add_argument("action", choices=("prepare", "analyze", "align", "render"))
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--release", required=True)
     parser.add_argument("--track", required=True)
@@ -164,7 +176,12 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     try:
-        from mrp.video.workspace import analyze_track, prepare_track, render_track
+        from mrp.video.workspace import (
+            align_track,
+            analyze_track,
+            prepare_track,
+            render_track,
+        )
 
         progress = ProgressMapper(args.action, writer, cancelled)
         if args.action == "prepare":
@@ -180,6 +197,14 @@ def main(argv: list[str] | None = None) -> int:
                 root,
                 args.release,
                 args.track,
+                progress=progress,
+            )
+        elif args.action == "align":
+            result = align_track(
+                root,
+                args.release,
+                args.track,
+                force=True,
                 progress=progress,
             )
         else:

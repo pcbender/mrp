@@ -125,10 +125,16 @@ def video_track_rows(root: Path, release_slug: str, release: dict[str, Any]) -> 
                 "project": paths["project"].is_file(),
                 "timing": paths["aligned"].is_file(),
                 "cast": status in {"cast", "previewed", "rendered", "approved", "published"},
-                "preview": status in {"previewed", "rendered", "approved", "published"}
-                or _artifact_state(paths, "preview"),
-                "render": status in {"rendered", "approved", "published"}
-                or _artifact_state(paths, "render"),
+                "preview": validation == "passed"
+                and (
+                    status in {"previewed", "rendered", "approved", "published"}
+                    or _artifact_state(paths, "preview")
+                ),
+                "render": validation == "passed"
+                and (
+                    status in {"rendered", "approved", "published"}
+                    or _artifact_state(paths, "render")
+                ),
                 "approval": status in {"approved", "published"},
                 "video_status": status,
                 "validation": validation,

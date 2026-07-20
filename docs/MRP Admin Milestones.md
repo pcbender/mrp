@@ -138,6 +138,13 @@ persistent child-process jobs with HTMX progress polling, heartbeats,
 cancellation, per-track render exclusivity, artifact/log references, and
 interruption recovery after an admin restart.
 
+Milestone 5 was implemented 2026-07-20 on the same branch: alignment is now a
+process-backed Video job, and each track has a timing editor for audio scrubbing,
+section and lyric-cue boundaries, confidence/status review, and range previews.
+Validated edits are saved atomically to the versioned aligned-lyrics artifact;
+uncertain or unmatched cues require explicit review before the track becomes
+`timed`, and structure directives cannot appear as displayed lyric cues.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports

@@ -109,6 +109,29 @@ An artifact is stale when its recorded fingerprint differs from the current
 fingerprint. Stale artifacts remain available for diagnosis and comparison;
 the adapter reports them and never silently deletes or approves them.
 
+## Admin timing editor
+
+The per-track Video page links to
+`/releases/{release}/tracks/{track}/video/timing`. Alignment runs in the same
+isolated process-job system as analysis and rendering. It uses the structured
+track lyrics and vocals stem, writes the versioned `lyrics.aligned.yaml`, and
+reuses cached transcription unless the operator deliberately retranscribes.
+
+The editor streams the private track master through an admin-only route and
+adds a synchronized scrubber, playhead capture, and range playback. Operators
+can edit every section and lyric-cue start/end value and record review state
+without changing canonical lyric text, section identity, confidence, match
+status, or alignment provenance. Saves are atomic and reject invalid ordering,
+overlap, out-of-section lines, nonpositive windows, and timing beyond the known
+master duration.
+
+`reviewed` is optional on existing aligned sections and lines. A newly aligned
+file therefore remains backward compatible. Uncertain and unmatched cues count
+as pending until explicitly reviewed; once none remain, saving advances a draft
+track's `music_video.status` to `timed`. Bracketed structure directives are
+section metadata and the shared renderer contract rejects them as displayed
+lyric cues.
+
 ## Privacy and dependency boundary
 
 The track workflow lives entirely in `mrp.video`. It does not import MRP Admin,

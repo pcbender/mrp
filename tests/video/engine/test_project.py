@@ -6,11 +6,36 @@ import yaml
 from pydantic import ValidationError
 
 from mrp.video.project import (
+    AlignedLyricLine,
+    AlignedLyricSection,
+    LyricLine,
     ProjectManifest,
     SpirophonicValidationError,
     load_aligned_lyrics,
     validate_project,
 )
+
+
+def test_timing_review_markers_are_optional_and_structure_tags_are_not_cues() -> None:
+    line = AlignedLyricLine(
+        text="A displayed lyric",
+        start=0,
+        end=1,
+        confidence=0.5,
+        status="uncertain",
+    )
+    section = AlignedLyricSection(
+        id="verse",
+        type="verse",
+        start=0,
+        end=1,
+        lines=[line],
+    )
+
+    assert line.reviewed is None
+    assert section.reviewed is None
+    with pytest.raises(ValidationError, match="section labels"):
+        LyricLine(text="[Verse]")
 
 
 def _valid_project() -> dict[str, Any]:

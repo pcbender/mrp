@@ -8,6 +8,17 @@
 
 <div id="video-save-result"></div>
 <div class="form-card">
+  <div class="form-body" style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
+    <div>
+      <h2 style="margin:0">Sections &amp; timing</h2>
+      <p style="font-size:12px;color:var(--muted);margin:.2rem 0 0">
+        Generate line cues, review confidence, scrub the master, and edit section or lyric boundaries.
+      </p>
+    </div>
+    <a class="btn btn-primary" href="/releases/{{ slug }}/tracks/{{ track_slug }}/video/timing">Open timing editor</a>
+  </div>
+</div>
+<div class="form-card">
   <div class="form-body">
     <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem">
       <div>
@@ -90,7 +101,7 @@
       Preparation validates and links the tracked project. Analysis and rendering run in isolated child processes.
     </p>
     <div class="video-job-grid">
-      {% for kind in ['prepare', 'analyze', 'render'] %}
+      {% for kind in ['prepare', 'analyze', 'align', 'render'] %}
       <div id="video-job-{{ kind }}">
         {% set job = video_jobs[kind] %}
         {% include "releases/workspace/_video_job.html" %}
