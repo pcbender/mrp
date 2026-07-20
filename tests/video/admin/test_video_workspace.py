@@ -273,7 +273,7 @@ def test_video_track_page_renders_assets_and_job_controls(tmp_path: Path, monkey
     assert "Run prepare" in body
     assert "Run analyze" in body
     assert "Run align" in body
-    assert "Run render" in body
+    assert "Open rendering workspace" in body
 
 
 def test_workspace_dispatch_renders_optional_video_matrix(tmp_path: Path, monkeypatch):
@@ -348,12 +348,20 @@ def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, mon
     monkeypatch.setattr(video_jobs.subprocess, "Popen", fake_popen)
     monkeypatch.setattr(video_jobs, "_start_monitor", lambda *_args: None)
 
-    job_id = video_jobs.launch(tmp_path, "release", "track", "artist--track", "render")
+    job_id = video_jobs.launch(
+        tmp_path,
+        "release",
+        "track",
+        "artist--track",
+        "render",
+        expected_fingerprint="fingerprint",
+    )
 
     assert db.get_video_job(job_id)["pid"] == 43210
     command, kwargs = launches[0]
     assert command[1:3] == ["-m", "mrp.video.worker"]
     assert "--job-id" in command
+    assert command[-2:] == ["--expected-fingerprint", "fingerprint"]
     assert kwargs["start_new_session"] is True
     align_job_id = video_jobs.launch(
         tmp_path, "release", "track", "artist--track", "align"
@@ -375,10 +383,37 @@ def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, mon
     )
     assert db.get_video_job(contact_job_id)["kind"] == "contact"
     assert launches[3][0][3] == "contact"
+    draft_job_id = video_jobs.launch(
+        tmp_path,
+        "release",
+        "track",
+        "artist--track",
+        "draft",
+        start_seconds=2.5,
+        end_seconds=7.75,
+    )
+    assert db.get_video_job(draft_job_id)["command"].endswith(
+        "draft@2.500000:7.750000"
+    )
+    assert launches[4][0][-4:] == ["--from", "2.500000", "--to", "7.750000"]
+    plan_job_id = video_jobs.launch(
+        tmp_path, "release", "track", "artist--track", "render_plan"
+    )
+    assert db.get_video_job(plan_job_id)["kind"] == "render_plan"
+    assert launches[5][0][3] == "render_plan"
     with pytest.raises(video_jobs.VideoJobError, match="require.*time"):
         video_jobs.launch(tmp_path, "release", "track", "artist--track", "frame")
+    with pytest.raises(video_jobs.VideoJobError, match="require.*range"):
+        video_jobs.launch(tmp_path, "release", "track", "artist--track", "draft")
     with pytest.raises(video_jobs.VideoJobConflict, match="active full render"):
-        video_jobs.launch(tmp_path, "release", "track", "artist--track", "render")
+        video_jobs.launch(
+            tmp_path,
+            "release",
+            "track",
+            "artist--track",
+            "render",
+            expected_fingerprint="fingerprint",
+        )
 
 
 def test_cancellation_and_restart_recovery_reach_terminal_states(tmp_path: Path, monkeypatch):

@@ -16,6 +16,14 @@ from mrp.admin.video_casting import (
     previews_path,
     save_casting,
 )
+from mrp.admin.video_rendering import (
+    VideoRenderingError,
+    approve_render,
+    discard_draft,
+    load_rendering,
+    render_launch_problems,
+    renders_path,
+)
 from mrp.admin.video_timing import TimingEditorError, load_timing, save_timing
 from mrp.admin.video_workspace import (
     STEM_ROLES,
@@ -84,10 +92,16 @@ def _job_template(
     error: str | None = None,
 ) -> HTMLResponse:
     preview_time = None
+    draft_start = None
+    draft_end = None
     if job and job.get("kind") == "frame":
         marker, separator, value = str(job.get("command") or "").rpartition("@")
         if separator and marker:
             preview_time = value
+    if job and job.get("kind") == "draft":
+        marker, separator, value = str(job.get("command") or "").rpartition("@")
+        if separator and marker and ":" in value:
+            draft_start, draft_end = value.split(":", 1)
     return _templates.TemplateResponse(
         request,
         "releases/workspace/_video_job.html",
@@ -98,6 +112,8 @@ def _job_template(
             "track_slug": track_slug,
             "kind": kind,
             "preview_time": preview_time,
+            "draft_start": draft_start,
+            "draft_end": draft_end,
         },
         status_code=409 if error else 200,
     )
@@ -401,6 +417,168 @@ async def video_preview_image(slug: str, track_slug: str, name: str):
     return FileResponse(path, media_type=media_type)
 
 
+@router.get(
+    "/releases/{slug}/tracks/{track_slug}/video/rendering",
+    response_class=HTMLResponse,
+)
+async def video_rendering(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    key = track_key(ctx["release"], unit["track"])
+    plan_job = db.get_latest_video_job(key, "render_plan")
+    rendering_error = None
+    try:
+        rendering = load_rendering(
+            root,
+            ctx["release"],
+            unit["track"],
+            plan_job=plan_job,
+        )
+    except VideoRenderingError as exc:
+        rendering = None
+        rendering_error = list(exc.problems)
+    ctx.update(
+        {
+            "unit": unit,
+            "track": unit["track"],
+            "track_slug": track_slug,
+            "track_key": key,
+            "rendering": rendering,
+            "rendering_error": rendering_error,
+            "draft_job": db.get_latest_video_job(key, "draft"),
+            "plan_job": plan_job,
+            "render_job": db.get_latest_video_job(key, "render"),
+        }
+    )
+    return _templates.TemplateResponse(request, "releases/workspace/video_rendering.html", ctx)
+
+
+@router.get(
+    "/releases/{slug}/tracks/{track_slug}/video/renders/{group}/{name}",
+)
+async def video_render_file(slug: str, track_slug: str, group: str, name: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    if (
+        group not in {"drafts", "full"}
+        or Path(name).name != name
+        or Path(name).suffix.casefold() != ".mp4"
+    ):
+        return HTMLResponse("Rendered video not found.", status_code=404)
+    path = renders_path(root, ctx["release"], unit["track"]) / group / name
+    if not path.is_file():
+        return HTMLResponse("Rendered video not found.", status_code=404)
+    return FileResponse(path, media_type="video/mp4")
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/rendering/drafts/{draft_id}/discard",
+    response_class=HTMLResponse,
+)
+async def video_draft_discard(
+    request: Request,
+    slug: str,
+    track_slug: str,
+    draft_id: str,
+):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    try:
+        discard_draft(root, ctx["release"], unit["track"], draft_id)
+    except VideoRenderingError as exc:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {"field": "draft", "message": problem, "severity": "error"}
+                    for problem in exc.problems
+                ]
+            },
+            status_code=422,
+        )
+    response = HTMLResponse('<div class="flash flash-ok">Draft discarded.</div>')
+    response.headers["HX-Redirect"] = (
+        f"/releases/{slug}/tracks/{track_slug}/video/rendering"
+    )
+    return response
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/rendering/approve",
+    response_class=HTMLResponse,
+)
+async def video_render_approve(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.is_file():
+        return _not_found(track_slug)
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    unit = _unit(release, track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    form = await request.form()
+    artifact_path = str(form.get("artifact_path") or "")
+    video = dict(unit["track"].get("music_video") or {})
+    video["status"] = "approved"
+    unit["track"]["music_video"] = video
+    errors = validate_release_dict(data)
+    if errors:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {"errors": errors},
+            status_code=422,
+        )
+    try:
+        approve_render(root, release, unit["track"], artifact_path)
+    except VideoRenderingError as exc:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {"field": "approval", "message": problem, "severity": "error"}
+                    for problem in exc.problems
+                ]
+            },
+            status_code=409,
+        )
+    path.write_text(serialize_structured_record(path, data), encoding="utf-8")
+    preflight = (
+        root
+        / "assets"
+        / "processed"
+        / "video"
+        / track_key(release, unit["track"])
+        / "logs"
+        / "preflight.json"
+    )
+    if preflight.is_file():
+        preflight.touch()
+    response = HTMLResponse('<div class="flash flash-ok">Full render approved.</div>')
+    response.headers["HX-Redirect"] = (
+        f"/releases/{slug}/tracks/{track_slug}/video/rendering"
+    )
+    return response
+
+
 @router.post("/releases/{slug}/tracks/{track_slug}/video/assets", response_class=HTMLResponse)
 async def video_assets_save(request: Request, slug: str, track_slug: str):
     root = get_repo_root()
@@ -502,6 +680,9 @@ async def video_job_launch(request: Request, slug: str, track_slug: str, kind: s
                 error="Save a reviewed section cast before rendering previews.",
             )
     time_seconds = None
+    start_seconds = None
+    end_seconds = None
+    expected_fingerprint = None
     if kind == "frame":
         form = await request.form()
         try:
@@ -515,6 +696,71 @@ async def video_job_launch(request: Request, slug: str, track_slug: str, kind: s
                 kind=kind,
                 error="Frame time must be a number.",
             )
+    if kind == "draft":
+        form = await request.form()
+        section_id = str(form.get("section_id") or "").strip()
+        try:
+            state = load_rendering(root, ctx["release"], unit["track"])
+            selected = next(
+                (item for item in state["sections"] if item["id"] == section_id),
+                None,
+            )
+            if section_id and selected is None:
+                raise ValueError("Unknown section")
+            if selected is not None:
+                start_seconds = float(selected["start"])
+                end_seconds = float(selected["end"])
+            else:
+                start_seconds = float(str(form.get("start_seconds") or ""))
+                end_seconds = float(str(form.get("end_seconds") or ""))
+        except (ValueError, VideoRenderingError) as exc:
+            return _job_template(
+                request,
+                None,
+                slug=slug,
+                track_slug=track_slug,
+                kind=kind,
+                error=f"Invalid draft range: {exc}",
+            )
+    if kind in {"draft", "render_plan", "render"}:
+        plan_job = db.get_latest_video_job(key, "render_plan")
+        try:
+            problems = render_launch_problems(
+                root,
+                ctx["release"],
+                unit["track"],
+                plan_job=plan_job,
+                require_plan=kind == "render",
+            )
+        except VideoRenderingError as exc:
+            problems = exc.problems
+        if problems:
+            return _job_template(
+                request,
+                None,
+                slug=slug,
+                track_slug=track_slug,
+                kind=kind,
+                error="; ".join(problems),
+            )
+        if kind == "render":
+            try:
+                state = load_rendering(
+                    root,
+                    ctx["release"],
+                    unit["track"],
+                    plan_job=plan_job,
+                )
+                expected_fingerprint = str(state["plan"]["input_fingerprint"])
+            except (VideoRenderingError, KeyError, TypeError) as exc:
+                return _job_template(
+                    request,
+                    None,
+                    slug=slug,
+                    track_slug=track_slug,
+                    kind=kind,
+                    error=f"Cannot pin full-render inputs: {exc}",
+                )
     try:
         job_id = video_jobs.launch(
             root,
@@ -523,6 +769,9 @@ async def video_job_launch(request: Request, slug: str, track_slug: str, kind: s
             key,
             kind,
             time_seconds=time_seconds,
+            start_seconds=start_seconds,
+            end_seconds=end_seconds,
+            expected_fingerprint=expected_fingerprint,
         )
     except (video_jobs.VideoJobConflict, video_jobs.VideoJobError) as exc:
         return _job_template(

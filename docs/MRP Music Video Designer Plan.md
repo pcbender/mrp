@@ -555,6 +555,27 @@ reproduce the same frame from the saved project.
 
 ### Milestone 7: Draft and full rendering
 
+Status 2026-07-20: implemented on `feat/music-video-designer-plan`. The
+per-track rendering workspace can launch a timed section or custom range as an
+isolated draft job, retain independently named draft iterations and manifests,
+play them through private admin-only routes, and discard one draft without
+touching versioned source, full renders, or public assets.
+
+Full rendering now has a separate preflight job that reports the exact input
+fingerprint, frame count, output profile, card inclusion, and estimated raw
+stream work. The full-render worker is pinned to that fingerprint and refuses
+to encode if the project or inputs changed after planning. Existing process
+jobs provide live progress, heartbeats, cancellation, restart recovery, and
+one-active-full-render enforcement; the renderer atomically publishes only an
+FFprobe-verified MP4 and its render manifest.
+
+Approval rechecks the versioned project, aligned timing, master, enabled stems,
+artifact fingerprint, full-render classification, verification result, output
+hash, and manifest before changing only the selected track to `approved`. The
+local approval record preserves the reviewed project hash, input hashes,
+manifest hash, and output hash, while stale iterations remain visible but
+cannot be approved.
+
 - Add range/section draft rendering and iteration history.
 - Add full render preflight, progress, cancellation, verification, and approval.
 - Preserve render manifests and prevent stale-project approval.

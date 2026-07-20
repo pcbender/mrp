@@ -14,6 +14,7 @@ scripts/mrp video track preflight RELEASE [--track TRACK] --json
 scripts/mrp video track analyze RELEASE [--track TRACK] --json
 scripts/mrp video track align RELEASE [--track TRACK] --json
 scripts/mrp video track preview RELEASE [--track TRACK] --time 30 --json
+scripts/mrp video track render RELEASE [--track TRACK] --draft --from 30 --to 45 --json
 scripts/mrp video track render RELEASE [--track TRACK] --dry-run --json
 ```
 
@@ -159,6 +160,37 @@ same isolated process-job system as analysis and alignment. Preview artifacts
 record the input fingerprint and are served only through the admin route. A
 successful preview of the current cast advances `cast` to `previewed`; changing
 the cast returns the track to `cast` and requires fresh preflight/rendering.
+
+## Admin draft, full-render, and approval workflow
+
+After casting, the per-track Video page links to
+`/releases/{release}/tracks/{track}/video/rendering`. A draft job accepts either
+a timed section range or custom start/end values. Every job gets its own ignored
+`renders/drafts/{job-id}.mp4` plus adjacent `.render.json`; the history keeps
+current and stale iterations available for private comparison. Discard removes
+only the selected draft and its manifest from the generated workspace.
+
+Full output uses a two-step gate. `render_plan` prepares the exact current
+inputs and reports the fingerprint, duration, frame count, dimensions, frame
+rate, card inclusion, and raw streamed work estimate. The subsequent full job
+receives that fingerprint and aborts before encoding if a fresh prepare resolves
+different inputs. One full render may run per track, and the persistent worker
+continues to expose progress, heartbeat, cancellation, and interruption state.
+
+Successful full jobs live under `renders/full/{job-id}.mp4`. The renderer first
+encodes to temporary paths, verifies streams, codecs, pixel format, duration,
+frame rate, dimensions, frame count, audio properties, and fast-start metadata
+with FFprobe, writes the render manifest, and only then publishes both files.
+Cancellation or failure leaves no published partial output.
+
+Human approval is server-enforced. It rechecks the current versioned project,
+aligned timing, master and enabled-stem hashes, the artifact fingerprint,
+full-versus-draft flags, verification state, and MP4 SHA-256. The ignored local
+approval record preserves the project hash, all preflight input hashes, manifest
+hash, and output hash; the release YAML advances only the selected track to
+`music_video.status: approved`. Stale renders remain visible but cannot be
+approved. Publication to a stable public MP4 is deliberately deferred to
+Milestone 8.
 
 ## Privacy and dependency boundary
 

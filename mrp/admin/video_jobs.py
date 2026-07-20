@@ -24,7 +24,16 @@ from mrp.admin import db
 
 ACTIVE_STATUSES = {"pending", "running"}
 TERMINAL_STATUSES = {"done", "error", "cancelled", "interrupted"}
-JOB_KINDS = {"prepare", "analyze", "align", "frame", "contact", "render"}
+JOB_KINDS = {
+    "prepare",
+    "analyze",
+    "align",
+    "frame",
+    "contact",
+    "draft",
+    "render_plan",
+    "render",
+}
 POLL_SECONDS = 0.2
 CANCEL_GRACE_SECONDS = 5.0
 
@@ -244,6 +253,9 @@ def launch(
     kind: str,
     *,
     time_seconds: float | None = None,
+    start_seconds: float | None = None,
+    end_seconds: float | None = None,
+    expected_fingerprint: str | None = None,
 ) -> str:
     """Launch one video operation in an isolated Python child process."""
     if kind not in JOB_KINDS:
@@ -253,6 +265,25 @@ def launch(
             raise VideoJobError("frame jobs require a finite non-negative time")
     elif time_seconds is not None:
         raise VideoJobError(f"{kind} jobs do not accept a frame time")
+    if kind == "draft":
+        if (
+            start_seconds is None
+            or end_seconds is None
+            or not math.isfinite(start_seconds)
+            or not math.isfinite(end_seconds)
+            or start_seconds < 0
+            or end_seconds <= start_seconds
+        ):
+            raise VideoJobError(
+                "draft jobs require a finite range with end after start"
+            )
+    elif start_seconds is not None or end_seconds is not None:
+        raise VideoJobError(f"{kind} jobs do not accept a render range")
+    if kind == "render":
+        if not expected_fingerprint:
+            raise VideoJobError("full render jobs require a preflight fingerprint")
+    elif expected_fingerprint is not None:
+        raise VideoJobError(f"{kind} jobs do not accept a preflight fingerprint")
     repo = root.resolve()
     job_id = uuid.uuid4().hex[:12]
     job_dir = repo / "assets" / "processed" / "video" / track_key / "logs" / "jobs"
@@ -264,6 +295,8 @@ def launch(
     command_name = f"video/{release_slug}/{track_slug}/{kind}"
     if time_seconds is not None:
         command_name += f"@{time_seconds:.6f}"
+    elif start_seconds is not None and end_seconds is not None:
+        command_name += f"@{start_seconds:.6f}:{end_seconds:.6f}"
     try:
         db.create_video_job(
             job_id=job_id,
@@ -300,6 +333,17 @@ def launch(
     ]
     if time_seconds is not None:
         command.extend(["--time", f"{time_seconds:.6f}"])
+    if start_seconds is not None and end_seconds is not None:
+        command.extend(
+            [
+                "--from",
+                f"{start_seconds:.6f}",
+                "--to",
+                f"{end_seconds:.6f}",
+            ]
+        )
+    if expected_fingerprint is not None:
+        command.extend(["--expected-fingerprint", expected_fingerprint])
     try:
         with log_path.open("ab") as log:
             process = subprocess.Popen(

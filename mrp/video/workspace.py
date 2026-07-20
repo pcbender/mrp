@@ -57,6 +57,7 @@ RENDERER_CONTRACT_VERSION = 1
 SOURCE_RENDERER_REVISION = "e3d4b100e026d486ce2c28547e6e8a907b1c621a"
 SEMANTIC_ROLES = ("drums", "bass", "vocals", "instruments")
 _SLUG_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+_RENDER_ID_PATTERN = re.compile(r"^[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}$")
 _SECTION_PATTERN = re.compile(r"^\[(?P<label>[^]]+)]$")
 
 
@@ -770,6 +771,54 @@ def _advance_preview_status(
     video["status"] = "previewed"
     selection.track["music_video"] = video
     _write_yaml(selection.release_path, selection.document)
+    preflight = TrackWorkspace.for_track(
+        selection.repo,
+        selection.track_key,
+    ).preflight_path
+    if preflight.is_file():
+        os.utime(preflight, None)
+
+
+def _advance_render_status(
+    repo: Path,
+    release_slug: str,
+    track_slug: str | None,
+) -> None:
+    """Advance a current cast/preview only after a verified full render succeeds."""
+    selection = _select_track(repo, release_slug, track_slug)
+    current = selection.track.get("music_video")
+    if not isinstance(current, dict):
+        return
+    if current.get("status") not in {"cast", "previewed", "rendered"}:
+        return
+    video = dict(current)
+    video["status"] = "rendered"
+    selection.track["music_video"] = video
+    _write_yaml(selection.release_path, selection.document)
+    preflight = TrackWorkspace.for_track(
+        selection.repo,
+        selection.track_key,
+    ).preflight_path
+    if preflight.is_file():
+        os.utime(preflight, None)
+
+
+def _render_output(
+    prepared: PreparedTrack,
+    *,
+    draft: bool,
+    render_id: str | None,
+) -> tuple[Path, str | None]:
+    if render_id is None and draft:
+        render_id = datetime.now(UTC).strftime("%Y%m%dT%H%M%S%fZ")
+    if render_id is not None:
+        if not _RENDER_ID_PATTERN.fullmatch(render_id):
+            raise MRPVideoAdapterError(
+                "render id must contain only letters, digits, underscore, or hyphen"
+            )
+        directory = "drafts" if draft else "full"
+        return prepared.workspace.renders_dir / directory / f"{render_id}.mp4", render_id
+    return prepared.workspace.renders_dir / f"{prepared.track_key}.mp4", None
 
 
 def prepare_track(
@@ -1149,11 +1198,24 @@ def render_track(
     end_seconds: float | None = None,
     force: bool = False,
     dry_run: bool = False,
+    render_id: str | None = None,
+    expected_fingerprint: str | None = None,
     progress: Callable[[str], None] | None = None,
     cancel_check: Callable[[], bool] | None = None,
 ) -> dict[str, Any]:
     prepared = prepare_track(repo, release_slug, track_slug, font_path=font_path)
-    output = prepared.workspace.renders_dir / f"{prepared.track_key}.mp4"
+    if (
+        expected_fingerprint is not None
+        and prepared.input_fingerprint != expected_fingerprint
+    ):
+        raise MRPVideoAdapterError(
+            "render inputs changed after full-render preflight; run preflight again"
+        )
+    output, resolved_render_id = _render_output(
+        prepared,
+        draft=draft,
+        render_id=render_id,
+    )
     try:
         if dry_run:
             plan = plan_project_video(
@@ -1190,8 +1252,10 @@ def render_track(
         raise MRPVideoAdapterError(str(exc)) from exc
     _record_artifact(
         prepared,
-        kind="render",
+        kind="draft" if draft else "render",
         path=run.output_path,
-        details=run.summary(),
+        details={"render_id": resolved_render_id, **run.summary()},
     )
+    if not draft:
+        _advance_render_status(repo, release_slug, track_slug)
     return {"preflight": prepared.summary(), "render": run.summary()}

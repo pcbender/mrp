@@ -270,6 +270,20 @@ def test_failed_duration_preflight_does_not_link_release(tmp_path: Path) -> None
     assert "music_video" not in release["release"]["song"]
 
 
+def test_full_render_rejects_inputs_changed_after_preflight(tmp_path: Path) -> None:
+    repo, _master = _write_repo(tmp_path)
+    prepared = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+
+    with pytest.raises(MRPVideoAdapterError, match="inputs changed"):
+        render_track(
+            repo,
+            "fixture-release",
+            font_path=FONT_PATH,
+            dry_run=True,
+            expected_fingerprint=f"{prepared.input_fingerprint}-stale",
+        )
+
+
 @pytest.mark.video_ffmpeg
 def test_track_alignment_preview_and_render_use_mrp_artifact_paths(
     tmp_path: Path,
@@ -325,6 +339,7 @@ def test_track_alignment_preview_and_render_use_mrp_artifact_paths(
         draft=True,
         start_seconds=0.2,
         end_seconds=0.4,
+        render_id="draft-1",
         force=True,
     )
     output = Path(rendered["render"]["output_path"])
@@ -332,6 +347,8 @@ def test_track_alignment_preview_and_render_use_mrp_artifact_paths(
     assert "assets/processed/video/fixture-artist--fixture-track/renders" in str(
         output
     )
+    assert output.as_posix().endswith("/renders/drafts/draft-1.mp4")
+    assert output.with_suffix(".render.json").is_file()
     artifact_index = json.loads(
         (
             repo
@@ -340,6 +357,6 @@ def test_track_alignment_preview_and_render_use_mrp_artifact_paths(
     )
     assert {artifact["kind"] for artifact in artifact_index["artifacts"]} == {
         "alignment",
+        "draft",
         "preview",
-        "render",
     }

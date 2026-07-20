@@ -78,6 +78,8 @@ class ProgressMapper:
             "align": "alignment",
             "frame": "preview",
             "contact": "preview",
+            "draft": "render",
+            "render_plan": "planning",
             "render": "render",
         }.get(self.action, "preflight")
         percent = self.writer.progress
@@ -137,8 +139,10 @@ def _relative_artifact(root: Path, result: dict[str, Any], action: str) -> str |
         value = (result.get("preview") or {}).get("output_path")
     elif action == "contact":
         value = (result.get("contact_sheet") or {}).get("output_path")
-    else:
+    elif action in {"draft", "render"}:
         value = (result.get("render") or {}).get("output_path")
+    else:
+        value = None
     if not value:
         return None
     path = Path(str(value))
@@ -153,7 +157,16 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run one MRP track-video worker job.")
     parser.add_argument(
         "action",
-        choices=("prepare", "analyze", "align", "frame", "contact", "render"),
+        choices=(
+            "prepare",
+            "analyze",
+            "align",
+            "frame",
+            "contact",
+            "draft",
+            "render_plan",
+            "render",
+        ),
     )
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--release", required=True)
@@ -161,6 +174,9 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--job-id", required=True)
     parser.add_argument("--events", type=Path, required=True)
     parser.add_argument("--time", type=float)
+    parser.add_argument("--from", dest="start_seconds", type=float)
+    parser.add_argument("--to", dest="end_seconds", type=float)
+    parser.add_argument("--expected-fingerprint")
     return parser
 
 
@@ -243,11 +259,35 @@ def main(argv: list[str] | None = None) -> int:
                 force=True,
                 progress=progress,
             )
+        elif args.action == "draft":
+            if args.start_seconds is None or args.end_seconds is None:
+                raise ValueError("draft jobs require --from and --to")
+            result = render_track(
+                root,
+                args.release,
+                args.track,
+                draft=True,
+                start_seconds=args.start_seconds,
+                end_seconds=args.end_seconds,
+                render_id=args.job_id,
+                progress=progress,
+                cancel_check=cancelled.is_set,
+            )
+        elif args.action == "render_plan":
+            result = render_track(
+                root,
+                args.release,
+                args.track,
+                dry_run=True,
+                progress=progress,
+            )
         else:
             result = render_track(
                 root,
                 args.release,
                 args.track,
+                render_id=args.job_id,
+                expected_fingerprint=args.expected_fingerprint,
                 progress=progress,
                 cancel_check=cancelled.is_set,
             )

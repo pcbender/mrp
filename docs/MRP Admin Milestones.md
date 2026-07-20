@@ -153,6 +153,16 @@ atomically to the versioned track project. Isolated frame/contact-sheet jobs
 record the project fingerprint; casting edits immediately mark previous
 validation and previews stale while retaining them for comparison.
 
+Milestone 7 was implemented 2026-07-20 on the same branch: the per-track
+rendering workspace now creates isolated section/custom-range draft iterations,
+keeps their verified manifests and private playback history, and discards drafts
+without affecting source or full output. A separate full-render preflight pins
+the planned input fingerprint before the process-backed render begins. Full
+jobs retain progress, cancellation, restart recovery, and exclusivity, publish
+only FFprobe-verified output, and require a stale-safe human approval that
+records the exact project, input, manifest, and MP4 hashes before advancing only
+the selected track to `approved`.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports
