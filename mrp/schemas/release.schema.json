@@ -66,11 +66,11 @@
             "description": {"type": "string", "minLength": 1}
           }
         },
-        "song": {"$ref": "#/$defs/song"},
+        "song": {"$ref": "#/$defs/track"},
         "tracks": {
           "type": "array",
-          "minItems": 1,
-          "items": {"$ref": "#/$defs/song"}
+          "minItems": 2,
+          "items": {"$ref": "#/$defs/track"}
         },
         "automation": {
           "type": "object",
@@ -87,20 +87,60 @@
           "if": {"properties": {"model": {"const": "song"}}, "required": ["model"]},
           "then": {
             "required": ["song"],
-            "properties": {"release_type": {"const": "single"}}
+            "properties": {"release_type": {"const": "single"}},
+            "not": {"required": ["tracks"]}
           }
         },
         {
           "if": {"properties": {"model": {"const": "album"}}, "required": ["model"]},
           "then": {
             "required": ["tracks"],
-            "properties": {"release_type": {"enum": ["ep", "album"]}}
+            "properties": {"release_type": {"enum": ["ep", "album"]}},
+            "not": {"required": ["song"]}
           }
         }
       ]
     }
   },
   "$defs": {
+    "stem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "role", "path"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "label": {"type": ["string", "null"]},
+        "role": {
+          "type": "string",
+          "enum": ["drums", "bass", "vocals", "instruments", "other"]
+        },
+        "path": {"type": "string", "minLength": 1},
+        "enabled": {"type": "boolean"}
+      }
+    },
+    "public_media_reference": {
+      "oneOf": [
+        {"type": "string", "minLength": 1, "pattern": "^(?:https?://|/)"},
+        {"type": "null"}
+      ]
+    },
+    "music_video": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["project", "status"],
+      "properties": {
+        "project": {
+          "type": "string",
+          "pattern": "^assets/source/video/[a-z0-9][a-z0-9-]*--[a-z0-9][a-z0-9-]*/project\\.yaml$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["draft", "timed", "cast", "previewed", "rendered", "approved", "published"]
+        },
+        "public_url": {"$ref": "#/$defs/public_media_reference"},
+        "poster": {"$ref": "#/$defs/public_media_reference"}
+      }
+    },
     "featuring": {
       "type": "array",
       "minItems": 1,
@@ -144,7 +184,7 @@
         "itunes_store": {"type": ["string", "null"]}
       }
     },
-    "song": {
+    "track": {
       "type": "object",
       "required": ["title", "slug", "explicit", "instrumental"],
       "additionalProperties": false,
@@ -162,6 +202,11 @@
         "lyrics_source": {"type": ["string", "null"]},
         "style": {"type": ["string", "null"]},
         "master_path": {"type": ["string", "null"]},
+        "stems": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/stem"}
+        },
+        "music_video": {"$ref": "#/$defs/music_video"},
         "credits": {"$ref": "#/$defs/credits"},
         "featuring": {"$ref": "#/$defs/featuring"},
         "performers": {

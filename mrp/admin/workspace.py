@@ -14,6 +14,8 @@ from typing import Any
 
 import jsonschema
 
+from mrp.core.validate import validate_release_stem_ids
+
 _SCHEMA_PATH = Path(__file__).parent.parent / "schemas" / "release.schema.json"
 
 PLATFORM_KEYS = [
@@ -44,6 +46,14 @@ def validate_release_dict(data: dict) -> list[dict]:
     for err in validator.iter_errors(data):
         field = ".".join(str(p) for p in err.absolute_path) or "(root)"
         errors.append({"field": field, "message": err.message, "severity": "error"})
+    errors.extend(
+        {
+            "field": error["field"],
+            "message": error["message"],
+            "severity": error["severity"],
+        }
+        for error in validate_release_stem_ids(Path("(release)"), data)
+    )
     return errors
 
 

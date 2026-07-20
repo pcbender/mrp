@@ -1,0 +1,57 @@
+release:
+  id: video-contract
+  slug: video-contract
+  title: Video Contract
+  artist_id: pcbender
+  model: album
+  release_type: album
+  status: draft
+  release_date: '2026-07-20'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  cover_image: assets/releases/video-contract/cover.jpg
+  summary: Contract fixture for private music-video production data.
+  description: Public track content must remain unchanged by internal production fields.
+  credits:
+    primary_artist: PCBender
+    songwriter: Michael Anthony Rose
+  links:
+    spotify:
+    apple_music:
+    youtube_music:
+  seo:
+    title: Video Contract by PCBender
+    description: Video Contract by PCBender on Maricopa Records.
+  tracks:
+    - number: 1
+      title: Private Track
+      slug: private-track
+      isrc: QZ-MRP-26-00001
+      duration: '3:21'
+      explicit: false
+      instrumental: false
+      preview_audio:
+      master_path: /private/video-contract/master-private-sentinel.wav
+      lyrics_text: |-
+        The public lyric stays visible.
+      stems:
+        - id: lead-vocal
+          label: Lead vocal
+          role: vocals
+          path: /private/video-contract/stem-private-sentinel.wav
+          enabled: true
+        - id: drums
+          label: Drums
+          role: drums
+          path: assets/processed/video/processed-private-sentinel/analysis/drums.wav
+          enabled: true
+      music_video:
+        project: assets/source/video/pcbender--private-track/project.yaml
+        status: cast
+        public_url:
+        poster:
+    - number: 2
+      title: Legacy Track
+      slug: legacy-track
+      explicit: false
+      instrumental: true

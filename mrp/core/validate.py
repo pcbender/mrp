@@ -87,6 +87,8 @@ def validate_repository(repo: str | Path, release: str | None = None) -> dict[st
     errors.extend(validate_duplicates(clone_pages + clone_posts, "clone", "id"))
     errors.extend(validate_artist_references(releases, artists))
     errors.extend(validate_member_slugs(artists))
+    for record in releases:
+        errors.extend(validate_release_stem_ids(record["path"], record["data"]))
     errors.extend(validate_member_and_feature_references(releases, artists))
     errors.extend(validate_asset_manifest(root, asset_manifest_path, asset_manifest))
     errors.extend(validate_release_assets(root, releases))
@@ -233,6 +235,35 @@ def _release_songs(release: dict[str, Any]) -> list[tuple[str, dict[str, Any]]]:
             if isinstance(track, dict):
                 songs.append((f"release.tracks.{index}", track))
     return songs
+
+
+def validate_release_stem_ids(path: Path, data: dict[str, Any]) -> list[dict[str, str]]:
+    """Stem ids must be unique within each song/track.
+
+    JSON Schema can reject duplicate stem records, but it cannot express
+    uniqueness for one property across otherwise distinct objects. Keep this
+    repository-level check alongside the other cross-record invariants.
+    """
+    release = data.get("release", {})
+    errors: list[dict[str, str]] = []
+    for prefix, song in _release_songs(release):
+        seen: set[str] = set()
+        for index, stem in enumerate(song.get("stems") or []):
+            if not isinstance(stem, dict):
+                continue
+            stem_id = stem.get("id")
+            if not stem_id:
+                continue
+            if stem_id in seen:
+                errors.append(
+                    error_record(
+                        path,
+                        f"{prefix}.stems.{index}.id",
+                        f"Duplicate stem id within track: {stem_id}",
+                    )
+                )
+            seen.add(stem_id)
+    return errors
 
 
 def validate_member_and_feature_references(

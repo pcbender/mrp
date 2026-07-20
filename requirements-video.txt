@@ -1,0 +1,4 @@
+# Install the lightweight MRP runtime and test dependencies first. Renderer
+# package pins will be copied from the reproducible Spirophonic baseline when
+# the headless engine moves in Milestone 2; no heavy renderer is present yet.
+-r requirements.txt

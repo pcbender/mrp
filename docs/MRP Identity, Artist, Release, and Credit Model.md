@@ -117,7 +117,9 @@ Relationships:
 
 ### Release
 
-A **Release** represents a single, EP, or album. It belongs to one or more Artist Projects and contains one or more Tracks.
+A **Release** represents a single, EP, or album. It belongs to one or more
+Artist Projects. A single contains exactly one Track; an EP or album contains
+at least two Tracks.
 
 Primary fields:
 
@@ -142,7 +144,7 @@ Primary fields:
 
 Relationships:
 
-* A Release has one or more Tracks.
+* A single Release has exactly one Track; an EP or album Release has multiple Tracks.
 * A Release has one or more release-level Credits.
 * A Release may have featured artists, with-artists, remixers, producers, writers, or other participants through Credits.
 * A Release may have artwork, snippets, reviews, DSP links, and promotional copy.
@@ -176,6 +178,8 @@ Relationships:
 * A Track has one or more track-level Credits.
 * A Track may have a 30-second MP3 snippet.
 * A Track may have lyrics, reviews, DSP links, and promotional notes.
+* A Track may own optional stems and one music-video project/state; these are
+  never release-level fields.
 * A Track may identify specific performers, such as lead vocal, backing vocal, guitar, producer, lyricist, or featured artist.
 
 ---

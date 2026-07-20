@@ -105,6 +105,19 @@ more expressive video options as explicit, user-triggered upgrades:
   per release; proven with STAB) → Nim video render + local snippet mux,
   human gate between every stage
 
+### MRP Music Video Designer
+
+Planned 2026-07-20. Move the headless Python renderer from Spirophonic into
+MRP, leave the Spirophonic React browser instrument unchanged, and build the
+production editor as a new FastAPI/Jinja/HTMX workspace stage. The phased
+architecture, backward-compatible stems and music-video track contracts,
+isolated renderer test lanes, job requirements, and Astro compatibility gates
+are captured in [MRP Music Video Designer Plan](<MRP Music Video Designer Plan.md>).
+
+Implementation begins with optional schema contracts and compatibility tests;
+the renderer moves only after existing and enriched track records are proven to
+validate and build through Astro without leaking private production paths.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports

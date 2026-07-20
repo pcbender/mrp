@@ -67,10 +67,19 @@ within that member's own band (see `performers` below).
 ## Releases
 
 Release records live in `content/releases/{slug}.yaml`
-(`mrp/schemas/release.schema.json`). Two models:
+(`mrp/schemas/release.schema.json`). A release has exactly one of two shapes:
 
-- `song`: one single. `release_type: single`, track fields under `song:`.
-- `album`: multi-track. `release_type: ep` or `album`, tracks under `tracks:`.
+- `song`: a single-track release. `release_type: single`; its one track is
+  stored under `song:`.
+- `album`: a multi-track release with at least two tracks. `release_type: ep`
+  or `album`; every track is an item under `tracks:`.
+
+Both `song` and each `tracks[]` item use the same track contract. Track-owned
+fields—including `master_path`, `stems`, lyrics, credits, links, and
+`music_video`—belong inside that individual track object, never at the release
+root. A music video therefore always belongs to exactly one track, regardless
+of whether that track is the single release's `song` or one item in an EP or
+album's `tracks` array.
 
 Skeleton of the current shape (see any live release for a full example,
 e.g. `content/releases/on-to-potter-s-field.yaml`):
@@ -118,6 +127,47 @@ release:
     credits: {}            # per-track credit overrides
     critic: {}             # saved critic settings: model/persona/target/target_tier
 ```
+
+### Optional stems and music-video production state
+
+An individual track may add an internal `stems` array without changing the
+meaning or validity of older records. The master remains in `master_path`; it is not
+duplicated as a stem. Each stem has a stable slug-like `id`, a local `path`,
+and one of the semantic roles `drums`, `bass`, `vocals`, `instruments`, or
+`other`. `label` and `enabled` are optional. Multiple stems may share a role,
+but their IDs must be unique within the track.
+
+```yaml
+song:
+  master_path: /mnt/c/Masters/signal-path.wav
+  stems:
+    - id: lead-vocal
+      label: Lead vocal
+      role: vocals
+      path: /mnt/c/Stems/Signal Path/Lead Vocal.wav
+      enabled: true
+```
+
+A track may also reference versioned music-video source state. The object is
+optional; when present, `project` is the canonical repo-relative
+`assets/source/video/{artist_id}--{track_slug}/project.yaml` path and `status`
+is one of `draft`, `timed`, `cast`, `previewed`, `rendered`, `approved`, or
+`published`. `public_url` and `poster` are optional public URL/site-path fields
+and remain null until publication owns stable public media.
+
+```yaml
+song:
+  music_video:
+    project: assets/source/video/pcbender--signal-path/project.yaml
+    status: cast
+    public_url:
+    poster:
+```
+
+`master_path`, every `stems[].path`, the internal project path, and all
+`assets/processed/video/` paths are private production data. Astro pages,
+JSON-LD, browser payloads, and public manifests must never contain them. The
+presence of a project or render state alone does not make a video public.
 
 Create a draft from the CLI (`scripts/mrp release create --artist pcbender
 --title "Signal Path" --type single`) or through the admin UI. Both refuse to

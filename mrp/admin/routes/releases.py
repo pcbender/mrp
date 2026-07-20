@@ -495,5 +495,23 @@ def _new_release_skeleton(
             "hints": {},
         }
     else:
-        skeleton["tracks"] = []
+        skeleton["tracks"] = [
+            {
+                "number": index,
+                "title": f"Track {index}",
+                "slug": f"track-{index}",
+                "isrc": None,
+                "duration": None,
+                "explicit": False,
+                "instrumental": False,
+                "preview_audio": None,
+                "lyrics_text": None,
+                "lyrics_raw": None,
+                "lyrics_source": None,
+                "style": None,
+                "links": {key: None for key in PLATFORM_KEYS},
+                "hints": {},
+            }
+            for index in range(1, 3)
+        ]
     return skeleton
