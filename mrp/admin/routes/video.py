@@ -24,6 +24,14 @@ from mrp.admin.video_rendering import (
     render_launch_problems,
     renders_path,
 )
+from mrp.admin.video_publication import (
+    VideoPublicationError,
+    apply_publication,
+    load_publication,
+    plan_publication,
+    public_media_available,
+    record_opt_in,
+)
 from mrp.admin.video_timing import TimingEditorError, load_timing, save_timing
 from mrp.admin.video_workspace import (
     STEM_ROLES,
@@ -80,6 +88,20 @@ def _unit(release: dict, track_slug: str) -> dict | None:
 
 def _not_found(value: str) -> HTMLResponse:
     return HTMLResponse(f"Music-video track <b>{value}</b> not found.", status_code=404)
+
+
+def _touch_video_preflight(root: Path, release: dict, track: dict) -> None:
+    preflight = (
+        root
+        / "assets"
+        / "processed"
+        / "video"
+        / track_key(release, track)
+        / "logs"
+        / "preflight.json"
+    )
+    if preflight.is_file():
+        preflight.touch()
 
 
 def _job_template(
@@ -453,6 +475,7 @@ async def video_rendering(request: Request, slug: str, track_slug: str):
             "draft_job": db.get_latest_video_job(key, "draft"),
             "plan_job": plan_job,
             "render_job": db.get_latest_video_job(key, "render"),
+            "publication": load_publication(root, ctx["release"], unit["track"]),
         }
     )
     return _templates.TemplateResponse(request, "releases/workspace/video_rendering.html", ctx)
@@ -561,18 +584,166 @@ async def video_render_approve(request: Request, slug: str, track_slug: str):
             status_code=409,
         )
     path.write_text(serialize_structured_record(path, data), encoding="utf-8")
-    preflight = (
-        root
-        / "assets"
-        / "processed"
-        / "video"
-        / track_key(release, unit["track"])
-        / "logs"
-        / "preflight.json"
-    )
-    if preflight.is_file():
-        preflight.touch()
+    _touch_video_preflight(root, release, unit["track"])
     response = HTMLResponse('<div class="flash flash-ok">Full render approved.</div>')
+    response.headers["HX-Redirect"] = (
+        f"/releases/{slug}/tracks/{track_slug}/video/rendering"
+    )
+    return response
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/rendering/publish",
+    response_class=HTMLResponse,
+)
+async def video_render_publish(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.is_file():
+        return _not_found(track_slug)
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    unit = _unit(release, track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    form = await request.form()
+    if str(form.get("opt_in") or "").casefold() not in {"1", "true", "on", "yes"}:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {
+                        "field": "music_video.opt_in",
+                        "message": "Check Opt In before publishing this video publicly.",
+                        "severity": "error",
+                    }
+                ]
+            },
+            status_code=422,
+        )
+    try:
+        plan = plan_publication(root, release, unit["track"])
+    except VideoPublicationError as exc:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {"field": "publication", "message": problem, "severity": "error"}
+                    for problem in exc.problems
+                ]
+            },
+            status_code=409,
+        )
+    video = dict(unit["track"].get("music_video") or {})
+    video.update(
+        {
+            "status": "published",
+            "opt_in": True,
+            "public_url": plan.public_url,
+            "poster": plan.poster_url,
+        }
+    )
+    unit["track"]["music_video"] = video
+    errors = validate_release_dict(data)
+    if errors:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {"errors": errors},
+            status_code=422,
+        )
+    try:
+        apply_publication(plan)
+    except VideoPublicationError as exc:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {"field": "publication", "message": problem, "severity": "error"}
+                    for problem in exc.problems
+                ]
+            },
+            status_code=409,
+        )
+    path.write_text(serialize_structured_record(path, data), encoding="utf-8")
+    _touch_video_preflight(root, release, unit["track"])
+    response = HTMLResponse(
+        '<div class="flash flash-ok">Approved video published with public display opted in.</div>'
+    )
+    response.headers["HX-Redirect"] = (
+        f"/releases/{slug}/tracks/{track_slug}/video/rendering"
+    )
+    return response
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/rendering/visibility",
+    response_class=HTMLResponse,
+)
+async def video_render_visibility(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.is_file():
+        return _not_found(track_slug)
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    unit = _unit(release, track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    video = unit["track"].get("music_video")
+    if not isinstance(video, dict) or video.get("status") != "published":
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {
+                        "field": "music_video.status",
+                        "message": "Publish an approved video before changing its public Opt In.",
+                        "severity": "error",
+                    }
+                ]
+            },
+            status_code=409,
+        )
+    form = await request.form()
+    opt_in = str(form.get("opt_in") or "").casefold() in {"1", "true", "on", "yes"}
+    if opt_in and not public_media_available(root, unit["track"]):
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {
+                        "field": "music_video.opt_in",
+                        "message": "Durable public video or poster is missing; republish before opting in.",
+                        "severity": "error",
+                    }
+                ]
+            },
+            status_code=409,
+        )
+    video = dict(video)
+    video["opt_in"] = opt_in
+    unit["track"]["music_video"] = video
+    errors = validate_release_dict(data)
+    if errors:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {"errors": errors},
+            status_code=422,
+        )
+    path.write_text(serialize_structured_record(path, data), encoding="utf-8")
+    record_opt_in(root, release, unit["track"], opt_in)
+    _touch_video_preflight(root, release, unit["track"])
+    state = "opted in" if opt_in else "opted out"
+    response = HTMLResponse(
+        f'<div class="flash flash-ok">Public video display {state}.</div>'
+    )
     response.headers["HX-Redirect"] = (
         f"/releases/{slug}/tracks/{track_slug}/video/rendering"
     )

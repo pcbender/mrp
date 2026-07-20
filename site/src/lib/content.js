@@ -92,6 +92,28 @@ export function releaseCoverUrl(release) {
   return "/assets/maricopa-mark.svg";
 }
 
+export function publicMusicVideo(track) {
+  const video = track?.music_video;
+  const isPublicReference = (value) =>
+    typeof value === "string" && (/^https?:\/\//.test(value) || value.startsWith("/media/"));
+  if (
+    !video ||
+    video.opt_in !== true ||
+    video.status !== "published" ||
+    !isPublicReference(video.public_url) ||
+    !isPublicReference(video.poster)
+  ) {
+    return null;
+  }
+  return { publicUrl: video.public_url, poster: video.poster };
+}
+
+export function absolutePublicUrl(value) {
+  return /^https?:\/\//.test(value)
+    ? value
+    : `https://www.maricoparecords.com${value}`;
+}
+
 export const PLATFORM_ORDER = [
   "spotify",
   "apple_music",

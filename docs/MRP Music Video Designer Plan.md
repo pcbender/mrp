@@ -121,6 +121,7 @@ song:
   music_video:
     project: assets/source/video/pcbender--you-dont-say/project.yaml
     status: cast
+    opt_in: false
     public_url:
     poster:
 ```
@@ -130,6 +131,8 @@ Initial fields:
 - `project`: repo-relative path to the versioned video project.
 - `status`: `draft`, `timed`, `cast`, `previewed`, `rendered`, `approved`, or
   `published`.
+- `opt_in`: optional boolean; public display is disabled unless it is exactly
+  `true`, even when an approved video has been published.
 - `public_url`: optional public MP4 URL or site path, written only after the
   approved-media publication step.
 - `poster`: optional public poster URL or site path.
@@ -584,6 +587,29 @@ Exit: an approved full MP4 is reproducible from the reviewed project and input
 hashes, entirely within MRP.
 
 ### Milestone 8: Public-media publication and Astro player
+
+Status 2026-07-20: implemented on `feat/music-video-designer-plan`. Approved
+full renders publish into a content-addressed durable store outside both Git and
+the disposable site-output tree. `MRP_PUBLIC_MEDIA_ROOT` selects the store and
+defaults to `~/.mrp/public-media/maricoparecords`. Publication copies and
+re-hashes the verified MP4 plus release-cover poster, then writes only public
+URLs and `status: published` to the selected track. A versioned, public-only
+`publication.yaml` records the project, input, manifest, MP4, and poster hashes
+for Changes-page review without exposing production paths.
+
+Public display has a separate explicit gate: the optional per-track
+`music_video.opt_in` boolean must be exactly `true` in addition to published
+status and valid public media. The Admin rendering page requires an unchecked
+Opt In checkbox for initial publication and supports later opt-out/re-opt-in
+without deleting durable media. Approval by itself never opts a track into the
+site.
+
+Astro overlays only currently opted-in local media into each immutable build
+artifact and renders an accessible player plus `VideoObject` metadata on album
+track pages or the single's release page. Unchecked, unpublished, and legacy
+tracks retain the previous markup. Verification checks the player, MP4, poster,
+and private-path boundary; the existing whole-artifact stage and rollback paths
+therefore carry the exact public media automatically.
 
 - Choose and implement durable public MP4 storage.
 - Publish approved media and poster assets.

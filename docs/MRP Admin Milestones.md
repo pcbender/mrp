@@ -163,6 +163,16 @@ only FFprobe-verified output, and require a stale-safe human approval that
 records the exact project, input, manifest, and MP4 hashes before advancing only
 the selected track to `approved`.
 
+Milestone 8 was implemented 2026-07-20 on the same branch: approved video and
+poster files now publish to content-addressed durable storage outside Git and
+the disposable build tree, while a public-only versioned receipt participates
+in Changes-page release attribution. Public display requires a separate
+per-track Opt In checkbox; approval or publication without `opt_in: true` cannot
+produce an Astro player or copy media into a build. Opted-in singles and album
+tracks receive an accessible player and public `VideoObject` metadata, and
+build, stage, verification, rollback, compatibility, and private-path tests
+cover the complete media lifecycle.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports

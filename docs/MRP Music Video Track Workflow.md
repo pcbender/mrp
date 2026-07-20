@@ -192,6 +192,46 @@ hash, and output hash; the release YAML advances only the selected track to
 approved. Publication to a stable public MP4 is deliberately deferred to
 Milestone 8.
 
+## Public-media publication and Opt In
+
+Approval and public display are deliberately separate. The rendering workspace
+requires the operator to check an initially unchecked **Opt In** box before an
+approved video can be published. Publication re-verifies the approved MP4,
+copies it and the release-cover poster into content-addressed durable storage,
+and advances only that track to:
+
+```yaml
+music_video:
+  project: assets/source/video/{track-key}/project.yaml
+  status: published
+  opt_in: true
+  public_url: /media/music-videos/{track-key}/{sha256}/video.mp4
+  poster: /media/music-videos/{track-key}/{sha256}/poster-{poster-sha256}.jpg
+```
+
+`opt_in` is optional and therefore false-by-absence for every existing release.
+Astro requires `status: published`, `opt_in: true`, and both valid public fields
+before rendering a player or metadata. The Admin can later uncheck Opt In; this
+keeps the content-addressed files for recovery but excludes the player and media
+from subsequent builds. Re-enabling display is refused if the durable files are
+missing.
+
+`MRP_PUBLIC_MEDIA_ROOT` controls the durable store and defaults to
+`~/.mrp/public-media/maricoparecords`. It must be outside the repository and is
+independent of disposable `MRP_SITE_OUT_ROOT` output. Ordinary MP4 binaries are
+never committed. Instead,
+`assets/source/video/{track-key}/publication.yaml` versions only public URLs and
+the reviewed project/input/manifest/output/poster hashes; the Changes page
+attributes this receipt to the owning release.
+
+At build time MRP resolves only opted-in published local references, refuses
+missing or escaping media, and overlays those files at `/media/` in the
+immutable Astro artifact. Album/EP tracks display on their track page; a
+single's sole track displays on the release page. The same build is used for
+staging and production, verification requires the player and referenced MP4/
+poster while scanning for private paths, and rollback restores the media with
+the rest of the selected build.
+
 ## Privacy and dependency boundary
 
 The track workflow lives entirely in `mrp.video`. It does not import MRP Admin,

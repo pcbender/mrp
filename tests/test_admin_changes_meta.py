@@ -25,6 +25,7 @@ def _release(root, slug, title, artist_id, status):
     (root / "content" / "releases" / f"{slug}.yaml").write_text(yaml.safe_dump({"release": {
         "id": slug, "slug": slug, "title": title, "artist_id": artist_id,
         "status": status, "model": "song",
+        "song": {"title": title, "slug": slug, "explicit": False, "instrumental": False},
     }}))
 
 
@@ -78,6 +79,18 @@ def test_classify_release_asset_inherits_eligibility(tmp_path):
     assert c["kind"] == "release-asset"
     assert c["release_slug"] == "on-advent"
     assert c["eligible"] is False
+
+
+def test_classify_versioned_video_publication_as_release_asset(tmp_path):
+    _repo(tmp_path)
+    c = classify_change(
+        tmp_path,
+        "assets/source/video/stab--burn-me/publication.yaml",
+    )
+    assert c["kind"] == "release-asset"
+    assert c["release_slug"] == "burn-me"
+    assert c["entity_title"] == "Burn Me"
+    assert c["eligible"] is True
 
 
 def test_classify_unknown_asset_is_eligible(tmp_path):

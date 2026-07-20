@@ -87,6 +87,29 @@ def test_stage_local_target_copies_build_and_writes_report(tmp_path):
     assert (repo / payload["report_path"]).is_file()
 
 
+def test_stage_copies_public_music_video_from_immutable_build(tmp_path):
+    repo = deployable_repo(tmp_path)
+    out_root = tmp_path / "site-out"
+    build = out_root / "builds/staging/20260617T120000Z-site"
+    media = build / "media/music-videos/artist--track/hash/video.mp4"
+    media.parent.mkdir(parents=True)
+    media.write_bytes(b"published video")
+
+    result = run_mrp(
+        "--repo",
+        str(repo),
+        "--json",
+        "stage",
+        "--target",
+        "local-staging",
+        site_out_root=out_root,
+    )
+
+    assert result.returncode == 0
+    deployed = out_root / "staging/media/music-videos/artist--track/hash/video.mp4"
+    assert deployed.read_bytes() == b"published video"
+
+
 def test_stage_local_target_removes_stale_files_but_preserves_marker(tmp_path):
     repo = deployable_repo(tmp_path)
     out_root = tmp_path / "site-out"

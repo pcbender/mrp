@@ -995,3 +995,16 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .video-render-meta > div:first-child { display: flex; align-items: center; gap: .45rem; }
 .video-render-meta > div:first-child .badge { margin-left: auto; }
 .video-render-meta small { color: var(--muted); overflow-wrap: anywhere; }
+.video-public-opt-in {
+  display: flex;
+  gap: .55rem;
+  align-items: flex-start;
+  margin: .65rem 0;
+  padding: .65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--panel, #fff) 85%, var(--green));
+  font-size: 12px;
+  line-height: 1.45;
+}
+.video-public-opt-in input { margin-top: .15rem; flex: 0 0 auto; }

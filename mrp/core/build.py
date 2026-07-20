@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from mrp.core.output import build_artifact_dir, display_path
+from mrp.core.public_media import PublicMediaError, referenced_public_media
 from mrp.core.validate import validate_repository
 
 
@@ -56,7 +57,7 @@ def build_repository(
     build_dir.mkdir(parents=True, exist_ok=True)
     try:
         site_workspace = prepare_site_workspace(root, build_dir, build_id)
-    except OSError as exc:
+    except (OSError, PublicMediaError) as exc:
         result = base_result(root, build_id, generated_at, release)
         result["validation_report_path"] = validation["report_path"] if validation else None
         result.update(
@@ -257,7 +258,13 @@ def prepare_site_workspace(root: Path, build_dir: Path, build_id: str) -> Path:
         shutil.rmtree(workspace)
     shutil.copytree(source, workspace, ignore=shutil.ignore_patterns("node_modules", "dist", ".astro", "public"))
     link_directory(source / "node_modules", workspace / "node_modules")
-    link_directory(source / "public", workspace / "public")
+    link_directory_contents(source / "public", workspace / "public")
+    media_references = referenced_public_media(root)
+    media_mount = workspace / "public" / "media"
+    if media_references and (media_mount.exists() or media_mount.is_symlink()):
+        raise PublicMediaError("site/public/media is reserved for durable public media")
+    for media_source, relative in media_references:
+        link_path(media_source, workspace / "public" / relative)
     return workspace
 
 
@@ -278,6 +285,26 @@ def link_directory(source: Path, target: Path) -> None:
             if completed.returncode == 0:
                 return
         shutil.copytree(source, target)
+
+
+def link_directory_contents(source: Path, target: Path) -> None:
+    if not source.is_dir():
+        return
+    target.mkdir(parents=True, exist_ok=True)
+    for child in sorted(source.iterdir()):
+        link_path(child, target / child.name)
+
+
+def link_path(source: Path, target: Path) -> None:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        os.symlink(source, target, target_is_directory=source.is_dir())
+        return
+    except OSError:
+        if source.is_dir():
+            shutil.copytree(source, target)
+        else:
+            shutil.copy2(source, target)
 
 
 def write_build_report(root: Path, build_id: str, result: dict[str, Any]) -> str:

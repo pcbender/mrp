@@ -120,7 +120,7 @@
     },
     "public_media_reference": {
       "oneOf": [
-        {"type": "string", "minLength": 1, "pattern": "^(?:https?://|/)"},
+        {"type": "string", "minLength": 1, "pattern": "^(?:https?://|/media/)"},
         {"type": "null"}
       ]
     },
@@ -137,9 +137,39 @@
           "type": "string",
           "enum": ["draft", "timed", "cast", "previewed", "rendered", "approved", "published"]
         },
+        "opt_in": {"type": "boolean"},
         "public_url": {"$ref": "#/$defs/public_media_reference"},
         "poster": {"$ref": "#/$defs/public_media_reference"}
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": ["status"],
+            "properties": {"status": {"const": "published"}}
+          },
+          "then": {
+            "required": ["public_url", "poster"],
+            "properties": {
+              "public_url": {"type": "string", "minLength": 1},
+              "poster": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        {
+          "if": {
+            "required": ["opt_in"],
+            "properties": {"opt_in": {"const": true}}
+          },
+          "then": {
+            "required": ["public_url", "poster"],
+            "properties": {
+              "status": {"const": "published"},
+              "public_url": {"type": "string", "minLength": 1},
+              "poster": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      ]
     },
     "featuring": {
       "type": "array",

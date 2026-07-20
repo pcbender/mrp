@@ -127,6 +127,55 @@
 </div></div>
 {% endif %}
 
+<div class="form-card"><div class="form-body">
+  <div class="video-cast-heading">
+    <div>
+      <h2>Public-media publication</h2>
+      <p class="video-help">The approved MP4 and poster are copied to durable storage outside Git. Astro displays them only while this track is explicitly opted in.</p>
+    </div>
+    {% if publication.status == 'published' %}
+    <span class="badge badge-{{ 'live' if publication.opt_in else 'draft' }}">{{ 'opted in' if publication.opt_in else 'opted out' }}</span>
+    {% endif %}
+  </div>
+
+  {% if publication.status == 'published' %}
+    <dl class="video-render-plan">
+      <div><dt>Public video</dt><dd>{{ publication.public_url }}</dd></div>
+      <div><dt>Poster</dt><dd>{{ publication.poster }}</dd></div>
+      <div><dt>Durable files</dt><dd>{{ 'available' if publication.media_available else 'missing' }}</dd></div>
+    </dl>
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/visibility"
+          hx-target="#video-render-result" hx-swap="innerHTML" style="margin-top:.8rem">
+      <label class="video-public-opt-in">
+        <input type="checkbox" name="opt_in" value="true" {% if publication.opt_in %}checked{% endif %}>
+        <span><strong>Opt In</strong> — display this video on the public Astro track page and include its public metadata.</span>
+      </label>
+      <button type="submit" class="btn btn-primary btn-sm">Save public display setting</button>
+    </form>
+    {% if not publication.media_available and rendering.approval.current %}
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/publish"
+          hx-target="#video-render-result" hx-swap="innerHTML" style="margin-top:.6rem">
+      <label class="video-public-opt-in">
+        <input type="checkbox" name="opt_in" value="true" required>
+        <span><strong>Opt In</strong> and restore the missing durable public files from the current approved render.</span>
+      </label>
+      <button type="submit" class="btn btn-secondary btn-sm">Republish approved media</button>
+    </form>
+    {% endif %}
+  {% elif rendering.approval.current and track.music_video.status == 'approved' %}
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/publish"
+          hx-target="#video-render-result" hx-swap="innerHTML">
+      <label class="video-public-opt-in">
+        <input type="checkbox" name="opt_in" value="true" required>
+        <span><strong>Opt In</strong> — I want this approved video displayed on the public Astro track page.</span>
+      </label>
+      <button type="submit" class="btn btn-primary">Publish approved video</button>
+    </form>
+  {% else %}
+    <p class="video-help">Approve a current verified full render before publishing. Approval does not opt the track into public display.</p>
+  {% endif %}
+</div></div>
+
 <script>
   function selectDraftSection(select) {
     const option = select.options[select.selectedIndex];

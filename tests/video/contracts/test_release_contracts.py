@@ -81,7 +81,9 @@ def test_ep_and_album_require_more_than_one_track(release_type: str):
         (lambda stem, video: stem.pop("path"), "is a required property"),
         (lambda stem, video: video.update(project="/private/project.yaml"), "does not match"),
         (lambda stem, video: video.update(public_url="assets/processed/video/render.mp4"), "is not valid"),
+        (lambda stem, video: video.update(public_url="/assets/processed/video/render.mp4"), "is not valid"),
         (lambda stem, video: video.update(status="processing"), "is not one of"),
+        (lambda stem, video: video.update(opt_in="yes"), "is not of type"),
     ],
 )
 def test_enriched_contract_rejects_invalid_private_state(mutation, expected_fragment: str):
@@ -110,6 +112,27 @@ def test_release_creation_remains_valid_without_video_backfill(release_type: str
     else:
         assert len(release["tracks"]) >= 2
         assert "song" not in release
+
+
+def test_public_video_requires_explicit_opt_in_and_published_public_media():
+    record = _load(ENRICHED)
+    video = record["release"]["tracks"][0]["music_video"]
+    video["opt_in"] = True
+
+    assert any("published" in error.message for error in _errors(record))
+
+    video.update(
+        status="published",
+        public_url="/media/music-videos/pcbender--private-track/video.mp4",
+        poster="/media/music-videos/pcbender--private-track/poster.jpg",
+    )
+    assert _errors(record) == []
+
+    video["opt_in"] = False
+    assert _errors(record) == []
+
+    video.pop("opt_in")
+    assert _errors(record) == []
 
 
 @pytest.mark.parametrize("fixture", [ENRICHED_SINGLE, ENRICHED], ids=["single", "album"])

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SongLanding from "../../../components/SongLanding.astro";
-import { getAllTrackRouteParams, getArtistById, getReleaseBySlug, getTrackBySlug, releaseCoverUrl } from "../../../lib/content.js";
+import { absolutePublicUrl, getAllTrackRouteParams, getArtistById, getReleaseBySlug, getTrackBySlug, publicMusicVideo, releaseCoverUrl } from "../../../lib/content.js";
 
 export function getStaticPaths() {
   return getAllTrackRouteParams().map(({ slug, track }) => ({ params: { slug, track } }));
@@ -11,6 +11,7 @@ const release = getReleaseBySlug(Astro.params.slug);
 const track = getTrackBySlug(release, Astro.params.track);
 const artist = getArtistById(release.artist_id);
 const artistName = artist?.name || release.artist_id;
+const publicVideo = publicMusicVideo(track);
 
 function durationToISO(str: string | null | undefined): string | undefined {
   if (!str) return undefined;
@@ -36,7 +37,15 @@ const trackJsonLd = JSON.stringify({
     "@type": "MusicAlbum",
     "name": release.title,
     "url": `https://www.maricoparecords.com/releases/${release.slug}/`
-  }
+  },
+  ...(publicVideo ? {
+    "video": {
+      "@type": "VideoObject",
+      "name": `${track.title} music video`,
+      "contentUrl": absolutePublicUrl(publicVideo.publicUrl),
+      "thumbnailUrl": absolutePublicUrl(publicVideo.poster)
+    }
+  } : {})
 });
 ---
 <BaseLayout paneled={true}

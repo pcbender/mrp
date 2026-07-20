@@ -48,5 +48,6 @@ release:
     music_video:
       project: assets/source/video/pcbender--single-video-track/project.yaml
       status: cast
+      opt_in: false
       public_url:
       poster:
