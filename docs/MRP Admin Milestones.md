@@ -118,6 +118,13 @@ Implementation begins with optional schema contracts and compatibility tests;
 the renderer moves only after existing and enriched track records are proven to
 validate and build through Astro without leaking private production paths.
 
+Milestones 1 and the MRP side of Milestone 2 were implemented 2026-07-20 on
+`feat/music-video-designer-plan`: optional per-track contracts remain backward
+compatible, the headless renderer and parity suite now live in `mrp.video`, and
+`scripts/mrp video ...` exposes lazy diagnostic commands. Removal of the donor
+Python renderer is intentionally a separate post-merge change; the Spirophonic
+React application remains untouched.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports

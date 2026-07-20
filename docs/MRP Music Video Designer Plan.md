@@ -213,7 +213,7 @@ Primary commands:
 
 ```bash
 # Fast renderer lane; does not collect admin, publishing, or Astro tests
-python3 -m pytest tests/video/engine
+pytest tests/video/engine
 
 # MRP integration without Astro
 python3 -m pytest tests/video/admin tests/video/contracts
@@ -422,7 +422,8 @@ After storage is settled:
 ### Milestone 0: Baseline and plan
 
 - Capture the source Spirophonic commit, renderer test result, dependency set,
-  and representative frame/render manifests.
+  and representative frame/render manifests in
+  [MRP Music Video Renderer Baseline](<MRP Music Video Renderer Baseline.md>).
 - Add this plan to the MRP roadmap.
 - No runtime behavior changes.
 
@@ -444,6 +445,12 @@ Exit: old records need no edits; repository validation and Astro build pass;
 new internal fields do not alter or leak into public output.
 
 ### Milestone 2: Renderer transplant with parity
+
+MRP-side status 2026-07-20: implemented on
+`feat/music-video-designer-plan`. The isolated engine, diagnostics, locked
+optional dependencies, reference-project validation, and FFmpeg acceptance are
+in MRP. The separate post-merge Spirophonic Python cleanup remains deferred;
+its React application is untouched.
 
 - Move the headless Python engine and its tests into `mrp.video`.
 - Preserve deterministic geometry, casting, frames, encoding, verification, and
