@@ -947,6 +947,7 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   border-radius: 8px;
   color: inherit;
   display: flex;
+  flex-wrap: wrap;
   gap: .6rem;
   min-width: 0;
   padding: .6rem;
@@ -956,7 +957,7 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   background: color-mix(in srgb, var(--primary) 9%, transparent);
   border-color: var(--primary);
 }
-.actor-library-card > span:nth-child(2) { min-width: 0; }
+.actor-library-card > span:nth-child(2) { flex: 1 1 8rem; min-width: 0; }
 .actor-library-card small {
   color: var(--muted);
   display: block;
@@ -967,18 +968,27 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .actor-library-card form {
   align-items: center;
   display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
   gap: .4rem;
   margin-left: auto;
+  min-width: 0;
 }
 .actor-import-character {
+  align-items: center;
   color: var(--muted);
+  display: flex;
+  flex: 0 0 auto;
   font-size: 10px;
+  gap: .3rem;
   white-space: nowrap;
 }
 .actor-import-character select {
   font-size: 11px;
+  max-width: 100%;
   padding: .25rem;
 }
+.actor-library-card form .btn { flex: 0 0 auto; }
 .actor-swatch {
   background: var(--actor-color, var(--primary));
   border: 2px solid color-mix(in srgb, var(--actor-color, var(--primary)) 55%, #fff);

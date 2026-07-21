@@ -471,6 +471,11 @@ def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, mon
 
     monkeypatch.setattr(video_jobs.subprocess, "Popen", fake_popen)
     monkeypatch.setattr(video_jobs, "_start_monitor", lambda *_args: None)
+    monkeypatch.setattr(
+        video_jobs,
+        "renderer_environment",
+        lambda _root: (True, str(video_python)),
+    )
 
     job_id = video_jobs.launch(
         tmp_path,
@@ -539,6 +544,36 @@ def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, mon
             "render",
             expected_fingerprint="fingerprint",
         )
+
+
+def test_launch_refuses_before_spawning_when_renderer_python_is_incomplete(
+    tmp_path: Path, monkeypatch
+):
+    """A missing renderer dependency must fail submission, not the child process.
+
+    Falling through to an interpreter without the video stack used to create a
+    job row and spawn a worker that died mid-render with a bare
+    "No module named 'librosa'".
+    """
+    db.init(tmp_path / "admin.db")
+    monkeypatch.setattr(
+        video_jobs,
+        "renderer_environment",
+        lambda _root: (
+            False,
+            "missing librosa; install requirements-video.txt into /usr/bin/python3",
+        ),
+    )
+
+    def fail_popen(*_args, **_kwargs):
+        raise AssertionError("launch must not spawn a worker without the renderer")
+
+    monkeypatch.setattr(video_jobs.subprocess, "Popen", fail_popen)
+
+    with pytest.raises(video_jobs.VideoJobError, match="renderer environment is not ready"):
+        video_jobs.launch(tmp_path, "release", "track", "artist--track", "analyze")
+
+    assert db.list_video_jobs() == []
 
 
 def test_renderer_environment_reports_invalid_explicit_python(

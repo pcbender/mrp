@@ -344,6 +344,9 @@ def launch(
             raise VideoJobError("full render jobs require a preflight fingerprint")
     elif expected_fingerprint is not None:
         raise VideoJobError(f"{kind} jobs do not accept a preflight fingerprint")
+    renderer_ready, renderer_detail = renderer_environment(root)
+    if not renderer_ready:
+        raise VideoJobError(f"renderer environment is not ready: {renderer_detail}")
     repo = root.resolve()
     job_id = uuid.uuid4().hex[:12]
     job_dir = repo / "assets" / "processed" / "video" / track_key / "logs" / "jobs"
