@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import asyncio
 import json
+import subprocess
+import sys
 from pathlib import Path
 from urllib.parse import urlencode
 
@@ -15,9 +17,10 @@ from mrp.admin.video_casting import (
     CastingEditorError,
     load_casting,
     save_casting,
+    save_track_actor,
 )
 from mrp.core.migrate_site import load_structured_record
-from mrp.video.workspace import TrackProjectDocument
+from mrp.video.track_project import TrackProjectDocument
 
 ROOT = Path(__file__).resolve().parents[3]
 ENRICHED = ROOT / "tests" / "video" / "fixtures" / "releases" / "enriched-album.yaml"
@@ -211,6 +214,46 @@ def _manual_fields(*, fixed_radius: str = "333") -> dict[str, list[str]]:
     }
 
 
+def _actor_fields(*, action: str = "actor_save") -> dict[str, list[str]]:
+    fields = _manual_fields(fixed_radius="205")
+    fields.update(
+        {
+            "action": [action],
+            "scope": ["type"],
+            "actor_original_id": [""],
+            "actor_edit_id": ["vocal-lantern"],
+            "actor_name": ["Vocal Lantern"],
+            "actor_description": ["A rose-colored lead identity."],
+            "actor_character": ["bass"],
+            "trace_id": ["shape"],
+        }
+    )
+    return fields
+
+
+def _actor_cast_fields() -> dict[str, list[str]]:
+    return {
+        "section_id": ["verse_1"],
+        "section_type": ["verse"],
+        "scope": ["type"],
+        "action": ["save_cast"],
+        "mapping_preset": ["balanced"],
+        "palette_preset": ["layer"],
+        "auto_casting": ["true"],
+        "assignment_id": ["lead"],
+        "assigned_actor": ["vocal-lantern"],
+        "direction_anchor_x": ["0.62"],
+        "direction_anchor_y": ["0.35"],
+        "direction_scale": ["1.25"],
+        "direction_opacity": ["0.9"],
+        "direction_rotation": ["0.4"],
+        "direction_hue": ["12"],
+        "direction_depth": ["foreground"],
+        "direction_visible": ["true"],
+        "style_beat_gain": ["1.4"],
+    }
+
+
 def test_load_casting_resolves_deterministic_type_scenes(tmp_path: Path) -> None:
     release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
 
@@ -229,6 +272,39 @@ def test_load_casting_resolves_deterministic_type_scenes(tmp_path: Path) -> None
             "stale": False,
         }
     ]
+
+
+def test_casting_project_load_does_not_import_audio_workspace(tmp_path: Path) -> None:
+    _release, _track, _release_path, project_path = _write_cast_repo(tmp_path)
+    script = f"""
+import builtins
+import sys
+from pathlib import Path
+
+original_import = builtins.__import__
+
+def guarded_import(name, *args, **kwargs):
+    if name == "librosa" or name.startswith("librosa."):
+        raise ModuleNotFoundError("blocked renderer dependency: librosa")
+    return original_import(name, *args, **kwargs)
+
+builtins.__import__ = guarded_import
+from mrp.admin.video_casting import _load_project
+
+document = _load_project(Path({str(project_path)!r}))
+assert document.source.track_slug == "private-track"
+assert "mrp.video.workspace" not in sys.modules
+"""
+
+    result = subprocess.run(
+        [sys.executable, "-c", script],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0, result.stderr
 
 
 def test_save_exact_cast_is_atomic_versioned_and_invalidates_previews(tmp_path: Path) -> None:
@@ -265,6 +341,127 @@ def test_save_exact_cast_is_atomic_versioned_and_invalidates_previews(tmp_path: 
     with pytest.raises(CastingEditorError, match="fixed_radius"):
         save_casting(tmp_path, release, track, _manual_fields(fixed_radius="0"))
     assert project_path.read_bytes() == before
+
+
+def test_actor_identity_cast_and_direction_compile_without_rewriting_renderer(
+    tmp_path: Path,
+) -> None:
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+
+    actor_id = save_track_actor(tmp_path, release, track, _actor_fields())
+    assert actor_id == "vocal-lantern"
+    actor_result = load_casting(tmp_path, release, track)
+    assert actor_result["project"].visuals.actors["vocal-lantern"].name == "Vocal Lantern"
+    assert actor_result["project"].visuals.actors["vocal-lantern"].character == "bass"
+
+    cast_result = save_casting(tmp_path, release, track, _actor_cast_fields())
+
+    actor_cast = cast_result["project"].visuals.section_casts["verse"]
+    assert actor_cast.actors[0].actor == "vocal-lantern"
+    assert cast_result["composition_source"] == "actor cast for all verse scenes"
+    compiled = cast_result["composition"].traces[0]
+    assert compiled.id == "lead--shape"
+    assert compiled.geometry.fixed_radius == 205
+    assert compiled.anchor_x == pytest.approx(0.37)
+    assert compiled.base_scale == pytest.approx(1.75)
+    assert compiled.drivers.scale == "bass.energy"
+
+    stored = TrackProjectDocument.model_validate(
+        yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    )
+    assert stored.project.visuals.actors["vocal-lantern"].components[0].anchor_x == 0.25
+
+
+def test_recommended_actor_onboarding_and_exact_scene_direction(tmp_path: Path) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+
+    recommended = save_casting(
+        tmp_path,
+        release,
+        track,
+        {
+            "section_id": ["verse_1"],
+            "section_type": ["verse"],
+            "scope": ["type"],
+            "action": ["recommended"],
+        },
+    )
+
+    type_cast = recommended["project"].visuals.section_casts["verse"]
+    assert len(type_cast.actors) == 2
+    assert len(recommended["project"].visuals.actors) == 2
+    first = type_cast.actors[0]
+    exact_fields = {
+        "section_id": ["verse_1"],
+        "section_type": ["verse"],
+        "scope": ["section"],
+        "action": ["save_cast"],
+        "assignment_id": [first.id],
+        "assigned_actor": [first.actor],
+        "direction_anchor_x": ["0.7"],
+        "direction_anchor_y": [""],
+        "direction_scale": ["1.1"],
+        "direction_opacity": ["1"],
+        "direction_rotation": ["0"],
+        "direction_hue": ["0"],
+        "direction_depth": [""],
+        "direction_visible": ["true"],
+    }
+
+    exact = save_casting(tmp_path, release, track, exact_fields)
+
+    assert exact["composition_source"] == "exact scene actor cast"
+    assert exact["project"].visuals.cast_overrides["verse_1"].actors[0].direction.scale == 1.1
+    assert exact["project"].visuals.actors[first.actor].character == "bass"
+
+
+def test_global_actor_library_imports_a_pinned_project_snapshot(tmp_path: Path) -> None:
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+    fields = _actor_fields(action="actor_publish")
+
+    actor_id = save_track_actor(tmp_path, release, track, fields)
+    assert actor_id == "vocal-lantern"
+    published = load_casting(tmp_path, release, track)
+    library_path = (
+        tmp_path / "assets/source/video/actors/vocal-lantern.yaml"
+    )
+    assert library_path.is_file()
+    assert "character" not in yaml.safe_load(
+        library_path.read_text(encoding="utf-8")
+    )["actor"]
+    revision = published["library_actors"][0]["revision"]
+
+    payload = yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    payload["project"]["visuals"]["actors"] = {}
+    project_path.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
+    imported_id = save_track_actor(
+        tmp_path,
+        release,
+        track,
+        {
+            "action": ["actor_import"],
+            "library_actor_id": ["vocal-lantern"],
+        },
+    )
+    assert imported_id == "vocal-lantern"
+    imported = load_casting(tmp_path, release, track)
+
+    snapshot = imported["project"].visuals.actors["vocal-lantern"]
+    assert snapshot.library_source is not None
+    assert snapshot.library_source.revision == revision
+    assert snapshot.description == "A rose-colored lead identity."
+    assert snapshot.character == "vocals"
+
+    library_payload = yaml.safe_load(library_path.read_text(encoding="utf-8"))
+    library_payload["actor"]["name"] = "Library Name Changed Later"
+    library_path.write_text(
+        yaml.safe_dump(library_payload, sort_keys=False),
+        encoding="utf-8",
+    )
+    reloaded = TrackProjectDocument.model_validate(
+        yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    )
+    assert reloaded.project.visuals.actors["vocal-lantern"].name == "Vocal Lantern"
 
 
 def test_casting_route_updates_only_selected_track_and_renders_controls(
@@ -314,12 +511,71 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     )
     body = page.body.decode()
     assert page.status_code == 200
-    assert "exact section" in body
+    assert "Only this scene" in body
+    assert "Actor Library" in body
+    assert "Actor Designer" in body
+    assert "Scene Casting" in body
+    assert body.index("<h2>Actor Library") < body.index("<h2>Scene Casting")
+    assert body.index("<h2>Actor Designer") < body.index("<h2>Scene Casting")
+    assert "Create recommended actors" in body
+    assert 'name="actor_character"' in body
+    assert 'name="reacts_to"' not in body
+    assert "/video/actors" in body
     assert 'name="fixed_radius"' in body
-    assert 'name="style_beat_gain"' in body
-    assert "Reset to deterministic auto" in body
+    assert 'id="track-actor-designer"' in body
+    assert 'class="actor-designer-live-layout"' in body
+    assert 'class="actor-designer-controls"' in body
+    assert 'width="720" height="720"' in body
+    assert "Component offset X" in body
+    assert (
+        'title="Horizontal position inside the actor identity preview. '
+        'Scene position is set later in Scene Casting."'
+    ) in body
     assert "Run frame" in body
     assert "Run contact" in body
+
+
+def test_track_actor_route_does_not_depend_on_or_mutate_scene_scope(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    release, _track, release_path, project_path = _write_cast_repo(tmp_path)
+    release["tracks"][0]["music_video"]["status"] = "timed"
+    release_path.write_text(
+        yaml.safe_dump({"release": release}, sort_keys=False),
+        encoding="utf-8",
+    )
+    db.init(tmp_path / "admin.db")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+    fields = [
+        (name, value)
+        for name, values in _actor_fields().items()
+        for value in values
+    ] + [("return_section", "chorus_1"), ("return_scope", "section")]
+
+    response = asyncio.run(
+        video_routes.video_actor_save(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/actors",
+                fields,
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.status_code == 200
+    assert "section=chorus_1" in response.headers["HX-Redirect"]
+    assert "scope=section" in response.headers["HX-Redirect"]
+    assert "actor=vocal-lantern" in response.headers["HX-Redirect"]
+    stored = TrackProjectDocument.model_validate(
+        yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    )
+    assert stored.project.visuals.actors["vocal-lantern"].character == "bass"
+    assert stored.project.visuals.section_casts == {}
+    assert stored.project.visuals.cast_overrides == {}
+    saved_release = load_structured_record(release_path)["release"]
+    assert saved_release["tracks"][0]["music_video"]["status"] == "timed"
 
 
 def test_private_preview_route_rejects_traversal(tmp_path: Path, monkeypatch) -> None:

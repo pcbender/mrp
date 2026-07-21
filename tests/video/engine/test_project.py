@@ -343,6 +343,61 @@ def test_section_compositions_reject_duplicates_and_unknown_signals() -> None:
         ProjectManifest.model_validate(project)
 
 
+def test_actor_contracts_are_optional_pinned_and_reference_checked() -> None:
+    project = _valid_project()
+    project["visuals"] = {
+        "actors": {
+            "vocal-bloom": {
+                "id": "vocal-bloom",
+                "name": "Vocal Bloom",
+                "description": "A reusable lead identity.",
+                "character": "vocals",
+                "library_source": {
+                    "actor_id": "vocal-bloom",
+                    "revision": "a" * 64,
+                },
+                "components": [
+                    {
+                        "id": "petals",
+                        "role": "vocals",
+                        "geometry": {
+                            "fixed_radius": 180,
+                            "moving_radius": 60,
+                            "pen_offset": 100,
+                        },
+                        "color": "#ff5fd2",
+                    }
+                ],
+            }
+        },
+        "section_casts": {
+            "verse": {
+                "actors": [
+                    {
+                        "id": "lead",
+                        "actor": "vocal-bloom",
+                        "direction": {"scale": 1.2},
+                    }
+                ]
+            }
+        },
+    }
+
+    manifest = ProjectManifest.model_validate(project)
+
+    assert manifest.visuals.actors["vocal-bloom"].name == "Vocal Bloom"
+    assert manifest.visuals.section_casts["verse"].actors[0].direction.scale == 1.2
+
+    project["visuals"]["section_casts"]["verse"]["actors"][0]["actor"] = "missing"
+    with pytest.raises(ValidationError, match="unknown actors"):
+        ProjectManifest.model_validate(project)
+
+    project["visuals"]["section_casts"]["verse"]["actors"][0]["actor"] = "vocal-bloom"
+    project["visuals"]["actors"]["vocal-bloom"].pop("character")
+    with pytest.raises(ValidationError, match="track-level character"):
+        ProjectManifest.model_validate(project)
+
+
 def test_aligned_lyrics_reject_overlapping_lines(tmp_path: Path) -> None:
     aligned_path = tmp_path / "lyrics.aligned.yaml"
     aligned_path.write_text(

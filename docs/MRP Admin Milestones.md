@@ -153,6 +153,18 @@ atomically to the versioned track project. Isolated frame/contact-sheet jobs
 record the project fingerprint; casting edits immediately mark previous
 validation and previews stale while retaining them for comparison.
 
+The actor-first casting revision was implemented 2026-07-21 on the same branch.
+Reusable named actors now own one or more visual components, project imports pin
+global-library snapshots by content revision, and each track actor receives one
+musical character such as bass. Section-type or exact-scene assignments contain
+only performance direction such as position, scale, visibility, layer, hue, and
+rotation; they cannot redefine what the actor reacts to. Actor casts compile
+into the unchanged renderer composition contract, while original embedded
+compositions remain backward compatible. Actor Library and Actor Designer are
+track-level surfaces saved independently of section scope; Scene Casting alone
+owns assignment and per-scene direction, with advanced controls progressively
+disclosed.
+
 Milestone 7 was implemented 2026-07-20 on the same branch: the per-track
 rendering workspace now creates isolated section/custom-range draft iterations,
 keeps their verified manifests and private playback history, and discards drafts
@@ -202,6 +214,20 @@ cover the complete media lifecycle.
 
 
 ## TODO List
+
+### Music Video Designer follow-ups
+
+- Stem preview playback: add a private admin audio endpoint and an inline play
+  control for every imported stem so an operator can identify composite or
+  overlapping sources before enabling them. Keep paths private, allow only one
+  preview to play at a time, and do not copy stem audio into the public site.
+- Additional actor media: extend the actor component union and renderer
+  compiler beyond the initial spirogram implementation to imported still,
+  vector, or motion assets, with the same pinned-library, private-path, preview,
+  and deterministic-render guarantees.
+
+### General admin follow-ups
+
 - ~~git integration~~ Done 2026-07-07 (PR #64): Changes page — review diffs,
   Approve & Push commits content/assets pathspecs to main (validation gate,
   branch guard, pull --ff-only). Runtime split: admin runs from the

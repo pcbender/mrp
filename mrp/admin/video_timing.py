@@ -152,13 +152,13 @@ def _write(path: Path, document: Any) -> None:
         temporary.unlink(missing_ok=True)
 
 
-def save_timing(
+def validate_timing(
     root: Path,
     release: dict[str, Any],
     track: dict[str, Any],
     fields: Mapping[str, Sequence[str]],
 ) -> dict[str, Any]:
-    """Validate and atomically replace one track's versioned timing artifact."""
+    """Build and validate a timing edit without changing the source artifact."""
     from mrp.video.project import AlignedLyrics
 
     path = timing_path(root, release, track)
@@ -223,10 +223,31 @@ def save_timing(
             f"after the {duration:.3f}s master"
         )
 
-    _write(path, updated)
     return {
         "path": path.relative_to(root).as_posix(),
         "document": updated,
         "summary": _summary(updated),
         "master_duration": duration,
     }
+
+
+def persist_timing(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    document: Any,
+) -> None:
+    """Atomically replace one track's validated timing artifact."""
+    _write(timing_path(root, release, track), document)
+
+
+def save_timing(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    fields: Mapping[str, Sequence[str]],
+) -> dict[str, Any]:
+    """Validate and atomically replace one track's versioned timing artifact."""
+    result = validate_timing(root, release, track, fields)
+    persist_timing(root, release, track, result["document"])
+    return result

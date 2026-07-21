@@ -3,6 +3,7 @@ import random
 from dataclasses import dataclass
 
 from mrp.video.project import (
+    ActorCastConfig,
     CastingConfig,
     LayerGeometryConfig,
     LayerTraceConfig,
@@ -531,12 +532,109 @@ def _type_composition(
     )
 
 
+def _type_actor_cast(
+    visuals: VisualConfig,
+    section_type: str,
+) -> tuple[str, ActorCastConfig] | None:
+    folded = section_type.casefold()
+    return next(
+        (
+            (name, cast)
+            for name, cast in visuals.section_casts.items()
+            if name.casefold() == folded
+        ),
+        None,
+    )
+
+
+def _clamp(value: float, minimum: float, maximum: float) -> float:
+    return min(maximum, max(minimum, value))
+
+
+def compile_actor_cast(
+    visuals: VisualConfig,
+    cast: ActorCastConfig,
+) -> SectionCompositionConfig:
+    """Compile actor identity plus scene direction to the stable trace contract."""
+    traces: list[VisualLayerConfig] = []
+    for assignment in cast.actors:
+        actor = visuals.actors[assignment.actor]
+        direction = assignment.direction
+        for component in actor.components:
+            drivers = component.drivers
+            role = component.role
+            if actor.character is not None:
+                role = actor.character
+                energy = f"{role}.energy"
+                accent = f"{role}.accent"
+                drivers = TraceAudioDriversConfig(
+                    scale=energy,
+                    opacity=energy,
+                    color=energy,
+                    pulse=accent,
+                )
+            anchor_x = component.anchor_x
+            if direction.anchor_x is not None:
+                anchor_x += direction.anchor_x - 0.5
+            anchor_y = component.anchor_y
+            if direction.anchor_y is not None:
+                anchor_y += direction.anchor_y - 0.5
+            traces.append(
+                component.model_copy(
+                    update={
+                        "id": f"{assignment.id}--{component.id}",
+                        "role": role,
+                        "anchor_x": _clamp(anchor_x, -0.5, 1.5),
+                        "anchor_y": _clamp(anchor_y, -0.5, 1.5),
+                        "base_scale": _clamp(
+                            component.base_scale * direction.scale,
+                            0.000001,
+                            2,
+                        ),
+                        "opacity": (
+                            component.opacity * direction.opacity
+                            if direction.visible
+                            else 0
+                        ),
+                        "rotation_degrees_per_second": _clamp(
+                            component.rotation_degrees_per_second
+                            + direction.rotation_offset_degrees_per_second,
+                            -180,
+                            180,
+                        ),
+                        "hue_shift_degrees": _clamp(
+                            component.hue_shift_degrees
+                            + direction.hue_shift_degrees,
+                            -360,
+                            360,
+                        ),
+                        "depth": direction.depth or component.depth,
+                        "drivers": drivers,
+                    }
+                )
+            )
+    return SectionCompositionConfig(casting=cast.casting, traces=traces)
+
+
 def resolve_section_composition(
     visuals: VisualConfig,
     section_type: str,
     section_id: str,
     project_seed: int,
 ) -> ResolvedComposition:
+    actor_override = visuals.cast_overrides.get(section_id)
+    if actor_override is not None:
+        return ResolvedComposition(
+            f"actors:section:{section_id}",
+            compile_actor_cast(visuals, actor_override),
+        )
+    actor_cast = _type_actor_cast(visuals, section_type)
+    if actor_cast is not None:
+        name, cast = actor_cast
+        return ResolvedComposition(
+            f"actors:type:{name.casefold()}",
+            compile_actor_cast(visuals, cast),
+        )
     override = visuals.composition_overrides.get(section_id)
     if override is not None:
         return ResolvedComposition(f"section:{section_id}", override)

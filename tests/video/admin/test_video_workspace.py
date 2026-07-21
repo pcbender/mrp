@@ -185,6 +185,11 @@ def test_asset_validation_accepts_master_only_track(tmp_path: Path, monkeypatch)
         },
     }
     monkeypatch.setattr(video_workspace.shutil, "which", lambda name: f"/usr/bin/{name}")
+    monkeypatch.setattr(
+        video_jobs,
+        "renderer_environment",
+        lambda _root: (True, "/repo/.venv/bin/python"),
+    )
     monkeypatch.setattr(video_workspace, "_default_font", lambda: font)
     monkeypatch.setattr(video_workspace, "_audio_duration", lambda _path: 10.0)
     monkeypatch.setattr(
@@ -200,7 +205,86 @@ def test_asset_validation_accepts_master_only_track(tmp_path: Path, monkeypatch)
     )
 
     assert report["status"] == "passed"
+    assert next(
+        check for check in report["checks"] if check["name"] == "Renderer Python"
+    )["ok"] is True
     assert next(check for check in report["checks"] if check["name"] == "Stems")["detail"] == "0 enabled"
+
+
+def test_scan_stem_directory_infers_editable_rows(tmp_path: Path):
+    directory = tmp_path / "Track Stems"
+    directory.mkdir()
+    for name in (
+        "Bass.wav",
+        "Drums.WAV",
+        "Guitar L.aiff",
+        "Lead Vocals.flac",
+        "Room Tone.m4a",
+    ):
+        (directory / name).write_bytes(b"audio")
+    (directory / "notes.txt").write_text("not audio", encoding="utf-8")
+    nested = directory / "nested"
+    nested.mkdir()
+    (nested / "Piano.wav").write_bytes(b"nested")
+
+    stems = video_workspace.scan_stem_directory(tmp_path, directory)
+
+    assert [stem["id"] for stem in stems] == [
+        "bass",
+        "drums",
+        "guitar-l",
+        "lead-vocals",
+        "room-tone",
+    ]
+    assert [stem["role"] for stem in stems] == [
+        "bass",
+        "drums",
+        "instruments",
+        "vocals",
+        "other",
+    ]
+    assert all(stem["enabled"] is True for stem in stems)
+    assert all(Path(str(stem["path"])).parent == directory for stem in stems)
+
+
+def test_scan_stem_directory_rejects_missing_or_empty_path(tmp_path: Path):
+    with pytest.raises(video_workspace.StemImportError, match="Enter a directory"):
+        video_workspace.scan_stem_directory(tmp_path, "")
+
+    empty = tmp_path / "empty"
+    empty.mkdir()
+    with pytest.raises(video_workspace.StemImportError, match="No supported audio"):
+        video_workspace.scan_stem_directory(tmp_path, empty)
+
+
+def test_stem_import_route_scans_without_saving_release(tmp_path: Path, monkeypatch):
+    record = yaml.safe_load(ENRICHED.read_text(encoding="utf-8"))
+    path = tmp_path / "content" / "releases" / "video-contract.yaml"
+    path.parent.mkdir(parents=True)
+    path.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
+    original = path.read_text(encoding="utf-8")
+    stems = tmp_path / "stems"
+    stems.mkdir()
+    (stems / "Bass.wav").write_bytes(b"bass")
+    (stems / "Vocals.wav").write_bytes(b"vocals")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    response = asyncio.run(
+        video_routes.video_stems_import(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/stems/import",
+                [("stem_directory", str(stems))],
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+    payload = json.loads(response.body)
+
+    assert response.status_code == 200
+    assert payload["count"] == 2
+    assert [stem["role"] for stem in payload["stems"]] == ["bass", "vocals"]
+    assert path.read_text(encoding="utf-8") == original
 
 
 def test_asset_save_updates_only_selected_track(tmp_path: Path, monkeypatch):
@@ -270,10 +354,47 @@ def test_video_track_page_renders_assets_and_job_controls(tmp_path: Path, monkey
 
     assert response.status_code == 200
     assert "Import assets by local path" in body
+    assert "Import from path&hellip;" in body
     assert "Run prepare" in body
     assert "Run analyze" in body
     assert "Run align" in body
     assert "Open rendering workspace" in body
+
+
+def test_video_track_page_makes_legacy_master_an_explicit_import(
+    tmp_path: Path, monkeypatch
+):
+    db.init(tmp_path / "admin.db")
+    legacy_master = tmp_path / "legacy master.wav"
+    legacy_master.write_bytes(b"audio")
+    record = {
+        "release": {
+            "slug": "single",
+            "artist_id": "artist",
+            "model": "song",
+            "automation": {"master_path": str(legacy_master)},
+            "song": {"slug": "track", "title": "Track", "master_path": None},
+        }
+    }
+    path = tmp_path / "content" / "releases" / "single.yaml"
+    path.parent.mkdir(parents=True)
+    path.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    response = asyncio.run(
+        video_routes.video_track(
+            _get_request("/releases/single/tracks/track/video"),
+            "single",
+            "track",
+        )
+    )
+    body = response.body.decode()
+
+    assert response.status_code == 200
+    assert 'id="video-master-path" type="text" name="master_path" value=""' in body
+    assert 'placeholder="/path/to/master.wav"' in body
+    assert f'data-master-path="{legacy_master}"' in body
+    assert "Import legacy master" in body
 
 
 def test_workspace_dispatch_renders_optional_video_matrix(tmp_path: Path, monkeypatch):
@@ -334,6 +455,9 @@ def test_video_job_events_persist_progress_and_result(tmp_path: Path):
 def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, monkeypatch):
     db.init(tmp_path / "admin.db")
     launches: list[tuple[list[str], dict]] = []
+    video_python = tmp_path / ".venv" / "bin" / "python"
+    video_python.parent.mkdir(parents=True)
+    video_python.write_text("", encoding="utf-8")
 
     class FakeProcess:
         pid = 43210
@@ -359,6 +483,7 @@ def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, mon
 
     assert db.get_video_job(job_id)["pid"] == 43210
     command, kwargs = launches[0]
+    assert command[0] == str(video_python.absolute())
     assert command[1:3] == ["-m", "mrp.video.worker"]
     assert "--job-id" in command
     assert command[-2:] == ["--expected-fingerprint", "fingerprint"]
@@ -414,6 +539,18 @@ def test_launch_uses_worker_process_and_blocks_second_render(tmp_path: Path, mon
             "render",
             expected_fingerprint="fingerprint",
         )
+
+
+def test_renderer_environment_reports_invalid_explicit_python(
+    tmp_path: Path, monkeypatch
+):
+    missing = tmp_path / "missing-video-python"
+    monkeypatch.setenv("MRP_VIDEO_PYTHON", str(missing))
+
+    ready, detail = video_jobs.renderer_environment(tmp_path)
+
+    assert ready is False
+    assert detail == f"not found: {missing}"
 
 
 def test_cancellation_and_restart_recovery_reach_terminal_states(tmp_path: Path, monkeypatch):

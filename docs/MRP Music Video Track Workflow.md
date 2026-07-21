@@ -7,6 +7,9 @@ copying private production paths into versioned project files.
 
 Install the optional renderer environment from `requirements-video.txt`. Add
 `requirements-video-align.txt` only when new OpenAI transcription is required.
+Admin video jobs prefer the repository `.venv` interpreter when it exists and
+otherwise use the admin server interpreter. Set `MRP_VIDEO_PYTHON` to an
+explicit interpreter when the locked video environment lives elsewhere.
 
 ```bash
 scripts/mrp video track prepare RELEASE [--track TRACK] --json
@@ -21,6 +24,13 @@ scripts/mrp video track render RELEASE [--track TRACK] --dry-run --json
 `RELEASE` is the slug below `content/releases/`. A single has exactly one song,
 so `--track` is optional and must match that song if supplied. An EP or album
 requires `--track`.
+
+In the admin track workspace, **Import legacy master** explicitly selects an
+older `automation.master_path` for the track; the legacy path is never presented
+as though it were already saved. **Import from path...** scans one local stem
+directory for WAV, MP3, FLAC, AIFF, or M4A files, derives stable IDs and initial
+semantic roles from their filenames, and adds editable rows. Directory import
+does not modify release YAML until **Save assets** is clicked.
 
 `prepare` validates the exact local assets before linking the track to its
 project. On first success it adds this optional track state:
@@ -126,6 +136,13 @@ status, or alignment provenance. Saves are atomic and reject invalid ordering,
 overlap, out-of-section lines, nonpositive windows, and timing beyond the known
 master duration.
 
+If automatic alignment collapses a recognized lyric to a nonpositive window,
+the aligner preserves it as a non-overlapping provisional cue instead of
+aborting the whole alignment. The cue receives an editable timing window,
+`status: unmatched`, and zero confidence, and the aligner writes the complete
+file with a manual-review warning. The Timing editor can then correct and
+explicitly review the cue.
+
 `reviewed` is optional on existing aligned sections and lines. A newly aligned
 file therefore remains backward compatible. Uncertain and unmatched cues count
 as pending until explicitly reviewed; once none remain, saving advances a draft
@@ -133,24 +150,43 @@ track's `music_video.status` to `timed`. Bracketed structure directives are
 section metadata and the shared renderer contract rejects them as displayed
 lyric cues.
 
-## Admin section-casting editor
+The editor labels a reviewed uncertain or unmatched cue as `manual`, while the
+stored match status and confidence continue to record the aligner's original
+result. Rejected saves display their validation details in the editor and do
+not partially persist timing changes before release validation succeeds.
+
+## Admin actor and scene-casting editor
 
 After reviewed timing advances a track to `timed`, the per-track Video page
 links to `/releases/{release}/tracks/{track}/video/casting`. Every aligned
-section is a stable scene. Resolution order is exact section override, then a
-case-insensitive section-type default, then the deterministic auto cast (or the
-global-layer fallback when auto casting is disabled).
+section is a stable scene. Actor resolution order is an exact-scene actor cast,
+then a case-insensitive section-type actor cast. Projects that have not adopted
+actors continue through the original exact composition, section-type
+composition, deterministic auto cast, and global-layer fallback in that order.
 
-The editor can materialize an auto cast, clear back to inheritance, or save a
-manual composition containing one to twelve traces. Each trace exposes its
-role, hypotrochoid/epitrochoid geometry, anchor, scale, color, depth, opacity,
-line and rotation behavior, cyclic trail, ghosts, and optional scale/opacity/
-color/pulse audio drivers. Scene-level controls cover visible roles, spatial
-and motion response, lyric opacity, trace/trail response, beat gain, and
-intensity gain. Section-type settings apply consistently to repeated forms;
-exact-section settings permit deliberately different scene geometry.
+Actor Library and Actor Designer are track-level surfaces above the scene
+workspace. The library browses identities pinned to the current project and
+reusable definitions under `assets/source/video/actors/`. Importing creates a
+project-owned snapshot, records the library content revision, and assigns the
+new track actor a musical character. Updating a library identity never changes
+a project until the operator imports it again. Actor Designer gives the actor a
+name, a stable track-wide “reacts to” character such as bass, and a live
+spirogram preview, with topology and component behavior under advanced
+controls. An actor may contain multiple visual components.
 
-Saves validate the complete shared project contract and atomically replace the
+Scene Casting assigns those actors to all sections of a type or to one exact
+scene. Per-appearance direction controls position, scale, opacity, visibility,
+foreground/background layer, hue, and additional rotation, but cannot change
+the actor's musical character. The existing whole-scene response is retained
+under advanced controls. “Create recommended actors” materializes the
+deterministic cast as editable track actors; “Adopt current look” converts the
+currently resolved legacy composition. Actor identity, track character, and
+scene direction compile into the renderer's unchanged trace composition
+contract.
+
+Track actors save through `/video/actors`, independently of section identity or
+casting scope. Scene casts save through `/video/casting`. Both validate the
+complete shared actor and project contracts and atomically replace the
 versioned `project.yaml`. The previous preflight becomes `stale`, so no preview
 or render made from the former project is treated as current. Generated files
 are retained for comparison and remain below `assets/processed/video/`.

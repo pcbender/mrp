@@ -252,6 +252,59 @@ def test_unmatched_line_gets_editable_timing_and_review_warning() -> None:
     assert warnings == ("verse line 2 is unmatched (confidence 0.000)",)
 
 
+def test_collapsed_recognized_line_gets_provisional_manual_timing() -> None:
+    lyrics = StructuredLyrics(
+        version=1,
+        sections=[
+            LyricSection(
+                id="intro",
+                type="verse",
+                lines=[LyricLine(text="Before")],
+            ),
+            LyricSection(
+                id="verse",
+                type="verse",
+                lines=[
+                    LyricLine(text="The wind blows cold again"),
+                    LyricLine(text="Memories warming me"),
+                ],
+            ),
+        ],
+    )
+    transcription = _transcription(
+        [
+            TranscriptWord("before", 1.0, 2.0),
+            TranscriptWord("the", 5.0, 5.1),
+            TranscriptWord("wind", 5.0, 5.2),
+            TranscriptWord("blows", 5.0, 5.3),
+            TranscriptWord("cold", 5.0, 5.4),
+            TranscriptWord("again", 5.0, 6.0),
+            TranscriptWord("memories", 5.0, 6.5),
+            TranscriptWord("warming", 6.6, 6.8),
+            TranscriptWord("me", 6.9, 7.2),
+        ]
+    )
+
+    aligned, warnings = align_lyrics_document(
+        lyrics,
+        transcription,
+        source=Path("lyrics.yaml"),
+        duration=8,
+        config=AlignmentConfig(),
+    )
+
+    provisional = aligned.sections[1].lines[0]
+    following = aligned.sections[1].lines[1]
+    assert (provisional.start, provisional.end) == pytest.approx((2.0, 5.0))
+    assert provisional.status == "unmatched"
+    assert provisional.confidence == 0
+    assert following.start == pytest.approx(5.0)
+    assert warnings == (
+        "verse line 1 received a provisional 3.000s timing window "
+        "and requires manual review",
+    )
+
+
 def test_transcription_adapter_caches_word_timestamps(tmp_path: Path) -> None:
     vocals = tmp_path / "vocals.wav"
     vocals.write_bytes(b"small fixture")

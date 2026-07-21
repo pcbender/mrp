@@ -100,3 +100,110 @@ def test_disabling_auto_casting_uses_the_global_layer_fallback() -> None:
 
     assert resolved.key == "legacy:global-layers"
     assert resolved.composition.traces == visuals.layers
+
+
+def test_actor_cast_compiles_identity_and_scene_direction_to_traces() -> None:
+    visuals = VisualConfig.model_validate(
+        {
+            "actors": {
+                "vocal-bloom": {
+                    "id": "vocal-bloom",
+                    "name": "Vocal Bloom",
+                    "character": "bass",
+                    "components": [
+                        {
+                            **_trace("petals", 180),
+                            "anchor_x": 0.4,
+                            "anchor_y": 0.3,
+                            "base_scale": 0.5,
+                            "opacity": 0.8,
+                        },
+                        {
+                            **_trace("halo", 120),
+                            "anchor_x": 0.6,
+                            "anchor_y": 0.3,
+                            "base_scale": 0.3,
+                        },
+                    ],
+                }
+            },
+            "section_casts": {
+                "Verse": {
+                    "actors": [
+                        {
+                            "id": "lead",
+                            "actor": "vocal-bloom",
+                            "direction": {
+                                "anchor_x": 0.6,
+                                "anchor_y": 0.45,
+                                "scale": 1.5,
+                                "opacity": 0.5,
+                                "hue_shift_degrees": 20,
+                            },
+                        }
+                    ]
+                }
+            },
+        }
+    )
+
+    resolved = resolve_section_composition(visuals, "verse", "verse_1", 4821)
+
+    assert resolved.key == "actors:type:verse"
+    assert [trace.id for trace in resolved.composition.traces] == [
+        "lead--petals",
+        "lead--halo",
+    ]
+    petals = resolved.composition.traces[0]
+    assert petals.geometry.fixed_radius == 180
+    assert petals.anchor_x == 0.5
+    assert petals.anchor_y == 0.25
+    assert petals.base_scale == 0.75
+    assert petals.opacity == 0.4
+    assert petals.role == "bass"
+    assert petals.drivers.scale == "bass.energy"
+    assert petals.drivers.pulse == "bass.accent"
+    assert petals.hue_shift_degrees == 20
+
+
+def test_exact_actor_cast_direction_precedes_type_and_legacy_compositions() -> None:
+    visuals = VisualConfig.model_validate(
+        {
+            "actors": {
+                "solo": {
+                    "id": "solo",
+                    "name": "Solo",
+                    "character": "vocals",
+                    "components": [_trace("shape", 180)],
+                }
+            },
+            "section_casts": {
+                "chorus": {"actors": [{"id": "group", "actor": "solo"}]}
+            },
+            "cast_overrides": {
+                "final_chorus": {
+                    "actors": [
+                        {
+                            "id": "hero",
+                            "actor": "solo",
+                            "direction": {"scale": 1.5, "visible": False},
+                        }
+                    ]
+                }
+            },
+            "composition_overrides": {
+                "final_chorus": {"traces": [_trace("legacy", 240)]}
+            },
+        }
+    )
+
+    resolved = resolve_section_composition(
+        visuals,
+        "chorus",
+        "final_chorus",
+        4821,
+    )
+
+    assert resolved.key == "actors:section:final_chorus"
+    assert resolved.composition.traces[0].id == "hero--shape"
+    assert resolved.composition.traces[0].opacity == 0

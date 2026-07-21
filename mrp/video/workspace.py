@@ -9,14 +9,14 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from collections.abc import Callable
-from typing import Any, Literal
+from typing import Any
 
 import librosa
 import numpy as np
 import soundfile as sf
 import yaml
 from PIL import Image, ImageDraw, ImageFont
-from pydantic import Field, ValidationError, model_validator
+from pydantic import ValidationError
 
 from mrp.video.alignment import SpirophonicAlignmentError, align_project
 from mrp.video.analysis import SpirophonicAnalysisError, analyze_project
@@ -33,7 +33,6 @@ from mrp.video.project import (
     AudioConfig,
     CardConfig,
     CardsConfig,
-    ContractModel,
     LyricsConfig,
     ProjectManifest,
     SpirophonicValidationError,
@@ -51,10 +50,12 @@ from mrp.video.renderer import (
     render_frame_file,
 )
 from mrp.video.verification import SpirophonicVerificationError
+from mrp.video.track_project import (
+    ADAPTER_VERSION,
+    TrackProjectDocument,
+    TrackSource,
+)
 
-ADAPTER_VERSION = 1
-RENDERER_CONTRACT_VERSION = 1
-SOURCE_RENDERER_REVISION = "e3d4b100e026d486ce2c28547e6e8a907b1c621a"
 SEMANTIC_ROLES = ("drums", "bass", "vocals", "instruments")
 _SLUG_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 _RENDER_ID_PATTERN = re.compile(r"^[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}$")
@@ -65,31 +66,6 @@ class MRPVideoAdapterError(Exception):
     def __init__(self, *problems: str):
         self.problems = tuple(problems)
         super().__init__("; ".join(problems))
-
-
-class TrackSource(ContractModel):
-    release: Path
-    track_slug: str = Field(pattern=r"^[a-z0-9][a-z0-9-]*$")
-    track_key: str = Field(pattern=r"^[a-z0-9][a-z0-9-]*--[a-z0-9][a-z0-9-]*$")
-    artist_id: str = Field(pattern=r"^[a-z0-9][a-z0-9-]*$")
-
-    @model_validator(mode="after")
-    def release_is_repo_relative(self) -> "TrackSource":
-        if self.release.is_absolute() or self.release.parts[:2] != (
-            "content",
-            "releases",
-        ):
-            raise ValueError("release must be relative below content/releases")
-        return self
-
-
-class TrackProjectDocument(ContractModel):
-    version: Literal[1] = 1
-    adapter_version: Literal[1] = ADAPTER_VERSION
-    renderer_contract_version: Literal[1] = RENDERER_CONTRACT_VERSION
-    source_renderer_revision: str = SOURCE_RENDERER_REVISION
-    source: TrackSource
-    project: ProjectManifest
 
 
 @dataclass(frozen=True, slots=True)

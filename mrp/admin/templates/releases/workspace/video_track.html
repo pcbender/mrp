@@ -68,13 +68,37 @@
   <div class="form-card">
     <div class="form-body">
       <div class="form-field full">
-        <label>Master audio path</label>
-        <input type="text" name="master_path" value="{{ track.master_path or '' }}" placeholder="{{ master_fallback or '/path/to/master.wav' }}">
+        <label for="video-master-path">Master audio path</label>
+        <div class="video-path-import">
+          <input id="video-master-path" type="text" name="master_path" value="{{ track.master_path or '' }}" placeholder="/path/to/master.wav">
+          {% if not track.master_path and master_fallback %}
+          <button type="button" class="btn btn-secondary btn-sm"
+                  data-master-path="{{ master_fallback }}" onclick="importLegacyMaster(this)">
+            Import legacy master
+          </button>
+          {% endif %}
+        </div>
         {% if not track.master_path and master_fallback %}
-        <span style="font-size:11px;color:var(--muted)">
-          Video preparation is track-scoped. Import the legacy release master explicitly: <code>{{ master_fallback }}</code>
+        <span class="video-import-note">
+          Legacy release master available at <code>{{ master_fallback }}</code>. Importing selects it for this track; Save assets persists it.
         </span>
+        <span id="master-import-result" class="video-import-result" aria-live="polite"></span>
         {% endif %}
+      </div>
+      <div class="form-field full" style="margin-top:.85rem">
+        <label for="stem-import-directory">Stem directory</label>
+        <div class="video-path-import">
+          <input id="stem-import-directory" type="text" placeholder="/path/to/stems">
+          <button type="button" class="btn btn-secondary btn-sm"
+                  data-import-url="/releases/{{ slug }}/tracks/{{ track_slug }}/video/stems/import"
+                  onclick="importVideoStems(this)">
+            Import from path&hellip;
+          </button>
+        </div>
+        <span class="video-import-note">
+          Scans supported audio files in one local directory. Review the inferred roles below before saving.
+        </span>
+        <span id="stem-import-result" class="video-import-result" aria-live="polite"></span>
       </div>
       <div class="table-wrap" style="margin-top:.75rem">
         <table class="track-matrix">
@@ -93,7 +117,7 @@
           </tbody>
         </table>
       </div>
-      <button type="button" class="btn btn-secondary btn-sm" style="margin-top:.5rem" onclick="addVideoStem()">+ Import stem</button>
+      <button type="button" class="btn btn-secondary btn-sm" style="margin-top:.5rem" onclick="addVideoStem()">+ Add stem</button>
       <button type="submit" class="btn btn-primary btn-sm" style="margin-top:.5rem">Save assets</button>
     </div>
   </div>
@@ -110,9 +134,81 @@
   </tr>
 </template>
 <script>
-  function addVideoStem() {
+  function addVideoStem(stem = {}) {
     const template = document.getElementById('video-stem-template');
-    document.getElementById('video-stems').appendChild(template.content.cloneNode(true));
+    const fragment = template.content.cloneNode(true);
+    fragment.querySelector('[name="stem_id"]').value = stem.id || '';
+    fragment.querySelector('[name="stem_label"]').value = stem.label || '';
+    fragment.querySelector('[name="stem_role"]').value = stem.role || 'other';
+    fragment.querySelector('[name="stem_path"]').value = stem.path || '';
+    fragment.querySelector('[name="stem_enabled"]').value = stem.enabled === false ? 'false' : 'true';
+    document.getElementById('video-stems').appendChild(fragment);
+  }
+
+  function importLegacyMaster(button) {
+    document.getElementById('video-master-path').value = button.dataset.masterPath || '';
+    const result = document.getElementById('master-import-result');
+    result.textContent = 'Legacy master selected. Click Save assets to persist it.';
+    result.className = 'video-import-result ok';
+    button.disabled = true;
+  }
+
+  function uniqueStemId(base, used) {
+    let candidate = base;
+    let suffix = 2;
+    while (used.has(candidate)) {
+      candidate = `${base}-${suffix}`;
+      suffix += 1;
+    }
+    used.add(candidate);
+    return candidate;
+  }
+
+  async function importVideoStems(button) {
+    const directory = document.getElementById('stem-import-directory').value.trim();
+    const result = document.getElementById('stem-import-result');
+    if (!directory) {
+      result.textContent = 'Enter a stem directory path.';
+      result.className = 'video-import-result error';
+      return;
+    }
+    button.disabled = true;
+    result.textContent = 'Scanning stem directory…';
+    result.className = 'video-import-result';
+    try {
+      const response = await fetch(button.dataset.importUrl, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: new URLSearchParams({stem_directory: directory}),
+      });
+      const payload = await response.json();
+      if (!response.ok) {
+        throw new Error(payload.detail || 'Stem import failed.');
+      }
+      const rows = Array.from(document.querySelectorAll('#video-stems tr'));
+      const usedPaths = new Set(rows.map((row) => row.querySelector('[name="stem_path"]').value));
+      const usedIds = new Set(rows.map((row) => row.querySelector('[name="stem_id"]').value));
+      let imported = 0;
+      let skipped = 0;
+      for (const stem of payload.stems) {
+        if (usedPaths.has(stem.path)) {
+          skipped += 1;
+          continue;
+        }
+        stem.id = uniqueStemId(stem.id, usedIds);
+        usedPaths.add(stem.path);
+        addVideoStem(stem);
+        imported += 1;
+      }
+      result.textContent = `Imported ${imported} stem${imported === 1 ? '' : 's'}`
+        + (skipped ? `; skipped ${skipped} already listed.` : '.');
+      result.className = 'video-import-result ok';
+    } catch (error) {
+      result.textContent = error.message || 'Stem import failed.';
+      result.className = 'video-import-result error';
+    } finally {
+      button.disabled = false;
+    }
   }
 </script>
 

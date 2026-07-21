@@ -36,6 +36,17 @@ JOB_KINDS = {
 }
 POLL_SECONDS = 0.2
 CANCEL_GRACE_SECONDS = 5.0
+VIDEO_REQUIRED_MODULES = (
+    "PIL",
+    "cv2",
+    "librosa",
+    "numpy",
+    "pydantic",
+    "scipy",
+    "soundfile",
+    "typer",
+    "yaml",
+)
 
 
 class VideoJobConflict(Exception):
@@ -49,6 +60,55 @@ class VideoJobError(Exception):
 _LOCK = threading.Lock()
 _MONITORS: dict[str, threading.Thread] = {}
 _PROCESSES: dict[str, subprocess.Popen[bytes]] = {}
+
+
+def worker_python(root: Path) -> Path:
+    """Select the isolated interpreter used by renderer child processes."""
+    root = root.absolute()
+    configured = str(os.environ.get("MRP_VIDEO_PYTHON") or "").strip()
+    if configured:
+        candidate = Path(configured).expanduser()
+        if not candidate.is_absolute():
+            candidate = root / candidate
+        return candidate.absolute()
+    candidates = (
+        root / ".venv" / "bin" / "python",
+        root / ".venv" / "Scripts" / "python.exe",
+    )
+    return next(
+        (candidate.absolute() for candidate in candidates if candidate.is_file()),
+        Path(sys.executable).absolute(),
+    )
+
+
+def renderer_environment(root: Path) -> tuple[bool, str]:
+    """Check renderer imports in the same interpreter used by video jobs."""
+    python = worker_python(root)
+    if not python.is_file():
+        return False, f"not found: {python}"
+    probe = (
+        "import importlib.util,sys; "
+        "print(','.join(name for name in sys.argv[1:] "
+        "if importlib.util.find_spec(name) is None))"
+    )
+    try:
+        completed = subprocess.run(
+            [str(python), "-c", probe, *VIDEO_REQUIRED_MODULES],
+            cwd=str(root),
+            capture_output=True,
+            text=True,
+            timeout=10,
+            check=False,
+        )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        return False, f"{python}: {exc}"
+    if completed.returncode != 0:
+        detail = completed.stderr.strip() or f"probe exited {completed.returncode}"
+        return False, f"{python}: {detail}"
+    missing = completed.stdout.strip()
+    if missing:
+        return False, f"missing {missing}; install requirements-video.txt into {python}"
+    return True, str(python)
 
 
 def _now() -> str:
@@ -316,7 +376,7 @@ def launch(
         ) from exc
 
     command = [
-        sys.executable,
+        str(worker_python(repo)),
         "-m",
         "mrp.video.worker",
         kind,

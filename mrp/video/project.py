@@ -17,6 +17,10 @@ from pydantic import (
 )
 
 NonBlankText = Annotated[str, Field(min_length=1)]
+ActorId = Annotated[
+    str,
+    Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+)*$"),
+]
 HexColor = Annotated[str, Field(pattern=r"^#[0-9a-fA-F]{6}$")]
 VisualRole = Literal["master", "drums", "bass", "vocals", "instruments"]
 AudioSignal = Literal[
@@ -260,6 +264,80 @@ class SectionCompositionConfig(ContractModel):
         return self
 
 
+class ActorLibrarySourceConfig(ContractModel):
+    """Provenance for a project-pinned copy of a reusable library actor."""
+
+    actor_id: ActorId
+    revision: Annotated[str, Field(pattern=r"^[0-9a-f]{64}$")]
+
+
+class ActorConfig(ContractModel):
+    """A track actor: pinned visual identity plus its musical character."""
+
+    id: ActorId
+    name: NonBlankText
+    description: str = ""
+    kind: Literal["spirogram"] = "spirogram"
+    character: VisualRole | None = None
+    components: list[VisualLayerConfig] = Field(min_length=1, max_length=12)
+    library_source: ActorLibrarySourceConfig | None = None
+
+    @model_validator(mode="after")
+    def component_ids_are_unique(self) -> "ActorConfig":
+        ids = [component.id for component in self.components]
+        duplicates = sorted(
+            {component_id for component_id in ids if ids.count(component_id) > 1}
+        )
+        if duplicates:
+            joined = ", ".join(duplicates)
+            raise ValueError(f"actor component ids must be unique: {joined}")
+        return self
+
+
+class ActorDirectionConfig(ContractModel):
+    """Scene-specific direction that leaves the actor's identity intact."""
+
+    anchor_x: float | None = Field(default=None, ge=-0.5, le=1.5)
+    anchor_y: float | None = Field(default=None, ge=-0.5, le=1.5)
+    scale: float = Field(default=1, gt=0, le=3)
+    opacity: float = Field(default=1, ge=0, le=1)
+    rotation_offset_degrees_per_second: float = Field(
+        default=0,
+        ge=-180,
+        le=180,
+    )
+    hue_shift_degrees: float = Field(default=0, ge=-360, le=360)
+    depth: Literal["background", "foreground"] | None = None
+    visible: bool = True
+
+
+class ActorAssignmentConfig(ContractModel):
+    id: ActorId
+    actor: ActorId
+    direction: ActorDirectionConfig = Field(default_factory=ActorDirectionConfig)
+
+
+class ActorCastConfig(ContractModel):
+    casting: CastingConfig = Field(default_factory=CastingConfig)
+    actors: list[ActorAssignmentConfig] = Field(min_length=1, max_length=12)
+
+    @model_validator(mode="after")
+    def assignment_ids_are_unique(self) -> "ActorCastConfig":
+        ids = [assignment.id for assignment in self.actors]
+        duplicates = sorted(
+            {assignment_id for assignment_id in ids if ids.count(assignment_id) > 1}
+        )
+        if duplicates:
+            joined = ", ".join(duplicates)
+            raise ValueError(f"actor assignment ids must be unique: {joined}")
+        return self
+
+
+class ActorLibraryDocument(ContractModel):
+    version: Literal[1] = 1
+    actor: ActorConfig
+
+
 def _default_visual_layers() -> list[VisualLayerConfig]:
     return [
         VisualLayerConfig(
@@ -400,6 +478,9 @@ class VisualConfig(ContractModel):
     composition_overrides: dict[NonBlankText, SectionCompositionConfig] = Field(
         default_factory=dict
     )
+    actors: dict[ActorId, ActorConfig] = Field(default_factory=dict)
+    section_casts: dict[NonBlankText, ActorCastConfig] = Field(default_factory=dict)
+    cast_overrides: dict[NonBlankText, ActorCastConfig] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def layer_ids_are_unique(self) -> "VisualConfig":
@@ -428,6 +509,41 @@ class VisualConfig(ContractModel):
         if composition_duplicates:
             joined = ", ".join(composition_duplicates)
             raise ValueError(f"section composition names must be unique: {joined}")
+        actor_mismatches = sorted(
+            key for key, actor in self.actors.items() if key != actor.id
+        )
+        if actor_mismatches:
+            joined = ", ".join(actor_mismatches)
+            raise ValueError(f"actor mapping keys must match actor ids: {joined}")
+        normalized_casts = [key.casefold() for key in self.section_casts]
+        cast_duplicates = sorted(
+            {key for key in normalized_casts if normalized_casts.count(key) > 1}
+        )
+        if cast_duplicates:
+            joined = ", ".join(cast_duplicates)
+            raise ValueError(f"section cast names must be unique: {joined}")
+        assignments = [
+            assignment
+            for cast in (*self.section_casts.values(), *self.cast_overrides.values())
+            for assignment in cast.actors
+        ]
+        missing_actors = sorted(
+            {assignment.actor for assignment in assignments if assignment.actor not in self.actors}
+        )
+        if missing_actors:
+            joined = ", ".join(missing_actors)
+            raise ValueError(f"actor casts reference unknown actors: {joined}")
+        uncastable_actors = sorted(
+            {
+                assignment.actor
+                for assignment in assignments
+                if assignment.actor in self.actors
+                and self.actors[assignment.actor].character is None
+            }
+        )
+        if uncastable_actors:
+            joined = ", ".join(uncastable_actors)
+            raise ValueError(f"cast actors require a track-level character: {joined}")
         return self
 
 

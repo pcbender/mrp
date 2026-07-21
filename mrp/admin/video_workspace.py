@@ -8,10 +8,98 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-from mrp.admin import db
+from mrp.admin import db, video_jobs
 from mrp.admin.workspace import track_units
+from mrp.core.release import slugify
 
 STEM_ROLES = ("drums", "bass", "vocals", "instruments", "other")
+STEM_AUDIO_SUFFIXES = frozenset({".wav", ".mp3", ".flac", ".aif", ".aiff", ".m4a"})
+_ROLE_KEYWORDS = (
+    ("drums", frozenset({"drum", "drums", "percussion", "kick", "snare"})),
+    ("bass", frozenset({"bass"})),
+    ("vocals", frozenset({"vocal", "vocals", "vox", "voice"})),
+    (
+        "instruments",
+        frozenset(
+            {
+                "guitar",
+                "instrumental",
+                "keys",
+                "keyboard",
+                "music",
+                "piano",
+                "strings",
+                "synth",
+            }
+        ),
+    ),
+)
+
+
+class StemImportError(ValueError):
+    """A local stem directory cannot be scanned safely."""
+
+
+def _stem_role(name: str) -> str:
+    words = set(slugify(name).split("-"))
+    return next(
+        (role for role, keywords in _ROLE_KEYWORDS if words & keywords),
+        "other",
+    )
+
+
+def scan_stem_directory(root: Path, value: object) -> list[dict[str, object]]:
+    """Describe supported audio files in one local directory as editable stems."""
+    text = str(value or "").strip()
+    if not text:
+        raise StemImportError("Enter a directory containing stem audio files.")
+    directory = Path(text).expanduser()
+    if not directory.is_absolute():
+        directory = root / directory
+    directory = directory.resolve()
+    if not directory.exists():
+        raise StemImportError(f"Stem directory does not exist: {directory}")
+    if not directory.is_dir():
+        raise StemImportError(f"Stem import path is not a directory: {directory}")
+
+    files = sorted(
+        (
+            path
+            for path in directory.iterdir()
+            if path.is_file() and path.suffix.casefold() in STEM_AUDIO_SUFFIXES
+        ),
+        key=lambda path: (path.name.casefold(), path.name),
+    )
+    if not files:
+        supported = ", ".join(sorted(STEM_AUDIO_SUFFIXES))
+        raise StemImportError(
+            f"No supported audio files found in {directory}. Expected: {supported}."
+        )
+    if len(files) > 100:
+        raise StemImportError(
+            f"Stem directory contains {len(files)} audio files; the import limit is 100."
+        )
+
+    stems: list[dict[str, object]] = []
+    used_ids: set[str] = set()
+    for path in files:
+        base_id = slugify(path.stem)
+        stem_id = base_id
+        suffix = 2
+        while stem_id in used_ids:
+            stem_id = f"{base_id}-{suffix}"
+            suffix += 1
+        used_ids.add(stem_id)
+        stems.append(
+            {
+                "id": stem_id,
+                "label": path.stem,
+                "role": _stem_role(path.stem),
+                "path": str(path.resolve()),
+                "enabled": True,
+            }
+        )
+    return stems
 
 
 def track_key(release: dict[str, Any], track: dict[str, Any]) -> str:
@@ -206,6 +294,8 @@ def validate_assets(
         if not ok:
             errors.append(f"{name}: {detail}")
 
+    renderer_ready, renderer_detail = video_jobs.renderer_environment(root)
+    record("Renderer Python", renderer_ready, renderer_detail)
     ffmpeg = shutil.which("ffmpeg")
     ffprobe = shutil.which("ffprobe")
     record("FFmpeg", bool(ffmpeg), ffmpeg or "not on PATH")

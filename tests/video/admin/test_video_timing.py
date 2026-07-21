@@ -169,6 +169,33 @@ def test_load_timing_reports_confidence_review_and_master_duration(tmp_path: Pat
     }
 
 
+def test_load_timing_exposes_provisional_unmatched_line_for_review(tmp_path: Path):
+    release = _release()
+    path = _write_timing(tmp_path, release)
+    payload = yaml.safe_load(path.read_text(encoding="utf-8"))
+    provisional = payload["sections"][0]["lines"][1]
+    provisional.update(
+        {
+            "start": 3.5,
+            "end": 4.0,
+            "confidence": 0,
+            "status": "unmatched",
+        }
+    )
+    payload["alignment"]["warnings"] = [
+        "verse line 2 received a provisional timing window "
+        "and requires manual review"
+    ]
+    path.write_text(yaml.safe_dump(payload, sort_keys=False), encoding="utf-8")
+
+    timing = load_timing(tmp_path, release, release["tracks"][0])
+
+    assert timing["exists"] is True
+    assert timing["summary"]["unmatched"] == 1
+    assert timing["summary"]["pending_review"] == 1
+    assert timing["document"].sections[0].lines[1].start == 3.5
+
+
 def test_save_timing_atomically_persists_boundaries_and_review(tmp_path: Path):
     release = _release()
     path = _write_timing(tmp_path, release)
@@ -222,6 +249,50 @@ def test_timing_route_marks_only_selected_track_timed(tmp_path: Path, monkeypatc
     assert saved["tracks"][1] == untouched
 
 
+def test_timing_route_rejection_does_not_partially_persist_timing(
+    tmp_path: Path,
+    monkeypatch,
+):
+    db.init(tmp_path / "admin.db")
+    release = _release()
+    release["tracks"][0]["music_video"]["status"] = "draft"
+    release_path = tmp_path / "content" / "releases" / "video-contract.yaml"
+    release_path.parent.mkdir(parents=True)
+    release_path.write_text(
+        yaml.safe_dump({"release": release}, sort_keys=False),
+        encoding="utf-8",
+    )
+    timing_path = _write_timing(tmp_path, release)
+    before = timing_path.read_text(encoding="utf-8")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+    monkeypatch.setattr(
+        video_routes,
+        "validate_release_dict",
+        lambda _data: [
+            {
+                "field": "release.song.music_video.status",
+                "message": "test rejection",
+                "severity": "error",
+            }
+        ],
+    )
+
+    response = asyncio.run(
+        video_routes.video_timing_save(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/timing",
+                _form_fields(_fields()),
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.status_code == 422
+    assert "test rejection" in response.body.decode()
+    assert timing_path.read_text(encoding="utf-8") == before
+
+
 def test_timing_page_renders_scrubbing_boundaries_and_no_structure_cues(tmp_path: Path, monkeypatch):
     db.init(tmp_path / "admin.db")
     release = _release()
@@ -232,7 +303,15 @@ def test_timing_page_renders_scrubbing_boundaries_and_no_structure_cues(tmp_path
     path = tmp_path / "content" / "releases" / "video-contract.yaml"
     path.parent.mkdir(parents=True)
     path.write_text(yaml.safe_dump({"release": release}, sort_keys=False), encoding="utf-8")
-    _write_timing(tmp_path, release)
+    timing_path = _write_timing(tmp_path, release)
+    timing_payload = yaml.safe_load(timing_path.read_text(encoding="utf-8"))
+    timing_payload["sections"][0]["lines"][0]["end"] = 1.590567
+    timing_payload["sections"][0]["lines"][1]["start"] = 1.590567
+    timing_payload["sections"][0]["lines"][1]["reviewed"] = True
+    timing_path.write_text(
+        yaml.safe_dump(timing_payload, sort_keys=False),
+        encoding="utf-8",
+    )
     monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
 
     response = asyncio.run(
@@ -253,6 +332,11 @@ def test_timing_page_renders_scrubbing_boundaries_and_no_structure_cues(tmp_path
     assert "Use playhead" in body
     assert "Needs attention" in body
     assert "52.0%" in body
+    assert 'timing-status-manual">manual' in body
+    assert 'step="0.001" value="1.591"' in body
+    assert "1.590567" not in body
+    assert "htmx:beforeSwap" in body
+    assert "event.detail.shouldSwap = true" in body
     assert "[Verse]" not in body
 
 

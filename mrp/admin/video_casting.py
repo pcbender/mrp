@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import math
 import os
+import re
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
@@ -83,7 +85,7 @@ def _read_mapping(path: Path) -> dict[str, Any]:
 
 
 def _load_project(path: Path):
-    from mrp.video.workspace import TrackProjectDocument
+    from mrp.video.track_project import TrackProjectDocument
 
     if not path.is_file():
         raise CastingEditorError("video project does not exist; run prepare first")
@@ -117,6 +119,117 @@ def _casefold_item(values: Mapping[str, Any], key: str) -> tuple[str, Any] | Non
     return next(
         ((name, value) for name, value in values.items() if name.casefold() == folded),
         None,
+    )
+
+
+def actor_library_path(root: Path) -> Path:
+    return root / "assets" / "source" / "video" / "actors"
+
+
+def _actor_revision(actor: Any) -> str:
+    payload = actor.model_dump(mode="json", exclude_none=True)
+    payload.pop("library_source", None)
+    payload.pop("character", None)
+    encoded = json.dumps(
+        payload,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _library_actors(root: Path) -> list[dict[str, Any]]:
+    from mrp.video.project import ActorLibraryDocument
+
+    library = actor_library_path(root)
+    if not library.is_dir():
+        return []
+    actors = []
+    for path in sorted(library.glob("*.yaml")):
+        try:
+            document = ActorLibraryDocument.model_validate(_read_mapping(path))
+        except CastingEditorError:
+            raise
+        except ValidationError as exc:
+            raise CastingEditorError(
+                *[f"actor library {path.name}: {problem}" for problem in _validation_problems(exc)]
+            ) from exc
+        actor = document.actor
+        actors.append(
+            {
+                "actor": actor,
+                "id": actor.id,
+                "name": actor.name,
+                "description": actor.description,
+                "revision": _actor_revision(actor),
+                "path": path.relative_to(root).as_posix(),
+            }
+        )
+    return actors
+
+
+def _write_library_actor(root: Path, actor: Any) -> dict[str, Any]:
+    from mrp.video.project import ActorLibraryDocument
+
+    clean_actor = actor.model_copy(
+        update={"character": None, "library_source": None}
+    )
+    document = ActorLibraryDocument(actor=clean_actor)
+    directory = actor_library_path(root)
+    directory.mkdir(parents=True, exist_ok=True)
+    path = directory / f"{clean_actor.id}.yaml"
+    _write_yaml_atomic(
+        path,
+        document.model_dump(mode="json", exclude_none=True),
+    )
+    return {
+        "actor": clean_actor,
+        "id": clean_actor.id,
+        "name": clean_actor.name,
+        "description": clean_actor.description,
+        "revision": _actor_revision(clean_actor),
+        "path": path.relative_to(root).as_posix(),
+    }
+
+
+def _actor_cast_for_scope(project: Any, section: Any, scope: str):
+    visuals = project.visuals
+    if scope == "section":
+        override = visuals.cast_overrides.get(section.id)
+        if override is not None:
+            return override.model_copy(deep=True), "exact scene actor cast"
+    configured = _casefold_item(visuals.section_casts, section.type)
+    if configured is not None:
+        name, cast = configured
+        return cast.model_copy(deep=True), f"actor cast for all {name} scenes"
+    return None, "no actor cast"
+
+
+def _slug(value: str, *, fallback: str = "actor") -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-")
+    return slug or fallback
+
+
+def _unique_actor_id(actors: Mapping[str, Any], preferred: str) -> str:
+    candidate = _slug(preferred)
+    if candidate not in actors:
+        return candidate
+    index = 2
+    while f"{candidate}-{index}" in actors:
+        index += 1
+    return f"{candidate}-{index}"
+
+
+def _actor_from_trace(trace: Any, actor_id: str | None = None):
+    from mrp.video.project import ActorConfig
+
+    identifier = actor_id or _slug(trace.id)
+    component = trace.model_copy(update={"id": "shape"})
+    return ActorConfig(
+        id=identifier,
+        name=trace.id.replace("-", " ").title(),
+        character=trace.role,
+        components=[component],
     )
 
 
@@ -208,6 +321,7 @@ def load_casting(
     *,
     section_id: str | None = None,
     scope: str = "type",
+    actor_id: str | None = None,
 ) -> dict[str, Any]:
     """Load one track's versioned casting project and resolved section scenes."""
     from mrp.video.casting import resolve_section_composition
@@ -222,6 +336,37 @@ def load_casting(
         (section for section in lyrics.sections if section.id == section_id),
         lyrics.sections[0],
     )
+    library_actors = _library_actors(root)
+    library_by_id = {entry["id"]: entry for entry in library_actors}
+    project_actors = []
+    for actor in sorted(document.project.visuals.actors.values(), key=lambda item: item.name.casefold()):
+        source = actor.library_source
+        library_entry = library_by_id.get(source.actor_id) if source is not None else None
+        project_actors.append(
+            {
+                "actor": actor,
+                "id": actor.id,
+                "name": actor.name,
+                "description": actor.description,
+                "component_count": len(actor.components),
+                "source": "library snapshot" if source is not None else "project actor",
+                "library_status": (
+                    "current"
+                    if source is not None
+                    and library_entry is not None
+                    and _actor_revision(actor) == source.revision
+                    and source.revision == library_entry["revision"]
+                    else "modified"
+                    if source is not None
+                    and _actor_revision(actor) != source.revision
+                    else "updated"
+                    if source is not None and library_entry is not None
+                    else "unavailable"
+                    if source is not None
+                    else None
+                ),
+            }
+        )
     sections = []
     for section in lyrics.sections:
         resolved = resolve_section_composition(
@@ -240,14 +385,48 @@ def load_casting(
                 "midpoint": round(section.start + (section.end - section.start) / 2, 6),
                 "composition_key": resolved.key,
                 "trace_count": len(resolved.composition.traces),
+                "actor_count": (
+                    len(document.project.visuals.cast_overrides[section.id].actors)
+                    if section.id in document.project.visuals.cast_overrides
+                    else len(_casefold_item(document.project.visuals.section_casts, section.type)[1].actors)
+                    if _casefold_item(document.project.visuals.section_casts, section.type) is not None
+                    else 0
+                ),
                 "overridden": section.id in document.project.visuals.composition_overrides,
+                "actor_overridden": section.id in document.project.visuals.cast_overrides,
             }
         )
-    composition, composition_source = _selected_composition(
+    actor_cast, actor_cast_source = _actor_cast_for_scope(
         document.project,
         selected,
         scope,
     )
+    if actor_cast is not None:
+        from mrp.video.casting import compile_actor_cast
+
+        composition = compile_actor_cast(document.project.visuals, actor_cast)
+        composition_source = actor_cast_source
+    else:
+        composition, composition_source = _selected_composition(
+            document.project,
+            selected,
+            scope,
+        )
+    new_actor_requested = actor_id == "__new__"
+    selected_actor = (
+        None
+        if new_actor_requested
+        else document.project.visuals.actors.get(actor_id or "")
+    )
+    selected_actor_saved = selected_actor is not None
+    if selected_actor is None and project_actors and not new_actor_requested:
+        selected_actor = project_actors[0]["actor"]
+        selected_actor_saved = True
+    if selected_actor is None:
+        selected_actor = _actor_from_trace(
+            composition.traces[0],
+            _unique_actor_id(document.project.visuals.actors, "new-actor"),
+        )
     style = _selected_style(document.project, selected, scope)
     return {
         "path": path.relative_to(root).as_posix(),
@@ -258,6 +437,12 @@ def load_casting(
         "scope": scope,
         "composition": composition,
         "composition_source": composition_source,
+        "actor_cast": actor_cast,
+        "actor_cast_source": actor_cast_source,
+        "project_actors": project_actors,
+        "library_actors": library_actors,
+        "selected_actor": selected_actor,
+        "selected_actor_saved": selected_actor_saved,
         "style": style,
         "presets": preset_catalog(),
         "gallery": _gallery(root, release, track),
@@ -385,6 +570,113 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
     return traces
 
 
+def _actor_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
+    actor_id = _slug(_single(fields, "actor_edit_id"))
+    name = _single(fields, "actor_name")
+    if not name:
+        raise CastingEditorError("actor name is required")
+    return {
+        "id": actor_id,
+        "name": name,
+        "description": _single(fields, "actor_description", default=""),
+        "kind": "spirogram",
+        "character": _single(fields, "actor_character"),
+        "components": _trace_payloads(fields),
+    }
+
+
+def _actor_assignment_payloads(
+    fields: Mapping[str, Sequence[str]],
+) -> list[dict[str, Any]]:
+    ids = [str(value).strip() for value in fields.get("assignment_id", [])]
+    if not ids:
+        raise CastingEditorError("a scene cast requires at least one actor")
+    count = len(ids)
+    names = (
+        "assigned_actor",
+        "direction_anchor_x",
+        "direction_anchor_y",
+        "direction_scale",
+        "direction_opacity",
+        "direction_rotation",
+        "direction_hue",
+        "direction_depth",
+        "direction_visible",
+    )
+    columns = {name: _repeated(fields, name, count) for name in names}
+    assignments = []
+    for index, assignment_id in enumerate(ids):
+        direction: dict[str, Any] = {
+            "scale": _number(columns["direction_scale"][index], f"actor {assignment_id} scale"),
+            "opacity": _number(columns["direction_opacity"][index], f"actor {assignment_id} opacity"),
+            "rotation_offset_degrees_per_second": _number(
+                columns["direction_rotation"][index],
+                f"actor {assignment_id} rotation",
+            ),
+            "hue_shift_degrees": _number(
+                columns["direction_hue"][index],
+                f"actor {assignment_id} hue shift",
+            ),
+            "visible": columns["direction_visible"][index].casefold()
+            in {"1", "true", "yes", "on"},
+        }
+        for field, key in (
+            ("direction_anchor_x", "anchor_x"),
+            ("direction_anchor_y", "anchor_y"),
+        ):
+            value = columns[field][index]
+            if value:
+                direction[key] = _number(value, f"actor {assignment_id} {key}")
+        depth = columns["direction_depth"][index]
+        if depth:
+            direction["depth"] = depth
+        assignments.append(
+            {
+                "id": _slug(assignment_id, fallback=f"actor-{index + 1}"),
+                "actor": columns["assigned_actor"][index],
+                "direction": direction,
+            }
+        )
+    return assignments
+
+
+def _materialize_actor_cast(
+    visuals: dict[str, Any],
+    composition: Any,
+) -> dict[str, Any]:
+    from mrp.video.project import ActorConfig
+
+    actors = visuals.setdefault("actors", {})
+    assignments = []
+    for index, trace in enumerate(composition.traces, start=1):
+        actor_id = _unique_actor_id(actors, trace.id)
+        actor = _actor_from_trace(trace, actor_id)
+        actor = ActorConfig.model_validate(actor)
+        actors[actor.id] = actor.model_dump(mode="json", exclude_none=True)
+        assignments.append(
+            {
+                "id": _unique_actor_id(
+                    {item["id"]: item for item in assignments},
+                    f"{actor.id}-appearance",
+                ),
+                "actor": actor.id,
+                "direction": {},
+            }
+        )
+    return {
+        "casting": composition.casting.model_dump(mode="json", exclude_none=True),
+        "actors": assignments,
+    }
+
+
+def _actor_is_cast(visuals: Mapping[str, Any], actor_id: str) -> bool:
+    for field in ("section_casts", "cast_overrides"):
+        for cast in (visuals.get(field) or {}).values():
+            if any(item.get("actor") == actor_id for item in cast.get("actors") or []):
+                return True
+    return False
+
+
 def _style_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
     style: dict[str, Any] = {}
     roles = [str(value).strip() for value in fields.get("style_visible_roles", [])]
@@ -427,6 +719,101 @@ def _invalidate_preflight(path: Path) -> None:
         temporary.unlink(missing_ok=True)
 
 
+def save_track_actor(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    fields: Mapping[str, Sequence[str]],
+) -> str | None:
+    """Save one track-level actor operation without any scene dependency."""
+    from mrp.video.project import ActorConfig
+    from mrp.video.track_project import TrackProjectDocument
+
+    path = project_path(root, release, track)
+    document = _load_project(path)
+    payload = document.model_dump(mode="json", exclude_none=True)
+    visuals = payload["project"]["visuals"]
+    actors = visuals.setdefault("actors", {})
+    action = _single(fields, "action")
+    selected_actor_id: str | None = None
+    library_actor = None
+
+    if action in {"actor_save", "actor_publish"}:
+        actor_payload = _actor_payload(fields)
+        original_id = _single(fields, "actor_original_id", default="")
+        if original_id and original_id != actor_payload["id"]:
+            raise CastingEditorError(
+                "a saved actor id cannot be renamed; duplicate it instead"
+            )
+        existing_actor = actors.get(actor_payload["id"])
+        if existing_actor and existing_actor.get("library_source"):
+            actor_payload["library_source"] = existing_actor["library_source"]
+        try:
+            actor = ActorConfig.model_validate(actor_payload)
+        except ValidationError as exc:
+            raise CastingEditorError(*_validation_problems(exc)) from exc
+        actors[actor.id] = actor.model_dump(mode="json", exclude_none=True)
+        selected_actor_id = actor.id
+        if action == "actor_publish":
+            library_actor = actor
+    elif action == "actor_duplicate":
+        source_id = _single(fields, "actor_original_id")
+        source = document.project.visuals.actors.get(source_id)
+        if source is None:
+            raise CastingEditorError(f"actor does not exist: {source_id}")
+        duplicate_id = _unique_actor_id(actors, f"{source.id}-copy")
+        duplicate = ActorConfig.model_validate(
+            source.model_dump(mode="json", exclude={"library_source"})
+            | {"id": duplicate_id, "name": f"{source.name} Copy"}
+        )
+        actors[duplicate.id] = duplicate.model_dump(mode="json", exclude_none=True)
+        selected_actor_id = duplicate.id
+    elif action == "actor_delete":
+        actor_id = _single(fields, "actor_original_id")
+        if _actor_is_cast(visuals, actor_id):
+            raise CastingEditorError(
+                "remove this actor from every scene cast before deleting it"
+            )
+        if actors.pop(actor_id, None) is None:
+            raise CastingEditorError(f"actor does not exist: {actor_id}")
+    elif action == "actor_import":
+        library_id = _single(fields, "library_actor_id")
+        library_entry = next(
+            (entry for entry in _library_actors(root) if entry["id"] == library_id),
+            None,
+        )
+        if library_entry is None:
+            raise CastingEditorError(f"library actor does not exist: {library_id}")
+        imported_payload = library_entry["actor"].model_dump(
+            mode="json",
+            exclude_none=True,
+        )
+        imported_payload["character"] = _single(
+            fields,
+            "actor_character",
+            default=library_entry["actor"].components[0].role,
+        )
+        imported_payload["library_source"] = {
+            "actor_id": library_entry["id"],
+            "revision": library_entry["revision"],
+        }
+        imported = ActorConfig.model_validate(imported_payload)
+        actors[imported.id] = imported.model_dump(mode="json", exclude_none=True)
+        selected_actor_id = imported.id
+    else:
+        raise CastingEditorError(f"unsupported actor action: {action}")
+
+    try:
+        updated = TrackProjectDocument.model_validate(payload)
+    except ValidationError as exc:
+        raise CastingEditorError(*_validation_problems(exc)) from exc
+    _write_yaml_atomic(path, updated.model_dump(mode="json", exclude_none=True))
+    if library_actor is not None:
+        _write_library_actor(root, library_actor)
+    _invalidate_preflight(_preflight_path(root, release, track))
+    return selected_actor_id
+
+
 def save_casting(
     root: Path,
     release: dict[str, Any],
@@ -435,7 +822,7 @@ def save_casting(
 ) -> dict[str, Any]:
     """Validate and atomically replace one track's versioned casting project."""
     from mrp.video.casting import generate_auto_composition
-    from mrp.video.workspace import TrackProjectDocument
+    from mrp.video.track_project import TrackProjectDocument
 
     path = project_path(root, release, track)
     document = _load_project(path)
@@ -448,8 +835,16 @@ def save_casting(
     scope = _single(fields, "scope")
     if scope not in {"type", "section"}:
         raise CastingEditorError("casting scope must be type or section")
-    action = _single(fields, "action", default="save")
-    if action not in {"save", "auto", "clear"}:
+    action = _single(fields, "action", default="save_cast")
+    supported_actions = {
+        "save",
+        "auto",
+        "clear",
+        "save_cast",
+        "recommended",
+        "adopt",
+    }
+    if action not in supported_actions:
         raise CastingEditorError(f"unsupported casting action: {action}")
 
     payload = document.model_dump(mode="json", exclude_none=True)
@@ -474,16 +869,44 @@ def save_casting(
     visuals["auto_casting"] = auto_casting.casefold() in {"1", "true", "yes", "on"}
 
     composition_field = "section_compositions" if scope == "type" else "composition_overrides"
+    actor_cast_field = "section_casts" if scope == "type" else "cast_overrides"
     style_field = "section_styles" if scope == "type" else "section_overrides"
     target = section.type if scope == "type" else section.id
     compositions = visuals.setdefault(composition_field, {})
+    actor_casts = visuals.setdefault(actor_cast_field, {})
     styles = visuals.setdefault(style_field, {})
     existing = _casefold_item(compositions, target) if scope == "type" else None
     existing_key = existing[0] if existing is not None else target
+    existing_actor_cast = _casefold_item(actor_casts, target) if scope == "type" else None
+    existing_actor_cast_key = (
+        existing_actor_cast[0] if existing_actor_cast is not None else target
+    )
     existing_style = _casefold_item(styles, target) if scope == "type" else None
     existing_style_key = existing_style[0] if existing_style is not None else target
-
-    if action == "clear":
+    if action in {"recommended", "adopt"}:
+        composition = (
+            generate_auto_composition(section.type, document.project.video.seed)
+            if action == "recommended"
+            else _selected_composition(document.project, section, scope)[0]
+        )
+        actor_casts.pop(existing_actor_cast_key, None)
+        actor_casts[target] = _materialize_actor_cast(visuals, composition)
+    elif action == "save_cast":
+        actor_casts.pop(existing_actor_cast_key, None)
+        actor_casts[target] = {
+            "casting": {
+                "source": "manual",
+                "seed": document.project.video.seed,
+                "generator_version": 1,
+            },
+            "actors": _actor_assignment_payloads(fields),
+        }
+        style = _style_payload(fields)
+        styles.pop(existing_style_key, None)
+        if style:
+            styles[target] = style
+    elif action == "clear":
+        actor_casts.pop(existing_actor_cast_key, None)
         compositions.pop(existing_key, None)
         styles.pop(existing_style_key, None)
     else:

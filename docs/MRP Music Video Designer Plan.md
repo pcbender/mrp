@@ -147,14 +147,18 @@ Use a stable track key: `{artist_id}--{track_slug}`.
 Versioned source:
 
 ```text
+assets/source/video/actors/{actor-id}.yaml
 assets/source/video/{track-key}/project.yaml
 assets/source/video/{track-key}/lyrics.aligned.yaml
 ```
 
-The project stores reviewed timing, section identities, cast settings, visual
-presets, card settings, renderer contract version, and the source renderer
-revision used during the transplant. These files participate in MRP's Changes
-review and Git history.
+The global actor library stores reusable visual identities. Importing a library
+actor into a project creates a complete pinned snapshot with the library actor
+ID and content revision as provenance; later library edits cannot silently
+change an approved project. The project stores those actor snapshots, scene
+assignments and direction, reviewed timing, visual presets, card settings,
+renderer contract version, and the source renderer revision used during the
+transplant. These files participate in MRP's Changes review and Git history.
 
 Generated and ignored:
 
@@ -555,6 +559,43 @@ an exact-section cast from YAML and proves repeated frame pixels are identical.
 
 Exit: the user can cast substantially different scene geometry per section and
 reproduce the same frame from the saved project.
+
+#### Actor-first casting revision
+
+Status 2026-07-21: implemented on `feat/music-video-designer-plan`. The first
+casting editor exposed renderer traces directly and therefore mixed visual
+identity design, scene casting, and scene direction in one large form. The
+authoring contract is now additive and separates those decisions:
+
+- The global library holds named, reusable visual identities containing one or
+  more spirogram components. Component topology, color, material, and base
+  behavior belong to the identity.
+- The repository-wide actor library stores reusable definitions under
+  `assets/source/video/actors/`. Import creates a full track-project snapshot
+  plus a source revision, so library updates are explicit rather than action at
+  a distance. The track actor then receives one musical character such as bass,
+  drums, or vocals. That “reacts to” assignment is stable across the track.
+- A scene cast assigns project actors to a section type or an exact section.
+  Direction controls only the actor's performance in that scene: position,
+  scale, opacity, visibility, layer, hue, and additional rotation. It cannot
+  change the actor's track-level musical character.
+- The renderer still consumes `SectionCompositionConfig`. Actor casts compile
+  deterministically into the established trace contract before frame rendering,
+  preserving renderer isolation and deterministic output.
+- Projects containing only the original embedded `section_compositions` and
+  `composition_overrides` remain valid. Actor casts take precedence when
+  present, then resolution falls through the original exact, type, automatic,
+  and global-layer paths.
+
+The admin page presents Actor Library and Actor Designer as track-level
+surfaces above the scene workspace. Actor mutations use a separate track route
+and do not read or alter the selected section. Scene selection and type/exact
+scope apply only to Scene Casting. The page includes a live spirogram identity
+preview, recommended/adopt-current onboarding, project snapshots,
+global-library publish/import, repeated-section inheritance, exact-scene
+direction, and the existing private frame/contact-sheet jobs. Advanced
+component and whole-scene controls remain available without dominating the
+normal casting workflow.
 
 ### Milestone 7: Draft and full rendering
 

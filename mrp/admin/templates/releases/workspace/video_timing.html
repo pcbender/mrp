@@ -42,8 +42,8 @@
     <div class="timing-summary">
       <strong>{{ summary.sections }} sections · {{ summary.lines }} lyric cues</strong>
       <span class="badge badge-live">{{ summary.matched }} matched</span>
-      <span class="badge badge-draft">{{ summary.uncertain }} uncertain</span>
-      <span class="badge badge-failed">{{ summary.unmatched }} unmatched</span>
+      <span class="badge badge-draft">{{ summary.uncertain }} uncertain by aligner</span>
+      <span class="badge badge-failed">{{ summary.unmatched }} unmatched by aligner</span>
       <span class="badge badge-{{ 'live' if summary.review_complete else 'failed' }}">
         {{ summary.pending_review }} need review
       </span>
@@ -95,13 +95,13 @@
         <input type="hidden" name="section_id" value="{{ section.id }}">
         <label>start
           <input id="section-{{ section_index }}-start" type="number" name="section_start"
-                 min="0" step="0.001" value="{{ '%.6f' | format(section.start) }}" required>
+                 min="0" step="0.001" value="{{ '%.3f' | format(section.start) }}" required>
         </label>
         <button type="button" class="btn btn-secondary btn-sm" onclick="timingSet('section-{{ section_index }}-start')">Use playhead</button>
         <button type="button" class="btn btn-secondary btn-sm" onclick="timingSeek('section-{{ section_index }}-start')">Seek</button>
         <label>end
           <input id="section-{{ section_index }}-end" type="number" name="section_end"
-                 min="0.001" step="0.001" value="{{ '%.6f' | format(section.end) }}" required>
+                 min="0.001" step="0.001" value="{{ '%.3f' | format(section.end) }}" required>
         </label>
         <button type="button" class="btn btn-secondary btn-sm" onclick="timingSet('section-{{ section_index }}-end')">Use playhead</button>
         <button type="button" class="btn btn-secondary btn-sm" onclick="timingPreview('section-{{ section_index }}-start', 'section-{{ section_index }}-end')">Preview</button>
@@ -121,19 +121,20 @@
         <tbody>
           {% for line in section.lines %}
           {% set line_index = loop.index0 %}
+          {% set display_status = 'manual' if line.reviewed is true and line.status in ['uncertain', 'unmatched'] else line.status or 'manual' %}
           <tr class="{{ 'timing-needs-review' if line.status in ['uncertain', 'unmatched'] and line.reviewed is not true else '' }}">
             <td class="timing-lyric">{{ line.text }}</td>
-            <td><span class="timing-status timing-status-{{ line.status or 'manual' }}">{{ line.status or 'manual' }}</span></td>
+            <td><span class="timing-status timing-status-{{ display_status }}">{{ display_status }}</span></td>
             <td class="td-mono">{% if line.confidence is not none %}{{ '%.1f' | format(line.confidence * 100) }}%{% else %}—{% endif %}</td>
             <td>
               <input type="hidden" name="line_key" value="{{ section.id }}:{{ line_index }}">
               <input id="line-{{ section_index }}-{{ line_index }}-start" type="number" name="line_start"
-                     min="0" step="0.001" value="{{ '%.6f' | format(line.start) }}" required>
+                     min="0" step="0.001" value="{{ '%.3f' | format(line.start) }}" required>
               <button type="button" class="timing-playhead-button" onclick="timingSet('line-{{ section_index }}-{{ line_index }}-start')" title="Use playhead">●</button>
             </td>
             <td>
               <input id="line-{{ section_index }}-{{ line_index }}-end" type="number" name="line_end"
-                     min="0.001" step="0.001" value="{{ '%.6f' | format(line.end) }}" required>
+                     min="0.001" step="0.001" value="{{ '%.3f' | format(line.end) }}" required>
               <button type="button" class="timing-playhead-button" onclick="timingSet('line-{{ section_index }}-{{ line_index }}-end')" title="Use playhead">●</button>
             </td>
             <td>
@@ -208,6 +209,12 @@ function timingReviewFlagged() {
     }
   });
 }
+document.body.addEventListener('htmx:beforeSwap', (event) => {
+  if (event.detail.target?.id === 'timing-result' && event.detail.xhr.status === 422) {
+    event.detail.shouldSwap = true;
+    event.detail.isError = false;
+  }
+});
 </script>
 {% endif %}
 {% endblock %}

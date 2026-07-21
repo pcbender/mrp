@@ -386,20 +386,66 @@ def _apply_energy_tails(
         )
 
 
-def _bound_line_transitions(drafts: list[_LineDraft]) -> None:
+def _provisional_window_seconds(draft: _LineDraft) -> float:
+    return min(4.0, max(0.5, draft.token_count * 0.6))
+
+
+def _bound_line_transitions(
+    drafts: list[_LineDraft],
+    duration: float,
+) -> tuple[_LineDraft, ...]:
+    """Prevent overlap and retain collapsed cues as editable manual fallbacks."""
     for current, following in zip(drafts, drafts[1:], strict=False):
         if current.end is None or following.start is None:
             raise SpirophonicAlignmentError(
                 "internal error: unresolved lyric timing"
             )
         current.end = min(current.end, following.start)
-    for draft in drafts:
-        if draft.start is None or draft.end is None or draft.end <= draft.start:
+
+    repaired: list[_LineDraft] = []
+    for index, draft in enumerate(drafts):
+        if draft.start is None or draft.end is None:
+            raise SpirophonicAlignmentError("internal error: unresolved lyric timing")
+        if draft.end > draft.start:
+            continue
+        anchor = min(duration, max(0.0, draft.start))
+        previous_end = drafts[index - 1].end if index else 0.0
+        if previous_end is None:
+            raise SpirophonicAlignmentError("internal error: unresolved lyric timing")
+        target = _provisional_window_seconds(draft)
+        left_available = anchor - previous_end
+        if left_available > 0:
+            draft.start = anchor - min(target, left_available)
+            draft.end = anchor
+        else:
+            following = drafts[index + 1] if index + 1 < len(drafts) else None
+            right_limit = following.end if following is not None else duration
+            if right_limit is None:
+                raise SpirophonicAlignmentError(
+                    "internal error: unresolved lyric timing"
+                )
+            right_available = right_limit - anchor
+            if right_available <= 0:
+                raise SpirophonicAlignmentError(
+                    "recognized lyric timing has no editable fallback window near "
+                    f"section {draft.section_index + 1}, "
+                    f"line {draft.line_index + 1}"
+                )
+            width = min(target, right_available)
+            if following is not None:
+                width = min(width, right_available / 2)
+                following.start = anchor + width
+            draft.start = anchor
+            draft.end = anchor + width
+        if draft.end <= draft.start:
             raise SpirophonicAlignmentError(
-                "recognized lyric timing has no positive line window near "
-                f"section {draft.section_index + 1}, line {draft.line_index + 1}; "
-                "manual timing is required"
+                "recognized lyric timing has no editable fallback window near "
+                f"section {draft.section_index + 1}, line {draft.line_index + 1}"
             )
+        draft.confidence = 0
+        draft.status = "unmatched"
+        repaired.append(draft)
+    return tuple(repaired)
 
 
 def _build_sections(
@@ -519,11 +565,19 @@ def align_lyrics_document(
         vocal_timeline,
         frame_seconds,
     )
-    _bound_line_transitions(drafts)
+    provisional = _bound_line_transitions(drafts, duration)
     sections = _build_sections(lyrics, drafts, duration)
+    provisional_ids = {id(draft) for draft in provisional}
     warnings = tuple(
-        f"{lyrics.sections[draft.section_index].id} line {draft.line_index + 1} "
-        f"is {draft.status} (confidence {draft.confidence:.3f})"
+        (
+            f"{lyrics.sections[draft.section_index].id} line "
+            f"{draft.line_index + 1} received a provisional "
+            f"{draft.end - draft.start:.3f}s timing window and requires manual review"
+            if id(draft) in provisional_ids
+            else f"{lyrics.sections[draft.section_index].id} line "
+            f"{draft.line_index + 1} is {draft.status} "
+            f"(confidence {draft.confidence:.3f})"
+        )
         for draft in drafts
         if draft.status != "matched"
     )

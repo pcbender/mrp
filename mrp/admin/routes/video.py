@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 from fastapi import APIRouter, Request
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 
 from mrp.admin import db, video_jobs
@@ -15,6 +15,7 @@ from mrp.admin.video_casting import (
     load_casting,
     previews_path,
     save_casting,
+    save_track_actor,
 )
 from mrp.admin.video_rendering import (
     VideoRenderingError,
@@ -32,10 +33,17 @@ from mrp.admin.video_publication import (
     public_media_available,
     record_opt_in,
 )
-from mrp.admin.video_timing import TimingEditorError, load_timing, save_timing
+from mrp.admin.video_timing import (
+    TimingEditorError,
+    load_timing,
+    persist_timing,
+    validate_timing,
+)
 from mrp.admin.video_workspace import (
     STEM_ROLES,
+    StemImportError,
     resolve_asset,
+    scan_stem_directory,
     track_key,
     validate_assets,
     video_track_rows,
@@ -256,7 +264,7 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
     )
     fields = {name: form.getlist(name) for name in field_names}
     try:
-        result = save_timing(root, release, unit["track"], fields)
+        result = validate_timing(root, release, unit["track"], fields)
     except TimingEditorError as exc:
         errors = [
             {"field": "timing", "message": problem, "severity": "error"}
@@ -288,6 +296,7 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
             {"errors": errors},
             status_code=422,
         )
+    persist_timing(root, release, unit["track"], result["document"])
     path.write_text(serialize_structured_record(path, data), encoding="utf-8")
     response = HTMLResponse(
         '<div class="flash flash-ok">Timing and review state saved.</div>'
@@ -308,6 +317,7 @@ async def video_casting(
     track_slug: str,
     section: str | None = None,
     scope: str = "type",
+    actor: str | None = None,
 ):
     root = get_repo_root()
     ctx = _context(root, slug)
@@ -325,6 +335,7 @@ async def video_casting(
             unit["track"],
             section_id=section,
             scope=scope,
+            actor_id=actor,
         )
     except CastingEditorError as exc:
         casting = None
@@ -344,6 +355,50 @@ async def video_casting(
         }
     )
     return _templates.TemplateResponse(request, "releases/workspace/video_casting.html", ctx)
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/actors",
+    response_class=HTMLResponse,
+)
+async def video_actor_save(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.is_file():
+        return _not_found(track_slug)
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    unit = _unit(release, track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    form = await request.form()
+    fields = {str(name): form.getlist(name) for name in form.keys()}
+    try:
+        actor_id = save_track_actor(root, release, unit["track"], fields)
+    except CastingEditorError as exc:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {
+                "errors": [
+                    {"field": "actor", "message": problem, "severity": "error"}
+                    for problem in exc.problems
+                ]
+            },
+            status_code=422,
+        )
+    section = str(form.get("return_section") or "")
+    scope = str(form.get("return_scope") or "type")
+    query = f"?scope={scope}"
+    if section:
+        query += f"&section={section}"
+    if actor_id:
+        query += f"&actor={actor_id}"
+    response = HTMLResponse('<div class="flash flash-ok">Track actor saved.</div>')
+    response.headers["HX-Redirect"] = (
+        f"/releases/{slug}/tracks/{track_slug}/video/casting{query}"
+    )
+    return response
 
 
 @router.post(
@@ -750,7 +805,26 @@ async def video_render_visibility(request: Request, slug: str, track_slug: str):
     return response
 
 
-@router.post("/releases/{slug}/tracks/{track_slug}/video/assets", response_class=HTMLResponse)
+@router.post("/releases/{slug}/tracks/{track_slug}/video/stems/import")
+async def video_stems_import(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return JSONResponse({"detail": f"Release not found: {slug}"}, status_code=404)
+    if _unit(ctx["release"], track_slug) is None:
+        return JSONResponse({"detail": f"Track not found: {track_slug}"}, status_code=404)
+    form = await request.form()
+    try:
+        stems = scan_stem_directory(root, form.get("stem_directory"))
+    except (OSError, StemImportError) as exc:
+        return JSONResponse({"detail": str(exc)}, status_code=422)
+    return JSONResponse({"count": len(stems), "stems": stems})
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/assets",
+    response_class=HTMLResponse,
+)
 async def video_assets_save(request: Request, slug: str, track_slug: str):
     root = get_repo_root()
     path = _release_path(root, slug)
