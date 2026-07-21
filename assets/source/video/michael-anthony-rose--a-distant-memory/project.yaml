@@ -193,3 +193,626 @@ project:
     auto_casting: true
     section_compositions: {}
     composition_overrides: {}
+    actors:
+      bassman:
+        id: bassman
+        name: Bassman
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            fixed_radius: 208.6
+            moving_radius: 74.9
+            pen_offset: 129.3
+            rotation: outside
+            samples: 1200
+          trace:
+            cycles_per_second: 0.064
+            trail_fraction: 0.3
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          depth: foreground
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 0.7
+          opacity: 0.72
+          line_width: 1.0
+          rotation_degrees_per_second: 0.9
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      sun:
+        id: sun
+        name: Sun
+        description: Centered high-opacity sun with a heavy line and a wide trail.
+          Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            fixed_radius: 217.0
+            moving_radius: 59.0
+            pen_offset: 174.0
+            rotation: inside
+            samples: 1700
+          trace:
+            cycles_per_second: 0.094
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 5.0
+          color: '#ff5fd2'
+          depth: foreground
+          anchor_x: 0.51
+          anchor_y: 0.29
+          base_scale: 0.76
+          opacity: 0.88
+          line_width: 3.0
+          rotation_degrees_per_second: -1.7
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: sun
+          revision: 8ffc99b061fb1ee3f06c051eebe856d42999ad34181c8046fdb0e4d21c77df88
+      spark:
+        id: spark
+        name: Spark
+        description: Small fast-spinning outside-rotation spark with a clipped trail.
+          Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            fixed_radius: 181.0
+            moving_radius: 53.0
+            pen_offset: 137.0
+            rotation: outside
+            samples: 1200
+          trace:
+            cycles_per_second: 0.15
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.07
+            head_radius: 5.0
+          color: '#ffd166'
+          depth: foreground
+          anchor_x: 0.92
+          anchor_y: 0.39
+          base_scale: 0.62
+          opacity: 0.82
+          line_width: 2.2
+          rotation_degrees_per_second: 2.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: spark
+          revision: b9e7cd508fb84c7a52d77c16ee632924e2bf41c7cb78f7a8542d8632b14fcd87
+      crown:
+        id: crown
+        name: Crown
+        description: Compact inside-rotation crown with a short trail and no ghost
+          tail. Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            fixed_radius: 229.0
+            moving_radius: 76.0
+            pen_offset: 173.0
+            rotation: inside
+            samples: 1500
+          trace:
+            cycles_per_second: 0.062
+            trail_fraction: 0.28
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          depth: foreground
+          anchor_x: 0.08
+          anchor_y: 0.38
+          base_scale: 0.78
+          opacity: 0.8
+          line_width: 2.6
+          rotation_degrees_per_second: 1.2
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: crown
+          revision: b3e1da539217abcfe360a504826eb872b6bd1e1b7afe838a5e36e9909638f7d2
+      adlib-orbit:
+        id: adlib-orbit
+        name: Adlib Orbit
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            fixed_radius: 207.0
+            moving_radius: 74.0
+            pen_offset: 140.0
+            rotation: outside
+            samples: 1200
+          trace:
+            cycles_per_second: 0.064
+            trail_fraction: 0.3
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          depth: foreground
+          anchor_x: 0.27
+          anchor_y: 0.34
+          base_scale: 0.7
+          opacity: 0.72
+          line_width: 2.2
+          rotation_degrees_per_second: 0.9
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      adlib-flower:
+        id: adlib-flower
+        name: Adlib Flower
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            fixed_radius: 156.0
+            moving_radius: 48.0
+            pen_offset: 108.0
+            rotation: inside
+            samples: 1200
+          trace:
+            cycles_per_second: 0.078
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          depth: foreground
+          anchor_x: 0.73
+          anchor_y: 0.33
+          base_scale: 0.56
+          opacity: 0.76
+          line_width: 2.3
+          rotation_degrees_per_second: -1.2
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      verse-orbit:
+        id: verse-orbit
+        name: Verse Orbit
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            fixed_radius: 231.0
+            moving_radius: 82.0
+            pen_offset: 138.0
+            rotation: outside
+            samples: 1400
+          trace:
+            cycles_per_second: 0.038
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          depth: foreground
+          anchor_x: 0.2
+          anchor_y: 0.37
+          base_scale: 0.67
+          opacity: 0.66
+          line_width: 2.0
+          rotation_degrees_per_second: 0.65
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      verse-bloom:
+        id: verse-bloom
+        name: Verse Bloom
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            fixed_radius: 159.0
+            moving_radius: 53.0
+            pen_offset: 118.0
+            rotation: inside
+            samples: 1200
+          trace:
+            cycles_per_second: 0.064
+            trail_fraction: 0.3
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          depth: foreground
+          anchor_x: 0.75
+          anchor_y: 0.3
+          base_scale: 0.48
+          opacity: 0.76
+          line_width: 2.2
+          rotation_degrees_per_second: -1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+      bloom:
+        id: bloom
+        name: Bloom
+        description: Tight inside-rotation bloom with a fast cycle and bright head.
+          Authored for the You Don't Say guitar solo.
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            fixed_radius: 221.0
+            moving_radius: 64.0
+            pen_offset: 169.0
+            rotation: inside
+            samples: 1600
+          trace:
+            cycles_per_second: 0.11
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.09
+            head_radius: 5.0
+          color: '#ff5fd2'
+          depth: foreground
+          anchor_x: 0.78
+          anchor_y: 0.31
+          base_scale: 0.84
+          opacity: 0.84
+          line_width: 2.8
+          rotation_degrees_per_second: -1.9
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: bloom
+          revision: 08f9db266bbcfdeb074cd5c6119ddeb52a547a1412db5f01c9946522d67cd353
+      halo:
+        id: halo
+        name: Halo
+        description: Oversized, low-opacity background halo with a slow reverse rotation
+          and three ghosts. Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            fixed_radius: 271.0
+            moving_radius: 93.0
+            pen_offset: 204.0
+            rotation: outside
+            samples: 1900
+          trace:
+            cycles_per_second: 0.046
+            trail_fraction: 0.5
+            ghost_count: 3
+            ghost_spacing: 0.07
+            head_radius: 0.0
+          color: '#8c5cff'
+          depth: background
+          anchor_x: 0.5
+          anchor_y: 0.38
+          base_scale: 1.72
+          opacity: 0.18
+          line_width: 1.4
+          rotation_degrees_per_second: -0.55
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: halo
+          revision: 7864e15c2b12fc8ce81463be5672c77877261e1294269d8199fb3d1cbcbe6916
+      chorus-wheel:
+        id: chorus-wheel
+        name: Chorus Wheel
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            fixed_radius: 240.0
+            moving_radius: 90.0
+            pen_offset: 150.0
+            rotation: outside
+            samples: 1500
+          trace:
+            cycles_per_second: 0.052
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          depth: foreground
+          anchor_x: 0.13
+          anchor_y: 0.39
+          base_scale: 0.72
+          opacity: 0.78
+          line_width: 2.5
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      chorus-rosette:
+        id: chorus-rosette
+        name: Chorus Rosette
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            fixed_radius: 200.0
+            moving_radius: 71.0
+            pen_offset: 127.0
+            rotation: inside
+            samples: 1200
+          trace:
+            cycles_per_second: 0.082
+            trail_fraction: 0.38
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          depth: foreground
+          anchor_x: 0.5
+          anchor_y: 0.29
+          base_scale: 0.66
+          opacity: 0.86
+          line_width: 2.7
+          rotation_degrees_per_second: -1.5
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+      chorus-star:
+        id: chorus-star
+        name: Chorus Star
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            fixed_radius: 172.0
+            moving_radius: 51.0
+            pen_offset: 116.0
+            rotation: outside
+            samples: 1200
+          trace:
+            cycles_per_second: 0.12
+            trail_fraction: 0.22
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          depth: foreground
+          anchor_x: 0.87
+          anchor_y: 0.38
+          base_scale: 0.57
+          opacity: 0.8
+          line_width: 2.0
+          rotation_degrees_per_second: 2.25
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      bridge-hero-flower:
+        id: bridge-hero-flower
+        name: Bridge Hero Flower
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            fixed_radius: 252.0
+            moving_radius: 85.0
+            pen_offset: 193.0
+            rotation: inside
+            samples: 1800
+          trace:
+            cycles_per_second: 0.036
+            trail_fraction: 0.52
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 5.0
+          color: '#ff5fd2'
+          depth: foreground
+          anchor_x: 0.39
+          anchor_y: 0.42
+          base_scale: 1.62
+          opacity: 0.78
+          line_width: 3.2
+          rotation_degrees_per_second: -0.52
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+    section_casts:
+      verse:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: verse-orbit-appearance
+          actor: verse-orbit
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+        - id: verse-bloom-appearance
+          actor: verse-bloom
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+        - id: appearance-3
+          actor: bassman
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+      chorus:
+        casting:
+          source: auto
+          seed: 449906841686821701
+          generator_version: 1
+        actors:
+        - id: chorus-wheel-appearance
+          actor: chorus-wheel
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+        - id: chorus-rosette-appearance
+          actor: chorus-rosette
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+        - id: chorus-star-appearance
+          actor: chorus-star
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+      bridge:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: bridge-hero-flower-appearance
+          actor: bridge-hero-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+      adlib:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: adlib-orbit-appearance
+          actor: adlib-orbit
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+        - id: adlib-flower-appearance
+          actor: adlib-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+    cast_overrides: {}

@@ -227,7 +227,7 @@ release:
       label: Vocals
     music_video:
       project: assets/source/video/michael-anthony-rose--a-distant-memory/project.yaml
-      status: timed
+      status: rendered
   seo:
     title: A Distant Memory
     description: A Distant Memory on Maricopa Records.
