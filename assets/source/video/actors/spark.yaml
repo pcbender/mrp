@@ -1,0 +1,37 @@
+version: 1
+actor:
+  id: spark
+  name: Spark
+  description: Small fast-spinning outside-rotation spark with a clipped trail. Authored
+    for the You Don't Say final chorus.
+  kind: spirogram
+  components:
+  - id: shape
+    role: drums
+    geometry:
+      fixed_radius: 181.0
+      moving_radius: 53.0
+      pen_offset: 137.0
+      rotation: outside
+      samples: 1200
+    trace:
+      cycles_per_second: 0.15
+      trail_fraction: 0.24
+      ghost_count: 1
+      ghost_spacing: 0.07
+      head_radius: 5.0
+    color: '#ffd166'
+    depth: foreground
+    anchor_x: 0.92
+    anchor_y: 0.39
+    base_scale: 0.62
+    opacity: 0.82
+    line_width: 2.2
+    rotation_degrees_per_second: 2.8
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers:
+      scale: drums.energy
+      opacity: master.energy
+      color: instruments.energy
+      pulse: drums.accent

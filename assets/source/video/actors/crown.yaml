@@ -1,0 +1,37 @@
+version: 1
+actor:
+  id: crown
+  name: Crown
+  description: Compact inside-rotation crown with a short trail and no ghost tail.
+    Authored for the You Don't Say final chorus.
+  kind: spirogram
+  components:
+  - id: shape
+    role: bass
+    geometry:
+      fixed_radius: 229.0
+      moving_radius: 76.0
+      pen_offset: 173.0
+      rotation: inside
+      samples: 1500
+    trace:
+      cycles_per_second: 0.062
+      trail_fraction: 0.28
+      ghost_count: 1
+      ghost_spacing: 0.08
+      head_radius: 4.0
+    color: '#4c78ff'
+    depth: foreground
+    anchor_x: 0.08
+    anchor_y: 0.38
+    base_scale: 0.78
+    opacity: 0.8
+    line_width: 2.6
+    rotation_degrees_per_second: 1.2
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers:
+      scale: bass.energy
+      opacity: master.energy
+      color: bass.energy
+      pulse: drums.accent
