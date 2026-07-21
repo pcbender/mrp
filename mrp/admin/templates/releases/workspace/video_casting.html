@@ -338,6 +338,42 @@
 </template>
 
 <script>
+  // Renderer-faithful trochoid, matching mrp/video/geometry.py
+  // (gcd cycle length, hypotrochoid inside / epitrochoid outside). Shared by
+  // the Actor Designer identity preview and the Scene Casting storyboard so
+  // both match the render exactly. `extent` is the max point radius, as the
+  // renderer normalizes by before placing.
+  window.mrpSpiroPoints = function (shape) {
+    const fixed = Number(shape.fixed_radius);
+    const moving = Math.max(0.000001, Number(shape.moving_radius));
+    const pen = Number(shape.pen_offset);
+    const fInt = Math.max(1, Math.round(Math.abs(fixed)));
+    const mInt = Math.max(1, Math.round(Math.abs(moving)));
+    let a = fInt, b = mInt;
+    while (b) { const t = b; b = a % b; a = t; }
+    const end = Math.PI * 2 * (mInt / (a || 1));
+    const n = Math.max(2, Math.round(Math.min(Number(shape.samples) || 900, 1200)));
+    const outside = shape.rotation === 'outside';
+    const pts = [];
+    let extent = 0;
+    for (let i = 0; i < n; i += 1) {
+      const theta = (i / (n - 1)) * end;
+      let x, y;
+      if (outside) {
+        const rs = fixed + moving, ratio = rs / moving;
+        x = rs * Math.cos(theta) - pen * Math.cos(ratio * theta);
+        y = rs * Math.sin(theta) - pen * Math.sin(ratio * theta);
+      } else {
+        const rd = fixed - moving, ratio = rd / moving;
+        x = rd * Math.cos(theta) + pen * Math.cos(ratio * theta);
+        y = rd * Math.sin(theta) - pen * Math.sin(ratio * theta);
+      }
+      pts.push([x, y]);
+      extent = Math.max(extent, Math.hypot(x, y));
+    }
+    return { pts, extent: extent > 0 ? extent : 1 };
+  };
+
   function addActorComponent() {
     const clone = document.getElementById('actor-component-template').content.cloneNode(true);
     const count = document.querySelectorAll('#actor-components fieldset').length + 1;
@@ -381,21 +417,20 @@
       const color = fieldValue(card, 'color', '#ff5fd2');
       const opacity = Number(fieldValue(card, 'opacity', 0.8));
       const lineWidth = Number(fieldValue(card, 'line_width', 2));
-      const points = [];
-      let extent = 1;
-      for (let index = 0; index <= samples; index += 1) {
-        const angle = (index / samples) * Math.PI * 20;
-        const carrier = outside ? fixed + moving : fixed - moving;
-        const x = carrier * Math.cos(angle) + (outside ? -1 : 1) * pen * Math.cos((carrier / moving) * angle);
-        const y = carrier * Math.sin(angle) - pen * Math.sin((carrier / moving) * angle);
-        points.push([x, y]);
-        extent = Math.max(extent, Math.abs(x), Math.abs(y));
-      }
-      const fit = Math.min(canvas.width, canvas.height) * 0.38 * identityScale / extent;
+      const { pts, extent } = window.mrpSpiroPoints({
+        fixed_radius: fixed,
+        moving_radius: moving,
+        pen_offset: pen,
+        rotation: outside ? 'outside' : 'inside',
+        samples,
+      });
+      // Match the renderer's placement: normalize by extent, size by
+      // min(w,h) * (0.5 - canvas_margin) * scale.
+      const fit = Math.min(canvas.width, canvas.height) * (0.5 - 0.08) * identityScale / extent;
       const originX = canvas.width * Math.min(1, Math.max(0, anchorX));
       const originY = canvas.height * Math.min(1, Math.max(0, anchorY));
       context.beginPath();
-      points.forEach(([x, y], index) => {
+      pts.forEach(([x, y], index) => {
         const px = originX + x * fit;
         const py = originY + y * fit;
         if (index === 0) context.moveTo(px, py); else context.lineTo(px, py);
@@ -431,35 +466,7 @@
     const TAU = Math.PI * 2;
     const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
-    function gcd(a, b) { while (b) { [a, b] = [b, a % b]; } return a || 1; }
-
-    // Faithful to mrp/video/geometry.py generate_spiro_points.
-    function spiroPoints(shape) {
-      const fixed = shape.fixed_radius, moving = shape.moving_radius, pen = shape.pen_offset;
-      const fInt = Math.max(1, Math.round(Math.abs(fixed)));
-      const mInt = Math.max(1, Math.round(Math.abs(moving)));
-      const end = TAU * (mInt / gcd(fInt, mInt));
-      const n = Math.max(2, Math.round(Math.min(shape.samples || 900, 1200)));
-      const outside = shape.rotation === 'outside';
-      const pts = [];
-      let extent = 0;
-      for (let i = 0; i < n; i += 1) {
-        const theta = (i / (n - 1)) * end;
-        let x, y;
-        if (outside) {
-          const rs = fixed + moving, ratio = rs / moving;
-          x = rs * Math.cos(theta) - pen * Math.cos(ratio * theta);
-          y = rs * Math.sin(theta) - pen * Math.sin(ratio * theta);
-        } else {
-          const rd = fixed - moving, ratio = rd / moving;
-          x = rd * Math.cos(theta) + pen * Math.cos(ratio * theta);
-          y = rd * Math.sin(theta) - pen * Math.sin(ratio * theta);
-        }
-        pts.push([x, y]);
-        extent = Math.max(extent, Math.hypot(x, y));
-      }
-      return { pts, extent: extent > 0 ? extent : 1 };
-    }
+    const spiroPoints = window.mrpSpiroPoints;
 
     function fieldVal(card, name) {
       const el = card.querySelector(`[name="${name}"]`);
