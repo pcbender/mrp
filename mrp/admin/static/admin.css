@@ -1133,6 +1133,7 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   font-size: 12px;
 }
 .video-project-look { margin: .75rem 0; }
+.video-scene-workspace-heading { scroll-margin-top: 1rem; }
 .storyboard-heading { margin-bottom: .65rem; }
 .scene-storyboard { position: relative; }
 #scene-storyboard-canvas {

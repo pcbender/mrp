@@ -154,7 +154,7 @@
   </div></section>
 </div>
 
-<div class="video-scene-workspace-heading">
+<div class="video-scene-workspace-heading" id="scene-casting">
   <p class="video-step-label">Scenes · Assignment and direction</p>
   <h2>Scene Casting</h2>
   <p class="video-help">Selecting a scene below changes only where track actors appear and how they perform.</p>
@@ -167,7 +167,7 @@
       <p class="video-help">Cast all scenes of a type, then direct an exact scene only when it needs to differ.</p>
       {% for scene in casting.sections %}
       <a class="video-scene-link {{ 'active' if scene.id == casting.selected_section.id else '' }}"
-         href="?section={{ scene.id }}&scope={{ casting.scope }}{% if casting.selected_actor_saved %}&actor={{ casting.selected_actor.id }}{% endif %}">
+         href="?section={{ scene.id }}&scope={{ casting.scope }}{% if casting.selected_actor_saved %}&actor={{ casting.selected_actor.id }}{% endif %}#scene-casting">
         <span><strong>{{ scene.label }}</strong><small>{{ scene.id }} · {{ '%.2f'|format(scene.start) }}–{{ '%.2f'|format(scene.end) }}s</small></span>
         <span class="badge badge-{{ 'live' if scene.actor_count else 'draft' }}">{% if scene.actor_count %}{{ scene.actor_count }} actor{{ '' if scene.actor_count == 1 else 's' }}{% else %}legacy{% endif %}</span>
       </a>
@@ -183,8 +183,8 @@
           <p class="video-help">{{ casting.selected_section.id }} · {{ casting.composition_source }}</p>
         </div>
         <div class="video-scope-tabs">
-          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'type' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=type">All {{ casting.selected_section.type }} scenes</a>
-          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'section' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=section">Only this scene</a>
+          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'type' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=type#scene-casting">All {{ casting.selected_section.type }} scenes</a>
+          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'section' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=section#scene-casting">Only this scene</a>
         </div>
       </div>
       {% if not cast_status_ok %}<div class="flash flash-error">Review and save timing before saving visual casts.</div>{% endif %}
@@ -231,7 +231,7 @@
               <div class="form-field"><label>Position Y</label><input type="number" step="0.01" name="direction_anchor_y" value="{{ assignment.direction.anchor_y if assignment.direction.anchor_y is not none else '' }}" placeholder="identity"></div>
               <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="{{ assignment.direction.scale }}" required></div>
               <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="{{ assignment.direction.opacity }}" required></div>
-              <div class="form-field"><label>Extra rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="{{ assignment.direction.rotation_offset_degrees_per_second }}" required></div>
+              <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="{{ assignment.direction.rotation_offset_degrees_per_second }}" required></div>
               <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="{{ assignment.direction.hue_shift_degrees }}" required></div>
               <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background" {% if assignment.direction.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if assignment.direction.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
               <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true" {% if assignment.direction.visible %}selected{% endif %}>visible</option><option value="false" {% if not assignment.direction.visible %}selected{% endif %}>hidden in this scene</option></select></div>
@@ -329,7 +329,7 @@
       <div class="form-field"><label>Position Y</label><input type="number" step="0.01" name="direction_anchor_y" placeholder="identity"></div>
       <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="1" required></div>
       <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="1" required></div>
-      <div class="form-field"><label>Extra rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="0" required></div>
+      <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="0" required></div>
       <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="0" required></div>
       <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background">background</option><option value="foreground">foreground</option></select></div>
       <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true">visible</option><option value="false">hidden in this scene</option></select></div>
