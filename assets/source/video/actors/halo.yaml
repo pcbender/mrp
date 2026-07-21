@@ -1,0 +1,37 @@
+version: 1
+actor:
+  id: halo
+  name: Halo
+  description: Oversized, low-opacity background halo with a slow reverse rotation
+    and three ghosts. Authored for the You Don't Say final chorus.
+  kind: spirogram
+  components:
+  - id: shape
+    role: instruments
+    geometry:
+      fixed_radius: 271.0
+      moving_radius: 93.0
+      pen_offset: 204.0
+      rotation: outside
+      samples: 1900
+    trace:
+      cycles_per_second: 0.046
+      trail_fraction: 0.5
+      ghost_count: 3
+      ghost_spacing: 0.07
+      head_radius: 0.0
+    color: '#8c5cff'
+    depth: background
+    anchor_x: 0.5
+    anchor_y: 0.38
+    base_scale: 1.72
+    opacity: 0.18
+    line_width: 1.4
+    rotation_degrees_per_second: -0.55
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers:
+      scale: instruments.energy
+      opacity: master.energy
+      color: vocals.energy
+      pulse: drums.accent

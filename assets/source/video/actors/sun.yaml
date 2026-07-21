@@ -1,0 +1,37 @@
+version: 1
+actor:
+  id: sun
+  name: Sun
+  description: Centered high-opacity sun with a heavy line and a wide trail. Authored
+    for the You Don't Say final chorus.
+  kind: spirogram
+  components:
+  - id: shape
+    role: vocals
+    geometry:
+      fixed_radius: 217.0
+      moving_radius: 59.0
+      pen_offset: 174.0
+      rotation: inside
+      samples: 1700
+    trace:
+      cycles_per_second: 0.094
+      trail_fraction: 0.42
+      ghost_count: 2
+      ghost_spacing: 0.08
+      head_radius: 5.0
+    color: '#ff5fd2'
+    depth: foreground
+    anchor_x: 0.51
+    anchor_y: 0.29
+    base_scale: 0.76
+    opacity: 0.88
+    line_width: 3.0
+    rotation_degrees_per_second: -1.7
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers:
+      scale: vocals.energy
+      opacity: vocals.energy
+      color: vocals.energy
+      pulse: drums.accent
