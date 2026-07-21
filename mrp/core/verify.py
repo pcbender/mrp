@@ -11,6 +11,7 @@ import yaml
 
 from mrp.core.deploy import load_targets, validate_rsync_target, validate_target
 from mrp.core.output import path_from_report
+from mrp.core.public_media import public_video_enabled
 
 
 CONTENT_EXTENSIONS = {".yaml", ".yml", ".json"}
@@ -102,6 +103,7 @@ def verify_target(repo: str | Path, target: str | None = None, release: str | No
     check_release_pages(result, target_path, releases)
     check_artist_pages(result, target_path, artists)
     check_cover_images(result, target_path, releases)
+    check_music_videos(result, target_path, releases)
     check_internal_links(result, target_path)
     check_placeholders(result, target_path)
     check_migration_surface(result, root, target_path, pages, posts, artists, releases)
@@ -150,6 +152,89 @@ def check_cover_images(result: dict[str, Any], target_path: Path, releases: list
             continue
         relative = cover.removeprefix("site/public/")
         check_file(result, target_path / relative, relative)
+
+
+def check_music_videos(
+    result: dict[str, Any],
+    target_path: Path,
+    releases: list[dict[str, Any]],
+) -> None:
+    checked = 0
+    for release in releases:
+        if release.get("status") == "draft":
+            continue
+        song = release.get("song")
+        tracks = release.get("tracks") if isinstance(release.get("tracks"), list) else []
+        units = [song] if isinstance(song, dict) else [
+            track for track in tracks if isinstance(track, dict)
+        ]
+        for track in units:
+            is_song = track is song
+            relative_page = (
+                f"releases/{release['slug']}/index.html"
+                if is_song
+                else f"releases/{release['slug']}/{track['slug']}/index.html"
+            )
+            page = target_path / relative_page
+            if not page.is_file():
+                if public_video_enabled(track):
+                    add_error(
+                        result,
+                        "music_video.page",
+                        f"Missing opted-in video page: {relative_page}",
+                    )
+                continue
+            html = page.read_text(encoding="utf-8", errors="ignore")
+            video = track.get("music_video")
+            private_values = [track.get("master_path")]
+            if isinstance(video, dict):
+                private_values.append(video.get("project"))
+            for stem in track.get("stems") or []:
+                if isinstance(stem, dict):
+                    private_values.append(stem.get("path"))
+            for value in private_values:
+                if isinstance(value, str) and value and value in html:
+                    add_error(
+                        result,
+                        "music_video.privacy",
+                        f"{relative_page} exposes a private production path",
+                    )
+
+            if not isinstance(video, dict):
+                continue
+            public_url = video.get("public_url")
+            poster = video.get("poster")
+            if not public_video_enabled(track):
+                for value in (public_url, poster):
+                    if isinstance(value, str) and value and value in html:
+                        add_error(
+                            result,
+                            "music_video.opt_in",
+                            f"{relative_page} exposes public video media without Opt In",
+                        )
+                continue
+
+            checked += 1
+            if "<video" not in html or public_url not in html or poster not in html:
+                add_error(
+                    result,
+                    "music_video.player",
+                    f"{relative_page} is missing its opted-in video player or metadata",
+                )
+            for field, value in (("public_url", public_url), ("poster", poster)):
+                parsed = urlparse(str(value))
+                if parsed.scheme in {"http", "https"} and parsed.netloc:
+                    continue
+                media_path = target_path / parsed.path.removeprefix("/")
+                if not media_path.is_file():
+                    add_error(
+                        result,
+                        f"music_video.{field}",
+                        f"Missing published media: {parsed.path}",
+                    )
+    result["checks"].append(
+        {"name": "music_videos", "status": "passed", "checked": checked}
+    )
 
 
 def check_internal_links(result: dict[str, Any], target_path: Path) -> None:

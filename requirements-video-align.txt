@@ -1,0 +1,4 @@
+# Optional OpenAI transcription support for `scripts/mrp video align`.
+-r requirements-video.txt
+
+openai==2.46.0

@@ -182,13 +182,52 @@ release:
       Vocals: Female
       Genre: Alternative
       Feel: Jazzy
-    master_path: null
+    master_path: /mnt/c/Masters/A Distant Memory.wav
     credits:
       primary_artist: null
       songwriter: Michael Anthony Rose
       lyrics: Kellen
       producer: Michael Anthony Rose
       mastering: Michael Anthony Rose
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/A Distant Memory/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/A Distant Memory/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/A Distant Memory/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/A Distant Memory/Instrumental.wav
+      enabled: false
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/A Distant Memory/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/A Distant Memory/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/A Distant Memory/Vocals.wav
+      enabled: true
+      label: Vocals
+    music_video:
+      project: assets/source/video/michael-anthony-rose--a-distant-memory/project.yaml
+      status: timed
   seo:
     title: A Distant Memory
     description: A Distant Memory on Maricopa Records.

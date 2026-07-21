@@ -85,6 +85,30 @@ def test_release_create_ep_adds_template_tracks(tmp_path):
     assert release["tracks"][0]["slug"] == "track-1"
 
 
+def test_release_create_album_adds_two_template_tracks(tmp_path):
+    repo = content_repo(tmp_path)
+
+    result = run_mrp(
+        "--repo",
+        str(repo),
+        "--json",
+        "release",
+        "create",
+        "--artist",
+        "pcbender",
+        "--title",
+        "Longer Signals",
+        "--type",
+        "album",
+    )
+
+    assert result.returncode == 0
+    release = yaml.safe_load((repo / "content/releases/longer-signals.yaml").read_text())["release"]
+    assert release["model"] == "album"
+    assert release["release_type"] == "album"
+    assert [track["slug"] for track in release["tracks"]] == ["track-1", "track-2"]
+
+
 def test_release_create_refuses_overwrite(tmp_path):
     repo = content_repo(tmp_path)
 

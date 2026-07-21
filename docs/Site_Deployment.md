@@ -67,6 +67,12 @@ and operational:
 `MRP_SITE_OUT_ROOT` controls the base path for local targets (default:
 `~/astro-sites/maricoparecords`). It must be outside the repository.
 
+`MRP_PUBLIC_MEDIA_ROOT` controls durable music-video storage (default:
+`~/.mrp/public-media/maricoparecords`). It is not generated output and must be
+outside the repository. Builds copy only media referenced by tracks with
+`music_video.status: published` and explicit `music_video.opt_in: true`; a
+missing opted-in MP4 or poster blocks the build.
+
 Build artifacts are written to:
 ```
 $MRP_SITE_OUT_ROOT/builds/staging/{build-id}/

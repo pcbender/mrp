@@ -10,8 +10,8 @@ from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from mrp.admin import db
-from mrp.admin.routes import apps, artists, catalog, changes, identity, jobs, metrics, nim, posts, releases, status, workspace
+from mrp.admin import db, video_jobs
+from mrp.admin.routes import apps, artists, catalog, changes, identity, jobs, metrics, nim, posts, releases, status, video, workspace
 
 _STATIC_DIR = Path(__file__).parent / "static"
 _TEMPLATES_DIR = Path(__file__).parent / "templates"
@@ -22,6 +22,7 @@ templates = Jinja2Templates(directory=str(_TEMPLATES_DIR))
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     db.init()
+    video_jobs.recover()
     yield
 
 
@@ -35,6 +36,7 @@ app.include_router(artists.router)
 app.include_router(identity.router)
 app.include_router(posts.router)
 app.include_router(workspace.router)
+app.include_router(video.router)
 app.include_router(status.router)
 app.include_router(changes.router)
 app.include_router(metrics.router)

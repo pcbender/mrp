@@ -1,0 +1,244 @@
+version: 1
+source: lyrics.yaml
+alignment:
+  algorithm_version: 1
+  model: whisper-1
+  transcription_cache_key: 2ed034ae6e06e816f174ace0b8f574c2a3f22ff392659899b9064b03f09fdc7a
+  source_hash: 2436b005f763a7874d065a59f2117a1414201ee3d9a63cbd5b08c582870d8f5f
+  vocals_hash: 6bbdcf51cb75745e04828ea166adf4cbc6b3f246cd6685d3f1eec33f068d3bb6
+  warnings:
+  - normalized Whisper word timestamps (0 negative starts, 0 regressing starts, 6
+    nonpositive durations)
+  - verse-3 line 1 received a provisional 3.000s timing window and requires manual
+    review
+sections:
+- id: adlib
+  type: adlib
+  label: Adlib
+  start: 0.0
+  end: 4.354
+  reviewed: false
+  lines:
+  - text: One
+    start: 0.0
+    end: 1.591
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Two
+    start: 1.6
+    end: 2.055
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Three
+    start: 2.06
+    end: 2.98
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Four
+    start: 2.98
+    end: 4.354
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: verse
+  type: verse
+  label: Verse
+  start: 20.82
+  end: 40.972
+  reviewed: false
+  lines:
+  - text: In the cold sunlight
+    start: 20.82
+    end: 24.602
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Memories holding me
+    start: 25.36
+    end: 28.851
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Barely
+    start: 31.02
+    end: 32.729
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: The days multiply
+    start: 33.78
+    end: 36.629
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: You're out there and I'm still waiting
+    start: 36.9
+    end: 40.972
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: chorus
+  type: chorus
+  label: Chorus
+  start: 41.92
+  end: 48.4
+  reviewed: false
+  lines:
+  - text: I've been waiting
+    start: 41.92
+    end: 44.571
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: For the day that I see you again
+    start: 44.58
+    end: 48.4
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: bridge
+  type: bridge
+  label: Bridge
+  start: 49.0
+  end: 68.627
+  reviewed: false
+  lines:
+  - text: Your face is a distant memory
+    start: 49.0
+    end: 52.93
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Your face is a distant memory
+    start: 56.0
+    end: 60.825
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Your face is a distant memory
+    start: 63.9
+    end: 68.627
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: verse-2
+  type: verse
+  label: Verse
+  start: 88.56
+  end: 104.2
+  reviewed: false
+  lines:
+  - text: When the night air wanes
+    start: 88.56
+    end: 92.26
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: I see your face as it dissipates
+    start: 92.26
+    end: 96.723
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Over fields of grain
+    start: 96.74
+    end: 100.15
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: The sun comes up and it's another day
+    start: 100.2
+    end: 104.2
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: adlib-2
+  type: adlib
+  label: Adlib
+  start: 104.2
+  end: 108.681
+  reviewed: false
+  lines:
+  - text: One
+    start: 104.2
+    end: 105.779
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Two
+    start: 105.78
+    end: 106.38
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Three
+    start: 106.38
+    end: 107.822
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Four
+    start: 107.9
+    end: 108.681
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: verse-3
+  type: verse
+  label: Verse
+  start: 139.22
+  end: 156.54
+  reviewed: false
+  lines:
+  - text: The wind blows cold again
+    start: 139.22
+    end: 142.22
+    confidence: 0.0
+    status: unmatched
+    reviewed: true
+  - text: Memories warming me
+    start: 142.22
+    end: 145.22
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Barely
+    start: 147.18
+    end: 148.712
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: The days multiply
+    start: 148.72
+    end: 152.12
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Pieces of you slip from my mind
+    start: 152.12
+    end: 156.54
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: chorus-2
+  type: chorus
+  label: Chorus
+  start: 156.54
+  end: 164.61
+  reviewed: false
+  lines:
+  - text: I've been counting
+    start: 156.54
+    end: 158.813
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: The days that I will see you again
+    start: 158.82
+    end: 164.61
+    confidence: 1.0
+    status: matched
+    reviewed: false

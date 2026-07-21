@@ -1,0 +1,220 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+<p style="font-size:12px;margin-bottom:.75rem">
+  <a href="/releases/{{ slug }}/tracks/{{ track_slug }}/video" style="color:var(--primary);text-decoration:none">← {{ track.title }} video</a>
+  <span style="color:var(--muted)"> / Timing</span>
+</p>
+
+<div class="form-card">
+  <div class="form-body">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+      <div>
+        <h2 style="margin:0">Generate alignment</h2>
+        <p style="font-size:12px;color:var(--muted);margin:.25rem 0 0">
+          Uses the structured track lyrics and vocals stem. Re-running replaces manual timing but reuses cached transcription when possible.
+        </p>
+      </div>
+      <div id="video-job-align" style="min-width:260px">
+        {% set job = align_job %}
+        {% set kind = 'align' %}
+        {% include "releases/workspace/_video_job.html" %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if timing_error %}
+<div class="flash flash-error">
+  <strong>Aligned lyrics could not be loaded.</strong>
+  <ul>{% for problem in timing_error %}<li>{{ problem }}</li>{% endfor %}</ul>
+</div>
+{% elif not timing or not timing.exists %}
+<div class="form-card">
+  <div class="form-body" style="text-align:center;color:var(--muted);padding:2rem">
+    No aligned timing exists yet. Prepare the track, add a vocals stem, then run alignment.
+  </div>
+</div>
+{% else %}
+{% set summary = timing.summary %}
+<div class="form-card">
+  <div class="form-body">
+    <div class="timing-summary">
+      <strong>{{ summary.sections }} sections · {{ summary.lines }} lyric cues</strong>
+      <span class="badge badge-live">{{ summary.matched }} matched</span>
+      <span class="badge badge-draft">{{ summary.uncertain }} uncertain by aligner</span>
+      <span class="badge badge-failed">{{ summary.unmatched }} unmatched by aligner</span>
+      <span class="badge badge-{{ 'live' if summary.review_complete else 'failed' }}">
+        {{ summary.pending_review }} need review
+      </span>
+      <code style="margin-left:auto;font-size:10px">{{ timing.path }}</code>
+    </div>
+
+    {% if audio_available %}
+    <audio id="timing-audio" controls preload="metadata" style="width:100%;margin-top:.75rem"
+           src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/audio"></audio>
+    <div class="timing-scrubber">
+      <span id="timing-current">0:00.000</span>
+      <input id="timing-range" type="range" min="0"
+             max="{{ timing.master_duration or timing.document.sections[-1].end }}"
+             value="0" step="0.01" aria-label="Audio playhead">
+      <span id="timing-duration">0:00.000</span>
+    </div>
+    {% else %}
+    <div class="flash flash-error" style="margin-top:.75rem">
+      The track master is unavailable; timing can be inspected but playhead controls are disabled.
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<div id="timing-result"></div>
+<form id="timing-form"
+      hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/timing"
+      hx-target="#timing-result" hx-swap="innerHTML">
+  <div style="display:flex;gap:.5rem;align-items:center;margin-bottom:.75rem;flex-wrap:wrap">
+    <button type="submit" class="btn btn-primary">Save timing</button>
+    <button type="button" class="btn btn-secondary" onclick="timingReviewFlagged()">
+      Mark uncertain/unmatched reviewed
+    </button>
+    <span style="font-size:11px;color:var(--muted)">
+      A track becomes <strong>timed</strong> only after every uncertain or unmatched cue is explicitly reviewed.
+    </span>
+  </div>
+
+  {% for section in timing.document.sections %}
+  {% set section_index = loop.index0 %}
+  <section class="timing-section">
+    <header>
+      <div>
+        <span class="timing-section-number">{{ loop.index }}</span>
+        <strong>{{ section.label or section.type }}</strong>
+        <code>{{ section.id }}</code>
+      </div>
+      <div class="timing-boundaries">
+        <input type="hidden" name="section_id" value="{{ section.id }}">
+        <label>start
+          <input id="section-{{ section_index }}-start" type="number" name="section_start"
+                 min="0" step="0.001" value="{{ '%.3f' | format(section.start) }}" required>
+        </label>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="timingSet('section-{{ section_index }}-start')">Use playhead</button>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="timingSeek('section-{{ section_index }}-start')">Seek</button>
+        <label>end
+          <input id="section-{{ section_index }}-end" type="number" name="section_end"
+                 min="0.001" step="0.001" value="{{ '%.3f' | format(section.end) }}" required>
+        </label>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="timingSet('section-{{ section_index }}-end')">Use playhead</button>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="timingPreview('section-{{ section_index }}-start', 'section-{{ section_index }}-end')">Preview</button>
+        <label>reviewed
+          <select name="section_reviewed">
+            <option value="false" {% if section.reviewed is not true %}selected{% endif %}>no</option>
+            <option value="true" {% if section.reviewed is true %}selected{% endif %}>yes</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    {% if section.lines %}
+    <div class="table-wrap" style="border:0;border-radius:0">
+      <table class="track-matrix timing-lines">
+        <thead><tr><th>Lyric cue</th><th>Status</th><th>Confidence</th><th>Start</th><th>End</th><th>Review</th><th>Listen</th></tr></thead>
+        <tbody>
+          {% for line in section.lines %}
+          {% set line_index = loop.index0 %}
+          {% set display_status = 'manual' if line.reviewed is true and line.status in ['uncertain', 'unmatched'] else line.status or 'manual' %}
+          <tr class="{{ 'timing-needs-review' if line.status in ['uncertain', 'unmatched'] and line.reviewed is not true else '' }}">
+            <td class="timing-lyric">{{ line.text }}</td>
+            <td><span class="timing-status timing-status-{{ display_status }}">{{ display_status }}</span></td>
+            <td class="td-mono">{% if line.confidence is not none %}{{ '%.1f' | format(line.confidence * 100) }}%{% else %}—{% endif %}</td>
+            <td>
+              <input type="hidden" name="line_key" value="{{ section.id }}:{{ line_index }}">
+              <input id="line-{{ section_index }}-{{ line_index }}-start" type="number" name="line_start"
+                     min="0" step="0.001" value="{{ '%.3f' | format(line.start) }}" required>
+              <button type="button" class="timing-playhead-button" onclick="timingSet('line-{{ section_index }}-{{ line_index }}-start')" title="Use playhead">●</button>
+            </td>
+            <td>
+              <input id="line-{{ section_index }}-{{ line_index }}-end" type="number" name="line_end"
+                     min="0.001" step="0.001" value="{{ '%.3f' | format(line.end) }}" required>
+              <button type="button" class="timing-playhead-button" onclick="timingSet('line-{{ section_index }}-{{ line_index }}-end')" title="Use playhead">●</button>
+            </td>
+            <td>
+              <select name="line_reviewed" data-status="{{ line.status or '' }}">
+                <option value="false" {% if line.reviewed is not true %}selected{% endif %}>needs review</option>
+                <option value="true" {% if line.reviewed is true %}selected{% endif %}>reviewed</option>
+              </select>
+            </td>
+            <td><button type="button" class="btn btn-secondary btn-sm" onclick="timingPreview('line-{{ section_index }}-{{ line_index }}-start', 'line-{{ section_index }}-{{ line_index }}-end')">▶</button></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p style="padding:.65rem;color:var(--muted);font-size:12px">Instrumental section — boundary timing only.</p>
+    {% endif %}
+  </section>
+  {% endfor %}
+
+  <button type="submit" class="btn btn-primary" style="margin-top:.75rem">Save timing</button>
+</form>
+
+<script>
+const timingAudio = document.getElementById('timing-audio');
+const timingRange = document.getElementById('timing-range');
+function timingClock(seconds) {
+  if (!Number.isFinite(seconds)) return '0:00.000';
+  const minutes = Math.floor(seconds / 60);
+  return minutes + ':' + (seconds % 60).toFixed(3).padStart(6, '0');
+}
+if (timingAudio && timingRange) {
+  timingAudio.addEventListener('loadedmetadata', () => {
+    timingRange.max = timingAudio.duration;
+    document.getElementById('timing-duration').textContent = timingClock(timingAudio.duration);
+  });
+  timingAudio.addEventListener('timeupdate', () => {
+    timingRange.value = timingAudio.currentTime;
+    document.getElementById('timing-current').textContent = timingClock(timingAudio.currentTime);
+  });
+  timingRange.addEventListener('input', () => {
+    timingAudio.currentTime = Number(timingRange.value);
+  });
+}
+function timingSet(inputId) {
+  if (!timingAudio) return;
+  document.getElementById(inputId).value = timingAudio.currentTime.toFixed(3);
+}
+function timingSeek(inputId) {
+  if (!timingAudio) return;
+  timingAudio.currentTime = Number(document.getElementById(inputId).value);
+}
+function timingPreview(startId, endId) {
+  if (!timingAudio) return;
+  const start = Number(document.getElementById(startId).value);
+  const end = Number(document.getElementById(endId).value);
+  if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return;
+  timingAudio.currentTime = start;
+  timingAudio.play();
+  const stopAt = () => {
+    if (timingAudio.currentTime >= end) {
+      timingAudio.pause();
+      timingAudio.removeEventListener('timeupdate', stopAt);
+    }
+  };
+  timingAudio.addEventListener('timeupdate', stopAt);
+}
+function timingReviewFlagged() {
+  document.querySelectorAll('select[name=line_reviewed]').forEach((select) => {
+    if (select.dataset.status === 'uncertain' || select.dataset.status === 'unmatched') {
+      select.value = 'true';
+    }
+  });
+}
+document.body.addEventListener('htmx:beforeSwap', (event) => {
+  if (event.detail.target?.id === 'timing-result' && event.detail.xhr.status === 422) {
+    event.detail.shouldSwap = true;
+    event.detail.isError = false;
+  }
+});
+</script>
+{% endif %}
+{% endblock %}

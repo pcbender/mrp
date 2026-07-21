@@ -1,0 +1,45 @@
+# Optional, reproducible headless music-video renderer environment. This is the
+# exact default dependency closure in the passing Spirophonic baseline at
+# commit e3d4b100e026d486ce2c28547e6e8a907b1c621a.
+-r requirements.txt
+
+annotated-doc==0.0.4
+annotated-types==0.7.0
+audioread==3.1.0
+certifi==2026.6.17
+cffi==2.1.0
+charset-normalizer==3.4.9
+decorator==5.3.1
+idna==3.18
+joblib==1.5.3
+lazy-loader==0.5
+librosa==0.11.0
+llvmlite==0.48.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+msgpack==1.2.1
+narwhals==2.24.0
+numba==0.66.0
+numpy==2.4.6
+opencv-python-headless==4.13.0.92
+packaging==26.2
+Pillow==12.3.0
+platformdirs==4.10.1
+pooch==1.9.0
+pycparser==3.0
+pydantic==2.13.4
+pydantic-core==2.46.4
+Pygments==2.20.0
+PyYAML==6.0.3
+requests==2.34.2
+rich==14.3.4
+scikit-learn==1.9.0
+scipy==1.18.0
+shellingham==1.5.4
+soundfile==0.14.0
+soxr==1.1.0
+threadpoolctl==3.6.0
+typer==0.27.0
+typing-inspection==0.4.2
+typing-extensions==4.16.0
+urllib3==2.7.0

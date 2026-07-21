@@ -95,6 +95,10 @@ def write_site(root: Path, label: str) -> None:
     write_file(root / "assets/releases/circuiting-cover.svg", "<svg></svg>\n")
     write_file(root / "sitemap.xml", "<urlset></urlset>\n")
     write_file(root / "feed.xml", "<rss></rss>\n")
+    write_file(
+        root / "media/music-videos/artist--track/hash/video.mp4",
+        f"{label} video\n",
+    )
     write_json(root / "build-manifest.json", {"label": label})
 
 
@@ -129,6 +133,10 @@ def test_rollback_to_build_restores_and_verifies(tmp_path):
     assert payload["status"] == "rolled_back"
     assert payload["candidate"]["build_id"] == "build-123"
     assert "build" in (site_out_root(repo) / "prod/index.html").read_text()
+    assert (
+        site_out_root(repo)
+        / "prod/media/music-videos/artist--track/hash/video.mp4"
+    ).read_text() == "build video\n"
     assert (repo / payload["verification_report_path"]).is_file()
     assert (repo / payload["report_path"]).is_file()
 

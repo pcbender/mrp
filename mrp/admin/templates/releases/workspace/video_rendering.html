@@ -1,0 +1,190 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+<p class="video-breadcrumb">
+  <a href="/releases/{{ slug }}/tracks/{{ track_slug }}/video">← {{ track.title }}</a>
+  <span> / Rendering &amp; approval</span>
+</p>
+<div id="video-render-result"></div>
+
+{% if rendering_error %}
+<div class="form-card"><div class="form-body">
+  <h2>Rendering workspace is unavailable</h2>
+  {% for problem in rendering_error %}<div class="flash flash-error">{{ problem }}</div>{% endfor %}
+</div></div>
+{% else %}
+<div class="form-card"><div class="form-body">
+  <div class="video-cast-heading">
+    <div><h2>Current input gate</h2><p class="video-help">Every job and approval is tied to the exact project and input fingerprint.</p></div>
+    <span class="badge badge-{{ 'live' if rendering.preflight_current else 'failed' }}">{{ 'current' if rendering.preflight_current else 'stale' }}</span>
+  </div>
+  {% if rendering.preflight_current %}
+  <div class="video-render-fingerprint"><code>{{ rendering.preflight.input_fingerprint }}</code></div>
+  {% else %}
+    {% for problem in rendering.preflight_problems %}<div class="flash flash-error">{{ problem }}</div>{% endfor %}
+    <p class="video-help">Run Prepare after correcting inputs. Draft, full render, and approval remain blocked until this gate is current.</p>
+  {% endif %}
+</div></div>
+
+<div class="form-card"><div class="form-body">
+  <div class="video-cast-heading">
+    <div><h2>Draft iteration</h2><p class="video-help">Drafts use the renderer's bounded resolution/frame-rate profile and omit opening/closing cards for excerpts.</p></div>
+  </div>
+  {% if rendering.sections %}
+  <div class="form-field" style="margin-bottom:.65rem">
+    <label>Fill range from timed section</label>
+    <select id="draft-section" onchange="selectDraftSection(this)">
+      <option value="">custom range</option>
+      {% for section in rendering.sections %}
+      <option value="{{ section.id }}" data-start="{{ section.start }}" data-end="{{ section.end }}">{{ section.label }} · {{ '%.3f'|format(section.start) }}–{{ '%.3f'|format(section.end) }}s</option>
+      {% endfor %}
+    </select>
+  </div>
+  {% endif %}
+  <div id="video-job-draft">
+    {% set job = draft_job %}{% set kind = 'draft' %}
+    {% if not job and rendering.sections %}{% set draft_start = rendering.sections[0].start %}{% set draft_end = rendering.sections[0].end %}{% endif %}
+    {% include "releases/workspace/_video_job.html" %}
+  </div>
+</div></div>
+
+{% if rendering.drafts %}
+<div class="form-card"><div class="form-body">
+  <h2>Draft iteration history</h2>
+  <p class="video-help">Generated drafts can be compared or discarded without touching versioned source or public assets.</p>
+  <div class="video-render-gallery">
+    {% for draft in rendering.drafts %}
+    <article class="video-render-card {{ 'stale' if draft.stale else '' }}">
+      {% if draft.exists %}
+      <video controls preload="metadata" src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/renders/{{ draft.group }}/{{ draft.name }}"></video>
+      {% endif %}
+      <div class="video-render-meta">
+        <div><strong>{{ draft.id }}</strong><span class="badge badge-{{ 'failed' if draft.stale else 'live' }}">{{ 'stale' if draft.stale else 'current' }}</span></div>
+        <small>{{ draft.width }}×{{ draft.height }} · {{ draft.fps }} fps · {{ '%.3f'|format(draft.source_start or 0) }}–{{ '%.3f'|format(draft.source_end or 0) }}s · {{ draft.frame_count }} frames</small>
+        <small>{{ 'verified' if draft.verified else 'verification unavailable' }} · manifest {{ 'present' if draft.manifest_exists else 'missing' }}</small>
+        <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/drafts/{{ draft.id }}/discard"
+              hx-target="#video-render-result" hx-swap="innerHTML">
+          <button type="submit" class="btn btn-danger btn-sm">Discard draft</button>
+        </form>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div></div>
+{% endif %}
+
+<div class="video-render-grid">
+  <div class="form-card"><div class="form-body">
+    <h2>1. Full-render preflight</h2>
+    <p class="video-help">Resolve exact inputs, validate the encoder/cards, and estimate frame count and raw streamed work.</p>
+    <div id="video-job-render_plan">{% set job = plan_job %}{% set kind = 'render_plan' %}{% include "releases/workspace/_video_job.html" %}</div>
+    {% if rendering.plan %}
+    <dl class="video-render-plan {{ 'stale' if not rendering.plan.current else '' }}">
+      <div><dt>State</dt><dd>{{ 'current' if rendering.plan.current else 'stale' }}</dd></div>
+      <div><dt>Frames</dt><dd>{{ rendering.plan.frame_count }}</dd></div>
+      <div><dt>Duration</dt><dd>{{ '%.3f'|format(rendering.plan.duration) }}s</dd></div>
+      <div><dt>Output</dt><dd>{{ rendering.plan.width }}×{{ rendering.plan.height }} @ {{ rendering.plan.fps }} fps</dd></div>
+      <div><dt>Raw stream</dt><dd>{{ '%.2f'|format(rendering.plan.diagnostics.raw_stream_gib) }} GiB</dd></div>
+      <div><dt>Cards</dt><dd>{{ 'included' if rendering.plan.cards_included else 'omitted' }}</dd></div>
+    </dl>
+    {% endif %}
+  </div></div>
+  <div class="form-card"><div class="form-body">
+    <h2>2. Verified full render</h2>
+    <p class="video-help">One full render may run per track. Cancellation terminates the process group and removes partial output.</p>
+    <div id="video-job-render">{% set job = render_job %}{% set kind = 'render' %}{% include "releases/workspace/_video_job.html" %}</div>
+  </div></div>
+</div>
+
+{% if rendering.renders %}
+<div class="form-card"><div class="form-body">
+  <h2>Full render history &amp; approval</h2>
+  {% if rendering.approval.current %}
+  <div class="flash flash-ok">Approved {{ rendering.approval.approved_at }} · <code>{{ rendering.approval.output_sha256 }}</code></div>
+  {% endif %}
+  <div class="video-render-gallery">
+    {% for render in rendering.renders %}
+    <article class="video-render-card {{ 'stale' if render.stale else '' }}">
+      {% if render.exists %}
+      <video controls preload="metadata" src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/renders/{{ render.group }}/{{ render.name }}"></video>
+      {% endif %}
+      <div class="video-render-meta">
+        <div><strong>{{ render.id }}</strong><span class="badge badge-{{ 'failed' if render.stale else 'live' }}">{{ 'stale' if render.stale else 'current' }}</span></div>
+        <small>{{ render.width }}×{{ render.height }} · {{ render.fps }} fps · {{ '%.3f'|format(render.duration or 0) }}s · {{ render.frame_count }} frames</small>
+        <small>{{ render.video_codec }} / {{ render.audio_codec }} · {{ 'verified' if render.verified else 'verification unavailable' }} · manifest {{ 'present' if render.manifest_exists else 'missing' }}</small>
+        <small>SHA-256 <code>{{ render.output_sha256 }}</code></small>
+        {% if render.current and render.verified and not rendering.approval.current %}
+        <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/approve"
+              hx-target="#video-render-result" hx-swap="innerHTML">
+          <input type="hidden" name="artifact_path" value="{{ render.path }}">
+          <button type="submit" class="btn btn-primary">Approve verified full render</button>
+        </form>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div></div>
+{% endif %}
+
+<div class="form-card"><div class="form-body">
+  <div class="video-cast-heading">
+    <div>
+      <h2>Public-media publication</h2>
+      <p class="video-help">The approved MP4 and poster are copied to durable storage outside Git. Astro displays them only while this track is explicitly opted in.</p>
+    </div>
+    {% if publication.status == 'published' %}
+    <span class="badge badge-{{ 'live' if publication.opt_in else 'draft' }}">{{ 'opted in' if publication.opt_in else 'opted out' }}</span>
+    {% endif %}
+  </div>
+
+  {% if publication.status == 'published' %}
+    <dl class="video-render-plan">
+      <div><dt>Public video</dt><dd>{{ publication.public_url }}</dd></div>
+      <div><dt>Poster</dt><dd>{{ publication.poster }}</dd></div>
+      <div><dt>Durable files</dt><dd>{{ 'available' if publication.media_available else 'missing' }}</dd></div>
+    </dl>
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/visibility"
+          hx-target="#video-render-result" hx-swap="innerHTML" style="margin-top:.8rem">
+      <label class="video-public-opt-in">
+        <input type="checkbox" name="opt_in" value="true" {% if publication.opt_in %}checked{% endif %}>
+        <span><strong>Opt In</strong> — display this video on the public Astro track page and include its public metadata.</span>
+      </label>
+      <button type="submit" class="btn btn-primary btn-sm">Save public display setting</button>
+    </form>
+    {% if not publication.media_available and rendering.approval.current %}
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/publish"
+          hx-target="#video-render-result" hx-swap="innerHTML" style="margin-top:.6rem">
+      <label class="video-public-opt-in">
+        <input type="checkbox" name="opt_in" value="true" required>
+        <span><strong>Opt In</strong> and restore the missing durable public files from the current approved render.</span>
+      </label>
+      <button type="submit" class="btn btn-secondary btn-sm">Republish approved media</button>
+    </form>
+    {% endif %}
+  {% elif rendering.approval.current and track.music_video.status == 'approved' %}
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/publish"
+          hx-target="#video-render-result" hx-swap="innerHTML">
+      <label class="video-public-opt-in">
+        <input type="checkbox" name="opt_in" value="true" required>
+        <span><strong>Opt In</strong> — I want this approved video displayed on the public Astro track page.</span>
+      </label>
+      <button type="submit" class="btn btn-primary">Publish approved video</button>
+    </form>
+  {% else %}
+    <p class="video-help">Approve a current verified full render before publishing. Approval does not opt the track into public display.</p>
+  {% endif %}
+</div></div>
+
+<script>
+  function selectDraftSection(select) {
+    const option = select.options[select.selectedIndex];
+    if (!option || !option.dataset.start) return;
+    const start = document.querySelector('#video-job-draft input[name="start_seconds"]');
+    const end = document.querySelector('#video-job-draft input[name="end_seconds"]');
+    if (start) start.value = option.dataset.start;
+    if (end) end.value = option.dataset.end;
+  }
+</script>
+{% endif %}
+{% endblock %}

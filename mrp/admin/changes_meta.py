@@ -48,6 +48,28 @@ def _release_slug_from_parts(parts: tuple[str, ...]) -> str | None:
     return None
 
 
+def _release_slug_for_video_key(root: Path, key: str) -> str | None:
+    directory = root / "content" / "releases"
+    if not directory.is_dir():
+        return None
+    for path in sorted(directory.iterdir()):
+        if not path.is_file() or path.suffix.casefold() not in {".json", ".yaml", ".yml"}:
+            continue
+        record = _load_yaml_record(root, path.relative_to(root).as_posix())
+        release = (record or {}).get("release") or {}
+        artist_id = str(release.get("artist_id") or "")
+        tracks = release.get("tracks") if isinstance(release.get("tracks"), list) else []
+        song = release.get("song")
+        units = [song] if isinstance(song, dict) else tracks
+        if any(
+            isinstance(track, dict)
+            and f"{artist_id}--{track.get('slug') or ''}" == key
+            for track in units
+        ):
+            return str(release.get("slug") or path.stem)
+    return None
+
+
 def classify_change(root: Path, path: str) -> dict[str, Any]:
     """Resolve one changed file to its entity + publish eligibility.
 
@@ -81,7 +103,10 @@ def classify_change(root: Path, path: str) -> dict[str, Any]:
         return info
     else:
         # Asset or other file — try to attribute it to a release/artist.
-        slug = _release_slug_from_parts(parts)
+        slug = None
+        if parts[:3] == ("assets", "source", "video") and len(parts) >= 4:
+            slug = _release_slug_for_video_key(root, parts[3])
+        slug = slug or _release_slug_from_parts(parts)
         if slug:
             info["kind"] = "release-asset"
             info["release_slug"] = slug

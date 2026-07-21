@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ReleaseLanding from "../../components/ReleaseLanding.astro";
-import { getArtistById, getReleaseBySlug, getVisibleReleases, releaseCoverUrl } from "../../lib/content.js";
+import { absolutePublicUrl, getArtistById, getReleaseBySlug, getVisibleReleases, publicMusicVideo, releaseCoverUrl } from "../../lib/content.js";
 
 export function getStaticPaths() {
   return getVisibleReleases().map((release) => ({ params: { slug: release.slug } }));
@@ -30,12 +30,25 @@ const releaseJsonLd = JSON.stringify({
     "url": `https://www.maricoparecords.com/artists/${release.artist_id}/`
   },
   ...(allTracks.length ? {
-    "track": allTracks.map((t: any) => ({
-      "@type": "MusicRecording",
-      "name": t.title,
-      "url": `https://www.maricoparecords.com/releases/${release.slug}/${t.slug}/`,
-      ...(t.isrc ? { "isrcCode": t.isrc } : {})
-    }))
+    "track": allTracks.map((t: any) => {
+      const publicVideo = publicMusicVideo(t);
+      return {
+        "@type": "MusicRecording",
+        "name": t.title,
+        "url": release.song === t
+          ? `https://www.maricoparecords.com/releases/${release.slug}/`
+          : `https://www.maricoparecords.com/releases/${release.slug}/${t.slug}/`,
+        ...(t.isrc ? { "isrcCode": t.isrc } : {}),
+        ...(publicVideo ? {
+          "video": {
+            "@type": "VideoObject",
+            "name": `${t.title} music video`,
+            "contentUrl": absolutePublicUrl(publicVideo.publicUrl),
+            "thumbnailUrl": absolutePublicUrl(publicVideo.poster)
+          }
+        } : {})
+      };
+    })
   } : {})
 });
 ---

@@ -1,0 +1,404 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% macro context_fields() -%}
+<input type="hidden" name="section_id" value="{{ casting.selected_section.id }}">
+<input type="hidden" name="section_type" value="{{ casting.selected_section.type }}">
+<input type="hidden" name="scope" value="{{ casting.scope }}">
+{%- endmacro %}
+
+{% macro actor_return_fields() -%}
+<input type="hidden" name="return_section" value="{{ casting.selected_section.id }}">
+<input type="hidden" name="return_scope" value="{{ casting.scope }}">
+{%- endmacro %}
+
+{% macro optional_number(name, label, value, step='0.01') -%}
+<div class="form-field">
+  <label>{{ label }}</label>
+  <input type="number" step="{{ step }}" name="style_{{ name }}" value="{{ value if value is not none else '' }}" placeholder="inherit">
+</div>
+{%- endmacro %}
+
+{% macro actor_control_label(label, help) -%}
+<label class="actor-control-label" title="{{ help }}">{{ label }} <span aria-hidden="true">?</span></label>
+{%- endmacro %}
+
+{% macro component_fields(component, index) -%}
+<fieldset class="video-trace-card actor-component-card">
+  <legend><span>Visual component {{ index }}</span>{% if index > 1 %}<button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button>{% endif %}</legend>
+  <div class="actor-component-summary">
+    <span class="actor-swatch" style="--actor-color: {{ component.color }}"></span>
+    <strong>{{ component.id }}</strong>
+    <span>{{ component.geometry.rotation }} spirogram · {{ component.role }}</span>
+  </div>
+  <details class="video-advanced" {% if index == 1 %}open{% endif %}>
+    <summary>Visual identity controls</summary>
+    <div class="form-grid video-trace-grid">
+      <div class="form-field">{{ actor_control_label('Component ID', 'Stable identifier for this visual component inside the actor.') }}<input name="trace_id" value="{{ component.id }}" required></div>
+      <div class="form-field">{{ actor_control_label('Component fallback role', 'Fallback audio role for this component when the actor has no assigned track character.') }}<select name="trace_role">{% for role in ['master','drums','bass','vocals','instruments'] %}<option value="{{ role }}" {% if component.role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select></div>
+      <div class="form-field">{{ actor_control_label('Color', 'Base color of this component before any scene-specific hue adjustment.') }}<input type="color" name="color" value="{{ component.color }}"></div>
+      <div class="form-field">{{ actor_control_label('Layer', 'Default depth of this component within the actor. A scene may redirect the whole actor.') }}<select name="depth"><option value="background" {% if component.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if component.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
+      <div class="form-field">{{ actor_control_label('Fixed radius', 'Radius of the stationary circle used to construct the spirogram geometry.') }}<input type="number" step="0.1" name="fixed_radius" value="{{ component.geometry.fixed_radius }}" required></div>
+      <div class="form-field">{{ actor_control_label('Moving radius', 'Radius of the circle that rolls inside or outside the fixed circle.') }}<input type="number" step="0.1" name="moving_radius" value="{{ component.geometry.moving_radius }}" required></div>
+      <div class="form-field">{{ actor_control_label('Pen offset', 'Distance from the moving circle center to the point that draws the curve.') }}<input type="number" step="0.1" name="pen_offset" value="{{ component.geometry.pen_offset }}" required></div>
+      <div class="form-field">{{ actor_control_label('Spirogram type', 'Choose whether the moving circle rolls inside or outside the fixed circle.') }}<select name="geometry_rotation"><option value="inside" {% if component.geometry.rotation == 'inside' %}selected{% endif %}>hypotrochoid (inside)</option><option value="outside" {% if component.geometry.rotation == 'outside' %}selected{% endif %}>epitrochoid (outside)</option></select></div>
+      <div class="form-field">{{ actor_control_label('Curve samples', 'Number of points used to draw the curve. More points are smoother but cost more to render.') }}<input type="number" name="samples" value="{{ component.geometry.samples }}" required></div>
+      <div class="form-field">{{ actor_control_label('Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.') }}<input type="number" step="0.01" name="anchor_x" value="{{ component.anchor_x }}" required></div>
+      <div class="form-field">{{ actor_control_label('Component offset Y', 'Vertical position inside the actor identity preview. Scene position is set later in Scene Casting.') }}<input type="number" step="0.01" name="anchor_y" value="{{ component.anchor_y }}" required></div>
+      <div class="form-field">{{ actor_control_label('Identity scale', 'Base size of this component within the actor before a scene scales the whole actor.') }}<input type="number" step="0.01" name="base_scale" value="{{ component.base_scale }}" required></div>
+      <div class="form-field">{{ actor_control_label('Identity opacity', 'Base opacity of this component before a scene changes the whole actor opacity.') }}<input type="number" step="0.01" name="opacity" value="{{ component.opacity }}" required></div>
+      <div class="form-field">{{ actor_control_label('Line width', 'Base stroke width used to draw this component.') }}<input type="number" step="0.1" name="line_width" value="{{ component.line_width }}" required></div>
+      <div class="form-field">{{ actor_control_label('Base rotation °/s', 'Continuous rotation speed that belongs to the actor identity.') }}<input type="number" step="0.1" name="rotation_speed" value="{{ component.rotation_degrees_per_second }}" required></div>
+      <div class="form-field">{{ actor_control_label('Base hue shift °', 'Permanent hue rotation applied to this component before scene direction.') }}<input type="number" step="1" name="hue_shift" value="{{ component.hue_shift_degrees }}" required></div>
+      <div class="form-field">{{ actor_control_label('Blend', 'How this component combines with the other visual components in the actor.') }}<select name="blend_mode"><option value="screen" {% if component.blend_mode == 'screen' %}selected{% endif %}>screen</option><option value="normal" {% if component.blend_mode == 'normal' %}selected{% endif %}>normal</option></select></div>
+      <div class="form-field">{{ actor_control_label('Cycles / second', 'Speed at which the visible trace travels around the curve.') }}<input type="number" step="0.001" name="cycles_per_second" value="{{ component.trace.cycles_per_second }}" required></div>
+      <div class="form-field">{{ actor_control_label('Trail length', 'Fraction of the full curve left visible behind the moving trace head.') }}<input type="number" step="0.01" name="trail_fraction" value="{{ component.trace.trail_fraction }}" required></div>
+      <div class="form-field">{{ actor_control_label('Ghost count', 'Number of additional fading trace copies drawn behind the main trace.') }}<input type="number" name="ghost_count" value="{{ component.trace.ghost_count }}" required></div>
+      <div class="form-field">{{ actor_control_label('Ghost spacing', 'Time separation between successive ghost traces.') }}<input type="number" step="0.01" name="ghost_spacing" value="{{ component.trace.ghost_spacing }}" required></div>
+      <div class="form-field">{{ actor_control_label('Head radius', 'Radius of the bright point at the leading edge of the trace.') }}<input type="number" step="0.1" name="head_radius" value="{{ component.trace.head_radius }}" required></div>
+      {% for driver, value in [('scale', component.drivers.scale), ('opacity', component.drivers.opacity), ('color', component.drivers.color), ('pulse', component.drivers.pulse)] %}
+      <div class="form-field">{{ actor_control_label(driver|title ~ ' reaction', 'Fallback signal for this component response. The actor track character supplies the normal performance signal.') }}<select name="driver_{{ driver }}"><option value="">none</option>{% for signal in ['master.energy','master.accent','drums.energy','drums.accent','bass.energy','bass.accent','vocals.energy','vocals.accent','instruments.energy','instruments.accent'] %}<option value="{{ signal }}" {% if value == signal %}selected{% endif %}>{{ signal }}</option>{% endfor %}</select></div>
+      {% endfor %}
+    </div>
+  </details>
+</fieldset>
+{%- endmacro %}
+
+{% block stage %}
+<p class="video-breadcrumb">
+  <a href="/releases/{{ slug }}/tracks/{{ track_slug }}/video">← {{ track.title }}</a>
+  <span> / Scene casting</span>
+</p>
+
+<div id="video-casting-result"></div>
+
+{% if casting_error %}
+<div class="form-card"><div class="form-body">
+  <h2>Casting is not ready</h2>
+  {% for problem in casting_error %}<div class="flash flash-error">{{ problem }}</div>{% endfor %}
+  <p class="video-help">Prepare the track and finish reviewed timing before opening the casting editor.</p>
+</div></div>
+{% else %}
+<div class="track-actor-workspace">
+  <section class="form-card"><div class="form-body">
+    <div class="video-cast-heading">
+      <div><p class="video-step-label">Track · Casting roster</p><h2>Actor Library</h2><p class="video-help">These actors belong to the track, not to the selected scene. Each project actor combines a pinned visual identity with one musical character.</p></div>
+      <a class="btn btn-secondary btn-sm" href="?section={{ casting.selected_section.id }}&scope={{ casting.scope }}&actor=__new__">+ New track actor</a>
+    </div>
+
+    <h3>Actors in this track</h3>
+    {% if casting.project_actors %}
+    <div class="actor-library-grid">
+      {% for item in casting.project_actors %}
+      <a class="actor-library-card {{ 'active' if casting.selected_actor_saved and item.id == casting.selected_actor.id else '' }}" href="?section={{ casting.selected_section.id }}&scope={{ casting.scope }}&actor={{ item.id }}">
+        <span class="actor-swatch" style="--actor-color: {{ item.actor.components[0].color }}"></span>
+        <span><strong>{{ item.name }}</strong><small>plays {{ item.actor.character or 'unassigned' }} · {{ item.component_count }} visual component{{ '' if item.component_count == 1 else 's' }} · {{ item.source }}{% if item.library_status %} · {{ item.library_status }}{% endif %}</small></span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="video-empty-state">No track actors yet. Scene Casting can create a recommended track roster from the current look.</p>
+    {% endif %}
+
+    <h3>Reusable visual identities</h3>
+    {% if casting.library_actors %}
+    <div class="actor-library-grid">
+      {% for item in casting.library_actors %}
+      <div class="actor-library-card">
+        <span class="actor-swatch" style="--actor-color: {{ item.actor.components[0].color }}"></span>
+        <span><strong>{{ item.name }}</strong><small>{{ item.description or item.id }} · revision {{ item.revision[:8] }}</small></span>
+        <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/actors" hx-target="#video-casting-result" hx-swap="innerHTML">
+          {{ actor_return_fields() }}<input type="hidden" name="library_actor_id" value="{{ item.id }}">
+          <label class="actor-import-character">plays <select name="actor_character">{% for role in ['master','drums','bass','vocals','instruments'] %}<option value="{{ role }}" {% if item.actor.components[0].role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select></label>
+          <button class="btn btn-secondary btn-sm" name="action" value="actor_import" type="submit">Import identity</button>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="video-empty-state">The reusable identity library is empty. Save a track actor below, then choose “Add identity to global library.”</p>
+    {% endif %}
+  </div></section>
+
+  <section class="form-card" id="track-actor-designer"><div class="form-body">
+    <div><p class="video-step-label">Track · Character design</p><h2>Actor Designer</h2><p class="video-help">Define who this actor is for the whole track. Its visual identity and musical character stay fixed while scenes direct its performance.</p></div>
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/actors" hx-target="#video-casting-result" hx-swap="innerHTML">
+      {{ actor_return_fields() }}
+      <input type="hidden" name="actor_original_id" value="{{ casting.selected_actor.id if casting.selected_actor_saved else '' }}">
+      <div class="form-grid actor-identity-fields">
+        <div class="form-field">{{ actor_control_label('Actor ID', 'Stable project identifier for this actor. It cannot be renamed after the actor is saved.') }}<input name="actor_edit_id" value="{{ casting.selected_actor.id }}" {% if casting.selected_actor_saved %}readonly{% endif %} required><small>Stable once saved.</small></div>
+        <div class="form-field">{{ actor_control_label('Actor name', 'Human-readable name shown in the track roster and every scene cast.') }}<input name="actor_name" value="{{ casting.selected_actor.name }}" required></div>
+        <div class="form-field">{{ actor_control_label('Character — reacts to', 'Track-wide musical role played by this actor. Scenes direct the actor but do not change its character.') }}<select name="actor_character" required>{% for role in ['master','drums','bass','vocals','instruments'] %}<option value="{{ role }}" {% if casting.selected_actor.character == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select><small>Assigned once for the track.</small></div>
+        <div class="form-field form-field-wide">{{ actor_control_label('Identity note', 'A short description of the visual traits that should remain recognizable in every scene.') }}<input name="actor_description" value="{{ casting.selected_actor.description }}" placeholder="What makes this actor recognizable?"></div>
+      </div>
+      <div class="actor-designer-live-layout">
+        <div class="actor-designer-preview-column">
+          <div class="actor-designer-preview">
+            <canvas id="actor-designer-canvas" width="720" height="720" aria-label="Live square preview of the actor's visual identity"></canvas>
+          </div>
+          <small class="actor-designer-preview-note">Actor-local identity preview. Position in the video frame belongs to Scene Casting.</small>
+        </div>
+        <div id="actor-components" class="actor-designer-controls">
+          {% for component in casting.selected_actor.components %}{{ component_fields(component, loop.index) }}{% endfor %}
+        </div>
+      </div>
+      <div class="video-cast-actions">
+        <button class="btn btn-primary" name="action" value="actor_save" type="submit">Save track actor</button>
+        <button class="btn btn-secondary" type="button" onclick="addActorComponent()">+ Add visual component</button>
+        {% if casting.selected_actor_saved %}
+        <button class="btn btn-secondary" name="action" value="actor_duplicate" type="submit" formnovalidate>Duplicate</button>
+        <button class="btn btn-secondary" name="action" value="actor_publish" type="submit">Add identity to global library</button>
+        <button class="btn btn-danger" name="action" value="actor_delete" type="submit" formnovalidate>Delete actor</button>
+        {% endif %}
+      </div>
+    </form>
+  </div></section>
+</div>
+
+<div class="video-scene-workspace-heading">
+  <p class="video-step-label">Scenes · Assignment and direction</p>
+  <h2>Scene Casting</h2>
+  <p class="video-help">Selecting a scene below changes only where track actors appear and how they perform.</p>
+</div>
+
+<div class="video-casting-layout">
+  <aside class="form-card video-scene-list">
+    <div class="form-body">
+      <h2>Scenes</h2>
+      <p class="video-help">Cast all scenes of a type, then direct an exact scene only when it needs to differ.</p>
+      {% for scene in casting.sections %}
+      <a class="video-scene-link {{ 'active' if scene.id == casting.selected_section.id else '' }}"
+         href="?section={{ scene.id }}&scope={{ casting.scope }}{% if casting.selected_actor_saved %}&actor={{ casting.selected_actor.id }}{% endif %}">
+        <span><strong>{{ scene.label }}</strong><small>{{ scene.id }} · {{ '%.2f'|format(scene.start) }}–{{ '%.2f'|format(scene.end) }}s</small></span>
+        <span class="badge badge-{{ 'live' if scene.actor_count else 'draft' }}">{% if scene.actor_count %}{{ scene.actor_count }} actor{{ '' if scene.actor_count == 1 else 's' }}{% else %}legacy{% endif %}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </aside>
+
+  <div class="video-casting-main">
+    <div class="form-card"><div class="form-body">
+      <div class="video-cast-heading">
+        <div>
+          <h2>{{ casting.selected_section.label or casting.selected_section.type|replace('_', ' ')|title }}</h2>
+          <p class="video-help">{{ casting.selected_section.id }} · {{ casting.composition_source }}</p>
+        </div>
+        <div class="video-scope-tabs">
+          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'type' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=type">All {{ casting.selected_section.type }} scenes</a>
+          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'section' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=section">Only this scene</a>
+        </div>
+      </div>
+      {% if not cast_status_ok %}<div class="flash flash-error">Review and save timing before saving visual casts.</div>{% endif %}
+    </div></div>
+
+    <section class="form-card"><div class="form-body">
+      <div><h2>Cast this scene</h2><p class="video-help">Assign track actors to {{ 'all ' ~ casting.selected_section.type ~ ' scenes' if casting.scope == 'type' else 'only ' ~ casting.selected_section.id }}, then direct how each one performs here.</p></div>
+      {% if not casting.actor_cast %}
+      <div class="video-empty-state actor-cast-onboarding">
+        <strong>This scene still uses the legacy visual composition.</strong>
+        <p>Create actors from the deterministic recommended look, or adopt the exact look currently shown.</p>
+        <div class="video-cast-actions">
+          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-primary" name="action" value="recommended" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Create recommended actors</button></form>
+          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-secondary" name="action" value="adopt" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Adopt current look as actors</button></form>
+        </div>
+      </div>
+      {% else %}
+      <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
+        {{ context_fields() }}
+        <div class="form-grid video-project-look">
+          <div class="form-field"><label>Audio mapping</label><select name="mapping_preset">{% for preset in casting.presets.mapping %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.mapping_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select></div>
+          <div class="form-field"><label>Palette</label><select name="palette_preset">{% for preset in casting.presets.palette %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.palette_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select></div>
+          <input type="hidden" name="auto_casting" value="{{ 'true' if casting.project.visuals.auto_casting else 'false' }}">
+        </div>
+        <div id="actor-assignments">
+          {% for assignment in casting.actor_cast.actors %}
+          <fieldset class="actor-assignment-card">
+            <legend><span>Cast member {{ loop.index }}</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button></legend>
+            <input type="hidden" name="assignment_id" value="{{ assignment.id }}">
+            <div class="form-grid actor-direction-grid">
+              <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in casting.project_actors %}<option value="{{ item.id }}" {% if assignment.actor == item.id %}selected{% endif %}>{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
+              <div class="form-field"><label>Position X</label><input type="number" step="0.01" name="direction_anchor_x" value="{{ assignment.direction.anchor_x if assignment.direction.anchor_x is not none else '' }}" placeholder="identity"></div>
+              <div class="form-field"><label>Position Y</label><input type="number" step="0.01" name="direction_anchor_y" value="{{ assignment.direction.anchor_y if assignment.direction.anchor_y is not none else '' }}" placeholder="identity"></div>
+              <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="{{ assignment.direction.scale }}" required></div>
+              <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="{{ assignment.direction.opacity }}" required></div>
+              <div class="form-field"><label>Extra rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="{{ assignment.direction.rotation_offset_degrees_per_second }}" required></div>
+              <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="{{ assignment.direction.hue_shift_degrees }}" required></div>
+              <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background" {% if assignment.direction.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if assignment.direction.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
+              <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true" {% if assignment.direction.visible %}selected{% endif %}>visible</option><option value="false" {% if not assignment.direction.visible %}selected{% endif %}>hidden in this scene</option></select></div>
+            </div>
+          </fieldset>
+          {% endfor %}
+        </div>
+        <button class="btn btn-secondary btn-sm" type="button" onclick="addActorAssignment()">+ Add actor to scene</button>
+
+        <details class="video-advanced">
+          <summary>Advanced whole-scene response</summary>
+          <p class="video-help">These settings affect the scene after each actor's own direction is applied. Blank values inherit.</p>
+          <div class="video-role-picker"><strong>Visible musical roles</strong>{% for role in ['master', 'drums', 'bass', 'vocals', 'instruments'] %}<label><input type="checkbox" name="style_visible_roles" value="{{ role }}" {% if casting.style.visible_roles and role in casting.style.visible_roles %}checked{% endif %}> {{ role }}</label>{% endfor %}</div>
+          <div class="form-grid video-style-grid">
+            {{ optional_number('layer_fraction', 'Layer fraction', casting.style.layer_fraction) }}
+            {{ optional_number('scale', 'Scene scale', casting.style.scale) }}
+            {{ optional_number('motion', 'Motion', casting.style.motion) }}
+            {{ optional_number('color_intensity', 'Color intensity', casting.style.color_intensity) }}
+            {{ optional_number('onset_response', 'Onset response', casting.style.onset_response) }}
+            {{ optional_number('rotation_direction', 'Rotation direction', casting.style.rotation_direction) }}
+            {{ optional_number('palette_shift', 'Palette shift', casting.style.palette_shift) }}
+            {{ optional_number('lyrics_opacity', 'Lyrics opacity', casting.style.lyrics_opacity) }}
+            {{ optional_number('spatial_spread', 'Spatial spread', casting.style.spatial_spread) }}
+            {{ optional_number('anchor_drift', 'Anchor drift', casting.style.anchor_drift, '0.001') }}
+            {{ optional_number('trace_speed', 'Trace speed', casting.style.trace_speed) }}
+            {{ optional_number('trail_length', 'Trail length', casting.style.trail_length) }}
+            {{ optional_number('beat_gain', 'Beat gain', casting.style.beat_gain) }}
+            {{ optional_number('intensity_gain', 'Intensity gain', casting.style.intensity_gain) }}
+          </div>
+        </details>
+        <div class="video-cast-actions">
+          <button class="btn btn-primary" name="action" value="save_cast" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Save scene cast</button>
+          <button class="btn btn-danger" name="action" value="clear" type="submit" formnovalidate {% if not cast_status_ok %}disabled{% endif %}>Clear {{ 'type' if casting.scope == 'type' else 'scene' }} cast</button>
+        </div>
+      </form>
+      {% endif %}
+    </div></section>
+
+    <div class="form-card"><div class="form-body">
+      <h2>Scene previews</h2>
+      <p class="video-help">Render the selected scene or a one-frame-per-scene contact sheet using the compiled actor cast.</p>
+      <div class="video-job-grid">
+        <div id="video-job-frame">{% set job = frame_job %}{% set kind = 'frame' %}{% set preview_time = casting.selected_section.start + (casting.selected_section.end - casting.selected_section.start) / 2 %}{% include "releases/workspace/_video_job.html" %}</div>
+        <div id="video-job-contact">{% set job = contact_job %}{% set kind = 'contact' %}{% include "releases/workspace/_video_job.html" %}</div>
+      </div>
+    </div></div>
+
+    {% if casting.gallery %}
+    <div class="form-card"><div class="form-body">
+      <h2>Preview history</h2>
+      <div class="video-preview-gallery">{% for preview in casting.gallery %}<figure class="{{ 'stale' if preview.stale else '' }}"><img src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/previews/{{ preview.name }}" alt="{{ preview.preview_type }} preview"><figcaption><strong>{{ preview.preview_type|replace('_', ' ') }}</strong>{% if preview.time_seconds is not none %} · {{ '%.3f'|format(preview.time_seconds) }}s{% endif %}<span class="badge badge-{{ 'failed' if preview.stale else 'live' }}">{{ 'stale' if preview.stale else 'current' }}</span></figcaption></figure>{% endfor %}</div>
+    </div></div>
+    {% endif %}
+  </div>
+</div>
+
+<template id="actor-component-template">
+  <fieldset class="video-trace-card actor-component-card">
+    <legend><span>New visual component</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button></legend>
+    <div class="form-grid video-trace-grid">
+      <div class="form-field">{{ actor_control_label('Component ID', 'Stable identifier for this visual component inside the actor.') }}<input name="trace_id" value="shape" required></div>
+      <div class="form-field">{{ actor_control_label('Component fallback role', 'Fallback audio role for this component when the actor has no assigned track character.') }}<select name="trace_role"><option>master</option><option>drums</option><option>bass</option><option selected>vocals</option><option>instruments</option></select></div>
+      <div class="form-field">{{ actor_control_label('Color', 'Base color of this component before any scene-specific hue adjustment.') }}<input type="color" name="color" value="#ff5fd2"></div>
+      <div class="form-field">{{ actor_control_label('Layer', 'Default depth of this component within the actor. A scene may redirect the whole actor.') }}<select name="depth"><option>background</option><option selected>foreground</option></select></div>
+      <div class="form-field">{{ actor_control_label('Fixed radius', 'Radius of the stationary circle used to construct the spirogram geometry.') }}<input type="number" step="0.1" name="fixed_radius" value="180" required></div>
+      <div class="form-field">{{ actor_control_label('Moving radius', 'Radius of the circle that rolls inside or outside the fixed circle.') }}<input type="number" step="0.1" name="moving_radius" value="60" required></div>
+      <div class="form-field">{{ actor_control_label('Pen offset', 'Distance from the moving circle center to the point that draws the curve.') }}<input type="number" step="0.1" name="pen_offset" value="100" required></div>
+      <div class="form-field">{{ actor_control_label('Spirogram type', 'Choose whether the moving circle rolls inside or outside the fixed circle.') }}<select name="geometry_rotation"><option value="inside" selected>hypotrochoid (inside)</option><option value="outside">epitrochoid (outside)</option></select></div>
+      <div class="form-field">{{ actor_control_label('Curve samples', 'Number of points used to draw the curve. More points are smoother but cost more to render.') }}<input type="number" name="samples" value="900" required></div>
+      <div class="form-field">{{ actor_control_label('Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.') }}<input type="number" step="0.01" name="anchor_x" value="0.5" required></div>
+      <div class="form-field">{{ actor_control_label('Component offset Y', 'Vertical position inside the actor identity preview. Scene position is set later in Scene Casting.') }}<input type="number" step="0.01" name="anchor_y" value="0.5" required></div>
+      <div class="form-field">{{ actor_control_label('Identity scale', 'Base size of this component within the actor before a scene scales the whole actor.') }}<input type="number" step="0.01" name="base_scale" value="1" required></div>
+      <div class="form-field">{{ actor_control_label('Identity opacity', 'Base opacity of this component before a scene changes the whole actor opacity.') }}<input type="number" step="0.01" name="opacity" value="0.8" required></div>
+      <div class="form-field">{{ actor_control_label('Line width', 'Base stroke width used to draw this component.') }}<input type="number" step="0.1" name="line_width" value="2" required></div>
+      <div class="form-field">{{ actor_control_label('Base rotation °/s', 'Continuous rotation speed that belongs to the actor identity.') }}<input type="number" step="0.1" name="rotation_speed" value="0" required></div>
+      <div class="form-field">{{ actor_control_label('Base hue shift °', 'Permanent hue rotation applied to this component before scene direction.') }}<input type="number" step="1" name="hue_shift" value="0" required></div>
+      <div class="form-field">{{ actor_control_label('Blend', 'How this component combines with the other visual components in the actor.') }}<select name="blend_mode"><option selected>screen</option><option>normal</option></select></div>
+      <div class="form-field">{{ actor_control_label('Cycles / second', 'Speed at which the visible trace travels around the curve.') }}<input type="number" step="0.001" name="cycles_per_second" value="0.08" required></div>
+      <div class="form-field">{{ actor_control_label('Trail length', 'Fraction of the full curve left visible behind the moving trace head.') }}<input type="number" step="0.01" name="trail_fraction" value="0.24" required></div>
+      <div class="form-field">{{ actor_control_label('Ghost count', 'Number of additional fading trace copies drawn behind the main trace.') }}<input type="number" name="ghost_count" value="1" required></div>
+      <div class="form-field">{{ actor_control_label('Ghost spacing', 'Time separation between successive ghost traces.') }}<input type="number" step="0.01" name="ghost_spacing" value="0.08" required></div>
+      <div class="form-field">{{ actor_control_label('Head radius', 'Radius of the bright point at the leading edge of the trace.') }}<input type="number" step="0.1" name="head_radius" value="3" required></div>
+      {% for driver in ['scale', 'opacity', 'color', 'pulse'] %}<div class="form-field">{{ actor_control_label(driver|title ~ ' reaction', 'Fallback signal for this component response. The actor track character supplies the normal performance signal.') }}<select name="driver_{{ driver }}"><option value="">none</option>{% for signal in ['master.energy','master.accent','drums.energy','drums.accent','bass.energy','bass.accent','vocals.energy','vocals.accent','instruments.energy','instruments.accent'] %}<option value="{{ signal }}">{{ signal }}</option>{% endfor %}</select></div>{% endfor %}
+    </div>
+  </fieldset>
+</template>
+
+<template id="actor-assignment-template">
+  <fieldset class="actor-assignment-card">
+    <legend><span>New cast member</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button></legend>
+    <input type="hidden" name="assignment_id" value="appearance">
+    <div class="form-grid actor-direction-grid">
+      <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in casting.project_actors %}<option value="{{ item.id }}">{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
+      <div class="form-field"><label>Position X</label><input type="number" step="0.01" name="direction_anchor_x" placeholder="identity"></div>
+      <div class="form-field"><label>Position Y</label><input type="number" step="0.01" name="direction_anchor_y" placeholder="identity"></div>
+      <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="1" required></div>
+      <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="1" required></div>
+      <div class="form-field"><label>Extra rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="0" required></div>
+      <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="0" required></div>
+      <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background">background</option><option value="foreground">foreground</option></select></div>
+      <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true">visible</option><option value="false">hidden in this scene</option></select></div>
+    </div>
+  </fieldset>
+</template>
+
+<script>
+  function addActorComponent() {
+    const clone = document.getElementById('actor-component-template').content.cloneNode(true);
+    const count = document.querySelectorAll('#actor-components fieldset').length + 1;
+    clone.querySelector('input[name="trace_id"]').value = `shape-${count}`;
+    document.getElementById('actor-components').appendChild(clone);
+    drawActorPreview();
+  }
+  function addActorAssignment() {
+    const clone = document.getElementById('actor-assignment-template').content.cloneNode(true);
+    const count = document.querySelectorAll('#actor-assignments fieldset').length + 1;
+    clone.querySelector('input[name="assignment_id"]').value = `appearance-${count}`;
+    document.getElementById('actor-assignments').appendChild(clone);
+  }
+
+  function fieldValue(card, name, fallback) {
+    const field = card.querySelector(`[name="${name}"]`);
+    return field ? field.value : fallback;
+  }
+
+  function drawActorPreview() {
+    const canvas = document.getElementById('actor-designer-canvas');
+    if (!canvas) return;
+    const context = canvas.getContext('2d');
+    context.fillStyle = '#101014';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+    const cards = document.querySelectorAll('#actor-components .actor-component-card');
+    cards.forEach((card) => {
+      const fixed = Number(fieldValue(card, 'fixed_radius', 180));
+      const moving = Math.max(0.001, Number(fieldValue(card, 'moving_radius', 60)));
+      const pen = Number(fieldValue(card, 'pen_offset', 100));
+      const outside = fieldValue(card, 'geometry_rotation', 'inside') === 'outside';
+      const samples = Math.min(2400, Math.max(240, Number(fieldValue(card, 'samples', 900))));
+      const anchorX = Number(fieldValue(card, 'anchor_x', 0.5));
+      const anchorY = Number(fieldValue(card, 'anchor_y', 0.5));
+      const identityScale = Number(fieldValue(card, 'base_scale', 1));
+      const color = fieldValue(card, 'color', '#ff5fd2');
+      const opacity = Number(fieldValue(card, 'opacity', 0.8));
+      const lineWidth = Number(fieldValue(card, 'line_width', 2));
+      const points = [];
+      let extent = 1;
+      for (let index = 0; index <= samples; index += 1) {
+        const angle = (index / samples) * Math.PI * 20;
+        const carrier = outside ? fixed + moving : fixed - moving;
+        const x = carrier * Math.cos(angle) + (outside ? -1 : 1) * pen * Math.cos((carrier / moving) * angle);
+        const y = carrier * Math.sin(angle) - pen * Math.sin((carrier / moving) * angle);
+        points.push([x, y]);
+        extent = Math.max(extent, Math.abs(x), Math.abs(y));
+      }
+      const fit = Math.min(canvas.width, canvas.height) * 0.38 * identityScale / extent;
+      const originX = canvas.width * Math.min(1, Math.max(0, anchorX));
+      const originY = canvas.height * Math.min(1, Math.max(0, anchorY));
+      context.beginPath();
+      points.forEach(([x, y], index) => {
+        const px = originX + x * fit;
+        const py = originY + y * fit;
+        if (index === 0) context.moveTo(px, py); else context.lineTo(px, py);
+      });
+      context.globalAlpha = Math.min(1, Math.max(0, opacity));
+      context.strokeStyle = color;
+      context.lineWidth = Math.max(0.5, lineWidth);
+      context.shadowColor = color;
+      context.shadowBlur = 8;
+      context.stroke();
+      context.globalAlpha = 1;
+      context.shadowBlur = 0;
+    });
+  }
+
+  document.addEventListener('input', (event) => {
+    if (event.target.closest('#actor-components')) drawActorPreview();
+  });
+  drawActorPreview();
+</script>
+{% endif %}
+{% endblock %}

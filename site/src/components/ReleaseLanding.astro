@@ -2,6 +2,7 @@
 import Breadcrumbs from "./Breadcrumbs.astro";
 import Lyrics from "./Lyrics.astro";
 import StreamingLinks from "./StreamingLinks.astro";
+import MusicVideoPlayer from "./MusicVideoPlayer.astro";
 import { releaseCoverUrl, featuredArtists } from "../lib/content.js";
 import { releaseSocialLinks, trackStreamingLinks } from "../lib/catalog";
 import { getEntry } from "astro:content";
@@ -93,6 +94,8 @@ function cleanMarkdownText(value: string) {
     </div>
     <img src={coverUrl} alt="" width="800" height="800" />
   </section>
+
+  {release.song && <MusicVideoPlayer track={release.song} />}
 
   {release.tracks?.length > 0 && (
     <section class="track-list">

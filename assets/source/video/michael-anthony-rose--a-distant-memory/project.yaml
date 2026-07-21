@@ -1,0 +1,195 @@
+version: 1
+adapter_version: 1
+renderer_contract_version: 1
+source_renderer_revision: e3d4b100e026d486ce2c28547e6e8a907b1c621a
+source:
+  release: content/releases/a-distant-memory.yaml
+  track_slug: a-distant-memory
+  track_key: michael-anthony-rose--a-distant-memory
+  artist_id: michael-anthony-rose
+project:
+  version: 1
+  title: A Distant Memory
+  audio:
+    master: '@mrp/master'
+    stems:
+      bass: '@mrp/stems/bass'
+      drums: '@mrp/stems/drums'
+      instruments: '@mrp/stems/instruments'
+      vocals: '@mrp/stems/vocals'
+    duration_tolerance: 0.05
+  lyrics:
+    source: '@mrp/lyrics'
+    aligned: lyrics.aligned.yaml
+    language: en
+  cards:
+    opening:
+      file: '@mrp/cover'
+      duration: 3.0
+      fit: contain
+      fade: 0.5
+      background: '#101014'
+    closing:
+      file: '@mrp/cover'
+      duration: 4.0
+      fit: contain
+      fade: 0.75
+      background: '#101014'
+  video:
+    width: 1920
+    height: 1080
+    fps: 30.0
+    background: '#101014'
+    seed: 4821
+  encoding:
+    video_codec: libx264
+    pixel_format: yuv420p
+    crf: 18
+    preset: medium
+    threads: 1
+    audio_codec: aac
+    audio_bitrate_kbps: 192
+    audio_sample_rate: 48000
+    audio_channels: 2
+    faststart: true
+    duration_tolerance: 0.15
+  text:
+    font: '@mrp/font'
+    size: 60
+    maximum_width_fraction: 0.82
+    position: bottom
+    active_color: '#ffffff'
+  analysis:
+    sample_rate: 22050
+    frame_length: 2048
+    hop_length: 512
+    low_cutoff_hz: 250.0
+    high_cutoff_hz: 2000.0
+    percentile_low: 5.0
+    percentile_high: 95.0
+    attack_seconds: 0.05
+    release_seconds: 0.25
+    vocal_activity_threshold: 0.15
+    cache_dir: cache/analysis
+  alignment:
+    model: whisper-1
+    cache_dir: cache/alignment
+    min_token_similarity: 0.72
+    matched_confidence: 0.75
+    max_tail_seconds: 0.75
+    activity_threshold: 0.2
+    upload_bitrate_kbps: 128
+  visuals:
+    mapping_preset: balanced
+    palette_preset: layer
+    palette: []
+    layers:
+    - id: instrument-haze
+      role: instruments
+      geometry:
+        fixed_radius: 192.0
+        moving_radius: 48.0
+        pen_offset: 112.0
+        rotation: inside
+        samples: 1800
+      trace:
+        cycles_per_second: 0.018
+        trail_fraction: 0.54
+        ghost_count: 3
+        ghost_spacing: 0.07
+        head_radius: 0.0
+      color: '#8c5cff'
+      depth: background
+      anchor_x: 0.52
+      anchor_y: 0.38
+      base_scale: 1.82
+      opacity: 0.16
+      line_width: 1.2
+      rotation_degrees_per_second: -0.35
+      hue_shift_degrees: 18.0
+      blend_mode: screen
+      drivers: {}
+    - id: bass-orbit
+      role: bass
+      geometry:
+        fixed_radius: 233.0
+        moving_radius: 89.0
+        pen_offset: 144.0
+        rotation: outside
+        samples: 1400
+      trace:
+        cycles_per_second: 0.045
+        trail_fraction: 0.18
+        ghost_count: 1
+        ghost_spacing: 0.1
+        head_radius: 3.5
+      color: '#4c78ff'
+      depth: foreground
+      anchor_x: 0.14
+      anchor_y: 0.44
+      base_scale: 0.6
+      opacity: 0.74
+      line_width: 2.2
+      rotation_degrees_per_second: 0.8
+      hue_shift_degrees: 0.0
+      blend_mode: screen
+      drivers: {}
+    - id: vocal-flower
+      role: vocals
+      geometry:
+        fixed_radius: 180.0
+        moving_radius: 65.0
+        pen_offset: 95.0
+        rotation: inside
+        samples: 900
+      trace:
+        cycles_per_second: 0.068
+        trail_fraction: 0.28
+        ghost_count: 1
+        ghost_spacing: 0.09
+        head_radius: 4.0
+      color: '#ff5fd2'
+      depth: foreground
+      anchor_x: 0.52
+      anchor_y: 0.34
+      base_scale: 0.48
+      opacity: 0.82
+      line_width: 2.4
+      rotation_degrees_per_second: -1.25
+      hue_shift_degrees: -12.0
+      blend_mode: screen
+      drivers: {}
+    - id: drum-spark
+      role: drums
+      geometry:
+        fixed_radius: 96.0
+        moving_radius: 32.0
+        pen_offset: 50.0
+        rotation: outside
+        samples: 720
+      trace:
+        cycles_per_second: 0.12
+        trail_fraction: 0.3
+        ghost_count: 1
+        ghost_spacing: 0.07
+        head_radius: 4.0
+      color: '#ffd166'
+      depth: foreground
+      anchor_x: 0.89
+      anchor_y: 0.46
+      base_scale: 0.54
+      opacity: 0.72
+      line_width: 1.6
+      rotation_degrees_per_second: 2.4
+      hue_shift_degrees: 10.0
+      blend_mode: screen
+      drivers: {}
+    canvas_margin: 0.08
+    transition_seconds: 0.65
+    background_response: 0.16
+    lyric_fade_seconds: 0.25
+    section_styles: {}
+    section_overrides: {}
+    auto_casting: true
+    section_compositions: {}
+    composition_overrides: {}

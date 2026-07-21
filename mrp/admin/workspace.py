@@ -1,8 +1,8 @@
 """Shared workspace helpers: stage registry, completion indicators, form utilities.
 
 The release workspace presents each release as a set of workflow-stage screens
-(intake → details → links → tracks → critic → sampler → promoter → publish →
-monitoring).
+(intake → details → links → tracks → optional video → critic → sampler →
+promoter → publish → monitoring).
 This module owns the stage registry and the cheap heuristics that drive the
 per-stage completion dots in the workspace header.
 """
@@ -13,6 +13,8 @@ from pathlib import Path
 from typing import Any
 
 import jsonschema
+
+from mrp.core.validate import validate_release_stem_ids
 
 _SCHEMA_PATH = Path(__file__).parent.parent / "schemas" / "release.schema.json"
 
@@ -28,6 +30,7 @@ STAGES = [
     ("details",    "Details"),
     ("links",      "Links"),
     ("tracks",     "Tracks"),
+    ("video",      "Video"),
     ("critic",     "Critic"),
     ("sampler",    "Sampler"),
     ("promoter",   "Promoter"),
@@ -44,6 +47,14 @@ def validate_release_dict(data: dict) -> list[dict]:
     for err in validator.iter_errors(data):
         field = ".".join(str(p) for p in err.absolute_path) or "(root)"
         errors.append({"field": field, "message": err.message, "severity": "error"})
+    errors.extend(
+        {
+            "field": error["field"],
+            "message": error["message"],
+            "severity": error["severity"],
+        }
+        for error in validate_release_stem_ids(Path("(release)"), data)
+    )
     return errors
 
 
@@ -298,11 +309,14 @@ def _publish_status(release: dict) -> dict:
 
 def stage_statuses(root: Path, slug: str, release: dict) -> dict[str, dict]:
     """Compute {stage_id: {"state": done|partial|todo, "detail": str}} for the header."""
+    from mrp.admin.video_workspace import video_stage_status
+
     return {
         "intake": {"state": "done", "detail": ""},
         "details": _details_status(release),
         "links": _links_status(release),
         "tracks": _tracks_status(release, root),
+        "video": video_stage_status(root, slug, release),
         "critic": _critic_status(release, root),
         "sampler": _sampler_status(release),
         "promoter": _promoter_status(root, release),

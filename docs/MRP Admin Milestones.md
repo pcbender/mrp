@@ -105,6 +105,86 @@ more expressive video options as explicit, user-triggered upgrades:
   per release; proven with STAB) → Nim video render + local snippet mux,
   human gate between every stage
 
+### MRP Music Video Designer
+
+Planned 2026-07-20. Move the headless Python renderer from Spirophonic into
+MRP, leave the Spirophonic React browser instrument unchanged, and build the
+production editor as a new FastAPI/Jinja/HTMX workspace stage. The phased
+architecture, backward-compatible stems and music-video track contracts,
+isolated renderer test lanes, job requirements, and Astro compatibility gates
+are captured in [MRP Music Video Designer Plan](<MRP Music Video Designer Plan.md>).
+
+Implementation begins with optional schema contracts and compatibility tests;
+the renderer moves only after existing and enriched track records are proven to
+validate and build through Astro without leaking private production paths.
+
+Milestones 1 and the MRP side of Milestone 2 were implemented 2026-07-20 on
+`feat/music-video-designer-plan`: optional per-track contracts remain backward
+compatible, the headless renderer and parity suite now live in `mrp.video`, and
+`scripts/mrp video ...` exposes lazy diagnostic commands. Removal of the donor
+Python renderer is intentionally a separate post-merge change; the Spirophonic
+React application remains untouched.
+
+Milestone 3 was implemented 2026-07-20 on the same branch: a release/track
+adapter now creates symbolic versioned projects and ignored runtime manifests,
+aggregates repeated semantic stem roles deterministically, records input hashes
+and preflight results, detects stale artifacts, and exposes prepare, analyze,
+align, preview, and render commands under `scripts/mrp video track ...`.
+
+Milestone 4 was implemented 2026-07-20 on the same branch: the optional Video
+stage now provides a per-track readiness matrix, local-path master/stem editing,
+and media/tool validation. Prepare, analysis, and full-render work runs in
+persistent child-process jobs with HTMX progress polling, heartbeats,
+cancellation, per-track render exclusivity, artifact/log references, and
+interruption recovery after an admin restart.
+
+Milestone 5 was implemented 2026-07-20 on the same branch: alignment is now a
+process-backed Video job, and each track has a timing editor for audio scrubbing,
+section and lyric-cue boundaries, confidence/status review, and range previews.
+Validated edits are saved atomically to the versioned aligned-lyrics artifact;
+uncertain or unmatched cues require explicit review before the track becomes
+`timed`, and structure directives cannot appear as displayed lyric cues.
+
+Milestone 6 was implemented 2026-07-20 on the same branch: every timed section
+can now use deterministic auto casting, a section-type default, or an exact
+section override. The editor provides trace CRUD plus geometry, placement,
+color, depth, motion, audio-driver, beat, and intensity controls, all saved
+atomically to the versioned track project. Isolated frame/contact-sheet jobs
+record the project fingerprint; casting edits immediately mark previous
+validation and previews stale while retaining them for comparison.
+
+The actor-first casting revision was implemented 2026-07-21 on the same branch.
+Reusable named actors now own one or more visual components, project imports pin
+global-library snapshots by content revision, and each track actor receives one
+musical character such as bass. Section-type or exact-scene assignments contain
+only performance direction such as position, scale, visibility, layer, hue, and
+rotation; they cannot redefine what the actor reacts to. Actor casts compile
+into the unchanged renderer composition contract, while original embedded
+compositions remain backward compatible. Actor Library and Actor Designer are
+track-level surfaces saved independently of section scope; Scene Casting alone
+owns assignment and per-scene direction, with advanced controls progressively
+disclosed.
+
+Milestone 7 was implemented 2026-07-20 on the same branch: the per-track
+rendering workspace now creates isolated section/custom-range draft iterations,
+keeps their verified manifests and private playback history, and discards drafts
+without affecting source or full output. A separate full-render preflight pins
+the planned input fingerprint before the process-backed render begins. Full
+jobs retain progress, cancellation, restart recovery, and exclusivity, publish
+only FFprobe-verified output, and require a stale-safe human approval that
+records the exact project, input, manifest, and MP4 hashes before advancing only
+the selected track to `approved`.
+
+Milestone 8 was implemented 2026-07-20 on the same branch: approved video and
+poster files now publish to content-addressed durable storage outside Git and
+the disposable build tree, while a public-only versioned receipt participates
+in Changes-page release attribution. Public display requires a separate
+per-track Opt In checkbox; approval or publication without `opt_in: true` cannot
+produce an Astro player or copy media into a build. Opted-in singles and album
+tracks receive an accessible player and public `VideoObject` metadata, and
+build, stage, verification, rollback, compatibility, and private-path tests
+cover the complete media lifecycle.
+
 ## MRP Admin v0.4
 
 - ~~LANDR/Amuse CSV import~~ Done 2026-07-07 (PR #66): Metrics page imports
@@ -134,6 +214,20 @@ more expressive video options as explicit, user-triggered upgrades:
 
 
 ## TODO List
+
+### Music Video Designer follow-ups
+
+- Stem preview playback: add a private admin audio endpoint and an inline play
+  control for every imported stem so an operator can identify composite or
+  overlapping sources before enabling them. Keep paths private, allow only one
+  preview to play at a time, and do not copy stem audio into the public site.
+- Additional actor media: extend the actor component union and renderer
+  compiler beyond the initial spirogram implementation to imported still,
+  vector, or motion assets, with the same pinned-library, private-path, preview,
+  and deterministic-render guarantees.
+
+### General admin follow-ups
+
 - ~~git integration~~ Done 2026-07-07 (PR #64): Changes page — review diffs,
   Approve & Push commits content/assets pathspecs to main (validation gate,
   branch guard, pull --ff-only). Runtime split: admin runs from the

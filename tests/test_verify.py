@@ -91,6 +91,37 @@ def write_file(path: Path, text: str) -> None:
     path.write_text(text)
 
 
+def add_published_track_video(repo: Path, *, opt_in: bool = True) -> tuple[Path, Path]:
+    release_path = repo / "content/releases/circuiting.yaml"
+    record = yaml.safe_load(release_path.read_text(encoding="utf-8"))
+    release = record["release"]
+    track = release["tracks"][0]
+    video_url = "/media/music-videos/pcbender--conductor/hash/video.mp4"
+    poster_url = "/media/music-videos/pcbender--conductor/hash/poster.jpg"
+    track["music_video"] = {
+        "project": "assets/source/video/pcbender--conductor/project.yaml",
+        "status": "published",
+        "opt_in": opt_in,
+        "public_url": video_url,
+        "poster": poster_url,
+    }
+    release_path.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
+    target = staging_path(repo)
+    page = target / "releases/circuiting/conductor/index.html"
+    video = target / video_url.removeprefix("/")
+    poster = target / poster_url.removeprefix("/")
+    if opt_in:
+        write_file(
+            page,
+            f'<video controls src="{video_url}" poster="{poster_url}"></video>\n',
+        )
+        write_file(video, "video\n")
+        write_file(poster, "poster\n")
+    else:
+        write_file(page, "<p>Public video is opted out.</p>\n")
+    return video, poster
+
+
 def test_verify_staging_passes_for_valid_local_target(tmp_path):
     repo = verified_repo(tmp_path)
 
@@ -128,6 +159,65 @@ def test_verify_missing_cover_image_fails(tmp_path):
     assert payload["status"] == "failed"
     expected = cover_path.relative_to(staging_path(repo)).as_posix()
     assert any(expected in error["message"] for error in payload["errors"])
+
+
+def test_verify_opted_in_music_video_player_and_media(tmp_path):
+    repo = verified_repo(tmp_path)
+    add_published_track_video(repo)
+
+    result = run_mrp(
+        "--repo",
+        str(repo),
+        "--json",
+        "verify",
+        "--target",
+        "staging",
+        site_out_root=site_out_root(repo),
+    )
+
+    assert result.returncode == 0
+    payload = json.loads(result.stdout)
+    checks = [item for item in payload["checks"] if item["name"] == "music_videos"]
+    assert checks == [{"name": "music_videos", "status": "passed", "checked": 1}]
+
+
+def test_verify_missing_opted_in_music_video_fails(tmp_path):
+    repo = verified_repo(tmp_path)
+    video, _poster = add_published_track_video(repo)
+    video.unlink()
+
+    result = run_mrp(
+        "--repo",
+        str(repo),
+        "--json",
+        "verify",
+        "--target",
+        "staging",
+        site_out_root=site_out_root(repo),
+    )
+
+    assert result.returncode == 1
+    payload = json.loads(result.stdout)
+    assert any(error["field"] == "music_video.public_url" for error in payload["errors"])
+
+
+def test_verify_opted_out_music_video_requires_no_player_or_media(tmp_path):
+    repo = verified_repo(tmp_path)
+    video, poster = add_published_track_video(repo, opt_in=False)
+
+    result = run_mrp(
+        "--repo",
+        str(repo),
+        "--json",
+        "verify",
+        "--target",
+        "staging",
+        site_out_root=site_out_root(repo),
+    )
+
+    assert result.returncode == 0
+    assert not video.exists()
+    assert not poster.exists()
 
 
 def test_verify_placeholder_token_fails(tmp_path):

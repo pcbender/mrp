@@ -102,7 +102,7 @@ def release_record(artist: str, title: str, slug: str, release_type: str) -> dic
     if model == "song":
         release["song"] = track(title, slug, None)
     else:
-        count = 2 if release_type == "ep" else 1
+        count = 2
         release["tracks"] = [track(f"Track {index}", f"track-{index}", index) for index in range(1, count + 1)]
     return {"release": release}
 

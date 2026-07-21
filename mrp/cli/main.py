@@ -60,6 +60,11 @@ def build_parser() -> argparse.ArgumentParser:
 
     subparsers = parser.add_subparsers(dest="command", required=True)
 
+    subparsers.add_parser(
+        "video",
+        help="Run the optional headless music-video renderer.",
+    )
+
     inspect_parser = subparsers.add_parser("inspect", help="Inspect repository state.")
     add_global_options(inspect_parser, suppress_defaults=True)
 
@@ -388,9 +393,13 @@ def emit(result: dict[str, Any], json_output: bool) -> None:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    command_argv = list(argv) if argv is not None else sys.argv[1:]
+    if command_argv and command_argv[0] == "video":
+        return run_video_command(command_argv[1:])
+
     parser = build_parser()
     try:
-        args = parser.parse_args(argv)
+        args = parser.parse_args(command_argv)
     except SystemExit as exc:
         return int(exc.code)
 
@@ -511,6 +520,40 @@ def main(argv: Sequence[str] | None = None) -> int:
         return EXIT_CONFIG
     if args.command == "clone-compare" and result["status"] == "failed":
         return EXIT_FAILURE
+    return EXIT_SUCCESS
+
+
+def run_video_command(argv: Sequence[str]) -> int:
+    """Dispatch the optional renderer without loading it for normal MRP work."""
+    try:
+        from mrp.video.cli import app
+    except ModuleNotFoundError as exc:
+        optional_modules = {
+            "PIL",
+            "cv2",
+            "librosa",
+            "numba",
+            "numpy",
+            "pydantic",
+            "rich",
+            "scipy",
+            "soundfile",
+            "typer",
+            "yaml",
+        }
+        if exc.name and exc.name.split(".", 1)[0] in optional_modules:
+            print(
+                "MRP video dependencies are not installed; "
+                "install requirements-video.txt.",
+                file=sys.stderr,
+            )
+            return EXIT_CONFIG
+        raise
+
+    try:
+        app(args=list(argv), prog_name="mrp video")
+    except SystemExit as exc:
+        return int(exc.code or 0)
     return EXIT_SUCCESS
 
 

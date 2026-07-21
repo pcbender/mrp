@@ -1,0 +1,60 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+<div class="form-card" style="border-top-left-radius:0">
+  <div class="form-body">
+    <h2 style="margin-bottom:.35rem">Music videos</h2>
+    <p style="font-size:12px;color:var(--muted);margin:0">
+      Optional, track-specific production work. A release can publish without a video.
+    </p>
+  </div>
+</div>
+
+<div class="table-wrap">
+  <table class="track-matrix video-track-matrix">
+    <thead>
+      <tr>
+        <th>Track</th>
+        <th title="Master audio">Master</th>
+        <th>Stems</th>
+        <th>Lyrics</th>
+        <th>Art</th>
+        <th>Timing</th>
+        <th>Cast</th>
+        <th>Preview</th>
+        <th>Render</th>
+        <th>Approval</th>
+        <th>Last job / validation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in video_rows %}
+      <tr>
+        <td class="td-title">
+          <a href="/releases/{{ slug }}/tracks/{{ row.slug }}/video">{{ row.title }}</a>
+        </td>
+        {% for value in [row.master, row.stems, row.lyrics, row.artwork, row.timing, row.cast, row.preview, row.render, row.approval] %}
+        <td class="cell-check"><span class="cell-dot {{ 'on' if value else 'off' }}"></span></td>
+        {% endfor %}
+        <td style="font-size:11px">
+          {% if row.last_job %}
+          <span class="badge badge-{{ 'live' if row.last_job.status == 'done' else ('failed' if row.last_job.status in ['error', 'interrupted'] else 'draft') }}">
+            {{ row.last_job.kind }} {{ row.last_job.status }}
+          </span>
+          {% else %}
+          <span style="color:var(--muted)">no jobs</span>
+          {% endif %}
+          <div style="margin-top:.2rem;color:{{ 'var(--success)' if row.validation == 'passed' else ('var(--danger)' if row.validation == 'failed' else 'var(--muted)') }}"
+               title="{{ row.validation_detail }}">preflight: {{ row.validation }}</div>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="11" style="text-align:center;color:var(--muted);padding:1.5rem">No tracks.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p style="font-size:12px;color:var(--muted);margin-top:.5rem">
+  Stems are optional; a master-only track can be prepared and analyzed.
+</p>
+{% endblock %}

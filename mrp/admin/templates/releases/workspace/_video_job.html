@@ -1,0 +1,85 @@
+{% set job_kind = job.kind if job else kind %}
+{% set release_slug = job.release_slug if job else slug %}
+{% set selected_track = job.track_slug if job else track_slug %}
+{% set active = job and job.status in ['pending', 'running'] %}
+{% set job_label = 'contact sheet' if job_kind == 'contact' else ('frame preview' if job_kind == 'frame' else ('full preflight' if job_kind == 'render_plan' else ('draft render' if job_kind == 'draft' else ('full render' if job_kind == 'render' else job_kind)))) %}
+
+<div class="video-job-card">
+  {% if job_error %}
+  <div class="flash flash-error" style="margin-bottom:.5rem">{{ job_error }}</div>
+  {% endif %}
+
+  {% if job %}
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <strong style="text-transform:capitalize">{{ job_label }}</strong>
+    <span class="badge badge-{{ 'live' if job.status == 'done' else ('failed' if job.status in ['error', 'interrupted'] else 'draft') }}">
+      {{ job.status }}
+    </span>
+    <span class="td-mono" style="margin-left:auto;font-size:10px">{{ job.id }}</span>
+  </div>
+  <div class="video-progress" aria-label="{{ job.progress }} percent complete">
+    <span style="width:{{ job.progress or 0 }}%"></span>
+  </div>
+  <div style="font-size:12px;margin-top:.35rem">
+    <strong>{{ job.phase or 'queued' }}</strong>
+    <span style="color:var(--muted)"> — {{ job.message or '' }}</span>
+  </div>
+  <div style="font-size:10px;color:var(--muted);margin-top:.25rem">
+    {{ '%.1f' | format(job.progress or 0) }}%
+    {% if job.heartbeat_at %} · heartbeat {{ job.heartbeat_at[:19].replace('T', ' ') }}{% endif %}
+    {% if job.log_path %} · log <code>{{ job.log_path }}</code>{% endif %}
+  </div>
+  {% if job.artifact_path %}
+  <div style="font-size:10px;color:var(--muted);margin-top:.2rem">artifact <code>{{ job.artifact_path }}</code></div>
+  {% endif %}
+
+  {% if active %}
+  <span style="display:none"
+        hx-get="/releases/{{ release_slug }}/tracks/{{ selected_track }}/video/jobs/{{ job.id }}"
+        hx-trigger="load delay:1s"
+        hx-target="#video-job-{{ job.kind }}"
+        hx-swap="innerHTML"></span>
+  <form hx-post="/releases/{{ release_slug }}/tracks/{{ selected_track }}/video/jobs/{{ job.id }}/cancel"
+        hx-target="#video-job-{{ job.kind }}"
+        hx-swap="innerHTML"
+        style="margin-top:.5rem">
+    <button class="btn btn-danger btn-sm" type="submit"
+            {% if job.cancel_requested_at %}disabled{% endif %}>
+      {{ 'Cancelling…' if job.cancel_requested_at else 'Cancel' }}
+    </button>
+  </form>
+  {% endif %}
+  {% else %}
+  <div style="font-size:12px;color:var(--muted)">Never run.</div>
+  {% endif %}
+
+  {% if not active and job_kind %}
+  <form hx-post="/releases/{{ release_slug }}/tracks/{{ selected_track }}/video/jobs/{{ job_kind }}"
+        hx-target="#video-job-{{ job_kind }}"
+        hx-swap="innerHTML"
+        style="margin-top:.5rem">
+    {% if job_kind == 'frame' %}
+    <label style="display:block;font-size:11px;color:var(--muted);margin-bottom:.35rem">
+      Frame time (seconds)
+      <input type="number" name="time_seconds" min="0" step="0.001" required
+             value="{{ preview_time if preview_time is defined and preview_time is not none else 0 }}" style="margin-top:.2rem">
+    </label>
+    {% endif %}
+    {% if job_kind == 'draft' %}
+    <div class="form-grid" style="margin-bottom:.4rem">
+      <label style="font-size:11px;color:var(--muted)">From
+        <input type="number" name="start_seconds" min="0" step="0.001" required
+               value="{{ draft_start if draft_start is defined and draft_start is not none else 0 }}">
+      </label>
+      <label style="font-size:11px;color:var(--muted)">To
+        <input type="number" name="end_seconds" min="0" step="0.001" required
+               value="{{ draft_end if draft_end is defined and draft_end is not none else 1 }}">
+      </label>
+    </div>
+    {% endif %}
+    <button class="btn btn-secondary btn-sm" type="submit">
+      {{ 'Run again' if job else 'Run' }} {{ job_label }}
+    </button>
+  </form>
+  {% endif %}
+</div>

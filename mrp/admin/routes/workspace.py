@@ -887,6 +887,10 @@ async def stage_page(request: Request, slug: str, stage: str):
         return _publish_stage(request, root, slug, ctx)
     if stage == "monitoring":
         return _monitoring_stage(request, root, slug, ctx)
+    if stage == "video":
+        from mrp.admin.routes.video import video_stage
+
+        return video_stage(request, root, slug, ctx)
 
     if stage == "details":
         from mrp.admin.routes.releases import _load_artists
