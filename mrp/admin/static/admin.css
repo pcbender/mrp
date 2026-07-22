@@ -1027,10 +1027,13 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   overflow: hidden;
 }
 .actor-designer-preview canvas {
+  cursor: grab;
   display: block;
   height: auto;
+  touch-action: none;
   width: 100%;
 }
+.actor-designer-preview canvas.dragging { cursor: grabbing; }
 .actor-designer-preview-note {
   color: var(--muted);
   display: block;

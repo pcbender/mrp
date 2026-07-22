@@ -25,7 +25,7 @@
           <button type="button" class="btn btn-secondary btn-sm" id="spiro-reset">Reset</button>
           <span class="spiro-progress" id="spiro-progress" aria-live="off"></span>
         </div>
-        <small class="actor-designer-preview-note">Actor-local identity preview. Play traces the curve the way the renderer draws it.</small>
+        <small class="actor-designer-preview-note">Actor-local identity preview. Play traces the curve the way the renderer draws it. Drag a component to reposition it.</small>
       </div>
       <div id="actor-components" class="actor-designer-controls">
         {% if entry %}
@@ -55,8 +55,9 @@
 <script src="/static/spiro-preview.js"></script>
 <script>
   const componentsEl = document.getElementById('actor-components');
+  const designerCanvas = document.getElementById('actor-designer-canvas');
   const player = window.mrpSpiroPlayer(
-    document.getElementById('actor-designer-canvas'),
+    designerCanvas,
     () => window.mrpReadComponentShapes(componentsEl),
     {
       onchange(progress, playing) {
@@ -69,14 +70,100 @@
   document.getElementById('spiro-play').addEventListener('click', () => player.toggle());
   document.getElementById('spiro-reset').addEventListener('click', () => player.reset());
 
-  function addActorComponent() {
-    const clone = document.getElementById('actor-component-template').content.cloneNode(true);
-    const count = componentsEl.querySelectorAll('fieldset').length + 1;
-    clone.querySelector('input[name="trace_id"]').value = `shape-${count}`;
-    componentsEl.appendChild(clone);
-    window.mrpSyncFamilyFields(componentsEl);
+  // ---- drag a component to reposition it (mirrors the Scene Casting
+  // storyboard's pointer handling, but writes the identity anchor sliders) ----
+  let componentDrag = null;
+  const dragClamp = (value, low, high) => Math.min(high, Math.max(low, value));
+  function designerCanvasPoint(event) {
+    const rect = designerCanvas.getBoundingClientRect();
+    return {
+      x: (event.clientX - rect.left) * (designerCanvas.width / rect.width),
+      y: (event.clientY - rect.top) * (designerCanvas.height / rect.height),
+    };
+  }
+  function pickComponentCard(pt) {
+    const MARGIN = 0.08;
+    let best = null;
+    let bestDist = Infinity;
+    componentsEl.querySelectorAll('.actor-component-card').forEach((card) => {
+      const ax = dragClamp(Number(window.mrpFieldValue(card, 'anchor_x', 0.5)) || 0.5, 0, 1);
+      const ay = dragClamp(Number(window.mrpFieldValue(card, 'anchor_y', 0.5)) || 0.5, 0, 1);
+      const scale = Number(window.mrpFieldValue(card, 'base_scale', 1)) || 1;
+      const cx = designerCanvas.width * ax;
+      const cy = designerCanvas.height * ay;
+      const reach = Math.max(
+        28,
+        Math.min(designerCanvas.width, designerCanvas.height) * (0.5 - MARGIN) * scale
+      );
+      const dist = Math.hypot(pt.x - cx, pt.y - cy);
+      if (dist < reach && dist < bestDist) { best = card; bestDist = dist; }
+    });
+    return best;
+  }
+  designerCanvas.addEventListener('pointerdown', (event) => {
+    const pt = designerCanvasPoint(event);
+    const card = pickComponentCard(pt);
+    if (!card) return;
+    const xEl = card.querySelector('input[name="anchor_x"]');
+    const yEl = card.querySelector('input[name="anchor_y"]');
+    if (!xEl || !yEl) return;
+    componentDrag = {
+      xEl, yEl,
+      startX: pt.x, startY: pt.y,
+      baseX: Number(xEl.value) || 0.5,
+      baseY: Number(yEl.value) || 0.5,
+    };
+    designerCanvas.setPointerCapture(event.pointerId);
+    designerCanvas.classList.add('dragging');
+    event.preventDefault();
+  });
+  designerCanvas.addEventListener('pointermove', (event) => {
+    if (!componentDrag) return;
+    const pt = designerCanvasPoint(event);
+    const setPair = (el, value) => {
+      el.value = value.toFixed(3);
+      const pair = el.closest('.slider-pair');
+      const range = pair && pair.querySelector('input[type="range"]');
+      if (range) range.value = el.value;
+    };
+    setPair(
+      componentDrag.xEl,
+      dragClamp(componentDrag.baseX + (pt.x - componentDrag.startX) / designerCanvas.width, -0.5, 1.5)
+    );
+    setPair(
+      componentDrag.yEl,
+      dragClamp(componentDrag.baseY + (pt.y - componentDrag.startY) / designerCanvas.height, -0.5, 1.5)
+    );
     player.redraw();
-    return componentsEl.querySelector('fieldset:last-of-type');
+  });
+  function endComponentDrag(event) {
+    if (!componentDrag) return;
+    componentDrag.xEl.dispatchEvent(new Event('input', { bubbles: true }));
+    componentDrag = null;
+    designerCanvas.classList.remove('dragging');
+    if (event) designerCanvas.releasePointerCapture(event.pointerId);
+  }
+  designerCanvas.addEventListener('pointerup', endComponentDrag);
+  designerCanvas.addEventListener('pointercancel', endComponentDrag);
+
+  function componentFlash(message) {
+    const flash = document.createElement('div');
+    flash.className = 'flash flash-error';
+    flash.textContent = message;
+    document.getElementById('actor-validation').appendChild(flash);
+  }
+
+  function addActorComponent() {
+    const card = window.mrpAddActorComponent(
+      componentsEl,
+      document.getElementById('actor-component-template')
+    );
+    if (!card) {
+      componentFlash('An actor holds at most 9 visual components.');
+      return null;
+    }
+    player.redraw();
+    return card;
   }
 
   document.getElementById('svg-import-input').addEventListener('change', async (event) => {
@@ -96,11 +183,12 @@
       validation.appendChild(flash);
       return;
     }
-    payload.subpaths.forEach((subpath) => {
+    for (const subpath of payload.subpaths) {
       const card = addActorComponent();
+      if (!card) break;
       card.querySelector('select[name="geometry_family"]').value = 'path';
       card.querySelector('textarea[name="path_data"]').value = subpath.d;
-    });
+    }
     window.mrpSyncFamilyFields(componentsEl);
     player.redraw();
   });

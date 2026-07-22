@@ -171,7 +171,9 @@ class AlignmentConfig(ContractModel):
         return self
 
 
-GeometryFamily = Literal["spirogram", "lissajous", "rose", "superformula", "path"]
+GeometryFamily = Literal[
+    "spirogram", "lissajous", "rose", "superformula", "path", "harmonograph"
+]
 
 _FAMILY_FIELDS: dict[str, dict[str, Any]] = {
     "spirogram": {},  # trochoid fields are required, not defaulted
@@ -179,6 +181,13 @@ _FAMILY_FIELDS: dict[str, dict[str, Any]] = {
     "rose": {"rose_n": 5, "rose_d": 1},
     "superformula": {"sf_m": 6, "sf_n1": 0.3, "sf_n2": 0.3, "sf_n3": 0.3},
     "path": {},  # path_data is required, not defaulted
+    "harmonograph": {
+        "harm_freq_x": 3.01,
+        "harm_freq_y": 2.0,
+        "harm_delta": math.pi / 2,
+        "harm_damping": 0.02,
+        "harm_turns": 12,
+    },
 }
 _TROCHOID_FIELDS = ("fixed_radius", "moving_radius", "pen_offset")
 
@@ -229,6 +238,13 @@ class LayerGeometryConfig(ContractModel):
     sf_n3: float | None = Field(default=None, ge=0.1, le=40)
     # path: one SVG subpath's d attribute, resampled by arc length
     path_data: str | None = Field(default=None, max_length=20000)
+    # harmonograph: damped lissajous, ping-ponged closed (fractional
+    # frequencies detune the pendulums, which is what makes the figure precess)
+    harm_freq_x: float | None = Field(default=None, ge=1, le=12)
+    harm_freq_y: float | None = Field(default=None, ge=1, le=12)
+    harm_delta: float | None = Field(default=None, ge=0, le=6.2832)
+    harm_damping: float | None = Field(default=None, ge=0, le=0.2)
+    harm_turns: int | None = Field(default=None, ge=1, le=30)
 
     @model_validator(mode="after")
     def family_fields_are_consistent(self) -> "LayerGeometryConfig":
@@ -375,7 +391,7 @@ class ActorConfig(ContractModel):
     description: str = ""
     kind: Literal["spirogram"] = "spirogram"
     character: VisualRole | None = None
-    components: list[VisualLayerConfig] = Field(min_length=1, max_length=12)
+    components: list[VisualLayerConfig] = Field(min_length=1, max_length=9)
     library_source: ActorLibrarySourceConfig | None = None
 
     @model_validator(mode="after")

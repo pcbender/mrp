@@ -269,11 +269,14 @@
 <script src="/static/spiro-preview.js"></script>
 <script>
   function addActorComponent() {
-    const clone = document.getElementById('actor-component-template').content.cloneNode(true);
-    const count = document.querySelectorAll('#actor-components fieldset').length + 1;
-    clone.querySelector('input[name="trace_id"]').value = `shape-${count}`;
-    document.getElementById('actor-components').appendChild(clone);
-    window.mrpSyncFamilyFields(document.getElementById('actor-components'));
+    const card = window.mrpAddActorComponent(
+      document.getElementById('actor-components'),
+      document.getElementById('actor-component-template')
+    );
+    if (!card) {
+      alert('An actor holds at most 9 visual components.');
+      return;
+    }
     drawActorPreview();
   }
   function addActorAssignment() {

@@ -122,6 +122,28 @@
       pts.push(base.pts[shift % cycle]);
       return { pts, extent: base.extent };
     }
+    if (family === 'harmonograph') {
+      // Damped lissajous ping-ponged closed, mirroring _harmonograph_points.
+      const fx = numberOr(shape.harm_freq_x, 3.01);
+      const fy = numberOr(shape.harm_freq_y, 2);
+      const delta = numberOr(shape.harm_delta, Math.PI / 2);
+      const damping = numberOr(shape.harm_damping, 0.02);
+      const turns = Math.max(1, Math.round(numberOr(shape.harm_turns, 12)));
+      const span = turns * TAU;
+      const forward = Math.floor(n / 2) + 1;
+      const pts = [];
+      let extent = 0;
+      for (let i = 0; i < forward; i += 1) {
+        const theta = (i / (forward - 1)) * span + phase;
+        const envelope = Math.exp(-damping * theta);
+        const x = Math.sin(fx * theta + delta) * envelope;
+        const y = Math.sin(fy * theta) * envelope;
+        pts.push([x, y]);
+        extent = Math.max(extent, Math.hypot(x, y));
+      }
+      for (let i = forward - 2; i >= 0; i -= 1) pts.push([pts[i][0], pts[i][1]]);
+      return { pts, extent: extent > 0 ? extent : 1 };
+    }
     let end, pointAt;
     if (family === 'lissajous') {
       const a = Math.max(1, Math.round(numberOr(shape.liss_freq_x, 3)));
@@ -189,6 +211,39 @@
       pts[pts.length - 1] = [pts[0][0], pts[0][1]];
     }
     return { pts, extent: extent > 0 ? extent : 1 };
+  };
+
+  // Clone a component card out of `template` into `container`, capped at 9
+  // components per actor (mirrors ActorConfig's max_length). Component 1 owns
+  // the center of a 3x3 anchor grid; each added component lands in its own
+  // cell (reading order, skipping the center) so it is visible immediately
+  // instead of stacking pixel-perfectly on the defaults of component 1.
+  // Returns the new fieldset, or null when the actor is full.
+  window.mrpAddActorComponent = function (container, template) {
+    const MAX_COMPONENTS = 9;
+    // Ordinal -> anchor slot. Index 0 is component 1's center cell (r2c2).
+    const SLOTS = [
+      [0.5, 0.5],
+      [0.25, 0.25], [0.5, 0.25], [0.75, 0.25],
+      [0.25, 0.5], [0.75, 0.5],
+      [0.25, 0.75], [0.5, 0.75], [0.75, 0.75],
+    ];
+    const count = container.querySelectorAll('fieldset').length + 1;
+    if (count > MAX_COMPONENTS) return null;
+    const clone = template.content.cloneNode(true);
+    clone.querySelector('input[name="trace_id"]').value = `shape-${count}`;
+    const slot = SLOTS[count - 1];
+    [['anchor_x', slot[0]], ['anchor_y', slot[1]]].forEach(([name, value]) => {
+      const number = clone.querySelector(`input[name="${name}"]`);
+      if (!number) return;
+      number.value = value;
+      const pair = number.closest('.slider-pair');
+      const range = pair && pair.querySelector('input[type="range"]');
+      if (range) range.value = value;
+    });
+    container.appendChild(clone);
+    window.mrpSyncFamilyFields(container);
+    return container.querySelector('fieldset:last-of-type');
   };
 
   // Show only the selected curve family's controls in a component card.
@@ -297,6 +352,11 @@
         sf_n2: window.mrpFieldValue(card, 'sf_n2', 0.3),
         sf_n3: window.mrpFieldValue(card, 'sf_n3', 0.3),
         path_data: window.mrpFieldValue(card, 'path_data', ''),
+        harm_freq_x: window.mrpFieldValue(card, 'harm_freq_x', 3.01),
+        harm_freq_y: window.mrpFieldValue(card, 'harm_freq_y', 2),
+        harm_delta: window.mrpFieldValue(card, 'harm_delta', 1.5708),
+        harm_damping: window.mrpFieldValue(card, 'harm_damping', 0.02),
+        harm_turns: window.mrpFieldValue(card, 'harm_turns', 12),
         samples: Math.min(2400, Math.max(240, Number(window.mrpFieldValue(card, 'samples', 900)))),
         anchor_x: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
         anchor_y: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),
@@ -304,6 +364,7 @@
         color: window.mrpFieldValue(card, 'color', '#ff5fd2'),
         opacity: Number(window.mrpFieldValue(card, 'opacity', 0.8)),
         line_width: Number(window.mrpFieldValue(card, 'line_width', 2)),
+        head_radius: Number(window.mrpFieldValue(card, 'head_radius', 3)),
         color_flow: (() => {
           const source = window.mrpFieldValue(card, 'color_flow_source', '');
           if (!source) return null;
@@ -397,9 +458,17 @@
           context.stroke(path);
         });
       }
-      if (opts.showHead && progress < 1) {
+      // Mirror the renderer's head semantics: hidden at 0, else at least 1px.
+      const headRadius = numberOr(shape.head_radius, 3);
+      if (opts.showHead && progress < 1 && headRadius > 0) {
         context.beginPath();
-        context.arc(originX + pts[last][0] * fit, originY + pts[last][1] * fit, 5, 0, Math.PI * 2);
+        context.arc(
+          originX + pts[last][0] * fit,
+          originY + pts[last][1] * fit,
+          Math.max(1, Math.round(headRadius)),
+          0,
+          Math.PI * 2
+        );
         context.fillStyle = '#f6f4ef';
         context.fill();
       }

@@ -90,6 +90,11 @@ def _designer_fields(
         "sf_n2": ["0.3"],
         "sf_n3": ["0.3"],
         "path_data": [""],
+        "harm_freq_x": ["3.01"],
+        "harm_freq_y": ["2"],
+        "harm_delta": ["1.5708"],
+        "harm_damping": ["0.02"],
+        "harm_turns": ["12"],
         "fixed_radius": ["180"],
         "moving_radius": ["61"],
         "pen_offset": ["104"],
@@ -358,7 +363,8 @@ def test_svg_subpaths_endpoint_caps_results_and_rejects_garbage() -> None:
     many = " ".join(f"M {i} 0 L {i} 5" for i in range(14))
     response = _split_svg(many)
     assert response.status_code == 200
-    assert len(json.loads(response.body)["subpaths"]) == 12
+    # Capped to match ActorConfig's 9-component maximum.
+    assert len(json.loads(response.body)["subpaths"]) == 9
 
     garbage = _split_svg("this is not svg at all }{")
     assert garbage.status_code == 422
@@ -382,6 +388,37 @@ def test_maricopa_mark_asset_splits_into_traceable_subpaths() -> None:
     # The letterform "M" and the underline bar, both closed.
     assert len(payload["subpaths"]) == 2
     assert all(subpath["closed"] for subpath in payload["subpaths"])
+
+
+def test_harmonograph_actor_saves_family_geometry(tmp_path: Path) -> None:
+    fields = _designer_fields(edit_id="pendulum-ghost", name="Pendulum Ghost")
+    fields.update(
+        {
+            "geometry_family": ["harmonograph"],
+            "harm_freq_x": ["3.05"],
+            "harm_damping": ["0.035"],
+            "harm_turns": ["18"],
+            "fixed_radius": [""],
+            "moving_radius": [""],
+            "pen_offset": [""],
+        }
+    )
+
+    actor_id = save_library_actor(tmp_path, fields)
+
+    assert actor_id == "pendulum-ghost"
+    payload = yaml.safe_load(
+        (tmp_path / LIBRARY / "pendulum-ghost.yaml").read_text(encoding="utf-8")
+    )
+    geometry = payload["actor"]["components"][0]["geometry"]
+    assert geometry["family"] == "harmonograph"
+    assert geometry["harm_freq_x"] == 3.05
+    assert geometry["harm_damping"] == 0.035
+    assert geometry["harm_turns"] == 18
+    assert "fixed_radius" not in geometry
+    assert "path_data" not in geometry
+    document = ActorLibraryDocument.model_validate(payload)
+    assert document.actor.components[0].geometry.harm_freq_y == 2
 
 
 def test_rose_actor_saves_family_geometry(tmp_path: Path) -> None:

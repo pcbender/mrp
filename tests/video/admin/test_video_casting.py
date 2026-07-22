@@ -198,6 +198,11 @@ def _manual_fields(*, fixed_radius: str = "333") -> dict[str, list[str]]:
         "sf_n2": ["0.3"],
         "sf_n3": ["0.3"],
         "path_data": [""],
+        "harm_freq_x": ["3.01"],
+        "harm_freq_y": ["2"],
+        "harm_delta": ["1.5708"],
+        "harm_damping": ["0.02"],
+        "harm_turns": ["12"],
         "fixed_radius": [fixed_radius],
         "moving_radius": ["77"],
         "pen_offset": ["155"],
@@ -579,6 +584,8 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'data-family="lissajous"' in body
     assert 'data-family="path"' in body
     assert 'name="path_data"' in body
+    assert 'data-family="harmonograph"' in body
+    assert 'name="harm_damping"' in body
     assert 'name="phase"' in body
     assert 'name="color_flow_source"' in body
     assert 'type="range"' in body

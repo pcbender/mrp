@@ -205,6 +205,43 @@ def test_path_family_rejects_multiple_subpaths_and_degenerate_paths() -> None:
         )
 
 
+def test_harmonograph_pingpongs_closed_with_a_decaying_envelope() -> None:
+    points = generate_spiro_points(
+        SpiroGeometry(family="harmonograph", samples=400)
+    )
+
+    # forward = samples // 2 + 1 stations, mirrored over the interior.
+    assert len(points) == 401
+    xs = [point.x for point in points]
+    ys = [point.y for point in points]
+    assert xs == list(reversed(xs))
+    assert ys == list(reversed(ys))
+    assert (points[0].x, points[0].y) == (points[-1].x, points[-1].y)
+
+    # Damping shrinks the swing: the last tenth of the forward pass stays
+    # well inside the first tenth's envelope.
+    forward = 400 // 2 + 1
+    tenth = forward // 10
+    early = max(point.radius for point in points[:tenth])
+    late = max(point.radius for point in points[forward - tenth:forward])
+    assert late < early * 0.5
+
+    # Zero damping degenerates to a steady orbit: no decay between windings.
+    steady = generate_spiro_points(
+        SpiroGeometry(
+            family="harmonograph",
+            harm_freq_x=3,
+            harm_freq_y=2,
+            harm_damping=0,
+            harm_turns=2,
+            samples=400,
+        )
+    )
+    steady_early = max(point.radius for point in steady[:tenth])
+    steady_late = max(point.radius for point in steady[forward - tenth:forward])
+    assert steady_late == pytest.approx(steady_early, rel=0.05)
+
+
 def test_maricopa_mark_letterform_traces_closed() -> None:
     import re
 
