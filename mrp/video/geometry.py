@@ -36,6 +36,12 @@ class SpiroGeometry:
     sf_n3: float = 0.3
     # path: one SVG subpath's d attribute, resampled by arc length
     path_data: str = ""
+    # harmonograph: damped lissajous, ping-ponged closed
+    harm_freq_x: float = 3.01
+    harm_freq_y: float = 2.0
+    harm_delta: float = math.pi / 2
+    harm_damping: float = 0.02
+    harm_turns: int = 12
 
 
 @dataclass(frozen=True, slots=True)
@@ -180,6 +186,45 @@ def _superformula_curve(geometry: SpiroGeometry):
     return end, point
 
 
+def _harmonograph_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
+    """Damped lissajous traced forward, then ping-ponged into a closed cycle.
+
+    x = sin(fx*theta + delta) * exp(-damping*theta), y = sin(fy*theta) *
+    exp(-damping*theta) over turns full windings. The decay makes the curve
+    open, so like open SVG subpaths it samples the forward half and retraces
+    the interior in reverse — a seamless palindrome whose endpoint lands
+    exactly on its start. theta = progress * end + phase keeps the shared
+    start-offset meaning of phase. Mirrored by mrpSpiroPoints in
+    mrp/admin/static/spiro-preview.js — keep the two in sync.
+    """
+    end = max(1, _javascript_round(geometry.harm_turns)) * TAU
+    count = max(2, _javascript_round(geometry.samples))
+    forward = count // 2 + 1
+    xs: list[float] = []
+    ys: list[float] = []
+    for index in range(forward):
+        theta = index / (forward - 1) * end + geometry.phase
+        envelope = math.exp(-geometry.harm_damping * theta)
+        xs.append(math.sin(geometry.harm_freq_x * theta + geometry.harm_delta) * envelope)
+        ys.append(math.sin(geometry.harm_freq_y * theta) * envelope)
+    xs += xs[-2::-1]
+    ys += ys[-2::-1]
+
+    points: list[SpiroPoint] = []
+    last = len(xs) - 1
+    for position, (x, y) in enumerate(zip(xs, ys)):
+        points.append(
+            SpiroPoint(
+                t=position / last,
+                x=x,
+                y=y,
+                radius=math.hypot(x, y),
+                angle=math.atan2(y, x),
+            )
+        )
+    return points
+
+
 def _path_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
     """Trace one SVG subpath as a closed cycle of arc-length-uniform points.
 
@@ -282,10 +327,13 @@ def generate_spiro_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
     TypeScript prototype; the other parametric families share the identical
     sampling loop (theta = progress * end + phase) so phase, color flow, and
     tracing behave uniformly. The path family is sampled by arc length in
-    _path_points instead, with phase mapped onto the same start-offset role.
+    _path_points and the harmonograph's damped open curve is ping-ponged in
+    _harmonograph_points, both keeping phase's start-offset role.
     """
     if geometry.family == "path":
         return _path_points(geometry)
+    if geometry.family == "harmonograph":
+        return _harmonograph_points(geometry)
     curve = _CURVE_FAMILIES.get(geometry.family)
     if curve is None:
         raise ValueError(f"unknown geometry family: {geometry.family}")

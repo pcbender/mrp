@@ -529,6 +529,22 @@ def test_build_curve_supports_non_spirogram_families() -> None:
     assert float(np.max(np.linalg.norm(curve.points, axis=1))) == pytest.approx(1.0)
     assert curve.hue_values is not None and len(curve.hue_values) == 128
 
+    harmonograph = _build_curve(
+        VisualLayerConfig.model_validate(
+            {
+                "id": "harm-probe",
+                "role": "vocals",
+                "color": "#5fd2ff",
+                "geometry": {"family": "harmonograph", "samples": 128},
+            }
+        ),
+        7,
+    )
+    # Ping-pong closure: forward = samples // 2 + 1 stations, palindromed.
+    assert harmonograph.points.shape == (129, 2)
+    assert float(np.max(np.linalg.norm(harmonograph.points, axis=1))) == pytest.approx(1.0)
+    assert np.array_equal(harmonograph.points[0], harmonograph.points[-1])
+
 
 def test_build_curve_supports_path_family_deterministically() -> None:
     import hashlib

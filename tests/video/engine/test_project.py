@@ -502,6 +502,17 @@ def test_geometry_family_defaults_and_validation() -> None:
     with pytest.raises(ValidationError, match="does not accept fixed_radius"):
         LayerGeometryConfig.model_validate({"family": "rose", "fixed_radius": 120})
 
+    harmonograph = LayerGeometryConfig.model_validate({"family": "harmonograph"})
+    assert harmonograph.harm_freq_x == pytest.approx(3.01)
+    assert harmonograph.harm_freq_y == pytest.approx(2)
+    assert harmonograph.harm_damping == pytest.approx(0.02)
+    assert harmonograph.harm_turns == 12
+    assert harmonograph.fixed_radius is None
+    with pytest.raises(ValidationError, match="does not accept harm_damping"):
+        LayerGeometryConfig.model_validate({"family": "lissajous", "harm_damping": 0.05})
+    with pytest.raises(ValidationError, match="does not accept rose_n"):
+        LayerGeometryConfig.model_validate({"family": "harmonograph", "rose_n": 4})
+
 
 def test_path_geometry_requires_one_syntactically_valid_subpath() -> None:
     from mrp.video.project import LayerGeometryConfig

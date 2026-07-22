@@ -204,7 +204,7 @@ def library_actor(root: Path, actor_id: str) -> dict[str, Any] | None:
     )
 
 
-def split_svg_subpaths(text: str, *, limit: int = 12) -> list[dict[str, Any]]:
+def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
     """Split SVG markup or a bare ``d`` attribute into single-subpath entries.
 
     The split happens server-side because browsers expose no subpath
@@ -212,8 +212,8 @@ def split_svg_subpaths(text: str, *, limit: int = 12) -> list[dict[str, Any]]:
     resolves the relative-``m`` continuation trap (an ``m`` after a drawn
     segment continues from the previous point, so a subpath's commands are
     not independent of the ones before it). Returns up to ``limit`` entries
-    shaped for the designer importer: the subpath's absolute ``d`` string
-    and whether it closes.
+    (matching ActorConfig's 9-component cap) shaped for the designer
+    importer: the subpath's absolute ``d`` string and whether it closes.
     """
     try:
         from svgpathtools import parse_path
@@ -731,6 +731,11 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
         "sf_n2",
         "sf_n3",
         "path_data",
+        "harm_freq_x",
+        "harm_freq_y",
+        "harm_delta",
+        "harm_damping",
+        "harm_turns",
         "cycles_per_second",
         "trail_fraction",
         "ghost_count",
@@ -808,6 +813,14 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
             }
         elif family == "path":
             geometry |= {"path_data": columns["path_data"][index]}
+        elif family == "harmonograph":
+            geometry |= {
+                "harm_freq_x": _number(columns["harm_freq_x"][index], f"trace {trace_id} x frequency"),
+                "harm_freq_y": _number(columns["harm_freq_y"][index], f"trace {trace_id} y frequency"),
+                "harm_delta": _number(columns["harm_delta"][index], f"trace {trace_id} delta"),
+                "harm_damping": _number(columns["harm_damping"][index], f"trace {trace_id} damping"),
+                "harm_turns": _integer(columns["harm_turns"][index], f"trace {trace_id} turns"),
+            }
         else:
             raise CastingEditorError(f"trace {trace_id} has an unknown geometry family: {family}")
         traces.append(

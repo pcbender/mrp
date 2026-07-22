@@ -122,6 +122,28 @@
       pts.push(base.pts[shift % cycle]);
       return { pts, extent: base.extent };
     }
+    if (family === 'harmonograph') {
+      // Damped lissajous ping-ponged closed, mirroring _harmonograph_points.
+      const fx = numberOr(shape.harm_freq_x, 3.01);
+      const fy = numberOr(shape.harm_freq_y, 2);
+      const delta = numberOr(shape.harm_delta, Math.PI / 2);
+      const damping = numberOr(shape.harm_damping, 0.02);
+      const turns = Math.max(1, Math.round(numberOr(shape.harm_turns, 12)));
+      const span = turns * TAU;
+      const forward = Math.floor(n / 2) + 1;
+      const pts = [];
+      let extent = 0;
+      for (let i = 0; i < forward; i += 1) {
+        const theta = (i / (forward - 1)) * span + phase;
+        const envelope = Math.exp(-damping * theta);
+        const x = Math.sin(fx * theta + delta) * envelope;
+        const y = Math.sin(fy * theta) * envelope;
+        pts.push([x, y]);
+        extent = Math.max(extent, Math.hypot(x, y));
+      }
+      for (let i = forward - 2; i >= 0; i -= 1) pts.push([pts[i][0], pts[i][1]]);
+      return { pts, extent: extent > 0 ? extent : 1 };
+    }
     let end, pointAt;
     if (family === 'lissajous') {
       const a = Math.max(1, Math.round(numberOr(shape.liss_freq_x, 3)));
@@ -191,6 +213,39 @@
     return { pts, extent: extent > 0 ? extent : 1 };
   };
 
+  // Clone a component card out of `template` into `container`, capped at 9
+  // components per actor (mirrors ActorConfig's max_length). Component 1 owns
+  // the center of a 3x3 anchor grid; each added component lands in its own
+  // cell (reading order, skipping the center) so it is visible immediately
+  // instead of stacking pixel-perfectly on the defaults of component 1.
+  // Returns the new fieldset, or null when the actor is full.
+  window.mrpAddActorComponent = function (container, template) {
+    const MAX_COMPONENTS = 9;
+    // Ordinal -> anchor slot. Index 0 is component 1's center cell (r2c2).
+    const SLOTS = [
+      [0.5, 0.5],
+      [0.25, 0.25], [0.5, 0.25], [0.75, 0.25],
+      [0.25, 0.5], [0.75, 0.5],
+      [0.25, 0.75], [0.5, 0.75], [0.75, 0.75],
+    ];
+    const count = container.querySelectorAll('fieldset').length + 1;
+    if (count > MAX_COMPONENTS) return null;
+    const clone = template.content.cloneNode(true);
+    clone.querySelector('input[name="trace_id"]').value = `shape-${count}`;
+    const slot = SLOTS[count - 1];
+    [['anchor_x', slot[0]], ['anchor_y', slot[1]]].forEach(([name, value]) => {
+      const number = clone.querySelector(`input[name="${name}"]`);
+      if (!number) return;
+      number.value = value;
+      const pair = number.closest('.slider-pair');
+      const range = pair && pair.querySelector('input[type="range"]');
+      if (range) range.value = value;
+    });
+    container.appendChild(clone);
+    window.mrpSyncFamilyFields(container);
+    return container.querySelector('fieldset:last-of-type');
+  };
+
   // Show only the selected curve family's controls in a component card.
   window.mrpSyncFamilyFields = function (root) {
     (root || document).querySelectorAll('.actor-component-card').forEach((card) => {
@@ -213,6 +268,88 @@
   window.mrpFieldValue = function (card, name, fallback) {
     const field = card.querySelector(`[name="${name}"]`);
     return field ? field.value : fallback;
+  };
+
+  // Drag a component around an identity preview canvas to write its
+  // anchor_x/anchor_y sliders. Pointer conventions mirror the Scene Casting
+  // storyboard (anchor-center hit-test with max(28px, fitted-radius) reach,
+  // pointer capture, -0.5..1.5 clamp, one bubbling `input` on release), but
+  // this writes the actor-local identity anchors rather than scene direction.
+  window.mrpEnableComponentDrag = function (canvas, container, redraw) {
+    if (!canvas || !container) return;
+    const MARGIN = 0.08;
+    const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
+    let drag = null;
+
+    const canvasPoint = (event) => {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: (event.clientX - rect.left) * (canvas.width / rect.width),
+        y: (event.clientY - rect.top) * (canvas.height / rect.height),
+      };
+    };
+    const pickCard = (pt) => {
+      let best = null;
+      let bestDist = Infinity;
+      container.querySelectorAll('.actor-component-card').forEach((card) => {
+        const ax = clamp(Number(window.mrpFieldValue(card, 'anchor_x', 0.5)) || 0.5, 0, 1);
+        const ay = clamp(Number(window.mrpFieldValue(card, 'anchor_y', 0.5)) || 0.5, 0, 1);
+        const scale = Number(window.mrpFieldValue(card, 'base_scale', 1)) || 1;
+        const cx = canvas.width * ax;
+        const cy = canvas.height * ay;
+        const reach = Math.max(
+          28,
+          Math.min(canvas.width, canvas.height) * (0.5 - MARGIN) * scale
+        );
+        const dist = Math.hypot(pt.x - cx, pt.y - cy);
+        if (dist < reach && dist < bestDist) { best = card; bestDist = dist; }
+      });
+      return best;
+    };
+    const setPair = (el, value) => {
+      // Snap to the input's declared step (anchors use 0.001, the admin's
+      // three-decimal convention): form validation rejects values finer
+      // than the step granularity, silently blocking saves.
+      const step = Number(el.step) || 0.001;
+      el.value = String(Number((Math.round(value / step) * step).toFixed(4)));
+      const pair = el.closest('.slider-pair');
+      const range = pair && pair.querySelector('input[type="range"]');
+      if (range) range.value = el.value;
+    };
+
+    canvas.addEventListener('pointerdown', (event) => {
+      const pt = canvasPoint(event);
+      const card = pickCard(pt);
+      if (!card) return;
+      const xEl = card.querySelector('input[name="anchor_x"]');
+      const yEl = card.querySelector('input[name="anchor_y"]');
+      if (!xEl || !yEl) return;
+      drag = {
+        xEl, yEl,
+        startX: pt.x, startY: pt.y,
+        baseX: Number(xEl.value) || 0.5,
+        baseY: Number(yEl.value) || 0.5,
+      };
+      canvas.setPointerCapture(event.pointerId);
+      canvas.classList.add('dragging');
+      event.preventDefault();
+    });
+    canvas.addEventListener('pointermove', (event) => {
+      if (!drag) return;
+      const pt = canvasPoint(event);
+      setPair(drag.xEl, clamp(drag.baseX + (pt.x - drag.startX) / canvas.width, -0.5, 1.5));
+      setPair(drag.yEl, clamp(drag.baseY + (pt.y - drag.startY) / canvas.height, -0.5, 1.5));
+      redraw();
+    });
+    const endDrag = (event) => {
+      if (!drag) return;
+      drag.xEl.dispatchEvent(new Event('input', { bubbles: true }));
+      drag = null;
+      canvas.classList.remove('dragging');
+      if (event) canvas.releasePointerCapture(event.pointerId);
+    };
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointercancel', endDrag);
   };
 
   const minMaxNormalized = (values) => {
@@ -297,6 +434,11 @@
         sf_n2: window.mrpFieldValue(card, 'sf_n2', 0.3),
         sf_n3: window.mrpFieldValue(card, 'sf_n3', 0.3),
         path_data: window.mrpFieldValue(card, 'path_data', ''),
+        harm_freq_x: window.mrpFieldValue(card, 'harm_freq_x', 3.01),
+        harm_freq_y: window.mrpFieldValue(card, 'harm_freq_y', 2),
+        harm_delta: window.mrpFieldValue(card, 'harm_delta', 1.5708),
+        harm_damping: window.mrpFieldValue(card, 'harm_damping', 0.02),
+        harm_turns: window.mrpFieldValue(card, 'harm_turns', 12),
         samples: Math.min(2400, Math.max(240, Number(window.mrpFieldValue(card, 'samples', 900)))),
         anchor_x: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
         anchor_y: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),
@@ -304,6 +446,7 @@
         color: window.mrpFieldValue(card, 'color', '#ff5fd2'),
         opacity: Number(window.mrpFieldValue(card, 'opacity', 0.8)),
         line_width: Number(window.mrpFieldValue(card, 'line_width', 2)),
+        head_radius: Number(window.mrpFieldValue(card, 'head_radius', 3)),
         color_flow: (() => {
           const source = window.mrpFieldValue(card, 'color_flow_source', '');
           if (!source) return null;
@@ -397,9 +540,17 @@
           context.stroke(path);
         });
       }
-      if (opts.showHead && progress < 1) {
+      // Mirror the renderer's head semantics: hidden at 0, else at least 1px.
+      const headRadius = numberOr(shape.head_radius, 3);
+      if (opts.showHead && progress < 1 && headRadius > 0) {
         context.beginPath();
-        context.arc(originX + pts[last][0] * fit, originY + pts[last][1] * fit, 5, 0, Math.PI * 2);
+        context.arc(
+          originX + pts[last][0] * fit,
+          originY + pts[last][1] * fit,
+          Math.max(1, Math.round(headRadius)),
+          0,
+          Math.PI * 2
+        );
         context.fillStyle = '#f6f4ef';
         context.fill();
       }
