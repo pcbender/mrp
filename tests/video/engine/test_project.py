@@ -452,3 +452,29 @@ def test_layer_geometry_phase_defaults_to_zero_and_round_trips() -> None:
     base = {"fixed_radius": 120, "moving_radius": 45, "pen_offset": 60}
     assert LayerGeometryConfig.model_validate(base).phase == 0.0
     assert LayerGeometryConfig.model_validate(base | {"phase": 0.75}).phase == 0.75
+
+
+def test_color_flow_is_optional_and_validates_source_and_swing() -> None:
+    from mrp.video.project import VisualLayerConfig
+
+    base = {
+        "id": "flow-probe",
+        "role": "vocals",
+        "color": "#ff5fd2",
+        "geometry": {"fixed_radius": 120, "moving_radius": 45, "pen_offset": 60},
+    }
+    assert VisualLayerConfig.model_validate(base).color_flow is None
+
+    flowing = VisualLayerConfig.model_validate(
+        base | {"color_flow": {"source": "curvature", "swing_degrees": 120}}
+    )
+    assert flowing.color_flow is not None
+    assert flowing.color_flow.source == "curvature"
+    assert flowing.color_flow.swing_degrees == 120
+
+    with pytest.raises(ValidationError):
+        VisualLayerConfig.model_validate(base | {"color_flow": {"source": "tempo"}})
+    with pytest.raises(ValidationError):
+        VisualLayerConfig.model_validate(
+            base | {"color_flow": {"source": "angle", "swing_degrees": 0}}
+        )

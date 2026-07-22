@@ -45,3 +45,30 @@ def test_python_geometry_matches_typescript_golden_fixtures() -> None:
             assert point.y == pytest.approx(expected["y"], abs=1e-9)
             assert point.radius == pytest.approx(expected["radius"], abs=1e-9)
             assert point.angle == pytest.approx(expected["angle"], abs=1e-12)
+
+
+def test_hue_flow_values_match_prototype_semantics() -> None:
+    from mrp.video.geometry import SpiroGeometry, generate_spiro_points, hue_flow_values
+
+    points = generate_spiro_points(
+        SpiroGeometry(fixed_radius=120, moving_radius=45, pen_offset=60, samples=240)
+    )
+
+    for source in ("angle", "radius", "velocity", "curvature"):
+        values = hue_flow_values(points, source)
+        assert len(values) == len(points)
+        assert all(0 <= value <= 1 for value in values)
+
+    # Min-max sources span the full range; curvature ends are defined as flat.
+    radius_values = hue_flow_values(points, "radius")
+    assert min(radius_values) == 0
+    assert max(radius_values) == 1
+    curvature_values = hue_flow_values(points, "curvature")
+    assert curvature_values[0] == 0
+    assert curvature_values[-1] == 0
+
+    # A circle (no pen offset) has constant radius: values collapse to center.
+    circle = generate_spiro_points(
+        SpiroGeometry(fixed_radius=120, moving_radius=60, pen_offset=0, samples=120)
+    )
+    assert set(hue_flow_values(circle, "radius")) == {0.5}

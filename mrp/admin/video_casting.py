@@ -411,6 +411,14 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
         "rotation": layer.geometry.rotation,
         "samples": min(layer.geometry.samples, 1200),
         "color": layer.color,
+        "color_flow": (
+            {
+                "source": layer.color_flow.source,
+                "swing_degrees": layer.color_flow.swing_degrees,
+            }
+            if layer.color_flow is not None
+            else None
+        ),
         "anchor_x": layer.anchor_x,
         "anchor_y": layer.anchor_y,
         "base_scale": layer.base_scale,
@@ -667,6 +675,8 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
         "rotation_speed",
         "hue_shift",
         "blend_mode",
+        "color_flow_source",
+        "color_flow_swing",
         "driver_scale",
         "driver_opacity",
         "driver_color",
@@ -680,10 +690,23 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
             for key in ("driver_scale", "driver_opacity", "driver_color", "driver_pulse")
             if columns[key][index]
         }
+        flow_source = columns["color_flow_source"][index]
+        color_flow = (
+            {
+                "source": flow_source,
+                "swing_degrees": _number(
+                    columns["color_flow_swing"][index],
+                    f"trace {trace_id} color flow swing",
+                ),
+            }
+            if flow_source
+            else None
+        )
         traces.append(
             {
                 "id": trace_id,
                 "role": columns["trace_role"][index],
+                "color_flow": color_flow,
                 "geometry": {
                     "fixed_radius": _number(columns["fixed_radius"][index], f"trace {trace_id} fixed radius"),
                     "moving_radius": _number(columns["moving_radius"][index], f"trace {trace_id} moving radius"),

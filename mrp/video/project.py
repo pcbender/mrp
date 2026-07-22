@@ -227,12 +227,25 @@ class TraceAudioDriversConfig(ContractModel):
     pulse: AudioSignal | None = None
 
 
+class LayerColorFlowConfig(ContractModel):
+    """Per-point hue motion along the trace, centered on the layer's base color.
+
+    The base hue always comes from the resolved layer color (a scene's palette
+    preset by role, or the layer's own hex outside a production), so an actor
+    keeps its color character while adopting each production's palette.
+    """
+
+    source: Literal["angle", "radius", "velocity", "curvature"]
+    swing_degrees: float = Field(default=90, gt=0, le=360)
+
+
 class VisualLayerConfig(ContractModel):
     id: NonBlankText
     role: VisualRole
     geometry: LayerGeometryConfig
     trace: LayerTraceConfig = Field(default_factory=LayerTraceConfig)
     color: HexColor
+    color_flow: LayerColorFlowConfig | None = None
     depth: Literal["background", "foreground"] = "foreground"
     anchor_x: float = Field(default=0.5, ge=-0.5, le=1.5)
     anchor_y: float = Field(default=0.5, ge=-0.5, le=1.5)

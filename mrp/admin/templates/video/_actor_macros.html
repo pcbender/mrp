@@ -17,6 +17,7 @@
   'rotation_degrees_per_second': 0,
   'hue_shift_degrees': 0,
   'blend_mode': 'screen',
+  'color_flow': none,
   'trace': {'cycles_per_second': 0.08, 'trail_fraction': 0.24, 'ghost_count': 1, 'ghost_spacing': 0.08, 'head_radius': 3},
   'drivers': {'scale': none, 'opacity': none, 'color': none, 'pulse': none},
 } %}
@@ -62,6 +63,9 @@
       {{ slider_field('rotation_speed', 'Base rotation °/s', 'Continuous rotation speed that belongs to the actor identity.', component.rotation_degrees_per_second, -180, 180, '0.1') }}
       {{ slider_field('hue_shift', 'Base hue shift °', 'Permanent hue rotation applied to this component before scene direction.', component.hue_shift_degrees, -360, 360, '1') }}
       <div class="form-field">{{ actor_control_label('Blend', 'How this component combines with the other visual components in the actor.') }}<select name="blend_mode"><option value="screen" {% if component.blend_mode == 'screen' %}selected{% endif %}>screen</option><option value="normal" {% if component.blend_mode == 'normal' %}selected{% endif %}>normal</option></select></div>
+      {% set flow = component.color_flow %}
+      <div class="form-field">{{ actor_control_label('Color flow', 'How color moves along the curve. Solid keeps one color; the other sources sweep the hue around the base color, so a scene palette restyles the actor without losing its character.') }}<select name="color_flow_source"><option value="">solid</option>{% for source in ['angle','radius','velocity','curvature'] %}<option value="{{ source }}" {% if flow and flow.source == source %}selected{% endif %}>{{ source }}</option>{% endfor %}</select></div>
+      {{ slider_field('color_flow_swing', 'Flow swing °', 'Total hue range swept around the base color while color flow is active.', flow.swing_degrees if flow else 90, 5, 360, '1') }}
       {{ slider_field('cycles_per_second', 'Cycles / second', 'Speed at which the visible trace travels around the curve.', component.trace.cycles_per_second, 0.001, 2, '0.001') }}
       {{ slider_field('trail_fraction', 'Trail length', 'Fraction of the full curve left visible behind the moving trace head.', component.trace.trail_fraction, 0.01, 1, '0.01') }}
       {{ slider_field('ghost_count', 'Ghost count', 'Number of additional fading trace copies drawn behind the main trace.', component.trace.ghost_count, 0, 6, '1') }}

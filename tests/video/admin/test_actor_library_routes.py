@@ -99,6 +99,8 @@ def _designer_fields(
         "rotation_speed": ["0"],
         "hue_shift": ["0"],
         "blend_mode": ["screen"],
+        "color_flow_source": ["curvature"],
+        "color_flow_swing": ["120"],
         "driver_scale": [""],
         "driver_opacity": [""],
         "driver_color": [""],
@@ -202,6 +204,10 @@ def test_save_writes_a_validated_library_file(tmp_path: Path, monkeypatch) -> No
     assert "character" not in payload["actor"]
     assert "library_source" not in payload["actor"]
     assert payload["actor"]["components"][0]["geometry"]["phase"] == 0.5
+    assert payload["actor"]["components"][0]["color_flow"] == {
+        "source": "curvature",
+        "swing_degrees": 120.0,
+    }
     document = ActorLibraryDocument.model_validate(payload)
     assert document.actor.name == "Rose Lantern"
 
