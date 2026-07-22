@@ -78,6 +78,16 @@ def _designer_fields(
         "actor_description": ["A rose identity with a slow inner bloom."],
         "trace_id": ["shape"],
         "trace_role": ["vocals"],
+        "geometry_family": ["spirogram"],
+        "liss_freq_x": ["3"],
+        "liss_freq_y": ["2"],
+        "liss_delta": ["1.5708"],
+        "rose_n": ["5"],
+        "rose_d": ["1"],
+        "sf_m": ["6"],
+        "sf_n1": ["0.3"],
+        "sf_n2": ["0.3"],
+        "sf_n3": ["0.3"],
         "fixed_radius": ["180"],
         "moving_radius": ["61"],
         "pen_offset": ["104"],
@@ -283,3 +293,28 @@ def test_missing_name_is_a_validation_error(tmp_path: Path, monkeypatch) -> None
 
     assert response.status_code == 422
     assert "actor name is required" in response.body.decode()
+
+
+def test_rose_actor_saves_family_geometry(tmp_path: Path) -> None:
+    fields = _designer_fields(edit_id="rose-bloom", name="Rose Bloom")
+    fields.update(
+        {
+            "geometry_family": ["rose"],
+            "rose_n": ["7"],
+            "rose_d": ["3"],
+            "fixed_radius": [""],
+            "moving_radius": [""],
+            "pen_offset": [""],
+        }
+    )
+
+    actor_id = save_library_actor(tmp_path, fields)
+
+    payload = yaml.safe_load(
+        (tmp_path / LIBRARY / "rose-bloom.yaml").read_text(encoding="utf-8")
+    )
+    geometry = payload["actor"]["components"][0]["geometry"]
+    assert geometry["family"] == "rose"
+    assert geometry["rose_n"] == 7
+    assert geometry["rose_d"] == 3
+    assert "fixed_radius" not in geometry

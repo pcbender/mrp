@@ -273,6 +273,7 @@
     const count = document.querySelectorAll('#actor-components fieldset').length + 1;
     clone.querySelector('input[name="trace_id"]').value = `shape-${count}`;
     document.getElementById('actor-components').appendChild(clone);
+    window.mrpSyncFamilyFields(document.getElementById('actor-components'));
     drawActorPreview();
   }
   function addActorAssignment() {
@@ -297,6 +298,7 @@
   document.addEventListener('input', (event) => {
     if (event.target.closest('#actor-components')) drawActorPreview();
   });
+  window.mrpSyncFamilyFields(document.getElementById('actor-components'));
   drawActorPreview();
 </script>
 

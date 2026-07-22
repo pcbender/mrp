@@ -8,7 +8,7 @@
   'role': 'vocals',
   'color': '#ff5fd2',
   'depth': 'foreground',
-  'geometry': {'fixed_radius': 180, 'moving_radius': 60, 'pen_offset': 100, 'phase': 0, 'rotation': 'inside', 'samples': 900},
+  'geometry': {'family': 'spirogram', 'fixed_radius': 180, 'moving_radius': 60, 'pen_offset': 100, 'phase': 0, 'rotation': 'inside', 'samples': 900, 'liss_freq_x': 3, 'liss_freq_y': 2, 'liss_delta': 1.5708, 'rose_n': 5, 'rose_d': 1, 'sf_m': 6, 'sf_n1': 0.3, 'sf_n2': 0.3, 'sf_n3': 0.3},
   'anchor_x': 0.5,
   'anchor_y': 0.5,
   'base_scale': 1,
@@ -26,8 +26,8 @@
 <label class="actor-control-label" title="{{ help }}">{{ label }} <span aria-hidden="true">?</span></label>
 {%- endmacro %}
 
-{% macro slider_field(name, label, help, value, min, max, step) -%}
-<div class="form-field">{{ actor_control_label(label, help) }}<div class="slider-pair"><input type="range" min="{{ min }}" max="{{ max }}" step="{{ step }}" value="{{ value }}" aria-hidden="true" tabindex="-1"><input type="number" step="{{ step }}" name="{{ name }}" value="{{ value }}" required></div></div>
+{% macro slider_field(name, label, help, value, min, max, step, family=none) -%}
+<div class="form-field{% if family %} family-field{% endif %}"{% if family %} data-family="{{ family }}"{% endif %}>{{ actor_control_label(label, help) }}<div class="slider-pair"><input type="range" min="{{ min }}" max="{{ max }}" step="{{ step }}" value="{{ value }}" aria-hidden="true" tabindex="-1"><input type="number" step="{{ step }}" name="{{ name }}" value="{{ value }}"{% if not family %} required{% endif %}></div></div>
 {%- endmacro %}
 
 {% macro component_fields(component, index) -%}
@@ -39,7 +39,7 @@
   <div class="actor-component-summary">
     <span class="actor-swatch" style="--actor-color: {{ component.color }}"></span>
     <strong>{{ component.id }}</strong>
-    <span>{{ component.geometry.rotation }} spirogram · {{ component.role }}</span>
+    <span>{{ component.geometry.family }}{% if component.geometry.family == 'spirogram' %} ({{ component.geometry.rotation }}){% endif %} · {{ component.role }}</span>
   </div>
   {% endif %}
   <details class="video-advanced" {% if is_new or index == 1 %}open{% endif %}>
@@ -49,11 +49,21 @@
       <div class="form-field">{{ actor_control_label('Component fallback role', 'Fallback audio role for this component when the actor has no assigned track character.') }}<select name="trace_role">{% for role in ['master','drums','bass','vocals','instruments'] %}<option value="{{ role }}" {% if component.role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select></div>
       <div class="form-field">{{ actor_control_label('Color', 'Base color of this component before any scene-specific hue adjustment.') }}<input type="color" name="color" value="{{ component.color }}"></div>
       <div class="form-field">{{ actor_control_label('Layer', 'Default depth of this component within the actor. A scene may redirect the whole actor.') }}<select name="depth"><option value="background" {% if component.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if component.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
-      {{ slider_field('fixed_radius', 'Fixed radius', 'Radius of the stationary circle used to construct the spirogram geometry.', component.geometry.fixed_radius, 1, 400, '0.1') }}
-      {{ slider_field('moving_radius', 'Moving radius', 'Radius of the circle that rolls inside or outside the fixed circle.', component.geometry.moving_radius, 1, 240, '0.1') }}
-      {{ slider_field('pen_offset', 'Pen offset', 'Distance from the moving circle center to the point that draws the curve.', component.geometry.pen_offset, 0, 240, '0.1') }}
-      {{ slider_field('phase', 'Phase (rad)', 'Rotates the whole curve by shifting the starting angle. One full turn is about 6.28 radians.', component.geometry.phase, 0, 6.2832, '0.01') }}
-      <div class="form-field">{{ actor_control_label('Spirogram type', 'Choose whether the moving circle rolls inside or outside the fixed circle.') }}<select name="geometry_rotation"><option value="inside" {% if component.geometry.rotation == 'inside' %}selected{% endif %}>hypotrochoid (inside)</option><option value="outside" {% if component.geometry.rotation == 'outside' %}selected{% endif %}>epitrochoid (outside)</option></select></div>
+      <div class="form-field">{{ actor_control_label('Curve family', 'The kind of parametric curve this component draws. Every family shares phase, samples, color, and motion controls.') }}<select name="geometry_family">{% for family in ['spirogram','lissajous','rose','superformula'] %}<option value="{{ family }}" {% if component.geometry.family == family %}selected{% endif %}>{{ family }}</option>{% endfor %}</select></div>
+      {{ slider_field('fixed_radius', 'Fixed radius', 'Radius of the stationary circle used to construct the spirogram geometry.', component.geometry.fixed_radius if component.geometry.fixed_radius is not none else 180, 1, 400, '0.1', family='spirogram') }}
+      {{ slider_field('moving_radius', 'Moving radius', 'Radius of the circle that rolls inside or outside the fixed circle.', component.geometry.moving_radius if component.geometry.moving_radius is not none else 60, 1, 240, '0.1', family='spirogram') }}
+      {{ slider_field('pen_offset', 'Pen offset', 'Distance from the moving circle center to the point that draws the curve.', component.geometry.pen_offset if component.geometry.pen_offset is not none else 100, 0, 240, '0.1', family='spirogram') }}
+      <div class="form-field family-field" data-family="spirogram">{{ actor_control_label('Spirogram type', 'Choose whether the moving circle rolls inside or outside the fixed circle.') }}<select name="geometry_rotation"><option value="inside" {% if component.geometry.rotation == 'inside' %}selected{% endif %}>hypotrochoid (inside)</option><option value="outside" {% if component.geometry.rotation == 'outside' %}selected{% endif %}>epitrochoid (outside)</option></select></div>
+      {{ slider_field('liss_freq_x', 'X frequency', 'Horizontal oscillation count. The x:y ratio selects the Lissajous figure.', component.geometry.liss_freq_x if component.geometry.liss_freq_x is not none else 3, 1, 12, '1', family='lissajous') }}
+      {{ slider_field('liss_freq_y', 'Y frequency', 'Vertical oscillation count. The x:y ratio selects the Lissajous figure.', component.geometry.liss_freq_y if component.geometry.liss_freq_y is not none else 2, 1, 12, '1', family='lissajous') }}
+      {{ slider_field('liss_delta', 'Delta (rad)', 'Phase offset between the x and y oscillations — this is what reshapes the figure from line to ellipse to pretzel.', component.geometry.liss_delta if component.geometry.liss_delta is not none else 1.5708, 0, 6.2832, '0.01', family='lissajous') }}
+      {{ slider_field('rose_n', 'Petal numerator', 'Numerator of the petal ratio n/d. With d = 1: odd n gives n petals, even n gives 2n.', component.geometry.rose_n if component.geometry.rose_n is not none else 5, 1, 12, '1', family='rose') }}
+      {{ slider_field('rose_d', 'Petal denominator', 'Denominator of the petal ratio n/d. Values above 1 interleave overlapping petals.', component.geometry.rose_d if component.geometry.rose_d is not none else 1, 1, 9, '1', family='rose') }}
+      {{ slider_field('sf_m', 'Symmetry m', 'Rotational symmetry count of the supershape. 0 is a circle, 3 a triangle-ish form, higher values add lobes.', component.geometry.sf_m if component.geometry.sf_m is not none else 6, 0, 24, '1', family='superformula') }}
+      {{ slider_field('sf_n1', 'Shape n1', 'Overall sharpness exponent. Small values spike outward; large values round off.', component.geometry.sf_n1 if component.geometry.sf_n1 is not none else 0.3, 0.1, 40, '0.1', family='superformula') }}
+      {{ slider_field('sf_n2', 'Shape n2', 'Cosine-term exponent shaping alternate lobes.', component.geometry.sf_n2 if component.geometry.sf_n2 is not none else 0.3, 0.1, 40, '0.1', family='superformula') }}
+      {{ slider_field('sf_n3', 'Shape n3', 'Sine-term exponent shaping the other lobes.', component.geometry.sf_n3 if component.geometry.sf_n3 is not none else 0.3, 0.1, 40, '0.1', family='superformula') }}
+      {{ slider_field('phase', 'Phase (rad)', 'Shifts where the trace starts along the curve without changing its shape. One full turn is about 6.28 radians.', component.geometry.phase, 0, 6.2832, '0.01') }}
       {{ slider_field('samples', 'Curve samples', 'Number of points used to draw the curve. More points are smoother but cost more to render.', component.geometry.samples, 64, 4800, '1') }}
       {{ slider_field('anchor_x', 'Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_x, -0.5, 1.5, '0.01') }}
       {{ slider_field('anchor_y', 'Component offset Y', 'Vertical position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_y, -0.5, 1.5, '0.01') }}

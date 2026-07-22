@@ -509,3 +509,22 @@ def test_composite_trace_color_flow_varies_hue_deterministically() -> None:
     assert not np.array_equal(flowing[30, 20], solid[30, 20])
     assert not np.array_equal(flowing[30, 100], solid[30, 100])
     assert np.array_equal(flowing, repeat)
+
+
+def test_build_curve_supports_non_spirogram_families() -> None:
+    from mrp.video.project import VisualLayerConfig
+    from mrp.video.renderer import _build_curve
+
+    layer = VisualLayerConfig.model_validate(
+        {
+            "id": "liss-probe",
+            "role": "vocals",
+            "color": "#5fd2ff",
+            "geometry": {"family": "lissajous", "liss_freq_x": 3, "liss_freq_y": 2, "samples": 128},
+            "color_flow": {"source": "velocity", "swing_degrees": 90},
+        }
+    )
+    curve = _build_curve(layer, 7)
+    assert curve.points.shape == (128, 2)
+    assert float(np.max(np.linalg.norm(curve.points, axis=1))) == pytest.approx(1.0)
+    assert curve.hue_values is not None and len(curve.hue_values) == 128

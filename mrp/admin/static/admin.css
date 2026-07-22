@@ -1343,3 +1343,4 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   width: 100%;
 }
 .slider-pair input[type="number"] { width: 100%; }
+.family-field.family-hidden { display: none; }

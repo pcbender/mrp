@@ -12,39 +12,115 @@
 
   const clamp01 = (value) => Math.min(1, Math.max(0, value));
 
-  // `extent` is the max point radius, as the renderer normalizes by before
-  // placing.
-  window.mrpSpiroPoints = function (shape) {
-    const fixed = Number(shape.fixed_radius);
-    const moving = Math.max(0.000001, Number(shape.moving_radius));
-    const pen = Number(shape.pen_offset);
-    const phase = Number(shape.phase) || 0;
-    const fInt = Math.max(1, Math.round(Math.abs(fixed)));
-    const mInt = Math.max(1, Math.round(Math.abs(moving)));
-    let a = fInt, b = mInt;
+  const TAU = Math.PI * 2;
+
+  const intGcd = (x, y) => {
+    let a = Math.max(1, Math.round(Math.abs(x)));
+    let b = Math.max(1, Math.round(Math.abs(y)));
     while (b) { const t = b; b = a % b; a = t; }
-    const end = Math.PI * 2 * (mInt / (a || 1));
-    const n = Math.max(2, Math.round(Math.min(Number(shape.samples) || 900, 1200)));
-    const outside = shape.rotation === 'outside';
+    return a || 1;
+  };
+
+  const numberOr = (value, fallback) => {
+    if (value === undefined || value === null || value === '') return fallback;
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : fallback;
+  };
+
+  // `extent` is the max point radius, as the renderer normalizes by before
+  // placing. Family dispatch and closure formulas mirror
+  // mrp/video/geometry.py generate_spiro_points — keep them in sync.
+  window.mrpSpiroPoints = function (shape) {
+    const family = shape.family || 'spirogram';
+    const phase = numberOr(shape.phase, 0);
+    const n = Math.max(2, Math.round(Math.min(numberOr(shape.samples, 900), 1200)));
+    let end, pointAt;
+    if (family === 'lissajous') {
+      const a = Math.max(1, Math.round(numberOr(shape.liss_freq_x, 3)));
+      const b = Math.max(1, Math.round(numberOr(shape.liss_freq_y, 2)));
+      const delta = numberOr(shape.liss_delta, Math.PI / 2);
+      end = TAU / intGcd(a, b);
+      pointAt = (theta) => [Math.sin(a * theta + delta), Math.sin(b * theta)];
+    } else if (family === 'rose') {
+      let rn = Math.max(1, Math.round(numberOr(shape.rose_n, 5)));
+      let rd = Math.max(1, Math.round(numberOr(shape.rose_d, 1)));
+      const divisor = intGcd(rn, rd);
+      rn /= divisor;
+      rd /= divisor;
+      end = (rn * rd) % 2 === 1 ? Math.PI * rd : TAU * rd;
+      const k = rn / rd;
+      pointAt = (theta) => {
+        const r = Math.cos(k * theta);
+        return [r * Math.cos(theta), r * Math.sin(theta)];
+      };
+    } else if (family === 'superformula') {
+      const m = Math.max(0, Math.round(numberOr(shape.sf_m, 6)));
+      const n1 = numberOr(shape.sf_n1, 0.3);
+      const n2 = numberOr(shape.sf_n2, 0.3);
+      const n3 = numberOr(shape.sf_n3, 0.3);
+      end = m % 2 === 0 ? TAU : 2 * TAU;
+      pointAt = (theta) => {
+        const u = (m * theta) / 4;
+        const base = Math.abs(Math.cos(u)) ** n2 + Math.abs(Math.sin(u)) ** n3;
+        let r = base ** (-1 / n1);
+        if (!Number.isFinite(r)) r = 0;
+        r = Math.min(r, 1e9);
+        return [r * Math.cos(theta), r * Math.sin(theta)];
+      };
+    } else {
+      const fixed = Number(shape.fixed_radius);
+      const moving = Math.max(0.000001, Number(shape.moving_radius));
+      const pen = Number(shape.pen_offset);
+      end = TAU * (Math.max(1, Math.round(Math.abs(moving))) / intGcd(fixed, moving));
+      const outside = shape.rotation === 'outside';
+      pointAt = (theta) => {
+        if (outside) {
+          const rs = fixed + moving, ratio = rs / moving;
+          return [
+            rs * Math.cos(theta) - pen * Math.cos(ratio * theta),
+            rs * Math.sin(theta) - pen * Math.sin(ratio * theta),
+          ];
+        }
+        const rd = fixed - moving, ratio = rd / moving;
+        return [
+          rd * Math.cos(theta) + pen * Math.cos(ratio * theta),
+          rd * Math.sin(theta) - pen * Math.sin(ratio * theta),
+        ];
+      };
+    }
     const pts = [];
     let extent = 0;
     for (let i = 0; i < n; i += 1) {
       const theta = (i / (n - 1)) * end + phase;
-      let x, y;
-      if (outside) {
-        const rs = fixed + moving, ratio = rs / moving;
-        x = rs * Math.cos(theta) - pen * Math.cos(ratio * theta);
-        y = rs * Math.sin(theta) - pen * Math.sin(ratio * theta);
-      } else {
-        const rd = fixed - moving, ratio = rd / moving;
-        x = rd * Math.cos(theta) + pen * Math.cos(ratio * theta);
-        y = rd * Math.sin(theta) - pen * Math.sin(ratio * theta);
-      }
+      const [x, y] = pointAt(theta);
       pts.push([x, y]);
       extent = Math.max(extent, Math.hypot(x, y));
     }
+    if (family !== 'spirogram' && pts.length > 1) {
+      // Snap the wrap point exactly closed, matching generate_spiro_points.
+      pts[pts.length - 1] = [pts[0][0], pts[0][1]];
+    }
     return { pts, extent: extent > 0 ? extent : 1 };
   };
+
+  // Show only the selected curve family's controls in a component card.
+  window.mrpSyncFamilyFields = function (root) {
+    (root || document).querySelectorAll('.actor-component-card').forEach((card) => {
+      const select = card.querySelector('select[name="geometry_family"]');
+      if (!select) return;
+      card.querySelectorAll('.family-field').forEach((field) => {
+        field.classList.toggle('family-hidden', field.dataset.family !== select.value);
+      });
+    });
+  };
+
+  document.addEventListener('change', (event) => {
+    if (event.target instanceof HTMLSelectElement
+        && event.target.name === 'geometry_family') {
+      const card = event.target.closest('.actor-component-card');
+      if (card) window.mrpSyncFamilyFields(card.parentElement || document);
+    }
+  });
 
   window.mrpFieldValue = function (card, name, fallback) {
     const field = card.querySelector(`[name="${name}"]`);
@@ -117,11 +193,21 @@
     const shapes = [];
     container.querySelectorAll('.actor-component-card').forEach((card) => {
       shapes.push({
+        family: window.mrpFieldValue(card, 'geometry_family', 'spirogram') || 'spirogram',
         fixed_radius: Number(window.mrpFieldValue(card, 'fixed_radius', 180)),
         moving_radius: Math.max(0.001, Number(window.mrpFieldValue(card, 'moving_radius', 60))),
         pen_offset: Number(window.mrpFieldValue(card, 'pen_offset', 100)),
         phase: Number(window.mrpFieldValue(card, 'phase', 0)) || 0,
         rotation: window.mrpFieldValue(card, 'geometry_rotation', 'inside') === 'outside' ? 'outside' : 'inside',
+        liss_freq_x: window.mrpFieldValue(card, 'liss_freq_x', 3),
+        liss_freq_y: window.mrpFieldValue(card, 'liss_freq_y', 2),
+        liss_delta: window.mrpFieldValue(card, 'liss_delta', 1.5708),
+        rose_n: window.mrpFieldValue(card, 'rose_n', 5),
+        rose_d: window.mrpFieldValue(card, 'rose_d', 1),
+        sf_m: window.mrpFieldValue(card, 'sf_m', 6),
+        sf_n1: window.mrpFieldValue(card, 'sf_n1', 0.3),
+        sf_n2: window.mrpFieldValue(card, 'sf_n2', 0.3),
+        sf_n3: window.mrpFieldValue(card, 'sf_n3', 0.3),
         samples: Math.min(2400, Math.max(240, Number(window.mrpFieldValue(card, 'samples', 900)))),
         anchor_x: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
         anchor_y: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),

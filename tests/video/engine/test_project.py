@@ -478,3 +478,26 @@ def test_color_flow_is_optional_and_validates_source_and_swing() -> None:
         VisualLayerConfig.model_validate(
             base | {"color_flow": {"source": "angle", "swing_degrees": 0}}
         )
+
+
+def test_geometry_family_defaults_and_validation() -> None:
+    from mrp.video.project import LayerGeometryConfig
+
+    trochoid = {"fixed_radius": 120, "moving_radius": 45, "pen_offset": 60}
+    assert LayerGeometryConfig.model_validate(trochoid).family == "spirogram"
+
+    lissajous = LayerGeometryConfig.model_validate({"family": "lissajous"})
+    assert lissajous.liss_freq_x == 3
+    assert lissajous.liss_freq_y == 2
+    assert lissajous.liss_delta == pytest.approx(1.5707963)
+    assert lissajous.fixed_radius is None
+
+    rose = LayerGeometryConfig.model_validate({"family": "rose", "rose_n": 7})
+    assert rose.rose_d == 1
+
+    with pytest.raises(ValidationError, match="fixed_radius"):
+        LayerGeometryConfig.model_validate({"moving_radius": 45, "pen_offset": 60})
+    with pytest.raises(ValidationError, match="does not accept rose_n"):
+        LayerGeometryConfig.model_validate({"family": "lissajous", "rose_n": 4})
+    with pytest.raises(ValidationError, match="does not accept fixed_radius"):
+        LayerGeometryConfig.model_validate({"family": "rose", "fixed_radius": 120})
