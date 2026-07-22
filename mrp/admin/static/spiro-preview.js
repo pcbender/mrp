@@ -307,7 +307,10 @@
       return best;
     };
     const setPair = (el, value) => {
-      el.value = value.toFixed(3);
+      // Snap to the input's declared step: form validation rejects values
+      // finer than the step granularity, silently blocking saves.
+      const step = Number(el.step) || 0.01;
+      el.value = String(Number((Math.round(value / step) * step).toFixed(4)));
       const pair = el.closest('.slider-pair');
       const range = pair && pair.querySelector('input[type="range"]');
       if (range) range.value = el.value;

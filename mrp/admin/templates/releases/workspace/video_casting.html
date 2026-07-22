@@ -503,8 +503,10 @@
       const dfy = (pt.y - drag.startY) / H;
       const nextX = clamp((drag.baseX !== null ? drag.baseX : 0.5) + dfx, -0.5, 1.5);
       const nextY = clamp((drag.baseY !== null ? drag.baseY : 0.5) + dfy, -0.5, 1.5);
-      if (drag.xEl) drag.xEl.value = nextX.toFixed(3);
-      if (drag.yEl) drag.yEl.value = nextY.toFixed(3);
+      // Two decimals to match the inputs' step="0.01"; finer values fail
+      // form validation and block the scene save.
+      if (drag.xEl) drag.xEl.value = nextX.toFixed(2);
+      if (drag.yEl) drag.yEl.value = nextY.toFixed(2);
       drawStoryboard();
     });
     function endDrag(event) {
