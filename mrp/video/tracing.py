@@ -8,6 +8,8 @@ from numpy.typing import NDArray
 class TraceWindow:
     points: NDArray[np.float32]
     progress: float
+    indices: NDArray[np.int64] | None = None
+    """Source-point indices of the window, for per-point lookups (color flow)."""
 
     @property
     def head(self) -> NDArray[np.float32]:
@@ -50,4 +52,5 @@ def cyclic_trace_window(
     indices = np.arange(head_index - trail_count + 1, head_index + 1) % point_count
     selected = np.asarray(core[indices], dtype=np.float32)
     selected.setflags(write=False)
-    return TraceWindow(points=selected, progress=normalized_progress)
+    indices.setflags(write=False)
+    return TraceWindow(points=selected, progress=normalized_progress, indices=indices)

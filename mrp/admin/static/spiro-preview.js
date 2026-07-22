@@ -51,6 +51,67 @@
     return field ? field.value : fallback;
   };
 
+  const minMaxNormalized = (values) => {
+    const low = Math.min(...values);
+    const high = Math.max(...values);
+    const span = high - low;
+    // Relative guard matching hue_flow_values: numerically-constant sources
+    // collapse to the center instead of amplifying float noise.
+    if (span <= Math.max(Math.abs(low), Math.abs(high), 1) * 1e-9) {
+      return values.map(() => 0.5);
+    }
+    return values.map((value) => (value - low) / span);
+  };
+
+  // Per-point color-flow values in [0, 1], matching mrp/video/geometry.py
+  // hue_flow_values (and the archived prototype's pointToHue).
+  window.mrpHueFlowValues = function (pts, source) {
+    const TAU = Math.PI * 2;
+    const n = pts.length;
+    if (source === 'angle') {
+      return pts.map(([x, y]) => (((Math.atan2(y, x) % TAU) + TAU) % TAU) / TAU);
+    }
+    if (source === 'radius') {
+      return minMaxNormalized(pts.map(([x, y]) => Math.hypot(x, y)));
+    }
+    if (source === 'velocity') {
+      return minMaxNormalized(pts.map((_, index) => {
+        const a = pts[Math.max(0, index - 1)];
+        const b = pts[Math.min(n - 1, index + 1)];
+        return Math.hypot(b[0] - a[0], b[1] - a[1]);
+      }));
+    }
+    return pts.map((_, index) => {
+      if (index === 0 || index === n - 1) return 0;
+      const [px, py] = pts[index - 1];
+      const [cx, cy] = pts[index];
+      const [nx, ny] = pts[index + 1];
+      const incoming = Math.atan2(cy - py, cx - px);
+      const outgoing = Math.atan2(ny - cy, nx - cx);
+      const turn = ((((outgoing - incoming + Math.PI) % TAU) + TAU) % TAU) - Math.PI;
+      return Math.abs(turn) / Math.PI;
+    });
+  };
+
+  // Rotate a #rrggbb color's hue by `degrees`, returning a CSS color.
+  window.mrpShiftHue = function (hex, degrees) {
+    const r = parseInt(hex.slice(1, 3), 16) / 255;
+    const g = parseInt(hex.slice(3, 5), 16) / 255;
+    const b = parseInt(hex.slice(5, 7), 16) / 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    const l = (max + min) / 2;
+    let h = 0, s = 0;
+    if (max !== min) {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      if (max === r) h = ((g - b) / d + (g < b ? 6 : 0)) / 6;
+      else if (max === g) h = ((b - r) / d + 2) / 6;
+      else h = ((r - g) / d + 4) / 6;
+    }
+    const hue = ((h * 360 + degrees) % 360 + 360) % 360;
+    return `hsl(${hue.toFixed(1)} ${(s * 100).toFixed(1)}% ${(l * 100).toFixed(1)}%)`;
+  };
+
   // Read every .actor-component-card in `container` into draw-ready shapes.
   window.mrpReadComponentShapes = function (container) {
     const shapes = [];
@@ -68,6 +129,14 @@
         color: window.mrpFieldValue(card, 'color', '#ff5fd2'),
         opacity: Number(window.mrpFieldValue(card, 'opacity', 0.8)),
         line_width: Number(window.mrpFieldValue(card, 'line_width', 2)),
+        color_flow: (() => {
+          const source = window.mrpFieldValue(card, 'color_flow_source', '');
+          if (!source) return null;
+          return {
+            source,
+            swing_degrees: Number(window.mrpFieldValue(card, 'color_flow_swing', 90)) || 90,
+          };
+        })(),
       });
     });
     return shapes;
@@ -93,19 +162,66 @@
       const originX = canvas.width * clamp01(anchorX);
       const originY = canvas.height * clamp01(anchorY);
       const last = Math.max(1, Math.round(progress * (pts.length - 1)));
-      context.beginPath();
-      for (let i = 0; i <= last; i += 1) {
-        const px = originX + pts[i][0] * fit;
-        const py = originY + pts[i][1] * fit;
-        if (i === 0) context.moveTo(px, py); else context.lineTo(px, py);
-      }
       const color = shape.color || '#ff5fd2';
+      const flow = shape.color_flow && shape.color_flow.source ? shape.color_flow : null;
       context.globalAlpha = clamp01(shape.opacity === undefined ? 0.8 : Number(shape.opacity));
-      context.strokeStyle = color;
       context.lineWidth = Math.max(0.5, Number(shape.line_width) || 2);
-      context.shadowColor = color;
       context.shadowBlur = 8;
-      context.stroke();
+      const traceTo = (start, end) => {
+        context.beginPath();
+        for (let i = start; i <= end; i += 1) {
+          const px = originX + pts[i][0] * fit;
+          const py = originY + pts[i][1] * fit;
+          if (i === start) context.moveTo(px, py); else context.lineTo(px, py);
+        }
+      };
+      if (!flow) {
+        traceTo(0, last);
+        context.strokeStyle = color;
+        context.shadowColor = color;
+        context.stroke();
+      } else {
+        // Level-quantized runs matching the renderer's color-flow strokes:
+        // flow values oscillate once per winding, so each point's value is
+        // quantized onto fixed hue levels and constant-level runs are batched
+        // into one path per level — per-petal detail, few stroke calls.
+        const LEVELS = 24;
+        const values = window.mrpHueFlowValues(pts, flow.source);
+        const swing = Number(flow.swing_degrees) || 90;
+        const level = (i) => Math.min(
+          LEVELS - 1,
+          Math.floor(Math.min(1, Math.max(0, values[i])) * LEVELS)
+        );
+        const levelPaths = new Map();
+        let runStart = 0;
+        const flushRun = (endIndex) => {
+          const key = level(runStart);
+          if (!levelPaths.has(key)) levelPaths.set(key, new Path2D());
+          const path = levelPaths.get(key);
+          const from = Math.max(0, runStart - 1);
+          const to = Math.min(last, endIndex);
+          path.moveTo(originX + pts[from][0] * fit, originY + pts[from][1] * fit);
+          for (let i = from + 1; i <= to; i += 1) {
+            path.lineTo(originX + pts[i][0] * fit, originY + pts[i][1] * fit);
+          }
+        };
+        for (let i = 1; i <= last; i += 1) {
+          if (level(i) !== level(runStart)) {
+            flushRun(i);
+            runStart = i;
+          }
+        }
+        flushRun(last);
+        levelPaths.forEach((path, key) => {
+          const segmentColor = window.mrpShiftHue(
+            color,
+            ((key + 0.5) / LEVELS - 0.5) * swing
+          );
+          context.strokeStyle = segmentColor;
+          context.shadowColor = segmentColor;
+          context.stroke(path);
+        });
+      }
       if (opts.showHead && progress < 1) {
         context.beginPath();
         context.arc(originX + pts[last][0] * fit, originY + pts[last][1] * fit, 5, 0, Math.PI * 2);

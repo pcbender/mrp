@@ -208,6 +208,8 @@ def _manual_fields(*, fixed_radius: str = "333") -> dict[str, list[str]]:
         "rotation_speed": ["-1.2"],
         "hue_shift": ["12"],
         "blend_mode": ["screen"],
+        "color_flow_source": [""],
+        "color_flow_swing": ["90"],
         "driver_scale": ["bass.energy"],
         "driver_opacity": ["master.energy"],
         "driver_color": ["vocals.energy"],
@@ -227,6 +229,8 @@ def _actor_fields(*, action: str = "actor_save") -> dict[str, list[str]]:
             "actor_description": ["A rose-colored lead identity."],
             "actor_character": ["bass"],
             "trace_id": ["shape"],
+            "color_flow_source": ["curvature"],
+            "color_flow_swing": ["120"],
         }
     )
     return fields
@@ -364,6 +368,9 @@ def test_actor_identity_cast_and_direction_compile_without_rewriting_renderer(
     compiled = cast_result["composition"].traces[0]
     assert compiled.id == "lead--shape"
     assert compiled.geometry.fixed_radius == 205
+    assert compiled.color_flow is not None
+    assert compiled.color_flow.source == "curvature"
+    assert compiled.color_flow.swing_degrees == 120
     assert compiled.anchor_x == pytest.approx(0.37)
     assert compiled.base_scale == pytest.approx(1.75)
     assert compiled.drivers.scale == "bass.energy"
@@ -392,6 +399,7 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
     assert trace["base_scale"] == pytest.approx(1.75)
     assert {"fixed_radius", "phase", "rotation", "samples", "color", "opacity"} <= set(trace)
     assert trace["phase"] == 0.5
+    assert trace["color_flow"] == {"source": "curvature", "swing_degrees": 120.0}
 
     # Actor identities let the browser recompile placement live from the fields.
     identity = storyboard["actors"]["vocal-lantern"]
@@ -456,9 +464,12 @@ def test_global_actor_library_imports_a_pinned_project_snapshot(tmp_path: Path) 
         tmp_path / "assets/source/video/actors/vocal-lantern.yaml"
     )
     assert library_path.is_file()
-    assert "character" not in yaml.safe_load(
-        library_path.read_text(encoding="utf-8")
-    )["actor"]
+    library_actor_payload = yaml.safe_load(library_path.read_text(encoding="utf-8"))["actor"]
+    assert "character" not in library_actor_payload
+    assert library_actor_payload["components"][0]["color_flow"] == {
+        "source": "curvature",
+        "swing_degrees": 120.0,
+    }
     revision = published["library_actors"][0]["revision"]
 
     payload = yaml.safe_load(project_path.read_text(encoding="utf-8"))
@@ -553,6 +564,7 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert "/video/actors" in body
     assert 'name="fixed_radius"' in body
     assert 'name="phase"' in body
+    assert 'name="color_flow_source"' in body
     assert 'type="range"' in body
     assert "/static/spiro-preview.js" in body
     assert 'id="track-actor-designer"' in body

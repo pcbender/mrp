@@ -117,3 +117,61 @@ def generate_spiro_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
         )
 
     return points
+
+
+HueFlowSource = Literal["angle", "radius", "velocity", "curvature"]
+
+
+def _normalized_angle(angle: float) -> float:
+    return ((angle % TAU) + TAU) % TAU / TAU
+
+
+def _signed_angle(angle: float) -> float:
+    return ((angle + math.pi) % TAU) - math.pi
+
+
+def _min_max_normalized(values: list[float]) -> list[float]:
+    low = min(values)
+    high = max(values)
+    span = high - low
+    # A relative guard, so a numerically-constant source (e.g. the radius of a
+    # zero-pen-offset circle) collapses to the center instead of amplifying
+    # float noise into a full hue swing.
+    if span <= max(abs(low), abs(high), 1.0) * 1e-9:
+        return [0.5 for _ in values]
+    return [(value - low) / span for value in values]
+
+
+def hue_flow_values(points: list[SpiroPoint], source: HueFlowSource) -> list[float]:
+    """Per-point color-flow values in [0, 1], matching the archived prototype.
+
+    The values are static per geometry; a color-flow layer maps them onto a hue
+    swing centered on its resolved base color. Semantics mirror the prototype's
+    pointToHue: angle normalizes the winding angle, radius and velocity are
+    min-max normalized over the curve, and curvature is the absolute turn angle
+    mapped over 0..pi.
+    """
+    if source == "angle":
+        return [_normalized_angle(point.angle) for point in points]
+    if source == "radius":
+        return _min_max_normalized([point.radius for point in points])
+    if source == "velocity":
+        last = len(points) - 1
+        speeds = [
+            math.hypot(
+                points[min(last, index + 1)].x - points[max(0, index - 1)].x,
+                points[min(last, index + 1)].y - points[max(0, index - 1)].y,
+            )
+            for index in range(len(points))
+        ]
+        return _min_max_normalized(speeds)
+    values = []
+    for index in range(len(points)):
+        if index == 0 or index == len(points) - 1:
+            values.append(0.0)
+            continue
+        previous, current, upcoming = points[index - 1], points[index], points[index + 1]
+        incoming = math.atan2(current.y - previous.y, current.x - previous.x)
+        outgoing = math.atan2(upcoming.y - current.y, upcoming.x - current.x)
+        values.append(abs(_signed_angle(outgoing - incoming)) / math.pi)
+    return values

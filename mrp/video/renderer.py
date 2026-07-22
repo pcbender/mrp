@@ -17,7 +17,7 @@ from numpy.typing import NDArray
 from mrp.video.analysis import AnalysisBundle, analyze_project
 from mrp.video.casting import resolve_section_composition
 from mrp.video.choreography import ChoreographyState, choreography_at
-from mrp.video.geometry import SpiroGeometry, generate_spiro_points
+from mrp.video.geometry import SpiroGeometry, generate_spiro_points, hue_flow_values
 from mrp.video.mappings import map_layer_state, sample_audio_visual_state
 from mrp.video.presets import (
     MappingPreset,
@@ -53,6 +53,8 @@ class LayerCurve:
     config: VisualLayerConfig
     points: NDArray[np.float32]
     phase_offset: float
+    hue_values: NDArray[np.float32] | None = None
+    """Static per-point color-flow values in [0, 1]; None for solid layers."""
 
 
 @dataclass(frozen=True, slots=True)
@@ -169,6 +171,13 @@ def _build_curve(
         raise SpirophonicRendererError(f"visual layer '{layer.id}' has no extent")
     points /= extent
     points.setflags(write=False)
+    hue_values = None
+    if layer.color_flow is not None:
+        hue_values = np.asarray(
+            hue_flow_values(generated, layer.color_flow.source),
+            dtype=np.float32,
+        )
+        hue_values.setflags(write=False)
     return LayerCurve(
         config=layer,
         points=points,
@@ -176,6 +185,7 @@ def _build_curve(
             seed,
             f"{namespace}:{layer.id}" if namespace else layer.id,
         ),
+        hue_values=hue_values,
     )
 
 
@@ -401,20 +411,80 @@ def _draw_fading_path(
         )
 
 
+FLOW_HUE_LEVELS = 24
+
+
+def _paint_flow_colors(
+    color_buffer: NDArray[np.uint8],
+    paths: tuple[tuple[NDArray[np.int32], float, NDArray[np.float32] | None], ...],
+    color_for_value: Callable[[float], tuple[int, int, int]],
+    *,
+    line_width: float,
+    head_radius: float,
+) -> None:
+    """Stroke hue-leveled runs into the layer's per-pixel color source.
+
+    Flow values oscillate once per winding on a spirogram, so positional
+    binning would average them away. Instead each point's value in [0, 1] is
+    quantized onto FLOW_HUE_LEVELS fixed levels and the path is split into
+    constant-level runs — per-petal color detail at segment resolution, with
+    at most one cv2 call per level per path. The alpha mask keeps the fade/AA
+    look; these strokes only decide which color each masked pixel takes, so
+    they draw slightly wider with no AA of their own.
+    """
+    thickness = max(1, round(line_width)) + 3
+    for points, _peak, values in paths:
+        if values is None or len(points) < 2:
+            continue
+        levels = np.minimum(
+            FLOW_HUE_LEVELS - 1,
+            (np.clip(values, 0, 1) * FLOW_HUE_LEVELS).astype(np.int32),
+        )
+        changes = np.flatnonzero(np.diff(levels) != 0) + 1
+        boundaries = [0, *changes.tolist(), len(points)]
+        runs: dict[int, list[NDArray[np.int32]]] = {}
+        for start, end in zip(boundaries[:-1], boundaries[1:]):
+            # Extend one point past each side so boundary segments are covered;
+            # neighboring runs overlap by a segment, which is harmless here.
+            runs.setdefault(int(levels[start]), []).append(
+                points[max(0, start - 1) : min(len(points), end + 1)]
+            )
+        for level, segments in runs.items():
+            cv2.polylines(
+                color_buffer,
+                segments,
+                isClosed=False,
+                color=color_for_value((level + 0.5) / FLOW_HUE_LEVELS),
+                thickness=thickness,
+                lineType=cv2.LINE_8,
+            )
+    if paths and head_radius > 0 and paths[-1][2] is not None:
+        head = paths[-1][0][-1, 0]
+        cv2.circle(
+            color_buffer,
+            (int(head[0]), int(head[1])),
+            max(1, round(head_radius)) + 2,
+            color_for_value(float(paths[-1][2][-1])),
+            thickness=-1,
+            lineType=cv2.LINE_8,
+        )
+
+
 def _composite_trace(
     frame: NDArray[np.uint8],
-    paths: tuple[tuple[NDArray[np.int32], float], ...],
+    paths: tuple[tuple[NDArray[np.int32], float, NDArray[np.float32] | None], ...],
     *,
     color: tuple[int, int, int],
     opacity: float,
     line_width: float,
     blend_mode: str,
     head_radius: float,
+    color_for_value: Callable[[float], tuple[int, int, int]] | None = None,
 ) -> NDArray[np.uint8]:
     if opacity <= 0:
         return frame
     mask = np.zeros(frame.shape[:2], dtype=np.uint8)
-    for points, peak in paths:
+    for points, peak, _values in paths:
         _draw_fading_path(mask, points, peak=peak, line_width=line_width)
     if paths and head_radius > 0:
         head = paths[-1][0][-1, 0]
@@ -429,7 +499,22 @@ def _composite_trace(
     alpha = mask.astype(np.float32)[:, :, np.newaxis] / 255
     alpha *= opacity
     base = frame.astype(np.float32) / 255
-    source = np.asarray(color, dtype=np.float32)[np.newaxis, np.newaxis, :] / 255
+    flow = color_for_value is not None and any(
+        values is not None for _points, _peak, values in paths
+    )
+    if flow:
+        color_buffer = np.empty_like(frame)
+        color_buffer[:, :] = color
+        _paint_flow_colors(
+            color_buffer,
+            paths,
+            color_for_value,
+            line_width=line_width,
+            head_radius=head_radius,
+        )
+        source = color_buffer.astype(np.float32) / 255
+    else:
+        source = np.asarray(color, dtype=np.float32)[np.newaxis, np.newaxis, :] / 255
     if blend_mode == "screen":
         output = 1 - (1 - base) * (1 - source * alpha)
     else:
@@ -517,7 +602,17 @@ def render_frame(
             trace.cycles_per_second,
             phase=curve.phase_offset / math.tau,
         )
-        trace_paths: list[tuple[NDArray[np.int32], float]] = []
+        flow = curve.config.color_flow
+        flow_active = flow is not None and curve.hue_values is not None
+
+        def _window_flow_values(window) -> NDArray[np.float32] | None:
+            if not flow_active or window.indices is None:
+                return None
+            return curve.hue_values[window.indices]
+
+        trace_paths: list[
+            tuple[NDArray[np.int32], float, NDArray[np.float32] | None]
+        ] = []
         for ghost_index in range(trace.ghost_count, 0, -1):
             ghost_progress = progress - ghost_index * (
                 state.trail_fraction + trace.ghost_spacing
@@ -540,6 +635,7 @@ def render_frame(
                         anchor_y=anchor_y,
                     ),
                     0.3 / ghost_index,
+                    _window_flow_values(ghost),
                 )
             )
         active = cyclic_trace_window(
@@ -560,13 +656,33 @@ def render_frame(
                     anchor_y=anchor_y,
                 ),
                 1.0,
+                _window_flow_values(active),
             )
         )
+        base_color = _base_layer_color(context, curve.config, layer_index)
+        color_for_value = None
+        if flow_active:
+
+            def color_for_value(
+                value: float,
+                _base: str = base_color,
+                _swing: float = flow.swing_degrees,
+                _hue_shift: float = state.hue_shift_degrees,
+                _intensity: float = state.color_intensity,
+                _flash: float = state.beat_pulse,
+            ) -> tuple[int, int, int]:
+                return _layer_color(
+                    _base,
+                    _hue_shift + (value - 0.5) * _swing,
+                    _intensity,
+                    _flash,
+                )
+
         frame = _composite_trace(
             frame,
             tuple(trace_paths),
             color=_layer_color(
-                _base_layer_color(context, curve.config, layer_index),
+                base_color,
                 state.hue_shift_degrees,
                 state.color_intensity,
                 state.beat_pulse,
@@ -575,6 +691,7 @@ def render_frame(
             line_width=state.line_width,
             blend_mode=curve.config.blend_mode,
             head_radius=trace.head_radius * (1 + state.beat_pulse * 2.2),
+            color_for_value=color_for_value,
         )
 
     cue = lyric_cue_at(

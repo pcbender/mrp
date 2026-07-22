@@ -433,3 +433,79 @@ def test_build_curve_honors_geometry_phase() -> None:
     # Phase rotates the sampled curve, so the point cloud must move while the
     # normalization extent stays comparable.
     assert not np.allclose(plain.points, shifted.points)
+
+
+def test_build_curve_precomputes_color_flow_values_only_when_configured() -> None:
+    from mrp.video.project import VisualLayerConfig
+    from mrp.video.renderer import _build_curve
+
+    base = {
+        "id": "flow-probe",
+        "role": "vocals",
+        "color": "#ff5fd2",
+        "geometry": {
+            "fixed_radius": 120,
+            "moving_radius": 45,
+            "pen_offset": 60,
+            "samples": 128,
+        },
+    }
+    solid = _build_curve(VisualLayerConfig.model_validate(base), 7)
+    assert solid.hue_values is None
+
+    flowing = _build_curve(
+        VisualLayerConfig.model_validate(
+            base | {"color_flow": {"source": "radius", "swing_degrees": 90}}
+        ),
+        7,
+    )
+    assert flowing.hue_values is not None
+    assert len(flowing.hue_values) == 128
+    assert float(flowing.hue_values.min()) >= 0
+    assert float(flowing.hue_values.max()) <= 1
+
+
+def test_composite_trace_color_flow_varies_hue_deterministically() -> None:
+    from mrp.video.renderer import _composite_trace, _layer_color
+
+    xs = np.linspace(10, 110, 24)
+    points = (
+        np.stack([xs, np.full(24, 30.0)], axis=1)
+        .round()
+        .astype(np.int32)
+        .reshape((-1, 1, 2))
+    )
+    values = np.linspace(0, 1, 24, dtype=np.float32)
+    kwargs = {
+        "color": _layer_color("#ff5fd2", 0, 1),
+        "opacity": 1.0,
+        "line_width": 3.0,
+        "blend_mode": "normal",
+        "head_radius": 0.0,
+    }
+    frame = np.zeros((60, 120, 3), dtype=np.uint8)
+
+    def flow_color(value: float) -> tuple[int, int, int]:
+        return _layer_color("#ff5fd2", (value - 0.5) * 240, 1)
+
+    solid = _composite_trace(frame, ((points, 1.0, None),), **kwargs)
+    flowing = _composite_trace(
+        frame,
+        ((points, 1.0, values),),
+        **kwargs,
+        color_for_value=flow_color,
+    )
+    repeat = _composite_trace(
+        frame,
+        ((points, 1.0, values),),
+        **kwargs,
+        color_for_value=flow_color,
+    )
+
+    # The hue sweeps along the stroke: at equal trail fade, flow pixels must
+    # disagree with the solid render at both ends, deterministically. (The
+    # solid ends differ from each other too — that is the fading trail.)
+    assert not np.array_equal(solid, flowing)
+    assert not np.array_equal(flowing[30, 20], solid[30, 20])
+    assert not np.array_equal(flowing[30, 100], solid[30, 100])
+    assert np.array_equal(flowing, repeat)
