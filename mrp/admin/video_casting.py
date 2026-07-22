@@ -404,11 +404,9 @@ def _gallery(
 def _storyboard_shape(layer: Any) -> dict[str, Any]:
     """Serialize one visual layer's geometry and placement for canvas drawing."""
     return {
-        "fixed_radius": layer.geometry.fixed_radius,
-        "moving_radius": layer.geometry.moving_radius,
-        "pen_offset": layer.geometry.pen_offset,
-        "phase": layer.geometry.phase,
-        "rotation": layer.geometry.rotation,
+        # Whole geometry (family + its fields) so the client dispatcher draws
+        # any curve family without per-field drift here.
+        **layer.geometry.model_dump(mode="json", exclude_none=True),
         "samples": min(layer.geometry.samples, 1200),
         "color": layer.color,
         "color_flow": (
@@ -654,12 +652,22 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
     count = len(ids)
     names = (
         "trace_role",
+        "geometry_family",
         "fixed_radius",
         "moving_radius",
         "pen_offset",
         "phase",
         "geometry_rotation",
         "samples",
+        "liss_freq_x",
+        "liss_freq_y",
+        "liss_delta",
+        "rose_n",
+        "rose_d",
+        "sf_m",
+        "sf_n1",
+        "sf_n2",
+        "sf_n3",
         "cycles_per_second",
         "trail_fraction",
         "ghost_count",
@@ -702,19 +710,47 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
             if flow_source
             else None
         )
+        family = columns["geometry_family"][index] or "spirogram"
+        geometry: dict[str, Any] = {
+            "family": family,
+            "phase": _number(columns["phase"][index], f"trace {trace_id} phase"),
+            "samples": _integer(columns["samples"][index], f"trace {trace_id} samples"),
+        }
+        # Only the active family's columns are parsed, so hidden inputs left
+        # blank by the form can never fail number validation.
+        if family == "spirogram":
+            geometry |= {
+                "fixed_radius": _number(columns["fixed_radius"][index], f"trace {trace_id} fixed radius"),
+                "moving_radius": _number(columns["moving_radius"][index], f"trace {trace_id} moving radius"),
+                "pen_offset": _number(columns["pen_offset"][index], f"trace {trace_id} pen offset"),
+                "rotation": columns["geometry_rotation"][index],
+            }
+        elif family == "lissajous":
+            geometry |= {
+                "liss_freq_x": _integer(columns["liss_freq_x"][index], f"trace {trace_id} x frequency"),
+                "liss_freq_y": _integer(columns["liss_freq_y"][index], f"trace {trace_id} y frequency"),
+                "liss_delta": _number(columns["liss_delta"][index], f"trace {trace_id} delta"),
+            }
+        elif family == "rose":
+            geometry |= {
+                "rose_n": _integer(columns["rose_n"][index], f"trace {trace_id} petal numerator"),
+                "rose_d": _integer(columns["rose_d"][index], f"trace {trace_id} petal denominator"),
+            }
+        elif family == "superformula":
+            geometry |= {
+                "sf_m": _integer(columns["sf_m"][index], f"trace {trace_id} symmetry m"),
+                "sf_n1": _number(columns["sf_n1"][index], f"trace {trace_id} n1"),
+                "sf_n2": _number(columns["sf_n2"][index], f"trace {trace_id} n2"),
+                "sf_n3": _number(columns["sf_n3"][index], f"trace {trace_id} n3"),
+            }
+        else:
+            raise CastingEditorError(f"trace {trace_id} has an unknown geometry family: {family}")
         traces.append(
             {
                 "id": trace_id,
                 "role": columns["trace_role"][index],
                 "color_flow": color_flow,
-                "geometry": {
-                    "fixed_radius": _number(columns["fixed_radius"][index], f"trace {trace_id} fixed radius"),
-                    "moving_radius": _number(columns["moving_radius"][index], f"trace {trace_id} moving radius"),
-                    "pen_offset": _number(columns["pen_offset"][index], f"trace {trace_id} pen offset"),
-                    "phase": _number(columns["phase"][index], f"trace {trace_id} phase"),
-                    "rotation": columns["geometry_rotation"][index],
-                    "samples": _integer(columns["samples"][index], f"trace {trace_id} samples"),
-                },
+                "geometry": geometry,
                 "trace": {
                     "cycles_per_second": _number(columns["cycles_per_second"][index], f"trace {trace_id} speed"),
                     "trail_fraction": _number(columns["trail_fraction"][index], f"trace {trace_id} trail"),

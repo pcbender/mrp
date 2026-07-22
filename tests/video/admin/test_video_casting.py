@@ -187,6 +187,16 @@ def _manual_fields(*, fixed_radius: str = "333") -> dict[str, list[str]]:
         "style_beat_gain": ["1.8"],
         "trace_id": ["verse-hero"],
         "trace_role": ["vocals"],
+        "geometry_family": ["spirogram"],
+        "liss_freq_x": ["3"],
+        "liss_freq_y": ["2"],
+        "liss_delta": ["1.5708"],
+        "rose_n": ["5"],
+        "rose_d": ["1"],
+        "sf_m": ["6"],
+        "sf_n1": ["0.3"],
+        "sf_n2": ["0.3"],
+        "sf_n3": ["0.3"],
         "fixed_radius": [fixed_radius],
         "moving_radius": ["77"],
         "pen_offset": ["155"],
@@ -397,7 +407,8 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
     assert trace["assignment"] == "lead"
     assert trace["anchor_x"] == pytest.approx(0.37)
     assert trace["base_scale"] == pytest.approx(1.75)
-    assert {"fixed_radius", "phase", "rotation", "samples", "color", "opacity"} <= set(trace)
+    assert {"family", "fixed_radius", "phase", "rotation", "samples", "color", "opacity"} <= set(trace)
+    assert trace["family"] == "spirogram"
     assert trace["phase"] == 0.5
     assert trace["color_flow"] == {"source": "curvature", "swing_degrees": 120.0}
 
@@ -563,6 +574,8 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'name="reacts_to"' not in body
     assert "/video/actors" in body
     assert 'name="fixed_radius"' in body
+    assert 'name="geometry_family"' in body
+    assert 'data-family="lissajous"' in body
     assert 'name="phase"' in body
     assert 'name="color_flow_source"' in body
     assert 'type="range"' in body
@@ -645,3 +658,36 @@ def test_private_preview_route_rejects_traversal(tmp_path: Path, monkeypatch) ->
     assert response.status_code == 200
     assert response.media_type == "image/png"
     assert rejected.status_code == 404
+
+
+def test_lissajous_actor_round_trips_family_geometry(tmp_path: Path) -> None:
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+    fields = _actor_fields()
+    fields.update(
+        {
+            "geometry_family": ["lissajous"],
+            "liss_freq_x": ["5"],
+            "liss_freq_y": ["4"],
+            "liss_delta": ["0.7"],
+            # Hidden inputs for the inactive family post blank values.
+            "fixed_radius": [""],
+            "moving_radius": [""],
+            "pen_offset": [""],
+        }
+    )
+
+    actor_id = save_track_actor(tmp_path, release, track, fields)
+
+    stored = TrackProjectDocument.model_validate(
+        yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    )
+    geometry = stored.project.visuals.actors[actor_id].components[0].geometry
+    assert geometry.family == "lissajous"
+    assert geometry.liss_freq_x == 5
+    assert geometry.liss_freq_y == 4
+    assert geometry.liss_delta == 0.7
+    assert geometry.fixed_radius is None
+    payload = yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    raw = payload["project"]["visuals"]["actors"][actor_id]["components"][0]["geometry"]
+    assert "fixed_radius" not in raw
+    assert raw["family"] == "lissajous"

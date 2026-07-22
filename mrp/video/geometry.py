@@ -9,12 +9,31 @@ TAU = math.tau
 
 @dataclass(frozen=True, slots=True)
 class SpiroGeometry:
-    fixed_radius: float
-    moving_radius: float
-    pen_offset: float
+    """Geometry for one curve; ``family`` selects which fields apply.
+
+    Curve math is mirrored in mrp/admin/static/spiro-preview.js — keep the
+    closure formulas and expressions in sync.
+    """
+
+    fixed_radius: float | None = None
+    moving_radius: float | None = None
+    pen_offset: float | None = None
     phase: float = 0.0
     rotation: RotationMode = "inside"
     samples: float = 900
+    family: str = "spirogram"
+    # lissajous: x = sin(a*theta + delta), y = sin(b*theta)
+    liss_freq_x: int = 3
+    liss_freq_y: int = 2
+    liss_delta: float = math.pi / 2
+    # rose: r = cos((n/d) * theta)
+    rose_n: int = 5
+    rose_d: int = 1
+    # superformula (Gielis, a = b = 1)
+    sf_m: int = 6
+    sf_n1: float = 0.3
+    sf_n2: float = 0.3
+    sf_n3: float = 0.3
 
 
 @dataclass(frozen=True, slots=True)
@@ -82,29 +101,110 @@ def _epitrochoid_point(
     )
 
 
-def generate_spiro_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
-    """Generate the same trochoid points as the archived TypeScript prototype."""
-    point_count = max(2, _javascript_round(geometry.samples))
+def _spirogram_curve(geometry: SpiroGeometry):
+    """Trochoid curve, identical to the archived TypeScript prototype."""
     end = _cycle_end(geometry.fixed_radius, geometry.moving_radius)
+    if geometry.rotation == "inside":
+
+        def point(theta: float) -> tuple[float, float]:
+            return _hypotrochoid_point(
+                theta,
+                geometry.fixed_radius,
+                geometry.moving_radius,
+                geometry.pen_offset,
+            )
+
+    else:
+
+        def point(theta: float) -> tuple[float, float]:
+            return _epitrochoid_point(
+                theta,
+                geometry.fixed_radius,
+                geometry.moving_radius,
+                geometry.pen_offset,
+            )
+
+    return end, point
+
+
+def _lissajous_curve(geometry: SpiroGeometry):
+    """x = sin(a*theta + delta), y = sin(b*theta); closes at TAU / gcd(a, b)."""
+    a = max(1, _javascript_round(geometry.liss_freq_x))
+    b = max(1, _javascript_round(geometry.liss_freq_y))
+    delta = geometry.liss_delta
+    end = TAU / greatest_common_divisor(a, b)
+
+    def point(theta: float) -> tuple[float, float]:
+        return math.sin(a * theta + delta), math.sin(b * theta)
+
+    return end, point
+
+
+def _rose_curve(geometry: SpiroGeometry):
+    """r = cos(k*theta), k = n/d reduced; closes at pi*d (n*d odd) else 2*pi*d."""
+    n = max(1, _javascript_round(geometry.rose_n))
+    d = max(1, _javascript_round(geometry.rose_d))
+    divisor = greatest_common_divisor(n, d)
+    n //= divisor
+    d //= divisor
+    end = math.pi * d if (n * d) % 2 == 1 else TAU * d
+    k = n / d
+
+    def point(theta: float) -> tuple[float, float]:
+        radius = math.cos(k * theta)
+        return radius * math.cos(theta), radius * math.sin(theta)
+
+    return end, point
+
+
+def _superformula_curve(geometry: SpiroGeometry):
+    """Gielis supershape with a = b = 1; closes at TAU (m even or 0) else 2*TAU."""
+    m = max(0, _javascript_round(geometry.sf_m))
+    n1, n2, n3 = geometry.sf_n1, geometry.sf_n2, geometry.sf_n3
+    end = TAU if m % 2 == 0 else 2 * TAU
+
+    def point(theta: float) -> tuple[float, float]:
+        u = m * theta / 4
+        base = abs(math.cos(u)) ** n2 + abs(math.sin(u)) ** n3
+        try:
+            radius = base ** (-1 / n1)
+        except (OverflowError, ZeroDivisionError):
+            radius = 0.0
+        if not math.isfinite(radius):
+            radius = 0.0
+        radius = min(radius, 1e9)
+        return radius * math.cos(theta), radius * math.sin(theta)
+
+    return end, point
+
+
+_CURVE_FAMILIES = {
+    "spirogram": _spirogram_curve,
+    "lissajous": _lissajous_curve,
+    "rose": _rose_curve,
+    "superformula": _superformula_curve,
+}
+
+
+def generate_spiro_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
+    """Generate one closed curve for the geometry's family.
+
+    The spirogram branch produces the same trochoid points as the archived
+    TypeScript prototype; other families share the identical sampling loop
+    (theta = progress * end + phase) so phase, color flow, and tracing behave
+    uniformly.
+    """
+    curve = _CURVE_FAMILIES.get(geometry.family)
+    if curve is None:
+        raise ValueError(f"unknown geometry family: {geometry.family}")
+    end, point_at = curve(geometry)
+    point_count = max(2, _javascript_round(geometry.samples))
     points: list[SpiroPoint] = []
 
     for index in range(point_count):
         progress = index / (point_count - 1)
         theta = progress * end + geometry.phase
-        if geometry.rotation == "inside":
-            x, y = _hypotrochoid_point(
-                theta,
-                geometry.fixed_radius,
-                geometry.moving_radius,
-                geometry.pen_offset,
-            )
-        else:
-            x, y = _epitrochoid_point(
-                theta,
-                geometry.fixed_radius,
-                geometry.moving_radius,
-                geometry.pen_offset,
-            )
+        x, y = point_at(theta)
 
         points.append(
             SpiroPoint(
@@ -114,6 +214,21 @@ def generate_spiro_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
                 radius=math.hypot(x, y),
                 angle=math.atan2(y, x),
             )
+        )
+
+    if geometry.family != "spirogram" and len(points) > 1:
+        # Every family closes by construction, but fractional exponents (e.g.
+        # superformula n3 < 1) amplify float residue at the wrap point. Snap
+        # the endpoint so the tracing window's closed-curve trim fires
+        # deterministically. The spirogram branch is left verbatim to keep
+        # its golden fixture and render digests byte-identical.
+        first = points[0]
+        points[-1] = SpiroPoint(
+            t=1.0,
+            x=first.x,
+            y=first.y,
+            radius=first.radius,
+            angle=first.angle,
         )
 
     return points

@@ -170,13 +170,69 @@ class AlignmentConfig(ContractModel):
         return self
 
 
+GeometryFamily = Literal["spirogram", "lissajous", "rose", "superformula"]
+
+_FAMILY_FIELDS: dict[str, dict[str, Any]] = {
+    "spirogram": {},  # trochoid fields are required, not defaulted
+    "lissajous": {"liss_freq_x": 3, "liss_freq_y": 2, "liss_delta": math.pi / 2},
+    "rose": {"rose_n": 5, "rose_d": 1},
+    "superformula": {"sf_m": 6, "sf_n1": 0.3, "sf_n2": 0.3, "sf_n3": 0.3},
+}
+_TROCHOID_FIELDS = ("fixed_radius", "moving_radius", "pen_offset")
+
+
 class LayerGeometryConfig(ContractModel):
-    fixed_radius: float = Field(gt=0)
-    moving_radius: float = Field(gt=0)
-    pen_offset: float = Field(ge=0)
-    phase: float = 0.0
+    """One curve family per layer; family-specific fields stay None elsewhere.
+
+    A single widened model (not a discriminated union) so legacy geometry
+    dicts without a ``family`` key remain valid spirograms.
+    """
+
+    family: GeometryFamily = "spirogram"
+    # spirogram (trochoid) — required when family == "spirogram"
+    fixed_radius: float | None = Field(default=None, gt=0)
+    moving_radius: float | None = Field(default=None, gt=0)
+    pen_offset: float | None = Field(default=None, ge=0)
     rotation: Literal["inside", "outside"] = "inside"
+    # shared by every family: parameter start offset + sample count
+    phase: float = 0.0
     samples: int = Field(default=900, ge=64, le=8192)
+    # lissajous: x = sin(a*theta + delta), y = sin(b*theta)
+    liss_freq_x: int | None = Field(default=None, ge=1, le=12)
+    liss_freq_y: int | None = Field(default=None, ge=1, le=12)
+    liss_delta: float | None = Field(default=None, ge=0, le=6.2832)
+    # rose: r = cos((n/d) * theta)
+    rose_n: int | None = Field(default=None, ge=1, le=12)
+    rose_d: int | None = Field(default=None, ge=1, le=9)
+    # superformula (Gielis, a = b = 1)
+    sf_m: int | None = Field(default=None, ge=0, le=24)
+    sf_n1: float | None = Field(default=None, ge=0.1, le=40)
+    sf_n2: float | None = Field(default=None, ge=0.1, le=40)
+    sf_n3: float | None = Field(default=None, ge=0.1, le=40)
+
+    @model_validator(mode="after")
+    def family_fields_are_consistent(self) -> "LayerGeometryConfig":
+        if self.family == "spirogram":
+            for name in _TROCHOID_FIELDS:
+                if getattr(self, name) is None:
+                    raise ValueError(f"spirogram geometry requires {name}")
+        else:
+            for name in _TROCHOID_FIELDS:
+                if getattr(self, name) is not None:
+                    raise ValueError(
+                        f"{self.family} geometry does not accept {name}"
+                    )
+        for family, defaults in _FAMILY_FIELDS.items():
+            for name, default in defaults.items():
+                value = getattr(self, name)
+                if family == self.family:
+                    if value is None:
+                        setattr(self, name, default)
+                elif value is not None:
+                    raise ValueError(
+                        f"{self.family} geometry does not accept {name}"
+                    )
+        return self
 
 
 class LayerTraceConfig(ContractModel):

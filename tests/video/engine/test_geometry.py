@@ -72,3 +72,69 @@ def test_hue_flow_values_match_prototype_semantics() -> None:
         SpiroGeometry(fixed_radius=120, moving_radius=60, pen_offset=0, samples=120)
     )
     assert set(hue_flow_values(circle, "radius")) == {0.5}
+
+
+def test_curve_families_close_and_sample_uniformly() -> None:
+    import math
+
+    from mrp.video.geometry import SpiroGeometry, generate_spiro_points
+
+    cases = {
+        "lissajous": SpiroGeometry(family="lissajous", liss_freq_x=3, liss_freq_y=2, samples=601),
+        "rose": SpiroGeometry(family="rose", rose_n=5, rose_d=1, samples=601),
+        "rose-even": SpiroGeometry(family="rose", rose_n=2, rose_d=1, samples=601),
+        "superformula": SpiroGeometry(family="superformula", sf_m=6, samples=601),
+        "superformula-odd": SpiroGeometry(family="superformula", sf_m=7, samples=601),
+    }
+    for label, geometry in cases.items():
+        points = generate_spiro_points(geometry)
+        assert len(points) == 601, label
+        first, last = points[0], points[-1]
+        assert math.hypot(first.x - last.x, first.y - last.y) < 1e-9, label
+
+
+def test_lissajous_equal_frequencies_with_quarter_delta_is_a_circle() -> None:
+    from mrp.video.geometry import SpiroGeometry, generate_spiro_points
+
+    points = generate_spiro_points(
+        SpiroGeometry(family="lissajous", liss_freq_x=4, liss_freq_y=4, samples=241)
+    )
+    radii = [point.radius for point in points]
+    assert max(radii) - min(radii) < 1e-9
+
+
+def test_rose_petal_counts_follow_parity() -> None:
+    from mrp.video.geometry import SpiroGeometry, generate_spiro_points
+
+    def petals(n: int, d: int) -> int:
+        # phase shifts the start off a petal tip so every tip is an interior
+        # maximum for the counter below.
+        points = generate_spiro_points(
+            SpiroGeometry(family="rose", rose_n=n, rose_d=d, samples=4801, phase=0.1)
+        )
+        radii = [point.radius for point in points]
+        count = 0
+        for index in range(1, len(radii) - 1):
+            if radii[index] > 0.999 and radii[index] >= radii[index - 1] and radii[index] > radii[index + 1]:
+                count += 1
+        return count
+
+    assert petals(5, 1) == 5   # odd n*d: closes at pi, n petals
+    assert petals(2, 1) == 4   # even n*d: closes at 2*pi, 2n petals
+
+
+def test_superformula_is_circle_at_m_zero_and_stays_finite_at_extremes() -> None:
+    import math
+
+    from mrp.video.geometry import SpiroGeometry, generate_spiro_points
+
+    circle = generate_spiro_points(
+        SpiroGeometry(family="superformula", sf_m=0, samples=121)
+    )
+    radii = [point.radius for point in circle]
+    assert max(radii) - min(radii) < 1e-9
+
+    extreme = generate_spiro_points(
+        SpiroGeometry(family="superformula", sf_m=24, sf_n1=0.1, sf_n2=40, sf_n3=40, samples=241)
+    )
+    assert all(math.isfinite(point.x) and math.isfinite(point.y) for point in extreme)

@@ -148,23 +148,24 @@ def _phase_offset(seed: int, layer_id: str) -> float:
     return fraction * math.tau
 
 
+def _spiro_geometry(config: Any) -> SpiroGeometry:
+    """Map a LayerGeometryConfig onto the engine dataclass.
+
+    None values (fields belonging to other families) fall back to the
+    dataclass defaults; the config validator guarantees the active family's
+    fields are populated.
+    """
+    fields = config.model_dump(exclude_none=True)
+    return SpiroGeometry(**fields)
+
+
 def _build_curve(
     layer: VisualLayerConfig,
     seed: int,
     *,
     namespace: str | None = None,
 ) -> LayerCurve:
-    geometry = layer.geometry
-    generated = generate_spiro_points(
-        SpiroGeometry(
-            fixed_radius=geometry.fixed_radius,
-            moving_radius=geometry.moving_radius,
-            pen_offset=geometry.pen_offset,
-            phase=geometry.phase,
-            rotation=geometry.rotation,
-            samples=geometry.samples,
-        )
-    )
+    generated = generate_spiro_points(_spiro_geometry(layer.geometry))
     points = np.asarray([(point.x, point.y) for point in generated], dtype=np.float32)
     extent = float(np.max(np.linalg.norm(points, axis=1), initial=0))
     if not math.isfinite(extent) or extent <= 0:

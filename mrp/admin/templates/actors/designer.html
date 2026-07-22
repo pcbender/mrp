@@ -72,11 +72,13 @@
     const count = componentsEl.querySelectorAll('fieldset').length + 1;
     clone.querySelector('input[name="trace_id"]').value = `shape-${count}`;
     componentsEl.appendChild(clone);
+    window.mrpSyncFamilyFields(componentsEl);
     player.redraw();
   }
 
   document.addEventListener('input', (event) => {
     if (event.target.closest('#actor-components')) player.redraw();
   });
+  window.mrpSyncFamilyFields(componentsEl);
 </script>
 {% endblock %}
