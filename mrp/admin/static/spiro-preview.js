@@ -270,6 +270,84 @@
     return field ? field.value : fallback;
   };
 
+  // Drag a component around an identity preview canvas to write its
+  // anchor_x/anchor_y sliders. Pointer conventions mirror the Scene Casting
+  // storyboard (anchor-center hit-test with max(28px, fitted-radius) reach,
+  // pointer capture, -0.5..1.5 clamp, one bubbling `input` on release), but
+  // this writes the actor-local identity anchors rather than scene direction.
+  window.mrpEnableComponentDrag = function (canvas, container, redraw) {
+    if (!canvas || !container) return;
+    const MARGIN = 0.08;
+    const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
+    let drag = null;
+
+    const canvasPoint = (event) => {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: (event.clientX - rect.left) * (canvas.width / rect.width),
+        y: (event.clientY - rect.top) * (canvas.height / rect.height),
+      };
+    };
+    const pickCard = (pt) => {
+      let best = null;
+      let bestDist = Infinity;
+      container.querySelectorAll('.actor-component-card').forEach((card) => {
+        const ax = clamp(Number(window.mrpFieldValue(card, 'anchor_x', 0.5)) || 0.5, 0, 1);
+        const ay = clamp(Number(window.mrpFieldValue(card, 'anchor_y', 0.5)) || 0.5, 0, 1);
+        const scale = Number(window.mrpFieldValue(card, 'base_scale', 1)) || 1;
+        const cx = canvas.width * ax;
+        const cy = canvas.height * ay;
+        const reach = Math.max(
+          28,
+          Math.min(canvas.width, canvas.height) * (0.5 - MARGIN) * scale
+        );
+        const dist = Math.hypot(pt.x - cx, pt.y - cy);
+        if (dist < reach && dist < bestDist) { best = card; bestDist = dist; }
+      });
+      return best;
+    };
+    const setPair = (el, value) => {
+      el.value = value.toFixed(3);
+      const pair = el.closest('.slider-pair');
+      const range = pair && pair.querySelector('input[type="range"]');
+      if (range) range.value = el.value;
+    };
+
+    canvas.addEventListener('pointerdown', (event) => {
+      const pt = canvasPoint(event);
+      const card = pickCard(pt);
+      if (!card) return;
+      const xEl = card.querySelector('input[name="anchor_x"]');
+      const yEl = card.querySelector('input[name="anchor_y"]');
+      if (!xEl || !yEl) return;
+      drag = {
+        xEl, yEl,
+        startX: pt.x, startY: pt.y,
+        baseX: Number(xEl.value) || 0.5,
+        baseY: Number(yEl.value) || 0.5,
+      };
+      canvas.setPointerCapture(event.pointerId);
+      canvas.classList.add('dragging');
+      event.preventDefault();
+    });
+    canvas.addEventListener('pointermove', (event) => {
+      if (!drag) return;
+      const pt = canvasPoint(event);
+      setPair(drag.xEl, clamp(drag.baseX + (pt.x - drag.startX) / canvas.width, -0.5, 1.5));
+      setPair(drag.yEl, clamp(drag.baseY + (pt.y - drag.startY) / canvas.height, -0.5, 1.5));
+      redraw();
+    });
+    const endDrag = (event) => {
+      if (!drag) return;
+      drag.xEl.dispatchEvent(new Event('input', { bubbles: true }));
+      drag = null;
+      canvas.classList.remove('dragging');
+      if (event) canvas.releasePointerCapture(event.pointerId);
+    };
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointercancel', endDrag);
+  };
+
   const minMaxNormalized = (values) => {
     const low = Math.min(...values);
     const high = Math.max(...values);

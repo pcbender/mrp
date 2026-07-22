@@ -91,7 +91,7 @@
           <div class="actor-designer-preview">
             <canvas id="actor-designer-canvas" width="720" height="720" aria-label="Live square preview of the actor's visual identity"></canvas>
           </div>
-          <small class="actor-designer-preview-note">Actor-local identity preview. Position in the video frame belongs to Scene Casting.</small>
+          <small class="actor-designer-preview-note">Actor-local identity preview. Drag a component to reposition it within the actor; position in the video frame belongs to Scene Casting.</small>
         </div>
         <div id="actor-components" class="actor-designer-controls">
           {% for component in casting.selected_actor.components %}{{ component_fields(component, loop.index) }}{% endfor %}
@@ -303,6 +303,11 @@
   });
   window.mrpSyncFamilyFields(document.getElementById('actor-components'));
   drawActorPreview();
+  window.mrpEnableComponentDrag(
+    document.getElementById('actor-designer-canvas'),
+    document.getElementById('actor-components'),
+    drawActorPreview
+  );
 </script>
 
 <script>
