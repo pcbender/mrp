@@ -34,6 +34,8 @@ class SpiroGeometry:
     sf_n1: float = 0.3
     sf_n2: float = 0.3
     sf_n3: float = 0.3
+    # path: one SVG subpath's d attribute, resampled by arc length
+    path_data: str = ""
 
 
 @dataclass(frozen=True, slots=True)
@@ -178,6 +180,93 @@ def _superformula_curve(geometry: SpiroGeometry):
     return end, point
 
 
+def _path_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
+    """Trace one SVG subpath as a closed cycle of arc-length-uniform points.
+
+    SVG's y axis grows downward, exactly like the admin canvas and the cv2
+    frame buffer, so coordinates pass through without a y-flip. A closed
+    subpath is resampled to ``samples`` stations with the endpoint snapped
+    onto the start; an open subpath is sampled halfway and ping-ponged
+    (forward then back over the interior) so the cycle has no seam. Points
+    are centered on the sampled bounding-box center because the renderer
+    normalizes and places curves about the origin. ``phase`` rotates the
+    start point around the cycle, matching its start-offset meaning in the
+    parametric families. The sampler is mirrored by mrpPathPoints in
+    mrp/admin/static/spiro-preview.js — keep the two in sync.
+    """
+    import numpy as np
+    from svgpathtools import parse_path
+
+    subpaths = [
+        subpath
+        for subpath in parse_path(geometry.path_data).continuous_subpaths()
+        if len(subpath)
+    ]
+    if len(subpaths) != 1:
+        raise ValueError(
+            f"path geometry requires exactly one subpath, found {len(subpaths)}"
+        )
+    subpath = subpaths[0]
+    count = max(2, _javascript_round(geometry.samples))
+
+    # Degenerate paths crash svgpathtools' arc-length inversion, so check the
+    # bounding box before sampling.
+    xmin, xmax, ymin, ymax = subpath.bbox()
+    diagonal = math.hypot(xmax - xmin, ymax - ymin)
+    if diagonal <= 0:
+        raise ValueError("path geometry has no extent")
+
+    # Oversample uniformly in path parameter, then measure chord lengths so
+    # the final stations are uniform in arc length. 4x oversampling keeps the
+    # chord interpolation error on curved segments below preview resolution.
+    oversample = max(4 * count, 512)
+    raw = np.asarray(
+        [subpath.point(index / (oversample - 1)) for index in range(oversample)]
+    )
+    xs, ys = raw.real, raw.imag
+    closed = bool(subpath.isclosed()) or abs(raw[-1] - raw[0]) < 1e-6 * diagonal
+    lengths = np.concatenate([[0.0], np.cumsum(np.abs(np.diff(raw)))])
+    total = float(lengths[-1])
+    if total <= 0:
+        raise ValueError("path geometry has no length")
+
+    if closed:
+        stations = np.linspace(0.0, total, count)
+        px = np.interp(stations, lengths, xs)
+        py = np.interp(stations, lengths, ys)
+        px[-1], py[-1] = px[0], py[0]
+    else:
+        forward = count // 2 + 1
+        stations = np.linspace(0.0, total, forward)
+        fx = np.interp(stations, lengths, xs)
+        fy = np.interp(stations, lengths, ys)
+        px = np.concatenate([fx, fx[-2::-1]])
+        py = np.concatenate([fy, fy[-2::-1]])
+
+    px = px - (px.max() + px.min()) / 2
+    py = py - (py.max() + py.min()) / 2
+
+    cycle = len(px) - 1
+    fraction = ((geometry.phase % TAU) + TAU) % TAU / TAU
+    shift = _javascript_round(fraction * cycle) % cycle
+    order = [(shift + index) % cycle for index in range(cycle)] + [shift % cycle]
+
+    points: list[SpiroPoint] = []
+    last = len(order) - 1
+    for position, index in enumerate(order):
+        x, y = float(px[index]), float(py[index])
+        points.append(
+            SpiroPoint(
+                t=position / last,
+                x=x,
+                y=y,
+                radius=math.hypot(x, y),
+                angle=math.atan2(y, x),
+            )
+        )
+    return points
+
+
 _CURVE_FAMILIES = {
     "spirogram": _spirogram_curve,
     "lissajous": _lissajous_curve,
@@ -190,10 +279,13 @@ def generate_spiro_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
     """Generate one closed curve for the geometry's family.
 
     The spirogram branch produces the same trochoid points as the archived
-    TypeScript prototype; other families share the identical sampling loop
-    (theta = progress * end + phase) so phase, color flow, and tracing behave
-    uniformly.
+    TypeScript prototype; the other parametric families share the identical
+    sampling loop (theta = progress * end + phase) so phase, color flow, and
+    tracing behave uniformly. The path family is sampled by arc length in
+    _path_points instead, with phase mapped onto the same start-offset role.
     """
+    if geometry.family == "path":
+        return _path_points(geometry)
     curve = _CURVE_FAMILIES.get(geometry.family)
     if curve is None:
         raise ValueError(f"unknown geometry family: {geometry.family}")

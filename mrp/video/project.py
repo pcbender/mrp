@@ -1,5 +1,6 @@
 import json
 import math
+import re
 import shutil
 import subprocess
 from collections.abc import Callable, Iterator
@@ -170,15 +171,32 @@ class AlignmentConfig(ContractModel):
         return self
 
 
-GeometryFamily = Literal["spirogram", "lissajous", "rose", "superformula"]
+GeometryFamily = Literal["spirogram", "lissajous", "rose", "superformula", "path"]
 
 _FAMILY_FIELDS: dict[str, dict[str, Any]] = {
     "spirogram": {},  # trochoid fields are required, not defaulted
     "lissajous": {"liss_freq_x": 3, "liss_freq_y": 2, "liss_delta": math.pi / 2},
     "rose": {"rose_n": 5, "rose_d": 1},
     "superformula": {"sf_m": 6, "sf_n1": 0.3, "sf_n2": 0.3, "sf_n3": 0.3},
+    "path": {},  # path_data is required, not defaulted
 }
 _TROCHOID_FIELDS = ("fixed_radius", "moving_radius", "pen_offset")
+
+_PATH_DATA_CHARS = re.compile(r"^[MmLlHhVvCcSsQqTtAaZz0-9eE\s,.+-]+$")
+
+
+def _validate_path_data(value: str) -> None:
+    """Syntactic screen for one SVG subpath; geometric parsing waits for trace time."""
+    data = value.strip()
+    if data[0] not in "Mm":
+        raise ValueError("path_data must start with an M or m command")
+    if not _PATH_DATA_CHARS.match(data):
+        raise ValueError("path_data contains characters outside the SVG path grammar")
+    if sum(1 for char in data if char in "Mm") != 1:
+        raise ValueError(
+            "path_data must hold exactly one subpath (a single M command); "
+            "split multi-subpath files with the SVG import"
+        )
 
 
 class LayerGeometryConfig(ContractModel):
@@ -209,6 +227,8 @@ class LayerGeometryConfig(ContractModel):
     sf_n1: float | None = Field(default=None, ge=0.1, le=40)
     sf_n2: float | None = Field(default=None, ge=0.1, le=40)
     sf_n3: float | None = Field(default=None, ge=0.1, le=40)
+    # path: one SVG subpath's d attribute, resampled by arc length
+    path_data: str | None = Field(default=None, max_length=20000)
 
     @model_validator(mode="after")
     def family_fields_are_consistent(self) -> "LayerGeometryConfig":
@@ -222,6 +242,12 @@ class LayerGeometryConfig(ContractModel):
                     raise ValueError(
                         f"{self.family} geometry does not accept {name}"
                     )
+        if self.family == "path":
+            if self.path_data is None or not self.path_data.strip():
+                raise ValueError("path geometry requires path_data")
+            _validate_path_data(self.path_data)
+        elif self.path_data is not None:
+            raise ValueError(f"{self.family} geometry does not accept path_data")
         for family, defaults in _FAMILY_FIELDS.items():
             for name, default in defaults.items():
                 value = getattr(self, name)

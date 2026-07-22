@@ -1,6 +1,7 @@
 # Optional, reproducible headless music-video renderer environment. This is the
 # exact default dependency closure in the passing Spirophonic baseline at
-# commit e3d4b100e026d486ce2c28547e6e8a907b1c621a.
+# commit e3d4b100e026d486ce2c28547e6e8a907b1c621a, plus svgpathtools (and its
+# svgwrite dependency) for the SVG path actor-geometry family.
 -r requirements.txt
 
 annotated-doc==0.0.4
@@ -38,6 +39,8 @@ scipy==1.18.0
 shellingham==1.5.4
 soundfile==0.14.0
 soxr==1.1.0
+svgpathtools==1.7.1
+svgwrite==1.4.3
 threadpoolctl==3.6.0
 typer==0.27.0
 typing-inspection==0.4.2

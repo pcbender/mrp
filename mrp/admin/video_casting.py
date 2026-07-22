@@ -204,6 +204,68 @@ def library_actor(root: Path, actor_id: str) -> dict[str, Any] | None:
     )
 
 
+def split_svg_subpaths(text: str, *, limit: int = 12) -> list[dict[str, Any]]:
+    """Split SVG markup or a bare ``d`` attribute into single-subpath entries.
+
+    The split happens server-side because browsers expose no subpath
+    enumeration, and re-serializing each subpath through svgpathtools
+    resolves the relative-``m`` continuation trap (an ``m`` after a drawn
+    segment continues from the previous point, so a subpath's commands are
+    not independent of the ones before it). Returns up to ``limit`` entries
+    shaped for the designer importer: the subpath's absolute ``d`` string
+    and whether it closes.
+    """
+    try:
+        from svgpathtools import parse_path
+    except ImportError as exc:  # pragma: no cover - environment guard
+        raise CastingEditorError(
+            "svg import requires svgpathtools; install requirements-video.txt"
+        ) from exc
+
+    source = text.strip()
+    if not source:
+        raise CastingEditorError("svg import requires SVG markup or path data")
+    attributes: list[str] = []
+    if source.startswith("<"):
+        import xml.etree.ElementTree as ElementTree
+
+        try:
+            root = ElementTree.fromstring(source)
+        except ElementTree.ParseError as exc:
+            raise CastingEditorError(f"svg import could not parse the markup: {exc}") from exc
+        for element in root.iter():
+            if element.tag.rsplit("}", 1)[-1] == "path":
+                data = (element.get("d") or "").strip()
+                if data:
+                    attributes.append(data)
+        if not attributes:
+            raise CastingEditorError("svg import found no <path> elements with path data")
+    else:
+        attributes.append(source)
+
+    subpaths: list[dict[str, Any]] = []
+    for data in attributes:
+        try:
+            parsed = parse_path(data)
+        except Exception as exc:
+            raise CastingEditorError(f"svg import could not parse path data: {exc}") from exc
+        for subpath in parsed.continuous_subpaths():
+            if not len(subpath):
+                continue
+            start, end = subpath.start, subpath.end
+            xmin, xmax, ymin, ymax = subpath.bbox()
+            diagonal = math.hypot(xmax - xmin, ymax - ymin)
+            closed = bool(subpath.isclosed()) or (
+                diagonal > 0 and abs(end - start) < 1e-6 * diagonal
+            )
+            subpaths.append({"d": subpath.d(), "closed": closed})
+            if len(subpaths) >= limit:
+                return subpaths
+    if not subpaths:
+        raise CastingEditorError("svg import found no drawable subpaths")
+    return subpaths
+
+
 def actor_preview_shapes(actor: Any) -> list[dict[str, Any]]:
     """Draw-ready component shapes for the shared canvas helpers."""
     return [_storyboard_shape(component) for component in actor.components]
@@ -668,6 +730,7 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
         "sf_n1",
         "sf_n2",
         "sf_n3",
+        "path_data",
         "cycles_per_second",
         "trail_fraction",
         "ghost_count",
@@ -743,6 +806,8 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
                 "sf_n2": _number(columns["sf_n2"][index], f"trace {trace_id} n2"),
                 "sf_n3": _number(columns["sf_n3"][index], f"trace {trace_id} n3"),
             }
+        elif family == "path":
+            geometry |= {"path_data": columns["path_data"][index]}
         else:
             raise CastingEditorError(f"trace {trace_id} has an unknown geometry family: {family}")
         traces.append(

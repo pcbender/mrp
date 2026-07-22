@@ -197,6 +197,7 @@ def _manual_fields(*, fixed_radius: str = "333") -> dict[str, list[str]]:
         "sf_n1": ["0.3"],
         "sf_n2": ["0.3"],
         "sf_n3": ["0.3"],
+        "path_data": [""],
         "fixed_radius": [fixed_radius],
         "moving_radius": ["77"],
         "pen_offset": ["155"],
@@ -576,6 +577,8 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'name="fixed_radius"' in body
     assert 'name="geometry_family"' in body
     assert 'data-family="lissajous"' in body
+    assert 'data-family="path"' in body
+    assert 'name="path_data"' in body
     assert 'name="phase"' in body
     assert 'name="color_flow_source"' in body
     assert 'type="range"' in body

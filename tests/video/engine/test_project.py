@@ -501,3 +501,38 @@ def test_geometry_family_defaults_and_validation() -> None:
         LayerGeometryConfig.model_validate({"family": "lissajous", "rose_n": 4})
     with pytest.raises(ValidationError, match="does not accept fixed_radius"):
         LayerGeometryConfig.model_validate({"family": "rose", "fixed_radius": 120})
+
+
+def test_path_geometry_requires_one_syntactically_valid_subpath() -> None:
+    from mrp.video.project import LayerGeometryConfig
+
+    square = "M 0 0 L 10 0 L 10 10 L 0 10 Z"
+    config = LayerGeometryConfig.model_validate({"family": "path", "path_data": square})
+    assert config.family == "path"
+    assert config.path_data == square
+    assert config.fixed_radius is None
+
+    with pytest.raises(ValidationError, match="requires path_data"):
+        LayerGeometryConfig.model_validate({"family": "path"})
+    with pytest.raises(ValidationError, match="requires path_data"):
+        LayerGeometryConfig.model_validate({"family": "path", "path_data": "   "})
+    with pytest.raises(ValidationError, match="start with an M"):
+        LayerGeometryConfig.model_validate(
+            {"family": "path", "path_data": "L 10 0 L 10 10"}
+        )
+    with pytest.raises(ValidationError, match="exactly one subpath"):
+        LayerGeometryConfig.model_validate(
+            {"family": "path", "path_data": "M 0 0 L 1 0 M 2 0 L 3 0"}
+        )
+    with pytest.raises(ValidationError, match="path grammar"):
+        LayerGeometryConfig.model_validate(
+            {"family": "path", "path_data": "M 0 0 <script>"}
+        )
+    with pytest.raises(ValidationError, match="does not accept path_data"):
+        LayerGeometryConfig.model_validate(
+            {"family": "lissajous", "path_data": "M 0 0 L 1 1"}
+        )
+    with pytest.raises(ValidationError, match="does not accept fixed_radius"):
+        LayerGeometryConfig.model_validate(
+            {"family": "path", "path_data": square, "fixed_radius": 120}
+        )
