@@ -71,8 +71,8 @@
       {{ slider_field('harm_turns', 'Turns', 'Full windings the pendulums swing through before the trace retraces itself back to the start.', component.geometry.harm_turns if component.geometry.harm_turns is not none else 12, 1, 30, '1', family='harmonograph') }}
       {{ slider_field('phase', 'Phase (rad)', 'Shifts where the trace starts along the curve without changing its shape. One full turn is about 6.28 radians.', component.geometry.phase, 0, 6.2832, '0.01') }}
       {{ slider_field('samples', 'Curve samples', 'Number of points used to draw the curve. More points are smoother but cost more to render.', component.geometry.samples, 64, 4800, '1') }}
-      {{ slider_field('anchor_x', 'Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_x, -0.5, 1.5, '0.01') }}
-      {{ slider_field('anchor_y', 'Component offset Y', 'Vertical position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_y, -0.5, 1.5, '0.01') }}
+      {{ slider_field('anchor_x', 'Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_x, -0.5, 1.5, '0.001') }}
+      {{ slider_field('anchor_y', 'Component offset Y', 'Vertical position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_y, -0.5, 1.5, '0.001') }}
       {{ slider_field('base_scale', 'Identity scale', 'Base size of this component within the actor before a scene scales the whole actor.', component.base_scale, 0.05, 2, '0.01') }}
       {{ slider_field('opacity', 'Identity opacity', 'Base opacity of this component before a scene changes the whole actor opacity.', component.opacity, 0, 1, '0.01') }}
       {{ slider_field('line_width', 'Line width', 'Base stroke width used to draw this component.', component.line_width, 0.5, 20, '0.1') }}

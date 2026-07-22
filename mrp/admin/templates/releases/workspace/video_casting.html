@@ -183,8 +183,8 @@
             <input type="hidden" name="assignment_id" value="{{ assignment.id }}">
             <div class="form-grid actor-direction-grid">
               <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in casting.project_actors %}<option value="{{ item.id }}" {% if assignment.actor == item.id %}selected{% endif %}>{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
-              <div class="form-field"><label>Position X</label><input type="number" step="0.01" name="direction_anchor_x" value="{{ assignment.direction.anchor_x if assignment.direction.anchor_x is not none else '' }}" placeholder="identity"></div>
-              <div class="form-field"><label>Position Y</label><input type="number" step="0.01" name="direction_anchor_y" value="{{ assignment.direction.anchor_y if assignment.direction.anchor_y is not none else '' }}" placeholder="identity"></div>
+              <div class="form-field"><label>Position X</label><input type="number" step="0.001" name="direction_anchor_x" value="{{ assignment.direction.anchor_x if assignment.direction.anchor_x is not none else '' }}" placeholder="identity"></div>
+              <div class="form-field"><label>Position Y</label><input type="number" step="0.001" name="direction_anchor_y" value="{{ assignment.direction.anchor_y if assignment.direction.anchor_y is not none else '' }}" placeholder="identity"></div>
               <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="{{ assignment.direction.scale }}" required></div>
               <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="{{ assignment.direction.opacity }}" required></div>
               <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="{{ assignment.direction.rotation_offset_degrees_per_second }}" required></div>
@@ -254,8 +254,8 @@
     <input type="hidden" name="assignment_id" value="appearance">
     <div class="form-grid actor-direction-grid">
       <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in casting.project_actors %}<option value="{{ item.id }}">{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
-      <div class="form-field"><label>Position X</label><input type="number" step="0.01" name="direction_anchor_x" placeholder="identity"></div>
-      <div class="form-field"><label>Position Y</label><input type="number" step="0.01" name="direction_anchor_y" placeholder="identity"></div>
+      <div class="form-field"><label>Position X</label><input type="number" step="0.001" name="direction_anchor_x" placeholder="identity"></div>
+      <div class="form-field"><label>Position Y</label><input type="number" step="0.001" name="direction_anchor_y" placeholder="identity"></div>
       <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="1" required></div>
       <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="1" required></div>
       <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="0" required></div>
@@ -503,10 +503,10 @@
       const dfy = (pt.y - drag.startY) / H;
       const nextX = clamp((drag.baseX !== null ? drag.baseX : 0.5) + dfx, -0.5, 1.5);
       const nextY = clamp((drag.baseY !== null ? drag.baseY : 0.5) + dfy, -0.5, 1.5);
-      // Two decimals to match the inputs' step="0.01"; finer values fail
+      // Three decimals to match the inputs' step="0.001"; finer values fail
       // form validation and block the scene save.
-      if (drag.xEl) drag.xEl.value = nextX.toFixed(2);
-      if (drag.yEl) drag.yEl.value = nextY.toFixed(2);
+      if (drag.xEl) drag.xEl.value = nextX.toFixed(3);
+      if (drag.yEl) drag.yEl.value = nextY.toFixed(3);
       drawStoryboard();
     });
     function endDrag(event) {
