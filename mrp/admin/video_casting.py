@@ -314,6 +314,56 @@ def _gallery(
     return sorted(gallery, key=lambda item: str(item.get("recorded_at") or ""), reverse=True)
 
 
+def _storyboard_shape(layer: Any) -> dict[str, Any]:
+    """Serialize one visual layer's geometry and placement for canvas drawing."""
+    return {
+        "fixed_radius": layer.geometry.fixed_radius,
+        "moving_radius": layer.geometry.moving_radius,
+        "pen_offset": layer.geometry.pen_offset,
+        "rotation": layer.geometry.rotation,
+        "samples": min(layer.geometry.samples, 1200),
+        "color": layer.color,
+        "anchor_x": layer.anchor_x,
+        "anchor_y": layer.anchor_y,
+        "base_scale": layer.base_scale,
+        "opacity": layer.opacity,
+        "line_width": layer.line_width,
+        "depth": layer.depth,
+    }
+
+
+def _storyboard(composition: Any, background: str, actors: Any) -> dict[str, Any]:
+    """Client-side draw data for the scene storyboard.
+
+    ``traces`` is the compiled composition the renderer draws, so a scene shows
+    its staged actors — or its legacy look — without a render job. ``actors``
+    carries each project actor's identity components so the browser can recompile
+    placement live from the direction fields as they are edited or dragged,
+    matching ``compile_actor_cast``. The compiled trace id is
+    ``{assignment}--{component}``; the assignment prefix maps a dragged shape
+    back to its cast member. Legacy traces have no ``--`` and stay static.
+    """
+    traces = []
+    for trace in composition.traces:
+        shape = _storyboard_shape(trace)
+        shape["id"] = trace.id
+        shape["assignment"] = trace.id.split("--", 1)[0] if "--" in trace.id else None
+        traces.append(shape)
+    actor_identities = {
+        actor_id: {
+            "character": actor.character,
+            "components": [_storyboard_shape(component) for component in actor.components],
+        }
+        for actor_id, actor in actors.items()
+    }
+    return {
+        "background": background,
+        "margin": 0.08,
+        "traces": traces,
+        "actors": actor_identities,
+    }
+
+
 def load_casting(
     root: Path,
     release: dict[str, Any],
@@ -439,6 +489,11 @@ def load_casting(
         "composition_source": composition_source,
         "actor_cast": actor_cast,
         "actor_cast_source": actor_cast_source,
+        "storyboard": _storyboard(
+            composition,
+            document.project.video.background,
+            document.project.visuals.actors,
+        ),
         "project_actors": project_actors,
         "library_actors": library_actors,
         "selected_actor": selected_actor,

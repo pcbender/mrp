@@ -372,6 +372,33 @@ def test_actor_identity_cast_and_direction_compile_without_rewriting_renderer(
     assert stored.project.visuals.actors["vocal-lantern"].components[0].anchor_x == 0.25
 
 
+def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
+    tmp_path: Path,
+) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+    cast_result = save_casting(tmp_path, release, track, _actor_cast_fields())
+
+    storyboard = cast_result["storyboard"]
+
+    # Every compiled trace the renderer would draw is available for the canvas,
+    # tagged with the assignment prefix so a dragged shape maps back to its card.
+    assert storyboard["margin"] == 0.08
+    trace = storyboard["traces"][0]
+    assert trace["assignment"] == "lead"
+    assert trace["anchor_x"] == pytest.approx(0.37)
+    assert trace["base_scale"] == pytest.approx(1.75)
+    assert {"fixed_radius", "rotation", "samples", "color", "opacity"} <= set(trace)
+
+    # Actor identities let the browser recompile placement live from the fields.
+    identity = storyboard["actors"]["vocal-lantern"]
+    assert identity["character"] == "bass"
+    assert identity["components"][0]["anchor_x"] == 0.25
+
+    # Samples are capped so a large curve does not bloat the client payload.
+    assert all(shape["samples"] <= 1200 for shape in storyboard["traces"])
+
+
 def test_recommended_actor_onboarding_and_exact_scene_direction(tmp_path: Path) -> None:
     release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
 

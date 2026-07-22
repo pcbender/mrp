@@ -154,7 +154,7 @@
   </div></section>
 </div>
 
-<div class="video-scene-workspace-heading">
+<div class="video-scene-workspace-heading" id="scene-casting">
   <p class="video-step-label">Scenes · Assignment and direction</p>
   <h2>Scene Casting</h2>
   <p class="video-help">Selecting a scene below changes only where track actors appear and how they perform.</p>
@@ -167,7 +167,7 @@
       <p class="video-help">Cast all scenes of a type, then direct an exact scene only when it needs to differ.</p>
       {% for scene in casting.sections %}
       <a class="video-scene-link {{ 'active' if scene.id == casting.selected_section.id else '' }}"
-         href="?section={{ scene.id }}&scope={{ casting.scope }}{% if casting.selected_actor_saved %}&actor={{ casting.selected_actor.id }}{% endif %}">
+         href="?section={{ scene.id }}&scope={{ casting.scope }}{% if casting.selected_actor_saved %}&actor={{ casting.selected_actor.id }}{% endif %}#scene-casting">
         <span><strong>{{ scene.label }}</strong><small>{{ scene.id }} · {{ '%.2f'|format(scene.start) }}–{{ '%.2f'|format(scene.end) }}s</small></span>
         <span class="badge badge-{{ 'live' if scene.actor_count else 'draft' }}">{% if scene.actor_count %}{{ scene.actor_count }} actor{{ '' if scene.actor_count == 1 else 's' }}{% else %}legacy{% endif %}</span>
       </a>
@@ -183,11 +183,22 @@
           <p class="video-help">{{ casting.selected_section.id }} · {{ casting.composition_source }}</p>
         </div>
         <div class="video-scope-tabs">
-          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'type' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=type">All {{ casting.selected_section.type }} scenes</a>
-          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'section' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=section">Only this scene</a>
+          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'type' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=type#scene-casting">All {{ casting.selected_section.type }} scenes</a>
+          <a class="btn btn-sm {{ 'btn-primary' if casting.scope == 'section' else 'btn-secondary' }}" href="?section={{ casting.selected_section.id }}&scope=section#scene-casting">Only this scene</a>
         </div>
       </div>
       {% if not cast_status_ok %}<div class="flash flash-error">Review and save timing before saving visual casts.</div>{% endif %}
+    </div></div>
+
+    <div class="form-card"><div class="form-body">
+      <div class="storyboard-heading">
+        <div><h2>Storyboard</h2><p class="video-help">Where the staged actors sit in the {{ casting.project.video.width }}×{{ casting.project.video.height }} frame. Drag a shape to reposition it; edits to the controls below update it live. Render a frame only to confirm.</p></div>
+      </div>
+      <div class="scene-storyboard">
+        <canvas id="scene-storyboard-canvas" width="960" height="540" aria-label="Storyboard of the staged actors in this scene"></canvas>
+        <p class="storyboard-empty" id="storyboard-empty" hidden>No shapes staged in this scene yet.</p>
+      </div>
+      <script type="application/json" id="scene-storyboard-data">{{ casting.storyboard | tojson }}</script>
     </div></div>
 
     <section class="form-card"><div class="form-body">
@@ -211,8 +222,8 @@
         </div>
         <div id="actor-assignments">
           {% for assignment in casting.actor_cast.actors %}
-          <fieldset class="actor-assignment-card">
-            <legend><span>Cast member {{ loop.index }}</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button></legend>
+          <fieldset class="actor-assignment-card" data-assignment-id="{{ assignment.id }}">
+            <legend><span class="assignment-title">Cast member {{ loop.index }}</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove(); if (window.redrawStoryboard) redrawStoryboard();">Remove</button></legend>
             <input type="hidden" name="assignment_id" value="{{ assignment.id }}">
             <div class="form-grid actor-direction-grid">
               <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in casting.project_actors %}<option value="{{ item.id }}" {% if assignment.actor == item.id %}selected{% endif %}>{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
@@ -220,7 +231,7 @@
               <div class="form-field"><label>Position Y</label><input type="number" step="0.01" name="direction_anchor_y" value="{{ assignment.direction.anchor_y if assignment.direction.anchor_y is not none else '' }}" placeholder="identity"></div>
               <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="{{ assignment.direction.scale }}" required></div>
               <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="{{ assignment.direction.opacity }}" required></div>
-              <div class="form-field"><label>Extra rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="{{ assignment.direction.rotation_offset_degrees_per_second }}" required></div>
+              <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="{{ assignment.direction.rotation_offset_degrees_per_second }}" required></div>
               <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="{{ assignment.direction.hue_shift_degrees }}" required></div>
               <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background" {% if assignment.direction.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if assignment.direction.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
               <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true" {% if assignment.direction.visible %}selected{% endif %}>visible</option><option value="false" {% if not assignment.direction.visible %}selected{% endif %}>hidden in this scene</option></select></div>
@@ -310,7 +321,7 @@
 
 <template id="actor-assignment-template">
   <fieldset class="actor-assignment-card">
-    <legend><span>New cast member</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button></legend>
+    <legend><span class="assignment-title">New cast member</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove(); if (window.redrawStoryboard) redrawStoryboard();">Remove</button></legend>
     <input type="hidden" name="assignment_id" value="appearance">
     <div class="form-grid actor-direction-grid">
       <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in casting.project_actors %}<option value="{{ item.id }}">{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
@@ -318,7 +329,7 @@
       <div class="form-field"><label>Position Y</label><input type="number" step="0.01" name="direction_anchor_y" placeholder="identity"></div>
       <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="1" required></div>
       <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="1" required></div>
-      <div class="form-field"><label>Extra rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="0" required></div>
+      <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="0" required></div>
       <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="0" required></div>
       <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background">background</option><option value="foreground">foreground</option></select></div>
       <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true">visible</option><option value="false">hidden in this scene</option></select></div>
@@ -327,6 +338,42 @@
 </template>
 
 <script>
+  // Renderer-faithful trochoid, matching mrp/video/geometry.py
+  // (gcd cycle length, hypotrochoid inside / epitrochoid outside). Shared by
+  // the Actor Designer identity preview and the Scene Casting storyboard so
+  // both match the render exactly. `extent` is the max point radius, as the
+  // renderer normalizes by before placing.
+  window.mrpSpiroPoints = function (shape) {
+    const fixed = Number(shape.fixed_radius);
+    const moving = Math.max(0.000001, Number(shape.moving_radius));
+    const pen = Number(shape.pen_offset);
+    const fInt = Math.max(1, Math.round(Math.abs(fixed)));
+    const mInt = Math.max(1, Math.round(Math.abs(moving)));
+    let a = fInt, b = mInt;
+    while (b) { const t = b; b = a % b; a = t; }
+    const end = Math.PI * 2 * (mInt / (a || 1));
+    const n = Math.max(2, Math.round(Math.min(Number(shape.samples) || 900, 1200)));
+    const outside = shape.rotation === 'outside';
+    const pts = [];
+    let extent = 0;
+    for (let i = 0; i < n; i += 1) {
+      const theta = (i / (n - 1)) * end;
+      let x, y;
+      if (outside) {
+        const rs = fixed + moving, ratio = rs / moving;
+        x = rs * Math.cos(theta) - pen * Math.cos(ratio * theta);
+        y = rs * Math.sin(theta) - pen * Math.sin(ratio * theta);
+      } else {
+        const rd = fixed - moving, ratio = rd / moving;
+        x = rd * Math.cos(theta) + pen * Math.cos(ratio * theta);
+        y = rd * Math.sin(theta) - pen * Math.sin(ratio * theta);
+      }
+      pts.push([x, y]);
+      extent = Math.max(extent, Math.hypot(x, y));
+    }
+    return { pts, extent: extent > 0 ? extent : 1 };
+  };
+
   function addActorComponent() {
     const clone = document.getElementById('actor-component-template').content.cloneNode(true);
     const count = document.querySelectorAll('#actor-components fieldset').length + 1;
@@ -337,8 +384,13 @@
   function addActorAssignment() {
     const clone = document.getElementById('actor-assignment-template').content.cloneNode(true);
     const count = document.querySelectorAll('#actor-assignments fieldset').length + 1;
-    clone.querySelector('input[name="assignment_id"]').value = `appearance-${count}`;
+    const assignmentId = `appearance-${count}`;
+    clone.querySelector('input[name="assignment_id"]').value = assignmentId;
+    clone.querySelector('fieldset').dataset.assignmentId = assignmentId;
+    const title = clone.querySelector('.assignment-title');
+    if (title) title.textContent = `Cast member ${count}`;
     document.getElementById('actor-assignments').appendChild(clone);
+    if (window.redrawStoryboard) redrawStoryboard();
   }
 
   function fieldValue(card, name, fallback) {
@@ -365,21 +417,20 @@
       const color = fieldValue(card, 'color', '#ff5fd2');
       const opacity = Number(fieldValue(card, 'opacity', 0.8));
       const lineWidth = Number(fieldValue(card, 'line_width', 2));
-      const points = [];
-      let extent = 1;
-      for (let index = 0; index <= samples; index += 1) {
-        const angle = (index / samples) * Math.PI * 20;
-        const carrier = outside ? fixed + moving : fixed - moving;
-        const x = carrier * Math.cos(angle) + (outside ? -1 : 1) * pen * Math.cos((carrier / moving) * angle);
-        const y = carrier * Math.sin(angle) - pen * Math.sin((carrier / moving) * angle);
-        points.push([x, y]);
-        extent = Math.max(extent, Math.abs(x), Math.abs(y));
-      }
-      const fit = Math.min(canvas.width, canvas.height) * 0.38 * identityScale / extent;
+      const { pts, extent } = window.mrpSpiroPoints({
+        fixed_radius: fixed,
+        moving_radius: moving,
+        pen_offset: pen,
+        rotation: outside ? 'outside' : 'inside',
+        samples,
+      });
+      // Match the renderer's placement: normalize by extent, size by
+      // min(w,h) * (0.5 - canvas_margin) * scale.
+      const fit = Math.min(canvas.width, canvas.height) * (0.5 - 0.08) * identityScale / extent;
       const originX = canvas.width * Math.min(1, Math.max(0, anchorX));
       const originY = canvas.height * Math.min(1, Math.max(0, anchorY));
       context.beginPath();
-      points.forEach(([x, y], index) => {
+      pts.forEach(([x, y], index) => {
         const px = originX + x * fit;
         const py = originY + y * fit;
         if (index === 0) context.moveTo(px, py); else context.lineTo(px, py);
@@ -399,6 +450,223 @@
     if (event.target.closest('#actor-components')) drawActorPreview();
   });
   drawActorPreview();
+</script>
+
+<script>
+  (function () {
+    const canvas = document.getElementById('scene-storyboard-canvas');
+    const dataEl = document.getElementById('scene-storyboard-data');
+    const emptyEl = document.getElementById('storyboard-empty');
+    if (!canvas || !dataEl) return;
+    const ctx = canvas.getContext('2d');
+    let model;
+    try { model = JSON.parse(dataEl.textContent); } catch (err) { return; }
+    const W = canvas.width, H = canvas.height;
+    const MARGIN = typeof model.margin === 'number' ? model.margin : 0.08;
+    const TAU = Math.PI * 2;
+    const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+
+    const spiroPoints = window.mrpSpiroPoints;
+
+    function fieldVal(card, name) {
+      const el = card.querySelector(`[name="${name}"]`);
+      return el ? el.value : '';
+    }
+    function numOrNull(value) {
+      const text = String(value).trim();
+      if (text === '') return null;
+      const parsed = Number(text);
+      return Number.isFinite(parsed) ? parsed : null;
+    }
+
+    // Recompile placement from the live direction fields, mirroring
+    // mrp/video/casting.py compile_actor_cast. Falls back to the server's
+    // compiled traces for legacy scenes that have no cast fieldsets.
+    function computeShapes() {
+      const cards = Array.from(
+        document.querySelectorAll('#actor-assignments fieldset[data-assignment-id]')
+      );
+      const actors = model.actors || {};
+      if (!cards.length || !Object.keys(actors).length) {
+        return (model.traces || []).map((t) => ({
+          assignment: t.assignment,
+          label: '',
+          shape: t,
+          anchor_x: t.anchor_x,
+          anchor_y: t.anchor_y,
+          base_scale: t.base_scale,
+          opacity: t.opacity,
+          color: t.color,
+          depth: t.depth,
+        }));
+      }
+      const shapes = [];
+      cards.forEach((card) => {
+        const actorId = fieldVal(card, 'assigned_actor');
+        const actor = actors[actorId];
+        if (!actor) return;
+        const select = card.querySelector('[name="assigned_actor"]');
+        const label = select && select.selectedOptions.length
+          ? select.selectedOptions[0].textContent.split('—')[0].trim()
+          : actorId;
+        const dirX = numOrNull(fieldVal(card, 'direction_anchor_x'));
+        const dirY = numOrNull(fieldVal(card, 'direction_anchor_y'));
+        const scale = numOrNull(fieldVal(card, 'direction_scale'));
+        const opacity = numOrNull(fieldVal(card, 'direction_opacity'));
+        const depth = fieldVal(card, 'direction_depth');
+        const visible = fieldVal(card, 'direction_visible') !== 'false';
+        actor.components.forEach((component) => {
+          const ax = component.anchor_x + (dirX !== null ? dirX - 0.5 : 0);
+          const ay = component.anchor_y + (dirY !== null ? dirY - 0.5 : 0);
+          shapes.push({
+            assignment: card.dataset.assignmentId,
+            label,
+            shape: component,
+            anchor_x: clamp(ax, -0.5, 1.5),
+            anchor_y: clamp(ay, -0.5, 1.5),
+            base_scale: clamp(component.base_scale * (scale !== null ? scale : 1), 0.000001, 2),
+            opacity: visible ? component.opacity * (opacity !== null ? opacity : 1) : 0,
+            color: component.color,
+            depth: depth || component.depth,
+          });
+        });
+      });
+      return shapes;
+    }
+
+    // assignment id -> {cx, cy, radius} in canvas pixels, for drag hit-testing.
+    let handles = new Map();
+
+    function drawStoryboard() {
+      ctx.fillStyle = model.background || '#101014';
+      ctx.fillRect(0, 0, W, H);
+      // frame guides
+      ctx.strokeStyle = 'rgba(255,255,255,0.10)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(W / 2, 0); ctx.lineTo(W / 2, H);
+      ctx.moveTo(0, H / 2); ctx.lineTo(W, H / 2);
+      ctx.stroke();
+
+      const shapes = computeShapes().filter((s) => s.opacity > 0.001);
+      const order = { background: 0, foreground: 1 };
+      shapes.sort((a, b) => (order[a.depth] || 0) - (order[b.depth] || 0));
+      handles = new Map();
+      const radius = (scale) => Math.min(W, H) * (0.5 - MARGIN) * scale;
+
+      shapes.forEach((item) => {
+        const { pts, extent } = spiroPoints(item.shape);
+        const r = radius(item.base_scale);
+        const ox = W * item.anchor_x, oy = H * item.anchor_y;
+        ctx.beginPath();
+        pts.forEach(([x, y], index) => {
+          const px = ox + (x / extent) * r;
+          const py = oy + (y / extent) * r;
+          if (index === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+        });
+        ctx.globalAlpha = clamp(item.opacity, 0, 1);
+        ctx.strokeStyle = item.color;
+        ctx.lineWidth = Math.max(0.6, (item.shape.line_width || 2) * 0.7);
+        ctx.shadowColor = item.color;
+        ctx.shadowBlur = 6;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+        ctx.shadowBlur = 0;
+        if (item.assignment) {
+          const existing = handles.get(item.assignment);
+          const merged = existing || { assignment: item.assignment, label: item.label, cx: ox, cy: oy, r: 0 };
+          merged.cx = ox; merged.cy = oy;
+          merged.r = Math.max(merged.r, r);
+          handles.set(item.assignment, merged);
+        }
+      });
+
+      // draggable handles + labels
+      handles.forEach((h) => {
+        ctx.fillStyle = 'rgba(255,255,255,0.9)';
+        ctx.beginPath();
+        ctx.arc(h.cx, h.cy, 4, 0, TAU);
+        ctx.fill();
+        if (h.label) {
+          ctx.font = '600 13px system-ui, sans-serif';
+          const w = ctx.measureText(h.label).width + 12;
+          ctx.fillStyle = 'rgba(0,0,0,0.55)';
+          ctx.fillRect(h.cx + 8, h.cy - 10, w, 20);
+          ctx.fillStyle = '#fff';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(h.label, h.cx + 14, h.cy + 1);
+        }
+      });
+
+      if (emptyEl) emptyEl.hidden = shapes.length > 0;
+    }
+    window.redrawStoryboard = drawStoryboard;
+
+    // ---- drag to reposition ----
+    let drag = null;
+    function canvasPoint(event) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: (event.clientX - rect.left) * (W / rect.width),
+        y: (event.clientY - rect.top) * (H / rect.height),
+      };
+    }
+    function pickHandle(pt) {
+      let best = null, bestDist = Infinity;
+      handles.forEach((h) => {
+        const d = Math.hypot(pt.x - h.cx, pt.y - h.cy);
+        const reach = Math.max(28, h.r);
+        if (d < reach && d < bestDist) { best = h; bestDist = d; }
+      });
+      return best;
+    }
+    canvas.addEventListener('pointerdown', (event) => {
+      const pt = canvasPoint(event);
+      const handle = pickHandle(pt);
+      if (!handle) return;
+      const card = document.querySelector(`#actor-assignments fieldset[data-assignment-id="${handle.assignment}"]`);
+      if (!card) return;
+      const xEl = card.querySelector('[name="direction_anchor_x"]');
+      const yEl = card.querySelector('[name="direction_anchor_y"]');
+      drag = {
+        card, xEl, yEl,
+        startX: pt.x, startY: pt.y,
+        baseX: numOrNull(xEl && xEl.value),
+        baseY: numOrNull(yEl && yEl.value),
+      };
+      canvas.setPointerCapture(event.pointerId);
+      canvas.classList.add('dragging');
+      event.preventDefault();
+    });
+    canvas.addEventListener('pointermove', (event) => {
+      if (!drag) return;
+      const pt = canvasPoint(event);
+      const dfx = (pt.x - drag.startX) / W;
+      const dfy = (pt.y - drag.startY) / H;
+      const nextX = clamp((drag.baseX !== null ? drag.baseX : 0.5) + dfx, -0.5, 1.5);
+      const nextY = clamp((drag.baseY !== null ? drag.baseY : 0.5) + dfy, -0.5, 1.5);
+      if (drag.xEl) drag.xEl.value = nextX.toFixed(3);
+      if (drag.yEl) drag.yEl.value = nextY.toFixed(3);
+      drawStoryboard();
+    });
+    function endDrag(event) {
+      if (!drag) return;
+      if (drag.xEl) drag.xEl.dispatchEvent(new Event('input', { bubbles: true }));
+      drag = null;
+      canvas.classList.remove('dragging');
+      if (event) canvas.releasePointerCapture(event.pointerId);
+    }
+    canvas.addEventListener('pointerup', endDrag);
+    canvas.addEventListener('pointercancel', endDrag);
+
+    // live redraw when any direction field or selected actor changes
+    const assignments = document.getElementById('actor-assignments');
+    if (assignments) {
+      assignments.addEventListener('input', drawStoryboard);
+      assignments.addEventListener('change', drawStoryboard);
+    }
+    drawStoryboard();
+  })();
 </script>
 {% endif %}
 {% endblock %}
