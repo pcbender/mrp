@@ -190,6 +190,7 @@ def _manual_fields(*, fixed_radius: str = "333") -> dict[str, list[str]]:
         "fixed_radius": [fixed_radius],
         "moving_radius": ["77"],
         "pen_offset": ["155"],
+        "phase": ["0.5"],
         "geometry_rotation": ["outside"],
         "samples": ["1200"],
         "cycles_per_second": ["0.07"],
@@ -323,6 +324,7 @@ def test_save_exact_cast_is_atomic_versioned_and_invalidates_previews(tmp_path: 
 
     trace = saved["project"].visuals.composition_overrides["verse_1"].traces[0]
     assert trace.geometry.fixed_radius == 333
+    assert trace.geometry.phase == 0.5
     assert trace.anchor_x == 0.25
     assert trace.drivers.pulse == "drums.accent"
     assert saved["project"].visuals.section_overrides["verse_1"].beat_gain == 1.8
@@ -388,7 +390,8 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
     assert trace["assignment"] == "lead"
     assert trace["anchor_x"] == pytest.approx(0.37)
     assert trace["base_scale"] == pytest.approx(1.75)
-    assert {"fixed_radius", "rotation", "samples", "color", "opacity"} <= set(trace)
+    assert {"fixed_radius", "phase", "rotation", "samples", "color", "opacity"} <= set(trace)
+    assert trace["phase"] == 0.5
 
     # Actor identities let the browser recompile placement live from the fields.
     identity = storyboard["actors"]["vocal-lantern"]
@@ -549,6 +552,9 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'name="reacts_to"' not in body
     assert "/video/actors" in body
     assert 'name="fixed_radius"' in body
+    assert 'name="phase"' in body
+    assert 'type="range"' in body
+    assert "/static/spiro-preview.js" in body
     assert 'id="track-actor-designer"' in body
     assert 'class="actor-designer-live-layout"' in body
     assert 'class="actor-designer-controls"' in body

@@ -1,0 +1,37 @@
+{% extends "_base.html" %}
+{% block page_title %} · Actors{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div>
+    <h1>Actor Library</h1>
+    <p class="video-help">The casting book of reusable spirogram identities. Any track can import these actors; each track pins its own copy, so editing here never changes an existing production.</p>
+  </div>
+</div>
+
+<div class="actor-book-grid">
+  <a class="actor-book-card actor-book-new" href="/actors/new">
+    <span class="actor-book-plus" aria-hidden="true">+</span>
+    <strong>New actor</strong>
+    <small>Design a fresh identity</small>
+  </a>
+  {% for entry in actors %}
+  <a class="actor-book-card" href="/actors/{{ entry.id }}">
+    <canvas class="actor-headshot" width="240" height="240" data-shapes='{{ entry.shapes | tojson }}' aria-label="Headshot preview of {{ entry.name }}"></canvas>
+    <strong>{{ entry.name }}</strong>
+    <small>{{ entry.description or entry.id }} · {{ entry.actor.components | length }} component{{ '' if entry.actor.components | length == 1 else 's' }}</small>
+  </a>
+  {% endfor %}
+</div>
+{% if not actors %}
+<p class="video-empty-state">The library is empty. Design your first actor, or publish one from a track's Scene Casting page.</p>
+{% endif %}
+
+<script src="/static/spiro-preview.js"></script>
+<script>
+  document.querySelectorAll('canvas.actor-headshot').forEach((canvas) => {
+    try {
+      window.mrpDrawHeadshot(canvas, JSON.parse(canvas.dataset.shapes));
+    } catch (err) { /* leave the card blank rather than break the page */ }
+  });
+</script>
+{% endblock %}

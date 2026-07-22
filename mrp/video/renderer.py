@@ -158,6 +158,7 @@ def _build_curve(
             fixed_radius=geometry.fixed_radius,
             moving_radius=geometry.moving_radius,
             pen_offset=geometry.pen_offset,
+            phase=geometry.phase,
             rotation=geometry.rotation,
             samples=geometry.samples,
         )

@@ -406,3 +406,30 @@ def test_frame_cli_renders_an_inspectable_png(tmp_path: Path) -> None:
     assert summary["output_path"] == str(output)
     assert summary["time_seconds"] == 0.5
     assert output.is_file()
+
+
+def test_build_curve_honors_geometry_phase() -> None:
+    from mrp.video.project import VisualLayerConfig
+    from mrp.video.renderer import _build_curve
+
+    base = {
+        "id": "phase-probe",
+        "role": "vocals",
+        "color": "#ffffff",
+        "geometry": {
+            "fixed_radius": 120,
+            "moving_radius": 45,
+            "pen_offset": 60,
+            "samples": 128,
+        },
+    }
+    plain = _build_curve(VisualLayerConfig.model_validate(base), 7)
+    shifted = _build_curve(
+        VisualLayerConfig.model_validate(
+            base | {"geometry": base["geometry"] | {"phase": 1.25}}
+        ),
+        7,
+    )
+    # Phase rotates the sampled curve, so the point cloud must move while the
+    # normalization extent stays comparable.
+    assert not np.allclose(plain.points, shifted.points)

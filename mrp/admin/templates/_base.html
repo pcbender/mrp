@@ -16,6 +16,7 @@
         <a href="/releases" {% if request.url.path.startswith('/releases') or request.url.path == '/missing-links' %}class="active"{% endif %}>Releases</a>
         <a href="/catalog" {% if request.url.path.startswith('/catalog') %}class="active"{% endif %}>Catalog</a>
         <a href="/artists" {% if request.url.path.startswith('/artists') %}class="active"{% endif %}>Artists</a>
+        <a href="/actors" {% if request.url.path.startswith('/actors') %}class="active"{% endif %}>Actors</a>
         <a href="/posts" {% if request.url.path.startswith('/posts') %}class="active"{% endif %}>Posts</a>
         <a href="/status" {% if request.url.path == '/status' %}class="active"{% endif %}>Status</a>
         <a href="/missing-links" {% if request.url.path == '/missing-links' %}class="active"{% endif %}>Missing Links</a>
