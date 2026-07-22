@@ -1,4 +1,5 @@
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -138,3 +139,88 @@ def test_superformula_is_circle_at_m_zero_and_stays_finite_at_extremes() -> None
         SpiroGeometry(family="superformula", sf_m=24, sf_n1=0.1, sf_n2=40, sf_n3=40, samples=241)
     )
     assert all(math.isfinite(point.x) and math.isfinite(point.y) for point in extreme)
+
+
+SQUARE_PATH = "M 0 0 L 10 0 L 10 10 L 0 10 Z"
+
+
+def test_path_family_traces_a_closed_subpath_centered_without_y_flip() -> None:
+    points = generate_spiro_points(
+        SpiroGeometry(family="path", path_data=SQUARE_PATH, samples=101)
+    )
+
+    assert len(points) == 101
+    first, last = points[0], points[-1]
+    assert (first.x, first.y) == (last.x, last.y)
+    # Centered on the bbox center: the 10x10 square spans -5..5 on both axes.
+    xs = [point.x for point in points]
+    ys = [point.y for point in points]
+    assert min(xs) == pytest.approx(-5) and max(xs) == pytest.approx(5)
+    assert min(ys) == pytest.approx(-5) and max(ys) == pytest.approx(5)
+    # No y-flip: the subpath starts at the SVG top-left corner and first
+    # moves right along y = 0 (top edge stays "up" i.e. negative y).
+    assert (first.x, first.y) == pytest.approx((-5, -5))
+    assert points[10].y == pytest.approx(-5)
+    assert points[10].x > first.x
+
+
+def test_path_family_pingpongs_open_subpaths_into_a_seamless_palindrome() -> None:
+    points = generate_spiro_points(
+        SpiroGeometry(family="path", path_data="M 0 0 L 10 0", samples=10)
+    )
+
+    # forward = samples // 2 + 1 stations, mirrored over the interior.
+    assert len(points) == 11
+    xs = [point.x for point in points]
+    assert xs == list(reversed(xs))
+    assert (points[0].x, points[0].y) == (points[-1].x, points[-1].y)
+    # A vertical SVG line runs downward, which stays downward (positive y).
+    vertical = generate_spiro_points(
+        SpiroGeometry(family="path", path_data="M 0 0 L 0 10", samples=10)
+    )
+    assert vertical[0].y == pytest.approx(-5)
+    assert vertical[5].y == pytest.approx(5)
+
+
+def test_path_family_phase_rotates_the_start_point() -> None:
+    base = generate_spiro_points(
+        SpiroGeometry(family="path", path_data=SQUARE_PATH, samples=101)
+    )
+    shifted = generate_spiro_points(
+        SpiroGeometry(family="path", path_data=SQUARE_PATH, samples=101, phase=math.pi)
+    )
+
+    assert (shifted[0].x, shifted[0].y) == (base[50].x, base[50].y)
+    assert (shifted[0].x, shifted[0].y) == (shifted[-1].x, shifted[-1].y)
+
+
+def test_path_family_rejects_multiple_subpaths_and_degenerate_paths() -> None:
+    with pytest.raises(ValueError, match="exactly one subpath"):
+        generate_spiro_points(
+            SpiroGeometry(family="path", path_data="M 0 0 L 1 0 M 2 0 L 3 0")
+        )
+    with pytest.raises(ValueError, match="no extent"):
+        generate_spiro_points(
+            SpiroGeometry(family="path", path_data="M 5 5 L 5 5")
+        )
+
+
+def test_maricopa_mark_letterform_traces_closed() -> None:
+    import re
+
+    svg = (Path(__file__).parents[3] / "site/public/assets/maricopa-mark.svg").read_text(
+        encoding="utf-8"
+    )
+    letterform = re.search(r'<path d="([^"]+)"', svg).group(1)
+
+    points = generate_spiro_points(
+        SpiroGeometry(family="path", path_data=letterform, samples=901)
+    )
+
+    assert len(points) == 901
+    assert (points[0].x, points[0].y) == (points[-1].x, points[-1].y)
+    assert all(math.isfinite(point.x) and math.isfinite(point.y) for point in points)
+    xs = [point.x for point in points]
+    ys = [point.y for point in points]
+    assert max(xs) + min(xs) == pytest.approx(0, abs=1e-9)
+    assert max(ys) + min(ys) == pytest.approx(0, abs=1e-9)

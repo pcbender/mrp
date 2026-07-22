@@ -528,3 +528,33 @@ def test_build_curve_supports_non_spirogram_families() -> None:
     assert curve.points.shape == (128, 2)
     assert float(np.max(np.linalg.norm(curve.points, axis=1))) == pytest.approx(1.0)
     assert curve.hue_values is not None and len(curve.hue_values) == 128
+
+
+def test_build_curve_supports_path_family_deterministically() -> None:
+    import hashlib
+
+    from mrp.video.project import VisualLayerConfig
+    from mrp.video.renderer import _build_curve
+
+    layer = VisualLayerConfig.model_validate(
+        {
+            "id": "path-probe",
+            "role": "vocals",
+            "color": "#f1d36b",
+            "geometry": {
+                "family": "path",
+                "path_data": "M 0 0 L 10 0 L 10 10 L 0 10 Z",
+                "samples": 128,
+            },
+        }
+    )
+    curve = _build_curve(layer, 7)
+    repeat = _build_curve(layer, 7)
+
+    assert curve.points.shape == (128, 2)
+    assert float(np.max(np.linalg.norm(curve.points, axis=1))) == pytest.approx(1.0)
+    assert np.array_equal(curve.points, repeat.points)
+    # Line-segment paths interpolate exactly, so the sampled bytes are a
+    # stable probe digest for the whole path pipeline.
+    digest = hashlib.sha256(curve.points.tobytes()).hexdigest()
+    assert digest == hashlib.sha256(repeat.points.tobytes()).hexdigest()

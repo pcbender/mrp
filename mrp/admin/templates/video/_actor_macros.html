@@ -8,7 +8,7 @@
   'role': 'vocals',
   'color': '#ff5fd2',
   'depth': 'foreground',
-  'geometry': {'family': 'spirogram', 'fixed_radius': 180, 'moving_radius': 60, 'pen_offset': 100, 'phase': 0, 'rotation': 'inside', 'samples': 900, 'liss_freq_x': 3, 'liss_freq_y': 2, 'liss_delta': 1.5708, 'rose_n': 5, 'rose_d': 1, 'sf_m': 6, 'sf_n1': 0.3, 'sf_n2': 0.3, 'sf_n3': 0.3},
+  'geometry': {'family': 'spirogram', 'fixed_radius': 180, 'moving_radius': 60, 'pen_offset': 100, 'phase': 0, 'rotation': 'inside', 'samples': 900, 'liss_freq_x': 3, 'liss_freq_y': 2, 'liss_delta': 1.5708, 'rose_n': 5, 'rose_d': 1, 'sf_m': 6, 'sf_n1': 0.3, 'sf_n2': 0.3, 'sf_n3': 0.3, 'path_data': ''},
   'anchor_x': 0.5,
   'anchor_y': 0.5,
   'base_scale': 1,
@@ -49,7 +49,7 @@
       <div class="form-field">{{ actor_control_label('Component fallback role', 'Fallback audio role for this component when the actor has no assigned track character.') }}<select name="trace_role">{% for role in ['master','drums','bass','vocals','instruments'] %}<option value="{{ role }}" {% if component.role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select></div>
       <div class="form-field">{{ actor_control_label('Color', 'Base color of this component before any scene-specific hue adjustment.') }}<input type="color" name="color" value="{{ component.color }}"></div>
       <div class="form-field">{{ actor_control_label('Layer', 'Default depth of this component within the actor. A scene may redirect the whole actor.') }}<select name="depth"><option value="background" {% if component.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if component.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
-      <div class="form-field">{{ actor_control_label('Curve family', 'The kind of parametric curve this component draws. Every family shares phase, samples, color, and motion controls.') }}<select name="geometry_family">{% for family in ['spirogram','lissajous','rose','superformula'] %}<option value="{{ family }}" {% if component.geometry.family == family %}selected{% endif %}>{{ family }}</option>{% endfor %}</select></div>
+      <div class="form-field">{{ actor_control_label('Curve family', 'The kind of parametric curve this component draws. Every family shares phase, samples, color, and motion controls.') }}<select name="geometry_family">{% for family in ['spirogram','lissajous','rose','superformula','path'] %}<option value="{{ family }}" {% if component.geometry.family == family %}selected{% endif %}>{{ 'path (SVG)' if family == 'path' else family }}</option>{% endfor %}</select></div>
       {{ slider_field('fixed_radius', 'Fixed radius', 'Radius of the stationary circle used to construct the spirogram geometry.', component.geometry.fixed_radius if component.geometry.fixed_radius is not none else 180, 1, 400, '0.1', family='spirogram') }}
       {{ slider_field('moving_radius', 'Moving radius', 'Radius of the circle that rolls inside or outside the fixed circle.', component.geometry.moving_radius if component.geometry.moving_radius is not none else 60, 1, 240, '0.1', family='spirogram') }}
       {{ slider_field('pen_offset', 'Pen offset', 'Distance from the moving circle center to the point that draws the curve.', component.geometry.pen_offset if component.geometry.pen_offset is not none else 100, 0, 240, '0.1', family='spirogram') }}
@@ -63,6 +63,7 @@
       {{ slider_field('sf_n1', 'Shape n1', 'Overall sharpness exponent. Small values spike outward; large values round off.', component.geometry.sf_n1 if component.geometry.sf_n1 is not none else 0.3, 0.1, 40, '0.1', family='superformula') }}
       {{ slider_field('sf_n2', 'Shape n2', 'Cosine-term exponent shaping alternate lobes.', component.geometry.sf_n2 if component.geometry.sf_n2 is not none else 0.3, 0.1, 40, '0.1', family='superformula') }}
       {{ slider_field('sf_n3', 'Shape n3', 'Sine-term exponent shaping the other lobes.', component.geometry.sf_n3 if component.geometry.sf_n3 is not none else 0.3, 0.1, 40, '0.1', family='superformula') }}
+      <div class="form-field form-field-wide family-field" data-family="path">{{ actor_control_label('SVG path data', "One subpath's d attribute, traced by arc length exactly as drawn (SVG y-down matches the canvas). Use Import SVG to split a file into one component per subpath.") }}<textarea name="path_data" rows="3" spellcheck="false" placeholder="M 35 74 V 48 h 13 …">{{ component.geometry.path_data or '' }}</textarea></div>
       {{ slider_field('phase', 'Phase (rad)', 'Shifts where the trace starts along the curve without changing its shape. One full turn is about 6.28 radians.', component.geometry.phase, 0, 6.2832, '0.01') }}
       {{ slider_field('samples', 'Curve samples', 'Number of points used to draw the curve. More points are smoother but cost more to render.', component.geometry.samples, 64, 4800, '1') }}
       {{ slider_field('anchor_x', 'Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_x, -0.5, 1.5, '0.01') }}

@@ -4,7 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from fastapi import APIRouter, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 
 from mrp.admin.deps import get_repo_root
@@ -14,6 +14,7 @@ from mrp.admin.video_casting import (
     library_actor,
     list_library_actors,
     save_library_actor,
+    split_svg_subpaths,
 )
 
 router = APIRouter(prefix="/actors")
@@ -75,6 +76,17 @@ async def actors_designer(request: Request, actor_id: str):
         "actors/designer.html",
         {"entry": entry},
     )
+
+
+@router.post("/svg-subpaths")
+async def actors_svg_subpaths(request: Request):
+    """Split uploaded SVG text (or a bare d attribute) into subpath entries."""
+    form = await request.form()
+    try:
+        subpaths = split_svg_subpaths(str(form.get("svg") or ""))
+    except CastingEditorError as exc:
+        return JSONResponse({"errors": list(exc.problems)}, status_code=422)
+    return JSONResponse({"subpaths": subpaths})
 
 
 @router.post("/save", response_class=HTMLResponse)

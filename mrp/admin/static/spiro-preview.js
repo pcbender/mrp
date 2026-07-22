@@ -27,6 +27,80 @@
     return Number.isFinite(parsed) ? parsed : fallback;
   };
 
+  // SVG path sampling, mirroring mrp/video/geometry.py _path_points: sample
+  // uniform arc-length stations (getPointAtLength is arc-length exact, so no
+  // oversampling pass is needed), close or ping-pong, center on the sampled
+  // bbox center, no y-flip (SVG y-down == canvas == cv2). The pre-phase cycle
+  // is cached per `samples|d`; phase rotates the start point per call.
+  const pathPointCache = new Map();
+  let pathProbe = null;
+
+  const ensurePathProbe = () => {
+    if (pathProbe) return pathProbe;
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden;visibility:hidden';
+    pathProbe = document.createElementNS(svgNS, 'path');
+    svg.appendChild(pathProbe);
+    document.body.appendChild(svg);
+    return pathProbe;
+  };
+
+  window.mrpPathPoints = function (d, samples) {
+    const count = Math.max(2, Math.round(samples));
+    const key = `${count}|${d}`;
+    if (!pathPointCache.has(key)) {
+      const probe = ensurePathProbe();
+      probe.setAttribute('d', d);
+      let total = 0;
+      try { total = probe.getTotalLength(); } catch (err) { total = 0; }
+      if (!(total > 0)) return null;
+      const at = (length) => {
+        const point = probe.getPointAtLength(length);
+        return [point.x, point.y];
+      };
+      // Coarse pass for the bbox diagonal backing the closed-endpoint rule.
+      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+      for (let i = 0; i < 64; i += 1) {
+        const [x, y] = at((i / 63) * total);
+        minX = Math.min(minX, x); maxX = Math.max(maxX, x);
+        minY = Math.min(minY, y); maxY = Math.max(maxY, y);
+      }
+      const diagonal = Math.hypot(maxX - minX, maxY - minY);
+      if (!(diagonal > 0)) return null;
+      const [sx, sy] = at(0);
+      const [ex, ey] = at(total);
+      const closed = Math.hypot(ex - sx, ey - sy) < 1e-6 * diagonal;
+      let pts;
+      if (closed) {
+        pts = [];
+        for (let i = 0; i < count; i += 1) pts.push(at((i / (count - 1)) * total));
+        pts[count - 1] = [pts[0][0], pts[0][1]];
+      } else {
+        const forward = Math.floor(count / 2) + 1;
+        pts = [];
+        for (let i = 0; i < forward; i += 1) pts.push(at((i / (forward - 1)) * total));
+        for (let i = forward - 2; i >= 0; i -= 1) pts.push([pts[i][0], pts[i][1]]);
+      }
+      let loX = Infinity, hiX = -Infinity, loY = Infinity, hiY = -Infinity;
+      pts.forEach(([x, y]) => {
+        loX = Math.min(loX, x); hiX = Math.max(hiX, x);
+        loY = Math.min(loY, y); hiY = Math.max(hiY, y);
+      });
+      const centerX = (loX + hiX) / 2;
+      const centerY = (loY + hiY) / 2;
+      let extent = 0;
+      const centered = pts.map(([x, y]) => {
+        const px = x - centerX, py = y - centerY;
+        extent = Math.max(extent, Math.hypot(px, py));
+        return [px, py];
+      });
+      pathPointCache.set(key, { pts: centered, extent: extent > 0 ? extent : 1 });
+    }
+    return pathPointCache.get(key);
+  };
+
   // `extent` is the max point radius, as the renderer normalizes by before
   // placing. Family dispatch and closure formulas mirror
   // mrp/video/geometry.py generate_spiro_points — keep them in sync.
@@ -34,6 +108,20 @@
     const family = shape.family || 'spirogram';
     const phase = numberOr(shape.phase, 0);
     const n = Math.max(2, Math.round(Math.min(numberOr(shape.samples, 900), 1200)));
+    if (family === 'path') {
+      const d = String(shape.path_data || '').trim();
+      const base = d ? window.mrpPathPoints(d, n) : null;
+      // Empty or unparsable path data degrades to a dot so live previews
+      // never throw while the textarea is mid-edit.
+      if (!base) return { pts: [[0, 0], [0, 0]], extent: 1 };
+      const cycle = base.pts.length - 1;
+      const fraction = (((phase % TAU) + TAU) % TAU) / TAU;
+      const shift = Math.round(fraction * cycle) % cycle;
+      const pts = [];
+      for (let i = 0; i < cycle; i += 1) pts.push(base.pts[(shift + i) % cycle]);
+      pts.push(base.pts[shift % cycle]);
+      return { pts, extent: base.extent };
+    }
     let end, pointAt;
     if (family === 'lissajous') {
       const a = Math.max(1, Math.round(numberOr(shape.liss_freq_x, 3)));
@@ -208,6 +296,7 @@
         sf_n1: window.mrpFieldValue(card, 'sf_n1', 0.3),
         sf_n2: window.mrpFieldValue(card, 'sf_n2', 0.3),
         sf_n3: window.mrpFieldValue(card, 'sf_n3', 0.3),
+        path_data: window.mrpFieldValue(card, 'path_data', ''),
         samples: Math.min(2400, Math.max(240, Number(window.mrpFieldValue(card, 'samples', 900)))),
         anchor_x: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
         anchor_y: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),

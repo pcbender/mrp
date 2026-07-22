@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 from pathlib import Path
 from urllib.parse import urlencode
 
@@ -88,6 +89,7 @@ def _designer_fields(
         "sf_n1": ["0.3"],
         "sf_n2": ["0.3"],
         "sf_n3": ["0.3"],
+        "path_data": [""],
         "fixed_radius": ["180"],
         "moving_radius": ["61"],
         "pen_offset": ["104"],
@@ -293,6 +295,93 @@ def test_missing_name_is_a_validation_error(tmp_path: Path, monkeypatch) -> None
 
     assert response.status_code == 422
     assert "actor name is required" in response.body.decode()
+
+
+SQUARE_PATH = "M 0 0 L 10 0 L 10 10 L 0 10 Z"
+
+
+def test_path_actor_saves_inline_path_data(tmp_path: Path) -> None:
+    fields = _designer_fields(edit_id="mark-tracer", name="Mark Tracer")
+    fields.update(
+        {
+            "geometry_family": ["path"],
+            "path_data": [SQUARE_PATH],
+            "fixed_radius": [""],
+            "moving_radius": [""],
+            "pen_offset": [""],
+        }
+    )
+
+    actor_id = save_library_actor(tmp_path, fields)
+
+    assert actor_id == "mark-tracer"
+    payload = yaml.safe_load(
+        (tmp_path / LIBRARY / "mark-tracer.yaml").read_text(encoding="utf-8")
+    )
+    geometry = payload["actor"]["components"][0]["geometry"]
+    assert geometry["family"] == "path"
+    assert geometry["path_data"] == SQUARE_PATH
+    assert "fixed_radius" not in geometry
+    document = ActorLibraryDocument.model_validate(payload)
+    assert document.actor.components[0].geometry.path_data == SQUARE_PATH
+
+
+def _split_svg(svg_text: str):
+    return asyncio.run(
+        actors_routes.actors_svg_subpaths(
+            _request("/actors/svg-subpaths", [("svg", svg_text)])
+        )
+    )
+
+
+def test_svg_subpaths_endpoint_splits_markup_and_bare_path_data() -> None:
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">'
+        '<path d="M 0 0 L 10 0 L 10 10 Z M 12 12 L 14 12" fill="none"/>'
+        "</svg>"
+    )
+    response = _split_svg(svg)
+    assert response.status_code == 200
+    payload = json.loads(response.body)
+    assert len(payload["subpaths"]) == 2
+    assert payload["subpaths"][0]["closed"] is True
+    assert payload["subpaths"][1]["closed"] is False
+    for subpath in payload["subpaths"]:
+        assert subpath["d"].lstrip()[0] in "Mm"
+
+    bare = _split_svg(SQUARE_PATH)
+    assert bare.status_code == 200
+    assert len(json.loads(bare.body)["subpaths"]) == 1
+
+
+def test_svg_subpaths_endpoint_caps_results_and_rejects_garbage() -> None:
+    many = " ".join(f"M {i} 0 L {i} 5" for i in range(14))
+    response = _split_svg(many)
+    assert response.status_code == 200
+    assert len(json.loads(response.body)["subpaths"]) == 12
+
+    garbage = _split_svg("this is not svg at all }{")
+    assert garbage.status_code == 422
+    assert json.loads(garbage.body)["errors"]
+
+    empty = _split_svg("")
+    assert empty.status_code == 422
+
+    no_paths = _split_svg('<svg xmlns="http://www.w3.org/2000/svg"><rect width="4" height="4"/></svg>')
+    assert no_paths.status_code == 422
+    assert "no <path>" in json.loads(no_paths.body)["errors"][0]
+
+
+def test_maricopa_mark_asset_splits_into_traceable_subpaths() -> None:
+    svg = (Path(__file__).parents[3] / "site/public/assets/maricopa-mark.svg").read_text(
+        encoding="utf-8"
+    )
+    response = _split_svg(svg)
+    assert response.status_code == 200
+    payload = json.loads(response.body)
+    # The letterform "M" and the underline bar, both closed.
+    assert len(payload["subpaths"]) == 2
+    assert all(subpath["closed"] for subpath in payload["subpaths"])
 
 
 def test_rose_actor_saves_family_geometry(tmp_path: Path) -> None:
