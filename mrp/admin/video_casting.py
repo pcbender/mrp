@@ -192,6 +192,93 @@ def _write_library_actor(root: Path, actor: Any) -> dict[str, Any]:
     }
 
 
+def list_library_actors(root: Path) -> list[dict[str, Any]]:
+    """Public view of the reusable actor library for the Actor Designer."""
+    return _library_actors(root)
+
+
+def library_actor(root: Path, actor_id: str) -> dict[str, Any] | None:
+    return next(
+        (entry for entry in _library_actors(root) if entry["id"] == actor_id),
+        None,
+    )
+
+
+def actor_preview_shapes(actor: Any) -> list[dict[str, Any]]:
+    """Draw-ready component shapes for the shared canvas helpers."""
+    return [_storyboard_shape(component) for component in actor.components]
+
+
+def _delete_library_actor(root: Path, actor_id: str, *, missing_ok: bool = False) -> None:
+    directory = actor_library_path(root)
+    path = directory / f"{_slug(actor_id)}.yaml"
+    if not path.is_file():
+        if missing_ok:
+            return
+        raise CastingEditorError(f"library actor does not exist: {actor_id}")
+    path.unlink()
+
+
+def _library_actor_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
+    name = _single(fields, "actor_name")
+    if not name:
+        raise CastingEditorError("actor name is required")
+    actor_id = _slug(_single(fields, "actor_edit_id", default="") or name)
+    return {
+        "id": actor_id,
+        "name": name,
+        "description": _single(fields, "actor_description", default=""),
+        "kind": "spirogram",
+        "components": _trace_payloads(fields),
+    }
+
+
+def save_library_actor(root: Path, fields: Mapping[str, Sequence[str]]) -> str:
+    """Apply one Actor Designer action to the global actor library.
+
+    Library actors are freestanding YAML documents keyed by id; projects pin
+    self-contained copies, so renames and deletes never touch a track project.
+    Returns the resulting actor id ("" after a delete).
+    """
+    from mrp.video.project import ActorConfig
+
+    action = _single(fields, "action")
+    existing = {entry["id"]: entry for entry in _library_actors(root)}
+
+    if action == "actor_save":
+        payload = _library_actor_payload(fields)
+        original_id = _single(fields, "actor_original_id", default="")
+        if payload["id"] != original_id and payload["id"] in existing:
+            raise CastingEditorError(
+                f"the library already has an actor with id: {payload['id']}"
+            )
+        try:
+            actor = ActorConfig.model_validate(payload)
+        except ValidationError as exc:
+            raise CastingEditorError(*_validation_problems(exc)) from exc
+        entry = _write_library_actor(root, actor)
+        if original_id and original_id != actor.id:
+            # The library file is keyed by id, so a rename retires the old file.
+            _delete_library_actor(root, original_id, missing_ok=True)
+        return entry["id"]
+    if action == "actor_duplicate":
+        source_id = _single(fields, "actor_original_id")
+        source = existing.get(source_id)
+        if source is None:
+            raise CastingEditorError(f"library actor does not exist: {source_id}")
+        duplicate = source["actor"].model_copy(
+            update={
+                "id": _unique_actor_id(existing, f"{source_id}-copy"),
+                "name": f"{source['name']} Copy",
+            }
+        )
+        return _write_library_actor(root, duplicate)["id"]
+    if action == "actor_delete":
+        _delete_library_actor(root, _single(fields, "actor_original_id"))
+        return ""
+    raise CastingEditorError(f"unsupported actor action: {action}")
+
+
 def _actor_cast_for_scope(project: Any, section: Any, scope: str):
     visuals = project.visuals
     if scope == "section":
@@ -320,6 +407,7 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
         "fixed_radius": layer.geometry.fixed_radius,
         "moving_radius": layer.geometry.moving_radius,
         "pen_offset": layer.geometry.pen_offset,
+        "phase": layer.geometry.phase,
         "rotation": layer.geometry.rotation,
         "samples": min(layer.geometry.samples, 1200),
         "color": layer.color,
@@ -561,6 +649,7 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
         "fixed_radius",
         "moving_radius",
         "pen_offset",
+        "phase",
         "geometry_rotation",
         "samples",
         "cycles_per_second",
@@ -599,6 +688,7 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
                     "fixed_radius": _number(columns["fixed_radius"][index], f"trace {trace_id} fixed radius"),
                     "moving_radius": _number(columns["moving_radius"][index], f"trace {trace_id} moving radius"),
                     "pen_offset": _number(columns["pen_offset"][index], f"trace {trace_id} pen offset"),
+                    "phase": _number(columns["phase"][index], f"trace {trace_id} phase"),
                     "rotation": columns["geometry_rotation"][index],
                     "samples": _integer(columns["samples"][index], f"trace {trace_id} samples"),
                 },

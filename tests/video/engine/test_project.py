@@ -444,3 +444,11 @@ def test_stem_duration_must_match_master(tmp_path: Path) -> None:
             probe_media=True,
             duration_probe=probe,
         )
+
+
+def test_layer_geometry_phase_defaults_to_zero_and_round_trips() -> None:
+    from mrp.video.project import LayerGeometryConfig
+
+    base = {"fixed_radius": 120, "moving_radius": 45, "pen_offset": 60}
+    assert LayerGeometryConfig.model_validate(base).phase == 0.0
+    assert LayerGeometryConfig.model_validate(base | {"phase": 0.75}).phase == 0.75

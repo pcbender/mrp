@@ -1,4 +1,5 @@
 {% extends "releases/workspace/_shell.html" %}
+{% from "video/_actor_macros.html" import actor_control_label, component_fields %}
 
 {% macro context_fields() -%}
 <input type="hidden" name="section_id" value="{{ casting.selected_section.id }}">
@@ -16,51 +17,6 @@
   <label>{{ label }}</label>
   <input type="number" step="{{ step }}" name="style_{{ name }}" value="{{ value if value is not none else '' }}" placeholder="inherit">
 </div>
-{%- endmacro %}
-
-{% macro actor_control_label(label, help) -%}
-<label class="actor-control-label" title="{{ help }}">{{ label }} <span aria-hidden="true">?</span></label>
-{%- endmacro %}
-
-{% macro component_fields(component, index) -%}
-<fieldset class="video-trace-card actor-component-card">
-  <legend><span>Visual component {{ index }}</span>{% if index > 1 %}<button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button>{% endif %}</legend>
-  <div class="actor-component-summary">
-    <span class="actor-swatch" style="--actor-color: {{ component.color }}"></span>
-    <strong>{{ component.id }}</strong>
-    <span>{{ component.geometry.rotation }} spirogram · {{ component.role }}</span>
-  </div>
-  <details class="video-advanced" {% if index == 1 %}open{% endif %}>
-    <summary>Visual identity controls</summary>
-    <div class="form-grid video-trace-grid">
-      <div class="form-field">{{ actor_control_label('Component ID', 'Stable identifier for this visual component inside the actor.') }}<input name="trace_id" value="{{ component.id }}" required></div>
-      <div class="form-field">{{ actor_control_label('Component fallback role', 'Fallback audio role for this component when the actor has no assigned track character.') }}<select name="trace_role">{% for role in ['master','drums','bass','vocals','instruments'] %}<option value="{{ role }}" {% if component.role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select></div>
-      <div class="form-field">{{ actor_control_label('Color', 'Base color of this component before any scene-specific hue adjustment.') }}<input type="color" name="color" value="{{ component.color }}"></div>
-      <div class="form-field">{{ actor_control_label('Layer', 'Default depth of this component within the actor. A scene may redirect the whole actor.') }}<select name="depth"><option value="background" {% if component.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if component.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
-      <div class="form-field">{{ actor_control_label('Fixed radius', 'Radius of the stationary circle used to construct the spirogram geometry.') }}<input type="number" step="0.1" name="fixed_radius" value="{{ component.geometry.fixed_radius }}" required></div>
-      <div class="form-field">{{ actor_control_label('Moving radius', 'Radius of the circle that rolls inside or outside the fixed circle.') }}<input type="number" step="0.1" name="moving_radius" value="{{ component.geometry.moving_radius }}" required></div>
-      <div class="form-field">{{ actor_control_label('Pen offset', 'Distance from the moving circle center to the point that draws the curve.') }}<input type="number" step="0.1" name="pen_offset" value="{{ component.geometry.pen_offset }}" required></div>
-      <div class="form-field">{{ actor_control_label('Spirogram type', 'Choose whether the moving circle rolls inside or outside the fixed circle.') }}<select name="geometry_rotation"><option value="inside" {% if component.geometry.rotation == 'inside' %}selected{% endif %}>hypotrochoid (inside)</option><option value="outside" {% if component.geometry.rotation == 'outside' %}selected{% endif %}>epitrochoid (outside)</option></select></div>
-      <div class="form-field">{{ actor_control_label('Curve samples', 'Number of points used to draw the curve. More points are smoother but cost more to render.') }}<input type="number" name="samples" value="{{ component.geometry.samples }}" required></div>
-      <div class="form-field">{{ actor_control_label('Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.') }}<input type="number" step="0.01" name="anchor_x" value="{{ component.anchor_x }}" required></div>
-      <div class="form-field">{{ actor_control_label('Component offset Y', 'Vertical position inside the actor identity preview. Scene position is set later in Scene Casting.') }}<input type="number" step="0.01" name="anchor_y" value="{{ component.anchor_y }}" required></div>
-      <div class="form-field">{{ actor_control_label('Identity scale', 'Base size of this component within the actor before a scene scales the whole actor.') }}<input type="number" step="0.01" name="base_scale" value="{{ component.base_scale }}" required></div>
-      <div class="form-field">{{ actor_control_label('Identity opacity', 'Base opacity of this component before a scene changes the whole actor opacity.') }}<input type="number" step="0.01" name="opacity" value="{{ component.opacity }}" required></div>
-      <div class="form-field">{{ actor_control_label('Line width', 'Base stroke width used to draw this component.') }}<input type="number" step="0.1" name="line_width" value="{{ component.line_width }}" required></div>
-      <div class="form-field">{{ actor_control_label('Base rotation °/s', 'Continuous rotation speed that belongs to the actor identity.') }}<input type="number" step="0.1" name="rotation_speed" value="{{ component.rotation_degrees_per_second }}" required></div>
-      <div class="form-field">{{ actor_control_label('Base hue shift °', 'Permanent hue rotation applied to this component before scene direction.') }}<input type="number" step="1" name="hue_shift" value="{{ component.hue_shift_degrees }}" required></div>
-      <div class="form-field">{{ actor_control_label('Blend', 'How this component combines with the other visual components in the actor.') }}<select name="blend_mode"><option value="screen" {% if component.blend_mode == 'screen' %}selected{% endif %}>screen</option><option value="normal" {% if component.blend_mode == 'normal' %}selected{% endif %}>normal</option></select></div>
-      <div class="form-field">{{ actor_control_label('Cycles / second', 'Speed at which the visible trace travels around the curve.') }}<input type="number" step="0.001" name="cycles_per_second" value="{{ component.trace.cycles_per_second }}" required></div>
-      <div class="form-field">{{ actor_control_label('Trail length', 'Fraction of the full curve left visible behind the moving trace head.') }}<input type="number" step="0.01" name="trail_fraction" value="{{ component.trace.trail_fraction }}" required></div>
-      <div class="form-field">{{ actor_control_label('Ghost count', 'Number of additional fading trace copies drawn behind the main trace.') }}<input type="number" name="ghost_count" value="{{ component.trace.ghost_count }}" required></div>
-      <div class="form-field">{{ actor_control_label('Ghost spacing', 'Time separation between successive ghost traces.') }}<input type="number" step="0.01" name="ghost_spacing" value="{{ component.trace.ghost_spacing }}" required></div>
-      <div class="form-field">{{ actor_control_label('Head radius', 'Radius of the bright point at the leading edge of the trace.') }}<input type="number" step="0.1" name="head_radius" value="{{ component.trace.head_radius }}" required></div>
-      {% for driver, value in [('scale', component.drivers.scale), ('opacity', component.drivers.opacity), ('color', component.drivers.color), ('pulse', component.drivers.pulse)] %}
-      <div class="form-field">{{ actor_control_label(driver|title ~ ' reaction', 'Fallback signal for this component response. The actor track character supplies the normal performance signal.') }}<select name="driver_{{ driver }}"><option value="">none</option>{% for signal in ['master.energy','master.accent','drums.energy','drums.accent','bass.energy','bass.accent','vocals.energy','vocals.accent','instruments.energy','instruments.accent'] %}<option value="{{ signal }}" {% if value == signal %}selected{% endif %}>{{ signal }}</option>{% endfor %}</select></div>
-      {% endfor %}
-    </div>
-  </details>
-</fieldset>
 {%- endmacro %}
 
 {% block stage %}
@@ -289,34 +245,7 @@
 </div>
 
 <template id="actor-component-template">
-  <fieldset class="video-trace-card actor-component-card">
-    <legend><span>New visual component</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button></legend>
-    <div class="form-grid video-trace-grid">
-      <div class="form-field">{{ actor_control_label('Component ID', 'Stable identifier for this visual component inside the actor.') }}<input name="trace_id" value="shape" required></div>
-      <div class="form-field">{{ actor_control_label('Component fallback role', 'Fallback audio role for this component when the actor has no assigned track character.') }}<select name="trace_role"><option>master</option><option>drums</option><option>bass</option><option selected>vocals</option><option>instruments</option></select></div>
-      <div class="form-field">{{ actor_control_label('Color', 'Base color of this component before any scene-specific hue adjustment.') }}<input type="color" name="color" value="#ff5fd2"></div>
-      <div class="form-field">{{ actor_control_label('Layer', 'Default depth of this component within the actor. A scene may redirect the whole actor.') }}<select name="depth"><option>background</option><option selected>foreground</option></select></div>
-      <div class="form-field">{{ actor_control_label('Fixed radius', 'Radius of the stationary circle used to construct the spirogram geometry.') }}<input type="number" step="0.1" name="fixed_radius" value="180" required></div>
-      <div class="form-field">{{ actor_control_label('Moving radius', 'Radius of the circle that rolls inside or outside the fixed circle.') }}<input type="number" step="0.1" name="moving_radius" value="60" required></div>
-      <div class="form-field">{{ actor_control_label('Pen offset', 'Distance from the moving circle center to the point that draws the curve.') }}<input type="number" step="0.1" name="pen_offset" value="100" required></div>
-      <div class="form-field">{{ actor_control_label('Spirogram type', 'Choose whether the moving circle rolls inside or outside the fixed circle.') }}<select name="geometry_rotation"><option value="inside" selected>hypotrochoid (inside)</option><option value="outside">epitrochoid (outside)</option></select></div>
-      <div class="form-field">{{ actor_control_label('Curve samples', 'Number of points used to draw the curve. More points are smoother but cost more to render.') }}<input type="number" name="samples" value="900" required></div>
-      <div class="form-field">{{ actor_control_label('Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.') }}<input type="number" step="0.01" name="anchor_x" value="0.5" required></div>
-      <div class="form-field">{{ actor_control_label('Component offset Y', 'Vertical position inside the actor identity preview. Scene position is set later in Scene Casting.') }}<input type="number" step="0.01" name="anchor_y" value="0.5" required></div>
-      <div class="form-field">{{ actor_control_label('Identity scale', 'Base size of this component within the actor before a scene scales the whole actor.') }}<input type="number" step="0.01" name="base_scale" value="1" required></div>
-      <div class="form-field">{{ actor_control_label('Identity opacity', 'Base opacity of this component before a scene changes the whole actor opacity.') }}<input type="number" step="0.01" name="opacity" value="0.8" required></div>
-      <div class="form-field">{{ actor_control_label('Line width', 'Base stroke width used to draw this component.') }}<input type="number" step="0.1" name="line_width" value="2" required></div>
-      <div class="form-field">{{ actor_control_label('Base rotation °/s', 'Continuous rotation speed that belongs to the actor identity.') }}<input type="number" step="0.1" name="rotation_speed" value="0" required></div>
-      <div class="form-field">{{ actor_control_label('Base hue shift °', 'Permanent hue rotation applied to this component before scene direction.') }}<input type="number" step="1" name="hue_shift" value="0" required></div>
-      <div class="form-field">{{ actor_control_label('Blend', 'How this component combines with the other visual components in the actor.') }}<select name="blend_mode"><option selected>screen</option><option>normal</option></select></div>
-      <div class="form-field">{{ actor_control_label('Cycles / second', 'Speed at which the visible trace travels around the curve.') }}<input type="number" step="0.001" name="cycles_per_second" value="0.08" required></div>
-      <div class="form-field">{{ actor_control_label('Trail length', 'Fraction of the full curve left visible behind the moving trace head.') }}<input type="number" step="0.01" name="trail_fraction" value="0.24" required></div>
-      <div class="form-field">{{ actor_control_label('Ghost count', 'Number of additional fading trace copies drawn behind the main trace.') }}<input type="number" name="ghost_count" value="1" required></div>
-      <div class="form-field">{{ actor_control_label('Ghost spacing', 'Time separation between successive ghost traces.') }}<input type="number" step="0.01" name="ghost_spacing" value="0.08" required></div>
-      <div class="form-field">{{ actor_control_label('Head radius', 'Radius of the bright point at the leading edge of the trace.') }}<input type="number" step="0.1" name="head_radius" value="3" required></div>
-      {% for driver in ['scale', 'opacity', 'color', 'pulse'] %}<div class="form-field">{{ actor_control_label(driver|title ~ ' reaction', 'Fallback signal for this component response. The actor track character supplies the normal performance signal.') }}<select name="driver_{{ driver }}"><option value="">none</option>{% for signal in ['master.energy','master.accent','drums.energy','drums.accent','bass.energy','bass.accent','vocals.energy','vocals.accent','instruments.energy','instruments.accent'] %}<option value="{{ signal }}">{{ signal }}</option>{% endfor %}</select></div>{% endfor %}
-    </div>
-  </fieldset>
+  {{ component_fields(none, none) }}
 </template>
 
 <template id="actor-assignment-template">
@@ -337,43 +266,8 @@
   </fieldset>
 </template>
 
+<script src="/static/spiro-preview.js"></script>
 <script>
-  // Renderer-faithful trochoid, matching mrp/video/geometry.py
-  // (gcd cycle length, hypotrochoid inside / epitrochoid outside). Shared by
-  // the Actor Designer identity preview and the Scene Casting storyboard so
-  // both match the render exactly. `extent` is the max point radius, as the
-  // renderer normalizes by before placing.
-  window.mrpSpiroPoints = function (shape) {
-    const fixed = Number(shape.fixed_radius);
-    const moving = Math.max(0.000001, Number(shape.moving_radius));
-    const pen = Number(shape.pen_offset);
-    const fInt = Math.max(1, Math.round(Math.abs(fixed)));
-    const mInt = Math.max(1, Math.round(Math.abs(moving)));
-    let a = fInt, b = mInt;
-    while (b) { const t = b; b = a % b; a = t; }
-    const end = Math.PI * 2 * (mInt / (a || 1));
-    const n = Math.max(2, Math.round(Math.min(Number(shape.samples) || 900, 1200)));
-    const outside = shape.rotation === 'outside';
-    const pts = [];
-    let extent = 0;
-    for (let i = 0; i < n; i += 1) {
-      const theta = (i / (n - 1)) * end;
-      let x, y;
-      if (outside) {
-        const rs = fixed + moving, ratio = rs / moving;
-        x = rs * Math.cos(theta) - pen * Math.cos(ratio * theta);
-        y = rs * Math.sin(theta) - pen * Math.sin(ratio * theta);
-      } else {
-        const rd = fixed - moving, ratio = rd / moving;
-        x = rd * Math.cos(theta) + pen * Math.cos(ratio * theta);
-        y = rd * Math.sin(theta) - pen * Math.sin(ratio * theta);
-      }
-      pts.push([x, y]);
-      extent = Math.max(extent, Math.hypot(x, y));
-    }
-    return { pts, extent: extent > 0 ? extent : 1 };
-  };
-
   function addActorComponent() {
     const clone = document.getElementById('actor-component-template').content.cloneNode(true);
     const count = document.querySelectorAll('#actor-components fieldset').length + 1;
@@ -393,57 +287,11 @@
     if (window.redrawStoryboard) redrawStoryboard();
   }
 
-  function fieldValue(card, name, fallback) {
-    const field = card.querySelector(`[name="${name}"]`);
-    return field ? field.value : fallback;
-  }
-
   function drawActorPreview() {
     const canvas = document.getElementById('actor-designer-canvas');
-    if (!canvas) return;
-    const context = canvas.getContext('2d');
-    context.fillStyle = '#101014';
-    context.fillRect(0, 0, canvas.width, canvas.height);
-    const cards = document.querySelectorAll('#actor-components .actor-component-card');
-    cards.forEach((card) => {
-      const fixed = Number(fieldValue(card, 'fixed_radius', 180));
-      const moving = Math.max(0.001, Number(fieldValue(card, 'moving_radius', 60)));
-      const pen = Number(fieldValue(card, 'pen_offset', 100));
-      const outside = fieldValue(card, 'geometry_rotation', 'inside') === 'outside';
-      const samples = Math.min(2400, Math.max(240, Number(fieldValue(card, 'samples', 900))));
-      const anchorX = Number(fieldValue(card, 'anchor_x', 0.5));
-      const anchorY = Number(fieldValue(card, 'anchor_y', 0.5));
-      const identityScale = Number(fieldValue(card, 'base_scale', 1));
-      const color = fieldValue(card, 'color', '#ff5fd2');
-      const opacity = Number(fieldValue(card, 'opacity', 0.8));
-      const lineWidth = Number(fieldValue(card, 'line_width', 2));
-      const { pts, extent } = window.mrpSpiroPoints({
-        fixed_radius: fixed,
-        moving_radius: moving,
-        pen_offset: pen,
-        rotation: outside ? 'outside' : 'inside',
-        samples,
-      });
-      // Match the renderer's placement: normalize by extent, size by
-      // min(w,h) * (0.5 - canvas_margin) * scale.
-      const fit = Math.min(canvas.width, canvas.height) * (0.5 - 0.08) * identityScale / extent;
-      const originX = canvas.width * Math.min(1, Math.max(0, anchorX));
-      const originY = canvas.height * Math.min(1, Math.max(0, anchorY));
-      context.beginPath();
-      pts.forEach(([x, y], index) => {
-        const px = originX + x * fit;
-        const py = originY + y * fit;
-        if (index === 0) context.moveTo(px, py); else context.lineTo(px, py);
-      });
-      context.globalAlpha = Math.min(1, Math.max(0, opacity));
-      context.strokeStyle = color;
-      context.lineWidth = Math.max(0.5, lineWidth);
-      context.shadowColor = color;
-      context.shadowBlur = 8;
-      context.stroke();
-      context.globalAlpha = 1;
-      context.shadowBlur = 0;
-    });
+    const container = document.getElementById('actor-components');
+    if (!canvas || !container) return;
+    window.mrpDrawShapes(canvas, window.mrpReadComponentShapes(container));
   }
 
   document.addEventListener('input', (event) => {

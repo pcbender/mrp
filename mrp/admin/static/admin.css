@@ -1271,3 +1271,75 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   .video-path-import { grid-template-columns: 1fr; }
   .actor-designer-controls .video-trace-grid { grid-template-columns: 1fr; }
 }
+
+/* ---- Actor Designer (standalone library pages) ---- */
+.page-heading {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.page-heading h1 { margin: 0 0 .2rem; }
+.actor-book-grid {
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.actor-book-card {
+  background: var(--panel, #16161c);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  padding: .8rem;
+  text-decoration: none;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.actor-book-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.actor-book-card canvas.actor-headshot {
+  aspect-ratio: 1;
+  background: #101014;
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.actor-book-card small { color: var(--muted); line-height: 1.4; overflow-wrap: anywhere; }
+.actor-book-new {
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  text-align: center;
+}
+.actor-book-plus {
+  color: var(--muted);
+  font-size: 44px;
+  line-height: 1;
+}
+.spiro-transport {
+  align-items: center;
+  display: flex;
+  gap: .5rem;
+  padding: .5rem .2rem 0;
+}
+.spiro-progress {
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  min-width: 3ch;
+}
+.slider-pair {
+  align-items: center;
+  display: grid;
+  gap: .45rem;
+  grid-template-columns: minmax(0, 1fr) 5.5rem;
+}
+.slider-pair input[type="range"] {
+  accent-color: var(--primary);
+  min-width: 0;
+  width: 100%;
+}
+.slider-pair input[type="number"] { width: 100%; }

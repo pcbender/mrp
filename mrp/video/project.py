@@ -174,6 +174,7 @@ class LayerGeometryConfig(ContractModel):
     fixed_radius: float = Field(gt=0)
     moving_radius: float = Field(gt=0)
     pen_offset: float = Field(ge=0)
+    phase: float = 0.0
     rotation: Literal["inside", "outside"] = "inside"
     samples: int = Field(default=900, ge=64, le=8192)
 

@@ -1,0 +1,76 @@
+{# Shared actor component controls used by the release casting page and the
+   standalone Actor Designer. The repeated field names bind to
+   _trace_payloads() in mrp/admin/video_casting.py and to the shared canvas
+   helpers in static/spiro-preview.js — keep all three in sync. #}
+
+{% set default_component = {
+  'id': 'shape',
+  'role': 'vocals',
+  'color': '#ff5fd2',
+  'depth': 'foreground',
+  'geometry': {'fixed_radius': 180, 'moving_radius': 60, 'pen_offset': 100, 'phase': 0, 'rotation': 'inside', 'samples': 900},
+  'anchor_x': 0.5,
+  'anchor_y': 0.5,
+  'base_scale': 1,
+  'opacity': 0.8,
+  'line_width': 2,
+  'rotation_degrees_per_second': 0,
+  'hue_shift_degrees': 0,
+  'blend_mode': 'screen',
+  'trace': {'cycles_per_second': 0.08, 'trail_fraction': 0.24, 'ghost_count': 1, 'ghost_spacing': 0.08, 'head_radius': 3},
+  'drivers': {'scale': none, 'opacity': none, 'color': none, 'pulse': none},
+} %}
+
+{% macro actor_control_label(label, help) -%}
+<label class="actor-control-label" title="{{ help }}">{{ label }} <span aria-hidden="true">?</span></label>
+{%- endmacro %}
+
+{% macro slider_field(name, label, help, value, min, max, step) -%}
+<div class="form-field">{{ actor_control_label(label, help) }}<div class="slider-pair"><input type="range" min="{{ min }}" max="{{ max }}" step="{{ step }}" value="{{ value }}" aria-hidden="true" tabindex="-1"><input type="number" step="{{ step }}" name="{{ name }}" value="{{ value }}" required></div></div>
+{%- endmacro %}
+
+{% macro component_fields(component, index) -%}
+{% set is_new = component is none %}
+{% set component = component if component is not none else default_component %}
+<fieldset class="video-trace-card actor-component-card">
+  <legend><span>{{ 'New visual component' if is_new else 'Visual component ' ~ index }}</span>{% if is_new or index > 1 %}<button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button>{% endif %}</legend>
+  {% if not is_new %}
+  <div class="actor-component-summary">
+    <span class="actor-swatch" style="--actor-color: {{ component.color }}"></span>
+    <strong>{{ component.id }}</strong>
+    <span>{{ component.geometry.rotation }} spirogram · {{ component.role }}</span>
+  </div>
+  {% endif %}
+  <details class="video-advanced" {% if is_new or index == 1 %}open{% endif %}>
+    <summary>Visual identity controls</summary>
+    <div class="form-grid video-trace-grid">
+      <div class="form-field">{{ actor_control_label('Component ID', 'Stable identifier for this visual component inside the actor.') }}<input name="trace_id" value="{{ component.id }}" required></div>
+      <div class="form-field">{{ actor_control_label('Component fallback role', 'Fallback audio role for this component when the actor has no assigned track character.') }}<select name="trace_role">{% for role in ['master','drums','bass','vocals','instruments'] %}<option value="{{ role }}" {% if component.role == role %}selected{% endif %}>{{ role }}</option>{% endfor %}</select></div>
+      <div class="form-field">{{ actor_control_label('Color', 'Base color of this component before any scene-specific hue adjustment.') }}<input type="color" name="color" value="{{ component.color }}"></div>
+      <div class="form-field">{{ actor_control_label('Layer', 'Default depth of this component within the actor. A scene may redirect the whole actor.') }}<select name="depth"><option value="background" {% if component.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if component.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
+      {{ slider_field('fixed_radius', 'Fixed radius', 'Radius of the stationary circle used to construct the spirogram geometry.', component.geometry.fixed_radius, 1, 400, '0.1') }}
+      {{ slider_field('moving_radius', 'Moving radius', 'Radius of the circle that rolls inside or outside the fixed circle.', component.geometry.moving_radius, 1, 240, '0.1') }}
+      {{ slider_field('pen_offset', 'Pen offset', 'Distance from the moving circle center to the point that draws the curve.', component.geometry.pen_offset, 0, 240, '0.1') }}
+      {{ slider_field('phase', 'Phase (rad)', 'Rotates the whole curve by shifting the starting angle. One full turn is about 6.28 radians.', component.geometry.phase, 0, 6.2832, '0.01') }}
+      <div class="form-field">{{ actor_control_label('Spirogram type', 'Choose whether the moving circle rolls inside or outside the fixed circle.') }}<select name="geometry_rotation"><option value="inside" {% if component.geometry.rotation == 'inside' %}selected{% endif %}>hypotrochoid (inside)</option><option value="outside" {% if component.geometry.rotation == 'outside' %}selected{% endif %}>epitrochoid (outside)</option></select></div>
+      {{ slider_field('samples', 'Curve samples', 'Number of points used to draw the curve. More points are smoother but cost more to render.', component.geometry.samples, 64, 4800, '1') }}
+      {{ slider_field('anchor_x', 'Component offset X', 'Horizontal position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_x, -0.5, 1.5, '0.01') }}
+      {{ slider_field('anchor_y', 'Component offset Y', 'Vertical position inside the actor identity preview. Scene position is set later in Scene Casting.', component.anchor_y, -0.5, 1.5, '0.01') }}
+      {{ slider_field('base_scale', 'Identity scale', 'Base size of this component within the actor before a scene scales the whole actor.', component.base_scale, 0.05, 2, '0.01') }}
+      {{ slider_field('opacity', 'Identity opacity', 'Base opacity of this component before a scene changes the whole actor opacity.', component.opacity, 0, 1, '0.01') }}
+      {{ slider_field('line_width', 'Line width', 'Base stroke width used to draw this component.', component.line_width, 0.5, 20, '0.1') }}
+      {{ slider_field('rotation_speed', 'Base rotation °/s', 'Continuous rotation speed that belongs to the actor identity.', component.rotation_degrees_per_second, -180, 180, '0.1') }}
+      {{ slider_field('hue_shift', 'Base hue shift °', 'Permanent hue rotation applied to this component before scene direction.', component.hue_shift_degrees, -360, 360, '1') }}
+      <div class="form-field">{{ actor_control_label('Blend', 'How this component combines with the other visual components in the actor.') }}<select name="blend_mode"><option value="screen" {% if component.blend_mode == 'screen' %}selected{% endif %}>screen</option><option value="normal" {% if component.blend_mode == 'normal' %}selected{% endif %}>normal</option></select></div>
+      {{ slider_field('cycles_per_second', 'Cycles / second', 'Speed at which the visible trace travels around the curve.', component.trace.cycles_per_second, 0.001, 2, '0.001') }}
+      {{ slider_field('trail_fraction', 'Trail length', 'Fraction of the full curve left visible behind the moving trace head.', component.trace.trail_fraction, 0.01, 1, '0.01') }}
+      {{ slider_field('ghost_count', 'Ghost count', 'Number of additional fading trace copies drawn behind the main trace.', component.trace.ghost_count, 0, 6, '1') }}
+      {{ slider_field('ghost_spacing', 'Ghost spacing', 'Time separation between successive ghost traces.', component.trace.ghost_spacing, 0, 1, '0.01') }}
+      {{ slider_field('head_radius', 'Head radius', 'Radius of the bright point at the leading edge of the trace.', component.trace.head_radius, 0, 24, '0.1') }}
+      {% for driver, value in [('scale', component.drivers.scale), ('opacity', component.drivers.opacity), ('color', component.drivers.color), ('pulse', component.drivers.pulse)] %}
+      <div class="form-field">{{ actor_control_label(driver|title ~ ' reaction', 'Fallback signal for this component response. The actor track character supplies the normal performance signal.') }}<select name="driver_{{ driver }}"><option value="">none</option>{% for signal in ['master.energy','master.accent','drums.energy','drums.accent','bass.energy','bass.accent','vocals.energy','vocals.accent','instruments.energy','instruments.accent'] %}<option value="{{ signal }}" {% if value == signal %}selected{% endif %}>{{ signal }}</option>{% endfor %}</select></div>
+      {% endfor %}
+    </div>
+  </details>
+</fieldset>
+{%- endmacro %}

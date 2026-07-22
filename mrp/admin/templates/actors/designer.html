@@ -1,0 +1,82 @@
+{% extends "_base.html" %}
+{% from "video/_actor_macros.html" import actor_control_label, component_fields %}
+{% block page_title %} · Actor Designer{% endblock %}
+{% block content %}
+<p class="video-breadcrumb"><a href="/actors">← Actor Library</a><span> / {{ entry.name if entry else 'New actor' }}</span></p>
+
+<div id="actor-validation"></div>
+
+<section class="form-card"><div class="form-body">
+  <div><p class="video-step-label">Library · Identity design</p><h2>Actor Designer</h2><p class="video-help">Prototype a reusable visual identity. Colors here are the actor's own headshot look; a production's palette restyles the actor to fit each scene.</p></div>
+  <form hx-post="/actors/save" hx-target="#actor-validation" hx-swap="innerHTML">
+    <input type="hidden" name="actor_original_id" value="{{ entry.id if entry else '' }}">
+    <div class="form-grid actor-identity-fields">
+      <div class="form-field">{{ actor_control_label('Actor ID', 'Library identifier and file name. Renaming a saved actor moves its library file; tracks keep their pinned copies.') }}<input name="actor_edit_id" value="{{ entry.id if entry else '' }}" placeholder="auto from name"><small>Lowercase slug; blank derives it from the name.</small></div>
+      <div class="form-field">{{ actor_control_label('Actor name', 'Human-readable name shown in the casting book and on every import.') }}<input name="actor_name" value="{{ entry.name if entry else '' }}" required></div>
+      <div class="form-field form-field-wide">{{ actor_control_label('Identity note', 'A short description of the visual traits that should remain recognizable in every scene.') }}<input name="actor_description" value="{{ entry.description if entry else '' }}" placeholder="What makes this actor recognizable?"></div>
+    </div>
+    <div class="actor-designer-live-layout">
+      <div class="actor-designer-preview-column">
+        <div class="actor-designer-preview">
+          <canvas id="actor-designer-canvas" width="720" height="720" aria-label="Live square preview of the actor's visual identity"></canvas>
+        </div>
+        <div class="spiro-transport">
+          <button type="button" class="btn btn-secondary btn-sm" id="spiro-play">▶ Play</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="spiro-reset">Reset</button>
+          <span class="spiro-progress" id="spiro-progress" aria-live="off"></span>
+        </div>
+        <small class="actor-designer-preview-note">Actor-local identity preview. Play traces the curve the way the renderer draws it.</small>
+      </div>
+      <div id="actor-components" class="actor-designer-controls">
+        {% if entry %}
+        {% for component in entry.actor.components %}{{ component_fields(component, loop.index) }}{% endfor %}
+        {% else %}
+        {{ component_fields(none, none) }}
+        {% endif %}
+      </div>
+    </div>
+    <div class="video-cast-actions">
+      <button class="btn btn-primary" name="action" value="actor_save" type="submit">Save to library</button>
+      <button class="btn btn-secondary" type="button" onclick="addActorComponent()">+ Add visual component</button>
+      {% if entry %}
+      <button class="btn btn-secondary" name="action" value="actor_duplicate" type="submit" formnovalidate>Duplicate</button>
+      <button class="btn btn-danger" name="action" value="actor_delete" type="submit" formnovalidate hx-confirm="Delete this actor from the library? Tracks keep their pinned copies.">Delete actor</button>
+      {% endif %}
+    </div>
+  </form>
+</div></section>
+
+<template id="actor-component-template">
+  {{ component_fields(none, none) }}
+</template>
+
+<script src="/static/spiro-preview.js"></script>
+<script>
+  const componentsEl = document.getElementById('actor-components');
+  const player = window.mrpSpiroPlayer(
+    document.getElementById('actor-designer-canvas'),
+    () => window.mrpReadComponentShapes(componentsEl),
+    {
+      onchange(progress, playing) {
+        document.getElementById('spiro-play').textContent = playing ? '❚❚ Pause' : '▶ Play';
+        document.getElementById('spiro-progress').textContent =
+          playing || progress < 1 ? `${Math.round(progress * 100)}%` : '';
+      },
+    }
+  );
+  document.getElementById('spiro-play').addEventListener('click', () => player.toggle());
+  document.getElementById('spiro-reset').addEventListener('click', () => player.reset());
+
+  function addActorComponent() {
+    const clone = document.getElementById('actor-component-template').content.cloneNode(true);
+    const count = componentsEl.querySelectorAll('fieldset').length + 1;
+    clone.querySelector('input[name="trace_id"]').value = `shape-${count}`;
+    componentsEl.appendChild(clone);
+    player.redraw();
+  }
+
+  document.addEventListener('input', (event) => {
+    if (event.target.closest('#actor-components')) player.redraw();
+  });
+</script>
+{% endblock %}
