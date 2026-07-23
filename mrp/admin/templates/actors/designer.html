@@ -97,7 +97,26 @@
   document.getElementById('spiro-play').addEventListener('click', () => player.toggle());
   document.getElementById('spiro-reset').addEventListener('click', () => player.reset());
 
-  window.mrpEnableComponentDrag(designerCanvas, componentsEl, () => player.redraw());
+  function selectComponentCard(card, scrollTo) {
+    componentsEl.querySelectorAll('.actor-component-card.is-selected').forEach((el) => {
+      if (el !== card) el.classList.remove('is-selected');
+    });
+    if (card) card.classList.add('is-selected');
+    player.redraw();
+    if (card && scrollTo) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  componentsEl.addEventListener('click', (event) => {
+    const card = event.target.closest('.actor-component-card');
+    if (card) selectComponentCard(card, false);
+  });
+
+  window.mrpEnableComponentDrag(
+    designerCanvas,
+    componentsEl,
+    () => player.redraw(),
+    (card) => selectComponentCard(card, true)
+  );
 
   function componentFlash(message) {
     const flash = document.createElement('div');
@@ -131,12 +150,27 @@
     return payload.subpaths;
   }
 
+  function setPairField(card, name, value) {
+    if (value === undefined || value === null) return;
+    const el = card.querySelector(`input[name="${name}"]`);
+    if (!el) return;
+    el.value = String(value);
+    const pair = el.closest('.slider-pair');
+    const range = pair && pair.querySelector('input[type="range"]');
+    if (range) range.value = el.value;
+  }
+
   function applySubpaths(subpaths) {
     for (const subpath of subpaths) {
       const card = addActorComponent();
       if (!card) break;
       card.querySelector('select[name="geometry_family"]').value = 'path';
       card.querySelector('textarea[name="path_data"]').value = subpath.d;
+      // Source-layout hints from the splitter reconstruct the SVG's own
+      // composition instead of the 3x3 default grid.
+      setPairField(card, 'anchor_x', subpath.anchor_x);
+      setPairField(card, 'anchor_y', subpath.anchor_y);
+      setPairField(card, 'base_scale', subpath.base_scale);
     }
     window.mrpSyncFamilyFields(componentsEl);
     player.redraw();

@@ -278,7 +278,10 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
         attributes.append(source)
 
     subpaths: list[dict[str, Any]] = []
+    samples: list[tuple[list[float], list[float]]] = []
     for data in attributes:
+        if len(subpaths) >= limit:
+            break
         try:
             parsed = parse_path(data)
         except Exception as exc:
@@ -293,11 +296,59 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
                 diagonal > 0 and abs(end - start) < 1e-6 * diagonal
             )
             subpaths.append({"d": subpath.d(), "closed": closed})
+            points = [subpath.point(index / 127) for index in range(128)]
+            samples.append(([p.real for p in points], [p.imag for p in points]))
             if len(subpaths) >= limit:
-                return subpaths
+                break
     if not subpaths:
         raise CastingEditorError("svg import found no drawable subpaths")
+    _apply_source_layout(subpaths, samples)
     return subpaths
+
+
+# Mirrors MARGIN in static/spiro-preview.js — keep the two in sync.
+_PREVIEW_MARGIN = 0.08
+
+
+def _apply_source_layout(
+    entries: list[dict[str, Any]],
+    samples: list[tuple[list[float], list[float]]],
+) -> None:
+    """Anchor/scale hints that reconstruct the source SVG's composition.
+
+    The designer draws each path component centered on its own bounding box
+    and sized by base_scale/extent (mrpDrawShapes in static/spiro-preview.js),
+    so a multi-shape import would otherwise scatter across the default anchor
+    grid. These hints map every subpath's center and extent back onto that
+    draw law so the imported components reproduce the source layout: anchors
+    place each shape's center relative to the union bounds, base_scale keeps
+    the shapes' relative sizes.
+    """
+    all_x = [value for xs, _ in samples for value in xs]
+    all_y = [value for _, ys in samples for value in ys]
+    if not all_x:
+        return
+    union_cx = (max(all_x) + min(all_x)) / 2
+    union_cy = (max(all_y) + min(all_y)) / 2
+    radius = max(max(all_x) - min(all_x), max(all_y) - min(all_y)) / 2
+    if radius <= 0:
+        return
+    factor = 0.5 - _PREVIEW_MARGIN
+    for entry, (xs, ys) in zip(entries, samples):
+        cx = (max(xs) + min(xs)) / 2
+        cy = (max(ys) + min(ys)) / 2
+        extent = max(
+            (math.hypot(x - cx, y - cy) for x, y in zip(xs, ys)),
+            default=0.0,
+        )
+        # Steps match the component form inputs: anchors 0.001, scale 0.01.
+        entry["anchor_x"] = round(
+            min(1.5, max(-0.5, 0.5 + factor * (cx - union_cx) / radius)), 3
+        )
+        entry["anchor_y"] = round(
+            min(1.5, max(-0.5, 0.5 + factor * (cy - union_cy) / radius)), 3
+        )
+        entry["base_scale"] = round(min(2.0, max(0.05, extent / radius)), 2)
 
 
 def actor_preview_shapes(actor: Any) -> list[dict[str, Any]]:

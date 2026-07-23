@@ -275,7 +275,9 @@
   // storyboard (anchor-center hit-test with max(28px, fitted-radius) reach,
   // pointer capture, -0.5..1.5 clamp, one bubbling `input` on release), but
   // this writes the actor-local identity anchors rather than scene direction.
-  window.mrpEnableComponentDrag = function (canvas, container, redraw) {
+  // `onpick` (optional) is called with the hit card — or null on an empty
+  // canvas press — before any drag starts, so pages can drive selection.
+  window.mrpEnableComponentDrag = function (canvas, container, redraw, onpick) {
     if (!canvas || !container) return;
     const MARGIN = 0.08;
     const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
@@ -320,6 +322,7 @@
     canvas.addEventListener('pointerdown', (event) => {
       const pt = canvasPoint(event);
       const card = pickCard(pt);
+      if (onpick) onpick(card || null);
       if (!card) return;
       const xEl = card.querySelector('input[name="anchor_x"]');
       const yEl = card.querySelector('input[name="anchor_y"]');
@@ -443,6 +446,7 @@
         anchor_x: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
         anchor_y: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),
         base_scale: Number(window.mrpFieldValue(card, 'base_scale', 1)),
+        selected: card.classList.contains('is-selected'),
         color: window.mrpFieldValue(card, 'color', '#ff5fd2'),
         opacity: Number(window.mrpFieldValue(card, 'opacity', 0.8)),
         line_width: Number(window.mrpFieldValue(card, 'line_width', 2)),
@@ -553,6 +557,26 @@
         );
         context.fillStyle = '#f6f4ef';
         context.fill();
+      }
+      // Selection halo: a dashed ring at the component's drag reach, so the
+      // designer shows which shape a settings card (or canvas pick) owns.
+      if (shape.selected) {
+        context.save();
+        context.globalAlpha = 0.85;
+        context.setLineDash([6, 6]);
+        context.lineWidth = 1.5;
+        context.shadowBlur = 0;
+        context.strokeStyle = '#f6f4ef';
+        context.beginPath();
+        context.arc(
+          originX,
+          originY,
+          Math.max(28, Math.min(canvas.width, canvas.height) * (0.5 - margin) * identityScale),
+          0,
+          Math.PI * 2
+        );
+        context.stroke();
+        context.restore();
       }
       context.globalAlpha = 1;
       context.shadowBlur = 0;

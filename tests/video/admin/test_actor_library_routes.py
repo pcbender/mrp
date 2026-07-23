@@ -416,6 +416,39 @@ def test_svg_subpaths_endpoint_rejects_malformed_shape() -> None:
     assert "could not convert" in json.loads(bad.body)["errors"][0]
 
 
+def test_svg_subpaths_layout_reconstructs_source_composition() -> None:
+    import pytest
+
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">'
+        '<circle cx="25" cy="50" r="20"/>'
+        '<rect x="100" y="10" width="80" height="80"/>'
+        "</svg>"
+    )
+    payload = json.loads(_split_svg(svg).body)
+    circle, rect = payload["subpaths"]
+    # Small circle left of center, big square right of center — anchors and
+    # relative scale must reproduce the source layout, not the 3x3 grid.
+    assert circle["anchor_x"] < 0.5 < rect["anchor_x"]
+    assert circle["anchor_y"] == pytest.approx(0.5, abs=0.005)
+    assert rect["anchor_y"] == pytest.approx(0.5, abs=0.005)
+    assert circle["anchor_x"] == pytest.approx(0.176, abs=0.005)
+    assert rect["anchor_x"] == pytest.approx(0.728, abs=0.005)
+    assert circle["base_scale"] == pytest.approx(0.23, abs=0.02)
+    assert rect["base_scale"] == pytest.approx(0.65, abs=0.03)
+    assert rect["base_scale"] > circle["base_scale"]
+
+
+def test_svg_subpaths_single_shape_centers() -> None:
+    import pytest
+
+    payload = json.loads(_split_svg(SQUARE_PATH).body)
+    (entry,) = payload["subpaths"]
+    assert entry["anchor_x"] == pytest.approx(0.5, abs=0.005)
+    assert entry["anchor_y"] == pytest.approx(0.5, abs=0.005)
+    assert 0.05 <= entry["base_scale"] <= 2
+
+
 def test_maricopa_mark_asset_splits_into_traceable_subpaths() -> None:
     svg = (Path(__file__).parents[3] / "site/public/assets/maricopa-mark.svg").read_text(
         encoding="utf-8"
