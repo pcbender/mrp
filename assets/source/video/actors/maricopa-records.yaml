@@ -1,0 +1,114 @@
+version: 1
+actor:
+  id: maricopa-records
+  name: maricopa-records
+  description: Maricopa records
+  kind: spirogram
+  components:
+  - id: shape-1
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 18.0,0.0 L 110.0,0.0 A 18.0,18.0 0.0 0,1 128.0,18.0 L 128.0,110.0
+        A 18.0,18.0 0.0 0,1 110.0,128.0 L 18.0,128.0 A 18.0,18.0 0.0 0,1 0.0,110.0
+        L 0.0,18.0 A 18.0,18.0 0.0 0,1 18.0,0.0
+    trace:
+      cycles_per_second: 0.3
+      trail_fraction: 0.8
+      ghost_count: 1
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#ffbd61'
+    depth: foreground
+    anchor_x: 0.5
+    anchor_y: 0.5
+    base_scale: 1.3
+    opacity: 0.8
+    line_width: 2.0
+    rotation_degrees_per_second: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-2
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 22.0,64.0 A 42.0,42.0 0.0 1,0 106.0,64.0 A 42.0,42.0 0.0 1,0 22.0,64.0
+    trace:
+      cycles_per_second: 0.3
+      trail_fraction: 0.8
+      ghost_count: 1
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#1faaef'
+    depth: foreground
+    anchor_x: 0.5
+    anchor_y: 0.5
+    base_scale: 0.66
+    opacity: 0.8
+    line_width: 2.0
+    rotation_degrees_per_second: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-3
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 35.0,74.0 L 35.0,48.0 L 48.0,48.0 L 64.0,67.0 L 80.0,48.0 L 93.0,48.0
+        L 93.0,74.0 L 82.0,74.0 L 82.0,60.0 L 66.0,78.0 L 62.0,78.0 L 46.0,60.0 L
+        46.0,74.0 L 35.0,74.0
+    trace:
+      cycles_per_second: 0.3
+      trail_fraction: 0.8
+      ghost_count: 1
+      ghost_spacing: 0.5
+      head_radius: 0.0
+    color: '#00ff00'
+    color_flow:
+      source: angle
+      swing_degrees: 90.0
+    depth: foreground
+    anchor_x: 0.5
+    anchor_y: 0.493
+    base_scale: 0.51
+    opacity: 0.8
+    line_width: 2.0
+    rotation_degrees_per_second: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-4
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 35.0,87.0 L 93.0,87.0 L 93.0,95.0 L 35.0,95.0 L 35.0,87.0
+    trace:
+      cycles_per_second: 0.3
+      trail_fraction: 0.8
+      ghost_count: 1
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#b861ff'
+    depth: foreground
+    anchor_x: 0.5
+    anchor_y: 0.631
+    base_scale: 0.46
+    opacity: 0.8
+    line_width: 2.0
+    rotation_degrees_per_second: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}

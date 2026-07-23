@@ -402,6 +402,34 @@ async def video_actor_save(request: Request, slug: str, track_slug: str):
 
 
 @router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/actors/title-generate",
+    response_class=HTMLResponse,
+)
+async def video_title_generate(request: Request, slug: str, track_slug: str):
+    from mrp.admin import actor_gen
+    from mrp.admin import jobs as job_runner
+
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.is_file():
+        return _not_found(track_slug)
+    release = load_structured_record(path).get("release") or {}
+    if _unit(release, track_slug) is None:
+        return _not_found(track_slug)
+    job_id = job_runner.launch(
+        f"actor-title/{slug}/{track_slug}",
+        actor_gen.generate_title_actor,
+        root,
+        slug,
+        track_slug,
+        only_if_missing=False,
+    )
+    return _templates.TemplateResponse(
+        request, "jobs/_result.html", {"job": db.get_job(job_id)}
+    )
+
+
+@router.post(
     "/releases/{slug}/tracks/{track_slug}/video/casting",
     response_class=HTMLResponse,
 )

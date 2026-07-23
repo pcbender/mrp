@@ -38,7 +38,11 @@
   <section class="form-card"><div class="form-body">
     <div class="video-cast-heading">
       <div><p class="video-step-label">Track · Casting roster</p><h2>Actor Library</h2><p class="video-help">These actors belong to the track, not to the selected scene. Each project actor combines a pinned visual identity with one musical character.</p></div>
-      <a class="btn btn-secondary btn-sm" href="?section={{ casting.selected_section.id }}&scope={{ casting.scope }}&actor=__new__">+ New track actor</a>
+      {% set has_title = casting.project_actors | selectattr('id', 'equalto', 'song-title') | list | length > 0 %}
+      <div class="video-cast-heading-actions">
+        <button class="btn btn-secondary btn-sm" hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/actors/title-generate" hx-target="#video-casting-result" hx-swap="innerHTML"{% if has_title %} hx-confirm="Replace the current song-title actor draft?"{% endif %} title="Outline the track title into a song-title text layer; refine it in the Actor Designer.">{{ 'Regenerate title actor' if has_title else 'Generate title actor' }}</button>
+        <a class="btn btn-secondary btn-sm" href="?section={{ casting.selected_section.id }}&scope={{ casting.scope }}&actor=__new__">+ New track actor</a>
+      </div>
     </div>
 
     <h3>Actors in this track</h3>

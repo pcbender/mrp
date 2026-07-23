@@ -17,7 +17,12 @@ from numpy.typing import NDArray
 from mrp.video.analysis import AnalysisBundle, analyze_project
 from mrp.video.casting import resolve_section_composition
 from mrp.video.choreography import ChoreographyState, choreography_at
-from mrp.video.geometry import SpiroGeometry, generate_spiro_points, hue_flow_values
+from mrp.video.geometry import (
+    SpiroGeometry,
+    generate_spiro_points,
+    generate_text_points,
+    hue_flow_values,
+)
 from mrp.video.mappings import map_layer_state, sample_audio_visual_state
 from mrp.video.presets import (
     MappingPreset,
@@ -159,18 +164,20 @@ def _spiro_geometry(config: Any) -> SpiroGeometry:
     return SpiroGeometry(**fields)
 
 
-def _build_curve(
+def _curve_from_points(
     layer: VisualLayerConfig,
-    seed: int,
+    generated: list,
     *,
-    namespace: str | None = None,
-) -> LayerCurve:
-    generated = generate_spiro_points(_spiro_geometry(layer.geometry))
+    key: str,
+    seed: int,
+    normalize: bool,
+) -> LayerCurve | None:
     points = np.asarray([(point.x, point.y) for point in generated], dtype=np.float32)
     extent = float(np.max(np.linalg.norm(points, axis=1), initial=0))
     if not math.isfinite(extent) or extent <= 0:
-        raise SpirophonicRendererError(f"visual layer '{layer.id}' has no extent")
-    points /= extent
+        return None
+    if normalize:
+        points /= extent
     points.setflags(write=False)
     hue_values = None
     if layer.color_flow is not None:
@@ -182,12 +189,65 @@ def _build_curve(
     return LayerCurve(
         config=layer,
         points=points,
-        phase_offset=_phase_offset(
-            seed,
-            f"{namespace}:{layer.id}" if namespace else layer.id,
-        ),
+        phase_offset=_phase_offset(seed, key),
         hue_values=hue_values,
     )
+
+
+def _build_curves(
+    layer: VisualLayerConfig,
+    seed: int,
+    *,
+    namespace: str | None = None,
+) -> tuple[LayerCurve, ...]:
+    """Build one or more curves for a layer.
+
+    Every family yields a single curve except ``text``, which expands into one
+    curve per letter-contour (all sharing the layer's config) so the whole
+    word draws with per-letter spiro trails while counting as a single trace
+    in the scene budget. Contours are group-normalized in generate_text_points,
+    so they are not re-normalized here.
+    """
+    prefix = f"{namespace}:{layer.id}" if namespace else layer.id
+    if layer.geometry.family == "text":
+        contours = generate_text_points(_spiro_geometry(layer.geometry))
+        curves = [
+            curve
+            for index, contour in enumerate(contours)
+            if (
+                curve := _curve_from_points(
+                    layer, contour, key=f"{prefix}:{index}", seed=seed, normalize=False
+                )
+            )
+            is not None
+        ]
+        if not curves:
+            raise SpirophonicRendererError(
+                f"text layer '{layer.id}' has no drawable contours"
+            )
+        return tuple(curves)
+    generated = generate_spiro_points(_spiro_geometry(layer.geometry))
+    curve = _curve_from_points(
+        layer, generated, key=prefix, seed=seed, normalize=True
+    )
+    if curve is None:
+        raise SpirophonicRendererError(f"visual layer '{layer.id}' has no extent")
+    return (curve,)
+
+
+def _build_curve(
+    layer: VisualLayerConfig,
+    seed: int,
+    *,
+    namespace: str | None = None,
+) -> LayerCurve:
+    """Single-curve build for non-text families (text expands to many)."""
+    curves = _build_curves(layer, seed, namespace=namespace)
+    if len(curves) != 1:
+        raise SpirophonicRendererError(
+            f"layer '{layer.id}' expands to {len(curves)} curves; use _build_curves"
+        )
+    return curves[0]
 
 
 def build_render_context(
@@ -203,7 +263,9 @@ def build_render_context(
             "aligned lyric timing extends beyond the master audio duration"
         )
     layers = tuple(
-        _build_curve(layer, project.video.seed) for layer in project.visuals.layers
+        curve
+        for layer in project.visuals.layers
+        for curve in _build_curves(layer, project.video.seed)
     )
     composition_cache: dict[str, CurveComposition] = {}
     section_compositions: dict[str, CurveComposition] = {}
@@ -225,7 +287,9 @@ def build_render_context(
                     update={"seed": seed}
                 ),
                 layers=tuple(
-                    _build_curve(
+                    curve
+                    for trace in resolved.composition.traces
+                    for curve in _build_curves(
                         trace,
                         seed,
                         namespace=(
@@ -234,7 +298,6 @@ def build_render_context(
                             else resolved.key
                         ),
                     )
-                    for trace in resolved.composition.traces
                 ),
             )
             composition_cache[resolved.key] = composition

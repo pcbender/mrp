@@ -123,19 +123,16 @@ def _casefold_item(values: Mapping[str, Any], key: str) -> tuple[str, Any] | Non
 
 
 def actor_library_path(root: Path) -> Path:
-    return root / "assets" / "source" / "video" / "actors"
+    from mrp.video.actor_library import actor_library_path as _shared
+
+    return _shared(root)
 
 
 def _actor_revision(actor: Any) -> str:
-    payload = actor.model_dump(mode="json", exclude_none=True)
-    payload.pop("library_source", None)
-    payload.pop("character", None)
-    encoded = json.dumps(
-        payload,
-        sort_keys=True,
-        separators=(",", ":"),
-    ).encode("utf-8")
-    return hashlib.sha256(encoded).hexdigest()
+    # Delegated so admin-pinned revisions match the renderer-side auto-import.
+    from mrp.video.actor_library import actor_revision
+
+    return actor_revision(actor)
 
 
 def _library_actors(root: Path) -> list[dict[str, Any]]:
@@ -204,6 +201,52 @@ def library_actor(root: Path, actor_id: str) -> dict[str, Any] | None:
     )
 
 
+_TRANSFORM_CALL = re.compile(r"(matrix|translate|scale|rotate)\s*\(([^)]*)\)")
+
+
+def _parse_svg_transform(text: str | None) -> Any | None:
+    """Parse an SVG ``transform`` attribute into a 3x3 affine matrix.
+
+    Handles matrix/translate/scale/rotate and composes multiple calls
+    left-to-right (SVG semantics: the first-listed transform is applied last
+    to a point). Returns a numpy 3x3 array, or None when there is nothing to
+    apply. Unknown transform functions are ignored rather than fatal.
+    """
+    if not text or not text.strip():
+        return None
+    import numpy as np
+
+    matrix = None
+    for name, raw in _TRANSFORM_CALL.findall(text):
+        args = [float(value) for value in re.split(r"[\s,]+", raw.strip()) if value]
+        if name == "matrix" and len(args) == 6:
+            a, b, c, d, e, f = args
+            step = np.array([[a, c, e], [b, d, f], [0, 0, 1]])
+        elif name == "translate" and args:
+            tx = args[0]
+            ty = args[1] if len(args) > 1 else 0.0
+            step = np.array([[1, 0, tx], [0, 1, ty], [0, 0, 1]])
+        elif name == "scale" and args:
+            sx = args[0]
+            sy = args[1] if len(args) > 1 else sx
+            step = np.array([[sx, 0, 0], [0, sy, 0], [0, 0, 1]])
+        elif name == "rotate" and args:
+            angle = math.radians(args[0])
+            cos, sin = math.cos(angle), math.sin(angle)
+            rot = np.array([[cos, -sin, 0], [sin, cos, 0], [0, 0, 1]])
+            if len(args) == 3:
+                cx, cy = args[1], args[2]
+                to = np.array([[1, 0, cx], [0, 1, cy], [0, 0, 1]])
+                back = np.array([[1, 0, -cx], [0, 1, -cy], [0, 0, 1]])
+                step = to @ rot @ back
+            else:
+                step = rot
+        else:
+            continue
+        matrix = step if matrix is None else matrix @ step
+    return matrix
+
+
 def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
     """Split SVG markup or a bare ``d`` attribute into single-subpath entries.
 
@@ -217,6 +260,12 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
     """
     try:
         from svgpathtools import parse_path
+        from svgpathtools.path import transform as transform_path
+        from svgpathtools.svg_to_paths import (
+            ellipse2pathd,
+            polyline2pathd,
+            rect2pathd,
+        )
     except ImportError as exc:  # pragma: no cover - environment guard
         raise CastingEditorError(
             "svg import requires svgpathtools; install requirements-video.txt"
@@ -233,18 +282,69 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
             root = ElementTree.fromstring(source)
         except ElementTree.ParseError as exc:
             raise CastingEditorError(f"svg import could not parse the markup: {exc}") from exc
-        for element in root.iter():
-            if element.tag.rsplit("}", 1)[-1] == "path":
-                data = (element.get("d") or "").strip()
-                if data:
-                    attributes.append(data)
+
+        def shape_data(tag: str, element: Any) -> str | None:
+            if tag == "path":
+                return (element.get("d") or "").strip() or None
+            if tag in {"circle", "ellipse"}:
+                return ellipse2pathd(element.attrib)
+            if tag == "rect":
+                return rect2pathd(element.attrib)
+            if tag == "polygon":
+                return polyline2pathd(element.attrib, is_polygon=True)
+            if tag == "polyline":
+                return polyline2pathd(element.attrib, is_polygon=False)
+            if tag == "line":
+                return "M {x1} {y1} L {x2} {y2}".format(
+                    x1=float(element.get("x1", "0")),
+                    y1=float(element.get("y1", "0")),
+                    x2=float(element.get("x2", "0")),
+                    y2=float(element.get("y2", "0")),
+                )
+            return None
+
+        # Walk depth-first, threading the accumulated transform so glyph
+        # wordmarks and grouped marks land where their transforms place them.
+        # Basic shapes convert through svgpathtools' own helpers; document
+        # order is preserved for stacking.
+        def walk(element: Any, parent_tf: Any) -> None:
+            tag = element.tag.rsplit("}", 1)[-1]
+            local = _parse_svg_transform(element.get("transform"))
+            tf = parent_tf if local is None else (
+                local if parent_tf is None else parent_tf @ local
+            )
+            try:
+                data = shape_data(tag, element)
+            except (KeyError, ValueError) as exc:
+                raise CastingEditorError(
+                    f"svg import could not convert a <{tag}> element: {exc}"
+                ) from exc
+            if data:
+                if tf is not None:
+                    try:
+                        data = transform_path(parse_path(data), tf).d()
+                    except Exception as exc:
+                        raise CastingEditorError(
+                            f"svg import could not apply a transform: {exc}"
+                        ) from exc
+                attributes.append(data)
+            for child in element:
+                walk(child, tf)
+
+        walk(root, None)
         if not attributes:
-            raise CastingEditorError("svg import found no <path> elements with path data")
+            raise CastingEditorError(
+                "svg import found no drawable elements (path, circle, ellipse, "
+                "rect, polygon, polyline, line)"
+            )
     else:
         attributes.append(source)
 
     subpaths: list[dict[str, Any]] = []
+    samples: list[tuple[list[float], list[float]]] = []
     for data in attributes:
+        if len(subpaths) >= limit:
+            break
         try:
             parsed = parse_path(data)
         except Exception as exc:
@@ -259,11 +359,59 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
                 diagonal > 0 and abs(end - start) < 1e-6 * diagonal
             )
             subpaths.append({"d": subpath.d(), "closed": closed})
+            points = [subpath.point(index / 127) for index in range(128)]
+            samples.append(([p.real for p in points], [p.imag for p in points]))
             if len(subpaths) >= limit:
-                return subpaths
+                break
     if not subpaths:
         raise CastingEditorError("svg import found no drawable subpaths")
+    _apply_source_layout(subpaths, samples)
     return subpaths
+
+
+# Mirrors MARGIN in static/spiro-preview.js — keep the two in sync.
+_PREVIEW_MARGIN = 0.08
+
+
+def _apply_source_layout(
+    entries: list[dict[str, Any]],
+    samples: list[tuple[list[float], list[float]]],
+) -> None:
+    """Anchor/scale hints that reconstruct the source SVG's composition.
+
+    The designer draws each path component centered on its own bounding box
+    and sized by base_scale/extent (mrpDrawShapes in static/spiro-preview.js),
+    so a multi-shape import would otherwise scatter across the default anchor
+    grid. These hints map every subpath's center and extent back onto that
+    draw law so the imported components reproduce the source layout: anchors
+    place each shape's center relative to the union bounds, base_scale keeps
+    the shapes' relative sizes.
+    """
+    all_x = [value for xs, _ in samples for value in xs]
+    all_y = [value for _, ys in samples for value in ys]
+    if not all_x:
+        return
+    union_cx = (max(all_x) + min(all_x)) / 2
+    union_cy = (max(all_y) + min(all_y)) / 2
+    radius = max(max(all_x) - min(all_x), max(all_y) - min(all_y)) / 2
+    if radius <= 0:
+        return
+    factor = 0.5 - _PREVIEW_MARGIN
+    for entry, (xs, ys) in zip(entries, samples):
+        cx = (max(xs) + min(xs)) / 2
+        cy = (max(ys) + min(ys)) / 2
+        extent = max(
+            (math.hypot(x - cx, y - cy) for x, y in zip(xs, ys)),
+            default=0.0,
+        )
+        # Steps match the component form inputs: anchors 0.001, scale 0.01.
+        entry["anchor_x"] = round(
+            min(1.5, max(-0.5, 0.5 + factor * (cx - union_cx) / radius)), 3
+        )
+        entry["anchor_y"] = round(
+            min(1.5, max(-0.5, 0.5 + factor * (cy - union_cy) / radius)), 3
+        )
+        entry["base_scale"] = round(min(2.0, max(0.05, extent / radius)), 2)
 
 
 def actor_preview_shapes(actor: Any) -> list[dict[str, Any]]:

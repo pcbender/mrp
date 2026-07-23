@@ -360,3 +360,93 @@ def test_track_alignment_preview_and_render_use_mrp_artifact_paths(
         "draft",
         "preview",
     }
+
+
+def _write_library_actor(repo: Path, actor_id: str, name: str) -> None:
+    directory = repo / "assets" / "source" / "video" / "actors"
+    directory.mkdir(parents=True, exist_ok=True)
+    document = {
+        "version": 1,
+        "actor": {
+            "id": actor_id,
+            "name": name,
+            "kind": "spirogram",
+            "components": [
+                {
+                    "id": "shape",
+                    "role": "vocals",
+                    "geometry": {
+                        "family": "spirogram",
+                        "fixed_radius": 180,
+                        "moving_radius": 60,
+                        "pen_offset": 100,
+                    },
+                    "color": "#ffcc00",
+                }
+            ],
+        },
+    }
+    (directory / f"{actor_id}.yaml").write_text(
+        yaml.safe_dump(document, sort_keys=False), encoding="utf-8"
+    )
+
+
+def _project_actors(project_path: Path) -> dict:
+    value = yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    return value["project"].get("visuals", {}).get("actors", {})
+
+
+def test_prepare_seeds_branding_actors_from_library(tmp_path: Path) -> None:
+    from mrp.video.actor_library import actor_revision, load_library_actor
+
+    repo, _ = _write_repo(tmp_path)
+    _write_library_actor(repo, "maricopa-records", "Maricopa Records")
+    _write_library_actor(repo, "artist-fixture-artist", "Fixture Artist")
+
+    prepared = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+    actors = _project_actors(prepared.workspace.project_path)
+
+    assert set(actors) == {"maricopa-records", "artist-fixture-artist"}
+    # Each is pinned to its current library revision (parity with the admin).
+    for actor_id in actors:
+        expected = actor_revision(load_library_actor(repo, actor_id))
+        assert actors[actor_id]["library_source"] == {
+            "actor_id": actor_id,
+            "revision": expected,
+        }
+        assert actors[actor_id]["character"] == "vocals"
+
+
+def test_prepare_skips_missing_branding_actors(tmp_path: Path) -> None:
+    repo, _ = _write_repo(tmp_path)
+    _write_library_actor(repo, "maricopa-records", "Maricopa Records")
+    # No artist-fixture-artist in the library.
+
+    prepared = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+    actors = _project_actors(prepared.workspace.project_path)
+    assert set(actors) == {"maricopa-records"}
+
+
+def test_prepare_without_branding_library_succeeds(tmp_path: Path) -> None:
+    repo, _ = _write_repo(tmp_path)
+    prepared = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+    assert _project_actors(prepared.workspace.project_path) == {}
+
+
+def test_reprepare_does_not_readd_deleted_branding(tmp_path: Path) -> None:
+    repo, _ = _write_repo(tmp_path)
+    _write_library_actor(repo, "maricopa-records", "Maricopa Records")
+    _write_library_actor(repo, "artist-fixture-artist", "Fixture Artist")
+
+    prepared = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+    project_path = prepared.workspace.project_path
+
+    # Simulate the user deleting the label actor from the roster.
+    value = yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    del value["project"]["visuals"]["actors"]["maricopa-records"]
+    project_path.write_text(yaml.safe_dump(value, sort_keys=False), encoding="utf-8")
+
+    # Re-prepare (not force): re-normalizes but must not re-add the deletion.
+    prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+    actors = _project_actors(project_path)
+    assert set(actors) == {"artist-fixture-artist"}

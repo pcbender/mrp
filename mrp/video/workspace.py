@@ -368,6 +368,33 @@ def _load_source_project(path: Path) -> TrackProjectDocument:
         raise MRPVideoAdapterError(*problems) from exc
 
 
+def _branding_actors(root: Path, artist_id: str) -> dict[str, Any]:
+    """Snapshot the label + artist branding actors from the library, pinned.
+
+    Returns ``{actor_id: ActorConfig}`` for whichever of ``maricopa-records``
+    and ``artist-{artist_id}`` exist in the library — missing actors are
+    silently skipped so prepare never fails on branding. Each snapshot pins its
+    library revision (mirroring the admin's actor_import), so the casting
+    editor shows it as a current library import.
+    """
+    from mrp.video.actor_library import actor_revision, load_library_actor
+    from mrp.video.project import ActorConfig
+
+    branding: dict[str, Any] = {}
+    for actor_id in ("maricopa-records", f"artist-{artist_id}"):
+        actor = load_library_actor(root, actor_id)
+        if actor is None:
+            continue
+        payload = actor.model_dump(mode="json", exclude_none=True)
+        payload["character"] = actor.components[0].role
+        payload["library_source"] = {
+            "actor_id": actor_id,
+            "revision": actor_revision(actor),
+        }
+        branding[actor_id] = ActorConfig.model_validate(payload)
+    return branding
+
+
 def _source_project(
     selection: _TrackSelection,
     groups: dict[str, list[StemSource]],
@@ -402,7 +429,13 @@ def _source_project(
         project_value["text"]["font"] = "@mrp/font"
         project = ProjectManifest.model_validate(project_value)
     else:
+        # Fresh project (or force-rebuild): seed the roster with the branding
+        # actors so a track arrives with its label + artist marks pre-cast.
+        # Only here, never on re-normalize, so a later deletion sticks.
         project = _default_project(selection, groups)
+        branding = _branding_actors(selection.repo, source.artist_id)
+        if branding:
+            project.visuals.actors.update(branding)
     document = TrackProjectDocument(source=source, project=project)
     _write_yaml(
         workspace.project_path,
