@@ -45,8 +45,12 @@ def _anthropic_client(repo: Path) -> Any:
     try:
         import anthropic
     except ImportError as exc:  # pragma: no cover - environment guard
+        import sys
+
         raise CastingEditorError(
-            "svg generation requires the anthropic package; install requirements.txt"
+            "svg generation requires the anthropic package; the admin is "
+            f"running under {sys.executable} — install requirements.txt into "
+            "that environment (or restart the admin from the repo .venv)"
         ) from exc
 
     api_key = os.environ.get("ANTHROPIC_API_KEY") or load_dotenv(
