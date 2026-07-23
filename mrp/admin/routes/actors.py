@@ -123,6 +123,26 @@ async def actors_svg_generate(request: Request):
     return JSONResponse(result)
 
 
+@router.post("/text-outline")
+async def actors_text_outline(request: Request):
+    """Outline a word in a real font as a single multi-subpath text layer."""
+    from mrp.admin import text_outline
+
+    root = get_repo_root()
+    form = await request.form()
+    text = str(form.get("text") or "").strip()
+    try:
+        tracking = float(str(form.get("tracking") or "0"))
+    except ValueError:
+        tracking = 0.0
+    try:
+        font = text_outline.resolve_font(root, str(form.get("font") or "") or None)
+        path_data = text_outline.text_to_path_data(text, font, tracking=tracking)
+    except CastingEditorError as exc:
+        return JSONResponse({"errors": list(exc.problems)}, status_code=422)
+    return JSONResponse({"path_data": path_data})
+
+
 @router.post("/svg-subpaths")
 async def actors_svg_subpaths(request: Request):
     """Split uploaded SVG text (or a bare d attribute) into subpath entries."""

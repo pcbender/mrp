@@ -101,6 +101,85 @@
     return pathPointCache.get(key);
   };
 
+  // Sample one subpath's d to `count` arc-length-uniform points, positioned
+  // (no centering). Closed subpaths snap the endpoint; open ones ping-pong.
+  function rawProbePoints(d, count) {
+    const probe = ensurePathProbe();
+    probe.setAttribute('d', d);
+    let total = 0;
+    try { total = probe.getTotalLength(); } catch (err) { total = 0; }
+    if (!(total > 0)) return null;
+    const at = (length) => {
+      const point = probe.getPointAtLength(length);
+      return [point.x, point.y];
+    };
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (let i = 0; i < 64; i += 1) {
+      const [x, y] = at((i / 63) * total);
+      minX = Math.min(minX, x); maxX = Math.max(maxX, x);
+      minY = Math.min(minY, y); maxY = Math.max(maxY, y);
+    }
+    const diagonal = Math.hypot(maxX - minX, maxY - minY);
+    if (!(diagonal > 0)) return null;
+    const [sx, sy] = at(0);
+    const [ex, ey] = at(total);
+    const closed = Math.hypot(ex - sx, ey - sy) < 1e-6 * diagonal;
+    let pts;
+    if (closed) {
+      pts = [];
+      for (let i = 0; i < count; i += 1) pts.push(at((i / (count - 1)) * total));
+      pts[count - 1] = [pts[0][0], pts[0][1]];
+    } else {
+      const forward = Math.floor(count / 2) + 1;
+      pts = [];
+      for (let i = 0; i < forward; i += 1) pts.push(at((i / (forward - 1)) * total));
+      for (let i = forward - 2; i >= 0; i -= 1) pts.push([pts[i][0], pts[i][1]]);
+    }
+    return pts;
+  }
+
+  const textContourCache = new Map();
+
+  // Split a multi-subpath ``text`` d into one point-list per contour and
+  // group-normalize them together (word centered, one shared extent), so each
+  // letter keeps its relative position/size. Mirrors generate_text_points in
+  // mrp/video/geometry.py — keep the two in sync. Relies on the outliner
+  // emitting absolute per-glyph subpaths, so splitting on M boundaries yields
+  // independent subpaths.
+  window.mrpTextContours = function (d, samples) {
+    const count = Math.max(2, Math.round(samples));
+    const key = `${count}|${d}`;
+    if (!textContourCache.has(key)) {
+      const subs = String(d || '').match(/[Mm][^Mm]*/g);
+      const raw = [];
+      if (subs) {
+        subs.forEach((sub) => {
+          const pts = rawProbePoints(sub.trim(), count);
+          if (pts) raw.push(pts);
+        });
+      }
+      let result = null;
+      if (raw.length) {
+        let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+        raw.forEach((pts) => pts.forEach(([x, y]) => {
+          minX = Math.min(minX, x); maxX = Math.max(maxX, x);
+          minY = Math.min(minY, y); maxY = Math.max(maxY, y);
+        }));
+        const cx = (minX + maxX) / 2;
+        const cy = (minY + maxY) / 2;
+        let ext = 0;
+        raw.forEach((pts) => pts.forEach(([x, y]) => {
+          ext = Math.max(ext, Math.hypot(x - cx, y - cy));
+        }));
+        if (ext > 0) {
+          result = raw.map((pts) => pts.map(([x, y]) => [(x - cx) / ext, (y - cy) / ext]));
+        }
+      }
+      textContourCache.set(key, result);
+    }
+    return textContourCache.get(key);
+  };
+
   // `extent` is the max point radius, as the renderer normalizes by before
   // placing. Family dispatch and closure formulas mirror
   // mrp/video/geometry.py generate_spiro_points — keep them in sync.
@@ -252,7 +331,8 @@
       const select = card.querySelector('select[name="geometry_family"]');
       if (!select) return;
       card.querySelectorAll('.family-field').forEach((field) => {
-        field.classList.toggle('family-hidden', field.dataset.family !== select.value);
+        const families = (field.dataset.family || '').split(/\s+/);
+        field.classList.toggle('family-hidden', !families.includes(select.value));
       });
     });
   };
@@ -483,122 +563,135 @@
     context.fillStyle = opts.background || '#101014';
     context.fillRect(0, 0, canvas.width, canvas.height);
     shapes.forEach((shape) => {
-      const { pts, extent } = window.mrpSpiroPoints(shape);
+      const family = shape.family || 'spirogram';
       const identityScale = Number(shape.base_scale) || 1;
-      const fit = Math.min(canvas.width, canvas.height) * (0.5 - margin) * identityScale / extent;
       const anchorX = shape.anchor_x === undefined ? 0.5 : Number(shape.anchor_x);
       const anchorY = shape.anchor_y === undefined ? 0.5 : Number(shape.anchor_y);
       const originX = canvas.width * clamp01(anchorX);
       const originY = canvas.height * clamp01(anchorY);
-      const cycle = Math.max(1, pts.length - 1);
       const playing = typeof opts.clockSeconds === 'number';
-      // Playing: the trace head travels at cycles_per_second (progress is the
-      // head's cycle position). Static: a growing reveal 0..baseProgress, the
-      // identity/headshot look.
-      const progress = playing
-        ? ((opts.clockSeconds * numberOr(shape.cycles_per_second, 0.08)) % 1 + 1) % 1
-        : baseProgress;
       const color = shape.color || '#ff5fd2';
       const flow = shape.color_flow && shape.color_flow.source ? shape.color_flow : null;
+      const flowSwing = flow ? (Number(shape.color_flow.swing_degrees) || 90) : 0;
       const baseAlpha = clamp01(shape.opacity === undefined ? 0.8 : Number(shape.opacity));
       context.lineWidth = Math.max(0.5, Number(shape.line_width) || 2);
       context.shadowBlur = 8;
 
-      const flowValues = flow ? window.mrpHueFlowValues(pts, flow.source) : null;
-      const flowSwing = flow ? (Number(flow.swing_degrees) || 90) : 0;
-
-      // Stroke an ordered list of curve indices at a given alpha. Solid color,
-      // or level-quantized color-flow batching (mirrors the renderer's runs).
-      const strokeIndices = (indices, alpha) => {
-        if (indices.length < 2) return;
-        context.globalAlpha = clamp01(baseAlpha * alpha);
-        if (!flow) {
-          context.beginPath();
-          indices.forEach((idx, k) => {
-            const px = originX + pts[idx][0] * fit;
-            const py = originY + pts[idx][1] * fit;
-            if (k === 0) context.moveTo(px, py); else context.lineTo(px, py);
-          });
-          context.strokeStyle = color;
-          context.shadowColor = color;
-          context.stroke();
-          return;
-        }
-        const LEVELS = 24;
-        const level = (idx) => Math.min(
-          LEVELS - 1,
-          Math.floor(Math.min(1, Math.max(0, flowValues[idx])) * LEVELS)
-        );
-        const levelPaths = new Map();
-        for (let k = 1; k < indices.length; k += 1) {
-          const key = level(indices[k]);
-          if (!levelPaths.has(key)) levelPaths.set(key, new Path2D());
-          const path = levelPaths.get(key);
-          const a = indices[k - 1];
-          const b = indices[k];
-          path.moveTo(originX + pts[a][0] * fit, originY + pts[a][1] * fit);
-          path.lineTo(originX + pts[b][0] * fit, originY + pts[b][1] * fit);
-        }
-        levelPaths.forEach((path, key) => {
-          const segmentColor = window.mrpShiftHue(
-            color, ((key + 0.5) / LEVELS - 0.5) * flowSwing
-          );
-          context.strokeStyle = segmentColor;
-          context.shadowColor = segmentColor;
-          context.stroke(path);
-        });
-      };
-
-      // Integer indices for a cyclic window ending at `endFrac` (cycle
-      // position) with length `lenFrac`, mirroring cyclic_trace_window.
-      const windowIndices = (endFrac, lenFrac) => {
-        const len = clamp01(lenFrac);
-        const endI = (((endFrac % 1) + 1) % 1) * cycle;
-        const startI = endI - len * cycle;
-        const list = [];
-        for (let i = Math.floor(startI); i <= Math.ceil(endI); i += 1) {
-          list.push(((i % cycle) + cycle) % cycle);
-        }
-        return list;
-      };
-
-      let headIndex = Math.round(progress * cycle) % cycle;
-      if (playing) {
-        // Rolling trail window at cycles_per_second, with fading ghosts
-        // trailing behind it — the renderer's exact trace composition.
-        const trail = clamp01(numberOr(shape.trail_fraction, 0.24)) || 0.001;
-        const ghostCount = Math.max(0, Math.round(numberOr(shape.ghost_count, 1)));
-        const ghostSpacing = numberOr(shape.ghost_spacing, 0.08);
-        for (let g = ghostCount; g >= 1; g -= 1) {
-          strokeIndices(
-            windowIndices(progress - g * (trail + ghostSpacing), trail),
-            0.3 / g
-          );
-        }
-        strokeIndices(windowIndices(progress, trail), 1);
+      // A text component holds one contour per letter, group-normalized so the
+      // whole word shares one extent; every other family is a single contour.
+      let contours;
+      let groupExtent;
+      if (family === 'text') {
+        const sampleCount = Math.max(2, Math.round(Math.min(numberOr(shape.samples, 900), 1200)));
+        const list = window.mrpTextContours(String(shape.path_data || '').trim(), sampleCount);
+        contours = list && list.length ? list : [[[0, 0], [0, 0]]];
+        groupExtent = 1;
       } else {
-        const last = Math.max(1, Math.round(progress * cycle));
-        const list = [];
-        for (let i = 0; i <= last; i += 1) list.push(i);
-        strokeIndices(list, 1);
-        headIndex = last;
+        const base = window.mrpSpiroPoints(shape);
+        contours = [base.pts];
+        groupExtent = base.extent;
       }
+      const fit = Math.min(canvas.width, canvas.height) * (0.5 - margin) * identityScale / groupExtent;
 
-      // Mirror the renderer's head semantics: hidden at 0, else at least 1px.
-      const headRadius = numberOr(shape.head_radius, 3);
-      if (opts.showHead && headRadius > 0 && (playing || progress < 1)) {
-        context.globalAlpha = baseAlpha;
-        context.beginPath();
-        context.arc(
-          originX + pts[headIndex][0] * fit,
-          originY + pts[headIndex][1] * fit,
-          Math.max(1, Math.round(headRadius)),
-          0,
-          Math.PI * 2
-        );
-        context.fillStyle = '#f6f4ef';
-        context.fill();
-      }
+      // Draw one contour with the shape's trace behavior. For text, each letter
+      // gets its own trail, staggered slightly so they are not lock-stepped.
+      const drawCurve = (pts, contourIndex) => {
+        const cycle = Math.max(1, pts.length - 1);
+        const flowValues = flow ? window.mrpHueFlowValues(pts, flow.source) : null;
+        const stagger = family === 'text' ? contourIndex * 0.11 : 0;
+        const progress = playing
+          ? (((opts.clockSeconds * numberOr(shape.cycles_per_second, 0.08) + stagger) % 1) + 1) % 1
+          : baseProgress;
+
+        const strokeIndices = (indices, alpha) => {
+          if (indices.length < 2) return;
+          context.globalAlpha = clamp01(baseAlpha * alpha);
+          if (!flow) {
+            context.beginPath();
+            indices.forEach((idx, k) => {
+              const px = originX + pts[idx][0] * fit;
+              const py = originY + pts[idx][1] * fit;
+              if (k === 0) context.moveTo(px, py); else context.lineTo(px, py);
+            });
+            context.strokeStyle = color;
+            context.shadowColor = color;
+            context.stroke();
+            return;
+          }
+          const LEVELS = 24;
+          const level = (idx) => Math.min(
+            LEVELS - 1,
+            Math.floor(Math.min(1, Math.max(0, flowValues[idx])) * LEVELS)
+          );
+          const levelPaths = new Map();
+          for (let k = 1; k < indices.length; k += 1) {
+            const lkey = level(indices[k]);
+            if (!levelPaths.has(lkey)) levelPaths.set(lkey, new Path2D());
+            const path = levelPaths.get(lkey);
+            const a = indices[k - 1];
+            const b = indices[k];
+            path.moveTo(originX + pts[a][0] * fit, originY + pts[a][1] * fit);
+            path.lineTo(originX + pts[b][0] * fit, originY + pts[b][1] * fit);
+          }
+          levelPaths.forEach((path, lkey) => {
+            const segmentColor = window.mrpShiftHue(
+              color, ((lkey + 0.5) / LEVELS - 0.5) * flowSwing
+            );
+            context.strokeStyle = segmentColor;
+            context.shadowColor = segmentColor;
+            context.stroke(path);
+          });
+        };
+
+        const windowIndices = (endFrac, lenFrac) => {
+          const len = clamp01(lenFrac);
+          const endI = (((endFrac % 1) + 1) % 1) * cycle;
+          const startI = endI - len * cycle;
+          const list = [];
+          for (let i = Math.floor(startI); i <= Math.ceil(endI); i += 1) {
+            list.push(((i % cycle) + cycle) % cycle);
+          }
+          return list;
+        };
+
+        let headIndex = Math.round(progress * cycle) % cycle;
+        if (playing) {
+          const trail = clamp01(numberOr(shape.trail_fraction, 0.24)) || 0.001;
+          const ghostCount = Math.max(0, Math.round(numberOr(shape.ghost_count, 1)));
+          const ghostSpacing = numberOr(shape.ghost_spacing, 0.08);
+          for (let g = ghostCount; g >= 1; g -= 1) {
+            strokeIndices(
+              windowIndices(progress - g * (trail + ghostSpacing), trail),
+              0.3 / g
+            );
+          }
+          strokeIndices(windowIndices(progress, trail), 1);
+        } else {
+          const last = Math.max(1, Math.round(progress * cycle));
+          const list = [];
+          for (let i = 0; i <= last; i += 1) list.push(i);
+          strokeIndices(list, 1);
+          headIndex = last;
+        }
+
+        const headRadius = numberOr(shape.head_radius, 3);
+        if (opts.showHead && headRadius > 0 && (playing || progress < 1)) {
+          context.globalAlpha = baseAlpha;
+          context.beginPath();
+          context.arc(
+            originX + pts[headIndex][0] * fit,
+            originY + pts[headIndex][1] * fit,
+            Math.max(1, Math.round(headRadius)),
+            0,
+            Math.PI * 2
+          );
+          context.fillStyle = '#f6f4ef';
+          context.fill();
+        }
+      };
+
+      contours.forEach((pts, contourIndex) => drawCurve(pts, contourIndex));
+
       // Selection halo: a dashed ring at the component's drag reach, so the
       // designer shows which shape a settings card (or canvas pick) owns.
       if (shape.selected) {
