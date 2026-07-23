@@ -442,6 +442,7 @@
         harm_delta: window.mrpFieldValue(card, 'harm_delta', 1.5708),
         harm_damping: window.mrpFieldValue(card, 'harm_damping', 0.02),
         harm_turns: window.mrpFieldValue(card, 'harm_turns', 12),
+        cycles_per_second: Math.max(0.001, Number(window.mrpFieldValue(card, 'cycles_per_second', 0.08)) || 0.08),
         samples: Math.min(2400, Math.max(240, Number(window.mrpFieldValue(card, 'samples', 900)))),
         anchor_x: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
         anchor_y: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),
@@ -467,11 +468,14 @@
   // Draw identity shapes onto a square-ish canvas, matching the renderer's
   // placement: normalize by extent, size by min(w,h) * (0.5 - margin) * scale.
   // `revealProgress` < 1 strokes only the leading fraction of each curve and
-  // `showHead` marks the trace head, spirophonic-prototype style.
+  // `showHead` marks the trace head, spirophonic-prototype style. When
+  // `clockSeconds` is given, each shape reveals at its own
+  // cycles_per_second (fraction of a loop = clockSeconds * cycles_per_second),
+  // mirroring the renderer's per-trace speed so the field is honored here.
   window.mrpDrawShapes = function (canvas, shapes, options) {
     const opts = options || {};
     const margin = typeof opts.margin === 'number' ? opts.margin : 0.08;
-    const progress = clamp01(typeof opts.revealProgress === 'number' ? opts.revealProgress : 1);
+    const baseProgress = clamp01(typeof opts.revealProgress === 'number' ? opts.revealProgress : 1);
     const context = canvas.getContext('2d');
     context.fillStyle = opts.background || '#101014';
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -483,6 +487,9 @@
       const anchorY = shape.anchor_y === undefined ? 0.5 : Number(shape.anchor_y);
       const originX = canvas.width * clamp01(anchorX);
       const originY = canvas.height * clamp01(anchorY);
+      const progress = typeof opts.clockSeconds === 'number'
+        ? (opts.clockSeconds * numberOr(shape.cycles_per_second, 0.08)) % 1
+        : baseProgress;
       const last = Math.max(1, Math.round(progress * (pts.length - 1)));
       const color = shape.color || '#ff5fd2';
       const flow = shape.color_flow && shape.color_flow.source ? shape.color_flow : null;
@@ -592,24 +599,40 @@
   // revealed over `durationSeconds`, looping while playing.
   window.mrpSpiroPlayer = function (canvas, getShapes, options) {
     const opts = options || {};
-    const duration = Number(opts.durationSeconds) > 0 ? Number(opts.durationSeconds) : 6;
-    let progress = 1;
+    // Real-time clock in seconds: each shape reveals at its own
+    // cycles_per_second, so Play traces at the same speed the renderer will.
+    let clock = 0;
     let playing = false;
     let frameId = 0;
     let lastTime = 0;
 
+    // Headline progress for the % readout: the cycle position of the fastest
+    // shape (the one that laps first), so the indicator still animates when
+    // shapes run at different speeds.
+    function headlineProgress(shapes) {
+      if (playing) {
+        let maxCps = 0;
+        shapes.forEach((shape) => {
+          maxCps = Math.max(maxCps, numberOr(shape.cycles_per_second, 0.08));
+        });
+        return (clock * maxCps) % 1;
+      }
+      return 1;
+    }
+
     function draw() {
-      window.mrpDrawShapes(canvas, getShapes(), {
-        revealProgress: progress,
+      const shapes = getShapes();
+      window.mrpDrawShapes(canvas, shapes, {
+        clockSeconds: playing ? clock : undefined,
+        revealProgress: playing ? undefined : 1,
         showHead: playing,
         background: opts.background,
       });
-      if (opts.onchange) opts.onchange(progress, playing);
+      if (opts.onchange) opts.onchange(headlineProgress(shapes), playing);
     }
     function tick(timestamp) {
-      const elapsed = (timestamp - lastTime) / 1000;
+      clock += (timestamp - lastTime) / 1000;
       lastTime = timestamp;
-      progress = (progress + elapsed / duration) % 1;
       draw();
       frameId = requestAnimationFrame(tick);
     }
@@ -617,7 +640,6 @@
       play() {
         if (playing) return;
         playing = true;
-        if (progress >= 1) progress = 0;
         lastTime = performance.now();
         frameId = requestAnimationFrame(tick);
         draw();
@@ -630,7 +652,7 @@
       reset() {
         playing = false;
         cancelAnimationFrame(frameId);
-        progress = 1;
+        clock = 0;
         draw();
       },
       toggle() {
@@ -638,7 +660,7 @@
       },
       redraw: draw,
       get playing() { return playing; },
-      get progress() { return progress; },
+      get progress() { return headlineProgress(getShapes()); },
     };
     draw();
     return player;
