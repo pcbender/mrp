@@ -582,7 +582,8 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'name="fixed_radius"' in body
     assert 'name="geometry_family"' in body
     assert 'data-family="lissajous"' in body
-    assert 'data-family="path"' in body
+    # The path_data field serves both the path and text families.
+    assert 'data-family="path text"' in body
     assert 'name="path_data"' in body
     assert 'data-family="harmonograph"' in body
     assert 'name="harm_damping"' in body

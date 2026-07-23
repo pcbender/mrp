@@ -40,6 +40,7 @@
       <button class="btn btn-secondary" type="button" onclick="addActorComponent()">+ Add visual component</button>
       <button class="btn btn-secondary" type="button" onclick="document.getElementById('svg-import-input').click()" title="Split an SVG file into one path component per subpath.">Import SVG…</button>
       <input type="file" id="svg-import-input" accept=".svg,image/svg+xml" hidden>
+      <button class="btn btn-secondary" type="button" onclick="toggleTextOutline()" title="Turn a word into a single text layer — one letter-contour each, all traced together.">Generate text…</button>
       <button class="btn btn-secondary" type="button" onclick="toggleSvgGenerate()" title="Have AI draw raw SVG shapes; you give them life here.">Generate with AI…</button>
       {% if entry %}
       <button class="btn btn-secondary" name="action" value="actor_duplicate" type="submit" formnovalidate>Duplicate</button>
@@ -47,6 +48,23 @@
       {% endif %}
     </div>
   </form>
+</div></section>
+
+<section class="form-card" id="text-outline-panel" hidden><div class="form-body">
+  <div><p class="video-step-label">Library · Text layer</p><h3>Generate a text layer</h3><p class="video-help">Type a word (artist name or song title). It becomes one text component — each letter-contour gets its own spiro trail, and the whole word counts as a single trace in a scene. Refine trace, color, and drivers here.</p></div>
+  <div class="form-grid">
+    <div class="form-field form-field-wide"><label>Text</label>
+      <input id="text-outline-value" placeholder="4Castle">
+    </div>
+    <div class="form-field"><label>Letter spacing</label>
+      <input type="number" id="text-outline-tracking" value="0" min="-0.2" max="0.5" step="0.01">
+      <small>Extra tracking in em units (0 = the font's own spacing).</small>
+    </div>
+  </div>
+  <div class="video-cast-actions">
+    <button class="btn btn-primary" type="button" id="text-outline-run">Generate text</button>
+    <span id="text-outline-status" class="video-help"></span>
+  </div>
 </div></section>
 
 <section class="form-card" id="svg-generate-panel" hidden><div class="form-body">
@@ -191,6 +209,53 @@
     panel.hidden = !panel.hidden;
     if (!panel.hidden) document.getElementById('svg-generate-brief').focus();
   }
+
+  function toggleTextOutline() {
+    const panel = document.getElementById('text-outline-panel');
+    panel.hidden = !panel.hidden;
+    if (!panel.hidden) document.getElementById('text-outline-value').focus();
+  }
+
+  function setFieldValue(card, name, value) {
+    const el = card.querySelector(`[name="${name}"]`);
+    if (!el) return;
+    el.value = String(value);
+  }
+
+  document.getElementById('text-outline-run').addEventListener('click', async () => {
+    const button = document.getElementById('text-outline-run');
+    const status = document.getElementById('text-outline-status');
+    const body = new URLSearchParams();
+    body.set('text', document.getElementById('text-outline-value').value);
+    body.set('tracking', document.getElementById('text-outline-tracking').value);
+    button.disabled = true;
+    status.textContent = 'Outlining…';
+    try {
+      const response = await fetch('/actors/text-outline', { method: 'POST', body });
+      const payload = await response.json();
+      if (!response.ok) {
+        componentFlash((payload.errors || ['Text outline failed.']).join('; '));
+        status.textContent = '';
+        return;
+      }
+      const card = addActorComponent();
+      if (!card) { status.textContent = ''; return; }
+      // One text component holds the whole word.
+      card.querySelector('select[name="geometry_family"]').value = 'text';
+      setFieldValue(card, 'path_data', payload.path_data);
+      // Lighter defaults suit many small letter-contours.
+      setPairField(card, 'samples', 300);
+      window.mrpSyncFamilyFields(componentsEl);
+      selectComponentCard(card, true);
+      player.redraw();
+      status.textContent = 'Added a text layer — refine it below.';
+    } catch (error) {
+      componentFlash(`Text outline failed: ${error}`);
+      status.textContent = '';
+    } finally {
+      button.disabled = false;
+    }
+  });
 
   document.getElementById('svg-generate-run').addEventListener('click', async () => {
     const button = document.getElementById('svg-generate-run');

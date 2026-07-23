@@ -312,6 +312,100 @@ def _path_points(geometry: SpiroGeometry) -> list[SpiroPoint]:
     return points
 
 
+def _contour_stations(subpath: object, count: int):
+    """Arc-length-uniform (px, py) stations for one subpath, positioned.
+
+    Same sampling as _path_points but WITHOUT centering — text keeps each
+    glyph-contour where the wordmark places it, and the group is normalized
+    together later. Returns (px, py, arc_length) or None for a degenerate
+    contour.
+    """
+    import numpy as np
+
+    xmin, xmax, ymin, ymax = subpath.bbox()
+    diagonal = math.hypot(xmax - xmin, ymax - ymin)
+    if diagonal <= 0:
+        return None
+    oversample = max(4 * count, 512)
+    raw = np.asarray([subpath.point(i / (oversample - 1)) for i in range(oversample)])
+    lengths = np.concatenate([[0.0], np.cumsum(np.abs(np.diff(raw)))])
+    total = float(lengths[-1])
+    if total <= 0:
+        return None
+    closed = bool(subpath.isclosed()) or abs(raw[-1] - raw[0]) < 1e-6 * diagonal
+    if closed:
+        stations = np.linspace(0.0, total, count)
+        px = np.interp(stations, lengths, raw.real)
+        py = np.interp(stations, lengths, raw.imag)
+        px[-1], py[-1] = px[0], py[0]
+    else:
+        forward = count // 2 + 1
+        stations = np.linspace(0.0, total, forward)
+        fx = np.interp(stations, lengths, raw.real)
+        fy = np.interp(stations, lengths, raw.imag)
+        px = np.concatenate([fx, fx[-2::-1]])
+        py = np.concatenate([fy, fy[-2::-1]])
+    return px, py, total
+
+
+def generate_text_points(geometry: SpiroGeometry) -> list[list[SpiroPoint]]:
+    """Sample a multi-subpath ``text`` path into one traced cycle per contour.
+
+    Each letter-contour becomes its own closed cycle (so the renderer draws a
+    per-letter spiro trail), and all contours are normalized as a GROUP — the
+    whole word is centered on its bounding box and divided by a single extent,
+    so letters keep their relative position and size. Mirrors mrpTextContours
+    in mrp/admin/static/spiro-preview.js — keep the two in sync.
+    """
+    import numpy as np
+    from svgpathtools import parse_path
+
+    subpaths = [
+        subpath
+        for subpath in parse_path(geometry.path_data).continuous_subpaths()
+        if len(subpath)
+    ]
+    if not subpaths:
+        raise ValueError("text geometry requires at least one subpath")
+    count = max(2, _javascript_round(geometry.samples))
+
+    sampled: list[tuple] = []
+    for subpath in subpaths:
+        stations = _contour_stations(subpath, count)
+        if stations is not None:
+            sampled.append(stations)
+    if not sampled:
+        raise ValueError("text geometry has no drawable extent")
+
+    all_x = np.concatenate([px for px, _py, _t in sampled])
+    all_y = np.concatenate([py for _px, py, _t in sampled])
+    center_x = (float(all_x.max()) + float(all_x.min())) / 2
+    center_y = (float(all_y.max()) + float(all_y.min())) / 2
+    extent = 0.0
+    for px, py, _total in sampled:
+        extent = max(extent, float(np.max(np.hypot(px - center_x, py - center_y))))
+    if extent <= 0:
+        raise ValueError("text geometry has no extent")
+
+    contours: list[list[SpiroPoint]] = []
+    for px, py, _total in sampled:
+        nx = (px - center_x) / extent
+        ny = (py - center_y) / extent
+        last = max(1, len(nx) - 1)
+        contour = [
+            SpiroPoint(
+                t=index / last,
+                x=float(nx[index]),
+                y=float(ny[index]),
+                radius=math.hypot(float(nx[index]), float(ny[index])),
+                angle=math.atan2(float(ny[index]), float(nx[index])),
+            )
+            for index in range(len(nx))
+        ]
+        contours.append(contour)
+    return contours
+
+
 _CURVE_FAMILIES = {
     "spirogram": _spirogram_curve,
     "lissajous": _lissajous_curve,

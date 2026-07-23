@@ -172,7 +172,7 @@ class AlignmentConfig(ContractModel):
 
 
 GeometryFamily = Literal[
-    "spirogram", "lissajous", "rose", "superformula", "path", "harmonograph"
+    "spirogram", "lissajous", "rose", "superformula", "path", "harmonograph", "text"
 ]
 
 _FAMILY_FIELDS: dict[str, dict[str, Any]] = {
@@ -188,7 +188,10 @@ _FAMILY_FIELDS: dict[str, dict[str, Any]] = {
         "harm_damping": 0.02,
         "harm_turns": 12,
     },
+    "text": {},  # path_data is required, not defaulted
 }
+# Families whose geometry is one or more SVG subpaths in ``path_data``.
+_PATH_FAMILIES = ("path", "text")
 _TROCHOID_FIELDS = ("fixed_radius", "moving_radius", "pen_offset")
 
 _PATH_DATA_CHARS = re.compile(r"^[MmLlHhVvCcSsQqTtAaZz0-9eE\s,.+-]+$")
@@ -206,6 +209,17 @@ def _validate_path_data(value: str) -> None:
             "path_data must hold exactly one subpath (a single M command); "
             "split multi-subpath files with the SVG import"
         )
+
+
+def _validate_text_data(value: str) -> None:
+    """Syntactic screen for a text mark: one or more SVG subpaths."""
+    data = value.strip()
+    if data[0] not in "Mm":
+        raise ValueError("path_data must start with an M or m command")
+    if not _PATH_DATA_CHARS.match(data):
+        raise ValueError("path_data contains characters outside the SVG path grammar")
+    if not any(char in "Mm" for char in data):
+        raise ValueError("text path_data must hold at least one subpath (an M command)")
 
 
 class LayerGeometryConfig(ContractModel):
@@ -236,8 +250,9 @@ class LayerGeometryConfig(ContractModel):
     sf_n1: float | None = Field(default=None, ge=0.1, le=40)
     sf_n2: float | None = Field(default=None, ge=0.1, le=40)
     sf_n3: float | None = Field(default=None, ge=0.1, le=40)
-    # path: one SVG subpath's d attribute, resampled by arc length
-    path_data: str | None = Field(default=None, max_length=20000)
+    # path / text: SVG d attribute(s), resampled by arc length. path holds one
+    # subpath; text holds a whole word (one subpath per letter-contour).
+    path_data: str | None = Field(default=None, max_length=200000)
     # harmonograph: damped lissajous, ping-ponged closed (fractional
     # frequencies detune the pendulums, which is what makes the figure precess)
     harm_freq_x: float | None = Field(default=None, ge=1, le=12)
@@ -258,10 +273,13 @@ class LayerGeometryConfig(ContractModel):
                     raise ValueError(
                         f"{self.family} geometry does not accept {name}"
                     )
-        if self.family == "path":
+        if self.family in _PATH_FAMILIES:
             if self.path_data is None or not self.path_data.strip():
-                raise ValueError("path geometry requires path_data")
-            _validate_path_data(self.path_data)
+                raise ValueError(f"{self.family} geometry requires path_data")
+            if self.family == "text":
+                _validate_text_data(self.path_data)
+            else:
+                _validate_path_data(self.path_data)
         elif self.path_data is not None:
             raise ValueError(f"{self.family} geometry does not accept path_data")
         for family, defaults in _FAMILY_FIELDS.items():
