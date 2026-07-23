@@ -401,6 +401,8 @@ release:
   automation:
     allow_auto_publish: false
     master_path: /mnt/c/Masters/You Don't Say.wav
+    links_na:
+    - deezer
   hero_image: site/public/assets/releases/you-don-t-say/hero.jpg
   language: null
   summary: null

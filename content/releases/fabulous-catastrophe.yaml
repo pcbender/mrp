@@ -36,7 +36,10 @@ release:
   automation:
     allow_auto_publish: false
     links_na:
+    - bandcamp
     - deezer
+    - pandora
+    - soundcloud
   song:
     number: 1
     title: Fabulous Catastrophe

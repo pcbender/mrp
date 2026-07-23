@@ -35,7 +35,10 @@ release:
     allow_auto_publish: false
     links_na:
     - amazon_music
+    - bandcamp
     - itunes_store
+    - pandora
+    - soundcloud
     - tidal
   song:
     number: 1

@@ -1,0 +1,65 @@
+version: 1
+actor:
+  id: mr
+  name: MR
+  description: ''
+  kind: spirogram
+  components:
+  - id: shape-1
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.6
+      samples: 900
+      path_data: M 35.0,74.0 L 35.0,48.0 L 48.0,48.0 L 64.0,67.0 L 80.0,48.0 L 93.0,48.0
+        L 93.0,74.0 L 82.0,74.0 L 82.0,60.0 L 66.0,78.0 L 62.0,78.0 L 46.0,60.0 L
+        46.0,74.0 L 35.0,74.0
+    trace:
+      cycles_per_second: 0.8
+      trail_fraction: 0.24
+      ghost_count: 1
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#ff5fd2'
+    color_flow:
+      source: angle
+      swing_degrees: 90.0
+    depth: foreground
+    anchor_x: 0.5
+    anchor_y: 0.5
+    base_scale: 1.0
+    opacity: 0.8
+    line_width: 2.0
+    rotation_degrees_per_second: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-2
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 35.0,87.0 L 93.0,87.0 L 93.0,95.0 L 35.0,95.0 L 35.0,87.0
+    trace:
+      cycles_per_second: 0.08
+      trail_fraction: 0.24
+      ghost_count: 1
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#2b35c5'
+    color_flow:
+      source: radius
+      swing_degrees: 90.0
+    depth: foreground
+    anchor_x: 0.494
+    anchor_y: 0.542
+    base_scale: 1.0
+    opacity: 0.8
+    line_width: 2.0
+    rotation_degrees_per_second: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}

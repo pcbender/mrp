@@ -37,6 +37,9 @@ release:
     description: Not Long Enough For Me by PCBender on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - bandcamp
+    - soundcloud
   song:
     number: 1
     title: Not Long Enough For Me

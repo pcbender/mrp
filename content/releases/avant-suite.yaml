@@ -34,8 +34,11 @@ release:
     allow_auto_publish: false
     links_na:
     - apple_music
+    - bandcamp
     - deezer
     - itunes_store
+    - pandora
+    - soundcloud
   song:
     number: 1
     title: Avant Suite
