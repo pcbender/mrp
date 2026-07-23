@@ -217,6 +217,11 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
     """
     try:
         from svgpathtools import parse_path
+        from svgpathtools.svg_to_paths import (
+            ellipse2pathd,
+            polyline2pathd,
+            rect2pathd,
+        )
     except ImportError as exc:  # pragma: no cover - environment guard
         raise CastingEditorError(
             "svg import requires svgpathtools; install requirements-video.txt"
@@ -233,13 +238,42 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
             root = ElementTree.fromstring(source)
         except ElementTree.ParseError as exc:
             raise CastingEditorError(f"svg import could not parse the markup: {exc}") from exc
+        # Basic shapes convert through svgpathtools' own helpers so imported
+        # marks (circles, rounded rects, polygons) trace like hand-written
+        # paths; root.iter() preserves document order for stacking.
         for element in root.iter():
-            if element.tag.rsplit("}", 1)[-1] == "path":
-                data = (element.get("d") or "").strip()
-                if data:
-                    attributes.append(data)
+            tag = element.tag.rsplit("}", 1)[-1]
+            try:
+                if tag == "path":
+                    data = (element.get("d") or "").strip()
+                elif tag in {"circle", "ellipse"}:
+                    data = ellipse2pathd(element.attrib)
+                elif tag == "rect":
+                    data = rect2pathd(element.attrib)
+                elif tag == "polygon":
+                    data = polyline2pathd(element.attrib, is_polygon=True)
+                elif tag == "polyline":
+                    data = polyline2pathd(element.attrib, is_polygon=False)
+                elif tag == "line":
+                    data = "M {x1} {y1} L {x2} {y2}".format(
+                        x1=float(element.get("x1", "0")),
+                        y1=float(element.get("y1", "0")),
+                        x2=float(element.get("x2", "0")),
+                        y2=float(element.get("y2", "0")),
+                    )
+                else:
+                    continue
+            except (KeyError, ValueError) as exc:
+                raise CastingEditorError(
+                    f"svg import could not convert a <{tag}> element: {exc}"
+                ) from exc
+            if data:
+                attributes.append(data)
         if not attributes:
-            raise CastingEditorError("svg import found no <path> elements with path data")
+            raise CastingEditorError(
+                "svg import found no drawable elements (path, circle, ellipse, "
+                "rect, polygon, polyline, line)"
+            )
     else:
         attributes.append(source)
 

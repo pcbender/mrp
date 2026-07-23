@@ -21,6 +21,22 @@ router = APIRouter(prefix="/actors")
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
 
 
+def _artist_options(root: Path) -> list[dict[str, str]]:
+    """Artist ids + display names for the AI-generation panel select."""
+    import yaml
+
+    options = []
+    for path in sorted((root / "content" / "artists").glob("*.yaml")):
+        try:
+            record = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        except yaml.YAMLError:
+            continue
+        artist = record.get("artist") or {}
+        artist_id = artist.get("id") or path.stem
+        options.append({"id": artist_id, "name": artist.get("name") or artist_id})
+    return options
+
+
 def _library_error(request: Request, problems: tuple[str, ...]) -> HTMLResponse:
     return _templates.TemplateResponse(
         request,
@@ -56,7 +72,7 @@ async def actors_new(request: Request):
     return _templates.TemplateResponse(
         request,
         "actors/designer.html",
-        {"entry": None},
+        {"entry": None, "artist_options": _artist_options(get_repo_root())},
     )
 
 
@@ -74,8 +90,37 @@ async def actors_designer(request: Request, actor_id: str):
     return _templates.TemplateResponse(
         request,
         "actors/designer.html",
-        {"entry": entry},
+        {"entry": entry, "artist_options": _artist_options(root)},
     )
+
+
+@router.post("/svg-generate")
+async def actors_svg_generate(request: Request):
+    """Generate raw SVG shapes with AI and split them into subpath entries."""
+    from mrp.admin import svg_gen
+
+    root = get_repo_root()
+    form = await request.form()
+    brief = str(form.get("brief") or "").strip()
+    artist_id = str(form.get("artist_id") or "").strip()
+    try:
+        max_subpaths = int(str(form.get("max_subpaths") or "6"))
+    except ValueError:
+        max_subpaths = 6
+    try:
+        if artist_id:
+            artist_lines = svg_gen.artist_brief(root, artist_id)
+            brief = f"{artist_lines}\n{brief}" if brief else artist_lines
+        if not brief:
+            raise CastingEditorError(
+                "svg generation requires a design brief or an artist"
+            )
+        result = svg_gen.generate_svg_shapes(
+            root, brief, max_subpaths=max_subpaths
+        )
+    except CastingEditorError as exc:
+        return JSONResponse({"errors": list(exc.problems)}, status_code=422)
+    return JSONResponse(result)
 
 
 @router.post("/svg-subpaths")

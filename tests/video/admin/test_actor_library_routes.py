@@ -373,9 +373,47 @@ def test_svg_subpaths_endpoint_caps_results_and_rejects_garbage() -> None:
     empty = _split_svg("")
     assert empty.status_code == 422
 
-    no_paths = _split_svg('<svg xmlns="http://www.w3.org/2000/svg"><rect width="4" height="4"/></svg>')
-    assert no_paths.status_code == 422
-    assert "no <path>" in json.loads(no_paths.body)["errors"][0]
+    no_shapes = _split_svg(
+        '<svg xmlns="http://www.w3.org/2000/svg"><text x="1" y="1">hi</text></svg>'
+    )
+    assert no_shapes.status_code == 422
+    assert "no drawable elements" in json.loads(no_shapes.body)["errors"][0]
+
+
+def test_svg_subpaths_endpoint_converts_basic_shapes() -> None:
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
+        '<rect x="2" y="2" width="20" height="20" rx="4"/>'
+        '<circle cx="50" cy="50" r="10"/>'
+        '<ellipse cx="70" cy="20" rx="8" ry="4"/>'
+        '<polygon points="10,80 30,80 20,95"/>'
+        '<polyline points="40,80 60,80 60,95"/>'
+        '<line x1="70" y1="80" x2="90" y2="95"/>'
+        "</svg>"
+    )
+    response = _split_svg(svg)
+    assert response.status_code == 200
+    payload = json.loads(response.body)
+    assert len(payload["subpaths"]) == 6
+    # rect, circle, ellipse, polygon are closed; polyline and line stay open.
+    assert [subpath["closed"] for subpath in payload["subpaths"]] == [
+        True,
+        True,
+        True,
+        True,
+        False,
+        False,
+    ]
+    for subpath in payload["subpaths"]:
+        assert subpath["d"].lstrip()[0] in "Mm"
+
+
+def test_svg_subpaths_endpoint_rejects_malformed_shape() -> None:
+    bad = _split_svg(
+        '<svg xmlns="http://www.w3.org/2000/svg"><circle cx="oops" r="4"/></svg>'
+    )
+    assert bad.status_code == 422
+    assert "could not convert" in json.loads(bad.body)["errors"][0]
 
 
 def test_maricopa_mark_asset_splits_into_traceable_subpaths() -> None:
@@ -385,8 +423,8 @@ def test_maricopa_mark_asset_splits_into_traceable_subpaths() -> None:
     response = _split_svg(svg)
     assert response.status_code == 200
     payload = json.loads(response.body)
-    # The letterform "M" and the underline bar, both closed.
-    assert len(payload["subpaths"]) == 2
+    # Rounded frame, record circle, letterform "M", underline bar — all closed.
+    assert len(payload["subpaths"]) == 4
     assert all(subpath["closed"] for subpath in payload["subpaths"])
 
 

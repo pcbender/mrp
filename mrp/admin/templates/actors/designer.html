@@ -40,12 +40,39 @@
       <button class="btn btn-secondary" type="button" onclick="addActorComponent()">+ Add visual component</button>
       <button class="btn btn-secondary" type="button" onclick="document.getElementById('svg-import-input').click()" title="Split an SVG file into one path component per subpath.">Import SVG…</button>
       <input type="file" id="svg-import-input" accept=".svg,image/svg+xml" hidden>
+      <button class="btn btn-secondary" type="button" onclick="toggleSvgGenerate()" title="Have AI draw raw SVG shapes; you give them life here.">Generate with AI…</button>
       {% if entry %}
       <button class="btn btn-secondary" name="action" value="actor_duplicate" type="submit" formnovalidate>Duplicate</button>
       <button class="btn btn-danger" name="action" value="actor_delete" type="submit" formnovalidate hx-confirm="Delete this actor from the library? Tracks keep their pinned copies.">Delete actor</button>
       {% endif %}
     </div>
   </form>
+</div></section>
+
+<section class="form-card" id="svg-generate-panel" hidden><div class="form-body">
+  <div><p class="video-step-label">Library · AI shape generation</p><h3>Generate raw shapes</h3><p class="video-help">The AI only draws the shapes — pick an artist and/or describe the mark, then refine trace, color, and drivers here to make it alive.</p></div>
+  <div class="form-grid">
+    <div class="form-field"><label>Artist (optional)</label>
+      <select id="svg-generate-artist">
+        <option value="">— none —</option>
+        {% for option in artist_options or [] %}
+        <option value="{{ option.id }}">{{ option.name }}</option>
+        {% endfor %}
+      </select>
+      <small>Selecting an artist builds an identity-driven wordmark brief.</small>
+    </div>
+    <div class="form-field"><label>Shape budget</label>
+      <input type="number" id="svg-generate-budget" value="6" min="1" max="9" step="1">
+      <small>Max subpaths (scene traces are capped at 12 across all cast actors).</small>
+    </div>
+    <div class="form-field form-field-wide"><label>Design brief</label>
+      <textarea id="svg-generate-brief" rows="3" placeholder="e.g. A desert sun rising over three mesas, drawn as bold single-stroke line art"></textarea>
+    </div>
+  </div>
+  <div class="video-cast-actions">
+    <button class="btn btn-primary" type="button" id="svg-generate-run">Generate shapes</button>
+    <span id="svg-generate-status" class="video-help"></span>
+  </div>
 </div></section>
 
 <template id="actor-component-template">
@@ -92,24 +119,20 @@
     return card;
   }
 
-  document.getElementById('svg-import-input').addEventListener('change', async (event) => {
-    const file = event.target.files[0];
-    event.target.value = '';
-    if (!file) return;
+  async function fetchSubpaths(url, body, failMessage) {
     const validation = document.getElementById('actor-validation');
     validation.innerHTML = '';
-    const body = new URLSearchParams();
-    body.set('svg', await file.text());
-    const response = await fetch('/actors/svg-subpaths', { method: 'POST', body });
+    const response = await fetch(url, { method: 'POST', body });
     const payload = await response.json();
     if (!response.ok) {
-      const flash = document.createElement('div');
-      flash.className = 'flash flash-error';
-      flash.textContent = (payload.errors || ['SVG import failed.']).join('; ');
-      validation.appendChild(flash);
-      return;
+      componentFlash((payload.errors || [failMessage]).join('; '));
+      return null;
     }
-    for (const subpath of payload.subpaths) {
+    return payload.subpaths;
+  }
+
+  function applySubpaths(subpaths) {
+    for (const subpath of subpaths) {
       const card = addActorComponent();
       if (!card) break;
       card.querySelector('select[name="geometry_family"]').value = 'path';
@@ -117,6 +140,47 @@
     }
     window.mrpSyncFamilyFields(componentsEl);
     player.redraw();
+  }
+
+  document.getElementById('svg-import-input').addEventListener('change', async (event) => {
+    const file = event.target.files[0];
+    event.target.value = '';
+    if (!file) return;
+    const body = new URLSearchParams();
+    body.set('svg', await file.text());
+    const subpaths = await fetchSubpaths('/actors/svg-subpaths', body, 'SVG import failed.');
+    if (subpaths) applySubpaths(subpaths);
+  });
+
+  function toggleSvgGenerate() {
+    const panel = document.getElementById('svg-generate-panel');
+    panel.hidden = !panel.hidden;
+    if (!panel.hidden) document.getElementById('svg-generate-brief').focus();
+  }
+
+  document.getElementById('svg-generate-run').addEventListener('click', async () => {
+    const button = document.getElementById('svg-generate-run');
+    const status = document.getElementById('svg-generate-status');
+    const body = new URLSearchParams();
+    body.set('brief', document.getElementById('svg-generate-brief').value);
+    body.set('artist_id', document.getElementById('svg-generate-artist').value);
+    body.set('max_subpaths', document.getElementById('svg-generate-budget').value);
+    button.disabled = true;
+    status.textContent = 'Generating shapes… this can take a minute.';
+    try {
+      const subpaths = await fetchSubpaths('/actors/svg-generate', body, 'SVG generation failed.');
+      if (subpaths) {
+        applySubpaths(subpaths);
+        status.textContent = `Added ${subpaths.length} shape${subpaths.length === 1 ? '' : 's'}.`;
+      } else {
+        status.textContent = '';
+      }
+    } catch (error) {
+      componentFlash(`SVG generation failed: ${error}`);
+      status.textContent = '';
+    } finally {
+      button.disabled = false;
+    }
   });
 
   document.addEventListener('input', (event) => {
