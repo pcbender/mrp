@@ -217,6 +217,11 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
     """
     try:
         from svgpathtools import parse_path
+        from svgpathtools.svg_to_paths import (
+            ellipse2pathd,
+            polyline2pathd,
+            rect2pathd,
+        )
     except ImportError as exc:  # pragma: no cover - environment guard
         raise CastingEditorError(
             "svg import requires svgpathtools; install requirements-video.txt"
@@ -233,18 +238,50 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
             root = ElementTree.fromstring(source)
         except ElementTree.ParseError as exc:
             raise CastingEditorError(f"svg import could not parse the markup: {exc}") from exc
+        # Basic shapes convert through svgpathtools' own helpers so imported
+        # marks (circles, rounded rects, polygons) trace like hand-written
+        # paths; root.iter() preserves document order for stacking.
         for element in root.iter():
-            if element.tag.rsplit("}", 1)[-1] == "path":
-                data = (element.get("d") or "").strip()
-                if data:
-                    attributes.append(data)
+            tag = element.tag.rsplit("}", 1)[-1]
+            try:
+                if tag == "path":
+                    data = (element.get("d") or "").strip()
+                elif tag in {"circle", "ellipse"}:
+                    data = ellipse2pathd(element.attrib)
+                elif tag == "rect":
+                    data = rect2pathd(element.attrib)
+                elif tag == "polygon":
+                    data = polyline2pathd(element.attrib, is_polygon=True)
+                elif tag == "polyline":
+                    data = polyline2pathd(element.attrib, is_polygon=False)
+                elif tag == "line":
+                    data = "M {x1} {y1} L {x2} {y2}".format(
+                        x1=float(element.get("x1", "0")),
+                        y1=float(element.get("y1", "0")),
+                        x2=float(element.get("x2", "0")),
+                        y2=float(element.get("y2", "0")),
+                    )
+                else:
+                    continue
+            except (KeyError, ValueError) as exc:
+                raise CastingEditorError(
+                    f"svg import could not convert a <{tag}> element: {exc}"
+                ) from exc
+            if data:
+                attributes.append(data)
         if not attributes:
-            raise CastingEditorError("svg import found no <path> elements with path data")
+            raise CastingEditorError(
+                "svg import found no drawable elements (path, circle, ellipse, "
+                "rect, polygon, polyline, line)"
+            )
     else:
         attributes.append(source)
 
     subpaths: list[dict[str, Any]] = []
+    samples: list[tuple[list[float], list[float]]] = []
     for data in attributes:
+        if len(subpaths) >= limit:
+            break
         try:
             parsed = parse_path(data)
         except Exception as exc:
@@ -259,11 +296,59 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
                 diagonal > 0 and abs(end - start) < 1e-6 * diagonal
             )
             subpaths.append({"d": subpath.d(), "closed": closed})
+            points = [subpath.point(index / 127) for index in range(128)]
+            samples.append(([p.real for p in points], [p.imag for p in points]))
             if len(subpaths) >= limit:
-                return subpaths
+                break
     if not subpaths:
         raise CastingEditorError("svg import found no drawable subpaths")
+    _apply_source_layout(subpaths, samples)
     return subpaths
+
+
+# Mirrors MARGIN in static/spiro-preview.js — keep the two in sync.
+_PREVIEW_MARGIN = 0.08
+
+
+def _apply_source_layout(
+    entries: list[dict[str, Any]],
+    samples: list[tuple[list[float], list[float]]],
+) -> None:
+    """Anchor/scale hints that reconstruct the source SVG's composition.
+
+    The designer draws each path component centered on its own bounding box
+    and sized by base_scale/extent (mrpDrawShapes in static/spiro-preview.js),
+    so a multi-shape import would otherwise scatter across the default anchor
+    grid. These hints map every subpath's center and extent back onto that
+    draw law so the imported components reproduce the source layout: anchors
+    place each shape's center relative to the union bounds, base_scale keeps
+    the shapes' relative sizes.
+    """
+    all_x = [value for xs, _ in samples for value in xs]
+    all_y = [value for _, ys in samples for value in ys]
+    if not all_x:
+        return
+    union_cx = (max(all_x) + min(all_x)) / 2
+    union_cy = (max(all_y) + min(all_y)) / 2
+    radius = max(max(all_x) - min(all_x), max(all_y) - min(all_y)) / 2
+    if radius <= 0:
+        return
+    factor = 0.5 - _PREVIEW_MARGIN
+    for entry, (xs, ys) in zip(entries, samples):
+        cx = (max(xs) + min(xs)) / 2
+        cy = (max(ys) + min(ys)) / 2
+        extent = max(
+            (math.hypot(x - cx, y - cy) for x, y in zip(xs, ys)),
+            default=0.0,
+        )
+        # Steps match the component form inputs: anchors 0.001, scale 0.01.
+        entry["anchor_x"] = round(
+            min(1.5, max(-0.5, 0.5 + factor * (cx - union_cx) / radius)), 3
+        )
+        entry["anchor_y"] = round(
+            min(1.5, max(-0.5, 0.5 + factor * (cy - union_cy) / radius)), 3
+        )
+        entry["base_scale"] = round(min(2.0, max(0.05, extent / radius)), 2)
 
 
 def actor_preview_shapes(actor: Any) -> list[dict[str, Any]]:
