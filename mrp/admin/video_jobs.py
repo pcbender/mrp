@@ -164,6 +164,36 @@ def _read_events(job: dict[str, Any], offset: int) -> tuple[list[dict[str, Any]]
                 events.append(event)
 
 
+def _after_prepare_success(job_id: str) -> None:
+    """Auto-generate the song-title actor once a prepare job completes.
+
+    Runs as a background thread job so the completed prepare is unaffected;
+    any failure here is swallowed (it surfaces in the title job's own row, and
+    a missing title actor never blocks rendering).
+    """
+    try:
+        job = db.get_video_job(job_id)
+        if not job or str(job.get("kind")) != "prepare":
+            return
+        from pathlib import Path
+
+        from mrp.admin import actor_gen
+        from mrp.admin import jobs as job_runner
+
+        release_slug = str(job["release_slug"])
+        track_slug = str(job["track_slug"])
+        job_runner.launch(
+            f"actor-title/{release_slug}/{track_slug}",
+            actor_gen.generate_title_actor,
+            Path(str(job["repo_root"])),
+            release_slug,
+            track_slug,
+            only_if_missing=True,
+        )
+    except Exception:  # noqa: BLE001 - hook must never fail the prepare job
+        return
+
+
 def _apply_event(job_id: str, event: dict[str, Any]) -> None:
     kind = str(event.get("event") or "")
     timestamp = str(event.get("timestamp") or _now())
@@ -194,6 +224,7 @@ def _apply_event(job_id: str, event: dict[str, Any]) -> None:
             output=json.dumps(event.get("result"), default=str),
             artifact_path=event.get("artifact_path"),
         )
+        _after_prepare_success(job_id)
         return
     if kind in {"error", "cancelled"}:
         status = "cancelled" if kind == "cancelled" else "error"
