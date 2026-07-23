@@ -449,6 +449,41 @@ def test_svg_subpaths_single_shape_centers() -> None:
     assert 0.05 <= entry["base_scale"] <= 2
 
 
+def test_svg_subpaths_applies_element_transforms() -> None:
+    import pytest
+
+    # Two identical glyphs placed by per-path transforms (a wordmark's
+    # layout lives entirely in the transforms). Without applying them both
+    # collapse onto the origin; with them the anchors spread left-to-right.
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20">'
+        '<path transform="translate(10,10)" d="M -3 -3 L 3 -3 L 3 3 L -3 3 Z"/>'
+        '<path transform="translate(90,10)" d="M -3 -3 L 3 -3 L 3 3 L -3 3 Z"/>'
+        "</svg>"
+    )
+    left, right = json.loads(_split_svg(svg).body)["subpaths"]
+    assert left["anchor_x"] < 0.5 < right["anchor_x"]
+    assert left["anchor_y"] == pytest.approx(0.5, abs=0.02)
+    # The transformed d must carry the translation, not the local coords.
+    assert "10" in left["d"] or "7" in left["d"]
+
+
+def test_svg_subpaths_applies_group_transforms() -> None:
+    import pytest
+
+    # A group transform composes with the child's own transform.
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
+        '<g transform="translate(50,0)">'
+        '<circle cx="0" cy="50" r="5"/>'
+        "</g>"
+        "</svg>"
+    )
+    (entry,) = json.loads(_split_svg(svg).body)["subpaths"]
+    # Circle drawn at local x=0 but shifted to x=50 (center of a 0..100 box).
+    assert entry["anchor_x"] == pytest.approx(0.5, abs=0.02)
+
+
 def test_maricopa_mark_asset_splits_into_traceable_subpaths() -> None:
     svg = (Path(__file__).parents[3] / "site/public/assets/maricopa-mark.svg").read_text(
         encoding="utf-8"
