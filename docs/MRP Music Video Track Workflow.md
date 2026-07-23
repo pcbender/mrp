@@ -174,6 +174,16 @@ name, a stable track-wide “reacts to” character such as bass, and a live
 spirogram preview, with topology and component behavior under advanced
 controls. An actor may contain multiple visual components.
 
+Two library actor ids are reserved for branding and auto-imported into a
+track's roster **when its project is first created** (the initial `prepare`,
+or a `--force` rebuild): `maricopa-records` (the label mark) and
+`artist-{artist_id}` (the release artist's name mark, e.g.
+`artist-michael-anthony-rose`). Each is snapshotted and revision-pinned exactly
+like a manual import. Missing branding actors are skipped, so `prepare` never
+fails when they do not exist yet. Auto-import runs only on fresh creation — a
+later deletion from the roster sticks, and re-preparing an existing project
+does not re-add it.
+
 Scene Casting assigns those actors to all sections of a type or to one exact
 scene. Per-appearance direction controls position, scale, opacity, visibility,
 foreground/background layer, hue, and additional rotation, but cannot change

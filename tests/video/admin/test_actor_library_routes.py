@@ -550,3 +550,38 @@ def test_rose_actor_saves_family_geometry(tmp_path: Path) -> None:
     assert geometry["rose_n"] == 7
     assert geometry["rose_d"] == 3
     assert "fixed_radius" not in geometry
+
+
+def test_admin_and_renderer_revision_hashes_match(tmp_path: Path) -> None:
+    """The admin's pin revision must equal the renderer-side auto-import's."""
+    from mrp.admin.video_casting import _actor_revision
+    from mrp.video.actor_library import actor_revision, load_library_actor
+
+    directory = tmp_path / "assets" / "source" / "video" / "actors"
+    directory.mkdir(parents=True)
+    document = {
+        "version": 1,
+        "actor": {
+            "id": "parity-check",
+            "name": "Parity",
+            "kind": "spirogram",
+            "components": [
+                {
+                    "id": "shape",
+                    "role": "vocals",
+                    "geometry": {
+                        "family": "spirogram",
+                        "fixed_radius": 180,
+                        "moving_radius": 60,
+                        "pen_offset": 100,
+                    },
+                    "color": "#ffcc00",
+                }
+            ],
+        },
+    }
+    (directory / "parity-check.yaml").write_text(
+        yaml.safe_dump(document), encoding="utf-8"
+    )
+    actor = load_library_actor(tmp_path, "parity-check")
+    assert actor_revision(actor) == _actor_revision(actor)

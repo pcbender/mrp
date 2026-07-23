@@ -123,19 +123,16 @@ def _casefold_item(values: Mapping[str, Any], key: str) -> tuple[str, Any] | Non
 
 
 def actor_library_path(root: Path) -> Path:
-    return root / "assets" / "source" / "video" / "actors"
+    from mrp.video.actor_library import actor_library_path as _shared
+
+    return _shared(root)
 
 
 def _actor_revision(actor: Any) -> str:
-    payload = actor.model_dump(mode="json", exclude_none=True)
-    payload.pop("library_source", None)
-    payload.pop("character", None)
-    encoded = json.dumps(
-        payload,
-        sort_keys=True,
-        separators=(",", ":"),
-    ).encode("utf-8")
-    return hashlib.sha256(encoded).hexdigest()
+    # Delegated so admin-pinned revisions match the renderer-side auto-import.
+    from mrp.video.actor_library import actor_revision
+
+    return actor_revision(actor)
 
 
 def _library_actors(root: Path) -> list[dict[str, Any]]:
