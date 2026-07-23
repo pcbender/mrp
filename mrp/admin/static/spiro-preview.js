@@ -443,6 +443,9 @@
         harm_damping: window.mrpFieldValue(card, 'harm_damping', 0.02),
         harm_turns: window.mrpFieldValue(card, 'harm_turns', 12),
         cycles_per_second: Math.max(0.001, Number(window.mrpFieldValue(card, 'cycles_per_second', 0.08)) || 0.08),
+        trail_fraction: Number(window.mrpFieldValue(card, 'trail_fraction', 0.24)),
+        ghost_count: Number(window.mrpFieldValue(card, 'ghost_count', 1)),
+        ghost_spacing: Number(window.mrpFieldValue(card, 'ghost_spacing', 0.08)),
         samples: Math.min(2400, Math.max(240, Number(window.mrpFieldValue(card, 'samples', 900)))),
         anchor_x: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
         anchor_y: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),
@@ -487,77 +490,108 @@
       const anchorY = shape.anchor_y === undefined ? 0.5 : Number(shape.anchor_y);
       const originX = canvas.width * clamp01(anchorX);
       const originY = canvas.height * clamp01(anchorY);
-      const progress = typeof opts.clockSeconds === 'number'
-        ? (opts.clockSeconds * numberOr(shape.cycles_per_second, 0.08)) % 1
+      const cycle = Math.max(1, pts.length - 1);
+      const playing = typeof opts.clockSeconds === 'number';
+      // Playing: the trace head travels at cycles_per_second (progress is the
+      // head's cycle position). Static: a growing reveal 0..baseProgress, the
+      // identity/headshot look.
+      const progress = playing
+        ? ((opts.clockSeconds * numberOr(shape.cycles_per_second, 0.08)) % 1 + 1) % 1
         : baseProgress;
-      const last = Math.max(1, Math.round(progress * (pts.length - 1)));
       const color = shape.color || '#ff5fd2';
       const flow = shape.color_flow && shape.color_flow.source ? shape.color_flow : null;
-      context.globalAlpha = clamp01(shape.opacity === undefined ? 0.8 : Number(shape.opacity));
+      const baseAlpha = clamp01(shape.opacity === undefined ? 0.8 : Number(shape.opacity));
       context.lineWidth = Math.max(0.5, Number(shape.line_width) || 2);
       context.shadowBlur = 8;
-      const traceTo = (start, end) => {
-        context.beginPath();
-        for (let i = start; i <= end; i += 1) {
-          const px = originX + pts[i][0] * fit;
-          const py = originY + pts[i][1] * fit;
-          if (i === start) context.moveTo(px, py); else context.lineTo(px, py);
+
+      const flowValues = flow ? window.mrpHueFlowValues(pts, flow.source) : null;
+      const flowSwing = flow ? (Number(flow.swing_degrees) || 90) : 0;
+
+      // Stroke an ordered list of curve indices at a given alpha. Solid color,
+      // or level-quantized color-flow batching (mirrors the renderer's runs).
+      const strokeIndices = (indices, alpha) => {
+        if (indices.length < 2) return;
+        context.globalAlpha = clamp01(baseAlpha * alpha);
+        if (!flow) {
+          context.beginPath();
+          indices.forEach((idx, k) => {
+            const px = originX + pts[idx][0] * fit;
+            const py = originY + pts[idx][1] * fit;
+            if (k === 0) context.moveTo(px, py); else context.lineTo(px, py);
+          });
+          context.strokeStyle = color;
+          context.shadowColor = color;
+          context.stroke();
+          return;
         }
-      };
-      if (!flow) {
-        traceTo(0, last);
-        context.strokeStyle = color;
-        context.shadowColor = color;
-        context.stroke();
-      } else {
-        // Level-quantized runs matching the renderer's color-flow strokes:
-        // flow values oscillate once per winding, so each point's value is
-        // quantized onto fixed hue levels and constant-level runs are batched
-        // into one path per level — per-petal detail, few stroke calls.
         const LEVELS = 24;
-        const values = window.mrpHueFlowValues(pts, flow.source);
-        const swing = Number(flow.swing_degrees) || 90;
-        const level = (i) => Math.min(
+        const level = (idx) => Math.min(
           LEVELS - 1,
-          Math.floor(Math.min(1, Math.max(0, values[i])) * LEVELS)
+          Math.floor(Math.min(1, Math.max(0, flowValues[idx])) * LEVELS)
         );
         const levelPaths = new Map();
-        let runStart = 0;
-        const flushRun = (endIndex) => {
-          const key = level(runStart);
+        for (let k = 1; k < indices.length; k += 1) {
+          const key = level(indices[k]);
           if (!levelPaths.has(key)) levelPaths.set(key, new Path2D());
           const path = levelPaths.get(key);
-          const from = Math.max(0, runStart - 1);
-          const to = Math.min(last, endIndex);
-          path.moveTo(originX + pts[from][0] * fit, originY + pts[from][1] * fit);
-          for (let i = from + 1; i <= to; i += 1) {
-            path.lineTo(originX + pts[i][0] * fit, originY + pts[i][1] * fit);
-          }
-        };
-        for (let i = 1; i <= last; i += 1) {
-          if (level(i) !== level(runStart)) {
-            flushRun(i);
-            runStart = i;
-          }
+          const a = indices[k - 1];
+          const b = indices[k];
+          path.moveTo(originX + pts[a][0] * fit, originY + pts[a][1] * fit);
+          path.lineTo(originX + pts[b][0] * fit, originY + pts[b][1] * fit);
         }
-        flushRun(last);
         levelPaths.forEach((path, key) => {
           const segmentColor = window.mrpShiftHue(
-            color,
-            ((key + 0.5) / LEVELS - 0.5) * swing
+            color, ((key + 0.5) / LEVELS - 0.5) * flowSwing
           );
           context.strokeStyle = segmentColor;
           context.shadowColor = segmentColor;
           context.stroke(path);
         });
+      };
+
+      // Integer indices for a cyclic window ending at `endFrac` (cycle
+      // position) with length `lenFrac`, mirroring cyclic_trace_window.
+      const windowIndices = (endFrac, lenFrac) => {
+        const len = clamp01(lenFrac);
+        const endI = (((endFrac % 1) + 1) % 1) * cycle;
+        const startI = endI - len * cycle;
+        const list = [];
+        for (let i = Math.floor(startI); i <= Math.ceil(endI); i += 1) {
+          list.push(((i % cycle) + cycle) % cycle);
+        }
+        return list;
+      };
+
+      let headIndex = Math.round(progress * cycle) % cycle;
+      if (playing) {
+        // Rolling trail window at cycles_per_second, with fading ghosts
+        // trailing behind it — the renderer's exact trace composition.
+        const trail = clamp01(numberOr(shape.trail_fraction, 0.24)) || 0.001;
+        const ghostCount = Math.max(0, Math.round(numberOr(shape.ghost_count, 1)));
+        const ghostSpacing = numberOr(shape.ghost_spacing, 0.08);
+        for (let g = ghostCount; g >= 1; g -= 1) {
+          strokeIndices(
+            windowIndices(progress - g * (trail + ghostSpacing), trail),
+            0.3 / g
+          );
+        }
+        strokeIndices(windowIndices(progress, trail), 1);
+      } else {
+        const last = Math.max(1, Math.round(progress * cycle));
+        const list = [];
+        for (let i = 0; i <= last; i += 1) list.push(i);
+        strokeIndices(list, 1);
+        headIndex = last;
       }
+
       // Mirror the renderer's head semantics: hidden at 0, else at least 1px.
       const headRadius = numberOr(shape.head_radius, 3);
-      if (opts.showHead && progress < 1 && headRadius > 0) {
+      if (opts.showHead && headRadius > 0 && (playing || progress < 1)) {
+        context.globalAlpha = baseAlpha;
         context.beginPath();
         context.arc(
-          originX + pts[last][0] * fit,
-          originY + pts[last][1] * fit,
+          originX + pts[headIndex][0] * fit,
+          originY + pts[headIndex][1] * fit,
           Math.max(1, Math.round(headRadius)),
           0,
           Math.PI * 2
