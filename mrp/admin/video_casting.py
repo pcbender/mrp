@@ -204,6 +204,52 @@ def library_actor(root: Path, actor_id: str) -> dict[str, Any] | None:
     )
 
 
+_TRANSFORM_CALL = re.compile(r"(matrix|translate|scale|rotate)\s*\(([^)]*)\)")
+
+
+def _parse_svg_transform(text: str | None) -> Any | None:
+    """Parse an SVG ``transform`` attribute into a 3x3 affine matrix.
+
+    Handles matrix/translate/scale/rotate and composes multiple calls
+    left-to-right (SVG semantics: the first-listed transform is applied last
+    to a point). Returns a numpy 3x3 array, or None when there is nothing to
+    apply. Unknown transform functions are ignored rather than fatal.
+    """
+    if not text or not text.strip():
+        return None
+    import numpy as np
+
+    matrix = None
+    for name, raw in _TRANSFORM_CALL.findall(text):
+        args = [float(value) for value in re.split(r"[\s,]+", raw.strip()) if value]
+        if name == "matrix" and len(args) == 6:
+            a, b, c, d, e, f = args
+            step = np.array([[a, c, e], [b, d, f], [0, 0, 1]])
+        elif name == "translate" and args:
+            tx = args[0]
+            ty = args[1] if len(args) > 1 else 0.0
+            step = np.array([[1, 0, tx], [0, 1, ty], [0, 0, 1]])
+        elif name == "scale" and args:
+            sx = args[0]
+            sy = args[1] if len(args) > 1 else sx
+            step = np.array([[sx, 0, 0], [0, sy, 0], [0, 0, 1]])
+        elif name == "rotate" and args:
+            angle = math.radians(args[0])
+            cos, sin = math.cos(angle), math.sin(angle)
+            rot = np.array([[cos, -sin, 0], [sin, cos, 0], [0, 0, 1]])
+            if len(args) == 3:
+                cx, cy = args[1], args[2]
+                to = np.array([[1, 0, cx], [0, 1, cy], [0, 0, 1]])
+                back = np.array([[1, 0, -cx], [0, 1, -cy], [0, 0, 1]])
+                step = to @ rot @ back
+            else:
+                step = rot
+        else:
+            continue
+        matrix = step if matrix is None else matrix @ step
+    return matrix
+
+
 def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
     """Split SVG markup or a bare ``d`` attribute into single-subpath entries.
 
@@ -217,6 +263,7 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
     """
     try:
         from svgpathtools import parse_path
+        from svgpathtools.path import transform as transform_path
         from svgpathtools.svg_to_paths import (
             ellipse2pathd,
             polyline2pathd,
@@ -238,37 +285,56 @@ def split_svg_subpaths(text: str, *, limit: int = 9) -> list[dict[str, Any]]:
             root = ElementTree.fromstring(source)
         except ElementTree.ParseError as exc:
             raise CastingEditorError(f"svg import could not parse the markup: {exc}") from exc
-        # Basic shapes convert through svgpathtools' own helpers so imported
-        # marks (circles, rounded rects, polygons) trace like hand-written
-        # paths; root.iter() preserves document order for stacking.
-        for element in root.iter():
+
+        def shape_data(tag: str, element: Any) -> str | None:
+            if tag == "path":
+                return (element.get("d") or "").strip() or None
+            if tag in {"circle", "ellipse"}:
+                return ellipse2pathd(element.attrib)
+            if tag == "rect":
+                return rect2pathd(element.attrib)
+            if tag == "polygon":
+                return polyline2pathd(element.attrib, is_polygon=True)
+            if tag == "polyline":
+                return polyline2pathd(element.attrib, is_polygon=False)
+            if tag == "line":
+                return "M {x1} {y1} L {x2} {y2}".format(
+                    x1=float(element.get("x1", "0")),
+                    y1=float(element.get("y1", "0")),
+                    x2=float(element.get("x2", "0")),
+                    y2=float(element.get("y2", "0")),
+                )
+            return None
+
+        # Walk depth-first, threading the accumulated transform so glyph
+        # wordmarks and grouped marks land where their transforms place them.
+        # Basic shapes convert through svgpathtools' own helpers; document
+        # order is preserved for stacking.
+        def walk(element: Any, parent_tf: Any) -> None:
             tag = element.tag.rsplit("}", 1)[-1]
+            local = _parse_svg_transform(element.get("transform"))
+            tf = parent_tf if local is None else (
+                local if parent_tf is None else parent_tf @ local
+            )
             try:
-                if tag == "path":
-                    data = (element.get("d") or "").strip()
-                elif tag in {"circle", "ellipse"}:
-                    data = ellipse2pathd(element.attrib)
-                elif tag == "rect":
-                    data = rect2pathd(element.attrib)
-                elif tag == "polygon":
-                    data = polyline2pathd(element.attrib, is_polygon=True)
-                elif tag == "polyline":
-                    data = polyline2pathd(element.attrib, is_polygon=False)
-                elif tag == "line":
-                    data = "M {x1} {y1} L {x2} {y2}".format(
-                        x1=float(element.get("x1", "0")),
-                        y1=float(element.get("y1", "0")),
-                        x2=float(element.get("x2", "0")),
-                        y2=float(element.get("y2", "0")),
-                    )
-                else:
-                    continue
+                data = shape_data(tag, element)
             except (KeyError, ValueError) as exc:
                 raise CastingEditorError(
                     f"svg import could not convert a <{tag}> element: {exc}"
                 ) from exc
             if data:
+                if tf is not None:
+                    try:
+                        data = transform_path(parse_path(data), tf).d()
+                    except Exception as exc:
+                        raise CastingEditorError(
+                            f"svg import could not apply a transform: {exc}"
+                        ) from exc
                 attributes.append(data)
+            for child in element:
+                walk(child, tf)
+
+        walk(root, None)
         if not attributes:
             raise CastingEditorError(
                 "svg import found no drawable elements (path, circle, ellipse, "
