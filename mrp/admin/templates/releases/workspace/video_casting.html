@@ -152,7 +152,12 @@
 
     <div class="form-card"><div class="form-body">
       <div class="storyboard-heading">
-        <div><h2>Storyboard</h2><p class="video-help">Where the staged actors sit in the {{ casting.project.video.width }}×{{ casting.project.video.height }} frame. Drag a shape to reposition it; edits to the controls below update it live. Render a frame only to confirm.</p></div>
+        <div><h2>Storyboard</h2><p class="video-help">Where the staged actors sit in the {{ casting.project.video.width }}×{{ casting.project.video.height }} frame. Drag a shape to reposition it; edits to the controls below update it live. Play traces the cast the way the renderer draws it; render a frame only to confirm.</p></div>
+        <div class="spiro-transport">
+          <button type="button" class="btn btn-secondary btn-sm" id="storyboard-play">▶ Play</button>
+          <button type="button" class="btn btn-secondary btn-sm" id="storyboard-reset">Reset</button>
+          <span class="spiro-progress" id="storyboard-progress" aria-live="off"></span>
+        </div>
       </div>
       <div class="scene-storyboard">
         <canvas id="scene-storyboard-canvas" width="960" height="540" aria-label="Storyboard of the staged actors in this scene"></canvas>
@@ -328,8 +333,6 @@
     const TAU = Math.PI * 2;
     const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 
-    const spiroPoints = window.mrpSpiroPoints;
-
     function fieldVal(card, name) {
       const el = card.querySelector(`[name="${name}"]`);
       return el ? el.value : '';
@@ -350,17 +353,9 @@
       );
       const actors = model.actors || {};
       if (!cards.length || !Object.keys(actors).length) {
-        return (model.traces || []).map((t) => ({
-          assignment: t.assignment,
-          label: '',
-          shape: t,
-          anchor_x: t.anchor_x,
-          anchor_y: t.anchor_y,
-          base_scale: t.base_scale,
-          opacity: t.opacity,
-          color: t.color,
-          depth: t.depth,
-        }));
+        // Flat descriptors: mrpDrawShapes reads geometry/trace fields off the
+        // top level; assignment/label ride along for the drag-handle overlay.
+        return (model.traces || []).map((t) => ({ ...t, assignment: t.assignment, label: '' }));
       }
       const shapes = [];
       cards.forEach((card) => {
@@ -381,9 +376,9 @@
           const ax = component.anchor_x + (dirX !== null ? dirX - 0.5 : 0);
           const ay = component.anchor_y + (dirY !== null ? dirY - 0.5 : 0);
           shapes.push({
+            ...component,
             assignment: card.dataset.assignmentId,
             label,
-            shape: component,
             anchor_x: clamp(ax, -0.5, 1.5),
             anchor_y: clamp(ay, -0.5, 1.5),
             base_scale: clamp(component.base_scale * (scale !== null ? scale : 1), 0.000001, 2),
@@ -398,11 +393,23 @@
 
     // assignment id -> {cx, cy, radius} in canvas pixels, for drag hit-testing.
     let handles = new Map();
+    const depthOrder = { background: 0, foreground: 1 };
 
-    function drawStoryboard() {
-      ctx.fillStyle = model.background || '#101014';
-      ctx.fillRect(0, 0, W, H);
-      // frame guides
+    // Shapes for mrpDrawShapes, background actors first. Cached each tick so the
+    // overlay reuses exactly the list the player just drew.
+    let lastShapes = [];
+    function getStoryboardShapes() {
+      lastShapes = computeShapes()
+        .filter((s) => s.opacity > 0.001)
+        .sort((a, b) => (depthOrder[a.depth] || 0) - (depthOrder[b.depth] || 0));
+      return lastShapes;
+    }
+
+    // Painted on top of each animated frame: subtle frame guides plus the
+    // draggable anchor dots and actor labels. mrpDrawShapes has already cleared
+    // the canvas and drawn the curves by the time this runs.
+    function drawOverlay() {
+      ctx.save();
       ctx.strokeStyle = 'rgba(255,255,255,0.10)';
       ctx.lineWidth = 1;
       ctx.beginPath();
@@ -410,40 +417,18 @@
       ctx.moveTo(0, H / 2); ctx.lineTo(W, H / 2);
       ctx.stroke();
 
-      const shapes = computeShapes().filter((s) => s.opacity > 0.001);
-      const order = { background: 0, foreground: 1 };
-      shapes.sort((a, b) => (order[a.depth] || 0) - (order[b.depth] || 0));
       handles = new Map();
-      const radius = (scale) => Math.min(W, H) * (0.5 - MARGIN) * scale;
-
-      shapes.forEach((item) => {
-        const { pts, extent } = spiroPoints(item.shape);
-        const r = radius(item.base_scale);
+      lastShapes.forEach((item) => {
+        if (!item.assignment) return;
         const ox = W * item.anchor_x, oy = H * item.anchor_y;
-        ctx.beginPath();
-        pts.forEach(([x, y], index) => {
-          const px = ox + (x / extent) * r;
-          const py = oy + (y / extent) * r;
-          if (index === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
-        });
-        ctx.globalAlpha = clamp(item.opacity, 0, 1);
-        ctx.strokeStyle = item.color;
-        ctx.lineWidth = Math.max(0.6, (item.shape.line_width || 2) * 0.7);
-        ctx.shadowColor = item.color;
-        ctx.shadowBlur = 6;
-        ctx.stroke();
-        ctx.globalAlpha = 1;
-        ctx.shadowBlur = 0;
-        if (item.assignment) {
-          const existing = handles.get(item.assignment);
-          const merged = existing || { assignment: item.assignment, label: item.label, cx: ox, cy: oy, r: 0 };
-          merged.cx = ox; merged.cy = oy;
-          merged.r = Math.max(merged.r, r);
-          handles.set(item.assignment, merged);
-        }
+        const r = Math.min(W, H) * (0.5 - MARGIN) * item.base_scale;
+        const existing = handles.get(item.assignment);
+        const merged = existing || { assignment: item.assignment, label: item.label, cx: ox, cy: oy, r: 0 };
+        merged.cx = ox; merged.cy = oy;
+        merged.r = Math.max(merged.r, r);
+        handles.set(item.assignment, merged);
       });
 
-      // draggable handles + labels
       handles.forEach((h) => {
         ctx.fillStyle = 'rgba(255,255,255,0.9)';
         ctx.beginPath();
@@ -459,9 +444,30 @@
           ctx.fillText(h.label, h.cx + 14, h.cy + 1);
         }
       });
+      ctx.restore();
 
-      if (emptyEl) emptyEl.hidden = shapes.length > 0;
+      if (emptyEl) emptyEl.hidden = lastShapes.length > 0;
     }
+
+    // Reuse the Actor Designer's player so the scene traces at the same
+    // per-shape cycles_per_second the renderer uses. onchange fires right after
+    // mrpDrawShapes, so the overlay paints on top within the same frame.
+    const playBtn = document.getElementById('storyboard-play');
+    const resetBtn = document.getElementById('storyboard-reset');
+    const progressEl = document.getElementById('storyboard-progress');
+    const player = window.mrpSpiroPlayer(canvas, getStoryboardShapes, {
+      background: model.background || '#101014',
+      onchange(progress, playing) {
+        drawOverlay();
+        if (playBtn) playBtn.textContent = playing ? '❚❚ Pause' : '▶ Play';
+        if (progressEl) {
+          progressEl.textContent = playing || progress < 1 ? `${Math.round(progress * 100)}%` : '';
+        }
+      },
+    });
+    if (playBtn) playBtn.addEventListener('click', () => player.toggle());
+    if (resetBtn) resetBtn.addEventListener('click', () => player.reset());
+    const drawStoryboard = player.redraw;
     window.redrawStoryboard = drawStoryboard;
 
     // ---- drag to reposition ----
