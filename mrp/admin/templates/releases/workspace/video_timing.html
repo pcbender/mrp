@@ -68,6 +68,71 @@
   </div>
 </div>
 
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="margin:0">Gaps &amp; scenes</h2>
+    <p style="font-size:12px;color:var(--muted);margin:.25rem 0 .75rem">
+      Uncovered time renders as an empty frame. <strong>Fill gaps</strong> closes them all — an
+      instrumental intro for the lead-in, the preceding section stretched over mid-song gaps, and the
+      last section extended to the song end — or add a single scene by hand.
+    </p>
+    {% if timing.gaps %}
+    <div class="timing-gaps">
+      {% for gap in timing.gaps %}
+      <button type="button" class="timing-gap" onclick="timingFillScene(this)"
+              data-start="{{ '%.3f' | format(gap.start) }}" data-end="{{ '%.3f' | format(gap.end) }}"
+              title="Prefill the Add scene form with this gap">
+        <span class="timing-gap-kind">{{ gap.kind }}</span>
+        {{ '%.3f' | format(gap.start) }}s – {{ '%.3f' | format(gap.end) }}s
+        <span class="timing-gap-len">{{ '%.2f' | format(gap.end - gap.start) }}s</span>
+      </button>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="font-size:12px;color:var(--muted)">
+      No gaps detected — the timeline is contiguous{% if not timing.master_duration %}
+      (a tail gap can't be detected without the master duration){% endif %}.
+    </p>
+    {% endif %}
+
+    <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-top:.75rem">
+      <button type="button" class="btn btn-secondary"
+              hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/timing/fill-gaps"
+              hx-target="#timing-result" hx-swap="innerHTML"
+              {% if not timing.gaps %}disabled{% endif %}>Fill gaps</button>
+    </div>
+
+    <form class="timing-add-scene"
+          hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/timing/section"
+          hx-target="#timing-result" hx-swap="innerHTML">
+      <label>type
+        <select name="section_type" id="add-scene-type">
+          <option value="instrumental" selected>instrumental</option>
+          <option value="intro">intro</option>
+          <option value="outro">outro</option>
+          <option value="interlude">interlude</option>
+          <option value="__custom__">custom…</option>
+        </select>
+      </label>
+      <label class="add-scene-custom" hidden>custom type
+        <input type="text" id="add-scene-type-custom" placeholder="e.g. breakdown">
+      </label>
+      <label>label <span style="color:var(--muted)">(optional)</span>
+        <input type="text" name="section_label" placeholder="shown in the list">
+      </label>
+      <label>start
+        <input id="add-scene-start" type="number" name="section_start" min="0" step="0.001" required>
+      </label>
+      <button type="button" class="btn btn-secondary btn-sm" onclick="timingSet('add-scene-start')">Use playhead</button>
+      <label>end
+        <input id="add-scene-end" type="number" name="section_end" min="0.001" step="0.001" required>
+      </label>
+      <button type="button" class="btn btn-secondary btn-sm" onclick="timingSet('add-scene-end')">Use playhead</button>
+      <button type="submit" class="btn btn-primary">Add scene</button>
+    </form>
+  </div>
+</div>
+
 <div id="timing-result"></div>
 <form id="timing-form"
       hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/timing"
@@ -215,6 +280,34 @@ document.body.addEventListener('htmx:beforeSwap', (event) => {
     event.detail.isError = false;
   }
 });
+
+// Add-scene: reveal a free-text field for "custom…" and post its value as the
+// section type; prefill start/end when a gap chip is clicked.
+const addSceneType = document.getElementById('add-scene-type');
+if (addSceneType) {
+  addSceneType.addEventListener('change', () => {
+    const custom = document.querySelector('.add-scene-custom');
+    const show = addSceneType.value === '__custom__';
+    if (custom) custom.hidden = !show;
+    if (show) document.getElementById('add-scene-type-custom').focus();
+  });
+  document.querySelector('.timing-add-scene')?.addEventListener('htmx:configRequest', (event) => {
+    if (addSceneType.value === '__custom__') {
+      event.detail.parameters.section_type =
+        document.getElementById('add-scene-type-custom').value.trim();
+    }
+  });
+}
+function timingFillScene(button) {
+  document.getElementById('add-scene-start').value = button.dataset.start;
+  document.getElementById('add-scene-end').value = button.dataset.end;
+  if (addSceneType) {
+    addSceneType.value = 'instrumental';
+    const custom = document.querySelector('.add-scene-custom');
+    if (custom) custom.hidden = true;
+  }
+  document.querySelector('.timing-add-scene')?.scrollIntoView({ block: 'nearest' });
+}
 </script>
 {% endif %}
 {% endblock %}

@@ -35,6 +35,8 @@ from mrp.admin.video_publication import (
 )
 from mrp.admin.video_timing import (
     TimingEditorError,
+    add_section,
+    fill_gaps,
     load_timing,
     persist_timing,
     validate_timing,
@@ -305,6 +307,80 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
         f"/releases/{slug}/tracks/{track_slug}/video/timing"
     )
     return response
+
+
+def _timing_errors(request: Request, exc: TimingEditorError) -> HTMLResponse:
+    errors = [
+        {"field": "timing", "message": problem, "severity": "error"}
+        for problem in exc.problems
+    ]
+    return _templates.TemplateResponse(
+        request, "releases/_validation.html", {"errors": errors}, status_code=422
+    )
+
+
+def _timing_redirect(
+    request: Request, slug: str, track_slug: str, message: str
+) -> HTMLResponse:
+    response = HTMLResponse(f'<div class="flash flash-ok">{message}</div>')
+    response.headers["HX-Redirect"] = (
+        f"/releases/{slug}/tracks/{track_slug}/video/timing"
+    )
+    return response
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/timing/fill-gaps",
+    response_class=HTMLResponse,
+)
+async def video_timing_fill_gaps(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    try:
+        result = fill_gaps(root, ctx["release"], unit["track"])
+    except TimingEditorError as exc:
+        return _timing_errors(request, exc)
+    if result["filled"] == 0:
+        message = "No gaps to fill — the timeline is already contiguous."
+    else:
+        plural = "" if result["filled"] == 1 else "s"
+        message = f"Filled {result['filled']} gap{plural}."
+    return _timing_redirect(request, slug, track_slug, message)
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/timing/section",
+    response_class=HTMLResponse,
+)
+async def video_timing_add_section(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    form = await request.form()
+    try:
+        result = add_section(
+            root,
+            ctx["release"],
+            unit["track"],
+            section_type=str(form.get("section_type") or ""),
+            start=str(form.get("section_start") or ""),
+            end=str(form.get("section_end") or ""),
+            label=str(form.get("section_label") or "") or None,
+        )
+    except TimingEditorError as exc:
+        return _timing_errors(request, exc)
+    return _timing_redirect(
+        request, slug, track_slug, f"Added scene {result['section_id']}."
+    )
 
 
 @router.get(
