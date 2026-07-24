@@ -782,7 +782,17 @@
       if (opts.onchange) opts.onchange(headlineProgress(shapes), playing);
     }
     function tick(timestamp) {
-      clock += (timestamp - lastTime) / 1000;
+      // When a clockSource yields a finite time (e.g. an <audio> element's
+      // playhead), the visuals follow it so a scene's reveal stays locked to
+      // the snippet playing. A null/undefined return means "no external clock
+      // right now" and we accumulate wall-clock time, so one player can switch
+      // between audio-synced and silent playback without being recreated.
+      const external = typeof opts.clockSource === 'function' ? opts.clockSource() : null;
+      if (Number.isFinite(external)) {
+        clock = external;
+      } else {
+        clock += (timestamp - lastTime) / 1000;
+      }
       lastTime = timestamp;
       draw();
       frameId = requestAnimationFrame(tick);

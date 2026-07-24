@@ -156,6 +156,13 @@
         <div class="spiro-transport">
           <button type="button" class="btn btn-secondary btn-sm" id="storyboard-play">▶ Play</button>
           <button type="button" class="btn btn-secondary btn-sm" id="storyboard-reset">Reset</button>
+          {% if audio_available %}
+          <label class="storyboard-audio-toggle"><input type="checkbox" id="storyboard-audio"> 🔊 with audio</label>
+          <audio id="storyboard-audio-el" preload="metadata"
+                 src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/audio"
+                 data-start="{{ casting.selected_section.start }}"
+                 data-end="{{ casting.selected_section.end }}"></audio>
+          {% endif %}
           <span class="spiro-progress" id="storyboard-progress" aria-live="off"></span>
         </div>
       </div>
@@ -449,14 +456,27 @@
       if (emptyEl) emptyEl.hidden = lastShapes.length > 0;
     }
 
+    // Optional audio: when "with audio" is on, the scene's master snippet plays
+    // and drives the visual clock, so the reveal stays locked to what you hear.
+    // The <audio>/toggle only exist when the track master is available.
+    const audioEl = document.getElementById('storyboard-audio-el');
+    const audioToggle = document.getElementById('storyboard-audio');
+    const sceneStart = audioEl ? Number(audioEl.dataset.start) || 0 : 0;
+    const sceneEnd = audioEl ? Number(audioEl.dataset.end) || 0 : 0;
+    const withAudio = () => !!(audioToggle && audioToggle.checked && audioEl);
+
     // Reuse the Actor Designer's player so the scene traces at the same
     // per-shape cycles_per_second the renderer uses. onchange fires right after
-    // mrpDrawShapes, so the overlay paints on top within the same frame.
+    // mrpDrawShapes, so the overlay paints on top within the same frame. When
+    // audio is playing, clockSource returns the snippet-relative time; otherwise
+    // null lets the player free-run on wall-clock time.
     const playBtn = document.getElementById('storyboard-play');
     const resetBtn = document.getElementById('storyboard-reset');
     const progressEl = document.getElementById('storyboard-progress');
     const player = window.mrpSpiroPlayer(canvas, getStoryboardShapes, {
       background: model.background || '#101014',
+      clockSource: () =>
+        withAudio() && !audioEl.paused ? Math.max(0, audioEl.currentTime - sceneStart) : null,
       onchange(progress, playing) {
         drawOverlay();
         if (playBtn) playBtn.textContent = playing ? '❚❚ Pause' : '▶ Play';
@@ -465,8 +485,44 @@
         }
       },
     });
-    if (playBtn) playBtn.addEventListener('click', () => player.toggle());
-    if (resetBtn) resetBtn.addEventListener('click', () => player.reset());
+
+    function startAudio() {
+      if (!withAudio()) return;
+      audioEl.currentTime = sceneStart;
+      audioEl.play().catch(() => {});
+    }
+    if (playBtn) {
+      playBtn.addEventListener('click', () => {
+        if (player.playing) {
+          player.pause();
+          if (audioEl) audioEl.pause();
+        } else {
+          startAudio();
+          player.play();
+        }
+      });
+    }
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        player.reset();
+        if (audioEl) { audioEl.pause(); audioEl.currentTime = sceneStart; }
+      });
+    }
+    if (audioToggle) {
+      // Toggling mid-play: start the snippet, or drop back to silent playback.
+      audioToggle.addEventListener('change', () => {
+        if (!player.playing) return;
+        if (audioToggle.checked) startAudio(); else audioEl.pause();
+      });
+    }
+    if (audioEl) {
+      // Loop within the scene window so the snippet repeats while playing.
+      audioEl.addEventListener('timeupdate', () => {
+        if (player.playing && sceneEnd > sceneStart && audioEl.currentTime >= sceneEnd) {
+          audioEl.currentTime = sceneStart;
+        }
+      });
+    }
     const drawStoryboard = player.redraw;
     window.redrawStoryboard = drawStoryboard;
 

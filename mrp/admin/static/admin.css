@@ -1386,6 +1386,15 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   font-variant-numeric: tabular-nums;
   min-width: 3ch;
 }
+.storyboard-audio-toggle {
+  align-items: center;
+  color: var(--muted);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 12px;
+  gap: .3rem;
+  user-select: none;
+}
 .slider-pair {
   align-items: center;
   display: grid;

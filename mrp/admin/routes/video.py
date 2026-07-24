@@ -341,6 +341,7 @@ async def video_casting(
         casting = None
         casting_error = list(exc.problems)
     status = str((unit["track"].get("music_video") or {}).get("status") or "draft")
+    master = resolve_asset(root, unit["track"].get("master_path"))
     ctx.update(
         {
             "unit": unit,
@@ -350,6 +351,7 @@ async def video_casting(
             "casting": casting,
             "casting_error": casting_error,
             "cast_status_ok": status in {"timed", "cast", "previewed", "rendered"},
+            "audio_available": bool(master and master.is_file()),
             "frame_job": db.get_latest_video_job(key, "frame"),
             "contact_job": db.get_latest_video_job(key, "contact"),
         }
