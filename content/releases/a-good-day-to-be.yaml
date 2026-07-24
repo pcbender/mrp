@@ -260,7 +260,7 @@ release:
       label: Vocals
     music_video:
       project: assets/source/video/4castle--a-good-day-to-be/project.yaml
-      status: previewed
+      status: cast
   seo:
     title: A Good Day To Be
     description: A Good Day To Be on Maricopa Records.

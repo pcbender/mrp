@@ -10,11 +10,17 @@ alignment:
   - normalized Whisper word timestamps (0 negative starts, 0 regressing starts, 3
     nonpositive durations)
 sections:
+- id: intro
+  type: intro
+  start: 0.0
+  end: 12.3
+  reviewed: true
+  lines: []
 - id: verse-1
   type: verse
   label: Verse 1 | warm intimate vocal | guitar and recorder | unhurried phrasing
   start: 12.3
-  end: 39.462
+  end: 40.85
   reviewed: true
   lines:
   - text: cat distracted
@@ -61,7 +67,7 @@ sections:
     reviewed: false
   - text: unheard
     start: 38.2
-    end: 39.462
+    end: 40.85
     confidence: 1.0
     status: matched
     reviewed: false
@@ -102,6 +108,12 @@ sections:
     confidence: 1.0
     status: matched
     reviewed: false
+- id: instrumental
+  type: instrumental
+  start: 57.644
+  end: 68.96
+  reviewed: true
+  lines: []
 - id: verse-2
   type: verse
   label: Verse 2 | guitar and recorder | gentle upright bass enters | patient
@@ -194,6 +206,13 @@ sections:
     confidence: 1.0
     status: matched
     reviewed: false
+- id: post-chorus
+  type: instrumental
+  label: Post Chorus
+  start: 114.23
+  end: 129.84
+  reviewed: true
+  lines: []
 - id: bridge
   type: bridge
   label: Bridge | stripped back | voice and single guitar | hold the space
@@ -219,6 +238,13 @@ sections:
     confidence: 1.0
     status: matched
     reviewed: false
+- id: post-bridge
+  type: instrumental
+  label: Post Bridge
+  start: 143.186
+  end: 173.46
+  reviewed: true
+  lines: []
 - id: final-chorus
   type: final-chorus
   label: Final Chorus | fullest yet still soft | layered harmonies | chimes swell
@@ -257,3 +283,9 @@ sections:
     confidence: 1.0
     status: matched
     reviewed: false
+- id: outro
+  type: outro
+  start: 191.135
+  end: 211.726
+  reviewed: true
+  lines: []

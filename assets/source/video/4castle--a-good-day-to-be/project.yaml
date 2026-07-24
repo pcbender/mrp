@@ -1553,6 +1553,86 @@ project:
         library_source:
           actor_id: raven
           revision: 29f73a70bbf66387e28de08c9fdba0a63a75200ab53bb17ddba66496d6e76024
+      crown:
+        id: crown
+        name: Crown
+        description: Compact inside-rotation crown with a short trail and no ghost
+          tail. Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 229.0
+            moving_radius: 76.0
+            pen_offset: 173.0
+            rotation: inside
+            phase: 0.0
+            samples: 1500
+          trace:
+            cycles_per_second: 0.062
+            trail_fraction: 0.28
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          depth: foreground
+          anchor_x: 0.08
+          anchor_y: 0.38
+          base_scale: 0.78
+          opacity: 0.8
+          line_width: 2.6
+          rotation_degrees_per_second: 1.2
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: crown
+          revision: eae1a4f2f77f83b83c97106b19001ff5db8b4147a2dedd1c15c87e7856841f5b
+      intro-lantern:
+        id: intro-lantern
+        name: Intro Lantern
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 175.0
+            moving_radius: 58.0
+            pen_offset: 101.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.045
+            trail_fraction: 0.38
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          depth: foreground
+          anchor_x: 0.48
+          anchor_y: 0.35
+          base_scale: 0.72
+          opacity: 0.58
+          line_width: 1.8
+          rotation_degrees_per_second: -0.45
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
     section_casts:
       verse:
         casting:
@@ -1585,4 +1665,18 @@ project:
             hue_shift_degrees: 0.0
             depth: background
             visible: true
-    cast_overrides: {}
+    cast_overrides:
+      intro:
+        casting:
+          source: auto
+          seed: 4674408174474543021
+          generator_version: 1
+        actors:
+        - id: intro-lantern-appearance
+          actor: intro-lantern
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
