@@ -848,6 +848,7 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   text-transform: uppercase;
 }
 .timing-boundaries input[type="number"] { width: 6.2rem; }
+.timing-boundaries select { width: auto; }
 .timing-lines input[type="number"] { width: 6.5rem; }
 .timing-gaps {
   display: flex;
