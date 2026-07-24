@@ -211,7 +211,7 @@ release:
     hints:
       Vocals: Female
       Notes: Guitar solos surround the bridge
-    master_path: null
+    master_path: /mnt/c/Masters/A Good Day To Be.wav
     credits:
       primary_artist: 4Castle
       songwriter: Michael Anthony Rose
@@ -222,6 +222,45 @@ release:
       model: hero
       persona: liner
       target: liner
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/A Good Day To Be/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/A Good Day To Be/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/A Good Day To Be/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/A Good Day To Be/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/A Good Day To Be/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/A Good Day To Be/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/A Good Day To Be/Vocals.wav
+      enabled: true
+      label: Vocals
+    music_video:
+      project: assets/source/video/4castle--a-good-day-to-be/project.yaml
+      status: previewed
   seo:
     title: A Good Day To Be
     description: A Good Day To Be on Maricopa Records.
