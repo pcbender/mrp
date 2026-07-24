@@ -1,0 +1,259 @@
+version: 1
+source: lyrics.yaml
+alignment:
+  algorithm_version: 1
+  model: whisper-1
+  transcription_cache_key: 1d7494e2e812d9d44537e55c43e5808adffa1c9052487db37fbae7909c09e745
+  source_hash: 708d280ea4285a06dfc843c99e77d08527fe59372aaff7cc6f9bf087871c0016
+  vocals_hash: 0e0ed77fa8d55a3b2c9cc7b122b97894d3559bb0aff4c786253de0b1d66a8c97
+  warnings:
+  - normalized Whisper word timestamps (0 negative starts, 0 regressing starts, 3
+    nonpositive durations)
+sections:
+- id: verse-1
+  type: verse
+  label: Verse 1 | warm intimate vocal | guitar and recorder | unhurried phrasing
+  start: 12.3
+  end: 39.462
+  reviewed: true
+  lines:
+  - text: cat distracted
+    start: 12.3
+    end: 15.14
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: one eye closed
+    start: 15.14
+    end: 18.1
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: the sun remembering
+    start: 18.1
+    end: 21.8
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: after dark
+    start: 21.8
+    end: 25.484
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: broom sweeping
+    start: 26.46
+    end: 29.385
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: a clean floor
+    start: 30.3
+    end: 31.94
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: the sound of steps
+    start: 31.94
+    end: 36.05
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: unheard
+    start: 38.2
+    end: 39.462
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: chorus
+  type: chorus
+  label: Chorus | gentle lift | piano countermelody | soft single voice
+  start: 40.96
+  end: 57.644
+  reviewed: true
+  lines:
+  - text: grass still wet
+    start: 40.96
+    end: 43.34
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: one bird searches
+    start: 44.44
+    end: 46.6
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: the road bends away
+    start: 46.6
+    end: 50.62
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: a good day to be
+    start: 50.62
+    end: 53.673
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: before the wind changes
+    start: 53.86
+    end: 57.644
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: verse-2
+  type: verse
+  label: Verse 2 | guitar and recorder | gentle upright bass enters | patient
+  start: 68.96
+  end: 96.09
+  reviewed: true
+  lines:
+  - text: smell of cumin
+    start: 68.96
+    end: 71.36
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: the kitchen window open
+    start: 71.36
+    end: 74.86
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: rain finding the dust
+    start: 74.86
+    end: 78.0
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: already dry
+    start: 78.0
+    end: 81.839
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: shadows longer
+    start: 82.96
+    end: 85.833
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: wind chimes ring
+    start: 86.52
+    end: 88.4
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: the crickets
+    start: 88.4
+    end: 90.42
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: keep their distance
+    start: 90.42
+    end: 96.09
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: chorus-2
+  type: chorus
+  label: Chorus | warmer | quiet harmony added | recorder and piano weave
+  start: 96.68
+  end: 114.23
+  reviewed: true
+  lines:
+  - text: grass still wet
+    start: 96.68
+    end: 99.672
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: one bird searches
+    start: 100.9
+    end: 103.1
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: the road bends away
+    start: 103.1
+    end: 107.0
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: a good day to be
+    start: 107.0
+    end: 110.121
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: before the wind changes
+    start: 110.26
+    end: 114.23
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: bridge
+  type: bridge
+  label: Bridge | stripped back | voice and single guitar | hold the space
+  start: 129.84
+  end: 143.186
+  reviewed: true
+  lines:
+  - text: a deep breath
+    start: 129.84
+    end: 132.899
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: light through the curtain
+    start: 132.9
+    end: 136.82
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: blanket on the floor
+    start: 136.82
+    end: 143.186
+    confidence: 1.0
+    status: matched
+    reviewed: false
+- id: final-chorus
+  type: final-chorus
+  label: Final Chorus | fullest yet still soft | layered harmonies | chimes swell
+    | settles
+  start: 173.46
+  end: 191.135
+  reviewed: true
+  lines:
+  - text: grass still wet
+    start: 173.46
+    end: 174.18
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: one bird searches
+    start: 174.18
+    end: 177.76
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: the road bends away
+    start: 177.76
+    end: 181.8
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: a good day to be
+    start: 181.8
+    end: 185.284
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: before the wind changes
+    start: 185.3
+    end: 191.135
+    confidence: 1.0
+    status: matched
+    reviewed: false

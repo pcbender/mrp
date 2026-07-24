@@ -617,6 +617,10 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
         # Whole geometry (family + its fields) so the client dispatcher draws
         # any curve family without per-field drift here.
         **layer.geometry.model_dump(mode="json", exclude_none=True),
+        # Trace behavior (cycles_per_second, trail_fraction, ghost_*, head_radius)
+        # so the storyboard can animate the reveal exactly like mrpDrawShapes /
+        # the Actor Designer, not just draw the completed curve.
+        **layer.trace.model_dump(mode="json", exclude_none=True),
         "samples": min(layer.geometry.samples, 1200),
         "color": layer.color,
         "color_flow": (

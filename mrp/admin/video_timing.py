@@ -91,6 +91,27 @@ def _summary(document: Any) -> dict[str, int | bool]:
     }
 
 
+def _gaps(document: Any, duration: float | None) -> list[dict[str, Any]]:
+    """Uncovered spans in the timeline: the lead-in, holes between sections,
+    and the tail after the last section (only when the master duration is
+    known). Spans under ~50ms are ignored as rounding noise."""
+    eps = 0.05
+    spans: list[dict[str, Any]] = []
+    sections = document.sections
+    if sections and sections[0].start > eps:
+        spans.append({"start": 0.0, "end": sections[0].start, "kind": "lead"})
+    for before, after in zip(sections, sections[1:]):
+        if after.start - before.end > eps:
+            spans.append(
+                {"start": before.end, "end": after.start, "kind": "mid", "after": before.id}
+            )
+    if sections and duration is not None and duration - sections[-1].end > eps:
+        spans.append(
+            {"start": sections[-1].end, "end": duration, "kind": "tail", "after": sections[-1].id}
+        )
+    return spans
+
+
 def load_timing(
     root: Path,
     release: dict[str, Any],
@@ -105,14 +126,17 @@ def load_timing(
             "document": None,
             "summary": None,
             "master_duration": _master_duration(root, release, track),
+            "gaps": [],
         }
     document = _load(path)
+    duration = _master_duration(root, release, track)
     return {
         "exists": True,
         "path": relative,
         "document": document,
         "summary": _summary(document),
-        "master_duration": _master_duration(root, release, track),
+        "master_duration": duration,
+        "gaps": _gaps(document, duration),
     }
 
 
@@ -251,3 +275,147 @@ def save_timing(
     result = validate_timing(root, release, track, fields)
     persist_timing(root, release, track, result["document"])
     return result
+
+
+def _slugify(value: str) -> str:
+    slug = "".join(char if char.isalnum() else "-" for char in value.casefold())
+    slug = "-".join(part for part in slug.split("-") if part)
+    return slug or "section"
+
+
+def _unique_section_id(existing: Sequence[str], base: str) -> str:
+    if base not in existing:
+        return base
+    index = 2
+    while f"{base}-{index}" in existing:
+        index += 1
+    return f"{base}-{index}"
+
+
+def _rebuild(payload: dict[str, Any]) -> Any:
+    """Re-validate an edited aligned-lyrics payload, surfacing field errors."""
+    from mrp.video.project import AlignedLyrics
+
+    try:
+        return AlignedLyrics.model_validate(payload)
+    except ValidationError as exc:
+        problems = []
+        for error in exc.errors(include_url=False):
+            location = ".".join(str(part) for part in error["loc"])
+            problems.append(f"{location}: {error['msg']}")
+        raise TimingEditorError(*problems) from exc
+
+
+def add_section(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    *,
+    section_type: str,
+    start: str,
+    end: str,
+    label: str | None = None,
+) -> dict[str, Any]:
+    """Insert a manually-defined (typically instrumental) scene into a gap.
+
+    Sections are kept time-ordered and must not overlap an existing one; the
+    new scene carries no lyric cues, so any ``type`` is allowed."""
+    path = timing_path(root, release, track)
+    if not path.is_file():
+        raise TimingEditorError("aligned lyrics do not exist; run alignment first")
+    stype = section_type.strip()
+    if not stype:
+        raise TimingEditorError("scene type is required")
+    label_text = (label or "").strip()
+    start_seconds = _number(start, "scene start")
+    end_seconds = _number(end, "scene end")
+    if end_seconds <= start_seconds:
+        raise TimingEditorError("scene end must be greater than scene start")
+
+    duration = _master_duration(root, release, track)
+    if duration is not None and end_seconds > duration + 0.001:
+        raise TimingEditorError(
+            f"scene ends at {end_seconds:.3f}s, after the {duration:.3f}s master"
+        )
+
+    original = _load(path)
+    for section in original.sections:
+        if start_seconds < section.end - 1e-6 and end_seconds > section.start + 1e-6:
+            raise TimingEditorError(
+                f"scene {start_seconds:.3f}–{end_seconds:.3f}s overlaps section "
+                f"{section.id} ({section.start:.3f}–{section.end:.3f}s)"
+            )
+
+    payload = original.model_dump(mode="json", exclude_none=True)
+    new_id = _unique_section_id(
+        [section.id for section in original.sections],
+        _slugify(label_text or stype),
+    )
+    new_section: dict[str, Any] = {
+        "id": new_id,
+        "type": stype,
+        "start": start_seconds,
+        "end": end_seconds,
+        "reviewed": True,
+        "lines": [],
+    }
+    if label_text:
+        new_section["label"] = label_text
+    payload["sections"] = sorted(
+        [*payload["sections"], new_section], key=lambda item: item["start"]
+    )
+
+    updated = _rebuild(payload)
+    persist_timing(root, release, track, updated)
+    return {"summary": _summary(updated), "section_id": new_id}
+
+
+def fill_gaps(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+) -> dict[str, Any]:
+    """Close timeline holes: add an instrumental intro for the lead-in gap,
+    extend each preceding section over mid-song gaps, and stretch the last
+    section to the master end. Returns how many gaps were filled (0 = no-op,
+    nothing written)."""
+    path = timing_path(root, release, track)
+    if not path.is_file():
+        raise TimingEditorError("aligned lyrics do not exist; run alignment first")
+    original = _load(path)
+    payload = original.model_dump(mode="json", exclude_none=True)
+    sections = payload["sections"]
+    duration = _master_duration(root, release, track)
+    eps = 0.05
+    filled = 0
+
+    if sections and sections[0]["start"] > eps:
+        intro_id = _unique_section_id([s["id"] for s in sections], "intro")
+        sections.insert(
+            0,
+            {
+                "id": intro_id,
+                "type": "instrumental",
+                "start": 0.0,
+                "end": round(sections[0]["start"], 6),
+                "reviewed": True,
+                "lines": [],
+            },
+        )
+        filled += 1
+
+    for before, after in zip(sections, sections[1:]):
+        if after["start"] - before["end"] > eps:
+            before["end"] = after["start"]
+            filled += 1
+
+    if duration is not None and sections and duration - sections[-1]["end"] > eps:
+        sections[-1]["end"] = round(duration, 6)
+        filled += 1
+
+    if filled == 0:
+        return {"summary": _summary(original), "filled": 0}
+
+    updated = _rebuild(payload)
+    persist_timing(root, release, track, updated)
+    return {"summary": _summary(updated), "filled": filled}

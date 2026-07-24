@@ -51,9 +51,24 @@ async def root():
     return RedirectResponse(url="/releases")
 
 
+def _load_repo_env(repo: Path) -> None:
+    """Merge the repo's .env into the process environment at startup.
+
+    Every child process the admin spawns (video worker, builds, etc.) inherits
+    this environment, so loading .env here makes keys like OPENAI_API_KEY
+    available downstream even when the server was launched without them
+    exported. Real environment values win over .env.
+    """
+    from mrp.core.spotify_client import load_dotenv
+
+    for key, value in load_dotenv(repo / ".env").items():
+        os.environ.setdefault(key, value)
+
+
 def run_server(repo: str | Path, host: str = "127.0.0.1", port: int = 8000) -> None:
     repo_path = Path(repo).resolve()
     os.environ.setdefault("MRP_REPO", str(repo_path))
+    _load_repo_env(repo_path)
     pub_dir = repo_path / "site" / "public"
     if pub_dir.is_dir():
         app.mount("/pub", StaticFiles(directory=str(pub_dir)), name="site-public")

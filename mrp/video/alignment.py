@@ -895,7 +895,7 @@ def _openai_client() -> Any:
     except ImportError as exc:
         raise SpirophonicAlignmentError(
             "OpenAI alignment support is not installed; run "
-            "'uv sync --extra align --dev'"
+            "'uv pip install -r requirements-video-align.txt'"
         ) from exc
     return OpenAI()
 
