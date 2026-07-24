@@ -28,6 +28,29 @@
         <small class="actor-designer-preview-note">Actor-local identity preview. Play traces the curve the way the renderer draws it. Drag a component to reposition it.</small>
       </div>
       <div id="actor-components" class="actor-designer-controls">
+        <div id="component-bulk-bar" class="component-bulk-bar">
+          <div class="bulk-select-row">
+            <span class="bulk-count" id="bulk-count">Ctrl/⌘-click or Shift-click cards to multi-select</span>
+            <button type="button" class="btn btn-secondary btn-sm" id="bulk-select-all">Select all</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="bulk-clear">Clear</button>
+          </div>
+          <div class="bulk-actions" id="bulk-actions" hidden>
+            <div class="bulk-action">
+              <label>Resize group ×</label>
+              <input type="number" id="bulk-scale-factor" value="1.10" min="0.1" max="10" step="0.05">
+              <button type="button" class="btn btn-secondary btn-sm" id="bulk-scale-apply" title="Scale the selected components as one unit about their shared center — the way to resize a multi-shape imported SVG.">Apply</button>
+            </div>
+            <div class="bulk-action">
+              <label>Set</label>
+              <select id="bulk-field"></select>
+              <span id="bulk-value-wrap"></span>
+              <button type="button" class="btn btn-secondary btn-sm" id="bulk-field-apply" title="Set this field to the same value on every selected component.">Apply to all</button>
+            </div>
+            <div class="bulk-action">
+              <button type="button" class="btn btn-secondary btn-sm" id="bulk-complete-shape" title="Show the selected components as a finished, static mark: full trail, no head marker, no ghosts, solid color.">Make complete shape</button>
+            </div>
+          </div>
+        </div>
         {% if entry %}
         {% for component in entry.actor.components %}{{ component_fields(component, loop.index) }}{% endfor %}
         {% else %}
@@ -115,18 +138,48 @@
   document.getElementById('spiro-play').addEventListener('click', () => player.toggle());
   document.getElementById('spiro-reset').addEventListener('click', () => player.reset());
 
-  function selectComponentCard(card, scrollTo) {
-    componentsEl.querySelectorAll('.actor-component-card.is-selected').forEach((el) => {
-      if (el !== card) el.classList.remove('is-selected');
-    });
-    if (card) card.classList.add('is-selected');
+  let lastPickedCard = null;
+  const cardsList = () => Array.from(componentsEl.querySelectorAll('.actor-component-card'));
+  const selectedCards = () => cardsList().filter((c) => c.classList.contains('is-selected'));
+
+  function setSelection(cards) {
+    const keep = new Set(cards);
+    cardsList().forEach((c) => c.classList.toggle('is-selected', keep.has(c)));
+    lastPickedCard = cards.length ? cards[cards.length - 1] : null;
     player.redraw();
-    if (card && scrollTo) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    updateBulkBar();
+  }
+
+  function selectComponentCard(card, scrollTo, mode) {
+    if (!card) return;
+    mode = mode || 'single';
+    if (mode === 'toggle') {
+      card.classList.toggle('is-selected');
+      if (card.classList.contains('is-selected')) lastPickedCard = card;
+    } else if (mode === 'range' && lastPickedCard) {
+      const list = cardsList();
+      const a = list.indexOf(lastPickedCard);
+      const b = list.indexOf(card);
+      if (a !== -1 && b !== -1) {
+        const lo = Math.min(a, b);
+        const hi = Math.max(a, b);
+        list.forEach((c, i) => c.classList.toggle('is-selected', i >= lo && i <= hi));
+      }
+    } else {
+      cardsList().forEach((c) => c.classList.toggle('is-selected', c === card));
+      lastPickedCard = card;
+    }
+    player.redraw();
+    updateBulkBar();
+    if (scrollTo) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   componentsEl.addEventListener('click', (event) => {
+    if (event.target.closest('.component-bulk-bar')) return;
     const card = event.target.closest('.actor-component-card');
-    if (card) selectComponentCard(card, false);
+    if (!card) return;
+    const mode = event.ctrlKey || event.metaKey ? 'toggle' : event.shiftKey ? 'range' : 'single';
+    selectComponentCard(card, false, mode);
   });
 
   window.mrpEnableComponentDrag(
@@ -170,7 +223,9 @@
 
   function setPairField(card, name, value) {
     if (value === undefined || value === null) return;
-    const el = card.querySelector(`input[name="${name}"]`);
+    // Any named control (number, color, or select); range siblings carry no
+    // name attribute, so there is no ambiguity with the slider pairs.
+    const el = card.querySelector(`[name="${name}"]`);
     if (!el) return;
     el.value = String(value);
     const pair = el.closest('.slider-pair');
@@ -179,6 +234,7 @@
   }
 
   function applySubpaths(subpaths) {
+    const added = [];
     for (const subpath of subpaths) {
       const card = addActorComponent();
       if (!card) break;
@@ -189,9 +245,12 @@
       setPairField(card, 'anchor_x', subpath.anchor_x);
       setPairField(card, 'anchor_y', subpath.anchor_y);
       setPairField(card, 'base_scale', subpath.base_scale);
+      added.push(card);
     }
     window.mrpSyncFamilyFields(componentsEl);
-    player.redraw();
+    // Pre-select every imported subpath so the group can be resized in one move.
+    if (added.length > 1) setSelection(added);
+    else player.redraw();
   }
 
   document.getElementById('svg-import-input').addEventListener('change', async (event) => {
@@ -283,8 +342,136 @@
   });
 
   document.addEventListener('input', (event) => {
+    if (event.target.closest('.component-bulk-bar')) return;
     if (event.target.closest('#actor-components')) player.redraw();
   });
+
+  // ----- Multi-select bulk tools -----
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+
+  // Fields offered by "Set … to all", with the value control each one needs.
+  const BULK_FIELDS = {
+    color: { label: 'Color', type: 'color', default: '#ff5fd2' },
+    opacity: { label: 'Identity opacity', type: 'number', min: 0, max: 1, step: 0.01, default: 0.8 },
+    line_width: { label: 'Line width', type: 'number', min: 0.5, max: 20, step: 0.1, default: 2 },
+    base_scale: { label: 'Identity scale (absolute)', type: 'number', min: 0.05, max: 2, step: 0.01, default: 1 },
+    rotation_speed: { label: 'Base rotation °/s', type: 'number', min: -180, max: 180, step: 0.1, default: 0 },
+    hue_shift: { label: 'Base hue shift °', type: 'number', min: -360, max: 360, step: 1, default: 0 },
+    cycles_per_second: { label: 'Cycles / second', type: 'number', min: 0.001, max: 2, step: 0.001, default: 0.08 },
+    trail_fraction: { label: 'Trail length', type: 'number', min: 0.01, max: 1, step: 0.01, default: 0.24 },
+    ghost_count: { label: 'Ghost count', type: 'number', min: 0, max: 6, step: 1, default: 1 },
+    ghost_spacing: { label: 'Ghost spacing', type: 'number', min: 0, max: 1, step: 0.01, default: 0.08 },
+    head_radius: { label: 'Head radius', type: 'number', min: 0, max: 24, step: 0.1, default: 3 },
+    blend_mode: { label: 'Blend', type: 'select', options: ['screen', 'normal'], default: 'screen' },
+    color_flow_source: { label: 'Color flow', type: 'select', options: ['', 'angle', 'radius', 'velocity', 'curvature'], default: '' },
+    depth: { label: 'Layer', type: 'select', options: ['background', 'foreground'], default: 'foreground' },
+  };
+
+  const bulkFieldSelect = document.getElementById('bulk-field');
+  const bulkValueWrap = document.getElementById('bulk-value-wrap');
+
+  function updateBulkBar() {
+    const n = selectedCards().length;
+    const actions = document.getElementById('bulk-actions');
+    const count = document.getElementById('bulk-count');
+    if (n >= 1) {
+      count.textContent = `${n} component${n === 1 ? '' : 's'} selected · Ctrl/⌘-click or Shift-click to add more`;
+      actions.hidden = false;
+    } else {
+      count.textContent = 'Ctrl/⌘-click or Shift-click cards to multi-select';
+      actions.hidden = true;
+    }
+  }
+
+  function renderBulkValue() {
+    const meta = BULK_FIELDS[bulkFieldSelect.value];
+    bulkValueWrap.innerHTML = '';
+    let control;
+    if (meta.type === 'select') {
+      control = document.createElement('select');
+      for (const opt of meta.options) {
+        const o = document.createElement('option');
+        o.value = opt;
+        o.textContent = opt === '' ? 'solid' : opt;
+        control.appendChild(o);
+      }
+      control.value = meta.default;
+    } else {
+      control = document.createElement('input');
+      control.type = meta.type;
+      if (meta.type === 'number') {
+        control.min = meta.min;
+        control.max = meta.max;
+        control.step = meta.step;
+      }
+      control.value = meta.default;
+    }
+    control.setAttribute('data-bulk-value', '');
+    bulkValueWrap.appendChild(control);
+  }
+
+  for (const [name, meta] of Object.entries(BULK_FIELDS)) {
+    const o = document.createElement('option');
+    o.value = name;
+    o.textContent = meta.label;
+    bulkFieldSelect.appendChild(o);
+  }
+  bulkFieldSelect.addEventListener('change', renderBulkValue);
+  renderBulkValue();
+
+  document.getElementById('bulk-select-all').addEventListener('click', () => setSelection(cardsList()));
+  document.getElementById('bulk-clear').addEventListener('click', () => setSelection([]));
+
+  // Group scale: resize the selected components as one unit about their
+  // shared centroid, so an imported multi-shape SVG grows without collapsing.
+  document.getElementById('bulk-scale-apply').addEventListener('click', () => {
+    const cards = selectedCards();
+    if (cards.length < 1) return;
+    const factor = Number(document.getElementById('bulk-scale-factor').value);
+    if (!(factor > 0)) return;
+    const rows = cards.map((card) => ({
+      card,
+      ax: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
+      ay: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),
+      bs: Number(window.mrpFieldValue(card, 'base_scale', 1)),
+    }));
+    const cx = rows.reduce((s, r) => s + r.ax, 0) / rows.length;
+    const cy = rows.reduce((s, r) => s + r.ay, 0) / rows.length;
+    for (const { card, ax, ay, bs } of rows) {
+      setPairField(card, 'anchor_x', clamp(cx + (ax - cx) * factor, -0.5, 1.5).toFixed(3));
+      setPairField(card, 'anchor_y', clamp(cy + (ay - cy) * factor, -0.5, 1.5).toFixed(3));
+      setPairField(card, 'base_scale', clamp(bs * factor, 0.05, 2).toFixed(3));
+    }
+    player.redraw();
+  });
+
+  // Set one field to the same value across every selected component.
+  document.getElementById('bulk-field-apply').addEventListener('click', () => {
+    const cards = selectedCards();
+    if (cards.length < 1) return;
+    const control = bulkValueWrap.querySelector('[data-bulk-value]');
+    if (!control) return;
+    for (const card of cards) setPairField(card, bulkFieldSelect.value, control.value);
+    window.mrpSyncFamilyFields(componentsEl);
+    player.redraw();
+  });
+
+  // Preset: present the selected components as a finished, static mark.
+  document.getElementById('bulk-complete-shape').addEventListener('click', () => {
+    const cards = selectedCards();
+    if (cards.length < 1) return;
+    for (const card of cards) {
+      setPairField(card, 'trail_fraction', 1);
+      setPairField(card, 'head_radius', 0);
+      setPairField(card, 'ghost_count', 0);
+      setPairField(card, 'cycles_per_second', 0.001);
+      setPairField(card, 'color_flow_source', '');
+    }
+    window.mrpSyncFamilyFields(componentsEl);
+    player.redraw();
+  });
+
   window.mrpSyncFamilyFields(componentsEl);
+  updateBulkBar();
 </script>
 {% endblock %}

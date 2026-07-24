@@ -334,6 +334,7 @@
         const families = (field.dataset.family || '').split(/\s+/);
         field.classList.toggle('family-hidden', !families.includes(select.value));
       });
+      window.mrpRefreshComponentTitle(card);
     });
   };
 
@@ -349,6 +350,29 @@
     const field = card.querySelector(`[name="${name}"]`);
     return field ? field.value : fallback;
   };
+
+  // Legend title for a still-unsaved component: its id plus a short curve-family
+  // label (e.g. "shape-1 SVG"). Saved components keep their "Visual component N"
+  // legend instead — only cards flagged data-title-live are rewritten.
+  const TITLE_FAMILY_LABELS = { path: 'SVG', text: 'text' };
+  window.mrpComponentTitle = function (card) {
+    const id = (window.mrpFieldValue(card, 'trace_id', '') || '').trim() || 'shape';
+    const family = window.mrpFieldValue(card, 'geometry_family', 'spirogram') || 'spirogram';
+    return `${id} ${TITLE_FAMILY_LABELS[family] || family}`;
+  };
+  window.mrpRefreshComponentTitle = function (card) {
+    if (!card || !card.hasAttribute('data-title-live')) return;
+    const title = card.querySelector('.actor-component-title');
+    if (title) title.textContent = window.mrpComponentTitle(card);
+  };
+
+  // Live-update the legend as the id or curve family is typed/picked.
+  document.addEventListener('input', (event) => {
+    const target = event.target;
+    if (!target || (target.name !== 'trace_id' && target.name !== 'geometry_family')) return;
+    const card = target.closest && target.closest('.actor-component-card');
+    if (card) window.mrpRefreshComponentTitle(card);
+  });
 
   // Drag a component around an identity preview canvas to write its
   // anchor_x/anchor_y sliders. Pointer conventions mirror the Scene Casting

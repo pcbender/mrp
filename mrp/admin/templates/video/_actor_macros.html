@@ -33,8 +33,8 @@
 {% macro component_fields(component, index) -%}
 {% set is_new = component is none %}
 {% set component = component if component is not none else default_component %}
-<fieldset class="video-trace-card actor-component-card">
-  <legend><span>{{ 'New visual component' if is_new else 'Visual component ' ~ index }}</span>{% if is_new or index > 1 %}<button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button>{% endif %}</legend>
+<fieldset class="video-trace-card actor-component-card"{% if is_new %} data-title-live{% endif %}>
+  <legend><span class="actor-component-title">{% if is_new %}{{ component.id }} {{ {'path': 'SVG', 'text': 'text'}.get(component.geometry.family, component.geometry.family) }}{% else %}Visual component {{ index }}{% endif %}</span>{% if is_new or index > 1 %}<button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button>{% endif %}</legend>
   {% if not is_new %}
   <div class="actor-component-summary">
     <span class="actor-swatch" style="--actor-color: {{ component.color }}"></span>
