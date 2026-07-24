@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import signal
 import threading
@@ -20,6 +21,21 @@ class WorkerCancelled(Exception):
 
 def _now() -> str:
     return datetime.now(UTC).replace(microsecond=0).isoformat()
+
+
+def _load_repo_env(repo: Path) -> None:
+    """Merge the repo's .env into the process environment.
+
+    The worker runs as a detached child process and only inherits whatever
+    environment the admin server was launched with. Loading .env here ensures
+    keys like OPENAI_API_KEY (used for vocal transcription) are available even
+    when the server was started without them exported. Real environment values
+    win over .env.
+    """
+    from mrp.core.spotify_client import load_dotenv
+
+    for key, value in load_dotenv(repo / ".env").items():
+        os.environ.setdefault(key, value)
 
 
 class EventWriter:
@@ -183,6 +199,7 @@ def _parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     root = args.repo.resolve()
+    _load_repo_env(root)
     writer = EventWriter(args.events.resolve())
     cancelled = threading.Event()
     stopped = threading.Event()
