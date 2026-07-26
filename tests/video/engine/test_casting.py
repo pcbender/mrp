@@ -207,3 +207,59 @@ def test_exact_actor_cast_direction_precedes_type_and_legacy_compositions() -> N
     assert resolved.key == "actors:section:final_chorus"
     assert resolved.composition.traces[0].id == "hero--shape"
     assert resolved.composition.traces[0].opacity == 0
+
+
+def test_scene_wardrobe_replaces_actor_look_and_survives_the_palette() -> None:
+    """A directed color is a costume for one scene, not a new identity.
+
+    The actor keeps its own white in scenes that gave no wardrobe note, and the
+    directed scene locks its color so a production palette cannot restyle it.
+    """
+    visuals = VisualConfig.model_validate(
+        {
+            "actors": {
+                "title": {
+                    "id": "title",
+                    "name": "Song Title",
+                    "character": "vocals",
+                    "components": [
+                        {
+                            **_trace("mark", 200),
+                            "color": "#ffffff",
+                            "line_width": 2.5,
+                            "blend_mode": "screen",
+                        }
+                    ],
+                }
+            },
+            "section_casts": {
+                "intro": {
+                    "actors": [
+                        {
+                            "id": "billing",
+                            "actor": "title",
+                            "direction": {
+                                "color": "#ff0000",
+                                "line_width": 6,
+                                "blend_mode": "normal",
+                            },
+                        }
+                    ]
+                },
+                "outro": {"actors": [{"id": "billing", "actor": "title"}]},
+            },
+        }
+    )
+
+    dressed = resolve_section_composition(visuals, "intro", "intro_1", 4821)
+    bare = resolve_section_composition(visuals, "outro", "outro_1", 4821)
+
+    assert dressed.composition.traces[0].color == "#ff0000"
+    assert dressed.composition.traces[0].color_locked is True
+    assert dressed.composition.traces[0].line_width == 6
+    assert dressed.composition.traces[0].blend_mode == "normal"
+
+    assert bare.composition.traces[0].color == "#ffffff"
+    assert bare.composition.traces[0].color_locked is False
+    assert bare.composition.traces[0].line_width == 2.5
+    assert bare.composition.traces[0].blend_mode == "screen"

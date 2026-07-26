@@ -1229,6 +1229,26 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   padding: .28rem .4rem;
   font-size: 12px;
 }
+/* Wardrobe color is a checkbox + swatch pair. The checkbox decides whether the
+   scene dresses the actor at all, so it has to stay checkbox-sized against the
+   direction grid's `width: 100%` rule above. */
+.wardrobe-color {
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+.actor-direction-grid .wardrobe-color input[type="checkbox"] {
+  width: auto;
+  flex: none;
+  margin: 0;
+}
+.actor-direction-grid .wardrobe-color input[type="color"] {
+  flex: 1;
+  height: 26px;
+  padding: 1px;
+}
+.actor-direction-grid .wardrobe-color input[type="color"]:disabled { opacity: .4; }
+
 .video-project-look { margin: .75rem 0; }
 .video-scene-workspace-heading { scroll-margin-top: 1rem; }
 .storyboard-heading { margin-bottom: .65rem; }

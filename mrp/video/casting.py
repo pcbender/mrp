@@ -611,6 +611,21 @@ def compile_actor_cast(
                             360,
                         ),
                         "depth": direction.depth or component.depth,
+                        # Wardrobe: what the scene asked for, else the actor's own.
+                        "color": (
+                            component.color
+                            if direction.color is None
+                            else direction.color
+                        ),
+                        "color_locked": (
+                            component.color_locked or direction.color is not None
+                        ),
+                        "line_width": (
+                            component.line_width
+                            if direction.line_width is None
+                            else direction.line_width
+                        ),
+                        "blend_mode": direction.blend_mode or component.blend_mode,
                         "drivers": drivers,
                     }
                 )

@@ -361,6 +361,10 @@ class VisualLayerConfig(ContractModel):
     geometry: LayerGeometryConfig
     trace: LayerTraceConfig = Field(default_factory=LayerTraceConfig)
     color: HexColor
+    # Set when a scene's direction dressed this layer in a specific color. A
+    # production palette restyles actors that took no wardrobe note, but it
+    # must not overrule a color the scene asked for by name.
+    color_locked: bool = False
     color_flow: LayerColorFlowConfig | None = None
     depth: Literal["background", "foreground"] = "foreground"
     anchor_x: float = Field(default=0.5, ge=-0.5, le=1.5)
@@ -425,7 +429,14 @@ class ActorConfig(ContractModel):
 
 
 class ActorDirectionConfig(ContractModel):
-    """Scene-specific direction that leaves the actor's identity intact."""
+    """Scene-specific direction that leaves the actor's identity intact.
+
+    Blocking — anchors, scale, rotation, depth, visibility — modifies what the
+    actor already is, so those fields carry a neutral default and combine with
+    the actor's own values. Wardrobe — color, line width, blend mode — is a
+    costume the actor wears in this scene only, so those fields replace the
+    actor's values outright and ``None`` means "wear your own".
+    """
 
     anchor_x: float | None = Field(default=None, ge=-0.5, le=1.5)
     anchor_y: float | None = Field(default=None, ge=-0.5, le=1.5)
@@ -439,6 +450,9 @@ class ActorDirectionConfig(ContractModel):
     hue_shift_degrees: float = Field(default=0, ge=-360, le=360)
     depth: Literal["background", "foreground"] | None = None
     visible: bool = True
+    color: HexColor | None = None
+    line_width: float | None = Field(default=None, gt=0, le=20)
+    blend_mode: Literal["normal", "screen"] | None = None
 
 
 class ActorAssignmentConfig(ContractModel):

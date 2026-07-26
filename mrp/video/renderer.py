@@ -383,6 +383,8 @@ def _base_layer_color(
     layer: VisualLayerConfig,
     layer_index: int,
 ) -> str:
+    if layer.color_locked:
+        return layer.color
     custom = context.project.visuals.palette
     if custom:
         return custom[layer_index % len(custom)]

@@ -574,3 +574,35 @@ def test_build_curve_supports_path_family_deterministically() -> None:
     # stable probe digest for the whole path pipeline.
     digest = hashlib.sha256(curve.points.tobytes()).hexdigest()
     assert digest == hashlib.sha256(repeat.points.tobytes()).hexdigest()
+
+
+def test_directed_wardrobe_color_outranks_the_production_palette() -> None:
+    """A palette dresses actors that took no wardrobe note; it never overrules one."""
+    from types import SimpleNamespace
+
+    from mrp.video.presets import get_palette_preset
+    from mrp.video.project import VisualConfig, VisualLayerConfig
+    from mrp.video.renderer import _base_layer_color
+
+    def layer(color: str, locked: bool) -> VisualLayerConfig:
+        return VisualLayerConfig.model_validate(
+            {
+                "id": "mark",
+                "role": "vocals",
+                "geometry": {
+                    "fixed_radius": 180,
+                    "moving_radius": 40,
+                    "pen_offset": 80,
+                },
+                "color": color,
+                "color_locked": locked,
+            }
+        )
+
+    context = SimpleNamespace(
+        project=SimpleNamespace(visuals=VisualConfig.model_validate({})),
+        palette_preset=get_palette_preset("aurora"),
+    )
+
+    assert _base_layer_color(context, layer("#ffffff", False), 0) == "#ff5fd2"
+    assert _base_layer_color(context, layer("#ff0000", True), 0) == "#ff0000"

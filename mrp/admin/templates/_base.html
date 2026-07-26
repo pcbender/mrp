@@ -38,5 +38,16 @@
   <main class="main">
     {% block content %}{% endblock %}
   </main>
+  <script>
+    // Validation failures come back as a 422 partial. htmx drops error
+    // responses by default, which would leave the user with a silent
+    // "422 Unprocessable Entity" in the console, so swap them in as content.
+    document.body.addEventListener('htmx:beforeSwap', (event) => {
+      if (event.detail.xhr.status === 422 && event.detail.target) {
+        event.detail.shouldSwap = true;
+        event.detail.isError = false;
+      }
+    });
+  </script>
 </body>
 </html>

@@ -837,6 +837,22 @@ def _repeated(
     return values
 
 
+def _repeated_optional(
+    fields: Mapping[str, Sequence[str]],
+    name: str,
+    count: int,
+) -> list[str]:
+    """A column whose absence means every row left it blank.
+
+    Wardrobe fields post one value per cast card like any other column, but a
+    form that predates them omits the column entirely. That is "nobody was
+    dressed", not a malformed post — a present column is still length-checked.
+    """
+    if name not in fields:
+        return [""] * count
+    return _repeated(fields, name, count)
+
+
 def _number(value: str, label: str) -> float:
     try:
         number = float(value)
@@ -1037,7 +1053,11 @@ def _actor_assignment_payloads(
         "direction_depth",
         "direction_visible",
     )
+    wardrobe_names = ("direction_color", "direction_line_width", "direction_blend")
     columns = {name: _repeated(fields, name, count) for name in names}
+    columns |= {
+        name: _repeated_optional(fields, name, count) for name in wardrobe_names
+    }
     assignments = []
     for index, assignment_id in enumerate(ids):
         direction: dict[str, Any] = {
@@ -1064,6 +1084,21 @@ def _actor_assignment_payloads(
         depth = columns["direction_depth"][index]
         if depth:
             direction["depth"] = depth
+        # Wardrobe: blank means the actor wears its own, so omit rather than
+        # write a value the actor would then be stuck with.
+        line_width = columns["direction_line_width"][index]
+        if line_width:
+            direction["line_width"] = _number(
+                line_width,
+                f"actor {assignment_id} line width",
+            )
+        for field, key in (
+            ("direction_color", "color"),
+            ("direction_blend", "blend_mode"),
+        ):
+            value = columns[field][index]
+            if value:
+                direction[key] = value
         assignments.append(
             {
                 "id": _slug(assignment_id, fallback=f"actor-{index + 1}"),
@@ -1103,12 +1138,17 @@ def _materialize_actor_cast(
     }
 
 
-def _actor_is_cast(visuals: Mapping[str, Any], actor_id: str) -> bool:
-    for field in ("section_casts", "cast_overrides"):
-        for cast in (visuals.get(field) or {}).values():
+def _actor_cast_in(visuals: Mapping[str, Any], actor_id: str) -> list[str]:
+    """Scene casts that still reference this actor, named for an error message."""
+    casts: list[str] = []
+    for field, label in (
+        ("section_casts", "all {} scenes"),
+        ("cast_overrides", "scene {}"),
+    ):
+        for key, cast in (visuals.get(field) or {}).items():
             if any(item.get("actor") == actor_id for item in cast.get("actors") or []):
-                return True
-    return False
+                casts.append(label.format(key))
+    return casts
 
 
 def _style_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
@@ -1204,9 +1244,11 @@ def save_track_actor(
         selected_actor_id = duplicate.id
     elif action == "actor_delete":
         actor_id = _single(fields, "actor_original_id")
-        if _actor_is_cast(visuals, actor_id):
+        cast_in = _actor_cast_in(visuals, actor_id)
+        if cast_in:
             raise CastingEditorError(
-                "remove this actor from every scene cast before deleting it"
+                "remove this actor from every scene cast before deleting it — "
+                f"still cast in {', '.join(cast_in)}"
             )
         if actors.pop(actor_id, None) is None:
             raise CastingEditorError(f"actor does not exist: {actor_id}")

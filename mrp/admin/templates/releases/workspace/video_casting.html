@@ -1,5 +1,5 @@
 {% extends "releases/workspace/_shell.html" %}
-{% from "video/_actor_macros.html" import actor_control_label, component_fields %}
+{% from "video/_actor_macros.html" import actor_control_label, component_fields, direction_fields %}
 
 {% macro context_fields() -%}
 <input type="hidden" name="section_id" value="{{ casting.selected_section.id }}">
@@ -41,7 +41,6 @@
       {% set has_title = casting.project_actors | selectattr('id', 'equalto', 'song-title') | list | length > 0 %}
       <div class="video-cast-heading-actions">
         <button class="btn btn-secondary btn-sm" hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/actors/title-generate" hx-target="#video-casting-result" hx-swap="innerHTML"{% if has_title %} hx-confirm="Replace the current song-title actor draft?"{% endif %} title="Outline the track title into a song-title text layer; refine it in the Actor Designer.">{{ 'Regenerate title actor' if has_title else 'Generate title actor' }}</button>
-        <a class="btn btn-secondary btn-sm" href="?section={{ casting.selected_section.id }}&scope={{ casting.scope }}&actor=__new__">+ New track actor</a>
       </div>
     </div>
 
@@ -95,7 +94,12 @@
           <div class="actor-designer-preview">
             <canvas id="actor-designer-canvas" width="720" height="720" aria-label="Live square preview of the actor's visual identity"></canvas>
           </div>
-          <small class="actor-designer-preview-note">Actor-local identity preview. Drag a component to reposition it within the actor; position in the video frame belongs to Scene Casting.</small>
+          <div class="spiro-transport">
+            <button type="button" class="btn btn-secondary btn-sm" id="spiro-play">▶ Play</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="spiro-reset">Reset</button>
+            <span class="spiro-progress" id="spiro-progress" aria-live="off"></span>
+          </div>
+          <small class="actor-designer-preview-note">Actor-local identity preview. Play traces the curve the way the renderer draws it. Drag a component to reposition it within the actor; position in the video frame belongs to Scene Casting.</small>
         </div>
         <div id="actor-components" class="actor-designer-controls">
           {% for component in casting.selected_actor.components %}{{ component_fields(component, loop.index) }}{% endfor %}
@@ -109,6 +113,7 @@
         <button class="btn btn-secondary" name="action" value="actor_publish" type="submit">Add identity to global library</button>
         <button class="btn btn-danger" name="action" value="actor_delete" type="submit" formnovalidate>Delete actor</button>
         {% endif %}
+        <a class="btn btn-secondary" href="?section={{ casting.selected_section.id }}&scope={{ casting.scope }}&actor=__new__">+ New track actor</a>
       </div>
     </form>
   </div></section>
@@ -193,23 +198,7 @@
           <input type="hidden" name="auto_casting" value="{{ 'true' if casting.project.visuals.auto_casting else 'false' }}">
         </div>
         <div id="actor-assignments">
-          {% for assignment in casting.actor_cast.actors %}
-          <fieldset class="actor-assignment-card" data-assignment-id="{{ assignment.id }}">
-            <legend><span class="assignment-title">Cast member {{ loop.index }}</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove(); if (window.redrawStoryboard) redrawStoryboard();">Remove</button></legend>
-            <input type="hidden" name="assignment_id" value="{{ assignment.id }}">
-            <div class="form-grid actor-direction-grid">
-              <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in casting.project_actors %}<option value="{{ item.id }}" {% if assignment.actor == item.id %}selected{% endif %}>{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
-              <div class="form-field"><label>Position X</label><input type="number" step="0.001" name="direction_anchor_x" value="{{ assignment.direction.anchor_x if assignment.direction.anchor_x is not none else '' }}" placeholder="identity"></div>
-              <div class="form-field"><label>Position Y</label><input type="number" step="0.001" name="direction_anchor_y" value="{{ assignment.direction.anchor_y if assignment.direction.anchor_y is not none else '' }}" placeholder="identity"></div>
-              <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="{{ assignment.direction.scale }}" required></div>
-              <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="{{ assignment.direction.opacity }}" required></div>
-              <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="{{ assignment.direction.rotation_offset_degrees_per_second }}" required></div>
-              <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="{{ assignment.direction.hue_shift_degrees }}" required></div>
-              <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background" {% if assignment.direction.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if assignment.direction.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
-              <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true" {% if assignment.direction.visible %}selected{% endif %}>visible</option><option value="false" {% if not assignment.direction.visible %}selected{% endif %}>hidden in this scene</option></select></div>
-            </div>
-          </fieldset>
-          {% endfor %}
+          {% for assignment in casting.actor_cast.actors %}{{ direction_fields(assignment, loop.index, casting.project_actors) }}{% endfor %}
         </div>
         <button class="btn btn-secondary btn-sm" type="button" onclick="addActorAssignment()">+ Add actor to scene</button>
 
@@ -265,21 +254,7 @@
 </template>
 
 <template id="actor-assignment-template">
-  <fieldset class="actor-assignment-card">
-    <legend><span class="assignment-title">New cast member</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove(); if (window.redrawStoryboard) redrawStoryboard();">Remove</button></legend>
-    <input type="hidden" name="assignment_id" value="appearance">
-    <div class="form-grid actor-direction-grid">
-      <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in casting.project_actors %}<option value="{{ item.id }}">{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
-      <div class="form-field"><label>Position X</label><input type="number" step="0.001" name="direction_anchor_x" placeholder="identity"></div>
-      <div class="form-field"><label>Position Y</label><input type="number" step="0.001" name="direction_anchor_y" placeholder="identity"></div>
-      <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="1" required></div>
-      <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="1" required></div>
-      <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="0" required></div>
-      <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="0" required></div>
-      <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background">background</option><option value="foreground">foreground</option></select></div>
-      <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true">visible</option><option value="false">hidden in this scene</option></select></div>
-    </div>
-  </fieldset>
+  {{ direction_fields(none, none, casting.project_actors) }}
 </template>
 
 <script src="/static/spiro-preview.js"></script>
@@ -295,6 +270,20 @@
     }
     drawActorPreview();
   }
+  // Wardrobe color is tri-state, which no single input expresses: the checkbox
+  // says whether this scene dresses the actor at all, and only then does the
+  // swatch become the submitted value. The hidden field is what posts, so every
+  // cast card contributes exactly one direction_color value and the server's
+  // column alignment holds. Blank means "wear your own".
+  window.mrpSyncWardrobeColor = function (el) {
+    const wrap = el.closest('.wardrobe-color');
+    if (!wrap) return;
+    const on = wrap.querySelector('.wardrobe-toggle').checked;
+    const swatch = wrap.querySelector('.wardrobe-swatch');
+    swatch.disabled = !on;
+    wrap.querySelector('input[name="direction_color"]').value = on ? swatch.value : '';
+  };
+
   function addActorAssignment() {
     const clone = document.getElementById('actor-assignment-template').content.cloneNode(true);
     const count = document.querySelectorAll('#actor-assignments fieldset').length + 1;
@@ -307,21 +296,37 @@
     if (window.redrawStoryboard) redrawStoryboard();
   }
 
+  // Same live identity preview as the standalone Actor Designer, transport
+  // included, so an actor animates the same way on both pages.
+  const actorComponentsEl = document.getElementById('actor-components');
+  const actorCanvas = document.getElementById('actor-designer-canvas');
+  const actorPlayer = actorCanvas && actorComponentsEl
+    ? window.mrpSpiroPlayer(
+        actorCanvas,
+        () => window.mrpReadComponentShapes(actorComponentsEl),
+        {
+          onchange(progress, playing) {
+            document.getElementById('spiro-play').textContent = playing ? '❚❚ Pause' : '▶ Play';
+            document.getElementById('spiro-progress').textContent =
+              playing || progress < 1 ? `${Math.round(progress * 100)}%` : '';
+          },
+        }
+      )
+    : null;
   function drawActorPreview() {
-    const canvas = document.getElementById('actor-designer-canvas');
-    const container = document.getElementById('actor-components');
-    if (!canvas || !container) return;
-    window.mrpDrawShapes(canvas, window.mrpReadComponentShapes(container));
+    if (actorPlayer) actorPlayer.redraw();
   }
+  document.getElementById('spiro-play')?.addEventListener('click', () => actorPlayer.toggle());
+  document.getElementById('spiro-reset')?.addEventListener('click', () => actorPlayer.reset());
 
   document.addEventListener('input', (event) => {
     if (event.target.closest('#actor-components')) drawActorPreview();
   });
-  window.mrpSyncFamilyFields(document.getElementById('actor-components'));
+  window.mrpSyncFamilyFields(actorComponentsEl);
   drawActorPreview();
   window.mrpEnableComponentDrag(
-    document.getElementById('actor-designer-canvas'),
-    document.getElementById('actor-components'),
+    actorCanvas,
+    actorComponentsEl,
     drawActorPreview
   );
 </script>
@@ -379,6 +384,10 @@
         const opacity = numOrNull(fieldVal(card, 'direction_opacity'));
         const depth = fieldVal(card, 'direction_depth');
         const visible = fieldVal(card, 'direction_visible') !== 'false';
+        // Wardrobe: blank wears the actor's own. Blend mode has no canvas
+        // equivalent here, so the storyboard previews color and weight only.
+        const wardrobe = fieldVal(card, 'direction_color');
+        const lineWidth = numOrNull(fieldVal(card, 'direction_line_width'));
         actor.components.forEach((component) => {
           const ax = component.anchor_x + (dirX !== null ? dirX - 0.5 : 0);
           const ay = component.anchor_y + (dirY !== null ? dirY - 0.5 : 0);
@@ -390,7 +399,8 @@
             anchor_y: clamp(ay, -0.5, 1.5),
             base_scale: clamp(component.base_scale * (scale !== null ? scale : 1), 0.000001, 2),
             opacity: visible ? component.opacity * (opacity !== null ? opacity : 1) : 0,
-            color: component.color,
+            color: wardrobe || component.color,
+            line_width: lineWidth !== null ? lineWidth : component.line_width,
             depth: depth || component.depth,
           });
         });
