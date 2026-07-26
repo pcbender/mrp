@@ -206,7 +206,10 @@ def test_designer_renders_saved_actor_and_unknown_id_is_404(tmp_path: Path, monk
 
     blank = asyncio.run(actors_routes.actors_new(_get_request("/actors/new")))
     assert blank.status_code == 200
-    assert "New visual component" in blank.body.decode()
+    # A blank designer opens on one component whose legend tracks its id and
+    # curve family live, so it reads "shape spirogram" rather than a fixed label.
+    assert "data-title-live" in blank.body.decode()
+    assert "shape spirogram" in blank.body.decode()
 
 
 def test_save_writes_a_validated_library_file(tmp_path: Path, monkeypatch) -> None:

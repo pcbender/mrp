@@ -702,3 +702,45 @@ def test_lissajous_actor_round_trips_family_geometry(tmp_path: Path) -> None:
     raw = payload["project"]["visuals"]["actors"][actor_id]["components"][0]["geometry"]
     assert "fixed_radius" not in raw
     assert raw["family"] == "lissajous"
+
+
+def test_scene_wardrobe_fields_round_trip_and_blank_keeps_the_actor_look(
+    tmp_path: Path,
+) -> None:
+    """Blank wardrobe posts must stay absent, not freeze the actor's look in.
+
+    The cast form always submits one value per column, so an untouched wardrobe
+    arrives as an empty string. If that were stored, the scene would silently
+    pin whatever the actor happened to look like at cast time.
+    """
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    bare = save_casting(tmp_path, release, track, _actor_cast_fields())
+    direction = bare["project"].visuals.section_casts["verse"].actors[0].direction
+    assert direction.color is None
+    assert direction.line_width is None
+    assert direction.blend_mode is None
+    assert bare["composition"].traces[0].color_locked is False
+
+    dressed = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields()
+        | {
+            "direction_color": ["#ff0000"],
+            "direction_line_width": ["6"],
+            "direction_blend": ["normal"],
+        },
+    )
+
+    direction = dressed["project"].visuals.section_casts["verse"].actors[0].direction
+    assert direction.color == "#ff0000"
+    assert direction.line_width == 6
+    assert direction.blend_mode == "normal"
+    compiled = dressed["composition"].traces[0]
+    assert compiled.color == "#ff0000"
+    assert compiled.color_locked is True
+    assert compiled.line_width == 6
+    assert compiled.blend_mode == "normal"
