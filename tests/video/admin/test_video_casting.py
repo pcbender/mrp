@@ -552,7 +552,11 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     saved_release = load_structured_record(release_path)["release"]
 
     assert response.status_code == 200
-    assert response.headers["HX-Redirect"].endswith("section=verse_1&scope=section")
+    # The anchor keeps a saved cast on the scene it was edited on: HX-Redirect
+    # is a full page load, so without it the editor reopens at the top.
+    assert response.headers["HX-Redirect"].endswith(
+        "section=verse_1&scope=section#scene-casting"
+    )
     assert saved_release["tracks"][0]["music_video"]["status"] == "cast"
     assert saved_release["tracks"][1] == untouched
 
@@ -744,3 +748,42 @@ def test_scene_wardrobe_fields_round_trip_and_blank_keeps_the_actor_look(
     assert compiled.color_locked is True
     assert compiled.line_width == 6
     assert compiled.blend_mode == "normal"
+
+
+def test_scene_energy_fields_round_trip_and_blank_leaves_no_override(
+    tmp_path: Path,
+) -> None:
+    """An untouched energy block must not be stored at all.
+
+    Writing an empty trace override would be harmless today but would pin the
+    actor's energy the moment a default changed, so absence has to survive.
+    """
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    bare = save_casting(tmp_path, release, track, _actor_cast_fields())
+    direction = bare["project"].visuals.section_casts["verse"].actors[0].direction
+    assert direction.trace.model_dump(exclude_none=True) == {}
+
+    driven = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields()
+        | {
+            "direction_cycles": ["0.9"],
+            "direction_ghosts": ["0"],
+        },
+    )
+
+    direction = driven["project"].visuals.section_casts["verse"].actors[0].direction
+    assert direction.trace.cycles_per_second == 0.9
+    assert direction.trace.ghost_count == 0
+    assert direction.trace.trail_fraction is None
+
+    compiled = driven["composition"].traces[0].trace
+    assert compiled.cycles_per_second == 0.9
+    assert compiled.ghost_count == 0
+    # Inherited from the actor rather than reset to the schema default of 0.24.
+    assert compiled.trail_fraction == 0.31
+    assert compiled.ghost_spacing == 0.09

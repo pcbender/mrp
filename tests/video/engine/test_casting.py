@@ -263,3 +263,65 @@ def test_scene_wardrobe_replaces_actor_look_and_survives_the_palette() -> None:
     assert bare.composition.traces[0].color_locked is False
     assert bare.composition.traces[0].line_width == 2.5
     assert bare.composition.traces[0].blend_mode == "screen"
+
+
+def test_scene_energy_overrides_merge_onto_the_actors_own_trace() -> None:
+    """A scene changes the energy it names and inherits the rest.
+
+    The trace override is partial on purpose: a scene that only speeds an actor
+    up must not silently reset its ghosts or trail to schema defaults.
+    """
+    visuals = VisualConfig.model_validate(
+        {
+            "actors": {
+                "orbit": {
+                    "id": "orbit",
+                    "name": "Orbit",
+                    "character": "drums",
+                    "components": [
+                        {
+                            **_trace("ring", 160),
+                            "trace": {
+                                "cycles_per_second": 0.1,
+                                "trail_fraction": 0.3,
+                                "ghost_count": 2,
+                                "ghost_spacing": 0.05,
+                                "head_radius": 4,
+                            },
+                        }
+                    ],
+                }
+            },
+            "section_casts": {
+                "bridge": {
+                    "actors": [
+                        {
+                            "id": "lead",
+                            "actor": "orbit",
+                            "direction": {
+                                "trace": {
+                                    "cycles_per_second": 0.9,
+                                    "ghost_count": 0,
+                                }
+                            },
+                        }
+                    ]
+                },
+                "verse": {"actors": [{"id": "lead", "actor": "orbit"}]},
+            },
+        }
+    )
+
+    driven = resolve_section_composition(visuals, "bridge", "bridge_1", 4821)
+    calm = resolve_section_composition(visuals, "verse", "verse_1", 4821)
+
+    trace = driven.composition.traces[0].trace
+    assert trace.cycles_per_second == 0.9
+    assert trace.ghost_count == 0
+    # Untouched by this scene, so still the actor's own.
+    assert trace.trail_fraction == 0.3
+    assert trace.ghost_spacing == 0.05
+    assert trace.head_radius == 4
+
+    assert calm.composition.traces[0].trace.cycles_per_second == 0.1
+    assert calm.composition.traces[0].trace.ghost_count == 2

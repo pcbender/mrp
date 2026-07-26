@@ -34,6 +34,7 @@
   'color': none,
   'line_width': none,
   'blend_mode': none,
+  'trace': {'cycles_per_second': none, 'trail_fraction': none, 'ghost_count': none, 'ghost_spacing': none, 'head_radius': none},
 } %}
 
 {% macro actor_control_label(label, help) -%}
@@ -140,6 +141,11 @@
     </div>
     <div class="form-field">{{ actor_control_label('Line width', 'Stroke weight in this scene. Blank wears the actor\'s own.') }}<input type="number" step="0.1" min="0.1" max="20" name="direction_line_width" value="{{ direction.line_width if direction.line_width is not none else '' }}" placeholder="identity"></div>
     <div class="form-field">{{ actor_control_label('Blend', 'How this actor composites over the scene here. Screen glows against dark backgrounds; normal paints solid.') }}<select name="direction_blend"><option value="">actor default</option>{% for mode in ['normal','screen'] %}<option value="{{ mode }}" {% if direction.blend_mode == mode %}selected{% endif %}>{{ mode }}</option>{% endfor %}</select></div>
+    <div class="form-field">{{ actor_control_label('Trace speed', 'How fast the curve draws itself in this scene, in cycles per second. Higher reads as more energy.') }}<input type="number" step="0.01" min="0.01" max="2" name="direction_cycles" value="{{ direction.trace.cycles_per_second if direction.trace.cycles_per_second is not none else '' }}" placeholder="identity"></div>
+    <div class="form-field">{{ actor_control_label('Trail', 'How much of the curve stays lit behind the head. Short trails feel taut, long trails feel sustained.') }}<input type="number" step="0.01" min="0.01" max="1" name="direction_trail" value="{{ direction.trace.trail_fraction if direction.trace.trail_fraction is not none else '' }}" placeholder="identity"></div>
+    <div class="form-field">{{ actor_control_label('Ghosts', 'Echo copies trailing the curve in this scene. 0 is a clean single line.') }}<input type="number" step="1" min="0" max="6" name="direction_ghosts" value="{{ direction.trace.ghost_count if direction.trace.ghost_count is not none else '' }}" placeholder="identity"></div>
+    <div class="form-field">{{ actor_control_label('Ghost spacing', 'How far apart the echo copies sit along the curve.') }}<input type="number" step="0.01" min="0" max="1" name="direction_ghost_spacing" value="{{ direction.trace.ghost_spacing if direction.trace.ghost_spacing is not none else '' }}" placeholder="identity"></div>
+    <div class="form-field">{{ actor_control_label('Head', 'Radius of the bright dot leading the trace. 0 hides it.') }}<input type="number" step="0.5" min="0" max="24" name="direction_head" value="{{ direction.trace.head_radius if direction.trace.head_radius is not none else '' }}" placeholder="identity"></div>
   </div>
 </fieldset>
 {%- endmacro %}

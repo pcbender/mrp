@@ -626,6 +626,12 @@ def compile_actor_cast(
                             else direction.line_width
                         ),
                         "blend_mode": direction.blend_mode or component.blend_mode,
+                        # Energy: only the trace fields this scene named, laid
+                        # over the actor's own. exclude_none is what makes a
+                        # partial override partial.
+                        "trace": component.trace.model_copy(
+                            update=direction.trace.model_dump(exclude_none=True)
+                        ),
                         "drivers": drivers,
                     }
                 )
