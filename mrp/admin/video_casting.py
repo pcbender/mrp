@@ -1103,12 +1103,17 @@ def _materialize_actor_cast(
     }
 
 
-def _actor_is_cast(visuals: Mapping[str, Any], actor_id: str) -> bool:
-    for field in ("section_casts", "cast_overrides"):
-        for cast in (visuals.get(field) or {}).values():
+def _actor_cast_in(visuals: Mapping[str, Any], actor_id: str) -> list[str]:
+    """Scene casts that still reference this actor, named for an error message."""
+    casts: list[str] = []
+    for field, label in (
+        ("section_casts", "all {} scenes"),
+        ("cast_overrides", "scene {}"),
+    ):
+        for key, cast in (visuals.get(field) or {}).items():
             if any(item.get("actor") == actor_id for item in cast.get("actors") or []):
-                return True
-    return False
+                casts.append(label.format(key))
+    return casts
 
 
 def _style_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
@@ -1204,9 +1209,11 @@ def save_track_actor(
         selected_actor_id = duplicate.id
     elif action == "actor_delete":
         actor_id = _single(fields, "actor_original_id")
-        if _actor_is_cast(visuals, actor_id):
+        cast_in = _actor_cast_in(visuals, actor_id)
+        if cast_in:
             raise CastingEditorError(
-                "remove this actor from every scene cast before deleting it"
+                "remove this actor from every scene cast before deleting it — "
+                f"still cast in {', '.join(cast_in)}"
             )
         if actors.pop(actor_id, None) is None:
             raise CastingEditorError(f"actor does not exist: {actor_id}")

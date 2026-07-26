@@ -41,7 +41,6 @@
       {% set has_title = casting.project_actors | selectattr('id', 'equalto', 'song-title') | list | length > 0 %}
       <div class="video-cast-heading-actions">
         <button class="btn btn-secondary btn-sm" hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/actors/title-generate" hx-target="#video-casting-result" hx-swap="innerHTML"{% if has_title %} hx-confirm="Replace the current song-title actor draft?"{% endif %} title="Outline the track title into a song-title text layer; refine it in the Actor Designer.">{{ 'Regenerate title actor' if has_title else 'Generate title actor' }}</button>
-        <a class="btn btn-secondary btn-sm" href="?section={{ casting.selected_section.id }}&scope={{ casting.scope }}&actor=__new__">+ New track actor</a>
       </div>
     </div>
 
@@ -95,7 +94,12 @@
           <div class="actor-designer-preview">
             <canvas id="actor-designer-canvas" width="720" height="720" aria-label="Live square preview of the actor's visual identity"></canvas>
           </div>
-          <small class="actor-designer-preview-note">Actor-local identity preview. Drag a component to reposition it within the actor; position in the video frame belongs to Scene Casting.</small>
+          <div class="spiro-transport">
+            <button type="button" class="btn btn-secondary btn-sm" id="spiro-play">▶ Play</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="spiro-reset">Reset</button>
+            <span class="spiro-progress" id="spiro-progress" aria-live="off"></span>
+          </div>
+          <small class="actor-designer-preview-note">Actor-local identity preview. Play traces the curve the way the renderer draws it. Drag a component to reposition it within the actor; position in the video frame belongs to Scene Casting.</small>
         </div>
         <div id="actor-components" class="actor-designer-controls">
           {% for component in casting.selected_actor.components %}{{ component_fields(component, loop.index) }}{% endfor %}
@@ -109,6 +113,7 @@
         <button class="btn btn-secondary" name="action" value="actor_publish" type="submit">Add identity to global library</button>
         <button class="btn btn-danger" name="action" value="actor_delete" type="submit" formnovalidate>Delete actor</button>
         {% endif %}
+        <a class="btn btn-secondary" href="?section={{ casting.selected_section.id }}&scope={{ casting.scope }}&actor=__new__">+ New track actor</a>
       </div>
     </form>
   </div></section>
@@ -307,21 +312,37 @@
     if (window.redrawStoryboard) redrawStoryboard();
   }
 
+  // Same live identity preview as the standalone Actor Designer, transport
+  // included, so an actor animates the same way on both pages.
+  const actorComponentsEl = document.getElementById('actor-components');
+  const actorCanvas = document.getElementById('actor-designer-canvas');
+  const actorPlayer = actorCanvas && actorComponentsEl
+    ? window.mrpSpiroPlayer(
+        actorCanvas,
+        () => window.mrpReadComponentShapes(actorComponentsEl),
+        {
+          onchange(progress, playing) {
+            document.getElementById('spiro-play').textContent = playing ? '❚❚ Pause' : '▶ Play';
+            document.getElementById('spiro-progress').textContent =
+              playing || progress < 1 ? `${Math.round(progress * 100)}%` : '';
+          },
+        }
+      )
+    : null;
   function drawActorPreview() {
-    const canvas = document.getElementById('actor-designer-canvas');
-    const container = document.getElementById('actor-components');
-    if (!canvas || !container) return;
-    window.mrpDrawShapes(canvas, window.mrpReadComponentShapes(container));
+    if (actorPlayer) actorPlayer.redraw();
   }
+  document.getElementById('spiro-play')?.addEventListener('click', () => actorPlayer.toggle());
+  document.getElementById('spiro-reset')?.addEventListener('click', () => actorPlayer.reset());
 
   document.addEventListener('input', (event) => {
     if (event.target.closest('#actor-components')) drawActorPreview();
   });
-  window.mrpSyncFamilyFields(document.getElementById('actor-components'));
+  window.mrpSyncFamilyFields(actorComponentsEl);
   drawActorPreview();
   window.mrpEnableComponentDrag(
-    document.getElementById('actor-designer-canvas'),
-    document.getElementById('actor-components'),
+    actorCanvas,
+    actorComponentsEl,
     drawActorPreview
   );
 </script>
