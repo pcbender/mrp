@@ -5,6 +5,7 @@
 <input type="hidden" name="section_id" value="{{ casting.selected_section.id }}">
 <input type="hidden" name="section_type" value="{{ casting.selected_section.type }}">
 <input type="hidden" name="scope" value="{{ casting.scope }}">
+<input type="hidden" name="return_actor" value="{{ casting.selected_actor.id if casting.selected_actor_saved else '' }}">
 {%- endmacro %}
 
 {% macro actor_return_fields() -%}
@@ -388,11 +389,24 @@
         // equivalent here, so the storyboard previews color and weight only.
         const wardrobe = fieldVal(card, 'direction_color');
         const lineWidth = numOrNull(fieldVal(card, 'direction_line_width'));
+        // Energy: a partial trace override, matching compile_actor_cast's merge.
+        const energy = {};
+        [
+          ['direction_cycles', 'cycles_per_second'],
+          ['direction_trail', 'trail_fraction'],
+          ['direction_ghosts', 'ghost_count'],
+          ['direction_ghost_spacing', 'ghost_spacing'],
+          ['direction_head', 'head_radius'],
+        ].forEach(([field, key]) => {
+          const value = numOrNull(fieldVal(card, field));
+          if (value !== null) energy[key] = value;
+        });
         actor.components.forEach((component) => {
           const ax = component.anchor_x + (dirX !== null ? dirX - 0.5 : 0);
           const ay = component.anchor_y + (dirY !== null ? dirY - 0.5 : 0);
           shapes.push({
             ...component,
+            ...energy,
             assignment: card.dataset.assignmentId,
             label,
             anchor_x: clamp(ax, -0.5, 1.5),

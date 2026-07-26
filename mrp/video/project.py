@@ -303,6 +303,20 @@ class LayerTraceConfig(ContractModel):
     head_radius: float = Field(default=3, ge=0, le=24)
 
 
+class ActorTraceDirectionConfig(ContractModel):
+    """A partial LayerTraceConfig: only the fields a scene chose to change.
+
+    Bounds mirror LayerTraceConfig field for field. Every value is optional so
+    the merge in compile_actor_cast can fall back to the actor's own trace.
+    """
+
+    cycles_per_second: float | None = Field(default=None, gt=0, le=2)
+    trail_fraction: float | None = Field(default=None, gt=0, le=1)
+    ghost_count: int | None = Field(default=None, ge=0, le=6)
+    ghost_spacing: float | None = Field(default=None, ge=0, le=1)
+    head_radius: float | None = Field(default=None, ge=0, le=24)
+
+
 class SectionVisualStyleConfig(ContractModel):
     visible_roles: list[VisualRole] | None = Field(default=None, max_length=5)
     layer_fraction: float | None = Field(default=None, ge=0, le=1)
@@ -453,6 +467,9 @@ class ActorDirectionConfig(ContractModel):
     color: HexColor | None = None
     line_width: float | None = Field(default=None, gt=0, le=20)
     blend_mode: Literal["normal", "screen"] | None = None
+    trace: ActorTraceDirectionConfig = Field(
+        default_factory=ActorTraceDirectionConfig
+    )
 
 
 class ActorAssignmentConfig(ContractModel):

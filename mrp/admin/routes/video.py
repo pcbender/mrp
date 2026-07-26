@@ -475,6 +475,7 @@ async def video_actor_save(request: Request, slug: str, track_slug: str):
     response = HTMLResponse('<div class="flash flash-ok">Track actor saved.</div>')
     response.headers["HX-Redirect"] = (
         f"/releases/{slug}/tracks/{track_slug}/video/casting{query}"
+        "#track-actor-designer"
     )
     return response
 
@@ -573,9 +574,15 @@ async def video_casting_save(request: Request, slug: str, track_slug: str):
     path.write_text(serialize_structured_record(path, data), encoding="utf-8")
     selected = result["selected_section"]
     response = HTMLResponse('<div class="flash flash-ok">Section cast saved.</div>')
+    # HX-Redirect is a full page load, so without the anchor the editor reopens
+    # at the top of the page and the scene the user was working on scrolls away.
+    # The selected actor rides along for the same reason.
+    actor = str(form.get("return_actor") or "")
+    query = f"?section={selected.id}&scope={result['scope']}"
+    if actor:
+        query += f"&actor={actor}"
     response.headers["HX-Redirect"] = (
-        f"/releases/{slug}/tracks/{track_slug}/video/casting"
-        f"?section={selected.id}&scope={result['scope']}"
+        f"/releases/{slug}/tracks/{track_slug}/video/casting{query}#scene-casting"
     )
     return response
 

@@ -1053,7 +1053,16 @@ def _actor_assignment_payloads(
         "direction_depth",
         "direction_visible",
     )
-    wardrobe_names = ("direction_color", "direction_line_width", "direction_blend")
+    wardrobe_names = (
+        "direction_color",
+        "direction_line_width",
+        "direction_blend",
+        "direction_cycles",
+        "direction_trail",
+        "direction_ghosts",
+        "direction_ghost_spacing",
+        "direction_head",
+    )
     columns = {name: _repeated(fields, name, count) for name in names}
     columns |= {
         name: _repeated_optional(fields, name, count) for name in wardrobe_names
@@ -1099,6 +1108,26 @@ def _actor_assignment_payloads(
             value = columns[field][index]
             if value:
                 direction[key] = value
+        # Energy: a partial trace override, so only the fields the scene filled
+        # in are carried. An empty block stays empty rather than being written.
+        trace: dict[str, Any] = {}
+        for field, key in (
+            ("direction_cycles", "cycles_per_second"),
+            ("direction_trail", "trail_fraction"),
+            ("direction_ghost_spacing", "ghost_spacing"),
+            ("direction_head", "head_radius"),
+        ):
+            value = columns[field][index]
+            if value:
+                trace[key] = _number(value, f"actor {assignment_id} {key}")
+        ghosts = columns["direction_ghosts"][index]
+        if ghosts:
+            trace["ghost_count"] = _integer(
+                ghosts,
+                f"actor {assignment_id} ghost count",
+            )
+        if trace:
+            direction["trace"] = trace
         assignments.append(
             {
                 "id": _slug(assignment_id, fallback=f"actor-{index + 1}"),
