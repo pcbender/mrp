@@ -114,6 +114,13 @@ architecture, backward-compatible stems and music-video track contracts,
 isolated renderer test lanes, job requirements, and Astro compatibility gates
 are captured in [MRP Music Video Designer Plan](<MRP Music Video Designer Plan.md>).
 
+The private, non-rendering audio-reactive Scene Preview and Full-track Preview
+follow-on was completed and release-gated 2026-07-27. Its durable design is
+captured in
+[MRP Music Video Live Preview Plan](<MRP Music Video Live Preview Plan.md>).
+Current milestone status, exit criteria, and completion evidence are maintained
+in [MRP Music Video Live Preview Milestones](<MRP Music Video Live Preview Milestones.md>).
+
 Implementation begins with optional schema contracts and compatibility tests;
 the renderer moves only after existing and enriched track records are proven to
 validate and build through Astro without leaking private production paths.

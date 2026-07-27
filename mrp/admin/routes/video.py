@@ -4,8 +4,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-from fastapi import APIRouter, Request
-from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
+from fastapi import APIRouter, Header, Request
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Response
 from fastapi.templating import Jinja2Templates
 
 from mrp.admin import db, video_jobs
@@ -24,6 +24,10 @@ from mrp.admin.video_rendering import (
     load_rendering,
     render_launch_problems,
     renders_path,
+)
+from mrp.admin.video_live_preview import (
+    LivePreviewError,
+    build_live_preview_document,
 )
 from mrp.admin.video_publication import (
     VideoPublicationError,
@@ -237,6 +241,115 @@ async def video_audio(slug: str, track_slug: str):
         master.suffix.casefold(), "application/octet-stream"
     )
     return FileResponse(master, media_type=media_type)
+
+
+def _etag_matches(header: object, etag: str) -> bool:
+    """Whether an If-None-Match header covers this entity tag.
+
+    Accepts any object so a direct call that never went through FastAPI's
+    header binding is simply treated as sending no validator.
+    """
+    if not isinstance(header, str) or not header:
+        return False
+    for candidate in header.split(","):
+        value = candidate.strip()
+        if value == "*":
+            return True
+        if value.startswith("W/"):
+            value = value[2:]
+        if value.strip('"') == etag:
+            return True
+    return False
+
+
+@router.get(
+    "/releases/{slug}/tracks/{track_slug}/video/live-preview",
+    response_class=HTMLResponse,
+)
+async def video_live_preview(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    key = track_key(ctx["release"], unit["track"])
+    master = resolve_asset(root, unit["track"].get("master_path"))
+    ctx.update(
+        {
+            "unit": unit,
+            "track": unit["track"],
+            "track_slug": track_slug,
+            "track_key": key,
+            "audio_available": bool(master and master.is_file()),
+            "frame_job": db.get_latest_video_job(key, "frame"),
+        }
+    )
+    return _templates.TemplateResponse(
+        request,
+        "releases/workspace/video_live_preview.html",
+        ctx,
+        headers={"Cache-Control": "private, no-store"},
+    )
+
+
+@router.get(
+    "/releases/{slug}/tracks/{track_slug}/video/live-preview/data",
+    response_class=Response,
+)
+async def video_live_preview_data(
+    slug: str,
+    track_slug: str,
+    if_none_match: str | None = Header(default=None),
+):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return JSONResponse(
+            {
+                "error": {
+                    "code": "release_not_found",
+                    "message": f"Release not found: {slug}",
+                }
+            },
+            status_code=404,
+        )
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return JSONResponse(
+            {
+                "error": {
+                    "code": "track_not_found",
+                    "message": f"Track not found: {track_slug}",
+                }
+            },
+            status_code=404,
+        )
+    try:
+        document = build_live_preview_document(
+            root,
+            slug,
+            ctx["release"],
+            track_slug,
+            unit["track"],
+        )
+    except LivePreviewError as exc:
+        return JSONResponse(exc.payload(), status_code=exc.status_code)
+    headers = {
+        "Cache-Control": "private, no-store",
+        "ETag": f'"{document.etag}"',
+        "X-Content-Type-Options": "nosniff",
+    }
+    # The browser re-checks this resource whenever the tab regains focus, so a
+    # matching validator answers with no body at all.
+    if _etag_matches(if_none_match, document.etag):
+        return Response(status_code=304, headers=headers)
+    return Response(
+        content=document.body,
+        media_type="application/json",
+        headers=headers,
+    )
 
 
 @router.post(

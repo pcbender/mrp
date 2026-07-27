@@ -393,6 +393,14 @@ implemented.
 - Record the project revision/hash used for every preview.
 - Let the user compare and discard drafts without modifying public assets.
 
+The rendered-artifact workflow above remains the authority for exact output.
+The private, non-rendering browser preview that shares audio-reactive state
+between Scene Preview and a complete Full-track Preview was completed and
+release-gated 2026-07-27. Its durable design is specified in
+[MRP Music Video Live Preview Plan](<MRP Music Video Live Preview Plan.md>).
+Implementation status and completion evidence are recorded separately in
+[MRP Music Video Live Preview Milestones](<MRP Music Video Live Preview Milestones.md>).
+
 ### 5. Full render and approval
 
 - Preflight exact inputs and estimated work.

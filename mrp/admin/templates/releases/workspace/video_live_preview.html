@@ -1,0 +1,112 @@
+{% extends "releases/workspace/_shell.html" %}
+
+{% block stage %}
+<p class="video-breadcrumb">
+  <a href="/releases/{{ slug }}/tracks/{{ track_slug }}/video">← {{ track.title }}</a>
+  <span> / Full-track Live Preview</span>
+</p>
+
+<div class="track-preview-heading">
+  <div>
+    <p class="video-step-label">Saved project · Master timeline</p>
+    <h2>Full-track Live Preview</h2>
+    <p class="video-help">
+      Hear the master while the browser draws every saved scene from time zero
+      through the end of the track. This does not start an MP4 render or change
+      video status.
+    </p>
+  </div>
+  <div class="video-cast-actions">
+    <a class="btn btn-secondary btn-sm"
+       href="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting">Edit scene casting</a>
+    <a class="btn btn-secondary btn-sm"
+       href="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering">Rendering workspace</a>
+  </div>
+</div>
+
+<div class="track-preview-layout">
+  <section class="form-card track-preview-main"><div class="form-body">
+    <div class="track-preview-canvas-heading">
+      <div>
+        <h2>Saved timeline</h2>
+        <p class="video-help">
+          Canvas timing, scene transitions, audio response, and lyric cues use
+          the loaded saved revision. Browser font metrics and antialiasing may
+          differ from the production renderer.
+        </p>
+        <small class="track-preview-performance" id="track-preview-performance">
+          Measuring redraw target…
+        </small>
+      </div>
+      <span class="badge badge-draft" id="track-preview-state"
+            data-state="loading" aria-live="polite">Loading saved preview…</span>
+    </div>
+
+    <div class="track-preview-canvas-wrap">
+      <canvas id="track-live-preview-canvas" width="960" height="540"
+              data-preview-url="/releases/{{ slug }}/tracks/{{ track_slug }}/video/live-preview/data"
+              aria-label="Full-track music-video Live Preview"></canvas>
+    </div>
+
+    {% if audio_available %}
+    <audio id="track-preview-audio" preload="metadata"
+           src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/audio"></audio>
+    {% endif %}
+
+    <div class="track-preview-transport" role="group"
+         aria-label="Full-track preview transport">
+      <button type="button" class="btn btn-primary" id="track-preview-play"
+              aria-pressed="false" disabled>▶ Play</button>
+      <button type="button" class="btn btn-secondary" id="track-preview-reset"
+              disabled>Reset</button>
+      <input type="range" id="track-preview-scrubber" min="0" max="1"
+             value="0" step="0.01" disabled
+             aria-label="Preview position" aria-valuetext="Loading">
+      <output id="track-preview-time" for="track-preview-scrubber">0:00.00 / 0:00.00</output>
+    </div>
+
+    <dl class="track-preview-now" aria-live="polite">
+      <div><dt>Scene</dt><dd id="track-preview-scene">Loading…</dd></div>
+      <div><dt>Lyric</dt><dd id="track-preview-lyric">—</dd></div>
+    </dl>
+  </div></section>
+
+  <aside class="track-preview-sidebar">
+    <section class="form-card"><div class="form-body">
+      <h2>Jump to scene</h2>
+      <p class="video-help">Jump buttons seek the same absolute master clock as the scrubber.</p>
+      <div id="track-preview-scenes" class="track-preview-scenes">
+        <span class="video-help">Loading scenes…</span>
+      </div>
+    </div></section>
+
+    <section class="form-card"><div class="form-body">
+      <h2>Confirm exact pixels</h2>
+      <p class="video-help">
+        The canvas is editor-trustworthy for timing and motion. Render the
+        currently displayed time to confirm exact geometry, font rasterization,
+        and color.
+      </p>
+      <div id="video-job-frame">
+        {% set job = frame_job %}
+        {% set kind = 'frame' %}
+        {% set preview_time = 0 %}
+        {% include "releases/workspace/_video_job.html" %}
+      </div>
+    </div></section>
+
+    <section class="form-card"><div class="form-body">
+      <h2>Loaded revision</h2>
+      <p class="video-help">
+        Returning to this tab checks whether saved project, timing, or analysis
+        changed. A stale notice never swaps state during playback.
+      </p>
+      <button type="button" class="btn btn-secondary btn-sm"
+              id="track-preview-reload">Reload saved state</button>
+    </div></section>
+  </aside>
+</div>
+
+<script src="/static/spiro-preview.js"></script>
+<script src="/static/video-live-preview.js"></script>
+{% endblock %}

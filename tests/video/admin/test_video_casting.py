@@ -410,6 +410,8 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
     # Every compiled trace the renderer would draw is available for the canvas,
     # tagged with the assignment prefix so a dragged shape maps back to its card.
     assert storyboard["margin"] == 0.08
+    assert storyboard["section_id"] == "verse_1"
+    assert storyboard["range"] == {"start": 0.0, "end": 4.0}
     trace = storyboard["traces"][0]
     assert trace["assignment"] == "lead"
     assert trace["anchor_x"] == pytest.approx(0.37)
@@ -417,6 +419,9 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
     assert {"family", "fixed_radius", "phase", "rotation", "samples", "color", "opacity"} <= set(trace)
     assert trace["family"] == "spirogram"
     assert trace["phase"] == 0.5
+    assert trace["role"] == "bass"
+    assert trace["drivers"]["scale"] == "bass.energy"
+    assert trace["blend_mode"] == "screen"
     assert trace["color_flow"] == {"source": "curvature", "swing_degrees": 120.0}
 
     # Actor identities let the browser recompile placement live from the fields.
@@ -596,6 +601,7 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'name="color_flow_source"' in body
     assert 'type="range"' in body
     assert "/static/spiro-preview.js" in body
+    assert "/static/video-live-preview.js" in body
     assert 'id="track-actor-designer"' in body
     assert 'class="actor-designer-live-layout"' in body
     assert 'class="actor-designer-controls"' in body
@@ -1056,6 +1062,12 @@ def test_casting_page_offers_the_transition_on_a_cast_scene(
     assert 'name="transition_curve"' in body
     assert 'name="transition_gap"' in body
     assert "No gap before this scene" in body
+    assert "Scene Preview" in body
+    assert 'id="storyboard-state"' in body
+    assert (
+        'data-preview-url="/releases/video-contract/tracks/private-track/video/live-preview/data"'
+        in body
+    )
     assert 'value="1.2"' in body
     assert "transition for all verse scenes" in body
     # The transition belongs to the scene, ahead of the advanced style block.
