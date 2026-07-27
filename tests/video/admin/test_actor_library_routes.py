@@ -260,6 +260,23 @@ def test_every_component_can_be_removed_including_the_first(
     assert "this.closest('fieldset').remove()" not in body
 
 
+def test_both_designers_import_svg_through_the_one_shared_helper(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    """The splitter wiring lives in spiro-preview.js, not copied per page."""
+    _seed_actor(tmp_path)
+    monkeypatch.setattr(actors_routes, "get_repo_root", lambda: tmp_path)
+
+    body = asyncio.run(
+        actors_routes.actors_designer(_get_request("/actors/rose-lantern"), "rose-lantern")
+    ).body.decode()
+
+    assert "window.mrpEnableSvgImport" in body
+    # The page-local reimplementation is gone; only the shared call remains.
+    assert "const response = await fetch(url" not in body
+
+
 def test_the_designer_routes_component_changes_back_into_its_preview(
     tmp_path: Path,
     monkeypatch,

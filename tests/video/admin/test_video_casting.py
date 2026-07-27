@@ -869,6 +869,39 @@ def test_the_admin_shell_reloads_when_a_redirect_points_at_the_current_page(
     assert "window.location.reload()" in body
 
 
+def test_a_track_actor_can_be_built_from_an_svg_not_typed_coordinates(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    """The track designer only exposed a raw path_data textarea.
+
+    Picking artwork is the point; nobody is going to hand-enter an SVG's
+    coordinates into a track actor, so it now offers the same splitter the
+    standalone Actor Designer has.
+    """
+    release, _track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    db.init(tmp_path / "admin.db")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    body = asyncio.run(
+        video_routes.video_casting(
+            _get_request("/releases/video-contract/tracks/private-track/video/casting"),
+            "video-contract",
+            "private-track",
+            "verse_1",
+            "type",
+        )
+    ).body.decode()
+
+    assert "Import SVG" in body
+    assert 'id="track-svg-import"' in body
+    assert 'accept=".svg,image/svg+xml"' in body
+    assert "window.mrpEnableSvgImport" in body
+    # The file input must not ride along with the actor form on save.
+    assert 'type="file" id="track-svg-import" accept=".svg,image/svg+xml" hidden' in body
+    assert 'name="track-svg-import"' not in body
+
+
 def test_the_casting_page_wires_the_shared_component_hooks(
     tmp_path: Path,
     monkeypatch,
