@@ -87,10 +87,12 @@ project:
     - id: instrument-haze
       role: instruments
       geometry:
+        family: spirogram
         fixed_radius: 192.0
         moving_radius: 48.0
         pen_offset: 112.0
         rotation: inside
+        phase: 0.0
         samples: 1800
       trace:
         cycles_per_second: 0.018
@@ -112,10 +114,12 @@ project:
     - id: bass-orbit
       role: bass
       geometry:
+        family: spirogram
         fixed_radius: 233.0
         moving_radius: 89.0
         pen_offset: 144.0
         rotation: outside
+        phase: 0.0
         samples: 1400
       trace:
         cycles_per_second: 0.045
@@ -137,10 +141,12 @@ project:
     - id: vocal-flower
       role: vocals
       geometry:
+        family: spirogram
         fixed_radius: 180.0
         moving_radius: 65.0
         pen_offset: 95.0
         rotation: inside
+        phase: 0.0
         samples: 900
       trace:
         cycles_per_second: 0.068
@@ -162,10 +168,12 @@ project:
     - id: drum-spark
       role: drums
       geometry:
+        family: spirogram
         fixed_radius: 96.0
         moving_radius: 32.0
         pen_offset: 50.0
         rotation: outside
+        phase: 0.0
         samples: 720
       trace:
         cycles_per_second: 0.12
@@ -201,14 +209,16 @@ project:
         kind: spirogram
         character: bass
         components:
-        - id: shape
+        - id: shape-33
           role: instruments
           geometry:
-            fixed_radius: 208.6
-            moving_radius: 74.9
-            pen_offset: 129.3
-            rotation: outside
+            family: lissajous
+            rotation: inside
+            phase: 0.0
             samples: 1200
+            liss_freq_x: 3
+            liss_freq_y: 2
+            liss_delta: 1.5708
           trace:
             cycles_per_second: 0.064
             trail_fraction: 0.3
@@ -241,10 +251,12 @@ project:
         - id: shape
           role: vocals
           geometry:
+            family: spirogram
             fixed_radius: 217.0
             moving_radius: 59.0
             pen_offset: 174.0
             rotation: inside
+            phase: 0.0
             samples: 1700
           trace:
             cycles_per_second: 0.094
@@ -281,10 +293,12 @@ project:
         - id: shape
           role: drums
           geometry:
+            family: spirogram
             fixed_radius: 181.0
             moving_radius: 53.0
             pen_offset: 137.0
             rotation: outside
+            phase: 0.0
             samples: 1200
           trace:
             cycles_per_second: 0.15
@@ -321,10 +335,12 @@ project:
         - id: shape
           role: bass
           geometry:
+            family: spirogram
             fixed_radius: 229.0
             moving_radius: 76.0
             pen_offset: 173.0
             rotation: inside
+            phase: 0.0
             samples: 1500
           trace:
             cycles_per_second: 0.062
@@ -360,10 +376,12 @@ project:
         - id: shape
           role: instruments
           geometry:
+            family: spirogram
             fixed_radius: 207.0
             moving_radius: 74.0
             pen_offset: 140.0
             rotation: outside
+            phase: 0.0
             samples: 1200
           trace:
             cycles_per_second: 0.064
@@ -396,10 +414,12 @@ project:
         - id: shape
           role: vocals
           geometry:
+            family: spirogram
             fixed_radius: 156.0
             moving_radius: 48.0
             pen_offset: 108.0
             rotation: inside
+            phase: 0.0
             samples: 1200
           trace:
             cycles_per_second: 0.078
@@ -432,10 +452,12 @@ project:
         - id: shape
           role: bass
           geometry:
+            family: spirogram
             fixed_radius: 231.0
             moving_radius: 82.0
             pen_offset: 138.0
             rotation: outside
+            phase: 0.0
             samples: 1400
           trace:
             cycles_per_second: 0.038
@@ -458,6 +480,33 @@ project:
             opacity: master.energy
             color: bass.energy
             pulse: drums.accent
+        - id: shape-2
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 180.0
+            moving_radius: 60.0
+            pen_offset: 100.0
+            rotation: inside
+            phase: 0.0
+            samples: 900
+          trace:
+            cycles_per_second: 0.08
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 3.0
+          color: '#ff5fd2'
+          depth: foreground
+          anchor_x: 0.25
+          anchor_y: 0.25
+          base_scale: 1.0
+          opacity: 0.8
+          line_width: 2.0
+          rotation_degrees_per_second: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
       verse-bloom:
         id: verse-bloom
         name: Verse Bloom
@@ -468,10 +517,12 @@ project:
         - id: shape
           role: vocals
           geometry:
+            family: spirogram
             fixed_radius: 159.0
             moving_radius: 53.0
             pen_offset: 118.0
             rotation: inside
+            phase: 0.0
             samples: 1200
           trace:
             cycles_per_second: 0.064
@@ -505,10 +556,12 @@ project:
         - id: shape
           role: vocals
           geometry:
+            family: spirogram
             fixed_radius: 221.0
             moving_radius: 64.0
             pen_offset: 169.0
             rotation: inside
+            phase: 0.0
             samples: 1600
           trace:
             cycles_per_second: 0.11
@@ -545,10 +598,12 @@ project:
         - id: shape
           role: instruments
           geometry:
+            family: spirogram
             fixed_radius: 271.0
             moving_radius: 93.0
             pen_offset: 204.0
             rotation: outside
+            phase: 0.0
             samples: 1900
           trace:
             cycles_per_second: 0.046
@@ -584,10 +639,12 @@ project:
         - id: shape
           role: bass
           geometry:
+            family: spirogram
             fixed_radius: 240.0
             moving_radius: 90.0
             pen_offset: 150.0
             rotation: outside
+            phase: 0.0
             samples: 1500
           trace:
             cycles_per_second: 0.052
@@ -620,10 +677,12 @@ project:
         - id: shape
           role: vocals
           geometry:
+            family: spirogram
             fixed_radius: 200.0
             moving_radius: 71.0
             pen_offset: 127.0
             rotation: inside
+            phase: 0.0
             samples: 1200
           trace:
             cycles_per_second: 0.082
@@ -656,10 +715,12 @@ project:
         - id: shape
           role: drums
           geometry:
+            family: spirogram
             fixed_radius: 172.0
             moving_radius: 51.0
             pen_offset: 116.0
             rotation: outside
+            phase: 0.0
             samples: 1200
           trace:
             cycles_per_second: 0.12
@@ -692,10 +753,12 @@ project:
         - id: shape
           role: vocals
           geometry:
+            family: spirogram
             fixed_radius: 252.0
             moving_radius: 85.0
             pen_offset: 193.0
             rotation: inside
+            phase: 0.0
             samples: 1800
           trace:
             cycles_per_second: 0.036
