@@ -371,10 +371,32 @@
   });
   window.mrpSyncFamilyFields(actorComponentsEl);
   drawActorPreview();
+
+  // Removing a component has to redraw here too, not just on /actors.
+  window.mrpComponentsChanged = drawActorPreview;
+
+  // Pressing or dragging a shape on the canvas has to bring its controls into
+  // view. Only component 1 renders expanded, so without opening the card the
+  // drag silently edits fields the user cannot see.
+  function revealComponentCard(card) {
+    if (!actorComponentsEl) return;
+    actorComponentsEl.querySelectorAll('.actor-component-card').forEach((item) => {
+      item.classList.toggle('is-selected', item === card);
+    });
+    if (!card) return;
+    const details = card.querySelector('details');
+    if (details) details.open = true;
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  actorComponentsEl?.addEventListener('click', (event) => {
+    const card = event.target.closest('.actor-component-card');
+    if (card) revealComponentCard(card);
+  });
   window.mrpEnableComponentDrag(
     actorCanvas,
     actorComponentsEl,
-    drawActorPreview
+    drawActorPreview,
+    revealComponentCard
   );
 </script>
 

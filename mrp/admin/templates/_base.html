@@ -49,6 +49,32 @@
         event.detail.isError = false;
       }
     });
+
+    // htmx honours HX-Redirect by assigning window.location.href. When the
+    // target is the page we are already on, that assignment is a same-document
+    // navigation and the browser does nothing — a save then appears to have no
+    // effect until the user refreshes by hand. Editors that redirect back to
+    // the scene being edited hit this on every save, so force a real reload.
+    document.body.addEventListener('htmx:beforeOnLoad', (event) => {
+      const xhr = event.detail && event.detail.xhr;
+      if (!xhr) return;
+      let target;
+      try {
+        target = xhr.getResponseHeader('HX-Redirect');
+      } catch (err) {
+        return;
+      }
+      if (!target) return;
+      const url = new URL(target, window.location.href);
+      if (url.pathname !== window.location.pathname) return;
+      if (url.search !== window.location.search) return;
+      // Same page: htmx's assignment would be a no-op, so take over.
+      event.preventDefault();
+      if (url.hash && url.hash !== window.location.hash) {
+        window.location.hash = url.hash;
+      }
+      window.location.reload();
+    });
   </script>
 </body>
 </html>

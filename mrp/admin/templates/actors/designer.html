@@ -196,6 +196,15 @@
     document.getElementById('actor-validation').appendChild(flash);
   }
 
+  // Shared component Remove button hooks. Refusals go to this page's own
+  // validation area rather than an alert, and a removal redraws the preview
+  // and re-counts the selection the removed card may have been part of.
+  window.mrpComponentNotice = componentFlash;
+  window.mrpComponentsChanged = () => {
+    player.redraw();
+    updateBulkBar();
+  };
+
   function addActorComponent() {
     const card = window.mrpAddActorComponent(
       componentsEl,

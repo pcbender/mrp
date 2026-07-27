@@ -325,6 +325,43 @@
     return container.querySelector('fieldset:last-of-type');
   };
 
+  // Pages may override to route a message into their own validation area;
+  // otherwise it falls back to an alert so a refusal is never silent.
+  window.mrpComponentNotice = null;
+  function componentNotice(message) {
+    if (typeof window.mrpComponentNotice === 'function') {
+      window.mrpComponentNotice(message);
+    } else {
+      window.alert(message);
+    }
+  }
+
+  // Pages set this to redraw their preview after a component is added or
+  // removed. Removal used to be a bare fieldset.remove() in the template,
+  // which left the canvas showing a shape the actor no longer had.
+  window.mrpComponentsChanged = null;
+  function componentsChanged(container) {
+    if (typeof window.mrpComponentsChanged === 'function') {
+      window.mrpComponentsChanged(container);
+    }
+  }
+
+  // Remove one component card. Any card may go — the guard is the count, not
+  // the position, since ActorConfig requires at least one component and the
+  // first card is as removable as the rest once a second exists.
+  window.mrpRemoveComponent = function (button) {
+    const card = button && button.closest('.actor-component-card');
+    const container = card && card.parentElement;
+    if (!card || !container) return false;
+    if (container.querySelectorAll('.actor-component-card').length <= 1) {
+      componentNotice('An actor needs at least one visual component.');
+      return false;
+    }
+    card.remove();
+    componentsChanged(container);
+    return true;
+  };
+
   // Show only the selected curve family's controls in a component card.
   window.mrpSyncFamilyFields = function (root) {
     (root || document).querySelectorAll('.actor-component-card').forEach((card) => {

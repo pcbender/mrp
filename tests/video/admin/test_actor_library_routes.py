@@ -212,6 +212,69 @@ def test_designer_renders_saved_actor_and_unknown_id_is_404(tmp_path: Path, monk
     assert "shape spirogram" in blank.body.decode()
 
 
+def test_every_component_can_be_removed_including_the_first(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    """A multi-shape SVG import made the first shape permanently undeletable.
+
+    The Remove button used to render only for index > 1, so the one component
+    a user most often wants to drop from a traced import — the stray first
+    subpath — was the one component with no way to drop it.
+    """
+    document = ActorLibraryDocument(
+        actor=ActorConfig.model_validate(
+            {
+                "id": "three-part",
+                "name": "Three Part",
+                "kind": "spirogram",
+                "components": [
+                    {"id": f"shape-{index}", "role": "vocals", "color": "#ff5fd2",
+                     "geometry": {"family": "path", "path_data": "M 0 0 L 10 10"}}
+                    for index in (1, 2, 3)
+                ],
+            }
+        )
+    )
+    path = tmp_path / LIBRARY / "three-part.yaml"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        yaml.safe_dump(document.model_dump(mode="json", exclude_none=True)),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(actors_routes, "get_repo_root", lambda: tmp_path)
+
+    page = asyncio.run(
+        actors_routes.actors_designer(_get_request("/actors/three-part"), "three-part")
+    )
+    body = page.body.decode()
+
+    assert page.status_code == 200
+    # Three saved components plus the add-a-component <template>.
+    cards = body.count("video-trace-card actor-component-card")
+    assert cards == 4
+    # One Remove per card, the first component included. The "keep at least
+    # one" rule is enforced by count in mrpRemoveComponent, not by hiding a
+    # button on whichever component happens to be first.
+    assert body.count("mrpRemoveComponent(this)") == cards
+    assert "this.closest('fieldset').remove()" not in body
+
+
+def test_the_designer_routes_component_changes_back_into_its_preview(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    _seed_actor(tmp_path)
+    monkeypatch.setattr(actors_routes, "get_repo_root", lambda: tmp_path)
+
+    body = asyncio.run(
+        actors_routes.actors_designer(_get_request("/actors/rose-lantern"), "rose-lantern")
+    ).body.decode()
+
+    assert "window.mrpComponentsChanged" in body
+    assert "window.mrpComponentNotice" in body
+
+
 def test_save_writes_a_validated_library_file(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(actors_routes, "get_repo_root", lambda: tmp_path)
 

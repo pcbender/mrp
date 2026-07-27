@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -792,6 +793,110 @@ def test_scene_transition_round_trips_and_the_track_default_stores_nothing(
 
     restored = save_casting(tmp_path, release, track, _actor_cast_fields())
     assert restored["project"].visuals.section_transitions == {}
+
+
+def test_saving_a_cast_redirects_to_the_very_page_it_was_saved_from(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    """This is why _base.html forces a reload on a same-page HX-Redirect.
+
+    htmx honours HX-Redirect by assigning window.location.href. The target here
+    is byte-identical to the scene link the user is already on, and assigning
+    the current URL is a same-document navigation — nothing reloads, so a save
+    looked like it had done nothing until the page was refreshed by hand. If
+    this assertion ever fails because the redirect changed, revisit the guard.
+    """
+    release, track, release_path, _project_path = _write_cast_repo(tmp_path)
+    release["tracks"][0]["music_video"]["status"] = "timed"
+    release_path.write_text(
+        yaml.safe_dump({"release": release}, sort_keys=False), encoding="utf-8"
+    )
+    db.init(tmp_path / "admin.db")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+    base = "/releases/video-contract/tracks/private-track/video/casting"
+
+    page = asyncio.run(
+        video_routes.video_casting(_get_request(base), "video-contract", "private-track", "verse_1", "type")
+    )
+    # The URL the browser is actually on: what the scene list links to.
+    scene_links = re.findall(
+        r'class="video-scene-link[^"]*"\s*href="([^"]+)"',
+        page.body.decode(),
+    )
+    assert scene_links, "expected the scene list to link to the selected scene"
+
+    response = asyncio.run(
+        video_routes.video_casting_save(
+            _request(
+                base,
+                [
+                    ("section_id", "verse_1"),
+                    ("section_type", "verse"),
+                    ("scope", "type"),
+                    ("action", "recommended"),
+                    ("return_actor", ""),
+                ],
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.headers["HX-Redirect"] == base + scene_links[0]
+
+
+def test_the_admin_shell_reloads_when_a_redirect_points_at_the_current_page(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    release, _track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    db.init(tmp_path / "admin.db")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    body = asyncio.run(
+        video_routes.video_casting(
+            _get_request("/releases/video-contract/tracks/private-track/video/casting"),
+            "video-contract",
+            "private-track",
+            "verse_1",
+            "type",
+        )
+    ).body.decode()
+
+    assert "htmx:beforeOnLoad" in body
+    assert "HX-Redirect" in body
+    assert "window.location.reload()" in body
+
+
+def test_the_casting_page_wires_the_shared_component_hooks(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    """Drag has to reveal the shape's controls, and removal has to redraw.
+
+    Only component 1 renders expanded, so a drag that does not open the picked
+    card edits fields the user cannot see.
+    """
+    release, _track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    db.init(tmp_path / "admin.db")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    body = asyncio.run(
+        video_routes.video_casting(
+            _get_request("/releases/video-contract/tracks/private-track/video/casting"),
+            "video-contract",
+            "private-track",
+            "verse_1",
+            "type",
+        )
+    ).body.decode()
+
+    assert "revealComponentCard" in body
+    # Passed as mrpEnableComponentDrag's onpick, not merely defined.
+    drag = body.index("window.mrpEnableComponentDrag")
+    assert "revealComponentCard" in body[drag:drag + 260]
+    assert "window.mrpComponentsChanged = drawActorPreview" in body
 
 
 def test_gap_covering_round_trips_and_the_editor_reports_the_dead_air(
