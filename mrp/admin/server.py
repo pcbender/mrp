@@ -6,7 +6,7 @@ from pathlib import Path
 
 import uvicorn
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -49,6 +49,17 @@ app.include_router(apps.router)
 @app.get("/", include_in_schema=False)
 async def root():
     return RedirectResponse(url="/releases")
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    """Serve the icon at the root as well as from /static.
+
+    Browsers ask for /favicon.ico on their own — for bookmarks, and for any
+    response that is not an HTML page carrying the <link> tag — and the
+    /static mount does not answer that path.
+    """
+    return FileResponse(_STATIC_DIR / "favicon.ico", media_type="image/x-icon")
 
 
 def _load_repo_env(repo: Path) -> None:

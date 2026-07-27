@@ -1,8 +1,13 @@
 from dataclasses import dataclass, field, fields, replace
+from typing import Any
 
 from mrp.video.project import (
+    GAP_EPSILON_SECONDS,
     AlignedLyrics,
+    SceneTransitionConfig,
     SectionVisualStyleConfig,
+    TransitionCurve,
+    TransitionGap,
     VisualConfig,
     VisualRole,
 )
@@ -191,9 +196,98 @@ def _clamp01(value: float) -> float:
     return min(1, max(0, value))
 
 
-def _smoothstep(value: float) -> float:
+def _ease(curve: TransitionCurve, value: float) -> float:
+    """Map raw transition progress onto the curve the scene asked for."""
     value = _clamp01(value)
+    if curve == "cut":
+        return 1
+    if curve == "linear":
+        return value
+    if curve == "ease_in":
+        return value * value
+    if curve == "ease_out":
+        return value * (2 - value)
     return value * value * (3 - 2 * value)
+
+
+def _ease_integral(curve: TransitionCurve, value: float) -> float:
+    """Return the definite integral of ``_ease`` from 0 to ``value``.
+
+    trace_time and rotation_time accumulate a *rate* over the whole song, so a
+    transition has to contribute the area under its curve, not the curve's
+    value. Getting this wrong shifts the phase of every trace after the first
+    scene change, which reads as the animation jumping rather than easing.
+    """
+    value = _clamp01(value)
+    if curve == "cut":
+        return value
+    if curve == "linear":
+        return value**2 / 2
+    if curve == "ease_in":
+        return value**3 / 3
+    if curve == "ease_out":
+        return value**2 - value**3 / 3
+    return value**3 - 0.5 * value**4
+
+
+def _transition_for(
+    section_type: str,
+    section_id: str,
+    visuals: VisualConfig | None,
+    default_seconds: float,
+) -> tuple[float, TransitionCurve, TransitionGap]:
+    """Resolve one scene's transition, exact scene beating type beating track."""
+    configured = None
+    if visuals is not None:
+        configured = visuals.transition_overrides.get(section_id)
+        if configured is None:
+            folded = section_type.casefold()
+            configured = next(
+                (
+                    candidate
+                    for name, candidate in visuals.section_transitions.items()
+                    if name.casefold() == folded
+                ),
+                None,
+            )
+    if configured is None:
+        return default_seconds, "smooth", SceneTransitionConfig().gap
+    seconds = (
+        default_seconds if configured.seconds is None else configured.seconds
+    )
+    return seconds, configured.curve, configured.gap
+
+
+def _transition_plan(
+    sections: list[Any],
+    index: int,
+    visuals: VisualConfig | None,
+    default_seconds: float,
+) -> tuple[float, float, TransitionCurve]:
+    """Return when a scene's transition begins, how long it runs, and its curve.
+
+    Alignment leaves uncovered time between scenes, which the renderer fills by
+    holding the preceding scene. A gap-covering transition starts early — in
+    the hole rather than inside the new scene — so the change happens over the
+    dead air instead of after it.
+    """
+    section = sections[index]
+    seconds, curve, gap_mode = _transition_for(
+        section.type,
+        section.id,
+        visuals,
+        default_seconds,
+    )
+    if index == 0:
+        return section.start, seconds, curve
+    gap_start = sections[index - 1].end
+    gap = section.start - gap_start
+    if gap_mode == "hold" or gap <= GAP_EPSILON_SECONDS:
+        return section.start, seconds, curve
+    if gap_mode == "span":
+        # Arrive exactly as the scene starts, however wide the hole is.
+        return gap_start, max(seconds, gap), curve
+    return gap_start, seconds, curve
 
 
 def _configured_style(
@@ -273,17 +367,17 @@ def _transition_integral(
     current: float,
     elapsed: float,
     transition_seconds: float,
+    curve: TransitionCurve = "smooth",
 ) -> float:
     if elapsed <= 0:
         return 0
-    if transition_seconds <= 0:
+    if transition_seconds <= 0 or curve == "cut":
         return current * elapsed
     transition_elapsed = min(elapsed, transition_seconds)
     progress = transition_elapsed / transition_seconds
-    smoothstep_integral = progress**3 - 0.5 * progress**4
     total = previous * transition_elapsed
     total += (
-        (current - previous) * transition_seconds * smoothstep_integral
+        (current - previous) * transition_seconds * _ease_integral(curve, progress)
     )
     if elapsed > transition_seconds:
         total += current * (elapsed - transition_seconds)
@@ -303,9 +397,16 @@ def _integrated_style_value(
     total = 0.0
     sections = lyrics.sections
     for index, section in enumerate(sections):
-        interval_start = 0.0 if index == 0 else section.start
+        # Intervals are bounded by where each transition *begins*, not by the
+        # scene starts, so a gap-covering transition integrates over the same
+        # span it animates over. Anything else shifts the trace phase.
+        interval_start = (
+            0.0
+            if index == 0
+            else _transition_plan(sections, index, visuals, transition_seconds)[0]
+        )
         interval_end = (
-            sections[index + 1].start
+            _transition_plan(sections, index + 1, visuals, transition_seconds)[0]
             if index + 1 < len(sections)
             else time_seconds
         )
@@ -329,11 +430,18 @@ def _integrated_style_value(
         else:
             previous_value = getattr(previous, value)
             current_value = getattr(current, value)
+        _begin, seconds, curve = _transition_plan(
+            sections,
+            index,
+            visuals,
+            transition_seconds,
+        )
         total += _transition_integral(
             previous_value,
             current_value,
             elapsed,
-            transition_seconds,
+            seconds,
+            curve,
         )
         if time_seconds < interval_end:
             break
@@ -359,6 +467,13 @@ def choreography_at(
         if time_seconds < section.start:
             break
 
+    # A scene whose transition covers the gap before it takes that gap over:
+    # the plain scan above hands uncovered time to the scene that just ended.
+    if index + 1 < len(sections):
+        begin = _transition_plan(sections, index + 1, visuals, transition_seconds)[0]
+        if begin <= time_seconds < sections[index + 1].start:
+            index += 1
+
     section = sections[index]
     duration = section.end - section.start
     section_progress = _clamp01((time_seconds - section.start) / duration)
@@ -368,10 +483,15 @@ def choreography_at(
         if index > 0
         else current
     )
+    begin, seconds, curve = _transition_plan(
+        sections,
+        index,
+        visuals,
+        transition_seconds,
+    )
     transition_progress = 1.0
-    if index > 0 and transition_seconds > 0:
-        raw_transition = (time_seconds - section.start) / transition_seconds
-        transition_progress = _smoothstep(raw_transition)
+    if index > 0 and seconds > 0 and curve != "cut":
+        transition_progress = _ease(curve, (time_seconds - begin) / seconds)
     interpolated = _interpolate_style(previous, current, transition_progress)
 
     return ChoreographyState(

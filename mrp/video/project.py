@@ -317,6 +317,48 @@ class ActorTraceDirectionConfig(ContractModel):
     head_radius: float | None = Field(default=None, ge=0, le=24)
 
 
+TransitionCurve = Literal["cut", "linear", "smooth", "ease_in", "ease_out"]
+TransitionGap = Literal["hold", "span", "early"]
+
+# Below this, a hole between two scenes is alignment rounding rather than dead
+# air worth covering. The timing editor draws its gap list on the same
+# threshold, so "has a gap" means one thing everywhere.
+GAP_EPSILON_SECONDS = 0.05
+
+
+class SceneTransitionConfig(ContractModel):
+    """How a scene arrives: how long the change takes and the curve it follows.
+
+    A transition belongs to the scene being entered, not to the boundary, so a
+    scene carries the same direction wherever it is placed. ``seconds`` of
+    ``None`` inherits the track-wide ``transition_seconds``, so a scene that
+    only wants a different curve does not pin its duration to whatever the
+    track default happened to be the day it was authored.
+
+    ``gap`` decides what happens when alignment left uncovered time before this
+    scene. Whisper word queues rarely butt scenes together, so holes are the
+    norm rather than the exception, and holding the preceding scene across one
+    leaves a long instrumental frozen for half a minute before changing
+    abruptly once the new scene has already begun. ``span`` is therefore the
+    default:
+
+    - ``span`` stretches the transition across the whole gap, so the new scene
+      has fully arrived exactly when it starts and no moment sits still.
+    - ``early`` starts the transition at the top of the gap but keeps the
+      configured duration, so the new scene lands early and plays out the rest
+      of the gap.
+    - ``hold`` opts out — the transition runs from the scene's own start and
+      the gap shows the previous scene unchanged.
+
+    None of them do anything to a scene that already touches the one before it;
+    a hole has to be wider than ``GAP_EPSILON_SECONDS`` to count.
+    """
+
+    seconds: float | None = Field(default=None, ge=0, le=10)
+    curve: TransitionCurve = "smooth"
+    gap: TransitionGap = "span"
+
+
 class SectionVisualStyleConfig(ContractModel):
     visible_roles: list[VisualRole] | None = Field(default=None, max_length=5)
     layer_fraction: float | None = Field(default=None, ge=0, le=1)
@@ -642,6 +684,12 @@ class VisualConfig(ContractModel):
     actors: dict[ActorId, ActorConfig] = Field(default_factory=dict)
     section_casts: dict[NonBlankText, ActorCastConfig] = Field(default_factory=dict)
     cast_overrides: dict[NonBlankText, ActorCastConfig] = Field(default_factory=dict)
+    section_transitions: dict[NonBlankText, SceneTransitionConfig] = Field(
+        default_factory=dict
+    )
+    transition_overrides: dict[NonBlankText, SceneTransitionConfig] = Field(
+        default_factory=dict
+    )
 
     @model_validator(mode="after")
     def layer_ids_are_unique(self) -> "VisualConfig":
@@ -683,6 +731,17 @@ class VisualConfig(ContractModel):
         if cast_duplicates:
             joined = ", ".join(cast_duplicates)
             raise ValueError(f"section cast names must be unique: {joined}")
+        normalized_transitions = [key.casefold() for key in self.section_transitions]
+        transition_duplicates = sorted(
+            {
+                key
+                for key in normalized_transitions
+                if normalized_transitions.count(key) > 1
+            }
+        )
+        if transition_duplicates:
+            joined = ", ".join(transition_duplicates)
+            raise ValueError(f"section transition names must be unique: {joined}")
         assignments = [
             assignment
             for cast in (*self.section_casts.values(), *self.cast_overrides.values())

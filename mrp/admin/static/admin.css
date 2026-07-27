@@ -1179,6 +1179,27 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   margin-top: .75rem;
   padding-top: .65rem;
 }
+/* A scene's transition is direction, not an advanced knob, so it sits open
+   above the advanced block rather than inside it. */
+.video-transition {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 8px;
+  margin-top: .75rem;
+  padding: .5rem .75rem .75rem;
+}
+.video-transition legend {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 .35rem;
+}
+.video-transition-grid {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.video-transition-grid small {
+  color: var(--muted);
+  font-size: 10px;
+}
 .video-advanced summary {
   color: var(--primary);
   cursor: pointer;
