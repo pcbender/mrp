@@ -203,6 +203,52 @@
         </div>
         <button class="btn btn-secondary btn-sm" type="button" onclick="addActorAssignment()">+ Add actor to scene</button>
 
+        <fieldset class="video-transition">
+          <legend>Transition in</legend>
+          <p class="video-help">
+            How this scene arrives from the one before it. The cast, wardrobe and whole-scene
+            response all cross over on this curve. Currently taking the {{ casting.transition_source }}.
+            {% if casting.sections and casting.sections[0].id == casting.selected_section.id %}
+            This is the first scene of the song, so it has nothing to transition from — a setting
+            here applies only if the scene is later moved off the top.
+            {% endif %}
+          </p>
+          <div class="form-grid video-transition-grid">
+            <div class="form-field">
+              {{ actor_control_label('Duration (seconds)', 'How long the change from the previous scene takes. Blank inherits the track default.') }}
+              <input type="number" step="0.01" min="0" max="10" name="transition_seconds"
+                     value="{{ casting.transition.seconds if casting.transition.seconds is not none else '' }}"
+                     placeholder="inherit ({{ '%.2f'|format(casting.project.visuals.transition_seconds) }})">
+              <small>0 snaps the scene in. Blank inherits the track default. Span uses the gap width when that is longer.</small>
+            </div>
+            <div class="form-field">
+              {{ actor_control_label('Uncovered time before this scene', 'Alignment leaves holes between scenes. By default this scene arrives across the hole rather than after it, so no stretch of dead air sits frozen.') }}
+              <select name="transition_gap">
+                <option value="span" {% if casting.transition.gap == 'span' %}selected{% endif %}>span — stretch the change across the whole gap (default)</option>
+                <option value="early" {% if casting.transition.gap == 'early' %}selected{% endif %}>early — change at the top of the gap, then play on</option>
+                <option value="hold" {% if casting.transition.gap == 'hold' %}selected{% endif %}>hold — previous scene stays frozen until this one starts</option>
+              </select>
+              <small>
+                {% if casting.selected_gap %}
+                {{ '%.2f'|format(casting.selected_gap) }}s of dead air precedes this scene.
+                {% else %}
+                No gap before this scene — this setting does nothing here.
+                {% endif %}
+              </small>
+            </div>
+            <div class="form-field">
+              {{ actor_control_label('Curve', 'The shape of the change over that duration. Cut ignores the duration entirely.') }}
+              <select name="transition_curve">
+                <option value="smooth" {% if casting.transition.curve == 'smooth' %}selected{% endif %}>smooth — eases in and out (default)</option>
+                <option value="cut" {% if casting.transition.curve == 'cut' %}selected{% endif %}>cut — snaps in, no blend</option>
+                <option value="linear" {% if casting.transition.curve == 'linear' %}selected{% endif %}>linear — constant rate of change</option>
+                <option value="ease_in" {% if casting.transition.curve == 'ease_in' %}selected{% endif %}>ease in — holds, then arrives fast</option>
+                <option value="ease_out" {% if casting.transition.curve == 'ease_out' %}selected{% endif %}>ease out — leaves fast, then settles</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
         <details class="video-advanced">
           <summary>Advanced whole-scene response</summary>
           <p class="video-help">These settings affect the scene after each actor's own direction is applied. Blank values inherit.</p>

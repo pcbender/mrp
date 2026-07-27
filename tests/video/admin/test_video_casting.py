@@ -750,6 +750,193 @@ def test_scene_wardrobe_fields_round_trip_and_blank_keeps_the_actor_look(
     assert compiled.blend_mode == "normal"
 
 
+def test_scene_transition_round_trips_and_the_track_default_stores_nothing(
+    tmp_path: Path,
+) -> None:
+    """A scene that arrives the ordinary way must leave no entry behind.
+
+    Storing "0.65s smooth" for every scene would pin each one to whatever the
+    track default was the day it was cast, which is exactly what inheriting is
+    supposed to avoid.
+    """
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    bare = save_casting(tmp_path, release, track, _actor_cast_fields())
+    assert bare["project"].visuals.section_transitions == {}
+    assert bare["transition"].seconds is None
+    assert bare["transition"].curve == "smooth"
+    assert bare["transition_source"] == "track default"
+
+    directed = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields()
+        | {"transition_seconds": ["1.2"], "transition_curve": ["ease_in"]},
+    )
+    transition = directed["project"].visuals.section_transitions["verse"]
+    assert transition.seconds == 1.2
+    assert transition.curve == "ease_in"
+    assert directed["transition_source"] == "transition for all verse scenes"
+
+    # A curve alone still inherits the track's duration.
+    curve_only = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields() | {"transition_curve": ["cut"]},
+    )
+    stored = curve_only["project"].visuals.section_transitions["verse"]
+    assert stored.model_dump(exclude_none=True) == {"curve": "cut", "gap": "span"}
+
+    restored = save_casting(tmp_path, release, track, _actor_cast_fields())
+    assert restored["project"].visuals.section_transitions == {}
+
+
+def test_gap_covering_round_trips_and_the_editor_reports_the_dead_air(
+    tmp_path: Path,
+) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    # Opting out is the choice worth storing now that spanning is the default.
+    saved = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields() | {"transition_gap": ["hold"]},
+    )
+
+    stored = saved["project"].visuals.section_transitions["verse"]
+    assert stored.gap == "hold"
+    # A curve nobody touched still stores its default alongside the gap, so the
+    # entry reads as a complete instruction rather than a fragment.
+    assert stored.model_dump(exclude_none=True) == {"curve": "smooth", "gap": "hold"}
+    assert saved["transition"].gap == "hold"
+    assert "selected_gap" in saved
+    assert saved["selected_gap"] == 0.0
+
+    spanned = save_casting(tmp_path, release, track, _actor_cast_fields())
+    assert spanned["project"].visuals.section_transitions == {}
+    assert spanned["transition"].gap == "span"
+
+
+def test_unknown_gap_behaviour_is_refused(tmp_path: Path) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    with pytest.raises(CastingEditorError):
+        save_casting(
+            tmp_path,
+            release,
+            track,
+            _actor_cast_fields() | {"transition_gap": ["stretch"]},
+        )
+
+
+def test_exact_scene_transition_is_stored_against_the_scene_not_its_type(
+    tmp_path: Path,
+) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    saved = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields()
+        | {
+            "scope": ["section"],
+            "transition_seconds": ["0"],
+            "transition_curve": ["linear"],
+        },
+    )
+
+    visuals = saved["project"].visuals
+    assert visuals.section_transitions == {}
+    assert visuals.transition_overrides["verse_1"].seconds == 0
+    assert visuals.transition_overrides["verse_1"].curve == "linear"
+    assert saved["transition_source"] == "exact scene transition"
+
+    cleared = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields() | {"scope": ["section"], "action": ["clear"]},
+    )
+    assert cleared["project"].visuals.transition_overrides == {}
+
+
+def test_saving_a_cast_from_a_form_predating_transitions_still_works(
+    tmp_path: Path,
+) -> None:
+    """The transition columns are optional, like wardrobe and energy before them."""
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+    fields = _actor_cast_fields()
+    assert "transition_curve" not in fields
+
+    saved = save_casting(tmp_path, release, track, fields)
+
+    assert saved["project"].visuals.section_casts["verse"].actors[0].actor == (
+        "vocal-lantern"
+    )
+
+
+def test_casting_page_offers_the_transition_on_a_cast_scene(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    release, track, release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+    save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields() | {"transition_seconds": ["1.2"]},
+    )
+    db.init(tmp_path / "admin.db")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    page = asyncio.run(
+        video_routes.video_casting(
+            _get_request(
+                "/releases/video-contract/tracks/private-track/video/casting"
+            ),
+            "video-contract",
+            "private-track",
+            "verse_1",
+            "type",
+        )
+    )
+    body = page.body.decode()
+
+    assert page.status_code == 200
+    assert "Transition in" in body
+    assert 'name="transition_seconds"' in body
+    assert 'name="transition_curve"' in body
+    assert 'name="transition_gap"' in body
+    assert "No gap before this scene" in body
+    assert 'value="1.2"' in body
+    assert "transition for all verse scenes" in body
+    # The transition belongs to the scene, ahead of the advanced style block.
+    assert body.index("Transition in") < body.index("Advanced whole-scene response")
+
+
+def test_unknown_transition_curves_are_refused(tmp_path: Path) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    with pytest.raises(CastingEditorError):
+        save_casting(
+            tmp_path,
+            release,
+            track,
+            _actor_cast_fields() | {"transition_curve": ["wipe_left"]},
+        )
+
+
 def test_scene_energy_fields_round_trip_and_blank_leaves_no_override(
     tmp_path: Path,
 ) -> None:

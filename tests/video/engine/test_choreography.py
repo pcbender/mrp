@@ -9,7 +9,12 @@ from mrp.video.analysis import (
     FeatureTimeline,
     SemanticControl,
 )
-from mrp.video.choreography import ChoreographyState, choreography_at
+from mrp.video.choreography import (
+    ChoreographyState,
+    _ease,
+    _ease_integral,
+    choreography_at,
+)
 from mrp.video.mappings import (
     AudioVisualState,
     SemanticSample,
@@ -305,6 +310,303 @@ def test_section_transition_interpolates_without_trace_or_rotation_jump() -> Non
     assert abs(after.rotation_time - boundary.rotation_time) < 0.01
 
 
+def _transition_project(visuals: dict) -> ProjectManifest:
+    return ProjectManifest.model_validate(
+        {
+            "version": 1,
+            "title": "Scene Transition Fixture",
+            "audio": {"master": "master.wav"},
+            "lyrics": {"source": "lyrics.yaml", "language": "en"},
+            "cards": {
+                "opening": {"file": "open.jpg", "duration": 1},
+                "closing": {"file": "close.jpg", "duration": 1},
+            },
+            "text": {"font": "font.ttf"},
+            "visuals": visuals,
+        }
+    )
+
+
+def test_scene_transition_seconds_override_only_the_scene_that_sets_them() -> None:
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"seconds": 2}}}
+    )
+    lyrics = _aligned_sections()
+
+    chorus = choreography_at(
+        lyrics,
+        2.25,
+        transition_seconds=0.5,
+        visuals=project.visuals,
+    )
+    instrumental = choreography_at(
+        lyrics,
+        4.25,
+        transition_seconds=0.5,
+        visuals=project.visuals,
+    )
+
+    # A quarter second into a two second transition, against half of a half
+    # second one for the scene that took no note.
+    assert chorus.transition_progress == pytest.approx(_ease("smooth", 0.125))
+    assert instrumental.transition_progress == pytest.approx(_ease("smooth", 0.5))
+
+
+def test_exact_scene_transition_beats_the_type_which_beats_the_track() -> None:
+    project = _transition_project(
+        {
+            "section_transitions": {"chorus": {"seconds": 2}},
+            "transition_overrides": {"chorus": {"seconds": 0}},
+        }
+    )
+
+    chorus = choreography_at(
+        _aligned_sections(),
+        2.001,
+        transition_seconds=0.5,
+        visuals=project.visuals,
+    )
+
+    assert chorus.transition_progress == 1
+
+
+@pytest.mark.parametrize(
+    ("curve", "expected"),
+    [
+        ("linear", 0.5),
+        ("smooth", 0.5),
+        ("ease_in", 0.25),
+        ("ease_out", 0.75),
+    ],
+)
+def test_each_transition_curve_shapes_the_midpoint_of_the_change(
+    curve: str,
+    expected: float,
+) -> None:
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"seconds": 0.5, "curve": curve}}}
+    )
+
+    midpoint = choreography_at(
+        _aligned_sections(),
+        2.25,
+        transition_seconds=0.5,
+        visuals=project.visuals,
+    )
+
+    assert midpoint.transition_progress == pytest.approx(expected)
+
+
+def test_a_cut_arrives_whole_however_long_the_track_default_is() -> None:
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"curve": "cut"}}}
+    )
+    lyrics = _aligned_sections()
+
+    boundary = choreography_at(
+        lyrics,
+        2.001,
+        transition_seconds=4,
+        visuals=project.visuals,
+    )
+    before = choreography_at(
+        lyrics,
+        1.999,
+        transition_seconds=4,
+        visuals=project.visuals,
+    )
+
+    assert boundary.transition_progress == 1
+    assert boundary.scale > before.scale
+
+
+def _gapped_sections() -> AlignedLyrics:
+    """The verse ends at 1.5 but the chorus does not start until 2.0."""
+    lyrics = _aligned_sections().model_copy(deep=True)
+    lyrics.sections[0].end = 1.5
+    lyrics.sections[0].lines[0].end = 1.4
+    return lyrics
+
+
+def test_a_gap_is_covered_by_the_arriving_scene_without_being_asked() -> None:
+    """Alignment gaps are the norm, so covering one is the default."""
+    lyrics = _gapped_sections()
+
+    for time in (1.6, 1.8, 1.99):
+        state = choreography_at(lyrics, time, transition_seconds=0.5)
+        assert state.section_id == "chorus"
+        assert 0 < state.transition_progress < 1
+
+
+def test_hold_opts_a_scene_out_of_covering_its_gap() -> None:
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"gap": "hold"}}}
+    )
+    lyrics = _gapped_sections()
+
+    for time in (1.6, 1.8, 1.99):
+        state = choreography_at(
+            lyrics, time, transition_seconds=0.5, visuals=project.visuals
+        )
+        assert state.section_id == "verse"
+        assert state.transition_progress == 1
+
+
+def test_scenes_that_merely_touch_are_left_alone_by_the_default() -> None:
+    """A rounding-width hole is not dead air; it must not move the transition."""
+    lyrics = _aligned_sections().model_copy(deep=True)
+    lyrics.sections[0].end = 1.98  # 20ms short of the chorus, under the epsilon
+
+    boundary = choreography_at(lyrics, 1.99, transition_seconds=0.5)
+
+    assert boundary.section_id == "verse"
+    assert boundary.transition_progress == 1
+
+
+def test_a_spanning_transition_covers_the_whole_gap_and_lands_on_the_scene() -> None:
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"seconds": 0.2, "gap": "span"}}}
+    )
+    lyrics = _gapped_sections()
+
+    def progress(time: float) -> float:
+        return choreography_at(
+            lyrics,
+            time,
+            transition_seconds=0.5,
+            visuals=project.visuals,
+        ).transition_progress
+
+    # The gap runs 1.5 -> 2.0, so it outranks the configured 0.2s: the change
+    # starts the instant the verse ends and arrives exactly at the chorus.
+    assert choreography_at(
+        lyrics, 1.6, transition_seconds=0.5, visuals=project.visuals
+    ).section_id == "chorus"
+    assert progress(1.5) == pytest.approx(0)
+    assert progress(1.75) == pytest.approx(_ease("smooth", 0.5))
+    assert progress(2.0) == pytest.approx(1)
+    assert progress(1.6) < progress(1.75) < progress(1.9)
+
+
+def test_an_early_transition_arrives_and_then_plays_out_the_rest_of_the_gap() -> None:
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"seconds": 0.2, "gap": "early"}}}
+    )
+    lyrics = _gapped_sections()
+
+    states = {
+        time: choreography_at(
+            lyrics,
+            time,
+            transition_seconds=0.5,
+            visuals=project.visuals,
+        )
+        for time in (1.5, 1.6, 1.8, 2.4)
+    }
+
+    assert states[1.5].transition_progress == pytest.approx(0)
+    assert 0 < states[1.6].transition_progress < 1
+    # Arrived after its own 0.2s, with most of the gap still to play.
+    assert states[1.8].transition_progress == pytest.approx(1)
+    assert states[2.4].transition_progress == pytest.approx(1)
+    assert all(state.section_id == "chorus" for state in states.values())
+
+
+def test_gap_covering_does_nothing_when_the_scenes_already_touch() -> None:
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"seconds": 0.5, "gap": "span"}}}
+    )
+    # _aligned_sections is contiguous: the verse ends exactly where chorus starts.
+    lyrics = _aligned_sections()
+
+    before = choreography_at(
+        lyrics, 1.9, transition_seconds=0.5, visuals=project.visuals
+    )
+    midpoint = choreography_at(
+        lyrics, 2.25, transition_seconds=0.5, visuals=project.visuals
+    )
+
+    assert before.section_id == "verse"
+    assert midpoint.transition_progress == pytest.approx(_ease("smooth", 0.5))
+
+
+@pytest.mark.parametrize("mode", ["hold", "span", "early"])
+def test_trace_time_stays_continuous_however_a_gap_is_covered(mode: str) -> None:
+    """The integral bounds move with the transition, so phase must not jump."""
+    project = _transition_project(
+        {
+            "section_styles": {
+                "verse": {"trace_speed": 0.5},
+                "chorus": {"trace_speed": 1.8},
+            },
+            "section_transitions": {"chorus": {"seconds": 0.2, "gap": mode}},
+        }
+    )
+    lyrics = _gapped_sections()
+    times = [1.4, 1.5, 1.51, 1.7, 2.0, 2.4, 2.49, 2.5, 2.6, 3.0]
+    samples = [
+        choreography_at(
+            lyrics, time, transition_seconds=0.5, visuals=project.visuals
+        ).trace_time
+        for time in times
+    ]
+
+    assert all(later >= earlier for earlier, later in zip(samples, samples[1:]))
+    # No step at either edge of the gap.
+    assert samples[2] - samples[1] < 0.05
+    assert samples[7] - samples[6] < 0.05
+
+
+@pytest.mark.parametrize("curve", ["cut", "linear", "smooth", "ease_in", "ease_out"])
+@pytest.mark.parametrize("upto", [0.4, 1])
+def test_transition_curve_integral_matches_the_curve_it_eases(
+    curve: str,
+    upto: float,
+) -> None:
+    """The integral drives trace phase, so it must be the curve's true area.
+
+    A mismatch here does not fail loudly — it silently shifts the phase of
+    every trace after the first scene change.
+    """
+    steps = 20000
+    numeric = (
+        sum(_ease(curve, upto * (index + 0.5) / steps) for index in range(steps))
+        * upto
+        / steps
+    )
+
+    assert _ease_integral(curve, upto) == pytest.approx(numeric, abs=1e-5)
+
+
+@pytest.mark.parametrize("curve", ["cut", "linear", "smooth", "ease_in", "ease_out"])
+def test_every_curve_keeps_trace_time_moving_forward_across_the_boundary(
+    curve: str,
+) -> None:
+    project = _transition_project(
+        {
+            "section_styles": {
+                "verse": {"trace_speed": 0.5},
+                "chorus": {"trace_speed": 1.8},
+            },
+            "section_transitions": {"chorus": {"seconds": 0.5, "curve": curve}},
+        }
+    )
+    lyrics = _aligned_sections()
+    samples = [
+        choreography_at(
+            lyrics,
+            time,
+            transition_seconds=0.5,
+            visuals=project.visuals,
+        ).trace_time
+        for time in (1.999, 2.0, 2.001, 2.25, 2.5, 3)
+    ]
+
+    assert all(later >= earlier for earlier, later in zip(samples, samples[1:]))
+    assert samples[2] - samples[1] < 0.01
+    assert samples[-1] > samples[0]
+
+
 def test_trace_and_rotation_continue_through_unlabeled_section_gaps() -> None:
     lyrics = _aligned_sections().model_copy(deep=True)
     lyrics.sections[1].start = 3
@@ -318,7 +620,10 @@ def test_trace_and_rotation_continue_through_unlabeled_section_gaps() -> None:
     gap_middle = choreography_at(lyrics, 2.5, transition_seconds=0.5)
     next_start = choreography_at(lyrics, 3, transition_seconds=0.5)
 
-    assert gap_middle.section_id == "verse"
+    # Uncovered time belongs to the scene arriving across it, not the one that
+    # just ended: transitions span real gaps by default.
+    assert gap_middle.section_id == "chorus"
+    assert 0 < gap_middle.transition_progress < 1
     assert gap_middle.trace_time > section_end.trace_time
     assert next_start.trace_time > gap_middle.trace_time
     assert gap_middle.rotation_time > section_end.rotation_time

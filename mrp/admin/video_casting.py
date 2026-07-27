@@ -561,6 +561,22 @@ def _selected_style(project: Any, section: Any, scope: str):
     return SectionVisualStyleConfig()
 
 
+def _selected_transition(project: Any, section: Any, scope: str):
+    """Return the transition this scope edits, and where the shown one came from."""
+    from mrp.video.project import SceneTransitionConfig
+
+    visuals = project.visuals
+    if scope == "section":
+        override = visuals.transition_overrides.get(section.id)
+        if override is not None:
+            return override, "exact scene transition"
+    configured = _casefold_item(visuals.section_transitions, section.type)
+    if configured is not None:
+        name, transition = configured
+        return transition, f"transition for all {name} scenes"
+    return SceneTransitionConfig(), "track default"
+
+
 def _gallery(
     root: Path,
     release: dict[str, Any],
@@ -684,6 +700,7 @@ def load_casting(
     """Load one track's versioned casting project and resolved section scenes."""
     from mrp.video.casting import resolve_section_composition
     from mrp.video.presets import preset_catalog
+    from mrp.video.project import GAP_EPSILON_SECONDS
 
     if scope not in {"type", "section"}:
         raise CastingEditorError("casting scope must be type or section")
@@ -726,13 +743,24 @@ def load_casting(
             }
         )
     sections = []
-    for section in lyrics.sections:
+    for index, section in enumerate(lyrics.sections):
         resolved = resolve_section_composition(
             document.project.visuals,
             section.type,
             section.id,
             document.project.video.seed,
         )
+        # Uncovered time before this scene. Alignment rarely butts scenes
+        # together, and the renderer holds the previous scene across the hole,
+        # so the editor needs to show how much dead air a transition could
+        # cover. Spans under ~50ms are rounding noise, matching the timing page.
+        gap_before = (
+            0.0
+            if index == 0
+            else max(0.0, round(section.start - lyrics.sections[index - 1].end, 6))
+        )
+        if gap_before <= GAP_EPSILON_SECONDS:
+            gap_before = 0.0
         sections.append(
             {
                 "id": section.id,
@@ -740,6 +768,7 @@ def load_casting(
                 "label": section.label or section.type.replace("_", " ").title(),
                 "start": section.start,
                 "end": section.end,
+                "gap_before": gap_before,
                 "midpoint": round(section.start + (section.end - section.start) / 2, 6),
                 "composition_key": resolved.key,
                 "trace_count": len(resolved.composition.traces),
@@ -786,6 +815,11 @@ def load_casting(
             _unique_actor_id(document.project.visuals.actors, "new-actor"),
         )
     style = _selected_style(document.project, selected, scope)
+    transition, transition_source = _selected_transition(
+        document.project,
+        selected,
+        scope,
+    )
     return {
         "path": path.relative_to(root).as_posix(),
         "document": document,
@@ -807,6 +841,12 @@ def load_casting(
         "selected_actor": selected_actor,
         "selected_actor_saved": selected_actor_saved,
         "style": style,
+        "transition": transition,
+        "transition_source": transition_source,
+        "selected_gap": next(
+            (item["gap_before"] for item in sections if item["id"] == selected.id),
+            0.0,
+        ),
         "presets": preset_catalog(),
         "gallery": _gallery(root, release, track),
     }
@@ -1193,6 +1233,41 @@ def _style_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
     return style
 
 
+def _transition_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
+    """Read the scene's transition, or nothing at all when it takes the default.
+
+    A blank duration means "inherit the track default", so a scene that only
+    changes its curve stores just the curve. A transition matching the defaults
+    outright is not stored at all — an entry that changes nothing would only
+    pin the scene the day a default moves.
+    """
+    from typing import get_args
+
+    from mrp.video.project import (
+        SceneTransitionConfig,
+        TransitionCurve,
+        TransitionGap,
+    )
+
+    defaults = SceneTransitionConfig()
+    curve = _single(fields, "transition_curve", default=defaults.curve)
+    if curve not in get_args(TransitionCurve):
+        raise CastingEditorError(f"unsupported transition curve: {curve}")
+    gap = _single(fields, "transition_gap", default=defaults.gap)
+    if gap not in get_args(TransitionGap):
+        raise CastingEditorError(f"unsupported transition gap behaviour: {gap}")
+    seconds = _optional_number(
+        _single(fields, "transition_seconds", default=""),
+        "transition seconds",
+    )
+    if seconds is None and curve == defaults.curve and gap == defaults.gap:
+        return {}
+    transition: dict[str, Any] = {"curve": curve, "gap": gap}
+    if seconds is not None:
+        transition["seconds"] = seconds
+    return transition
+
+
 def _write_yaml_atomic(path: Path, payload: dict[str, Any]) -> None:
     temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
     try:
@@ -1376,10 +1451,14 @@ def save_casting(
     composition_field = "section_compositions" if scope == "type" else "composition_overrides"
     actor_cast_field = "section_casts" if scope == "type" else "cast_overrides"
     style_field = "section_styles" if scope == "type" else "section_overrides"
+    transition_field = (
+        "section_transitions" if scope == "type" else "transition_overrides"
+    )
     target = section.type if scope == "type" else section.id
     compositions = visuals.setdefault(composition_field, {})
     actor_casts = visuals.setdefault(actor_cast_field, {})
     styles = visuals.setdefault(style_field, {})
+    transitions = visuals.setdefault(transition_field, {})
     existing = _casefold_item(compositions, target) if scope == "type" else None
     existing_key = existing[0] if existing is not None else target
     existing_actor_cast = _casefold_item(actor_casts, target) if scope == "type" else None
@@ -1388,6 +1467,12 @@ def save_casting(
     )
     existing_style = _casefold_item(styles, target) if scope == "type" else None
     existing_style_key = existing_style[0] if existing_style is not None else target
+    existing_transition = (
+        _casefold_item(transitions, target) if scope == "type" else None
+    )
+    existing_transition_key = (
+        existing_transition[0] if existing_transition is not None else target
+    )
     if action in {"recommended", "adopt"}:
         composition = (
             generate_auto_composition(section.type, document.project.video.seed)
@@ -1410,10 +1495,15 @@ def save_casting(
         styles.pop(existing_style_key, None)
         if style:
             styles[target] = style
+        transition = _transition_payload(fields)
+        transitions.pop(existing_transition_key, None)
+        if transition:
+            transitions[target] = transition
     elif action == "clear":
         actor_casts.pop(existing_actor_cast_key, None)
         compositions.pop(existing_key, None)
         styles.pop(existing_style_key, None)
+        transitions.pop(existing_transition_key, None)
     else:
         if action == "auto":
             composition = generate_auto_composition(

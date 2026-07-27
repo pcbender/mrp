@@ -72,9 +72,11 @@
   <div class="form-body">
     <h2 style="margin:0">Gaps &amp; scenes</h2>
     <p style="font-size:12px;color:var(--muted);margin:.25rem 0 .75rem">
-      Uncovered time renders as an empty frame. <strong>Fill gaps</strong> closes them all — an
+      Uncovered time is not blank — the renderer holds the preceding scene across it, frozen in
+      staging until the next scene starts. <strong>Fill gaps</strong> closes them all — an
       instrumental intro for the lead-in, the preceding section stretched over mid-song gaps, and the
-      last section extended to the song end — or add a single scene by hand.
+      last section extended to the song end — or add a single scene by hand. A gap you would rather
+      keep can instead be covered by the next scene's transition, in Scene Casting.
     </p>
     {% if timing.gaps %}
     <div class="timing-gaps">
