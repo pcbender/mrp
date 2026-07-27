@@ -196,6 +196,15 @@
     document.getElementById('actor-validation').appendChild(flash);
   }
 
+  // Shared component Remove button hooks. Refusals go to this page's own
+  // validation area rather than an alert, and a removal redraws the preview
+  // and re-counts the selection the removed card may have been part of.
+  window.mrpComponentNotice = componentFlash;
+  window.mrpComponentsChanged = () => {
+    player.redraw();
+    updateBulkBar();
+  };
+
   function addActorComponent() {
     const card = window.mrpAddActorComponent(
       componentsEl,
@@ -209,59 +218,32 @@
     return card;
   }
 
-  async function fetchSubpaths(url, body, failMessage) {
-    const validation = document.getElementById('actor-validation');
-    validation.innerHTML = '';
-    const response = await fetch(url, { method: 'POST', body });
-    const payload = await response.json();
-    if (!response.ok) {
-      componentFlash((payload.errors || [failMessage]).join('; '));
-      return null;
-    }
-    return payload.subpaths;
-  }
+  // Subpath import/generation is shared with the track actor designer on the
+  // Scene Casting page; only the validation reset and the group pre-select
+  // below are particular to this page.
+  const setPairField = window.mrpSetComponentField;
 
-  function setPairField(card, name, value) {
-    if (value === undefined || value === null) return;
-    // Any named control (number, color, or select); range siblings carry no
-    // name attribute, so there is no ambiguity with the slider pairs.
-    const el = card.querySelector(`[name="${name}"]`);
-    if (!el) return;
-    el.value = String(value);
-    const pair = el.closest('.slider-pair');
-    const range = pair && pair.querySelector('input[type="range"]');
-    if (range) range.value = el.value;
+  async function fetchSubpaths(url, body, failMessage) {
+    document.getElementById('actor-validation').innerHTML = '';
+    return window.mrpFetchSubpaths(url, body, failMessage);
   }
 
   function applySubpaths(subpaths) {
-    const added = [];
-    for (const subpath of subpaths) {
-      const card = addActorComponent();
-      if (!card) break;
-      card.querySelector('select[name="geometry_family"]').value = 'path';
-      card.querySelector('textarea[name="path_data"]').value = subpath.d;
-      // Source-layout hints from the splitter reconstruct the SVG's own
-      // composition instead of the 3x3 default grid.
-      setPairField(card, 'anchor_x', subpath.anchor_x);
-      setPairField(card, 'anchor_y', subpath.anchor_y);
-      setPairField(card, 'base_scale', subpath.base_scale);
-      added.push(card);
-    }
-    window.mrpSyncFamilyFields(componentsEl);
+    const added = window.mrpApplySubpaths(
+      subpaths,
+      componentsEl,
+      document.getElementById('actor-component-template')
+    );
     // Pre-select every imported subpath so the group can be resized in one move.
     if (added.length > 1) setSelection(added);
-    else player.redraw();
   }
 
-  document.getElementById('svg-import-input').addEventListener('change', async (event) => {
-    const file = event.target.files[0];
-    event.target.value = '';
-    if (!file) return;
-    const body = new URLSearchParams();
-    body.set('svg', await file.text());
-    const subpaths = await fetchSubpaths('/actors/svg-subpaths', body, 'SVG import failed.');
-    if (subpaths) applySubpaths(subpaths);
-  });
+  window.mrpEnableSvgImport(
+    document.getElementById('svg-import-input'),
+    componentsEl,
+    document.getElementById('actor-component-template'),
+    (added) => { if (added.length > 1) setSelection(added); }
+  );
 
   function toggleSvgGenerate() {
     const panel = document.getElementById('svg-generate-panel');

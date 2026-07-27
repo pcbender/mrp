@@ -109,6 +109,9 @@
       <div class="video-cast-actions">
         <button class="btn btn-primary" name="action" value="actor_save" type="submit">Save track actor</button>
         <button class="btn btn-secondary" type="button" onclick="addActorComponent()">+ Add visual component</button>
+        {# Unnamed and hidden, so it never posts with the actor form. #}
+        <button class="btn btn-secondary" type="button" onclick="document.getElementById('track-svg-import').click()" title="Split an SVG file into one path component per subpath, laid out like the source artwork.">Import SVG…</button>
+        <input type="file" id="track-svg-import" accept=".svg,image/svg+xml" hidden>
         {% if casting.selected_actor_saved %}
         <button class="btn btn-secondary" name="action" value="actor_duplicate" type="submit" formnovalidate>Duplicate</button>
         <button class="btn btn-secondary" name="action" value="actor_publish" type="submit">Add identity to global library</button>
@@ -312,7 +315,7 @@
       document.getElementById('actor-component-template')
     );
     if (!card) {
-      alert('An actor holds at most 9 visual components.');
+      window.mrpComponentNotice('An actor holds at most 9 visual components.');
       return;
     }
     drawActorPreview();
@@ -371,10 +374,51 @@
   });
   window.mrpSyncFamilyFields(actorComponentsEl);
   drawActorPreview();
+
+  // Removing a component has to redraw here too, not just on /actors.
+  window.mrpComponentsChanged = drawActorPreview;
+
+  // Refusals and import failures land in the page's own result banner rather
+  // than an alert, matching how saves report.
+  window.mrpComponentNotice = function (message) {
+    const result = document.getElementById('video-casting-result');
+    if (!result) { window.alert(message); return; }
+    result.innerHTML = '<div class="flash flash-error"></div>';
+    result.firstChild.textContent = message;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+
+  // Same SVG splitter the standalone Actor Designer uses, so a track actor can
+  // be built from artwork instead of hand-entered path coordinates.
+  window.mrpEnableSvgImport(
+    document.getElementById('track-svg-import'),
+    actorComponentsEl,
+    document.getElementById('actor-component-template'),
+    (added) => { if (added.length) revealComponentCard(added[0]); }
+  );
+
+  // Pressing or dragging a shape on the canvas has to bring its controls into
+  // view. Only component 1 renders expanded, so without opening the card the
+  // drag silently edits fields the user cannot see.
+  function revealComponentCard(card) {
+    if (!actorComponentsEl) return;
+    actorComponentsEl.querySelectorAll('.actor-component-card').forEach((item) => {
+      item.classList.toggle('is-selected', item === card);
+    });
+    if (!card) return;
+    const details = card.querySelector('details');
+    if (details) details.open = true;
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  actorComponentsEl?.addEventListener('click', (event) => {
+    const card = event.target.closest('.actor-component-card');
+    if (card) revealComponentCard(card);
+  });
   window.mrpEnableComponentDrag(
     actorCanvas,
     actorComponentsEl,
-    drawActorPreview
+    drawActorPreview,
+    revealComponentCard
   );
 </script>
 

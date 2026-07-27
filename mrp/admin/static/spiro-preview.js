@@ -325,6 +325,121 @@
     return container.querySelector('fieldset:last-of-type');
   };
 
+  // Pages may override to route a message into their own validation area;
+  // otherwise it falls back to an alert so a refusal is never silent.
+  window.mrpComponentNotice = null;
+  function componentNotice(message) {
+    if (typeof window.mrpComponentNotice === 'function') {
+      window.mrpComponentNotice(message);
+    } else {
+      window.alert(message);
+    }
+  }
+
+  // Pages set this to redraw their preview after a component is added or
+  // removed. Removal used to be a bare fieldset.remove() in the template,
+  // which left the canvas showing a shape the actor no longer had.
+  window.mrpComponentsChanged = null;
+  function componentsChanged(container) {
+    if (typeof window.mrpComponentsChanged === 'function') {
+      window.mrpComponentsChanged(container);
+    }
+  }
+
+  // Remove one component card. Any card may go — the guard is the count, not
+  // the position, since ActorConfig requires at least one component and the
+  // first card is as removable as the rest once a second exists.
+  window.mrpRemoveComponent = function (button) {
+    const card = button && button.closest('.actor-component-card');
+    const container = card && card.parentElement;
+    if (!card || !container) return false;
+    if (container.querySelectorAll('.actor-component-card').length <= 1) {
+      componentNotice('An actor needs at least one visual component.');
+      return false;
+    }
+    card.remove();
+    componentsChanged(container);
+    return true;
+  };
+
+  // Write a value into a named control and its slider twin. Range siblings
+  // carry no name attribute, so there is no ambiguity with the slider pairs.
+  window.mrpSetComponentField = function (card, name, value) {
+    if (value === undefined || value === null) return;
+    const el = card.querySelector(`[name="${name}"]`);
+    if (!el) return;
+    el.value = String(value);
+    const pair = el.closest('.slider-pair');
+    const range = pair && pair.querySelector('input[type="range"]');
+    if (range) range.value = el.value;
+  };
+
+  // POST to a subpath-producing endpoint (/actors/svg-subpaths or
+  // /actors/svg-generate) and return its subpaths, or null after reporting.
+  window.mrpFetchSubpaths = async function (url, body, failMessage) {
+    let response;
+    let payload;
+    try {
+      response = await fetch(url, { method: 'POST', body });
+      payload = await response.json();
+    } catch (err) {
+      componentNotice(failMessage);
+      return null;
+    }
+    if (!response.ok) {
+      componentNotice(((payload && payload.errors) || [failMessage]).join('; '));
+      return null;
+    }
+    return payload.subpaths;
+  };
+
+  // Turn split subpaths into path components. The splitter's layout hints
+  // rebuild the SVG's own composition rather than the 3x3 default grid, so an
+  // imported mark arrives looking like the artwork it came from. Returns the
+  // cards it added so a caller can select them as a group.
+  window.mrpApplySubpaths = function (subpaths, container, template) {
+    const added = [];
+    for (const subpath of subpaths) {
+      const card = window.mrpAddActorComponent(container, template);
+      if (!card) {
+        componentNotice('An actor holds at most 9 visual components.');
+        break;
+      }
+      const family = card.querySelector('select[name="geometry_family"]');
+      if (family) family.value = 'path';
+      const data = card.querySelector('textarea[name="path_data"]');
+      if (data) data.value = subpath.d;
+      window.mrpSetComponentField(card, 'anchor_x', subpath.anchor_x);
+      window.mrpSetComponentField(card, 'anchor_y', subpath.anchor_y);
+      window.mrpSetComponentField(card, 'base_scale', subpath.base_scale);
+      added.push(card);
+    }
+    window.mrpSyncFamilyFields(container);
+    componentsChanged(container);
+    return added;
+  };
+
+  // Wire a hidden file input to the SVG splitter. `oncards` (optional) is
+  // called with the added cards once the import lands.
+  window.mrpEnableSvgImport = function (input, container, template, oncards) {
+    if (!input) return;
+    input.addEventListener('change', async (event) => {
+      const file = event.target.files[0];
+      event.target.value = '';
+      if (!file) return;
+      const body = new URLSearchParams();
+      body.set('svg', await file.text());
+      const subpaths = await window.mrpFetchSubpaths(
+        '/actors/svg-subpaths',
+        body,
+        'SVG import failed.'
+      );
+      if (!subpaths) return;
+      const added = window.mrpApplySubpaths(subpaths, container, template);
+      if (oncards) oncards(added);
+    });
+  };
+
   // Show only the selected curve family's controls in a component card.
   window.mrpSyncFamilyFields = function (root) {
     (root || document).querySelectorAll('.actor-component-card').forEach((card) => {

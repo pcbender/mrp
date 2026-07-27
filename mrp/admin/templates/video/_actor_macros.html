@@ -49,7 +49,11 @@
 {% set is_new = component is none %}
 {% set component = component if component is not none else default_component %}
 <fieldset class="video-trace-card actor-component-card"{% if is_new %} data-title-live{% endif %}>
-  <legend><span class="actor-component-title">{% if is_new %}{{ component.id }} {{ {'path': 'SVG', 'text': 'text'}.get(component.geometry.family, component.geometry.family) }}{% else %}Visual component {{ index }}{% endif %}</span>{% if is_new or index > 1 %}<button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove()">Remove</button>{% endif %}</legend>
+  {# Every component gets a Remove button. Gating it on index > 1 made the
+     first shape of an imported multi-shape SVG permanently undeletable; the
+     "at least one component" rule is enforced by count in mrpRemoveComponent,
+     which also redraws the preview the removal just invalidated. #}
+  <legend><span class="actor-component-title">{% if is_new %}{{ component.id }} {{ {'path': 'SVG', 'text': 'text'}.get(component.geometry.family, component.geometry.family) }}{% else %}Visual component {{ index }}{% endif %}</span><button type="button" class="btn btn-danger btn-sm" onclick="mrpRemoveComponent(this)">Remove</button></legend>
   {% if not is_new %}
   <div class="actor-component-summary">
     <span class="actor-swatch" style="--actor-color: {{ component.color }}"></span>
