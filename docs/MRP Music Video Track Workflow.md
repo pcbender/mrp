@@ -207,6 +207,39 @@ record the input fingerprint and are served only through the admin route. A
 successful preview of the current cast advances `cast` to `previewed`; changing
 the cast returns the track to `cast` and requires fresh preflight/rendering.
 
+## Admin Live Preview
+
+Between Scene Casting and Rendering, the per-track Video page links to
+`/releases/{release}/tracks/{track}/video/live-preview`. This is a private,
+non-rendering canvas for hearing the master while playing or scrubbing the
+complete saved project. It includes keyboard-operable play/pause, reset,
+scrubber, and scene-jump controls plus textual current-scene and current-lyric
+indicators.
+
+Live Preview reads the current cached analysis and samples the same Python
+audio/choreography state used by the renderer. It never computes analysis on
+page navigation. A current cache enables audio-reactive motion; a missing or
+stale cache leaves master-audio playback and saved geometry usable under an
+explicit **Geometry only** label.
+
+Scene Preview uses the same absolute-time engine and may layer unsaved fields
+from the selected Scene Casting form over the saved document. Full-track Live
+Preview is deliberately read-only and saved-state-only. If project, timing, or
+analysis changes after loading, it keeps the loaded timeline, shows
+**Stale loaded state**, and requires an explicit reload instead of swapping
+state during playback.
+
+Typical canvases target 30 redraws per second. Expensive scenes adapt to 20 or
+15 without changing `audio.currentTime`; reduced-motion preference uses the
+15 fps target. This changes drawing frequency only, not scene choice, lyric
+timing, trace phase, or audio speed.
+
+Live Preview is an editorial timing and motion check, not a render artifact.
+It does not write source, launch a job, advance `music_video.status`, satisfy
+approval, or publish anything. Canvas font metrics, glow, antialiasing,
+color-flow, and screen blending can differ from OpenCV. Use **Render frame to
+confirm** or a verified draft/full render when exact pixels matter.
+
 ## Admin draft, full-render, and approval workflow
 
 After casting, the per-track Video page links to

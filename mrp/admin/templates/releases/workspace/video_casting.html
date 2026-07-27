@@ -24,6 +24,7 @@
 <p class="video-breadcrumb">
   <a href="/releases/{{ slug }}/tracks/{{ track_slug }}/video">← {{ track.title }}</a>
   <span> / Scene casting</span>
+  <span> · <a href="/releases/{{ slug }}/tracks/{{ track_slug }}/video/live-preview">Full-track Live Preview</a></span>
 </p>
 
 <div id="video-casting-result"></div>
@@ -161,7 +162,7 @@
 
     <div class="form-card"><div class="form-body">
       <div class="storyboard-heading">
-        <div><h2>Storyboard</h2><p class="video-help">Where the staged actors sit in the {{ casting.project.video.width }}×{{ casting.project.video.height }} frame. Drag a shape to reposition it; edits to the controls below update it live. Play traces the cast the way the renderer draws it; render a frame only to confirm.</p></div>
+        <div><h2>Scene Preview</h2><p class="video-help">The selected scene at absolute track time, including cached audio response when analysis is current. Drag a shape to reposition it; edits to the controls below update it live. Render a frame only to confirm exact pixels.</p></div>
         <div class="spiro-transport">
           <button type="button" class="btn btn-secondary btn-sm" id="storyboard-play">▶ Play</button>
           <button type="button" class="btn btn-secondary btn-sm" id="storyboard-reset">Reset</button>
@@ -172,11 +173,14 @@
                  data-start="{{ casting.selected_section.start }}"
                  data-end="{{ casting.selected_section.end }}"></audio>
           {% endif %}
+          <span class="badge badge-draft" id="storyboard-state" data-state="loading" aria-live="polite">Loading audio response…</span>
           <span class="spiro-progress" id="storyboard-progress" aria-live="off"></span>
         </div>
       </div>
       <div class="scene-storyboard">
-        <canvas id="scene-storyboard-canvas" width="960" height="540" aria-label="Storyboard of the staged actors in this scene"></canvas>
+        <canvas id="scene-storyboard-canvas" width="960" height="540"
+                data-preview-url="/releases/{{ slug }}/tracks/{{ track_slug }}/video/live-preview/data"
+                aria-label="Audio-reactive preview of the staged actors in this scene"></canvas>
         <p class="storyboard-empty" id="storyboard-empty" hidden>No shapes staged in this scene yet.</p>
       </div>
       <script type="application/json" id="scene-storyboard-data">{{ casting.storyboard | tojson }}</script>
@@ -343,7 +347,8 @@
     const title = clone.querySelector('.assignment-title');
     if (title) title.textContent = `Cast member ${count}`;
     document.getElementById('actor-assignments').appendChild(clone);
-    if (window.redrawStoryboard) redrawStoryboard();
+    if (window.markStoryboardUnsaved) markStoryboardUnsaved();
+    else if (window.redrawStoryboard) redrawStoryboard();
   }
 
   // Same live identity preview as the standalone Actor Designer, transport
@@ -422,291 +427,6 @@
   );
 </script>
 
-<script>
-  (function () {
-    const canvas = document.getElementById('scene-storyboard-canvas');
-    const dataEl = document.getElementById('scene-storyboard-data');
-    const emptyEl = document.getElementById('storyboard-empty');
-    if (!canvas || !dataEl) return;
-    const ctx = canvas.getContext('2d');
-    let model;
-    try { model = JSON.parse(dataEl.textContent); } catch (err) { return; }
-    const W = canvas.width, H = canvas.height;
-    const MARGIN = typeof model.margin === 'number' ? model.margin : 0.08;
-    const TAU = Math.PI * 2;
-    const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
-
-    function fieldVal(card, name) {
-      const el = card.querySelector(`[name="${name}"]`);
-      return el ? el.value : '';
-    }
-    function numOrNull(value) {
-      const text = String(value).trim();
-      if (text === '') return null;
-      const parsed = Number(text);
-      return Number.isFinite(parsed) ? parsed : null;
-    }
-
-    // Recompile placement from the live direction fields, mirroring
-    // mrp/video/casting.py compile_actor_cast. Falls back to the server's
-    // compiled traces for legacy scenes that have no cast fieldsets.
-    function computeShapes() {
-      const cards = Array.from(
-        document.querySelectorAll('#actor-assignments fieldset[data-assignment-id]')
-      );
-      const actors = model.actors || {};
-      if (!cards.length || !Object.keys(actors).length) {
-        // Flat descriptors: mrpDrawShapes reads geometry/trace fields off the
-        // top level; assignment/label ride along for the drag-handle overlay.
-        return (model.traces || []).map((t) => ({ ...t, assignment: t.assignment, label: '' }));
-      }
-      const shapes = [];
-      cards.forEach((card) => {
-        const actorId = fieldVal(card, 'assigned_actor');
-        const actor = actors[actorId];
-        if (!actor) return;
-        const select = card.querySelector('[name="assigned_actor"]');
-        const label = select && select.selectedOptions.length
-          ? select.selectedOptions[0].textContent.split('—')[0].trim()
-          : actorId;
-        const dirX = numOrNull(fieldVal(card, 'direction_anchor_x'));
-        const dirY = numOrNull(fieldVal(card, 'direction_anchor_y'));
-        const scale = numOrNull(fieldVal(card, 'direction_scale'));
-        const opacity = numOrNull(fieldVal(card, 'direction_opacity'));
-        const depth = fieldVal(card, 'direction_depth');
-        const visible = fieldVal(card, 'direction_visible') !== 'false';
-        // Wardrobe: blank wears the actor's own. Blend mode has no canvas
-        // equivalent here, so the storyboard previews color and weight only.
-        const wardrobe = fieldVal(card, 'direction_color');
-        const lineWidth = numOrNull(fieldVal(card, 'direction_line_width'));
-        // Energy: a partial trace override, matching compile_actor_cast's merge.
-        const energy = {};
-        [
-          ['direction_cycles', 'cycles_per_second'],
-          ['direction_trail', 'trail_fraction'],
-          ['direction_ghosts', 'ghost_count'],
-          ['direction_ghost_spacing', 'ghost_spacing'],
-          ['direction_head', 'head_radius'],
-        ].forEach(([field, key]) => {
-          const value = numOrNull(fieldVal(card, field));
-          if (value !== null) energy[key] = value;
-        });
-        actor.components.forEach((component) => {
-          const ax = component.anchor_x + (dirX !== null ? dirX - 0.5 : 0);
-          const ay = component.anchor_y + (dirY !== null ? dirY - 0.5 : 0);
-          shapes.push({
-            ...component,
-            ...energy,
-            assignment: card.dataset.assignmentId,
-            label,
-            anchor_x: clamp(ax, -0.5, 1.5),
-            anchor_y: clamp(ay, -0.5, 1.5),
-            base_scale: clamp(component.base_scale * (scale !== null ? scale : 1), 0.000001, 2),
-            opacity: visible ? component.opacity * (opacity !== null ? opacity : 1) : 0,
-            color: wardrobe || component.color,
-            line_width: lineWidth !== null ? lineWidth : component.line_width,
-            depth: depth || component.depth,
-          });
-        });
-      });
-      return shapes;
-    }
-
-    // assignment id -> {cx, cy, radius} in canvas pixels, for drag hit-testing.
-    let handles = new Map();
-    const depthOrder = { background: 0, foreground: 1 };
-
-    // Shapes for mrpDrawShapes, background actors first. Cached each tick so the
-    // overlay reuses exactly the list the player just drew.
-    let lastShapes = [];
-    function getStoryboardShapes() {
-      lastShapes = computeShapes()
-        .filter((s) => s.opacity > 0.001)
-        .sort((a, b) => (depthOrder[a.depth] || 0) - (depthOrder[b.depth] || 0));
-      return lastShapes;
-    }
-
-    // Painted on top of each animated frame: subtle frame guides plus the
-    // draggable anchor dots and actor labels. mrpDrawShapes has already cleared
-    // the canvas and drawn the curves by the time this runs.
-    function drawOverlay() {
-      ctx.save();
-      ctx.strokeStyle = 'rgba(255,255,255,0.10)';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(W / 2, 0); ctx.lineTo(W / 2, H);
-      ctx.moveTo(0, H / 2); ctx.lineTo(W, H / 2);
-      ctx.stroke();
-
-      handles = new Map();
-      lastShapes.forEach((item) => {
-        if (!item.assignment) return;
-        const ox = W * item.anchor_x, oy = H * item.anchor_y;
-        const r = Math.min(W, H) * (0.5 - MARGIN) * item.base_scale;
-        const existing = handles.get(item.assignment);
-        const merged = existing || { assignment: item.assignment, label: item.label, cx: ox, cy: oy, r: 0 };
-        merged.cx = ox; merged.cy = oy;
-        merged.r = Math.max(merged.r, r);
-        handles.set(item.assignment, merged);
-      });
-
-      handles.forEach((h) => {
-        ctx.fillStyle = 'rgba(255,255,255,0.9)';
-        ctx.beginPath();
-        ctx.arc(h.cx, h.cy, 4, 0, TAU);
-        ctx.fill();
-        if (h.label) {
-          ctx.font = '600 13px system-ui, sans-serif';
-          const w = ctx.measureText(h.label).width + 12;
-          ctx.fillStyle = 'rgba(0,0,0,0.55)';
-          ctx.fillRect(h.cx + 8, h.cy - 10, w, 20);
-          ctx.fillStyle = '#fff';
-          ctx.textBaseline = 'middle';
-          ctx.fillText(h.label, h.cx + 14, h.cy + 1);
-        }
-      });
-      ctx.restore();
-
-      if (emptyEl) emptyEl.hidden = lastShapes.length > 0;
-    }
-
-    // Optional audio: when "with audio" is on, the scene's master snippet plays
-    // and drives the visual clock, so the reveal stays locked to what you hear.
-    // The <audio>/toggle only exist when the track master is available.
-    const audioEl = document.getElementById('storyboard-audio-el');
-    const audioToggle = document.getElementById('storyboard-audio');
-    const sceneStart = audioEl ? Number(audioEl.dataset.start) || 0 : 0;
-    const sceneEnd = audioEl ? Number(audioEl.dataset.end) || 0 : 0;
-    const withAudio = () => !!(audioToggle && audioToggle.checked && audioEl);
-
-    // Reuse the Actor Designer's player so the scene traces at the same
-    // per-shape cycles_per_second the renderer uses. onchange fires right after
-    // mrpDrawShapes, so the overlay paints on top within the same frame. When
-    // audio is playing, clockSource returns the snippet-relative time; otherwise
-    // null lets the player free-run on wall-clock time.
-    const playBtn = document.getElementById('storyboard-play');
-    const resetBtn = document.getElementById('storyboard-reset');
-    const progressEl = document.getElementById('storyboard-progress');
-    const player = window.mrpSpiroPlayer(canvas, getStoryboardShapes, {
-      background: model.background || '#101014',
-      clockSource: () =>
-        withAudio() && !audioEl.paused ? Math.max(0, audioEl.currentTime - sceneStart) : null,
-      onchange(progress, playing) {
-        drawOverlay();
-        if (playBtn) playBtn.textContent = playing ? '❚❚ Pause' : '▶ Play';
-        if (progressEl) {
-          progressEl.textContent = playing || progress < 1 ? `${Math.round(progress * 100)}%` : '';
-        }
-      },
-    });
-
-    function startAudio() {
-      if (!withAudio()) return;
-      audioEl.currentTime = sceneStart;
-      audioEl.play().catch(() => {});
-    }
-    if (playBtn) {
-      playBtn.addEventListener('click', () => {
-        if (player.playing) {
-          player.pause();
-          if (audioEl) audioEl.pause();
-        } else {
-          startAudio();
-          player.play();
-        }
-      });
-    }
-    if (resetBtn) {
-      resetBtn.addEventListener('click', () => {
-        player.reset();
-        if (audioEl) { audioEl.pause(); audioEl.currentTime = sceneStart; }
-      });
-    }
-    if (audioToggle) {
-      // Toggling mid-play: start the snippet, or drop back to silent playback.
-      audioToggle.addEventListener('change', () => {
-        if (!player.playing) return;
-        if (audioToggle.checked) startAudio(); else audioEl.pause();
-      });
-    }
-    if (audioEl) {
-      // Loop within the scene window so the snippet repeats while playing.
-      audioEl.addEventListener('timeupdate', () => {
-        if (player.playing && sceneEnd > sceneStart && audioEl.currentTime >= sceneEnd) {
-          audioEl.currentTime = sceneStart;
-        }
-      });
-    }
-    const drawStoryboard = player.redraw;
-    window.redrawStoryboard = drawStoryboard;
-
-    // ---- drag to reposition ----
-    let drag = null;
-    function canvasPoint(event) {
-      const rect = canvas.getBoundingClientRect();
-      return {
-        x: (event.clientX - rect.left) * (W / rect.width),
-        y: (event.clientY - rect.top) * (H / rect.height),
-      };
-    }
-    function pickHandle(pt) {
-      let best = null, bestDist = Infinity;
-      handles.forEach((h) => {
-        const d = Math.hypot(pt.x - h.cx, pt.y - h.cy);
-        const reach = Math.max(28, h.r);
-        if (d < reach && d < bestDist) { best = h; bestDist = d; }
-      });
-      return best;
-    }
-    canvas.addEventListener('pointerdown', (event) => {
-      const pt = canvasPoint(event);
-      const handle = pickHandle(pt);
-      if (!handle) return;
-      const card = document.querySelector(`#actor-assignments fieldset[data-assignment-id="${handle.assignment}"]`);
-      if (!card) return;
-      const xEl = card.querySelector('[name="direction_anchor_x"]');
-      const yEl = card.querySelector('[name="direction_anchor_y"]');
-      drag = {
-        card, xEl, yEl,
-        startX: pt.x, startY: pt.y,
-        baseX: numOrNull(xEl && xEl.value),
-        baseY: numOrNull(yEl && yEl.value),
-      };
-      canvas.setPointerCapture(event.pointerId);
-      canvas.classList.add('dragging');
-      event.preventDefault();
-    });
-    canvas.addEventListener('pointermove', (event) => {
-      if (!drag) return;
-      const pt = canvasPoint(event);
-      const dfx = (pt.x - drag.startX) / W;
-      const dfy = (pt.y - drag.startY) / H;
-      const nextX = clamp((drag.baseX !== null ? drag.baseX : 0.5) + dfx, -0.5, 1.5);
-      const nextY = clamp((drag.baseY !== null ? drag.baseY : 0.5) + dfy, -0.5, 1.5);
-      // Three decimals to match the inputs' step="0.001"; finer values fail
-      // form validation and block the scene save.
-      if (drag.xEl) drag.xEl.value = nextX.toFixed(3);
-      if (drag.yEl) drag.yEl.value = nextY.toFixed(3);
-      drawStoryboard();
-    });
-    function endDrag(event) {
-      if (!drag) return;
-      if (drag.xEl) drag.xEl.dispatchEvent(new Event('input', { bubbles: true }));
-      drag = null;
-      canvas.classList.remove('dragging');
-      if (event) canvas.releasePointerCapture(event.pointerId);
-    }
-    canvas.addEventListener('pointerup', endDrag);
-    canvas.addEventListener('pointercancel', endDrag);
-
-    // live redraw when any direction field or selected actor changes
-    const assignments = document.getElementById('actor-assignments');
-    if (assignments) {
-      assignments.addEventListener('input', drawStoryboard);
-      assignments.addEventListener('change', drawStoryboard);
-    }
-    drawStoryboard();
-  })();
-</script>
+<script src="/static/video-live-preview.js"></script>
 {% endif %}
 {% endblock %}

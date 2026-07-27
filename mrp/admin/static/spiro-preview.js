@@ -26,6 +26,12 @@
     const parsed = Number(value);
     return Number.isFinite(parsed) ? parsed : fallback;
   };
+  const finiteNumber = (value) => (
+    value !== undefined
+    && value !== null
+    && value !== ''
+    && Number.isFinite(Number(value))
+  );
 
   // SVG path sampling, mirroring mrp/video/geometry.py _path_points: sample
   // uniform arc-length stations (getPointAtLength is arc-length exact, so no
@@ -183,7 +189,26 @@
   // `extent` is the max point radius, as the renderer normalizes by before
   // placing. Family dispatch and closure formulas mirror
   // mrp/video/geometry.py generate_spiro_points — keep them in sync.
-  window.mrpSpiroPoints = function (shape) {
+  //
+  // Live Preview redraws the same geometry at many absolute times. Cache the
+  // normalized points by the complete geometry signature so transport ticks
+  // move only the trace window; live form edits naturally select a new key.
+  const geometryPointCache = new Map();
+  const GEOMETRY_CACHE_LIMIT = 256;
+  const GEOMETRY_FIELDS = [
+    'family', 'samples', 'phase',
+    'fixed_radius', 'moving_radius', 'pen_offset', 'rotation',
+    'liss_freq_x', 'liss_freq_y', 'liss_delta',
+    'rose_n', 'rose_d',
+    'sf_m', 'sf_n1', 'sf_n2', 'sf_n3',
+    'path_data',
+    'harm_freq_x', 'harm_freq_y', 'harm_delta', 'harm_damping', 'harm_turns',
+  ];
+  const geometrySignature = (shape) => GEOMETRY_FIELDS
+    .map((field) => `${field}:${shape[field] === undefined ? '' : shape[field]}`)
+    .join('|');
+
+  function computeSpiroPoints(shape) {
     const family = shape.family || 'spirogram';
     const phase = numberOr(shape.phase, 0);
     const n = Math.max(2, Math.round(Math.min(numberOr(shape.samples, 900), 1200)));
@@ -290,6 +315,22 @@
       pts[pts.length - 1] = [pts[0][0], pts[0][1]];
     }
     return { pts, extent: extent > 0 ? extent : 1 };
+  }
+
+  window.mrpSpiroPoints = function (shape) {
+    const key = geometrySignature(shape);
+    if (geometryPointCache.has(key)) {
+      const cached = geometryPointCache.get(key);
+      geometryPointCache.delete(key);
+      geometryPointCache.set(key, cached);
+      return cached;
+    }
+    const result = computeSpiroPoints(shape);
+    geometryPointCache.set(key, result);
+    if (geometryPointCache.size > GEOMETRY_CACHE_LIMIT) {
+      geometryPointCache.delete(geometryPointCache.keys().next().value);
+    }
+    return result;
   };
 
   // Clone a component card out of `template` into `container`, capped at 9
@@ -715,6 +756,9 @@
       const baseAlpha = clamp01(shape.opacity === undefined ? 0.8 : Number(shape.opacity));
       context.lineWidth = Math.max(0.5, Number(shape.line_width) || 2);
       context.shadowBlur = 8;
+      context.globalCompositeOperation = shape.blend_mode === 'screen'
+        ? 'screen'
+        : 'source-over';
 
       // A text component holds one contour per letter, group-normalized so the
       // whole word shares one extent; every other family is a single contour.
@@ -731,15 +775,35 @@
         groupExtent = base.extent;
       }
       const fit = Math.min(canvas.width, canvas.height) * (0.5 - margin) * identityScale / groupExtent;
+      const rotationRadians = numberOr(shape.rotation_radians, 0);
+      const rotationCosine = Math.cos(rotationRadians);
+      const rotationSine = Math.sin(rotationRadians);
+      const placedPoint = (point) => {
+        const rotatedX = point[0] * rotationCosine - point[1] * rotationSine;
+        const rotatedY = point[0] * rotationSine + point[1] * rotationCosine;
+        return [originX + rotatedX * fit, originY + rotatedY * fit];
+      };
 
       // Draw one contour with the shape's trace behavior. For text, each letter
       // gets its own trail, staggered slightly so they are not lock-stepped.
       const drawCurve = (pts, contourIndex) => {
         const cycle = Math.max(1, pts.length - 1);
         const flowValues = flow ? window.mrpHueFlowValues(pts, flow.source) : null;
-        const stagger = family === 'text' ? contourIndex * 0.11 : 0;
+        const contourPhases = Array.isArray(shape.phase_fractions)
+          ? shape.phase_fractions
+          : null;
+        const stagger = family === 'text' && !contourPhases
+          ? contourIndex * 0.11
+          : 0;
+        const traceClock = finiteNumber(shape.trace_time)
+          ? Number(shape.trace_time)
+          : opts.clockSeconds;
+        const phaseFraction = contourPhases
+          ? numberOr(contourPhases[contourIndex], numberOr(shape.phase_fraction, 0))
+          : numberOr(shape.phase_fraction, 0);
         const progress = playing
-          ? (((opts.clockSeconds * numberOr(shape.cycles_per_second, 0.08) + stagger) % 1) + 1) % 1
+          ? (((traceClock * numberOr(shape.cycles_per_second, 0.08)
+            + phaseFraction + stagger) % 1) + 1) % 1
           : baseProgress;
 
         const strokeIndices = (indices, alpha) => {
@@ -748,8 +812,7 @@
           if (!flow) {
             context.beginPath();
             indices.forEach((idx, k) => {
-              const px = originX + pts[idx][0] * fit;
-              const py = originY + pts[idx][1] * fit;
+              const [px, py] = placedPoint(pts[idx]);
               if (k === 0) context.moveTo(px, py); else context.lineTo(px, py);
             });
             context.strokeStyle = color;
@@ -769,8 +832,10 @@
             const path = levelPaths.get(lkey);
             const a = indices[k - 1];
             const b = indices[k];
-            path.moveTo(originX + pts[a][0] * fit, originY + pts[a][1] * fit);
-            path.lineTo(originX + pts[b][0] * fit, originY + pts[b][1] * fit);
+            const [ax, ay] = placedPoint(pts[a]);
+            const [bx, by] = placedPoint(pts[b]);
+            path.moveTo(ax, ay);
+            path.lineTo(bx, by);
           }
           levelPaths.forEach((path, lkey) => {
             const segmentColor = window.mrpShiftHue(
@@ -817,9 +882,10 @@
         if (opts.showHead && headRadius > 0 && (playing || progress < 1)) {
           context.globalAlpha = baseAlpha;
           context.beginPath();
+          const [headX, headY] = placedPoint(pts[headIndex]);
           context.arc(
-            originX + pts[headIndex][0] * fit,
-            originY + pts[headIndex][1] * fit,
+            headX,
+            headY,
             Math.max(1, Math.round(headRadius)),
             0,
             Math.PI * 2
@@ -853,6 +919,7 @@
       }
       context.globalAlpha = 1;
       context.shadowBlur = 0;
+      context.globalCompositeOperation = 'source-over';
     });
   };
 

@@ -1,0 +1,170 @@
+{
+  "audio_state": {
+    "master_energy": 0.6,
+    "master_accent": 0.2,
+    "drums_energy": 0.7,
+    "drums_accent": 0.8,
+    "bass_energy": 0.5,
+    "bass_accent": 0.4,
+    "vocals_energy": 0.3,
+    "vocals_accent": 0.25,
+    "instruments_energy": 0.4,
+    "instruments_accent": 0.1,
+    "spectral_centroid": 0.55,
+    "section_progress": 0.35,
+    "transition_progress": 0.65,
+    "layer_fraction": 1.0,
+    "scale": 1.08,
+    "motion": 1.18,
+    "color_intensity": 1.16,
+    "onset_response": 1.35,
+    "rotation_direction": 1.0,
+    "palette_shift": 0.1,
+    "lyrics_opacity": 1.0,
+    "spatial_spread": 1.08,
+    "anchor_drift": 0.014,
+    "trace_speed": 1.15,
+    "trail_length": 1.18,
+    "beat_gain": 1.4,
+    "intensity_gain": 1.2,
+    "trace_time": 48.2,
+    "rotation_time": 12.34,
+    "visibility_master": 0.7,
+    "visibility_drums": 0.8,
+    "visibility_bass": 0.9,
+    "visibility_vocals": 1.0,
+    "visibility_instruments": 0.85
+  },
+  "time_seconds": 42.25,
+  "cases": [
+    {
+      "name": "driven foreground with composition weight",
+      "visibility_override": 0.65,
+      "preset": {
+        "scale_response": 1.35,
+        "motion_response": 1.38,
+        "onset_response": 1.45,
+        "opacity_response": 1.08,
+        "hue_response": 1.35,
+        "background_response": 1.25,
+        "visibility_bias": 0.08,
+        "role_gains": {
+          "master": 1.0,
+          "drums": 1.0,
+          "bass": 1.0,
+          "vocals": 1.0,
+          "instruments": 1.0
+        }
+      },
+      "layer": {
+        "id": "bass-orbit",
+        "role": "bass",
+        "geometry": {
+          "family": "spirogram",
+          "fixed_radius": 120.0,
+          "moving_radius": 40.0,
+          "pen_offset": 60.0,
+          "rotation": "inside",
+          "phase": 0.0,
+          "samples": 900
+        },
+        "trace": {
+          "cycles_per_second": 0.12,
+          "trail_fraction": 0.31,
+          "ghost_count": 2,
+          "ghost_spacing": 0.09,
+          "head_radius": 4.0
+        },
+        "color": "#4c78ff",
+        "color_locked": false,
+        "depth": "foreground",
+        "anchor_x": 0.25,
+        "anchor_y": 0.4,
+        "base_scale": 1.2,
+        "opacity": 0.75,
+        "line_width": 2.5,
+        "rotation_degrees_per_second": -1.2,
+        "hue_shift_degrees": 12.0,
+        "blend_mode": "screen",
+        "drivers": {
+          "scale": "bass.energy",
+          "opacity": "master.energy",
+          "color": "vocals.energy",
+          "pulse": "drums.accent"
+        }
+      },
+      "expected": {
+        "scale": 1.47096,
+        "rotation_radians": -0.4364310506627191,
+        "trail_fraction": 0.358769324,
+        "opacity": 0.5913648000000001,
+        "line_width": 7.981,
+        "hue_shift_degrees": 64.2,
+        "color_intensity": 0.9512,
+        "beat_pulse": 1.0
+      }
+    },
+    {
+      "name": "undriven background with role visibility",
+      "visibility_override": null,
+      "preset": {
+        "scale_response": 0.6,
+        "motion_response": 0.68,
+        "onset_response": 0.55,
+        "opacity_response": 0.82,
+        "hue_response": 0.55,
+        "background_response": 0.58,
+        "visibility_bias": -0.08,
+        "role_gains": {
+          "master": 1.0,
+          "drums": 1.0,
+          "bass": 1.0,
+          "vocals": 1.0,
+          "instruments": 1.0
+        }
+      },
+      "layer": {
+        "id": "haze",
+        "role": "instruments",
+        "geometry": {
+          "family": "spirogram",
+          "fixed_radius": 192.0,
+          "moving_radius": 48.0,
+          "pen_offset": 112.0,
+          "rotation": "inside",
+          "phase": 0.0,
+          "samples": 900
+        },
+        "trace": {
+          "cycles_per_second": 0.02,
+          "trail_fraction": 0.54,
+          "ghost_count": 3,
+          "ghost_spacing": 0.07,
+          "head_radius": 0.0
+        },
+        "color": "#8c5cff",
+        "color_locked": false,
+        "depth": "background",
+        "anchor_x": 0.52,
+        "anchor_y": 0.38,
+        "base_scale": 1.7,
+        "opacity": 0.16,
+        "line_width": 1.2,
+        "rotation_degrees_per_second": -0.35,
+        "hue_shift_degrees": 0.0,
+        "blend_mode": "screen",
+        "drivers": {}
+      },
+      "expected": {
+        "scale": 1.8932832,
+        "rotation_radians": -0.12526312406177492,
+        "trail_fraction": 0.6183745632,
+        "opacity": 0.09526216832,
+        "line_width": 1.549272,
+        "hue_shift_degrees": 42.6,
+        "color_intensity": 1.2644,
+        "beat_pulse": 0.0
+      }
+    }
+  ]
+}

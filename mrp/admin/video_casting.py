@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import hashlib
 import math
 import os
 import re
@@ -630,6 +629,8 @@ def _gallery(
 def _storyboard_shape(layer: Any) -> dict[str, Any]:
     """Serialize one visual layer's geometry and placement for canvas drawing."""
     return {
+        "id": layer.id,
+        "role": layer.role,
         # Whole geometry (family + its fields) so the client dispatcher draws
         # any curve family without per-field drift here.
         **layer.geometry.model_dump(mode="json", exclude_none=True),
@@ -639,6 +640,7 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
         **layer.trace.model_dump(mode="json", exclude_none=True),
         "samples": min(layer.geometry.samples, 1200),
         "color": layer.color,
+        "color_locked": layer.color_locked,
         "color_flow": (
             {
                 "source": layer.color_flow.source,
@@ -653,10 +655,23 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
         "opacity": layer.opacity,
         "line_width": layer.line_width,
         "depth": layer.depth,
+        "rotation_degrees_per_second": layer.rotation_degrees_per_second,
+        "hue_shift_degrees": layer.hue_shift_degrees,
+        "blend_mode": layer.blend_mode,
+        "drivers": layer.drivers.model_dump(mode="json", exclude_none=True),
     }
 
 
-def _storyboard(composition: Any, background: str, actors: Any) -> dict[str, Any]:
+def _storyboard(
+    composition: Any,
+    background: str,
+    actors: Any,
+    *,
+    section_id: str,
+    start: float,
+    end: float,
+    margin: float,
+) -> dict[str, Any]:
     """Client-side draw data for the scene storyboard.
 
     ``traces`` is the compiled composition the renderer draws, so a scene shows
@@ -682,7 +697,9 @@ def _storyboard(composition: Any, background: str, actors: Any) -> dict[str, Any
     }
     return {
         "background": background,
-        "margin": 0.08,
+        "margin": margin,
+        "section_id": section_id,
+        "range": {"start": start, "end": end},
         "traces": traces,
         "actors": actor_identities,
     }
@@ -835,6 +852,10 @@ def load_casting(
             composition,
             document.project.video.background,
             document.project.visuals.actors,
+            section_id=selected.id,
+            start=selected.start,
+            end=selected.end,
+            margin=document.project.visuals.canvas_margin,
         ),
         "project_actors": project_actors,
         "library_actors": library_actors,

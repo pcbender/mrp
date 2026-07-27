@@ -124,7 +124,7 @@
 {% set is_new = assignment is none %}
 {% set direction = assignment.direction if not is_new else default_direction %}
 <fieldset class="actor-assignment-card"{% if not is_new %} data-assignment-id="{{ assignment.id }}"{% endif %}>
-  <legend><span class="assignment-title">{{ 'New cast member' if is_new else 'Cast member ' ~ index }}</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove(); if (window.redrawStoryboard) redrawStoryboard();">Remove</button></legend>
+  <legend><span class="assignment-title">{{ 'New cast member' if is_new else 'Cast member ' ~ index }}</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove(); if (window.markStoryboardUnsaved) markStoryboardUnsaved(); else if (window.redrawStoryboard) redrawStoryboard();">Remove</button></legend>
   <input type="hidden" name="assignment_id" value="{{ 'appearance' if is_new else assignment.id }}">
   <div class="form-grid actor-direction-grid">
     <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in project_actors %}<option value="{{ item.id }}" {% if not is_new and assignment.actor == item.id %}selected{% endif %}>{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>

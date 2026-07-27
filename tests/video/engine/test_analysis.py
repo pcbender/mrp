@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 
 import numpy as np
@@ -11,6 +12,7 @@ from mrp.video.analysis import (
     ANALYSIS_FEATURES,
     analyze_project,
     analyze_signal,
+    load_existing_analysis,
     robust_normalize,
     smooth_attack_release,
 )
@@ -155,6 +157,10 @@ def test_project_analysis_caches_and_reports_semantic_fallbacks(tmp_path: Path) 
     assert first.bundle.semantic_controls["drums"].track == "master"
     assert first.bundle.semantic_controls["drums"].energy_feature == "high_energy"
     assert any("drums" in warning for warning in first.warnings)
+    existing = load_existing_analysis(manifest)
+    assert existing is not None
+    assert existing.bundle.cache_key == first.bundle.cache_key
+    assert existing.cache_hit
 
     result = runner.invoke(app, ["analyze", str(manifest), "--json"])
     assert result.exit_code == 0, result.output
@@ -167,9 +173,17 @@ def test_project_analysis_caches_and_reports_semantic_fallbacks(tmp_path: Path) 
         _pulse_signal(8000, 2) * 0.5,
         8000,
     )
+    newer = first.cache_path.stat().st_mtime_ns + 1_000_000
+    os.utime(tmp_path / "audio" / "master.wav", ns=(newer, newer))
+    cache_files = tuple(first.cache_path.parent.glob("*.npz"))
+    assert load_existing_analysis(manifest) is None
+    assert tuple(first.cache_path.parent.glob("*.npz")) == cache_files
     changed = analyze_project(manifest)
     assert not changed.cache_hit
     assert changed.cache_path != first.cache_path
+    refreshed = load_existing_analysis(manifest)
+    assert refreshed is not None
+    assert refreshed.bundle.cache_key == changed.bundle.cache_key
 
 
 def test_analysis_configuration_rejects_invalid_frequency_bands() -> None:

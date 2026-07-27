@@ -2,6 +2,7 @@ import hashlib
 import json
 import math
 import os
+import zipfile
 from collections.abc import Callable, Mapping
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -12,7 +13,12 @@ import numpy as np
 import soundfile as sf
 from numpy.typing import NDArray
 
-from mrp.video.project import AnalysisConfig, ProjectManifest, validate_project
+from mrp.video.project import (
+    AnalysisConfig,
+    ProjectManifest,
+    load_project_manifest,
+    validate_project,
+)
 
 ANALYSIS_FORMAT_VERSION = 1
 ANALYSIS_FEATURES = (
@@ -480,7 +486,14 @@ def _load_cache(path: Path, expected_key: str) -> AnalysisBundle:
                         dtype=np.float64,
                     ),
                 )
-    except (OSError, KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
+    except (
+        OSError,
+        KeyError,
+        TypeError,
+        ValueError,
+        zipfile.BadZipFile,
+        json.JSONDecodeError,
+    ) as exc:
         raise SpirophonicAnalysisError(f"invalid analysis cache {path}: {exc}") from exc
 
     controls = {
@@ -497,6 +510,99 @@ def _load_cache(path: Path, expected_key: str) -> AnalysisBundle:
         tracks=tracks,
         semantic_controls=controls,
     )
+
+
+def _cache_metadata(path: Path) -> dict[str, Any]:
+    try:
+        with np.load(path, allow_pickle=False) as archive:
+            value = json.loads(str(archive["metadata"].item()))
+    except (
+        OSError,
+        KeyError,
+        TypeError,
+        ValueError,
+        zipfile.BadZipFile,
+        json.JSONDecodeError,
+    ) as exc:
+        raise SpirophonicAnalysisError(f"invalid analysis cache {path}: {exc}") from exc
+    if not isinstance(value, dict):
+        raise SpirophonicAnalysisError(
+            f"invalid analysis cache {path}: metadata must be a mapping"
+        )
+    return value
+
+
+def load_existing_analysis(manifest_path: Path) -> AnalysisRun | None:
+    """Load a current analysis cache without hashing, decoding, or writing audio.
+
+    This is the read-only path used by interactive previews. A candidate is
+    accepted only when its recorded key matches the current analysis settings
+    and declared inputs, and no input has a newer modification time than the
+    cache. Missing, malformed, or stale caches return ``None``; callers that
+    need to create or refresh analysis must use :func:`analyze_project`.
+    """
+    manifest = manifest_path.expanduser().resolve()
+    project = load_project_manifest(manifest)
+    root = manifest.parent
+    input_paths = {
+        "master": (root / project.audio.master).resolve(),
+        **{
+            name: (root / relative_path).resolve()
+            for name, relative_path in sorted(project.audio.stems.items())
+        },
+    }
+    if any(not path.is_file() for path in input_paths.values()):
+        return None
+
+    cache_dir = (root / project.analysis.cache_dir).resolve()
+    try:
+        cache_dir.relative_to(root)
+    except ValueError:
+        return None
+    if not cache_dir.is_dir():
+        return None
+
+    try:
+        candidates = sorted(
+            cache_dir.glob("*.npz"),
+            key=lambda path: (path.stat().st_mtime_ns, path.name),
+            reverse=True,
+        )
+    except OSError:
+        return None
+    semantic_controls, warnings = _semantic_controls(set(input_paths))
+    for cache_path in candidates:
+        try:
+            metadata = _cache_metadata(cache_path)
+            cache_key = str(metadata["cache_key"])
+            input_hashes = {
+                str(name): str(value)
+                for name, value in dict(metadata["input_hashes"]).items()
+            }
+            if metadata.get("format_version") != ANALYSIS_FORMAT_VERSION:
+                continue
+            if cache_path.stem != cache_key:
+                continue
+            if set(input_hashes) != set(input_paths):
+                continue
+            if _analysis_key(project, input_hashes) != cache_key:
+                continue
+            cache_mtime = cache_path.stat().st_mtime_ns
+            if any(path.stat().st_mtime_ns > cache_mtime for path in input_paths.values()):
+                continue
+            bundle = _load_cache(cache_path, cache_key)
+        except (
+            OSError,
+            KeyError,
+            TypeError,
+            ValueError,
+            SpirophonicAnalysisError,
+        ):
+            continue
+        if bundle.semantic_controls != semantic_controls:
+            continue
+        return AnalysisRun(bundle, cache_path, True, warnings)
+    return None
 
 
 def analyze_project(
