@@ -178,6 +178,23 @@
 </div></div>
 
 <script>
+  // A finished job changes more of this page than the job card it swaps: the
+  // render history, the Approve button it unlocks, the plan summary and the
+  // input gate are all server-rendered once at page load. Refresh once the job
+  // reaches a terminal state so the result is visible without a manual reload.
+  //
+  // Only this page opts in. Scene Casting runs its own jobs while holding live,
+  // possibly unsaved cast edits, and reloading there would throw them away.
+  (function () {
+    let refreshing = false;
+    document.body.addEventListener('mrp:job-finished', () => {
+      if (refreshing) return;      // two jobs landing together reload once
+      refreshing = true;
+      // Let htmx finish settling the swap that carried the event.
+      setTimeout(() => window.location.reload(), 400);
+    });
+  })();
+
   function selectDraftSection(select) {
     const option = select.options[select.selectedIndex];
     if (!option || !option.dataset.start) return;

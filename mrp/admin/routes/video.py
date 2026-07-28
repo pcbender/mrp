@@ -1,6 +1,7 @@
 """Optional per-track music-video workspace and process-job routes."""
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
@@ -142,7 +143,7 @@ def _job_template(
         marker, separator, value = str(job.get("command") or "").rpartition("@")
         if separator and marker and ":" in value:
             draft_start, draft_end = value.split(":", 1)
-    return _templates.TemplateResponse(
+    response = _templates.TemplateResponse(
         request,
         "releases/workspace/_video_job.html",
         {
@@ -157,6 +158,21 @@ def _job_template(
         },
         status_code=409 if error else 200,
     )
+    # Polling only ever swaps the job card, so everything a finished job changes
+    # elsewhere on the page — a new render in the history, the Approve button it
+    # unlocks, the plan summary — stayed at its page-load state until someone
+    # reloaded by hand. Announcing the terminal transition lets a page that can
+    # safely refresh itself do so; pages holding unsaved edits ignore it.
+    if job and job.get("status") in video_jobs.TERMINAL_STATUSES:
+        response.headers["HX-Trigger"] = json.dumps(
+            {
+                "mrp:job-finished": {
+                    "kind": str(job.get("kind") or ""),
+                    "status": str(job.get("status") or ""),
+                }
+            }
+        )
+    return response
 
 
 def video_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLResponse:

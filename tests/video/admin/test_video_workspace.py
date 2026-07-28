@@ -733,3 +733,49 @@ def test_audio_scoped_drift_still_catches_audio_changes(tmp_path: Path):
         )
         == "stem vocals was removed or disabled after preparation"
     )
+
+
+def test_finished_job_poll_announces_its_terminal_transition(tmp_path: Path):
+    """Polling swaps only the job card, so pages need telling when a job lands.
+
+    A finished render also unlocks the Approve button and adds a history entry,
+    neither of which the swapped fragment contains. The rendering page listens
+    for this header and refreshes; pages holding unsaved edits ignore it.
+    """
+    db.init(tmp_path / "admin.db")
+    _create_job(tmp_path, job_id="render-1", kind="render")
+
+    running = asyncio.run(
+        video_routes.video_job_poll(
+            _get_request("/x"), "release", "track", "render-1"
+        )
+    )
+    assert running.status_code == 200
+    assert "HX-Trigger" not in running.headers
+
+    db.update_video_job("render-1", status="done", progress=100.0)
+    finished = asyncio.run(
+        video_routes.video_job_poll(
+            _get_request("/x"), "release", "track", "render-1"
+        )
+    )
+
+    assert finished.status_code == 200
+    payload = json.loads(finished.headers["HX-Trigger"])
+    assert payload == {"mrp:job-finished": {"kind": "render", "status": "done"}}
+
+
+def test_failed_job_poll_also_announces_so_the_page_stops_waiting(tmp_path: Path):
+    """A page that only refreshes on success would sit on a dead progress bar."""
+    db.init(tmp_path / "admin.db")
+    _create_job(tmp_path, job_id="render-2", kind="render")
+    db.update_video_job("render-2", status="error")
+
+    response = asyncio.run(
+        video_routes.video_job_poll(
+            _get_request("/x"), "release", "track", "render-2"
+        )
+    )
+
+    payload = json.loads(response.headers["HX-Trigger"])
+    assert payload["mrp:job-finished"]["status"] == "error"
