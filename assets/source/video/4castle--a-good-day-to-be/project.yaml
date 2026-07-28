@@ -1101,22 +1101,2226 @@ project:
             opacity: master.energy
             color: vocals.energy
             pulse: drums.accent
+      cats:
+        id: cats
+        name: Two  Cats
+        description: Four cats.
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape-1
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            path_data: M 61.351157043524,-118.30589657909799 C 60.29800569836401,-117.87635643199202
+              59.641378674007,-116.81734164953001 59.635944566403,-115.53958360517
+              C 59.630291815095006,-114.210986064116 60.23363374566799,-113.266593990526
+              61.216753226004,-113.06520149214201 C 62.06436170670101,-112.891563397106
+              62.184407960773996,-112.491809445432 62.516232602019,-108.73778500154198
+              C 62.807883849594006,-105.438302968016 63.006819783484005,-104.09308360140601
+              63.486414986902005,-102.17756899999999 C 64.28313486157501,-98.99542933468
+              65.351350304422,-96.884444872576 67.221894453554,-94.795579 C 68.14397832657899,-93.76587528125
+              68.72246588636101,-93.25560273870799 69.706692668163,-92.603796778294
+              C 70.41229242115301,-92.13651600598601 71.07019419081699,-91.624793372172
+              71.168693418163,-91.466630209882 C 71.398769968028,-91.09722751142 71.396082034894,-90.72685012184199
+              71.14864682192,-88.704978492876 C 70.945959453779,-87.04873293628799
+              70.970485859014,-86.34310542365598 71.306258618366,-84.17027948118 C
+              71.36545126930301,-83.78721258501 71.285818654411,-83.641509416532 70.494576568344,-82.68510791895599
+              C 70.012053066934,-82.10186091559599 69.414757255381,-81.236030261292
+              69.16724912139,-80.76102430355799 C 67.988012802651,-78.497889645564
+              66.081673146503,-70.08097766519201 66.053344345848,-67.012453 C 66.03700550285399,-65.242166435352
+              66.381322791324,-64.65013754825199 67.537176287782,-64.461131357998
+              C 69.20894478604501,-64.18776378602401 70.136637610029,-65.552684744418
+              69.13039751277101,-66.805244164586 L 68.703206144889,-67.33701252513599
+              L 68.842716223804,-68.114262789108 C 69.576440932773,-72.202193833872
+              70.335303939046,-73.47744508864601 72.817436061022,-74.793639946974
+              C 73.551692580223,-75.182998311894 74.460496951252,-75.628775078896
+              74.836996516313,-75.78426770563999 L 75.521551812793,-76.06697430027201
+              L 75.57599504986499,-75.767580650136 C 75.605941121717,-75.602912880912
+              75.715308564271,-74.864206 75.819037815851,-74.126007 C 76.027982547202,-72.63892658937999
+              76.573741579174,-71.221437406452 77.860254739068,-68.824396 C 79.810868671153,-65.189975094962
+              80.714668703125,-64.45198091163 83.095227577076,-64.54978529979401 C
+              84.186359553475,-64.594612098524 84.248378699413,-64.613765007124 84.606230295724,-65.016410819826
+              C 85.319515040738,-65.818982651678 85.174075444822,-67.207136209 84.32476245027101,-67.70291709986401
+              C 84.103172188188,-67.832269026274 83.55784292476301,-67.95158574126
+              83.0438,-67.983182403294 C 81.81855565145499,-68.058507960818 81.570581348082,-68.19420061398401
+              81.051803569788,-69.073154835892 C 80.326383025079,-70.30223576975601
+              80.009571520352,-71.303095369216 80.004698224301,-72.381173 C 80.000968630551,-73.205978043552
+              80.049839436846,-73.41902777789001 80.404952138854,-74.126007 C 81.039689729941,-75.389674704502
+              83.934990782728,-79.873894460616 84.434821866731,-80.367438876946 L
+              84.885600140264,-80.812543882858 L 89.782870019889,-80.724242129094
+              C 92.47636508213,-80.675671721908 95.57791565296701,-80.635850315052
+              96.675210231058,-80.635760254774 L 98.67028796211599,-80.63558 L 98.704109231058,-73.4884715
+              L 98.7379305,-66.341363 L 99.02053464824,-65.786755299262 C 99.183988480336,-65.465972265992
+              99.51103446770101,-65.09838016834999 99.79629014824,-64.91486255477
+              C 100.23807216425999,-64.630615942806 100.432397126805,-64.59815102453
+              101.661932,-64.60318916559599 C 103.25231240834799,-64.60970182561 103.78914070431,-64.80082973400799
+              104.16515953965501,-65.494423126542 C 104.533602585481,-66.174032882528
+              104.486050324842,-66.846589214178 104.03970829864599,-67.26896144899399
+              C 103.731069795826,-67.56102317244401 103.554511424436,-67.616434 102.93247056394398,-67.616434
+              C 102.43998934558901,-67.616434 102.099022962838,-67.690006536226 101.913227969077,-67.83636509119799
+              C 101.561553534792,-68.11337815827 101.60134072157001,-68.53933844288001
+              102.18145271336901,-70.70730649906399 C 102.408040153689,-71.554115241536
+              102.901701355833,-73.42472117123201 103.27846324559998,-74.864206 C
+              103.655239576354,-76.303690828768 103.976917096965,-77.500118402284
+              103.993321461462,-77.52292499327999 C 104.080078256825,-77.643511410546
+              107.9798638125,-72.25943150262599 110.342401170104,-68.757287 C 111.93607412348798,-66.39489786257
+              112.460824980438,-65.765267668552 113.184978060007,-65.346581865324
+              C 114.20401669085099,-64.75739558124599 115.98660233967699,-64.66787324899
+              116.90989531715898,-65.15951713844 C 117.728089536236,-65.595193195634
+              118.192088831735,-66.69768293313 117.86901280297799,-67.4384542211 C
+              117.56320067581198,-68.139608918882 117.16480427796701,-68.33171997413
+              115.846800815388,-68.41355000437001 L 114.63388155087999,-68.488851
+              L 114.243002701218,-69.283763279028 C 114.02801197019399,-69.72097130047399
+              113.54494221756498,-70.928933300474 113.16950615362101,-71.968123279028
+              C 112.79407008967699,-73.007321579098 112.11851821153,-74.78058187775399
+              111.66830086889699,-75.908704434672 C 110.39693188852702,-79.09435859832199
+              110.375574146142,-79.843198938234 111.395836561124,-85.467428 C 111.885374921153,-88.165960212838
+              111.95445976753199,-88.773005007124 112.04512100000001,-91.171693 C
+              112.160636483912,-94.22824904347799 112.289569673646,-94.96149190960999
+              113.06257159966198,-96.957960097716 C 113.67275354549899,-98.533882892204
+              113.954673,-99.637978279634 113.954673,-100.45165853003799 C 113.954673,-101.006520171232
+              113.978492870995,-101.03974704509402 115.112944944066,-102.067632109944
+              C 116.55197079983098,-103.371465356254 116.760230718096,-103.742514506922
+              116.75661772636498,-104.996147 C 116.75350002468402,-106.07941014321399
+              116.49250126385401,-106.82190170328998 116.031881875395,-107.057938283398
+              C 115.86785267141202,-107.141980226278 115.43944468021202,-107.21074399999999
+              115.07987400971301,-107.21074399999999 C 114.57098842686098,-107.21074399999999
+              114.24333770824701,-107.31425010302199 113.601425094867,-107.677787206448
+              C 112.401690570837,-108.35724945685202 111.391436833969,-108.51476555416399
+              110.029960271864,-108.23464775631602 C 109.43940243389001,-108.11312745020602
+              108.88067730514398,-107.981121228628 108.78835523982401,-107.941275259878
+              C 108.66444822964799,-107.887814217208 108.54900566675299,-108.151269387228
+              108.34733071921299,-108.947828386898 C 108.19706890776202,-109.54127448185999
+              108.001600362263,-110.09453047312 107.91293508902298,-110.17726983030998
+              C 107.64739087835098,-110.42512752655001 107.219594898567,-110.20441810516998
+              106.954531417611,-109.68284883622199 L 106.70543537178499,-109.192671278422
+              L 106.430028205686,-109.743748240452 C 105.80545241491401,-110.99350599408801
+              105.20058797466199,-110.48746870053601 104.718188355438,-108.311587151072
+              C 104.42411866025499,-106.985152264652 104.38935765303499,-106.13397714220399
+              104.580018543333,-104.929038 C 105.12410218211902,-101.49083226821399
+              104.365290137015,-99.227771295902 102.338489018581,-98.243787194018
+              C 101.6064833838,-97.88840933703 100.508016102087,-97.831900740452 98.22999921576,-98.032416795296
+              C 95.306259921119,-98.289768938638 91.01528211056,-98.283559477086 88.5934355,-98.01845758642399
+              C 87.543183332164,-97.90349906411599 85.206964375,-97.59024445268399
+              83.401841,-97.32233284240999 C 80.59185431473401,-96.905293625606 79.78506752061101,-96.835210891598
+              77.792532,-96.83507989483 C 75.658760046119,-96.834940576546 75.367319923387,-96.864227078364
+              74.287201884883,-97.18736926142 C 70.402946596277,-98.349439577078 68.085652373556,-101.302628835818
+              67.106663134849,-106.338327 C 67.001965024323,-106.87686196102 66.877322239892,-108.56675207788602
+              66.814618519562,-110.297758 C 66.690085056983,-113.73579985160801 66.592328884059,-114.41267343944601
+              66.026749060368,-115.75321504032 C 65.30835793461199,-117.45595854395602
+              63.92902013918099,-118.497409558938 62.422125821661,-118.4748487211
+              C 62.04715604644599,-118.46922901344 61.565215316437005,-118.393207132932
+              61.351157043524,-118.30589657909799
+          trace:
+            cycles_per_second: 0.08
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 3.0
+          color: '#ff6161'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.275
+          anchor_y: 0.708
+          base_scale: 0.66
+          opacity: 0.8
+          line_width: 2.0
+          rotation_degrees_per_second: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        - id: shape-2
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            path_data: M 61.351157043524,-118.30589657909799 C 60.29800569836401,-117.87635643199202
+              59.641378674007,-116.81734164953001 59.635944566403,-115.53958360517
+              C 59.630291815095006,-114.210986064116 60.23363374566799,-113.266593990526
+              61.216753226004,-113.06520149214201 C 62.06436170670101,-112.891563397106
+              62.184407960773996,-112.491809445432 62.516232602019,-108.73778500154198
+              C 62.807883849594006,-105.438302968016 63.006819783484005,-104.09308360140601
+              63.486414986902005,-102.17756899999999 C 64.28313486157501,-98.99542933468
+              65.351350304422,-96.884444872576 67.221894453554,-94.795579 C 68.14397832657899,-93.76587528125
+              68.72246588636101,-93.25560273870799 69.706692668163,-92.603796778294
+              C 70.41229242115301,-92.13651600598601 71.07019419081699,-91.624793372172
+              71.168693418163,-91.466630209882 C 71.398769968028,-91.09722751142 71.396082034894,-90.72685012184199
+              71.14864682192,-88.704978492876 C 70.945959453779,-87.04873293628799
+              70.970485859014,-86.34310542365598 71.306258618366,-84.17027948118 C
+              71.36545126930301,-83.78721258501 71.285818654411,-83.641509416532 70.494576568344,-82.68510791895599
+              C 70.012053066934,-82.10186091559599 69.414757255381,-81.236030261292
+              69.16724912139,-80.76102430355799 C 67.988012802651,-78.497889645564
+              66.081673146503,-70.08097766519201 66.053344345848,-67.012453 C 66.03700550285399,-65.242166435352
+              66.381322791324,-64.65013754825199 67.537176287782,-64.461131357998
+              C 69.20894478604501,-64.18776378602401 70.136637610029,-65.552684744418
+              69.13039751277101,-66.805244164586 L 68.703206144889,-67.33701252513599
+              L 68.842716223804,-68.114262789108 C 69.576440932773,-72.202193833872
+              70.335303939046,-73.47744508864601 72.817436061022,-74.793639946974
+              C 73.551692580223,-75.182998311894 74.460496951252,-75.628775078896
+              74.836996516313,-75.78426770563999 L 75.521551812793,-76.06697430027201
+              L 75.57599504986499,-75.767580650136 C 75.605941121717,-75.602912880912
+              75.715308564271,-74.864206 75.819037815851,-74.126007 C 76.027982547202,-72.63892658937999
+              76.573741579174,-71.221437406452 77.860254739068,-68.824396 C 79.810868671153,-65.189975094962
+              80.714668703125,-64.45198091163 83.095227577076,-64.54978529979401 C
+              84.186359553475,-64.594612098524 84.248378699413,-64.613765007124 84.606230295724,-65.016410819826
+              C 85.319515040738,-65.818982651678 85.174075444822,-67.207136209 84.32476245027101,-67.70291709986401
+              C 84.103172188188,-67.832269026274 83.55784292476301,-67.95158574126
+              83.0438,-67.983182403294 C 81.81855565145499,-68.058507960818 81.570581348082,-68.19420061398401
+              81.051803569788,-69.073154835892 C 80.326383025079,-70.30223576975601
+              80.009571520352,-71.303095369216 80.004698224301,-72.381173 C 80.000968630551,-73.205978043552
+              80.049839436846,-73.41902777789001 80.404952138854,-74.126007 C 81.039689729941,-75.389674704502
+              83.934990782728,-79.873894460616 84.434821866731,-80.367438876946 L
+              84.885600140264,-80.812543882858 L 89.782870019889,-80.724242129094
+              C 92.47636508213,-80.675671721908 95.57791565296701,-80.635850315052
+              96.675210231058,-80.635760254774 L 98.67028796211599,-80.63558 L 98.704109231058,-73.4884715
+              L 98.7379305,-66.341363 L 99.02053464824,-65.786755299262 C 99.183988480336,-65.465972265992
+              99.51103446770101,-65.09838016834999 99.79629014824,-64.91486255477
+              C 100.23807216425999,-64.630615942806 100.432397126805,-64.59815102453
+              101.661932,-64.60318916559599 C 103.25231240834799,-64.60970182561 103.78914070431,-64.80082973400799
+              104.16515953965501,-65.494423126542 C 104.533602585481,-66.174032882528
+              104.486050324842,-66.846589214178 104.03970829864599,-67.26896144899399
+              C 103.731069795826,-67.56102317244401 103.554511424436,-67.616434 102.93247056394398,-67.616434
+              C 102.43998934558901,-67.616434 102.099022962838,-67.690006536226 101.913227969077,-67.83636509119799
+              C 101.561553534792,-68.11337815827 101.60134072157001,-68.53933844288001
+              102.18145271336901,-70.70730649906399 C 102.408040153689,-71.554115241536
+              102.901701355833,-73.42472117123201 103.27846324559998,-74.864206 C
+              103.655239576354,-76.303690828768 103.976917096965,-77.500118402284
+              103.993321461462,-77.52292499327999 C 104.080078256825,-77.643511410546
+              107.9798638125,-72.25943150262599 110.342401170104,-68.757287 C 111.93607412348798,-66.39489786257
+              112.460824980438,-65.765267668552 113.184978060007,-65.346581865324
+              C 114.20401669085099,-64.75739558124599 115.98660233967699,-64.66787324899
+              116.90989531715898,-65.15951713844 C 117.728089536236,-65.595193195634
+              118.192088831735,-66.69768293313 117.86901280297799,-67.4384542211 C
+              117.56320067581198,-68.139608918882 117.16480427796701,-68.33171997413
+              115.846800815388,-68.41355000437001 L 114.63388155087999,-68.488851
+              L 114.243002701218,-69.283763279028 C 114.02801197019399,-69.72097130047399
+              113.54494221756498,-70.928933300474 113.16950615362101,-71.968123279028
+              C 112.79407008967699,-73.007321579098 112.11851821153,-74.78058187775399
+              111.66830086889699,-75.908704434672 C 110.39693188852702,-79.09435859832199
+              110.375574146142,-79.843198938234 111.395836561124,-85.467428 C 111.885374921153,-88.165960212838
+              111.95445976753199,-88.773005007124 112.04512100000001,-91.171693 C
+              112.160636483912,-94.22824904347799 112.289569673646,-94.96149190960999
+              113.06257159966198,-96.957960097716 C 113.67275354549899,-98.533882892204
+              113.954673,-99.637978279634 113.954673,-100.45165853003799 C 113.954673,-101.006520171232
+              113.978492870995,-101.03974704509402 115.112944944066,-102.067632109944
+              C 116.55197079983098,-103.371465356254 116.760230718096,-103.742514506922
+              116.75661772636498,-104.996147 C 116.75350002468402,-106.07941014321399
+              116.49250126385401,-106.82190170328998 116.031881875395,-107.057938283398
+              C 115.86785267141202,-107.141980226278 115.43944468021202,-107.21074399999999
+              115.07987400971301,-107.21074399999999 C 114.57098842686098,-107.21074399999999
+              114.24333770824701,-107.31425010302199 113.601425094867,-107.677787206448
+              C 112.401690570837,-108.35724945685202 111.391436833969,-108.51476555416399
+              110.029960271864,-108.23464775631602 C 109.43940243389001,-108.11312745020602
+              108.88067730514398,-107.981121228628 108.78835523982401,-107.941275259878
+              C 108.66444822964799,-107.887814217208 108.54900566675299,-108.151269387228
+              108.34733071921299,-108.947828386898 C 108.19706890776202,-109.54127448185999
+              108.001600362263,-110.09453047312 107.91293508902298,-110.17726983030998
+              C 107.64739087835098,-110.42512752655001 107.219594898567,-110.20441810516998
+              106.954531417611,-109.68284883622199 L 106.70543537178499,-109.192671278422
+              L 106.430028205686,-109.743748240452 C 105.80545241491401,-110.99350599408801
+              105.20058797466199,-110.48746870053601 104.718188355438,-108.311587151072
+              C 104.42411866025499,-106.985152264652 104.38935765303499,-106.13397714220399
+              104.580018543333,-104.929038 C 105.12410218211902,-101.49083226821399
+              104.365290137015,-99.227771295902 102.338489018581,-98.243787194018
+              C 101.6064833838,-97.88840933703 100.508016102087,-97.831900740452 98.22999921576,-98.032416795296
+              C 95.306259921119,-98.289768938638 91.01528211056,-98.283559477086 88.5934355,-98.01845758642399
+              C 87.543183332164,-97.90349906411599 85.206964375,-97.59024445268399
+              83.401841,-97.32233284240999 C 80.59185431473401,-96.905293625606 79.78506752061101,-96.835210891598
+              77.792532,-96.83507989483 C 75.658760046119,-96.834940576546 75.367319923387,-96.864227078364
+              74.287201884883,-97.18736926142 C 70.402946596277,-98.349439577078 68.085652373556,-101.302628835818
+              67.106663134849,-106.338327 C 67.001965024323,-106.87686196102 66.877322239892,-108.56675207788602
+              66.814618519562,-110.297758 C 66.690085056983,-113.73579985160801 66.592328884059,-114.41267343944601
+              66.026749060368,-115.75321504032 C 65.30835793461199,-117.45595854395602
+              63.92902013918099,-118.497409558938 62.422125821661,-118.4748487211
+              C 62.04715604644599,-118.46922901344 61.565215316437005,-118.393207132932
+              61.351157043524,-118.30589657909799
+          trace:
+            cycles_per_second: 0.08
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 3.0
+          color: '#7bff61'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.694
+          anchor_y: 0.29
+          base_scale: 0.64
+          opacity: 0.8
+          line_width: 2.0
+          rotation_degrees_per_second: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        library_source:
+          actor_id: cats
+          revision: b425578ac65508bad804e4499e4beac22622c26355054fe3b45235fdfca3b77a
+      chorus-wheel:
+        id: chorus-wheel
+        name: Chorus Wheel
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 240.0
+            moving_radius: 90.0
+            pen_offset: 150.0
+            rotation: outside
+            phase: 0.0
+            samples: 1500
+          trace:
+            cycles_per_second: 0.052
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.13
+          anchor_y: 0.39
+          base_scale: 0.72
+          opacity: 0.78
+          line_width: 2.5
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      chorus-rosette:
+        id: chorus-rosette
+        name: Chorus Rosette
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 200.0
+            moving_radius: 71.0
+            pen_offset: 127.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.082
+            trail_fraction: 0.38
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.5
+          anchor_y: 0.29
+          base_scale: 0.66
+          opacity: 0.86
+          line_width: 2.7
+          rotation_degrees_per_second: -1.5
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+      chorus-star:
+        id: chorus-star
+        name: Chorus Star
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 172.0
+            moving_radius: 51.0
+            pen_offset: 116.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.12
+            trail_fraction: 0.22
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.87
+          anchor_y: 0.38
+          base_scale: 0.57
+          opacity: 0.8
+          line_width: 2.0
+          rotation_degrees_per_second: 2.25
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-arc-left:
+        id: instrumental-arc-left
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace:
+        id: instrumental-lace
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right:
+        id: instrumental-comet-right
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      instrumental-arc-left-2:
+        id: instrumental-arc-left-2
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace-2:
+        id: instrumental-lace-2
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right-2:
+        id: instrumental-comet-right-2
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      instrumental-arc-left-3:
+        id: instrumental-arc-left-3
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace-3:
+        id: instrumental-lace-3
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right-3:
+        id: instrumental-comet-right-3
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      instrumental-arc-left-4:
+        id: instrumental-arc-left-4
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace-4:
+        id: instrumental-lace-4
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right-4:
+        id: instrumental-comet-right-4
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      instrumental-arc-left-5:
+        id: instrumental-arc-left-5
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace-5:
+        id: instrumental-lace-5
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right-5:
+        id: instrumental-comet-right-5
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      instrumental-arc-left-6:
+        id: instrumental-arc-left-6
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace-6:
+        id: instrumental-lace-6
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right-6:
+        id: instrumental-comet-right-6
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      instrumental-arc-left-7:
+        id: instrumental-arc-left-7
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace-7:
+        id: instrumental-lace-7
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right-7:
+        id: instrumental-comet-right-7
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      instrumental-arc-left-8:
+        id: instrumental-arc-left-8
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace-8:
+        id: instrumental-lace-8
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right-8:
+        id: instrumental-comet-right-8
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      instrumental-arc-left-9:
+        id: instrumental-arc-left-9
+        name: Instrumental Arc Left
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 249.0
+            moving_radius: 69.0
+            pen_offset: 168.0
+            rotation: outside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.058
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          depth: foreground
+          anchor_x: -0.02
+          anchor_y: 0.39
+          base_scale: 0.96
+          opacity: 0.72
+          line_width: 2.3
+          rotation_degrees_per_second: 1.1
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      instrumental-lace-9:
+        id: instrumental-lace-9
+        name: Instrumental Lace
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 212.0
+            moving_radius: 57.0
+            pen_offset: 148.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.09
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.53
+          anchor_y: 0.3
+          base_scale: 0.73
+          opacity: 0.78
+          line_width: 2.4
+          rotation_degrees_per_second: -1.8
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      instrumental-comet-right-9:
+        id: instrumental-comet-right-9
+        name: Instrumental Comet Right
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 186.0
+            moving_radius: 52.0
+            pen_offset: 130.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.14
+            trail_fraction: 0.2
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          depth: foreground
+          anchor_x: 1.02
+          anchor_y: 0.42
+          base_scale: 0.82
+          opacity: 0.76
+          line_width: 2.0
+          rotation_degrees_per_second: 2.6
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      bridge-hero-flower:
+        id: bridge-hero-flower
+        name: Bridge Hero Flower
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 252.0
+            moving_radius: 85.0
+            pen_offset: 193.0
+            rotation: inside
+            phase: 0.0
+            samples: 1800
+          trace:
+            cycles_per_second: 0.036
+            trail_fraction: 0.52
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 5.0
+          color: '#ff5fd2'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.39
+          anchor_y: 0.42
+          base_scale: 1.62
+          opacity: 0.78
+          line_width: 3.2
+          rotation_degrees_per_second: -0.52
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      final-chorus-orbit:
+        id: final-chorus-orbit
+        name: Final Chorus Orbit
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 207.0
+            moving_radius: 72.0
+            pen_offset: 140.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.064
+            trail_fraction: 0.3
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.27
+          anchor_y: 0.34
+          base_scale: 0.7
+          opacity: 0.72
+          line_width: 2.2
+          rotation_degrees_per_second: 0.9
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      final-chorus-flower:
+        id: final-chorus-flower
+        name: Final Chorus Flower
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 157.0
+            moving_radius: 49.0
+            pen_offset: 108.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.078
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          color_locked: false
+          depth: foreground
+          anchor_x: 0.73
+          anchor_y: 0.33
+          base_scale: 0.56
+          opacity: 0.76
+          line_width: 2.3
+          rotation_degrees_per_second: -1.2
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      raven:
+        id: raven
+        name: raven
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape-1
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            path_data: M 180.702675843024,-130.95207497757602 C 180.59012298234802,-130.91362779869002
+              179.81967384769803,-130.07277663465803 178.99056867369,-129.08349854869002
+              C 175.306688541112,-124.688072630816 169.42067570950803,-119.564369577346
+              163.28578505648,-115.412718110358 C 159.543227540386,-112.880011502178
+              157.026605960234,-111.42430817493799 153.03639800000002,-109.48408081882998
+              C 149.41461895971997,-107.72300785787 148.627287830878,-107.395803856108
+              148.07462284219196,-107.422030887146 C 147.708691717918,-107.43939727024598
+              146.745285573814,-107.057273338766 145.214830595308,-106.287728420264
+              C 142.08486417285798,-104.713938274292 140.20359414389196,-104.124172199858
+              138.483563,-104.177498550044 C 137.75592124999997,-104.20005420950798
+              137.17446669653003,-104.27062857973598 137.19145629350197,-104.33431231489
+              C 137.27556391829,-104.64983471189798 137.40756095410796,-104.774661345414
+              138.307165,-105.38948105139 C 140.550511680542,-106.92263844725599 142.07704780108003,-108.0715941196
+              142.144855015882,-108.2779445 C 142.18740415385997,-108.40743297985999
+              142.06414957932003,-108.498442 141.846214436668,-108.498442 C 141.41467242909,-108.498442
+              137.10461379412203,-106.57276024657399 135.03391842006,-105.454790470512
+              C 132.67748051214602,-104.18254794279399 131.41455091683798,-103.615628231728
+              129.840061,-103.12329859136 C 129.015391706498,-102.86544140614399 127.665964293502,-102.383566169644
+              126.84129499999999,-102.05247541434998 C 126.016625706498,-101.721384659056
+              124.786254066448,-101.299198625 124.10712600000001,-101.11427354567999
+              C 121.676227144724,-100.45235045816199 116.66938353270199,-98.18583425311598
+              114.95607068303802,-96.971741326098 C 113.982457797858,-96.281814703284
+              110.49523832714202,-94.21020399999999 110.30747077045,-94.21020399999999
+              C 110.265524560836,-94.21020399999999 109.46370180710001,-93.707204926602
+              108.525661518998,-93.09242808533999 C 104.98962672414997,-90.774975723008
+              105.40730155575399,-90.99479497269799 96.41264,-86.717617101328 C 90.75879551287203,-84.029087203072
+              87.73040029360801,-82.47832652159198 85.034969,-80.89141218802199 C
+              83.13837827554,-79.77480967285798 80.342872692174,-78.357122760588 79.16203749128,-77.91305931737799
+              C 77.617004629258,-77.33205704838 76.87254562313198,-77.28161604028
+              76.382864598734,-77.724785851222 C 76.09885570442599,-77.98180338195799
+              75.775236815616,-78.06104453872199 75.095010671618,-78.04011456322598
+              C 74.59532752782398,-78.024740066342 73.767611311668,-78.00658783015199
+              73.255643634756,-77.999783277302 C 72.64837129360801,-77.99171924273199
+              71.998614199752,-77.83311821334999 71.386442933348,-77.54351079931799
+              C 70.658693580568,-77.199230941962 70.16746201775,-77.099598 69.197714541944,-77.099598
+              C 68.510005594786,-77.099598 67.76355487884202,-77.17239022228199 67.53895541975,-77.26135355481601
+              C 67.314345023982,-77.350327824026 66.59024552222,-77.95269083243599
+              65.92985109977,-78.59996071449198 C 63.88466146532399,-80.60446397384001
+              61.545407015783994,-81.38224509135999 58.67593563424201,-81.011835221866
+              C 57.633266636420004,-80.877243371468 56.99928252253001,-80.699919458366
+              56.689509289138,-80.45625261026 C 56.43926403041799,-80.25941978394998
+              56.124376842608015,-80.09836399999999 55.989763471654,-80.09836399999999
+              C 55.85516103737599,-80.09836399999999 55.409428692687996,-79.791476285092
+              54.999268945078015,-79.4163828723 C 53.95868867597402,-78.464787632684
+              53.27400530731201,-78.157986 52.19090818106399,-78.157986 C 51.304859263084,-78.157986
+              47.721451903345994,-77.400930236296 47.067689692900004,-77.07562110184999
+              C 46.588624300142,-76.83722961233201 46.179713450372006,-76.892397028444
+              45.33444792639001,-77.30944741112799 C 44.38704090448799,-77.7768957608
+              43.406139253947984,-77.78954631976801 42.74724139212999,-77.342801979754
+              C 41.99364161804199,-76.83184647456599 40.704366452239995,-76.85811654671599
+              39.347887,-77.412051953798 C 38.37074280325798,-77.81107922362798 36.063227822255996,-79.029704697256
+              33.703151000000005,-80.393107065404 C 31.065223514014008,-81.91702702720399
+              28.932330205151985,-83.064722865032 27.000027000000003,-84.00002845494
+              C 25.981324316447996,-84.493111667564 23.855116844582,-85.52806113611
+              22.275114490243993,-86.299920749168 C 20.695101199229995,-87.071780538624
+              18.631253242731987,-88.00972380782599 17.688766490243992,-88.38423581280999
+              C 13.726971132268005,-89.958532044644 10.326637025645994,-91.80483258129401
+              8.919231999999994,-93.14589449553799 C 8.209817984533998,-93.82185709987598
+              6.522107716988003,-94.920490127178 4.068286999999998,-96.30367059188198
+              C 3.3406452499999943,-96.71381957921399 2.467473033223996,-97.21760468209999
+              2.1279090000000025,-97.42317979328999 C 0.6974960304179945,-98.28914932692999
+              -0.9357035507700004,-99.14934799999999 -1.1494719962639977,-99.14934799999999
+              C -1.2758380551260018,-99.14934799999999 -1.428291437809989,-99.228729216776
+              -1.4882499999999936,-99.325746 C -1.6862347052500013,-99.64609182392
+              -1.9530066925900087,-99.52322479578599 -1.7755211989200035,-99.19344749999999
+              C -1.684146152930012,-99.02366019144799 -1.1455422016200032,-98.647985370848
+              -0.5786224905540109,-98.358603922654 C 1.5714542766820045,-97.26107973317998
+              2.4704336972559986,-96.651040236606 2.478002582640002,-96.284398581188
+              C 2.4829981740000022,-96.042475780108 0.2981242552939989,-96.973776253426
+              -2.917091087003996,-98.584053972902 C -5.955321553155997,-100.10570210485999
+              -7.594044332121996,-100.758193720512 -10.572747000000007,-101.63234582817799
+              C -11.300388749999996,-101.845888131436 -12.411694033223995,-102.27554603197599
+              -13.042319000000006,-102.587138810738 C -14.701993275017998,-103.407210643166
+              -16.399361156666004,-104.004082734632 -18.534650126765996,-104.51849440583399
+              C -20.43836821241601,-104.977114212004 -21.180437025641993,-105.06426875944598
+              -21.390776470413996,-104.853924022734 C -21.52091091975001,-104.723800510074
+              -21.065224965116002,-104.434225200478 -20.010040000000004,-103.976509786854
+              C -18.232574902094,-103.205490004674 -14.016383993253996,-100.979003444972
+              -13.958917934803992,-100.7810295 C -13.861109830152003,-100.44409256219001
+              -15.012746222901995,-100.50672108450799 -16.366496445286003,-100.91194997882401
+              C -17.21460973858001,-101.16582339160799 -18.201459882476,-101.28058334405999
+              -19.921841,-101.32541507215801 C -21.231594033224,-101.35954473359598
+              -22.422280533223997,-101.43141104277599 -22.567811000000006,-101.485103418812
+              C -22.713341466776,-101.538806555126 -23.348370033224,-101.761112840218
+              -23.978994999999998,-101.979134065094 C -24.60961996677601,-102.197144529692
+              -26.114143910088004,-102.84931333700399 -27.322385186251992,-103.42839921813
+              C -29.11049290469201,-104.28540014825599 -29.577693591572,-104.444743989616
+              -29.833661201412,-104.284883302116 C -30.284814433037994,-104.003135300974
+              -30.284259837725997,-104.002984657082 -32.313192279696004,-104.95755149740599
+              C -40.692694739722,-108.89991326412 -45.045006340426,-111.323264754568
+              -50.013052976328005,-114.812766815404 C -56.10609990698,-119.09244248245399
+              -59.798789708474004,-122.33388485578998 -64.929237868668,-127.906162554922
+              C -65.865167907496,-128.92269042753202 -66.69409791829,-129.692805993564
+              -66.771307146492,-129.61751597560203 C -66.848516198296,-129.54222595764003
+              -66.732859967606,-128.87279854640602 -66.514297730064,-128.12991142285802
+              C -65.344094565824,-124.152397239102 -62.238406682104,-119.64071463174601
+              -58.062573695286,-115.85196906333199 C -55.094952526166004,-113.15943404848598
+              -54.14970673256,-112.39426027242398 -52.106339289454,-111.030405796202
+              C -49.40340102616,-109.22632065251399 -47.263531,-107.60646064088199
+              -47.263531,-107.36445175757801 C -47.263531,-106.959190758826 -50.146907306688,-107.988315389014
+              -53.878456,-109.72543314877801 C -54.751625570806,-110.13191076453599
+              -56.021690641612,-110.71657364482998 -56.700824,-111.024677976744 C
+              -57.379957358388,-111.332782308658 -60.039156679194,-112.63500949761
+              -62.610157,-113.91852456311999 C -68.65522561503,-116.93637964908798
+              -69.829259085442,-117.591476839598 -74.9215643533,-120.788238305126
+              C -78.188316135278,-122.83897283430402 -79.079594901162,-123.31025395971999
+              -79.291138791478,-123.09870336627999 C -79.51472749003,-122.875115902514
+              -78.518275121004,-121.0770923233 -77.207215331396,-119.338424201514
+              C -74.4611479335,-115.69671642078599 -69.87496557122199,-112.04314393418001
+              -63.430600503014,-108.363322719582 C -57.551128332851995,-105.00605442067999
+              -54.585337292982,-103.449684459198 -52.77841514026,-102.77333430845398
+              C -51.657796924626,-102.353861452036 -51.425808858906,-102.320679047858
+              -50.878066962002,-102.501448366696 C -50.335126795056,-102.68063486628
+              -50.173255523152,-102.659618632162 -49.630751412062,-102.339531231312
+              C -49.287876741174,-102.137239768892 -48.863828297034004,-101.971716
+              -48.688420771804,-101.971716 C -48.294432134446,-101.971716 -47.439929,-101.31997795660399
+              -47.439929,-101.019474790908 C -47.439929,-100.66212454734399 -46.709369450682,-100.102052253842
+              -45.802487399708006,-99.76415712209601 C -44.906177939262,-99.43019160859599
+              -44.659167996259995,-99.211309032286 -44.90635028010799,-98.97004313735799
+              C -45.064967361708,-98.815210322052 -46.254792686672005,-99.08692392296399
+              -47.616327,-99.588900240758 C -48.052913108388005,-99.74985918220601
+              -49.719871033223995,-100.146851524708 -51.320685,-100.47108410216 C
+              -54.49564173235,-101.1141659429 -57.95412032413,-101.88262336773198
+              -60.846177,-102.58760167908999 C -61.864874391612,-102.835930549938
+              -63.849351891612,-103.281361254046 -65.25612699999999,-103.57745023618999
+              C -66.662902108388,-103.87354997861199 -68.369550641612,-104.26723715178798
+              -69.04868400000001,-104.45232363527799 C -69.727817358388,-104.63741011876799
+              -70.6803655,-104.86932021657199 -71.16546,-104.967682740138 C -71.6505545,-105.066045263704
+              -72.563414679194,-105.266150978506 -73.194037,-105.41235987198999 C
+              -79.980097871262,-106.98570849376799 -88.364265,-108.34367392276 -88.364265,-107.86945347747
+              C -88.364265,-107.36185711939599 -86.998698581188,-106.29339167805401
+              -84.89896862552,-105.158087976124 C -84.524937128688,-104.955850315094
+              -84.099843526398,-104.71165586057 -83.954315,-104.615414346556 C -83.01836749777,-103.99650326536799
+              -77.233185350548,-101.544588175974 -76.292378083418,-101.368093333472
+              C -75.917636055442,-101.29778814659198 -75.483946049418,-101.093408131852
+              -75.32862214208001,-100.91392016808601 C -74.871231124378,-100.385339856728
+              -66.09188043822999,-97.64851148048 -60.58158,-96.316741154488 C -58.09598753364,-95.716014590324
+              -57.721343582952,-95.54483832392 -58.043231654586,-95.15698674938 C
+              -58.311847353822,-94.833324819458 -60.716909194037996,-94.840505982038
+              -65.305381025958,-95.17867029713199 C -67.2671788587,-95.32325333025
+              -70.777384929194,-95.520484639642 -73.105838,-95.616952295892 C -75.434291070806,-95.71343071241999
+              -79.006350570806,-95.878771380188 -81.043748,-95.984390564678 C -84.99152465611999,-96.18902917888599
+              -88.663517327478,-96.031816930958 -89.138248974172,-95.637828469998
+              C -89.28313717583,-95.51757760060201 -89.357472704214,-95.303992256232
+              -89.30343882165,-95.16317743719 C -89.157355523542,-94.782485504674
+              -87.004774963094,-93.57278541705 -85.90472740023,-93.25317164482999
+              C -85.376642238058,-93.099738547654 -84.894732074754,-92.8935605081
+              -84.833814613036,-92.794993362854 C -84.49605530775,-92.24848678114398
+              -75.24879940111,-90.116056340634 -71.077261,-89.62270394466199 C -70.058563608388,-89.50222710942799
+              -68.907565070806,-89.32298680845399 -68.51949,-89.224376622096 C -68.131414929194,-89.12577719601599
+              -65.432525,-88.98756777543399 -62.521958,-88.917262764952 C -59.611391,-88.84695757807201
+              -56.793431891612,-88.698003402514 -56.259828999999996,-88.58625809188199
+              C -54.574597653548,-88.23332203187 -53.790257,-87.995339785712 -53.790257,-87.836954138288
+              C -53.790257,-87.63469513309998 -53.345388829114,-87.669395442068 -58.112008,-87.499834099354
+              C -68.052278552842,-87.14621996543 -71.516296571016,-86.936628800974
+              -77.162992,-86.347153254046 C -82.846952917668,-85.753791129984 -84.242116451308,-85.12990597799201
+              -82.1462355,-84.11878276370399 C -79.326420508254,-82.758405797654 -73.669783464388,-81.696960114722
+              -70.548067,-81.942446684596 C -69.25504514067799,-82.044136074442 -68.87267090043599,-82.15661343677401
+              -67.76979850000001,-82.75969773660599 C -66.811336968234,-83.28383158357799
+              -66.490913,-83.391614818732 -66.490913,-83.189894003842 C -66.490913,-82.84587274595398
+              -66.18726589275,-82.85010382838199 -65.520724,-83.20341667452199 C -64.557839993976,-83.713812468856
+              -64.197739,-83.813466931374 -64.197739,-83.56952013964201 C -64.197739,-83.446060767024
+              -64.630508384862,-83.070978290908 -65.1594520761,-82.736000782082 C
+              -66.161114183658,-82.101639705666 -66.286616421514,-81.95080142307 -65.9176195,-81.824790453382
+              C -65.796345875,-81.783371850186 -63.368765771696005,-81.794719709924
+              -60.522996813016,-81.85001642577 C -55.61534214919,-81.945364307516
+              -55.3354593805,-81.96871675674599 -55.088454905836,-82.303339 C -54.945225727368,-82.49737256644799
+              -54.861357474666,-82.834740091776 -54.902078952966,-83.05303049999999
+              C -54.964535310836,-83.387814147424 -54.898768315302,-83.44992599999999
+              -54.481798722902,-83.44992599999999 C -54.209920895452,-83.44992599999999
+              -53.938417208160004,-83.37054478322399 -53.878456,-83.273528 C -53.648874355795996,-82.90205215739199
+              -52.944816489202,-83.12914958856199 -51.690946871572,-83.97912 C -50.446419997614,-84.82274907973598
+              -49.909501,-85.04193294382999 -49.909501,-84.706331162482 C -49.909501,-84.621200605692
+              -50.505021882786,-84.01856841393399 -51.232879014744,-83.367142594998
+              C -51.960735970304,-82.715706015784 -52.516488276786,-82.11837087956799
+              -52.467883042672,-82.03973247477 C -52.296531789452,-81.762474155524
+              -50.021590815926,-82.65120397030799 -48.057322,-83.76275691632401 C
+              -47.124174992418,-84.290809621264 -45.099334102058,-85.213906 -44.874180047654,-85.213906
+              C -44.67052661627599,-85.213906 -44.680087387876,-85.14491444902599
+              -44.92308674595,-84.86111 C -45.089229671822,-84.667076433552 -45.284786611398005,-84.508314
+              -45.357664915904,-84.508314 C -45.601041236504,-84.508314 -49.288296744811994,-82.18117174273199
+              -49.556705,-81.85816654256399 C -49.796794849461996,-81.569237378842
+              -50.913795494912,-80.90403046615599 -52.555471,-80.072287612854 C -52.895037679194,-79.900249995016
+              -54.16510275,-79.405207353408 -55.377839,-78.972190305754 C -62.664056643685996,-76.37059974937999
+              -66.48315572155201,-74.59234333004599 -67.9461965,-73.120102690306 C
+              -69.01323541071599,-72.046350777302 -68.807732799104,-71.55975989306799
+              -67.042748918086,-70.980910738058 C -66.485903825994,-70.79828976941398
+              -65.188720737852,-70.684843452868 -62.962953,-70.62409886118999 C -59.749280081814,-70.53640594705199
+              -59.665139999794,-70.54354406852 -57.43699547529,-71.09309757288399
+              C -56.192568089804,-71.400017568626 -55.001881589804,-71.718360746052
+              -54.79102547529,-71.800509118254 C -54.580169360776004,-71.88266807433601
+              -53.693237570806,-72.16354396376599 -52.820068,-72.42468497415 C -51.946898429194,-72.685825984534
+              -50.518073570806,-73.12380634271399 -49.644904,-73.39797469819399 C
+              -45.347657504568,-74.747305268688 -44.617561,-74.88032506011 -44.617561,-74.313986756852
+              C -44.617561,-74.13021373286999 -44.85750814348,-73.88530857080399 -45.1908545,-73.72885007153
+              C -45.506166983388,-73.58085408990799 -47.986763858388,-72.34325806976801
+              -50.703292,-70.978639084614 C -53.419820141612,-69.61402009945999 -56.57627731011,-68.053278995538
+              -57.717637284573996,-67.510319954006 C -60.688100931066,-66.09723032641199
+              -62.434267731832,-64.72017069591 -62.725118751764,-63.561325975288 C
+              -62.877954388914,-62.952373972383995 -62.257947699747994,-62.41867953021
+              -60.89739856925,-61.98805814379399 C -60.054488134966,-61.721270104236
+              -59.305690267234,-61.66638263175 -56.612625,-61.673994558245994 C -53.620830248960004,-61.682446139221994
+              -53.202469052738,-61.723358832954005 -51.585282,-62.165645771906 C -49.286364128324,-62.794381339704
+              -47.556104722799994,-63.787858227266 -45.925112233388,-65.415588412066
+              C -45.188415974048,-66.15080963132999 -44.592297454838004,-66.617547449858
+              -44.526315077346,-66.51078697030799 C -44.25912343916399,-66.078458933242
+              -45.315702654072,-64.62893553353399 -46.931390500208,-63.211270141819995
+              C -49.430005019724,-61.018897191338 -51.29442021979,-59.18124756540399
+              -51.518026558142,-58.69048451567399 C -52.052603695908,-57.517212908223996
+              -51.254777944454,-57.00855586897599 -48.652331504984,-56.86343993749999
+              C -46.714828086792004,-56.755403747614 -44.833041388084006,-57.089110661646004
+              -43.209440151269995,-57.828660158636 C -41.621976514328,-58.551742373132
+              -39.326643755604,-59.972890743356004 -37.947996190306,-61.08625776640399
+              C -37.238813432618,-61.658986087212 -36.528640376557995,-62.102554204838
+              -36.369840193833994,-62.07197208357799 C -36.081901504882,-62.016519255502004
+              -36.22914373785,-61.83949680658199 -40.398118546826005,-57.229026556479994
+              C -41.954472279692006,-55.507848649189995 -42.567424107246,-54.40297095628999
+              -42.580047853718,-53.295977722176005 C -42.58768130077,-52.62635644954
+              -42.520374527094006,-52.47330031489 -42.117600563744,-52.24436728613199
+              C -41.711548243564,-52.01357696283199 -41.438499486190004,-52.00647641413801
+              -40.14757164752599,-52.193124196325996 C -37.11766910735199,-52.631201397008
+              -35.973832857764,-53.49914111990999 -35.254809737646,-55.90572933202
+              C -35.04735034302,-56.600091835339995 -35.003358622198,-56.64320086056999
+              -34.794160472486,-56.357108529483995 C -34.666954582746,-56.18314376349599
+              -34.561658382994004,-55.837685214703995 -34.56017258264001,-55.58942619746399
+              C -34.554751695702,-54.683356988474 -34.308043216882,-54.581183209719995
+              -33.49169638102,-55.146913116276 C -33.08205877149,-55.430792887248
+              -32.540305763084,-55.94053724376799 -32.287804903137996,-56.27968144975199
+              C -31.447857955254,-57.407836269936 -29.386895340842003,-59.389912816758
+              -26.896113421720003,-61.464995561875995 C -25.54145880678999,-62.5935702093
+              -24.370614965014,-63.51695199999999 -24.29424292172,-63.51695199999999
+              C -23.955507959095996,-63.51695199999999 -24.38191978364,-62.47801364348
+              -25.132763162580005,-61.473937176495994 C -25.356350802744004,-61.174935863372
+              -25.706848160405997,-60.6319715299 -25.911648002386002,-60.267343104855996
+              C -26.116442552425994,-59.902720148149996 -27.056512475915994,-58.55977412686799
+              -28.000689650438005,-57.28302039669799 C -30.984387909676002,-53.248330681998
+              -31.653395493670004,-52.10277719788 -31.830299403134,-50.725502361818
+              C -32.00017297030799,-49.402990990448004 -31.727038130710007,-49.134103638292004
+              -30.244800839912003,-49.164653478717995 C -29.600620745224006,-49.17792848660601
+              -28.70123208129,-49.32786784499399 -28.246159991696004,-49.497849014948
+              C -27.147882229966,-49.908078792564 -25.134717299624,-51.243310752908
+              -24.182497611087996,-52.193070394936 C -23.322401248858,-53.05094343677399
+              -22.825910379670006,-53.08682278997399 -23.042413523357993,-52.275455493254
+              C -23.313648027301994,-51.25897048535799 -23.162454479134,-49.005826307099994
+              -22.751250278965998,-47.936494222384 C -22.249263200893992,-46.631080050766
+              -21.599592189261998,-46.165925051491996 -20.476384627385997,-46.307725053363995
+              C -18.392064271804003,-46.57085777356599 -16.198097918187997,-48.70090348951399
+              -15.137158321117994,-51.491391960963995 C -15.009160933551996,-51.828048955148006
+              -14.92699668553,-51.871658597902 -14.729512421406,-51.707760512978 C
+              -14.541045270246002,-51.551345054816 -14.505273696224009,-51.19707401474
+              -14.579223265784009,-50.219278556582 C -14.72587333066599,-48.280273285818
+              -14.136241847905993,-46.42977394757399 -13.013018057414001,-45.30385849999999
+              C -11.880518907285989,-44.168646348631995 -11.597575809694007,-44.19737664368799
+              -9.975261219892005,-45.612275056374 C -8.642613313849992,-46.774538017439994
+              -8.656265284263995,-46.75221908409199 -8.007509425456007,-48.83002594352401
+              C -7.885363688743993,-49.221247425456 -7.102888267647998,-48.243909543710004
+              -6.992208930130005,-47.561874614619995 C -6.922366787999991,-47.13148995431999
+              -6.580213408533993,-46.562599877593996 -5.962012858489999,-45.84900311275199
+              C -5.052525409056003,-44.799169004568 -5.023084406457997,-44.782050284259995
+              -4.272612345307991,-44.866637182413996 C -3.852525800248003,-44.91398805035
+              -3.208690387251991,-45.16072351806399 -2.8418548704320017,-45.41494161253999
+              C -2.475019353611998,-45.669154415075994 -2.120608429922001,-45.877151999999995
+              -2.0542760787979972,-45.877151999999995 C -1.9879439040719973,-45.877151999999995
+              -1.7392920484859928,-45.569241529487996 -1.501729629568004,-45.192909979134
+              C -1.0188960227340118,-44.42805389586999 -0.06642867140600117,-43.760375999999994
+              0.5418235606319968,-43.760375999999994 C 1.517471196742008,-43.760375999999994
+              3.8217669142440087,-45.514240809486 5.040274024813996,-47.184261885591994
+              L 5.394878809906004,-47.67025001786 L 5.861896395662001,-47.30289765489999
+              C 6.118752169432,-47.10084856333199 6.419556975707991,-46.93553999999999
+              6.530343916006004,-46.93553999999999 C 6.969045742006003,-46.93553999999999
+              7.79677271844001,-47.50522669009399 7.952251326823998,-47.914175289035995
+              C 8.042700636109998,-48.15207674490999 8.237746197884007,-48.346723999999995
+              8.385666857560011,-48.346723999999995 C 8.533598277514002,-48.346723999999995
+              8.653773648566002,-48.326881341776 8.652729372406,-48.30262449999999
+              C 8.651674159569993,-48.278367658224 8.532607802743996,-47.868859172029985
+              8.388132372405991,-47.392598507472 C 7.842885448814002,-45.595269407184006
+              8.170035825583994,-43.94076835631199 9.223331215323995,-43.16861257101199
+              C 9.730120199751994,-42.797088395352006 9.917316932516002,-42.81910039617999
+              11.425872981311997,-43.427605582949994 C 11.90703768666799,-43.62169295078799
+              12.080765550142004,-43.613763507892 12.581783674000008,-43.374844588353994
+              C 13.079539669644006,-43.137481322778 13.204323085650003,-42.95110272393801
+              13.382594432409988,-42.17878024252799 C 13.498743342713993,-41.675587131330005
+              13.593778999999998,-41.063868149398004 13.593778999999998,-40.819399043188
+              C 13.593778999999998,-39.805363674318 14.169387370953984,-38.39878771927199
+              14.895058755293988,-37.63958942546 C 15.528601521388012,-36.976761768998
+              15.724680599043992,-36.875594517232 16.416146999999995,-36.854793665071995
+              C 16.852727816447995,-36.841658717196 17.537626567068003,-36.887184747822005
+              17.93815039753001,-36.955955624897996 C 18.662562123751997,-37.08035149449799
+              18.668279182931997,-37.077013867939996 19.037612495432,-36.314090401163995
+              C 19.24179882516799,-35.892286621574 19.731049085650014,-35.232570625832
+              20.124833101328008,-34.84805120951199 C 20.758203526575997,-34.229576184180004
+              20.93660417307001,-34.14986104599001 21.671341003426008,-34.157020864412004
+              C 22.128130503948,-34.161467328798 22.747375330151996,-34.272878894414006
+              23.047426211376006,-34.40459598660601 C 23.584748984011995,-34.640473451828
+              23.606195805647985,-34.630363729652004 24.470281232249988,-33.733892865036
+              C 25.281449199229996,-32.892320233183995 25.409882642651993,-32.8237
+              26.17380734447599,-32.8237 C 26.764833253426005,-32.8237 27.100456731728002,-32.924129731728
+              27.352823,-33.176496 C 27.546856566448,-33.370534858388 27.74769433294999,-33.529292
+              27.79912581581999,-33.529292 C 27.850557298689992,-33.529292 28.412858204523985,-33.087979307202005
+              29.04867280046001,-32.548594971140005 C 30.561201508614005,-31.265478212314004
+              30.815775045060008,-31.157511876035993 31.74113231696201,-31.406691338039995
+              C 32.420734012039986,-31.589689269209995 32.924336190199995,-32.095110816342
+              33.240924560322,-32.911899000000005 C 33.278531731932006,-33.008915783224
+              33.711193514014,-32.67413213580001 34.20239261959999,-32.167935319457996
+              C 35.14710816081801,-31.194370943727993 35.695821834304,-30.946052833157996
+              36.471955747300015,-31.14085073214 C 37.10406651442999,-31.299500270971993
+              37.966903043192005,-32.240899706188 38.267804515571996,-33.100215507268004
+              C 38.58847332423001,-34.015963850915995 38.73211968396801,-34.176508080666
+              39.59168314783999,-34.579793598216 C 40.53500973120599,-35.02237653301199
+              41.17423727564601,-35.59225179256799 41.54197700861401,-36.31847777222001
+              C 41.801470814474,-36.830919077762005 43.888778999379994,-38.39629521553199
+              44.07040949325399,-38.214664721657996 C 44.10399002771801,-38.181084010796
+              44.281174057206,-37.539864756537995 44.464139531144,-36.78972644040401
+              C 44.647115941758,-36.039593592608 44.925720177744,-35.15420669632199
+              45.08327675456799,-34.822195496264 C 45.354172221556,-34.251313709719994
+              45.34843364182002,-34.149559581808006 44.97757148785401,-32.947826686252
+              C 44.655029332436,-31.902703110259996 44.36089977927601,-31.410927888805997
+              43.32072875353198,-30.17773 C 39.26447914607799,-25.368725741276 34.001048767235986,-18.062794739099996
+              32.523715517235985,-15.190865957019998 C 31.835812885074006,-13.853585663100002
+              31.58412486711201,-12.524735605998 31.937986663828,-12.098358884655998
+              C 32.487701572361985,-11.435991626974005 33.859178735357986,-11.970375079735998
+              35.94353701651001,-13.659094696638004 C 36.73915832215802,-14.303699910506001
+              37.43372544715801,-14.831104 37.48701951650999,-14.831104 C 37.73144011327001,-14.831104
+              37.52637091154399,-14.287412906768001 36.85390733793399,-13.152523740137998
+              C 34.09609518480001,-8.498330776163996 32.902781765784,-5.786198119916001
+              32.698358533534005,-3.707944444349998 C 32.620753821015995,-2.9189687569540013
+              32.66270003062999,-2.666909421202 32.913300554922,-2.4163007826020007
+              C 33.33841497217601,-1.9911890113179993 33.887699293192,-2.1490147714899983
+              35.290733,-3.0994258513320005 C 36.68003959084599,-4.040531760276 37.934603511004,-5.303956681167996
+              39.233073246157986,-7.069592 C 40.70797326214601,-9.075150295785999
+              40.94706452253,-9.362766 41.139300064164004,-9.362766 C 41.32524789908801,-9.362766
+              41.18373330918,-8.445941099358002 40.922355396281986,-7.957371735156002
+              C 40.84280183865998,-7.808659754051998 40.61449872716001,-7.226884861814
+              40.415017461278,-6.664540914867999 C 40.21553601899801,-6.102196967922001
+              39.904567865554,-5.348093753941999 39.723970887562004,-4.988759914868002
+              C 39.024354369812,-3.5967401463840005 38.465897,-0.8899504091579971
+              38.465897,1.1090067206719993 C 38.465897,2.763490308142 38.51939569103199,3.1023894973039994
+              38.89870942597399,3.8509356450900007 C 39.46699657433602,4.972393691601999
+              40.033377918705995,5.167813393534001 41.452141564368006,4.731956690876
+              C 43.477510237543996,4.109745555903999 44.59287443874801,3.136123498027999
+              45.41807116227001,1.2700206982960012 C 45.80459851702399,0.3959319175120015
+              46.051011,0.4413207104940007 46.051011,1.3866054880579988 C 46.051011,2.049859674884001
+              46.482251543396,3.2103341366280027 47.424544610880005,5.082822720358001
+              C 47.93414361544801,6.095470718958001 49.69434464109399,7.74784 50.263482204213986,7.74784
+              C 50.75643629350198,7.74784 52.084858409056,6.784836219734 53.05890170535601,5.721386655522
+              C 53.54871202948799,5.186614245169999 54.03665959074,4.749074 54.14322620888801,4.749074
+              C 54.24979282703599,4.749074 54.44506435464801,5.007056427796 54.57715840936599,5.3223675
+              C 54.9315478125,6.168274936303998 55.997935285401994,7.771968953226001
+              56.541890093644,8.277034 C 56.923368055648,8.631229718130001 57.18314162873601,8.712944504048
+              57.86172056821,8.692198864461998 C 58.82178908575601,8.662846766456001
+              59.234188382374,8.481952381436 60.29435271023401,7.625168068054 C 61.11797772757602,6.9595372709740015
+              61.910390530002005,5.880150500257999 62.276289373442,4.925472000000001
+              C 62.92484061057,3.2332641126480013 64.25320874833601,0.6919199999999996
+              64.48917776411999,0.6919199999999996 C 64.646992764014,0.6919199999999996
+              64.74919899999999,0.8605365550260018 64.74919899999999,1.1209037073840022
+              C 64.74919899999999,1.3882528689800004 64.933219686774,1.6809220230979989
+              65.23759884572401,1.8976594233300013 C 65.61909832828401,2.1693125197280025
+              65.78959616798001,2.5163874033940026 66.016532018582,3.483376014480001
+              C 66.176317384136,4.164246893168002 66.433539360154,4.985547690462001
+              66.58812451266799,5.308490798534001 C 66.949587475602,6.063606007839999
+              69.034419385384,7.474045784678001 70.35779193179,7.858760297185999 C
+              71.732176133826,8.258304413156 72.12074917618601,8.086958451875999 72.765122955878,6.797223063692002
+              C 73.21020915469201,5.906380353664 73.284573259552,5.554603228511999
+              73.287167897734,4.327651063692002 C 73.288826038934,3.5407344701499994
+              73.186533720724,2.4603103027959996 73.05984450072599,1.9267059999999994
+              C 72.33060934759202,-1.144744443103999 72.142744948398,-2.041697227055998
+              71.87755595671,-3.718029999999999 C 71.37394301827199,-6.901508343332001
+              71.33697087946202,-7.109384919227999 70.91381606759002,-9.136885185836
+              C 70.23432197529199,-12.392603978506 70.52641660112401,-12.142199961585998
+              72.91372186586399,-7.4223880000000015 C 74.947595921406,-3.4013313811279993
+              75.49300424916801,-2.548273475496 77.03027454080201,-0.983861000000001
+              C 78.51543492285798,0.5275158292139999 79.348394393166,1.0131702164660012
+              80.03892412074198,0.7703241482540015 C 81.11809145234598,0.3908003232939983
+              80.93943255917999,-1.670307466672 79.45363679152798,-5.981633874066002
+              C 78.61815800498401,-8.405938266510002 78.59955348432202,-8.903930988269998
+              79.359699211792,-8.497116805127998 C 79.557770175664,-8.391110074232
+              79.96136244933602,-8.304378 80.25655779921199,-8.304378 C 81.944860234844,-8.304378
+              81.555619702452,-11.315293941444 79.310184293192,-15.624894999999999
+              C 77.231844535402,-19.613776094478002 75.32840639337802,-22.711093011108
+              71.83028023432202,-27.796356999999997 C 69.13414916984802,-31.715759332228
+              69.03628197186599,-31.904608737854 69.35846886171201,-32.56607424895999
+              C 69.66350475041601,-33.192328073296 69.977627605692,-33.301699419643995
+              70.126258796512,-32.833411415491994 C 70.26262697477001,-32.403731994396
+              70.664539763084,-32.355089011109996 70.81605629599001,-32.74992806322601
+              C 70.874949061464,-32.90339344123599 70.923129,-33.404185422858006 70.923129,-33.862799937088
+              C 70.923129,-34.32849859499801 71.03868556581999,-34.847825067276005
+              71.18486217847,-35.039059197464 C 71.328820762668,-35.22738646501 71.53032619559998,-35.679142625
+              71.632661554922,-36.0429635 C 71.73498615396598,-36.406784375 71.87698530918,-36.70445599999999
+              71.94820547248601,-36.70445599999999 C 72.01941505191199,-36.70445599999999
+              72.230438038934,-36.42081313154199 72.417128685836,-36.074143257684
+              C 72.97318510247,-35.04162702315 75.07584626370401,-34.072870022114
+              76.216899305648,-34.323486775022005 C 76.492725802328,-34.384064317794
+              77.140394167466,-34.825689235051996 77.656173099566,-35.304862054192
+              C 78.17194127138801,-35.784040518068 78.660933285198,-36.153766668914
+              78.742801537376,-36.126473664762 C 78.824680549832,-36.09918066061 79.04265873359599,-35.64809216705001
+              79.22720702678798,-35.12404987064001 C 79.91861944995598,-33.160733956710004
+              81.207550110464,-31.859965579217995 82.45832429599001,-31.863259988266005
+              C 82.85678091829,-31.864315201102 83.31656354007602,-31.928601864619996
+              83.480052558038,-32.006125786854 C 83.691538413412,-32.10640487469 83.889146332534,-32.01847505803799
+              84.16478990448799,-31.70145063206 C 84.65321109437001,-31.139720373756003
+              85.697430454214,-30.713879196741996 86.30272202221998,-30.829586582852006
+              C 86.55773673006401,-30.878337168917998 86.987017844476,-31.148511168086
+              87.25665365334599,-31.429968465324 C 87.85350404785798,-32.052933172552
+              87.93377907330002,-32.057180483596 88.59509923245402,-31.500715000000003
+              C 89.35256406311997,-30.86335021844 90.079301420574,-30.918130088145997
+              90.931791324646,-31.676843816652 C 91.612168288934,-32.282393631329995
+              91.633162826098,-32.28816449189999 92.07837832464601,-31.992000187810003
+              C 92.32779468916401,-31.826072643896 92.80018465240799,-31.551726655629995
+              93.12811012198999,-31.382342945702003 C 93.675154893998,-31.099776634238
+              93.76830644424602,-31.097111966049997 94.257363019724,-31.350021892957994
+              C 94.550534378948,-31.501624684486 95.179232197574,-32.014480701726
+              95.65444294123601,-32.489691445388004 L 96.518474566448,-33.353717602261995
+              L 97.72511697114003,-33.241573984946 C 99.06031118231199,-33.117479579527995
+              99.27990428976601,-33.205565508410004 100.115899746052,-34.20056047716001
+              C 100.64963722933798,-34.83580424916799 101.070563605276,-36.404184268479995
+              101.08098555191201,-37.796532313642004 C 101.08438774013798,-38.251647620746
+              101.15792277439799,-38.667728872818 101.244377550974,-38.721163002181996
+              C 101.330832503948,-38.774596955148 101.684188214802,-38.505477992417994
+              102.02961995109798,-38.1231280951 C 103.774155775956,-36.19215457807199
+              105.71851737198999,-36.486849310424006 106.56581782330001,-38.810648472796004
+              L 106.93975918075397,-39.836220270865994 L 107.903789773778,-39.81382072363199
+              C 108.726197997716,-39.794710117107996 108.91426684219199,-39.85289217504
+              109.18394569217402,-40.209838643582 C 109.703815823088,-40.897924376868005
+              110.102218643998,-42.23711294435199 110.20964661358,-43.657690667046
+              C 110.268625461278,-44.43741533773 110.392138458888,-45.002956851221995
+              110.50583243822602,-45.01385260288599 C 110.61310958751803,-45.024134665907994
+              110.902792499894,-45.019871126248006 111.14956024844197,-45.004378089908
+              C 111.39634951754597,-44.988885229966 111.79985570899403,-45.05286496096399
+              112.04627877585001,-45.146549409569985 C 112.633827174628,-45.369932428054
+              112.78106958399401,-45.25360059302399 113.24262853364003,-44.201370999999995
+              C 113.931101813332,-42.631849685628 115.14553906924603,-41.643600000000006
+              116.38579446563402,-41.643600000000006 C 117.619697593644,-41.643600000000006
+              118.06586052585003,-42.235040444250004 118.71456240686997,-44.730565
+              L 119.03553285610802,-45.965351 L 119.89316899543199,-45.965351 C 120.67391095338202,-45.965351
+              120.7728333642,-45.917897821224 120.99651784686598,-45.436156999999994
+              C 121.53006146874999,-44.286996882374 122.78403339722,-43.407579999999996
+              123.88910477512401,-43.407579999999996 C 124.32566407101602,-43.407579999999996
+              124.61984724916799,-43.556534175558 125.021329273566,-43.9808735 C 125.67638342296398,-44.67323353322399
+              126.31111052523,-46.32110784043 126.31479265708201,-47.33905148338799
+              C 126.31627845743601,-47.74774165926 126.39343106188001,-48.201193533224
+              126.48621658627802,-48.346723999999995 C 126.62803264036798,-48.569111075376
+              126.703699444458,-48.540972772008004 126.960522937394,-48.170326 C 128.079634008516,-46.55529488361799
+              130.630600455666,-44.947224255918 131.556797734844,-45.272947925664
+              C 132.190534185942,-45.495824858286 132.883938495326,-46.59190082018
+              133.24853463953605,-47.94716383181199 C 133.605141894724,-49.272716657497995
+              133.61455184603398,-49.77628091008799 133.302173214182,-50.816295999999994
+              C 133.171037529798,-51.25288210838799 133.00826980325803,-51.987139841776
+              132.940462588456,-52.44797749999999 C 132.738763294122,-53.819083345205996
+              133.19138609748603,-53.485354734219996 134.2562554892,-51.4777885 C
+              135.03708370577198,-50.005736253324 135.51694571189802,-49.36560431633799
+              136.838251050142,-48.03339793449 C 138.56715395504597,-46.29022407859
+              139.673775694972,-45.62043064150599 141.1618755733,-45.41645969372799
+              C 141.87765261742203,-45.318355593232 142.00598904194402,-45.357389471866
+              142.413844855276,-45.797248645143995 C 143.57561249075803,-47.05014913216199
+              142.993167462518,-50.651455773357995 141.112974166944,-53.84076689295799
+              C 139.93507828592402,-55.838778000313994 140.32247775239,-55.87502320296599
+              142.33953455180597,-53.955532313747995 C 144.531395948088,-51.86968840863999
+              147.37176554038598,-50.463499999999996 149.39308587946198,-50.463499999999996
+              C 150.48866140023,-50.463499999999996 150.730734845202,-50.728016209716
+              150.61060251526197,-51.79390853343199 C 150.50360530959597,-52.74315132932
+              149.86851218148,-53.751884350707996 147.89432732838202,-56.10823599999999
+              C 146.240143970308,-58.082646818936 144.657493,-60.16041046085799 144.657493,-60.357684634964
+              C 144.657493,-60.77050375882199 145.09846647944403,-60.598977695184004
+              146.18346923328602,-59.76411788922199 C 146.847976375106,-59.252812410402
+              147.748872183552,-58.60054676058799 148.185453,-58.31463753062599 C
+              148.62203381644798,-58.028728300664 149.336454183552,-57.511431287375984
+              149.773035,-57.165084398256 C 151.439169322574,-55.84332130720199 153.97209113631402,-54.344256
+              154.53926927045,-54.344256 C 154.625573403134,-54.344256 154.748957277408,-54.625535664452
+              154.81344856260597,-54.969325488164 C 154.964006901576,-55.771864241382005
+              155.25351764950398,-55.66842533617199 155.61628331166798,-54.682479584822005
+              C 155.97286922269797,-53.713302580147996 156.53065892608004,-53.366148317382
+              158.18785692597396,-53.08196708222799 C 159.211899882578,-52.906365695595994
+              159.49830973006402,-52.909278026576004 159.725245580666,-53.09761076245999
+              C 160.10121110516997,-53.409650180957996 160.076340574752,-54.08368563714599
+              159.656878478612,-54.95005347746999 C 159.08543680481597,-56.13030727055599
+              156.62086057257397,-58.937403084512 155.04258074470602,-60.20562426702399
+              C 152.889306410924,-61.935862151992 151.889811,-62.931271656042 151.889811,-63.345468977474
+              C 151.889811,-63.618732940407995 152.479684853612,-63.693430790284 152.753217999894,-63.45480257464999
+              C 153.439516468644,-62.856056960025995 155.14146011441204,-61.77941988133399
+              155.273069603824,-61.860760527094 C 155.352655265882,-61.909947345414
+              155.41777100000002,-62.57204806571799 155.41777100000002,-63.33209148234799
+              C 155.41777100000002,-64.45122407402599 155.472895375,-64.735141417772
+              155.707626076824,-64.82521923287 C 155.86703465624998,-64.886388943728
+              156.01048715458597,-64.914726400438 156.026400018166,-64.888186968542
+              C 156.04229136119,-64.861647536646 156.27747434748602,-64.26092644081999
+              156.548983503116,-63.55325118044 C 157.470766422344,-61.15071130243
+              158.64390343812,-59.903043132888 161.150706,-58.659127301602 C 162.714063439058,-57.88336999833601
+              164.04144110205402,-57.642206237850004 166.26624800000002,-57.72971622726199
+              C 168.47049094830004,-57.81641866663 169.10013620058402,-58.07961065655999
+              169.062087328382,-58.898385258096 C 169.01167877751402,-59.983205087212
+              166.659999734844,-62.48492579911 162.304915686774,-66.08668454837999
+              C 161.38743934831803,-66.84546830689199 159.839542664766,-68.21209523048
+              158.86515468677396,-69.123628543918 C 157.890766708782,-70.03517244123599
+              156.458523433552,-71.20415369653 155.682368,-71.72138614815 C 154.906212566448,-72.23861859977
+              153.95600610828603,-72.95279148048 153.570802973318,-73.30844071812999
+              C 152.96676047954998,-73.866112058454 152.910710191448,-73.97762046657199
+              153.16327014472398,-74.118973475912 C 153.357303711172,-74.227553500832
+              153.682989631746,-74.195964676186 154.12826969196198,-74.025348297034
+              C 154.49792598919998,-73.88371516767 155.36682408243598,-73.60395905274399
+              156.059151658428,-73.403659300142 C 156.75147941081804,-73.203359723938
+              158.49782384436998,-72.55979349429 159.939907658428,-71.973515690306
+              C 163.550511179816,-70.50563525633 165.61769676287201,-69.78766188070999
+              167.872046797858,-69.21854583814599 C 169.63643604121802,-68.77312571791799
+              170.07654816922803,-68.732778379776 173.233969,-68.726996758928 C 176.114540578488,-68.721715755604
+              176.845778378116,-68.774423125208 177.732118,-69.05121857610199 C 179.07478407765603,-69.470513623336
+              179.25428280170001,-69.55992924034199 179.483738144936,-69.92368555367399
+              C 179.794437115032,-70.416252096556 179.01298444954,-71.630710873026
+              177.76771194123603,-72.59060722612399 C 176.30926315552398,-73.714789034154
+              172.40318434063403,-75.59314144019999 168.82401900000002,-76.891438834508
+              C 165.00426583835002,-78.27699873183398 158.751266846034,-80.797388526062
+              156.68655753810202,-81.783684074646 C 155.78357282454,-82.215021636942
+              155.00177583015198,-82.56793599999999 154.94923533305598,-82.56793599999999
+              C 154.896695012358,-82.56793599999999 154.603566694246,-82.684396958366
+              154.29784179495402,-82.826740618874 C 152.494887186048,-83.66621376172999
+              149.56606017067998,-84.804779768272 146.950667,-85.682936992528 C 146.22302524999998,-85.92724981011
+              145.38954893355202,-86.23081083513598 145.09848799999997,-86.357499878736
+              C 143.74871608170997,-86.945048277514 141.16540688486202,-87.84505063009
+              140.688538,-87.89388729838 C 140.36502689036797,-87.92701572477 140.15934399999998,-88.048892278134
+              140.15934399999998,-88.207461026682 C 140.15934399999998,-88.622131976744
+              140.95705403436597,-88.912923903346 142.09972199999999,-88.914797250106
+              C 143.16941481862597,-88.916541297132 144.269060017652,-88.587442428054
+              147.33048682080397,-87.34935108232999 C 149.09720151899802,-86.63485521688199
+              149.512830662996,-86.588914650956 149.49444152429203,-87.1101845 C 149.48132792057402,-87.481294316758
+              149.84885262438002,-87.67635063881 149.978825493148,-87.367266416006
+              C 150.141614740244,-86.980179174 151.568000896282,-86.36510104495399
+              153.17683603291403,-85.988220367626 C 155.773710765156,-85.37989281364199
+              157.59231999097,-85.09819861389 160.88610899999998,-84.79407787801 C
+              166.93010917234403,-84.236029751558 167.777151200584,-84.26789851982998
+              166.87420952813403,-85.019388044644 C 166.636851730896,-85.216931402098
+              166.37979133544604,-85.38120627315 166.30296171574003,-85.38443629692799
+              C 166.058713283428,-85.394696662996 165.405123413828,-86.08735816040199
+              165.52581563102,-86.20805037759399 C 165.58953164700802,-86.27177715386
+              165.95423539399803,-86.117084398566 166.33625172269802,-85.864287542776
+              C 167.57512892151203,-85.04443091590801 169.80969027606199,-84.551261444662
+              173.233969,-84.341939639952 C 177.70175655263802,-84.068837081188 177.996715,-84.07914066476599
+              177.996715,-84.508314 C 177.996715,-84.702347566448 177.937176441448,-84.86147602585
+              177.8644165,-84.861928310322 C 177.65701108316205,-84.86320948899599
+              176.553576149504,-85.946349656356 176.65568536659003,-86.048437352886
+              C 176.70587871189798,-86.09865221874999 177.12738631924606,-85.86838950186801
+              177.592347633516,-85.536738859322 C 178.54576241850202,-84.85666335921599
+              179.19790952886,-84.57892065106199 180.1513460108,-84.44686963745599
+              C 180.929719296406,-84.33907564202399 182.759461,-84.50444876702399
+              182.759461,-84.682601750726 C 182.759461,-84.751313358074 182.46178937500002,-84.94237532381399
+              182.09796850000004,-85.107199498238 C 181.20874335963202,-85.51003802325599
+              180.52942160818003,-86.04141759447599 180.693675135074,-86.20567094497198
+              C 180.76731777211404,-86.279324518688 181.32179154589204,-86.15889072456599
+              181.925812519104,-85.93804871927199 C 184.64536059447602,-84.94372124055401
+              185.600648726222,-84.86105619860999 189.11030584614002,-85.31640293989
+              C 191.13390859893804,-85.578954252284 193.56909251443,-86.179476194768
+              194.38859387572603,-86.618059481312 C 195.01615039929203,-86.953919862128
+              194.84386529506003,-87.48739892234398 193.98519546345602,-87.867229503426
+              C 192.34139083450805,-88.59436516756399 189.16058527367204,-89.115839638288
+              183.81784900000002,-89.534128158534 C 181.92598468355203,-89.682242679612
+              179.22708681644804,-89.9183083615 177.820317,-90.058724873858 C 176.413547183552,-90.199141386216
+              174.11154481644803,-90.40005465106199 172.70477500000004,-90.50520003052401
+              C 168.986592865138,-90.783115079524 165.31313467919603,-91.19449162053799
+              164.50226800000002,-91.423795967086 C 163.80274832475203,-91.62159774761
+              161.944497,-92.88505494933601 161.944497,-93.162862395556 C 161.944497,-93.445181044228
+              162.274597280524,-93.504418138598 162.767594410924,-93.310567673274
+              C 164.072793200584,-92.797329577966 165.59773574159004,-92.449669229338
+              166.08382071635998,-92.554524081294 L 166.606964088562,-92.66736746947599
+              L 165.858672130294,-93.01956054111199 C 165.44711266455403,-93.213260362544
+              164.85448259219197,-93.61596976422601 164.541716413934,-93.914470283428
+              C 164.07281472114005,-94.36200065293 164.02634654879597,-94.468578031356
+              164.276753388084,-94.522065785712 C 164.44378447788603,-94.55774598557001
+              165.00222032714203,-94.35545452315 165.51771931561598,-94.072543706392
+              C 167.475840484844,-92.997919858074 168.077169800974,-92.88362295037199
+              171.55818800000003,-92.92450336326999 C 173.30453243355203,-92.945013511526
+              176.51938175000004,-93.131467432312 178.70230700000002,-93.338840568316
+              C 180.88523225,-93.546224464598 183.385682543502,-93.782462487332 184.258844,-93.863824830046
+              C 185.87299771273,-94.014232525124 187.87039495504598,-94.32319820847201
+              187.98781410734802,-94.440628121052 C 188.023408224982,-94.47620071812999
+              187.76712292234402,-94.765000758516 187.418332038934,-95.082396502284
+              C 186.54635491860802,-95.875875277824 186.854879077762,-96.13932022248599
+              187.98585467836403,-95.566984916422 C 189.38519549304203,-94.85885207963
+              189.99143449470603,-94.755375425248 191.612672527514,-94.94793395162
+              C 192.41901724398002,-95.043712597282 193.14620670950802,-95.18678830949
+              193.22867806644803,-95.26588958264 C 193.31114924699,-95.34499085578999
+              193.19299786659002,-95.595343893688 192.96610505710004,-95.822215182622
+              C 192.413224862854,-96.375116897424 192.77515087053803,-96.43929595816199
+              194.051215413722,-96.01464440926 C 195.15383221345604,-95.64772281021598
+              195.42249889171399,-95.68269230253199 198.15414857547802,-96.548683356728
+              C 200.047950800354,-97.149054478922 201.634047,-97.964389319458 201.634047,-98.337523126868
+              C 201.634047,-98.745960348008 201.245893961278,-98.926578846556 199.693669,-99.240475559596
+              C 197.43219160382398,-99.697792490138 190.83106921813004,-99.783428956392
+              184.672728920574,-99.43534878052401 C 181.92260401588203,-99.279913036854
+              177.172045706498,-99.033877516404 174.11595900000003,-98.888616232976
+              C 171.059872293502,-98.74334401287199 167.51543954266998,-98.53584175353198
+              166.239439384756,-98.427487870848 C 164.63519094892,-98.291259576204
+              163.81887639389197,-98.28675913403 163.59346938475602,-98.412909987332
+              C 163.29521652834597,-98.579833474354 163.30955733295002,-98.611336216776
+              163.76211557464603,-98.78341687572599 C 164.034184617528,-98.88685048899599
+              165.145478964076,-99.17945102429199 166.231687574646,-99.433647598212
+              C 167.317917705772,-99.687833411854 168.84165456644803,-100.04591588351599
+              169.61781000000002,-100.229387443316 C 170.393965433552,-100.41285900311598
+              171.750692724982,-100.717108862332 172.63276880720605,-100.90550069154601
+              C 180.00412512199,-102.47986148504799 188.97559563268402,-105.38660646958199
+              195.63651500000003,-108.35869315407199 C 196.907325705152,-108.925731228196
+              200.120602962624,-110.930180509756 200.65804409831804,-111.491135675248
+              C 201.249188370326,-112.10817340967601 201.15657518677398,-112.555596
+              200.43767572165405,-112.555596 C 199.81022697726604,-112.555596 196.20054936898003,-112.087135655002
+              195.01912200000004,-111.852383432622 C 192.39528783222397,-111.331016564678
+              187.877220852054,-110.35536910496599 186.022824,-109.909690561668 C
+              181.82350944061602,-108.90044087053799 179.454194831498,-108.339431903656
+              177.11472500000002,-107.80040812510602 C 175.80496120649804,-107.498634364616
+              173.383903066448,-106.933049633614 171.73458600000004,-106.54355085455
+              C 167.01619792307002,-105.429252450062 166.65112815023002,-105.34818081125199
+              166.08985,-105.28996647248599 C 165.72708416143803,-105.252337603922
+              165.560656,-105.31296365614399 165.560656,-105.482740380816 C 165.560656,-105.63341725924201
+              166.66585667763798,-106.2154638044 168.38302400000003,-106.96911737987799
+              C 171.23379401837798,-108.22032232932001 177.613040706498,-111.405875995122
+              180.18857639628203,-112.864378582224 C 182.06474323110803,-113.92682567660201
+              187.46516623712802,-117.47766432080398 189.115602901682,-118.73399416134
+              C 190.83369613714603,-120.041819870016 192.90135552523003,-122.253448602576
+              193.744284657702,-123.68498117026401 C 194.35108354661799,-124.71551627886
+              194.379765332224,-124.82004814607798 194.069238526576,-124.86949850301
+              C 193.70358734592799,-124.927723602054 191.905886751452,-124.07187472726598
+              188.93339100000003,-122.424398726744 C 187.914688316448,-121.859804470512
+              186.48586875,-121.07263492223801 185.75822700000003,-120.67515801442998
+              C 183.71423246200402,-119.55859871677599 178.72635939649405,-117.131188308348
+              176.14453600000002,-115.996519815616 C 175.85347506644803,-115.86861397861198
+              173.691522833056,-114.88176930305401 171.34016677512403,-113.803549405108
+              C 168.988810717192,-112.72532950716199 166.88527744424601,-111.77408953311802
+              166.66561977512401,-111.68968026775 C 166.23760907910798,-111.52521153529601
+              164.85454715385998,-110.90705420276198 163.002885,-110.05263715054001
+              C 161.076245052638,-109.16361663185201 160.830058711898,-109.05611334032399
+              159.8718205,-108.68543428748201 C 159.13907537946199,-108.40198510402799
+              158.94573100000002,-108.37808352782399 158.94573100000002,-108.570943518378
+              C 158.94573100000002,-108.89627417338001 159.777075546618,-109.608046100912
+              161.97343738507402,-111.16314564399799 C 165.36442610205398,-113.56411363942998
+              170.66767092068,-117.54542867089201 172.18576604412203,-118.829869649504
+              C 175.64654327824002,-121.75801823816398 178.55260983606598,-125.33625766569598
+              180.319195410924,-128.844579629152 C 180.979094331392,-130.15507547435402
+              181.15204710205398,-131.10558339669802 180.702675843024,-130.95207497757602
+          trace:
+            cycles_per_second: 0.001
+            trail_fraction: 1.0
+            ghost_count: 0
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#96798d'
+          color_locked: false
+          color_flow:
+            source: angle
+            swing_degrees: 90.0
+          depth: foreground
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 1.06
+          opacity: 0.8
+          line_width: 3.0
+          rotation_degrees_per_second: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        library_source:
+          actor_id: raven
+          revision: 016e3dcb0ed941c8f68b3d35c534eb7c2a1beec7fe54a6b560f55be5fff915dc
     section_casts:
-      verse:
-        casting:
-          source: manual
-          seed: 4821
-          generator_version: 1
-        actors:
-        - id: verse-bloom-appearance
-          actor: verse-bloom
-          direction:
-            scale: 1.0
-            opacity: 1.0
-            rotation_offset_degrees_per_second: 0.0
-            hue_shift_degrees: 0.0
-            visible: true
-            trace: {}
       intro:
         casting:
           source: manual
@@ -1136,6 +3340,126 @@ project:
             blend_mode: normal
             trace:
               head_radius: 2.0
+      verse:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: verse-bloom-appearance
+          actor: verse-bloom
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+      chorus:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: chorus-wheel-appearance
+          actor: chorus-wheel
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+        - id: chorus-rosette-appearance
+          actor: chorus-rosette
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+        - id: chorus-star-appearance
+          actor: chorus-star
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+      bridge:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: bridge-hero-flower-appearance
+          actor: bridge-hero-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+      instrumental:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: instrumental-arc-left-9-appearance
+          actor: instrumental-arc-left-9
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+        - id: instrumental-lace-9-appearance
+          actor: instrumental-lace-9
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+        - id: instrumental-comet-right-9-appearance
+          actor: instrumental-comet-right-9
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+      final-chorus:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: final-chorus-orbit-appearance
+          actor: final-chorus-orbit
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+        - id: final-chorus-flower-appearance
+          actor: final-chorus-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
       outro:
         casting:
           source: manual
@@ -1145,16 +3469,43 @@ project:
         - id: outro-eclipse-appearance
           actor: song-title
           direction:
+            anchor_x: 0.482
+            anchor_y: 0.675
             scale: 1.5
             opacity: 1.0
             rotation_offset_degrees_per_second: 5.0
             hue_shift_degrees: 0.0
-            depth: background
+            depth: foreground
             visible: true
-            color: '#f70808'
+            color: '#0883f7'
             line_width: 0.7
             trace:
+              cycles_per_second: 0.1
               ghost_count: 6
+        - id: appearance-2
+          actor: artist-4castle
+          direction:
+            anchor_x: 0.468
+            anchor_y: 0.39
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            depth: foreground
+            visible: true
+            trace: {}
+        - id: appearance-3
+          actor: raven
+          direction:
+            anchor_x: 0.493
+            anchor_y: 0.425
+            scale: 2.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            depth: background
+            visible: true
+            trace: {}
     cast_overrides:
       verse-2:
         casting:
@@ -1186,3 +3537,86 @@ project:
             hue_shift_degrees: 0.0
             visible: true
             trace: {}
+      chorus:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: chorus-wheel-appearance
+          actor: chorus-wheel
+          direction:
+            anchor_x: 0.564
+            anchor_y: 0.611
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+        - id: chorus-star-appearance
+          actor: chorus-star
+          direction:
+            anchor_x: 0.455
+            anchor_y: 0.642
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            color: '#0aeb19'
+            trace:
+              cycles_per_second: 0.01
+              head_radius: 0.0
+        - id: appearance-3
+          actor: cats
+          direction:
+            anchor_x: 0.523
+            anchor_y: 0.588
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+      instrumental:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: instrumental-arc-left-8-appearance
+          actor: instrumental-arc-left-8
+          direction:
+            anchor_x: 0.665
+            anchor_y: 0.507
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+        - id: instrumental-lace-8-appearance
+          actor: instrumental-lace-8
+          direction:
+            anchor_x: 0.503
+            anchor_y: 0.857
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+        - id: instrumental-comet-right-8-appearance
+          actor: instrumental-comet-right-8
+          direction:
+            anchor_x: 0.269
+            anchor_y: 0.425
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            trace: {}
+    section_transitions: {}
+    transition_overrides: {}
