@@ -327,7 +327,7 @@ def test_rendering_page_and_approval_update_only_selected_track(
     body = page.body.decode()
     assert page.status_code == 200
     assert "Draft iteration history" in body
-    assert "Full-render preflight" in body
+    assert "Render plan" in body
     assert "Approve verified full render" in body
     assert "current-fingerprint" in body
 

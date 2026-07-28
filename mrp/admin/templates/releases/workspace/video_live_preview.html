@@ -62,7 +62,7 @@
       <input type="range" id="track-preview-scrubber" min="0" max="1"
              value="0" step="0.01" disabled
              aria-label="Preview position" aria-valuetext="Loading">
-      <output id="track-preview-time" for="track-preview-scrubber">0:00.00 / 0:00.00</output>
+      <output id="track-preview-time" for="track-preview-scrubber">0.000s / 0.000s</output>
     </div>
 
     <dl class="track-preview-now" aria-live="polite">
@@ -107,6 +107,7 @@
   </aside>
 </div>
 
+<script src="/static/video-timecode.js"></script>
 <script src="/static/spiro-preview.js"></script>
 <script src="/static/video-live-preview.js"></script>
 {% endblock %}

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 from datetime import UTC, datetime
 from pathlib import Path
@@ -19,6 +20,10 @@ from mrp.video.worker import EventWriter, ProgressMapper
 
 ROOT = Path(__file__).resolve().parents[3]
 ENRICHED = ROOT / "tests" / "video" / "fixtures" / "releases" / "enriched-album.yaml"
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def _now() -> str:
@@ -141,8 +146,19 @@ def test_video_track_matrix_reads_track_scoped_artifacts(tmp_path: Path):
     logs.mkdir(parents=True)
     (source / "project.yaml").write_text("version: 1\n", encoding="utf-8")
     (source / "lyrics.aligned.yaml").write_text("version: 1\n", encoding="utf-8")
+    # Preparation always records a hash per consumed input, and staleness is
+    # decided by re-hashing them rather than by comparing file timestamps.
     (logs / "preflight.json").write_text(
-        json.dumps({"status": "passed", "input_fingerprint": "fingerprint"}),
+        json.dumps(
+            {
+                "status": "passed",
+                "input_fingerprint": "fingerprint",
+                "input_hashes": {
+                    "audio.master": _sha256(master),
+                    "lyrics.aligned": _sha256(source / "lyrics.aligned.yaml"),
+                },
+            }
+        ),
         encoding="utf-8",
     )
     (logs / "artifacts.json").write_text(
@@ -639,3 +655,127 @@ def test_worker_progress_events_are_structured(tmp_path: Path):
     assert payloads[-1]["event"] == "progress"
     assert payloads[-1]["phase"] == "rendering"
     assert payloads[-1]["progress"] == 55.0
+
+
+def _drift_fixture(tmp_path: Path) -> tuple[dict, dict, dict]:
+    master = tmp_path / "private" / "master.wav"
+    stem = tmp_path / "private" / "vocals.wav"
+    master.parent.mkdir(parents=True, exist_ok=True)
+    master.write_bytes(b"master")
+    stem.write_bytes(b"vocals")
+    release = {"artist_id": "artist", "model": "song", "song": {"slug": "track"}}
+    track = {
+        "slug": "track",
+        "master_path": str(master),
+        "stems": [{"id": "vocals", "path": str(stem), "enabled": True}],
+    }
+    source = tmp_path / "assets" / "source" / "video" / "artist--track"
+    source.mkdir(parents=True, exist_ok=True)
+    aligned = source / "lyrics.aligned.yaml"
+    aligned.write_text("version: 1\n", encoding="utf-8")
+    preflight = {
+        "status": "passed",
+        "input_hashes": {
+            "audio.master": _sha256(master),
+            "audio.stem.vocals": _sha256(stem),
+            "lyrics.aligned": _sha256(aligned),
+        },
+    }
+    return release, track, preflight
+
+
+def test_timing_edits_do_not_invalidate_cached_audio_analysis(tmp_path: Path):
+    """Re-cutting scenes must not force a re-analyse.
+
+    Analysis keys its cache on the master and stems alone and its features are
+    time-indexed, so section boundaries cannot change it. Checking every
+    preflight input uniformly sent the Live Preview back to geometry-only after
+    every timing save.
+    """
+    release, track, preflight = _drift_fixture(tmp_path)
+    aligned = tmp_path / "assets" / "source" / "video" / "artist--track" / "lyrics.aligned.yaml"
+
+    assert video_workspace.preflight_input_drift(tmp_path, release, track, preflight) is None
+
+    aligned.write_text("version: 1\nsections: []\n", encoding="utf-8")
+
+    # Rendering depends on aligned timing and must still notice.
+    assert video_workspace.preflight_input_drift(
+        tmp_path, release, track, preflight
+    ) == "aligned timing changed after preparation"
+    # The cached audio analysis does not, so the preview stays audio-reactive.
+    assert (
+        video_workspace.preflight_input_drift(
+            tmp_path, release, track, preflight, audio_only=True
+        )
+        is None
+    )
+
+
+def test_audio_scoped_drift_still_catches_audio_changes(tmp_path: Path):
+    """Narrowing the question must not stop it detecting a real audio change."""
+    release, track, preflight = _drift_fixture(tmp_path)
+    stem = Path(track["stems"][0]["path"])
+
+    stem.write_bytes(b"vocals-remixed")
+    assert (
+        video_workspace.preflight_input_drift(
+            tmp_path, release, track, preflight, audio_only=True
+        )
+        == "stem vocals changed after preparation"
+    )
+
+    stem.write_bytes(b"vocals")
+    track["stems"][0]["enabled"] = False
+    assert (
+        video_workspace.preflight_input_drift(
+            tmp_path, release, track, preflight, audio_only=True
+        )
+        == "stem vocals was removed or disabled after preparation"
+    )
+
+
+def test_finished_job_poll_announces_its_terminal_transition(tmp_path: Path):
+    """Polling swaps only the job card, so pages need telling when a job lands.
+
+    A finished render also unlocks the Approve button and adds a history entry,
+    neither of which the swapped fragment contains. The rendering page listens
+    for this header and refreshes; pages holding unsaved edits ignore it.
+    """
+    db.init(tmp_path / "admin.db")
+    _create_job(tmp_path, job_id="render-1", kind="render")
+
+    running = asyncio.run(
+        video_routes.video_job_poll(
+            _get_request("/x"), "release", "track", "render-1"
+        )
+    )
+    assert running.status_code == 200
+    assert "HX-Trigger" not in running.headers
+
+    db.update_video_job("render-1", status="done", progress=100.0)
+    finished = asyncio.run(
+        video_routes.video_job_poll(
+            _get_request("/x"), "release", "track", "render-1"
+        )
+    )
+
+    assert finished.status_code == 200
+    payload = json.loads(finished.headers["HX-Trigger"])
+    assert payload == {"mrp:job-finished": {"kind": "render", "status": "done"}}
+
+
+def test_failed_job_poll_also_announces_so_the_page_stops_waiting(tmp_path: Path):
+    """A page that only refreshes on success would sit on a dead progress bar."""
+    db.init(tmp_path / "admin.db")
+    _create_job(tmp_path, job_id="render-2", kind="render")
+    db.update_video_job("render-2", status="error")
+
+    response = asyncio.run(
+        video_routes.video_job_poll(
+            _get_request("/x"), "release", "track", "render-2"
+        )
+    )
+
+    payload = json.loads(response.headers["HX-Trigger"])
+    assert payload["mrp:job-finished"]["status"] == "error"

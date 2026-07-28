@@ -14,6 +14,7 @@ from mrp.video.alignment import (
     SpirophonicAlignmentError,
     TranscriptionResult,
     TranscriptWord,
+    _carry_manual_sections,
     align_lyrics_document,
     align_project,
     align_token_sequences,
@@ -22,6 +23,8 @@ from mrp.video.alignment import (
 )
 from mrp.video.cli import app
 from mrp.video.project import (
+    AlignedLyricLine,
+    AlignedLyricSection,
     AlignmentConfig,
     LyricLine,
     LyricSection,
@@ -407,3 +410,116 @@ def test_project_alignment_is_safe_editable_and_cache_first(tmp_path: Path) -> N
         "uncertain": 0,
         "unmatched": 0,
     }
+
+
+def _append_manual_section(
+    path: Path, section_id: str, start: float, end: float
+) -> None:
+    """Stage a hand-added instrumental the way the admin timing editor does."""
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    document["sections"].append(
+        {
+            "id": section_id,
+            "type": "instrumental",
+            "label": section_id.replace("-", " ").title(),
+            "start": start,
+            "end": end,
+            "reviewed": True,
+            "lines": [],
+        }
+    )
+    document["sections"].sort(key=lambda section: section["start"])
+    path.write_text(yaml.safe_dump(document, sort_keys=False), encoding="utf-8")
+
+
+def test_realignment_keeps_hand_added_instrumental_sections(tmp_path: Path) -> None:
+    """A forced re-align must not silently delete staging it cannot regenerate.
+
+    Sections come from the canonical lyric source, so one carrying no lines has
+    nothing to be rebuilt from. Overwriting used to drop them outright, which
+    turned deliberate instrumental staging into uncovered gaps.
+    """
+    manifest = _write_alignment_project(tmp_path)
+    client = _FakeOpenAI(_response())
+    first = align_project(manifest, client=client)
+    sung_end = max(section.end for section in first.aligned.sections)
+    _append_manual_section(first.output_path, "outro", sung_end, sung_end + 0.4)
+
+    rerun = align_project(manifest, force=True, client=client)
+
+    carried = {section.id: section for section in rerun.aligned.sections}
+    assert "outro" in carried, "hand-added section was dropped by re-alignment"
+    assert carried["outro"].start == pytest.approx(sung_end)
+    assert carried["outro"].end == pytest.approx(sung_end + 0.4)
+    # The carry survives the round trip to disk, not just the in-memory run.
+    assert "outro" in {
+        section.id for section in load_aligned_lyrics(rerun.output_path).sections
+    }
+    assert not any("outro" in warning for warning in rerun.warnings)
+
+
+def test_realignment_drops_a_manual_section_that_now_covers_sung_time(
+    tmp_path: Path,
+) -> None:
+    """Alignment owns any span it placed lyrics in, and warns rather than failing.
+
+    Exercised against the carry helper directly: reproducing the collision
+    end-to-end would mean hand-editing sung boundaries that re-alignment
+    immediately recomputes, which tests the fixture rather than the rule.
+    """
+    previous = tmp_path / "lyrics.aligned.yaml"
+    previous.write_text(
+        yaml.safe_dump(
+            {
+                "version": 1,
+                "source": "lyrics.yaml",
+                "sections": [
+                    {
+                        "id": "verse_1",
+                        "type": "verse",
+                        "start": 0.0,
+                        "end": 1.0,
+                        "lines": [
+                            {"text": "A generated fixture", "start": 0.0, "end": 1.0}
+                        ],
+                    },
+                    {
+                        "id": "overlap",
+                        "type": "instrumental",
+                        "start": 4.0,
+                        "end": 5.0,
+                        "reviewed": True,
+                        "lines": [],
+                    },
+                    # Still clear of the vocal after re-alignment, so it returns.
+                    {
+                        "id": "kept",
+                        "type": "instrumental",
+                        "start": 5.0,
+                        "end": 6.0,
+                        "reviewed": True,
+                        "lines": [],
+                    },
+                ],
+            },
+            sort_keys=False,
+        ),
+        encoding="utf-8",
+    )
+    # Re-alignment now stretches the vocal across what "overlap" was staged over.
+    rebuilt = [
+        AlignedLyricSection(
+            id="verse_1",
+            type="verse",
+            start=0.0,
+            end=4.5,
+            lines=[AlignedLyricLine(text="A generated fixture", start=0.0, end=4.5)],
+        )
+    ]
+
+    merged, warnings = _carry_manual_sections(rebuilt, previous)
+
+    assert [section.id for section in merged] == ["verse_1", "kept"]
+    assert len(warnings) == 1
+    assert "overlap" in warnings[0]
+    assert "4.000s–5.000s" in warnings[0]

@@ -2,7 +2,12 @@
 {% set release_slug = job.release_slug if job else slug %}
 {% set selected_track = job.track_slug if job else track_slug %}
 {% set active = job and job.status in ['pending', 'running'] %}
-{% set job_label = 'contact sheet' if job_kind == 'contact' else ('frame preview' if job_kind == 'frame' else ('full preflight' if job_kind == 'render_plan' else ('draft render' if job_kind == 'draft' else ('full render' if job_kind == 'render' else job_kind)))) %}
+{% set job_label = 'contact sheet' if job_kind == 'contact' else ('frame preview' if job_kind == 'frame' else ('render plan' if job_kind == 'render_plan' else ('draft render' if job_kind == 'draft' else ('full render' if job_kind == 'render' else job_kind)))) %}
+{# This job builds the render plan; it does not run the preflight, which only
+   Prepare rewrites. Calling it "full preflight" sent people here to clear a
+   stale gate that this button consumes rather than refreshes. #}
+{% set job_verb = 'Build' if job_kind == 'render_plan' else 'Run' %}
+{% set job_verb_again = 'Rebuild' if job_kind == 'render_plan' else 'Run again' %}
 
 <div class="video-job-card">
   {% if job_error %}
@@ -78,7 +83,7 @@
     </div>
     {% endif %}
     <button class="btn btn-secondary btn-sm" type="submit">
-      {{ 'Run again' if job else 'Run' }} {{ job_label }}
+      {{ job_verb_again if job else job_verb }} {{ job_label }}
     </button>
   </form>
   {% endif %}

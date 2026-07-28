@@ -37,7 +37,7 @@
     <select id="draft-section" onchange="selectDraftSection(this)">
       <option value="">custom range</option>
       {% for section in rendering.sections %}
-      <option value="{{ section.id }}" data-start="{{ section.start }}" data-end="{{ section.end }}">{{ section.label }} · {{ '%.3f'|format(section.start) }}–{{ '%.3f'|format(section.end) }}s</option>
+      <option value="{{ section.id }}" data-start="{{ section.start }}" data-end="{{ section.end }}">{{ section.label }} · {{ section.start | seconds }}–{{ section.end | seconds }}</option>
       {% endfor %}
     </select>
   </div>
@@ -61,7 +61,7 @@
       {% endif %}
       <div class="video-render-meta">
         <div><strong>{{ draft.id }}</strong><span class="badge badge-{{ 'failed' if draft.stale else 'live' }}">{{ 'stale' if draft.stale else 'current' }}</span></div>
-        <small>{{ draft.width }}×{{ draft.height }} · {{ draft.fps }} fps · {{ '%.3f'|format(draft.source_start or 0) }}–{{ '%.3f'|format(draft.source_end or 0) }}s · {{ draft.frame_count }} frames</small>
+        <small>{{ draft.width }}×{{ draft.height }} · {{ draft.fps }} fps · {{ (draft.source_start or 0) | seconds }}–{{ (draft.source_end or 0) | seconds }} · {{ draft.frame_count }} frames</small>
         <small>{{ 'verified' if draft.verified else 'verification unavailable' }} · manifest {{ 'present' if draft.manifest_exists else 'missing' }}</small>
         <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/rendering/drafts/{{ draft.id }}/discard"
               hx-target="#video-render-result" hx-swap="innerHTML">
@@ -76,14 +76,14 @@
 
 <div class="video-render-grid">
   <div class="form-card"><div class="form-body">
-    <h2>1. Full-render preflight</h2>
-    <p class="video-help">Resolve exact inputs, validate the encoder/cards, and estimate frame count and raw streamed work.</p>
+    <h2>1. Render plan</h2>
+    <p class="video-help">Resolve exact inputs, validate the encoder/cards, and estimate frame count and raw streamed work. Needs the input gate above to be current; only Prepare refreshes that.</p>
     <div id="video-job-render_plan">{% set job = plan_job %}{% set kind = 'render_plan' %}{% include "releases/workspace/_video_job.html" %}</div>
     {% if rendering.plan %}
     <dl class="video-render-plan {{ 'stale' if not rendering.plan.current else '' }}">
       <div><dt>State</dt><dd>{{ 'current' if rendering.plan.current else 'stale' }}</dd></div>
       <div><dt>Frames</dt><dd>{{ rendering.plan.frame_count }}</dd></div>
-      <div><dt>Duration</dt><dd>{{ '%.3f'|format(rendering.plan.duration) }}s</dd></div>
+      <div><dt>Duration</dt><dd>{{ rendering.plan.duration | seconds }}</dd></div>
       <div><dt>Output</dt><dd>{{ rendering.plan.width }}×{{ rendering.plan.height }} @ {{ rendering.plan.fps }} fps</dd></div>
       <div><dt>Raw stream</dt><dd>{{ '%.2f'|format(rendering.plan.diagnostics.raw_stream_gib) }} GiB</dd></div>
       <div><dt>Cards</dt><dd>{{ 'included' if rendering.plan.cards_included else 'omitted' }}</dd></div>
@@ -111,7 +111,7 @@
       {% endif %}
       <div class="video-render-meta">
         <div><strong>{{ render.id }}</strong><span class="badge badge-{{ 'failed' if render.stale else 'live' }}">{{ 'stale' if render.stale else 'current' }}</span></div>
-        <small>{{ render.width }}×{{ render.height }} · {{ render.fps }} fps · {{ '%.3f'|format(render.duration or 0) }}s · {{ render.frame_count }} frames</small>
+        <small>{{ render.width }}×{{ render.height }} · {{ render.fps }} fps · {{ (render.duration or 0) | seconds }} · {{ render.frame_count }} frames</small>
         <small>{{ render.video_codec }} / {{ render.audio_codec }} · {{ 'verified' if render.verified else 'verification unavailable' }} · manifest {{ 'present' if render.manifest_exists else 'missing' }}</small>
         <small>SHA-256 <code>{{ render.output_sha256 }}</code></small>
         {% if render.current and render.verified and not rendering.approval.current %}
@@ -178,6 +178,23 @@
 </div></div>
 
 <script>
+  // A finished job changes more of this page than the job card it swaps: the
+  // render history, the Approve button it unlocks, the plan summary and the
+  // input gate are all server-rendered once at page load. Refresh once the job
+  // reaches a terminal state so the result is visible without a manual reload.
+  //
+  // Only this page opts in. Scene Casting runs its own jobs while holding live,
+  // possibly unsaved cast edits, and reloading there would throw them away.
+  (function () {
+    let refreshing = false;
+    document.body.addEventListener('mrp:job-finished', () => {
+      if (refreshing) return;      // two jobs landing together reload once
+      refreshing = true;
+      // Let htmx finish settling the swap that carried the event.
+      setTimeout(() => window.location.reload(), 400);
+    });
+  })();
+
   function selectDraftSection(select) {
     const option = select.options[select.selectedIndex];
     if (!option || !option.dataset.start) return;

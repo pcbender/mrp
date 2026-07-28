@@ -13,10 +13,16 @@
 <input type="hidden" name="return_scope" value="{{ casting.scope }}">
 {%- endmacro %}
 
-{% macro optional_number(name, label, value, step='0.01') -%}
+{# The bounds come straight from SectionVisualStyleConfig in mrp/video/project.py.
+   They used to be invisible until a save failed validation, so they are both
+   enforced by the input and printed under it. #}
+{% macro optional_number(name, label, help, value, min, max, step='0.01') -%}
 <div class="form-field">
-  <label>{{ label }}</label>
-  <input type="number" step="{{ step }}" name="style_{{ name }}" value="{{ value if value is not none else '' }}" placeholder="inherit">
+  {{ actor_control_label(label, help) }}
+  <input type="number" step="{{ step }}" min="{{ min }}" max="{{ max }}"
+         name="style_{{ name }}" value="{{ value if value is not none else '' }}"
+         placeholder="inherit">
+  <small>{{ min }} to {{ max }} · blank inherits</small>
 </div>
 {%- endmacro %}
 
@@ -138,7 +144,7 @@
       {% for scene in casting.sections %}
       <a class="video-scene-link {{ 'active' if scene.id == casting.selected_section.id else '' }}"
          href="?section={{ scene.id }}&scope={{ casting.scope }}{% if casting.selected_actor_saved %}&actor={{ casting.selected_actor.id }}{% endif %}#scene-casting">
-        <span><strong>{{ scene.label }}</strong><small>{{ scene.id }} · {{ '%.2f'|format(scene.start) }}–{{ '%.2f'|format(scene.end) }}s</small></span>
+        <span><strong>{{ scene.label }}</strong><small>{{ scene.id }} · {{ scene.start | seconds }}–{{ scene.end | seconds }}</small></span>
         <span class="badge badge-{{ 'live' if scene.actor_count else 'draft' }}">{% if scene.actor_count %}{{ scene.actor_count }} actor{{ '' if scene.actor_count == 1 else 's' }}{% else %}legacy{% endif %}</span>
       </a>
       {% endfor %}
@@ -237,7 +243,7 @@
               </select>
               <small>
                 {% if casting.selected_gap %}
-                {{ '%.2f'|format(casting.selected_gap) }}s of dead air precedes this scene.
+                {{ casting.selected_gap | seconds }} of dead air precedes this scene.
                 {% else %}
                 No gap before this scene — this setting does nothing here.
                 {% endif %}
@@ -258,23 +264,96 @@
 
         <details class="video-advanced">
           <summary>Advanced whole-scene response</summary>
-          <p class="video-help">These settings affect the scene after each actor's own direction is applied. Blank values inherit.</p>
-          <div class="video-role-picker"><strong>Visible musical roles</strong>{% for role in ['master', 'drums', 'bass', 'vocals', 'instruments'] %}<label><input type="checkbox" name="style_visible_roles" value="{{ role }}" {% if casting.style.visible_roles and role in casting.style.visible_roles %}checked{% endif %}> {{ role }}</label>{% endfor %}</div>
-          <div class="form-grid video-style-grid">
-            {{ optional_number('layer_fraction', 'Layer fraction', casting.style.layer_fraction) }}
-            {{ optional_number('scale', 'Scene scale', casting.style.scale) }}
-            {{ optional_number('motion', 'Motion', casting.style.motion) }}
-            {{ optional_number('color_intensity', 'Color intensity', casting.style.color_intensity) }}
-            {{ optional_number('onset_response', 'Onset response', casting.style.onset_response) }}
-            {{ optional_number('rotation_direction', 'Rotation direction', casting.style.rotation_direction) }}
-            {{ optional_number('palette_shift', 'Palette shift', casting.style.palette_shift) }}
-            {{ optional_number('lyrics_opacity', 'Lyrics opacity', casting.style.lyrics_opacity) }}
-            {{ optional_number('spatial_spread', 'Spatial spread', casting.style.spatial_spread) }}
-            {{ optional_number('anchor_drift', 'Anchor drift', casting.style.anchor_drift, '0.001') }}
-            {{ optional_number('trace_speed', 'Trace speed', casting.style.trace_speed) }}
-            {{ optional_number('trail_length', 'Trail length', casting.style.trail_length) }}
-            {{ optional_number('beat_gain', 'Beat gain', casting.style.beat_gain) }}
-            {{ optional_number('intensity_gain', 'Intensity gain', casting.style.intensity_gain) }}
+          <p class="video-help">
+            Direction above tells one actor how to perform; these settings act on the
+            whole scene afterwards, on top of it. Blank inherits the
+            <strong>{{ casting.selected_section.type }}</strong> choreography preset.
+            They are compiled into the saved scene, so the preview above only shows them
+            after <strong>Save scene cast</strong>.
+          </p>
+
+          <div class="video-style-group">
+            <h4>Presence</h4>
+            <p class="video-help">Who is on stage, and how visible the lyric is over them.</p>
+            <div class="video-role-picker"><strong>Visible musical roles</strong>{% for role in ['master', 'drums', 'bass', 'vocals', 'instruments'] %}<label><input type="checkbox" name="style_visible_roles" value="{{ role }}" {% if casting.style.visible_roles and role in casting.style.visible_roles %}checked{% endif %}> {{ role }}</label>{% endfor %}</div>
+            <div class="form-grid video-style-grid">
+              {{ optional_number('layer_fraction', 'Layer fraction',
+                 'Raises actors onto the stage by musical role. Each role has its own threshold, so lowering this thins the scene down to its lead roles first rather than fading everything evenly.',
+                 casting.style.layer_fraction, 0, 1) }}
+              {{ optional_number('lyrics_opacity', 'Lyrics opacity',
+                 'Opacity of the lyric line drawn over this scene. 0 hides the words without disturbing their timing.',
+                 casting.style.lyrics_opacity, 0, 1) }}
+            </div>
+          </div>
+
+          <div class="video-style-group">
+            <h4>Size &amp; space</h4>
+            <p class="video-help">How large the actors are and where they sit in the frame.</p>
+            <div class="form-grid video-style-grid">
+              {{ optional_number('scale', 'Scene scale',
+                 "Multiplies every actor's size in this scene, on top of the actor's own scale and its cast direction.",
+                 casting.style.scale, 0.2, 2) }}
+              {{ optional_number('spatial_spread', 'Spatial spread',
+                 'Pushes staged positions away from the centre of the frame. Below 1 gathers the cast inward; above 1 throws it toward the edges.',
+                 casting.style.spatial_spread, 0.2, 2) }}
+              {{ optional_number('anchor_drift', 'Anchor drift',
+                 'How far an actor wanders from its staged position over the scene. 0 pins each actor exactly where you dropped it.',
+                 casting.style.anchor_drift, 0, 0.2, '0.001') }}
+            </div>
+          </div>
+
+          <div class="video-style-group">
+            <h4>Motion</h4>
+            <p class="video-help">How the curves move once they are on stage.</p>
+            <div class="form-grid video-style-grid">
+              {{ optional_number('motion', 'Motion',
+                 'Overall movement energy for the scene. Feeds both rotation speed and how much trail each curve keeps.',
+                 casting.style.motion, 0, 3) }}
+              {{ optional_number('trace_speed', 'Trace speed',
+                 'How fast each curve draws itself. Below 1 slows the hand; above 1 races it.',
+                 casting.style.trace_speed, 0.1, 3) }}
+              {{ optional_number('rotation_direction', 'Rotation direction',
+                 'Direction and strength of spin. -1 turns every actor the other way, 0 stops rotation entirely.',
+                 casting.style.rotation_direction, -1, 1) }}
+              {{ optional_number('trail_length', 'Trail length',
+                 'Multiplies how much of each curve stays visible behind the drawing head. Short trails read as sharp strokes, long ones as full shapes.',
+                 casting.style.trail_length, 0.1, 3) }}
+            </div>
+          </div>
+
+          <div class="video-style-group">
+            <h4>Color</h4>
+            <p class="video-help">Applied after each actor's own wardrobe colour.</p>
+            <div class="form-grid video-style-grid">
+              {{ optional_number('color_intensity', 'Color intensity',
+                 'How saturated the scene runs. Below 1 washes it toward grey, above 1 drives it toward full colour.',
+                 casting.style.color_intensity, 0.2, 2) }}
+              {{ optional_number('palette_shift', 'Palette shift',
+                 'Rotates every hue in the scene. -1 and 1 are both a full turn, so small values are the useful ones.',
+                 casting.style.palette_shift, -1, 1) }}
+            </div>
+          </div>
+
+          <div class="video-style-group">
+            <h4>Audio response</h4>
+            <p class="video-help">
+              How hard the scene reacts to the music.
+              {% if not casting.analysis_current %}
+              <strong>These three have no visible effect until analysis is current</strong> —
+              the preview above is drawing geometry only, so there is no audio to react to.
+              {% endif %}
+            </p>
+            <div class="form-grid video-style-grid">
+              {{ optional_number('onset_response', 'Onset response',
+                 'How much each note attack thickens lines and pulses opacity. 0 ignores attacks and leaves a steady image.',
+                 casting.style.onset_response, 0, 3) }}
+              {{ optional_number('beat_gain', 'Beat gain',
+                 'Scales the beat pulse on drums and on any actor driven by an accent signal. Multiplies onset response rather than replacing it.',
+                 casting.style.beat_gain, 0, 3) }}
+              {{ optional_number('intensity_gain', 'Intensity gain',
+                 'How strongly overall loudness drives colour strength and background opacity.',
+                 casting.style.intensity_gain, 0, 3) }}
+            </div>
           </div>
         </details>
         <div class="video-cast-actions">
@@ -297,7 +376,7 @@
     {% if casting.gallery %}
     <div class="form-card"><div class="form-body">
       <h2>Preview history</h2>
-      <div class="video-preview-gallery">{% for preview in casting.gallery %}<figure class="{{ 'stale' if preview.stale else '' }}"><img src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/previews/{{ preview.name }}" alt="{{ preview.preview_type }} preview"><figcaption><strong>{{ preview.preview_type|replace('_', ' ') }}</strong>{% if preview.time_seconds is not none %} · {{ '%.3f'|format(preview.time_seconds) }}s{% endif %}<span class="badge badge-{{ 'failed' if preview.stale else 'live' }}">{{ 'stale' if preview.stale else 'current' }}</span></figcaption></figure>{% endfor %}</div>
+      <div class="video-preview-gallery">{% for preview in casting.gallery %}<figure class="{{ 'stale' if preview.stale else '' }}"><img src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/previews/{{ preview.name }}" alt="{{ preview.preview_type }} preview"><figcaption><strong>{{ preview.preview_type|replace('_', ' ') }}</strong>{% if preview.time_seconds is not none %} · {{ preview.time_seconds | seconds }}{% endif %}<span class="badge badge-{{ 'failed' if preview.stale else 'live' }}">{{ 'stale' if preview.stale else 'current' }}</span></figcaption></figure>{% endfor %}</div>
     </div></div>
     {% endif %}
   </div>
@@ -311,6 +390,7 @@
   {{ direction_fields(none, none, casting.project_actors) }}
 </template>
 
+<script src="/static/video-timecode.js"></script>
 <script src="/static/spiro-preview.js"></script>
 <script>
   function addActorComponent() {

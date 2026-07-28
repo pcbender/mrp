@@ -23,6 +23,7 @@ from mrp.video.project import (
     AlignmentConfig,
     AlignmentMetadata,
     StructuredLyrics,
+    load_aligned_lyrics,
     load_project_manifest,
     validate_project,
 )
@@ -968,6 +969,57 @@ def _write_aligned_yaml(path: Path, aligned: AlignedLyrics) -> None:
         temporary.unlink(missing_ok=True)
 
 
+def _carry_manual_sections(
+    aligned_sections: list[AlignedLyricSection],
+    output_path: Path,
+) -> tuple[list[AlignedLyricSection], tuple[str, ...]]:
+    """Re-insert lines-free sections a re-alignment cannot reproduce.
+
+    Alignment derives its sections from the canonical lyric source, so a
+    section carrying no lyric lines — an instrumental break, an intro or outro
+    added by hand in the timing editor — has nothing to be derived from and
+    simply vanishes from the new document. Overwriting used to drop those
+    silently, turning deliberate staging into uncovered gaps that the renderer
+    then papered over by freezing the preceding scene.
+
+    Only sections that land wholly inside a hole in the new timeline come back.
+    Alignment owns any span it actually placed lyrics in, so a manual section
+    that now overlaps sung material is left out rather than forced in; the
+    caller reports those as warnings instead of failing the run.
+    """
+    if not output_path.is_file():
+        return aligned_sections, ()
+    try:
+        previous = load_aligned_lyrics(output_path)
+    except Exception:
+        # An unreadable or outdated file is not worth failing a re-alignment
+        # over — it just means there is nothing to carry forward.
+        return aligned_sections, ()
+
+    taken = {section.id for section in aligned_sections}
+    spans = sorted((section.start, section.end) for section in aligned_sections)
+    carried: list[AlignedLyricSection] = []
+    warnings: list[str] = []
+    for section in previous.sections:
+        if section.lines:
+            continue
+        if section.id in taken:
+            continue
+        if any(section.start < end and start < section.end for start, end in spans):
+            warnings.append(
+                f"manual section {section.id!r} was dropped: alignment now places "
+                f"lyrics across {section.start:.3f}s–{section.end:.3f}s"
+            )
+            continue
+        carried.append(section)
+        taken.add(section.id)
+
+    if not carried:
+        return aligned_sections, tuple(warnings)
+    merged = sorted([*aligned_sections, *carried], key=lambda item: item.start)
+    return merged, tuple(warnings)
+
+
 def align_project(
     manifest_path: Path,
     *,
@@ -1033,10 +1085,15 @@ def align_project(
         vocal_timeline=vocal_timeline,
         frame_seconds=frame_seconds,
     )
+    notify("Carrying forward hand-added sections")
+    merged_sections, carry_warnings = _carry_manual_sections(
+        list(aligned_without_metadata.sections), output_path
+    )
     warnings = (
         *transcription.warnings,
         *segmentation_warnings,
         *alignment_warnings,
+        *carry_warnings,
     )
     metadata = AlignmentMetadata(
         model=project.alignment.model,
@@ -1049,7 +1106,7 @@ def align_project(
         version=1,
         source=aligned_without_metadata.source,
         alignment=metadata,
-        sections=aligned_without_metadata.sections,
+        sections=merged_sections,
     )
     notify("Writing editable aligned lyrics")
     _write_aligned_yaml(output_path, aligned)

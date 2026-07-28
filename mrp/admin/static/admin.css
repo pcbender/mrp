@@ -798,13 +798,21 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 }
 .timing-scrubber {
   display: grid;
-  grid-template-columns: 4.5rem minmax(10rem, 1fr) 4.5rem;
+  /* Readouts are wide enough for a full-length track's "3661.500s". */
+  grid-template-columns: auto 6rem minmax(10rem, 1fr) 6rem;
   align-items: center;
   gap: .5rem;
-  margin-top: .35rem;
+  margin-top: .75rem;
   color: var(--muted);
   font-family: ui-monospace, monospace;
   font-size: 11px;
+}
+.timing-scrubber #timing-current,
+.timing-scrubber #timing-duration {
+  font-variant-numeric: tabular-nums;
+}
+.timing-scrubber #timing-duration {
+  text-align: right;
 }
 .timing-section {
   overflow: hidden;
@@ -1206,6 +1214,38 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   font-size: 12px;
   font-weight: 700;
   margin-bottom: .75rem;
+}
+/* Fourteen knobs in one flat grid gave no clue which affected what. They are
+   grouped by the thing they change, and each group states its own scope. */
+.video-style-group {
+  border-top: 1px solid var(--border);
+  margin-top: .85rem;
+  padding-top: .65rem;
+}
+.video-style-group:first-of-type {
+  border-top: 0;
+  margin-top: .35rem;
+  padding-top: 0;
+}
+.video-style-group h4 {
+  font-size: 11px;
+  letter-spacing: .04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+.video-style-group .video-help {
+  margin: .2rem 0 .5rem;
+}
+/* Each field now carries a help label and its valid range, so the columns need
+   more room than the bare number inputs did. */
+.video-style-group .video-style-grid {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+.video-style-group .video-style-grid small {
+  color: var(--muted);
+  display: block;
+  font-size: 9px;
+  margin-top: .15rem;
 }
 .actor-assignment-card {
   border: 1px solid var(--border);

@@ -1896,11 +1896,13 @@
         : `${metrics.targetFps} fps redraw target`;
     }
 
+    // One clock for the whole admin, resolved lazily so script order on the
+    // page cannot freeze in a stale reference. `root` is null under node, where
+    // the tests require the module directly.
     function formatTime(value) {
-      const seconds = Math.max(0, finite(value) || 0);
-      const minutes = Math.floor(seconds / 60);
-      const remainder = seconds - minutes * 60;
-      return `${minutes}:${remainder.toFixed(2).padStart(5, '0')}`;
+      if (root && root.mrpTimecode) return root.mrpTimecode.seconds(value);
+      if (typeof require === 'function') return require('./video-timecode.js').seconds(value);
+      throw new Error('Live Preview needs /static/video-timecode.js loaded first.');
     }
 
     function drawLoading(message) {
