@@ -1,6 +1,7 @@
 """Lightweight readiness and asset helpers for the admin Video workspace."""
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
@@ -161,15 +162,127 @@ def _artifact_state(paths: dict[str, Path], kind: str) -> bool:
     )
 
 
-def _validation_state(release_path: Path, preflight_path: Path) -> tuple[str, str]:
+def _hash_file(path: Path) -> str | None:
+    digest = hashlib.sha256()
+    try:
+        with path.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(chunk)
+    except OSError:
+        return None
+    return digest.hexdigest()
+
+
+def stem_selection_drift(
+    track: dict[str, Any],
+    preflight: dict[str, Any],
+) -> str | None:
+    """Report a stem added, removed, enabled or disabled since preparation.
+
+    Hashing cannot see this on its own: toggling a stem's ``enabled`` flag
+    changes what the renderer consumes without changing any file on disk, and a
+    stem the track no longer names simply stops being hashed.
+    """
+    hashes = preflight.get("input_hashes")
+    if not isinstance(hashes, dict):
+        return None
+    prefix = "audio.stem."
+    expected = {
+        name[len(prefix):]
+        for name in hashes
+        if isinstance(name, str) and name.startswith(prefix)
+    }
+    current = {
+        str(stem.get("id") or "")
+        for stem in track.get("stems") or []
+        if isinstance(stem, dict) and stem.get("enabled", True) is not False
+    }
+    if current == expected:
+        return None
+    added = sorted(current - expected)
+    if added:
+        return f"stem {added[0]} was added or enabled after preparation"
+    return f"stem {sorted(expected - current)[0]} was removed or disabled after preparation"
+
+
+def preflight_input_drift(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    preflight: dict[str, Any],
+    *,
+    audio_only: bool = False,
+) -> str | None:
+    """Name the video input that changed since preparation, or None if current.
+
+    This used to be a modification-time comparison between the release YAML and
+    the preflight record, which was wrong in both directions. Saving a release
+    from the admin rewrites the YAML a fraction of a second after the preflight
+    is written, so a track went stale from an edit to its credits — or from no
+    edit at all. Meanwhile touching a stem without touching the release left the
+    timestamps in order and the staleness undetected.
+
+    Preflight already records a SHA-256 of every file the renderer consumes, so
+    the honest question is whether those files still hash the same, plus whether
+    the track still names the same set of them. Enabling or disabling a stem
+    changes the set without changing any file, which the hashes alone miss.
+
+    ``audio_only`` narrows the question to "is the cached audio analysis still
+    usable", which is a strictly smaller set. Analysis keys its cache on the
+    master and stems alone (see ``analysis.py``); its features are time-indexed
+    and know nothing about sections, so re-cutting scene boundaries cannot
+    invalidate it. Callers that only need the analysis — the Live Preview and
+    the casting editor — must not be pushed into a re-analyse by a timing edit.
+    Rendering is the opposite case and keeps the full check, because aligned
+    timing genuinely changes what comes out.
+    """
+    hashes = preflight.get("input_hashes")
+    if not isinstance(hashes, dict):
+        return "preparation recorded no input hashes"
+
+    key = track_key(release, track)
+    aligned = root / "assets" / "source" / "video" / key / "lyrics.aligned.yaml"
+    checks: list[tuple[str, str, Path | None]] = [
+        ("audio.master", "the track master", resolve_asset(root, track.get("master_path"))),
+    ]
+    if not audio_only:
+        checks.append(
+            ("lyrics.aligned", "aligned timing", aligned if aligned.is_file() else None)
+        )
+    for stem in track.get("stems") or []:
+        if not isinstance(stem, dict) or stem.get("enabled", True) is False:
+            continue
+        stem_id = str(stem.get("id") or "")
+        checks.append(
+            (f"audio.stem.{stem_id}", f"stem {stem_id}", resolve_asset(root, stem.get("path")))
+        )
+    selection = stem_selection_drift(track, preflight)
+    if selection is not None:
+        return selection
+
+    for name, label, path in checks:
+        expected = hashes.get(name)
+        if not isinstance(expected, str):
+            continue
+        if path is None or not path.is_file():
+            return f"{label} is missing"
+        if _hash_file(path) != expected:
+            return f"{label} changed after preparation"
+    return None
+
+
+def _validation_state(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    preflight_path: Path,
+) -> tuple[str, str]:
     report = _read_json(preflight_path)
     if not report:
         return "none", "not prepared"
-    try:
-        if release_path.stat().st_mtime > preflight_path.stat().st_mtime:
-            return "stale", "assets changed"
-    except OSError:
-        pass
+    drift = preflight_input_drift(root, release, track, report)
+    if drift is not None:
+        return "stale", drift
     status = str(report.get("status") or "failed")
     if status == "passed":
         return "passed", "passed"
@@ -178,7 +291,6 @@ def _validation_state(release_path: Path, preflight_path: Path) -> tuple[str, st
 
 
 def video_track_rows(root: Path, release_slug: str, release: dict[str, Any]) -> list[dict[str, Any]]:
-    release_path = root / "content" / "releases" / f"{release_slug}.yaml"
     rows: list[dict[str, Any]] = []
     for unit in track_units(release):
         track = unit["track"]
@@ -190,7 +302,9 @@ def video_track_rows(root: Path, release_slug: str, release: dict[str, Any]) -> 
         master_value = track.get("master_path")
         master = resolve_asset(root, master_value)
         artwork = resolve_asset(root, release.get("cover_image"))
-        validation, validation_detail = _validation_state(release_path, paths["preflight"])
+        validation, validation_detail = _validation_state(
+            root, release, track, paths["preflight"]
+        )
         try:
             last_job = db.get_latest_video_job(key)
         except AssertionError:

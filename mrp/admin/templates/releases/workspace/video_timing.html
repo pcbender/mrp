@@ -51,14 +51,19 @@
     </div>
 
     {% if audio_available %}
-    <audio id="timing-audio" controls preload="metadata" style="width:100%;margin-top:.75rem"
+    {# No `controls`: the native player prints its own 0:00 / 3:38 clock, which
+       no CSS or script can reformat, and every other time on the track video
+       pages is seconds. The transport below replaces it. #}
+    <audio id="timing-audio" preload="metadata"
            src="/releases/{{ slug }}/tracks/{{ track_slug }}/video/audio"></audio>
     <div class="timing-scrubber">
-      <span id="timing-current">0:00.000</span>
+      <button type="button" class="btn btn-secondary btn-sm" id="timing-play"
+              aria-pressed="false">▶ Play</button>
+      <span id="timing-current">0.000s</span>
       <input id="timing-range" type="range" min="0"
              max="{{ timing.master_duration or timing.document.sections[-1].end }}"
              value="0" step="0.01" aria-label="Audio playhead">
-      <span id="timing-duration">0:00.000</span>
+      <span id="timing-duration">0.000s</span>
     </div>
     {% else %}
     <div class="flash flash-error" style="margin-top:.75rem">
@@ -77,16 +82,18 @@
       instrumental intro for the lead-in, the preceding section stretched over mid-song gaps, and the
       last section extended to the song end — or add a single scene by hand. A gap you would rather
       keep can instead be covered by the next scene's transition, in Scene Casting.
+      {% if audio_available %}Clicking a gap fills the Add scene form and parks the playhead at its
+      start, so <strong>▶ Play</strong> auditions what is actually there.{% endif %}
     </p>
     {% if timing.gaps %}
     <div class="timing-gaps">
       {% for gap in timing.gaps %}
       <button type="button" class="timing-gap" onclick="timingFillScene(this)"
               data-start="{{ '%.3f' | format(gap.start) }}" data-end="{{ '%.3f' | format(gap.end) }}"
-              title="Prefill the Add scene form with this gap">
+              title="Prefill the Add scene form with this gap and park the playhead at its start, ready to play">
         <span class="timing-gap-kind">{{ gap.kind }}</span>
-        {{ '%.3f' | format(gap.start) }}s – {{ '%.3f' | format(gap.end) }}s
-        <span class="timing-gap-len">{{ '%.2f' | format(gap.end - gap.start) }}s</span>
+        {{ gap.start | seconds }} – {{ gap.end | seconds }}
+        <span class="timing-gap-len">{{ (gap.end - gap.start) | seconds }}</span>
       </button>
       {% endfor %}
     </div>
@@ -225,34 +232,97 @@
   <button type="submit" class="btn btn-primary" style="margin-top:.75rem">Save timing</button>
 </form>
 
+<script src="/static/video-timecode.js"></script>
 <script>
 const timingAudio = document.getElementById('timing-audio');
 const timingRange = document.getElementById('timing-range');
-function timingClock(seconds) {
-  if (!Number.isFinite(seconds)) return '0:00.000';
-  const minutes = Math.floor(seconds / 60);
-  return minutes + ':' + (seconds % 60).toFixed(3).padStart(6, '0');
-}
+const timingSeconds = window.mrpSeconds;
 if (timingAudio && timingRange) {
   timingAudio.addEventListener('loadedmetadata', () => {
     timingRange.max = timingAudio.duration;
-    document.getElementById('timing-duration').textContent = timingClock(timingAudio.duration);
+    document.getElementById('timing-duration').textContent = timingSeconds(timingAudio.duration);
   });
+  // The pointer owns the thumb until it is released. `preload="metadata"`
+  // buffers no audio, so dragging back outside what playback happened to load
+  // starts a seek that has to fetch; until it lands, currentTime still reports
+  // the last position that finished, and echoing that into the slider drags
+  // the thumb back to where playback began. Clicking the bar looked fine only
+  // because a single seek gets to complete.
+  let timingScrubbing = false;
+  const showTimingPosition = (seconds) => {
+    document.getElementById('timing-current').textContent = timingSeconds(seconds);
+  };
   timingAudio.addEventListener('timeupdate', () => {
-    timingRange.value = timingAudio.currentTime;
-    document.getElementById('timing-current').textContent = timingClock(timingAudio.currentTime);
+    if (timingScrubbing) return;
+    timingRange.value = String(timingAudio.currentTime);
+    showTimingPosition(timingAudio.currentTime);
   });
   timingRange.addEventListener('input', () => {
+    timingScrubbing = true;
+    // The readout follows the pointer rather than the audio, so the number
+    // matches the thumb while the seek is still catching up.
+    showTimingPosition(Number(timingRange.value));
     timingAudio.currentTime = Number(timingRange.value);
   });
+  // `change` lands on release. Handing the thumb back before the final seek
+  // resolves would reintroduce the same snap for one frame, so when a seek is
+  // still in flight the release waits for it.
+  timingRange.addEventListener('change', () => {
+    if (!timingAudio.seeking) {
+      timingScrubbing = false;
+      return;
+    }
+    timingAudio.addEventListener(
+      'seeked',
+      () => { timingScrubbing = false; },
+      { once: true }
+    );
+  });
+  // A pointer released outside the slider never fires `change`, which would
+  // otherwise leave the thumb frozen for the rest of the session.
+  ['pointerup', 'pointercancel'].forEach((type) => {
+    window.addEventListener(type, () => { timingScrubbing = false; });
+  });
+  // Bound to the element's own events, not to the click, so the label stays
+  // right when Preview scene starts playback or the track runs out.
+  const timingPlay = document.getElementById('timing-play');
+  const syncTimingPlay = () => {
+    timingPlay.textContent = timingAudio.paused ? '▶ Play' : '❚❚ Pause';
+    timingPlay.setAttribute('aria-pressed', timingAudio.paused ? 'false' : 'true');
+  };
+  timingPlay.addEventListener('click', () => {
+    if (timingAudio.paused) timingAudio.play();
+    else timingAudio.pause();
+  });
+  ['play', 'pause', 'ended'].forEach((type) => {
+    timingAudio.addEventListener(type, syncTimingPlay);
+  });
+  syncTimingPlay();
 }
 function timingSet(inputId) {
   if (!timingAudio) return;
   document.getElementById(inputId).value = timingAudio.currentTime.toFixed(3);
 }
+// Parking the playhead is deliberately not the same as playing: a gap is
+// usually being identified, not auditioned, and starting audio on every chip
+// click would fight whatever is already playing. Seeking while paused leaves
+// the transport untouched, so Play picks up from the gap.
+//
+// `preload="metadata"` normally has duration ready before anyone clicks, but a
+// seek requested first would be silently discarded, so it waits instead.
+function timingScrub(seconds) {
+  if (!timingAudio || !Number.isFinite(seconds)) return;
+  const apply = () => {
+    timingAudio.currentTime = Math.max(0, seconds);
+    if (timingRange) timingRange.value = String(timingAudio.currentTime);
+    const current = document.getElementById('timing-current');
+    if (current) current.textContent = timingSeconds(timingAudio.currentTime);
+  };
+  if (timingAudio.readyState >= HTMLMediaElement.HAVE_METADATA) apply();
+  else timingAudio.addEventListener('loadedmetadata', apply, { once: true });
+}
 function timingSeek(inputId) {
-  if (!timingAudio) return;
-  timingAudio.currentTime = Number(document.getElementById(inputId).value);
+  timingScrub(Number(document.getElementById(inputId).value));
 }
 function timingPreview(startId, endId) {
   if (!timingAudio) return;
@@ -303,6 +373,7 @@ if (addSceneType) {
 function timingFillScene(button) {
   document.getElementById('add-scene-start').value = button.dataset.start;
   document.getElementById('add-scene-end').value = button.dataset.end;
+  timingScrub(Number(button.dataset.start));
   if (addSceneType) {
     addSceneType.value = 'instrumental';
     const custom = document.querySelector('.add-scene-custom');

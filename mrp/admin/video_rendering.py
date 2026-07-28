@@ -10,7 +10,11 @@ from typing import Any
 
 import yaml
 
-from mrp.admin.video_workspace import resolve_asset, track_key
+from mrp.admin.video_workspace import (
+    resolve_asset,
+    stem_selection_drift,
+    track_key,
+)
 
 
 class VideoRenderingError(Exception):
@@ -72,11 +76,12 @@ def _current_preflight(
     fingerprint = preflight.get("input_fingerprint")
     if not isinstance(fingerprint, str) or not fingerprint:
         problems.append("video preflight has no input fingerprint")
-    try:
-        if paths["release"].stat().st_mtime > paths["preflight"].stat().st_mtime:
-            problems.append("release or track inputs changed after preflight")
-    except OSError:
-        problems.append("release or preflight record is missing")
+    # Every consumed file is re-hashed individually below, which already covers
+    # content drift and reports it per input. The one thing hashes cannot see is
+    # the track naming a different set of stems than preparation recorded.
+    selection = stem_selection_drift(track, preflight)
+    if selection is not None:
+        problems.append(selection)
     expected_project_hash = preflight.get("project_hash")
     if paths["project"].is_file() and isinstance(expected_project_hash, str):
         if _hash_file(paths["project"]) != expected_project_hash:
@@ -301,6 +306,14 @@ def render_launch_problems(
 ) -> tuple[str, ...]:
     preflight, problems = _current_preflight(root, release, track)
     result = list(problems)
+    if problems:
+        # Every problem above describes an input that moved on; none of them
+        # say what to do about it. Building the render plan consumes a preflight
+        # rather than producing one, and nothing on this page refreshes one, so
+        # without this the button reads as broken rather than blocked.
+        result.append(
+            "run Prepare on the track page to refresh the preflight, then retry here"
+        )
     status = str((track.get("music_video") or {}).get("status") or "draft")
     if status not in {"cast", "previewed", "rendered"}:
         result.append("track must have a reviewed cast before rendering")
@@ -311,9 +324,9 @@ def render_launch_problems(
             preflight_current=not problems,
         )
         if plan is None:
-            result.append("run full-render preflight first")
+            result.append("build the render plan first")
         elif not plan["current"]:
-            result.append("full-render preflight is stale")
+            result.append("the render plan is stale; rebuild it")
     return tuple(dict.fromkeys(result))
 
 

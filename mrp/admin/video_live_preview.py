@@ -17,7 +17,11 @@ import yaml
 from pydantic import ValidationError
 
 from mrp.admin.video_casting import aligned_path, project_path
-from mrp.admin.video_workspace import resolve_asset, track_key
+from mrp.admin.video_workspace import (
+    preflight_input_drift,
+    resolve_asset,
+    track_key,
+)
 from mrp.video.casting import resolve_section_composition
 from mrp.video.choreography import choreography_at
 from mrp.video.presets import get_mapping_preset, get_palette_preset
@@ -240,7 +244,7 @@ def _duration_from_track(track: dict[str, Any]) -> float | None:
 
 def _master_duration(
     root: Path,
-    release_slug: str,
+    release: dict[str, Any],
     key: str,
     track: dict[str, Any],
     lyrics: Any,
@@ -257,15 +261,10 @@ def _master_duration(
     """
     preflight_path = _preflight_path(root, key)
     preflight = _read_preflight(preflight_path)
-    release_path = root / "content" / "releases" / f"{release_slug}.yaml"
-    preflight_current_for_release = False
-    try:
-        preflight_current_for_release = (
-            bool(preflight)
-            and release_path.stat().st_mtime_ns <= preflight_path.stat().st_mtime_ns
-        )
-    except OSError:
-        pass
+    preflight_current_for_release = bool(preflight) and (
+        preflight_input_drift(root, release, track, preflight, audio_only=True)
+        is None
+    )
 
     measured = None
     if preflight_current_for_release:
@@ -319,7 +318,6 @@ def _analysis_unavailable(code: str, message: str) -> _AnalysisAvailability:
 
 def _existing_analysis(
     root: Path,
-    release_slug: str,
     release: dict[str, Any],
     track: dict[str, Any],
     source_project: Any,
@@ -339,7 +337,6 @@ def _existing_analysis(
     key = track_key(release, track)
     runtime_path = _runtime_manifest_path(root, key)
     preflight_path = _preflight_path(root, key)
-    release_path = root / "content" / "releases" / f"{release_slug}.yaml"
     if not runtime_path.is_file() or not preflight_path.is_file():
         return _analysis_unavailable(
             "analysis_missing",
@@ -351,12 +348,13 @@ def _existing_analysis(
             "analysis_stale",
             "Cached audio analysis cannot be verified. Run Prepare and Analyze.",
         )
+    drift = preflight_input_drift(root, release, track, preflight, audio_only=True)
+    if drift is not None:
+        return _analysis_unavailable(
+            "analysis_stale",
+            f"{drift[0].upper()}{drift[1:]}. Run Prepare and Analyze.",
+        )
     try:
-        if release_path.stat().st_mtime_ns > preflight_path.stat().st_mtime_ns:
-            return _analysis_unavailable(
-                "analysis_stale",
-                "Track audio inputs changed after preparation. Run Prepare and Analyze.",
-            )
         runtime = load_project_manifest(runtime_path)
     except (OSError, SpirophonicValidationError):
         return _analysis_unavailable(
@@ -750,7 +748,7 @@ def _build_live_preview_document_local(
     key = track_key(release, track)
     duration = _master_duration(
         root,
-        release_slug,
+        release,
         key,
         track,
         lyrics,
@@ -758,7 +756,6 @@ def _build_live_preview_document_local(
     )
     availability = _existing_analysis(
         root,
-        release_slug,
         release,
         track,
         project,

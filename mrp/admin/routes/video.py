@@ -37,6 +37,7 @@ from mrp.admin.video_publication import (
     public_media_available,
     record_opt_in,
 )
+from mrp.admin.video_timecode import seconds as _seconds
 from mrp.admin.video_timing import (
     TimingEditorError,
     add_section,
@@ -66,6 +67,9 @@ from mrp.core.migrate_site import load_structured_record, serialize_structured_r
 
 router = APIRouter()
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
+# Every track video template renders from this module, so one registration
+# covers the whole surface.
+_templates.env.filters["seconds"] = _seconds
 _STEM_ID = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 _AUDIO_MEDIA_TYPES = {
     ".wav": "audio/wav",

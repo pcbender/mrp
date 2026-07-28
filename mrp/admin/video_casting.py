@@ -870,7 +870,34 @@ def load_casting(
         ),
         "presets": preset_catalog(),
         "gallery": _gallery(root, release, track),
+        # The audio-response controls cannot show any effect on a canvas that
+        # has no audio behind it, so the editor says so rather than leaving
+        # three knobs that silently do nothing.
+        "analysis_current": _analysis_is_current(root, release, track),
     }
+
+
+def _analysis_is_current(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+) -> bool:
+    """Report whether cached analysis still matches the track's inputs."""
+    from mrp.admin.video_workspace import preflight_input_drift, track_key
+
+    key = track_key(release, track)
+    preflight_path = (
+        root / "assets" / "processed" / "video" / key / "logs" / "preflight.json"
+    )
+    try:
+        preflight = json.loads(preflight_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    if not isinstance(preflight, dict):
+        return False
+    return (
+        preflight_input_drift(root, release, track, preflight, audio_only=True) is None
+    )
 
 
 def _single(
