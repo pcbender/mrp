@@ -20,7 +20,7 @@ sections:
   type: verse
   label: Verse 1 | warm intimate vocal | guitar and recorder | unhurried phrasing
   start: 12.3
-  end: 40.85
+  end: 39.462
   reviewed: true
   lines:
   - text: cat distracted
@@ -67,7 +67,7 @@ sections:
     reviewed: false
   - text: unheard
     start: 38.2
-    end: 40.85
+    end: 39.462
     confidence: 1.0
     status: matched
     reviewed: false
@@ -108,8 +108,8 @@ sections:
     confidence: 1.0
     status: matched
     reviewed: false
-- id: instrumental
-  type: instrumental
+- id: interlude
+  type: interlude
   start: 57.644
   end: 68.96
   reviewed: true
@@ -206,9 +206,9 @@ sections:
     confidence: 1.0
     status: matched
     reviewed: false
-- id: post-chorus
+- id: pre-bridge
   type: instrumental
-  label: Post Chorus
+  label: Pre-Bridge
   start: 114.23
   end: 129.84
   reviewed: true
