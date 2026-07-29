@@ -924,6 +924,33 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .timing-status-unmatched { background: #fee2e2; color: #991b1b; }
 .timing-status-manual { background: var(--border); color: var(--muted); }
 .timing-needs-review { background: color-mix(in srgb, #fef3c7 45%, transparent); }
+.timing-line-note {
+  margin-top: .25rem;
+  font-size: 11px;
+  line-height: 1.35;
+  color: #92400e;
+}
+.timing-warning-list {
+  margin: 0 0 .75rem;
+  padding-left: 1.1rem;
+  font-size: 12px;
+  color: var(--muted);
+}
+.timing-heard { font-size: 13px; }
+.timing-heard-words summary {
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: .25rem;
+}
+.timing-word-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem .6rem;
+  margin-top: .35rem;
+  font-size: 11px;
+}
+.timing-word-grid code { font-size: 10px; color: var(--muted); }
 .timing-playhead-button {
   border: 0;
   background: transparent;

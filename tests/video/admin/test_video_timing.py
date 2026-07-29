@@ -118,6 +118,44 @@ def _write_timing(tmp_path: Path, release: dict) -> Path:
     return path
 
 
+def _write_transcript(tmp_path: Path, release: dict) -> Path:
+    key = f"{release['artist_id']}--{release['tracks'][0]['slug']}"
+    path = (
+        tmp_path
+        / "assets"
+        / "processed"
+        / "video"
+        / key
+        / "analysis"
+        / "cache"
+        / "alignment"
+        / "transcriptions"
+        / "transcription-key.json"
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps(
+            {
+                "response": {
+                    "text": "first lyric needs attention",
+                    "segments": [
+                        {"start": 0.0, "end": 1.5, "text": "first lyric"},
+                        {"start": 1.5, "end": 4.0, "text": "needs attention"},
+                    ],
+                    "words": [
+                        {"word": "first", "start": 0.0, "end": 0.7},
+                        {"word": "lyric", "start": 0.7, "end": 1.5},
+                        {"word": "needs", "start": 1.6, "end": 2.4},
+                        {"word": "attention", "start": 2.4, "end": 4.0},
+                    ],
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    return path
+
+
 def _fields(*, overlap: bool = False) -> dict[str, list[str]]:
     return {
         "section_id": ["verse", "break"],
@@ -167,6 +205,66 @@ def test_load_timing_reports_confidence_review_and_master_duration(tmp_path: Pat
         "pending_review": 1,
         "review_complete": False,
     }
+
+
+def test_load_timing_exposes_the_transcript_behind_the_alignment(tmp_path: Path):
+    release = _release()
+    _write_timing(tmp_path, release)
+    _write_transcript(tmp_path, release)
+
+    timing = load_timing(tmp_path, release, release["tracks"][0])
+
+    transcript = timing["transcript"]
+    assert transcript is not None
+    assert transcript["word_count"] == 4
+    assert [segment["text"] for segment in transcript["segments"]] == [
+        "first lyric",
+        "needs attention",
+    ]
+    # Words are grouped under the segment whose span contains them.
+    assert [word["text"] for word in transcript["segments"][0]["words"]] == [
+        "first",
+        "lyric",
+    ]
+    assert [word["text"] for word in transcript["segments"][1]["words"]] == [
+        "needs",
+        "attention",
+    ]
+
+
+def test_load_timing_survives_a_missing_or_unreadable_transcript(tmp_path: Path):
+    release = _release()
+    _write_timing(tmp_path, release)
+
+    # No transcript on disk at all.
+    assert load_timing(tmp_path, release, release["tracks"][0])["transcript"] is None
+
+    path = _write_transcript(tmp_path, release)
+    path.write_text("{not json", encoding="utf-8")
+    assert load_timing(tmp_path, release, release["tracks"][0])["transcript"] is None
+
+
+def test_load_timing_splits_alignment_warnings_per_line(tmp_path: Path):
+    release = _release()
+    path = _write_timing(tmp_path, release)
+    document = _aligned()
+    document["alignment"]["warnings"] = [
+        "verse line 2 has no recognized audio window — the surrounding cues are "
+        "adjacent, so it borrowed a 0.250s window and requires manual timing",
+        "transcription returned no timestamps for 3 words",
+    ]
+    path.write_text(yaml.safe_dump(document, sort_keys=False), encoding="utf-8")
+
+    warnings = load_timing(tmp_path, release, release["tracks"][0])["warnings"]
+
+    # Keyed by the zero-based line index the editor posts back as line_key.
+    assert list(warnings["lines"]) == ["verse:1"]
+    assert warnings["lines"]["verse:1"] == [
+        "has no recognized audio window — the surrounding cues are adjacent, so it "
+        "borrowed a 0.250s window and requires manual timing"
+    ]
+    assert warnings["general"] == ["transcription returned no timestamps for 3 words"]
+    assert warnings["total"] == 2
 
 
 def test_load_timing_exposes_provisional_unmatched_line_for_review(tmp_path: Path):
