@@ -306,10 +306,79 @@ def _draft_line_cues(
     return drafts
 
 
+# A stranded run gets at least this much editable width per line: small enough
+# that borrowing barely moves a recognized cue, wide enough to grab and drag in
+# the timing editor.
+_STRANDED_LINE_SECONDS = 0.25
+# Never take more than this share of a neighbouring cue's own span.
+_NEIGHBOUR_BORROW_SHARE = 0.5
+
+
+def _borrow_stranded_window(
+    drafts: list[_LineDraft],
+    run_start: int,
+    run_end: int,
+    left: float,
+    right: float,
+    duration: float,
+) -> tuple[float, float] | None:
+    """Carve a positive window for unmatched lines whose neighbours left no gap.
+
+    The transcript and the lyric document can disagree about line *order* — an
+    AI vocal take does not always follow the submitted lyric — and a phrase the
+    document places late can be sung early. Monotonic matching then pins the
+    later line against the earlier one and strands everything between them in a
+    zero-width gap. Borrow a sliver from the neighbouring cues instead of
+    failing the whole alignment, so the stranded lines land in the document
+    flagged for manual timing. Returns None when neither side can lend room.
+    """
+    needed = (run_end - run_start) * _STRANDED_LINE_SECONDS
+    previous = drafts[run_start - 1] if run_start else None
+    following = drafts[run_end] if run_end < len(drafts) else None
+
+    if previous is None:
+        lend_left = max(0.0, left)
+    elif previous.start is None or previous.end is None:
+        lend_left = 0.0
+    else:
+        lend_left = max(0.0, (previous.end - previous.start) * _NEIGHBOUR_BORROW_SHARE)
+
+    if following is None:
+        lend_right = max(0.0, duration - right)
+    elif following.start is None or following.end is None:
+        lend_right = 0.0
+    else:
+        lend_right = max(
+            0.0, (following.end - following.start) * _NEIGHBOUR_BORROW_SHARE
+        )
+
+    if lend_left + lend_right <= 0:
+        return None
+
+    take_right = min(lend_right, needed / 2 if lend_left > 0 else needed)
+    take_left = min(lend_left, needed - take_right)
+    if take_left + take_right < needed:
+        take_right = min(lend_right, needed - take_left)
+
+    new_left = left - take_left
+    new_right = right + take_right
+    if previous is not None and take_left > 0:
+        previous.end = new_left
+    if following is not None and take_right > 0:
+        following.start = new_right
+    return new_left, new_right
+
+
 def _interpolate_unmatched_lines(
     drafts: list[_LineDraft],
     duration: float,
-) -> None:
+) -> set[int]:
+    """Spread unmatched lines across the gap between their matched neighbours.
+
+    Returns the ids of drafts that had to borrow their window from a neighbour
+    because that gap was empty; those are guesses and need a human.
+    """
+    borrowed: set[int] = set()
     index = 0
     while index < len(drafts):
         if drafts[index].start is not None:
@@ -321,19 +390,28 @@ def _interpolate_unmatched_lines(
         run_end = index
         left = drafts[run_start - 1].end if run_start else 0.0
         right = drafts[run_end].start if run_end < len(drafts) else duration
-        if left is None or right is None or right <= left:
-            raise SpirophonicAlignmentError(
-                "unmatched lyric lines have no positive timing window; "
-                "manual timing is required"
+        left_bound = left if left is not None else 0.0
+        right_bound = right if right is not None else duration
+        if right_bound <= left_bound:
+            window = _borrow_stranded_window(
+                drafts, run_start, run_end, left_bound, right_bound, duration
             )
+            if window is None:
+                raise SpirophonicAlignmentError(
+                    "unmatched lyric lines have no positive timing window and no "
+                    "neighbouring cue can lend one; manual timing is required"
+                )
+            left_bound, right_bound = window
+            borrowed.update(id(draft) for draft in drafts[run_start:run_end])
         weights = [max(1, draft.token_count) for draft in drafts[run_start:run_end]]
         total_weight = sum(weights)
-        cursor = float(left)
+        cursor = float(left_bound)
         for draft, weight in zip(drafts[run_start:run_end], weights, strict=True):
-            line_duration = (right - left) * weight / total_weight
+            line_duration = (right_bound - left_bound) * weight / total_weight
             draft.start = cursor
             draft.end = cursor + line_duration
             cursor = draft.end
+    return borrowed
 
 
 def _extend_energy_tail(
@@ -558,7 +636,7 @@ def align_lyrics_document(
             draft.start = min(duration, max(0, draft.start))
         if draft.end is not None:
             draft.end = min(duration, max(0, draft.end))
-    _interpolate_unmatched_lines(drafts, duration)
+    borrowed_ids = _interpolate_unmatched_lines(drafts, duration)
     _apply_energy_tails(
         drafts,
         duration,
@@ -569,18 +647,27 @@ def align_lyrics_document(
     provisional = _bound_line_transitions(drafts, duration)
     sections = _build_sections(lyrics, drafts, duration)
     provisional_ids = {id(draft) for draft in provisional}
-    warnings = tuple(
-        (
-            f"{lyrics.sections[draft.section_index].id} line "
-            f"{draft.line_index + 1} received a provisional "
-            f"{draft.end - draft.start:.3f}s timing window and requires manual review"
-            if id(draft) in provisional_ids
-            else f"{lyrics.sections[draft.section_index].id} line "
-            f"{draft.line_index + 1} is {draft.status} "
-            f"(confidence {draft.confidence:.3f})"
+
+    def _line_warning(draft: _LineDraft) -> str:
+        prefix = (
+            f"{lyrics.sections[draft.section_index].id} line {draft.line_index + 1}"
         )
-        for draft in drafts
-        if draft.status != "matched"
+        if id(draft) in borrowed_ids:
+            return (
+                f"{prefix} has no recognized audio window — the surrounding cues "
+                f"are adjacent, so it borrowed a {draft.end - draft.start:.3f}s "
+                "window and requires manual timing"
+            )
+        if id(draft) in provisional_ids:
+            return (
+                f"{prefix} received a provisional "
+                f"{draft.end - draft.start:.3f}s timing window "
+                "and requires manual review"
+            )
+        return f"{prefix} is {draft.status} (confidence {draft.confidence:.3f})"
+
+    warnings = tuple(
+        _line_warning(draft) for draft in drafts if draft.status != "matched"
     )
     return (
         AlignedLyrics(version=1, source=source, sections=sections),

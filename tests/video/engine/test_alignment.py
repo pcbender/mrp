@@ -308,6 +308,118 @@ def test_collapsed_recognized_line_gets_provisional_manual_timing() -> None:
     )
 
 
+def test_stranded_lines_borrow_a_window_instead_of_failing_alignment() -> None:
+    """An AI vocal take can sing a late line early, stranding the lines between.
+
+    The document orders "Stranded one/two" before "After", but the take sings
+    "after" immediately when "Before" ends, leaving a zero-width gap. Alignment
+    must still produce an editable document rather than raising.
+    """
+    lyrics = StructuredLyrics(
+        version=1,
+        sections=[
+            LyricSection(
+                id="verse",
+                type="verse",
+                lines=[
+                    LyricLine(text="Before"),
+                    LyricLine(text="Stranded one"),
+                    LyricLine(text="Stranded two"),
+                    LyricLine(text="After"),
+                ],
+            )
+        ],
+    )
+    transcription = _transcription(
+        [
+            TranscriptWord("before", 1.0, 2.0),
+            TranscriptWord("after", 2.0, 3.0),
+        ]
+    )
+
+    aligned, warnings = align_lyrics_document(
+        lyrics,
+        transcription,
+        source=Path("lyrics.yaml"),
+        duration=4,
+        config=AlignmentConfig(),
+    )
+
+    lines = aligned.sections[0].lines
+    # Each neighbour lends half of the 0.5s the two stranded lines need.
+    assert (lines[1].start, lines[1].end) == pytest.approx((1.75, 2.0))
+    assert (lines[2].start, lines[2].end) == pytest.approx((2.0, 2.25))
+    assert lines[1].status == "unmatched"
+    assert lines[2].status == "unmatched"
+    # The recognized neighbours give up only the borrowed sliver.
+    assert lines[0].end == pytest.approx(1.75)
+    assert lines[3].start == pytest.approx(2.25)
+    assert warnings == (
+        "verse line 2 has no recognized audio window — the surrounding cues are "
+        "adjacent, so it borrowed a 0.250s window and requires manual timing",
+        "verse line 3 has no recognized audio window — the surrounding cues are "
+        "adjacent, so it borrowed a 0.250s window and requires manual timing",
+    )
+
+
+def test_stranded_run_keeps_every_line_ordered_and_positive() -> None:
+    """A long stranded run stays monotonic: the timing editor needs valid spans."""
+    lyrics = StructuredLyrics(
+        version=1,
+        sections=[
+            LyricSection(
+                id="verse",
+                type="verse",
+                lines=[LyricLine(text="Before")]
+                + [LyricLine(text=f"Stranded {index}") for index in range(7)]
+                + [LyricLine(text="After")],
+            )
+        ],
+    )
+    transcription = _transcription(
+        [
+            TranscriptWord("before", 1.0, 2.0),
+            TranscriptWord("after", 2.0, 3.0),
+        ]
+    )
+
+    aligned, warnings = align_lyrics_document(
+        lyrics,
+        transcription,
+        source=Path("lyrics.yaml"),
+        duration=4,
+        config=AlignmentConfig(),
+    )
+
+    lines = aligned.sections[0].lines
+    for line in lines:
+        assert line.end > line.start
+    for current, following in zip(lines, lines[1:], strict=False):
+        assert current.end <= following.start + 1e-9
+    assert all(line.status == "unmatched" for line in lines[1:8])
+    assert len(warnings) == 7
+
+
+def test_stranded_lines_still_fail_when_no_neighbour_can_lend() -> None:
+    from mrp.video.alignment import _borrow_stranded_window, _LineDraft
+
+    def _draft(start: float | None, end: float | None) -> _LineDraft:
+        return _LineDraft(
+            section_index=0,
+            line_index=0,
+            text="line",
+            token_count=1,
+            start=start,
+            end=end,
+            confidence=0,
+            status="matched" if start is not None else "unmatched",
+        )
+
+    # Both neighbours are zero-width, so there is nothing to borrow.
+    drafts = [_draft(2.0, 2.0), _draft(None, None), _draft(2.0, 2.0)]
+    assert _borrow_stranded_window(drafts, 1, 2, 2.0, 2.0, 4.0) is None
+
+
 def test_transcription_adapter_caches_word_timestamps(tmp_path: Path) -> None:
     vocals = tmp_path / "vocals.wav"
     vocals.write_bytes(b"small fixture")
