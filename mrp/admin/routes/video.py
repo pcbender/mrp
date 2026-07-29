@@ -42,6 +42,7 @@ from mrp.admin.video_timecode import seconds as _seconds
 from mrp.admin.video_timing import (
     TimingEditorError,
     add_section,
+    apply_lyric_text,
     fill_gaps,
     load_timing,
     persist_timing,
@@ -396,6 +397,7 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
         "line_start",
         "line_end",
         "line_reviewed",
+        "line_text",
     )
     fields = {name: form.getlist(name) for name in field_names}
     try:
@@ -411,6 +413,11 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
             {"errors": errors},
             status_code=422,
         )
+
+    # A corrected sung line goes back to the release record so the published
+    # lyric and the video agree, and a later re-prepare keeps the fix. It rides
+    # the same validate-then-serialize write as the rest of this handler.
+    lyrics_changed = apply_lyric_text(unit["track"], result["text_changes"])
 
     video = dict(unit["track"].get("music_video") or {})
     video.setdefault(
@@ -433,9 +440,13 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
         )
     persist_timing(root, release, unit["track"], result["document"])
     path.write_text(serialize_structured_record(path, data), encoding="utf-8")
-    response = HTMLResponse(
-        '<div class="flash flash-ok">Timing and review state saved.</div>'
-    )
+    saved = "Timing and review state saved."
+    if lyrics_changed:
+        saved += (
+            f" {lyrics_changed} lyric line{'s' if lyrics_changed != 1 else ''} "
+            "written back to the release record."
+        )
+    response = HTMLResponse(f'<div class="flash flash-ok">{saved}</div>')
     response.headers["HX-Redirect"] = (
         f"/releases/{slug}/tracks/{track_slug}/video/timing"
     )

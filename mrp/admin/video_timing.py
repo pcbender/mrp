@@ -180,6 +180,113 @@ def _warnings(document: Any) -> dict[str, Any]:
     return {"lines": lines, "general": general, "total": len(raw)}
 
 
+# A lyric-source line that is a bare "[Chorus]" marker structures the document
+# rather than being sung, and never appears as a cue.
+_SECTION_MARKER = re.compile(r"^\[[^]]+]$")
+
+
+def release_path(root: Path, release: dict[str, Any]) -> Path:
+    return root / "content" / "releases" / f"{release.get('slug')}.yaml"
+
+
+def _lyric_line_numbers(text: str) -> list[int]:
+    """Indices into text.splitlines() that carry a sung line, in order."""
+    return [
+        index
+        for index, line in enumerate(text.splitlines())
+        if line.strip() and not _SECTION_MARKER.match(line.strip())
+    ]
+
+
+def lyric_source(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    document: Any,
+) -> dict[str, Any]:
+    """Map each aligned cue back to the lyric line it came from.
+
+    The video reads `lyrics_raw` (section markers and all) while the public
+    pages render `lyrics_text`; the two hold the same sung lines in the same
+    order, so one edit maintains both. A cue is only editable when its section
+    still maps one-to-one — display segmentation splits an over-wide line into
+    several cues, and writing a fragment back would corrupt the source.
+    """
+    blocked: str | None = None
+    if track.get("lyrics_source"):
+        blocked = (
+            "lyrics_source points this track at an external lyric file, "
+            "so lyric text is edited there"
+        )
+    raw = str(track.get("lyrics_raw") or "")
+    text = str(track.get("lyrics_text") or "")
+    if not blocked and not (raw or text):
+        blocked = "this track has no lyrics_raw or lyrics_text to write back to"
+    if blocked or document is None:
+        return {"editable": False, "reason": blocked, "lines": {}, "sections": {}}
+
+    from mrp.video.workspace import MRPVideoAdapterError, _lyrics_from_text
+
+    try:
+        structured = _lyrics_from_text(
+            raw or text, instrumental=bool(track.get("instrumental", False))
+        )
+    except MRPVideoAdapterError as exc:
+        return {"editable": False, "reason": str(exc), "lines": {}, "sections": {}}
+
+    offsets: dict[str, int] = {}
+    counts: dict[str, int] = {}
+    cursor = 0
+    for section in structured.sections:
+        offsets[section.id] = cursor
+        counts[section.id] = len(section.lines)
+        cursor += len(section.lines)
+
+    lines: dict[str, int] = {}
+    sections: dict[str, bool] = {}
+    for section in document.sections:
+        matches = section.id in counts and counts[section.id] == len(section.lines)
+        sections[section.id] = matches
+        if not matches:
+            continue
+        for line_index in range(len(section.lines)):
+            lines[f"{section.id}:{line_index}"] = offsets[section.id] + line_index
+    return {
+        "editable": bool(lines),
+        "reason": None if lines else "no section maps one-to-one to the lyric source",
+        "lines": lines,
+        "sections": sections,
+    }
+
+
+def apply_lyric_text(track: dict[str, Any], changes: Mapping[int, str]) -> int:
+    """Fold corrected sung lines into a track's lyrics_raw and lyrics_text.
+
+    Mutates the track in place and returns how many lines changed; the caller
+    owns writing the release record, so the edit rides the normal validate-then
+    -serialize path rather than a second write of the same file. Both fields
+    carry the same sung lines in the same order, so a change at lyric index n
+    applies to line n of each. Section markers and blank lines are untouched.
+    """
+    if not changes:
+        return 0
+    for field in ("lyrics_raw", "lyrics_text"):
+        value = track.get(field)
+        if not value:
+            continue
+        source_lines = str(value).splitlines()
+        numbers = _lyric_line_numbers(str(value))
+        for index, replacement in changes.items():
+            if index >= len(numbers):
+                raise TimingEditorError(
+                    f"{field} holds {len(numbers)} lyric lines but the aligned "
+                    f"document edits line {index + 1}; re-run alignment to resync"
+                )
+            source_lines[numbers[index]] = replacement
+        track[field] = "\n".join(source_lines)
+    return len(changes)
+
+
 def _load(path: Path):
     from mrp.video.project import SpirophonicValidationError, load_aligned_lyrics
 
@@ -255,6 +362,12 @@ def load_timing(
             "gaps": [],
             "warnings": {"lines": {}, "general": [], "total": 0},
             "transcript": None,
+            "lyric_source": {
+                "editable": False,
+                "reason": None,
+                "lines": {},
+                "sections": {},
+            },
         }
     document = _load(path)
     duration = _master_duration(root, release, track)
@@ -267,6 +380,7 @@ def load_timing(
         "gaps": _gaps(document, duration),
         "warnings": _warnings(document),
         "transcript": load_transcript(root, release, track, document),
+        "lyric_source": lyric_source(root, release, track, document),
     }
 
 
@@ -343,6 +457,29 @@ def validate_timing(
     if line_keys != expected_line_keys:
         raise TimingEditorError("line identities or order changed while saving")
 
+    # Lyric text is optional: an older form, or a track whose source cannot be
+    # mapped back, posts timing only. The route whitelists the field name, so
+    # "absent" arrives as an empty list rather than a missing key.
+    line_texts = _field(fields, "line_text", line_count) if fields.get("line_text") else None
+    source = lyric_source(root, release, track, original)
+    text_changes: dict[int, str] = {}
+    if line_texts is not None:
+        original_texts = [
+            line.text for section in original.sections for line in section.lines
+        ]
+        for offset, (key, value) in enumerate(zip(line_keys, line_texts, strict=True)):
+            replacement = value.strip()
+            if replacement == original_texts[offset]:
+                continue
+            if not replacement:
+                raise TimingEditorError(f"line {key} cannot be blank")
+            if key not in source["lines"]:
+                raise TimingEditorError(
+                    f"line {key} cannot be edited here: "
+                    f"{source['reason'] or 'its section does not map to the lyric source'}"
+                )
+            text_changes[source["lines"][key]] = replacement
+
     line_offset = 0
     for section_index, section in enumerate(payload["sections"]):
         section["start"] = _number(
@@ -359,6 +496,10 @@ def validate_timing(
             line["start"] = _number(line_starts[line_offset], f"line {key} start")
             line["end"] = _number(line_ends[line_offset], f"line {key} end")
             line["reviewed"] = _reviewed(line_reviews[line_offset])
+            if line_texts is not None:
+                replacement = line_texts[line_offset].strip()
+                if replacement:
+                    line["text"] = replacement
             line_offset += 1
 
     try:
@@ -382,6 +523,7 @@ def validate_timing(
         "document": updated,
         "summary": _summary(updated),
         "master_duration": duration,
+        "text_changes": text_changes,
     }
 
 
@@ -401,8 +543,14 @@ def save_timing(
     track: dict[str, Any],
     fields: Mapping[str, Sequence[str]],
 ) -> dict[str, Any]:
-    """Validate and atomically replace one track's versioned timing artifact."""
+    """Validate and atomically replace one track's versioned timing artifact.
+
+    Lyric-text edits are folded into the passed track dict; persisting the
+    release record is the caller's job, since it owns the validate-and-
+    serialize path for that file.
+    """
     result = validate_timing(root, release, track, fields)
+    result["lyrics_changed"] = apply_lyric_text(track, result["text_changes"])
     persist_timing(root, release, track, result["document"])
     return result
 

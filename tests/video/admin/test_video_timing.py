@@ -347,6 +347,163 @@ def test_timing_route_marks_only_selected_track_timed(tmp_path: Path, monkeypatc
     assert saved["tracks"][1] == untouched
 
 
+def _lyric_release(tmp_path: Path) -> tuple[dict, Path]:
+    """A release whose track carries both lyric fields, 1:1 with the aligned doc."""
+    release = _release()
+    track = release["tracks"][0]
+    track["lyrics_raw"] = "[Verse]\nFirst lyric\nNeeds attention"
+    track["lyrics_text"] = "First lyric\nNeeds attention"
+    path = tmp_path / "content" / "releases" / "video-contract.yaml"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        yaml.safe_dump({"release": release}, sort_keys=False, allow_unicode=True),
+        encoding="utf-8",
+    )
+    _write_timing(tmp_path, release)
+    return release, path
+
+
+def test_editing_a_cue_writes_the_lyric_back_to_both_fields(tmp_path: Path, monkeypatch):
+    db.init(tmp_path / "admin.db")
+    release, path = _lyric_release(tmp_path)
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    fields = _fields()
+    # Musixmatch wants every vocal sound in the lyric, including the oohs.
+    fields["line_text"] = ["First lyric", "Needs attention, oooh"]
+
+    response = asyncio.run(
+        video_routes.video_timing_save(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/timing",
+                _form_fields(fields),
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.status_code == 200
+    saved = load_structured_record(path)["release"]["tracks"][0]
+    # The section marker survives; only the sung line changed.
+    assert saved["lyrics_raw"] == "[Verse]\nFirst lyric\nNeeds attention, oooh"
+    assert saved["lyrics_text"] == "First lyric\nNeeds attention, oooh"
+    # And the aligned document the renderer reads agrees.
+    document = load_timing(tmp_path, release, release["tracks"][0])["document"]
+    assert document.sections[0].lines[1].text == "Needs attention, oooh"
+
+
+def test_editing_the_very_first_cue_writes_back(tmp_path: Path, monkeypatch):
+    """The first line maps to source offset 0, which is easy to treat as absent."""
+    db.init(tmp_path / "admin.db")
+    release, path = _lyric_release(tmp_path)
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    assert load_timing(tmp_path, release, release["tracks"][0])["lyric_source"][
+        "lines"
+    ]["verse:0"] == 0
+
+    fields = _fields()
+    fields["line_text"] = ["Ooooh, first lyric", "Needs attention"]
+
+    response = asyncio.run(
+        video_routes.video_timing_save(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/timing",
+                _form_fields(fields),
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.status_code == 200
+    saved = load_structured_record(path)["release"]["tracks"][0]
+    assert saved["lyrics_raw"] == "[Verse]\nOoooh, first lyric\nNeeds attention"
+    assert saved["lyrics_text"] == "Ooooh, first lyric\nNeeds attention"
+
+
+def test_editing_a_cue_is_refused_when_the_section_does_not_map_one_to_one(
+    tmp_path: Path, monkeypatch
+):
+    db.init(tmp_path / "admin.db")
+    release, path = _lyric_release(tmp_path)
+    # Display segmentation would split a line into extra cues, so the aligned
+    # document no longer lines up with the source.
+    release["tracks"][0]["lyrics_raw"] = "[Verse]\nFirst lyric"
+    release["tracks"][0]["lyrics_text"] = "First lyric"
+    path.write_text(
+        yaml.safe_dump({"release": release}, sort_keys=False, allow_unicode=True),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    fields = _fields()
+    fields["line_text"] = ["First lyric", "Rewritten"]
+
+    response = asyncio.run(
+        video_routes.video_timing_save(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/timing",
+                _form_fields(fields),
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.status_code == 422
+    assert "cannot be edited here" in response.body.decode()
+    # Nothing was written to either artifact.
+    saved = load_structured_record(path)["release"]["tracks"][0]
+    assert saved["lyrics_text"] == "First lyric"
+    document = load_timing(tmp_path, release, release["tracks"][0])["document"]
+    assert document.sections[0].lines[1].text == "Needs attention"
+
+
+def test_unchanged_lyric_text_touches_neither_the_release_nor_the_document(
+    tmp_path: Path, monkeypatch
+):
+    db.init(tmp_path / "admin.db")
+    release, path = _lyric_release(tmp_path)
+    before = path.read_text(encoding="utf-8")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    fields = _fields()
+    fields["line_text"] = ["First lyric", "Needs attention"]
+
+    response = asyncio.run(
+        video_routes.video_timing_save(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/timing",
+                _form_fields(fields),
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.status_code == 200
+    saved = load_structured_record(path)["release"]["tracks"][0]
+    assert saved["lyrics_raw"] == "[Verse]\nFirst lyric\nNeeds attention"
+    assert saved["lyrics_text"] == "First lyric\nNeeds attention"
+    # No write-back happened, so the flash does not mention lyric lines.
+    assert "lyric line" not in response.body.decode()
+    assert "First lyric" in before
+
+
+def test_lyric_source_file_makes_text_read_only(tmp_path: Path):
+    release, _ = _lyric_release(tmp_path)
+    track = release["tracks"][0]
+    track["lyrics_source"] = "content/lyrics/private-track.yaml"
+
+    timing = load_timing(tmp_path, release, track)
+
+    assert timing["lyric_source"]["editable"] is False
+    assert "external lyric file" in timing["lyric_source"]["reason"]
+    assert timing["lyric_source"]["lines"] == {}
+
+
 def test_timing_route_rejection_does_not_partially_persist_timing(
     tmp_path: Path,
     monkeypatch,
