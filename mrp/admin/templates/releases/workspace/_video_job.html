@@ -14,14 +14,19 @@
   <div class="flash flash-error" style="margin-bottom:.5rem">{{ job_error }}</div>
   {% endif %}
 
-  {% if job %}
+  {# The stage name sits outside the job branch: a never-run stage still needs a
+     heading, or its card is identified only by the button text. #}
   <div style="display:flex;align-items:center;gap:.5rem">
     <strong style="text-transform:capitalize">{{ job_label }}</strong>
+    {% if job %}
     <span class="badge badge-{{ 'live' if job.status == 'done' else ('failed' if job.status in ['error', 'interrupted'] else 'draft') }}">
       {{ job.status }}
     </span>
     <span class="td-mono" style="margin-left:auto;font-size:10px">{{ job.id }}</span>
+    {% endif %}
   </div>
+
+  {% if job %}
   <div class="video-progress" aria-label="{{ job.progress }} percent complete">
     <span style="width:{{ job.progress or 0 }}%"></span>
   </div>
