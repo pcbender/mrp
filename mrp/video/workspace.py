@@ -144,6 +144,7 @@ class PreparedTrack:
     stale_artifacts: tuple[dict[str, Any], ...]
     master_duration: float
     stem_durations: dict[str, float]
+    lyric_directions: tuple[str, ...] = ()
 
     def summary(self) -> dict[str, Any]:
         return {
@@ -165,6 +166,7 @@ class PreparedTrack:
             "stale_artifacts": list(self.stale_artifacts),
             "master_duration": self.master_duration,
             "stem_durations": dict(sorted(self.stem_durations.items())),
+            "lyric_directions": list(self.lyric_directions),
         }
 
 
@@ -469,6 +471,62 @@ def _link_release_project(
     _write_yaml(selection.release_path, selection.document)
 
 
+# Suno and ACE Studio put song structure and performance directions in the same
+# [brackets]: "[Verse 1]" names a section, "[breathy male vocals]" is a note to
+# the generator that is never sung. Only a known structure name opens a section.
+_STRUCTURE_LABELS = frozenset(
+    {
+        "intro",
+        "verse",
+        "chorus",
+        "pre-chorus",
+        "post-chorus",
+        "bridge",
+        "outro",
+        "refrain",
+        "hook",
+        "interlude",
+        "breakdown",
+        "instrumental",
+        "solo",
+        "guitar solo",
+        "coda",
+        "vamp",
+        "tag",
+        "ad-lib",
+    }
+)
+_STRUCTURE_ALIASES = {
+    "pre chorus": "pre-chorus",
+    "prechorus": "pre-chorus",
+    "post chorus": "post-chorus",
+    "postchorus": "post-chorus",
+    "ad lib": "ad-lib",
+    "adlib": "ad-lib",
+    "ad libs": "ad-lib",
+    "ad-libs": "ad-lib",
+    "adlibs": "ad-lib",
+}
+
+
+def _structure_label(label: str, extra: frozenset[str] = frozenset()) -> str | None:
+    """The bracketed label if it names song structure, else None for a direction.
+
+    Trailing numbers are ignored when matching, so "[Verse 1]" and "[Verse 2]"
+    both read as a verse while keeping their distinct ids. A label containing
+    "|" is always treated as structure — the explicit escape hatch for a name
+    this vocabulary does not know.
+    """
+    if "|" in label:
+        return label
+    value = re.sub(r"\s+", " ", label).strip().casefold()
+    value = re.sub(r"\s*\d+$", "", value).strip()
+    canonical = _STRUCTURE_ALIASES.get(value, value)
+    if canonical in _STRUCTURE_LABELS or canonical in extra:
+        return label
+    return None
+
+
 def _section_type(label: str) -> str:
     value = label.split("|", 1)[0].strip().casefold()
     value = re.sub(r"\s+\d+$", "", value)
@@ -488,10 +546,22 @@ def _slugify(value: str) -> str:
     return slug or "section"
 
 
-def _lyrics_from_text(text: str, *, instrumental: bool) -> StructuredLyrics:
+def _lyrics_from_text(
+    text: str,
+    *,
+    instrumental: bool,
+    extra_labels: frozenset[str] = frozenset(),
+) -> tuple[StructuredLyrics, tuple[str, ...]]:
+    """Structure a pasted lyric, returning it with the directions it discarded.
+
+    Performance directions are reported rather than dropped in silence: they
+    vanish from the lyric the video and the published page use, and a lyric
+    losing lines without saying so is the failure mode worth shouting about.
+    """
     sections: list[dict[str, Any]] = []
     current: dict[str, Any] | None = None
     counts: dict[str, int] = defaultdict(int)
+    directions: list[str] = []
 
     def start_section(label: str, section_type: str) -> dict[str, Any]:
         base = _slugify(label.split("|", 1)[0])
@@ -510,9 +580,12 @@ def _lyrics_from_text(text: str, *, instrumental: bool) -> StructuredLyrics:
             continue
         match = _SECTION_PATTERN.fullmatch(line)
         if match:
+            label = _structure_label(match.group("label").strip(), extra_labels)
+            if label is None:
+                directions.append(line)
+                continue
             if current is not None:
                 sections.append(current)
-            label = match.group("label").strip()
             current = start_section(label, _section_type(label))
             continue
         if current is None:
@@ -528,19 +601,22 @@ def _lyrics_from_text(text: str, *, instrumental: bool) -> StructuredLyrics:
     if not sections:
         sections = [start_section("Instrumental", "instrumental")]
     try:
-        return StructuredLyrics.model_validate({"version": 1, "sections": sections})
+        structured = StructuredLyrics.model_validate(
+            {"version": 1, "sections": sections}
+        )
     except ValidationError as exc:
         raise MRPVideoAdapterError(f"could not structure track lyrics: {exc}") from exc
+    return structured, tuple(directions)
 
 
-def _structured_lyrics(selection: _TrackSelection) -> StructuredLyrics:
+def _structured_lyrics(selection: _TrackSelection) -> tuple[StructuredLyrics, tuple[str, ...]]:
     source_value = selection.track.get("lyrics_source")
     if source_value:
         candidate = Path(str(source_value)).expanduser()
         candidate = candidate.resolve() if candidate.is_absolute() else (selection.repo / candidate).resolve()
         if candidate.is_file() and candidate.suffix.casefold() in {".yaml", ".yml"}:
             try:
-                return load_structured_lyrics(candidate)
+                return load_structured_lyrics(candidate), ()
             except SpirophonicValidationError as exc:
                 raise MRPVideoAdapterError(*exc.problems) from exc
     text = str(
@@ -551,6 +627,20 @@ def _structured_lyrics(selection: _TrackSelection) -> StructuredLyrics:
     return _lyrics_from_text(
         text,
         instrumental=bool(selection.track.get("instrumental", False)),
+        extra_labels=track_structure_labels(selection.track),
+    )
+
+
+def track_structure_labels(track: dict[str, Any]) -> frozenset[str]:
+    """Extra bracketed labels this track treats as song structure.
+
+    A one-off a shared vocabulary should not have to carry.
+    """
+    values = track.get("section_tags") or ()
+    return frozenset(
+        re.sub(r"\s+", " ", str(value)).strip().casefold()
+        for value in values
+        if str(value).strip()
     )
 
 
@@ -867,7 +957,7 @@ def prepare_track(
     cover_path = _resolve_input(selection.repo, str(cover_value), "release cover")
     resolved_font = _default_font(font_path)
 
-    lyrics = _structured_lyrics(selection)
+    lyrics, lyric_directions = _structured_lyrics(selection)
     _write_yaml(
         workspace.runtime_lyrics_path,
         lyrics.model_dump(mode="json", exclude_none=True),
@@ -975,6 +1065,7 @@ def prepare_track(
         stale_artifacts=tuple(item for item in stale if item["stale"]),
         master_duration=validation.master_duration,
         stem_durations=validation.stem_durations,
+        lyric_directions=lyric_directions,
     )
     _link_release_project(
         selection,

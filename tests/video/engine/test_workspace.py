@@ -450,3 +450,95 @@ def test_reprepare_does_not_readd_deleted_branding(tmp_path: Path) -> None:
     prepare_track(repo, "fixture-release", font_path=FONT_PATH)
     actors = _project_actors(project_path)
     assert set(actors) == {"artist-fixture-artist"}
+
+
+def test_generator_directions_do_not_become_sections_or_cues() -> None:
+    """Suno brackets both song structure and performance notes.
+
+    "[breathy male vocals]" is an instruction to the generator, never sung, and
+    must not open a section or become a lyric cue.
+    """
+    from mrp.video.workspace import _lyrics_from_text
+
+    lyrics, directions = _lyrics_from_text(
+        "\n".join(
+            [
+                "[Intro]",
+                "[clean electric guitar arpeggios]",
+                "[Verse 1]",
+                "[breathy male vocals]",
+                "Moon low in the eastern sky",
+                "[Chorus]",
+                "[full band, high energy]",
+                "Darkness takes the shadows",
+                "[Verse 2]",
+                "Wind lifts sand and leaves",
+                "[Chorus]",
+                "Darkness takes the shadows",
+            ]
+        ),
+        instrumental=False,
+    )
+
+    # Ids stay distinct while the type groups them, so per-type scene styling
+    # and transitions still match every chorus.
+    assert [section.id for section in lyrics.sections] == [
+        "verse-1",
+        "chorus",
+        "verse-2",
+        "chorus-2",
+    ]
+    assert [section.type for section in lyrics.sections] == [
+        "verse",
+        "chorus",
+        "verse",
+        "chorus",
+    ]
+    # No direction leaked into a sung cue.
+    every_line = [line.text for section in lyrics.sections for line in section.lines]
+    assert every_line == [
+        "Moon low in the eastern sky",
+        "Darkness takes the shadows",
+        "Wind lifts sand and leaves",
+        "Darkness takes the shadows",
+    ]
+    assert directions == (
+        "[clean electric guitar arpeggios]",
+        "[breathy male vocals]",
+        "[full band, high energy]",
+    )
+
+
+def test_a_one_off_structure_label_can_be_declared_per_track() -> None:
+    from mrp.video.workspace import _lyrics_from_text, track_structure_labels
+
+    text = "[Chant]\nHey\n[Chorus]\nDarkness takes the shadows"
+
+    # Unknown marker dropped, but its line is not lost: it lands in the default
+    # opening verse rather than disappearing.
+    without, dropped = _lyrics_from_text(text, instrumental=False)
+    assert [section.id for section in without.sections] == ["verse", "chorus"]
+    assert [line.text for line in without.sections[0].lines] == ["Hey"]
+    assert dropped == ("[Chant]",)
+
+    labels = track_structure_labels({"section_tags": ["Chant"]})
+    with_tag, kept = _lyrics_from_text(text, instrumental=False, extra_labels=labels)
+    assert [section.id for section in with_tag.sections] == ["chant", "chorus"]
+    assert kept == ()
+
+
+def test_a_piped_label_is_always_structure() -> None:
+    """The escape hatch for a name the vocabulary does not know.
+
+    The type still comes from the part before the pipe, as it always has.
+    """
+    from mrp.video.workspace import _lyrics_from_text
+
+    lyrics, directions = _lyrics_from_text(
+        "[Whisper Break|quiet]\nSoftly now", instrumental=False
+    )
+
+    assert directions == ()
+    assert lyrics.sections[0].id == "whisper-break"
+    assert lyrics.sections[0].type == "whisper-break"
+    assert [line.text for line in lyrics.sections[0].lines] == ["Softly now"]
