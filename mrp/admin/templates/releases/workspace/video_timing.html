@@ -77,6 +77,22 @@
 {% set general_warnings = (timing.get('warnings') or {}).get('general') %}
 {% set lyric_source = timing.get('lyric_source') or {} %}
 {% set lyric_editable = lyric_source.get('lines') or {} %}
+{% set directions = timing.get('directions') %}
+{% if directions %}
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="margin:0">Production directions, not sung</h2>
+    <p style="font-size:12px;color:var(--muted);margin:.25rem 0 .5rem">
+      These bracketed lines in the track lyric were read as directions to the generator,
+      so they are not cues and do not appear on screen. Only known structure names
+      ([Verse&nbsp;2], [Chorus], …) open a section.
+    </p>
+    <ul class="timing-warning-list" style="margin-bottom:0">
+      {% for direction in directions %}<li><code>{{ direction }}</code></li>{% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
 {% if lyric_source.get('reason') %}
 <div class="flash flash-error">
   Lyric text is read-only here — {{ lyric_source.get('reason') }}.

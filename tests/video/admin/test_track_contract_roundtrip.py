@@ -107,3 +107,68 @@ def test_admin_release_skeletons_match_single_and_multi_track_cardinality():
         assert "song" not in release
         assert [track["slug"] for track in release["tracks"]] == ["track-1", "track-2"]
         assert validate_release_dict({"release": release}) == []
+
+
+def _save_lyrics(tmp_path: Path, monkeypatch, *, raw: str, text: str):
+    record = _record()
+    track = record["release"]["tracks"][0]
+    track["lyrics_raw"] = "[Verse]\nOld words"
+    track["lyrics_text"] = "Old words"
+    path = tmp_path / "content" / "releases" / "video-contract.yaml"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
+    monkeypatch.setattr(workspace_routes, "get_repo_root", lambda: tmp_path)
+
+    response = asyncio.run(
+        workspace_routes.track_save(
+            _request(
+                "/releases/video-contract/tracks/private-track",
+                [
+                    ("track_title", "Private Track"),
+                    ("track_slug", "private-track"),
+                    ("track_lyrics_raw", raw),
+                    ("track_lyrics_text", text),
+                ],
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+    assert response.status_code == 200
+    return load_structured_record(path)["release"]["tracks"][0]
+
+
+def test_editing_only_the_raw_lyric_rederives_the_published_one(tmp_path, monkeypatch):
+    """The two fields post independently, so a corrected take used to leave the
+    public pages showing the old words."""
+    saved = _save_lyrics(
+        tmp_path,
+        monkeypatch,
+        raw="[Verse 1]\n[breathy male vocals]\nNew words\nSecond line",
+        text="Old words",
+    )
+
+    assert saved["lyrics_raw"] == "[Verse 1]\n[breathy male vocals]\nNew words\nSecond line"
+    # Structure tags and generator directions alike are stripped from the
+    # published lyric.
+    assert saved["lyrics_text"] == "New words\nSecond line"
+
+
+def test_an_explicit_published_lyric_edit_is_not_overwritten(tmp_path, monkeypatch):
+    saved = _save_lyrics(
+        tmp_path,
+        monkeypatch,
+        raw="[Verse]\nNew words",
+        text="Hand written, oooh",
+    )
+
+    assert saved["lyrics_text"] == "Hand written, oooh"
+
+
+def test_leaving_both_lyric_fields_alone_changes_neither(tmp_path, monkeypatch):
+    saved = _save_lyrics(
+        tmp_path, monkeypatch, raw="[Verse]\nOld words", text="Old words"
+    )
+
+    assert saved["lyrics_raw"] == "[Verse]\nOld words"
+    assert saved["lyrics_text"] == "Old words"

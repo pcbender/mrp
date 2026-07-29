@@ -43,16 +43,35 @@ def _preflight_path(root: Path, release: dict[str, Any], track: dict[str, Any]) 
     )
 
 
-def _master_duration(root: Path, release: dict[str, Any], track: dict[str, Any]) -> float | None:
+def _preflight(root: Path, release: dict[str, Any], track: dict[str, Any]) -> dict[str, Any]:
     path = _preflight_path(root, release, track)
     if not path.is_file():
-        return None
+        return {}
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
-        duration = float(value.get("master_duration"))
-    except (OSError, TypeError, ValueError, json.JSONDecodeError):
+    except (OSError, ValueError):
+        return {}
+    return value if isinstance(value, dict) else {}
+
+
+def _master_duration(root: Path, release: dict[str, Any], track: dict[str, Any]) -> float | None:
+    try:
+        duration = float(_preflight(root, release, track).get("master_duration"))
+    except (TypeError, ValueError):
         return None
     return duration if math.isfinite(duration) and duration > 0 else None
+
+
+def lyric_directions(
+    root: Path, release: dict[str, Any], track: dict[str, Any]
+) -> list[str]:
+    """Bracketed performance directions prepare left out of the sung lyric.
+
+    Shown so a line vanishing from the lyric is always visible as a choice
+    rather than a silent loss.
+    """
+    values = _preflight(root, release, track).get("lyric_directions") or []
+    return [str(value) for value in values if str(value).strip()]
 
 
 def transcript_path(
@@ -225,11 +244,17 @@ def lyric_source(
     if blocked or document is None:
         return {"editable": False, "reason": blocked, "lines": {}, "sections": {}}
 
-    from mrp.video.workspace import MRPVideoAdapterError, _lyrics_from_text
+    from mrp.video.workspace import (
+        MRPVideoAdapterError,
+        _lyrics_from_text,
+        track_structure_labels,
+    )
 
     try:
-        structured = _lyrics_from_text(
-            raw or text, instrumental=bool(track.get("instrumental", False))
+        structured, _directions = _lyrics_from_text(
+            raw or text,
+            instrumental=bool(track.get("instrumental", False)),
+            extra_labels=track_structure_labels(track),
         )
     except MRPVideoAdapterError as exc:
         return {"editable": False, "reason": str(exc), "lines": {}, "sections": {}}
@@ -362,6 +387,7 @@ def load_timing(
             "gaps": [],
             "warnings": {"lines": {}, "general": [], "total": 0},
             "transcript": None,
+            "directions": lyric_directions(root, release, track),
             "lyric_source": {
                 "editable": False,
                 "reason": None,
@@ -380,6 +406,7 @@ def load_timing(
         "gaps": _gaps(document, duration),
         "warnings": _warnings(document),
         "transcript": load_transcript(root, release, track, document),
+        "directions": lyric_directions(root, release, track),
         "lyric_source": lyric_source(root, release, track, document),
     }
 

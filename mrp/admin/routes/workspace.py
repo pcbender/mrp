@@ -28,6 +28,7 @@ from mrp.admin.workspace import (
     track_units,
     validate_release_dict,
 )
+from mrp.core.lyrics_text import clean_lyrics, extract_primary_section
 from mrp.core.migrate_site import load_structured_record, serialize_structured_record
 
 router = APIRouter()
@@ -778,11 +779,28 @@ async def track_save(request: Request, slug: str, track_slug: str):
     form_data = await request.form()
     form = dict(form_data)
 
+    # Re-derive the published lyric when only the raw one was edited. The two
+    # fields post independently, so pasting a corrected take into lyrics_raw and
+    # leaving lyrics_text alone used to leave the public pages on the old words.
+    submitted_raw = str_or_none(form["track_lyrics_raw"]) if "track_lyrics_raw" in form else None
+    submitted_text = str_or_none(form["track_lyrics_text"]) if "track_lyrics_text" in form else None
+    rederive_lyrics = (
+        "track_lyrics_raw" in form
+        and submitted_raw != track.get("lyrics_raw")
+        and submitted_text == track.get("lyrics_text")
+    )
+
     for k in ["title", "slug", "isrc", "duration", "preview_audio", "master_path",
               "lyrics_text", "lyrics_raw", "lyrics_source", "style"]:
         field = f"track_{k}"
         if field in form:
             track[k] = str_or_none(form[field])
+    if rederive_lyrics:
+        track["lyrics_text"] = (
+            clean_lyrics(extract_primary_section(submitted_raw)) or None
+            if submitted_raw
+            else None
+        )
     if not track.get("title") and "track_title" in form:
         track["title"] = form["track_title"]
     if not track.get("slug"):
