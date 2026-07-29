@@ -312,6 +312,50 @@
   <button type="submit" class="btn btn-primary" style="margin-top:.75rem">Save timing</button>
 </form>
 
+{% set cue_sections = [] %}
+{% for section in timing.document.sections %}
+{% if section.lines and lyric_editable.get(section.id ~ ':0') is not none %}
+{% set _ = cue_sections.append(section) %}
+{% endif %}
+{% endfor %}
+{% if cue_sections %}
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="margin:0">Add a cue</h2>
+    <p style="font-size:12px;color:var(--muted);margin:.25rem 0 .75rem">
+      For something the take sings that the lyric never had — an "oooh", an ad-lib. The
+      cue is added to the track lyric as well as the video, so the published words match
+      what is heard. Its place in the section follows from its start time.
+      {% if audio_available %}Use ● to take the times from the playhead.{% endif %}
+    </p>
+    <form class="timing-add-scene"
+          hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/timing/line"
+          hx-target="#timing-result" hx-swap="innerHTML">
+      <label>Section
+        <select name="section_id" required>
+          {% for section in cue_sections %}
+          <option value="{{ section.id }}">{{ section.label or section.id }}
+            ({{ '%.1f' | format(section.start) }}–{{ '%.1f' | format(section.end) }}s)</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>Sung words
+        <input type="text" name="line_text" required placeholder="oooh">
+      </label>
+      <label>Start
+        <input id="add-cue-start" type="number" name="line_start" min="0" step="0.001" required>
+      </label>
+      <button type="button" class="timing-playhead-button" onclick="timingSet('add-cue-start')" title="Use playhead">●</button>
+      <label>End
+        <input id="add-cue-end" type="number" name="line_end" min="0.001" step="0.001" required>
+      </label>
+      <button type="button" class="timing-playhead-button" onclick="timingSet('add-cue-end')" title="Use playhead">●</button>
+      <button type="submit" class="btn btn-secondary">Add cue</button>
+    </form>
+  </div>
+</div>
+{% endif %}
+
 <script src="/static/video-timecode.js"></script>
 <script>
 const timingAudio = document.getElementById('timing-audio');

@@ -347,8 +347,12 @@ def test_timing_route_marks_only_selected_track_timed(tmp_path: Path, monkeypatc
     assert saved["tracks"][1] == untouched
 
 
-def _lyric_release(tmp_path: Path) -> tuple[dict, Path]:
-    """A release whose track carries both lyric fields, 1:1 with the aligned doc."""
+def _lyric_release(tmp_path: Path, *, gap: bool = False) -> tuple[dict, Path]:
+    """A release whose track carries both lyric fields, 1:1 with the aligned doc.
+
+    With gap=True the two cues leave room at 1.0-1.5s and 3.5-4.0s, so a new
+    cue has somewhere to land.
+    """
     release = _release()
     track = release["tracks"][0]
     track["lyrics_raw"] = "[Verse]\nFirst lyric\nNeeds attention"
@@ -359,7 +363,15 @@ def _lyric_release(tmp_path: Path) -> tuple[dict, Path]:
         yaml.safe_dump({"release": release}, sort_keys=False, allow_unicode=True),
         encoding="utf-8",
     )
-    _write_timing(tmp_path, release)
+    written = _write_timing(tmp_path, release)
+    if gap:
+        document = _aligned()
+        document["sections"][0]["lines"][0]["end"] = 1.0
+        document["sections"][0]["lines"][1]["start"] = 1.5
+        document["sections"][0]["lines"][1]["end"] = 3.5
+        written.write_text(
+            yaml.safe_dump(document, sort_keys=False), encoding="utf-8"
+        )
     return release, path
 
 
@@ -423,6 +435,121 @@ def test_editing_the_very_first_cue_writes_back(tmp_path: Path, monkeypatch):
     assert saved["lyrics_text"] == "Ooooh, first lyric\nNeeds attention"
 
 
+def _add_cue(tmp_path: Path, **overrides) -> object:
+    fields = {
+        "section_id": "verse",
+        "line_text": "Oooh",
+        "line_start": "1.2",
+        "line_end": "1.45",
+    }
+    fields.update(overrides)
+    return asyncio.run(
+        video_routes.video_timing_add_line(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/timing/line",
+                list(fields.items()),
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+
+def test_adding_a_cue_writes_it_into_the_document_and_the_lyric(
+    tmp_path: Path, monkeypatch
+):
+    db.init(tmp_path / "admin.db")
+    release, path = _lyric_release(tmp_path, gap=True)
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    # Into the gap between "First lyric" (0-1.0) and "Needs attention" (1.5-3.5).
+    response = _add_cue(tmp_path, line_start="1.1", line_end="1.4")
+
+    assert response.status_code == 200
+    saved = load_structured_record(path)["release"]["tracks"][0]
+    assert saved["lyrics_raw"] == "[Verse]\nFirst lyric\nOooh\nNeeds attention"
+    assert saved["lyrics_text"] == "First lyric\nOooh\nNeeds attention"
+    lines = load_timing(tmp_path, release, release["tracks"][0])["document"].sections[
+        0
+    ].lines
+    assert [line.text for line in lines] == ["First lyric", "Oooh", "Needs attention"]
+    # Hand-added cues are reviewed by definition and carry no aligner status.
+    assert lines[1].reviewed is True
+    assert lines[1].status is None
+
+
+def test_a_cue_added_at_the_end_of_a_section_lands_before_the_next_marker(
+    tmp_path: Path, monkeypatch
+):
+    db.init(tmp_path / "admin.db")
+    release, path = _lyric_release(tmp_path, gap=True)
+    # A second section follows, so a naive offset would insert after its marker.
+    release["tracks"][0]["lyrics_raw"] = (
+        "[Verse]\nFirst lyric\nNeeds attention\n[Chorus]\nHook line"
+    )
+    release["tracks"][0]["lyrics_text"] = "First lyric\nNeeds attention\nHook line"
+    path.write_text(
+        yaml.safe_dump({"release": release}, sort_keys=False, allow_unicode=True),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    response = _add_cue(tmp_path, line_start="3.6", line_end="3.9")
+
+    assert response.status_code == 200
+    saved = load_structured_record(path)["release"]["tracks"][0]
+    assert saved["lyrics_raw"] == (
+        "[Verse]\nFirst lyric\nNeeds attention\nOooh\n[Chorus]\nHook line"
+    )
+    assert saved["lyrics_text"] == "First lyric\nNeeds attention\nOooh\nHook line"
+
+
+def test_adding_a_cue_at_the_head_of_a_section_precedes_its_first_line(
+    tmp_path: Path, monkeypatch
+):
+    db.init(tmp_path / "admin.db")
+    release, path = _lyric_release(tmp_path, gap=True)
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    response = _add_cue(tmp_path, line_start="0.0", line_end="0.4")
+
+    assert response.status_code == 422
+    # 0-0.4 overlaps "First lyric" at 0-1.5, so it is refused rather than guessed.
+    assert "overlaps" in response.body.decode()
+
+
+@pytest.mark.parametrize(
+    "overrides, expected",
+    [
+        ({"line_text": "  "}, "lyric text is required"),
+        ({"line_text": "[Chorus]"}, "cannot be a [section] marker"),
+        ({"line_start": "3.0", "line_end": "2.0"}, "must be greater than"),
+        ({"line_start": "5.5", "line_end": "5.9"}, "falls outside section"),
+        ({"line_start": "0.5", "line_end": "0.9"}, "overlaps"),
+        ({"section_id": "nope"}, "unknown section"),
+        ({"section_id": "break"}, "no existing cue to anchor against"),
+    ],
+)
+def test_adding_a_cue_is_refused_and_changes_nothing(
+    tmp_path: Path, monkeypatch, overrides, expected
+):
+    db.init(tmp_path / "admin.db")
+    release, path = _lyric_release(tmp_path, gap=True)
+    before = path.read_text(encoding="utf-8")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    response = _add_cue(tmp_path, **overrides)
+
+    assert response.status_code == 422
+    assert expected in response.body.decode()
+    assert path.read_text(encoding="utf-8") == before
+    document = load_timing(tmp_path, release, release["tracks"][0])["document"]
+    assert [line.text for line in document.sections[0].lines] == [
+        "First lyric",
+        "Needs attention",
+    ]
+
+
 def test_editing_a_cue_is_refused_when_the_section_does_not_map_one_to_one(
     tmp_path: Path, monkeypatch
 ):
@@ -465,7 +592,7 @@ def test_unchanged_lyric_text_touches_neither_the_release_nor_the_document(
     tmp_path: Path, monkeypatch
 ):
     db.init(tmp_path / "admin.db")
-    release, path = _lyric_release(tmp_path)
+    release, path = _lyric_release(tmp_path, gap=True)
     before = path.read_text(encoding="utf-8")
     monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
 

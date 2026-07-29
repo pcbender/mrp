@@ -41,6 +41,7 @@ from mrp.admin.video_publication import (
 from mrp.admin.video_timecode import seconds as _seconds
 from mrp.admin.video_timing import (
     TimingEditorError,
+    add_line,
     add_section,
     apply_lyric_text,
     fill_gaps,
@@ -524,6 +525,52 @@ async def video_timing_add_section(request: Request, slug: str, track_slug: str)
         return _timing_errors(request, exc)
     return _timing_redirect(
         request, slug, track_slug, f"Added scene {result['section_id']}."
+    )
+
+
+@router.post(
+    "/releases/{slug}/tracks/{track_slug}/video/timing/line",
+    response_class=HTMLResponse,
+)
+async def video_timing_add_line(request: Request, slug: str, track_slug: str):
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.is_file():
+        return _not_found(track_slug)
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    unit = _unit(release, track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    form = await request.form()
+    try:
+        result = add_line(
+            root,
+            release,
+            unit["track"],
+            section_id=str(form.get("section_id") or ""),
+            text=str(form.get("line_text") or ""),
+            start=str(form.get("line_start") or ""),
+            end=str(form.get("line_end") or ""),
+        )
+    except TimingEditorError as exc:
+        return _timing_errors(request, exc)
+    # add_line folded the new cue into the track's lyric fields; persist the
+    # release record through the same validated path a timing save uses.
+    errors = validate_release_dict(data)
+    if errors:
+        return _templates.TemplateResponse(
+            request,
+            "releases/_validation.html",
+            {"errors": errors},
+            status_code=422,
+        )
+    path.write_text(serialize_structured_record(path, data), encoding="utf-8")
+    return _timing_redirect(
+        request,
+        slug,
+        track_slug,
+        f"Added a cue to {result['section_id']} and to the track lyric.",
     )
 
 
