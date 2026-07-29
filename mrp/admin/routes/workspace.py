@@ -795,6 +795,16 @@ async def track_save(request: Request, slug: str, track_slug: str):
         field = f"track_{k}"
         if field in form:
             track[k] = str_or_none(form[field])
+    if "track_section_tags" in form:
+        tags = [
+            " ".join(value.split())
+            for value in str(form["track_section_tags"]).split(",")
+            if value.strip()
+        ]
+        if tags:
+            track["section_tags"] = tags
+        else:
+            track.pop("section_tags", None)
     if rederive_lyrics:
         track["lyrics_text"] = (
             clean_lyrics(extract_primary_section(submitted_raw)) or None

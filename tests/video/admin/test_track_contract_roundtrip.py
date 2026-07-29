@@ -172,3 +172,51 @@ def test_leaving_both_lyric_fields_alone_changes_neither(tmp_path, monkeypatch):
 
     assert saved["lyrics_raw"] == "[Verse]\nOld words"
     assert saved["lyrics_text"] == "Old words"
+
+
+def test_section_tags_round_trip_through_the_track_editor(tmp_path, monkeypatch):
+    """A one-off structure name the shared vocabulary should not have to carry."""
+    record = _record()
+    path = tmp_path / "content" / "releases" / "video-contract.yaml"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
+    monkeypatch.setattr(workspace_routes, "get_repo_root", lambda: tmp_path)
+
+    def _save(value: str) -> dict:
+        response = asyncio.run(
+            workspace_routes.track_save(
+                _request(
+                    "/releases/video-contract/tracks/private-track",
+                    [
+                        ("track_title", "Private Track"),
+                        ("track_slug", "private-track"),
+                        ("track_section_tags", value),
+                    ],
+                ),
+                "video-contract",
+                "private-track",
+            )
+        )
+        assert response.status_code == 200
+        return load_structured_record(path)["release"]["tracks"][0]
+
+    saved = _save("Chant,  Whisper   Break ")
+    assert saved["section_tags"] == ["Chant", "Whisper Break"]
+    assert not validate_release_dict(load_structured_record(path))
+
+    # Clearing the field drops the key rather than storing an empty list.
+    assert "section_tags" not in _save("")
+
+
+def test_a_declared_section_tag_opens_a_section_in_the_video_lyrics(tmp_path):
+    from mrp.video.workspace import _lyrics_from_text, track_structure_labels
+
+    track = {"section_tags": ["Chant"], "lyrics_raw": "[Chant]\nHey\n[Chorus]\nHook"}
+    lyrics, directions = _lyrics_from_text(
+        track["lyrics_raw"],
+        instrumental=False,
+        extra_labels=track_structure_labels(track),
+    )
+
+    assert [section.id for section in lyrics.sections] == ["chant", "chorus"]
+    assert directions == ()
