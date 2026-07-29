@@ -1,4 +1,22 @@
 {% set wf = workflow %}
+
+{# A bare "verification failed" names no file and no fix. The checker already
+   returns exactly what it found, so both rungs show it the same way. #}
+{% macro deploy_failure(label, result) -%}
+<div class="flash flash-error">{{ label }} failed at {{ result.stage or "?" }}: {{ result.message }}</div>
+{% if result.verify_errors %}
+<ul class="publish-verify-errors">
+  {% for problem in result.verify_errors[:10] %}<li>{{ problem.message or problem }}</li>{% endfor %}
+  {% if result.verify_errors | length > 10 %}
+  <li>…and {{ result.verify_errors | length - 10 }} more.</li>
+  {% endif %}
+</ul>
+{% endif %}
+{% if result.verify_report %}
+<div class="commit-note">Full report: <code>{{ result.verify_report }}</code></div>
+{% endif %}
+{%- endmacro %}
+
 {% if error %}<div class="flash flash-error">{{ error }}</div>{% endif %}
 {% if verify_error %}<div class="flash flash-error">{{ verify_error }}</div>{% endif %}
 
@@ -12,11 +30,11 @@
         {% if stage_job and stage_job.status in ("pending", "running") %}
         <div class="stage-running" hx-get="/changes/stage/poll/{{ stage_job_id }}"
              hx-trigger="load delay:2s" hx-target="#publish-ladder" hx-swap="innerHTML">
-          <span class="spinner"></span> Building the site &amp; deploying to staging…
+          <span class="spinner"></span> Building the site, deploying to staging &amp; verifying…
         </div>
         {% else %}
           {% if stage_result and stage_result.status not in (none, "passed") %}
-          <div class="flash flash-error">Staging failed at {{ stage_result.stage or "?" }}: {{ stage_result.message }}</div>
+          {{ deploy_failure("Staging", stage_result) }}
           {% elif stage_job and stage_job.status == "error" %}
           <div class="flash flash-error">Staging deploy errored: {{ stage_job.output }}</div>
           {% endif %}
@@ -62,7 +80,7 @@
         </div>
         {% else %}
           {% if prod_result and prod_result.status not in (none, "passed") %}
-          <div class="flash flash-error">Production failed at {{ prod_result.stage or "?" }}: {{ prod_result.message }}</div>
+          {{ deploy_failure("Production", prod_result) }}
           {% elif prod_job and prod_job.status == "error" %}
           <div class="flash flash-error">Production deploy errored: {{ prod_job.output }}</div>
           {% endif %}

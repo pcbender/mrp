@@ -219,3 +219,69 @@ def test_affected_pages_builds_release_and_artist_urls():
         "https://staging.example.com/releases/burn-me/",
         "https://staging.example.com/artists/stab/",
     }
+
+
+def _stub_staging_deploy(monkeypatch, verify_status, verify_errors=()):
+    """Drive run_staging_deploy without a real build, rsync or SSH."""
+    import sys
+    import types
+
+    build = types.ModuleType("mrp.core.build")
+    build.build_repository = lambda _root: {"status": "passed", "build_id": "b1"}
+    deploy = types.ModuleType("mrp.core.deploy")
+    deploy.stage_build = lambda _root, build, target: {
+        "status": "passed", "target": target, "report_path": "reports/d.json"
+    }
+    verify = types.ModuleType("mrp.core.verify")
+    verify.verify_target = lambda _root, target: {
+        "status": verify_status,
+        "report_path": "reports/v.json",
+        "errors": list(verify_errors),
+    }
+    for name, module in (
+        ("mrp.core.build", build),
+        ("mrp.core.deploy", deploy),
+        ("mrp.core.verify", verify),
+    ):
+        monkeypatch.setitem(sys.modules, name, module)
+
+
+def test_staging_deploy_verifies_content_before_recording(tmp_path, monkeypatch):
+    """Staging must catch what production used to discover after going live.
+
+    Verification ran only on production, and only after the rsync, so a broken
+    link reached the public site before anything objected. Staging now runs the
+    same checker against the same build.
+    """
+    root = _repo(tmp_path)
+    _stub_staging_deploy(monkeypatch, "passed")
+
+    result = publish_state.run_staging_deploy(str(root), "sig-1")
+
+    assert result["status"] == "passed"
+    assert result["verify_status"] == "passed"
+    assert publish_state.load_state(root)["staging"]["build_id"] == "b1"
+
+
+def test_failed_staging_verification_blocks_promotion(tmp_path, monkeypatch):
+    """A build that fails verification must not become promotable.
+
+    Recording staging is what unlocks the production rung, so a failed check has
+    to leave that state untouched, and has to surface what it found rather than
+    a bare "verification failed".
+    """
+    root = _repo(tmp_path)
+    _stub_staging_deploy(
+        monkeypatch,
+        "failed",
+        [{"field": "internal_link", "message": "links to missing path: /releases/gone/"}],
+    )
+
+    result = publish_state.run_staging_deploy(str(root), "sig-1")
+
+    assert result["status"] == "failed"
+    assert result["stage"] == "verify"
+    assert "gone" in result["verify_errors"][0]["message"]
+    assert result["verify_report"] == "reports/v.json"
+    # Nothing recorded, so the ladder cannot offer production.
+    assert publish_state.load_state(root).get("staging") in (None, {})

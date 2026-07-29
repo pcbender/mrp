@@ -12,6 +12,7 @@ import yaml
 from mrp.core.deploy import load_targets, validate_rsync_target, validate_target
 from mrp.core.output import path_from_report
 from mrp.core.public_media import public_video_enabled
+from mrp.core.validate import PUBLISHABLE_STATUSES
 
 
 CONTENT_EXTENSIONS = {".yaml", ".yml", ".json"}
@@ -125,9 +126,21 @@ def check_required_files(result: dict[str, Any], target_path: Path) -> None:
         check_file(result, target_path / relative, relative)
 
 
+def _is_published(release: dict[str, Any]) -> bool:
+    """Does the public site build a page for this release?
+
+    The site keeps one set of publishable statuses and renders nothing outside
+    it, so the checks below have to ask the same question. They used to skip
+    only ``draft``, which meant an archived release — deliberately withdrawn,
+    correctly absent from the build — was reported as a missing required file
+    and failed production verification for doing exactly what it should.
+    """
+    return release.get("status") in PUBLISHABLE_STATUSES
+
+
 def check_release_pages(result: dict[str, Any], target_path: Path, releases: list[dict[str, Any]]) -> None:
     for release in releases:
-        if release.get("status") == "draft":
+        if not _is_published(release):
             continue
         relative = f"releases/{release['slug']}/index.html"
         check_file(result, target_path / relative, relative)
@@ -144,7 +157,7 @@ def check_artist_pages(result: dict[str, Any], target_path: Path, artists: list[
 
 def check_cover_images(result: dict[str, Any], target_path: Path, releases: list[dict[str, Any]]) -> None:
     for release in releases:
-        if release.get("status") == "draft":
+        if not _is_published(release):
             continue
         cover = release.get("cover_image")
         if not cover:
@@ -161,7 +174,7 @@ def check_music_videos(
 ) -> None:
     checked = 0
     for release in releases:
-        if release.get("status") == "draft":
+        if not _is_published(release):
             continue
         song = release.get("song")
         tracks = release.get("tracks") if isinstance(release.get("tracks"), list) else []
