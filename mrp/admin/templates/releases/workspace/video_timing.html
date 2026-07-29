@@ -73,6 +73,62 @@
   </div>
 </div>
 
+{% set transcript = timing.get('transcript') %}
+{% set general_warnings = (timing.get('warnings') or {}).get('general') %}
+{% if transcript or general_warnings %}
+<div class="form-card">
+  <div class="form-body">
+    <h2 style="margin:0">What the take actually sings</h2>
+    <p style="font-size:12px;color:var(--muted);margin:.25rem 0 .75rem">
+      Whisper's transcript of the vocals stem, with times. An AI vocal take does not
+      always follow the submitted lyric, so where the two disagree this is the record
+      of what was sung — use it to place cues the aligner could not.
+      {% if transcript %}<code style="font-size:10px">{{ transcript.path }}</code>{% endif %}
+    </p>
+
+    {% if general_warnings %}
+    <ul class="timing-warning-list">
+      {% for warning in general_warnings %}<li>{{ warning }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if transcript %}
+    <div class="table-wrap">
+      <table class="track-matrix">
+        <thead><tr><th style="width:9rem">Heard at</th><th>Words</th></tr></thead>
+        <tbody>
+          {% for segment in transcript.segments %}
+          <tr>
+            <td class="td-mono" style="white-space:nowrap">
+              {{ '%.3f' | format(segment.start) }}s
+              <span style="color:var(--muted)">→ {{ '%.3f' | format(segment.end) }}s</span>
+            </td>
+            <td>
+              <div class="timing-heard">{{ segment.text or '—' }}</div>
+              {% if segment.words %}
+              <details class="timing-heard-words">
+                <summary>{{ segment.words | length }} word timings</summary>
+                <div class="timing-word-grid">
+                  {% for word in segment.words %}
+                  <span><code>{{ '%.3f' | format(word.start) }}</code> {{ word.text }}</span>
+                  {% endfor %}
+                </div>
+              </details>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin:.5rem 0 0">
+      {{ transcript.segments | length }} segments · {{ transcript.word_count }} recognized words
+    </p>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
 <div class="form-card">
   <div class="form-body">
     <h2 style="margin:0">Gaps &amp; scenes</h2>
@@ -197,7 +253,15 @@
           {% set line_index = loop.index0 %}
           {% set display_status = 'manual' if line.reviewed is true and line.status in ['uncertain', 'unmatched'] else line.status or 'manual' %}
           <tr class="{{ 'timing-needs-review' if line.status in ['uncertain', 'unmatched'] and line.reviewed is not true else '' }}">
-            <td class="timing-lyric">{{ line.text }}</td>
+            <td class="timing-lyric">
+              {{ line.text }}
+              {% set line_notes = (timing.get('warnings') or {}).get('lines', {}).get(section.id ~ ':' ~ line_index) %}
+              {% if line_notes %}
+              {% for note in line_notes %}
+              <div class="timing-line-note">{{ note }}</div>
+              {% endfor %}
+              {% endif %}
+            </td>
             <td><span class="timing-status timing-status-{{ display_status }}">{{ display_status }}</span></td>
             <td class="td-mono">{% if line.confidence is not none %}{{ '%.1f' | format(line.confidence * 100) }}%{% else %}—{% endif %}</td>
             <td>

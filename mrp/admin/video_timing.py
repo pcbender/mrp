@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import math
 import os
+import re
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
@@ -52,6 +53,131 @@ def _master_duration(root: Path, release: dict[str, Any], track: dict[str, Any])
     except (OSError, TypeError, ValueError, json.JSONDecodeError):
         return None
     return duration if math.isfinite(duration) and duration > 0 else None
+
+
+def transcript_path(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    cache_key: str,
+) -> Path:
+    return (
+        root
+        / "assets"
+        / "processed"
+        / "video"
+        / track_key(release, track)
+        / "analysis"
+        / "cache"
+        / "alignment"
+        / "transcriptions"
+        / f"{cache_key}.json"
+    )
+
+
+def load_transcript(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    document: Any,
+) -> dict[str, Any] | None:
+    """The cached Whisper transcript behind an aligned document.
+
+    An AI vocal take is the artifact of record — it does not always follow the
+    submitted lyric — so the editor shows what was actually sung, with times,
+    beside the canonical lines. Returns None when no transcript is on disk.
+    """
+    metadata = getattr(document, "alignment", None) if document is not None else None
+    cache_key = getattr(metadata, "transcription_cache_key", None)
+    if not cache_key:
+        return None
+    path = transcript_path(root, release, track, str(cache_key))
+    if not path.is_file():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    response = payload.get("response")
+    if not isinstance(response, Mapping):
+        return None
+
+    words = [
+        {
+            "start": float(word["start"]),
+            "end": float(word["end"]),
+            "text": str(word.get("word", "")).strip(),
+        }
+        for word in response.get("words") or []
+        if _is_number(word.get("start")) and _is_number(word.get("end"))
+    ]
+    segments = []
+    for segment in response.get("segments") or []:
+        if not (_is_number(segment.get("start")) and _is_number(segment.get("end"))):
+            continue
+        start = float(segment["start"])
+        end = float(segment["end"])
+        segments.append(
+            {
+                "start": start,
+                "end": end,
+                "text": str(segment.get("text", "")).strip(),
+                "words": [word for word in words if start <= word["start"] <= end],
+            }
+        )
+    if not segments and words:
+        segments = [
+            {
+                "start": words[0]["start"],
+                "end": words[-1]["end"],
+                "text": " ".join(word["text"] for word in words),
+                "words": words,
+            }
+        ]
+    if not segments:
+        return None
+    return {
+        "path": path.relative_to(root).as_posix(),
+        "segments": segments,
+        "word_count": len(words),
+    }
+
+
+def _is_number(value: Any) -> bool:
+    try:
+        return math.isfinite(float(value))
+    except (TypeError, ValueError):
+        return False
+
+
+# Alignment warnings are emitted as "<section id> line <n> <detail>"; anything
+# that does not fit that shape is a document-level warning.
+_LINE_WARNING = re.compile(r"^(?P<section>\S+) line (?P<line>\d+) (?P<detail>.+)$")
+
+
+def _warnings(document: Any) -> dict[str, Any]:
+    """Split alignment warnings into per-line notes and document-level ones.
+
+    Line notes are keyed "<section id>:<zero-based line index>" to match the
+    line_key the editor already posts back.
+    """
+    metadata = getattr(document, "alignment", None) if document is not None else None
+    raw = list(getattr(metadata, "warnings", None) or [])
+    lines: dict[str, list[str]] = {}
+    general: list[str] = []
+    for warning in raw:
+        match = _LINE_WARNING.match(str(warning))
+        if not match:
+            general.append(str(warning))
+            continue
+        index = int(match.group("line")) - 1
+        if index < 0:
+            general.append(str(warning))
+            continue
+        lines.setdefault(f"{match.group('section')}:{index}", []).append(
+            match.group("detail")
+        )
+    return {"lines": lines, "general": general, "total": len(raw)}
 
 
 def _load(path: Path):
@@ -127,6 +253,8 @@ def load_timing(
             "summary": None,
             "master_duration": _master_duration(root, release, track),
             "gaps": [],
+            "warnings": {"lines": {}, "general": [], "total": 0},
+            "transcript": None,
         }
     document = _load(path)
     duration = _master_duration(root, release, track)
@@ -137,6 +265,8 @@ def load_timing(
         "summary": _summary(document),
         "master_duration": duration,
         "gaps": _gaps(document, duration),
+        "warnings": _warnings(document),
+        "transcript": load_transcript(root, release, track, document),
     }
 
 
