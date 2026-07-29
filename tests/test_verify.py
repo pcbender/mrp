@@ -526,3 +526,62 @@ def test_verify_excluded_clone_path_fails(tmp_path):
     payload = json.loads(result.stdout)
     assert payload["status"] == "failed"
     assert any(error["field"] == "clone.excluded_path" for error in payload["errors"])
+
+
+def test_withdrawn_releases_are_not_required_to_have_pages(tmp_path: Path) -> None:
+    """Verification must ask the same question the site build asks.
+
+    The site renders only publishable statuses, so an archived release has no
+    page by design. The checks used to skip just ``draft``, which turned a
+    correctly withdrawn release into "Missing required file" and failed
+    production verification for behaving properly.
+    """
+    from mrp.core.verify import check_cover_images, check_music_videos, check_release_pages
+
+    build = tmp_path / "build"
+    (build / "releases" / "live-one").mkdir(parents=True)
+    (build / "releases" / "live-one" / "index.html").write_text("<html></html>")
+    cover = build / "images" / "live-one.jpg"
+    cover.parent.mkdir(parents=True)
+    cover.write_bytes(b"jpeg")
+
+    releases = [
+        {
+            "id": "live-one",
+            "slug": "live-one",
+            "status": "live",
+            "cover_image": "site/public/images/live-one.jpg",
+        },
+        # Withdrawn: the build deliberately contains neither page nor cover.
+        {
+            "id": "gone",
+            "slug": "gone",
+            "status": "archived",
+            "cover_image": "site/public/images/gone.jpg",
+        },
+        {"id": "wip", "slug": "wip", "status": "draft", "cover_image": None},
+    ]
+
+    for check in (check_release_pages, check_cover_images):
+        result: dict = {"checks": [], "errors": []}
+        check(result, build, releases)
+        assert result["errors"] == [], f"{check.__name__} flagged a withdrawn release"
+
+    result = {"checks": [], "errors": []}
+    check_music_videos(result, build, releases)
+    assert result["errors"] == []
+
+
+def test_published_releases_are_still_required_to_have_pages(tmp_path: Path) -> None:
+    """Narrowing the status set must not stop it catching a real omission."""
+    from mrp.core.verify import check_release_pages
+
+    build = tmp_path / "build"
+    build.mkdir()
+    result: dict = {"checks": [], "errors": []}
+
+    check_release_pages(result, build, [{"id": "x", "slug": "x", "status": "live"}])
+
+    assert [error["message"] for error in result["errors"]] == [
+        "Missing required file: releases/x/index.html"
+    ]

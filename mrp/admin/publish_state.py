@@ -217,13 +217,20 @@ def affected_pages(changes: list[dict], base_url: str) -> list[dict[str, str]]:
 
 
 def run_staging_deploy(root_str: str, signature: str) -> dict[str, Any]:
-    """Background-job body: build the whole site, then rsync to staging.
+    """Background-job body: build the whole site, rsync to staging, then verify.
+
+    Verification used to run only on production, and only *after* the rsync, so
+    the first thing to notice a bad link or a missing page was the public site.
+    Staging exists to absorb that, so it runs the same ``verify_target`` against
+    the same build. Staging is only recorded when the content checks pass, which
+    keeps a failed build from being promotable.
 
     On success, records staging state against ``signature``. Returns a compact
     result the poll template renders.
     """
     from mrp.core.build import build_repository
     from mrp.core.deploy import stage_build
+    from mrp.core.verify import verify_target
 
     root = Path(root_str)
     build = build_repository(root)
@@ -241,8 +248,20 @@ def run_staging_deploy(root_str: str, signature: str) -> dict[str, Any]:
         "message": deploy.get("message"),
         "report": deploy.get("report_path"),
     }
-    if deploy.get("status") == "passed":
-        record_staging(root, signature, build.get("build_id"), deploy.get("report_path"), "passed")
+    if deploy.get("status") != "passed":
+        return result
+
+    verification = verify_target(root, target=STAGING_TARGET)
+    result["verify_status"] = verification.get("status")
+    result["verify_report"] = verification.get("report_path")
+    if verification.get("status") != "passed":
+        result["status"] = "failed"
+        result["stage"] = "verify"
+        result["message"] = "Staging verification failed."
+        result["verify_errors"] = verification.get("errors", [])
+        return result
+
+    record_staging(root, signature, build.get("build_id"), deploy.get("report_path"), "passed")
     return result
 
 
