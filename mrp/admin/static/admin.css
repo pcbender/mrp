@@ -924,6 +924,11 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .timing-status-unmatched { background: #fee2e2; color: #991b1b; }
 .timing-status-manual { background: var(--border); color: var(--muted); }
 .timing-needs-review { background: color-mix(in srgb, #fef3c7 45%, transparent); }
+.timing-lyric-input {
+  width: 100%;
+  min-width: 14rem;
+  font-size: 13px;
+}
 .timing-line-note {
   margin-top: .25rem;
   font-size: 11px;
