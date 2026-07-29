@@ -648,6 +648,137 @@ def add_section(
     return {"summary": _summary(updated), "section_id": new_id}
 
 
+def insert_lyric_line(
+    track: dict[str, Any],
+    text: str,
+    *,
+    after: int | None = None,
+    before: int | None = None,
+) -> None:
+    """Splice a new sung line into lyrics_raw and lyrics_text.
+
+    Anchored to a neighbouring lyric line rather than to an absolute offset, so
+    a line appended to the end of a section lands before the next section's
+    ``[Marker]`` in lyrics_raw instead of after it.
+    """
+    for field in ("lyrics_raw", "lyrics_text"):
+        value = track.get(field)
+        if not value:
+            continue
+        lines = str(value).splitlines()
+        numbers = _lyric_line_numbers(str(value))
+        if after is not None:
+            if after >= len(numbers):
+                raise TimingEditorError(
+                    f"{field} holds {len(numbers)} lyric lines; cannot anchor a new "
+                    f"cue after line {after + 1}. Re-run alignment to resync."
+                )
+            position = numbers[after] + 1
+        elif before is not None:
+            if before >= len(numbers):
+                raise TimingEditorError(
+                    f"{field} holds {len(numbers)} lyric lines; cannot anchor a new "
+                    f"cue before line {before + 1}. Re-run alignment to resync."
+                )
+            position = numbers[before]
+        else:
+            position = len(lines)
+        lines.insert(position, text)
+        track[field] = "\n".join(lines)
+
+
+def add_line(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    *,
+    section_id: str,
+    text: str,
+    start: str,
+    end: str,
+) -> dict[str, Any]:
+    """Add a sung cue the aligner never produced, to document and lyric alike.
+
+    A take sings things the submitted lyric never had — an "oooh", an ad-lib —
+    and Musixmatch expects those in the published lyric, so a new cue lands in
+    lyrics_raw and lyrics_text as well as the video document. Its place within
+    the section follows from its start time, so the written order can never
+    disagree with the timeline.
+
+    Mutates the track in place; the caller persists the release record.
+    """
+    path = timing_path(root, release, track)
+    if not path.is_file():
+        raise TimingEditorError("aligned lyrics do not exist; run alignment first")
+    words = " ".join(str(text).split())
+    if not words:
+        raise TimingEditorError("lyric text is required")
+    if _SECTION_MARKER.match(words):
+        raise TimingEditorError("a cue cannot be a [section] marker")
+    start_seconds = _number(start, "cue start")
+    end_seconds = _number(end, "cue end")
+    if end_seconds <= start_seconds:
+        raise TimingEditorError("cue end must be greater than cue start")
+
+    original = _load(path)
+    index = next(
+        (
+            position
+            for position, section in enumerate(original.sections)
+            if section.id == section_id
+        ),
+        None,
+    )
+    if index is None:
+        raise TimingEditorError(f"unknown section {section_id}")
+    section = original.sections[index]
+    if not section.lines:
+        raise TimingEditorError(
+            f"section {section_id} has no existing cue to anchor against; add the "
+            "line to the track lyric and re-run alignment"
+        )
+
+    source = lyric_source(root, release, track, original)
+    if f"{section_id}:0" not in source["lines"]:
+        raise TimingEditorError(
+            f"section {section_id} cannot take a new cue: "
+            f"{source['reason'] or 'it does not map one-to-one to the lyric source'}"
+        )
+
+    if start_seconds < section.start - 1e-6 or end_seconds > section.end + 1e-6:
+        raise TimingEditorError(
+            f"cue {start_seconds:.3f}-{end_seconds:.3f}s falls outside section "
+            f"{section_id} ({section.start:.3f}-{section.end:.3f}s)"
+        )
+    for existing in section.lines:
+        if start_seconds < existing.end - 1e-6 and end_seconds > existing.start + 1e-6:
+            raise TimingEditorError(
+                f"cue {start_seconds:.3f}-{end_seconds:.3f}s overlaps "
+                f"'{existing.text}' ({existing.start:.3f}-{existing.end:.3f}s)"
+            )
+
+    slot = sum(1 for existing in section.lines if existing.start < start_seconds)
+    payload = original.model_dump(mode="json", exclude_none=True)
+    payload["sections"][index]["lines"].insert(
+        slot,
+        {
+            "text": words,
+            "start": start_seconds,
+            "end": end_seconds,
+            "reviewed": True,
+        },
+    )
+    updated = _rebuild(payload)
+
+    if slot:
+        insert_lyric_line(track, words, after=source["lines"][f"{section_id}:{slot - 1}"])
+    else:
+        insert_lyric_line(track, words, before=source["lines"][f"{section_id}:0"])
+
+    persist_timing(root, release, track, updated)
+    return {"summary": _summary(updated), "section_id": section_id, "slot": slot}
+
+
 def fill_gaps(
     root: Path,
     release: dict[str, Any],
