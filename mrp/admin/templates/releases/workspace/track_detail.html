@@ -96,6 +96,19 @@
         <label>Lyrics Source URL</label>
         <input type="url" name="track_lyrics_source" value="{{ track.lyrics_source or '' }}">
       </div>
+      <div class="form-field full" style="margin-top:.75rem">
+        <label>Extra section tags</label>
+        <input type="text" name="track_section_tags"
+               value="{{ (track.section_tags or []) | join(', ') }}"
+               placeholder="Chant, Whisper Break">
+        <small style="color:var(--muted)">
+          Comma separated. Bracketed lines in Lyrics Raw are read as song structure only
+          when the name is known — Intro, Verse, Chorus, Pre-Chorus, Post-Chorus, Bridge,
+          Outro, Refrain, Hook, Interlude, Breakdown, Instrumental, Solo, Coda, Vamp, Tag,
+          Ad-Lib. Anything else is treated as a direction to the generator and is not sung.
+          Name a one-off here to have it open a section instead.
+        </small>
+      </div>
     </div>
   </div>
 
