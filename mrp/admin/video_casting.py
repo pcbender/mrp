@@ -501,6 +501,27 @@ def _actor_cast_for_scope(project: Any, section: Any, scope: str):
     return None, "no actor cast"
 
 
+def _scene_cast_state(visuals: Any, section: Any, actor_count: int) -> str:
+    """What the scene list reports for one scene: actors, legacy, or uncast.
+
+    "legacy" is the renderer's own word (``legacy:global-layers`` in
+    mrp/video/casting.py) for a stored composition or the global-layer fallback
+    when auto-casting is off. It was being shown for any scene without an actor
+    cast, so a track made this week read as legacy on every scene. A project
+    that has simply not been cast yet resolves through ``auto:{type}``, which is
+    a current feature, and is reported as uncast.
+    """
+    if actor_count:
+        return "actors"
+    if section.id in visuals.composition_overrides:
+        return "legacy"
+    if _casefold_item(visuals.section_compositions, section.type) is not None:
+        return "legacy"
+    if not visuals.auto_casting:
+        return "legacy"
+    return "uncast"
+
+
 def _slug(value: str, *, fallback: str = "actor") -> str:
     slug = re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-")
     return slug or fallback
@@ -800,6 +821,9 @@ def load_casting(
                 "actor_overridden": section.id in document.project.visuals.cast_overrides,
             }
         )
+        sections[-1]["cast_state"] = _scene_cast_state(
+            document.project.visuals, section, sections[-1]["actor_count"]
+        )
     actor_cast, actor_cast_source = _actor_cast_for_scope(
         document.project,
         selected,
@@ -848,6 +872,14 @@ def load_casting(
         "composition_source": composition_source,
         "actor_cast": actor_cast,
         "actor_cast_source": actor_cast_source,
+        # Whether the selected scope is backed by a stored composition, which is
+        # the only case where "adopt the current look" differs from "start from
+        # the recommended look". Without it the editor offered two buttons that
+        # produced identical output on any project that had never been cast.
+        "selected_cast_state": next(
+            (item["cast_state"] for item in sections if item["id"] == selected.id),
+            "uncast",
+        ),
         "storyboard": _storyboard(
             composition,
             document.project.video.background,
@@ -1478,6 +1510,7 @@ def save_casting(
         "clear",
         "save_cast",
         "recommended",
+        "recommended_all",
         "adopt",
     }
     if action not in supported_actions:
@@ -1529,7 +1562,21 @@ def save_casting(
     existing_transition_key = (
         existing_transition[0] if existing_transition is not None else target
     )
-    if action in {"recommended", "adopt"}:
+    if action == "recommended_all":
+        # The whole track in one move, so a new video can be seen end to end
+        # before any of it is cast by hand. Every scene already *renders* this
+        # look through auto-casting; this makes it editable. Cast by type, the
+        # granularity the editor works in, so re-running it is idempotent.
+        type_casts = visuals.setdefault("section_casts", {})
+        for scene_type in dict.fromkeys(item.type for item in lyrics.sections):
+            existing_type = _casefold_item(type_casts, scene_type)
+            if existing_type is not None:
+                type_casts.pop(existing_type[0], None)
+            type_casts[scene_type] = _materialize_actor_cast(
+                visuals,
+                generate_auto_composition(scene_type, document.project.video.seed),
+            )
+    elif action in {"recommended", "adopt"}:
         composition = (
             generate_auto_composition(section.type, document.project.video.seed)
             if action == "recommended"
@@ -1538,6 +1585,15 @@ def save_casting(
         actor_casts.pop(existing_actor_cast_key, None)
         actor_casts[target] = _materialize_actor_cast(visuals, composition)
     elif action == "save_cast":
+        assignments = _actor_assignment_payloads(fields)
+        # The uncast form opens with no rows, so saving an empty scene is an
+        # easy first move. Say what to do instead of reporting a list-length
+        # violation from the contract.
+        if not assignments:
+            raise CastingEditorError(
+                "add at least one actor to this scene before saving, "
+                "or use Clear to leave it on the recommended look"
+            )
         actor_casts.pop(existing_actor_cast_key, None)
         actor_casts[target] = {
             "casting": {
@@ -1545,7 +1601,7 @@ def save_casting(
                 "seed": document.project.video.seed,
                 "generator_version": 1,
             },
-            "actors": _actor_assignment_payloads(fields),
+            "actors": assignments,
         }
         style = _style_payload(fields)
         styles.pop(existing_style_key, None)

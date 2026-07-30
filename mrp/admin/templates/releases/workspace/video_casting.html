@@ -145,7 +145,9 @@
       <a class="video-scene-link {{ 'active' if scene.id == casting.selected_section.id else '' }}"
          href="?section={{ scene.id }}&scope={{ casting.scope }}{% if casting.selected_actor_saved %}&actor={{ casting.selected_actor.id }}{% endif %}#scene-casting">
         <span><strong>{{ scene.label }}</strong><small>{{ scene.id }} · {{ scene.start | seconds }}–{{ scene.end | seconds }}</small></span>
-        <span class="badge badge-{{ 'live' if scene.actor_count else 'draft' }}">{% if scene.actor_count %}{{ scene.actor_count }} actor{{ '' if scene.actor_count == 1 else 's' }}{% else %}legacy{% endif %}</span>
+        {# "legacy" belongs to a project carrying a stored composition, not to
+           one nobody has cast yet -- see _scene_cast_state. #}
+        <span class="badge badge-{{ 'live' if scene.cast_state == 'actors' else 'warn' if scene.cast_state == 'legacy' else 'draft' }}">{% if scene.cast_state == 'actors' %}{{ scene.actor_count }} actor{{ '' if scene.actor_count == 1 else 's' }}{% elif scene.cast_state == 'legacy' %}legacy{% else %}uncast{% endif %}</span>
       </a>
       {% endfor %}
     </div>
@@ -194,16 +196,27 @@
 
     <section class="form-card"><div class="form-body">
       <div><h2>Cast this scene</h2><p class="video-help">Assign track actors to {{ 'all ' ~ casting.selected_section.type ~ ' scenes' if casting.scope == 'type' else 'only ' ~ casting.selected_section.id }}, then direct how each one performs here.</p></div>
+      {# An uncast scene is the ordinary state of a new track, so the roster
+         leads and the generated looks are the shortcut beside it. Adopting a
+         stored look is offered only where one exists -- everywhere else it
+         produced the same actors as the recommended look. #}
       {% if not casting.actor_cast %}
-      <div class="video-empty-state actor-cast-onboarding">
-        <strong>This scene still uses the legacy visual composition.</strong>
-        <p>Create actors from the deterministic recommended look, or adopt the exact look currently shown.</p>
+      <div class="video-empty-state actor-cast-uncast">
+        <strong>No actors in this scene yet.</strong>
+        <p>
+          Add one of this track's actors below. Until you do, this scene still
+          renders the recommended look for {{ casting.selected_section.type|replace('_', ' ') }}
+          automatically — casting it here is what makes that editable.
+        </p>
         <div class="video-cast-actions">
-          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-primary" name="action" value="recommended" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Create recommended actors</button></form>
-          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-secondary" name="action" value="adopt" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Adopt current look as actors</button></form>
+          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-secondary btn-sm" name="action" value="recommended" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Start this scene from the recommended look</button></form>
+          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-secondary btn-sm" name="action" value="recommended_all" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Populate every scene</button></form>
+          {% if casting.selected_cast_state == 'legacy' %}
+          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-secondary btn-sm" name="action" value="adopt" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Adopt the stored look as actors</button></form>
+          {% endif %}
         </div>
       </div>
-      {% else %}
+      {% endif %}
       <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
         {{ context_fields() }}
         <div class="form-grid video-project-look">
@@ -212,9 +225,9 @@
           <input type="hidden" name="auto_casting" value="{{ 'true' if casting.project.visuals.auto_casting else 'false' }}">
         </div>
         <div id="actor-assignments">
-          {% for assignment in casting.actor_cast.actors %}{{ direction_fields(assignment, loop.index, casting.project_actors) }}{% endfor %}
+          {% for assignment in (casting.actor_cast.actors if casting.actor_cast else []) %}{{ direction_fields(assignment, loop.index, casting.project_actors) }}{% endfor %}
         </div>
-        <button class="btn btn-secondary btn-sm" type="button" onclick="addActorAssignment()">+ Add actor to scene</button>
+        <button class="btn {{ 'btn-primary' if not casting.actor_cast else 'btn-secondary btn-sm' }}" type="button" onclick="addActorAssignment()">+ Add actor to scene</button>
 
         <fieldset class="video-transition">
           <legend>Transition in</legend>
@@ -361,7 +374,6 @@
           <button class="btn btn-danger" name="action" value="clear" type="submit" formnovalidate {% if not cast_status_ok %}disabled{% endif %}>Clear {{ 'type' if casting.scope == 'type' else 'scene' }} cast</button>
         </div>
       </form>
-      {% endif %}
     </div></section>
 
     <div class="form-card"><div class="form-body">

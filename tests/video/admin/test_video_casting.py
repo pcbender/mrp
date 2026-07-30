@@ -276,6 +276,42 @@ def _actor_cast_fields() -> dict[str, list[str]]:
     }
 
 
+def test_a_new_project_reads_as_uncast_rather_than_legacy(tmp_path: Path) -> None:
+    """A track made this week is not a legacy project.
+
+    Every scene without an actor cast used to be badged "legacy" and told it
+    "still uses the legacy visual composition". A fresh project stores no
+    composition at all -- it resolves through auto:{type}, which is current
+    behaviour -- so the honest word is uncast. "legacy" is the renderer's own
+    term for a stored composition or the global-layer fallback.
+    """
+    from mrp.admin.video_casting import _scene_cast_state
+
+    class _Section:
+        def __init__(self, section_id: str, section_type: str) -> None:
+            self.id = section_id
+            self.type = section_type
+
+    class _Visuals:
+        def __init__(self, **kwargs) -> None:
+            self.composition_overrides = kwargs.get("composition_overrides", {})
+            self.section_compositions = kwargs.get("section_compositions", {})
+            self.auto_casting = kwargs.get("auto_casting", True)
+
+    intro = _Section("intro", "intro")
+
+    # A fresh project: nothing stored, auto-casting on.
+    assert _scene_cast_state(_Visuals(), intro, 0) == "uncast"
+    # Cast, and it says so.
+    assert _scene_cast_state(_Visuals(), intro, 2) == "actors"
+    # Genuinely legacy: a stored look for this exact scene, or for its type.
+    assert _scene_cast_state(_Visuals(composition_overrides={"intro": object()}), intro, 0) == "legacy"
+    assert _scene_cast_state(_Visuals(section_compositions={"intro": object()}), intro, 0) == "legacy"
+    # Auto-casting off falls back to the global layers -- the renderer's
+    # legacy:global-layers branch.
+    assert _scene_cast_state(_Visuals(auto_casting=False), intro, 0) == "legacy"
+
+
 def test_the_casting_form_parses_every_geometry_family_the_contract_declares() -> None:
     """The parser must not keep its own idea of which families exist.
 
@@ -629,7 +665,17 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert "Scene Casting" in body
     assert body.index("<h2>Actor Library") < body.index("<h2>Scene Casting")
     assert body.index("<h2>Actor Designer") < body.index("<h2>Scene Casting")
-    assert "Create recommended actors" in body
+    # An uncast scene leads with the track's own roster; the generated looks are
+    # the shortcut beside it, not the only way in.
+    assert "+ Add actor to scene" in body
+    assert 'value="recommended_all"' in body
+    # This test saves a composition first, so the selected scene genuinely does
+    # carry a stored look -- the one case where adopting it differs from the
+    # recommended look, and the one case that earns the word "legacy".
+    assert 'value="adopt"' in body
+    # Scenes with no stored composition read as uncast, not legacy.
+    assert ">uncast</span>" in body
+    assert "legacy visual composition" not in body
     assert 'name="actor_character"' in body
     assert 'name="reacts_to"' not in body
     assert "/video/actors" in body
