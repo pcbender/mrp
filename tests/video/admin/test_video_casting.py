@@ -276,6 +276,50 @@ def _actor_cast_fields() -> dict[str, list[str]]:
     }
 
 
+def test_the_casting_form_parses_every_geometry_family_the_contract_declares() -> None:
+    """The parser must not keep its own idea of which families exist.
+
+    "text" was added for song-title actors, and this parser was the one place
+    that still listed families by hand -- so casting a title actor onto a track
+    failed to save with "unknown geometry family: text" while the renderer and
+    the contract had supported it all along.
+    """
+    from mrp.admin.video_casting import _trace_payloads
+    from mrp.video.project import _FAMILY_FIELDS, _PATH_FAMILIES
+
+    for family in sorted(_FAMILY_FIELDS):
+        fields = _manual_fields()
+        fields["geometry_family"] = [family]
+        if family in _PATH_FAMILIES:
+            fields["path_data"] = ["M 35 74 V 48 h 13"]
+
+        traces = _trace_payloads(fields)
+
+        assert traces[0]["geometry"]["family"] == family, family
+
+
+def test_a_title_actor_keeps_its_outlined_glyphs_through_a_save() -> None:
+    """A text trace's letter-contours survive the round trip.
+
+    The whole word lives in path_data as one subpath per letter-contour; losing
+    it on save would leave the title actor with nothing to draw.
+    """
+    from mrp.admin.video_casting import _trace_payloads
+
+    glyphs = "M 35 74 V 48 h 13 M 60 74 V 48"
+    fields = _manual_fields()
+    fields["geometry_family"] = ["text"]
+    fields["path_data"] = [glyphs]
+
+    geometry = _trace_payloads(fields)[0]["geometry"]
+
+    assert geometry["family"] == "text"
+    assert geometry["path_data"] == glyphs
+    # Trochoid controls belong to spirogram alone; the contract rejects them on
+    # any other family, so the parser must not smuggle them through.
+    assert "fixed_radius" not in geometry
+
+
 def test_load_casting_resolves_deterministic_type_scenes(tmp_path: Path) -> None:
     release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
 

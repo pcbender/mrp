@@ -964,6 +964,11 @@ def _optional_number(value: str, label: str) -> float | None:
 
 
 def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]:
+    # Taken from the contract rather than restated here: "text" was added to the
+    # geometry families for song-title actors and this parser was the one place
+    # that kept its own list, so casting a title actor could not be saved.
+    from mrp.video.project import _PATH_FAMILIES
+
     ids = [str(value).strip() for value in fields.get("trace_id", [])]
     if not ids:
         raise CastingEditorError("a manual cast requires at least one trace")
@@ -1067,7 +1072,10 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
                 "sf_n2": _number(columns["sf_n2"][index], f"trace {trace_id} n2"),
                 "sf_n3": _number(columns["sf_n3"][index], f"trace {trace_id} n3"),
             }
-        elif family == "path":
+        elif family in _PATH_FAMILIES:
+            # "text" is a path family: one subpath per letter-contour rather
+            # than the single subpath "path" takes. Both carry the geometry in
+            # path_data, and the form offers the same textarea for each.
             geometry |= {"path_data": columns["path_data"][index]}
         elif family == "harmonograph":
             geometry |= {
