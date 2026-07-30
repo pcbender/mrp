@@ -1,0 +1,14 @@
+{# Timing faults, each carrying the form fields it is about so the editor can
+   highlight them. Rendered into #timing-result, which is pinned to the top of
+   the viewport while the form is on screen -- the Save button sits at the far
+   end of a long table, and an unpinned message scrolled away unread. #}
+<div class="flash flash-error timing-errors" data-timing-errors>
+  <strong>Timing not saved &mdash; {{ problems|length }} problem{{ '' if problems|length == 1 else 's' }} to fix.</strong>
+  <ul>
+    {% for problem in problems %}
+    <li{% if problem.fields %} data-fields="{{ problem.fields|join(' ') }}"{% endif %}>
+      {{ problem.message }}
+    </li>
+    {% endfor %}
+  </ul>
+</div>

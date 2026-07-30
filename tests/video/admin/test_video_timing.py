@@ -13,7 +13,12 @@ from starlette.requests import Request
 
 from mrp.admin import db
 from mrp.admin.routes import video as video_routes
-from mrp.admin.video_timing import TimingEditorError, load_timing, save_timing
+from mrp.admin.video_timing import (
+    TimingEditorError,
+    _timing_problems,
+    load_timing,
+    save_timing,
+)
 from mrp.core.migrate_site import load_structured_record
 from mrp.video.project import AlignedLyricLine, LyricLine
 
@@ -313,10 +318,87 @@ def test_invalid_overlap_leaves_versioned_timing_unchanged(tmp_path: Path):
     path = _write_timing(tmp_path, release)
     before = path.read_text(encoding="utf-8")
 
-    with pytest.raises(TimingEditorError, match="non-overlapping"):
+    with pytest.raises(TimingEditorError) as caught:
         save_timing(tmp_path, release, release["tracks"][0], _fields(overlap=True))
 
+    # The reader has to find the offending cue among a few hundred numbers, so
+    # the message names it and quotes the times rather than reporting the
+    # document path pydantic would have given ("sections.0").
+    problem = caught.value.problems[0]
+    assert "cue 2" in problem
+    assert "Needs attention" in problem
+    assert "0.500" in problem and "1.000" in problem
+    assert caught.value.details[0]["fields"] == ("line-0-1-start",)
+
     assert path.read_text(encoding="utf-8") == before
+
+
+def test_every_timing_fault_is_reported_against_the_fields_on_screen():
+    """One save reports every fault, not just the first one pydantic hits.
+
+    The model behind the artifact raises on the first bad section and names it
+    by document path, so a timeline with three broken cues took three saves to
+    discover. Each problem here carries the input ids it is about so the editor
+    can highlight them.
+    """
+    payload = {
+        "sections": [
+            {
+                "id": "verse-1",
+                "type": "verse",
+                "start": 0.0,
+                "end": 40.0,
+                "lines": [
+                    {"text": "first line", "start": 1.0, "end": 3.0},
+                    {"text": "second line", "start": 2.5, "end": 5.0},
+                ],
+            },
+            {
+                "id": "chorus",
+                "type": "chorus",
+                "label": "Chorus",
+                "start": 40.0,
+                "end": 46.0,
+                "lines": [{"text": "spills over", "start": 44.9, "end": 47.3}],
+            },
+        ]
+    }
+
+    problems = _timing_problems(payload)
+    messages = [problem["message"] for problem in problems]
+    fields = [problem["fields"] for problem in problems]
+
+    # An overlap in the first scene and a spill past the second scene's end are
+    # both reported, rather than the run stopping at the first.
+    assert len(problems) == 2
+    assert 'cue 2 "second line" starts at 2.500s' in messages[0]
+    assert 'cue 1 "first line" ends at 1.000s' not in messages[0]
+    assert "before cue 1" in messages[0]
+    assert ("line-0-1-start",) == fields[0]
+
+    assert 'scene 2 "Chorus"' in messages[1]
+    assert "ends at 47.300s, after the scene ends at 46.000s" in messages[1]
+    assert fields[1] == ("line-1-0-end", "section-1-end")
+
+
+def test_a_sound_timeline_reports_no_timing_problems():
+    payload = {
+        "sections": [
+            {
+                "id": "verse-1",
+                "type": "verse",
+                "start": 0.0,
+                "end": 10.0,
+                "lines": [
+                    {"text": "first", "start": 1.0, "end": 3.0},
+                    {"text": "second", "start": 3.0, "end": 5.0},
+                ],
+            },
+            {"id": "outro", "type": "instrumental", "start": 10.0, "end": 12.0, "lines": []},
+        ]
+    }
+
+    assert _timing_problems(payload) == []
 
 
 def test_timing_route_marks_only_selected_track_timed(tmp_path: Path, monkeypatch):
@@ -345,6 +427,44 @@ def test_timing_route_marks_only_selected_track_timed(tmp_path: Path, monkeypatc
     saved = load_structured_record(path)["release"]
     assert saved["tracks"][0]["music_video"]["status"] == "timed"
     assert saved["tracks"][1] == untouched
+
+
+def test_timing_route_returns_highlightable_problems(tmp_path: Path, monkeypatch):
+    """A refused save renders the cue and the fields to highlight.
+
+    The response is swapped into a container pinned to the top of the viewport,
+    because the Save button sits past the end of a long cue table and an
+    unpinned message scrolled away unread.
+    """
+    db.init(tmp_path / "admin.db")
+    release = _release()
+    path = tmp_path / "content" / "releases" / "video-contract.yaml"
+    path.parent.mkdir(parents=True)
+    path.write_text(yaml.safe_dump({"release": release}, sort_keys=False), encoding="utf-8")
+    timing = _write_timing(tmp_path, release)
+    before = timing.read_text(encoding="utf-8")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    response = asyncio.run(
+        video_routes.video_timing_save(
+            _request(
+                "/releases/video-contract/tracks/private-track/video/timing",
+                _form_fields(_fields(overlap=True)),
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+    body = response.body.decode()
+
+    assert response.status_code == 422
+    assert "1 problem to fix" in body
+    assert "Needs attention" in body
+    assert 'data-fields="line-0-1-start"' in body
+    # The old response named a document path and nothing else.
+    assert "sections.0" not in body
+    # A refused save leaves the artifact exactly as it was.
+    assert timing.read_text(encoding="utf-8") == before
 
 
 def _lyric_release(tmp_path: Path, *, gap: bool = False) -> tuple[dict, Path]:
