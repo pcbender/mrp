@@ -404,16 +404,7 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
     try:
         result = validate_timing(root, release, unit["track"], fields)
     except TimingEditorError as exc:
-        errors = [
-            {"field": "timing", "message": problem, "severity": "error"}
-            for problem in exc.problems
-        ]
-        return _templates.TemplateResponse(
-            request,
-            "releases/_validation.html",
-            {"errors": errors},
-            status_code=422,
-        )
+        return _timing_errors(request, exc)
 
     # A corrected sung line goes back to the release record so the published
     # lyric and the video agree, and a later re-prepare keeps the fix. It rides
@@ -455,12 +446,11 @@ async def video_timing_save(request: Request, slug: str, track_slug: str):
 
 
 def _timing_errors(request: Request, exc: TimingEditorError) -> HTMLResponse:
-    errors = [
-        {"field": "timing", "message": problem, "severity": "error"}
-        for problem in exc.problems
-    ]
     return _templates.TemplateResponse(
-        request, "releases/_validation.html", {"errors": errors}, status_code=422
+        request,
+        "releases/workspace/_timing_errors.html",
+        {"problems": list(exc.details)},
+        status_code=422,
     )
 
 

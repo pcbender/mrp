@@ -15,9 +15,139 @@ from mrp.admin.video_workspace import track_key
 
 
 class TimingEditorError(Exception):
-    def __init__(self, *problems: str):
+    """A timing edit that cannot be saved.
+
+    ``details`` carries the same problems with the form fields each one is
+    about, so the editor can highlight the offending inputs instead of leaving
+    the reader to work out which of a few hundred numbers is wrong. Callers
+    that only need text keep using ``problems``.
+    """
+
+    def __init__(
+        self,
+        *problems: str,
+        details: Sequence[Mapping[str, Any]] | None = None,
+    ):
         self.problems = tuple(problems)
+        self.details = tuple(
+            details
+            if details is not None
+            else ({"message": problem, "fields": ()} for problem in problems)
+        )
         super().__init__("; ".join(problems))
+
+
+def _cue_label(index: int, line: Mapping[str, Any]) -> str:
+    text = " ".join(str(line.get("text") or "").split())
+    if len(text) > 42:
+        text = text[:41].rstrip() + "…"
+    return f'cue {index + 1} "{text}"' if text else f"cue {index + 1}"
+
+
+def _scene_label(index: int, section: Mapping[str, Any]) -> str:
+    name = str(section.get("label") or section.get("type") or "").strip()
+    return f'scene {index + 1} "{name}"' if name else f"scene {index + 1}"
+
+
+def _timing_problems(payload: Mapping[str, Any]) -> list[dict[str, Any]]:
+    """Every ordering and containment fault in an edited timeline, at once.
+
+    The pydantic model behind the artifact reports only the first fault it hits
+    and names it by document path ("sections.2"), which tells the editor
+    nothing about which cue to look at. This walks the same rules and reports
+    each one against the numbers on screen, so a save that breaks three cues
+    says so once rather than three saves running.
+    """
+    problems: list[dict[str, Any]] = []
+    sections = list(payload.get("sections") or [])
+    previous_section_end: float | None = None
+    previous_section_label = ""
+
+    for section_index, section in enumerate(sections):
+        scene = _scene_label(section_index, section)
+        start = float(section["start"])
+        end = float(section["end"])
+        start_field = f"section-{section_index}-start"
+        end_field = f"section-{section_index}-end"
+
+        if end <= start:
+            problems.append(
+                {
+                    "message": (
+                        f"{scene} ends at {end:.3f}s, at or before its "
+                        f"{start:.3f}s start."
+                    ),
+                    "fields": (start_field, end_field),
+                }
+            )
+        if previous_section_end is not None and start < previous_section_end - 1e-6:
+            problems.append(
+                {
+                    "message": (
+                        f"{scene} starts at {start:.3f}s, before "
+                        f"{previous_section_label} ends at "
+                        f"{previous_section_end:.3f}s."
+                    ),
+                    "fields": (start_field,),
+                }
+            )
+        previous_section_end = end
+        previous_section_label = scene
+
+        previous_line_end = start
+        previous_cue_label = ""
+        for line_index, line in enumerate(section.get("lines") or []):
+            cue = _cue_label(line_index, line)
+            line_start = float(line["start"])
+            line_end = float(line["end"])
+            line_start_field = f"line-{section_index}-{line_index}-start"
+            line_end_field = f"line-{section_index}-{line_index}-end"
+
+            if line_end <= line_start:
+                problems.append(
+                    {
+                        "message": (
+                            f"{scene}: {cue} ends at {line_end:.3f}s, at or "
+                            f"before its {line_start:.3f}s start."
+                        ),
+                        "fields": (line_start_field, line_end_field),
+                    }
+                )
+            if line_start < start - 1e-6:
+                problems.append(
+                    {
+                        "message": (
+                            f"{scene}: {cue} starts at {line_start:.3f}s, "
+                            f"before the scene starts at {start:.3f}s."
+                        ),
+                        "fields": (line_start_field, start_field),
+                    }
+                )
+            if line_end > end + 1e-6:
+                problems.append(
+                    {
+                        "message": (
+                            f"{scene}: {cue} ends at {line_end:.3f}s, after "
+                            f"the scene ends at {end:.3f}s."
+                        ),
+                        "fields": (line_end_field, end_field),
+                    }
+                )
+            if previous_cue_label and line_start < previous_line_end - 1e-6:
+                problems.append(
+                    {
+                        "message": (
+                            f"{scene}: {cue} starts at {line_start:.3f}s, "
+                            f"before {previous_cue_label} ends at "
+                            f"{previous_line_end:.3f}s."
+                        ),
+                        "fields": (line_start_field,),
+                    }
+                )
+            previous_line_end = line_end
+            previous_cue_label = cue
+
+    return problems
 
 
 def timing_path(root: Path, release: dict[str, Any], track: dict[str, Any]) -> Path:
@@ -529,6 +659,15 @@ def validate_timing(
                     line["text"] = replacement
             line_offset += 1
 
+    # Reported before the model runs: pydantic stops at the first bad section
+    # and names it by document path, which is not something the editor can
+    # point at. This names every fault against the numbers on the page.
+    detected = _timing_problems(payload)
+    if detected:
+        raise TimingEditorError(
+            *(problem["message"] for problem in detected), details=detected
+        )
+
     try:
         updated = AlignedLyrics.model_validate(payload)
     except ValidationError as exc:
@@ -540,9 +679,20 @@ def validate_timing(
 
     duration = _master_duration(root, release, track)
     if duration is not None and updated.sections[-1].end > duration + 0.001:
+        last = len(updated.sections) - 1
         raise TimingEditorError(
-            f"final section ends at {updated.sections[-1].end:.3f}s, "
-            f"after the {duration:.3f}s master"
+            f"{_scene_label(last, payload['sections'][last])} ends at "
+            f"{updated.sections[-1].end:.3f}s, after the {duration:.3f}s master.",
+            details=[
+                {
+                    "message": (
+                        f"{_scene_label(last, payload['sections'][last])} ends at "
+                        f"{updated.sections[-1].end:.3f}s, after the "
+                        f"{duration:.3f}s master."
+                    ),
+                    "fields": (f"section-{last}-end",),
+                }
+            ],
         )
 
     return {

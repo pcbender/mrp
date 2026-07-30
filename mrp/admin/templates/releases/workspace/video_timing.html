@@ -373,6 +373,7 @@
 {% endif %}
 
 <script src="/static/video-timecode.js"></script>
+<script src="/static/video-timing-cascade.js"></script>
 <script>
 const timingAudio = document.getElementById('timing-audio');
 const timingRange = document.getElementById('timing-range');
@@ -447,7 +448,11 @@ if (timingAudio && timingRange) {
 }
 function timingSet(inputId) {
   if (!timingAudio) return;
-  document.getElementById(inputId).value = timingAudio.currentTime.toFixed(3);
+  const field = document.getElementById(inputId);
+  field.value = timingAudio.currentTime.toFixed(3);
+  // Setting .value in script fires nothing, so the cue cascade would not see a
+  // boundary dropped with the playhead button -- only one typed by hand.
+  field.dispatchEvent(new Event('change', { bubbles: true }));
 }
 // Parking the playhead is deliberately not the same as playing: a gap is
 // usually being identified, not auditioned, and starting audio on every chip
@@ -526,6 +531,139 @@ document.body.addEventListener('htmx:beforeSwap', (event) => {
     event.detail.shouldSwap = true;
     event.detail.isError = false;
   }
+});
+
+// ── Pointing at the offending numbers ──────────────────────────────────────
+// A save that fails names the cues it is unhappy about; each problem carries
+// the ids of the fields it is about, so the reader is taken to the first one
+// rather than left comparing a message against a few hundred inputs.
+const timingResult = document.getElementById('timing-result');
+
+function timingClearMarks(className) {
+  document.querySelectorAll('.' + className).forEach((field) => {
+    field.classList.remove(className);
+  });
+}
+
+document.body.addEventListener('htmx:afterSwap', (event) => {
+  if (event.detail.target?.id !== 'timing-result') return;
+  timingClearMarks('timing-field-error');
+  timingClearMarks('timing-field-bumped');
+  let first = null;
+  event.detail.target.querySelectorAll('li[data-fields]').forEach((item) => {
+    item.dataset.fields.split(/\s+/).forEach((id) => {
+      const field = document.getElementById(id);
+      if (!field) return;
+      field.classList.add('timing-field-error');
+      if (!first) first = field;
+    });
+  });
+  if (first) {
+    first.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    first.focus({ preventScroll: true });
+  }
+});
+
+// Correcting a flagged field clears its mark, so what is still wrong stays
+// obvious without another round trip.
+document.getElementById('timing-form')?.addEventListener('input', (event) => {
+  event.target.classList?.remove('timing-field-error');
+  event.target.classList?.remove('timing-field-bumped');
+});
+
+// ── Cues give way rather than collide ──────────────────────────────────────
+// Pushing a cue's end past the next cue's start used to be a save-time error
+// about a document path. The later cues simply move out of the way instead,
+// cascading for as long as they overlap. Scene boundaries are deliberate, so
+// a cue that cannot fit inside its scene stops the cascade and says so rather
+// than quietly moving the boundary.
+function timingEscape(value) {
+  const node = document.createElement('span');
+  node.textContent = value;
+  return node.innerHTML;
+}
+
+function timingCueLabel(sectionIndex, lineIndex) {
+  const row = document
+    .getElementById(`line-${sectionIndex}-${lineIndex}-start`)
+    ?.closest('tr');
+  const text = (row?.querySelector('input[name=line_text]')?.value || '').trim();
+  return text ? `cue ${lineIndex + 1} "${text}"` : `cue ${lineIndex + 1}`;
+}
+
+function timingSectionCues(sectionIndex) {
+  const cues = [];
+  for (let index = 0; ; index += 1) {
+    const start = document.getElementById(`line-${sectionIndex}-${index}-start`);
+    const end = document.getElementById(`line-${sectionIndex}-${index}-end`);
+    if (!start || !end) break;
+    cues.push({ index, start, end });
+  }
+  return cues;
+}
+
+function timingNotice(kind, heading, items) {
+  if (!timingResult) return;
+  const list = items.map((item) => `<li>${timingEscape(item)}</li>`).join('');
+  timingResult.innerHTML =
+    `<div class="flash flash-${kind} timing-errors">` +
+    `<strong>${timingEscape(heading)}</strong><ul>${list}</ul></div>`;
+}
+
+function timingSceneName(sectionIndex) {
+  return (
+    document
+      .getElementById(`section-${sectionIndex}-end`)
+      ?.closest('section')
+      ?.querySelector('header strong')
+      ?.textContent?.trim() || 'this scene'
+  );
+}
+
+function timingCascade(sectionIndex, fromIndex) {
+  const cues = timingSectionCues(sectionIndex);
+  const sectionEnd = document.getElementById(`section-${sectionIndex}-end`)?.value;
+  const { moves, blocked } = window.mrpTimingCascade.plan(
+    cues.map((cue) => ({ start: cue.start.value, end: cue.end.value })),
+    sectionEnd,
+    fromIndex
+  );
+
+  const moved = moves.map((move) => {
+    const cue = cues[move.index];
+    const hadEnd = Number(cue.end.value);
+    cue.start.value = move.start.toFixed(3);
+    cue.end.value = move.end.toFixed(3);
+    cue.start.classList.add('timing-field-bumped');
+    if (move.end !== hadEnd) cue.end.classList.add('timing-field-bumped');
+    return (
+      `${timingCueLabel(sectionIndex, move.index)} moved to ` +
+      `${move.start.toFixed(3)}–${move.end.toFixed(3)}s.`
+    );
+  });
+
+  if (blocked) {
+    timingNotice('warn', 'Cues moved, but one will not fit.', [
+      ...moved,
+      `${timingCueLabel(sectionIndex, blocked.index)} would need to run to ` +
+        `${blocked.needs.toFixed(3)}s, past the ${blocked.limit.toFixed(3)}s end of ` +
+        `"${timingSceneName(sectionIndex)}". Extend the scene or shorten the cue.`,
+    ]);
+    return;
+  }
+  if (moved.length) {
+    timingNotice(
+      'warn',
+      `${moved.length} later cue${moved.length === 1 ? '' : 's'} moved out of the way. ` +
+        'Nothing is saved until you press Save timing.',
+      moved
+    );
+  }
+}
+
+document.getElementById('timing-form')?.addEventListener('change', (event) => {
+  const match = /^line-(\d+)-(\d+)-(?:start|end)$/.exec(event.target.id || '');
+  if (match) timingCascade(Number(match[1]), Number(match[2]));
 });
 
 // Add-scene: reveal a free-text field for "custom…" and post its value as the

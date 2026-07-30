@@ -924,6 +924,27 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .timing-status-unmatched { background: #fee2e2; color: #991b1b; }
 .timing-status-manual { background: var(--border); color: var(--muted); }
 .timing-needs-review { background: color-mix(in srgb, #fef3c7 45%, transparent); }
+
+/* The Save button sits at the far end of a long cue table, so a message
+   rendered at the top of the form scrolled out of sight the moment it
+   mattered. Pinning it keeps the reason on screen while the offending cue is
+   found and corrected. */
+#timing-result { position: sticky; top: 0; z-index: 20; }
+#timing-result:empty { display: none; }
+.timing-errors { box-shadow: var(--shadow, 0 2px 8px rgba(0, 0, 0, .18)); }
+.timing-errors ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.timing-errors li { margin: .2rem 0; font-weight: 400; }
+/* Which of a few hundred numbers to look at. */
+.timing-field-error {
+  outline: 2px solid #dc2626;
+  outline-offset: 1px;
+  background: #fef2f2;
+}
+.timing-field-bumped {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+  background: #eff6ff;
+}
 .timing-lyric-input {
   width: 100%;
   min-width: 14rem;
