@@ -1320,9 +1320,30 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   display: flex;
   font-size: 12px;
   font-weight: 700;
+  gap: .75rem;
   justify-content: space-between;
   padding: 0 .35rem;
   width: calc(100% - .7rem);
+}
+.actor-assignment-card legend .assignment-title {
+  min-width: 0;
+  white-space: nowrap;
+}
+.actor-assignment-card legend .btn {
+  flex: none;
+}
+.actor-assignment-actor {
+  margin-bottom: .75rem;
+}
+.actor-assignment-actor select {
+  font-size: 13px;
+  width: 100%;
+}
+.actor-assignment-card .actor-direction-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.actor-direction-advanced {
+  margin-top: .9rem;
 }
 /* Scalar clusters hold 3-4 character values. The `.form-grid` class never set
    `display: grid`, so these stacked one full-width control per row. Make them

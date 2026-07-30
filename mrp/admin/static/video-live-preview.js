@@ -365,7 +365,12 @@
       * (finite(preset.motion_response) || 0)
       * scaleGain
     );
-    rotation += Math.sin(timeSeconds * 0.37 + scaleDriver.value * Math.PI) * 0.08;
+    rotation += (
+      Math.sin(timeSeconds * 0.37 + scaleDriver.value * Math.PI)
+      * (finite(layer.rotation_wobble_degrees) || 0)
+      * Math.PI
+      / 180
+    );
 
     const trailFraction = (
       (finite(layer.trail_fraction) || 0)
@@ -737,6 +742,39 @@
       start,
       text: String(line.text || ''),
     };
+  }
+
+  function drawLyricCue(targetCanvas, documentModel, cue) {
+    if (!targetCanvas || !documentModel || !cue || cue.alpha <= 0) return false;
+    const context = targetCanvas.getContext('2d');
+    const text = documentModel.text || {};
+    const video = documentModel.video || {};
+    const referenceHeight = Math.max(1, finite(video.height) || targetCanvas.height);
+    const fontSize = Math.max(
+      1,
+      Math.round((finite(text.size) || 60) * targetCanvas.height / referenceHeight)
+    );
+    const maximumWidth = (
+      targetCanvas.width
+      * clamp(finite(text.maximum_width_fraction) || 0.82, 0.2, 0.95)
+    );
+    let y = targetCanvas.height * 0.82;
+    if (text.position === 'top') y = targetCanvas.height * 0.11;
+    if (text.position === 'center') y = targetCanvas.height * 0.5;
+    context.save();
+    context.globalCompositeOperation = 'source-over';
+    context.globalAlpha = cue.alpha;
+    context.font = `600 ${fontSize}px system-ui, sans-serif`;
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.lineJoin = 'round';
+    context.lineWidth = Math.max(2, Math.round(fontSize / 15));
+    context.strokeStyle = 'rgba(0, 0, 0, .82)';
+    context.fillStyle = text.active_color || '#ffffff';
+    context.strokeText(cue.text, targetCanvas.width / 2, y, maximumWidth);
+    context.fillText(cue.text, targetCanvas.width / 2, y, maximumWidth);
+    context.restore();
+    return true;
   }
 
   function previewFrameAt(documentModel, decodedState, masterTimeSeconds) {
@@ -1377,6 +1415,7 @@
         const wardrobe = fieldValue(card, 'direction_color');
         const lineWidth = numberOrNull(fieldValue(card, 'direction_line_width'));
         const rotation = numberOrNull(fieldValue(card, 'direction_rotation'));
+        const wobble = numberOrNull(fieldValue(card, 'direction_wobble'));
         const hueShift = numberOrNull(fieldValue(card, 'direction_hue'));
         const blendMode = fieldValue(card, 'direction_blend');
         const energy = {};
@@ -1436,6 +1475,7 @@
               -180,
               180
             ),
+            rotation_wobble_degrees: clamp(wobble === null ? 0 : wobble, 0, 180),
             hue_shift_degrees: clamp(
               (finite(component.hue_shift_degrees) || 0)
               + (hueShift !== null ? hueShift : 0),
@@ -1564,6 +1604,16 @@
       if (emptyEl) emptyEl.hidden = lastShapes.length > 0;
     }
 
+    function drawSceneOverlays(drawContext) {
+      const cue = previewDocument
+        ? lyricCueAt(previewDocument, currentState, drawContext.masterTime)
+        : null;
+      drawLyricCue(drawContext.canvas, previewDocument, cue);
+      // Placement guides and drag handles stay above the audience-facing lyric
+      // so the scene remains practical to edit while showing its composition.
+      drawOverlay();
+    }
+
     const audioElement = doc.getElementById('storyboard-audio-el');
     const audioToggle = doc.getElementById('storyboard-audio');
     const modelStart = finite(model.range && model.range.start);
@@ -1604,7 +1654,7 @@
       },
       getShapes: getStoryboardShapes,
       drawShapes: root.mrpDrawShapes,
-      afterDraw: drawOverlay,
+      afterDraw: drawSceneOverlays,
       onchange(progress, playing) {
         if (playButton) {
           playButton.textContent = playing ? '❚❚ Pause' : '▶ Play';
@@ -1918,35 +1968,7 @@
 
     function drawLyric({ canvas: targetCanvas }) {
       const cue = currentFrame && currentFrame.lyric;
-      if (!cue || cue.alpha <= 0) return;
-      const context = targetCanvas.getContext('2d');
-      const text = previewDocument.text || {};
-      const video = previewDocument.video || {};
-      const referenceHeight = Math.max(1, finite(video.height) || targetCanvas.height);
-      const fontSize = Math.max(
-        1,
-        Math.round((finite(text.size) || 60) * targetCanvas.height / referenceHeight)
-      );
-      const maximumWidth = (
-        targetCanvas.width
-        * clamp(finite(text.maximum_width_fraction) || 0.82, 0.2, 0.95)
-      );
-      let y = targetCanvas.height * 0.82;
-      if (text.position === 'top') y = targetCanvas.height * 0.11;
-      if (text.position === 'center') y = targetCanvas.height * 0.5;
-      context.save();
-      context.globalCompositeOperation = 'source-over';
-      context.globalAlpha = cue.alpha;
-      context.font = `600 ${fontSize}px system-ui, sans-serif`;
-      context.textAlign = 'center';
-      context.textBaseline = 'middle';
-      context.lineJoin = 'round';
-      context.lineWidth = Math.max(2, Math.round(fontSize / 15));
-      context.strokeStyle = 'rgba(0, 0, 0, .82)';
-      context.fillStyle = text.active_color || '#ffffff';
-      context.strokeText(cue.text, targetCanvas.width / 2, y, maximumWidth);
-      context.fillText(cue.text, targetCanvas.width / 2, y, maximumWidth);
-      context.restore();
+      drawLyricCue(targetCanvas, previewDocument, cue);
     }
 
     function updateSceneJumps() {
@@ -2248,6 +2270,7 @@
     backgroundColor,
     createEngine,
     decodePreviewState,
+    drawLyricCue,
     flattenLayer,
     initFullTrackPreview,
     initScenePreview,

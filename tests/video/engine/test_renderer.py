@@ -217,7 +217,7 @@ def test_renderer_is_deterministic_and_seeded() -> None:
     np.testing.assert_array_equal(first, second)
     assert not np.array_equal(first, another_seed)
     digest = hashlib.sha256(first.tobytes()).hexdigest()
-    assert digest == "5af5bb3cbf55629a7156badc71cf0f6af0e999a337e0f22be72c899c8dbfcfa1"
+    assert digest == "7f6a2d55423c30c8ed765217814696499c2f44af5ec3dbe4116441b0d411e94c"
 
 
 def test_saved_exact_section_cast_reproduces_the_same_frame(tmp_path: Path) -> None:

@@ -177,7 +177,9 @@ def map_layer_state(
     )
     rotation = math.radians(layer.rotation_degrees_per_second)
     rotation *= choreography.rotation_time * preset.motion_response * scale_gain
-    rotation += math.sin(time_seconds * 0.37 + scale_energy * math.pi) * 0.08
+    rotation += math.sin(
+        time_seconds * 0.37 + scale_energy * math.pi
+    ) * math.radians(layer.rotation_wobble_degrees)
 
     trail_fraction = (
         layer.trace.trail_fraction

@@ -9,6 +9,7 @@ const {
   backgroundColor,
   createEngine,
   decodePreviewState,
+  drawLyricCue,
   layerColor,
   lyricCueAt,
   mapLayerState,
@@ -357,6 +358,41 @@ test('mapped color and reactive background match renderer color math', () => {
   );
 });
 
+test('wobble defaults off and combines independently with continuous rotation', () => {
+  const documentModel = fullTrackFixture();
+  const preset = documentModel.mapping_preset;
+  const layer = {
+    ...documentModel.compositions.verse.traces[0],
+    rotation_degrees_per_second: 0,
+  };
+  const state = reactiveState({
+    master_energy: 0.5,
+    rotation_time: 0,
+  });
+
+  const still = mapLayerState(layer, state, 0, preset);
+  const wobbleOnly = mapLayerState(
+    { ...layer, rotation_wobble_degrees: 12 },
+    state,
+    0,
+    preset
+  );
+  const rotateAndWobble = mapLayerState(
+    {
+      ...layer,
+      rotation_degrees_per_second: 3,
+      rotation_wobble_degrees: 12,
+    },
+    { ...state, rotation_time: 2 },
+    0,
+    preset
+  );
+
+  assert.equal(still.rotation_radians, 0);
+  assert.ok(Math.abs(wobbleOnly.rotation_radians - 12 * Math.PI / 180) < 1e-12);
+  assert.ok(rotateAndWobble.rotation_radians > wobbleOnly.rotation_radians);
+});
+
 function fullTrackFixture() {
   const trace = (id, depth = 'foreground') => ({
     id,
@@ -526,6 +562,78 @@ test('lyric cue selection and fades remain tied to absolute seek time', () => {
   });
   assert.equal(lyricCueAt(documentModel, state, 3), null);
   assert.equal(lyricCueAt(documentModel, null, 8.5).alpha, 0.5);
+});
+
+test('the shared lyric painter scales project text onto either preview canvas', () => {
+  const calls = [];
+  const context = new Proxy(
+    {
+      fillText(...args) {
+        calls.push(['fillText', ...args]);
+      },
+      restore() {
+        calls.push(['restore']);
+      },
+      save() {
+        calls.push(['save']);
+      },
+      strokeText(...args) {
+        calls.push(['strokeText', ...args]);
+      },
+    },
+    {
+      set(target, name, value) {
+        calls.push(['set', name, value]);
+        target[name] = value;
+        return true;
+      },
+    }
+  );
+  const canvas = {
+    height: 540,
+    width: 960,
+    getContext() {
+      return context;
+    },
+  };
+  const documentModel = {
+    text: {
+      active_color: '#ffe066',
+      maximum_width_fraction: 0.75,
+      position: 'center',
+      size: 60,
+    },
+    video: { height: 1080 },
+  };
+
+  assert.equal(
+    drawLyricCue(
+      canvas,
+      documentModel,
+      { alpha: 0.4, text: 'Design with the lyric' }
+    ),
+    true
+  );
+  assert.ok(calls.some((entry) => (
+    entry[0] === 'set' && entry[1] === 'font' && entry[2] === '600 30px system-ui, sans-serif'
+  )));
+  assert.ok(calls.some((entry) => (
+    entry[0] === 'set' && entry[1] === 'globalCompositeOperation' && entry[2] === 'source-over'
+  )));
+  assert.ok(calls.some((entry) => (
+    entry[0] === 'set' && entry[1] === 'globalAlpha' && entry[2] === 0.4
+  )));
+  assert.ok(calls.some((entry) => (
+    entry[0] === 'set' && entry[1] === 'fillStyle' && entry[2] === '#ffe066'
+  )));
+  assert.deepEqual(
+    calls.filter((entry) => ['strokeText', 'fillText'].includes(entry[0])),
+    [
+      ['strokeText', 'Design with the lyric', 480, 270, 720],
+      ['fillText', 'Design with the lyric', 480, 270, 720],
+    ]
+  );
+  assert.equal(drawLyricCue(canvas, documentModel, null), false);
 });
 
 test('source-revision checks detect staleness without replacing loaded state', () => {

@@ -269,6 +269,7 @@ def _actor_cast_fields() -> dict[str, list[str]]:
         "direction_scale": ["1.25"],
         "direction_opacity": ["0.9"],
         "direction_rotation": ["0.4"],
+        "direction_wobble": ["7.5"],
         "direction_hue": ["12"],
         "direction_depth": ["foreground"],
         "direction_visible": ["true"],
@@ -550,12 +551,27 @@ def test_actor_identity_cast_and_direction_compile_without_rewriting_renderer(
     assert compiled.color_flow.swing_degrees == 120
     assert compiled.anchor_x == pytest.approx(0.37)
     assert compiled.base_scale == pytest.approx(1.75)
+    assert compiled.rotation_wobble_degrees == 7.5
     assert compiled.drivers.scale == "bass.energy"
 
     stored = TrackProjectDocument.model_validate(
         yaml.safe_load(project_path.read_text(encoding="utf-8"))
     )
     assert stored.project.visuals.actors["vocal-lantern"].components[0].anchor_x == 0.25
+
+
+def test_a_missing_scene_wobble_defaults_to_still(tmp_path: Path) -> None:
+    """Pre-control form submissions acquire no surprise motion."""
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    save_track_actor(tmp_path, release, track, _actor_fields())
+    fields = _actor_cast_fields()
+    fields.pop("direction_wobble")
+
+    result = save_casting(tmp_path, release, track, fields)
+
+    direction = result["project"].visuals.section_casts["verse"].actors[0].direction
+    assert direction.rotation_wobble_degrees == 0
+    assert result["composition"].traces[0].rotation_wobble_degrees == 0
 
 
 def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
@@ -576,6 +592,7 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
     assert trace["assignment"] == "lead"
     assert trace["anchor_x"] == pytest.approx(0.37)
     assert trace["base_scale"] == pytest.approx(1.75)
+    assert trace["rotation_wobble_degrees"] == 7.5
     assert {"family", "fixed_radius", "phase", "rotation", "samples", "color", "opacity"} <= set(trace)
     assert trace["family"] == "spirogram"
     assert trace["phase"] == 0.5
@@ -624,6 +641,7 @@ def test_recommended_actor_onboarding_and_exact_scene_direction(tmp_path: Path) 
         "direction_scale": ["1.1"],
         "direction_opacity": ["1"],
         "direction_rotation": ["0"],
+        "direction_wobble": ["0"],
         "direction_hue": ["0"],
         "direction_depth": [""],
         "direction_visible": ["true"],
@@ -743,6 +761,9 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert "Actor Library" in body
     assert "Actor Designer" in body
     assert "Scene Casting" in body
+    assert body.count("<h2>Look</h2>") == 1
+    assert 'id="track-look"' in body
+    assert body.index("<h2>Look</h2>") < body.index("<h2>Actor Library")
     assert body.index("<h2>Actor Library") < body.index("<h2>Scene Casting")
     assert body.index("<h2>Actor Designer") < body.index("<h2>Scene Casting")
     # An uncast scene leads with the track's own roster; the generated looks are
@@ -772,6 +793,30 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'type="range"' in body
     assert "/static/spiro-preview.js" in body
     assert "/static/video-live-preview.js" in body
+    assert "Audio-reactive preview of staged actors and timed lyrics" in body
+    assert 'name="direction_wobble"' in body
+    assert (
+        'title="Maximum angle this actor rocks in either direction in this scene. '
+        '0 turns wobble off; Rotation °/s controls continuous spin separately."'
+    ) in body
+    assert 'class="form-field actor-assignment-actor"' in body
+    assert "Stage position" in body
+    assert "<summary>Advanced actor performance</summary>" in body
+    assert "Appearance" in body
+    assert "Trace performance" in body
+    assert body.index("Stage position") < body.index("Advanced actor performance")
+    for help_text in (
+        "The track-wide visual identity and musical character playing this part",
+        "Horizontal position in the scene frame.",
+        "Vertical position in the scene frame.",
+        "Multiplies the size of the whole actor in this scene",
+        "Multiplies the opacity of the whole actor in this scene",
+        "Places the whole actor behind or in front of the other cast.",
+        "Keeps the cast assignment but chooses whether this actor is drawn",
+        "Continuous spin added to the actor identity in degrees per second.",
+        "Rotates all of this actor’s colors for this scene.",
+    ):
+        assert f'title="{help_text}' in body
     assert 'id="track-actor-designer"' in body
     assert 'class="actor-designer-live-layout"' in body
     assert 'class="actor-designer-controls"' in body

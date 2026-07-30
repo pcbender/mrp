@@ -1,3 +1,4 @@
+from dataclasses import replace
 from pathlib import Path
 
 import numpy as np
@@ -197,6 +198,72 @@ def test_semantic_mapping_keeps_geometry_stable_and_modulates_style() -> None:
     assert drums.line_width > drums_layer.line_width * 2
     assert drums.opacity > 0
     assert drums.hue_shift_degrees > drums_layer.hue_shift_degrees
+
+
+def test_rotation_and_explicit_wobble_are_independent_and_default_still() -> None:
+    project = ProjectManifest.model_validate(
+        {
+            "version": 1,
+            "title": "Wobble Fixture",
+            "audio": {"master": "master.wav"},
+            "lyrics": {"source": "lyrics.yaml", "language": "en"},
+            "cards": {
+                "opening": {"file": "open.jpg", "duration": 1},
+                "closing": {"file": "close.jpg", "duration": 1},
+            },
+            "text": {"font": "font.ttf"},
+        }
+    )
+    sample = SemanticSample(0.5, 0)
+    audio = AudioVisualState(
+        master=sample,
+        drums=sample,
+        bass=sample,
+        vocals=sample,
+        instruments=sample,
+        spectral_centroid=0.5,
+    )
+    choreography = ChoreographyState(
+        section_id="intro",
+        section_type="intro",
+        section_label="Intro",
+        section_progress=0.5,
+        transition_progress=1,
+        layer_fraction=1,
+        scale=1,
+        motion=0,
+        color_intensity=1,
+        onset_response=0,
+        rotation_direction=1,
+        palette_shift=0,
+        lyrics_opacity=1,
+    )
+    component = project.visuals.layers[0].model_copy(
+        update={"rotation_degrees_per_second": 0}
+    )
+
+    still = map_layer_state(component, audio, choreography, 0)
+    wobble_only = map_layer_state(
+        component.model_copy(update={"rotation_wobble_degrees": 12}),
+        audio,
+        choreography,
+        0,
+    )
+    rotate_and_wobble = map_layer_state(
+        component.model_copy(
+            update={
+                "rotation_degrees_per_second": 3,
+                "rotation_wobble_degrees": 12,
+            }
+        ),
+        audio,
+        replace(choreography, rotation_time=2),
+        0,
+    )
+
+    assert still.rotation_radians == 0
+    assert wobble_only.rotation_radians == pytest.approx(np.radians(12))
+    assert rotate_and_wobble.rotation_radians > wobble_only.rotation_radians
 
 
 def test_sections_change_landscape_spread_without_collapsing_anchors() -> None:
