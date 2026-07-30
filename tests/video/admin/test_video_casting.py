@@ -276,6 +276,82 @@ def _actor_cast_fields() -> dict[str, list[str]]:
     }
 
 
+def _look_fields(**overrides: str) -> dict[str, list[str]]:
+    fields = {
+        "section_id": ["verse_1"],
+        "section_type": ["verse"],
+        "scope": ["section"],
+        "action": ["save_look"],
+        "background": ["#2b0a3d"],
+        "background_response": ["0.42"],
+        "lyric_color": ["#ffe066"],
+        "lyric_size": ["48"],
+        "lyric_position": ["center"],
+    }
+    fields.update({name: [value] for name, value in overrides.items()})
+    return fields
+
+
+def test_the_look_saves_without_casting_anything(tmp_path: Path) -> None:
+    """Background and lyric settings save on a track with no cast at all.
+
+    A blank track is a working state — lyric timing is reviewed against the
+    master with nothing else on screen — so styling it cannot require adding an
+    actor first. The three settings live in three different sections of the
+    project, which is why none of them had ever been exposed.
+    """
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+
+    save_casting(tmp_path, release, track, _look_fields())
+
+    saved = yaml.safe_load(project_path.read_text(encoding="utf-8"))["project"]
+    assert saved["video"]["background"] == "#2b0a3d"
+    assert saved["visuals"]["background_response"] == 0.42
+    assert saved["text"]["active_color"] == "#ffe066"
+    assert saved["text"]["size"] == 48
+    assert saved["text"]["position"] == "center"
+    # Nothing was cast on the way through.
+    assert not saved["visuals"].get("section_casts")
+    assert not saved["visuals"].get("cast_overrides")
+
+
+def test_saving_a_cast_leaves_the_look_alone(tmp_path: Path) -> None:
+    """The cast form does not carry the look fields, so they must not reset."""
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+    save_casting(tmp_path, release, track, _look_fields())
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    save_casting(tmp_path, release, track, _actor_cast_fields())
+
+    saved = yaml.safe_load(project_path.read_text(encoding="utf-8"))["project"]
+    assert saved["video"]["background"] == "#2b0a3d"
+    assert saved["text"]["active_color"] == "#ffe066"
+    assert saved["text"]["size"] == 48
+
+
+@pytest.mark.parametrize(
+    "field, value, message",
+    [
+        ("background", "octarine", "six-digit hex"),
+        ("lyric_color", "#fff", "six-digit hex"),
+        ("background_response", "1.5", "between 0 and 1"),
+        ("lyric_size", "0", "greater than 0"),
+        ("lyric_position", "sideways", "top, center, or bottom"),
+    ],
+)
+def test_the_look_rejects_values_the_contract_would_refuse(
+    tmp_path: Path, field: str, value: str, message: str
+) -> None:
+    """Said in the form's own words, not as a pydantic pattern failure."""
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+    before = project_path.read_text(encoding="utf-8")
+
+    with pytest.raises(CastingEditorError, match=message):
+        save_casting(tmp_path, release, track, _look_fields(**{field: value}))
+
+    assert project_path.read_text(encoding="utf-8") == before
+
+
 def test_a_new_project_reads_as_uncast_rather_than_legacy(tmp_path: Path) -> None:
     """A track made this week is not a legacy project.
 

@@ -205,6 +205,55 @@
       <script type="application/json" id="scene-storyboard-data">{{ casting.storyboard | tojson }}</script>
     </div></div>
 
+    {# Whole-track look, saved on its own. It cannot live inside the scene-cast
+       form: that form needs at least one actor to save, and a track with
+       nothing cast anywhere is a working state for reviewing lyric timing
+       against the master. #}
+    <section class="form-card"><div class="form-body">
+      <div>
+        <h2>Look</h2>
+        <p class="video-help">Applies to the whole track, not just this scene. Background and lyric settings show in the preview above and in Live Preview.</p>
+      </div>
+      <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
+        {{ context_fields() }}
+        <div class="form-grid video-project-look">
+          <div class="form-field">
+            {{ actor_control_label('Audio mapping', 'How strongly the audio drives what is on screen. Every actor inherits it.') }}
+            <select name="mapping_preset">{% for preset in casting.presets.mapping %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.mapping_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select>
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Palette', 'The colour set actors draw from when they do not carry a colour of their own.') }}
+            <select name="palette_preset">{% for preset in casting.presets.palette %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.palette_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select>
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Background', 'The colour behind everything. The frame sits at this colour when the track is quiet.') }}
+            <input type="color" name="background" value="{{ casting.project.video.background }}">
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Background reactivity', 'How far the background lifts toward white on the master’s energy. 0 holds it still.') }}
+            <div class="slider-pair">
+              <input type="range" min="0" max="1" step="0.01" value="{{ casting.project.visuals.background_response }}" aria-hidden="true" tabindex="-1">
+              <input type="number" name="background_response" min="0" max="1" step="0.01" value="{{ casting.project.visuals.background_response }}" required>
+            </div>
+            <small>0–1. Default 0.16.</small>
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Lyric colour', 'The colour of the sung line drawn over the scene.') }}
+            <input type="color" name="lyric_color" value="{{ casting.project.text.active_color }}">
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Lyric size', 'Point size of the lyric line, against a ' ~ casting.project.video.height ~ 'px tall frame.') }}
+            <input type="number" name="lyric_size" min="1" step="1" value="{{ casting.project.text.size }}" required>
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Lyric position', 'Where the sung line sits in the frame.') }}
+            <select name="lyric_position">{% for choice in ['top', 'center', 'bottom'] %}<option value="{{ choice }}" {% if casting.project.text.position == choice %}selected{% endif %}>{{ choice }}</option>{% endfor %}</select>
+          </div>
+        </div>
+        <button class="btn btn-primary" name="action" value="save_look" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Save look</button>
+      </form>
+    </div></section>
+
     <section class="form-card"><div class="form-body">
       <div><h2>Cast this scene</h2><p class="video-help">Assign track actors to {{ 'all ' ~ casting.selected_section.type ~ ' scenes' if casting.scope == 'type' else 'only ' ~ casting.selected_section.id }}, then direct how each one performs here.</p></div>
       {# An empty scene is left empty. Adding the default actors is a button,
@@ -221,11 +270,10 @@
       {% endif %}
       <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
         {{ context_fields() }}
-        <div class="form-grid video-project-look">
-          <div class="form-field"><label>Audio mapping</label><select name="mapping_preset">{% for preset in casting.presets.mapping %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.mapping_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select></div>
-          <div class="form-field"><label>Palette</label><select name="palette_preset">{% for preset in casting.presets.palette %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.palette_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select></div>
-          <input type="hidden" name="auto_casting" value="{{ 'true' if casting.project.visuals.auto_casting else 'false' }}">
-        </div>
+        {# Audio mapping and palette moved to Look: they are whole-track
+           settings, so they belong beside the other whole-track ones rather
+           than on whichever scene is selected. Omitted fields keep their
+           current value, so saving a cast leaves them alone. #}
         <div id="actor-assignments">
           {% for assignment in (casting.actor_cast.actors if casting.actor_cast else []) %}{{ direction_fields(assignment, loop.index, casting.project_actors) }}{% endfor %}
         </div>
