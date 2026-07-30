@@ -635,3 +635,63 @@ def test_realignment_drops_a_manual_section_that_now_covers_sung_time(
     assert len(warnings) == 1
     assert "overlap" in warnings[0]
     assert "4.000s–5.000s" in warnings[0]
+
+
+def test_a_lyric_less_intro_and_outro_take_the_time_around_the_singing() -> None:
+    lyrics = StructuredLyrics(
+        version=1,
+        sections=[
+            LyricSection(id="intro", type="intro", lines=[]),
+            LyricSection(
+                id="verse", type="verse", lines=[LyricLine(text="Hello world")]
+            ),
+            LyricSection(id="outro", type="outro", lines=[]),
+        ],
+    )
+    transcription = _transcription(
+        [TranscriptWord("hello", 2.0, 2.5), TranscriptWord("world", 2.5, 3.0)]
+    )
+
+    aligned, _warnings = align_lyrics_document(
+        lyrics,
+        transcription,
+        source=Path("lyrics.yaml"),
+        duration=8,
+        config=AlignmentConfig(),
+    )
+
+    assert [section.id for section in aligned.sections] == ["intro", "verse", "outro"]
+    # The intro is the time before the first word, the outro the time after the
+    # last, out to the end of the master.
+    assert (aligned.sections[0].start, aligned.sections[0].end) == pytest.approx(
+        (0.0, 2.0)
+    )
+    assert (aligned.sections[2].start, aligned.sections[2].end) == pytest.approx(
+        (3.0, 8.0)
+    )
+
+
+def test_a_lyric_less_section_with_no_room_is_dropped_not_fatal() -> None:
+    """Singing from the first sample leaves an intro nothing to occupy."""
+    lyrics = StructuredLyrics(
+        version=1,
+        sections=[
+            LyricSection(id="intro", type="intro", lines=[]),
+            LyricSection(
+                id="verse", type="verse", lines=[LyricLine(text="Hello world")]
+            ),
+        ],
+    )
+    transcription = _transcription(
+        [TranscriptWord("hello", 0.0, 0.5), TranscriptWord("world", 0.5, 1.0)]
+    )
+
+    aligned, _warnings = align_lyrics_document(
+        lyrics,
+        transcription,
+        source=Path("lyrics.yaml"),
+        duration=4,
+        config=AlignmentConfig(),
+    )
+
+    assert [section.id for section in aligned.sections] == ["verse"]

@@ -28,6 +28,7 @@ from mrp.video.pipeline import (
     render_project_video,
 )
 from mrp.video.project import (
+    LYRIC_LESS_SECTION_TYPES,
     AlignmentConfig,
     AnalysisConfig,
     AudioConfig,
@@ -596,7 +597,7 @@ def _lyrics_from_text(
     sections = [
         section
         for section in sections
-        if section["lines"] or section["type"] == "instrumental"
+        if section["lines"] or section["type"] in LYRIC_LESS_SECTION_TYPES
     ]
     if not sections:
         sections = [start_section("Instrumental", "instrumental")]
