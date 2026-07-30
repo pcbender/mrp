@@ -683,6 +683,7 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
         "line_width": layer.line_width,
         "depth": layer.depth,
         "rotation_degrees_per_second": layer.rotation_degrees_per_second,
+        "rotation_wobble_degrees": layer.rotation_wobble_degrees,
         "hue_shift_degrees": layer.hue_shift_degrees,
         "blend_mode": layer.blend_mode,
         "drivers": layer.drivers.model_dump(mode="json", exclude_none=True),
@@ -1222,6 +1223,13 @@ def _actor_assignment_payloads(
         "direction_head",
     )
     columns = {name: _repeated(fields, name, count) for name in names}
+    # Older saved forms and API callers predate explicit wobble. Missing means
+    # the new POLA default — still — while a supplied column remains strict.
+    columns["direction_wobble"] = (
+        _repeated(fields, "direction_wobble", count)
+        if "direction_wobble" in fields
+        else ["0"] * count
+    )
     columns |= {
         name: _repeated_optional(fields, name, count) for name in wardrobe_names
     }
@@ -1233,6 +1241,10 @@ def _actor_assignment_payloads(
             "rotation_offset_degrees_per_second": _number(
                 columns["direction_rotation"][index],
                 f"actor {assignment_id} rotation",
+            ),
+            "rotation_wobble_degrees": _number(
+                columns["direction_wobble"][index],
+                f"actor {assignment_id} wobble",
             ),
             "hue_shift_degrees": _number(
                 columns["direction_hue"][index],

@@ -84,6 +84,7 @@
         "opacity": 0.75,
         "line_width": 2.5,
         "rotation_degrees_per_second": -1.2,
+        "rotation_wobble_degrees": 4.583662361046586,
         "hue_shift_degrees": 12.0,
         "blend_mode": "screen",
         "drivers": {
@@ -151,6 +152,7 @@
         "opacity": 0.16,
         "line_width": 1.2,
         "rotation_degrees_per_second": -0.35,
+        "rotation_wobble_degrees": 4.583662361046586,
         "hue_shift_degrees": 0.0,
         "blend_mode": "screen",
         "drivers": {}

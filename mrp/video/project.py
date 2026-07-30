@@ -429,6 +429,7 @@ class VisualLayerConfig(ContractModel):
     opacity: float = Field(default=0.8, ge=0, le=1)
     line_width: float = Field(default=2, gt=0, le=20)
     rotation_degrees_per_second: float = Field(default=0, ge=-180, le=180)
+    rotation_wobble_degrees: float = Field(default=0, ge=0, le=180)
     hue_shift_degrees: float = Field(default=0, ge=-360, le=360)
     blend_mode: Literal["normal", "screen"] = "screen"
     drivers: TraceAudioDriversConfig = Field(default_factory=TraceAudioDriversConfig)
@@ -506,6 +507,7 @@ class ActorDirectionConfig(ContractModel):
         ge=-180,
         le=180,
     )
+    rotation_wobble_degrees: float = Field(default=0, ge=0, le=180)
     hue_shift_degrees: float = Field(default=0, ge=-360, le=360)
     depth: Literal["background", "foreground"] | None = None
     visible: bool = True

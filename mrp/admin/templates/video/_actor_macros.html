@@ -28,6 +28,7 @@
   'scale': 1,
   'opacity': 1,
   'rotation_offset_degrees_per_second': 0,
+  'rotation_wobble_degrees': 0,
   'hue_shift_degrees': 0,
   'depth': none,
   'visible': true,
@@ -126,30 +127,65 @@
 <fieldset class="actor-assignment-card"{% if not is_new %} data-assignment-id="{{ assignment.id }}"{% endif %}>
   <legend><span class="assignment-title">{{ 'New cast member' if is_new else 'Cast member ' ~ index }}</span><button type="button" class="btn btn-danger btn-sm" onclick="this.closest('fieldset').remove(); if (window.markStoryboardUnsaved) markStoryboardUnsaved(); else if (window.redrawStoryboard) redrawStoryboard();">Remove</button></legend>
   <input type="hidden" name="assignment_id" value="{{ 'appearance' if is_new else assignment.id }}">
-  <div class="form-grid actor-direction-grid">
-    <div class="form-field"><label>Track actor</label><select name="assigned_actor">{% for item in project_actors %}<option value="{{ item.id }}" {% if not is_new and assignment.actor == item.id %}selected{% endif %}>{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select></div>
-    <div class="form-field"><label>Position X</label><input type="number" step="0.001" name="direction_anchor_x" value="{{ direction.anchor_x if direction.anchor_x is not none else '' }}" placeholder="identity"></div>
-    <div class="form-field"><label>Position Y</label><input type="number" step="0.001" name="direction_anchor_y" value="{{ direction.anchor_y if direction.anchor_y is not none else '' }}" placeholder="identity"></div>
-    <div class="form-field"><label>Scale</label><input type="number" step="0.01" name="direction_scale" value="{{ direction.scale }}" required></div>
-    <div class="form-field"><label>Opacity</label><input type="number" step="0.01" name="direction_opacity" value="{{ direction.opacity }}" required></div>
-    <div class="form-field"><label>Rotation °/s</label><input type="number" step="0.1" name="direction_rotation" value="{{ direction.rotation_offset_degrees_per_second }}" required></div>
-    <div class="form-field"><label>Hue shift °</label><input type="number" step="1" name="direction_hue" value="{{ direction.hue_shift_degrees }}" required></div>
-    <div class="form-field"><label>Layer</label><select name="direction_depth"><option value="">actor default</option><option value="background" {% if direction.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if direction.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
-    <div class="form-field"><label>Visibility</label><select name="direction_visible"><option value="true" {% if direction.visible %}selected{% endif %}>visible</option><option value="false" {% if not direction.visible %}selected{% endif %}>hidden in this scene</option></select></div>
-    <div class="form-field">{{ actor_control_label('Wardrobe color', 'Dress this actor in a color for this scene only. Unchecked, it wears its own identity color and a production palette may restyle it.') }}
-      <div class="wardrobe-color">
-        <input type="checkbox" class="wardrobe-toggle" {% if direction.color %}checked{% endif %} oninput="mrpSyncWardrobeColor(this)" aria-label="Dress this actor in a scene-specific color">
-        <input type="color" class="wardrobe-swatch" value="{{ direction.color or '#ffffff' }}" {% if not direction.color %}disabled{% endif %} oninput="mrpSyncWardrobeColor(this)">
-        <input type="hidden" name="direction_color" value="{{ direction.color or '' }}">
+  <div class="form-field actor-assignment-actor">
+    {{ actor_control_label('Track actor', 'The track-wide visual identity and musical character playing this part in the scene.') }}
+    <select name="assigned_actor">{% for item in project_actors %}<option value="{{ item.id }}" {% if not is_new and assignment.actor == item.id %}selected{% endif %}>{{ item.name }} — plays {{ item.actor.character }}</option>{% endfor %}</select>
+  </div>
+
+  <div class="video-style-group actor-direction-group">
+    <h4>Stage position</h4>
+    <p class="video-help">Place this actor in the frame and decide whether it performs in front or behind.</p>
+    <div class="form-grid actor-direction-grid">
+      <div class="form-field">{{ actor_control_label('Position X', 'Horizontal position in the scene frame. 0 is the left edge, 0.5 is centre, and 1 is the right edge. Blank keeps the actor identity position.') }}<input type="number" step="0.001" min="-0.5" max="1.5" name="direction_anchor_x" value="{{ direction.anchor_x if direction.anchor_x is not none else '' }}" placeholder="identity"></div>
+      <div class="form-field">{{ actor_control_label('Position Y', 'Vertical position in the scene frame. 0 is the top edge, 0.5 is centre, and 1 is the bottom edge. Blank keeps the actor identity position.') }}<input type="number" step="0.001" min="-0.5" max="1.5" name="direction_anchor_y" value="{{ direction.anchor_y if direction.anchor_y is not none else '' }}" placeholder="identity"></div>
+      <div class="form-field">{{ actor_control_label('Scale', 'Multiplies the size of the whole actor in this scene without changing its identity.') }}<input type="number" step="0.01" min="0.01" max="3" name="direction_scale" value="{{ direction.scale }}" required></div>
+      <div class="form-field">{{ actor_control_label('Opacity', 'Multiplies the opacity of the whole actor in this scene. 0 is invisible and 1 preserves its identity opacity.') }}<input type="number" step="0.01" min="0" max="1" name="direction_opacity" value="{{ direction.opacity }}" required></div>
+      <div class="form-field">{{ actor_control_label('Layer', 'Places the whole actor behind or in front of the other cast. Actor default keeps the depth from its identity.') }}<select name="direction_depth"><option value="">actor default</option><option value="background" {% if direction.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if direction.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
+      <div class="form-field">{{ actor_control_label('Visibility', 'Keeps the cast assignment but chooses whether this actor is drawn in the scene.') }}<select name="direction_visible"><option value="true" {% if direction.visible %}selected{% endif %}>visible</option><option value="false" {% if not direction.visible %}selected{% endif %}>hidden in this scene</option></select></div>
+    </div>
+  </div>
+
+  <details class="video-advanced actor-direction-advanced">
+    <summary>Advanced actor performance</summary>
+    <p class="video-help">Direct this actor’s motion, scene-specific appearance, and drawing style without changing its track-wide identity.</p>
+
+    <div class="video-style-group actor-direction-group">
+      <h4>Motion</h4>
+      <p class="video-help">Continuous spin and rocking applied to this actor only.</p>
+      <div class="form-grid actor-direction-grid">
+        <div class="form-field">{{ actor_control_label('Rotation °/s', 'Continuous spin added to the actor identity in degrees per second. Negative values rotate the other way; 0 adds no scene rotation.') }}<input type="number" step="0.1" min="-180" max="180" name="direction_rotation" value="{{ direction.rotation_offset_degrees_per_second }}" required></div>
+        <div class="form-field">{{ actor_control_label('Wobble ±°', 'Maximum angle this actor rocks in either direction in this scene. 0 turns wobble off; Rotation °/s controls continuous spin separately.') }}<input type="number" step="0.1" min="0" max="180" name="direction_wobble" value="{{ direction.rotation_wobble_degrees }}" required></div>
       </div>
     </div>
-    <div class="form-field">{{ actor_control_label('Line width', 'Stroke weight in this scene. Blank wears the actor\'s own.') }}<input type="number" step="0.1" min="0.1" max="20" name="direction_line_width" value="{{ direction.line_width if direction.line_width is not none else '' }}" placeholder="identity"></div>
-    <div class="form-field">{{ actor_control_label('Blend', 'How this actor composites over the scene here. Screen glows against dark backgrounds; normal paints solid.') }}<select name="direction_blend"><option value="">actor default</option>{% for mode in ['normal','screen'] %}<option value="{{ mode }}" {% if direction.blend_mode == mode %}selected{% endif %}>{{ mode }}</option>{% endfor %}</select></div>
-    <div class="form-field">{{ actor_control_label('Trace speed', 'How fast the curve draws itself in this scene, in cycles per second. Higher reads as more energy.') }}<input type="number" step="0.01" min="0.01" max="2" name="direction_cycles" value="{{ direction.trace.cycles_per_second if direction.trace.cycles_per_second is not none else '' }}" placeholder="identity"></div>
-    <div class="form-field">{{ actor_control_label('Trail', 'How much of the curve stays lit behind the head. Short trails feel taut, long trails feel sustained.') }}<input type="number" step="0.01" min="0.01" max="1" name="direction_trail" value="{{ direction.trace.trail_fraction if direction.trace.trail_fraction is not none else '' }}" placeholder="identity"></div>
-    <div class="form-field">{{ actor_control_label('Ghosts', 'Echo copies trailing the curve in this scene. 0 is a clean single line.') }}<input type="number" step="1" min="0" max="6" name="direction_ghosts" value="{{ direction.trace.ghost_count if direction.trace.ghost_count is not none else '' }}" placeholder="identity"></div>
-    <div class="form-field">{{ actor_control_label('Ghost spacing', 'How far apart the echo copies sit along the curve.') }}<input type="number" step="0.01" min="0" max="1" name="direction_ghost_spacing" value="{{ direction.trace.ghost_spacing if direction.trace.ghost_spacing is not none else '' }}" placeholder="identity"></div>
-    <div class="form-field">{{ actor_control_label('Head', 'Radius of the bright dot leading the trace. 0 hides it.') }}<input type="number" step="0.5" min="0" max="24" name="direction_head" value="{{ direction.trace.head_radius if direction.trace.head_radius is not none else '' }}" placeholder="identity"></div>
-  </div>
+
+    <div class="video-style-group actor-direction-group">
+      <h4>Appearance</h4>
+      <p class="video-help">A scene-specific costume layered over the actor’s own color and line treatment.</p>
+      <div class="form-grid actor-direction-grid">
+        <div class="form-field">{{ actor_control_label('Hue shift °', 'Rotates all of this actor’s colors for this scene. 0 keeps their current hues.') }}<input type="number" step="1" min="-360" max="360" name="direction_hue" value="{{ direction.hue_shift_degrees }}" required></div>
+        <div class="form-field">{{ actor_control_label('Wardrobe color', 'Dress this actor in a color for this scene only. Unchecked, it wears its own identity color and a production palette may restyle it.') }}
+          <div class="wardrobe-color">
+            <input type="checkbox" class="wardrobe-toggle" {% if direction.color %}checked{% endif %} oninput="mrpSyncWardrobeColor(this)" aria-label="Dress this actor in a scene-specific color">
+            <input type="color" class="wardrobe-swatch" value="{{ direction.color or '#ffffff' }}" {% if not direction.color %}disabled{% endif %} oninput="mrpSyncWardrobeColor(this)">
+            <input type="hidden" name="direction_color" value="{{ direction.color or '' }}">
+          </div>
+        </div>
+        <div class="form-field">{{ actor_control_label('Line width', 'Stroke weight in this scene. Blank wears the actor\'s own.') }}<input type="number" step="0.1" min="0.1" max="20" name="direction_line_width" value="{{ direction.line_width if direction.line_width is not none else '' }}" placeholder="identity"></div>
+        <div class="form-field">{{ actor_control_label('Blend', 'How this actor composites over the scene here. Screen glows against dark backgrounds; normal paints solid.') }}<select name="direction_blend"><option value="">actor default</option>{% for mode in ['normal','screen'] %}<option value="{{ mode }}" {% if direction.blend_mode == mode %}selected{% endif %}>{{ mode }}</option>{% endfor %}</select></div>
+      </div>
+    </div>
+
+    <div class="video-style-group actor-direction-group">
+      <h4>Trace performance</h4>
+      <p class="video-help">Override how this actor draws and echoes its curves in this scene. Blank keeps the actor identity setting.</p>
+      <div class="form-grid actor-direction-grid">
+        <div class="form-field">{{ actor_control_label('Trace speed', 'How fast the curve draws itself in this scene, in cycles per second. Higher reads as more energy.') }}<input type="number" step="0.01" min="0.01" max="2" name="direction_cycles" value="{{ direction.trace.cycles_per_second if direction.trace.cycles_per_second is not none else '' }}" placeholder="identity"></div>
+        <div class="form-field">{{ actor_control_label('Trail', 'How much of the curve stays lit behind the head. Short trails feel taut, long trails feel sustained.') }}<input type="number" step="0.01" min="0.01" max="1" name="direction_trail" value="{{ direction.trace.trail_fraction if direction.trace.trail_fraction is not none else '' }}" placeholder="identity"></div>
+        <div class="form-field">{{ actor_control_label('Ghosts', 'Echo copies trailing the curve in this scene. 0 is a clean single line.') }}<input type="number" step="1" min="0" max="6" name="direction_ghosts" value="{{ direction.trace.ghost_count if direction.trace.ghost_count is not none else '' }}" placeholder="identity"></div>
+        <div class="form-field">{{ actor_control_label('Ghost spacing', 'How far apart the echo copies sit along the curve.') }}<input type="number" step="0.01" min="0" max="1" name="direction_ghost_spacing" value="{{ direction.trace.ghost_spacing if direction.trace.ghost_spacing is not none else '' }}" placeholder="identity"></div>
+        <div class="form-field">{{ actor_control_label('Head', 'Radius of the bright dot leading the trace. 0 hides it.') }}<input type="number" step="0.5" min="0" max="24" name="direction_head" value="{{ direction.trace.head_radius if direction.trace.head_radius is not none else '' }}" placeholder="identity"></div>
+      </div>
+    </div>
+  </details>
 </fieldset>
 {%- endmacro %}

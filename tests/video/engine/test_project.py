@@ -386,7 +386,9 @@ def test_actor_contracts_are_optional_pinned_and_reference_checked() -> None:
     manifest = ProjectManifest.model_validate(project)
 
     assert manifest.visuals.actors["vocal-bloom"].name == "Vocal Bloom"
-    assert manifest.visuals.section_casts["verse"].actors[0].direction.scale == 1.2
+    direction = manifest.visuals.section_casts["verse"].actors[0].direction
+    assert direction.scale == 1.2
+    assert direction.rotation_wobble_degrees == 0
 
     project["visuals"]["section_casts"]["verse"]["actors"][0]["actor"] = "missing"
     with pytest.raises(ValidationError, match="unknown actors"):

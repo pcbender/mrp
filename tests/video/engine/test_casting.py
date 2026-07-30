@@ -143,6 +143,7 @@ def test_actor_cast_compiles_identity_and_scene_direction_to_traces() -> None:
                                 "anchor_y": 0.45,
                                 "scale": 1.5,
                                 "opacity": 0.5,
+                                "rotation_wobble_degrees": 7.5,
                                 "hue_shift_degrees": 20,
                             },
                         }
@@ -165,6 +166,7 @@ def test_actor_cast_compiles_identity_and_scene_direction_to_traces() -> None:
     assert petals.anchor_y == 0.25
     assert petals.base_scale == 0.75
     assert petals.opacity == 0.4
+    assert petals.rotation_wobble_degrees == 7.5
     assert petals.role == "bass"
     assert petals.drivers.scale == "bass.energy"
     assert petals.drivers.pulse == "bass.accent"

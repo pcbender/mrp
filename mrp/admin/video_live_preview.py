@@ -433,6 +433,7 @@ def _safe_layer(
         "opacity": layer.opacity,
         "line_width": layer.line_width,
         "rotation_degrees_per_second": layer.rotation_degrees_per_second,
+        "rotation_wobble_degrees": layer.rotation_wobble_degrees,
         "hue_shift_degrees": layer.hue_shift_degrees,
         "blend_mode": layer.blend_mode,
         "drivers": layer.drivers.model_dump(mode="json", exclude_none=True),

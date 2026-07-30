@@ -604,6 +604,9 @@ def compile_actor_cast(
                             -180,
                             180,
                         ),
+                        # Wobble is scene direction, not actor identity. Zero is
+                        # deliberately still: no hidden motion is injected.
+                        "rotation_wobble_degrees": direction.rotation_wobble_degrees,
                         "hue_shift_degrees": _clamp(
                             component.hue_shift_degrees
                             + direction.hue_shift_degrees,
