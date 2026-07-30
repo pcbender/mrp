@@ -481,14 +481,17 @@ def test_generator_directions_do_not_become_sections_or_cues() -> None:
     )
 
     # Ids stay distinct while the type groups them, so per-type scene styling
-    # and transitions still match every chorus.
+    # and transitions still match every chorus. The lyric-less [Intro] is kept
+    # for alignment to size from the music before the first word.
     assert [section.id for section in lyrics.sections] == [
+        "intro",
         "verse-1",
         "chorus",
         "verse-2",
         "chorus-2",
     ]
     assert [section.type for section in lyrics.sections] == [
+        "intro",
         "verse",
         "chorus",
         "verse",
@@ -542,3 +545,33 @@ def test_a_piped_label_is_always_structure() -> None:
     assert lyrics.sections[0].id == "whisper-break"
     assert lyrics.sections[0].type == "whisper-break"
     assert [line.text for line in lyrics.sections[0].lines] == ["Softly now"]
+
+
+def test_an_empty_intro_or_outro_survives_but_an_empty_verse_does_not() -> None:
+    """A structural marker with no sung line still earns a scene at the edges."""
+    from mrp.video.workspace import _lyrics_from_text
+
+    lyrics, directions = _lyrics_from_text(
+        "\n".join(
+            [
+                "[Intro]",
+                "[clean guitar arpeggios]",
+                "[Verse 1]",
+                "Moon low in the eastern sky",
+                "[Bridge]",
+                "[bass and drums only]",
+                "[Outro]",
+                "[feedback fade]",
+            ]
+        ),
+        instrumental=False,
+    )
+
+    # Intro and outro are kept for alignment to size; the lyric-less bridge is
+    # dropped, as it always was.
+    assert [(section.id, len(section.lines)) for section in lyrics.sections] == [
+        ("intro", 0),
+        ("verse-1", 1),
+        ("outro", 0),
+    ]
+    assert len(directions) == 3

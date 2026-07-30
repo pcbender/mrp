@@ -573,12 +573,10 @@ def _build_sections(
             else duration
         )
         if right <= left:
-            section_ids = ", ".join(
-                section.id for section in lyrics.sections[run_start:run_end]
-            )
-            raise SpirophonicAlignmentError(
-                f"empty section timing has no positive window ({section_ids})"
-            )
+            # A lyric-less section the music leaves no room for — an [Intro]
+            # over a song that starts singing at 0s. Drop it rather than fail
+            # the alignment; it was never going to be a scene.
+            continue
         section_duration = (right - left) / (run_end - run_start)
         for offset, section_index in enumerate(range(run_start, run_end)):
             start = left + offset * section_duration
@@ -592,7 +590,13 @@ def _build_sections(
         strict=True,
     ):
         if bounds is None:
-            raise SpirophonicAlignmentError("internal error: unresolved section timing")
+            # Only a lyric-less section the loop above found no room for; a
+            # section with cues always resolves from its own line timings.
+            if lines:
+                raise SpirophonicAlignmentError(
+                    "internal error: unresolved section timing"
+                )
+            continue
         aligned_sections.append(
             AlignedLyricSection(
                 id=section.id,

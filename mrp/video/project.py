@@ -805,6 +805,12 @@ class LyricLine(ContractModel):
         return self
 
 
+# Section types that earn a scene without carrying a sung line: an instrumental
+# passage, and an intro or outro sized from the music around it — the time
+# before the first word, or after the last.
+LYRIC_LESS_SECTION_TYPES = frozenset({"instrumental", "intro", "outro"})
+
+
 class LyricSection(ContractModel):
     id: NonBlankText
     type: NonBlankText
@@ -813,8 +819,12 @@ class LyricSection(ContractModel):
 
     @model_validator(mode="after")
     def vocal_sections_have_lines(self) -> "LyricSection":
-        if self.type != "instrumental" and not self.lines:
-            raise ValueError("non-instrumental sections must contain at least one line")
+        if self.type not in LYRIC_LESS_SECTION_TYPES and not self.lines:
+            raise ValueError(
+                "sections other than "
+                + ", ".join(sorted(LYRIC_LESS_SECTION_TYPES))
+                + " must contain at least one line"
+            )
         return self
 
 
