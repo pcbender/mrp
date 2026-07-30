@@ -30,7 +30,21 @@ runner = CliRunner()
 FONT_PATH = Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf")
 
 
-def _project(*, seed: int = 4821) -> ProjectManifest:
+def _auto_composition(section_type: str, seed: int) -> dict:
+    """The default look for a section type, as a stored composition.
+
+    An uncast scene draws nothing now, so a renderer fixture has to say what it
+    casts. Generating it keeps these tests on the same shapes they always used,
+    while making the cast explicit rather than something the resolver supplied.
+    """
+    from mrp.video.casting import generate_auto_composition
+
+    return generate_auto_composition(section_type, seed).model_dump(
+        mode="json", exclude_none=True
+    )
+
+
+def _project(*, seed: int = 4821, cast: bool = True) -> ProjectManifest:
     return ProjectManifest.model_validate(
         {
             "version": 1,
@@ -48,6 +62,14 @@ def _project(*, seed: int = 4821) -> ProjectManifest:
                 "seed": seed,
             },
             "text": {"font": FONT_PATH.name, "size": 28},
+            "visuals": {
+                "section_compositions": {
+                    "verse": _auto_composition("verse", seed),
+                    "chorus": _auto_composition("chorus", seed),
+                }
+            }
+            if cast
+            else {},
         }
     )
 
@@ -195,7 +217,7 @@ def test_renderer_is_deterministic_and_seeded() -> None:
     np.testing.assert_array_equal(first, second)
     assert not np.array_equal(first, another_seed)
     digest = hashlib.sha256(first.tobytes()).hexdigest()
-    assert digest == "b94401ba693f046413208be2422c661defc3723d11b963302147ae77d5b5e68d"
+    assert digest == "5af5bb3cbf55629a7156badc71cf0f6af0e999a337e0f22be72c899c8dbfcfa1"
 
 
 def test_saved_exact_section_cast_reproduces_the_same_frame(tmp_path: Path) -> None:
@@ -246,22 +268,35 @@ def test_saved_exact_section_cast_reproduces_the_same_frame(tmp_path: Path) -> N
     assert not np.array_equal(first, render_frame(_context(), 4.5, 45, width=320, height=180))
 
 
-def test_disabling_auto_casting_preserves_the_global_layer_renderer() -> None:
-    project = _project()
-    project = project.model_copy(
-        update={"visuals": project.visuals.model_copy(update={"auto_casting": False})}
-    )
-    context = build_render_context(
-        project,
-        _analysis_bundle(),
-        _aligned_sections(),
-        root=FONT_PATH.parent,
-    )
+def test_an_uncast_scene_renders_the_background_alone() -> None:
+    """No cast, no shapes.
 
-    frame = render_frame(context, 4.5, 45, width=320, height=180)
-    digest = hashlib.sha256(frame.tobytes()).hexdigest()
+    A scene used to fill itself in from the deterministic look, or from the
+    global layer list when auto-casting was off, so a video showed shapes its
+    author never chose. Neither stands in for a cast now, so the frame is the
+    background and nothing else.
+    """
+    for auto_casting in (True, False):
+        project = _project(cast=False)
+        project = project.model_copy(
+            update={
+                "visuals": project.visuals.model_copy(
+                    update={"auto_casting": auto_casting}
+                )
+            }
+        )
+        assert project.visuals.layers, "fixture keeps global layers to fall back to"
 
-    assert digest == "f2b468d6b4c36df4ee024f3f4cbfeb40e50c4a4a727605ab4387ba36a20c49e8"
+        context = build_render_context(
+            project,
+            _analysis_bundle(),
+            _aligned_sections(),
+            root=FONT_PATH.parent,
+        )
+        frame = render_frame(context, 4.5, 45, width=320, height=180)
+
+        colors = np.unique(frame.reshape(-1, frame.shape[-1]), axis=0)
+        assert len(colors) == 1, f"auto_casting={auto_casting} drew {len(colors)} colors"
 
 
 def test_render_context_builds_and_crossfades_distinct_section_casts() -> None:
@@ -299,12 +334,12 @@ def test_render_context_builds_and_crossfades_distinct_section_casts() -> None:
     settled_casts = _weighted_compositions(context, settled)
 
     assert [(cast.key, weight) for cast, weight in boundary_casts] == [
-        ("auto:verse", 1),
-        ("auto:chorus", 0),
+        ("type:verse", 1),
+        ("type:chorus", 0),
     ]
     assert [weight for _, weight in midpoint_casts] == pytest.approx([0.5, 0.5])
     assert [(cast.key, weight) for cast, weight in settled_casts] == [
-        ("auto:chorus", 1),
+        ("type:chorus", 1),
     ]
 
 

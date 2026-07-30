@@ -293,12 +293,11 @@ def test_render_and_verify_cli_publish_master_only_timeline(tmp_path: Path) -> N
         "palette": "layer",
         "custom_palette": [],
     }
-    assert payload["casting"]["auto_enabled"] is True
-    assert payload["casting"]["sections"]["verse"]["source"] == "auto"
-    assert payload["casting"]["sections"]["verse"]["traces"] == [
-        "verse-orbit",
-        "verse-bloom",
-    ]
+    # This project casts nothing, so the manifest records the scene as uncast
+    # and carrying no traces. It used to be filled in with the deterministic
+    # look, which put shapes in the render nobody had chosen.
+    assert payload["casting"]["sections"]["verse"]["key"] == "uncast:empty"
+    assert payload["casting"]["sections"]["verse"]["traces"] == []
     assert payload["performance"]["frames_per_second"] > 0
     assert "audio.master" in payload["inputs"]
     assert "audio.vocals" in payload["inputs"]

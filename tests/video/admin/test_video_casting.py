@@ -276,14 +276,174 @@ def _actor_cast_fields() -> dict[str, list[str]]:
     }
 
 
-def test_load_casting_resolves_deterministic_type_scenes(tmp_path: Path) -> None:
+def _look_fields(**overrides: str) -> dict[str, list[str]]:
+    fields = {
+        "section_id": ["verse_1"],
+        "section_type": ["verse"],
+        "scope": ["section"],
+        "action": ["save_look"],
+        "background": ["#2b0a3d"],
+        "background_response": ["0.42"],
+        "lyric_color": ["#ffe066"],
+        "lyric_size": ["48"],
+        "lyric_position": ["center"],
+    }
+    fields.update({name: [value] for name, value in overrides.items()})
+    return fields
+
+
+def test_the_look_saves_without_casting_anything(tmp_path: Path) -> None:
+    """Background and lyric settings save on a track with no cast at all.
+
+    A blank track is a working state — lyric timing is reviewed against the
+    master with nothing else on screen — so styling it cannot require adding an
+    actor first. The three settings live in three different sections of the
+    project, which is why none of them had ever been exposed.
+    """
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+
+    save_casting(tmp_path, release, track, _look_fields())
+
+    saved = yaml.safe_load(project_path.read_text(encoding="utf-8"))["project"]
+    assert saved["video"]["background"] == "#2b0a3d"
+    assert saved["visuals"]["background_response"] == 0.42
+    assert saved["text"]["active_color"] == "#ffe066"
+    assert saved["text"]["size"] == 48
+    assert saved["text"]["position"] == "center"
+    # Nothing was cast on the way through.
+    assert not saved["visuals"].get("section_casts")
+    assert not saved["visuals"].get("cast_overrides")
+
+
+def test_saving_a_cast_leaves_the_look_alone(tmp_path: Path) -> None:
+    """The cast form does not carry the look fields, so they must not reset."""
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+    save_casting(tmp_path, release, track, _look_fields())
+    save_track_actor(tmp_path, release, track, _actor_fields())
+
+    save_casting(tmp_path, release, track, _actor_cast_fields())
+
+    saved = yaml.safe_load(project_path.read_text(encoding="utf-8"))["project"]
+    assert saved["video"]["background"] == "#2b0a3d"
+    assert saved["text"]["active_color"] == "#ffe066"
+    assert saved["text"]["size"] == 48
+
+
+@pytest.mark.parametrize(
+    "field, value, message",
+    [
+        ("background", "octarine", "six-digit hex"),
+        ("lyric_color", "#fff", "six-digit hex"),
+        ("background_response", "1.5", "between 0 and 1"),
+        ("lyric_size", "0", "greater than 0"),
+        ("lyric_position", "sideways", "top, center, or bottom"),
+    ],
+)
+def test_the_look_rejects_values_the_contract_would_refuse(
+    tmp_path: Path, field: str, value: str, message: str
+) -> None:
+    """Said in the form's own words, not as a pydantic pattern failure."""
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+    before = project_path.read_text(encoding="utf-8")
+
+    with pytest.raises(CastingEditorError, match=message):
+        save_casting(tmp_path, release, track, _look_fields(**{field: value}))
+
+    assert project_path.read_text(encoding="utf-8") == before
+
+
+def test_a_new_project_reads_as_uncast_rather_than_legacy(tmp_path: Path) -> None:
+    """A track made this week is not a legacy project.
+
+    Every scene without an actor cast used to be badged "legacy" and told it
+    "still uses the legacy visual composition". A fresh project stores no
+    composition at all -- it resolves through auto:{type}, which is current
+    behaviour -- so the honest word is uncast. "legacy" is the renderer's own
+    term for a stored composition or the global-layer fallback.
+    """
+    from mrp.admin.video_casting import _scene_cast_state
+
+    class _Section:
+        def __init__(self, section_id: str, section_type: str) -> None:
+            self.id = section_id
+            self.type = section_type
+
+    class _Visuals:
+        def __init__(self, **kwargs) -> None:
+            self.composition_overrides = kwargs.get("composition_overrides", {})
+            self.section_compositions = kwargs.get("section_compositions", {})
+            self.auto_casting = kwargs.get("auto_casting", True)
+
+    intro = _Section("intro", "intro")
+
+    # A fresh project: nothing stored, auto-casting on.
+    assert _scene_cast_state(_Visuals(), intro, 0) == "uncast"
+    # Cast, and it says so.
+    assert _scene_cast_state(_Visuals(), intro, 2) == "actors"
+    # Genuinely legacy: a stored look for this exact scene, or for its type.
+    assert _scene_cast_state(_Visuals(composition_overrides={"intro": object()}), intro, 0) == "legacy"
+    assert _scene_cast_state(_Visuals(section_compositions={"intro": object()}), intro, 0) == "legacy"
+    # Auto-casting off falls back to the global layers -- the renderer's
+    # legacy:global-layers branch.
+    assert _scene_cast_state(_Visuals(auto_casting=False), intro, 0) == "legacy"
+
+
+def test_the_casting_form_parses_every_geometry_family_the_contract_declares() -> None:
+    """The parser must not keep its own idea of which families exist.
+
+    "text" was added for song-title actors, and this parser was the one place
+    that still listed families by hand -- so casting a title actor onto a track
+    failed to save with "unknown geometry family: text" while the renderer and
+    the contract had supported it all along.
+    """
+    from mrp.admin.video_casting import _trace_payloads
+    from mrp.video.project import _FAMILY_FIELDS, _PATH_FAMILIES
+
+    for family in sorted(_FAMILY_FIELDS):
+        fields = _manual_fields()
+        fields["geometry_family"] = [family]
+        if family in _PATH_FAMILIES:
+            fields["path_data"] = ["M 35 74 V 48 h 13"]
+
+        traces = _trace_payloads(fields)
+
+        assert traces[0]["geometry"]["family"] == family, family
+
+
+def test_a_title_actor_keeps_its_outlined_glyphs_through_a_save() -> None:
+    """A text trace's letter-contours survive the round trip.
+
+    The whole word lives in path_data as one subpath per letter-contour; losing
+    it on save would leave the title actor with nothing to draw.
+    """
+    from mrp.admin.video_casting import _trace_payloads
+
+    glyphs = "M 35 74 V 48 h 13 M 60 74 V 48"
+    fields = _manual_fields()
+    fields["geometry_family"] = ["text"]
+    fields["path_data"] = [glyphs]
+
+    geometry = _trace_payloads(fields)[0]["geometry"]
+
+    assert geometry["family"] == "text"
+    assert geometry["path_data"] == glyphs
+    # Trochoid controls belong to spirogram alone; the contract rejects them on
+    # any other family, so the parser must not smuggle them through.
+    assert "fixed_radius" not in geometry
+
+
+def test_load_casting_leaves_an_uncast_scene_empty(tmp_path: Path) -> None:
+    """The editor previews what the renderer draws, which for an uncast scene
+    is nothing. It used to stage the deterministic look here, so the canvas
+    showed shapes the scene had never been given."""
     release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
 
     result = load_casting(tmp_path, release, track, section_id="chorus_1")
 
     assert result["selected_section"].id == "chorus_1"
-    assert result["composition_source"] == "deterministic auto: chorus"
-    assert [scene["trace_count"] for scene in result["sections"]] == [2, 3]
+    assert result["composition_source"] == "uncast — nothing staged"
+    assert result["composition"].traces == []
+    assert [scene["trace_count"] for scene in result["sections"]] == [0, 0]
     assert result["gallery"] == [
         {
             "name": "frame-2.000.png",
@@ -585,7 +745,17 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert "Scene Casting" in body
     assert body.index("<h2>Actor Library") < body.index("<h2>Scene Casting")
     assert body.index("<h2>Actor Designer") < body.index("<h2>Scene Casting")
-    assert "Create recommended actors" in body
+    # An uncast scene leads with the track's own roster; the generated looks are
+    # the shortcut beside it, not the only way in.
+    assert "+ Add actor to scene" in body
+    assert 'value="recommended_all"' in body
+    # This test saves a composition first, so the selected scene genuinely does
+    # carry a stored look -- the one case where adopting it differs from the
+    # recommended look, and the one case that earns the word "legacy".
+    assert 'value="adopt"' in body
+    # Scenes with no stored composition read as uncast, not legacy.
+    assert ">uncast</span>" in body
+    assert "legacy visual composition" not in body
     assert 'name="actor_character"' in body
     assert 'name="reacts_to"' not in body
     assert "/video/actors" in body

@@ -501,6 +501,27 @@ def _actor_cast_for_scope(project: Any, section: Any, scope: str):
     return None, "no actor cast"
 
 
+def _scene_cast_state(visuals: Any, section: Any, actor_count: int) -> str:
+    """What the scene list reports for one scene: actors, legacy, or uncast.
+
+    "legacy" is the renderer's own word (``legacy:global-layers`` in
+    mrp/video/casting.py) for a stored composition or the global-layer fallback
+    when auto-casting is off. It was being shown for any scene without an actor
+    cast, so a track made this week read as legacy on every scene. A project
+    that has simply not been cast yet resolves through ``auto:{type}``, which is
+    a current feature, and is reported as uncast.
+    """
+    if actor_count:
+        return "actors"
+    if section.id in visuals.composition_overrides:
+        return "legacy"
+    if _casefold_item(visuals.section_compositions, section.type) is not None:
+        return "legacy"
+    if not visuals.auto_casting:
+        return "legacy"
+    return "uncast"
+
+
 def _slug(value: str, *, fallback: str = "actor") -> str:
     slug = re.sub(r"[^a-z0-9]+", "-", value.casefold()).strip("-")
     return slug or fallback
@@ -530,7 +551,7 @@ def _actor_from_trace(trace: Any, actor_id: str | None = None):
 
 
 def _selected_composition(project: Any, section: Any, scope: str):
-    from mrp.video.casting import generate_auto_composition
+    from mrp.video.project import CastingConfig, SectionCompositionConfig
 
     visuals = project.visuals
     if scope == "section":
@@ -541,9 +562,15 @@ def _selected_composition(project: Any, section: Any, scope: str):
     if configured is not None:
         name, composition = configured
         return composition.model_copy(deep=True), f"type default: {name}"
+    # Empty, matching what the renderer now draws for an uncast scene. The
+    # editor used to preview the deterministic look here, so the canvas showed
+    # shapes the scene had never been given and the reader had to be told why.
     return (
-        generate_auto_composition(section.type, project.video.seed),
-        f"deterministic auto: {section.type}",
+        SectionCompositionConfig(
+            casting=CastingConfig(source="manual", seed=project.video.seed),
+            traces=[],
+        ),
+        "uncast — nothing staged",
     )
 
 
@@ -800,6 +827,9 @@ def load_casting(
                 "actor_overridden": section.id in document.project.visuals.cast_overrides,
             }
         )
+        sections[-1]["cast_state"] = _scene_cast_state(
+            document.project.visuals, section, sections[-1]["actor_count"]
+        )
     actor_cast, actor_cast_source = _actor_cast_for_scope(
         document.project,
         selected,
@@ -827,8 +857,19 @@ def load_casting(
         selected_actor = project_actors[0]["actor"]
         selected_actor_saved = True
     if selected_actor is None:
+        # Seeds the *designer* form, not the scene. An uncast scene stages
+        # nothing, but "new actor" still has to open on some shape, so fall back
+        # to the default look for this section type. Nothing is drawn in the
+        # scene until the actor is saved and cast.
+        seed_traces = composition.traces
+        if not seed_traces:
+            from mrp.video.casting import generate_auto_composition
+
+            seed_traces = generate_auto_composition(
+                selected.type, document.project.video.seed
+            ).traces
         selected_actor = _actor_from_trace(
-            composition.traces[0],
+            seed_traces[0],
             _unique_actor_id(document.project.visuals.actors, "new-actor"),
         )
     style = _selected_style(document.project, selected, scope)
@@ -848,6 +889,14 @@ def load_casting(
         "composition_source": composition_source,
         "actor_cast": actor_cast,
         "actor_cast_source": actor_cast_source,
+        # Whether the selected scope is backed by a stored composition, which is
+        # the only case where "adopt the current look" differs from "start from
+        # the recommended look". Without it the editor offered two buttons that
+        # produced identical output on any project that had never been cast.
+        "selected_cast_state": next(
+            (item["cast_state"] for item in sections if item["id"] == selected.id),
+            "uncast",
+        ),
         "storyboard": _storyboard(
             composition,
             document.project.video.background,
@@ -963,7 +1012,25 @@ def _optional_number(value: str, label: str) -> float | None:
     return None if not value else _number(value, label)
 
 
+_HEX_COLOR = re.compile(r"^#[0-9a-fA-F]{6}$")
+
+
+def _hex_color(value: str, label: str) -> str:
+    """A six-digit hex colour, said plainly rather than as a regex failure."""
+    text = value.strip()
+    if not _HEX_COLOR.match(text):
+        raise CastingEditorError(
+            f"{label} must be a six-digit hex colour such as #101014, not {value!r}"
+        )
+    return text.lower()
+
+
 def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]:
+    # Taken from the contract rather than restated here: "text" was added to the
+    # geometry families for song-title actors and this parser was the one place
+    # that kept its own list, so casting a title actor could not be saved.
+    from mrp.video.project import _PATH_FAMILIES
+
     ids = [str(value).strip() for value in fields.get("trace_id", [])]
     if not ids:
         raise CastingEditorError("a manual cast requires at least one trace")
@@ -1067,7 +1134,10 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
                 "sf_n2": _number(columns["sf_n2"][index], f"trace {trace_id} n2"),
                 "sf_n3": _number(columns["sf_n3"][index], f"trace {trace_id} n3"),
             }
-        elif family == "path":
+        elif family in _PATH_FAMILIES:
+            # "text" is a path family: one subpath per letter-contour rather
+            # than the single subpath "path" takes. Both carry the geometry in
+            # path_data, and the form offers the same textarea for each.
             geometry |= {"path_data": columns["path_data"][index]}
         elif family == "harmonograph":
             geometry |= {
@@ -1470,7 +1540,9 @@ def save_casting(
         "clear",
         "save_cast",
         "recommended",
+        "recommended_all",
         "adopt",
+        "save_look",
     }
     if action not in supported_actions:
         raise CastingEditorError(f"unsupported casting action: {action}")
@@ -1495,6 +1567,46 @@ def save_casting(
     visuals["mapping_preset"] = mapping_preset
     visuals["palette_preset"] = palette_preset
     visuals["auto_casting"] = auto_casting.casefold() in {"1", "true", "yes", "on"}
+
+    # Whole-track look. Each field keeps its current value when the form does
+    # not carry it, so saving a scene cast never disturbs these and the Look
+    # panel can save them without touching any cast. They live across three
+    # sections of the project -- background on video, its response on visuals,
+    # the lyric on text -- which is why they went unexposed for so long.
+    text = payload["project"]["text"]
+    video = payload["project"]["video"]
+    video["background"] = _hex_color(
+        _single(fields, "background", default=document.project.video.background),
+        "background colour",
+    )
+    background_response = _number(
+        _single(
+            fields,
+            "background_response",
+            default=str(document.project.visuals.background_response),
+        ),
+        "background reactivity",
+    )
+    if not 0 <= background_response <= 1:
+        raise CastingEditorError("background reactivity must be between 0 and 1")
+    visuals["background_response"] = background_response
+    text["active_color"] = _hex_color(
+        _single(fields, "lyric_color", default=document.project.text.active_color),
+        "lyric colour",
+    )
+    lyric_size = _integer(
+        _single(fields, "lyric_size", default=str(document.project.text.size)),
+        "lyric size",
+    )
+    if lyric_size <= 0:
+        raise CastingEditorError("lyric size must be greater than 0")
+    text["size"] = lyric_size
+    lyric_position = _single(
+        fields, "lyric_position", default=document.project.text.position
+    )
+    if lyric_position not in {"top", "center", "bottom"}:
+        raise CastingEditorError("lyric position must be top, center, or bottom")
+    text["position"] = lyric_position
 
     composition_field = "section_compositions" if scope == "type" else "composition_overrides"
     actor_cast_field = "section_casts" if scope == "type" else "cast_overrides"
@@ -1521,7 +1633,26 @@ def save_casting(
     existing_transition_key = (
         existing_transition[0] if existing_transition is not None else target
     )
-    if action in {"recommended", "adopt"}:
+    if action == "save_look":
+        # The whole-track look is already folded into the payload above. It
+        # saves on its own so a blank track -- no cast anywhere, which is a
+        # working state for reviewing lyric timing -- can still be styled.
+        pass
+    elif action == "recommended_all":
+        # The whole track in one move, so a new video can be seen end to end
+        # before any of it is cast by hand. Every scene already *renders* this
+        # look through auto-casting; this makes it editable. Cast by type, the
+        # granularity the editor works in, so re-running it is idempotent.
+        type_casts = visuals.setdefault("section_casts", {})
+        for scene_type in dict.fromkeys(item.type for item in lyrics.sections):
+            existing_type = _casefold_item(type_casts, scene_type)
+            if existing_type is not None:
+                type_casts.pop(existing_type[0], None)
+            type_casts[scene_type] = _materialize_actor_cast(
+                visuals,
+                generate_auto_composition(scene_type, document.project.video.seed),
+            )
+    elif action in {"recommended", "adopt"}:
         composition = (
             generate_auto_composition(section.type, document.project.video.seed)
             if action == "recommended"
@@ -1530,6 +1661,15 @@ def save_casting(
         actor_casts.pop(existing_actor_cast_key, None)
         actor_casts[target] = _materialize_actor_cast(visuals, composition)
     elif action == "save_cast":
+        assignments = _actor_assignment_payloads(fields)
+        # The uncast form opens with no rows, so saving an empty scene is an
+        # easy first move. Say what to do instead of reporting a list-length
+        # violation from the contract.
+        if not assignments:
+            raise CastingEditorError(
+                "add at least one actor to this scene before saving, "
+                "or use Clear to leave it on the recommended look"
+            )
         actor_casts.pop(existing_actor_cast_key, None)
         actor_casts[target] = {
             "casting": {
@@ -1537,7 +1677,7 @@ def save_casting(
                 "seed": document.project.video.seed,
                 "generator_version": 1,
             },
-            "actors": _actor_assignment_payloads(fields),
+            "actors": assignments,
         }
         style = _style_payload(fields)
         styles.pop(existing_style_key, None)

@@ -134,6 +134,17 @@
   <p class="video-step-label">Scenes · Assignment and direction</p>
   <h2>Scene Casting</h2>
   <p class="video-help">Selecting a scene below changes only where track actors appear and how they perform.</p>
+  {# Whole-track action, so it belongs to the whole-track heading rather than to
+     whichever scene happens to be selected. #}
+  <form class="video-track-cast-action"
+        hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting"
+        hx-target="#video-casting-result" hx-swap="innerHTML">
+    <input type="hidden" name="section_id" value="{{ casting.selected_section.id }}">
+    <input type="hidden" name="section_type" value="{{ casting.selected_section.type }}">
+    <input type="hidden" name="scope" value="{{ casting.scope }}">
+    <button class="btn btn-secondary btn-sm" name="action" value="recommended_all" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Add default actors to every scene</button>
+    <small class="video-help">Casts every scene type from the recommended look, so the whole track can be seen at once. Re-running it replaces those casts.</small>
+  </form>
 </div>
 
 <div class="video-casting-layout">
@@ -145,7 +156,9 @@
       <a class="video-scene-link {{ 'active' if scene.id == casting.selected_section.id else '' }}"
          href="?section={{ scene.id }}&scope={{ casting.scope }}{% if casting.selected_actor_saved %}&actor={{ casting.selected_actor.id }}{% endif %}#scene-casting">
         <span><strong>{{ scene.label }}</strong><small>{{ scene.id }} · {{ scene.start | seconds }}–{{ scene.end | seconds }}</small></span>
-        <span class="badge badge-{{ 'live' if scene.actor_count else 'draft' }}">{% if scene.actor_count %}{{ scene.actor_count }} actor{{ '' if scene.actor_count == 1 else 's' }}{% else %}legacy{% endif %}</span>
+        {# "legacy" belongs to a project carrying a stored composition, not to
+           one nobody has cast yet -- see _scene_cast_state. #}
+        <span class="badge badge-{{ 'live' if scene.cast_state == 'actors' else 'warn' if scene.cast_state == 'legacy' else 'draft' }}">{% if scene.cast_state == 'actors' %}{{ scene.actor_count }} actor{{ '' if scene.actor_count == 1 else 's' }}{% elif scene.cast_state == 'legacy' %}legacy{% else %}uncast{% endif %}</span>
       </a>
       {% endfor %}
     </div>
@@ -192,29 +205,79 @@
       <script type="application/json" id="scene-storyboard-data">{{ casting.storyboard | tojson }}</script>
     </div></div>
 
+    {# Whole-track look, saved on its own. It cannot live inside the scene-cast
+       form: that form needs at least one actor to save, and a track with
+       nothing cast anywhere is a working state for reviewing lyric timing
+       against the master. #}
     <section class="form-card"><div class="form-body">
-      <div><h2>Cast this scene</h2><p class="video-help">Assign track actors to {{ 'all ' ~ casting.selected_section.type ~ ' scenes' if casting.scope == 'type' else 'only ' ~ casting.selected_section.id }}, then direct how each one performs here.</p></div>
-      {% if not casting.actor_cast %}
-      <div class="video-empty-state actor-cast-onboarding">
-        <strong>This scene still uses the legacy visual composition.</strong>
-        <p>Create actors from the deterministic recommended look, or adopt the exact look currently shown.</p>
-        <div class="video-cast-actions">
-          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-primary" name="action" value="recommended" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Create recommended actors</button></form>
-          <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-secondary" name="action" value="adopt" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Adopt current look as actors</button></form>
-        </div>
+      <div>
+        <h2>Look</h2>
+        <p class="video-help">Applies to the whole track, not just this scene. Background and lyric settings show in the preview above and in Live Preview.</p>
       </div>
-      {% else %}
       <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
         {{ context_fields() }}
         <div class="form-grid video-project-look">
-          <div class="form-field"><label>Audio mapping</label><select name="mapping_preset">{% for preset in casting.presets.mapping %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.mapping_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select></div>
-          <div class="form-field"><label>Palette</label><select name="palette_preset">{% for preset in casting.presets.palette %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.palette_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select></div>
-          <input type="hidden" name="auto_casting" value="{{ 'true' if casting.project.visuals.auto_casting else 'false' }}">
+          <div class="form-field">
+            {{ actor_control_label('Audio mapping', 'How strongly the audio drives what is on screen. Every actor inherits it.') }}
+            <select name="mapping_preset">{% for preset in casting.presets.mapping %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.mapping_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select>
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Palette', 'The colour set actors draw from when they do not carry a colour of their own.') }}
+            <select name="palette_preset">{% for preset in casting.presets.palette %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.palette_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select>
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Background', 'The colour behind everything. The frame sits at this colour when the track is quiet.') }}
+            <input type="color" name="background" value="{{ casting.project.video.background }}">
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Background reactivity', 'How far the background lifts toward white on the master’s energy. 0 holds it still.') }}
+            <div class="slider-pair">
+              <input type="range" min="0" max="1" step="0.01" value="{{ casting.project.visuals.background_response }}" aria-hidden="true" tabindex="-1">
+              <input type="number" name="background_response" min="0" max="1" step="0.01" value="{{ casting.project.visuals.background_response }}" required>
+            </div>
+            <small>0–1. Default 0.16.</small>
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Lyric colour', 'The colour of the sung line drawn over the scene.') }}
+            <input type="color" name="lyric_color" value="{{ casting.project.text.active_color }}">
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Lyric size', 'Point size of the lyric line, against a ' ~ casting.project.video.height ~ 'px tall frame.') }}
+            <input type="number" name="lyric_size" min="1" step="1" value="{{ casting.project.text.size }}" required>
+          </div>
+          <div class="form-field">
+            {{ actor_control_label('Lyric position', 'Where the sung line sits in the frame.') }}
+            <select name="lyric_position">{% for choice in ['top', 'center', 'bottom'] %}<option value="{{ choice }}" {% if casting.project.text.position == choice %}selected{% endif %}>{{ choice }}</option>{% endfor %}</select>
+          </div>
         </div>
+        <button class="btn btn-primary" name="action" value="save_look" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Save look</button>
+      </form>
+    </div></section>
+
+    <section class="form-card"><div class="form-body">
+      <div><h2>Cast this scene</h2><p class="video-help">Assign track actors to {{ 'all ' ~ casting.selected_section.type ~ ' scenes' if casting.scope == 'type' else 'only ' ~ casting.selected_section.id }}, then direct how each one performs here.</p></div>
+      {# An empty scene is left empty. Adding the default actors is a button,
+         not something that happens on the reader's behalf. Adopting a stored
+         look appears only where one exists -- everywhere else it produced the
+         same actors as the default look. #}
+      {% if not casting.actor_cast %}
+      <div class="video-cast-actions actor-cast-uncast">
+        <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-secondary btn-sm" name="action" value="recommended" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Add default actors</button></form>
+        {% if casting.selected_cast_state == 'legacy' %}
+        <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">{{ context_fields() }}<button class="btn btn-secondary btn-sm" name="action" value="adopt" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Adopt the stored look as actors</button></form>
+        {% endif %}
+      </div>
+      {% endif %}
+      <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
+        {{ context_fields() }}
+        {# Audio mapping and palette moved to Look: they are whole-track
+           settings, so they belong beside the other whole-track ones rather
+           than on whichever scene is selected. Omitted fields keep their
+           current value, so saving a cast leaves them alone. #}
         <div id="actor-assignments">
-          {% for assignment in casting.actor_cast.actors %}{{ direction_fields(assignment, loop.index, casting.project_actors) }}{% endfor %}
+          {% for assignment in (casting.actor_cast.actors if casting.actor_cast else []) %}{{ direction_fields(assignment, loop.index, casting.project_actors) }}{% endfor %}
         </div>
-        <button class="btn btn-secondary btn-sm" type="button" onclick="addActorAssignment()">+ Add actor to scene</button>
+        <button class="btn {{ 'btn-primary' if not casting.actor_cast else 'btn-secondary btn-sm' }}" type="button" onclick="addActorAssignment()">+ Add actor to scene</button>
 
         <fieldset class="video-transition">
           <legend>Transition in</legend>
@@ -361,7 +424,6 @@
           <button class="btn btn-danger" name="action" value="clear" type="submit" formnovalidate {% if not cast_status_ok %}disabled{% endif %}>Clear {{ 'type' if casting.scope == 'type' else 'scene' }} cast</button>
         </div>
       </form>
-      {% endif %}
     </div></section>
 
     <div class="form-card"><div class="form-body">

@@ -327,10 +327,12 @@ def test_geometry_only_document_is_deterministic_private_and_read_only(
     )
     assert "state_samples_base64" not in first.payload
     assert first.payload["sections"][1]["previous_section_id"] == "verse_1"
-    assert first.payload["compositions"]["auto:verse"]["traces"][0][
-        "phase_fraction"
-    ] == pytest.approx(
-        first.payload["compositions"]["auto:verse"]["traces"][0]["phase_fraction"]
+    # This fixture casts nothing, so every scene resolves to the empty
+    # composition and the preview draws the background alone.
+    assert first.payload["compositions"]["uncast:empty"]["traces"] == []
+    assert all(
+        section["composition_key"] == "uncast:empty"
+        for section in first.payload["sections"]
     )
     assert first.payload["text"] == {
         "size": 60,
@@ -430,13 +432,15 @@ def test_newer_audio_falls_back_without_creating_analysis(tmp_path: Path) -> Non
             },
             "type:verse",
         ),
+        # Nothing casts this scene, so it draws nothing — global layers and the
+        # auto-casting flag no longer stand in for a cast that was never made.
         (
             {"auto_casting": True, "layers": [_layer()]},
-            "auto:verse",
+            "uncast:empty",
         ),
         (
             {"auto_casting": False, "layers": [_layer("legacy")]},
-            "legacy:global-layers",
+            "uncast:empty",
         ),
     ],
 )
@@ -761,13 +765,15 @@ def test_text_traces_carry_renderer_phase_for_each_contour(tmp_path: Path) -> No
         "path_data": "M0 0 L1 0 L1 1 Z M2 0 L3 0 L3 1 Z",
         "samples": 128,
     }
+    # Cast onto the scene rather than leaning on the old global-layer fallback:
+    # an uncast scene now draws nothing.
     release, track, _project_path = _write_repo(
         tmp_path,
-        visuals={"auto_casting": False, "layers": [text_layer]},
+        visuals={"section_compositions": {"verse": {"traces": [text_layer]}}},
     )
 
     result = _build(tmp_path, release, track)
-    trace = result.payload["compositions"]["legacy:global-layers"]["traces"][0]
+    trace = result.payload["compositions"]["type:verse"]["traces"][0]
 
     assert len(trace["phase_fractions"]) == 2
     assert trace["phase_fraction"] == trace["phase_fractions"][0]
@@ -789,18 +795,23 @@ def test_text_phases_skip_subpaths_the_renderer_drops(tmp_path: Path) -> None:
     }
     release, track, _project_path = _write_repo(
         tmp_path,
-        visuals={"auto_casting": False, "layers": [text_layer]},
+        visuals={"section_compositions": {"verse": {"traces": [text_layer]}}},
     )
 
     result = _build(tmp_path, release, track)
-    composition = result.payload["compositions"]["legacy:global-layers"]
+    composition = result.payload["compositions"]["type:verse"]
     trace = composition["traces"][0]
     seed = composition["casting"]["seed"]
 
     assert len(trace["phase_fractions"]) == 2
+    # Through _phase_key rather than restating its namespacing rule here.
     assert trace["phase_fractions"] == [
-        video_live_preview._phase_fraction(seed, "title:0"),
-        video_live_preview._phase_fraction(seed, "title:1"),
+        video_live_preview._phase_fraction(
+            seed, video_live_preview._phase_key("type:verse", "title", 0)
+        ),
+        video_live_preview._phase_fraction(
+            seed, video_live_preview._phase_key("type:verse", "title", 1)
+        ),
     ]
 
 
