@@ -356,14 +356,18 @@ def test_a_title_actor_keeps_its_outlined_glyphs_through_a_save() -> None:
     assert "fixed_radius" not in geometry
 
 
-def test_load_casting_resolves_deterministic_type_scenes(tmp_path: Path) -> None:
+def test_load_casting_leaves_an_uncast_scene_empty(tmp_path: Path) -> None:
+    """The editor previews what the renderer draws, which for an uncast scene
+    is nothing. It used to stage the deterministic look here, so the canvas
+    showed shapes the scene had never been given."""
     release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
 
     result = load_casting(tmp_path, release, track, section_id="chorus_1")
 
     assert result["selected_section"].id == "chorus_1"
-    assert result["composition_source"] == "deterministic auto: chorus"
-    assert [scene["trace_count"] for scene in result["sections"]] == [2, 3]
+    assert result["composition_source"] == "uncast — nothing staged"
+    assert result["composition"].traces == []
+    assert [scene["trace_count"] for scene in result["sections"]] == [0, 0]
     assert result["gallery"] == [
         {
             "name": "frame-2.000.png",

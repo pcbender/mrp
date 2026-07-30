@@ -551,7 +551,7 @@ def _actor_from_trace(trace: Any, actor_id: str | None = None):
 
 
 def _selected_composition(project: Any, section: Any, scope: str):
-    from mrp.video.casting import generate_auto_composition
+    from mrp.video.project import CastingConfig, SectionCompositionConfig
 
     visuals = project.visuals
     if scope == "section":
@@ -562,9 +562,15 @@ def _selected_composition(project: Any, section: Any, scope: str):
     if configured is not None:
         name, composition = configured
         return composition.model_copy(deep=True), f"type default: {name}"
+    # Empty, matching what the renderer now draws for an uncast scene. The
+    # editor used to preview the deterministic look here, so the canvas showed
+    # shapes the scene had never been given and the reader had to be told why.
     return (
-        generate_auto_composition(section.type, project.video.seed),
-        f"deterministic auto: {section.type}",
+        SectionCompositionConfig(
+            casting=CastingConfig(source="manual", seed=project.video.seed),
+            traces=[],
+        ),
+        "uncast — nothing staged",
     )
 
 
@@ -851,8 +857,19 @@ def load_casting(
         selected_actor = project_actors[0]["actor"]
         selected_actor_saved = True
     if selected_actor is None:
+        # Seeds the *designer* form, not the scene. An uncast scene stages
+        # nothing, but "new actor" still has to open on some shape, so fall back
+        # to the default look for this section type. Nothing is drawn in the
+        # scene until the actor is saved and cast.
+        seed_traces = composition.traces
+        if not seed_traces:
+            from mrp.video.casting import generate_auto_composition
+
+            seed_traces = generate_auto_composition(
+                selected.type, document.project.video.seed
+            ).traces
         selected_actor = _actor_from_trace(
-            composition.traces[0],
+            seed_traces[0],
             _unique_actor_id(document.project.visuals.actors, "new-actor"),
         )
     style = _selected_style(document.project, selected, scope)

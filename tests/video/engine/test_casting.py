@@ -85,21 +85,26 @@ def test_composition_resolution_prefers_exact_id_then_type_then_auto() -> None:
     assert final.key == "section:final_chorus"
     assert final.composition.casting.source == "ai"
     assert final.composition.traces[0].id == "final-chorus"
-    assert verse.key == "auto:verse"
+    # Nothing casts a verse, so a verse draws nothing.
+    assert verse.key == "uncast:empty"
+    assert verse.composition.traces == []
 
 
-def test_disabling_auto_casting_uses_the_global_layer_fallback() -> None:
-    visuals = VisualConfig(auto_casting=False)
+def test_an_uncast_scene_draws_nothing() -> None:
+    """No cast, no shapes — whatever else the project carries.
 
-    resolved = resolve_section_composition(
-        visuals,
-        "bridge",
-        "bridge",
-        4821,
-    )
+    A scene used to fill itself in from the deterministic look, or from the
+    global layer list when auto-casting was off, so a video showed shapes its
+    author never chose. The default look is a button in Scene Casting now.
+    """
+    populated = VisualConfig()
+    assert populated.layers, "fixture should carry global layers to fall back to"
 
-    assert resolved.key == "legacy:global-layers"
-    assert resolved.composition.traces == visuals.layers
+    for visuals in (VisualConfig(), VisualConfig(auto_casting=False)):
+        resolved = resolve_section_composition(visuals, "bridge", "bridge", 4821)
+
+        assert resolved.key == "uncast:empty"
+        assert resolved.composition.traces == []
 
 
 def test_actor_cast_compiles_identity_and_scene_direction_to_traces() -> None:

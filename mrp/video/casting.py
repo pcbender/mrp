@@ -665,13 +665,16 @@ def resolve_section_composition(
     if configured is not None:
         name, composition = configured
         return ResolvedComposition(f"type:{name.casefold()}", composition)
-    if visuals.auto_casting:
-        composition = generate_auto_composition(section_type, project_seed)
-        return ResolvedComposition(f"auto:{section_type.casefold()}", composition)
+    # A scene nobody has cast draws nothing. It used to quietly fill itself in
+    # from the deterministic look (or, with auto-casting off, from the global
+    # layer list), so a video showed shapes its author had never chosen and the
+    # editor had to explain why an "empty" scene was not empty. The default look
+    # is still one button away in Scene Casting; it is now something asked for
+    # rather than something that happens.
     return ResolvedComposition(
-        "legacy:global-layers",
+        "uncast:empty",
         SectionCompositionConfig(
             casting=CastingConfig(source="manual", seed=project_seed),
-            traces=visuals.layers,
+            traces=[],
         ),
     )

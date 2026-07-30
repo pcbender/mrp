@@ -442,7 +442,10 @@ class CastingConfig(ContractModel):
 
 class SectionCompositionConfig(ContractModel):
     casting: CastingConfig = Field(default_factory=CastingConfig)
-    traces: list[VisualLayerConfig] = Field(min_length=1, max_length=12)
+    # An uncast scene resolves to no traces at all and draws nothing, so the
+    # empty composition has to be expressible. A *stored* composition still
+    # carries at least one trace; that is enforced where one is saved, not here.
+    traces: list[VisualLayerConfig] = Field(default_factory=list, max_length=12)
 
     @model_validator(mode="after")
     def trace_ids_are_unique(self) -> "SectionCompositionConfig":
