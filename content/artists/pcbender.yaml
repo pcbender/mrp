@@ -5,45 +5,50 @@ artist:
   type: solo
   label: Maricopa Records
   default_publisher: Maricopa Publishing
-  bio_short: PCBender is a songwriter for the searchers, crafting lyrical snapshots
-    of life’s long, hard roads and quiet, internal landscapes. Blending philosophical
-    depth with raw, confessional storytelling, his music on Maricopa Records is an
-    unflinching look at love, loss, and the crooked path toward meaning in a world
-    that rarely fits together cleanly. His songs don’t offer easy answers, but they
-    provide a powerful soundtrack for the journey.
-  bio_long: "PCBender writes songs that feel like maps of an unfinished journey. His\
-    \ work, a striking debut for Maricopa Records, is marked by a restless, searching\
-    \ quality, chronicling the paths we take both on dusty roads and through the landscapes\
-    \ of the heart. This is music that moves, constantly weighing the pull of the\
-    \ horizon against the grace of standing still. With a voice that is at once confessional\
-    \ and philosophical, PCBender grapples with the beautiful, messy work of being\
-    \ human, asking not for solutions but for the courage to face the questions.\r\
-    \n\r\nThematic threads of movement, memory, and meaning are woven through every\
-    \ song. Lyrics frequently evoke the road as a central metaphor, a place of loss\
-    \ and self-discovery where every mile is meant to teach, not just to fade. This\
-    \ physical journey mirrors an internal one, a persistent search for an authentic,\
-    \ sovereign self in a world of confusing signals and borrowed truths. Whether\
-    \ confronting the social decay of bigotry in \"The Rats Are In The Roses\" or\
-    \ untangling the beautiful mystery of a relationship in \"I Can’t Quite Make It\
-    \ Fit,\" his songwriting remains grounded in a profound, unflinching honesty.\
-    \ He finds truth not in grand pronouncements but in \"hardwood confessions\" and\
-    \ the quiet understanding that life is a dance you learn while you’re already\
-    \ on the floor.\r\n\r\nThe emotional and stylistic range of PCBender’s work is\
-    \ remarkable. He shifts seamlessly from the narrative balladry of a storyteller,\
-    \ spinning tales of desert heat and formative first loves, to the abstract, metaphorical\
-    \ language of a poet exploring the very wiring of creativity and consciousness.\
-    \ His pen can be pointed and political, tender and romantic, or brutally direct\
-    \ in the face of heartbreak. The lyrics balance concrete imagery, like salt-flats\
-    \ and coastlines, with abstract inquiry, creating songs that are both intellectually\
-    \ stimulating and deeply felt. This is world-weary music that hasn't given up\
-    \ on hope, infused with a belief that the lack of an answer can be the truest\
-    \ reply.\r\n\r\nUltimately, the world of PCBender is one of rich texture and profound\
-    \ curiosity. His songs are invitations to lean into the riddles, to find peace\
-    \ in the imperfection, and to honor the pattern of choices that define a life.\
-    \ They are hymns for the over-thinkers, anthems for the independent, and lullabies\
-    \ for the lost. For any listener who has ever felt like they were halfway between\
-    \ a place and a dream, PCBender’s music offers not a destination, but a vital\
-    \ and resonant companion for the road ahead."
+  bio_short: On Maricopa Records, PCBender is a songwriter of the journey, charting
+    the roads we travel through love, loss, and disillusionment. With a literate and
+    unflinchingly confessional voice, their music maps the terrain between the deeply
+    personal and the philosophically vast, asking listeners to find their own meaning
+    in the spaces between the lines. PCBender’s songs are for anyone who has ever
+    felt like they can’t quite make it fit, but keeps dancing anyway.
+  bio_long: 'PCBender’s work is a testament to the journey. Across a catalog of searching
+    and literate songs, the solo artist on Maricopa Records explores the roads, both
+    literal and metaphorical, that carry us through life. From the dusty asphalt of
+    memory in "On Down the Way" to the spiritual ascent of "Camino Cielo," these are
+    narratives of movement, of perseverance through hardship, and of the profound
+    questions that arise when the path forward is unclear. The music lives in the
+    tension between where we have been and where we are going, capturing the weariness
+    of the "Long Hard Road" while always holding onto the hope that what you want
+    will eventually come your way.
+
+
+    Thematic preoccupations swing from the intimately personal to the socially vast.
+    With a confessional style, PCBender dissects the intricate mechanics of relationships,
+    from the confounding push and pull of a lover who "talks in smoke" to the quiet
+    decay of an "active illusion" where no one wins. Yet this introspection is frequently
+    turned outward, aimed at a world of collapsing certainties. Scathing allegories
+    like "The Rats Are In The Roses" and "On To Potter''s Field" confront social decay
+    and moral hypocrisy with a direct and potent voice, proving that the artist’s
+    gaze is as fixed on the world outside as it is on the heart within.
+
+
+    This expansive subject matter is delivered through a versatile lyrical style that
+    balances concrete storytelling with abstract exploration. One song might offer
+    a vivid, grounded narrative of a working musician in "The Singer Behind The Counter,"
+    while the next plunges into the mythological terrain of "On the Way That Comes
+    Before" or the heady conceptualism of the *Free* suite, which deconstructs ideas
+    of God, love, and death. Throughout, the emotional register is one of honest inquiry,
+    a relentless search for meaning in a world where "riddles abound" and truth can
+    feel like a "prehistoric lie." It is this blend of unflinching reflection and
+    quiet resilience that defines PCBender’s singular artistic vision.
+
+
+    Ultimately, the music of PCBender serves as a companion for the thoughtful listener.
+    It doesn''t offer easy answers but instead validates the questions, finding a
+    stubborn beauty in life''s crooked lines and a defiant grace in accepting what
+    we cannot fully grasp. It is an invitation to look closer, to feel deeper, and
+    to keep walking the path, knowing that every choice we make and every song we
+    carry with us helps us build our own meaning along the way.'
   image: /assets/migrated/9738fd064754-PCBender.png
   links:
     spotify: https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg
@@ -57,17 +62,17 @@ artist:
     tiktok: null
     website: null
   visibility: public
-  promo_blurb: PCBender is a songwriter who maps the terrain of love, loss, and the
-    search for meaning, pairing raw, confessional storytelling with expansive, atmospheric
-    production. His recent singles showcase a dynamic musical range. ["Try To Be Okay"](/releases/try-to-be-okay/)
-    channels airport frustration into an uplifting anthem, its soaring chorus held
-    in place by a funky, determined groove. The conversational ["With Preposition"](/releases/with-preposition/)
-    uses a clever lyrical conceit to deliver a poignant meditation on connection,
-    while the patient ["Footsteps Again"](/releases/footsteps-again/) builds from
-    an intimate, close-miked verse into a hypnotic pulse. The track transforms overheard
-    sounds from another room into a resonant, repeating pattern. Through his detailed
-    observations and shifting sonic landscapes, PCBender invites listeners to find
-    their own answers on the journey.
+  promo_blurb: PCBender crafts raw, confessional songs that navigate the complex territory
+    of love, loss, and the search for meaning. His music provides a powerful soundtrack
+    for life's long journeys, blending philosophical depth with unflinching, lyrical
+    storytelling. His recent work showcases a wide sonic palette. The single ["The
+    Singer Behind The Counter"](/releases/the-singer-behind-the-counter/) offers a
+    plainspoken portrait of daily work and small dignities, while ["Footsteps Again"](/releases/footsteps-again/)
+    shifts from bare acoustics into a hypnotic, atmospheric groove. The propulsive
+    ["Darkness Takes The Shadows"](/releases/darkness-takes-the-shadows/) demonstrates
+    his command of dynamics, building patiently from a murmured verse into an explosive
+    finale of layered vocals and distorted guitars. While his songs rarely offer easy
+    answers, they provide a vital and honest companion for the journey.
   bio_auto_generated: false
   reference_image: assets/artists/pcbender/reference.jpg
   likeness_notes: null

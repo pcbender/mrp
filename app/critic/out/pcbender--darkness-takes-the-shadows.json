@@ -1,0 +1,137 @@
+{
+  "track_id": "pcbender--darkness-takes-the-shadows",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Darkness Takes The Shadows.wav",
+    "proxy": "/home/mrose/audio/proxy/pcbender--darkness-takes-the-shadows.opus"
+  },
+  "lyrics": "moon low in the eastern sky\nclouds where they should be\nnowhere to be seen\ntoo hot for the dark\nair heavy with sound\nno clapping\ndarkness takes the shadows\nthe clock chimes twice\nnothing but silence\ncalling my name\nwind lifts sand and leaves\nthe smell of old things\nnew to me\npiles in the corners\na place to rest\none leaf stirring\ndarkness takes the shadows\nthe clock chimes twice\nnothing but silence\ncalling my name\nrain comes as the wind dies\nblowing sheets against the window\nmy eyes close\nsun pink through the curtain\nstreaks on the window\nmy eyes open\ndarkness takes the shadows\nthe clock chimes twice\nnothing but silence\ncalling my name\nwater finds a path\npooling thinning gone\nthe air holds it\nclouds gather\nrain begins\ndarkness takes the shadows\nthe clock chimes twice\nnothing but silence\ncalling my name",
+  "lyrics_raw": "[Intro]\n[clean electric guitar arpeggios with chorus and delay]\n[Verse 1]\n[breathy male vocals]\nMoon low in the eastern sky\nClouds where they should be\nNowhere seen\nToo hot for the dark\nAir heavy with sound\nWordlessly\n[Chorus]\n[distorted electric guitar power chords, driving drums]\nDarkness takes the shadows\nThe clock chimes twice\nNothing but silence calling my name\n[vocal ad-lib] (Oh-oh-oh)\n[vocal ad-lib] (Oh-oh-oh)\n[Verse 2]\n[clean electric guitar arpeggios return]\nWind lifts sand and leaves\nThe smell of old things\nNew to me\nPiles in the corners\nA place to rest\nMy eyes close\n[Bridge]\n[bass guitar and drums only, light guitar feedback]\nOne leaf stirring\n[Chorus]\n[full band, high energy]\nDarkness takes the shadows\nThe clock chimes twice\nNothing but silence calling my name\n[vocal ad-lib] (Oh-oh-oh)\n[vocal ad-lib] (Oh-oh-oh-oh)\n[vocal ad-lib] (Oh-oh-oh-oh)\n[vocal ad-lib] (Ah)\n[Outro]\n[distorted guitar riff]\nWater finds a path\nPooling, thinning, gone\nThe air holds it, clouds gather\nRain begins to fall\n[vocal ad-lib] (Oh-oh-oh-oh)\n[vocal ad-lib] (Oh-oh-oh-oh)\n[guitar solo with wah-wah effect]\n[vocal ad-lib] (Ah-ah-ah) \n[final drum hit and feedback fade]",
+  "style": "Alternative rock with post-grunge influences. Clean electric guitar arpeggios with chorus and delay effects open the track, transitioning into heavy distorted power chords during the chorus. A driving drum kit features a prominent snare and active hi-hat patterns. The bass guitar follows the root notes of the guitar progression with a thick, overdriven tone. Male vocals are delivered in a baritone range, shifting from a melodic, breathy delivery in the verses to a powerful, gritty belt in the choruses. The tempo is 120 BPM in the key of D major.",
+  "persona": "PCBender’s work is a testament to the journey. Across a catalog of searching and literate songs, the solo artist on Maricopa Records explores the roads, both literal and metaphorical, that carry us through life. From the dusty asphalt of memory in \"On Down the Way\" to the spiritual ascent of \"Camino Cielo,\" these are narratives of movement, of perseverance through hardship, and of the profound questions that arise when the path forward is unclear. The music lives in the tension between where we have been and where we are going, capturing the weariness of the \"Long Hard Road\" while always holding onto the hope that what you want will eventually come your way.\n\nThematic preoccupations swing from the intimately personal to the socially vast. With a confessional style, PCBender dissects the intricate mechanics of relationships, from the confounding push and pull of a lover who \"talks in smoke\" to the quiet decay of an \"active illusion\" where no one wins. Yet this introspection is frequently turned outward, aimed at a world of collapsing certainties. Scathing allegories like \"The Rats Are In The Roses\" and \"On To Potter's Field\" confront social decay and moral hypocrisy with a direct and potent voice, proving that the artist’s gaze is as fixed on the world outside as it is on the heart within.\n\nThis expansive subject matter is delivered through a versatile lyrical style that balances concrete storytelling with abstract exploration. One song might offer a vivid, grounded narrative of a working musician in \"The Singer Behind The Counter,\" while the next plunges into the mythological terrain of \"On the Way That Comes Before\" or the heady conceptualism of the *Free* suite, which deconstructs ideas of God, love, and death. Throughout, the emotional register is one of honest inquiry, a relentless search for meaning in a world where \"riddles abound\" and truth can feel like a \"prehistoric lie.\" It is this blend of unflinching reflection and quiet resilience that defines PCBender’s singular artistic vision.\n\nUltimately, the music of PCBender serves as a companion for the thoughtful listener. It doesn't offer easy answers but instead validates the questions, finding a stubborn beauty in life's crooked lines and a defiant grace in accepting what we cannot fully grasp. It is an invitation to look closer, to feel deeper, and to keep walking the path, knowing that every choice we make and every song we carry with us helps us build our own meaning along the way.",
+  "hints": {
+    "Vocals": "Male"
+  },
+  "hard_facts": {
+    "bpm": 129.2,
+    "key": "D",
+    "mode": "minor",
+    "time_signature": "4/4",
+    "duration_s": 275.01,
+    "lufs": -13.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.78,
+        "label": "S1"
+      },
+      {
+        "start": 4.78,
+        "end": 42.68,
+        "label": "S2"
+      },
+      {
+        "start": 42.68,
+        "end": 58.03,
+        "label": "S3"
+      },
+      {
+        "start": 58.03,
+        "end": 105.12,
+        "label": "S4"
+      },
+      {
+        "start": 105.12,
+        "end": 129.96,
+        "label": "S5"
+      },
+      {
+        "start": 129.96,
+        "end": 156.53,
+        "label": "S6"
+      },
+      {
+        "start": 156.53,
+        "end": 177.96,
+        "label": "S7"
+      },
+      {
+        "start": 177.96,
+        "end": 193.84,
+        "label": "S8"
+      },
+      {
+        "start": 193.84,
+        "end": 208.82,
+        "label": "S9"
+      },
+      {
+        "start": 208.82,
+        "end": 223.96,
+        "label": "S10"
+      },
+      {
+        "start": 223.96,
+        "end": 239.42,
+        "label": "S11"
+      },
+      {
+        "start": 239.42,
+        "end": 260.81,
+        "label": "S12"
+      },
+      {
+        "start": 260.81,
+        "end": 275.01,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.973,
+      "key": 0.911
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track blends a melancholic, atmospheric acoustic opening with a heavy, dramatic rock texture that evokes a strong sense of nostalgia and catharsis. The energy levels build effectively, transitioning from an intimate, low-key verse to an explosive, high-energy chorus propelled by crashing drums and soaring vocals. In terms of production, there is a wonderful sense of space and depth: the wide-panned, distorted guitars provide a dense wall of sound during the chorus while the lead vocals remain clean and centered in the mix. The most defining quality is this powerful dynamic contrast, highlighting the seamless transition from reflective verses to the massive, anthemic release of the chorus.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "The clean arpeggios that open this one, ringing through chorus and delay, set a stillness the song keeps testing, and PCBender is patient about it: the D minor verses stay low and breathy, letting a line like \"the smell of old things / new to me\" hang before the floor drops out. When the power chords land on \"darkness takes the shadows / the clock chimes twice / nothing but silence / calling my name,\" the payoff is the dynamic swing, verse-to-chorus contrast in the vein of a quieter Foo Fighters, and the baritone finds real grit at the top. At 129 and a full 4:35, the outro's wah-tinged solo and the pooling, thinning, gone imagery earn their length, though the repeated ad-libs stretch a little past where the tension peaks. A dependable cut that trusts its patience and mostly rewards it.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 3,
+      "label": "dependable"
+    },
+    "anchors_used": [
+      "clean electric guitar arpeggios with chorus and delay opening",
+      "D minor",
+      "129 BPM",
+      "4:35 duration",
+      "chorus lyric 'darkness takes the shadows / the clock chimes twice'",
+      "verse lyric 'the smell of old things / new to me'",
+      "baritone gritty belt in chorus",
+      "verse-to-chorus dynamic contrast",
+      "outro wah solo and 'pooling, thinning, gone'"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}
