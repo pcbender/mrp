@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArtistReleaseList from "../../components/ArtistReleaseList.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import StreamingLinks from "../../components/StreamingLinks.astro";
-import { getArtistById, getArtists, artistMembers } from "../../lib/content.js";
+import { getArtistById, getArtists, artistMembers, getVisibleReleases } from "../../lib/content.js";
 import { artistStreamingLinks, releasesForArtist } from "../../lib/catalog";
 
 export function getStaticPaths() {
@@ -25,10 +25,22 @@ const artistJsonLd = JSON.stringify({
   ...(artist.bio_short ? { "description": artist.bio_short } : {}),
   ...(sameAs.length ? { "sameAs": sameAs } : {})
 });
+const visibleReleaseSlugs = new Set(getVisibleReleases().map((release) => release.slug));
+
+// A blurb is written while its release is still a draft, so it can name a release
+// whose page the build won't emit yet. Keep the link text and drop the anchor
+// rather than shipping a dead href; it becomes a link once the release goes live.
+function isLinkableHref(href: string): boolean {
+  const releaseMatch = /^\/releases\/([^/]+)\//.exec(href);
+  return releaseMatch ? visibleReleaseSlugs.has(releaseMatch[1]) : true;
+}
+
 function renderPromoMarkdown(text: string): string {
   return text
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, label, href) =>
+      isLinkableHref(href) ? `<a href="${href}">${label}</a>` : label
+    )
     .replace(/\s+([,.;:!?])/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
