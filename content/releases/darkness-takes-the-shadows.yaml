@@ -1,0 +1,290 @@
+release:
+  id: darkness-takes-the-shadows
+  slug: darkness-takes-the-shadows
+  title: Darkness Takes The Shadows
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2026-07-27'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048571556'
+  catalog_number: null
+  cover_image: site/public/assets/releases/darkness-takes-the-shadows/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/2YSblH7QMzhK2LMiVZwucy
+    apple_music: https://music.apple.com/us/album/6795279593?app=music
+    itunes_store: https://music.apple.com/us/album/6795279593?app=itunes
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_l8F_JBfYOZvGKp58FjqA4hDjoxPHHh-4U
+    amazon_music: https://music.amazon.com/albums/B0HBRVGK78?ref=dmm_acq_soc_us_u_lfire_lp_x_58dc6fb2802145cc72be755098e3b480
+    tidal: http://www.tidal.com/album/546894245
+  song:
+    number: 1
+    title: Darkness Takes The Shadows
+    slug: darkness-takes-the-shadows
+    isrc: CAGOO2630894
+    duration: '4:35'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/pcbender--darkness-takes-the-shadows.mp3
+    links:
+      spotify: https://open.spotify.com/track/46iZJ9OAX6k9VD73lOaGEi
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: Alternative rock with post-grunge influences. Clean electric guitar arpeggios
+      with chorus and delay effects open the track, transitioning into heavy distorted
+      power chords during the chorus. A driving drum kit features a prominent snare
+      and active hi-hat patterns. The bass guitar follows the root notes of the guitar
+      progression with a thick, overdriven tone. Male vocals are delivered in a baritone
+      range, shifting from a melodic, breathy delivery in the verses to a powerful,
+      gritty belt in the choruses. The tempo is 120 BPM in the key of D major.
+    lyrics_raw: '[Intro]
+
+      [clean electric guitar arpeggios with chorus and delay]
+
+      [Verse 1]
+
+      [breathy male vocals]
+
+      Moon low in the eastern sky
+
+      Clouds where they should be
+
+      Nowhere seen
+
+      Too hot for the dark
+
+      Air heavy with sound
+
+      Wordlessly
+
+      [Chorus]
+
+      [distorted electric guitar power chords, driving drums]
+
+      Darkness takes the shadows
+
+      The clock chimes twice
+
+      Nothing but silence calling my name
+
+      (Oh-oh-oh)
+
+      (Oh-oh-oh)
+
+      [Verse 2]
+
+      [clean electric guitar arpeggios return]
+
+      Wind lifts sand and leaves
+
+      The smell of old things
+
+      New to me
+
+      Piles in the corners
+
+      A place to rest
+
+      My eyes close
+
+      [Bridge]
+
+      [bass guitar and drums only, light guitar feedback]
+
+      One leaf stirring
+
+      [Chorus]
+
+      [full band, high energy]
+
+      Darkness takes the shadows
+
+      The clock chimes twice
+
+      Nothing but silence calling my name
+
+      (Oh-oh-oh)
+
+      (Oh-oh-oh-oh)
+
+      (Oh-oh-oh-oh)
+
+      (Ah)
+
+      [Outro]
+
+      [distorted guitar riff]
+
+      Water finds a path
+
+      Pooling, thinning, gone
+
+      The air holds it, clouds gather
+
+      Rain begins to fall
+
+      (Oh-oh-oh-oh)
+
+      (Oh-oh-oh-oh)
+
+      [guitar solo with wah-wah effect]
+
+      (Ah-ah-ah)
+
+      [final drum hit and feedback fade]'
+    lyrics_text: 'moon low in the eastern sky
+
+      clouds where they should be
+
+      nowhere to be seen
+
+      too hot for the dark
+
+      air heavy with sound
+
+      no clapping
+
+      darkness takes the shadows
+
+      the clock chimes twice
+
+      nothing but silence
+
+      (Oh-oh-oh)
+
+      (Oh-oh-oh)
+
+      the smell of old things
+
+      new to me
+
+      piles in the corners
+
+      a place to rest
+
+      one leaf stirring
+
+      darkness takes the shadows
+
+      the clock chimes twice
+
+      nothing but silence
+
+      calling my name
+
+      rain comes as the wind dies
+
+      (Oh-oh-oh)
+
+      (Oh-oh-oh-oh)
+
+      (Oh-oh-oh-oh)
+
+      (Ah)
+
+      my eyes open
+
+      darkness takes the shadows
+
+      the clock chimes twice
+
+      nothing but silence
+
+      (Oh-oh-oh-oh)
+
+      (Oh-oh-oh-oh)
+
+      (Ah-ah-ah)
+
+      the air holds it
+
+      clouds gather
+
+      rain begins
+
+      darkness takes the shadows
+
+      the clock chimes twice
+
+      nothing but silence
+
+      calling my name'
+    lyrics_source: null
+    hints:
+      Vocals: Male
+    master_path: /mnt/c/Masters/Darkness Takes The Shadows.wav
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Darkness Takes The Shadows/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Darkness Takes The Shadows/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Darkness Takes The Shadows/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Darkness Takes The Shadows/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Darkness Takes The Shadows/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Darkness Takes The Shadows/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Darkness Takes The Shadows/Vocals.wav
+      enabled: true
+      label: Vocals
+    music_video:
+      project: assets/source/video/pcbender--darkness-takes-the-shadows/project.yaml
+      status: cast
+  distributor: landr
+  seo:
+    title: Darkness Takes The Shadows
+    description: Darkness Takes The Shadows on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/Darkness Takes The Shadows.wav
+  hero_image: site/public/assets/releases/darkness-takes-the-shadows/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null

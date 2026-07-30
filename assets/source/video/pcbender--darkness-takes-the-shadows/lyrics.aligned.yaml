@@ -1,0 +1,262 @@
+version: 1
+source: lyrics.yaml
+alignment:
+  algorithm_version: 1
+  model: whisper-1
+  transcription_cache_key: 851b71d469aee41aadf493b2e0627864146f20d8391c78214f5ae3ecbe63959f
+  source_hash: 62ea82e8c498b316091b340959b544e4974cb0bb0723ff4775f23725f612d92b
+  vocals_hash: eb3f22b31e662dde5bcc42767a0f05118c9165628381b69aad8b6cd5d3db9760
+  warnings:
+  - normalized Whisper word timestamps (0 negative starts, 0 regressing starts, 4
+    nonpositive durations)
+  - verse-1 line 1 is uncertain (confidence 0.667)
+  - chorus line 4 is unmatched (confidence 0.000)
+  - chorus line 5 is uncertain (confidence 0.333)
+  - chorus-2 line 4 is unmatched (confidence 0.000)
+  - chorus-2 line 5 is unmatched (confidence 0.000)
+  - chorus-2 line 6 is unmatched (confidence 0.000)
+  - outro line 5 is uncertain (confidence 0.250)
+  - outro line 6 is unmatched (confidence 0.000)
+  - outro line 7 is unmatched (confidence 0.000)
+sections:
+- id: intro
+  type: intro
+  label: Intro
+  start: 0.0
+  end: 33.0
+  reviewed: true
+  lines: []
+- id: verse-1
+  type: verse
+  label: Verse 1
+  start: 33.0
+  end: 60.95
+  reviewed: true
+  lines:
+  - text: Moon low in the eastern sky
+    start: 33.0
+    end: 38.5
+    confidence: 0.666667
+    status: uncertain
+    reviewed: true
+  - text: Clouds where they should be
+    start: 38.5
+    end: 43.0
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Nowhere seen
+    start: 43.1
+    end: 46.6
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Too hot for the dark
+    start: 47.32
+    end: 52.74
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Air heavy with sound
+    start: 52.74
+    end: 57.6
+    confidence: 0.75
+    status: matched
+    reviewed: true
+  - text: Wordlessly
+    start: 58.5
+    end: 60.95
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus
+  type: chorus
+  label: Chorus
+  start: 60.95
+  end: 92.11
+  reviewed: true
+  lines:
+  - text: Darkness takes the shadows
+    start: 61.0
+    end: 66.44
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: The clock chimes twice
+    start: 66.44
+    end: 69.62
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Nothing but silence calling my name
+    start: 69.62
+    end: 77.72
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: (Oh-oh-oh)
+    start: 81.0
+    end: 88.0
+    confidence: 0.0
+    status: unmatched
+    reviewed: true
+  - text: (Oh-oh-oh)
+    start: 88.0
+    end: 92.11
+    confidence: 0.333333
+    status: uncertain
+    reviewed: true
+- id: verse-2
+  type: verse
+  label: Verse 2
+  start: 92.12
+  end: 118.89
+  reviewed: true
+  lines:
+  - text: Wind lifts sand and leaves
+    start: 92.12
+    end: 96.76
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: The smell of old things
+    start: 96.76
+    end: 100.74
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: New to me
+    start: 100.74
+    end: 104.71
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Piles in the corners
+    start: 106.2
+    end: 109.02
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: A place to rest
+    start: 109.02
+    end: 111.66
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: My eyes close
+    start: 115.0
+    end: 118.89
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: bridge
+  type: bridge
+  label: Bridge
+  start: 125.96
+  end: 129.95
+  reviewed: true
+  lines:
+  - text: One leaf stirring
+    start: 125.96
+    end: 129.95
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus-2
+  type: chorus
+  label: Chorus
+  start: 135.68
+  end: 209.1
+  reviewed: true
+  lines:
+  - text: Darkness takes the shadows
+    start: 135.68
+    end: 139.422
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: The clock chimes twice
+    start: 139.422
+    end: 143.54
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Nothing but silence calling my name
+    start: 143.54
+    end: 151.62
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: (Oh-oh-oh)
+    start: 173.0
+    end: 177.5
+    confidence: 0.0
+    status: unmatched
+    reviewed: true
+  - text: (Oh-oh-oh-oh)
+    start: 180.0
+    end: 184.5
+    confidence: 0.0
+    status: unmatched
+    reviewed: true
+  - text: (Oh-oh-oh-oh)
+    start: 188.0
+    end: 192.0
+    confidence: 0.0
+    status: unmatched
+    reviewed: true
+  - text: (Ah)
+    start: 207.7
+    end: 209.1
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: outro
+  type: outro
+  label: Outro
+  start: 209.1
+  end: 275.012
+  reviewed: true
+  lines:
+  - text: Water finds a path
+    start: 209.1
+    end: 212.76
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Pooling, thinning, gone
+    start: 212.76
+    end: 215.8
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: The air holds it, clouds gather
+    start: 215.8
+    end: 221.135
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Rain begins to fall
+    start: 221.14
+    end: 226.2
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: (Oh-oh-oh-oh)
+    start: 226.4
+    end: 230.44
+    confidence: 0.25
+    status: uncertain
+    reviewed: true
+  - text: (Oh-oh-oh-oh)
+    start: 232.0
+    end: 238.0
+    confidence: 0.0
+    status: unmatched
+    reviewed: true
+  - text: (Ah-ah-ah)
+    start: 263.0
+    end: 268.0
+    confidence: 0.0
+    status: unmatched
+    reviewed: true
