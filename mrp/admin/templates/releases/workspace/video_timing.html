@@ -257,7 +257,7 @@
                  min="0.001" step="0.001" value="{{ '%.3f' | format(section.end) }}" required>
         </label>
         <button type="button" class="btn btn-secondary btn-sm" onclick="timingSet('section-{{ section_index }}-end')">Use playhead</button>
-        <button type="button" class="btn btn-secondary btn-sm" onclick="timingPreview('section-{{ section_index }}-start', 'section-{{ section_index }}-end')">Preview</button>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="timingPreview('section-{{ section_index }}-start', 'section-{{ section_index }}-end', this)" aria-pressed="false">Preview</button>
         <label>reviewed
           <select name="section_reviewed">
             <option value="false" {% if section.reviewed is not true %}selected{% endif %}>no</option>
@@ -313,7 +313,7 @@
                 <option value="true" {% if line.reviewed is true %}selected{% endif %}>reviewed</option>
               </select>
             </td>
-            <td><button type="button" class="btn btn-secondary btn-sm" onclick="timingPreview('line-{{ section_index }}-{{ line_index }}-start', 'line-{{ section_index }}-{{ line_index }}-end')">▶</button></td>
+            <td><button type="button" class="btn btn-secondary btn-sm" onclick="timingPreview('line-{{ section_index }}-{{ line_index }}-start', 'line-{{ section_index }}-{{ line_index }}-end', this)" aria-pressed="false" aria-label="Play cue {{ loop.index }} from its start">▶</button></td>
           </tr>
           {% endfor %}
         </tbody>
@@ -437,6 +437,12 @@ if (timingAudio && timingRange) {
   ['play', 'pause', 'ended'].forEach((type) => {
     timingAudio.addEventListener(type, syncTimingPlay);
   });
+  // However playback stopped — the cue's own end, the transport button, the
+  // track running out — the cue button goes back to ▶ and the next click on it
+  // starts from the cue start again.
+  ['pause', 'ended'].forEach((type) => {
+    timingAudio.addEventListener(type, timingPreviewRelease);
+  });
   syncTimingPlay();
 }
 function timingSet(inputId) {
@@ -464,20 +470,49 @@ function timingScrub(seconds) {
 function timingSeek(inputId) {
   timingScrub(Number(document.getElementById(inputId).value));
 }
-function timingPreview(startId, endId) {
+// One preview at a time. Previously every click left its own timeupdate
+// listener behind, and each one paused playback the moment the clock passed
+// *its* end — so previewing a later cue after an earlier one stopped dead on
+// the first tick, because the earlier cue's end was already behind us.
+let timingPreviewActive = null;
+
+function timingPreviewRelease() {
+  if (!timingPreviewActive) return;
+  const { stopAt, button, label } = timingPreviewActive;
+  timingAudio.removeEventListener('timeupdate', stopAt);
+  if (button) {
+    button.textContent = label;
+    button.setAttribute('aria-pressed', 'false');
+  }
+  timingPreviewActive = null;
+}
+
+function timingPreview(startId, endId, button) {
   if (!timingAudio) return;
   const start = Number(document.getElementById(startId).value);
   const end = Number(document.getElementById(endId).value);
   if (!Number.isFinite(start) || !Number.isFinite(end) || end <= start) return;
+
+  // Clicking the cue that is playing pauses it; clicking it again replays from
+  // the cue start rather than resuming where it stopped.
+  if (timingPreviewActive && timingPreviewActive.key === startId && !timingAudio.paused) {
+    timingAudio.pause();
+    return;
+  }
+  timingPreviewRelease();
+
+  const stopAt = () => {
+    if (timingAudio.currentTime >= end) timingAudio.pause();
+  };
+  const label = button ? button.textContent : '';
+  timingPreviewActive = { key: startId, stopAt, button: button || null, label };
+  if (button) {
+    button.textContent = label.trim().length <= 2 ? '❚❚' : '❚❚ Pause';
+    button.setAttribute('aria-pressed', 'true');
+  }
+  timingAudio.addEventListener('timeupdate', stopAt);
   timingAudio.currentTime = start;
   timingAudio.play();
-  const stopAt = () => {
-    if (timingAudio.currentTime >= end) {
-      timingAudio.pause();
-      timingAudio.removeEventListener('timeupdate', stopAt);
-    }
-  };
-  timingAudio.addEventListener('timeupdate', stopAt);
 }
 function timingReviewFlagged() {
   document.querySelectorAll('select[name=line_reviewed]').forEach((select) => {
