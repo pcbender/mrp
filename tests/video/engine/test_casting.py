@@ -173,6 +173,63 @@ def test_actor_cast_compiles_identity_and_scene_direction_to_traces() -> None:
     assert petals.hue_shift_degrees == 20
 
 
+def test_presentation_direction_is_actor_local() -> None:
+    visuals = VisualConfig.model_validate(
+        {
+            "actors": {
+                "outlined": {
+                    "id": "outlined",
+                    "name": "Outlined",
+                    "character": "vocals",
+                    "components": [_trace("mark", 180)],
+                },
+                "traced": {
+                    "id": "traced",
+                    "name": "Traced",
+                    "character": "bass",
+                    "components": [_trace("mark", 140)],
+                },
+                "filled": {
+                    "id": "filled",
+                    "name": "Filled",
+                    "character": "instruments",
+                    "components": [_trace("mark", 120)],
+                },
+            },
+            "section_casts": {
+                "verse": {
+                    "actors": [
+                        {
+                            "id": "outlined-role",
+                            "actor": "outlined",
+                            "direction": {"presentation": "full_outline"},
+                        },
+                        {
+                            "id": "traced-role",
+                            "actor": "traced",
+                        },
+                        {
+                            "id": "filled-role",
+                            "actor": "filled",
+                            "direction": {"presentation": "filled_shape"},
+                        },
+                    ]
+                }
+            },
+        }
+    )
+
+    traces = resolve_section_composition(
+        visuals, "verse", "verse_1", 4821
+    ).composition.traces
+
+    assert [trace.presentation for trace in traces] == [
+        "full_outline",
+        "animated_trace",
+        "filled_shape",
+    ]
+
+
 def test_exact_actor_cast_direction_precedes_type_and_legacy_compositions() -> None:
     visuals = VisualConfig.model_validate(
         {

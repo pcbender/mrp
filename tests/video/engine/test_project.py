@@ -482,6 +482,33 @@ def test_color_flow_is_optional_and_validates_source_and_swing() -> None:
         )
 
 
+def test_presentation_defaults_and_supported_modes() -> None:
+    from mrp.video.project import ActorDirectionConfig, VisualLayerConfig
+
+    layer = VisualLayerConfig.model_validate(
+        {
+            "id": "outline-probe",
+            "role": "vocals",
+            "color": "#ff5fd2",
+            "geometry": {
+                "family": "path",
+                "path_data": "M 0 0 L 10 0 L 10 10 Z",
+            },
+        }
+    )
+
+    assert layer.presentation == "animated_trace"
+    assert ActorDirectionConfig().presentation == "animated_trace"
+    assert ActorDirectionConfig(presentation="full_outline").presentation == (
+        "full_outline"
+    )
+    assert ActorDirectionConfig(presentation="filled_shape").presentation == (
+        "filled_shape"
+    )
+    with pytest.raises(ValidationError):
+        ActorDirectionConfig.model_validate({"presentation": "painted_shape"})
+
+
 def test_geometry_family_defaults_and_validation() -> None:
     from mrp.video.project import LayerGeometryConfig
 

@@ -428,6 +428,9 @@ class VisualLayerConfig(ContractModel):
     base_scale: float = Field(default=1, gt=0, le=2)
     opacity: float = Field(default=0.8, ge=0, le=1)
     line_width: float = Field(default=2, gt=0, le=20)
+    presentation: Literal["animated_trace", "full_outline", "filled_shape"] = (
+        "animated_trace"
+    )
     rotation_degrees_per_second: float = Field(default=0, ge=-180, le=180)
     rotation_wobble_degrees: float = Field(default=0, ge=0, le=180)
     hue_shift_degrees: float = Field(default=0, ge=-360, le=360)
@@ -514,6 +517,9 @@ class ActorDirectionConfig(ContractModel):
     color: HexColor | None = None
     line_width: float | None = Field(default=None, gt=0, le=20)
     blend_mode: Literal["normal", "screen"] | None = None
+    presentation: Literal["animated_trace", "full_outline", "filled_shape"] = (
+        "animated_trace"
+    )
     trace: ActorTraceDirectionConfig = Field(
         default_factory=ActorTraceDirectionConfig
     )

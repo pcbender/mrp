@@ -859,7 +859,13 @@
         };
 
         let headIndex = Math.round(progress * cycle) % cycle;
-        if (playing) {
+        const fullOutline = shape.presentation === 'full_outline';
+        if (fullOutline) {
+          const list = [];
+          for (let i = 0; i <= cycle; i += 1) list.push(i);
+          strokeIndices(list, 1);
+          headIndex = cycle;
+        } else if (playing) {
           const trail = clamp01(numberOr(shape.trail_fraction, 0.24)) || 0.001;
           const ghostCount = Math.max(0, Math.round(numberOr(shape.ghost_count, 1)));
           const ghostSpacing = numberOr(shape.ghost_spacing, 0.08);
@@ -879,7 +885,7 @@
         }
 
         const headRadius = numberOr(shape.head_radius, 3);
-        if (opts.showHead && headRadius > 0 && (playing || progress < 1)) {
+        if (!fullOutline && opts.showHead && headRadius > 0 && (playing || progress < 1)) {
           context.globalAlpha = baseAlpha;
           context.beginPath();
           const [headX, headY] = placedPoint(pts[headIndex]);
@@ -895,7 +901,24 @@
         }
       };
 
-      contours.forEach((pts, contourIndex) => drawCurve(pts, contourIndex));
+      if (shape.presentation === 'filled_shape') {
+        context.globalAlpha = baseAlpha;
+        context.beginPath();
+        contours.forEach((pts) => {
+          if (pts.length < 3) return;
+          pts.forEach((point, index) => {
+            const [px, py] = placedPoint(point);
+            if (index === 0) context.moveTo(px, py); else context.lineTo(px, py);
+          });
+          context.closePath();
+        });
+        context.fillStyle = color;
+        context.shadowColor = color;
+        // One even-odd fill preserves holes across SVG/text subpaths.
+        context.fill('evenodd');
+      } else {
+        contours.forEach((pts, contourIndex) => drawCurve(pts, contourIndex));
+      }
 
       // Selection halo: a dashed ring at the component's drag reach, so the
       // designer shows which shape a settings card (or canvas pick) owns.

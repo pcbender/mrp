@@ -35,6 +35,7 @@
   'color': none,
   'line_width': none,
   'blend_mode': none,
+  'presentation': 'animated_trace',
   'trace': {'cycles_per_second': none, 'trail_fraction': none, 'ghost_count': none, 'ghost_spacing': none, 'head_radius': none},
 } %}
 
@@ -179,6 +180,7 @@
       <h4>Trace performance</h4>
       <p class="video-help">Override how this actor draws and echoes its curves in this scene. Blank keeps the actor identity setting.</p>
       <div class="form-grid actor-direction-grid">
+        <div class="form-field">{{ actor_control_label('Presentation', 'Animated trace sends a moving head and trail around the curve. Full outline keeps the entire curve visible. Filled shape paints the inside of each closed contour. Full outline and Filled shape bypass trace movement for this actor only.') }}<select name="direction_presentation"><option value="animated_trace" {% if direction.presentation == 'animated_trace' %}selected{% endif %}>Animated trace</option><option value="full_outline" {% if direction.presentation == 'full_outline' %}selected{% endif %}>Full outline</option><option value="filled_shape" {% if direction.presentation == 'filled_shape' %}selected{% endif %}>Filled shape</option></select></div>
         <div class="form-field">{{ actor_control_label('Trace speed', 'How fast the curve draws itself in this scene, in cycles per second. Higher reads as more energy.') }}<input type="number" step="0.01" min="0.01" max="2" name="direction_cycles" value="{{ direction.trace.cycles_per_second if direction.trace.cycles_per_second is not none else '' }}" placeholder="identity"></div>
         <div class="form-field">{{ actor_control_label('Trail', 'How much of the curve stays lit behind the head. Short trails feel taut, long trails feel sustained.') }}<input type="number" step="0.01" min="0.01" max="1" name="direction_trail" value="{{ direction.trace.trail_fraction if direction.trace.trail_fraction is not none else '' }}" placeholder="identity"></div>
         <div class="form-field">{{ actor_control_label('Ghosts', 'Echo copies trailing the curve in this scene. 0 is a clean single line.') }}<input type="number" step="1" min="0" max="6" name="direction_ghosts" value="{{ direction.trace.ghost_count if direction.trace.ghost_count is not none else '' }}" placeholder="identity"></div>

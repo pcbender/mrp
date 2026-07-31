@@ -477,6 +477,26 @@ def _draw_fading_path(
         )
 
 
+def _draw_solid_path(
+    mask: NDArray[np.uint8],
+    points: NDArray[np.int32],
+    *,
+    peak: float,
+    line_width: float,
+) -> None:
+    """Draw a complete outline at one opacity, with no moving-trail fade."""
+    if len(points) < 2 or peak <= 0:
+        return
+    cv2.polylines(
+        mask,
+        [points],
+        isClosed=False,
+        color=max(1, min(255, round(255 * peak))),
+        thickness=max(1, round(line_width)),
+        lineType=cv2.LINE_AA,
+    )
+
+
 FLOW_HUE_LEVELS = 24
 
 
@@ -545,13 +565,28 @@ def _composite_trace(
     line_width: float,
     blend_mode: str,
     head_radius: float,
+    fade_paths: bool = True,
+    fill_paths: bool = False,
     color_for_value: Callable[[float], tuple[int, int, int]] | None = None,
 ) -> NDArray[np.uint8]:
     if opacity <= 0:
         return frame
     mask = np.zeros(frame.shape[:2], dtype=np.uint8)
-    for points, peak, _values in paths:
-        _draw_fading_path(mask, points, peak=peak, line_width=line_width)
+    if fill_paths:
+        # OpenCV applies an even-odd rule when contours are submitted together,
+        # retaining holes in multi-contour SVG/text shapes.
+        contours = [points for points, _peak, _values in paths if len(points) >= 3]
+        if contours:
+            cv2.fillPoly(
+                mask,
+                contours,
+                color=255,
+                lineType=cv2.LINE_AA,
+            )
+    else:
+        for points, peak, _values in paths:
+            draw_path = _draw_fading_path if fade_paths else _draw_solid_path
+            draw_path(mask, points, peak=peak, line_width=line_width)
     if paths and head_radius > 0:
         head = paths[-1][0][-1, 0]
         cv2.circle(
@@ -565,7 +600,7 @@ def _composite_trace(
     alpha = mask.astype(np.float32)[:, :, np.newaxis] / 255
     alpha *= opacity
     base = frame.astype(np.float32) / 255
-    flow = color_for_value is not None and any(
+    flow = not fill_paths and color_for_value is not None and any(
         values is not None for _points, _peak, values in paths
     )
     if flow:
@@ -634,20 +669,34 @@ def render_frame(
     )
     frame = _background_frame(context, width, height, audio.master.energy)
     weighted_compositions = _weighted_compositions(context, choreography)
-    indexed_layers = [
-        (composition_index, layer_index, curve, weight)
-        for composition_index, (composition, weight) in enumerate(weighted_compositions)
-        for layer_index, curve in enumerate(composition.layers)
-        if weight > 0
-    ]
+    indexed_layers: list[tuple[int, int, list[LayerCurve], float]] = []
+    for composition_index, (composition, weight) in enumerate(weighted_compositions):
+        if weight <= 0:
+            continue
+        for layer_index, curve in enumerate(composition.layers):
+            # Text expands into one curve per SVG contour. Filled presentation
+            # recombines adjacent contours from the same component so one
+            # even-odd fill can retain counters/holes in glyphs.
+            if (
+                curve.config.presentation == "filled_shape"
+                and indexed_layers
+                and indexed_layers[-1][0] == composition_index
+                and indexed_layers[-1][2][0].config is curve.config
+            ):
+                indexed_layers[-1][2].append(curve)
+            else:
+                indexed_layers.append(
+                    (composition_index, layer_index, [curve], weight)
+                )
     indexed_layers.sort(
         key=lambda item: (
-            item[2].config.depth == "foreground",
+            item[2][0].config.depth == "foreground",
             item[0],
             item[1],
         )
     )
-    for _, layer_index, curve, composition_weight in indexed_layers:
+    for _, layer_index, curves, composition_weight in indexed_layers:
+        curve = curves[0]
         state = map_layer_state(
             curve.config,
             audio,
@@ -663,11 +712,6 @@ def render_frame(
             spatial_spread=choreography.spatial_spread,
             anchor_drift=choreography.anchor_drift,
         )
-        progress = trace_progress(
-            choreography.trace_time,
-            trace.cycles_per_second,
-            phase=curve.phase_offset / math.tau,
-        )
         flow = curve.config.color_flow
         flow_active = flow is not None and curve.hue_values is not None
 
@@ -679,19 +723,12 @@ def render_frame(
         trace_paths: list[
             tuple[NDArray[np.int32], float, NDArray[np.float32] | None]
         ] = []
-        for ghost_index in range(trace.ghost_count, 0, -1):
-            ghost_progress = progress - ghost_index * (
-                state.trail_fraction + trace.ghost_spacing
-            )
-            ghost = cyclic_trace_window(
-                curve.points,
-                ghost_progress,
-                state.trail_fraction,
-            )
-            trace_paths.append(
+        fill_paths = curve.config.presentation == "filled_shape"
+        if fill_paths:
+            trace_paths.extend(
                 (
                     _transform_points(
-                        ghost.points,
+                        contour.points,
                         width=width,
                         height=height,
                         scale=state.scale,
@@ -700,31 +737,86 @@ def render_frame(
                         anchor_x=anchor_x,
                         anchor_y=anchor_y,
                     ),
-                    0.3 / ghost_index,
-                    _window_flow_values(ghost),
+                    1.0,
+                    None,
+                )
+                for contour in curves
+            )
+            head_radius = 0.0
+            fade_paths = False
+        elif curve.config.presentation == "full_outline":
+            trace_paths.append(
+                (
+                    _transform_points(
+                        curve.points,
+                        width=width,
+                        height=height,
+                        scale=state.scale,
+                        rotation=state.rotation_radians,
+                        margin=context.project.visuals.canvas_margin,
+                        anchor_x=anchor_x,
+                        anchor_y=anchor_y,
+                    ),
+                    1.0,
+                    curve.hue_values if flow_active else None,
                 )
             )
-        active = cyclic_trace_window(
-            curve.points,
-            progress,
-            state.trail_fraction,
-        )
-        trace_paths.append(
-            (
-                _transform_points(
-                    active.points,
-                    width=width,
-                    height=height,
-                    scale=state.scale,
-                    rotation=state.rotation_radians,
-                    margin=context.project.visuals.canvas_margin,
-                    anchor_x=anchor_x,
-                    anchor_y=anchor_y,
-                ),
-                1.0,
-                _window_flow_values(active),
+            head_radius = 0.0
+            fade_paths = False
+        else:
+            progress = trace_progress(
+                choreography.trace_time,
+                trace.cycles_per_second,
+                phase=curve.phase_offset / math.tau,
             )
-        )
+            for ghost_index in range(trace.ghost_count, 0, -1):
+                ghost_progress = progress - ghost_index * (
+                    state.trail_fraction + trace.ghost_spacing
+                )
+                ghost = cyclic_trace_window(
+                    curve.points,
+                    ghost_progress,
+                    state.trail_fraction,
+                )
+                trace_paths.append(
+                    (
+                        _transform_points(
+                            ghost.points,
+                            width=width,
+                            height=height,
+                            scale=state.scale,
+                            rotation=state.rotation_radians,
+                            margin=context.project.visuals.canvas_margin,
+                            anchor_x=anchor_x,
+                            anchor_y=anchor_y,
+                        ),
+                        0.3 / ghost_index,
+                        _window_flow_values(ghost),
+                    )
+                )
+            active = cyclic_trace_window(
+                curve.points,
+                progress,
+                state.trail_fraction,
+            )
+            trace_paths.append(
+                (
+                    _transform_points(
+                        active.points,
+                        width=width,
+                        height=height,
+                        scale=state.scale,
+                        rotation=state.rotation_radians,
+                        margin=context.project.visuals.canvas_margin,
+                        anchor_x=anchor_x,
+                        anchor_y=anchor_y,
+                    ),
+                    1.0,
+                    _window_flow_values(active),
+                )
+            )
+            head_radius = trace.head_radius * (1 + state.beat_pulse * 2.2)
+            fade_paths = True
         base_color = _base_layer_color(context, curve.config, layer_index)
         color_for_value = None
         if flow_active:
@@ -756,7 +848,9 @@ def render_frame(
             opacity=state.opacity,
             line_width=state.line_width,
             blend_mode=curve.config.blend_mode,
-            head_radius=trace.head_radius * (1 + state.beat_pulse * 2.2),
+            head_radius=head_radius,
+            fade_paths=fade_paths,
+            fill_paths=fill_paths,
             color_for_value=color_for_value,
         )
 

@@ -546,6 +546,144 @@ def test_composite_trace_color_flow_varies_hue_deterministically() -> None:
     assert np.array_equal(flowing, repeat)
 
 
+def test_full_outline_composites_one_solid_complete_path() -> None:
+    from mrp.video.renderer import _composite_trace
+
+    xs = np.linspace(10, 110, 24)
+    points = (
+        np.stack([xs, np.full(24, 30.0)], axis=1)
+        .round()
+        .astype(np.int32)
+        .reshape((-1, 1, 2))
+    )
+    frame = np.zeros((60, 120, 3), dtype=np.uint8)
+    kwargs = {
+        "color": (255, 255, 255),
+        "opacity": 1.0,
+        "line_width": 3.0,
+        "blend_mode": "normal",
+        "head_radius": 0.0,
+    }
+
+    animated = _composite_trace(
+        frame,
+        ((points, 1.0, None),),
+        **kwargs,
+    )
+    outlined = _composite_trace(
+        frame,
+        ((points, 1.0, None),),
+        **kwargs,
+        fade_paths=False,
+    )
+
+    assert int(animated[30, 20, 0]) < int(animated[30, 100, 0])
+    assert abs(int(outlined[30, 20, 0]) - int(outlined[30, 100, 0])) <= 1
+    assert int(outlined[30, 20, 0]) > int(animated[30, 20, 0])
+
+
+def test_filled_shape_composites_contours_with_even_odd_holes() -> None:
+    from mrp.video.renderer import _composite_trace
+
+    outer = np.asarray(
+        [[10, 10], [90, 10], [90, 90], [10, 90], [10, 10]],
+        dtype=np.int32,
+    ).reshape((-1, 1, 2))
+    inner = np.asarray(
+        [[30, 30], [70, 30], [70, 70], [30, 70], [30, 30]],
+        dtype=np.int32,
+    ).reshape((-1, 1, 2))
+    frame = np.zeros((100, 100, 3), dtype=np.uint8)
+
+    filled = _composite_trace(
+        frame,
+        ((outer, 1.0, None), (inner, 1.0, None)),
+        color=(255, 255, 255),
+        opacity=1.0,
+        line_width=3.0,
+        blend_mode="normal",
+        head_radius=0.0,
+        fill_paths=True,
+    )
+
+    assert tuple(filled[20, 20]) == (255, 255, 255)
+    assert tuple(filled[50, 50]) == (0, 0, 0)
+    assert tuple(filled[5, 5]) == (0, 0, 0)
+
+
+def test_filled_text_subpaths_are_composited_as_one_shape(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import mrp.video.renderer as renderer
+
+    project_data = _project().model_dump(mode="json")
+    text_trace = {
+        "id": "title",
+        "role": "vocals",
+        "color": "#ffffff",
+        "presentation": "filled_shape",
+        "geometry": {
+            "family": "text",
+            "path_data": (
+                "M0 0 L100 0 L100 100 L0 100 Z "
+                "M30 30 L70 30 L70 70 L30 70 Z"
+            ),
+            "samples": 64,
+        },
+    }
+    for composition in project_data["visuals"]["section_compositions"].values():
+        composition["traces"] = [text_trace]
+    context = build_render_context(
+        ProjectManifest.model_validate(project_data),
+        _analysis_bundle(),
+        _aligned_sections(),
+        root=FONT_PATH.parent,
+    )
+    original = renderer._composite_trace
+    filled_path_counts: list[int] = []
+
+    def capture_paths(frame, paths, **kwargs):
+        if kwargs.get("fill_paths"):
+            filled_path_counts.append(len(paths))
+        return original(frame, paths, **kwargs)
+
+    monkeypatch.setattr(renderer, "_composite_trace", capture_paths)
+
+    render_frame(context, 1.0, 10, width=320, height=180)
+
+    assert filled_path_counts == [2]
+
+
+@pytest.mark.parametrize("presentation", ["full_outline", "filled_shape"])
+def test_static_presentations_never_use_trace_progress_or_windows(
+    monkeypatch: pytest.MonkeyPatch,
+    presentation: str,
+) -> None:
+    project_data = _project().model_dump(mode="json")
+    for composition in project_data["visuals"]["section_compositions"].values():
+        for trace in composition["traces"]:
+            trace["presentation"] = presentation
+    context = build_render_context(
+        ProjectManifest.model_validate(project_data),
+        _analysis_bundle(),
+        _aligned_sections(),
+        root=FONT_PATH.parent,
+    )
+
+    def unexpected_trace_call(*_args, **_kwargs):
+        pytest.fail(f"{presentation} must bypass animated trace calculation")
+
+    monkeypatch.setattr("mrp.video.renderer.trace_progress", unexpected_trace_call)
+    monkeypatch.setattr(
+        "mrp.video.renderer.cyclic_trace_window",
+        unexpected_trace_call,
+    )
+
+    frame = render_frame(context, 4.5, 45, width=320, height=180)
+
+    assert frame.shape == (180, 320, 3)
+
+
 def test_build_curve_supports_non_spirogram_families() -> None:
     from mrp.video.project import VisualLayerConfig
     from mrp.video.renderer import _build_curve
