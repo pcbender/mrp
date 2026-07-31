@@ -198,6 +198,32 @@ def test_designer_renders_saved_actor_and_unknown_id_is_404(tmp_path: Path, monk
     assert 'type="range"' in body
     assert 'name="actor_character"' not in body
     assert "spiro-play" in body
+    group_labels = (
+        "Identity &amp; placement",
+        "Curve geometry",
+        "3D space",
+        "Appearance",
+        "Trace movement",
+        "Audio reactions",
+    )
+    for label in group_labels:
+        assert f"<span>{label}</span>" in body
+    assert body.count('class="actor-control-group"') == 12
+    assert body.index("Identity &amp; placement") < body.index("Curve geometry")
+    assert body.index("Curve geometry") < body.index("3D space")
+    assert body.index("3D space") < body.index("Appearance")
+    assert body.index("Appearance") < body.index("Trace movement")
+    assert body.index("Trace movement") < body.index("Audio reactions")
+    assert "Name, role, color, position and size" in body
+    assert "Fallback signals for scale, opacity, color and pulse" in body
+    assert "Base roll °/s" in body
+    assert "Spins this component around the viewing axis" in body
+    assert "Orientation timing" in body
+    assert "step after each circuit" in body
+    assert "Pitch step °/circuit" in body
+    assert "Yaw step °/circuit" in body
+    assert "Retained circuits" in body
+    assert "History fade" in body
 
     missing = asyncio.run(
         actors_routes.actors_designer(_get_request("/actors/nope"), "nope")
@@ -210,6 +236,8 @@ def test_designer_renders_saved_actor_and_unknown_id_is_404(tmp_path: Path, monk
     # curve family live, so it reads "shape spirogram" rather than a fixed label.
     assert "data-title-live" in blank.body.decode()
     assert "shape spirogram" in blank.body.decode()
+    assert "Identity &amp; placement" in blank.body.decode()
+    assert "Trace movement" in blank.body.decode()
 
 
 def test_every_component_can_be_removed_including_the_first(

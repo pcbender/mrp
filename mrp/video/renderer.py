@@ -38,6 +38,11 @@ from mrp.video.project import (
     load_aligned_lyrics,
     load_project_manifest,
 )
+from mrp.video.spatial import (
+    lift_curve_points,
+    project_curve_points,
+    retained_spatial_orientations,
+)
 from mrp.video.text import (
     SpirophonicTextError,
     draw_lyric_overlay,
@@ -178,6 +183,16 @@ def _curve_from_points(
         return None
     if normalize:
         points /= extent
+    if layer.spatial is not None:
+        progress = np.asarray([point.t for point in generated], dtype=np.float32)
+        points = lift_curve_points(
+            points,
+            progress,
+            mode=layer.spatial.mode,
+            amplitude=layer.spatial.amplitude,
+            windings=layer.spatial.windings,
+            phase_degrees=layer.spatial.phase_degrees,
+        )
     points.setflags(write=False)
     hue_values = None
     if layer.color_flow is not None:
@@ -417,19 +432,38 @@ def _transform_points(
     height: int,
     scale: float,
     rotation: float,
+    pitch: float,
+    yaw: float,
+    perspective_strength: float,
     margin: float,
     anchor_x: float,
     anchor_y: float,
-) -> NDArray[np.int32]:
-    cosine = math.cos(rotation)
-    sine = math.sin(rotation)
-    rotation_matrix = np.asarray(((cosine, -sine), (sine, cosine)), dtype=np.float32)
+) -> tuple[NDArray[np.int32], NDArray[np.float32] | None]:
+    if points.shape[1] == 2:
+        # This is deliberately the original 2D path, byte for byte. Projects
+        # without `spatial` retain their exact rendered pixels.
+        cosine = math.cos(rotation)
+        sine = math.sin(rotation)
+        rotation_matrix = np.asarray(
+            ((cosine, -sine), (sine, cosine)), dtype=np.float32
+        )
+        transformed = points @ rotation_matrix.T
+        depths = None
+    else:
+        transformed, depths = project_curve_points(
+            points,
+            pitch_radians=pitch,
+            yaw_radians=yaw,
+            roll_radians=rotation,
+            perspective_strength=perspective_strength,
+        )
     radius = min(width, height) * (0.5 - margin) * scale
-    transformed = points @ rotation_matrix.T
+    transformed = transformed.copy()
     transformed *= radius
     transformed[:, 0] += width * anchor_x
     transformed[:, 1] += height * anchor_y
-    return np.rint(transformed).astype(np.int32).reshape((-1, 1, 2))
+    pixels = np.rint(transformed).astype(np.int32).reshape((-1, 1, 2))
+    return pixels, depths
 
 
 def _layer_anchor(
@@ -497,12 +531,92 @@ def _draw_solid_path(
     )
 
 
+TracePath = (
+    tuple[NDArray[np.int32], float, NDArray[np.float32] | None]
+    | tuple[
+        NDArray[np.int32],
+        float,
+        NDArray[np.float32] | None,
+        NDArray[np.float32] | None,
+    ]
+)
+
+
+def _unpack_trace_path(
+    path: TracePath,
+) -> tuple[
+    NDArray[np.int32],
+    float,
+    NDArray[np.float32] | None,
+    NDArray[np.float32] | None,
+]:
+    if len(path) == 3:
+        points, peak, values = path
+        return points, peak, values, None
+    return path
+
+
+def _draw_depth_path(
+    mask: NDArray[np.uint8],
+    points: NDArray[np.int32],
+    depths: NDArray[np.float32],
+    *,
+    peak: float,
+    line_width: float,
+    fade: bool,
+) -> None:
+    """Paint depth-bucketed segments from far to near.
+
+    Near strokes are modestly wider and brighter. Bucketing keeps the draw
+    cost bounded and makes self-crossings read as spatial without changing
+    the compositing order between actors.
+    """
+    if len(points) < 2 or len(depths) != len(points) or peak <= 0:
+        return
+    depth_levels = 8
+    fade_levels = 14 if fade else 1
+    segments: dict[tuple[int, int], list[NDArray[np.int32]]] = {}
+    last = len(points) - 1
+    for index in range(1, len(points)):
+        depth = float(np.clip((depths[index - 1] + depths[index]) * 0.5, 0, 1))
+        depth_level = min(depth_levels - 1, int(depth * depth_levels))
+        if fade:
+            amount = index / last
+            fade_level = min(fade_levels - 1, int(amount * fade_levels))
+        else:
+            fade_level = 0
+        segments.setdefault((depth_level, fade_level), []).append(
+            points[index - 1 : index + 1]
+        )
+    for (depth_level, fade_level), lines in sorted(segments.items()):
+        depth = (depth_level + 0.5) / depth_levels
+        amount = (fade_level + 1) / fade_levels if fade else 1
+        trail_cue = 0.12 + 0.88 * amount * amount if fade else 1
+        intensity = round(255 * peak * trail_cue * (0.55 + 0.45 * depth))
+        thickness = max(1, round(line_width * (0.75 + 0.5 * depth)))
+        cv2.polylines(
+            mask,
+            lines,
+            isClosed=False,
+            color=max(1, min(255, intensity)),
+            thickness=thickness,
+            lineType=cv2.LINE_AA,
+        )
+
+
+def _head_depth_scale(path: TracePath) -> float:
+    _points, _peak, _values, depths = _unpack_trace_path(path)
+    if depths is None or not len(depths):
+        return 1.0
+    return 0.75 + 0.5 * float(depths[-1])
+
+
 FLOW_HUE_LEVELS = 24
 
 
 def _paint_flow_colors(
     color_buffer: NDArray[np.uint8],
-    paths: tuple[tuple[NDArray[np.int32], float, NDArray[np.float32] | None], ...],
+    paths: tuple[TracePath, ...],
     color_for_value: Callable[[float], tuple[int, int, int]],
     *,
     line_width: float,
@@ -518,8 +632,10 @@ def _paint_flow_colors(
     look; these strokes only decide which color each masked pixel takes, so
     they draw slightly wider with no AA of their own.
     """
-    thickness = max(1, round(line_width)) + 3
-    for points, _peak, values in paths:
+    has_depth = any(_unpack_trace_path(path)[3] is not None for path in paths)
+    thickness = max(1, round(line_width * (1.25 if has_depth else 1))) + 3
+    for path in paths:
+        points, _peak, values, _depths = _unpack_trace_path(path)
         if values is None or len(points) < 2:
             continue
         levels = np.minimum(
@@ -544,13 +660,16 @@ def _paint_flow_colors(
                 thickness=thickness,
                 lineType=cv2.LINE_8,
             )
-    if paths and head_radius > 0 and paths[-1][2] is not None:
-        head = paths[-1][0][-1, 0]
+    last_points, _peak, last_values, _depths = (
+        _unpack_trace_path(paths[-1]) if paths else (None, 0, None, None)
+    )
+    if last_points is not None and head_radius > 0 and last_values is not None:
+        head = last_points[-1, 0]
         cv2.circle(
             color_buffer,
             (int(head[0]), int(head[1])),
-            max(1, round(head_radius)) + 2,
-            color_for_value(float(paths[-1][2][-1])),
+            max(1, round(head_radius * _head_depth_scale(paths[-1]))) + 2,
+            color_for_value(float(last_values[-1])),
             thickness=-1,
             lineType=cv2.LINE_8,
         )
@@ -558,7 +677,7 @@ def _paint_flow_colors(
 
 def _composite_trace(
     frame: NDArray[np.uint8],
-    paths: tuple[tuple[NDArray[np.int32], float, NDArray[np.float32] | None], ...],
+    paths: tuple[TracePath, ...],
     *,
     color: tuple[int, int, int],
     opacity: float,
@@ -575,7 +694,11 @@ def _composite_trace(
     if fill_paths:
         # OpenCV applies an even-odd rule when contours are submitted together,
         # retaining holes in multi-contour SVG/text shapes.
-        contours = [points for points, _peak, _values in paths if len(points) >= 3]
+        contours = [
+            points
+            for points, _peak, _values, _depths in map(_unpack_trace_path, paths)
+            if len(points) >= 3
+        ]
         if contours:
             cv2.fillPoly(
                 mask,
@@ -584,15 +707,26 @@ def _composite_trace(
                 lineType=cv2.LINE_AA,
             )
     else:
-        for points, peak, _values in paths:
-            draw_path = _draw_fading_path if fade_paths else _draw_solid_path
-            draw_path(mask, points, peak=peak, line_width=line_width)
+        for path in paths:
+            points, peak, _values, depths = _unpack_trace_path(path)
+            if depths is not None:
+                _draw_depth_path(
+                    mask,
+                    points,
+                    depths,
+                    peak=peak,
+                    line_width=line_width,
+                    fade=fade_paths,
+                )
+            else:
+                draw_path = _draw_fading_path if fade_paths else _draw_solid_path
+                draw_path(mask, points, peak=peak, line_width=line_width)
     if paths and head_radius > 0:
-        head = paths[-1][0][-1, 0]
+        head = _unpack_trace_path(paths[-1])[0][-1, 0]
         cv2.circle(
             mask,
             (int(head[0]), int(head[1])),
-            max(1, round(head_radius)),
+            max(1, round(head_radius * _head_depth_scale(paths[-1]))),
             255,
             thickness=-1,
             lineType=cv2.LINE_AA,
@@ -601,7 +735,8 @@ def _composite_trace(
     alpha *= opacity
     base = frame.astype(np.float32) / 255
     flow = not fill_paths and color_for_value is not None and any(
-        values is not None for _points, _peak, values in paths
+        values is not None
+        for _points, _peak, values, _depths in map(_unpack_trace_path, paths)
     )
     if flow:
         color_buffer = np.empty_like(frame)
@@ -720,43 +855,42 @@ def render_frame(
                 return None
             return curve.hue_values[window.indices]
 
-        trace_paths: list[
-            tuple[NDArray[np.int32], float, NDArray[np.float32] | None]
-        ] = []
+        def _project_path(
+            points: NDArray[np.float32],
+            peak: float,
+            values: NDArray[np.float32] | None,
+            *,
+            pitch: float | None = None,
+            yaw: float | None = None,
+        ) -> TracePath:
+            pixels, depths = _transform_points(
+                points,
+                width=width,
+                height=height,
+                scale=state.scale,
+                rotation=state.rotation_radians,
+                pitch=state.pitch_radians if pitch is None else pitch,
+                yaw=state.yaw_radians if yaw is None else yaw,
+                perspective_strength=context.project.visuals.perspective_strength,
+                margin=context.project.visuals.canvas_margin,
+                anchor_x=anchor_x,
+                anchor_y=anchor_y,
+            )
+            return pixels, peak, values, depths
+
+        trace_paths: list[TracePath] = []
         fill_paths = curve.config.presentation == "filled_shape"
         if fill_paths:
             trace_paths.extend(
-                (
-                    _transform_points(
-                        contour.points,
-                        width=width,
-                        height=height,
-                        scale=state.scale,
-                        rotation=state.rotation_radians,
-                        margin=context.project.visuals.canvas_margin,
-                        anchor_x=anchor_x,
-                        anchor_y=anchor_y,
-                    ),
-                    1.0,
-                    None,
-                )
+                _project_path(contour.points, 1.0, None)
                 for contour in curves
             )
             head_radius = 0.0
             fade_paths = False
         elif curve.config.presentation == "full_outline":
             trace_paths.append(
-                (
-                    _transform_points(
-                        curve.points,
-                        width=width,
-                        height=height,
-                        scale=state.scale,
-                        rotation=state.rotation_radians,
-                        margin=context.project.visuals.canvas_margin,
-                        anchor_x=anchor_x,
-                        anchor_y=anchor_y,
-                    ),
+                _project_path(
+                    curve.points,
                     1.0,
                     curve.hue_values if flow_active else None,
                 )
@@ -779,17 +913,8 @@ def render_frame(
                     state.trail_fraction,
                 )
                 trace_paths.append(
-                    (
-                        _transform_points(
-                            ghost.points,
-                            width=width,
-                            height=height,
-                            scale=state.scale,
-                            rotation=state.rotation_radians,
-                            margin=context.project.visuals.canvas_margin,
-                            anchor_x=anchor_x,
-                            anchor_y=anchor_y,
-                        ),
+                    _project_path(
+                        ghost.points,
                         0.3 / ghost_index,
                         _window_flow_values(ghost),
                     )
@@ -800,17 +925,8 @@ def render_frame(
                 state.trail_fraction,
             )
             trace_paths.append(
-                (
-                    _transform_points(
-                        active.points,
-                        width=width,
-                        height=height,
-                        scale=state.scale,
-                        rotation=state.rotation_radians,
-                        margin=context.project.visuals.canvas_margin,
-                        anchor_x=anchor_x,
-                        anchor_y=anchor_y,
-                    ),
+                _project_path(
+                    active.points,
                     1.0,
                     _window_flow_values(active),
                 )
@@ -836,15 +952,53 @@ def render_frame(
                     _flash,
                 )
 
+        mapped_color = _layer_color(
+            base_color,
+            state.hue_shift_degrees,
+            state.color_intensity,
+            state.beat_pulse,
+        )
+        retained_orientations = ()
+        if curve.config.spatial is not None:
+            retained_orientations = retained_spatial_orientations(
+                current_pitch_radians=state.pitch_radians,
+                current_yaw_radians=state.yaw_radians,
+                trace_time=choreography.trace_time,
+                cycles_per_second=trace.cycles_per_second,
+                orientation_mode=curve.config.spatial.orientation_mode,
+                pitch_step_degrees=curve.config.spatial.pitch_step_degrees,
+                yaw_step_degrees=curve.config.spatial.yaw_step_degrees,
+                retained_circuits=curve.config.spatial.retained_circuits,
+                retention_fade=curve.config.spatial.retention_fade,
+            )
+        if not fill_paths:
+            # A retained circuit is a completed full outline at its previous
+            # stepped orientation. Composite history oldest-first, without a
+            # moving head or within-path fade, before painting the live trace.
+            for orientation in retained_orientations:
+                retained_path = _project_path(
+                    curve.points,
+                    1.0,
+                    curve.hue_values if flow_active else None,
+                    pitch=orientation.pitch_radians,
+                    yaw=orientation.yaw_radians,
+                )
+                frame = _composite_trace(
+                    frame,
+                    (retained_path,),
+                    color=mapped_color,
+                    opacity=state.opacity * orientation.opacity,
+                    line_width=state.line_width,
+                    blend_mode=curve.config.blend_mode,
+                    head_radius=0,
+                    fade_paths=False,
+                    color_for_value=color_for_value,
+                )
+
         frame = _composite_trace(
             frame,
             tuple(trace_paths),
-            color=_layer_color(
-                base_color,
-                state.hue_shift_degrees,
-                state.color_intensity,
-                state.beat_pulse,
-            ),
+            color=mapped_color,
             opacity=state.opacity,
             line_width=state.line_width,
             blend_mode=curve.config.blend_mode,

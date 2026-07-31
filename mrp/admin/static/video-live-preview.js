@@ -125,9 +125,9 @@
     if (
       !documentModel
       || documentModel.format !== 'mrp-music-video-live-preview'
-      || documentModel.version !== 1
+      || documentModel.version !== 2
     ) {
-      throw new Error('Live Preview document does not match version 1.');
+      throw new Error('Live Preview document does not match version 2.');
     }
     if (!['audio-reactive', 'geometry-only'].includes(documentModel.mode)) {
       throw new Error('Live Preview mode is invalid.');
@@ -181,13 +181,13 @@
     if (!documentModel || documentModel.mode !== 'audio-reactive') return null;
     if (
       documentModel.format !== 'mrp-music-video-live-preview'
-      || documentModel.version !== 1
+      || documentModel.version !== 2
       || documentModel.state_encoding !== 'base64-float32-le'
       || documentModel.state_width !== STATE_SCHEMA.length
       || !Array.isArray(documentModel.state_schema)
       || documentModel.state_schema.join('\n') !== STATE_SCHEMA.join('\n')
     ) {
-      throw new Error('Live Preview state contract does not match version 1.');
+      throw new Error('Live Preview state contract does not match version 2.');
     }
     const count = Math.round(finite(documentModel.state_sample_count) || 0);
     if (count <= 0 || typeof documentModel.state_samples_base64 !== 'string') {
@@ -371,6 +371,23 @@
       * Math.PI
       / 180
     );
+    let pitch = 0;
+    let yaw = 0;
+    if (layer.spatial) {
+      const motionTime = (
+        (finite(state.rotation_time) || 0)
+        * (finite(preset.motion_response) || 0)
+        * scaleGain
+      );
+      pitch = (
+        (finite(layer.spatial.pitch_degrees) || 0)
+        + (finite(layer.spatial.pitch_degrees_per_second) || 0) * motionTime
+      ) * Math.PI / 180;
+      yaw = (
+        (finite(layer.spatial.yaw_degrees) || 0)
+        + (finite(layer.spatial.yaw_degrees_per_second) || 0) * motionTime
+      ) * Math.PI / 180;
+    }
 
     const trailFraction = (
       (finite(layer.trail_fraction) || 0)
@@ -428,9 +445,11 @@
       hue_shift_degrees: hueShift,
       line_width: Math.max(0.25, lineWidth),
       opacity: clamp01(opacity),
+      pitch_radians: pitch,
       rotation_radians: rotation,
       scale,
       trail_fraction: clamp(trailFraction, 0.02, 1),
+      yaw_radians: yaw,
     };
   }
 
@@ -540,9 +559,15 @@
       ),
       line_width: mapped.line_width,
       opacity: mapped.opacity,
+      perspective_strength: finite(layer.perspective_strength)
+        ?? finite(documentModel.video && documentModel.video.perspective_strength)
+        ?? 0.18,
+      pitch_radians: mapped.pitch_radians,
       rotation_radians: mapped.rotation_radians,
+      rotation_time: finite(state.rotation_time) || 0,
       trace_time: finite(state.trace_time) || 0,
       trail_fraction: mapped.trail_fraction,
+      yaw_radians: mapped.yaw_radians,
     };
   }
 
@@ -634,16 +659,32 @@
 
   function geometryLayerShape(documentModel, layerValue, masterTimeSeconds, layerIndex) {
     const layer = flattenLayer(layerValue);
+    const spatial = layer.spatial;
     return {
       ...layer,
       color: baseLayerColor(documentModel, layer, layerIndex),
+      perspective_strength: finite(documentModel.video && documentModel.video.perspective_strength)
+        ?? 0.18,
+      pitch_radians: spatial
+        ? (
+          (finite(spatial.pitch_degrees) || 0)
+          + (finite(spatial.pitch_degrees_per_second) || 0) * masterTimeSeconds
+        ) * Math.PI / 180
+        : 0,
       rotation_radians: (
         (finite(layer.rotation_degrees_per_second) || 0)
         * Math.PI
         / 180
         * masterTimeSeconds
       ),
+      rotation_time: masterTimeSeconds,
       trace_time: masterTimeSeconds,
+      yaw_radians: spatial
+        ? (
+          (finite(spatial.yaw_degrees) || 0)
+          + (finite(spatial.yaw_degrees_per_second) || 0) * masterTimeSeconds
+        ) * Math.PI / 180
+        : 0,
     };
   }
 
@@ -1361,6 +1402,10 @@
     }
 
     function computeShapes() {
+      const perspectiveField = doc.querySelector('[name="perspective_strength"]');
+      const livePerspective = finite(perspectiveField && perspectiveField.value)
+        ?? finite(model.perspective_strength)
+        ?? 0.18;
       const cards = Array.from(
         doc.querySelectorAll('#actor-assignments fieldset[data-assignment-id]')
       );
@@ -1386,6 +1431,7 @@
           const trace = flattenLayer(traceValue);
           return {
             ...trace,
+            perspective_strength: livePerspective,
             assignment: trace.assignment || (
               String(trace.id || '').includes('--')
                 ? String(trace.id).split('--', 1)[0]
@@ -1417,6 +1463,10 @@
         const presentation = fieldValue(card, 'direction_presentation') || 'animated_trace';
         const rotation = numberOrNull(fieldValue(card, 'direction_rotation'));
         const wobble = numberOrNull(fieldValue(card, 'direction_wobble'));
+        const pitch = numberOrNull(fieldValue(card, 'direction_pitch'));
+        const yaw = numberOrNull(fieldValue(card, 'direction_yaw'));
+        const pitchSpeed = numberOrNull(fieldValue(card, 'direction_pitch_speed'));
+        const yawSpeed = numberOrNull(fieldValue(card, 'direction_yaw_speed'));
         const hueShift = numberOrNull(fieldValue(card, 'direction_hue'));
         const blendMode = fieldValue(card, 'direction_blend');
         const energy = {};
@@ -1433,6 +1483,41 @@
 
         actor.components.forEach((componentValue) => {
           const component = flattenLayer(componentValue);
+          let spatial = component.spatial ? { ...component.spatial } : null;
+          if (
+            spatial
+            || (pitch !== null && pitch !== 0)
+            || (yaw !== null && yaw !== 0)
+            || (pitchSpeed !== null && pitchSpeed !== 0)
+            || (yawSpeed !== null && yawSpeed !== 0)
+          ) {
+            spatial = spatial || {
+              mode: 'tilted',
+              amplitude: 0.35,
+              windings: 5,
+              phase_degrees: 0,
+              pitch_degrees: 0,
+              yaw_degrees: 0,
+              pitch_degrees_per_second: 0,
+              yaw_degrees_per_second: 0,
+            };
+            spatial.pitch_degrees = clamp(
+              (finite(spatial.pitch_degrees) || 0) + (pitch || 0), -180, 180
+            );
+            spatial.yaw_degrees = clamp(
+              (finite(spatial.yaw_degrees) || 0) + (yaw || 0), -180, 180
+            );
+            spatial.pitch_degrees_per_second = clamp(
+              (finite(spatial.pitch_degrees_per_second) || 0) + (pitchSpeed || 0),
+              -180,
+              180
+            );
+            spatial.yaw_degrees_per_second = clamp(
+              (finite(spatial.yaw_degrees_per_second) || 0) + (yawSpeed || 0),
+              -180,
+              180
+            );
+          }
           const anchorX = component.anchor_x + (directionX !== null ? directionX - 0.5 : 0);
           const anchorY = component.anchor_y + (directionY !== null ? directionY - 0.5 : 0);
           const traceId = `${card.dataset.assignmentId}--${component.id}`;
@@ -1470,6 +1555,8 @@
             color_locked: component.color_locked || Boolean(wardrobe),
             line_width: lineWidth !== null ? lineWidth : component.line_width,
             presentation,
+            perspective_strength: livePerspective,
+            spatial,
             depth: depth || component.depth,
             rotation_degrees_per_second: clamp(
               (finite(component.rotation_degrees_per_second) || 0)

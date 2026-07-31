@@ -286,7 +286,7 @@ test('version-1 Float32 state decodes once and interpolates numeric columns', ()
   const values = new Float32Array([...first, ...second]);
   const documentModel = {
     format: 'mrp-music-video-live-preview',
-    version: 1,
+    version: 2,
     mode: 'audio-reactive',
     duration_seconds: 0.05,
     state_rate_hz: 20,
@@ -427,7 +427,7 @@ function fullTrackFixture() {
   });
   return {
     format: 'mrp-music-video-live-preview',
-    version: 1,
+    version: 2,
     mode: 'geometry-only',
     duration_seconds: 12,
     video: {
@@ -523,6 +523,14 @@ test('full-track scene lookup follows sampled state and geometry fallback', () =
 test('saved full-track shapes blend canonical previous and current compositions', () => {
   const documentModel = fullTrackFixture();
   documentModel.compositions.chorus.traces[0].presentation = 'full_outline';
+  documentModel.compositions.chorus.traces[0].spatial = {
+    mode: 'tilted',
+    orientation_mode: 'circuit_step',
+    pitch_step_degrees: 5,
+    yaw_step_degrees: 15,
+    retained_circuits: 12,
+    retention_fade: 0.9,
+  };
   const state = reactiveState();
   const shapes = savedPreviewShapes(documentModel, state, 6.5);
 
@@ -532,6 +540,8 @@ test('saved full-track shapes blend canonical previous and current compositions'
   assert.ok(shapes[0].opacity < shapes[1].opacity);
   assert.equal(shapes[0].trace_time, 6.5);
   assert.equal(shapes[1].trace_time, 6.5);
+  assert.equal(shapes[0].spatial.orientation_mode, 'circuit_step');
+  assert.equal(shapes[0].spatial.retained_circuits, 12);
 
   const expectedCurrent = mappedLayerShape(
     documentModel.compositions.chorus.traces[0],
@@ -666,8 +676,8 @@ test('malformed preview documents fail closed before drawing', () => {
   assert.equal(validatePreviewDocument(valid), valid);
   assert.equal(decodePreviewState(valid), null);
   assert.throws(
-    () => validatePreviewDocument({ ...valid, version: 2 }),
-    /does not match version 1/
+    () => validatePreviewDocument({ ...valid, version: 1 }),
+    /does not match version 2/
   );
   assert.throws(
     () => validatePreviewDocument({

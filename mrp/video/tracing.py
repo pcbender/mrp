@@ -36,8 +36,8 @@ def cyclic_trace_window(
     trail_fraction: float,
 ) -> TraceWindow:
     """Select a tail-to-head window from a closed curve, including wraparound."""
-    if points.ndim != 2 or points.shape[1] != 2 or len(points) < 2:
-        raise ValueError("points must have shape (n, 2) with at least two points")
+    if points.ndim != 2 or points.shape[1] not in {2, 3} or len(points) < 2:
+        raise ValueError("points must have shape (n, 2|3) with at least two points")
     if not 0 < trail_fraction <= 1:
         raise ValueError("trail_fraction must be within (0, 1]")
 

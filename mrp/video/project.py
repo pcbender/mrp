@@ -411,6 +411,31 @@ class LayerColorFlowConfig(ContractModel):
     swing_degrees: float = Field(default=90, gt=0, le=360)
 
 
+class LayerSpatialConfig(ContractModel):
+    """Optional three-dimensional identity and motion for one curve.
+
+    ``tilted`` keeps the generated curve planar and turns it in 3D. ``wave``
+    lifts the normalized curve along z with an integer number of windings, so
+    the first and last samples still meet and cyclic trace windows stay
+    seamless. The orientation belongs to actor identity; scene direction can
+    add to it when an actor is cast.
+    """
+
+    mode: Literal["tilted", "wave"] = "tilted"
+    amplitude: float = Field(default=0.35, ge=0, le=1)
+    windings: int = Field(default=5, ge=1, le=24)
+    phase_degrees: float = Field(default=0, ge=-360, le=360)
+    pitch_degrees: float = Field(default=0, ge=-180, le=180)
+    yaw_degrees: float = Field(default=0, ge=-180, le=180)
+    orientation_mode: Literal["continuous", "circuit_step"] = "continuous"
+    pitch_degrees_per_second: float = Field(default=0, ge=-180, le=180)
+    yaw_degrees_per_second: float = Field(default=0, ge=-180, le=180)
+    pitch_step_degrees: float = Field(default=0, ge=-180, le=180)
+    yaw_step_degrees: float = Field(default=15, ge=-180, le=180)
+    retained_circuits: int = Field(default=0, ge=0, le=24)
+    retention_fade: float = Field(default=0.82, ge=0, le=1)
+
+
 class VisualLayerConfig(ContractModel):
     id: NonBlankText
     role: VisualRole
@@ -422,6 +447,7 @@ class VisualLayerConfig(ContractModel):
     # must not overrule a color the scene asked for by name.
     color_locked: bool = False
     color_flow: LayerColorFlowConfig | None = None
+    spatial: LayerSpatialConfig | None = None
     depth: Literal["background", "foreground"] = "foreground"
     anchor_x: float = Field(default=0.5, ge=-0.5, le=1.5)
     anchor_y: float = Field(default=0.5, ge=-0.5, le=1.5)
@@ -436,6 +462,16 @@ class VisualLayerConfig(ContractModel):
     hue_shift_degrees: float = Field(default=0, ge=-360, le=360)
     blend_mode: Literal["normal", "screen"] = "screen"
     drivers: TraceAudioDriversConfig = Field(default_factory=TraceAudioDriversConfig)
+
+    @model_validator(mode="after")
+    def nonplanar_curves_are_not_filled(self) -> "VisualLayerConfig":
+        if (
+            self.presentation == "filled_shape"
+            and self.spatial is not None
+            and self.spatial.mode == "wave"
+        ):
+            raise ValueError("filled_shape does not support nonplanar wave geometry")
+        return self
 
 
 class CastingConfig(ContractModel):
@@ -511,6 +547,10 @@ class ActorDirectionConfig(ContractModel):
         le=180,
     )
     rotation_wobble_degrees: float = Field(default=0, ge=0, le=180)
+    pitch_offset_degrees: float = Field(default=0, ge=-180, le=180)
+    yaw_offset_degrees: float = Field(default=0, ge=-180, le=180)
+    pitch_degrees_per_second: float = Field(default=0, ge=-180, le=180)
+    yaw_degrees_per_second: float = Field(default=0, ge=-180, le=180)
     hue_shift_degrees: float = Field(default=0, ge=-360, le=360)
     depth: Literal["background", "foreground"] | None = None
     visible: bool = True
@@ -676,6 +716,7 @@ class VisualConfig(ContractModel):
     palette: list[HexColor] = Field(default_factory=list, max_length=16)
     layers: list[VisualLayerConfig] = Field(default_factory=_default_visual_layers)
     canvas_margin: float = Field(default=0.08, ge=0, le=0.4)
+    perspective_strength: float = Field(default=0.18, ge=0, le=0.35)
     transition_seconds: float = Field(default=0.65, ge=0, le=10)
     background_response: float = Field(default=0.16, ge=0, le=1)
     lyric_fade_seconds: float = Field(default=0.25, ge=0, le=5)
@@ -775,6 +816,26 @@ class VisualConfig(ContractModel):
         if uncastable_actors:
             joined = ", ".join(uncastable_actors)
             raise ValueError(f"cast actors require a track-level character: {joined}")
+        nonplanar_fills = sorted(
+            {
+                assignment.id
+                for cast in (*self.section_casts.values(), *self.cast_overrides.values())
+                for assignment in cast.actors
+                if assignment.direction.presentation == "filled_shape"
+                and assignment.actor in self.actors
+                and any(
+                    component.spatial is not None
+                    and component.spatial.mode == "wave"
+                    for component in self.actors[assignment.actor].components
+                )
+            }
+        )
+        if nonplanar_fills:
+            joined = ", ".join(nonplanar_fills)
+            raise ValueError(
+                "filled_shape cannot be used with nonplanar wave actors: "
+                f"{joined}"
+            )
         return self
 
 

@@ -85,6 +85,16 @@
         "line_width": 2.5,
         "rotation_degrees_per_second": -1.2,
         "rotation_wobble_degrees": 4.583662361046586,
+        "spatial": {
+          "mode": "wave",
+          "amplitude": 0.4,
+          "windings": 6,
+          "phase_degrees": 30.0,
+          "pitch_degrees": 18.0,
+          "yaw_degrees": -12.0,
+          "pitch_degrees_per_second": 2.0,
+          "yaw_degrees_per_second": -1.5
+        },
         "hue_shift_degrees": 12.0,
         "blend_mode": "screen",
         "drivers": {
@@ -97,6 +107,8 @@
       "expected": {
         "scale": 1.47096,
         "rotation_radians": -0.4364310506627191,
+        "pitch_radians": 0.9085904833202161,
+        "yaw_radians": -0.6552629237102471,
         "trail_fraction": 0.358769324,
         "opacity": 0.5913648000000001,
         "line_width": 7.981,
@@ -160,6 +172,8 @@
       "expected": {
         "scale": 1.8932832,
         "rotation_radians": -0.12526312406177492,
+        "pitch_radians": 0.0,
+        "yaw_radians": 0.0,
         "trail_fraction": 0.6183745632,
         "opacity": 0.09526216832,
         "line_width": 1.549272,

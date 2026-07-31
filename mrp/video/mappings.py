@@ -5,6 +5,7 @@ from mrp.video.analysis import AnalysisBundle
 from mrp.video.choreography import ChoreographyState
 from mrp.video.presets import MappingPreset, get_mapping_preset
 from mrp.video.project import AudioSignal, VisualLayerConfig
+from mrp.video.spatial import spatial_orientations
 
 
 @dataclass(frozen=True, slots=True)
@@ -30,6 +31,8 @@ class AudioVisualState:
 class LayerFrameState:
     scale: float
     rotation_radians: float
+    pitch_radians: float
+    yaw_radians: float
     trail_fraction: float
     opacity: float
     line_width: float
@@ -180,6 +183,29 @@ def map_layer_state(
     rotation += math.sin(
         time_seconds * 0.37 + scale_energy * math.pi
     ) * math.radians(layer.rotation_wobble_degrees)
+    pitch = 0.0
+    yaw = 0.0
+    if layer.spatial is not None:
+        motion_time = choreography.rotation_time * preset.motion_response * scale_gain
+        orientation, _ = spatial_orientations(
+            base_pitch_degrees=layer.spatial.pitch_degrees,
+            base_yaw_degrees=layer.spatial.yaw_degrees,
+            pitch_degrees_per_second=layer.spatial.pitch_degrees_per_second,
+            yaw_degrees_per_second=layer.spatial.yaw_degrees_per_second,
+            motion_time=motion_time,
+            trace_time=choreography.trace_time,
+            cycles_per_second=layer.trace.cycles_per_second,
+            orientation_mode=layer.spatial.orientation_mode,
+            pitch_step_degrees=layer.spatial.pitch_step_degrees,
+            yaw_step_degrees=layer.spatial.yaw_step_degrees,
+            # The renderer composites history after mapping, using this
+            # current orientation as its reference. Avoid allocating retained
+            # orientation objects twice on every rendered frame.
+            retained_circuits=0,
+            retention_fade=layer.spatial.retention_fade,
+        )
+        pitch = orientation.pitch_radians
+        yaw = orientation.yaw_radians
 
     trail_fraction = (
         layer.trace.trail_fraction
@@ -225,6 +251,8 @@ def map_layer_state(
     return LayerFrameState(
         scale=scale,
         rotation_radians=rotation,
+        pitch_radians=pitch,
+        yaw_radians=yaw,
         trail_fraction=_clamp(trail_fraction, 0.02, 1),
         opacity=_clamp(opacity),
         line_width=max(0.25, line_width),

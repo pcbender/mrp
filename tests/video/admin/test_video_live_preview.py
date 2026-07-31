@@ -340,9 +340,47 @@ def test_geometry_only_document_is_deterministic_private_and_read_only(
         "position": "bottom",
         "active_color": "#ffffff",
     }
+    assert first.payload["video"]["perspective_strength"] == 0.18
     assert _snapshot(tmp_path) == before
     assert len(first.body) < video_live_preview.MAX_RESPONSE_BYTES
     _assert_private_data_absent(first.body)
+
+
+def test_spatial_identity_and_track_camera_are_safe_preview_data(
+    tmp_path: Path,
+) -> None:
+    layer = _layer("weave")
+    layer["spatial"] = {
+        "mode": "wave",
+        "amplitude": 0.45,
+        "windings": 7,
+        "phase_degrees": 30,
+        "pitch_degrees": 24,
+        "yaw_degrees": -16,
+        "orientation_mode": "circuit_step",
+        "pitch_degrees_per_second": 2,
+        "yaw_degrees_per_second": -3,
+        "pitch_step_degrees": 5,
+        "yaw_step_degrees": 15,
+        "retained_circuits": 12,
+        "retention_fade": 0.9,
+    }
+    release, track, _project_path = _write_repo(
+        tmp_path,
+        visuals={
+            "perspective_strength": 0.24,
+            "section_compositions": {"verse": {"traces": [layer]}},
+        },
+    )
+
+    result = _build(tmp_path, release, track)
+    trace = result.payload["compositions"]["type:verse"]["traces"][0]
+
+    assert result.payload["video"]["perspective_strength"] == 0.24
+    assert trace["spatial"] | layer["spatial"] == trace["spatial"]
+    assert trace["spatial"]["orientation_mode"] == "circuit_step"
+    assert trace["spatial"]["retained_circuits"] == 12
+    _assert_private_data_absent(result.body)
 
 
 def test_current_cache_samples_state_and_visual_edits_do_not_stale_audio(

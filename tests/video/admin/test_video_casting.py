@@ -285,6 +285,7 @@ def _look_fields(**overrides: str) -> dict[str, list[str]]:
         "action": ["save_look"],
         "background": ["#2b0a3d"],
         "background_response": ["0.42"],
+        "perspective_strength": ["0.27"],
         "lyric_color": ["#ffe066"],
         "lyric_size": ["48"],
         "lyric_position": ["center"],
@@ -308,6 +309,7 @@ def test_the_look_saves_without_casting_anything(tmp_path: Path) -> None:
     saved = yaml.safe_load(project_path.read_text(encoding="utf-8"))["project"]
     assert saved["video"]["background"] == "#2b0a3d"
     assert saved["visuals"]["background_response"] == 0.42
+    assert saved["visuals"]["perspective_strength"] == 0.27
     assert saved["text"]["active_color"] == "#ffe066"
     assert saved["text"]["size"] == 48
     assert saved["text"]["position"] == "center"
@@ -336,6 +338,7 @@ def test_saving_a_cast_leaves_the_look_alone(tmp_path: Path) -> None:
         ("background", "octarine", "six-digit hex"),
         ("lyric_color", "#fff", "six-digit hex"),
         ("background_response", "1.5", "between 0 and 1"),
+        ("perspective_strength", "0.5", "between 0 and 0.35"),
         ("lyric_size", "0", "greater than 0"),
         ("lyric_position", "sideways", "top, center, or bottom"),
     ],
@@ -560,6 +563,67 @@ def test_actor_identity_cast_and_direction_compile_without_rewriting_renderer(
     assert stored.project.visuals.actors["vocal-lantern"].components[0].anchor_x == 0.25
 
 
+def test_spatial_actor_and_scene_orientation_round_trip_into_compiled_trace(
+    tmp_path: Path,
+) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    identity = _actor_fields() | {
+        "spatial_mode": ["wave"],
+        "spatial_amplitude": ["0.45"],
+        "spatial_windings": ["7"],
+        "spatial_phase": ["30"],
+        "spatial_pitch": ["20"],
+        "spatial_yaw": ["-10"],
+        "spatial_orientation_mode": ["circuit_step"],
+        "spatial_pitch_speed": ["2"],
+        "spatial_yaw_speed": ["-3"],
+        "spatial_pitch_step": ["5"],
+        "spatial_yaw_step": ["15"],
+        "spatial_retain_circuits": ["12"],
+        "spatial_retention_fade": ["0.9"],
+    }
+    save_track_actor(tmp_path, release, track, identity)
+    result = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields()
+        | {
+            "direction_pitch": ["12"],
+            "direction_yaw": ["5"],
+            "direction_pitch_speed": ["1.5"],
+            "direction_yaw_speed": ["4"],
+        },
+    )
+
+    component = result["project"].visuals.actors["vocal-lantern"].components[0]
+    direction = result["project"].visuals.section_casts["verse"].actors[0].direction
+    compiled = result["composition"].traces[0]
+
+    assert component.spatial is not None
+    assert component.spatial.mode == "wave"
+    assert component.spatial.windings == 7
+    assert component.spatial.orientation_mode == "circuit_step"
+    assert component.spatial.pitch_step_degrees == 5
+    assert component.spatial.yaw_step_degrees == 15
+    assert component.spatial.retained_circuits == 12
+    assert component.spatial.retention_fade == pytest.approx(0.9)
+    assert direction.pitch_offset_degrees == 12
+    assert direction.yaw_degrees_per_second == 4
+    assert compiled.spatial is not None
+    assert compiled.spatial.pitch_degrees == 32
+    assert compiled.spatial.yaw_degrees == -5
+    assert compiled.spatial.pitch_degrees_per_second == 3.5
+    assert compiled.spatial.yaw_degrees_per_second == 1
+    assert compiled.spatial.orientation_mode == "circuit_step"
+    assert compiled.spatial.retained_circuits == 12
+    assert result["storyboard"]["traces"][0]["spatial"]["mode"] == "wave"
+    assert (
+        result["storyboard"]["traces"][0]["spatial"]["orientation_mode"]
+        == "circuit_step"
+    )
+
+
 def test_a_missing_scene_wobble_defaults_to_still(tmp_path: Path) -> None:
     """Pre-control form submissions acquire no surprise motion."""
     release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
@@ -586,6 +650,7 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
     # Every compiled trace the renderer would draw is available for the canvas,
     # tagged with the assignment prefix so a dragged shape maps back to its card.
     assert storyboard["margin"] == 0.08
+    assert storyboard["perspective_strength"] == 0.18
     assert storyboard["section_id"] == "verse_1"
     assert storyboard["range"] == {"start": 0.0, "end": 4.0}
     trace = storyboard["traces"][0]
@@ -790,18 +855,26 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'name="harm_damping"' in body
     assert 'name="phase"' in body
     assert 'name="color_flow_source"' in body
+    assert 'name="spatial_mode"' in body
+    assert 'name="spatial_amplitude"' in body
+    assert 'name="spatial_windings"' in body
+    assert 'name="perspective_strength"' in body
     assert 'type="range"' in body
     assert "/static/spiro-preview.js" in body
     assert "/static/video-live-preview.js" in body
     assert "Audio-reactive preview of staged actors and timed lyrics" in body
     assert 'name="direction_wobble"' in body
+    assert 'name="direction_pitch"' in body
+    assert 'name="direction_yaw"' in body
+    assert 'name="direction_pitch_speed"' in body
+    assert 'name="direction_yaw_speed"' in body
     assert 'name="direction_presentation"' in body
     assert ">Animated trace</option>" in body
     assert ">Full outline</option>" in body
     assert 'value="filled_shape" >Filled shape</option>' in body
     assert (
         'title="Maximum angle this actor rocks in either direction in this scene. '
-        '0 turns wobble off; Rotation °/s controls continuous spin separately."'
+        '0 turns wobble off; Roll °/s controls continuous roll separately."'
     ) in body
     assert 'class="form-field actor-assignment-actor"' in body
     assert "Stage position" in body
