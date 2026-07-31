@@ -1,0 +1,48 @@
+version: 1
+actor:
+  id: y-axis-flower
+  name: Y Axis Flower
+  description: ''
+  kind: spirogram
+  components:
+  - id: Y Axis Flower
+    role: vocals
+    geometry:
+      family: rose
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      rose_n: 5
+      rose_d: 1
+    trace:
+      cycles_per_second: 0.313
+      trail_fraction: 0.24
+      ghost_count: 1
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#ff5fd2'
+    color_locked: false
+    color_flow:
+      source: velocity
+      swing_degrees: 90.0
+    spatial:
+      mode: tilted
+      amplitude: 0.35
+      windings: 5
+      phase_degrees: 20.0
+      pitch_degrees: 0.0
+      yaw_degrees: 0.0
+      pitch_degrees_per_second: 0.0
+      yaw_degrees_per_second: 0.0
+    depth: foreground
+    anchor_x: 0.5
+    anchor_y: 0.5
+    base_scale: 1.0
+    opacity: 0.8
+    line_width: 2.0
+    presentation: animated_trace
+    rotation_degrees_per_second: 0.0
+    rotation_wobble_degrees: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}

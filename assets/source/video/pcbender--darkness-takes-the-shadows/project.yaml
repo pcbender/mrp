@@ -39,7 +39,7 @@ project:
     width: 1920
     height: 1080
     fps: 30.0
-    background: '#101014'
+    background: '#05706e'
     seed: 4821
   encoding:
     video_codec: libx264
@@ -81,7 +81,7 @@ project:
     upload_bitrate_kbps: 128
   visuals:
     mapping_preset: balanced
-    palette_preset: layer
+    palette_preset: ember
     palette: []
     layers:
     - id: instrument-haze
@@ -108,7 +108,9 @@ project:
       base_scale: 1.82
       opacity: 0.16
       line_width: 1.2
+      presentation: animated_trace
       rotation_degrees_per_second: -0.35
+      rotation_wobble_degrees: 0.0
       hue_shift_degrees: 18.0
       blend_mode: screen
       drivers: {}
@@ -136,7 +138,9 @@ project:
       base_scale: 0.6
       opacity: 0.74
       line_width: 2.2
+      presentation: animated_trace
       rotation_degrees_per_second: 0.8
+      rotation_wobble_degrees: 0.0
       hue_shift_degrees: 0.0
       blend_mode: screen
       drivers: {}
@@ -164,7 +168,9 @@ project:
       base_scale: 0.48
       opacity: 0.82
       line_width: 2.4
+      presentation: animated_trace
       rotation_degrees_per_second: -1.25
+      rotation_wobble_degrees: 0.0
       hue_shift_degrees: -12.0
       blend_mode: screen
       drivers: {}
@@ -192,16 +198,34 @@ project:
       base_scale: 0.54
       opacity: 0.72
       line_width: 1.6
+      presentation: animated_trace
       rotation_degrees_per_second: 2.4
+      rotation_wobble_degrees: 0.0
       hue_shift_degrees: 10.0
       blend_mode: screen
       drivers: {}
     canvas_margin: 0.08
     transition_seconds: 0.65
-    background_response: 0.16
+    background_response: 0.25
     lyric_fade_seconds: 0.25
-    section_styles: {}
-    section_overrides: {}
+    section_styles:
+      intro:
+        visible_roles:
+        - master
+        - drums
+        - bass
+        - vocals
+        - instruments
+        motion: 0.0
+    section_overrides:
+      intro:
+        visible_roles:
+        - master
+        - drums
+        - bass
+        - vocals
+        - instruments
+        motion: 0.0
     auto_casting: true
     section_compositions: {}
     composition_overrides: {}
@@ -237,7 +261,9 @@ project:
           base_scale: 1.3
           opacity: 0.8
           line_width: 2.0
+          presentation: animated_trace
           rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
           hue_shift_degrees: 0.0
           blend_mode: screen
           drivers: {}
@@ -264,7 +290,9 @@ project:
           base_scale: 0.66
           opacity: 0.8
           line_width: 2.0
+          presentation: animated_trace
           rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
           hue_shift_degrees: 0.0
           blend_mode: screen
           drivers: {}
@@ -295,7 +323,9 @@ project:
           base_scale: 0.51
           opacity: 0.8
           line_width: 2.0
+          presentation: animated_trace
           rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
           hue_shift_degrees: 0.0
           blend_mode: screen
           drivers: {}
@@ -321,7 +351,9 @@ project:
           base_scale: 0.46
           opacity: 0.8
           line_width: 2.0
+          presentation: animated_trace
           rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
           hue_shift_degrees: 0.0
           blend_mode: screen
           drivers: {}
@@ -526,11 +558,84 @@ project:
           base_scale: 1.0
           opacity: 1.0
           line_width: 2.5
+          presentation: animated_trace
           rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
           hue_shift_degrees: 0.0
           blend_mode: screen
           drivers: {}
-    section_casts: {}
-    cast_overrides: {}
+    section_casts:
+      intro:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: song-title
+          direction:
+            anchor_x: 0.496
+            anchor_y: 0.834
+            scale: 2.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            color: '#0442fb'
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: appearance-2
+          actor: maricopa-records
+          direction:
+            anchor_x: 0.487
+            anchor_y: 0.373
+            scale: 0.8
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+    cast_overrides:
+      intro:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: song-title
+          direction:
+            anchor_x: 0.496
+            anchor_y: 0.834
+            scale: 2.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            color: '#0442fb'
+            presentation: filled_shape
+            trace:
+              cycles_per_second: 0.01
+              trail_fraction: 1.0
+              ghost_spacing: 0.0
+              head_radius: 0.0
+        - id: appearance-2
+          actor: maricopa-records
+          direction:
+            anchor_x: 0.487
+            anchor_y: 0.373
+            scale: 0.8
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: full_outline
+            trace: {}
     section_transitions: {}
     transition_overrides: {}
