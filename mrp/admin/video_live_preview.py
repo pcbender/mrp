@@ -432,6 +432,7 @@ def _safe_layer(
         "base_scale": layer.base_scale,
         "opacity": layer.opacity,
         "line_width": layer.line_width,
+        "presentation": layer.presentation,
         "rotation_degrees_per_second": layer.rotation_degrees_per_second,
         "rotation_wobble_degrees": layer.rotation_wobble_degrees,
         "hue_shift_degrees": layer.hue_shift_degrees,

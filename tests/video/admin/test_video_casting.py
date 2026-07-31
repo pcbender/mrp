@@ -795,6 +795,10 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert "/static/video-live-preview.js" in body
     assert "Audio-reactive preview of staged actors and timed lyrics" in body
     assert 'name="direction_wobble"' in body
+    assert 'name="direction_presentation"' in body
+    assert ">Animated trace</option>" in body
+    assert ">Full outline</option>" in body
+    assert 'value="filled_shape" >Filled shape</option>' in body
     assert (
         'title="Maximum angle this actor rocks in either direction in this scene. '
         '0 turns wobble off; Rotation °/s controls continuous spin separately."'
@@ -1315,6 +1319,7 @@ def test_scene_energy_fields_round_trip_and_blank_leaves_no_override(
 
     bare = save_casting(tmp_path, release, track, _actor_cast_fields())
     direction = bare["project"].visuals.section_casts["verse"].actors[0].direction
+    assert direction.presentation == "animated_trace"
     assert direction.trace.model_dump(exclude_none=True) == {}
 
     driven = save_casting(
@@ -1323,19 +1328,38 @@ def test_scene_energy_fields_round_trip_and_blank_leaves_no_override(
         track,
         _actor_cast_fields()
         | {
+            "direction_presentation": ["full_outline"],
             "direction_cycles": ["0.9"],
             "direction_ghosts": ["0"],
         },
     )
 
     direction = driven["project"].visuals.section_casts["verse"].actors[0].direction
+    assert direction.presentation == "full_outline"
     assert direction.trace.cycles_per_second == 0.9
     assert direction.trace.ghost_count == 0
     assert direction.trace.trail_fraction is None
 
     compiled = driven["composition"].traces[0].trace
+    assert driven["composition"].traces[0].presentation == "full_outline"
     assert compiled.cycles_per_second == 0.9
     assert compiled.ghost_count == 0
     # Inherited from the actor rather than reset to the schema default of 0.24.
     assert compiled.trail_fraction == 0.31
     assert compiled.ghost_spacing == 0.09
+
+    filled = save_casting(
+        tmp_path,
+        release,
+        track,
+        _actor_cast_fields()
+        | {"direction_presentation": ["filled_shape"]},
+    )
+    assert (
+        filled["project"]
+        .visuals.section_casts["verse"]
+        .actors[0]
+        .direction.presentation
+        == "filled_shape"
+    )
+    assert filled["composition"].traces[0].presentation == "filled_shape"

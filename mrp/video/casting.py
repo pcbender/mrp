@@ -629,6 +629,10 @@ def compile_actor_cast(
                             else direction.line_width
                         ),
                         "blend_mode": direction.blend_mode or component.blend_mode,
+                        # Presentation is scene direction for the whole actor.
+                        # It changes how these components are drawn here without
+                        # changing the actor identity or another assignment.
+                        "presentation": direction.presentation,
                         # Energy: only the trace fields this scene named, laid
                         # over the actor's own. exclude_none is what makes a
                         # partial override partial.

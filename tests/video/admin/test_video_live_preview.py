@@ -760,6 +760,7 @@ def test_javascript_mapping_fixture_is_generated_from_canonical_python() -> None
 
 def test_text_traces_carry_renderer_phase_for_each_contour(tmp_path: Path) -> None:
     text_layer = _layer("title")
+    text_layer["presentation"] = "filled_shape"
     text_layer["geometry"] = {
         "family": "text",
         "path_data": "M0 0 L1 0 L1 1 Z M2 0 L3 0 L3 1 Z",
@@ -776,6 +777,7 @@ def test_text_traces_carry_renderer_phase_for_each_contour(tmp_path: Path) -> No
     trace = result.payload["compositions"]["type:verse"]["traces"][0]
 
     assert len(trace["phase_fractions"]) == 2
+    assert trace["presentation"] == "filled_shape"
     assert trace["phase_fraction"] == trace["phase_fractions"][0]
     assert trace["phase_fractions"][0] != trace["phase_fractions"][1]
 

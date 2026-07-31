@@ -1414,6 +1414,7 @@
         const visible = fieldValue(card, 'direction_visible') !== 'false';
         const wardrobe = fieldValue(card, 'direction_color');
         const lineWidth = numberOrNull(fieldValue(card, 'direction_line_width'));
+        const presentation = fieldValue(card, 'direction_presentation') || 'animated_trace';
         const rotation = numberOrNull(fieldValue(card, 'direction_rotation'));
         const wobble = numberOrNull(fieldValue(card, 'direction_wobble'));
         const hueShift = numberOrNull(fieldValue(card, 'direction_hue'));
@@ -1468,6 +1469,7 @@
             color: wardrobe || component.color,
             color_locked: component.color_locked || Boolean(wardrobe),
             line_width: lineWidth !== null ? lineWidth : component.line_width,
+            presentation,
             depth: depth || component.depth,
             rotation_degrees_per_second: clamp(
               (finite(component.rotation_degrees_per_second) || 0)

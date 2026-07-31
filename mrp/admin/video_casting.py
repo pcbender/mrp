@@ -1230,6 +1230,13 @@ def _actor_assignment_payloads(
         if "direction_wobble" in fields
         else ["0"] * count
     )
+    # Older forms and API callers predate presentation direction. Their trace
+    # behavior remains exactly as it was: a moving animated trace.
+    columns["direction_presentation"] = (
+        _repeated(fields, "direction_presentation", count)
+        if "direction_presentation" in fields
+        else ["animated_trace"] * count
+    )
     columns |= {
         name: _repeated_optional(fields, name, count) for name in wardrobe_names
     }
@@ -1252,6 +1259,7 @@ def _actor_assignment_payloads(
             ),
             "visible": columns["direction_visible"][index].casefold()
             in {"1", "true", "yes", "on"},
+            "presentation": columns["direction_presentation"][index],
         }
         for field, key in (
             ("direction_anchor_x", "anchor_x"),

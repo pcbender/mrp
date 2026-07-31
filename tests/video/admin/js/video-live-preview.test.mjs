@@ -522,10 +522,13 @@ test('full-track scene lookup follows sampled state and geometry fallback', () =
 
 test('saved full-track shapes blend canonical previous and current compositions', () => {
   const documentModel = fullTrackFixture();
+  documentModel.compositions.chorus.traces[0].presentation = 'full_outline';
   const state = reactiveState();
   const shapes = savedPreviewShapes(documentModel, state, 6.5);
 
   assert.deepEqual(shapes.map((shape) => shape.id), ['chorus-back', 'verse-front']);
+  assert.equal(shapes[0].presentation, 'full_outline');
+  assert.equal(shapes[1].presentation ?? 'animated_trace', 'animated_trace');
   assert.ok(shapes[0].opacity < shapes[1].opacity);
   assert.equal(shapes[0].trace_time, 6.5);
   assert.equal(shapes[1].trace_time, 6.5);
