@@ -44,16 +44,3 @@ the query-first rules). Graphify output is generated, not canonical source:
   after reviewing rollback candidate output.
 - Treat `/home/mrose/website-migration` as read-only source input.
 - No WooCommerce/cart/checkout/account/payment behavior.
-
-<!-- canto-agent-instructions:start -->
-## Canto Agent Instructions
-
-This repository is Canto-enabled. Before working, read
-`.canto/agents/shared.md`. Developer sessions supervising governed work must
-also read `.canto/agents/orchestrator.md`; delegated Worker sessions must also
-read `.canto/agents/executor.md`. The filenames retain internal compatibility
-terms while the manuals define the public roles.
-
-Do not bypass Canto assignment, Guardrail, review, Result, Approval, or Apply
-rules.
-<!-- canto-agent-instructions:end -->
