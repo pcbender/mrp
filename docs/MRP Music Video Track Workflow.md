@@ -191,8 +191,28 @@ the actor's musical character. The existing whole-scene response is retained
 under advanced controls. “Create recommended actors” materializes the
 deterministic cast as editable track actors; “Adopt current look” converts the
 currently resolved legacy composition. Actor identity, track character, and
-scene direction compile into the renderer's unchanged trace composition
+scene direction compile into the renderer's versioned trace composition
 contract.
+
+Actor components may optionally become Spatial. A tilted plane keeps the curve
+flat while orienting it with identity pitch and yaw; a depth weave adds a
+closed sinusoidal z path with whole-number windings. Identity pitch, yaw, and
+base tumble rates live on the component. Scene direction adds pitch/yaw offsets
+and tumble rates without rewriting that identity. The track-wide Look owns 3D
+perspective. Missing Spatial data follows the original 2D renderer path exactly.
+Orientation timing may instead step after each completed trace circuit. Separate
+pitch and yaw step angles hold the plane still during a traversal, then advance
+it at the boundary. A bounded retained-circuit history can keep completed full
+outlines at their previous orientations, oldest-first with an adjustable fade,
+so a flat curve can progressively build a wire-frame globe. Scene tumble remains
+additive, allowing the completed cage to rotate as a whole.
+Near portions receive restrained width and brightness cues, and crossings are
+painted far-to-near. `filled_shape` remains planar: it supports a tilted plane
+but rejects a nonplanar depth weave. Browser canvases use the same projection
+math for editorial preview; rendered MP4 frames remain exact-pixel authority.
+The renderer contract and private Live Preview payload are version 2 for this
+additive spatial data, while stored renderer contract version 1 projects remain
+loadable and are upgraded on their next actor or casting save.
 
 Track actors save through `/video/actors`, independently of section identity or
 casting scope. Scene casts save through `/video/casting`. Both validate the

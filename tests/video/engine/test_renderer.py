@@ -220,6 +220,77 @@ def test_renderer_is_deterministic_and_seeded() -> None:
     assert digest == "7f6a2d55423c30c8ed765217814696499c2f44af5ec3dbe4116441b0d411e94c"
 
 
+def test_spatial_render_is_deterministic_and_changes_projected_pixels() -> None:
+    payload = _project().model_dump(mode="json", exclude_none=True)
+    for trace in payload["visuals"]["section_compositions"]["chorus"]["traces"]:
+        trace["spatial"] = {
+            "mode": "wave",
+            "amplitude": 0.45,
+            "windings": 6,
+            "phase_degrees": 20,
+            "pitch_degrees": 28,
+            "yaw_degrees": -18,
+            "pitch_degrees_per_second": 3,
+            "yaw_degrees_per_second": -2,
+        }
+    project = ProjectManifest.model_validate(payload)
+    context = build_render_context(
+        project,
+        _analysis_bundle(),
+        _aligned_sections(),
+        root=FONT_PATH.parent,
+    )
+
+    first = render_frame(context, 2.5, 25, width=320, height=180)
+    second = render_frame(context, 2.5, 25, width=320, height=180)
+    flat = render_frame(_context(), 2.5, 25, width=320, height=180)
+
+    np.testing.assert_array_equal(first, second)
+    assert not np.array_equal(first, flat)
+
+
+def test_renderer_composites_retained_circuits_oldest_first(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import mrp.video.renderer as renderer
+
+    payload = _project().model_dump(mode="json", exclude_none=True)
+    trace = payload["visuals"]["section_compositions"]["chorus"]["traces"][0]
+    trace["trace"]["cycles_per_second"] = 2
+    trace["trace"]["ghost_count"] = 0
+    trace["spatial"] = {
+        "mode": "tilted",
+        "orientation_mode": "circuit_step",
+        "pitch_step_degrees": 0,
+        "yaw_step_degrees": 15,
+        "retained_circuits": 3,
+        "retention_fade": 0.5,
+    }
+    for composition in payload["visuals"]["section_compositions"].values():
+        composition["traces"] = [trace]
+    context = build_render_context(
+        ProjectManifest.model_validate(payload),
+        _analysis_bundle(),
+        _aligned_sections(),
+        root=FONT_PATH.parent,
+    )
+    original = renderer._composite_trace
+    retained_opacities: list[float] = []
+
+    def capture_retained(frame, paths, **kwargs):
+        if not kwargs.get("fade_paths", True) and not kwargs.get("fill_paths", False):
+            retained_opacities.append(kwargs["opacity"])
+        return original(frame, paths, **kwargs)
+
+    monkeypatch.setattr(renderer, "_composite_trace", capture_retained)
+
+    render_frame(context, 4.5, 45, width=320, height=180)
+
+    assert len(retained_opacities) == 3
+    assert retained_opacities[1] / retained_opacities[0] == pytest.approx(2)
+    assert retained_opacities[2] / retained_opacities[1] == pytest.approx(2)
+
+
 def test_saved_exact_section_cast_reproduces_the_same_frame(tmp_path: Path) -> None:
     payload = _project().model_dump(mode="json", exclude_none=True)
     payload["visuals"]["composition_overrides"] = {
@@ -468,6 +539,38 @@ def test_build_curve_honors_geometry_phase() -> None:
     # Phase rotates the sampled curve, so the point cloud must move while the
     # normalization extent stays comparable.
     assert not np.allclose(plain.points, shifted.points)
+
+
+def test_build_curve_lifts_wave_geometry_and_keeps_the_seam_closed() -> None:
+    from mrp.video.project import VisualLayerConfig
+    from mrp.video.renderer import _build_curve
+
+    curve = _build_curve(
+        VisualLayerConfig.model_validate(
+            {
+                "id": "wave-probe",
+                "role": "vocals",
+                "color": "#ffffff",
+                "geometry": {
+                    "fixed_radius": 120,
+                    "moving_radius": 40,
+                    "pen_offset": 60,
+                    "samples": 128,
+                },
+                "spatial": {
+                    "mode": "wave",
+                    "amplitude": 0.5,
+                    "windings": 4,
+                    "phase_degrees": 30,
+                },
+            }
+        ),
+        7,
+    )
+
+    assert curve.points.shape == (128, 3)
+    assert np.ptp(curve.points[:, 2]) > 0.9
+    np.testing.assert_allclose(curve.points[0], curve.points[-1], atol=1e-6)
 
 
 def test_build_curve_precomputes_color_flow_values_only_when_configured() -> None:

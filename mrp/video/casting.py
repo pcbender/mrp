@@ -6,6 +6,7 @@ from mrp.video.project import (
     ActorCastConfig,
     CastingConfig,
     LayerGeometryConfig,
+    LayerSpatialConfig,
     LayerTraceConfig,
     SectionCompositionConfig,
     TraceAudioDriversConfig,
@@ -581,6 +582,46 @@ def compile_actor_cast(
             anchor_y = component.anchor_y
             if direction.anchor_y is not None:
                 anchor_y += direction.anchor_y - 0.5
+            spatial = component.spatial
+            has_spatial_direction = any(
+                value != 0
+                for value in (
+                    direction.pitch_offset_degrees,
+                    direction.yaw_offset_degrees,
+                    direction.pitch_degrees_per_second,
+                    direction.yaw_degrees_per_second,
+                )
+            )
+            if spatial is not None or has_spatial_direction:
+                base_spatial = spatial or LayerSpatialConfig()
+                spatial = base_spatial.model_copy(
+                    update={
+                        "pitch_degrees": _clamp(
+                            base_spatial.pitch_degrees
+                            + direction.pitch_offset_degrees,
+                            -180,
+                            180,
+                        ),
+                        "yaw_degrees": _clamp(
+                            base_spatial.yaw_degrees
+                            + direction.yaw_offset_degrees,
+                            -180,
+                            180,
+                        ),
+                        "pitch_degrees_per_second": _clamp(
+                            base_spatial.pitch_degrees_per_second
+                            + direction.pitch_degrees_per_second,
+                            -180,
+                            180,
+                        ),
+                        "yaw_degrees_per_second": _clamp(
+                            base_spatial.yaw_degrees_per_second
+                            + direction.yaw_degrees_per_second,
+                            -180,
+                            180,
+                        ),
+                    }
+                )
             traces.append(
                 component.model_copy(
                     update={
@@ -607,6 +648,7 @@ def compile_actor_cast(
                         # Wobble is scene direction, not actor identity. Zero is
                         # deliberately still: no hidden motion is injected.
                         "rotation_wobble_degrees": direction.rotation_wobble_degrees,
+                        "spatial": spatial,
                         "hue_shift_degrees": _clamp(
                             component.hue_shift_degrees
                             + direction.hue_shift_degrees,

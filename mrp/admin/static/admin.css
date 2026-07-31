@@ -1243,6 +1243,65 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
   color: var(--muted);
   font-size: 11px;
 }
+.actor-component-groups {
+  display: grid;
+  gap: .55rem;
+}
+.actor-control-group {
+  background: color-mix(in srgb, var(--border) 16%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 .65rem;
+}
+.actor-control-group[open] {
+  background: color-mix(in srgb, var(--border) 9%, transparent);
+  padding-bottom: .7rem;
+}
+.video-advanced .actor-control-group > summary {
+  align-items: center;
+  color: inherit;
+  display: grid;
+  gap: .08rem .65rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  list-style: none;
+  margin: 0;
+  padding: .6rem 1.25rem .6rem 0;
+  position: relative;
+}
+.video-advanced .actor-control-group > summary::-webkit-details-marker { display: none; }
+.video-advanced .actor-control-group > summary::before { display: none; }
+.video-advanced > summary::before { transform: rotate(0); }
+.video-advanced[open] > summary::before { transform: rotate(90deg); }
+.actor-control-group > summary::after {
+  color: var(--primary);
+  content: "+";
+  font-size: 17px;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  top: .55rem;
+}
+.actor-control-group[open] > summary::after { content: "−"; }
+.actor-control-group > summary span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.actor-control-group > summary small {
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-align: right;
+  text-transform: none;
+}
+.actor-control-group > .video-help {
+  margin: 0 0 .6rem;
+}
+.actor-control-group .video-trace-grid {
+  margin-top: 0;
+}
 .video-advanced {
   border-top: 1px solid var(--border);
   margin-top: .75rem;
@@ -1534,6 +1593,15 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 @media (max-width: 640px) {
   .video-path-import { grid-template-columns: 1fr; }
   .actor-designer-controls .video-trace-grid { grid-template-columns: 1fr; }
+  .video-advanced .actor-control-group > summary {
+    display: block;
+    padding-right: 1.25rem;
+  }
+  .actor-control-group > summary small {
+    display: block;
+    margin-top: .15rem;
+    text-align: left;
+  }
 }
 
 /* ---- Actor Designer (standalone library pages) ---- */

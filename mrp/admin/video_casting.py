@@ -12,6 +12,7 @@ import yaml
 from pydantic import ValidationError
 
 from mrp.admin.video_workspace import track_key
+from mrp.video.track_project import RENDERER_CONTRACT_VERSION
 
 STYLE_NUMBER_FIELDS = (
     "layer_fraction",
@@ -676,6 +677,11 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
             if layer.color_flow is not None
             else None
         ),
+        "spatial": (
+            layer.spatial.model_dump(mode="json")
+            if layer.spatial is not None
+            else None
+        ),
         "anchor_x": layer.anchor_x,
         "anchor_y": layer.anchor_y,
         "base_scale": layer.base_scale,
@@ -699,6 +705,7 @@ def _storyboard(
     start: float,
     end: float,
     margin: float,
+    perspective_strength: float,
 ) -> dict[str, Any]:
     """Client-side draw data for the scene storyboard.
 
@@ -726,6 +733,7 @@ def _storyboard(
     return {
         "background": background,
         "margin": margin,
+        "perspective_strength": perspective_strength,
         "section_id": section_id,
         "range": {"start": start, "end": end},
         "traces": traces,
@@ -906,6 +914,7 @@ def load_casting(
             start=selected.start,
             end=selected.end,
             margin=document.project.visuals.canvas_margin,
+            perspective_strength=document.project.visuals.perspective_strength,
         ),
         "project_actors": project_actors,
         "library_actors": library_actors,
@@ -1083,6 +1092,24 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
         "driver_pulse",
     )
     columns = {name: _repeated(fields, name, count) for name in names}
+    spatial_names = (
+        "spatial_mode",
+        "spatial_amplitude",
+        "spatial_windings",
+        "spatial_phase",
+        "spatial_pitch",
+        "spatial_yaw",
+        "spatial_orientation_mode",
+        "spatial_pitch_speed",
+        "spatial_yaw_speed",
+        "spatial_pitch_step",
+        "spatial_yaw_step",
+        "spatial_retain_circuits",
+        "spatial_retention_fade",
+    )
+    columns |= {
+        name: _repeated_optional(fields, name, count) for name in spatial_names
+    }
     traces = []
     for index, trace_id in enumerate(ids):
         drivers = {
@@ -1103,6 +1130,59 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
             else None
         )
         family = columns["geometry_family"][index] or "spirogram"
+        spatial_mode = columns["spatial_mode"][index]
+        spatial = None
+        if spatial_mode:
+            spatial = {
+                "mode": spatial_mode,
+                "amplitude": _number(
+                    columns["spatial_amplitude"][index],
+                    f"trace {trace_id} depth amplitude",
+                ),
+                "windings": _integer(
+                    columns["spatial_windings"][index],
+                    f"trace {trace_id} depth windings",
+                ),
+                "phase_degrees": _number(
+                    columns["spatial_phase"][index],
+                    f"trace {trace_id} depth phase",
+                ),
+                "pitch_degrees": _number(
+                    columns["spatial_pitch"][index],
+                    f"trace {trace_id} pitch",
+                ),
+                "yaw_degrees": _number(
+                    columns["spatial_yaw"][index],
+                    f"trace {trace_id} yaw",
+                ),
+                "orientation_mode": (
+                    columns["spatial_orientation_mode"][index] or "continuous"
+                ),
+                "pitch_degrees_per_second": _number(
+                    columns["spatial_pitch_speed"][index] or "0",
+                    f"trace {trace_id} pitch speed",
+                ),
+                "yaw_degrees_per_second": _number(
+                    columns["spatial_yaw_speed"][index] or "0",
+                    f"trace {trace_id} yaw speed",
+                ),
+                "pitch_step_degrees": _number(
+                    columns["spatial_pitch_step"][index] or "0",
+                    f"trace {trace_id} pitch step",
+                ),
+                "yaw_step_degrees": _number(
+                    columns["spatial_yaw_step"][index] or "15",
+                    f"trace {trace_id} yaw step",
+                ),
+                "retained_circuits": _integer(
+                    columns["spatial_retain_circuits"][index] or "0",
+                    f"trace {trace_id} retained circuits",
+                ),
+                "retention_fade": _number(
+                    columns["spatial_retention_fade"][index] or "0.82",
+                    f"trace {trace_id} retention fade",
+                ),
+            }
         geometry: dict[str, Any] = {
             "family": family,
             "phase": _number(columns["phase"][index], f"trace {trace_id} phase"),
@@ -1155,6 +1235,7 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
                 "id": trace_id,
                 "role": columns["trace_role"][index],
                 "color_flow": color_flow,
+                "spatial": spatial,
                 "geometry": geometry,
                 "trace": {
                     "cycles_per_second": _number(columns["cycles_per_second"][index], f"trace {trace_id} speed"),
@@ -1237,6 +1318,15 @@ def _actor_assignment_payloads(
         if "direction_presentation" in fields
         else ["animated_trace"] * count
     )
+    for name in (
+        "direction_pitch",
+        "direction_yaw",
+        "direction_pitch_speed",
+        "direction_yaw_speed",
+    ):
+        columns[name] = (
+            _repeated(fields, name, count) if name in fields else ["0"] * count
+        )
     columns |= {
         name: _repeated_optional(fields, name, count) for name in wardrobe_names
     }
@@ -1252,6 +1342,22 @@ def _actor_assignment_payloads(
             "rotation_wobble_degrees": _number(
                 columns["direction_wobble"][index],
                 f"actor {assignment_id} wobble",
+            ),
+            "pitch_offset_degrees": _number(
+                columns["direction_pitch"][index],
+                f"actor {assignment_id} pitch",
+            ),
+            "yaw_offset_degrees": _number(
+                columns["direction_yaw"][index],
+                f"actor {assignment_id} yaw",
+            ),
+            "pitch_degrees_per_second": _number(
+                columns["direction_pitch_speed"][index],
+                f"actor {assignment_id} pitch speed",
+            ),
+            "yaw_degrees_per_second": _number(
+                columns["direction_yaw_speed"][index],
+                f"actor {assignment_id} yaw speed",
             ),
             "hue_shift_degrees": _number(
                 columns["direction_hue"][index],
@@ -1448,6 +1554,7 @@ def save_track_actor(
     path = project_path(root, release, track)
     document = _load_project(path)
     payload = document.model_dump(mode="json", exclude_none=True)
+    payload["renderer_contract_version"] = RENDERER_CONTRACT_VERSION
     visuals = payload["project"]["visuals"]
     actors = visuals.setdefault("actors", {})
     action = _single(fields, "action")
@@ -1568,6 +1675,7 @@ def save_casting(
         raise CastingEditorError(f"unsupported casting action: {action}")
 
     payload = document.model_dump(mode="json", exclude_none=True)
+    payload["renderer_contract_version"] = RENDERER_CONTRACT_VERSION
     visuals = payload["project"]["visuals"]
     mapping_preset = _single(
         fields,
@@ -1610,6 +1718,17 @@ def save_casting(
     if not 0 <= background_response <= 1:
         raise CastingEditorError("background reactivity must be between 0 and 1")
     visuals["background_response"] = background_response
+    perspective_strength = _number(
+        _single(
+            fields,
+            "perspective_strength",
+            default=str(document.project.visuals.perspective_strength),
+        ),
+        "perspective strength",
+    )
+    if not 0 <= perspective_strength <= 0.35:
+        raise CastingEditorError("perspective strength must be between 0 and 0.35")
+    visuals["perspective_strength"] = perspective_strength
     text["active_color"] = _hex_color(
         _single(fields, "lyric_color", default=document.project.text.active_color),
         "lyric colour",

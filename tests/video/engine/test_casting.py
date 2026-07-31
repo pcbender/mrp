@@ -173,6 +173,94 @@ def test_actor_cast_compiles_identity_and_scene_direction_to_traces() -> None:
     assert petals.hue_shift_degrees == 20
 
 
+def test_actor_cast_adds_scene_pitch_yaw_and_tumble_to_spatial_identity() -> None:
+    component = _trace("woven", 180) | {
+        "spatial": {
+            "mode": "wave",
+            "amplitude": 0.4,
+            "windings": 6,
+            "pitch_degrees": 20,
+            "yaw_degrees": -10,
+            "pitch_degrees_per_second": 2,
+            "yaw_degrees_per_second": -3,
+        }
+    }
+    visuals = VisualConfig.model_validate(
+        {
+            "actors": {
+                "weaver": {
+                    "id": "weaver",
+                    "name": "Weaver",
+                    "character": "vocals",
+                    "components": [component],
+                }
+            },
+            "section_casts": {
+                "verse": {
+                    "actors": [
+                        {
+                            "id": "lead",
+                            "actor": "weaver",
+                            "direction": {
+                                "pitch_offset_degrees": 12,
+                                "yaw_offset_degrees": 5,
+                                "pitch_degrees_per_second": 1.5,
+                                "yaw_degrees_per_second": 4,
+                            },
+                        }
+                    ]
+                }
+            },
+        }
+    )
+
+    trace = resolve_section_composition(
+        visuals, "verse", "verse_1", 4821
+    ).composition.traces[0]
+
+    assert trace.spatial is not None
+    assert trace.spatial.mode == "wave"
+    assert trace.spatial.amplitude == 0.4
+    assert trace.spatial.pitch_degrees == 32
+    assert trace.spatial.yaw_degrees == -5
+    assert trace.spatial.pitch_degrees_per_second == 3.5
+    assert trace.spatial.yaw_degrees_per_second == 1
+
+
+def test_scene_orientation_can_tilt_an_originally_2d_actor() -> None:
+    visuals = VisualConfig.model_validate(
+        {
+            "actors": {
+                "flat": {
+                    "id": "flat",
+                    "name": "Flat",
+                    "character": "vocals",
+                    "components": [_trace("line", 180)],
+                }
+            },
+            "section_casts": {
+                "verse": {
+                    "actors": [
+                        {
+                            "id": "lead",
+                            "actor": "flat",
+                            "direction": {"pitch_offset_degrees": 30},
+                        }
+                    ]
+                }
+            },
+        }
+    )
+
+    trace = resolve_section_composition(
+        visuals, "verse", "verse_1", 4821
+    ).composition.traces[0]
+
+    assert trace.spatial is not None
+    assert trace.spatial.mode == "tilted"
+    assert trace.spatial.pitch_degrees == 30
+
+
 def test_presentation_direction_is_actor_local() -> None:
     visuals = VisualConfig.model_validate(
         {

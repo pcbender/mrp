@@ -33,7 +33,7 @@ from mrp.video.project import (
 from mrp.video.track_project import TrackProjectDocument
 
 PREVIEW_FORMAT = "mrp-music-video-live-preview"
-PREVIEW_VERSION = 1
+PREVIEW_VERSION = 2
 STATE_RATE_HZ = 20
 STATE_ENCODING = "base64-float32-le"
 # Only the columns the browser engine actually reads. Sampled state is the
@@ -426,6 +426,11 @@ def _safe_layer(
             if layer.color_flow is not None
             else None
         ),
+        "spatial": (
+            layer.spatial.model_dump(mode="json")
+            if layer.spatial is not None
+            else None
+        ),
         "depth": layer.depth,
         "anchor_x": layer.anchor_x,
         "anchor_y": layer.anchor_y,
@@ -608,6 +613,7 @@ def _safe_base(
             "background": project.video.background,
             "seed": project.video.seed,
             "canvas_margin": project.visuals.canvas_margin,
+            "perspective_strength": project.visuals.perspective_strength,
             "background_response": project.visuals.background_response,
             "lyric_fade_seconds": project.visuals.lyric_fade_seconds,
         },

@@ -509,6 +509,83 @@ def test_presentation_defaults_and_supported_modes() -> None:
         ActorDirectionConfig.model_validate({"presentation": "painted_shape"})
 
 
+def test_spatial_curves_are_optional_bounded_and_nonplanar_fills_are_rejected() -> None:
+    from mrp.video.project import ActorDirectionConfig, VisualLayerConfig
+
+    base = {
+        "id": "spatial-probe",
+        "role": "vocals",
+        "color": "#ff5fd2",
+        "geometry": {
+            "fixed_radius": 120,
+            "moving_radius": 45,
+            "pen_offset": 60,
+        },
+    }
+    original = VisualLayerConfig.model_validate(base)
+    wave = VisualLayerConfig.model_validate(
+        base
+        | {
+            "spatial": {
+                "mode": "wave",
+                "amplitude": 0.42,
+                "windings": 7,
+                "pitch_degrees": 24,
+                "yaw_degrees": -16,
+            }
+        }
+    )
+
+    assert original.spatial is None
+    assert wave.spatial is not None
+    assert wave.spatial.windings == 7
+    assert wave.spatial.orientation_mode == "continuous"
+    assert wave.spatial.yaw_step_degrees == 15
+    assert wave.spatial.retained_circuits == 0
+    assert ActorDirectionConfig().pitch_offset_degrees == 0
+    with pytest.raises(ValidationError, match="nonplanar wave"):
+        VisualLayerConfig.model_validate(
+            base
+            | {
+                "presentation": "filled_shape",
+                "spatial": {"mode": "wave"},
+            }
+        )
+    with pytest.raises(ValidationError, match="less than or equal to 1"):
+        VisualLayerConfig.model_validate(
+            base | {"spatial": {"mode": "wave", "amplitude": 1.1}}
+        )
+    stepped = VisualLayerConfig.model_validate(
+        base
+        | {
+            "spatial": {
+                "orientation_mode": "circuit_step",
+                "pitch_step_degrees": 5,
+                "yaw_step_degrees": 15,
+                "retained_circuits": 23,
+                "retention_fade": 1,
+            }
+        }
+    )
+    assert stepped.spatial is not None
+    assert stepped.spatial.orientation_mode == "circuit_step"
+    assert stepped.spatial.retained_circuits == 23
+    with pytest.raises(ValidationError, match="less than or equal to 24"):
+        VisualLayerConfig.model_validate(
+            base | {"spatial": {"retained_circuits": 25}}
+        )
+
+
+def test_track_perspective_defaults_and_is_bounded() -> None:
+    project = ProjectManifest.model_validate(_valid_project())
+
+    assert project.visuals.perspective_strength == pytest.approx(0.18)
+    invalid = _valid_project()
+    invalid["visuals"] = {"perspective_strength": 0.36}
+    with pytest.raises(ValidationError, match="less than or equal to 0.35"):
+        ProjectManifest.model_validate(invalid)
+
+
 def test_geometry_family_defaults_and_validation() -> None:
     from mrp.video.project import LayerGeometryConfig
 

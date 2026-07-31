@@ -9,7 +9,7 @@ from pydantic import Field, model_validator
 from mrp.video.project import ContractModel, ProjectManifest
 
 ADAPTER_VERSION = 1
-RENDERER_CONTRACT_VERSION = 1
+RENDERER_CONTRACT_VERSION = 2
 SOURCE_RENDERER_REVISION = "e3d4b100e026d486ce2c28547e6e8a907b1c621a"
 
 
@@ -32,7 +32,7 @@ class TrackSource(ContractModel):
 class TrackProjectDocument(ContractModel):
     version: Literal[1] = 1
     adapter_version: Literal[1] = ADAPTER_VERSION
-    renderer_contract_version: Literal[1] = RENDERER_CONTRACT_VERSION
+    renderer_contract_version: Literal[1, 2] = RENDERER_CONTRACT_VERSION
     source_renderer_revision: str = SOURCE_RENDERER_REVISION
     source: TrackSource
     project: ProjectManifest

@@ -485,10 +485,25 @@
   window.mrpSyncFamilyFields = function (root) {
     (root || document).querySelectorAll('.actor-component-card').forEach((card) => {
       const select = card.querySelector('select[name="geometry_family"]');
-      if (!select) return;
-      card.querySelectorAll('.family-field').forEach((field) => {
-        const families = (field.dataset.family || '').split(/\s+/);
-        field.classList.toggle('family-hidden', !families.includes(select.value));
+      if (select) {
+        card.querySelectorAll('.family-field').forEach((field) => {
+          const families = (field.dataset.family || '').split(/\s+/);
+          field.classList.toggle('family-hidden', !families.includes(select.value));
+        });
+      }
+      const spatial = card.querySelector('select[name="spatial_mode"]');
+      const orientation = card.querySelector('select[name="spatial_orientation_mode"]');
+      card.querySelectorAll('.spatial-field').forEach((field) => {
+        const modes = (field.dataset.spatial || '').split(/\s+/);
+        const orientationModes = (field.dataset.orientation || '').split(/\s+/).filter(Boolean);
+        field.classList.toggle(
+          'family-hidden',
+          !spatial
+          || !spatial.value
+          || !modes.includes(spatial.value)
+          || (orientationModes.length
+            && (!orientation || !orientationModes.includes(orientation.value)))
+        );
       });
       window.mrpRefreshComponentTitle(card);
     });
@@ -496,7 +511,11 @@
 
   document.addEventListener('change', (event) => {
     if (event.target instanceof HTMLSelectElement
-        && event.target.name === 'geometry_family') {
+        && [
+          'geometry_family',
+          'spatial_mode',
+          'spatial_orientation_mode',
+        ].includes(event.target.name)) {
       const card = event.target.closest('.actor-component-card');
       if (card) window.mrpSyncFamilyFields(card.parentElement || document);
     }
@@ -710,6 +729,9 @@
         anchor_x: Number(window.mrpFieldValue(card, 'anchor_x', 0.5)),
         anchor_y: Number(window.mrpFieldValue(card, 'anchor_y', 0.5)),
         base_scale: Number(window.mrpFieldValue(card, 'base_scale', 1)),
+        rotation_degrees_per_second: Number(
+          window.mrpFieldValue(card, 'rotation_speed', 0)
+        ),
         selected: card.classList.contains('is-selected'),
         color: window.mrpFieldValue(card, 'color', '#ff5fd2'),
         opacity: Number(window.mrpFieldValue(card, 'opacity', 0.8)),
@@ -723,9 +745,110 @@
             swing_degrees: Number(window.mrpFieldValue(card, 'color_flow_swing', 90)) || 90,
           };
         })(),
+        spatial: (() => {
+          const mode = window.mrpFieldValue(card, 'spatial_mode', '');
+          if (!mode) return null;
+          return {
+            mode,
+            amplitude: Number(window.mrpFieldValue(card, 'spatial_amplitude', 0.35)),
+            windings: Number(window.mrpFieldValue(card, 'spatial_windings', 5)),
+            phase_degrees: Number(window.mrpFieldValue(card, 'spatial_phase', 0)),
+            pitch_degrees: Number(window.mrpFieldValue(card, 'spatial_pitch', 0)),
+            yaw_degrees: Number(window.mrpFieldValue(card, 'spatial_yaw', 0)),
+            orientation_mode: window.mrpFieldValue(
+              card, 'spatial_orientation_mode', 'continuous'
+            ) || 'continuous',
+            pitch_degrees_per_second: Number(
+              window.mrpFieldValue(card, 'spatial_pitch_speed', 0)
+            ),
+            yaw_degrees_per_second: Number(
+              window.mrpFieldValue(card, 'spatial_yaw_speed', 0)
+            ),
+            pitch_step_degrees: Number(
+              window.mrpFieldValue(card, 'spatial_pitch_step', 0)
+            ),
+            yaw_step_degrees: Number(
+              window.mrpFieldValue(card, 'spatial_yaw_step', 15)
+            ),
+            retained_circuits: Number(
+              window.mrpFieldValue(card, 'spatial_retain_circuits', 0)
+            ),
+            retention_fade: Number(
+              window.mrpFieldValue(card, 'spatial_retention_fade', 0.82)
+            ),
+          };
+        })(),
       });
     });
     return shapes;
+  };
+
+  // Mirrors mrp/video/spatial.py. Exposed so the shared Python/JavaScript
+  // golden cases can guard browser/editor parity.
+  window.mrpProjectSpatialPoint = function (
+    point, pitchRadians, yawRadians, rollRadians, perspectiveStrength
+  ) {
+    const pitchCosine = Math.cos(pitchRadians);
+    const pitchSine = Math.sin(pitchRadians);
+    const yawCosine = Math.cos(yawRadians);
+    const yawSine = Math.sin(yawRadians);
+    const rollCosine = Math.cos(rollRadians);
+    const rollSine = Math.sin(rollRadians);
+    const x = point[0];
+    const y = point[1] * pitchCosine - point[2] * pitchSine;
+    const z = point[1] * pitchSine + point[2] * pitchCosine;
+    const yawX = x * yawCosine + z * yawSine;
+    const yawZ = -x * yawSine + z * yawCosine;
+    const rollX = yawX * rollCosine - y * rollSine;
+    const rollY = yawX * rollSine + y * rollCosine;
+    const perspective = 1 / Math.max(0.25, 1 - perspectiveStrength * yawZ);
+    return [
+      rollX * perspective,
+      rollY * perspective,
+      Math.min(1, Math.max(0, 0.5 + yawZ / (2 * Math.sqrt(2)))),
+    ];
+  };
+
+  // Resolve circuit-stepped pitch/yaw from the same trace clock that moves the
+  // drawing head. The mapped Live Preview supplies its continuous orientation
+  // as the base; the standalone Actor Designer derives that base locally.
+  window.mrpSpatialOrientationState = function (
+    shape, basePitchRadians, baseYawRadians, traceClock
+  ) {
+    const spatial = shape && shape.spatial;
+    if (!spatial || spatial.orientation_mode !== 'circuit_step') {
+      return {
+        pitch_radians: basePitchRadians,
+        yaw_radians: baseYawRadians,
+        retained: [],
+      };
+    }
+    const cycles = Math.max(0.001, numberOr(shape.cycles_per_second, 0.08));
+    const completed = Math.floor(
+      Math.max(0, numberOr(traceClock, 0)) * cycles + 1e-9
+    );
+    const pitchStep = numberOr(spatial.pitch_step_degrees, 0) * Math.PI / 180;
+    const yawStep = numberOr(spatial.yaw_step_degrees, 15) * Math.PI / 180;
+    const retainedCount = Math.min(
+      completed,
+      Math.max(0, Math.round(numberOr(spatial.retained_circuits, 0)))
+    );
+    const fade = clamp01(numberOr(spatial.retention_fade, 0.82));
+    const retained = [];
+    for (let age = retainedCount; age >= 1; age -= 1) {
+      const opacity = fade ** age;
+      if (opacity <= 0) continue;
+      retained.push({
+        pitch_radians: basePitchRadians + pitchStep * (completed - age),
+        yaw_radians: baseYawRadians + yawStep * (completed - age),
+        opacity,
+      });
+    }
+    return {
+      pitch_radians: basePitchRadians + pitchStep * completed,
+      yaw_radians: baseYawRadians + yawStep * completed,
+      retained,
+    };
   };
 
   // Draw identity shapes onto a square-ish canvas, matching the renderer's
@@ -754,7 +877,8 @@
       const flow = shape.color_flow && shape.color_flow.source ? shape.color_flow : null;
       const flowSwing = flow ? (Number(shape.color_flow.swing_degrees) || 90) : 0;
       const baseAlpha = clamp01(shape.opacity === undefined ? 0.8 : Number(shape.opacity));
-      context.lineWidth = Math.max(0.5, Number(shape.line_width) || 2);
+      const baseLineWidth = Math.max(0.5, Number(shape.line_width) || 2);
+      context.lineWidth = baseLineWidth;
       context.shadowBlur = 8;
       context.globalCompositeOperation = shape.blend_mode === 'screen'
         ? 'screen'
@@ -775,13 +899,61 @@
         groupExtent = base.extent;
       }
       const fit = Math.min(canvas.width, canvas.height) * (0.5 - margin) * identityScale / groupExtent;
-      const rotationRadians = numberOr(shape.rotation_radians, 0);
+      const motionClock = finiteNumber(shape.rotation_time)
+        ? Number(shape.rotation_time)
+        : (finiteNumber(opts.clockSeconds) ? Number(opts.clockSeconds) : 0);
+      const rotationRadians = finiteNumber(shape.rotation_radians)
+        ? Number(shape.rotation_radians)
+        : numberOr(shape.rotation_degrees_per_second, 0) * motionClock * Math.PI / 180;
       const rotationCosine = Math.cos(rotationRadians);
       const rotationSine = Math.sin(rotationRadians);
-      const placedPoint = (point) => {
+      const spatial = shape.spatial && shape.spatial.mode ? shape.spatial : null;
+      const basePitchRadians = finiteNumber(shape.pitch_radians)
+        ? Number(shape.pitch_radians)
+        : (numberOr(spatial && spatial.pitch_degrees, 0)
+          + numberOr(spatial && spatial.pitch_degrees_per_second, 0) * motionClock)
+          * Math.PI / 180;
+      const baseYawRadians = finiteNumber(shape.yaw_radians)
+        ? Number(shape.yaw_radians)
+        : (numberOr(spatial && spatial.yaw_degrees, 0)
+          + numberOr(spatial && spatial.yaw_degrees_per_second, 0) * motionClock)
+          * Math.PI / 180;
+      const shapeTraceClock = finiteNumber(shape.trace_time)
+        ? Number(shape.trace_time)
+        : opts.clockSeconds;
+      const orientationState = window.mrpSpatialOrientationState(
+        shape,
+        basePitchRadians,
+        baseYawRadians,
+        shapeTraceClock
+      );
+      const pitchRadians = orientationState.pitch_radians;
+      const yawRadians = orientationState.yaw_radians;
+      const perspectiveStrength = Math.min(
+        0.35,
+        Math.max(0, numberOr(shape.perspective_strength, 0.18))
+      );
+      const placedPoint = (point, progress, orientation) => {
+        if (spatial) {
+          const z = spatial.mode === 'wave'
+            ? numberOr(spatial.amplitude, 0.35) * groupExtent * Math.sin(
+              Math.PI * 2 * Math.max(1, Math.round(numberOr(spatial.windings, 5)))
+              * progress
+              + numberOr(spatial.phase_degrees, 0) * Math.PI / 180
+            )
+            : 0;
+          const [projectedX, projectedY, depth] = window.mrpProjectSpatialPoint(
+            [point[0], point[1], z],
+            orientation ? orientation.pitch_radians : pitchRadians,
+            orientation ? orientation.yaw_radians : yawRadians,
+            rotationRadians,
+            perspectiveStrength
+          );
+          return [originX + projectedX * fit, originY + projectedY * fit, depth];
+        }
         const rotatedX = point[0] * rotationCosine - point[1] * rotationSine;
         const rotatedY = point[0] * rotationSine + point[1] * rotationCosine;
-        return [originX + rotatedX * fit, originY + rotatedY * fit];
+        return [originX + rotatedX * fit, originY + rotatedY * fit, null];
       };
 
       // Draw one contour with the shape's trace behavior. For text, each letter
@@ -795,24 +967,64 @@
         const stagger = family === 'text' && !contourPhases
           ? contourIndex * 0.11
           : 0;
-        const traceClock = finiteNumber(shape.trace_time)
-          ? Number(shape.trace_time)
-          : opts.clockSeconds;
         const phaseFraction = contourPhases
           ? numberOr(contourPhases[contourIndex], numberOr(shape.phase_fraction, 0))
           : numberOr(shape.phase_fraction, 0);
         const progress = playing
-          ? (((traceClock * numberOr(shape.cycles_per_second, 0.08)
+          ? (((shapeTraceClock * numberOr(shape.cycles_per_second, 0.08)
             + phaseFraction + stagger) % 1) + 1) % 1
           : baseProgress;
 
-        const strokeIndices = (indices, alpha) => {
+        const strokeIndices = (indices, alpha, orientation) => {
           if (indices.length < 2) return;
           context.globalAlpha = clamp01(baseAlpha * alpha);
+          if (spatial) {
+            const LEVELS = 24;
+            const DEPTH_LEVELS = 8;
+            const paths = new Map();
+            for (let k = 1; k < indices.length; k += 1) {
+              const a = indices[k - 1];
+              const b = indices[k];
+              const [ax, ay, ad] = placedPoint(pts[a], a / cycle, orientation);
+              const [bx, by, bd] = placedPoint(pts[b], b / cycle, orientation);
+              const depthLevel = Math.min(
+                DEPTH_LEVELS - 1,
+                Math.floor(Math.min(1, Math.max(0, (ad + bd) * 0.5)) * DEPTH_LEVELS)
+              );
+              const hueLevel = flow
+                ? Math.min(
+                  LEVELS - 1,
+                  Math.floor(Math.min(1, Math.max(0, flowValues[b])) * LEVELS)
+                )
+                : -1;
+              const key = `${depthLevel}:${hueLevel}`;
+              if (!paths.has(key)) paths.set(key, new Path2D());
+              paths.get(key).moveTo(ax, ay);
+              paths.get(key).lineTo(bx, by);
+            }
+            Array.from(paths.entries()).sort((left, right) => (
+              Number(left[0].split(':')[0]) - Number(right[0].split(':')[0])
+            )).forEach(([key, path]) => {
+              const [depthLevel, hueLevel] = key.split(':').map(Number);
+              const depth = (depthLevel + 0.5) / DEPTH_LEVELS;
+              const segmentColor = hueLevel >= 0
+                ? window.mrpShiftHue(
+                  color, ((hueLevel + 0.5) / LEVELS - 0.5) * flowSwing
+                )
+                : color;
+              context.globalAlpha = clamp01(baseAlpha * alpha * (0.55 + 0.45 * depth));
+              context.lineWidth = baseLineWidth * (0.75 + 0.5 * depth);
+              context.strokeStyle = segmentColor;
+              context.shadowColor = segmentColor;
+              context.stroke(path);
+            });
+            context.lineWidth = baseLineWidth;
+            return;
+          }
           if (!flow) {
             context.beginPath();
             indices.forEach((idx, k) => {
-              const [px, py] = placedPoint(pts[idx]);
+              const [px, py] = placedPoint(pts[idx], idx / cycle, orientation);
               if (k === 0) context.moveTo(px, py); else context.lineTo(px, py);
             });
             context.strokeStyle = color;
@@ -832,8 +1044,8 @@
             const path = levelPaths.get(lkey);
             const a = indices[k - 1];
             const b = indices[k];
-            const [ax, ay] = placedPoint(pts[a]);
-            const [bx, by] = placedPoint(pts[b]);
+            const [ax, ay] = placedPoint(pts[a], a / cycle, orientation);
+            const [bx, by] = placedPoint(pts[b], b / cycle, orientation);
             path.moveTo(ax, ay);
             path.lineTo(bx, by);
           }
@@ -860,10 +1072,13 @@
 
         let headIndex = Math.round(progress * cycle) % cycle;
         const fullOutline = shape.presentation === 'full_outline';
+        const fullCircuit = [];
+        for (let i = 0; i <= cycle; i += 1) fullCircuit.push(i);
+        orientationState.retained.forEach((orientation) => {
+          strokeIndices(fullCircuit, orientation.opacity, orientation);
+        });
         if (fullOutline) {
-          const list = [];
-          for (let i = 0; i <= cycle; i += 1) list.push(i);
-          strokeIndices(list, 1);
+          strokeIndices(fullCircuit, 1);
           headIndex = cycle;
         } else if (playing) {
           const trail = clamp01(numberOr(shape.trail_fraction, 0.24)) || 0.001;
@@ -888,11 +1103,16 @@
         if (!fullOutline && opts.showHead && headRadius > 0 && (playing || progress < 1)) {
           context.globalAlpha = baseAlpha;
           context.beginPath();
-          const [headX, headY] = placedPoint(pts[headIndex]);
+          const [headX, headY, headDepth] = placedPoint(
+            pts[headIndex], headIndex / cycle
+          );
           context.arc(
             headX,
             headY,
-            Math.max(1, Math.round(headRadius)),
+            Math.max(
+              1,
+              Math.round(headRadius * (headDepth === null ? 1 : 0.75 + 0.5 * headDepth))
+            ),
             0,
             Math.PI * 2
           );
@@ -907,7 +1127,7 @@
         contours.forEach((pts) => {
           if (pts.length < 3) return;
           pts.forEach((point, index) => {
-            const [px, py] = placedPoint(point);
+            const [px, py] = placedPoint(point, index / Math.max(1, pts.length - 1));
             if (index === 0) context.moveTo(px, py); else context.lineTo(px, py);
           });
           context.closePath();
