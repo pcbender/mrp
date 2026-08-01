@@ -79,12 +79,48 @@ class CardsConfig(ContractModel):
     closing: CardConfig
 
 
+class BackgroundConfig(ContractModel):
+    """One fully resolved song background for the track or an exact scene."""
+
+    color: HexColor = "#101014"
+    image: Path | None = None
+    fit: Literal["contain", "cover"] = "cover"
+    focal_x: float = Field(default=0.5, ge=0, le=1)
+    focal_y: float = Field(default=0.5, ge=0, le=1)
+    zoom: float = Field(default=1, ge=1, le=3)
+    opacity: float = Field(default=1, ge=0, le=1)
+    brightness_response: float = Field(default=0, ge=0, le=1)
+    opacity_response: float = Field(default=0, ge=0, le=1)
+    wash_color: HexColor = "#ffffff"
+    wash_opacity: float = Field(default=0, ge=0, le=1)
+    wash_response: float = Field(default=0, ge=0, le=1)
+    beat_zoom: float = Field(default=0, ge=0, le=0.2)
+    motion: Literal["still", "pan_scan"] = "still"
+    end_focal_x: float | None = Field(default=None, ge=0, le=1)
+    end_focal_y: float | None = Field(default=None, ge=0, le=1)
+    end_zoom: float | None = Field(default=None, ge=1, le=3)
+    easing: Literal["linear", "smooth", "ease_in", "ease_out"] = "smooth"
+
+
 class VideoConfig(ContractModel):
     width: int = Field(default=1920, gt=0)
     height: int = Field(default=1080, gt=0)
     fps: float = Field(default=30, gt=0, le=240)
-    background: HexColor = "#101014"
+    background: BackgroundConfig = Field(default_factory=BackgroundConfig)
     seed: int = 4821
+
+    @model_validator(mode="before")
+    @classmethod
+    def normalize_legacy_background_color(cls, value: Any) -> Any:
+        """One-way ingestion for the three existing v2 source projects.
+
+        New saves always emit the v3 mapping. Accepting the former color scalar
+        lets the editor perform that migration without a separate destructive
+        rewrite of published-source YAML.
+        """
+        if isinstance(value, dict) and isinstance(value.get("background"), str):
+            return {**value, "background": {"color": value["background"]}}
+        return value
 
     @model_validator(mode="after")
     def dimensions_support_yuv420p(self) -> "VideoConfig":
@@ -448,7 +484,10 @@ class VisualLayerConfig(ContractModel):
     color_locked: bool = False
     color_flow: LayerColorFlowConfig | None = None
     spatial: LayerSpatialConfig | None = None
-    depth: Literal["background", "foreground"] = "foreground"
+    # Pure compositing order. Lower values paint first; equal values retain the
+    # stable component/cast order. Three-dimensional curve depth lives in
+    # ``spatial`` and deliberately has no effect on this stack.
+    z_index: int = Field(default=0, ge=-1000, le=1000)
     anchor_x: float = Field(default=0.5, ge=-0.5, le=1.5)
     anchor_y: float = Field(default=0.5, ge=-0.5, le=1.5)
     base_scale: float = Field(default=1, gt=0, le=2)
@@ -530,7 +569,7 @@ class ActorConfig(ContractModel):
 class ActorDirectionConfig(ContractModel):
     """Scene-specific direction that leaves the actor's identity intact.
 
-    Blocking — anchors, scale, rotation, depth, visibility — modifies what the
+    Blocking — anchors, scale, rotation, Z order, visibility — modifies what the
     actor already is, so those fields carry a neutral default and combine with
     the actor's own values. Wardrobe — color, line width, blend mode — is a
     costume the actor wears in this scene only, so those fields replace the
@@ -552,7 +591,7 @@ class ActorDirectionConfig(ContractModel):
     pitch_degrees_per_second: float = Field(default=0, ge=-180, le=180)
     yaw_degrees_per_second: float = Field(default=0, ge=-180, le=180)
     hue_shift_degrees: float = Field(default=0, ge=-360, le=360)
-    depth: Literal["background", "foreground"] | None = None
+    z_index: int | None = Field(default=None, ge=-1000, le=1000)
     visible: bool = True
     color: HexColor | None = None
     line_width: float | None = Field(default=None, gt=0, le=20)
@@ -611,7 +650,7 @@ def _default_visual_layers() -> list[VisualLayerConfig]:
                 head_radius=0,
             ),
             color="#8c5cff",
-            depth="background",
+            z_index=-100,
             anchor_x=0.52,
             anchor_y=0.38,
             base_scale=1.82,
@@ -718,8 +757,10 @@ class VisualConfig(ContractModel):
     canvas_margin: float = Field(default=0.08, ge=0, le=0.4)
     perspective_strength: float = Field(default=0.18, ge=0, le=0.35)
     transition_seconds: float = Field(default=0.65, ge=0, le=10)
-    background_response: float = Field(default=0.16, ge=0, le=1)
     lyric_fade_seconds: float = Field(default=0.25, ge=0, le=5)
+    background_overrides: dict[NonBlankText, BackgroundConfig] = Field(
+        default_factory=dict
+    )
     section_styles: dict[NonBlankText, SectionVisualStyleConfig] = Field(
         default_factory=dict
     )
@@ -1005,6 +1046,11 @@ def _declared_paths(project: ProjectManifest) -> Iterator[tuple[str, Path]]:
         yield "lyrics.aligned", project.lyrics.aligned
     yield "cards.opening.file", project.cards.opening.file
     yield "cards.closing.file", project.cards.closing.file
+    if project.video.background.image is not None:
+        yield "video.background.image", project.video.background.image
+    for section_id, background in project.visuals.background_overrides.items():
+        if background.image is not None:
+            yield f"visuals.background_overrides.{section_id}.image", background.image
     yield "text.font", project.text.font
 
 

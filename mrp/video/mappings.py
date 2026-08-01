@@ -161,10 +161,6 @@ def map_layer_state(
         pulse_value * (pulse_gain if layer.drivers.pulse else 1) * 0.75,
     )
     opacity = layer.opacity * visibility * energy_opacity * preset.opacity_response
-    if layer.drivers.opacity is None and layer.depth == "background":
-        intensity_energy = audio.master.energy
-        opacity *= 0.35 + 1.1 * _clamp(intensity_energy * choreography.intensity_gain)
-
     accent = (
         pulse_value
         if layer.drivers.pulse is not None
@@ -216,9 +212,7 @@ def map_layer_state(
 
     if layer.drivers.color is None:
         color_energy = audio.vocals.energy
-        intensity_energy = (
-            audio.master.energy if layer.depth == "background" else role.energy
-        )
+        intensity_energy = role.energy
         color_gain = preset.role_gains[layer.role]
     else:
         color_energy, color_role = _driver_value(

@@ -1452,6 +1452,49 @@ td.td-mono { font-family: monospace; font-size: 12px; color: var(--muted); }
 .actor-direction-grid .wardrobe-color input[type="color"]:disabled { opacity: .4; }
 
 .video-project-look { margin: .75rem 0; }
+.video-background-editor {
+  margin: .65rem 0 1rem;
+}
+.video-background-advanced {
+  margin-top: .9rem;
+}
+.video-background-grid .form-field {
+  min-width: 0;
+}
+.video-background-grid input,
+.video-background-grid select {
+  min-width: 0;
+  width: 100%;
+}
+.video-background-grid input[type="color"] {
+  height: 30px;
+  padding: 2px;
+}
+.video-background-image-field {
+  min-width: 0;
+}
+.video-background-upload-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .6rem;
+}
+.video-background-upload-row small {
+  color: var(--muted);
+  font-size: 9px;
+}
+.video-background-upload {
+  flex: none;
+  width: fit-content;
+}
+.video-style-group .video-background-mode-grid {
+  grid-template-columns: minmax(180px, 320px);
+}
+.video-background-scope-group + .video-background-editor {
+  border-top: 1px solid var(--border);
+  margin-top: .9rem;
+  padding-top: .15rem;
+}
 .video-scene-workspace-heading { scroll-margin-top: 1rem; }
 .storyboard-heading { margin-bottom: .65rem; }
 .scene-storyboard { position: relative; }

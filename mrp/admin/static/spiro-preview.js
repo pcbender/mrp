@@ -863,8 +863,10 @@
     const margin = typeof opts.margin === 'number' ? opts.margin : 0.08;
     const baseProgress = clamp01(typeof opts.revealProgress === 'number' ? opts.revealProgress : 1);
     const context = canvas.getContext('2d');
-    context.fillStyle = opts.background || '#101014';
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    if (opts.clear !== false) {
+      context.fillStyle = opts.background || '#101014';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+    }
     shapes.forEach((shape) => {
       const family = shape.family || 'spirogram';
       const identityScale = Number(shape.base_scale) || 1;

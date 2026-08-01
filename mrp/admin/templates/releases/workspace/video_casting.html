@@ -13,6 +13,68 @@
 <input type="hidden" name="return_scope" value="{{ casting.scope }}">
 {%- endmacro %}
 
+{% macro background_fields(background, prefix) -%}
+<div class="video-background-editor">
+  <div class="video-style-group video-background-group">
+    <h4>Artwork &amp; framing</h4>
+    <p class="video-help">Choose the image, its fallback colour, and the portion framed before any performance effects.</p>
+    <div class="form-grid video-style-grid video-background-grid video-background-source-grid">
+      <div class="form-field">{{ actor_control_label('Base colour', 'Canvas colour below the image and around contain-fit artwork.') }}<input type="color" name="{{ prefix }}color" value="{{ background.color }}"></div>
+      <div class="form-field form-field-wide video-background-image-field">
+        {{ actor_control_label('Image', 'Use @mrp/cover for release artwork, type a filename inside this track project, or upload an image here. Blank produces a colour-only background.') }}
+        <input type="text" name="{{ prefix }}image" value="{{ background.image.as_posix() if background.image else '' }}" placeholder="@mrp/cover or backgrounds/image.jpg">
+        <div class="video-background-upload-row">
+          <label class="btn btn-secondary btn-sm video-background-upload">Choose image<input type="file" name="{{ prefix }}upload" accept="image/jpeg,image/png,image/webp" hidden onchange="this.closest('.video-background-image-field').querySelector('[data-upload-name]').textContent = this.files.length ? this.files[0].name : ''"></label>
+          <small data-upload-name>Uploads are stored with this track under <code>backgrounds/</code>.</small>
+        </div>
+      </div>
+      <div class="form-field">{{ actor_control_label('Fit', 'Cover fills and crops the frame. Contain keeps the whole image over the base colour.') }}<select name="{{ prefix }}fit"><option value="cover" {% if background.fit == 'cover' %}selected{% endif %}>cover</option><option value="contain" {% if background.fit == 'contain' %}selected{% endif %}>contain</option></select></div>
+      <div class="form-field">{{ actor_control_label('Base opacity', 'Image opacity over the base colour before audio response.') }}<input type="number" name="{{ prefix }}opacity" min="0" max="1" step="0.01" value="{{ background.opacity }}" required></div>
+      <div class="form-field">{{ actor_control_label('Focal X', 'Horizontal crop focus. 0 is left and 1 is right.') }}<input type="number" name="{{ prefix }}focal_x" min="0" max="1" step="0.01" value="{{ background.focal_x }}" required></div>
+      <div class="form-field">{{ actor_control_label('Focal Y', 'Vertical crop focus. 0 is top and 1 is bottom.') }}<input type="number" name="{{ prefix }}focal_y" min="0" max="1" step="0.01" value="{{ background.focal_y }}" required></div>
+      <div class="form-field">{{ actor_control_label('Base zoom', 'Static enlargement before beat zoom or pan and scan.') }}<input type="number" name="{{ prefix }}zoom" min="1" max="3" step="0.01" value="{{ background.zoom }}" required></div>
+    </div>
+  </div>
+
+  <details class="video-advanced video-background-advanced">
+    <summary>Advanced background performance</summary>
+    <p class="video-help">Let the soundtrack drive the image, apply a colour treatment, or move the framing over time.</p>
+
+    <div class="video-style-group video-background-group video-background-response-group">
+      <h4>Audio response</h4>
+      <p class="video-help">Use master energy and percussion accents to brighten, reveal, and push into the image.</p>
+      <div class="form-grid video-style-grid video-background-grid">
+        <div class="form-field">{{ actor_control_label('Brightness response', 'How far master energy lifts the image toward white.') }}<input type="number" name="{{ prefix }}brightness_response" min="0" max="1" step="0.01" value="{{ background.brightness_response }}" required></div>
+        <div class="form-field">{{ actor_control_label('Opacity response', 'How far master energy lifts the image toward fully opaque.') }}<input type="number" name="{{ prefix }}opacity_response" min="0" max="1" step="0.01" value="{{ background.opacity_response }}" required></div>
+        <div class="form-field">{{ actor_control_label('Beat zoom', 'Maximum extra zoom from percussion accents. 0.08 means eight percent.') }}<input type="number" name="{{ prefix }}beat_zoom" min="0" max="0.2" step="0.005" value="{{ background.beat_zoom }}" required></div>
+      </div>
+    </div>
+
+    <div class="video-style-group video-background-group video-background-wash-group">
+      <h4>Colour wash</h4>
+      <p class="video-help">Lay a fixed tint over the artwork, then let master energy strengthen it.</p>
+      <div class="form-grid video-style-grid video-background-grid">
+        <div class="form-field">{{ actor_control_label('Wash colour', 'Colour mixed over the image.') }}<input type="color" name="{{ prefix }}wash_color" value="{{ background.wash_color }}"></div>
+        <div class="form-field">{{ actor_control_label('Wash opacity', 'Constant wash amount over the image.') }}<input type="number" name="{{ prefix }}wash_opacity" min="0" max="1" step="0.01" value="{{ background.wash_opacity }}" required></div>
+        <div class="form-field">{{ actor_control_label('Wash response', 'Additional wash introduced by master energy.') }}<input type="number" name="{{ prefix }}wash_response" min="0" max="1" step="0.01" value="{{ background.wash_response }}" required></div>
+      </div>
+    </div>
+
+    <div class="video-style-group video-background-group video-background-motion-group">
+      <h4>Pan &amp; scan</h4>
+      <p class="video-help">Travel from the base framing to a second focal point and zoom over the scene.</p>
+      <div class="form-grid video-style-grid video-background-grid">
+        <div class="form-field">{{ actor_control_label('Motion', 'Pan and scan moves from the base framing to the ending values over the scene.') }}<select name="{{ prefix }}motion"><option value="still" {% if background.motion == 'still' %}selected{% endif %}>still</option><option value="pan_scan" {% if background.motion == 'pan_scan' %}selected{% endif %}>pan and scan</option></select></div>
+        <div class="form-field">{{ actor_control_label('End focal X', 'Ending horizontal focus for pan and scan. Blank keeps the base value.') }}<input type="number" name="{{ prefix }}end_focal_x" min="0" max="1" step="0.01" value="{{ background.end_focal_x if background.end_focal_x is not none else '' }}" placeholder="base"></div>
+        <div class="form-field">{{ actor_control_label('End focal Y', 'Ending vertical focus for pan and scan. Blank keeps the base value.') }}<input type="number" name="{{ prefix }}end_focal_y" min="0" max="1" step="0.01" value="{{ background.end_focal_y if background.end_focal_y is not none else '' }}" placeholder="base"></div>
+        <div class="form-field">{{ actor_control_label('End zoom', 'Ending zoom for pan and scan. Blank keeps the base zoom.') }}<input type="number" name="{{ prefix }}end_zoom" min="1" max="3" step="0.01" value="{{ background.end_zoom if background.end_zoom is not none else '' }}" placeholder="base"></div>
+        <div class="form-field">{{ actor_control_label('Motion easing', 'Rate used to move between the two framings.') }}<select name="{{ prefix }}easing">{% for choice in ['linear','smooth','ease_in','ease_out'] %}<option value="{{ choice }}" {% if background.easing == choice %}selected{% endif %}>{{ choice|replace('_', ' ') }}</option>{% endfor %}</select></div>
+      </div>
+    </div>
+  </details>
+</div>
+{%- endmacro %}
+
 {# The bounds come straight from SectionVisualStyleConfig in mrp/video/project.py.
    They used to be invisible until a save failed validation, so they are both
    enforced by the input and printed under it. #}
@@ -52,7 +114,7 @@
       <h2>Look</h2>
       <p class="video-help">Applies to the whole track, not just one scene. Background and lyric settings show in Scene Preview and Live Preview.</p>
     </div>
-    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
+    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML" hx-encoding="multipart/form-data" enctype="multipart/form-data">
       {{ context_fields() }}
       <div class="form-grid video-project-look">
         <div class="form-field">
@@ -62,18 +124,6 @@
         <div class="form-field">
           {{ actor_control_label('Palette', 'The colour set actors draw from when they do not carry a colour of their own.') }}
           <select name="palette_preset">{% for preset in casting.presets.palette %}<option value="{{ preset.name }}" {% if preset.name == casting.project.visuals.palette_preset %}selected{% endif %}>{{ preset.name }} — {{ preset.description }}</option>{% endfor %}</select>
-        </div>
-        <div class="form-field">
-          {{ actor_control_label('Background', 'The colour behind everything. The frame sits at this colour when the track is quiet.') }}
-          <input type="color" name="background" value="{{ casting.project.video.background }}">
-        </div>
-        <div class="form-field">
-          {{ actor_control_label('Background reactivity', 'How far the background lifts toward white on the master’s energy. 0 holds it still.') }}
-          <div class="slider-pair">
-            <input type="range" min="0" max="1" step="0.01" value="{{ casting.project.visuals.background_response }}" aria-hidden="true" tabindex="-1">
-            <input type="number" name="background_response" min="0" max="1" step="0.01" value="{{ casting.project.visuals.background_response }}" required>
-          </div>
-          <small>0–1. Default 0.16.</small>
         </div>
         <div class="form-field">
           {{ actor_control_label('3D perspective', 'How strongly near parts enlarge and far parts recede for every Spatial actor. 0 is orthographic; higher values feel more dimensional.') }}
@@ -96,6 +146,8 @@
           <select name="lyric_position">{% for choice in ['top', 'center', 'bottom'] %}<option value="{{ choice }}" {% if casting.project.text.position == choice %}selected{% endif %}>{{ choice }}</option>{% endfor %}</select>
         </div>
       </div>
+      <h3>Background</h3>
+      {{ background_fields(casting.project.video.background, 'background_') }}
       <button class="btn btn-primary" name="action" value="save_look" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Save look</button>
     </form>
   </div></section>
@@ -261,6 +313,32 @@
       </div>
       <script type="application/json" id="scene-storyboard-data">{{ casting.storyboard | tojson }}</script>
     </div></div>
+
+    <section class="form-card" id="scene-background"><div class="form-body">
+      <div>
+        <h2>Exact-scene background</h2>
+        <p class="video-help">This always edits only {{ casting.selected_section.id }}, independently of whether the cast tab below targets one scene or every {{ casting.selected_section.type }} scene.</p>
+      </div>
+      <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML" hx-encoding="multipart/form-data" enctype="multipart/form-data">
+        <input type="hidden" name="section_id" value="{{ casting.selected_section.id }}">
+        <input type="hidden" name="section_type" value="{{ casting.selected_section.type }}">
+        <input type="hidden" name="scope" value="section">
+        <input type="hidden" name="return_scope" value="{{ casting.scope }}">
+        <input type="hidden" name="return_actor" value="{{ casting.selected_actor.id if casting.selected_actor_saved else '' }}">
+        <div class="video-style-group video-background-group video-background-scope-group">
+          <h4>Scene behaviour</h4>
+          <p class="video-help">Choose whether this scene follows the track look or owns the background settings below.</p>
+          <div class="form-grid video-style-grid video-background-grid video-background-mode-grid">
+            <div class="form-field">
+              {{ actor_control_label('Background source', 'Override stores these controls for this exact scene. A blank image produces a colour-only override.') }}
+              <select name="scene_background_mode"><option value="inherit" {% if not casting.background_overridden %}selected{% endif %}>inherit track</option><option value="override" {% if casting.background_overridden %}selected{% endif %}>override this scene</option></select>
+            </div>
+          </div>
+        </div>
+        {{ background_fields(casting.background, 'scene_background_') }}
+        <button class="btn btn-secondary btn-sm" name="action" value="save_background" type="submit" {% if not cast_status_ok %}disabled{% endif %}>Save scene background</button>
+      </form>
+    </div></section>
 
     <section class="form-card"><div class="form-body">
       <div><h2>Cast this scene</h2><p class="video-help">Assign track actors to {{ 'all ' ~ casting.selected_section.type ~ ' scenes' if casting.scope == 'type' else 'only ' ~ casting.selected_section.id }}, then direct how each one performs here.</p></div>

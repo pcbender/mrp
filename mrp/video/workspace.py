@@ -771,6 +771,41 @@ def _relative_path(path: Path, root: Path) -> str:
     return Path(os.path.relpath(path.resolve(), root.resolve())).as_posix()
 
 
+def _background_image_inputs(
+    document: TrackProjectDocument,
+    workspace: TrackWorkspace,
+    cover_path: Path,
+) -> dict[str, Path]:
+    project_root = workspace.project_path.parent.resolve()
+    values = {
+        "video.background.image": document.project.video.background.image,
+        **{
+            f"visuals.background_overrides.{section_id}.image": background.image
+            for section_id, background in document.project.visuals.background_overrides.items()
+        },
+    }
+    resolved: dict[str, Path] = {}
+    for label, value in values.items():
+        if value is None:
+            continue
+        if value.as_posix() == "@mrp/cover":
+            resolved[label] = cover_path
+            continue
+        path = (project_root / value).resolve()
+        try:
+            path.relative_to(project_root)
+        except ValueError as exc:
+            raise MRPVideoAdapterError(
+                f"{label} must stay inside {project_root} or use @mrp/cover"
+            ) from exc
+        if not path.is_file():
+            raise MRPVideoAdapterError(
+                f"{label} does not exist or is not a file: {path}"
+            )
+        resolved[label] = path
+    return resolved
+
+
 def _runtime_project(
     document: TrackProjectDocument,
     workspace: TrackWorkspace,
@@ -779,6 +814,7 @@ def _runtime_project(
     semantic_paths: dict[str, Path],
     cover_path: Path,
     font_path: Path,
+    background_paths: dict[str, Path],
 ) -> ProjectManifest:
     payload = document.project.model_dump(mode="json", exclude_none=True)
     root = workspace.runtime_manifest_path.parent
@@ -794,6 +830,21 @@ def _runtime_project(
     payload["lyrics"]["aligned"] = _relative_path(workspace.aligned_path, root)
     payload["cards"]["opening"]["file"] = _relative_path(cover_path, root)
     payload["cards"]["closing"]["file"] = _relative_path(cover_path, root)
+    track_background = background_paths.get("video.background.image")
+    if track_background is not None:
+        payload["video"]["background"]["image"] = _relative_path(
+            track_background,
+            root,
+        )
+    for section_id, background in payload["visuals"].get(
+        "background_overrides",
+        {},
+    ).items():
+        source = background_paths.get(
+            f"visuals.background_overrides.{section_id}.image"
+        )
+        if source is not None:
+            background["image"] = _relative_path(source, root)
     payload["text"]["font"] = _relative_path(font_path, root)
     return ProjectManifest.model_validate(payload)
 
@@ -957,6 +1008,7 @@ def prepare_track(
         raise MRPVideoAdapterError("release cover_image is required for video cards")
     cover_path = _resolve_input(selection.repo, str(cover_value), "release cover")
     resolved_font = _default_font(font_path)
+    background_paths = _background_image_inputs(document, workspace, cover_path)
 
     lyrics, lyric_directions = _structured_lyrics(selection)
     _write_yaml(
@@ -968,6 +1020,7 @@ def prepare_track(
         "lyrics.source": workspace.runtime_lyrics_path,
         "cards.cover": cover_path,
         "text.font": resolved_font,
+        **background_paths,
     }
     stem_hashes: dict[str, str] = {}
     for sources in groups.values():
@@ -1012,6 +1065,7 @@ def prepare_track(
         semantic_paths=semantic_paths,
         cover_path=cover_path,
         font_path=resolved_font,
+        background_paths=background_paths,
     )
     _write_yaml(
         workspace.runtime_manifest_path,
@@ -1211,7 +1265,7 @@ def contact_sheet_track(
                 gutter + columns * (thumb_width + gutter),
                 gutter + rows * (thumb_height + label_height + gutter),
             ),
-            context.project.video.background,
+            context.project.video.background.color,
         )
         draw = ImageDraw.Draw(sheet)
         font = ImageFont.load_default()

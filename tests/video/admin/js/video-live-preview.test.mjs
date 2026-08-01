@@ -6,7 +6,7 @@ import test from 'node:test';
 const require = createRequire(import.meta.url);
 const {
   STATE_SCHEMA,
-  backgroundColor,
+  backgroundFrameAt,
   createEngine,
   decodePreviewState,
   drawLyricCue,
@@ -286,7 +286,7 @@ test('version-1 Float32 state decodes once and interpolates numeric columns', ()
   const values = new Float32Array([...first, ...second]);
   const documentModel = {
     format: 'mrp-music-video-live-preview',
-    version: 2,
+    version: 3,
     mode: 'audio-reactive',
     duration_seconds: 0.05,
     state_rate_hz: 20,
@@ -344,18 +344,60 @@ test('JavaScript layer mapping matches canonical Python parity fixtures', () => 
   });
 });
 
-test('mapped color and reactive background match renderer color math', () => {
+test('mapped color and background response inputs match renderer state', () => {
   assert.equal(layerColor('#4c78ff', 64.2, 0.9512, 1), '#f6cffe');
-  assert.equal(
-    backgroundColor(
-      {
-        video: { background: '#101014', background_response: 0.16 },
-        mapping_preset: { background_response: 1.25 },
-      },
-      { master_energy: 0.6 }
-    ),
-    '#2d2d30'
+  const background = { color: '#101014', brightness_response: 0.16 };
+  const frame = backgroundFrameAt(
+    {
+      video: { background },
+      sections: [{ id: 'scene', start: 0, end: 1, background }],
+      mapping_preset: { background_response: 1.25 },
+    },
+    { section_index: 0, previous_section_index: -1, master_energy: 0.6 },
+    0.5
   );
+  assert.equal(frame.energy, 0.6);
+  assert.equal(frame.mappingResponse, 1.25);
+  assert.equal(frame.layers[0].config, background);
+});
+
+test('background frames resolve exact-scene overrides and transition weights', () => {
+  const documentModel = fullTrackFixture();
+  const verse = {
+    color: '#101014',
+    image_url: '/private/track.png',
+  };
+  const chorus = {
+    color: '#050505',
+    image_url: '/private/chorus.png',
+    motion: 'pan_scan',
+    focal_x: 0,
+    end_focal_x: 1,
+    zoom: 1,
+    end_zoom: 1.4,
+  };
+  documentModel.video.background = verse;
+  documentModel.sections[0].background = verse;
+  documentModel.sections[1].background = chorus;
+
+  const frame = backgroundFrameAt(
+    documentModel,
+    reactiveState({
+      master_energy: 0.6,
+      drums_accent: 0.5,
+      beat_gain: 1.5,
+      transition_progress: 0.25,
+    }),
+    8
+  );
+
+  assert.equal(frame.energy, 0.6);
+  assert.equal(frame.beat, 0.75);
+  assert.equal(frame.layers[0].config, verse);
+  assert.equal(frame.layers[0].progress, 1);
+  assert.equal(frame.layers[1].config, chorus);
+  assert.equal(frame.layers[1].opacity, 0.25);
+  assert.equal(frame.layers[1].progress, 0.2);
 });
 
 test('wobble defaults off and combines independently with continuous rotation', () => {
@@ -394,7 +436,7 @@ test('wobble defaults off and combines independently with continuous rotation', 
 });
 
 function fullTrackFixture() {
-  const trace = (id, depth = 'foreground') => ({
+  const trace = (id, zIndex = 0) => ({
     id,
     role: 'master',
     geometry: {
@@ -413,7 +455,7 @@ function fullTrackFixture() {
     },
     color: '#4c78ff',
     color_locked: true,
-    depth,
+    z_index: zIndex,
     anchor_x: 0.5,
     anchor_y: 0.5,
     base_scale: 1,
@@ -427,12 +469,11 @@ function fullTrackFixture() {
   });
   return {
     format: 'mrp-music-video-live-preview',
-    version: 2,
+    version: 3,
     mode: 'geometry-only',
     duration_seconds: 12,
     video: {
-      background: '#101014',
-      background_response: 0,
+      background: { color: '#101014' },
       lyric_fade_seconds: 1,
     },
     text: {
@@ -471,7 +512,7 @@ function fullTrackFixture() {
     ],
     compositions: {
       verse: { traces: [trace('verse-front')] },
-      chorus: { traces: [trace('chorus-back', 'background')] },
+      chorus: { traces: [trace('chorus-back', -100)] },
     },
     lyrics: [
       { text: 'First line', start: 1, end: 3 },
@@ -677,7 +718,7 @@ test('malformed preview documents fail closed before drawing', () => {
   assert.equal(decodePreviewState(valid), null);
   assert.throws(
     () => validatePreviewDocument({ ...valid, version: 1 }),
-    /does not match version 2/
+    /does not match version 3/
   );
   assert.throws(
     () => validatePreviewDocument({

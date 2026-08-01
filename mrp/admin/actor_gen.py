@@ -75,7 +75,7 @@ def _title_actor_payload(title: str, path_data: str) -> dict[str, Any]:
                     "head_radius": 0,
                 },
                 "color": "#ffffff",
-                "depth": "foreground",
+                "z_index": 0,
                 "opacity": 1.0,
                 "line_width": 2.5,
             }

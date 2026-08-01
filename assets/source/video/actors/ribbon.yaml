@@ -21,7 +21,7 @@ actor:
       ghost_spacing: 0.08
       head_radius: 4.5
     color: '#8c5cff'
-    depth: foreground
+    z_index: 0
     anchor_x: 0.16
     anchor_y: 0.38
     base_scale: 1.06

@@ -164,6 +164,79 @@ def test_video_dimensions_must_support_yuv420p(tmp_path: Path) -> None:
         validate_project(manifest, require_tools=False, probe_media=False)
 
 
+def test_background_contract_normalizes_the_old_colour_and_bounds_effects() -> None:
+    project = ProjectManifest.model_validate(_valid_project())
+
+    assert project.video.background.color == "#101014"
+    assert project.video.background.image is None
+
+    value = _valid_project()
+    value["video"]["background"] = {
+        "color": "#203040",
+        "image": "backgrounds/still.png",
+        "fit": "contain",
+        "focal_x": 0,
+        "focal_y": 1,
+        "zoom": 1.25,
+        "opacity": 0.6,
+        "brightness_response": 0.4,
+        "opacity_response": 0.7,
+        "wash_color": "#ff8800",
+        "wash_opacity": 0.2,
+        "wash_response": 0.5,
+        "beat_zoom": 0.08,
+        "motion": "pan_scan",
+        "end_focal_x": 1,
+        "end_focal_y": 0,
+        "end_zoom": 1.5,
+        "easing": "ease_out",
+    }
+    value["visuals"] = {
+        "background_overrides": {
+            "verse_1": {"color": "#050505", "image": "backgrounds/verse.png"}
+        }
+    }
+
+    configured = ProjectManifest.model_validate(value)
+
+    assert configured.video.background.motion == "pan_scan"
+    assert configured.video.background.end_focal_x == 1
+    assert configured.visuals.background_overrides["verse_1"].image == Path(
+        "backgrounds/verse.png"
+    )
+
+    value["video"]["background"]["beat_zoom"] = 0.25
+    with pytest.raises(ValidationError, match="less than or equal to 0.2"):
+        ProjectManifest.model_validate(value)
+
+
+def test_numeric_z_order_replaces_the_depth_toggle() -> None:
+    value = _valid_project()
+    value["visuals"] = {
+        "layers": [
+            {
+                "id": "far",
+                "role": "instruments",
+                "geometry": {
+                    "fixed_radius": 180,
+                    "moving_radius": 65,
+                    "pen_offset": 95,
+                },
+                "color": "#8c5cff",
+                "z_index": -250,
+            }
+        ]
+    }
+    project = ProjectManifest.model_validate(value)
+
+    assert project.visuals.layers[0].z_index == -250
+
+    value["visuals"]["layers"][0].pop("z_index")
+    value["visuals"]["layers"][0]["depth"] = "background"
+    with pytest.raises(ValidationError, match="Extra inputs are not permitted"):
+        ProjectManifest.model_validate(value)
+
+
 def test_duplicate_lyric_section_ids_are_rejected(tmp_path: Path) -> None:
     manifest = _write_valid_inputs(tmp_path, _valid_project())
     lyrics_path = tmp_path / "lyrics.yaml"
@@ -206,12 +279,8 @@ def test_unknown_artistic_preset_is_rejected(tmp_path: Path) -> None:
 def test_default_visual_layout_has_three_distributed_foreground_systems() -> None:
     project = _valid_project()
     manifest = ProjectManifest.model_validate(project)
-    foreground = [
-        layer for layer in manifest.visuals.layers if layer.depth == "foreground"
-    ]
-    background = [
-        layer for layer in manifest.visuals.layers if layer.depth == "background"
-    ]
+    foreground = [layer for layer in manifest.visuals.layers if layer.z_index >= 0]
+    background = [layer for layer in manifest.visuals.layers if layer.z_index < 0]
 
     assert len(foreground) == 3
     assert [layer.role for layer in foreground] == ["bass", "vocals", "drums"]

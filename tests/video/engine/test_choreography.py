@@ -729,7 +729,7 @@ def test_percussion_flash_and_background_intensity_have_distinct_controls() -> N
         spectral_centroid=0.6,
     )
     background = next(
-        layer for layer in project.visuals.layers if layer.depth == "background"
+        layer for layer in project.visuals.layers if layer.z_index < 0
     )
     drums = next(layer for layer in project.visuals.layers if layer.role == "drums")
 

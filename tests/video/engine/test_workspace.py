@@ -141,6 +141,41 @@ def test_prepare_master_only_track_uses_symbolic_tracked_project(tmp_path: Path)
     assert json.loads(prepared.workspace.preflight_path.read_text())["status"] == "passed"
 
 
+def test_prepare_resolves_and_fingerprints_background_images(tmp_path: Path) -> None:
+    repo, _master = _write_repo(tmp_path)
+    first = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+    project_path = first.workspace.project_path
+    custom = project_path.parent / "backgrounds" / "verse.png"
+    custom.parent.mkdir()
+    Image.new("RGB", (64, 64), (90, 20, 120)).save(custom)
+    value = yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    value["project"]["video"]["background"] = {
+        "color": "#101014",
+        "image": "@mrp/cover",
+    }
+    value["project"]["visuals"]["background_overrides"] = {
+        "verse_1": {"color": "#050505", "image": "backgrounds/verse.png"}
+    }
+    project_path.write_text(yaml.safe_dump(value, sort_keys=False), encoding="utf-8")
+
+    prepared = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+    runtime = load_project_manifest(prepared.runtime_manifest_path)
+    runtime_root = prepared.runtime_manifest_path.parent
+
+    assert (runtime_root / runtime.video.background.image).resolve() == (
+        repo / "site" / "public" / "assets" / "fixture-cover.jpg"
+    )
+    override = runtime.visuals.background_overrides["verse_1"]
+    assert (runtime_root / override.image).resolve() == custom
+    assert "video.background.image" in prepared.input_hashes
+    assert "visuals.background_overrides.verse_1.image" in prepared.input_hashes
+
+    original_fingerprint = prepared.input_fingerprint
+    Image.new("RGB", (64, 64), (20, 90, 120)).save(custom)
+    changed = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+    assert changed.input_fingerprint != original_fingerprint
+
+
 def test_multi_stem_roles_are_aggregated_deterministically_and_go_stale(
     tmp_path: Path,
 ) -> None:

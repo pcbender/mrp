@@ -1,13 +1,17 @@
 """Optional per-track music-video workspace and process-job routes."""
 from __future__ import annotations
 
+import hashlib
 import json
+import os
 import re
+from io import BytesIO
 from pathlib import Path
 
 from fastapi import APIRouter, Header, Request
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Response
 from fastapi.templating import Jinja2Templates
+from PIL import Image, UnidentifiedImageError
 
 from mrp.admin import db, video_jobs
 from mrp.admin.deps import get_repo_root
@@ -28,6 +32,7 @@ from mrp.admin.video_rendering import (
 )
 from mrp.admin.video_live_preview import (
     LivePreviewError,
+    background_image_path,
     build_live_preview_document,
 )
 from mrp.admin.video_publication import (
@@ -82,6 +87,94 @@ _AUDIO_MEDIA_TYPES = {
     ".aiff": "audio/aiff",
     ".m4a": "audio/mp4",
 }
+_BACKGROUND_IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+_BACKGROUND_IMAGE_FORMATS = {
+    "JPEG": ".jpg",
+    "PNG": ".png",
+    "WEBP": ".webp",
+}
+_MAX_BACKGROUND_UPLOAD_BYTES = 32 * 1024 * 1024
+_MAX_BACKGROUND_UPLOAD_PIXELS = 50_000_000
+
+
+async def _store_background_upload(
+    root: Path,
+    release: dict,
+    track: dict,
+    upload: object,
+    *,
+    scene_id: str | None,
+) -> tuple[str, Path | None]:
+    """Validate one image and store it beside the track's source project.
+
+    Content-addressed names avoid overwriting an earlier source image. The
+    returned path is project-relative and can be written directly into the
+    background contract; the optional filesystem path identifies a newly
+    created file so the route can remove it if the project save is rejected.
+    """
+    filename = str(getattr(upload, "filename", "") or "")
+    extension = Path(filename).suffix.casefold()
+    normalized_extension = ".jpg" if extension == ".jpeg" else extension
+    if extension not in _BACKGROUND_IMAGE_EXTENSIONS:
+        raise CastingEditorError(
+            "background image must be a jpg, png, or webp file"
+        )
+    try:
+        contents = await upload.read(_MAX_BACKGROUND_UPLOAD_BYTES + 1)
+    except (AttributeError, OSError) as exc:
+        raise CastingEditorError("background image upload could not be read") from exc
+    if not contents:
+        raise CastingEditorError("background image upload is empty")
+    if len(contents) > _MAX_BACKGROUND_UPLOAD_BYTES:
+        raise CastingEditorError("background image upload must be 32 MB or smaller")
+    try:
+        with Image.open(BytesIO(contents)) as image:
+            image_format = str(image.format or "").upper()
+            width, height = image.size
+            image.verify()
+    except (Image.DecompressionBombError, OSError, UnidentifiedImageError) as exc:
+        raise CastingEditorError("background image upload is not a valid image") from exc
+    actual_extension = _BACKGROUND_IMAGE_FORMATS.get(image_format)
+    if actual_extension is None or actual_extension != normalized_extension:
+        raise CastingEditorError(
+            "background image filename does not match its image format"
+        )
+    if width <= 0 or height <= 0 or width * height > _MAX_BACKGROUND_UPLOAD_PIXELS:
+        raise CastingEditorError(
+            "background image must contain no more than 50 million pixels"
+        )
+
+    if scene_id is None:
+        target = "track"
+    else:
+        scene_slug = re.sub(r"[^a-z0-9]+", "-", scene_id.casefold()).strip("-")
+        if not scene_slug:
+            raise CastingEditorError("scene background upload requires a scene id")
+        target = f"scene-{scene_slug}"
+    digest = hashlib.sha256(contents).hexdigest()[:12]
+    relative = Path("backgrounds") / f"{target}-{digest}{actual_extension}"
+    directory = (
+        root
+        / "assets"
+        / "source"
+        / "video"
+        / track_key(release, track)
+    )
+    if not (directory / "project.yaml").is_file():
+        raise CastingEditorError("prepare the track before uploading a background image")
+    destination = directory / relative
+    if destination.is_file():
+        return relative.as_posix(), None
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = destination.with_name(f".{destination.name}.{os.getpid()}.tmp")
+    try:
+        temporary.write_bytes(contents)
+        os.replace(temporary, destination)
+    except OSError as exc:
+        raise CastingEditorError("background image upload could not be stored") from exc
+    finally:
+        temporary.unlink(missing_ok=True)
+    return relative.as_posix(), destination
 
 
 def _release_path(root: Path, slug: str) -> Path:
@@ -723,9 +816,47 @@ async def video_casting_save(request: Request, slug: str, track_slug: str):
         )
     form = await request.form()
     fields = {str(name): form.getlist(name) for name in form.keys()}
+    action = str(form.get("action") or "save_cast")
+    scope = str(form.get("scope") or "type")
+    uploaded_paths: list[Path] = []
     try:
+        track_upload = form.get("background_upload")
+        if track_upload is not None and getattr(track_upload, "filename", ""):
+            if action != "save_look":
+                raise CastingEditorError(
+                    "track background uploads must be saved from the Look panel"
+                )
+            relative, created = await _store_background_upload(
+                root,
+                release,
+                unit["track"],
+                track_upload,
+                scene_id=None,
+            )
+            fields["background_image"] = [relative]
+            if created is not None:
+                uploaded_paths.append(created)
+        scene_upload = form.get("scene_background_upload")
+        if scene_upload is not None and getattr(scene_upload, "filename", ""):
+            if action not in {"save_background", "save_cast"} or scope != "section":
+                raise CastingEditorError(
+                    "scene background uploads must be saved for one exact scene"
+                )
+            relative, created = await _store_background_upload(
+                root,
+                release,
+                unit["track"],
+                scene_upload,
+                scene_id=str(form.get("section_id") or ""),
+            )
+            fields["scene_background_image"] = [relative]
+            fields["scene_background_mode"] = ["override"]
+            if created is not None:
+                uploaded_paths.append(created)
         result = save_casting(root, release, unit["track"], fields)
     except CastingEditorError as exc:
+        for uploaded_path in uploaded_paths:
+            uploaded_path.unlink(missing_ok=True)
         return _templates.TemplateResponse(
             request,
             "releases/_validation.html",
@@ -754,17 +885,65 @@ async def video_casting_save(request: Request, slug: str, track_slug: str):
         )
     path.write_text(serialize_structured_record(path, data), encoding="utf-8")
     selected = result["selected_section"]
-    response = HTMLResponse('<div class="flash flash-ok">Section cast saved.</div>')
+    message = (
+        "Background image uploaded and saved."
+        if uploaded_paths
+        else "Video settings saved."
+    )
+    response = HTMLResponse(f'<div class="flash flash-ok">{message}</div>')
     # HX-Redirect is a full page load, so without the anchor the editor reopens
     # at the top of the page and the scene the user was working on scrolls away.
     # The selected actor rides along for the same reason.
     actor = str(form.get("return_actor") or "")
-    query = f"?section={selected.id}&scope={result['scope']}"
+    return_scope = str(form.get("return_scope") or result["scope"])
+    if return_scope not in {"type", "section"}:
+        return_scope = result["scope"]
+    query = f"?section={selected.id}&scope={return_scope}"
     if actor:
         query += f"&actor={actor}"
     response.headers["HX-Redirect"] = (
         f"/releases/{slug}/tracks/{track_slug}/video/casting{query}#scene-casting"
     )
+    return response
+
+
+@router.get(
+    "/releases/{slug}/tracks/{track_slug}/video/background",
+)
+async def video_background_image(
+    slug: str,
+    track_slug: str,
+    scene: str | None = None,
+):
+    root = get_repo_root()
+    ctx = _context(root, slug)
+    if ctx is None:
+        return _not_found(track_slug)
+    unit = _unit(ctx["release"], track_slug)
+    if unit is None:
+        return _not_found(track_slug)
+    try:
+        path = background_image_path(
+            root,
+            ctx["release"],
+            unit["track"],
+            scene_id=scene,
+        )
+    except LivePreviewError as exc:
+        return HTMLResponse(exc.message, status_code=exc.status_code)
+    if path is None:
+        return HTMLResponse("Background image not found.", status_code=404)
+    media_types = {
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".png": "image/png",
+        ".webp": "image/webp",
+    }
+    media_type = media_types.get(path.suffix.casefold())
+    if media_type is None:
+        return HTMLResponse("Unsupported background image type.", status_code=415)
+    response = FileResponse(path, media_type=media_type)
+    response.headers["Cache-Control"] = "private, no-store"
     return response
 
 

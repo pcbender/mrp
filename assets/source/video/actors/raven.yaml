@@ -571,7 +571,7 @@ actor:
     color_flow:
       source: angle
       swing_degrees: 90.0
-    depth: foreground
+    z_index: 0
     anchor_x: 0.5
     anchor_y: 0.5
     base_scale: 1.06

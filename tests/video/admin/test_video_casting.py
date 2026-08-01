@@ -5,11 +5,14 @@ import json
 import re
 import subprocess
 import sys
+from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlencode
 
 import pytest
 import yaml
+from PIL import Image
+from starlette.datastructures import FormData, UploadFile
 from starlette.requests import Request
 
 from mrp.admin import db
@@ -73,6 +76,33 @@ def _get_request(path: str) -> Request:
             "client": ("127.0.0.1", 1),
             "server": ("test", 80),
         }
+    )
+
+
+def _multipart_request(
+    path: str,
+    fields: dict[str, list[str]],
+    upload_name: str,
+    upload: UploadFile,
+) -> Request:
+    request = _request(path, [])
+    items = [
+        (name, value)
+        for name, values in fields.items()
+        for value in values
+    ]
+    items.append((upload_name, upload))
+    request._form = FormData(items)
+    return request
+
+
+def _image_upload(filename: str, color: tuple[int, int, int]) -> tuple[UploadFile, bytes]:
+    buffer = BytesIO()
+    Image.new("RGB", (48, 32), color).save(buffer, format="PNG")
+    contents = buffer.getvalue()
+    return (
+        UploadFile(BytesIO(contents), filename=filename, size=len(contents)),
+        contents,
     )
 
 
@@ -216,7 +246,7 @@ def _manual_fields(*, fixed_radius: str = "333") -> dict[str, list[str]]:
         "ghost_spacing": ["0.09"],
         "head_radius": ["4"],
         "color": ["#ff5fd2"],
-        "depth": ["foreground"],
+        "z_index": ["0"],
         "anchor_x": ["0.25"],
         "anchor_y": ["0.4"],
         "base_scale": ["1.4"],
@@ -271,7 +301,7 @@ def _actor_cast_fields() -> dict[str, list[str]]:
         "direction_rotation": ["0.4"],
         "direction_wobble": ["7.5"],
         "direction_hue": ["12"],
-        "direction_depth": ["foreground"],
+        "direction_z_index": ["20"],
         "direction_visible": ["true"],
         "style_beat_gain": ["1.4"],
     }
@@ -283,8 +313,8 @@ def _look_fields(**overrides: str) -> dict[str, list[str]]:
         "section_type": ["verse"],
         "scope": ["section"],
         "action": ["save_look"],
-        "background": ["#2b0a3d"],
-        "background_response": ["0.42"],
+        "background_color": ["#2b0a3d"],
+        "background_brightness_response": ["0.42"],
         "perspective_strength": ["0.27"],
         "lyric_color": ["#ffe066"],
         "lyric_size": ["48"],
@@ -307,8 +337,8 @@ def test_the_look_saves_without_casting_anything(tmp_path: Path) -> None:
     save_casting(tmp_path, release, track, _look_fields())
 
     saved = yaml.safe_load(project_path.read_text(encoding="utf-8"))["project"]
-    assert saved["video"]["background"] == "#2b0a3d"
-    assert saved["visuals"]["background_response"] == 0.42
+    assert saved["video"]["background"]["color"] == "#2b0a3d"
+    assert saved["video"]["background"]["brightness_response"] == 0.42
     assert saved["visuals"]["perspective_strength"] == 0.27
     assert saved["text"]["active_color"] == "#ffe066"
     assert saved["text"]["size"] == 48
@@ -316,6 +346,120 @@ def test_the_look_saves_without_casting_anything(tmp_path: Path) -> None:
     # Nothing was cast on the way through.
     assert not saved["visuals"].get("section_casts")
     assert not saved["visuals"].get("cast_overrides")
+
+
+def test_the_look_saves_the_complete_background_instruction(tmp_path: Path) -> None:
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+
+    save_casting(
+        tmp_path,
+        release,
+        track,
+        _look_fields(
+            background_image="@mrp/cover",
+            background_fit="contain",
+            background_focal_x="0.2",
+            background_focal_y="0.8",
+            background_zoom="1.15",
+            background_opacity="0.55",
+            background_opacity_response="0.7",
+            background_wash_color="#2050a0",
+            background_wash_opacity="0.25",
+            background_wash_response="0.5",
+            background_beat_zoom="0.08",
+            background_motion="pan_scan",
+            background_end_focal_x="0",
+            background_end_focal_y="1",
+            background_end_zoom="1.4",
+            background_easing="ease_out",
+        ),
+    )
+
+    background = yaml.safe_load(project_path.read_text(encoding="utf-8"))["project"][
+        "video"
+    ]["background"]
+    assert background == {
+        "color": "#2b0a3d",
+        "image": "@mrp/cover",
+        "fit": "contain",
+        "focal_x": 0.2,
+        "focal_y": 0.8,
+        "zoom": 1.15,
+        "opacity": 0.55,
+        "brightness_response": 0.42,
+        "opacity_response": 0.7,
+        "wash_color": "#2050a0",
+        "wash_opacity": 0.25,
+        "wash_response": 0.5,
+        "beat_zoom": 0.08,
+        "motion": "pan_scan",
+        "end_focal_x": 0.0,
+        "end_focal_y": 1.0,
+        "end_zoom": 1.4,
+        "easing": "ease_out",
+    }
+
+
+def test_exact_scene_background_overrides_and_returns_to_track_default(
+    tmp_path: Path,
+) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    fields = {
+        "section_id": ["verse_1"],
+        "section_type": ["verse"],
+        "scope": ["section"],
+        "action": ["save_background"],
+        "scene_background_mode": ["override"],
+        "scene_background_color": ["#071b33"],
+        "scene_background_image": ["backgrounds/verse.png"],
+        "scene_background_motion": ["pan_scan"],
+        "scene_background_end_focal_x": ["0"],
+        "scene_background_end_focal_y": ["1"],
+        "scene_background_end_zoom": ["1.3"],
+    }
+
+    overridden = save_casting(tmp_path, release, track, fields)
+
+    background = overridden["project"].visuals.background_overrides["verse_1"]
+    assert background.color == "#071b33"
+    assert background.image == Path("backgrounds/verse.png")
+    assert background.motion == "pan_scan"
+    assert background.end_focal_x == 0
+    assert overridden["background_overridden"] is True
+    assert overridden["actor_cast"] is None
+
+    inherited = save_casting(
+        tmp_path,
+        release,
+        track,
+        fields | {"scene_background_mode": ["inherit"]},
+    )
+    assert inherited["project"].visuals.background_overrides == {}
+    assert inherited["background_overridden"] is False
+
+
+def test_clearing_a_scene_cast_does_not_erase_its_background(tmp_path: Path) -> None:
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    fields = {
+        "section_id": ["verse_1"],
+        "section_type": ["verse"],
+        "scope": ["section"],
+        "action": ["save_background"],
+        "scene_background_mode": ["override"],
+        "scene_background_color": ["#071b33"],
+    }
+    save_casting(tmp_path, release, track, fields)
+
+    cleared = save_casting(
+        tmp_path,
+        release,
+        track,
+        fields | {"action": ["clear"]},
+    )
+
+    assert cleared["project"].visuals.background_overrides["verse_1"].color == (
+        "#071b33"
+    )
 
 
 def test_saving_a_cast_leaves_the_look_alone(tmp_path: Path) -> None:
@@ -327,7 +471,7 @@ def test_saving_a_cast_leaves_the_look_alone(tmp_path: Path) -> None:
     save_casting(tmp_path, release, track, _actor_cast_fields())
 
     saved = yaml.safe_load(project_path.read_text(encoding="utf-8"))["project"]
-    assert saved["video"]["background"] == "#2b0a3d"
+    assert saved["video"]["background"]["color"] == "#2b0a3d"
     assert saved["text"]["active_color"] == "#ffe066"
     assert saved["text"]["size"] == 48
 
@@ -335,9 +479,9 @@ def test_saving_a_cast_leaves_the_look_alone(tmp_path: Path) -> None:
 @pytest.mark.parametrize(
     "field, value, message",
     [
-        ("background", "octarine", "six-digit hex"),
+        ("background_color", "octarine", "six-digit hex"),
         ("lyric_color", "#fff", "six-digit hex"),
-        ("background_response", "1.5", "between 0 and 1"),
+        ("background_brightness_response", "1.5", "less than or equal to 1"),
         ("perspective_strength", "0.5", "between 0 and 0.35"),
         ("lyric_size", "0", "greater than 0"),
         ("lyric_position", "sideways", "top, center, or bottom"),
@@ -708,7 +852,7 @@ def test_recommended_actor_onboarding_and_exact_scene_direction(tmp_path: Path) 
         "direction_rotation": ["0"],
         "direction_wobble": ["0"],
         "direction_hue": ["0"],
-        "direction_depth": [""],
+        "direction_z_index": [""],
         "direction_visible": ["true"],
     }
 
@@ -869,6 +1013,24 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     assert 'name="direction_pitch_speed"' in body
     assert 'name="direction_yaw_speed"' in body
     assert 'name="direction_presentation"' in body
+    assert 'name="background_upload"' in body
+    assert 'name="scene_background_upload"' in body
+    assert body.count('hx-encoding="multipart/form-data"') == 2
+    assert "Uploads are stored with this track under" in body
+    # Track and exact-scene backgrounds use the same compact disclosure pattern
+    # as actor direction: framing stays visible and performance effects are
+    # grouped behind one advanced summary instead of stacking full-width fields.
+    assert body.count("<h4>Artwork &amp; framing</h4>") == 2
+    assert body.count("<summary>Advanced background performance</summary>") == 2
+    assert body.count("video-background-response-group") == 2
+    assert body.count("video-background-wash-group") == 2
+    assert body.count("video-background-motion-group") == 2
+    assert body.count("video-background-source-grid") == 2
+    assert body.count("form-field-wide video-background-image-field") == 2
+    assert "<h4>Scene behaviour</h4>" in body
+    assert body.index("Artwork &amp; framing") < body.index(
+        "Advanced background performance"
+    )
     assert ">Animated trace</option>" in body
     assert ">Full outline</option>" in body
     assert 'value="filled_shape" >Filled shape</option>' in body
@@ -888,7 +1050,7 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
         "Vertical position in the scene frame.",
         "Multiplies the size of the whole actor in this scene",
         "Multiplies the opacity of the whole actor in this scene",
-        "Places the whole actor behind or in front of the other cast.",
+        "Compositing order for the whole actor in this scene.",
         "Keeps the cast assignment but chooses whether this actor is drawn",
         "Continuous spin added to the actor identity in degrees per second.",
         "Rotates all of this actor’s colors for this scene.",
@@ -905,6 +1067,129 @@ def test_casting_route_updates_only_selected_track_and_renders_controls(
     ) in body
     assert "Run frame" in body
     assert "Run contact" in body
+
+    type_page = asyncio.run(
+        video_routes.video_casting(
+            _get_request(
+                "/releases/video-contract/tracks/private-track/video/casting"
+            ),
+            "video-contract",
+            "private-track",
+            "verse_1",
+            "type",
+        )
+    )
+    type_body = type_page.body.decode()
+    assert "Exact-scene background" in type_body
+    assert 'name="scene_background_mode"' in type_body
+    assert 'name="scope" value="section"' in type_body
+    assert 'name="return_scope" value="type"' in type_body
+
+
+def test_casting_route_uploads_track_and_exact_scene_backgrounds(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    release, _track, release_path, project_path = _write_cast_repo(tmp_path)
+    release["tracks"][0]["music_video"]["status"] = "timed"
+    release_path.write_text(
+        yaml.safe_dump({"release": release}, sort_keys=False),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+    route = "/releases/video-contract/tracks/private-track/video/casting"
+
+    track_upload, track_contents = _image_upload("Track Artwork.PNG", (20, 40, 80))
+    track_response = asyncio.run(
+        video_routes.video_casting_save(
+            _multipart_request(
+                route,
+                _look_fields(background_image="@mrp/cover"),
+                "background_upload",
+                track_upload,
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert track_response.status_code == 200
+    document = TrackProjectDocument.model_validate(
+        yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    )
+    track_relative = document.project.video.background.image
+    assert track_relative is not None
+    assert re.fullmatch(r"backgrounds/track-[0-9a-f]{12}\.png", track_relative.as_posix())
+    assert (project_path.parent / track_relative).read_bytes() == track_contents
+
+    scene_upload, scene_contents = _image_upload("Verse.PNG", (80, 30, 20))
+    scene_response = asyncio.run(
+        video_routes.video_casting_save(
+            _multipart_request(
+                route,
+                {
+                    "section_id": ["verse_1"],
+                    "section_type": ["verse"],
+                    "scope": ["section"],
+                    "return_scope": ["type"],
+                    "action": ["save_background"],
+                    "scene_background_color": ["#071b33"],
+                },
+                "scene_background_upload",
+                scene_upload,
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert scene_response.status_code == 200
+    assert "scope=type" in scene_response.headers["HX-Redirect"]
+    document = TrackProjectDocument.model_validate(
+        yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    )
+    scene_relative = document.project.visuals.background_overrides[
+        "verse_1"
+    ].image
+    assert scene_relative is not None
+    assert re.fullmatch(
+        r"backgrounds/scene-verse-1-[0-9a-f]{12}\.png",
+        scene_relative.as_posix(),
+    )
+    assert (project_path.parent / scene_relative).read_bytes() == scene_contents
+
+
+def test_casting_route_rejects_an_invalid_background_upload_without_writing(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    release, _track, release_path, project_path = _write_cast_repo(tmp_path)
+    release["tracks"][0]["music_video"]["status"] = "timed"
+    release_path.write_text(
+        yaml.safe_dump({"release": release}, sort_keys=False),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+    before = project_path.read_bytes()
+    upload = UploadFile(BytesIO(b"not an image"), filename="broken.png")
+
+    response = asyncio.run(
+        video_routes.video_casting_save(
+            _multipart_request(
+                "/releases/video-contract/tracks/private-track/video/casting",
+                _look_fields(),
+                "background_upload",
+                upload,
+            ),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.status_code == 422
+    assert b"not a valid image" in response.body
+    assert project_path.read_bytes() == before
+    assert not (project_path.parent / "backgrounds").exists()
 
 
 def test_track_actor_route_does_not_depend_on_or_mutate_scene_scope(

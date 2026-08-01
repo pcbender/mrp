@@ -125,9 +125,9 @@
     if (
       !documentModel
       || documentModel.format !== 'mrp-music-video-live-preview'
-      || documentModel.version !== 2
+      || documentModel.version !== 3
     ) {
-      throw new Error('Live Preview document does not match version 2.');
+      throw new Error('Live Preview document does not match version 3.');
     }
     if (!['audio-reactive', 'geometry-only'].includes(documentModel.mode)) {
       throw new Error('Live Preview mode is invalid.');
@@ -181,13 +181,13 @@
     if (!documentModel || documentModel.mode !== 'audio-reactive') return null;
     if (
       documentModel.format !== 'mrp-music-video-live-preview'
-      || documentModel.version !== 2
+      || documentModel.version !== 3
       || documentModel.state_encoding !== 'base64-float32-le'
       || documentModel.state_width !== STATE_SCHEMA.length
       || !Array.isArray(documentModel.state_schema)
       || documentModel.state_schema.join('\n') !== STATE_SCHEMA.join('\n')
     ) {
-      throw new Error('Live Preview state contract does not match version 2.');
+      throw new Error('Live Preview state contract does not match version 3.');
     }
     const count = Math.round(finite(documentModel.state_sample_count) || 0);
     if (count <= 0 || typeof documentModel.state_samples_base64 !== 'string') {
@@ -340,12 +340,6 @@
       * energyOpacity
       * (finite(preset.opacity_response) || 0)
     );
-    if (!(layer.drivers && layer.drivers.opacity) && layer.depth === 'background') {
-      opacity *= 0.35 + 1.1 * clamp01(
-        semanticSample(state, 'master').energy * (finite(state.intensity_gain) || 0)
-      );
-    }
-
     const accent = layer.drivers && layer.drivers.pulse
       ? pulseDriver.value
       : Math.max(role.accent, semanticSample(state, 'drums').accent * 0.35);
@@ -401,9 +395,7 @@
     let colorGain;
     if (!(layer.drivers && layer.drivers.color)) {
       colorEnergy = semanticSample(state, 'vocals').energy;
-      intensityEnergy = layer.depth === 'background'
-        ? semanticSample(state, 'master').energy
-        : role.energy;
+      intensityEnergy = role.energy;
       colorGain = gain(layer.role);
     } else {
       const colorDriver = driverValue(layer, state, 'color', 'vocals', 'energy');
@@ -530,20 +522,17 @@
       visibilityOverride
     );
     const phase = (finite(layer.phase_fraction) || 0) * TAU;
-    const depthResponse = layer.depth === 'background' ? 0.45 : 1;
     const anchorX = (
       0.5
       + ((finite(layer.anchor_x) || 0) - 0.5) * (finite(state.spatial_spread) || 0)
       + Math.sin(timeSeconds * 0.11 + phase)
       * (finite(state.anchor_drift) || 0)
-      * depthResponse
     );
     const anchorY = (
       (finite(layer.anchor_y) || 0)
       + Math.cos(timeSeconds * 0.09 + phase)
       * (finite(state.anchor_drift) || 0)
       * 0.7
-      * depthResponse
     );
     return {
       ...layer,
@@ -571,25 +560,173 @@
     };
   }
 
-  function backgroundColor(documentModel, state) {
-    const background = (
-      documentModel.video && documentModel.video.background
-    ) || '#101014';
-    if (!state) return background;
-    const response = (
-      (finite(documentModel.video && documentModel.video.background_response) || 0)
-      * (finite(
-        documentModel.mapping_preset
+  const backgroundImages = new Map();
+
+  function preloadBackground(url, redraw) {
+    if (!url || !root || typeof root.Image !== 'function') return null;
+    let entry = backgroundImages.get(url);
+    if (!entry) {
+      const image = new root.Image();
+      entry = { image, loaded: false, redraws: [] };
+      backgroundImages.set(url, entry);
+      image.onload = () => {
+        entry.loaded = true;
+        entry.redraws.splice(0).forEach((callback) => callback());
+      };
+      image.onerror = () => { entry.redraws = []; };
+      image.src = url;
+    }
+    if (typeof redraw === 'function') {
+      if (entry.loaded) redraw();
+      else entry.redraws.push(redraw);
+    }
+    return entry.loaded ? entry.image : null;
+  }
+
+  function preloadBackgrounds(documentModel, redraw) {
+    const values = [];
+    if (documentModel && documentModel.video && documentModel.video.background) {
+      values.push(documentModel.video.background);
+    }
+    if (documentModel && documentModel.background) values.push(documentModel.background);
+    ((documentModel && documentModel.sections) || []).forEach((section) => {
+      if (section.background) values.push(section.background);
+    });
+    [...new Set(values.map((item) => item && item.image_url).filter(Boolean))]
+      .forEach((url) => preloadBackground(url, redraw));
+  }
+
+  function backgroundProgress(section, masterTimeSeconds) {
+    if (!section) return 0;
+    const start = finite(section.start);
+    const end = finite(section.end);
+    if (start === null || end === null || end <= start) return 0;
+    return clamp01(((finite(masterTimeSeconds) || 0) - start) / (end - start));
+  }
+
+  function backgroundFrameAt(documentModel, state, masterTimeSeconds, fallback) {
+    const sections = previewSectionsAt(documentModel, state, masterTimeSeconds);
+    const track = (
+      documentModel && documentModel.video && documentModel.video.background
+    ) || fallback || { color: '#101014' };
+    const current = sections.current && sections.current.background
+      ? sections.current.background
+      : track;
+    const energy = semanticSample(state, 'master').energy;
+    const beat = clamp01(
+      semanticSample(state, 'drums').accent
+      * (finite(state && state.beat_gain) || 1)
+    );
+    if (!sections.previous || sections.transitionProgress >= 1) {
+      return {
+        energy,
+        beat,
+        mappingResponse: finite(
+          documentModel
+          && documentModel.mapping_preset
+          && documentModel.mapping_preset.background_response
+        ) || 1,
+        layers: [{ config: current, opacity: 1, progress: backgroundProgress(sections.current, masterTimeSeconds) }],
+      };
+    }
+    const previous = sections.previous.background || track;
+    return {
+      energy,
+      beat,
+      mappingResponse: finite(
+        documentModel
+        && documentModel.mapping_preset
         && documentModel.mapping_preset.background_response
-      ) || 0)
-      * semanticSample(state, 'master').energy
-    );
-    const values = parseHex(background).map(
-      (component) => Math.round((component * 255) + (255 - component * 255) * response)
-    );
-    return `#${values.map(
-      (component) => clamp(component, 0, 255).toString(16).padStart(2, '0')
-    ).join('')}`;
+      ) || 1,
+      layers: [
+        { config: previous, opacity: 1, progress: backgroundProgress(sections.previous, masterTimeSeconds) },
+        { config: current, opacity: sections.transitionProgress, progress: backgroundProgress(sections.current, masterTimeSeconds) },
+      ],
+    };
+  }
+
+  function backgroundEase(value, easing) {
+    const amount = clamp01(finite(value) || 0);
+    if (easing === 'linear') return amount;
+    if (easing === 'ease_in') return amount * amount;
+    if (easing === 'ease_out') return 1 - (1 - amount) * (1 - amount);
+    return amount * amount * (3 - 2 * amount);
+  }
+
+  function drawBackground(canvas, frame) {
+    const context = canvas.getContext('2d');
+    const data = frame || { energy: 0, beat: 0, mappingResponse: 1, layers: [] };
+    const layers = data.layers && data.layers.length
+      ? data.layers
+      : [{ config: { color: '#101014' }, opacity: 1, progress: 0 }];
+    context.save();
+    context.globalCompositeOperation = 'source-over';
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = 'high';
+    layers.forEach((layer) => {
+      const config = layer.config || {};
+      const layerOpacity = clamp01(finite(layer.opacity) === null ? 1 : finite(layer.opacity));
+      context.globalAlpha = layerOpacity;
+      context.fillStyle = config.color || '#101014';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      const entry = backgroundImages.get(config.image_url);
+      const image = entry && entry.loaded ? entry.image : null;
+      if (!image || !image.naturalWidth || !image.naturalHeight) return;
+
+      const motion = config.motion === 'pan_scan'
+        ? backgroundEase(layer.progress, config.easing)
+        : 0;
+      const endX = finite(config.end_focal_x) ?? (finite(config.focal_x) ?? 0.5);
+      const endY = finite(config.end_focal_y) ?? (finite(config.focal_y) ?? 0.5);
+      const endZoom = finite(config.end_zoom) ?? (finite(config.zoom) ?? 1);
+      const focalX = (finite(config.focal_x) ?? 0.5)
+        + (endX - (finite(config.focal_x) ?? 0.5)) * motion;
+      const focalY = (finite(config.focal_y) ?? 0.5)
+        + (endY - (finite(config.focal_y) ?? 0.5)) * motion;
+      let zoom = (finite(config.zoom) ?? 1)
+        + (endZoom - (finite(config.zoom) ?? 1)) * motion;
+      zoom *= 1 + (finite(config.beat_zoom) || 0) * data.beat;
+      const fitScale = config.fit === 'contain'
+        ? Math.min(canvas.width / image.naturalWidth, canvas.height / image.naturalHeight)
+        : Math.max(canvas.width / image.naturalWidth, canvas.height / image.naturalHeight);
+      const width = image.naturalWidth * fitScale * zoom;
+      const height = image.naturalHeight * fitScale * zoom;
+      const offset = (canvasSize, drawnSize, focal) => (
+        drawnSize <= canvasSize
+          ? (canvasSize - drawnSize) * focal
+          : Math.min(0, Math.max(canvasSize - drawnSize, canvasSize * 0.5 - focal * drawnSize))
+      );
+      const left = offset(canvas.width, width, focalX);
+      const top = offset(canvas.height, height, focalY);
+      const imageOpacity = clamp01(
+        (finite(config.opacity) ?? 1)
+        + (1 - (finite(config.opacity) ?? 1))
+        * (finite(config.opacity_response) || 0)
+        * data.energy
+      );
+      context.globalAlpha = layerOpacity * imageOpacity;
+      context.drawImage(image, left, top, width, height);
+      const brighten = clamp01(
+        (finite(config.brightness_response) || 0)
+        * data.mappingResponse
+        * data.energy
+      );
+      if (brighten) {
+        context.globalAlpha = layerOpacity * imageOpacity * brighten;
+        context.fillStyle = '#ffffff';
+        context.fillRect(left, top, width, height);
+      }
+      const baseWash = finite(config.wash_opacity) || 0;
+      const wash = clamp01(
+        baseWash + (1 - baseWash) * (finite(config.wash_response) || 0) * data.energy
+      );
+      if (wash) {
+        context.globalAlpha = layerOpacity * imageOpacity * wash;
+        context.fillStyle = config.wash_color || '#ffffff';
+        context.fillRect(left, top, width, height);
+      }
+    });
+    context.restore();
   }
 
   function sectionIndexAtTime(documentModel, masterTimeSeconds) {
@@ -705,7 +842,6 @@
         [sections.current, sections.transitionProgress],
       ];
     }
-    const depthOrder = { background: 0, foreground: 1 };
     const indexed = [];
     weighted.forEach(([section, weight], compositionIndex) => {
       const composition = compositions[section.composition_key] || {};
@@ -729,14 +865,14 @@
           );
         indexed.push({
           compositionIndex,
-          depth: depthOrder[shape.depth] || 0,
+          zIndex: finite(shape.z_index) || 0,
           layerIndex,
           shape,
         });
       });
     });
     indexed.sort((left, right) => (
-      left.depth - right.depth
+      left.zIndex - right.zIndex
       || left.compositionIndex - right.compositionIndex
       || left.layerIndex - right.layerIndex
     ));
@@ -924,10 +1060,13 @@
       const canvasMargin = typeof opts.margin === 'function'
         ? opts.margin(masterTime, liveOverrides, documentModel, shapes)
         : opts.margin;
+      const customBackground = typeof opts.drawBackground === 'function';
+      if (customBackground) opts.drawBackground(canvas, background);
       drawShapes(canvas, shapes, {
         clockSeconds: masterTime,
         showHead: opts.showHead !== false,
-        background,
+        background: customBackground ? undefined : background,
+        clear: !customBackground,
         margin: canvasMargin,
       });
       if (typeof opts.afterDraw === 'function') {
@@ -1337,7 +1476,9 @@
         return;
       }
       const reason = previewDocument.mode_reason || {};
-      if (reason.code === 'analysis_stale') {
+      if (reason.code === 'prepared_runtime_stale') {
+        setPreviewStatus('failed', 'Stale · Run Prepare');
+      } else if (reason.code === 'analysis_stale') {
         setPreviewStatus('failed', 'Stale · Run Analyze');
       } else {
         setPreviewStatus('draft', 'Geometry only · Run Analyze');
@@ -1456,7 +1597,7 @@
         const directionY = numberOrNull(fieldValue(card, 'direction_anchor_y'));
         const scale = numberOrNull(fieldValue(card, 'direction_scale'));
         const opacity = numberOrNull(fieldValue(card, 'direction_opacity'));
-        const depth = fieldValue(card, 'direction_depth');
+        const zIndex = finite(fieldValue(card, 'direction_z_index'));
         const visible = fieldValue(card, 'direction_visible') !== 'false';
         const wardrobe = fieldValue(card, 'direction_color');
         const lineWidth = numberOrNull(fieldValue(card, 'direction_line_width'));
@@ -1557,7 +1698,7 @@
             presentation,
             perspective_strength: livePerspective,
             spatial,
-            depth: depth || component.depth,
+            z_index: zIndex === null ? (finite(component.z_index) || 0) : zIndex,
             rotation_degrees_per_second: clamp(
               (finite(component.rotation_degrees_per_second) || 0)
               + (rotation !== null ? rotation : 0),
@@ -1580,8 +1721,6 @@
 
     let handles = new Map();
     let lastShapes = [];
-    const depthOrder = { background: 0, foreground: 1 };
-
     function getStoryboardShapes(masterTime) {
       const liveShapes = computeShapes();
       let shapes = liveShapes;
@@ -1639,7 +1778,7 @@
       }
       lastShapes = shapes
         .filter((shape) => shape.opacity > 0.001)
-        .sort((a, b) => (depthOrder[a.depth] || 0) - (depthOrder[b.depth] || 0));
+        .sort((a, b) => (finite(a.z_index) || 0) - (finite(b.z_index) || 0));
       return lastShapes;
     }
 
@@ -1730,11 +1869,13 @@
       initialTime: sceneStart,
       loop: true,
       reducedMotion,
-      background: () => (
-        previewDocument
-          ? backgroundColor(previewDocument, currentState)
-          : model.background || '#101014'
+      background: (masterTime) => backgroundFrameAt(
+        previewDocument || model,
+        currentState,
+        masterTime,
+        model.background
       ),
+      drawBackground,
       margin: () => {
         const documentMargin = previewDocument
           ? finite(previewDocument.video && previewDocument.video.canvas_margin)
@@ -1756,6 +1897,7 @@
 
     const redrawStoryboard = () => engine.redraw();
     root.redrawStoryboard = redrawStoryboard;
+    preloadBackgrounds(model, redrawStoryboard);
     refreshPreviewStatus();
 
     const loadController = typeof root.AbortController === 'function'
@@ -1788,6 +1930,7 @@
         previewDocument = payload;
         decodedState = nextDecoded;
         previewFailure = null;
+        preloadBackgrounds(payload, () => engine.redraw());
         engine.loadPreview(payload, { start: sceneStart, end: rangeEnd });
         refreshPreviewStatus();
       } catch (error) {
@@ -2019,7 +2162,9 @@
         return;
       }
       const reason = previewDocument.mode_reason || {};
-      if (reason.code === 'analysis_stale') {
+      if (reason.code === 'prepared_runtime_stale') {
+        setStatus('failed', 'Geometry only · Run Prepare');
+      } else if (reason.code === 'analysis_stale') {
         setStatus('failed', 'Geometry only · Analysis stale');
       } else {
         setStatus('draft', 'Geometry only · Run Analyze');
@@ -2216,10 +2361,12 @@
           initialTime: 0,
           loop: false,
           reducedMotion,
-          background: () => backgroundColor(
+          background: (masterTime) => backgroundFrameAt(
             previewDocument,
-            currentFrame && currentFrame.state
+            currentFrame && currentFrame.state,
+            masterTime
           ),
+          drawBackground,
           margin: () => (
             finite(previewDocument.video && previewDocument.video.canvas_margin)
             || 0.08
@@ -2245,6 +2392,7 @@
             setStatus('failed', 'Audio playback unavailable · Visual clock active');
           },
         });
+        preloadBackgrounds(previewDocument, () => engine && engine.redraw());
         if (audioElement) {
           engine.setAudio(audioElement, { time: 0, captureTime: false });
         }
@@ -2356,9 +2504,10 @@
 
   return {
     STATE_SCHEMA,
-    backgroundColor,
+    backgroundFrameAt,
     createEngine,
     decodePreviewState,
+    drawBackground,
     drawLyricCue,
     flattenLayer,
     initFullTrackPreview,

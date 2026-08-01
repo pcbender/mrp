@@ -18,6 +18,7 @@ from mrp.admin.routes import video as video_routes
 from mrp.admin.video_live_preview import (
     LivePreviewError,
     STATE_SCHEMA,
+    background_image_path,
     build_live_preview_document,
 )
 from mrp.video.analysis import (
@@ -447,6 +448,41 @@ def test_newer_audio_falls_back_without_creating_analysis(tmp_path: Path) -> Non
     assert _snapshot(tmp_path) == before
 
 
+def test_old_prepared_runtime_requests_prepare_without_discarding_analysis(
+    tmp_path: Path,
+) -> None:
+    release, track, project_path = _write_repo(tmp_path)
+    document = TrackProjectDocument.model_validate(
+        yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    )
+    _write_analysis(tmp_path, document)
+    runtime_path = (
+        tmp_path
+        / "assets"
+        / "processed"
+        / "video"
+        / "pcbender--private-track"
+        / "analysis"
+        / "project.runtime.yaml"
+    )
+    runtime = yaml.safe_load(runtime_path.read_text(encoding="utf-8"))
+    runtime["visuals"]["layers"][0]["depth"] = "foreground"
+    runtime_path.write_text(
+        yaml.safe_dump(runtime, sort_keys=False),
+        encoding="utf-8",
+    )
+    cache_files = tuple(tmp_path.rglob("*.npz"))
+
+    result = _build(tmp_path, release, track)
+
+    assert result.payload["mode"] == "geometry-only"
+    reason = result.payload["mode_reason"]
+    assert reason["code"] == "prepared_runtime_stale"
+    assert "Run Prepare" in reason["message"]
+    assert "analysis will be reused" in reason["message"]
+    assert tuple(tmp_path.rglob("*.npz")) == cache_files
+
+
 @pytest.mark.parametrize(
     ("visuals", "expected_key"),
     [
@@ -614,6 +650,69 @@ def test_private_data_route_returns_contract_headers_and_structured_errors(
     )
     assert missing_track.status_code == 404
     assert json.loads(missing_track.body)["error"]["code"] == "track_not_found"
+
+
+def test_background_images_use_private_path_free_preview_urls(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    release, track, project_path = _write_repo(tmp_path)
+    source = project_path.parent
+    backgrounds = source / "backgrounds"
+    backgrounds.mkdir()
+    track_image = backgrounds / "track.png"
+    scene_image = backgrounds / "verse.png"
+    track_image.write_bytes(b"track background")
+    scene_image.write_bytes(b"scene background")
+    value = yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    value["project"]["video"]["background"] = {
+        "color": "#101014",
+        "image": "backgrounds/track.png",
+        "beat_zoom": 0.08,
+    }
+    value["project"]["visuals"]["background_overrides"] = {
+        "verse_1": {
+            "color": "#050505",
+            "image": "backgrounds/verse.png",
+            "motion": "pan_scan",
+            "end_focal_x": 1,
+        }
+    }
+    project_path.write_text(yaml.safe_dump(value, sort_keys=False), encoding="utf-8")
+
+    result = _build(tmp_path, release, track)
+
+    assert result.payload["video"]["background"]["image_url"] == (
+        "/releases/video-contract/tracks/private-track/video/background"
+    )
+    assert result.payload["sections"][0]["background"]["image_url"].endswith(
+        "?scene=verse_1"
+    )
+    assert "backgrounds/track.png" not in result.body.decode()
+    assert "backgrounds/verse.png" not in result.body.decode()
+    assert background_image_path(tmp_path, release, track) == track_image
+    assert (
+        background_image_path(tmp_path, release, track, scene_id="verse_1")
+        == scene_image
+    )
+
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+    monkeypatch.setattr(
+        video_routes,
+        "_context",
+        lambda _root, _slug: {"release": release},
+    )
+    response = asyncio.run(
+        video_routes.video_background_image(
+            "video-contract",
+            "private-track",
+            scene="verse_1",
+        )
+    )
+    assert response.status_code == 200
+    assert response.path == scene_image
+    assert response.media_type == "image/png"
+    assert response.headers["cache-control"] == "private, no-store"
 
 
 @pytest.mark.parametrize(
@@ -899,7 +998,7 @@ def test_unchanged_sources_reuse_the_memoized_document(tmp_path: Path) -> None:
     rebuilt = _build(tmp_path, release, track)
 
     assert rebuilt is not first
-    assert rebuilt.payload["video"]["background"] == "#202030"
+    assert rebuilt.payload["video"]["background"]["color"] == "#202030"
 
 
 def test_matching_validator_revalidates_without_resending_the_document(
