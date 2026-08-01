@@ -1,6 +1,6 @@
 version: 1
 adapter_version: 1
-renderer_contract_version: 1
+renderer_contract_version: 3
 source_renderer_revision: e3d4b100e026d486ce2c28547e6e8a907b1c621a
 source:
   release: content/releases/a-distant-memory.yaml
@@ -39,7 +39,9 @@ project:
     width: 1920
     height: 1080
     fps: 30.0
-    background: '#101014'
+    background:
+      color: '#101014'
+      brightness_response: 0.16
     seed: 4821
   encoding:
     video_codec: libx264
@@ -101,7 +103,7 @@ project:
         ghost_spacing: 0.07
         head_radius: 0.0
       color: '#8c5cff'
-      depth: background
+      z_index: -100
       anchor_x: 0.52
       anchor_y: 0.38
       base_scale: 1.82
@@ -128,7 +130,7 @@ project:
         ghost_spacing: 0.1
         head_radius: 3.5
       color: '#4c78ff'
-      depth: foreground
+      z_index: 0
       anchor_x: 0.14
       anchor_y: 0.44
       base_scale: 0.6
@@ -155,7 +157,7 @@ project:
         ghost_spacing: 0.09
         head_radius: 4.0
       color: '#ff5fd2'
-      depth: foreground
+      z_index: 0
       anchor_x: 0.52
       anchor_y: 0.34
       base_scale: 0.48
@@ -182,7 +184,7 @@ project:
         ghost_spacing: 0.07
         head_radius: 4.0
       color: '#ffd166'
-      depth: foreground
+      z_index: 0
       anchor_x: 0.89
       anchor_y: 0.46
       base_scale: 0.54
@@ -194,7 +196,6 @@ project:
       drivers: {}
     canvas_margin: 0.08
     transition_seconds: 0.65
-    background_response: 0.16
     lyric_fade_seconds: 0.25
     section_styles: {}
     section_overrides: {}
@@ -226,7 +227,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#8c5cff'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.5
           anchor_y: 0.5
           base_scale: 0.7
@@ -265,7 +266,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 5.0
           color: '#ff5fd2'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.51
           anchor_y: 0.29
           base_scale: 0.76
@@ -307,7 +308,7 @@ project:
             ghost_spacing: 0.07
             head_radius: 5.0
           color: '#ffd166'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.92
           anchor_y: 0.39
           base_scale: 0.62
@@ -349,7 +350,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#4c78ff'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.08
           anchor_y: 0.38
           base_scale: 0.78
@@ -390,7 +391,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#8c5cff'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.27
           anchor_y: 0.34
           base_scale: 0.7
@@ -428,7 +429,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#ff5fd2'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.73
           anchor_y: 0.33
           base_scale: 0.56
@@ -466,7 +467,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#4c78ff'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.2
           anchor_y: 0.37
           base_scale: 0.67
@@ -497,7 +498,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 3.0
           color: '#ff5fd2'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.25
           anchor_y: 0.25
           base_scale: 1.0
@@ -531,7 +532,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#ff5fd2'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.75
           anchor_y: 0.3
           base_scale: 0.48
@@ -570,7 +571,7 @@ project:
             ghost_spacing: 0.09
             head_radius: 5.0
           color: '#ff5fd2'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.78
           anchor_y: 0.31
           base_scale: 0.84
@@ -612,7 +613,7 @@ project:
             ghost_spacing: 0.07
             head_radius: 0.0
           color: '#8c5cff'
-          depth: background
+          z_index: -100
           anchor_x: 0.5
           anchor_y: 0.38
           base_scale: 1.72
@@ -653,7 +654,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#4c78ff'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.13
           anchor_y: 0.39
           base_scale: 0.72
@@ -691,7 +692,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#ff5fd2'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.5
           anchor_y: 0.29
           base_scale: 0.66
@@ -729,7 +730,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 4.0
           color: '#ffd166'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.87
           anchor_y: 0.38
           base_scale: 0.57
@@ -767,7 +768,7 @@ project:
             ghost_spacing: 0.08
             head_radius: 5.0
           color: '#ff5fd2'
-          depth: foreground
+          z_index: 0
           anchor_x: 0.39
           anchor_y: 0.42
           base_scale: 1.62

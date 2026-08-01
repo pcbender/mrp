@@ -1,6 +1,6 @@
 version: 1
 adapter_version: 1
-renderer_contract_version: 1
+renderer_contract_version: 3
 source_renderer_revision: e3d4b100e026d486ce2c28547e6e8a907b1c621a
 source:
   release: content/releases/darkness-takes-the-shadows.yaml
@@ -39,7 +39,22 @@ project:
     width: 1920
     height: 1080
     fps: 30.0
-    background: '#05706e'
+    background:
+      color: '#05706e'
+      image: backgrounds/track-06f0faaba8ff.jpg
+      fit: cover
+      focal_x: 0.5
+      focal_y: 0.5
+      zoom: 1.0
+      opacity: 1.0
+      brightness_response: 0.25
+      opacity_response: 0.0
+      wash_color: '#ffffff'
+      wash_opacity: 0.0
+      wash_response: 0.0
+      beat_zoom: 0.2
+      motion: still
+      easing: ease_in
     seed: 4821
   encoding:
     video_codec: libx264
@@ -102,7 +117,7 @@ project:
         head_radius: 0.0
       color: '#8c5cff'
       color_locked: false
-      depth: background
+      z_index: -100
       anchor_x: 0.52
       anchor_y: 0.38
       base_scale: 1.82
@@ -132,7 +147,7 @@ project:
         head_radius: 3.5
       color: '#4c78ff'
       color_locked: false
-      depth: foreground
+      z_index: 0
       anchor_x: 0.14
       anchor_y: 0.44
       base_scale: 0.6
@@ -162,7 +177,7 @@ project:
         head_radius: 4.0
       color: '#ff5fd2'
       color_locked: false
-      depth: foreground
+      z_index: 0
       anchor_x: 0.52
       anchor_y: 0.34
       base_scale: 0.48
@@ -192,7 +207,7 @@ project:
         head_radius: 4.0
       color: '#ffd166'
       color_locked: false
-      depth: foreground
+      z_index: 0
       anchor_x: 0.89
       anchor_y: 0.46
       base_scale: 0.54
@@ -205,9 +220,10 @@ project:
       blend_mode: screen
       drivers: {}
     canvas_margin: 0.08
+    perspective_strength: 0.18
     transition_seconds: 0.65
-    background_response: 0.25
     lyric_fade_seconds: 0.25
+    background_overrides: {}
     section_styles:
       intro:
         visible_roles:
@@ -255,7 +271,7 @@ project:
             head_radius: 0.0
           color: '#ffbd61'
           color_locked: false
-          depth: foreground
+          z_index: 0
           anchor_x: 0.5
           anchor_y: 0.5
           base_scale: 1.3
@@ -284,7 +300,7 @@ project:
             head_radius: 0.0
           color: '#1faaef'
           color_locked: false
-          depth: foreground
+          z_index: 0
           anchor_x: 0.5
           anchor_y: 0.5
           base_scale: 0.66
@@ -317,7 +333,7 @@ project:
           color_flow:
             source: angle
             swing_degrees: 90.0
-          depth: foreground
+          z_index: 0
           anchor_x: 0.5
           anchor_y: 0.493
           base_scale: 0.51
@@ -345,7 +361,7 @@ project:
             head_radius: 0.0
           color: '#b861ff'
           color_locked: false
-          depth: foreground
+          z_index: 0
           anchor_x: 0.5
           anchor_y: 0.631
           base_scale: 0.46
@@ -552,7 +568,7 @@ project:
           color_flow:
             source: radius
             swing_degrees: 90.0
-          depth: foreground
+          z_index: 0
           anchor_x: 0.5
           anchor_y: 0.5
           base_scale: 1.0

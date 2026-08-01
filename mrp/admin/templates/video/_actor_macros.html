@@ -7,7 +7,7 @@
   'id': 'shape',
   'role': 'vocals',
   'color': '#ff5fd2',
-  'depth': 'foreground',
+  'z_index': 0,
   'geometry': {'family': 'spirogram', 'fixed_radius': 180, 'moving_radius': 60, 'pen_offset': 100, 'phase': 0, 'rotation': 'inside', 'samples': 900, 'liss_freq_x': 3, 'liss_freq_y': 2, 'liss_delta': 1.5708, 'rose_n': 5, 'rose_d': 1, 'sf_m': 6, 'sf_n1': 0.3, 'sf_n2': 0.3, 'sf_n3': 0.3, 'path_data': '', 'harm_freq_x': 3.01, 'harm_freq_y': 2, 'harm_delta': 1.5708, 'harm_damping': 0.02, 'harm_turns': 12},
   'anchor_x': 0.5,
   'anchor_y': 0.5,
@@ -35,7 +35,7 @@
   'pitch_degrees_per_second': 0,
   'yaw_degrees_per_second': 0,
   'hue_shift_degrees': 0,
-  'depth': none,
+  'z_index': none,
   'visible': true,
   'color': none,
   'line_width': none,
@@ -143,7 +143,7 @@
         <summary><span>Appearance</span><small>Opacity, line, layer and color treatment</small></summary>
         <p class="video-help">Style this component inside the actor. A production can still dress the finished actor for a particular scene.</p>
         <div class="form-grid video-trace-grid">
-          <div class="form-field">{{ actor_control_label('Layer order', 'Whether this component is composited behind or in front of the other actors. This is separate from three-dimensional depth.') }}<select name="depth"><option value="background" {% if component.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if component.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
+          <div class="form-field">{{ actor_control_label('Component Z', 'Compositing order inside and between actors. Lower values paint first; this is separate from three-dimensional depth.') }}<input type="number" name="z_index" min="-1000" max="1000" step="1" value="{{ component.z_index }}" required></div>
           {{ slider_field('opacity', 'Identity opacity', 'Base opacity of this component before a scene changes the whole actor opacity.', component.opacity, 0, 1, '0.01') }}
           {{ slider_field('line_width', 'Line width', 'Base stroke width used to draw this component.', component.line_width, 0.5, 20, '0.1') }}
           {{ slider_field('hue_shift', 'Base hue shift °', 'Permanent hue rotation applied to this component before scene direction.', component.hue_shift_degrees, -360, 360, '1') }}
@@ -199,13 +199,13 @@
 
   <div class="video-style-group actor-direction-group">
     <h4>Stage position</h4>
-    <p class="video-help">Place this actor in the frame and decide whether it performs in front or behind.</p>
+    <p class="video-help">Place this actor in the frame and choose its compositing order.</p>
     <div class="form-grid actor-direction-grid">
       <div class="form-field">{{ actor_control_label('Position X', 'Horizontal position in the scene frame. 0 is the left edge, 0.5 is centre, and 1 is the right edge. Blank keeps the actor identity position.') }}<input type="number" step="0.001" min="-0.5" max="1.5" name="direction_anchor_x" value="{{ direction.anchor_x if direction.anchor_x is not none else '' }}" placeholder="identity"></div>
       <div class="form-field">{{ actor_control_label('Position Y', 'Vertical position in the scene frame. 0 is the top edge, 0.5 is centre, and 1 is the bottom edge. Blank keeps the actor identity position.') }}<input type="number" step="0.001" min="-0.5" max="1.5" name="direction_anchor_y" value="{{ direction.anchor_y if direction.anchor_y is not none else '' }}" placeholder="identity"></div>
       <div class="form-field">{{ actor_control_label('Scale', 'Multiplies the size of the whole actor in this scene without changing its identity.') }}<input type="number" step="0.01" min="0.01" max="3" name="direction_scale" value="{{ direction.scale }}" required></div>
       <div class="form-field">{{ actor_control_label('Opacity', 'Multiplies the opacity of the whole actor in this scene. 0 is invisible and 1 preserves its identity opacity.') }}<input type="number" step="0.01" min="0" max="1" name="direction_opacity" value="{{ direction.opacity }}" required></div>
-        <div class="form-field">{{ actor_control_label('Layer order', 'Places the whole actor behind or in front of the other cast. Actor default keeps its compositing order; this is separate from 3D depth.') }}<select name="direction_depth"><option value="">actor default</option><option value="background" {% if direction.depth == 'background' %}selected{% endif %}>background</option><option value="foreground" {% if direction.depth == 'foreground' %}selected{% endif %}>foreground</option></select></div>
+        <div class="form-field">{{ actor_control_label('Actor Z', 'Compositing order for the whole actor in this scene. Lower values paint first; blank keeps each component’s identity Z.') }}<input type="number" name="direction_z_index" min="-1000" max="1000" step="1" value="{{ direction.z_index if direction.z_index is not none else '' }}" placeholder="identity"></div>
       <div class="form-field">{{ actor_control_label('Visibility', 'Keeps the cast assignment but chooses whether this actor is drawn in the scene.') }}<select name="direction_visible"><option value="true" {% if direction.visible %}selected{% endif %}>visible</option><option value="false" {% if not direction.visible %}selected{% endif %}>hidden in this scene</option></select></div>
     </div>
   </div>

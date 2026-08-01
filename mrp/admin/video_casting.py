@@ -7,6 +7,7 @@ import os
 import re
 from pathlib import Path
 from typing import Any, Mapping, Sequence
+from urllib.parse import quote
 
 import yaml
 from pydantic import ValidationError
@@ -604,6 +605,21 @@ def _selected_transition(project: Any, section: Any, scope: str):
     return SceneTransitionConfig(), "track default"
 
 
+def _selected_background(project: Any, section: Any):
+    override = project.visuals.background_overrides.get(section.id)
+    if override is not None:
+        return override, True
+    return project.video.background, False
+
+
+def _browser_background(background: Any, image_url: str | None) -> dict[str, Any]:
+    payload = background.model_dump(mode="json", exclude_none=True)
+    payload.pop("image", None)
+    if background.image is not None and image_url is not None:
+        payload["image_url"] = image_url
+    return payload
+
+
 def _gallery(
     root: Path,
     release: dict[str, Any],
@@ -687,7 +703,7 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
         "base_scale": layer.base_scale,
         "opacity": layer.opacity,
         "line_width": layer.line_width,
-        "depth": layer.depth,
+        "z_index": layer.z_index,
         "rotation_degrees_per_second": layer.rotation_degrees_per_second,
         "rotation_wobble_degrees": layer.rotation_wobble_degrees,
         "hue_shift_degrees": layer.hue_shift_degrees,
@@ -698,7 +714,7 @@ def _storyboard_shape(layer: Any) -> dict[str, Any]:
 
 def _storyboard(
     composition: Any,
-    background: str,
+    background: dict[str, Any],
     actors: Any,
     *,
     section_id: str,
@@ -882,6 +898,10 @@ def load_casting(
             _unique_actor_id(document.project.visuals.actors, "new-actor"),
         )
     style = _selected_style(document.project, selected, scope)
+    background, background_overridden = _selected_background(
+        document.project,
+        selected,
+    )
     transition, transition_source = _selected_transition(
         document.project,
         selected,
@@ -908,7 +928,20 @@ def load_casting(
         ),
         "storyboard": _storyboard(
             composition,
-            document.project.video.background,
+            _browser_background(
+                background,
+                (
+                    f"/releases/{document.source.release.stem}/tracks/"
+                    f"{document.source.track_slug}/video/background"
+                    + (
+                        f"?scene={quote(selected.id, safe='')}"
+                        if background_overridden
+                        else ""
+                    )
+                    if background.image is not None
+                    else None
+                ),
+            ),
             document.project.visuals.actors,
             section_id=selected.id,
             start=selected.start,
@@ -921,6 +954,8 @@ def load_casting(
         "selected_actor": selected_actor,
         "selected_actor_saved": selected_actor_saved,
         "style": style,
+        "background": background,
+        "background_overridden": background_overridden,
         "transition": transition,
         "transition_source": transition_source,
         "selected_gap": next(
@@ -1075,7 +1110,7 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
         "ghost_spacing",
         "head_radius",
         "color",
-        "depth",
+        "z_index",
         "anchor_x",
         "anchor_y",
         "base_scale",
@@ -1245,7 +1280,10 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
                     "head_radius": _number(columns["head_radius"][index], f"trace {trace_id} head radius"),
                 },
                 "color": columns["color"][index],
-                "depth": columns["depth"][index],
+                "z_index": _integer(
+                    columns["z_index"][index],
+                    f"trace {trace_id} Z index",
+                ),
                 "anchor_x": _number(columns["anchor_x"][index], f"trace {trace_id} anchor x"),
                 "anchor_y": _number(columns["anchor_y"][index], f"trace {trace_id} anchor y"),
                 "base_scale": _number(columns["base_scale"][index], f"trace {trace_id} scale"),
@@ -1290,7 +1328,7 @@ def _actor_assignment_payloads(
         "direction_opacity",
         "direction_rotation",
         "direction_hue",
-        "direction_depth",
+        "direction_z_index",
         "direction_visible",
     )
     wardrobe_names = (
@@ -1374,9 +1412,12 @@ def _actor_assignment_payloads(
             value = columns[field][index]
             if value:
                 direction[key] = _number(value, f"actor {assignment_id} {key}")
-        depth = columns["direction_depth"][index]
-        if depth:
-            direction["depth"] = depth
+        z_index = columns["direction_z_index"][index]
+        if z_index:
+            direction["z_index"] = _integer(
+                z_index,
+                f"actor {assignment_id} Z index",
+            )
         # Wardrobe: blank means the actor wears its own, so omit rather than
         # write a value the actor would then be stuck with.
         line_width = columns["direction_line_width"][index]
@@ -1475,6 +1516,108 @@ def _style_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
         if parsed is not None:
             style[name] = parsed
     return style
+
+
+def _background_payload(
+    fields: Mapping[str, Sequence[str]],
+    current: Any,
+    *,
+    prefix: str,
+) -> dict[str, Any]:
+    from mrp.video.project import BackgroundConfig
+
+    def field(name: str, default: Any) -> str:
+        value = default.as_posix() if isinstance(default, Path) else str(default)
+        return _single(fields, f"{prefix}{name}", default=value)
+
+    image_value = field("image", current.image or "").strip()
+    image = None
+    if image_value:
+        image = Path(image_value)
+        if image.is_absolute() or ".." in image.parts:
+            raise CastingEditorError(
+                "background image must be @mrp/cover or a path inside the track project"
+            )
+    payload: dict[str, Any] = {
+        "color": _hex_color(field("color", current.color), "background colour"),
+        "image": image,
+        "fit": field("fit", current.fit),
+        "focal_x": _number(field("focal_x", current.focal_x), "background focal X"),
+        "focal_y": _number(field("focal_y", current.focal_y), "background focal Y"),
+        "zoom": _number(field("zoom", current.zoom), "background zoom"),
+        "opacity": _number(field("opacity", current.opacity), "background opacity"),
+        "brightness_response": _number(
+            field("brightness_response", current.brightness_response),
+            "background brightness response",
+        ),
+        "opacity_response": _number(
+            field("opacity_response", current.opacity_response),
+            "background opacity response",
+        ),
+        "wash_color": _hex_color(
+            field("wash_color", current.wash_color),
+            "background wash colour",
+        ),
+        "wash_opacity": _number(
+            field("wash_opacity", current.wash_opacity),
+            "background wash opacity",
+        ),
+        "wash_response": _number(
+            field("wash_response", current.wash_response),
+            "background wash response",
+        ),
+        "beat_zoom": _number(field("beat_zoom", current.beat_zoom), "background beat zoom"),
+        "motion": field("motion", current.motion),
+        "easing": field("easing", current.easing),
+    }
+    for name, label in (
+        ("end_focal_x", "background end focal X"),
+        ("end_focal_y", "background end focal Y"),
+        ("end_zoom", "background end zoom"),
+    ):
+        current_value = getattr(current, name)
+        value = _optional_number(
+            field(name, "" if current_value is None else current_value),
+            label,
+        )
+        if value is not None:
+            payload[name] = value
+    try:
+        return BackgroundConfig.model_validate(payload).model_dump(
+            mode="json",
+            exclude_none=True,
+        )
+    except ValidationError as exc:
+        raise CastingEditorError(*_validation_problems(exc)) from exc
+
+
+def _update_background_override(
+    fields: Mapping[str, Sequence[str]],
+    backgrounds: dict[str, Any],
+    project: Any,
+    section: Any,
+) -> None:
+    background_mode = _single(
+        fields,
+        "scene_background_mode",
+        default=(
+            "override"
+            if section.id in project.visuals.background_overrides
+            else "inherit"
+        ),
+    )
+    backgrounds.pop(section.id, None)
+    if background_mode == "override":
+        current_background, _ = _selected_background(project, section)
+        backgrounds[section.id] = _background_payload(
+            fields,
+            current_background,
+            prefix="scene_background_",
+        )
+    elif background_mode != "inherit":
+        raise CastingEditorError(
+            "scene background mode must be inherit or override"
+        )
 
 
 def _transition_payload(fields: Mapping[str, Sequence[str]]) -> dict[str, Any]:
@@ -1670,6 +1813,7 @@ def save_casting(
         "recommended_all",
         "adopt",
         "save_look",
+        "save_background",
     }
     if action not in supported_actions:
         raise CastingEditorError(f"unsupported casting action: {action}")
@@ -1698,26 +1842,14 @@ def save_casting(
 
     # Whole-track look. Each field keeps its current value when the form does
     # not carry it, so saving a scene cast never disturbs these and the Look
-    # panel can save them without touching any cast. They live across three
-    # sections of the project -- background on video, its response on visuals,
-    # the lyric on text -- which is why they went unexposed for so long.
+    # panel can save them without touching any cast.
     text = payload["project"]["text"]
     video = payload["project"]["video"]
-    video["background"] = _hex_color(
-        _single(fields, "background", default=document.project.video.background),
-        "background colour",
+    video["background"] = _background_payload(
+        fields,
+        document.project.video.background,
+        prefix="background_",
     )
-    background_response = _number(
-        _single(
-            fields,
-            "background_response",
-            default=str(document.project.visuals.background_response),
-        ),
-        "background reactivity",
-    )
-    if not 0 <= background_response <= 1:
-        raise CastingEditorError("background reactivity must be between 0 and 1")
-    visuals["background_response"] = background_response
     perspective_strength = _number(
         _single(
             fields,
@@ -1758,6 +1890,7 @@ def save_casting(
     actor_casts = visuals.setdefault(actor_cast_field, {})
     styles = visuals.setdefault(style_field, {})
     transitions = visuals.setdefault(transition_field, {})
+    backgrounds = visuals.setdefault("background_overrides", {})
     existing = _casefold_item(compositions, target) if scope == "type" else None
     existing_key = existing[0] if existing is not None else target
     existing_actor_cast = _casefold_item(actor_casts, target) if scope == "type" else None
@@ -1777,6 +1910,17 @@ def save_casting(
         # saves on its own so a blank track -- no cast anywhere, which is a
         # working state for reviewing lyric timing -- can still be styled.
         pass
+    elif action == "save_background":
+        if scope != "section":
+            raise CastingEditorError(
+                "background overrides can only be saved for one exact scene"
+            )
+        _update_background_override(
+            fields,
+            backgrounds,
+            document.project,
+            section,
+        )
     elif action == "recommended_all":
         # The whole track in one move, so a new video can be seen end to end
         # before any of it is cast by hand. Every scene already *renders* this
@@ -1826,6 +1970,13 @@ def save_casting(
         transitions.pop(existing_transition_key, None)
         if transition:
             transitions[target] = transition
+        if scope == "section":
+            _update_background_override(
+                fields,
+                backgrounds,
+                document.project,
+                section,
+            )
     elif action == "clear":
         actor_casts.pop(existing_actor_cast_key, None)
         compositions.pop(existing_key, None)

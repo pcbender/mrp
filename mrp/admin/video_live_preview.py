@@ -12,6 +12,7 @@ import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 import yaml
 from pydantic import ValidationError
@@ -33,7 +34,7 @@ from mrp.video.project import (
 from mrp.video.track_project import TrackProjectDocument
 
 PREVIEW_FORMAT = "mrp-music-video-live-preview"
-PREVIEW_VERSION = 2
+PREVIEW_VERSION = 3
 STATE_RATE_HZ = 20
 STATE_ENCODING = "base64-float32-le"
 # Only the columns the browser engine actually reads. Sampled state is the
@@ -358,8 +359,9 @@ def _existing_analysis(
         runtime = load_project_manifest(runtime_path)
     except (OSError, SpirophonicValidationError):
         return _analysis_unavailable(
-            "analysis_stale",
-            "Cached audio analysis cannot be validated. Run Prepare and Analyze.",
+            "prepared_runtime_stale",
+            "Prepared video data uses an older renderer contract. Run Prepare; "
+            "current audio analysis will be reused when its inputs still match.",
         )
 
     source_settings = source_project.analysis.model_dump(
@@ -431,7 +433,7 @@ def _safe_layer(
             if layer.spatial is not None
             else None
         ),
-        "depth": layer.depth,
+        "z_index": layer.z_index,
         "anchor_x": layer.anchor_x,
         "anchor_y": layer.anchor_y,
         "base_scale": layer.base_scale,
@@ -523,6 +525,70 @@ def _safe_actor(actor: Any) -> dict[str, Any]:
     }
 
 
+def _safe_background(
+    background: Any,
+    *,
+    release_slug: str,
+    track_slug: str,
+    scene_id: str | None,
+) -> dict[str, Any]:
+    payload = background.model_dump(mode="json", exclude_none=True)
+    payload.pop("image", None)
+    if background.image is not None:
+        url = f"/releases/{release_slug}/tracks/{track_slug}/video/background"
+        if scene_id is not None:
+            url += f"?scene={quote(scene_id, safe='')}"
+        payload["image_url"] = url
+    return payload
+
+
+def background_image_path(
+    root: Path,
+    release: dict[str, Any],
+    track: dict[str, Any],
+    *,
+    scene_id: str | None = None,
+) -> Path | None:
+    """Resolve only an image declared by this track's current background model."""
+    path = project_path(root, release, track)
+    try:
+        document = TrackProjectDocument.model_validate(
+            _read_yaml_bytes(path, kind="project")[1]
+        )
+    except (OSError, ValidationError, LivePreviewError) as exc:
+        raise LivePreviewError(
+            "background_invalid",
+            "The saved background image configuration is invalid.",
+        ) from exc
+    background = document.project.video.background
+    if scene_id is not None:
+        background = document.project.visuals.background_overrides.get(
+            scene_id,
+            background,
+        )
+    if background.image is None:
+        return None
+    if background.image.as_posix() == "@mrp/cover":
+        resolved = resolve_asset(root, release.get("cover_image"))
+    else:
+        project_root = path.parent.resolve()
+        resolved = (project_root / background.image).resolve()
+        try:
+            resolved.relative_to(project_root)
+        except ValueError as exc:
+            raise LivePreviewError(
+                "background_invalid",
+                "Background images must stay inside the track project.",
+            ) from exc
+    if resolved is None or not resolved.is_file():
+        raise LivePreviewError(
+            "background_missing",
+            "The selected background image is missing.",
+            status_code=404,
+        )
+    return resolved
+
+
 def _safe_base(
     *,
     release_slug: str,
@@ -591,6 +657,19 @@ def _safe_base(
                 "start": section.start,
                 "end": section.end,
                 "composition_key": resolved.key,
+                "background": _safe_background(
+                    project.visuals.background_overrides.get(
+                        section.id,
+                        project.video.background,
+                    ),
+                    release_slug=release_slug,
+                    track_slug=track_slug,
+                    scene_id=(
+                        section.id
+                        if section.id in project.visuals.background_overrides
+                        else None
+                    ),
+                ),
                 "previous_section_id": (
                     lyrics.sections[index - 1].id if index > 0 else None
                 ),
@@ -610,11 +689,15 @@ def _safe_base(
         "video": {
             "width": project.video.width,
             "height": project.video.height,
-            "background": project.video.background,
+            "background": _safe_background(
+                project.video.background,
+                release_slug=release_slug,
+                track_slug=track_slug,
+                scene_id=None,
+            ),
             "seed": project.video.seed,
             "canvas_margin": project.visuals.canvas_margin,
             "perspective_strength": project.visuals.perspective_strength,
-            "background_response": project.visuals.background_response,
             "lyric_fade_seconds": project.visuals.lyric_fade_seconds,
         },
         "text": {

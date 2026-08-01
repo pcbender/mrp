@@ -107,7 +107,7 @@ def _designer_fields(
         "ghost_spacing": ["0.08"],
         "head_radius": ["3"],
         "color": ["#ff5fd2"],
-        "depth": ["foreground"],
+        "z_index": ["0"],
         "anchor_x": ["0.5"],
         "anchor_y": ["0.5"],
         "base_scale": ["1"],
@@ -651,7 +651,7 @@ def test_rose_actor_saves_family_geometry(tmp_path: Path) -> None:
         }
     )
 
-    actor_id = save_library_actor(tmp_path, fields)
+    save_library_actor(tmp_path, fields)
 
     payload = yaml.safe_load(
         (tmp_path / LIBRARY / "rose-bloom.yaml").read_text(encoding="utf-8")

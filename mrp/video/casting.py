@@ -63,7 +63,7 @@ def _trace(
     rotation_speed: float = 0,
     ghosts: int = 1,
     head_radius: float = 4,
-    depth: str = "foreground",
+    z_index: int = 0,
     drivers: TraceAudioDriversConfig | None = None,
 ) -> VisualLayerConfig:
     return VisualLayerConfig(
@@ -85,7 +85,7 @@ def _trace(
             head_radius=head_radius,
         ),
         color=_ROLE_COLORS[role],
-        depth=depth,
+        z_index=z_index,
         anchor_x=anchor_x,
         anchor_y=anchor_y,
         base_scale=scale,
@@ -655,7 +655,11 @@ def compile_actor_cast(
                             -360,
                             360,
                         ),
-                        "depth": direction.depth or component.depth,
+                        "z_index": (
+                            component.z_index
+                            if direction.z_index is None
+                            else direction.z_index
+                        ),
                         # Wardrobe: what the scene asked for, else the actor's own.
                         "color": (
                             component.color

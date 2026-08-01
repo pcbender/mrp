@@ -13,6 +13,7 @@ from typing import Any
 import cv2
 import numpy as np
 from numpy.typing import NDArray
+from PIL import Image, ImageOps, UnidentifiedImageError
 
 from mrp.video.analysis import AnalysisBundle, analyze_project
 from mrp.video.casting import resolve_section_composition
@@ -32,6 +33,7 @@ from mrp.video.presets import (
 )
 from mrp.video.project import (
     AlignedLyrics,
+    BackgroundConfig,
     CastingConfig,
     ProjectManifest,
     VisualLayerConfig,
@@ -75,12 +77,19 @@ class CurveComposition:
 
 
 @dataclass(frozen=True, slots=True)
+class BackgroundSource:
+    rgb: NDArray[np.uint8]
+    alpha: NDArray[np.float32]
+
+
+@dataclass(frozen=True, slots=True)
 class RenderContext:
     project: ProjectManifest
     analysis: AnalysisBundle
     lyrics: AlignedLyrics
     layers: tuple[LayerCurve, ...]
     section_compositions: dict[str, CurveComposition]
+    background_sources: dict[str, BackgroundSource]
     font_path: Path
     root: Path
     mapping_preset: MappingPreset
@@ -317,6 +326,32 @@ def build_render_context(
             )
             composition_cache[resolved.key] = composition
         section_compositions[section.id] = composition
+    background_sources: dict[str, BackgroundSource] = {}
+    backgrounds = (
+        project.video.background,
+        *project.visuals.background_overrides.values(),
+    )
+    for background in backgrounds:
+        if background.image is None:
+            continue
+        key = background.image.as_posix()
+        if key in background_sources:
+            continue
+        image_path = (root / background.image).resolve()
+        try:
+            with Image.open(image_path) as opened:
+                rgba = np.asarray(
+                    ImageOps.exif_transpose(opened).convert("RGBA"),
+                    dtype=np.uint8,
+                )
+        except (OSError, UnidentifiedImageError) as exc:
+            raise SpirophonicRendererError(
+                f"cannot load background image {image_path}: {exc}"
+            ) from exc
+        background_sources[key] = BackgroundSource(
+            rgb=np.ascontiguousarray(rgba[:, :, :3]),
+            alpha=np.ascontiguousarray(rgba[:, :, 3].astype(np.float32) / 255),
+        )
     font_path = (root / project.text.font).resolve()
     try:
         validate_lyric_font(font_path, project.text.size)
@@ -328,6 +363,7 @@ def build_render_context(
         lyrics=lyrics,
         layers=layers,
         section_compositions=section_compositions,
+        background_sources=background_sources,
         font_path=font_path,
         root=root.resolve(),
         mapping_preset=get_mapping_preset(project.visuals.mapping_preset),
@@ -406,23 +442,184 @@ def _base_layer_color(
     return context.palette_preset.colors.get(layer.role, layer.color)
 
 
+def _ease_background(value: float, easing: str) -> float:
+    amount = min(1, max(0, value))
+    if easing == "linear":
+        return amount
+    if easing == "ease_in":
+        return amount * amount
+    if easing == "ease_out":
+        return 1 - (1 - amount) * (1 - amount)
+    return amount * amount * (3 - 2 * amount)
+
+
+def _background_transform(
+    source: BackgroundSource,
+    config: BackgroundConfig,
+    *,
+    width: int,
+    height: int,
+    section_progress: float,
+    beat: float,
+) -> tuple[NDArray[np.uint8], NDArray[np.float32]]:
+    progress = (
+        _ease_background(section_progress, config.easing)
+        if config.motion == "pan_scan"
+        else 0
+    )
+    end_x = config.focal_x if config.end_focal_x is None else config.end_focal_x
+    end_y = config.focal_y if config.end_focal_y is None else config.end_focal_y
+    end_zoom = config.zoom if config.end_zoom is None else config.end_zoom
+    focal_x = config.focal_x + (end_x - config.focal_x) * progress
+    focal_y = config.focal_y + (end_y - config.focal_y) * progress
+    zoom = config.zoom + (end_zoom - config.zoom) * progress
+    zoom *= 1 + config.beat_zoom * min(1, max(0, beat))
+
+    source_height, source_width = source.rgb.shape[:2]
+    fit_scale = (
+        max(width / source_width, height / source_height)
+        if config.fit == "cover"
+        else min(width / source_width, height / source_height)
+    )
+    scale = fit_scale * zoom
+    drawn_width = source_width * scale
+    drawn_height = source_height * scale
+
+    def offset(canvas: int, drawn: float, focal: float) -> float:
+        if drawn <= canvas:
+            return (canvas - drawn) * focal
+        return min(0.0, max(canvas - drawn, canvas * 0.5 - focal * drawn))
+
+    matrix = np.asarray(
+        [
+            [scale, 0, offset(width, drawn_width, focal_x)],
+            [0, scale, offset(height, drawn_height, focal_y)],
+        ],
+        dtype=np.float32,
+    )
+    transformed = cv2.warpAffine(
+        source.rgb,
+        matrix,
+        (width, height),
+        flags=cv2.INTER_LINEAR,
+        borderMode=cv2.BORDER_CONSTANT,
+        borderValue=(0, 0, 0),
+    )
+    alpha = cv2.warpAffine(
+        source.alpha,
+        matrix,
+        (width, height),
+        flags=cv2.INTER_LINEAR,
+        borderMode=cv2.BORDER_CONSTANT,
+        borderValue=0,
+    )
+    return transformed, alpha
+
+
+def _render_background_config(
+    context: RenderContext,
+    config: BackgroundConfig,
+    width: int,
+    height: int,
+    *,
+    master_energy: float,
+    beat: float,
+    section_progress: float,
+) -> NDArray[np.uint8]:
+    color = np.asarray(_parse_hex_color(config.color), dtype=np.uint8)
+    frame = np.empty((height, width, 3), dtype=np.uint8)
+    frame[:, :] = color
+    if config.image is None:
+        return frame
+    source = context.background_sources.get(config.image.as_posix())
+    if source is None:
+        raise SpirophonicRendererError(
+            f"background image was not prepared: {config.image}"
+        )
+    image, source_alpha = _background_transform(
+        source,
+        config,
+        width=width,
+        height=height,
+        section_progress=section_progress,
+        beat=beat,
+    )
+    image_float = image.astype(np.float32)
+    brighten = min(
+        1,
+        config.brightness_response
+        * context.mapping_preset.background_response
+        * master_energy,
+    )
+    if brighten:
+        image_float += (255 - image_float) * brighten
+    wash = min(
+        1,
+        config.wash_opacity
+        + (1 - config.wash_opacity) * config.wash_response * master_energy,
+    )
+    if wash:
+        wash_color = np.asarray(_parse_hex_color(config.wash_color), dtype=np.float32)
+        image_float += (wash_color - image_float) * wash
+    opacity = min(
+        1,
+        config.opacity + (1 - config.opacity) * config.opacity_response * master_energy,
+    )
+    alpha = (source_alpha * opacity)[:, :, None]
+    composited = frame.astype(np.float32) * (1 - alpha) + image_float * alpha
+    frame = np.rint(composited).astype(np.uint8)
+    return frame
+
+
+def _background_config(context: RenderContext, section_id: str) -> BackgroundConfig:
+    return context.project.visuals.background_overrides.get(
+        section_id,
+        context.project.video.background,
+    )
+
+
+def _section_progress(context: RenderContext, section_id: str, time_seconds: float) -> float:
+    section = next(item for item in context.lyrics.sections if item.id == section_id)
+    return min(1, max(0, (time_seconds - section.start) / (section.end - section.start)))
+
+
 def _background_frame(
     context: RenderContext,
     width: int,
     height: int,
-    master_energy: float,
+    *,
+    audio: Any,
+    choreography: ChoreographyState,
+    time_seconds: float,
 ) -> NDArray[np.uint8]:
-    background = _parse_hex_color(context.project.video.background)
-    base = np.asarray(background, dtype=np.float64)
-    response = (
-        context.project.visuals.background_response
-        * context.mapping_preset.background_response
-        * master_energy
+    beat = min(1, audio.drums.accent * choreography.beat_gain)
+    current_config = _background_config(context, choreography.section_id)
+    current = _render_background_config(
+        context,
+        current_config,
+        width,
+        height,
+        master_energy=audio.master.energy,
+        beat=beat,
+        section_progress=choreography.section_progress,
     )
-    color = np.rint(base + (255 - base) * response).astype(np.uint8)
-    frame = np.empty((height, width, 3), dtype=np.uint8)
-    frame[:, :] = color
-    return frame
+    previous_id = choreography.previous_section_id
+    if previous_id is None or choreography.transition_progress >= 1:
+        return current
+    previous_config = _background_config(context, previous_id)
+    previous = _render_background_config(
+        context,
+        previous_config,
+        width,
+        height,
+        master_energy=audio.master.energy,
+        beat=beat,
+        section_progress=_section_progress(context, previous_id, time_seconds),
+    )
+    amount = min(1, max(0, choreography.transition_progress))
+    blended = previous.astype(np.float32) * (1 - amount)
+    blended += current.astype(np.float32) * amount
+    return np.rint(blended).astype(np.uint8)
 
 
 def _transform_points(
@@ -474,13 +671,12 @@ def _layer_anchor(
     anchor_drift: float,
 ) -> tuple[float, float]:
     config = curve.config
-    depth_response = 0.45 if config.depth == "background" else 1
     phase = curve.phase_offset
     anchor_x = 0.5 + (config.anchor_x - 0.5) * spatial_spread
-    anchor_x += math.sin(time_seconds * 0.11 + phase) * anchor_drift * depth_response
+    anchor_x += math.sin(time_seconds * 0.11 + phase) * anchor_drift
     anchor_y = config.anchor_y
     anchor_y += (
-        math.cos(time_seconds * 0.09 + phase) * anchor_drift * 0.7 * depth_response
+        math.cos(time_seconds * 0.09 + phase) * anchor_drift * 0.7
     )
     return anchor_x, anchor_y
 
@@ -802,7 +998,14 @@ def render_frame(
         transition_seconds=context.project.visuals.transition_seconds,
         visuals=context.project.visuals,
     )
-    frame = _background_frame(context, width, height, audio.master.energy)
+    frame = _background_frame(
+        context,
+        width,
+        height,
+        audio=audio,
+        choreography=choreography,
+        time_seconds=time_seconds,
+    )
     weighted_compositions = _weighted_compositions(context, choreography)
     indexed_layers: list[tuple[int, int, list[LayerCurve], float]] = []
     for composition_index, (composition, weight) in enumerate(weighted_compositions):
@@ -825,7 +1028,7 @@ def render_frame(
                 )
     indexed_layers.sort(
         key=lambda item: (
-            item[2][0].config.depth == "foreground",
+            item[2][0].config.z_index,
             item[0],
             item[1],
         )

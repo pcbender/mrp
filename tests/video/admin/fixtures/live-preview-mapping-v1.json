@@ -77,7 +77,7 @@
         },
         "color": "#4c78ff",
         "color_locked": false,
-        "depth": "foreground",
+        "z_index": 0,
         "anchor_x": 0.25,
         "anchor_y": 0.4,
         "base_scale": 1.2,
@@ -157,7 +157,7 @@
         },
         "color": "#8c5cff",
         "color_locked": false,
-        "depth": "background",
+        "z_index": -100,
         "anchor_x": 0.52,
         "anchor_y": 0.38,
         "base_scale": 1.7,
@@ -175,10 +175,10 @@
         "pitch_radians": 0.0,
         "yaw_radians": 0.0,
         "trail_fraction": 0.6183745632,
-        "opacity": 0.09526216832,
+        "opacity": 0.08341696000000001,
         "line_width": 1.549272,
         "hue_shift_degrees": 42.6,
-        "color_intensity": 1.2644,
+        "color_intensity": 1.0555999999999999,
         "beat_pulse": 0.0
       }
     }

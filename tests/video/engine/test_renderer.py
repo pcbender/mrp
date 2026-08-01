@@ -8,13 +8,16 @@ import numpy as np
 import pytest
 import soundfile as sf
 import yaml
+from PIL import Image
 from typer.testing import CliRunner
 
 from mrp.video.choreography import choreography_at
 from mrp.video.cli import app
-from mrp.video.project import ProjectManifest, load_project_manifest
+from mrp.video.project import BackgroundConfig, ProjectManifest, load_project_manifest
 from mrp.video.renderer import (
+    BackgroundSource,
     SpirophonicRendererError,
+    _background_transform,
     _weighted_compositions,
     build_render_context,
     plan_frame_range,
@@ -80,6 +83,25 @@ def _context(*, seed: int = 4821):
         _analysis_bundle(),
         _aligned_sections(),
         root=FONT_PATH.parent,
+    )
+
+
+def _background_context(
+    root: Path,
+    *,
+    background: dict,
+    overrides: dict | None = None,
+):
+    payload = _project(cast=False).model_dump(mode="json", exclude_none=True)
+    payload["text"]["font"] = "font.ttf"
+    payload["video"]["background"] = background
+    payload["visuals"]["background_overrides"] = overrides or {}
+    shutil.copyfile(FONT_PATH, root / "font.ttf")
+    return build_render_context(
+        ProjectManifest.model_validate(payload),
+        _analysis_bundle(),
+        _aligned_sections(),
+        root=root,
     )
 
 
@@ -217,7 +239,137 @@ def test_renderer_is_deterministic_and_seeded() -> None:
     np.testing.assert_array_equal(first, second)
     assert not np.array_equal(first, another_seed)
     digest = hashlib.sha256(first.tobytes()).hexdigest()
-    assert digest == "7f6a2d55423c30c8ed765217814696499c2f44af5ec3dbe4116441b0d411e94c"
+    assert digest == "dc5d96be483b3864ef218d53220260d728ec34b5961c0ca7734c22113bdf61a1"
+
+
+def test_background_transform_supports_pan_scan_and_beat_zoom() -> None:
+    x = np.arange(12, dtype=np.uint8)[None, :, None]
+    rgb = np.repeat(np.repeat(x, 6, axis=0), 3, axis=2) * 20
+    source = BackgroundSource(
+        rgb=rgb,
+        alpha=np.ones((6, 12), dtype=np.float32),
+    )
+    config = BackgroundConfig(
+        image=Path("gradient.png"),
+        focal_x=0,
+        focal_y=0.5,
+        zoom=1,
+        beat_zoom=0.2,
+        motion="pan_scan",
+        end_focal_x=1,
+        end_focal_y=0.5,
+        end_zoom=1.4,
+        easing="linear",
+    )
+
+    start, _ = _background_transform(
+        source,
+        config,
+        width=8,
+        height=8,
+        section_progress=0,
+        beat=0,
+    )
+    end, _ = _background_transform(
+        source,
+        config,
+        width=8,
+        height=8,
+        section_progress=1,
+        beat=0,
+    )
+    beat, _ = _background_transform(
+        source,
+        config,
+        width=8,
+        height=8,
+        section_progress=0,
+        beat=1,
+    )
+
+    assert not np.array_equal(start, end)
+    assert not np.array_equal(start, beat)
+    assert float(start[:, :, 0].mean()) < float(end[:, :, 0].mean())
+
+
+def test_renderer_applies_background_effects_over_the_base_colour(
+    tmp_path: Path,
+) -> None:
+    Image.new("RGB", (8, 8), (80, 40, 20)).save(tmp_path / "still.png")
+    context = _background_context(
+        tmp_path,
+        background={
+            "color": "#000000",
+            "image": "still.png",
+            "opacity": 0.5,
+            "brightness_response": 0.5,
+            "opacity_response": 1,
+            "wash_color": "#0000ff",
+            "wash_opacity": 0.25,
+            "wash_response": 0.25,
+        },
+    )
+
+    frame = render_frame(context, 4.5, 45, width=8, height=8)
+    energy = 0.4
+    brighten = 0.5 * context.mapping_preset.background_response * energy
+    image = np.asarray((80, 40, 20), dtype=np.float32)
+    image += (255 - image) * brighten
+    wash = 0.25 + 0.75 * 0.25 * energy
+    image += (np.asarray((0, 0, 255), dtype=np.float32) - image) * wash
+    expected = np.rint(image * (0.5 + 0.5 * energy)).astype(np.uint8)
+
+    np.testing.assert_allclose(frame[4, 4], expected, atol=1)
+    assert int(frame[4, 4, 2]) > int(frame[4, 4, 1])
+
+
+def test_renderer_crossfades_to_an_exact_scene_background(tmp_path: Path) -> None:
+    Image.new("RGB", (8, 8), (240, 20, 20)).save(tmp_path / "track.png")
+    Image.new("RGB", (8, 8), (20, 20, 240)).save(tmp_path / "scene.png")
+    context = _background_context(
+        tmp_path,
+        background={"color": "#000000", "image": "track.png"},
+        overrides={
+            "instrumental": {"color": "#000000", "image": "scene.png"}
+        },
+    )
+
+    before = render_frame(context, 3.9, 39, width=8, height=8)
+    middle = render_frame(context, 4.325, 43, width=8, height=8)
+    after = render_frame(context, 4.8, 48, width=8, height=8)
+
+    np.testing.assert_allclose(before[4, 4], (240, 20, 20), atol=1)
+    np.testing.assert_allclose(middle[4, 4], (130, 20, 130), atol=2)
+    np.testing.assert_allclose(after[4, 4], (20, 20, 240), atol=1)
+
+
+def test_renderer_paints_layers_in_numeric_z_order(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    import mrp.video.renderer as renderer
+
+    payload = _project().model_dump(mode="json", exclude_none=True)
+    traces = payload["visuals"]["section_compositions"]["verse"]["traces"]
+    for index, trace in enumerate(traces):
+        trace["z_index"] = (len(traces) - index) * 10
+    context = build_render_context(
+        ProjectManifest.model_validate(payload),
+        _analysis_bundle(),
+        _aligned_sections(),
+        root=FONT_PATH.parent,
+    )
+    original = renderer.map_layer_state
+    painted: list[str] = []
+
+    def capture_order(config, *args, **kwargs):
+        painted.append(config.id)
+        return original(config, *args, **kwargs)
+
+    monkeypatch.setattr(renderer, "map_layer_state", capture_order)
+
+    render_frame(context, 0.1, 1, width=320, height=180)
+
+    assert painted == [trace["id"] for trace in reversed(traces)]
 
 
 def test_spatial_render_is_deterministic_and_changes_projected_pixels() -> None:
