@@ -8,7 +8,7 @@
 
 <section class="form-card"><div class="form-body">
   <div><p class="video-step-label">Library · Identity design</p><h2>Actor Designer</h2><p class="video-help">Prototype a reusable visual identity. Colors here are the actor's own headshot look; a production's palette restyles the actor to fit each scene.</p></div>
-  <form hx-post="/actors/save" hx-target="#actor-validation" hx-swap="innerHTML">
+  <form data-unsaved-guard hx-post="/actors/save" hx-target="#actor-validation" hx-swap="innerHTML">
     <input type="hidden" name="actor_original_id" value="{{ entry.id if entry else '' }}">
     <div class="form-grid actor-identity-fields">
       <div class="form-field">{{ actor_control_label('Actor ID', 'Library identifier and file name. Renaming a saved actor moves its library file; tracks keep their pinned copies.') }}<input name="actor_edit_id" value="{{ entry.id if entry else '' }}" placeholder="auto from name"><small>Lowercase slug; blank derives it from the name.</small></div>
@@ -121,7 +121,15 @@
 </template>
 
 <script src="/static/spiro-preview.js"></script>
+<script src="/static/unsaved-guard.js"></script>
 <script>
+  // Nothing here autosaves, and the breadcrumb back to the library is a plain
+  // link. Designing an actor is a long sitting, so ask before it goes.
+  const unsavedGuard = window.mrpUnsavedGuard
+    ? window.mrpUnsavedGuard.attach({})
+    : null;
+  window.mrpMarkUnsaved = () => { if (unsavedGuard) unsavedGuard.markDirty(); };
+
   const componentsEl = document.getElementById('actor-components');
   const designerCanvas = document.getElementById('actor-designer-canvas');
   const player = window.mrpSpiroPlayer(
@@ -201,6 +209,7 @@
   // and re-counts the selection the removed card may have been part of.
   window.mrpComponentNotice = componentFlash;
   window.mrpComponentsChanged = () => {
+    window.mrpMarkUnsaved();
     player.redraw();
     updateBulkBar();
   };
@@ -214,6 +223,7 @@
       componentFlash('An actor holds at most 9 visual components.');
       return null;
     }
+    window.mrpMarkUnsaved();
     player.redraw();
     return card;
   }
@@ -221,7 +231,13 @@
   // Subpath import/generation is shared with the track actor designer on the
   // Scene Casting page; only the validation reset and the group pre-select
   // below are particular to this page.
-  const setPairField = window.mrpSetComponentField;
+  // mrpSetComponentField writes .value straight onto the control with no input
+  // event, so every bulk tool below is invisible to the unsaved guard unless it
+  // is told here. Marking at the setter covers all of them at once.
+  const setPairField = (card, name, value) => {
+    window.mrpMarkUnsaved();
+    return window.mrpSetComponentField(card, name, value);
+  };
 
   async function fetchSubpaths(url, body, failMessage) {
     document.getElementById('actor-validation').innerHTML = '';

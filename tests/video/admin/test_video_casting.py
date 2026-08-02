@@ -796,7 +796,8 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
     assert storyboard["margin"] == 0.08
     assert storyboard["perspective_strength"] == 0.18
     assert storyboard["section_id"] == "verse_1"
-    assert storyboard["range"] == {"start": 0.0, "end": 4.0}
+    # The opening scene has no incoming transition, so it settles on its start.
+    assert storyboard["range"] == {"start": 0.0, "end": 4.0, "settle": 0.0}
     trace = storyboard["traces"][0]
     assert trace["assignment"] == "lead"
     assert trace["anchor_x"] == pytest.approx(0.37)
@@ -817,6 +818,20 @@ def test_storyboard_payload_carries_compiled_placement_and_actor_identities(
 
     # Samples are capped so a large curve does not bloat the client payload.
     assert all(shape["samples"] <= 1200 for shape in storyboard["traces"])
+
+
+def test_a_butted_scene_opens_past_its_own_incoming_transition(
+    tmp_path: Path,
+) -> None:
+    """Resetting to the raw start showed the outgoing scene, not this cast."""
+    release, track, _release_path, _project_path = _write_cast_repo(tmp_path)
+
+    # chorus_1 starts exactly where verse_1 ends, so its 0.65s transition has
+    # nowhere to run but its own opening seconds.
+    result = load_casting(tmp_path, release, track, section_id="chorus_1")
+
+    assert result["storyboard"]["range"]["start"] == 4.0
+    assert result["storyboard"]["range"]["settle"] == pytest.approx(4.65)
 
 
 def test_recommended_actor_onboarding_and_exact_scene_direction(tmp_path: Path) -> None:
@@ -1512,7 +1527,42 @@ def test_the_casting_page_wires_the_shared_component_hooks(
     # Passed as mrpEnableComponentDrag's onpick, not merely defined.
     drag = body.index("window.mrpEnableComponentDrag")
     assert "revealComponentCard" in body[drag:drag + 260]
-    assert "window.mrpComponentsChanged = drawActorPreview" in body
+    # Adding or removing a card changes no field, so the hook has to redraw the
+    # preview *and* tell the unsaved guard by hand.
+    changed = body.index("window.mrpComponentsChanged =")
+    assert "drawActorPreview()" in body[changed:changed + 200]
+    assert "mrpMarkUnsaved()" in body[changed:changed + 200]
+
+
+def test_the_casting_page_guards_unsaved_edits(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    """Every way out of this page is a link that silently drops the form."""
+    release, _track, _release_path, _project_path = _write_cast_repo(tmp_path)
+    db.init(tmp_path / "admin.db")
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    body = asyncio.run(
+        video_routes.video_casting(
+            _get_request("/releases/video-contract/tracks/private-track/video/casting"),
+            "video-contract",
+            "private-track",
+            "verse_1",
+            "type",
+        )
+    ).body.decode()
+
+    assert '<script src="/static/unsaved-guard.js"></script>' in body
+    assert "window.mrpUnsavedGuard" in body
+    # Structural edits that touch no field have to arm it by hand.
+    assert body.count("mrpMarkUnsaved") >= 4
+    # The editors opt in: the Look, the Actor Designer, the scene background
+    # and the scene cast. The job panel must not, or its once-a-second status
+    # poll would report the user's typing as saved.
+    assert body.count("data-unsaved-guard") == 4
+    job = body.index('id="video-job-frame"')
+    assert "data-unsaved-guard" not in body[job:]
 
 
 def test_gap_covering_round_trips_and_the_editor_reports_the_dead_air(

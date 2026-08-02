@@ -114,7 +114,7 @@
       <h2>Look</h2>
       <p class="video-help">Applies to the whole track, not just one scene. Background and lyric settings show in Scene Preview and Live Preview.</p>
     </div>
-    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML" hx-encoding="multipart/form-data" enctype="multipart/form-data">
+    <form data-unsaved-guard hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML" hx-encoding="multipart/form-data" enctype="multipart/form-data">
       {{ context_fields() }}
       <div class="form-grid video-project-look">
         <div class="form-field">
@@ -197,7 +197,7 @@
 
   <section class="form-card" id="track-actor-designer"><div class="form-body">
     <div><p class="video-step-label">Track · Character design</p><h2>Actor Designer</h2><p class="video-help">Define who this actor is for the whole track. Its visual identity and musical character stay fixed while scenes direct its performance.</p></div>
-    <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/actors" hx-target="#video-casting-result" hx-swap="innerHTML">
+    <form data-unsaved-guard hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/actors" hx-target="#video-casting-result" hx-swap="innerHTML">
       {{ actor_return_fields() }}
       <input type="hidden" name="actor_original_id" value="{{ casting.selected_actor.id if casting.selected_actor_saved else '' }}">
       <div class="form-grid actor-identity-fields">
@@ -319,7 +319,7 @@
         <h2>Exact-scene background</h2>
         <p class="video-help">This always edits only {{ casting.selected_section.id }}, independently of whether the cast tab below targets one scene or every {{ casting.selected_section.type }} scene.</p>
       </div>
-      <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML" hx-encoding="multipart/form-data" enctype="multipart/form-data">
+      <form data-unsaved-guard hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML" hx-encoding="multipart/form-data" enctype="multipart/form-data">
         <input type="hidden" name="section_id" value="{{ casting.selected_section.id }}">
         <input type="hidden" name="section_type" value="{{ casting.selected_section.type }}">
         <input type="hidden" name="scope" value="section">
@@ -354,7 +354,7 @@
         {% endif %}
       </div>
       {% endif %}
-      <form hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
+      <form data-unsaved-guard hx-post="/releases/{{ slug }}/tracks/{{ track_slug }}/video/casting" hx-target="#video-casting-result" hx-swap="innerHTML">
         {{ context_fields() }}
         {# Audio mapping and palette moved to Look: they are whole-track
            settings, so they belong beside the other whole-track ones rather
@@ -540,7 +540,16 @@
 
 <script src="/static/video-timecode.js"></script>
 <script src="/static/spiro-preview.js"></script>
+<script src="/static/unsaved-guard.js"></script>
 <script>
+  // Every way out of this page -- the scene list, the scope tabs, the actor
+  // cards, the breadcrumb -- is a plain link that reloads and drops whatever is
+  // in the form. Nothing here autosaves, so ask before the work goes.
+  const unsavedGuard = window.mrpUnsavedGuard
+    ? window.mrpUnsavedGuard.attach({})
+    : null;
+  window.mrpMarkUnsaved = () => { if (unsavedGuard) unsavedGuard.markDirty(); };
+
   function addActorComponent() {
     const card = window.mrpAddActorComponent(
       document.getElementById('actor-components'),
@@ -550,6 +559,7 @@
       window.mrpComponentNotice('An actor holds at most 9 visual components.');
       return;
     }
+    window.mrpMarkUnsaved();
     drawActorPreview();
   }
   // Wardrobe color is tri-state, which no single input expresses: the checkbox
@@ -575,6 +585,7 @@
     const title = clone.querySelector('.assignment-title');
     if (title) title.textContent = `Cast member ${count}`;
     document.getElementById('actor-assignments').appendChild(clone);
+    window.mrpMarkUnsaved();
     if (window.markStoryboardUnsaved) markStoryboardUnsaved();
     else if (window.redrawStoryboard) redrawStoryboard();
   }
@@ -608,8 +619,12 @@
   window.mrpSyncFamilyFields(actorComponentsEl);
   drawActorPreview();
 
-  // Removing a component has to redraw here too, not just on /actors.
-  window.mrpComponentsChanged = drawActorPreview;
+  // Removing a component has to redraw here too, not just on /actors. Adding
+  // or removing a card changes no field, so the guard has to be told directly.
+  window.mrpComponentsChanged = () => {
+    window.mrpMarkUnsaved();
+    drawActorPreview();
+  };
 
   // Refusals and import failures land in the page's own result banner rather
   // than an alert, matching how saves report.

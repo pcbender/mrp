@@ -328,6 +328,10 @@ def test_geometry_only_document_is_deterministic_private_and_read_only(
     )
     assert "state_samples_base64" not in first.payload
     assert first.payload["sections"][1]["previous_section_id"] == "verse_1"
+    # Scene-jump targets. The chorus butts the verse, so its 0.65s transition
+    # plays over its own opening seconds: jumping to 4.0 would draw the verse.
+    assert first.payload["sections"][0]["settle"] == 0
+    assert first.payload["sections"][1]["settle"] == pytest.approx(4.65)
     # This fixture casts nothing, so every scene resolves to the empty
     # composition and the preview draws the background alone.
     assert first.payload["compositions"]["uncast:empty"]["traces"] == []

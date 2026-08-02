@@ -24,7 +24,7 @@ from mrp.admin.video_workspace import (
     track_key,
 )
 from mrp.video.casting import resolve_section_composition
-from mrp.video.choreography import choreography_at
+from mrp.video.choreography import choreography_at, scene_settle_seconds
 from mrp.video.presets import get_mapping_preset, get_palette_preset
 from mrp.video.project import (
     SpirophonicValidationError,
@@ -656,6 +656,16 @@ def _safe_base(
                 "label": section.label,
                 "start": section.start,
                 "end": section.end,
+                # Where the scene is first fully itself. A scene that butts
+                # against the one before it plays its transition over its own
+                # opening seconds, so a jump to `start` lands on the outgoing
+                # scene; the jump buttons aim here instead.
+                "settle": scene_settle_seconds(
+                    lyrics,
+                    index,
+                    transition_seconds=project.visuals.transition_seconds,
+                    visuals=project.visuals,
+                ),
                 "composition_key": resolved.key,
                 "background": _safe_background(
                     project.visuals.background_overrides.get(

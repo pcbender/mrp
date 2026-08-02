@@ -720,6 +720,7 @@ def _storyboard(
     section_id: str,
     start: float,
     end: float,
+    settle: float,
     margin: float,
     perspective_strength: float,
 ) -> dict[str, Any]:
@@ -732,6 +733,11 @@ def _storyboard(
     matching ``compile_actor_cast``. The compiled trace id is
     ``{assignment}--{component}``; the assignment prefix maps a dragged shape
     back to its cast member. Legacy traces have no ``--`` and stay static.
+
+    ``range.settle`` is where the transport opens and resets to. It is the
+    scene's start unless the scene runs its transition inside its own opening
+    seconds, in which case resetting to ``start`` shows the *outgoing* scene
+    and none of the cast being edited.
     """
     traces = []
     for trace in composition.traces:
@@ -751,7 +757,7 @@ def _storyboard(
         "margin": margin,
         "perspective_strength": perspective_strength,
         "section_id": section_id,
-        "range": {"start": start, "end": end},
+        "range": {"start": start, "end": end, "settle": settle},
         "traces": traces,
         "actors": actor_identities,
     }
@@ -768,6 +774,7 @@ def load_casting(
 ) -> dict[str, Any]:
     """Load one track's versioned casting project and resolved section scenes."""
     from mrp.video.casting import resolve_section_composition
+    from mrp.video.choreography import scene_settle_seconds
     from mrp.video.presets import preset_catalog
     from mrp.video.project import GAP_EPSILON_SECONDS
 
@@ -776,10 +783,15 @@ def load_casting(
     path = project_path(root, release, track)
     document = _load_project(path)
     lyrics = _load_lyrics(aligned_path(root, release, track))
-    selected = next(
-        (section for section in lyrics.sections if section.id == section_id),
-        lyrics.sections[0],
+    selected_index = next(
+        (
+            index
+            for index, section in enumerate(lyrics.sections)
+            if section.id == section_id
+        ),
+        0,
     )
+    selected = lyrics.sections[selected_index]
     library_actors = _library_actors(root)
     library_by_id = {entry["id"]: entry for entry in library_actors}
     project_actors = []
@@ -946,6 +958,12 @@ def load_casting(
             section_id=selected.id,
             start=selected.start,
             end=selected.end,
+            settle=scene_settle_seconds(
+                lyrics,
+                selected_index,
+                transition_seconds=document.project.visuals.transition_seconds,
+                visuals=document.project.visuals,
+            ),
             margin=document.project.visuals.canvas_margin,
             perspective_strength=document.project.visuals.perspective_strength,
         ),
