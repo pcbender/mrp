@@ -54,7 +54,9 @@
           "bass": 1.0,
           "vocals": 1.0,
           "instruments": 1.0
-        }
+        },
+        "opacity_lift": 0.25,
+        "saturation_lift": 0.3
       },
       "layer": {
         "id": "bass-orbit",
@@ -105,16 +107,16 @@
         }
       },
       "expected": {
-        "scale": 1.47096,
+        "scale": 1.6021800000000002,
         "rotation_radians": -0.4364310506627191,
         "pitch_radians": 0.9085904833202161,
         "yaw_radians": -0.6552629237102471,
         "trail_fraction": 0.358769324,
-        "opacity": 0.5913648000000001,
+        "opacity": 0.8173912500000002,
         "line_width": 7.981,
-        "hue_shift_degrees": 64.2,
-        "color_intensity": 0.9512,
-        "beat_pulse": 1.0
+        "hue_shift_degrees": 69.06,
+        "color_intensity": 1.28528,
+        "beat_pulse": 1
       }
     },
     {
@@ -134,7 +136,9 @@
           "bass": 1.0,
           "vocals": 1.0,
           "instruments": 1.0
-        }
+        },
+        "opacity_lift": 0.0,
+        "saturation_lift": 0.0
       },
       "layer": {
         "id": "haze",
@@ -170,15 +174,15 @@
         "drivers": {}
       },
       "expected": {
-        "scale": 1.8932832,
+        "scale": 1.9681920000000002,
         "rotation_radians": -0.12526312406177492,
         "pitch_radians": 0.0,
         "yaw_radians": 0.0,
         "trail_fraction": 0.6183745632,
-        "opacity": 0.08341696000000001,
+        "opacity": 0.11152000000000001,
         "line_width": 1.549272,
-        "hue_shift_degrees": 42.6,
-        "color_intensity": 1.0555999999999999,
+        "hue_shift_degrees": 44.580000000000005,
+        "color_intensity": 1.16,
         "beat_pulse": 0.0
       }
     }

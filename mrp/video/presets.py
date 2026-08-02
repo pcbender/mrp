@@ -13,6 +13,13 @@ class MappingPreset:
     background_response: float
     visibility_bias: float
     role_gains: dict[str, float]
+    # Energy lift for the two channels that used to decay from identity at
+    # rest. Both are additive now: 0 means a trace sits at exactly the opacity
+    # and saturation it was designed with and expresses energy through size,
+    # line weight, hue, and beat flash instead. A preset opts back in to alpha
+    # or saturation response by raising these, which can only ever add.
+    opacity_lift: float = 0.0
+    saturation_lift: float = 0.0
 
 
 @dataclass(frozen=True, slots=True)
@@ -66,6 +73,8 @@ MAPPING_PRESETS = {
         1.25,
         0.08,
         _UNITY_GAINS,
+        opacity_lift=0.25,
+        saturation_lift=0.3,
     ),
     "vocal-focus": MappingPreset(
         "vocal-focus",

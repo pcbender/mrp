@@ -270,11 +270,11 @@
   }
 
   const ROLE_SCALE_RESPONSE = {
-    master: 0.1,
-    drums: 0.06,
-    bass: 0.2,
-    vocals: 0.1,
-    instruments: 0.13,
+    master: 0.28,
+    drums: 0.22,
+    bass: 0.35,
+    vocals: 0.28,
+    instruments: 0.3,
   };
   const ROLE_VISIBILITY_THRESHOLD = {
     vocals: 0.2,
@@ -328,7 +328,9 @@
     const opacityGain = gain(opacityDriver.role);
     const pulseDriver = driverValue(layer, state, 'pulse', layer.role, 'accent');
     const pulseGain = gain(pulseDriver.role);
-    const energyOpacity = 0.58 + 0.42 * Math.max(
+    // Parity with map_layer_state: rest is the identity opacity and energy
+    // only ever adds toward opaque. See mrp/video/mappings.py.
+    const energyOpacity = 1 + (finite(preset.opacity_lift) || 0) * Math.max(
       opacityDriver.value * (layer.drivers && layer.drivers.opacity ? opacityGain : 1),
       pulseDriver.value * (
         layer.drivers && layer.drivers.pulse ? pulseGain : 1
@@ -406,7 +408,7 @@
     const hueShift = (
       (finite(layer.hue_shift_degrees) || 0)
       + (finite(state.palette_shift) || 0) * 360
-      + colorEnergy * 18 * (finite(preset.hue_response) || 0)
+      + colorEnergy * 30 * (finite(preset.hue_response) || 0)
       + (finite(state.spectral_centroid) || 0)
       * 12
       * (finite(preset.hue_response) || 0)
@@ -422,8 +424,8 @@
       opacity *= 1 + beatPulse * 0.35;
     }
     const energyColorResponse = (
-      0.55
-      + 0.75
+      1
+      + (finite(preset.saturation_lift) || 0)
       * clamp01(intensityEnergy * (finite(state.intensity_gain) || 0))
       * colorGain
     );

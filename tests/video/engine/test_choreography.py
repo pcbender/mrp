@@ -23,6 +23,7 @@ from mrp.video.mappings import (
     map_layer_state,
     sample_audio_visual_state,
 )
+from mrp.video.presets import get_mapping_preset
 from mrp.video.project import (
     AlignedLyricLine,
     AlignedLyrics,
@@ -194,7 +195,7 @@ def test_semantic_mapping_keeps_geometry_stable_and_modulates_style() -> None:
     bass = map_layer_state(bass_layer, audio, chorus, 1)
     drums = map_layer_state(drums_layer, audio, chorus, 1)
 
-    assert bass.scale == pytest.approx(bass_layer.base_scale * 1.08 * 1.16)
+    assert bass.scale == pytest.approx(bass_layer.base_scale * 1.08 * 1.28)
     assert bass.opacity > 0
     assert drums.line_width > drums_layer.line_width * 2
     assert drums.opacity > 0
@@ -746,6 +747,57 @@ def test_trace_and_rotation_continue_through_unlabeled_section_gaps() -> None:
     assert next_start.rotation_time > gap_middle.rotation_time
 
 
+def test_silence_renders_every_layer_at_its_identity_opacity() -> None:
+    """Rest is the designed look, not a faded version of it.
+
+    A trace with no audio under it must render at exactly the opacity and
+    saturation it was authored with, so a designer's `opacity: 0.8` means 0.8
+    on screen rather than a ceiling the shape only reaches at peak loudness.
+    """
+    project = ProjectManifest.model_validate(
+        {
+            "version": 1,
+            "title": "Rest Fixture",
+            "audio": {"master": "master.wav"},
+            "lyrics": {"source": "lyrics.yaml", "language": "en"},
+            "cards": {
+                "opening": {"file": "open.jpg", "duration": 1},
+                "closing": {"file": "close.jpg", "duration": 1},
+            },
+            "text": {"font": "font.ttf"},
+        }
+    )
+    silent = AudioVisualState(
+        master=SemanticSample(0, 0),
+        drums=SemanticSample(0, 0),
+        bass=SemanticSample(0, 0),
+        vocals=SemanticSample(0, 0),
+        instruments=SemanticSample(0, 0),
+        spectral_centroid=0,
+    )
+    choreography = ChoreographyState(
+        section_id="intro",
+        section_type="intro",
+        section_label="Intro",
+        section_progress=0.5,
+        transition_progress=1,
+        layer_fraction=1,
+        scale=1,
+        motion=0,
+        color_intensity=1,
+        onset_response=0,
+        rotation_direction=1,
+        palette_shift=0,
+        lyrics_opacity=1,
+    )
+
+    for layer in project.visuals.layers:
+        state = map_layer_state(layer, silent, choreography, 0)
+        assert state.opacity == pytest.approx(layer.opacity)
+        assert state.color_intensity == pytest.approx(choreography.color_intensity)
+        assert state.line_width == pytest.approx(layer.line_width)
+
+
 def test_percussion_flash_and_background_intensity_have_distinct_controls() -> None:
     project = ProjectManifest.model_validate(
         {
@@ -787,8 +839,24 @@ def test_percussion_flash_and_background_intensity_have_distinct_controls() -> N
     quiet_drums = map_layer_state(drums, quiet, choreography, 1)
     strong_drums = map_layer_state(drums, strong, choreography, 1)
 
-    assert strong_background.opacity > quiet_background.opacity
-    assert strong_background.color_intensity > quiet_background.color_intensity
+    # `balanced` spends no energy on alpha or saturation: a trace sits at the
+    # opacity and saturation it was designed with however loud the passage is,
+    # and loudness reads through size and line weight instead.
+    assert strong_background.opacity == pytest.approx(quiet_background.opacity)
+    assert strong_background.color_intensity == pytest.approx(
+        quiet_background.color_intensity
+    )
+    assert strong_background.scale > quiet_background.scale
+    assert strong_background.line_width > quiet_background.line_width
+
+    # A preset opts back in through the lift, and it can only ever add.
+    kinetic = get_mapping_preset("kinetic")
+    quiet_kinetic = map_layer_state(background, quiet, choreography, 1, kinetic)
+    strong_kinetic = map_layer_state(background, strong, choreography, 1, kinetic)
+    assert strong_kinetic.opacity > quiet_kinetic.opacity
+    assert strong_kinetic.color_intensity > quiet_kinetic.color_intensity
+    assert quiet_kinetic.opacity >= quiet_background.opacity
+
     assert strong_drums.beat_pulse > 0.9
     assert quiet_drums.beat_pulse < 0.1
     assert quiet_background.beat_pulse == 0
