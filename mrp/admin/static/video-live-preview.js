@@ -258,6 +258,13 @@
     };
   }
 
+  // Parity with _amount() in mrp/video/mappings.py: a component's per-channel
+  // amount wins over the preset's, and null/undefined inherits.
+  function driverAmount(layer, name, inherited) {
+    const override = layer.drivers ? finite(layer.drivers[name]) : null;
+    return override === null ? inherited : override;
+  }
+
   function driverValue(layer, state, driverName, fallbackRole, fallbackFeature) {
     const configured = layer.drivers && layer.drivers[driverName];
     const parts = configured ? String(configured).split('.', 2) : [];
@@ -270,11 +277,11 @@
   }
 
   const ROLE_SCALE_RESPONSE = {
-    master: 0.1,
-    drums: 0.06,
-    bass: 0.2,
-    vocals: 0.1,
-    instruments: 0.13,
+    master: 0.28,
+    drums: 0.22,
+    bass: 0.35,
+    vocals: 0.28,
+    instruments: 0.3,
   };
   const ROLE_VISIBILITY_THRESHOLD = {
     vocals: 0.2,
@@ -297,7 +304,7 @@
       * (finite(state.scale) || 0)
       * (
         1
-        + ROLE_SCALE_RESPONSE[scaleDriver.role]
+        + driverAmount(layer, 'scale_amount', ROLE_SCALE_RESPONSE[scaleDriver.role])
         * (finite(preset.scale_response) || 0)
         * scaleDriver.value
         * scaleGain
@@ -328,7 +335,11 @@
     const opacityGain = gain(opacityDriver.role);
     const pulseDriver = driverValue(layer, state, 'pulse', layer.role, 'accent');
     const pulseGain = gain(pulseDriver.role);
-    const energyOpacity = 0.58 + 0.42 * Math.max(
+    // Parity with map_layer_state: rest is the identity opacity and energy
+    // only ever adds toward opaque. See mrp/video/mappings.py.
+    const energyOpacity = 1 + driverAmount(
+      layer, 'opacity_amount', finite(preset.opacity_lift) || 0
+    ) * Math.max(
       opacityDriver.value * (layer.drivers && layer.drivers.opacity ? opacityGain : 1),
       pulseDriver.value * (
         layer.drivers && layer.drivers.pulse ? pulseGain : 1
@@ -349,7 +360,11 @@
       * (finite(preset.onset_response) || 0)
       * accent
       * pulseGain
-      * 1.4
+      * driverAmount(
+        layer,
+        'line_width_amount',
+        finite(preset.line_width_lift) === null ? 1.4 : finite(preset.line_width_lift)
+      )
     );
     let rotation = (
       (finite(layer.rotation_degrees_per_second) || 0)
@@ -406,7 +421,7 @@
     const hueShift = (
       (finite(layer.hue_shift_degrees) || 0)
       + (finite(state.palette_shift) || 0) * 360
-      + colorEnergy * 18 * (finite(preset.hue_response) || 0)
+      + colorEnergy * 30 * (finite(preset.hue_response) || 0)
       + (finite(state.spectral_centroid) || 0)
       * 12
       * (finite(preset.hue_response) || 0)
@@ -422,8 +437,8 @@
       opacity *= 1 + beatPulse * 0.35;
     }
     const energyColorResponse = (
-      0.55
-      + 0.75
+      1
+      + driverAmount(layer, 'saturation_amount', finite(preset.saturation_lift) || 0)
       * clamp01(intensityEnergy * (finite(state.intensity_gain) || 0))
       * colorGain
     );
@@ -1693,8 +1708,11 @@
           const anchorY = component.anchor_y + (directionY !== null ? directionY - 0.5 : 0);
           const traceId = `${card.dataset.assignmentId}--${component.id}`;
           const role = actor.character || component.role;
+          // Parity with compile_actor_cast: a character retargets the four
+          // signals and leaves the component's per-channel amounts alone.
           const drivers = actor.character
             ? {
+              ...(component.drivers || {}),
               scale: `${role}.energy`,
               opacity: `${role}.energy`,
               color: `${role}.energy`,

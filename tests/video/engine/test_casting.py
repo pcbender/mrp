@@ -107,6 +107,59 @@ def test_an_uncast_scene_draws_nothing() -> None:
         assert resolved.composition.traces == []
 
 
+def test_character_retargets_signals_and_keeps_per_channel_amounts() -> None:
+    """A character answers "which stem", never "how much".
+
+    Every cast actor is required to carry a track character, so a character
+    that rebuilt the driver config from scratch would make per-component
+    amounts unreachable from any scene.
+    """
+    visuals = VisualConfig.model_validate(
+        {
+            "actors": {
+                "solid-mark": {
+                    "id": "solid-mark",
+                    "name": "Solid Mark",
+                    "character": "vocals",
+                    "components": [
+                        {
+                            **_trace("glyph", 160),
+                            "drivers": {
+                                "scale": "bass.energy",
+                                "opacity": "master.energy",
+                                "color": "vocals.energy",
+                                "pulse": "drums.accent",
+                                "opacity_amount": 0.4,
+                                "saturation_amount": 0.9,
+                                "scale_amount": 0.6,
+                                "line_width_amount": 2.5,
+                            },
+                        }
+                    ],
+                }
+            },
+            "section_casts": {
+                "Verse": {
+                    "actors": [{"id": "lead", "actor": "solid-mark", "direction": {}}]
+                }
+            },
+        }
+    )
+
+    resolved = resolve_section_composition(visuals, "verse", "verse_1", 4821)
+    glyph = resolved.composition.traces[0]
+
+    assert glyph.drivers.scale == "vocals.energy"
+    assert glyph.drivers.opacity == "vocals.energy"
+    assert glyph.drivers.color == "vocals.energy"
+    assert glyph.drivers.pulse == "vocals.accent"
+
+    assert glyph.drivers.opacity_amount == 0.4
+    assert glyph.drivers.saturation_amount == 0.9
+    assert glyph.drivers.scale_amount == 0.6
+    assert glyph.drivers.line_width_amount == 2.5
+
+
 def test_actor_cast_compiles_identity_and_scene_direction_to_traces() -> None:
     visuals = VisualConfig.model_validate(
         {

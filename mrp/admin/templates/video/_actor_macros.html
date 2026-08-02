@@ -20,7 +20,7 @@
   'color_flow': none,
   'spatial': none,
   'trace': {'cycles_per_second': 0.08, 'trail_fraction': 0.24, 'ghost_count': 1, 'ghost_spacing': 0.08, 'head_radius': 3},
-  'drivers': {'scale': none, 'opacity': none, 'color': none, 'pulse': none},
+  'drivers': {'scale': none, 'opacity': none, 'color': none, 'pulse': none, 'opacity_amount': none, 'saturation_amount': none, 'scale_amount': none, 'line_width_amount': none},
 } %}
 
 {% set default_direction = {
@@ -50,6 +50,19 @@
 
 {% macro slider_field(name, label, help, value, min, max, step, family=none) -%}
 <div class="form-field{% if family %} family-field{% endif %}"{% if family %} data-family="{{ family }}"{% endif %}>{{ actor_control_label(label, help) }}<div class="slider-pair"><input type="range" min="{{ min }}" max="{{ max }}" step="{{ step }}" value="{{ value }}" aria-hidden="true" tabindex="-1"><input type="number" step="{{ step }}" name="{{ name }}" value="{{ value }}"{% if not family %} required{% endif %}></div></div>
+{%- endmacro %}
+
+{# A per-channel energy amount. Unlike slider_field this is deliberately not
+   required and has no range track: blank is a real value meaning "inherit the
+   production's mapping preset", which a slider cannot express. #}
+{% macro optional_amount_field(name, label, help, value, min, max, step='0.01') -%}
+<div class="form-field">
+  {{ actor_control_label(label, help) }}
+  <input type="number" step="{{ step }}" min="{{ min }}" max="{{ max }}"
+         name="{{ name }}" value="{{ value if value is not none else '' }}"
+         placeholder="inherit">
+  <small>{{ min }} to {{ max }} · blank inherits</small>
+</div>
 {%- endmacro %}
 
 {% macro spatial_slider_field(name, label, help, value, min, max, step, modes, orientation_modes=none) -%}
@@ -173,6 +186,13 @@
           {% for driver, value in [('scale', component.drivers.scale), ('opacity', component.drivers.opacity), ('color', component.drivers.color), ('pulse', component.drivers.pulse)] %}
           <div class="form-field">{{ actor_control_label(driver|title ~ ' reaction', 'Fallback signal for this component response. The actor track character supplies the normal performance signal.') }}<select name="driver_{{ driver }}"><option value="">none</option>{% for signal in ['master.energy','master.accent','drums.energy','drums.accent','bass.energy','bass.accent','vocals.energy','vocals.accent','instruments.energy','instruments.accent'] %}<option value="{{ signal }}" {% if value == signal %}selected{% endif %}>{{ signal }}</option>{% endfor %}</select></div>
           {% endfor %}
+        </div>
+        <p class="video-help">How far each channel travels with the music. The signals above say <em>which</em> stem drives a channel and a track character retargets them; these say <em>how much</em>, and a character leaves them alone. Blank inherits the production’s mapping preset. Opacity and saturation rest at this component’s own look and only ever add, so 0 means “stay exactly as designed”.</p>
+        <div class="form-grid video-trace-grid">
+          {{ optional_amount_field('amount_opacity', 'Opacity amount', 'How far energy lifts this component toward fully opaque. Blank inherits the preset, which is 0 on every preset but kinetic.', component.drivers.opacity_amount, 0, 1) }}
+          {{ optional_amount_field('amount_saturation', 'Saturation amount', 'How far energy lifts this component toward full colour. Blank inherits the preset.', component.drivers.saturation_amount, 0, 2) }}
+          {{ optional_amount_field('amount_scale', 'Scale amount', 'Fraction of its own size this component breathes at full energy. Blank inherits the per-role default, which runs 0.22 to 0.35.', component.drivers.scale_amount, 0, 1) }}
+          {{ optional_amount_field('amount_line_width', 'Line weight amount', 'How much each note attack thickens this component’s stroke. Blank inherits the preset, which is 1.4.', component.drivers.line_width_amount, 0, 4) }}
         </div>
       </details>
     </div>

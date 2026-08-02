@@ -42,11 +42,11 @@ class LayerFrameState:
 
 
 _ROLE_SCALE_RESPONSE = {
-    "master": 0.1,
-    "drums": 0.06,
-    "bass": 0.2,
-    "vocals": 0.1,
-    "instruments": 0.13,
+    "master": 0.28,
+    "drums": 0.22,
+    "bass": 0.35,
+    "vocals": 0.28,
+    "instruments": 0.3,
 }
 _ROLE_VISIBILITY_THRESHOLD = {
     "vocals": 0.2,
@@ -59,6 +59,11 @@ _ROLE_VISIBILITY_THRESHOLD = {
 
 def _clamp(value: float, lower: float = 0, upper: float = 1) -> float:
     return min(upper, max(lower, value))
+
+
+def _amount(override: float | None, inherited: float) -> float:
+    """Resolve one channel's energy amount: the component's, else the preset's."""
+    return inherited if override is None else override
 
 
 def _sample_semantic(
@@ -122,7 +127,8 @@ def map_layer_state(
         fallback_feature="energy",
     )
     scale_gain = preset.role_gains[scale_role]
-    scale_response = _ROLE_SCALE_RESPONSE[scale_role] * preset.scale_response
+    scale_amount = _amount(layer.drivers.scale_amount, _ROLE_SCALE_RESPONSE[scale_role])
+    scale_response = scale_amount * preset.scale_response
     scale = (
         layer.base_scale
         * choreography.scale
@@ -156,7 +162,12 @@ def map_layer_state(
         fallback_feature="accent",
     )
     pulse_gain = preset.role_gains[pulse_role]
-    energy_opacity = 0.58 + 0.42 * max(
+    # Rest is the identity opacity. Energy can only add toward opaque, so a
+    # trace never renders softer than it was designed; `opacity_lift` is 0 on
+    # every preset that expresses energy through size, weight, and flash.
+    energy_opacity = 1 + _amount(
+        layer.drivers.opacity_amount, preset.opacity_lift
+    ) * max(
         opacity_energy * (opacity_gain if layer.drivers.opacity else 1),
         pulse_value * (pulse_gain if layer.drivers.pulse else 1) * 0.75,
     )
@@ -172,7 +183,7 @@ def map_layer_state(
         * preset.onset_response
         * accent
         * pulse_gain
-        * 1.4
+        * _amount(layer.drivers.line_width_amount, preset.line_width_lift)
     )
     rotation = math.radians(layer.rotation_degrees_per_second)
     rotation *= choreography.rotation_time * preset.motion_response * scale_gain
@@ -226,7 +237,7 @@ def map_layer_state(
     hue_shift = (
         layer.hue_shift_degrees
         + choreography.palette_shift * 360
-        + color_energy * 18 * preset.hue_response
+        + color_energy * 30 * preset.hue_response
         + audio.spectral_centroid * 12 * preset.hue_response
     )
     beat_pulse = 0.0
@@ -238,9 +249,14 @@ def map_layer_state(
             * choreography.beat_gain
         )
         opacity *= 1 + beat_pulse * 0.35
+    # Same rule as opacity: rest is the identity saturation. The section
+    # intensity arc in `choreography.color_intensity` still applies on top —
+    # that is a deliberate per-section shape, not an energy floor.
     energy_color_response = (
-        0.55
-        + 0.75 * _clamp(intensity_energy * choreography.intensity_gain) * color_gain
+        1
+        + _amount(layer.drivers.saturation_amount, preset.saturation_lift)
+        * _clamp(intensity_energy * choreography.intensity_gain)
+        * color_gain
     )
     return LayerFrameState(
         scale=scale,

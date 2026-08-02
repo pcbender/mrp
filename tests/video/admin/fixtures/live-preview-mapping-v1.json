@@ -54,7 +54,10 @@
           "bass": 1.0,
           "vocals": 1.0,
           "instruments": 1.0
-        }
+        },
+        "opacity_lift": 0.25,
+        "saturation_lift": 0.3,
+        "line_width_lift": 1.4
       },
       "layer": {
         "id": "bass-orbit",
@@ -105,16 +108,16 @@
         }
       },
       "expected": {
-        "scale": 1.47096,
+        "scale": 1.6021800000000002,
         "rotation_radians": -0.4364310506627191,
         "pitch_radians": 0.9085904833202161,
         "yaw_radians": -0.6552629237102471,
         "trail_fraction": 0.358769324,
-        "opacity": 0.5913648000000001,
+        "opacity": 0.8173912500000002,
         "line_width": 7.981,
-        "hue_shift_degrees": 64.2,
-        "color_intensity": 0.9512,
-        "beat_pulse": 1.0
+        "hue_shift_degrees": 69.06,
+        "color_intensity": 1.28528,
+        "beat_pulse": 1
       }
     },
     {
@@ -134,7 +137,10 @@
           "bass": 1.0,
           "vocals": 1.0,
           "instruments": 1.0
-        }
+        },
+        "opacity_lift": 0.0,
+        "saturation_lift": 0.0,
+        "line_width_lift": 1.4
       },
       "layer": {
         "id": "haze",
@@ -170,16 +176,103 @@
         "drivers": {}
       },
       "expected": {
-        "scale": 1.8932832,
+        "scale": 1.9681920000000002,
         "rotation_radians": -0.12526312406177492,
         "pitch_radians": 0.0,
         "yaw_radians": 0.0,
         "trail_fraction": 0.6183745632,
-        "opacity": 0.08341696000000001,
+        "opacity": 0.11152000000000001,
         "line_width": 1.549272,
-        "hue_shift_degrees": 42.6,
-        "color_intensity": 1.0555999999999999,
+        "hue_shift_degrees": 44.580000000000005,
+        "color_intensity": 1.16,
         "beat_pulse": 0.0
+      }
+    },
+    {
+      "name": "component amounts override every preset channel",
+      "visibility_override": 0.65,
+      "preset": {
+        "scale_response": 1.35,
+        "motion_response": 1.38,
+        "onset_response": 1.45,
+        "opacity_response": 1.08,
+        "hue_response": 1.35,
+        "background_response": 1.25,
+        "visibility_bias": 0.08,
+        "role_gains": {
+          "master": 1.0,
+          "drums": 1.0,
+          "bass": 1.0,
+          "vocals": 1.0,
+          "instruments": 1.0
+        },
+        "opacity_lift": 0.25,
+        "saturation_lift": 0.3,
+        "line_width_lift": 1.4
+      },
+      "layer": {
+        "id": "bass-orbit",
+        "role": "bass",
+        "geometry": {
+          "family": "spirogram",
+          "fixed_radius": 120.0,
+          "moving_radius": 40.0,
+          "pen_offset": 60.0,
+          "rotation": "inside",
+          "phase": 0.0,
+          "samples": 900
+        },
+        "trace": {
+          "cycles_per_second": 0.12,
+          "trail_fraction": 0.31,
+          "ghost_count": 2,
+          "ghost_spacing": 0.09,
+          "head_radius": 4.0
+        },
+        "color": "#4c78ff",
+        "color_locked": false,
+        "z_index": 0,
+        "anchor_x": 0.25,
+        "anchor_y": 0.4,
+        "base_scale": 1.2,
+        "opacity": 0.75,
+        "line_width": 2.5,
+        "rotation_degrees_per_second": -1.2,
+        "rotation_wobble_degrees": 4.583662361046586,
+        "spatial": {
+          "mode": "wave",
+          "amplitude": 0.4,
+          "windings": 6,
+          "phase_degrees": 30.0,
+          "pitch_degrees": 18.0,
+          "yaw_degrees": -12.0,
+          "pitch_degrees_per_second": 2.0,
+          "yaw_degrees_per_second": -1.5
+        },
+        "hue_shift_degrees": 12.0,
+        "blend_mode": "screen",
+        "drivers": {
+          "scale": "bass.energy",
+          "opacity": "master.energy",
+          "color": "vocals.energy",
+          "pulse": "drums.accent",
+          "opacity_amount": 0.62,
+          "saturation_amount": 1.15,
+          "scale_amount": 0.44,
+          "line_width_amount": 2.75
+        }
+      },
+      "expected": {
+        "scale": 1.6809120000000002,
+        "rotation_radians": -0.4364310506627191,
+        "pitch_radians": 0.9085904833202161,
+        "yaw_radians": -0.6552629237102471,
+        "trail_fraction": 0.358769324,
+        "opacity": 0.9751833000000004,
+        "line_width": 13.26625,
+        "hue_shift_degrees": 69.06,
+        "color_intensity": 1.4,
+        "beat_pulse": 1
       }
     }
   ]

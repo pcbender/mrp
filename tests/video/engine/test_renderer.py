@@ -239,7 +239,9 @@ def test_renderer_is_deterministic_and_seeded() -> None:
     np.testing.assert_array_equal(first, second)
     assert not np.array_equal(first, another_seed)
     digest = hashlib.sha256(first.tobytes()).hexdigest()
-    assert digest == "dc5d96be483b3864ef218d53220260d728ec34b5961c0ca7734c22113bdf61a1"
+    # Rebaselined when energy stopped being expressed through alpha and
+    # saturation (traces now rest at their identity look). See mrp/video/mappings.py.
+    assert digest == "fa31fd28b14b67966a940dea83f74a1a9e1ae088b37626a1cf2b23c674f23529"
 
 
 def test_background_transform_supports_pan_scan_and_beat_zoom() -> None:
