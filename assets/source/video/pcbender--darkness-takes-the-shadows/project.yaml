@@ -41,7 +41,7 @@ project:
     fps: 30.0
     background:
       color: '#000000'
-      image: backgrounds/track-06f0faaba8ff.jpg
+      image: backgrounds/track-7e90e78f9b65.jpg
       fit: cover
       focal_x: 0.5
       focal_y: 0.5
@@ -51,7 +51,7 @@ project:
       opacity_response: 0.08
       wash_color: '#b31a09'
       wash_opacity: 0.0
-      wash_response: 0.0
+      wash_response: 0.4
       beat_zoom: 0.08
       motion: still
       easing: ease_in
@@ -579,7 +579,8 @@ project:
           rotation_wobble_degrees: 0.0
           hue_shift_degrees: 0.0
           blend_mode: screen
-          drivers: {}
+          drivers:
+            scale: bass.energy
       halo:
         id: halo
         name: Halo
@@ -743,12 +744,12 @@ project:
           color_flow:
             source: angle
             swing_degrees: 90.0
-          z_index: 0
+          z_index: 1
           anchor_x: 0.5
           anchor_y: 0.5
           base_scale: 1.0
           opacity: 0.8
-          line_width: 2.0
+          line_width: 3.0
           presentation: animated_trace
           rotation_degrees_per_second: 0.0
           rotation_wobble_degrees: 0.0
@@ -845,7 +846,274 @@ project:
         library_source:
           actor_id: y-axis-flower
           revision: 39049e3bf32ee1272e9a8c9a0bc97dc0cfb87bc8060e821b76d2a2c68004b6a9
+      chorus-wheel:
+        id: chorus-wheel
+        name: Chorus Wheel
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 240.0
+            moving_radius: 90.0
+            pen_offset: 150.0
+            rotation: outside
+            phase: 0.0
+            samples: 1500
+          trace:
+            cycles_per_second: 0.052
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.13
+          anchor_y: 0.39
+          base_scale: 0.72
+          opacity: 0.78
+          line_width: 2.5
+          presentation: animated_trace
+          rotation_degrees_per_second: 1.1
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      chorus-rosette:
+        id: chorus-rosette
+        name: Chorus Rosette
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 200.0
+            moving_radius: 71.0
+            pen_offset: 127.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.082
+            trail_fraction: 0.38
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.29
+          base_scale: 0.66
+          opacity: 0.86
+          line_width: 2.7
+          presentation: animated_trace
+          rotation_degrees_per_second: -1.5
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+      chorus-star:
+        id: chorus-star
+        name: Chorus Star
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 172.0
+            moving_radius: 51.0
+            pen_offset: 116.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.12
+            trail_fraction: 0.22
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.87
+          anchor_y: 0.38
+          base_scale: 0.57
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 2.25
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      chorus-wheel-2:
+        id: chorus-wheel-2
+        name: Chorus Wheel
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 240.0
+            moving_radius: 90.0
+            pen_offset: 150.0
+            rotation: outside
+            phase: 0.0
+            samples: 1500
+          trace:
+            cycles_per_second: 0.052
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.13
+          anchor_y: 0.39
+          base_scale: 0.72
+          opacity: 0.78
+          line_width: 2.5
+          presentation: animated_trace
+          rotation_degrees_per_second: 1.1
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      chorus-rosette-2:
+        id: chorus-rosette-2
+        name: Chorus Rosette
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 200.0
+            moving_radius: 71.0
+            pen_offset: 127.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.082
+            trail_fraction: 0.38
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.29
+          base_scale: 0.66
+          opacity: 0.86
+          line_width: 2.7
+          presentation: animated_trace
+          rotation_degrees_per_second: -1.5
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+      chorus-star-2:
+        id: chorus-star-2
+        name: Chorus Star
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 172.0
+            moving_radius: 51.0
+            pen_offset: 116.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.12
+            trail_fraction: 0.22
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.87
+          anchor_y: 0.38
+          base_scale: 0.57
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 2.25
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
     section_casts:
+      verse:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: y-axis-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
       intro:
         casting:
           source: manual
@@ -869,37 +1137,15 @@ project:
             z_index: 10
             visible: true
             color: '#0442fb'
-            presentation: animated_trace
+            presentation: full_outline
             trace:
               head_radius: 0.0
         - id: appearance-2
-          actor: maricopa-records
+          actor: mr
           direction:
-            anchor_x: 0.487
-            anchor_y: 0.373
-            scale: 0.8
-            opacity: 1.0
-            rotation_offset_degrees_per_second: 0.0
-            rotation_wobble_degrees: 0.0
-            pitch_offset_degrees: 0.0
-            yaw_offset_degrees: 0.0
-            pitch_degrees_per_second: 0.0
-            yaw_degrees_per_second: 0.0
-            hue_shift_degrees: 0.0
-            z_index: 10
-            visible: true
-            presentation: animated_trace
-            trace: {}
-      verse:
-        casting:
-          source: manual
-          seed: 4821
-          generator_version: 1
-        actors:
-        - id: appearance-1
-          actor: y-axis-flower
-          direction:
-            scale: 1.0
+            anchor_x: 0.499
+            anchor_y: 0.379
+            scale: 2.0
             opacity: 1.0
             rotation_offset_degrees_per_second: 0.0
             rotation_wobble_degrees: 0.0
@@ -942,11 +1188,11 @@ project:
               ghost_spacing: 0.0
               head_radius: 0.0
         - id: appearance-2
-          actor: maricopa-records
+          actor: mr
           direction:
-            anchor_x: 0.487
-            anchor_y: 0.373
-            scale: 0.8
+            anchor_x: 0.499
+            anchor_y: 0.431
+            scale: 1.5
             opacity: 1.0
             rotation_offset_degrees_per_second: 0.0
             rotation_wobble_degrees: 0.0
@@ -955,11 +1201,12 @@ project:
             pitch_degrees_per_second: 0.0
             yaw_degrees_per_second: 0.0
             hue_shift_degrees: 0.0
-            z_index: 10
+            z_index: 9
             visible: true
-            line_width: 4.0
-            presentation: full_outline
-            trace: {}
+            presentation: animated_trace
+            trace:
+              cycles_per_second: 1.0
+              trail_fraction: 1.0
       verse-1:
         casting:
           source: manual
@@ -987,6 +1234,57 @@ project:
             presentation: animated_trace
             trace:
               cycles_per_second: 2.0
+      chorus:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: chorus-wheel-appearance
+          actor: chorus-wheel
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+        - id: chorus-rosette-appearance
+          actor: chorus-rosette
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+        - id: chorus-star-appearance
+          actor: chorus-star
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
       verse-2:
         casting:
           source: manual
@@ -996,7 +1294,143 @@ project:
         - id: appearance-1
           actor: y-axis-flower
           direction:
+            anchor_x: 0.498
+            anchor_y: 0.402
+            scale: 0.8
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+      bridge:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: ribbon
+          direction:
+            anchor_x: 0.865
+            anchor_y: 0.51
+            scale: 0.75
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 1.0
+            presentation: animated_trace
+            trace: {}
+      chorus-2:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: chorus-wheel-2-appearance
+          actor: chorus-wheel-2
+          direction:
+            anchor_x: 0.637
+            anchor_y: 0.63
             scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+        - id: chorus-rosette-2-appearance
+          actor: chorus-rosette-2
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+        - id: chorus-star-2-appearance
+          actor: chorus-star-2
+          direction:
+            anchor_x: 0.415
+            anchor_y: 0.632
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+      outro:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: y-axis-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+        - id: appearance-2
+          actor: halo
+          direction:
+            anchor_x: 0.091
+            anchor_y: 0.447
+            scale: 0.5
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+        - id: appearance-3
+          actor: halo
+          direction:
+            anchor_x: 0.878
+            anchor_y: 0.436
+            scale: 0.5
             opacity: 1.0
             rotation_offset_degrees_per_second: 0.0
             rotation_wobble_degrees: 0.0

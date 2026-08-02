@@ -152,7 +152,7 @@ sections:
 - id: bridge
   type: bridge
   label: Bridge
-  start: 125.96
+  start: 119.0
   end: 129.95
   reviewed: true
   lines:
@@ -165,7 +165,7 @@ sections:
 - id: chorus-2
   type: chorus
   label: Chorus
-  start: 135.68
+  start: 130.0
   end: 209.1
   reviewed: true
   lines:

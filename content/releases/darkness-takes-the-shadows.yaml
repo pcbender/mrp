@@ -5,7 +5,7 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: draft
+  status: live
   release_date: '2026-07-27'
   label: Maricopa Records
   publisher: Maricopa Publishing
@@ -271,7 +271,10 @@ release:
       label: Vocals
     music_video:
       project: assets/source/video/pcbender--darkness-takes-the-shadows/project.yaml
-      status: cast
+      status: published
+      opt_in: true
+      public_url: /media/music-videos/pcbender--darkness-takes-the-shadows/39b647e47db08dc8b9351de92af88f70e606232d186319a1043be8e5312b7e25/video.mp4
+      poster: /media/music-videos/pcbender--darkness-takes-the-shadows/39b647e47db08dc8b9351de92af88f70e606232d186319a1043be8e5312b7e25/poster-b68548d35bdf6e4eeb7890d797349a5ae1add59e1d3559f550f8e855cee9a5f0.jpg
   distributor: landr
   seo:
     title: Darkness Takes The Shadows

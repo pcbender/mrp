@@ -5,7 +5,7 @@ release:
   artist_id: pcbender
   model: song
   release_type: single
-  status: draft
+  status: live
   release_date: '2026-08-01'
   label: Maricopa Records
   publisher: Maricopa Publishing
@@ -16,6 +16,8 @@ release:
     spotify: https://open.spotify.com/album/3WsLtsM6rSwjqmBY7H5MtK
     apple_music: https://music.apple.com/us/album/make-it-all-fine-single/6797066124
     tidal: https://listen.tidal.com/album/548495544
+    itunes_store: https://music.apple.com/us/album/6797066124?app=itunes
+    amazon_music: https://music.amazon.com/albums/B0HCK5T32L?ref=dmm_acq_soc_us_u_lfire_lp_x_c5185031256c31736709670b4defd2b9
   song:
     number: 1
     title: Make It All Fine
@@ -293,6 +295,53 @@ release:
       In a way that''s new'
     lyrics_source: null
     hints: {}
+    master_path: /mnt/c/Masters/Make It All Fine.wav
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Make It All Fine/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Make It All Fine/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Make It All Fine/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Make It All Fine/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Make It All Fine/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Make It All Fine/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Make It All Fine/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+    music_video:
+      project: assets/source/video/pcbender--make-it-all-fine/project.yaml
+      status: published
+      opt_in: true
+      public_url: /media/music-videos/pcbender--make-it-all-fine/1947cbca8e671f7cea9a88c2b1df5919cace936ca05ef935e80521de2b5f5ac9/video.mp4
+      poster: /media/music-videos/pcbender--make-it-all-fine/1947cbca8e671f7cea9a88c2b1df5919cace936ca05ef935e80521de2b5f5ac9/poster-c9e6cea0cf7b6579e69266b19669b48acd18a76ac5c85fb9b25c1bc2f1369068.jpg
   distributor: landr
   seo:
     title: Make It All Fine

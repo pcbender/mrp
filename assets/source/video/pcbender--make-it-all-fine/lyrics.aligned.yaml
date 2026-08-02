@@ -1,0 +1,415 @@
+version: 1
+source: lyrics.yaml
+alignment:
+  algorithm_version: 1
+  model: whisper-1
+  transcription_cache_key: bfd19d9f4ceb6a748bee57873892e7fc66b2bf8272a38c960eadc318049043d7
+  source_hash: 73597f6866a8a103486fdf92eba9fb0f7157674a682c755cdc27128239e046bf
+  vocals_hash: a583734f981b778a3f0f42f8cf43c096fa537c812cfa25c490e77e1cc900b028
+  warnings:
+  - normalized Whisper word timestamps (0 negative starts, 0 regressing starts, 14
+    nonpositive durations)
+  - outro line 1 split into 2 sequential display cues
+  - verse-2 line 5 is uncertain (confidence 0.667)
+sections:
+- id: intro
+  type: intro
+  label: Intro
+  start: 0.0
+  end: 15.88
+  reviewed: true
+  lines: []
+- id: verse-1
+  type: verse
+  label: Verse 1
+  start: 15.88
+  end: 42.783
+  reviewed: true
+  lines:
+  - text: I stare at blank white pages
+    start: 15.88
+    end: 19.679
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Like they've seen me before
+    start: 19.74
+    end: 23.069
+    confidence: 1.0
+    status: matched
+    reviewed: false
+  - text: Every line I reach for
+    start: 23.74
+    end: 26.552
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Feels like footsteps on your floor
+    start: 26.56
+    end: 29.78
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: I move the second verse up
+    start: 29.78
+    end: 32.868
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Swap a word out for a word
+    start: 33.58
+    end: 36.46
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: But it plays back like a record
+    start: 36.46
+    end: 39.416
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: That I've already heard
+    start: 39.48
+    end: 42.783
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: pre-chorus
+  type: pre-chorus
+  label: Pre-Chorus
+  start: 43.32
+  end: 57.24
+  reviewed: true
+  lines:
+  - text: So I wear it like a scar
+    start: 43.32
+    end: 45.616
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Try to call it art
+    start: 45.62
+    end: 47.218
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: But the label's in the collar
+    start: 47.22
+    end: 49.609
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: And it's someone else's heart
+    start: 50.02
+    end: 57.24
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus
+  type: chorus
+  label: Chorus
+  start: 57.24
+  end: 83.859
+  reviewed: true
+  lines:
+  - text: Can I borrow your brilliance
+    start: 57.24
+    end: 60.105
+    confidence: 0.975
+    status: matched
+    reviewed: true
+  - text: And claim it as mine?
+    start: 60.92
+    end: 63.541
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Step into a costume
+    start: 64.7
+    end: 66.92
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: And feel like I shine
+    start: 67.66
+    end: 71.111
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Take one little ride
+    start: 71.12
+    end: 73.619
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: And merely refine
+    start: 74.74
+    end: 77.03
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: As if saying sorry
+    start: 77.62
+    end: 80.446
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Will make it all fine
+    start: 81.42
+    end: 83.859
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: verse-2
+  type: verse
+  label: Verse 2
+  start: 84.94
+  end: 111.18
+  reviewed: true
+  lines:
+  - text: There's a ghost in my notebook
+    start: 84.94
+    end: 87.899
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: With a sharper kind of hand
+    start: 87.9
+    end: 91.68
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Every line I thought was new
+    start: 91.68
+    end: 94.029
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Comes back to me second-hand
+    start: 94.04
+    end: 98.02
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: I don't want to be him
+    start: 98.02
+    end: 100.22
+    confidence: 0.666667
+    status: uncertain
+    reviewed: true
+  - text: I don't even want to claim
+    start: 100.22
+    end: 104.85
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: I just want one honest word
+    start: 104.86
+    end: 108.379
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: That answers to my name
+    start: 108.38
+    end: 111.18
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: pre-chorus-2
+  type: pre-chorus
+  label: Pre-Chorus
+  start: 111.18
+  end: 125.93
+  reviewed: true
+  lines:
+  - text: So I stand at the edge of the thing I want to be
+    start: 111.18
+    end: 116.158
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Half of me is singing
+    start: 116.16
+    end: 117.969
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Half is asking, "Is this me?"
+    start: 119.38
+    end: 125.93
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus-2
+  type: chorus
+  label: Chorus
+  start: 126.0
+  end: 151.917
+  reviewed: true
+  lines:
+  - text: Can I borrow your brilliance
+    start: 126.0
+    end: 128.39
+    confidence: 0.975
+    status: matched
+    reviewed: true
+  - text: And claim it as mine?
+    start: 129.32
+    end: 131.808
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Step into a costume
+    start: 132.54
+    end: 135.129
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: And feel like I shine
+    start: 135.46
+    end: 139.22
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Take one little ride
+    start: 139.22
+    end: 142.42
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: And merely refine
+    start: 142.84
+    end: 145.276
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: As if saying sorry
+    start: 146.18
+    end: 148.71
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Will make it all fine
+    start: 149.82
+    end: 151.917
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: guitar-solo
+  type: instrumental
+  label: Guitar Solo
+  start: 151.917
+  end: 179.5
+  reviewed: true
+  lines: []
+- id: bridge
+  type: bridge
+  label: Bridge
+  start: 179.5
+  end: 206.158
+  reviewed: true
+  lines:
+  - text: Can I borrow your brilliance
+    start: 179.5
+    end: 182.28
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: And claim it as mine?
+    start: 182.28
+    end: 186.04
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: I keep reaching for something
+    start: 186.04
+    end: 189.719
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: That was already signed
+    start: 190.1
+    end: 193.44
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Take one little ride
+    start: 193.44
+    end: 196.429
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: And merely refine
+    start: 197.34
+    end: 199.51
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: As if saying sorry
+    start: 200.32
+    end: 202.81
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Will make it all fine
+    start: 203.94
+    end: 206.158
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: outro
+  type: outro
+  label: Outro
+  start: 207.88
+  end: 233.41
+  reviewed: true
+  lines:
+  - text: Maybe every voice is weather
+    start: 207.88
+    end: 210.7
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: passing through the same old sky
+    start: 210.7
+    end: 214.47
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Maybe I'm not a thief, just a person asking why
+    start: 214.94
+    end: 220.68
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: If I can't be first
+    start: 220.68
+    end: 222.76
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Let me still be true
+    start: 222.76
+    end: 226.708
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Let me get it right
+    start: 227.78
+    end: 231.097
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: In a way that's new
+    start: 231.1
+    end: 233.41
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: outro-2
+  type: instrumental
+  label: Outro
+  start: 233.411
+  end: 256.957
+  reviewed: true
+  lines: []
