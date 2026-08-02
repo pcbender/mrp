@@ -29,6 +29,7 @@ from mrp.video.project import (
     AlignedLyrics,
     AlignedLyricSection,
     ProjectManifest,
+    VisualLayerConfig,
 )
 
 
@@ -796,6 +797,103 @@ def test_silence_renders_every_layer_at_its_identity_opacity() -> None:
         assert state.opacity == pytest.approx(layer.opacity)
         assert state.color_intensity == pytest.approx(choreography.color_intensity)
         assert state.line_width == pytest.approx(layer.line_width)
+
+
+def test_component_amounts_override_the_preset_channel_by_channel() -> None:
+    """Each shape decides how far its own channels travel with the music."""
+    loud = AudioVisualState(
+        master=SemanticSample(1, 1),
+        drums=SemanticSample(1, 1),
+        bass=SemanticSample(1, 1),
+        vocals=SemanticSample(1, 1),
+        instruments=SemanticSample(1, 1),
+        spectral_centroid=0.5,
+    )
+    choreography = ChoreographyState(
+        section_id="chorus",
+        section_type="chorus",
+        section_label="Chorus",
+        section_progress=0.5,
+        transition_progress=1,
+        layer_fraction=1,
+        scale=1,
+        motion=0,
+        color_intensity=1,
+        onset_response=1,
+        rotation_direction=1,
+        palette_shift=0,
+        lyrics_opacity=1,
+        intensity_gain=1,
+        beat_gain=1,
+    )
+    base_layer = {
+        "id": "mark",
+        "role": "vocals",
+        "geometry": {"fixed_radius": 160, "moving_radius": 40, "pen_offset": 80},
+        "color": "#ff5fd2",
+        # Low enough that the beat flash both cases carry cannot clamp alpha.
+        "opacity": 0.3,
+        "line_width": 2.0,
+        "base_scale": 1.0,
+    }
+    signals = {
+        "scale": "vocals.energy",
+        "opacity": "vocals.energy",
+        "color": "vocals.energy",
+        "pulse": "vocals.accent",
+    }
+
+    inherited = map_layer_state(
+        VisualLayerConfig.model_validate({**base_layer, "drivers": signals}),
+        loud,
+        choreography,
+        0,
+    )
+    overridden = map_layer_state(
+        VisualLayerConfig.model_validate(
+            {
+                **base_layer,
+                "drivers": {
+                    **signals,
+                    "opacity_amount": 0.5,
+                    "saturation_amount": 1.0,
+                    "scale_amount": 0.8,
+                    "line_width_amount": 3.0,
+                },
+            }
+        ),
+        loud,
+        choreography,
+        0,
+    )
+
+    # `balanced` spends nothing on alpha, so the inherited case is the identity
+    # opacity carrying only the beat flash (0.3 * 1.35). The component opts in
+    # to a 0.5 lift on top of it.
+    assert inherited.opacity == pytest.approx(0.3 * 1.35)
+    assert overridden.opacity == pytest.approx(0.3 * 1.5 * 1.35)
+
+    assert inherited.color_intensity == pytest.approx(1.0)
+    # 1 * (1 + 1.0 * 1 * 1) = 2.0, held at the channel's 1.4 ceiling.
+    assert overridden.color_intensity == pytest.approx(1.4)
+
+    # Size and weight inherit a per-role default the component can widen:
+    # vocals scale response is 0.28, and line weight's preset lift is 1.4.
+    assert inherited.scale == pytest.approx(1.28)
+    assert overridden.scale == pytest.approx(1.8)
+    assert inherited.line_width == pytest.approx(2.0 * (1 + 1.4))
+    assert overridden.line_width == pytest.approx(2.0 * (1 + 3.0))
+
+    # 0 means "this channel does not react", which is not the same as blank.
+    silenced = map_layer_state(
+        VisualLayerConfig.model_validate(
+            {**base_layer, "drivers": {**signals, "scale_amount": 0}}
+        ),
+        loud,
+        choreography,
+        0,
+    )
+    assert silenced.scale == pytest.approx(1.0)
 
 
 def test_percussion_flash_and_background_intensity_have_distinct_controls() -> None:

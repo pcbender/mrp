@@ -570,11 +570,17 @@ def compile_actor_cast(
                 role = actor.character
                 energy = f"{role}.energy"
                 accent = f"{role}.accent"
-                drivers = TraceAudioDriversConfig(
-                    scale=energy,
-                    opacity=energy,
-                    color=energy,
-                    pulse=accent,
+                # The character supplies the performance signal for every
+                # channel, which is what makes the component signals fallbacks.
+                # It says nothing about how far each channel should travel, so
+                # the component's amounts carry through untouched.
+                drivers = component.drivers.model_copy(
+                    update={
+                        "scale": energy,
+                        "opacity": energy,
+                        "color": energy,
+                        "pulse": accent,
+                    }
                 )
             anchor_x = component.anchor_x
             if direction.anchor_x is not None:

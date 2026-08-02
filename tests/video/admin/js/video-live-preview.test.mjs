@@ -396,6 +396,35 @@ test('JavaScript layer mapping matches canonical Python parity fixtures', () => 
   });
 });
 
+test('a component amount of zero overrides the preset instead of inheriting it', () => {
+  // 0 is a meaningful amount ("this channel does not react"), so the resolver
+  // has to distinguish it from a blank that inherits. Anything reaching for
+  // falsiness here would silently hand the preset's lift back.
+  const base = mappingFixture.cases[0];
+  const preset = { ...base.preset, opacity_lift: 0.25, saturation_lift: 0.3 };
+
+  const inheriting = mapLayerState(
+    base.layer,
+    mappingFixture.audio_state,
+    mappingFixture.time_seconds,
+    preset,
+    base.visibility_override
+  );
+  const silenced = mapLayerState(
+    {
+      ...base.layer,
+      drivers: { ...base.layer.drivers, opacity_amount: 0, saturation_amount: 0 },
+    },
+    mappingFixture.audio_state,
+    mappingFixture.time_seconds,
+    preset,
+    base.visibility_override
+  );
+
+  assert.ok(inheriting.opacity > silenced.opacity);
+  assert.ok(inheriting.color_intensity > silenced.color_intensity);
+});
+
 test('mapped color and background response inputs match renderer state', () => {
   assert.equal(layerColor('#4c78ff', 64.2, 0.9512, 1), '#f6cffe');
   const background = { color: '#101014', brightness_response: 0.16 };

@@ -429,10 +429,24 @@ class SectionVisualStyleConfig(ContractModel):
 
 
 class TraceAudioDriversConfig(ContractModel):
+    """Which stem drives each channel, and how far that channel travels.
+
+    The signals and the amounts answer different questions. A signal says
+    *which* stem moves a channel; a track actor's musical character retargets
+    all four of them, which is why the component editor calls them fallbacks.
+    An amount says *how much* that channel moves, which is design intent about
+    the shape itself, so a character leaves amounts alone. ``None`` inherits
+    the amount from the mapping preset.
+    """
+
     scale: AudioSignal | None = None
     opacity: AudioSignal | None = None
     color: AudioSignal | None = None
     pulse: AudioSignal | None = None
+    opacity_amount: float | None = Field(default=None, ge=0, le=1)
+    saturation_amount: float | None = Field(default=None, ge=0, le=2)
+    scale_amount: float | None = Field(default=None, ge=0, le=1)
+    line_width_amount: float | None = Field(default=None, ge=0, le=4)
 
 
 class LayerColorFlowConfig(ContractModel):

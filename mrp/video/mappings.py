@@ -61,6 +61,11 @@ def _clamp(value: float, lower: float = 0, upper: float = 1) -> float:
     return min(upper, max(lower, value))
 
 
+def _amount(override: float | None, inherited: float) -> float:
+    """Resolve one channel's energy amount: the component's, else the preset's."""
+    return inherited if override is None else override
+
+
 def _sample_semantic(
     analysis: AnalysisBundle,
     role: str,
@@ -122,7 +127,8 @@ def map_layer_state(
         fallback_feature="energy",
     )
     scale_gain = preset.role_gains[scale_role]
-    scale_response = _ROLE_SCALE_RESPONSE[scale_role] * preset.scale_response
+    scale_amount = _amount(layer.drivers.scale_amount, _ROLE_SCALE_RESPONSE[scale_role])
+    scale_response = scale_amount * preset.scale_response
     scale = (
         layer.base_scale
         * choreography.scale
@@ -159,7 +165,9 @@ def map_layer_state(
     # Rest is the identity opacity. Energy can only add toward opaque, so a
     # trace never renders softer than it was designed; `opacity_lift` is 0 on
     # every preset that expresses energy through size, weight, and flash.
-    energy_opacity = 1 + preset.opacity_lift * max(
+    energy_opacity = 1 + _amount(
+        layer.drivers.opacity_amount, preset.opacity_lift
+    ) * max(
         opacity_energy * (opacity_gain if layer.drivers.opacity else 1),
         pulse_value * (pulse_gain if layer.drivers.pulse else 1) * 0.75,
     )
@@ -175,7 +183,7 @@ def map_layer_state(
         * preset.onset_response
         * accent
         * pulse_gain
-        * 1.4
+        * _amount(layer.drivers.line_width_amount, preset.line_width_lift)
     )
     rotation = math.radians(layer.rotation_degrees_per_second)
     rotation *= choreography.rotation_time * preset.motion_response * scale_gain
@@ -246,7 +254,7 @@ def map_layer_state(
     # that is a deliberate per-section shape, not an energy floor.
     energy_color_response = (
         1
-        + preset.saturation_lift
+        + _amount(layer.drivers.saturation_amount, preset.saturation_lift)
         * _clamp(intensity_energy * choreography.intensity_gain)
         * color_gain
     )

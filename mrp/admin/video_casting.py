@@ -1160,8 +1160,17 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
         "spatial_retain_circuits",
         "spatial_retention_fade",
     )
+    # Per-channel energy amounts post one value per component, but a form that
+    # predates them omits the column; blank means "inherit the mapping preset".
+    amount_names = (
+        "amount_opacity",
+        "amount_saturation",
+        "amount_scale",
+        "amount_line_width",
+    )
     columns |= {
-        name: _repeated_optional(fields, name, count) for name in spatial_names
+        name: _repeated_optional(fields, name, count)
+        for name in spatial_names + amount_names
     }
     traces = []
     for index, trace_id in enumerate(ids):
@@ -1170,6 +1179,14 @@ def _trace_payloads(fields: Mapping[str, Sequence[str]]) -> list[dict[str, Any]]
             for key in ("driver_scale", "driver_opacity", "driver_color", "driver_pulse")
             if columns[key][index]
         }
+        for key in amount_names:
+            channel = key.removeprefix("amount_")
+            amount = _optional_number(
+                columns[key][index],
+                f"trace {trace_id} {channel.replace('_', ' ')} amount",
+            )
+            if amount is not None:
+                drivers[f"{channel}_amount"] = amount
         flow_source = columns["color_flow_source"][index]
         color_flow = (
             {

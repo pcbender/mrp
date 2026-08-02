@@ -20,6 +20,10 @@ class MappingPreset:
     # or saturation response by raising these, which can only ever add.
     opacity_lift: float = 0.0
     saturation_lift: float = 0.0
+    # Line weight was already additive from identity, so this keeps its
+    # historical strength; it lives here so every channel's amount has one
+    # home that a component can override.
+    line_width_lift: float = 1.4
 
 
 @dataclass(frozen=True, slots=True)

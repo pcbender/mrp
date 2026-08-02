@@ -674,6 +674,41 @@ def test_save_exact_cast_is_atomic_versioned_and_invalidates_previews(tmp_path: 
     assert project_path.read_bytes() == before
 
 
+def test_channel_amounts_round_trip_and_survive_the_cast(tmp_path: Path) -> None:
+    """A blank amount inherits; a set one reaches the compiled trace.
+
+    The character on this actor is `bass`, so the compiled trace also proves
+    that retargeting the signals does not take the amounts with it.
+    """
+    release, track, _release_path, project_path = _write_cast_repo(tmp_path)
+
+    fields = _actor_fields() | {
+        "amount_opacity": ["0.45"],
+        "amount_saturation": [""],
+        "amount_scale": ["0.7"],
+        "amount_line_width": ["2.25"],
+    }
+    save_track_actor(tmp_path, release, track, fields)
+
+    stored = TrackProjectDocument.model_validate(
+        yaml.safe_load(project_path.read_text(encoding="utf-8"))
+    )
+    drivers = stored.project.visuals.actors["vocal-lantern"].components[0].drivers
+    assert drivers.opacity_amount == 0.45
+    assert drivers.saturation_amount is None
+    assert drivers.scale_amount == 0.7
+    assert drivers.line_width_amount == 2.25
+
+    cast_result = save_casting(tmp_path, release, track, _actor_cast_fields())
+    compiled = cast_result["composition"].traces[0]
+
+    assert compiled.drivers.opacity == "bass.energy"
+    assert compiled.drivers.opacity_amount == 0.45
+    assert compiled.drivers.saturation_amount is None
+    assert compiled.drivers.scale_amount == 0.7
+    assert compiled.drivers.line_width_amount == 2.25
+
+
 def test_actor_identity_cast_and_direction_compile_without_rewriting_renderer(
     tmp_path: Path,
 ) -> None:
