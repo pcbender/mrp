@@ -17,6 +17,7 @@ release:
     apple_music: https://music.apple.com/us/album/footsteps-again-single/6774493774
     deezer: https://www.deezer.com/track/4052023041
     pandora: https://www.pandora.com/AL:66929080
+    tidal: https://listen.tidal.com/album/528926617
   song:
     number: 1
     title: Footsteps Again
@@ -173,7 +174,6 @@ release:
     links_na:
     - amazon_music
     - itunes_store
-    - tidal
     - youtube
     - youtube_music
   distributor: amuse

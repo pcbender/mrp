@@ -40,7 +40,7 @@ project:
     height: 1080
     fps: 30.0
     background:
-      color: '#05706e'
+      color: '#000000'
       image: backgrounds/track-06f0faaba8ff.jpg
       fit: cover
       focal_x: 0.5
@@ -48,11 +48,11 @@ project:
       zoom: 1.0
       opacity: 1.0
       brightness_response: 0.25
-      opacity_response: 0.0
-      wash_color: '#ffffff'
+      opacity_response: 0.08
+      wash_color: '#b31a09'
       wash_opacity: 0.0
       wash_response: 0.0
-      beat_zoom: 0.2
+      beat_zoom: 0.08
       motion: still
       easing: ease_in
     seed: 4821
@@ -96,7 +96,7 @@ project:
     upload_bitrate_kbps: 128
   visuals:
     mapping_preset: balanced
-    palette_preset: ember
+    palette_preset: aurora
     palette: []
     layers:
     - id: instrument-haze
@@ -580,6 +580,271 @@ project:
           hue_shift_degrees: 0.0
           blend_mode: screen
           drivers: {}
+      halo:
+        id: halo
+        name: Halo
+        description: Oversized, low-opacity background halo with a slow reverse rotation
+          and three ghosts. Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 271.0
+            moving_radius: 93.0
+            pen_offset: 204.0
+            rotation: outside
+            phase: 0.0
+            samples: 1900
+          trace:
+            cycles_per_second: 0.046
+            trail_fraction: 0.5
+            ghost_count: 3
+            ghost_spacing: 0.07
+            head_radius: 0.0
+          color: '#8c5cff'
+          color_locked: false
+          z_index: -100
+          anchor_x: 0.5
+          anchor_y: 0.38
+          base_scale: 1.72
+          opacity: 0.18
+          line_width: 1.4
+          presentation: animated_trace
+          rotation_degrees_per_second: -0.55
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: halo
+          revision: 23c7e449e289b39a999dfefc8f36bc6368934568c5ece4a4e37e8f646732f700
+      ribbon:
+        id: ribbon
+        name: Ribbon
+        description: Wide outside-rotation ribbon with a long trail and paired ghosts.
+          Authored for the You Don't Say guitar solo.
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 257.0
+            moving_radius: 71.0
+            pen_offset: 191.0
+            rotation: outside
+            phase: 0.0
+            samples: 1800
+          trace:
+            cycles_per_second: 0.074
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.5
+          color: '#8c5cff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.16
+          anchor_y: 0.38
+          base_scale: 1.06
+          opacity: 0.8
+          line_width: 2.6
+          presentation: animated_trace
+          rotation_degrees_per_second: 1.4
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: ribbon
+          revision: 41dafa85e44167e795df84b2668dcaa8e2765f6bd3bd1bae4a1af6ffeedbb27a
+      sun:
+        id: sun
+        name: Sun
+        description: Centered high-opacity sun with a heavy line and a wide trail.
+          Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 217.0
+            moving_radius: 59.0
+            pen_offset: 174.0
+            rotation: inside
+            phase: 0.0
+            samples: 1700
+          trace:
+            cycles_per_second: 0.094
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 5.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.51
+          anchor_y: 0.29
+          base_scale: 0.76
+          opacity: 0.88
+          line_width: 3.0
+          presentation: animated_trace
+          rotation_degrees_per_second: -1.7
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: sun
+          revision: 1a8a9d0758f36c8e17836f78aea09e39242cd7234d49465bd64ef47a66341a3c
+      mr:
+        id: mr
+        name: MR
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape-1
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.6
+            samples: 900
+            path_data: M 35.0,74.0 L 35.0,48.0 L 48.0,48.0 L 64.0,67.0 L 80.0,48.0
+              L 93.0,48.0 L 93.0,74.0 L 82.0,74.0 L 82.0,60.0 L 66.0,78.0 L 62.0,78.0
+              L 46.0,60.0 L 46.0,74.0 L 35.0,74.0
+          trace:
+            cycles_per_second: 0.8
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#ff5fd2'
+          color_locked: false
+          color_flow:
+            source: angle
+            swing_degrees: 90.0
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 1.0
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        - id: shape-2
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            path_data: M 35.0,87.0 L 93.0,87.0 L 93.0,95.0 L 35.0,95.0 L 35.0,87.0
+          trace:
+            cycles_per_second: 0.08
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#2b35c5'
+          color_locked: false
+          color_flow:
+            source: radius
+            swing_degrees: 90.0
+          z_index: 0
+          anchor_x: 0.494
+          anchor_y: 0.542
+          base_scale: 1.0
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        library_source:
+          actor_id: mr
+          revision: fa929a3e09ae081cd4f6a2585f207e064f9fad2b54a81cc7c7557ffecd6d8620
+      y-axis-flower:
+        id: y-axis-flower
+        name: Y Axis Flower
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: Y Axis Flower
+          role: vocals
+          geometry:
+            family: rose
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            rose_n: 5
+            rose_d: 1
+          trace:
+            cycles_per_second: 0.5
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#ff5fd2'
+          color_locked: false
+          color_flow:
+            source: velocity
+            swing_degrees: 90.0
+          spatial:
+            mode: tilted
+            amplitude: 0.35
+            windings: 5
+            phase_degrees: 20.0
+            pitch_degrees: 0.0
+            yaw_degrees: 0.0
+            orientation_mode: circuit_step
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            pitch_step_degrees: 0.0
+            yaw_step_degrees: 15.0
+            retained_circuits: 23
+            retention_fade: 1.0
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 1.0
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        library_source:
+          actor_id: y-axis-flower
+          revision: 39049e3bf32ee1272e9a8c9a0bc97dc0cfb87bc8060e821b76d2a2c68004b6a9
     section_casts:
       intro:
         casting:
@@ -596,7 +861,12 @@ project:
             opacity: 1.0
             rotation_offset_degrees_per_second: 0.0
             rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
             hue_shift_degrees: 0.0
+            z_index: 10
             visible: true
             color: '#0442fb'
             presentation: animated_trace
@@ -611,6 +881,32 @@ project:
             opacity: 1.0
             rotation_offset_degrees_per_second: 0.0
             rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            z_index: 10
+            visible: true
+            presentation: animated_trace
+            trace: {}
+      verse:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: y-axis-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
             hue_shift_degrees: 0.0
             visible: true
             presentation: animated_trace
@@ -631,7 +927,12 @@ project:
             opacity: 1.0
             rotation_offset_degrees_per_second: 0.0
             rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
             hue_shift_degrees: 0.0
+            z_index: 10
             visible: true
             color: '#0442fb'
             presentation: filled_shape
@@ -649,9 +950,63 @@ project:
             opacity: 1.0
             rotation_offset_degrees_per_second: 0.0
             rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            z_index: 10
+            visible: true
+            line_width: 4.0
+            presentation: full_outline
+            trace: {}
+      verse-1:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: halo
+          direction:
+            anchor_x: 0.501
+            anchor_y: 0.5
+            scale: 0.5
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            z_index: 10
+            visible: true
+            color: '#f31616'
+            line_width: 2.0
+            presentation: animated_trace
+            trace:
+              cycles_per_second: 2.0
+      verse-2:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: y-axis-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
             hue_shift_degrees: 0.0
             visible: true
-            presentation: full_outline
+            presentation: animated_trace
             trace: {}
     section_transitions: {}
     transition_overrides: {}

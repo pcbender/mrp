@@ -29,6 +29,7 @@ release:
     youtube_music: https://music.youtube.com/watch?v=gt9XfITZVOg
     deezer: https://www.deezer.com/track/4054531451
     pandora: https://www.pandora.com/AL:66964508
+    tidal: https://listen.tidal.com/album/529305277
   seo:
     title: Entraining by Michael Anthony Rose
     description: Entraining by Michael Anthony Rose on Maricopa Records.
@@ -37,7 +38,6 @@ release:
     links_na:
     - amazon_music
     - itunes_store
-    - tidal
   song:
     number: 1
     title: Entraining

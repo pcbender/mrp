@@ -1,0 +1,311 @@
+release:
+  id: make-it-all-fine
+  slug: make-it-all-fine
+  title: Make It All Fine
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2026-08-01'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048628977'
+  catalog_number: null
+  cover_image: site/public/assets/releases/make-it-all-fine/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/3WsLtsM6rSwjqmBY7H5MtK
+    apple_music: https://music.apple.com/us/album/make-it-all-fine-single/6797066124
+    tidal: https://listen.tidal.com/album/548495544
+  song:
+    number: 1
+    title: Make It All Fine
+    slug: make-it-all-fine
+    isrc: CAGOO2641500
+    duration: '4:17'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/pcbender--make-it-all-fine.mp3
+    links:
+      spotify: https://open.spotify.com/track/64KIhpvwgOnR29VPU62BbB
+    style: Pop rock with alternative influences. Distorted electric guitars play palm-muted
+      eighth notes in the verses and open power chords in the choruses. A clean electric
+      guitar provides melodic counterpoint with high-register arpeggios. The bass
+      guitar follows the kick drum pattern with a gritty, overdriven tone. Drums feature
+      a prominent snare on 2 and 4 with eighth-note hi-hat patterns and frequent crash
+      cymbal accents during transitions. Male vocals are delivered in a chest-voice
+      tenor, shifting to a strained, high-energy belt in the choruses with occasional
+      vocal layering for harmonic thickness. The tempo is 145 BPM in the key of B
+      Major.
+    lyrics_raw: '[Intro]
+
+      [distorted electric guitar palm-muted eighth notes, clean guitar arpeggio]
+
+      [Verse 1]
+
+      [tenor male vocals]
+
+      I stare at blank white pages
+
+      Like they''ve seen me before
+
+      Every line I reach for
+
+      Feels like footsteps on your floor
+
+      I move the second verse up
+
+      Swap a word out for a word
+
+      But it plays back like a record
+
+      That I''ve already heard
+
+      [Pre-Chorus]
+
+      [bass guitar enters with overdrive, drum build-up]
+
+      So I wear it like a scar
+
+      Try to call it art
+
+      But the label''s in the collar
+
+      And it''s someone else''s heart
+
+      [Chorus]
+
+      [full band, open power chords, driving drums]
+
+      Can I borrow your brilliance
+
+      And claim it as mine?
+
+      Step into a costume
+
+      And feel like I shine
+
+      Take one little ride
+
+      And merely refine
+
+      As if saying sorry
+
+      Will make it all fine
+
+      [Verse 2]
+
+      [drums drop to kick and hi-hat, palm-muted guitar]
+
+      There''s a ghost in my notebook
+
+      With a sharper kind of hand
+
+      Every line I thought was new
+
+      Comes back to me second-hand
+
+      I don''t want to be him
+
+      I don''t even want to claim
+
+      I just want one honest word
+
+      That answers to my name
+
+      [Pre-Chorus]
+
+      [snare rolls, bass intensity increases]
+
+      So I stand at the edge of the thing I want to be
+
+      Half of me is singing
+
+      Half is asking, "Is this me?"
+
+      [Chorus]
+
+      [distorted guitar chords, heavy crash cymbals]
+
+      Can I borrow your brilliance
+
+      And claim it as mine?
+
+      Step into a costume
+
+      And feel like I shine
+
+      Take one little ride
+
+      And merely refine
+
+      As if saying sorry
+
+      Will make it all fine
+
+      [Bridge]
+
+      [guitar feedback, half-time drum feel]
+
+      Can I borrow your brilliance
+
+      And claim it as mine?
+
+      I keep reaching for something
+
+      That was already signed
+
+      Take one little ride
+
+      And merely refine
+
+      As if saying sorry
+
+      Will make it all fine
+
+      [Outro]
+
+      [clean guitar arpeggio, bass fades]
+
+      Maybe every voice is weather passing through the same old sky
+
+      Maybe I''m not a thief, just a person asking why
+
+      If I can''t be first
+
+      Let me still be true
+
+      Let me get it right
+
+      In a way that''s new
+
+      [final guitar chord rings out]'
+    lyrics_text: 'I stare at blank white pages
+
+      Like they''ve seen me before
+
+      Every line I reach for
+
+      Feels like footsteps on your floor
+
+      I move the second verse up
+
+      Swap a word out for a word
+
+      But it plays back like a record
+
+      That I''ve already heard
+
+
+      So I wear it like a scar
+
+      Try to call it art
+
+      But the label''s in the collar
+
+      And it''s someone else''s heart
+
+
+      Can I borrow your brilliance
+
+      And claim it as mine
+
+      Step into a costume
+
+      And feel like I shine
+
+      Take one little ride
+
+      And merely refine
+
+      As if saying sorry
+
+      Will make it all fine
+
+
+      There''s a ghost in my notebook
+
+      With a sharper kind of hand
+
+      Every line I thought was new
+
+      Comes back to me second-hand
+
+      I don''t want to be him
+
+      I don''t even want to claim
+
+      I just want one honest word
+
+      That answers to my name
+
+
+      So I stand at the edge of the thing I want to be
+
+      Half of me is singing
+
+      Half is asking, "Is this me?"
+
+
+      Can I borrow your brilliance
+
+      And claim it as mine
+
+      Step into a costume
+
+      And feel like I shine
+
+      Take one little ride
+
+      And merely refine
+
+      As if saying sorry
+
+      Will make it all fine
+
+
+      Can I borrow your brilliance
+
+      And claim it as mine
+
+      I keep reaching for something
+
+      That was already signed
+
+      Take one little ride
+
+      And merely refine
+
+      As if saying sorry
+
+      Will make it all fine
+
+
+      Maybe every voice is weather passing through the same old sky
+
+      Maybe I''m not a thief, just a person asking why
+
+      If I can''t be first
+
+      Let me still be true
+
+      Let me get it right
+
+      In a way that''s new'
+    lyrics_source: null
+    hints: {}
+  distributor: landr
+  seo:
+    title: Make It All Fine
+    description: Make It All Fine on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/Make It All Fine.wav
+  hero_image: site/public/assets/releases/make-it-all-fine/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null

@@ -29,6 +29,7 @@ release:
     youtube_music: https://music.youtube.com/watch?v=yFQYvdOrIv0
     pandora: https://www.pandora.com/AL:66162337
     deezer: https://www.deezer.com/track/4001606421
+    tidal: https://listen.tidal.com/album/521587674
   seo:
     title: A Certain Sense by 4Castle
     description: A Certain Sense by 4Castle on Maricopa Records.
@@ -37,7 +38,6 @@ release:
     links_na:
     - amazon_music
     - itunes_store
-    - tidal
   song:
     number: 1
     title: A Certain Sense

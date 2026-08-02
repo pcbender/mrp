@@ -15,7 +15,7 @@ actor:
       rose_n: 5
       rose_d: 1
     trace:
-      cycles_per_second: 0.313
+      cycles_per_second: 0.5
       trail_fraction: 0.24
       ghost_count: 1
       ghost_spacing: 0.08
@@ -32,8 +32,13 @@ actor:
       phase_degrees: 20.0
       pitch_degrees: 0.0
       yaw_degrees: 0.0
+      orientation_mode: circuit_step
       pitch_degrees_per_second: 0.0
       yaw_degrees_per_second: 0.0
+      pitch_step_degrees: 0.0
+      yaw_step_degrees: 15.0
+      retained_circuits: 23
+      retention_fade: 1.0
     z_index: 0
     anchor_x: 0.5
     anchor_y: 0.5
