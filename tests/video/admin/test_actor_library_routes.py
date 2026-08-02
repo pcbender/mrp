@@ -320,6 +320,27 @@ def test_the_designer_routes_component_changes_back_into_its_preview(
     assert "window.mrpComponentNotice" in body
 
 
+def test_the_designer_guards_unsaved_edits(tmp_path: Path, monkeypatch) -> None:
+    """Designing an actor is a long sitting and the breadcrumb is a plain link."""
+    _seed_actor(tmp_path)
+    monkeypatch.setattr(actors_routes, "get_repo_root", lambda: tmp_path)
+
+    body = asyncio.run(
+        actors_routes.actors_designer(_get_request("/actors/rose-lantern"), "rose-lantern")
+    ).body.decode()
+
+    assert '<script src="/static/unsaved-guard.js"></script>' in body
+    assert "window.mrpUnsavedGuard" in body
+    assert body.count("data-unsaved-guard") == 1
+    # The bulk tools write .value with no input event, so the guard is blind to
+    # them unless the shared setter marks. Wrapping it covers all of them.
+    setter = body.index("const setPairField")
+    assert "mrpMarkUnsaved()" in body[setter:setter + 260]
+    # Adding a card, and the shared add/remove/import hook, change no field.
+    changed = body.index("window.mrpComponentsChanged =")
+    assert "mrpMarkUnsaved()" in body[changed:changed + 200]
+
+
 def test_save_writes_a_validated_library_file(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr(actors_routes, "get_repo_root", lambda: tmp_path)
 

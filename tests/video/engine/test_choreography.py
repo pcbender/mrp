@@ -15,6 +15,7 @@ from mrp.video.choreography import (
     _ease,
     _ease_integral,
     choreography_at,
+    scene_settle_seconds,
 )
 from mrp.video.mappings import (
     AudioVisualState,
@@ -577,6 +578,54 @@ def test_an_early_transition_arrives_and_then_plays_out_the_rest_of_the_gap() ->
     assert states[1.8].transition_progress == pytest.approx(1)
     assert states[2.4].transition_progress == pytest.approx(1)
     assert all(state.section_id == "chorus" for state in states.values())
+
+
+def test_a_touching_scene_settles_only_after_its_transition_has_played() -> None:
+    """The frame at a butted scene's start still belongs to the scene before."""
+    lyrics = _aligned_sections()  # contiguous: verse ends exactly at chorus start
+
+    settle = scene_settle_seconds(lyrics, 1, transition_seconds=0.5)
+
+    assert settle == pytest.approx(2.5)
+    assert choreography_at(
+        lyrics, lyrics.sections[1].start, transition_seconds=0.5
+    ).transition_progress == pytest.approx(0)
+    assert choreography_at(
+        lyrics, settle, transition_seconds=0.5
+    ).transition_progress == pytest.approx(1)
+
+
+def test_a_gap_covering_scene_settles_on_its_own_start() -> None:
+    """A transition played over the hole has already arrived by the downbeat."""
+    lyrics = _gapped_sections()
+
+    assert scene_settle_seconds(lyrics, 1, transition_seconds=0.5) == pytest.approx(2.0)
+
+
+def test_the_first_scene_and_a_cut_settle_immediately() -> None:
+    lyrics = _aligned_sections()
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"curve": "cut"}}}
+    )
+
+    assert scene_settle_seconds(lyrics, 0, transition_seconds=0.5) == 0
+    assert scene_settle_seconds(
+        lyrics, 1, transition_seconds=0.5, visuals=project.visuals
+    ) == 2
+
+
+def test_a_transition_wider_than_its_scene_settles_at_the_midpoint() -> None:
+    """Never hand the editor a reset point at the far end of the scene."""
+    project = _transition_project(
+        {"section_transitions": {"chorus": {"seconds": 9}}}
+    )
+    lyrics = _aligned_sections()  # the chorus runs 2 -> 4
+
+    settle = scene_settle_seconds(
+        lyrics, 1, transition_seconds=0.5, visuals=project.visuals
+    )
+
+    assert settle == pytest.approx(3)
 
 
 def test_gap_covering_does_nothing_when_the_scenes_already_touch() -> None:

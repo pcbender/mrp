@@ -19,6 +19,7 @@ const {
   previewSectionsAt,
   savedPreviewShapes,
   samplePreviewState,
+  sceneJumpTime,
   sectionIndexAtTime,
   stateSampleWindow,
   validatePreviewDocument,
@@ -41,7 +42,8 @@ function engineHarness(options = {}) {
   const engine = createEngine({
     canvas,
     range: options.range || { start: 10, end: 15 },
-    initialTime: options.initialTime ?? 10,
+    initialTime: 'initialTime' in options ? options.initialTime : 10,
+    resetTime: options.resetTime,
     loop: options.loop ?? true,
     reducedMotion: options.reducedMotion ?? false,
     now: () => now,
@@ -160,6 +162,31 @@ test('audio currentTime is authoritative and remains absolute', () => {
   assert.equal(harness.engine.currentTime, 13.875);
 });
 
+test('reset returns to the settled time, not the head of the range', () => {
+  // A scene whose transition plays over its own opening seconds is still the
+  // outgoing scene at range.start, so the transport opens and resets past it.
+  const harness = engineHarness({ initialTime: null, resetTime: 10.65 });
+
+  assert.equal(harness.engine.currentTime, 10.65);
+
+  harness.engine.seek(13);
+  assert.equal(harness.engine.reset(), 10.65);
+  assert.equal(harness.engine.currentTime, 10.65);
+  assert.equal(harness.draws.at(-1).options.clockSeconds, 10.65);
+  assert.equal(harness.engine.playing, false);
+
+  // Scrubbing back into the transition stays available.
+  assert.equal(harness.engine.seek(10), 10);
+});
+
+test('reset falls back to the range head when nothing settles later', () => {
+  const harness = engineHarness({ initialTime: null });
+
+  assert.equal(harness.engine.currentTime, 10);
+  harness.engine.seek(13);
+  assert.equal(harness.engine.reset(), 10);
+});
+
 test('a non-looping range stops exactly at its end', () => {
   const harness = engineHarness({ loop: false });
 
@@ -266,6 +293,31 @@ test('stateSampleWindow returns adjacent fixed-rate samples', () => {
     fraction: 0,
   });
   assert.equal(stateSampleWindow({ mode: 'geometry-only' }, 2), null);
+});
+
+test('scene jumps land where the scene has settled, not on its start', () => {
+  // Butted against the scene before it: the transition plays over its own
+  // opening seconds, so start would draw the outgoing scene.
+  assert.equal(
+    sceneJumpTime({ start: 33, end: 60.95, settle: 33.65 }, 20),
+    33.65
+  );
+
+  // A gap-covering transition has already arrived; only the state-sample
+  // nudge applies, so the sampled state resolves to this scene.
+  assert.ok(
+    Math.abs(
+      sceneJumpTime({ start: 125.96, end: 129.95, settle: 125.96 }, 20) - 126.01
+    ) < 1e-9
+  );
+
+  // Older payloads carry no settle; behaviour is unchanged for them.
+  assert.equal(sceneJumpTime({ start: 4, end: 8 }, 20), 4.05);
+  assert.equal(sceneJumpTime({ start: 4, end: 8 }, null), 4.001);
+
+  // Never past the scene: a settle at or beyond the end is held inside.
+  assert.equal(sceneJumpTime({ start: 4, end: 8, settle: 9 }, 20), 7.999);
+  assert.equal(sceneJumpTime({ start: 4, end: 4 }, 20), 4);
 });
 
 test('normalizeRange rejects missing or empty playback ranges', () => {

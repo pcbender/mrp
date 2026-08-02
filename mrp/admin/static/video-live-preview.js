@@ -752,6 +752,28 @@
     return index;
   }
 
+  // Where a "jump to this scene" control should land.
+  //
+  // Not the scene's start: a scene with no gap in front of it has nowhere to
+  // play its incoming transition but its own opening seconds, so `start` draws
+  // the scene that just ended. `settle` is where the server says this scene is
+  // first fully itself. The landing is still pushed at least one state sample
+  // in, so the sampled state resolves to this scene and not its predecessor,
+  // and is held short of the scene's end.
+  function sceneJumpTime(section, stateRateHz) {
+    const start = finite(section && section.start) || 0;
+    const end = finite(section && section.end);
+    const rate = finite(stateRateHz);
+    const interiorOffset = rate !== null && rate > 0 ? 1 / rate : 0.001;
+    const settle = finite(section && section.settle);
+    const target = Math.max(
+      start + interiorOffset,
+      settle === null ? start : settle
+    );
+    const last = Math.max(start, (end === null ? start : end) - 0.001);
+    return Math.min(last, target);
+  }
+
   function previewSectionsAt(
     documentModel,
     state,
@@ -1009,8 +1031,16 @@
     let duration = finite(documentModel && documentModel.duration_seconds);
     let range = normalizeRange(opts.range, duration);
     let loop = opts.loop === true;
+    // Where Reset lands, which is not always the head of the range: a scene
+    // whose transition runs inside its own opening seconds only shows itself
+    // once that transition has settled.
+    const resetTime = clamp(
+      finite(opts.resetTime) === null ? range.start : finite(opts.resetTime),
+      range.start,
+      range.end
+    );
     let masterTime = clamp(
-      finite(opts.initialTime) === null ? range.start : finite(opts.initialTime),
+      finite(opts.initialTime) === null ? resetTime : finite(opts.initialTime),
       range.start,
       range.end
     );
@@ -1361,7 +1391,7 @@
       playing = false;
       cancelScheduledFrame();
       if (audio && typeof audio.pause === 'function') audio.pause();
-      masterTime = range.start;
+      masterTime = clamp(resetTime, range.start, range.end);
       syncAudioTime();
       renderAt(masterTime);
       return masterTime;
@@ -1853,6 +1883,12 @@
     const rangeEnd = sceneEnd !== null && sceneEnd > sceneStart
       ? sceneEnd
       : sceneStart + 1;
+    // A scene that butts against the one before it plays the incoming
+    // transition over its own first frames, so opening on sceneStart shows the
+    // outgoing scene rather than the cast being edited. The server says where
+    // this scene has settled; scrubbing back into the transition still works.
+    const modelSettle = finite(model.range && model.range.settle);
+    const sceneSettle = modelSettle === null ? sceneStart : modelSettle;
     const playButton = doc.getElementById('storyboard-play');
     const resetButton = doc.getElementById('storyboard-reset');
     const progressElement = doc.getElementById('storyboard-progress');
@@ -1866,7 +1902,8 @@
       canvas,
       previewDocument: model,
       range: { start: sceneStart, end: rangeEnd },
-      initialTime: sceneStart,
+      initialTime: sceneSettle,
+      resetTime: sceneSettle,
       loop: true,
       reducedMotion,
       background: (masterTime) => backgroundFrameAt(
@@ -2210,15 +2247,7 @@
       sceneJumps.replaceChildren();
       (previewDocument.sections || []).forEach((section) => {
         const start = finite(section.start) || 0;
-        const end = finite(section.end) || start;
-        const stateRate = finite(previewDocument.state_rate_hz);
-        const interiorOffset = stateRate !== null && stateRate > 0
-          ? 1 / stateRate
-          : 0.001;
-        const jumpTime = Math.min(
-          Math.max(start, end - 0.001),
-          start + interiorOffset
-        );
+        const jumpTime = sceneJumpTime(section, previewDocument.state_rate_hz);
         const button = doc.createElement('button');
         button.type = 'button';
         button.className = 'track-preview-scene-jump';
@@ -2522,6 +2551,7 @@
     previewSectionsAt,
     savedPreviewShapes,
     samplePreviewState,
+    sceneJumpTime,
     sectionIndexAtTime,
     stateSampleWindow,
     validatePreviewDocument,

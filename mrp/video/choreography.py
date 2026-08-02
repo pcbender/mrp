@@ -290,6 +290,42 @@ def _transition_plan(
     return gap_start, seconds, curve
 
 
+def scene_settle_seconds(
+    lyrics: AlignedLyrics,
+    index: int,
+    *,
+    transition_seconds: float,
+    visuals: VisualConfig | None = None,
+) -> float:
+    """Return when ``sections[index]`` is first fully itself.
+
+    A scene that butts against the one before it has nowhere to put its
+    transition but its own opening seconds, so the frame at ``section.start``
+    still shows the outgoing scene: the arriving cast is at zero visibility and
+    the style is still the previous scene's. An editor that wants to *look at*
+    a scene has to open past that, which is what this returns. Scenes that
+    cover a gap already arrive on their start and are unaffected.
+    """
+    sections = lyrics.sections
+    section = sections[index]
+    if index <= 0:
+        return section.start
+    begin, seconds, curve = _transition_plan(
+        sections,
+        index,
+        visuals,
+        transition_seconds,
+    )
+    if seconds <= 0 or curve == "cut":
+        return section.start
+    settled = begin + seconds
+    if settled <= section.start:
+        return section.start
+    # A transition wider than the scene never settles inside it. Fall back to
+    # the midpoint, the frame this editor already treats as representative.
+    return min(settled, section.start + (section.end - section.start) / 2)
+
+
 def _configured_style(
     style: SectionStyle,
     configured: SectionVisualStyleConfig | None,
