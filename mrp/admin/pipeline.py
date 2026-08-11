@@ -787,7 +787,12 @@ def run_promoter(root: Path, slug: str, mode: str = "blurb", model: str = "defau
     if mode not in ("blurb", "bio", "keywords"):
         raise ValueError(f"Unknown promoter mode: {mode}")
 
-    cmd = [promoter_bin(root), mode, "--artist", artist_id, "--model", model]
+    cmd = [promoter_bin(root), mode, "--artist", artist_id]
+    if mode == "keywords":
+        # The triumvirate's seats are fixed, so there is no single model to pick.
+        model = "triumvirate"
+    else:
+        cmd += ["--model", model]
     if mode == "bio":
         cmd.append("--force")
     result = subprocess.run(

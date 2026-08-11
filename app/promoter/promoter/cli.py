@@ -4,7 +4,7 @@ promoter CLI
 Commands:
     promoter blurb --artist <slug> [--releases N] [--model dev|default] [--dry-run]
     promoter bio   --artist <slug> [--model dev|default] [--dry-run]
-    promoter keywords --artist <slug> [--model dev|default] [--dry-run]
+    promoter keywords --artist <slug> [--dry-run]
     promoter kit   --release <slug> [--model dev|default] [--out <path>]
 """
 from __future__ import annotations
@@ -14,11 +14,10 @@ import json
 import sys
 from pathlib import Path
 
-from .config import MODEL_DEFAULT, model_for
+from .config import MODEL_DEFAULT, TRIUMVIRATE, model_for
 from .gather import (
     get_all_lyrics,
     get_artist,
-    get_catalog,
     get_critic_text,
     get_recent_releases,
     get_release,
@@ -123,6 +122,7 @@ def cmd_keywords(args: argparse.Namespace) -> None:
         print(f"  ✗  Artist '{args.artist}' not found", file=sys.stderr)
         sys.exit(1)
 
+    artist.setdefault("id", args.artist)
     artist_name = artist.get("name", args.artist)
     existing = normalize(artist.get("keywords") or [])
     patterns = artist.get("keywords_blocked") or []
@@ -131,14 +131,25 @@ def cmd_keywords(args: argparse.Namespace) -> None:
     print(f"  existing: {len(existing)} keyword(s), {len(keyword_field(existing))}/{KEYWORD_BUDGET} chars")
     if patterns:
         print(f"  blocklist: {len(patterns)} line(s)")
-    releases = get_catalog(args.artist)
-    print(f"  catalog : {len(releases)} release(s)")
 
-    model = model_for(args.model)
-    print(f"  calling {model}…")
-    candidates = generate_keywords(artist, releases, existing, model=model)
+    seats = TRIUMVIRATE
+    print(f"  polling : {', '.join(f'{v} ({m})' for v, m in seats)}")
+    run = generate_keywords(artist, existing, seats=seats)
 
-    kept, dropped, blocked = merge_keywords(existing, candidates, patterns)
+    print(f"  catalog : {run['total_releases']} release(s), {run['matched']} critic record(s)")
+    print(f"  gated   : {len(run['passed'])} candidate(s) cleared the floors, "
+          f"{len(run['rejected'])} cut")
+    for vendor, message in run["errors"].items():
+        print(f"  ⚠  {vendor} seat lost — {message}")
+
+    print("\n── ballot ────────────────────────────────────────────")
+    for row in run["tally"]:
+        mark = "keep" if row["kept"] else "drop"
+        voters = ",".join(v[0] for v in row["keeps"]) or "-"
+        rename = f"  → {row['final']}" if row["kept"] and row["final"] != row["term"] else ""
+        print(f"  {mark}  {len(row['keeps'])}/{len(run['ballots'])} [{voters:5}]  {row['term']}{rename}")
+
+    kept, dropped, blocked = merge_keywords(existing, run["keywords"], patterns)
     added = [k for k in kept if k not in existing]
 
     print("\n── keywords ──────────────────────────────────────────")
@@ -215,9 +226,10 @@ def main() -> None:
     p_bio.add_argument("--dry-run", action="store_true")
 
     # keywords
+    # No --model: the triumvirate's seats are fixed, so a single model choice
+    # would not mean anything here.
     p_kw = sub.add_parser("keywords", help="Append YouTube channel keywords from the catalog")
     p_kw.add_argument("--artist", required=True)
-    p_kw.add_argument("--model", default="default", choices=["dev", "default"])
     p_kw.add_argument("--dry-run", action="store_true")
 
     # kit
