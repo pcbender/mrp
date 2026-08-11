@@ -42,6 +42,34 @@ def write_promo_blurb(artist_slug: str, blurb: str) -> Path:
     return path
 
 
+def write_keywords(artist_slug: str, keywords: list[str]) -> Path:
+    """
+    Patch keywords and keywords_auto_generated onto the artist record.
+    keywords_auto_generated flags the list as AI-drafted; saving the artist in
+    the admin clears it, and the merge is append-only either way.
+    """
+    path, fmt = _artist_path(artist_slug)
+
+    if fmt == "json":
+        data = json.loads(path.read_text(encoding="utf-8"))
+        data["artist"]["keywords"] = keywords
+        data["artist"]["keywords_auto_generated"] = True
+        path.write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+    else:
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data["artist"]["keywords"] = keywords
+        data["artist"]["keywords_auto_generated"] = True
+        path.write_text(
+            yaml.dump(data, allow_unicode=True, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
+        )
+
+    return path
+
+
 def write_bio(
     artist_slug: str,
     bio_short: str,

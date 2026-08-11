@@ -138,6 +138,74 @@ def _parse_kit_response(raw: str) -> dict:
     raise ValueError(f"Could not parse JSON kit from model response:\n{raw[:400]}")
 
 
+def generate_keywords(
+    artist: dict,
+    releases: list[dict],
+    existing: list[str],
+    model: str = MODEL_DEFAULT,
+) -> list[str]:
+    """
+    Generate YouTube channel keyword candidates for an artist.
+
+    Reads the whole catalog rather than one release: channel keywords describe
+    the artist, not a campaign. Existing keywords are passed in so the model
+    does not re-propose what is already settled.
+    """
+    artist_name = artist.get("name", "")
+    system = (
+        (_PROMPTS_DIR / "keywords_system.md").read_text()
+        .replace("{artist_name}", artist_name)
+    )
+
+    parts = [
+        f"Artist: {artist_name}",
+        f"Type: {artist.get('type') or 'solo artist'}",
+    ]
+    bio = artist.get("bio_long") or artist.get("bio_short")
+    if bio:
+        parts.append(f"Bio:\n{bio}")
+
+    catalog = []
+    for rel in releases:
+        line = f"- {rel.get('title', '')} ({rel.get('release_type', '')}, {rel.get('release_date') or 'unreleased'})"
+        if rel.get("summary"):
+            line += f"\n  {rel['summary']}"
+        catalog.append(line)
+    parts.append("Catalog:\n" + ("\n".join(catalog) if catalog else "(no releases yet)"))
+
+    if existing:
+        parts.append("Already on the record (do not repeat):\n" + "\n".join(f"- {k}" for k in existing))
+
+    raw = _call_gemini(system, "\n\n".join(parts), model)
+    return _parse_keywords_response(raw)
+
+
+def _parse_keywords_response(raw: str) -> list[str]:
+    """Parse the JSON keyword array, tolerating fences or an object wrapper."""
+    import json as _json
+    import re as _re
+
+    candidates = [raw]
+    match = _re.search(r"```(?:json)?\s*(.*?)\s*```", raw, _re.DOTALL)
+    if match:
+        candidates.append(match.group(1))
+    match = _re.search(r"\[.*\]", raw, _re.DOTALL)
+    if match:
+        candidates.append(match.group(0))
+
+    for text in candidates:
+        try:
+            parsed = _json.loads(text)
+        except _json.JSONDecodeError:
+            continue
+        if isinstance(parsed, dict):
+            parsed = parsed.get("keywords")
+        if isinstance(parsed, list):
+            return [str(k).strip() for k in parsed if str(k).strip()]
+
+    raise ValueError(f"Could not parse keyword list from model response:\n{raw[:400]}")
+
+
 def generate_bio(
     artist_name: str,
     artist_type: str,

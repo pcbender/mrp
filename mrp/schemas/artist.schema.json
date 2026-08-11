@@ -21,6 +21,15 @@
         "bio_long": {"type": ["string", "null"]},
         "bio_auto_generated": {"type": ["boolean", "null"]},
         "promo_blurb": {"type": ["string", "null"]},
+        "keywords": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "keywords_auto_generated": {"type": ["boolean", "null"]},
+        "keywords_blocked": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
         "image": {"type": ["string", "null"]},
         "reference_image": {"type": ["string", "null"]},
         "likeness_notes": {"type": ["string", "null"]},

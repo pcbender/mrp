@@ -51,6 +51,29 @@ def get_recent_releases(artist_slug: str, n: int = 3) -> list[dict]:
     return releases[:n]
 
 
+def get_catalog(artist_slug: str) -> list[dict]:
+    """
+    Return every release for artist_slug, newest first.
+    Each dict: slug, title, release_type, release_date, summary.
+    """
+    releases = []
+    for path in RELEASES_DIR.glob("*.yaml"):
+        data = _load(path)
+        rel = data.get("release", {})
+        if rel.get("artist_id") != artist_slug:
+            continue
+        releases.append({
+            "slug": rel.get("slug", path.stem),
+            "title": rel.get("title", ""),
+            "release_type": rel.get("release_type", ""),
+            "release_date": rel.get("release_date", "") or "",
+            "summary": rel.get("summary", "") or "",
+        })
+
+    releases.sort(key=lambda r: r["release_date"], reverse=True)
+    return releases
+
+
 def get_release(slug: str) -> dict:
     """Return the release dict (inner 'release' key) or {} if not found."""
     path = RELEASES_DIR / f"{slug}.yaml"

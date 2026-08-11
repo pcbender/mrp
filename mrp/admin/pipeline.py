@@ -777,14 +777,14 @@ def _landr_store_links(release: dict[str, Any]) -> tuple[dict[str, str], dict[st
 
 
 def run_promoter(root: Path, slug: str, mode: str = "blurb", model: str = "default") -> dict[str, Any]:
-    """Run promoter blurb or bio for the release's artist (writes artist YAML)."""
+    """Run promoter blurb, bio, or keywords for the release's artist (writes artist YAML)."""
     from mrp.admin.critic_io import promoter_bin
 
     path, data, release = _load_release(root, slug)
     artist_id = release.get("artist_id") or ""
     if not artist_id:
         raise ValueError("No artist_id on this release")
-    if mode not in ("blurb", "bio"):
+    if mode not in ("blurb", "bio", "keywords"):
         raise ValueError(f"Unknown promoter mode: {mode}")
 
     cmd = [promoter_bin(root), mode, "--artist", artist_id, "--model", model]
