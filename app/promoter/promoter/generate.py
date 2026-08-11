@@ -140,70 +140,56 @@ def _parse_kit_response(raw: str) -> dict:
 
 def generate_keywords(
     artist: dict,
-    releases: list[dict],
     existing: list[str],
-    model: str = MODEL_DEFAULT,
-) -> list[str]:
+    seats=None,
+) -> dict:
     """
-    Generate YouTube channel keyword candidates for an artist.
+    Propose YouTube channel keywords for an artist.
 
-    Reads the whole catalog rather than one release: channel keywords describe
-    the artist, not a campaign. Existing keywords are passed in so the model
-    does not re-propose what is already settled.
+    Candidates come from the artist's own catalog (see `evidence.py`), not from
+    a model — channel keywords describe the artist, and a model asked to invent
+    them will happily claim a genre one track suggested. Three vendors then vote
+    on the gated candidates, and a keyword needs a quorum to survive.
+
+    Returns the full run: candidates, gate results, ballots, tally, and the
+    keywords that reached consensus. Nothing is written here.
     """
-    artist_name = artist.get("name", "")
-    system = (
-        (_PROMPTS_DIR / "keywords_system.md").read_text()
-        .replace("{artist_name}", artist_name)
-    )
+    from . import evidence as ev
+    from .config import TRIUMVIRATE
+    from .triumvirate import collect_ballots, consensus
 
-    parts = [
-        f"Artist: {artist_name}",
-        f"Type: {artist.get('type') or 'solo artist'}",
-    ]
-    bio = artist.get("bio_long") or artist.get("bio_short")
-    if bio:
-        parts.append(f"Bio:\n{bio}")
+    artist_id = artist.get("id", "")
+    gathered = ev.gather(artist_id)
+    total = gathered["total_releases"]
+    passed, rejected = ev.gated(gathered["candidates"], total)
 
-    catalog = []
-    for rel in releases:
-        line = f"- {rel.get('title', '')} ({rel.get('release_type', '')}, {rel.get('release_date') or 'unreleased'})"
-        if rel.get("summary"):
-            line += f"\n  {rel['summary']}"
-        catalog.append(line)
-    parts.append("Catalog:\n" + ("\n".join(catalog) if catalog else "(no releases yet)"))
+    lines = [f"{c.term} — {c.evidence(total)}" for c in passed]
+    lines += [f"{t} — tempo, from measured BPM across the catalog"
+              for t in ev.tempo_terms(gathered["bpm"])]
+    lines += [f"{n} — artist name variant" for n in ev.name_variants(artist.get("name", ""))]
+    terms = [line.split(" — ", 1)[0] for line in lines]
 
-    if existing:
-        parts.append("Already on the record (do not repeat):\n" + "\n".join(f"- {k}" for k in existing))
+    ballots, errors = collect_ballots(artist, lines, seats or TRIUMVIRATE)
+    if len(ballots) < 2:
+        raise RuntimeError(
+            "Need at least two ballots to form a consensus. "
+            + "; ".join(f"{v}: {e}" for v, e in errors.items())
+        )
 
-    raw = _call_gemini(system, "\n\n".join(parts), model)
-    return _parse_keywords_response(raw)
+    kept, tally = consensus(terms, ballots)
+    kept = [k for k in kept if k.casefold() not in {e.casefold() for e in existing}]
 
-
-def _parse_keywords_response(raw: str) -> list[str]:
-    """Parse the JSON keyword array, tolerating fences or an object wrapper."""
-    import json as _json
-    import re as _re
-
-    candidates = [raw]
-    match = _re.search(r"```(?:json)?\s*(.*?)\s*```", raw, _re.DOTALL)
-    if match:
-        candidates.append(match.group(1))
-    match = _re.search(r"\[.*\]", raw, _re.DOTALL)
-    if match:
-        candidates.append(match.group(0))
-
-    for text in candidates:
-        try:
-            parsed = _json.loads(text)
-        except _json.JSONDecodeError:
-            continue
-        if isinstance(parsed, dict):
-            parsed = parsed.get("keywords")
-        if isinstance(parsed, list):
-            return [str(k).strip() for k in parsed if str(k).strip()]
-
-    raise ValueError(f"Could not parse keyword list from model response:\n{raw[:400]}")
+    return {
+        "total_releases": total,
+        "matched": gathered["matched"],
+        "passed": passed,
+        "rejected": rejected,
+        "terms": terms,
+        "ballots": ballots,
+        "errors": errors,
+        "tally": tally,
+        "keywords": kept,
+    }
 
 
 def generate_bio(
