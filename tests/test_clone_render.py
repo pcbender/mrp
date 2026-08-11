@@ -11,6 +11,20 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def public_url(path: str) -> str:
+    """The site-root URL a content record's image path renders as.
+
+    Artist records store `/assets/…` while release records store
+    `site/public/assets/…`; the built page always uses the site-root form.
+
+    Rejects an empty path rather than returning "/", which would be trivially
+    present in any page and turn the caller's assertion into a no-op.
+    """
+    url = "/" + str(path or "").strip().replace("site/public/", "", 1).lstrip("/")
+    assert len(url) > 1, f"record has no usable image path: {path!r}"
+    return url
+
+
 def run_mrp(*args: str, site_out_root: Path) -> subprocess.CompletedProcess[str]:
     env = os.environ.copy()
     env["MRP_SITE_OUT_ROOT"] = str(site_out_root)
@@ -44,9 +58,15 @@ def test_build_renders_wxr_clone_artist_release_and_blog_pages(tmp_path):
     # Raw WP block markup must not leak through (it did, pre-promotion, when
     # this page was clone-rendered).
     assert "wp-block-stackable-column" not in pcbender
-    # Likewise, the native page uses the artist record's own (migrated,
-    # deduplicated) image path rather than a raw wp-content passthrough URL.
-    assert "/assets/migrated/9738fd064754-PCBender.png" in pcbender
+    # Likewise, the native page uses the artist record's own image path rather
+    # than a raw wp-content passthrough URL. Derived from the record for the
+    # same reason as the bio above: an artist's image is content and moves --
+    # the identity-refresh workflow replaces a migrated WP image with a
+    # generated one, which is a normal edit, not a regression. Pinning the
+    # filename made this test fail every time an artist's portrait was
+    # refreshed. What must stay true is the two assertions below.
+    assert public_url(artist["image"]) in pcbender
+    assert "wp-content" not in pcbender
 
     circuiting = (build_path / "artists/pcbender/circuiting/index.html").read_text()
     # circuiting was promoted from a clone-only page to a real catalog
@@ -55,7 +75,12 @@ def test_build_renders_wxr_clone_artist_release_and_blog_pages(tmp_path):
     # instead of raw clone HTML.
     assert 'class="release-landing"' in circuiting
     assert "Circuiting" in circuiting
-    assert "/assets/migrated/a4753b0ddd52-Circuiting.jpg" in circuiting
+    # Derived rather than pinned, for the same reason as the artist image: a
+    # release cover is content and can be regenerated. This one still happens
+    # to be the migrated asset.
+    release = yaml.safe_load((ROOT / "content/releases/circuiting.yaml").read_text())["release"]
+    assert public_url(release["cover_image"]) in circuiting
+    assert "wp-content" not in circuiting
 
     post = (build_path / "2025/02/26/the-future-of-ai-in-music/index.html").read_text()
     # Blog posts get a dedicated post-detail layout (added after this test was
