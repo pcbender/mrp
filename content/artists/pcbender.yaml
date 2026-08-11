@@ -47,7 +47,7 @@ artist:
     a world that is never quite square. His work is a testament to the idea that the
     most profound truths are often found not in the grand pronouncements, but in the
     quiet moments, the crooked lines, and the choice to keep moving on down the way.'
-  image: /assets/migrated/9738fd064754-PCBender.png
+  image: /assets/artists/pcbender/pcbender.jpg
   links:
     spotify: https://open.spotify.com/artist/0aivrU155laeOcIoT4AhPo?si=pYdQp1J_S4y0vSFA4itgUg
     apple_music: https://music.apple.com/us/artist/pcbender/1793178641
@@ -74,3 +74,15 @@ artist:
   bio_auto_generated: false
   reference_image: assets/artists/pcbender/reference.jpg
   likeness_notes: null
+  keywords:
+  - electric guitar
+  - classic rock
+  - acoustic guitar
+  - indie rock
+  - blues rock
+  - melancholic
+  - country rock
+  - PCBender
+  - PCBender music
+  - PCBender official
+  keywords_auto_generated: true

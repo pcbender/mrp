@@ -5,27 +5,46 @@ artist:
   type: project
   label: Maricopa Records
   default_publisher: Maricopa Publishing
-  bio_short: STAB isn’t just a name-it’s a statement. A sonic force of nature, she
-    channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving basslines,
-    and tight harmonies into anthems that hit hard and leave a mark. Bold, confident,
-    and unapologetically fierce, STAB delivers high-energy hooks with a rebellious
-    edge, embracing the raw, unfiltered spirit of rock.
-  bio_long: "STAB isn’t just a name-it’s a statement. A sonic force of nature, she\
-    \ channels the electric pulse of '80s pop-rock, fusing jangly guitars, driving\
-    \ basslines, and tight harmonies into anthems that hit hard and leave a mark.\
-    \ Bold, confident, and unapologetically fierce, STAB delivers high-energy hooks\
-    \ with a rebellious edge, embracing the raw, unfiltered spirit of rock.\r\n\r\n\
-    Her music is a love letter to the golden age of girl bands, blending the infectious\
-    \ melodies of The Bangles with the gritty attitude of The Runaways. Whether she’s\
-    \ tearing through anthemic choruses, throwing down sharp riffs, or tapping into\
-    \ her softer, more introspective side, STAB’s voice is unmistakable-powerful yet\
-    \ effortlessly cool.\r\n\r\nA signature artist under Maricopa Records, STAB thrives\
-    \ in the space where analog warmth meets AI-driven creativity, pushing boundaries\
-    \ while staying true to the timeless essence of rock 'n' roll. She’s not here\
-    \ to follow trends-she’s here to carve her own path, one catchy, defiant, and\
-    \ undeniably addictive track at a time.\r\n\r\nIf you’re looking for music that\
-    \ hits like a lightning bolt and stays in your head for days-STAB is already in\
-    \ your veins."
+  bio_short: STAB, the latest project from Maricopa Records, chronicles the friction
+    between our inner lives and our hyper-connected world. With lyrics that swing
+    from blistering social critique to quiet, confessional introspection, STAB gives
+    voice to the messy, unedited moments of modern existence. It is the sound of logging
+    off, facing the silence, and trying to find what remains.
+  bio_long: 'STAB, a project on Maricopa Records, operates as a lyrical field guide
+    to the fractured state of the modern soul. The project’s songs grapple with the
+    friction between the person we are and the person we perform, whether online,
+    in relationships, or in the quiet of our own minds. This is a world built from
+    unflinching confessionals, sharp social satire, and moments of profound philosophical
+    surrender, mapping a vast emotional and intellectual territory.
+
+
+    At the heart of STAB''s work is a powerful, recurring examination of life in the
+    digital age. Songs like “Excess Fiasco” deliver a cynical takedown of hustle culture
+    and monetized existence, where life is a “carousel made out of steel.” The extensive
+    “The Messy Middle” series offers a raw, vulnerable account of the consequences:
+    the phantom phone buzz, the loss of focus, and the quiet panic of confronting
+    oneself when the screens go dark. The language is direct and immediate, capturing
+    the specific anxieties of being “always half here, always reaching” and the difficult,
+    necessary work of reclaiming one’s own attention.
+
+
+    This exploration of authenticity extends to the chaos of human connection. STAB''s
+    emotional register is vast, swinging from the vengeful, scorched earth fury of
+    “Tits Up (Remix)” and the desperate physicality of “Burn Me” to the resilient,
+    post-heartbreak anthem “The Hardest Gift.” Yet, beyond the personal, the project
+    also reaches for the universal. In tracks like “Here Comes the Rain,” the artist
+    confronts fate not with fear, but with a radical acceptance, finding strength
+    in surrendering to forces beyond control with the resolve to “face what falls
+    and call it mine.”
+
+
+    Across mythological tales, bedroom confessions, and cultural critiques, STAB maintains
+    a singular focus: a search for what is true. The lyrics are both concrete and
+    metaphorical, grounding abstract feelings of alienation in the familiar glow of
+    a phone screen or the weight of a silent room. It is a project for anyone who
+    has ever felt a disconnect between their feed and their feelings, for anyone fighting
+    to hear their own voice above the noise. STAB doesn''t offer easy answers, but
+    instead provides a powerful, unflinching companion for the journey.'
   image: /assets/artists/stab/stab.jpg
   reference_image: assets/artists/stab/reference.jpg
   links:
@@ -40,20 +59,32 @@ artist:
     tiktok: null
     website: null
   visibility: public
-  promo_blurb: STAB channels the electric pulse of '80s pop-rock, fusing jangly guitars
-    and driving basslines into high-energy anthems with a rebellious edge. Her recent
-    work showcases a compelling artistic range, moving from myth-making to raw confession.
-    The single ["Raven Dark"](/releases/raven-dark/) builds from ambient electronics
-    into a powerful, ritualistic chant, demonstrating her ambitious scope. In contrast,
-    ["June Gloom"](/releases/june-gloom/) turns frustration into a cathartic sing-along,
-    capturing a restless energy that explodes in its chorus. On the more introspective
-    ["Just A Waste Of Tears"](/releases/just-a-waste-of-tears/), she explores a colder,
-    more controlled sound where emotional resignation becomes a potent hook. STAB
-    is a commanding voice in modern rock, crafting songs that are both unapologetically
-    fierce and deeply resonant.
+  promo_blurb: STAB channels the electric pulse of ‘80s pop-rock, fusing jangly guitars
+    and driving basslines into anthems that are bold, confident, and unapologetically
+    fierce. Her recent work showcases a formidable artistic range, moving from high-energy
+    hooks to more introspective territory. The single ["Raven Dark"](/releases/raven-dark/)
+    builds a creation myth with a ritualistic, call-and-response chorus that delivers
+    a genuine dynamic punch. On ["June Gloom"](/releases/june-gloom/), she captures
+    a restless energy, contrasting spare verses against a dense, chaotic hook to create
+    a powerful emotional arc. The more controlled ["Just A Waste Of Tears"](/releases/just-a-waste-of-tears/)
+    explores her reflective side, finding strength in restraint and melodic insistence.
+    With a raw, unfiltered spirit at her core, STAB is an artist who hits hard and
+    leaves a mark.
   likeness_notes: 'Direct young female rock artist in every image: mid-to-late twenties,
     light cool-neutral skin, refined oval-heart face, high cheekbones, large hazel-green
     almond eyes, thick dark brows, narrow straight nose, full sharply defined lips,
     fearless controlled gaze; preserve the exact face, eye color, hair pattern, hair
     volume, age, nose, lips, jaw, and brow shape.'
   bio_auto_generated: false
+  keywords:
+  - electric guitar
+  - indie rock
+  - classic rock
+  - emotional indie rock
+  - pop rock
+  - blues rock
+  - acoustic guitar
+  - STAB
+  - STAB music
+  - STAB official
+  keywords_auto_generated: true

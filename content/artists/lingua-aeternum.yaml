@@ -5,41 +5,48 @@ artist:
   type: project
   label: Maricopa Records
   default_publisher: Maricopa Publishing
-  bio_short: Lingua Aeternum crafts intricate, philosophical songs that chart the
-    unseen landscapes of the human mind. Their lyrics grapple with paradox, the struggle
-    of the creative act, and the search for an authentic self, using stark imagery
-    and hypnotic repetition. It is music as a form of wayfinding, offering listeners
-    a map not to a place, but to a state of being.
-  bio_long: "Lingua Aeternum, the latest project on Maricopa Records, is a profound\
-    \ exploration of the space between thought and sound. The work is a form of philosophical\
-    \ inquiry set to music, eschewing simple narratives for a rich tapestry of metaphor\
-    \ and paradox. These are songs about the very act of creation, the tension between\
-    \ meaning and truth, and the winding paths of self-discovery. Lingua Aeternum's\
-    \ lyrics interrogate the internal world with the precision of a cartographer,\
-    \ mapping the canyons of doubt and the coastlines of resolve.\r\n\r\nAt the core\
-    \ of the project’s lyrical world is a fascination with duality. As explored in\
-    \ songs like \"Opposites Attach,\" life is not a series of collisions between\
-    \ black and white but a constant, intricate weaving of contradictory forces: love\
-    \ and hate, silence and breath, chaos and order. This same tension is present\
-    \ in the persistent examination of the creative struggle, where what is broken\
-    \ often \"speaks the loudest part\" and a body of work becomes the very body of\
-    \ the artist. The music finds its power not in easy resolutions but in the resonant\
-    \ act of aiming for what feels true, even when the hand still shakes.\r\n\r\n\
-    The emotional register is as dynamic as the themes, moving from the vulnerable\
-    \ confession of a \"Stone Warrior\" learning to let in the light, to the hypnotic,\
-    \ meditative quality of pieces like \"Sentia\" that guide the listener toward\
-    \ a state of pure awareness. The project's voice is one of stark contrasts, moving\
-    \ from dense, abstract verses to direct, declarative choruses that serve as anchors\
-    \ in a sea of contemplation. Concrete images, a compass that cannot settle, a\
-    \ single thread waiting to be woven, a candle burning deep within, ground the\
-    \ listener in a world that is deeply felt and meticulously observed.\r\n\r\nUltimately,\
-    \ the music of Lingua Aeternum is an invitation to look inward, to embrace complexity,\
-    \ and to find meaning not in final answers but in the dedicated act of seeking.\
-    \ It is a soundtrack for the \"Wayfinder\" in everyone, for those charting their\
-    \ own internal caves and canyons with a compass that has been purposefully left\
-    \ behind. This is music that doesn't just describe the journey of becoming, it\
-    \ serves as a companion for it."
-  image: /assets/migrated/90aec637524d-LA_Profile_square.png
+  bio_short: Lingua Aeternum crafts deeply philosophical songs that map the landscapes
+    of the inner self through rich, abstract metaphor. The project’s lyrics are a
+    search for truth within the tensions of duality, the act of creation, and the
+    nature of consciousness. This is potent, introspective music for the listener
+    who seeks not just a melody, but a quiet revelation.
+  bio_long: 'The music of Lingua Aeternum, a new project on Maricopa Records, is less
+    a collection of stories and more a series of philosophical inquiries set to sound.
+    The lyrics do not narrate events so much as they chart internal territories, turning
+    the struggles of consciousness and creativity into intricate, metaphorical worlds.
+    This is a voice concerned with the unseen architecture of reality, from the way
+    opposites intertwine to the cyclical nature of beginnings and endings. The songs
+    are invitations to ponder the spaces between thought and action, silence and sound,
+    the self and the universe.
+
+
+    A central preoccupation for Lingua Aeternum is the act of creation itself. Lyrics
+    frequently return to the disciplined, sometimes painful, process of making meaning,
+    using resonant images of weaving threads into tapestries, drawing maps of uncharted
+    inner canyons, and wrestling with the gap between intention and expression. This
+    is not a triumphant art, but a persistent one, built from flawed drafts and corrected
+    margins. It is a body of work that finds its grace not in perfection, but in the
+    vulnerable, determined process of becoming, as one song states, “not to be perfect,
+    just to be true.”
+
+
+    The emotional register is consistently introspective and meditative, often feeling
+    like a direct address to the listener’s own searching mind. The voice can be confessional,
+    as in the quiet resignation of a sinking ship or the defiant vulnerability of
+    a “stone warrior” learning to feel. At other times, it becomes almost instructional,
+    guiding the listener toward a state of pure awareness, to be “empty, attentive,
+    free.” The language is deliberate and layered, favoring potent abstractions and
+    incantations over direct statements, creating a space where a listener can find
+    their own meaning reflected in the lyrics’ depths.
+
+
+    Ultimately, Lingua Aeternum offers a soundtrack for the journey inward. It is
+    music that asks questions, that finds solace in complexity, and that champions
+    the quiet power of self-awareness. It doesn''t provide easy answers but instead
+    offers a beautifully crafted compass for navigating the "caves and canyons" inside,
+    leaving the listener with the tools not to find a pre-drawn path, but to discover
+    their own.'
+  image: /assets/artists/lingua-aeternum/lingua-aeternum.jpg
   links:
     spotify: https://open.spotify.com/artist/4Ivof5fKiBE9wbz6ArgZzd?si=HYePmTM3TtCaN-P1PFFYlQ
     apple_music: https://music.apple.com/us/artist/lingua-aeternum/1809011711
@@ -52,18 +59,32 @@ artist:
     tiktok: null
     website: null
   visibility: public
-  promo_blurb: Lingua Aeternum operates less like a band and more like a ritual, building
-    resonant songs that balance intricate arrangements with impassioned performance.
-    Their work constructs its arguments brick by brick, layering interlocking guitar
-    and synth melodies over punchy rhythms to land with genuine conviction. The recent
-    single ["Aim For True"](/releases/aim-for-true/) captures the feeling of creative
-    struggle with a driving, chest-thumping pulse and plainspoken honesty. It follows
-    the more expansive ["Sentia"](/releases/sentia/), a multi-movement piece that
-    guides the listener from distorted, tense passages to a final resolution of quiet,
-    layered harmonies. Lingua Aeternum makes music that asks for your attention and
-    fully repays the investment.
-  bio_auto_generated: false
+  promo_blurb: Lingua Aeternum crafts intricate songs that act as a form of wayfinding,
+    charting the unseen landscapes of the human mind. Their music grapples with paradox
+    and the search for an authentic self through stark imagery and hypnotic repetition.
+    This philosophical approach is clear in their recent work, where each single explores
+    a different facet of conviction. The song ["Aim For True"](/releases/aim-for-true/)
+    captures the cycle of creative struggle with a swaying, insistent rhythm, while
+    ["Magical Thinking"](/releases/magical-thinking/) builds its case for self-determination
+    through clockwork precision and an impassioned vocal delivery. The ambitious ["Sentia"](/releases/sentia/)
+    is a patient, multi-movement piece that rewards close attention, culminating in
+    a powerful and intimate payoff. This is music that offers listeners a map not
+    to a place, but to a state of being.
+  bio_auto_generated: true
   reference_image: assets/artists/lingua-aeternum/reference.jpg
   likeness_notes: 'Lingua Aeternum Cantor, the same deliberately plain ritual identity
     in every image: Still, precise ceremonial posture, black smoke and subtle amber
     rim light; Glyph language, and restrained sacred-mathematical atmosphere'
+  keywords:
+  - electric guitar
+  - emotional
+  - classic rock
+  - indie rock
+  - tender
+  - acoustic guitar
+  - uplifting rock music
+  - blues rock
+  - Lingua Aeternum
+  - Lingua Aeternum music
+  - Lingua Aeternum official
+  keywords_auto_generated: true
