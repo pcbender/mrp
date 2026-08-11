@@ -480,6 +480,9 @@ def _ws_dispatch(step: str, form: dict):
     if step == "promoter-bio":
         return ("Artist bio", pipe.run_promoter,
                 {"mode": "bio", "model": str(form.get("promoter_model", "default"))})
+    if step == "promoter-keywords":
+        return ("Channel keywords", pipe.run_promoter,
+                {"mode": "keywords", "model": str(form.get("promoter_model", "default"))})
     if step == "promoter-kit":
         return ("Promo kit", pipe.run_promo_kit,
                 {"model": str(form.get("promoter_model", "default"))})
@@ -1050,6 +1053,7 @@ def _promoter_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLR
         "artist_id": artist_id,
         "blurb_job": db.get_latest_job_by_command(f"{slug}/promoter-blurb"),
         "bio_job": db.get_latest_job_by_command(f"{slug}/promoter-bio"),
+        "keywords_job": db.get_latest_job_by_command(f"{slug}/promoter-keywords"),
         "kit_job": db.get_latest_job_by_command(f"{slug}/promoter-kit"),
         "animated_job": db.get_latest_job_by_command(f"{slug}/promoter-animated-cover"),
         "nim_connected": nim.connected(),

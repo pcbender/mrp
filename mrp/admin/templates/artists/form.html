@@ -121,6 +121,53 @@
   </details>
 
   <details class="form-card" open>
+    <summary>Channel Keywords</summary>
+    <div class="form-body">
+      <div class="form-row">
+        <div class="form-field full">
+          <label>Keywords <span style="font-weight:400;color:var(--muted)">— one per line</span></label>
+          <textarea name="keywords" id="kw-input" rows="10">{{ keywords_text }}</textarea>
+        </div>
+        <div class="form-field full">
+          <label>Blocklist <span style="font-weight:400;color:var(--muted)">— one pattern per line</span></label>
+          <textarea name="keywords_blocked" id="kw-block" rows="6"
+            placeholder="# name variants Nim keeps inventing&#10;PCB*">{{ blocklist_text }}</textarea>
+          <p style="font-size:12px;color:var(--muted);margin:.4rem 0 0">
+            Reads like a <code>.gitignore</code>: <code>*</code> <code>?</code>
+            <code>[abc]</code> globs, <code>#</code> comments, <code>!</code> to
+            re-include, last match wins. Patterns match the <em>whole</em>
+            keyword — <code>PCB*</code> blocks "PCB Bender", bare <code>PCB</code>
+            does not. Blocked keywords are removed on save.
+          </p>
+        </div>
+        <div class="form-field full">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:.5rem">
+            <label style="margin:0">Paste into YouTube Studio</label>
+            <span id="kw-count" class="td-mono" style="font-size:12px;color:var(--muted)">
+              {{ keyword_used }}/{{ keyword_budget }}
+            </span>
+          </div>
+          <textarea id="kw-field" readonly rows="4">{{ keyword_field }}</textarea>
+          <div style="display:flex;align-items:center;gap:.6rem;margin-top:.4rem">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="kwCopy(this)">Copy</button>
+            <span id="kw-blocked" style="font-size:12px;color:var(--muted)"></span>
+          </div>
+        </div>
+      </div>
+      <div class="check-row">
+        <input type="checkbox" name="keywords_auto_generated" id="kw-auto"
+          {% if artist.keywords_auto_generated %}checked{% endif %}>
+        <label for="kw-auto">Keywords auto-generated</label>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin:.5rem 0 0">
+        Settings → Channel → Basic info → Keywords. The promoter appends new
+        keywords from the catalog and never rewrites what is already here, so
+        prune this list yourself when it hits the budget.
+      </p>
+    </div>
+  </details>
+
+  <details class="form-card" open>
     <summary>Links</summary>
     <div class="form-body">
       <div class="link-board">
@@ -194,4 +241,53 @@
   </div>
 </details>
 {% endif %}
+
+<script src="/static/keyword-blocklist.js"></script>
+<script>
+// Mirrors _keyword_field() in routes/artists.py: multi-word phrases are quoted,
+// and YouTube counts the assembled comma-separated string against its 500 cap.
+const KW_BUDGET = {{ keyword_budget }};
+
+function kwList() {
+  const seen = new Set();
+  return document.getElementById("kw-input").value
+    .replace(/\n/g, ",").split(",")
+    .map(s => s.trim().replace(/^"|"$/g, "").replace(/\s+/g, " "))
+    .filter(s => {
+      if (!s || seen.has(s.toLowerCase())) return false;
+      seen.add(s.toLowerCase());
+      return true;
+    });
+}
+
+function kwRefresh() {
+  const patterns = document.getElementById("kw-block").value.split("\n");
+  const split = window.mrpKeywordBlocklist.apply(kwList(), patterns);
+  const kept = split.kept;
+  const blocked = split.blocked;
+
+  const field = kept.map(k => k.includes(" ") ? '"' + k + '"' : k).join(", ");
+  document.getElementById("kw-field").value = field;
+  const count = document.getElementById("kw-count");
+  count.textContent = field.length + "/" + KW_BUDGET;
+  count.style.color = field.length > KW_BUDGET ? "var(--danger, #c0392b)" : "var(--muted)";
+
+  const note = document.getElementById("kw-blocked");
+  note.textContent = blocked.length
+    ? blocked.length + " blocked on save: " + blocked.join(", ")
+    : "";
+}
+
+function kwCopy(btn) {
+  navigator.clipboard.writeText(document.getElementById("kw-field").value).then(() => {
+    const old = btn.textContent;
+    btn.textContent = "Copied ✓";
+    setTimeout(() => { btn.textContent = old; }, 1200);
+  });
+}
+
+document.getElementById("kw-input").addEventListener("input", kwRefresh);
+document.getElementById("kw-block").addEventListener("input", kwRefresh);
+kwRefresh();
+</script>
 {% endblock %}

@@ -4,6 +4,7 @@ promoter CLI
 Commands:
     promoter blurb --artist <slug> [--releases N] [--model dev|default] [--dry-run]
     promoter bio   --artist <slug> [--model dev|default] [--dry-run]
+    promoter keywords --artist <slug> [--model dev|default] [--dry-run]
     promoter kit   --release <slug> [--model dev|default] [--out <path>]
 """
 from __future__ import annotations
@@ -14,9 +15,17 @@ import sys
 from pathlib import Path
 
 from .config import MODEL_DEFAULT, model_for
-from .gather import get_all_lyrics, get_artist, get_critic_text, get_recent_releases, get_release
-from .generate import generate_bio, generate_blurb, generate_kit
-from .writeback import write_bio, write_promo_blurb
+from .gather import (
+    get_all_lyrics,
+    get_artist,
+    get_catalog,
+    get_critic_text,
+    get_recent_releases,
+    get_release,
+)
+from .generate import generate_bio, generate_blurb, generate_keywords, generate_kit
+from .keywords import KEYWORD_BUDGET, keyword_field, merge_keywords, normalize
+from .writeback import write_bio, write_keywords, write_promo_blurb
 
 
 def cmd_blurb(args: argparse.Namespace) -> None:
@@ -108,6 +117,54 @@ def cmd_bio(args: argparse.Namespace) -> None:
     print(f"  ✓  Written to {path}")
 
 
+def cmd_keywords(args: argparse.Namespace) -> None:
+    artist = get_artist(args.artist)
+    if not artist:
+        print(f"  ✗  Artist '{args.artist}' not found", file=sys.stderr)
+        sys.exit(1)
+
+    artist_name = artist.get("name", args.artist)
+    existing = normalize(artist.get("keywords") or [])
+    patterns = artist.get("keywords_blocked") or []
+
+    print(f"  artist : {artist_name}")
+    print(f"  existing: {len(existing)} keyword(s), {len(keyword_field(existing))}/{KEYWORD_BUDGET} chars")
+    if patterns:
+        print(f"  blocklist: {len(patterns)} line(s)")
+    releases = get_catalog(args.artist)
+    print(f"  catalog : {len(releases)} release(s)")
+
+    model = model_for(args.model)
+    print(f"  calling {model}…")
+    candidates = generate_keywords(artist, releases, existing, model=model)
+
+    kept, dropped, blocked = merge_keywords(existing, candidates, patterns)
+    added = [k for k in kept if k not in existing]
+
+    print("\n── keywords ──────────────────────────────────────────")
+    print(keyword_field(kept))
+    print("─────────────────────────────────────────────────────")
+    print(f"  {len(kept)} keyword(s), {len(keyword_field(kept))}/{KEYWORD_BUDGET} chars")
+    print(f"  +{len(added)} new: {', '.join(added) if added else '(none)'}")
+    if blocked:
+        print(f"  ·  {len(blocked)} blocked by the blocklist: {', '.join(blocked)}")
+    if dropped:
+        print(f"  ⚠  {len(dropped)} did not fit the budget: {', '.join(dropped)}")
+        print("     Prune the list on the artist page to make room.")
+    print("  ⚠  keywords_auto_generated=true — review before publishing")
+
+    if args.dry_run:
+        print("  (dry-run — not written)")
+        return
+
+    if kept == existing:
+        print("  ·  Nothing new to add — record unchanged.")
+        return
+
+    path = write_keywords(args.artist, kept)
+    print(f"  ✓  Written to {path}")
+
+
 def cmd_kit(args: argparse.Namespace) -> None:
     release = get_release(args.release)
     if not release:
@@ -157,6 +214,12 @@ def main() -> None:
     p_bio.add_argument("--force", action="store_true", help="Overwrite existing bio")
     p_bio.add_argument("--dry-run", action="store_true")
 
+    # keywords
+    p_kw = sub.add_parser("keywords", help="Append YouTube channel keywords from the catalog")
+    p_kw.add_argument("--artist", required=True)
+    p_kw.add_argument("--model", default="default", choices=["dev", "default"])
+    p_kw.add_argument("--dry-run", action="store_true")
+
     # kit
     p_kit = sub.add_parser("kit", help="Generate per-platform promo copy for a release")
     p_kit.add_argument("--release", required=True)
@@ -168,6 +231,8 @@ def main() -> None:
         cmd_blurb(args)
     elif args.command == "bio":
         cmd_bio(args)
+    elif args.command == "keywords":
+        cmd_keywords(args)
     elif args.command == "kit":
         cmd_kit(args)
 

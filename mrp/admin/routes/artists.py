@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import fnmatch
 from html import escape as _escape
 from pathlib import Path
 from typing import Any
@@ -37,6 +38,67 @@ def _artist_path(root: Path, artist_id: str) -> Path:
     return root / "content" / "artists" / f"{artist_id}.yaml"
 
 
+# YouTube's channel keywords box is one comma-separated string capped at 500
+# characters, with multi-word phrases quoted. Mirrors promoter/keywords.py,
+# which owns the write side — the two apps share only the YAML.
+KEYWORD_BUDGET = 500
+
+
+def _keyword_field(keywords: list[str]) -> str:
+    """The exact string that gets pasted into YouTube Studio."""
+    return ", ".join(f'"{k}"' if " " in k else k for k in keywords)
+
+
+def _parse_keywords(text: str) -> list[str]:
+    """Read the keywords textarea — one per line or comma-separated, deduped."""
+    seen: set[str] = set()
+    out: list[str] = []
+    for chunk in str(text or "").replace("\n", ",").split(","):
+        keyword = " ".join(chunk.split()).strip('"')
+        if not keyword or keyword.casefold() in seen:
+            continue
+        seen.add(keyword.casefold())
+        out.append(keyword)
+    return out
+
+
+def _parse_blocklist(text: str) -> list[str]:
+    """Read the blocklist textarea. Lines are kept as authored — comments and
+    ordering are meaningful, so this only trims and drops trailing blanks."""
+    lines = [" ".join(line.split()) for line in str(text or "").splitlines()]
+    while lines and not lines[-1]:
+        lines.pop()
+    return lines
+
+
+def _is_blocked(keyword: str, patterns: list[str]) -> bool:
+    """Mirrors is_blocked() in promoter/keywords.py — .gitignore-style globs,
+    case-insensitive, whole-keyword match, `!` re-includes, last match wins."""
+    keyword = " ".join(str(keyword or "").split()).casefold()
+    if not keyword:
+        return False
+    blocked = False
+    for raw in patterns or []:
+        pattern = " ".join(str(raw or "").split())
+        if not pattern or pattern.startswith("#"):
+            continue
+        negated = pattern.startswith("!")
+        if negated:
+            pattern = pattern[1:].strip()
+        if pattern and fnmatch.fnmatchcase(keyword, pattern.casefold()):
+            blocked = not negated
+    return blocked
+
+
+def _apply_blocklist(keywords: list[str], patterns: list[str]) -> tuple[list[str], list[str]]:
+    """Split keywords into (kept, blocked), preserving order in both."""
+    kept: list[str] = []
+    blocked: list[str] = []
+    for keyword in keywords or []:
+        (blocked if _is_blocked(keyword, patterns) else kept).append(keyword)
+    return kept, blocked
+
+
 def _release_counts(root: Path) -> dict[str, int]:
     counts: dict[str, int] = {}
     for path in (root / "content" / "releases").glob("*.yaml"):
@@ -54,11 +116,18 @@ def _form_context(artist: dict[str, Any], flash: dict[str, str] | None = None,
                   errors: list | None = None) -> dict[str, Any]:
     links = artist.get("links") or {}
     link_keys = LINK_KEYS + sorted(k for k in links if k not in LINK_KEYS)
+    patterns = artist.get("keywords_blocked") or []
+    keywords, _ = _apply_blocklist(artist.get("keywords") or [], patterns)
     return {
         "artist": artist,
         "types": ARTIST_TYPES,
         "visibilities": VISIBILITIES,
         "link_keys": link_keys,
+        "keywords_text": "\n".join(keywords),
+        "keyword_field": _keyword_field(keywords),
+        "keyword_used": len(_keyword_field(keywords)),
+        "keyword_budget": KEYWORD_BUDGET,
+        "blocklist_text": "\n".join(patterns),
         "member_rows": _member_rows(artist.get("members")),
         "show_members": artist.get("type") == "band" or bool(artist.get("members")),
         "flash": flash,
@@ -315,6 +384,21 @@ async def artist_save(request: Request, artist_id: str):
         artist[key] = value or None
     artist["visibility"] = str(form.get("visibility") or "draft")
     artist["bio_auto_generated"] = form.get("bio_auto_generated") is not None
+
+    patterns = _parse_blocklist(form.get("keywords_blocked") or "")
+    if patterns:
+        artist["keywords_blocked"] = patterns
+    else:
+        artist.pop("keywords_blocked", None)
+
+    # Retroactive: a new pattern prunes keywords already on the record.
+    keywords, _ = _apply_blocklist(_parse_keywords(form.get("keywords") or ""), patterns)
+    if keywords:
+        artist["keywords"] = keywords
+        artist["keywords_auto_generated"] = form.get("keywords_auto_generated") is not None
+    else:
+        artist.pop("keywords", None)
+        artist.pop("keywords_auto_generated", None)
 
     links = dict(artist.get("links") or {})
     for key, value in form.multi_items():
