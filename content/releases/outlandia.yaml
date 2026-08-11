@@ -10312,4 +10312,7 @@ release:
   automation:
     allow_auto_publish: false
     master_path: null
+    links_na:
+    - amazon_music
+    - itunes_store
   hero_image: site/public/assets/releases/outlandia/hero.jpg

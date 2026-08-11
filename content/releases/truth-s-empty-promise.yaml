@@ -37,6 +37,9 @@ release:
     description: Truth's Empty Promise by Michael Anthony Rose on Maricopa Records.
   automation:
     allow_auto_publish: false
+    links_na:
+    - bandcamp
+    - soundcloud
   song:
     number: 1
     title: Truth's Empty Promise

@@ -207,6 +207,7 @@ release:
     master_path: /mnt/c/Masters/You Know Enough.wav
     links_na:
     - deezer
+    - youtube
   hero_image: site/public/assets/releases/you-know-enough/hero.jpg
   language: null
   summary: null

@@ -282,6 +282,8 @@ release:
   automation:
     allow_auto_publish: false
     master_path: /mnt/c/Masters/Darkness Takes The Shadows.wav
+    links_na:
+    - deezer
   hero_image: site/public/assets/releases/darkness-takes-the-shadows/hero.jpg
   language: null
   summary: null

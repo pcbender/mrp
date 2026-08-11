@@ -18,6 +18,7 @@ release:
     tidal: https://listen.tidal.com/album/548495544
     itunes_store: https://music.apple.com/us/album/6797066124?app=itunes
     amazon_music: https://music.amazon.com/albums/B0HCK5T32L?ref=dmm_acq_soc_us_u_lfire_lp_x_c5185031256c31736709670b4defd2b9
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_kSuXDZA2ycgdBkgQaiKNb5hIluofayZjs
   song:
     number: 1
     title: Make It All Fine
