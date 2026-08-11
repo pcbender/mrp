@@ -1,6 +1,7 @@
 """YouTube channel keywords on the artist record — schema, admin parsing,
 and the promoter's append-only merge against the 500-character budget."""
 
+import os
 import sys
 from pathlib import Path
 
@@ -18,7 +19,12 @@ from mrp.admin.routes.artists import (
 from mrp.core.validate import validate_schema
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app" / "promoter"))
-from promoter.generate import _parse_keywords_response  # noqa: E402
+
+# promoter.config calls load_dotenv() at import time, which would otherwise leak
+# the repo's real API keys into os.environ for the whole session — see the same
+# guard in test_keyword_evidence.py.
+_ENV_BEFORE = dict(os.environ)
+from promoter import writeback  # noqa: E402
 from promoter.keywords import (  # noqa: E402
     apply_blocklist,
     is_blocked,
@@ -26,6 +32,9 @@ from promoter.keywords import (  # noqa: E402
     merge_keywords,
     normalize,
 )
+
+os.environ.clear()
+os.environ.update(_ENV_BEFORE)
 
 
 def _record(**extra):
@@ -243,8 +252,6 @@ def test_admin_and_promoter_blocklists_agree():
 def test_write_keywords_round_trips_and_flags(tmp_path, monkeypatch):
     import yaml
 
-    from promoter import writeback
-
     monkeypatch.setattr(writeback, "ARTISTS_DIR", tmp_path)
     path = tmp_path / "stab.yaml"
     path.write_text(
@@ -260,27 +267,3 @@ def test_write_keywords_round_trips_and_flags(tmp_path, monkeypatch):
     assert artist["name"] == "STAB"  # untouched
     # content/ YAML keeps real UTF-8, not \\uXXXX escapes.
     assert "Björk-adjacent" in path.read_text(encoding="utf-8")
-
-
-# --- model response parsing --------------------------------------------------
-
-def test_parse_keywords_response_plain_array():
-    assert _parse_keywords_response('["a", "b"]') == ["a", "b"]
-
-
-def test_parse_keywords_response_fenced():
-    assert _parse_keywords_response('```json\n["a", "b"]\n```') == ["a", "b"]
-
-
-def test_parse_keywords_response_object_wrapper():
-    assert _parse_keywords_response('{"keywords": ["a", "b"]}') == ["a", "b"]
-
-
-def test_parse_keywords_response_with_commentary():
-    raw = 'Here you go:\n["desert rock", "slide guitar"]\nHope that helps.'
-    assert _parse_keywords_response(raw) == ["desert rock", "slide guitar"]
-
-
-def test_parse_keywords_response_raises_on_garbage():
-    with pytest.raises(ValueError):
-        _parse_keywords_response("no keywords here")

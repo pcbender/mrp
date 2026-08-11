@@ -10,6 +10,9 @@ dependencies = [
     "google-genai>=1.0",
     "pyyaml>=6.0",
     "python-dotenv>=1.0",
+    # The keyword triumvirate votes across three vendors.
+    "anthropic>=0.40",
+    "openai>=1.60",
 ]
 
 [project.scripts]

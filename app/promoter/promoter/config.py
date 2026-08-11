@@ -7,6 +7,8 @@ _MRP_ROOT = Path(__file__).resolve().parents[3]
 load_dotenv(_MRP_ROOT / ".env")
 
 GOOGLE_API_KEY: str = os.getenv("GOOGLE_SERVICE_API_KEY", "")
+ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
+OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
 
 ARTISTS_DIR = _MRP_ROOT / "content" / "artists"
 RELEASES_DIR = _MRP_ROOT / "content" / "releases"
@@ -20,3 +22,12 @@ _MODELS = {"dev": MODEL_DEV, "default": MODEL_DEFAULT}
 
 def model_for(tier: str) -> str:
     return _MODELS.get(tier, MODEL_DEFAULT)
+
+
+# The keyword triumvirate: three vendors vote on the same gated evidence, so a
+# single model's invention cannot become a channel keyword on its own.
+TRIUMVIRATE = (
+    ("gemini", MODEL_DEFAULT),
+    ("claude", "claude-opus-5"),
+    ("openai", "gpt-5.4"),
+)
