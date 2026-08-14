@@ -13,7 +13,7 @@ release:
   upc: '7333583407885'
   catalog_number: null
   cover_image: site/public/assets/releases/i-m-still-here/cover.jpg
-  hero_image: null
+  hero_image: site/public/assets/releases/i-m-still-here/hero.jpg
   summary: ''
   description: ''
   credits:
@@ -51,6 +51,13 @@ release:
       youtube: https://www.youtube.com/watch?v=S7OjVtF-E4k
       youtube_music: https://music.youtube.com/watch?v=S7OjVtF-E4k
       spotify: https://open.spotify.com/track/0ktqN5tm3KIRZbipG8wuhl
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'Mm
 
@@ -189,6 +196,19 @@ release:
 
       I''m old now'
     lyrics_source: https://docs.google.com/document/d/1g_XgrSIW2M-jUobE4fZjBSDpVIB-2oT3jdjMXgPm7rI/edit
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+    master_path: /mnt/c/Masters/I'm Old Now.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 2
     title: Slow Down
     slug: slow-down
@@ -201,6 +221,13 @@ release:
       youtube: https://www.youtube.com/watch?v=kMvPB6TcqWc
       youtube_music: https://music.youtube.com/watch?v=kMvPB6TcqWc
       spotify: https://open.spotify.com/track/1RT1aUNu3QFHF24WVVzZrQ
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'Everything updates before I blink
 
@@ -306,6 +333,15 @@ release:
 
       Slow down'
     lyrics_source: https://docs.google.com/document/d/1MQcMLiEn6g4OQADTF-O-dZlgUiI1n9deWm9I7EwkguA/edit
+    master_path: /mnt/c/Masters/Slow Down.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 3
     title: I Know Exactly What This Is
     slug: i-know-exactly-what-this-is
@@ -318,6 +354,13 @@ release:
       youtube: https://www.youtube.com/watch?v=ob-TUie-GFY
       youtube_music: https://music.youtube.com/watch?v=ob-TUie-GFY
       spotify: https://open.spotify.com/track/4QGG77haFV8d1hbFFzVnzl
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'A feeling of hidden anger
 
@@ -422,6 +465,15 @@ release:
 
       I know exactly what this is'
     lyrics_source: https://docs.google.com/document/d/17Gjir0FrA5tqOrFXxpw31lDAnSEiHu7syLlZ1ysT3TE/edit
+    master_path: /mnt/c/Masters/I Know Exactly What This Is.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 4
     title: Some Things Just Stop
     slug: some-things-just-stop
@@ -434,6 +486,13 @@ release:
       youtube: https://www.youtube.com/watch?v=0nlTcm1Xohw
       youtube_music: https://music.youtube.com/watch?v=0nlTcm1Xohw
       spotify: https://open.spotify.com/track/18PGAO603ehAV0jocmqZES
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'One by one
 
@@ -538,6 +597,15 @@ release:
 
       It''s not the same'
     lyrics_source: https://docs.google.com/document/d/1iSuO09u3ny50WZ9Iqw4h5RE_1POcTDR4jh-WVGhbv80/edit
+    master_path: /mnt/c/Masters/Some Things Just Stop.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 5
     title: Rooms Keep People
     slug: rooms-keep-people
@@ -550,6 +618,13 @@ release:
       youtube: https://www.youtube.com/watch?v=i9uhQndU6o0
       youtube_music: https://music.youtube.com/watch?v=i9uhQndU6o0
       spotify: https://open.spotify.com/track/5YXkRzEMSPlczQloxiuKXz
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'Mm-mm
 
@@ -661,6 +736,15 @@ release:
 
       I still do'
     lyrics_source: https://docs.google.com/document/d/1WmOq8ajLQGknbzSRDQQuzA2dN61zKkQFFAsdRJa7h6s/edit
+    master_path: /mnt/c/Masters/Rooms Keep People.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 6
     title: They Don’t Know
     slug: they-dont-know
@@ -673,6 +757,13 @@ release:
       youtube: https://www.youtube.com/watch?v=1sxZTJgKFPg
       youtube_music: https://music.youtube.com/watch?v=1sxZTJgKFPg
       spotify: https://open.spotify.com/track/4BYeB32qqQNpGWVFf4WX1a
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'I watch them talk with their whole bodies
 
@@ -787,6 +878,15 @@ release:
 
       They don''t know they''re in'
     lyrics_source: https://docs.google.com/document/d/1hQjQT_XCd258Qwe98F9TVNW3MXIBr5t5fpC63M4yO4Y/edit
+    master_path: /mnt/c/Masters/They Don't Know.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 7
     title: That’s The Question
     slug: thats-the-question
@@ -799,6 +899,13 @@ release:
       youtube: https://www.youtube.com/watch?v=N4X9F3Y9Yfc
       youtube_music: https://music.youtube.com/watch?v=N4X9F3Y9Yfc
       spotify: https://open.spotify.com/track/4pa0MIQNkQoS48jDIkVhSC
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'What am I for
 
@@ -905,6 +1012,15 @@ release:
 
       That''s the question'
     lyrics_source: https://docs.google.com/document/d/18gA0pOvrhtP4j60-tlqcP5caweW7aR8GNkN4SaQr_Uk/edit
+    master_path: /mnt/c/Masters/That's The Question.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 8
     title: Full-Size Person
     slug: full-size-person
@@ -917,6 +1033,13 @@ release:
       youtube: https://www.youtube.com/watch?v=QJbrfNFLgzE
       youtube_music: https://music.youtube.com/watch?v=QJbrfNFLgzE
       spotify: https://open.spotify.com/track/6RGlJmQBJQfnbIMfIVQqbk
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'No
 
@@ -1027,6 +1150,15 @@ release:
 
       Not me'
     lyrics_source: https://docs.google.com/document/d/1PrSlqkpYvYx_ZAALD9P71jP9fUXtza0rmiO0nSjn9zE/edit
+    master_path: /mnt/c/Masters/Full-Size Person.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 9
     title: Some Days Still Break Me
     slug: some-days-still-break-me
@@ -1039,6 +1171,13 @@ release:
       youtube: https://www.youtube.com/watch?v=4f6GWNt8Iic
       youtube_music: https://music.youtube.com/watch?v=4f6GWNt8Iic
       spotify: https://open.spotify.com/track/0LwWi2phUtppWul714KYgA
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'Yesterday I meant every word
 
@@ -1146,6 +1285,15 @@ release:
 
       Still break me'
     lyrics_source: https://docs.google.com/document/d/1JR235Cjge5fNthyOJRsKJIznW9nJ5_N6GZ-2aXiURX0/edit
+    master_path: /mnt/c/Masters/Some Days Still Break Me.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 10
     title: It’s In Me Too
     slug: its-in-me-too
@@ -1158,6 +1306,13 @@ release:
       youtube: https://www.youtube.com/watch?v=Ih0zlxp9bGU
       youtube_music: https://music.youtube.com/watch?v=Ih0zlxp9bGU
       spotify: https://open.spotify.com/track/1TEBWTR95lhu8Umzmc2cNE
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'I''ve been jealous of younger faces
 
@@ -1272,6 +1427,15 @@ release:
 
       It''s in me too'
     lyrics_source: https://docs.google.com/document/d/1pWQN6f0k0h_1nbH_OsWSMlyYZFlN2bfMYloiHuTWLxY/edit
+    master_path: /mnt/c/Masters/It's In Me Too.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 11
     title: That’s Enough
     slug: thats-enough
@@ -1284,6 +1448,13 @@ release:
       youtube: https://www.youtube.com/watch?v=1f6v1qoIbzA
       youtube_music: https://music.youtube.com/watch?v=1f6v1qoIbzA
       spotify: https://open.spotify.com/track/6H6oZ7AEmoGyM3lhZZqLab
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'All right
 
@@ -1398,18 +1569,34 @@ release:
 
       That''s enough'
     lyrics_source: https://docs.google.com/document/d/14wvuaE5ipL9COYIoSt7VRPFf_rWdM3qFTUTJJvEP3qA/edit
+    master_path: /mnt/c/Masters/That's Enough.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
   - number: 12
     title: I'm Still Here
     slug: i-m-still-here
     isrc: SE6QE2670839
     duration: '4:13'
     explicit: false
-    preview_audio: null
+    preview_audio: /samples/michael-anthony-rose--i-m-still-here.mp3
     links:
       apple_music: https://music.apple.com/us/album/im-still-here/6770845926?i=6770846240
       youtube: https://www.youtube.com/watch?v=3RcK60jhmjM
       youtube_music: https://music.youtube.com/watch?v=3RcK60jhmjM
       spotify: https://open.spotify.com/track/14NHMoh3oxZPc4JDVNc4RQ
+      itunes_store: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
     instrumental: false
     lyrics_text: 'Morning again
 
@@ -1516,3 +1703,12 @@ release:
 
       Mm'
     lyrics_source: https://docs.google.com/document/d/17b8Qamv9byHwytXoox38aJWgpP2QYiekbDF5gn8n-xA/edit
+    master_path: /mnt/c/Masters/I'm Still Here.wav
+    lyrics_raw: null
+    style: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
