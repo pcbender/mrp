@@ -59,6 +59,9 @@ def _build_user_message(
         return _title_map.get(tid.split("--", 1)[-1], tid.split("--", 1)[-1])
 
     parts = [
+        "=== ARTIST CONTEXT (POINT IN TIME) ===",
+        record.persona or "(none)",
+        "",
         "=== ALBUM ===",
         f"Artist       : {record.artist}",
         f"Instrumental : {'yes — no lyrics on any track' if is_instrumental else 'no'}",

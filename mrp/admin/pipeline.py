@@ -809,16 +809,32 @@ def run_promoter(root: Path, slug: str, mode: str = "blurb", model: str = "defau
     }
 
 
+def _promo_track_audio(root: Path, release: dict[str, Any]) -> tuple[dict, Path]:
+    """Resolve the configured shared promo track and its sampler snippet."""
+    from mrp.admin.workspace import configured_promo_track_slug, promo_track_unit
+
+    unit = promo_track_unit(release)
+    preview = unit["track"].get("preview_audio")
+    if not preview:
+        raise ValueError(
+            f"Promo track '{unit['title']}' has no snippet audio — cut one on the Sampler tab first"
+        )
+    path = root / "site" / "public" / str(preview).lstrip("/")
+    if not path.is_file():
+        raise ValueError(
+            f"Promo track '{unit['title']}' snippet file is missing: {preview}"
+        )
+    return ({
+        "slug": unit["slug"],
+        "title": unit["title"],
+        "preview_audio": preview,
+        "selection": "saved" if configured_promo_track_slug(release) else "default_first_track",
+    }, path)
+
+
 def _preview_audio_path(root: Path, release: dict[str, Any]) -> Path:
-    """Resolve the release's snippet mp3 (first track with a preview on albums)."""
-    tracks = [release["song"]] if release.get("song") else (release.get("tracks") or [])
-    for track in tracks:
-        preview = track.get("preview_audio")
-        if preview:
-            path = root / "site" / "public" / str(preview).lstrip("/")
-            if path.is_file():
-                return path
-    raise ValueError("No snippet audio yet — cut one on the Tracks tab (Snip) first")
+    """Backward-compatible path-only wrapper around shared promo-track resolution."""
+    return _promo_track_audio(root, release)[1]
 
 
 def _vertical_composite(cover: Path) -> list[str]:
@@ -913,7 +929,7 @@ def run_promo_kit(root: Path, slug: str, model: str = "default") -> dict[str, An
         cover = root / "site" / "public" / cover_rel
     if not cover.is_file():
         raise ValueError(f"Cover art not found: {cover_rel}")
-    snippet = _preview_audio_path(root, release)
+    promo_track, snippet = _promo_track_audio(root, release)
 
     kit_dir = root / "assets" / "processed" / "promo" / slug
     kit_dir.mkdir(parents=True, exist_ok=True)
@@ -954,6 +970,7 @@ def run_promo_kit(root: Path, slug: str, model: str = "default") -> dict[str, An
         "artist_id": artist_id,
         "artist_name": artist.get("name") or artist_id,
         "model": meta.get("model") or model,
+        "promo_track": promo_track,
         "copy": copy,
         "hashtags": hashtags,
         "smart_link": smart_link,
@@ -974,6 +991,7 @@ def run_promo_kit(root: Path, slug: str, model: str = "default") -> dict[str, An
         "copy_fields": len(copy),
         "hashtags": len(hashtags),
         "video": "short.mp4",
+        "promo_track_slug": promo_track["slug"],
         "model": manifest["model"],
     }
 
@@ -992,13 +1010,23 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
         cover = root / "site" / "public" / cover_rel
     if not cover.is_file():
         raise ValueError(f"Cover art not found: {cover_rel}")
-    snippet = _preview_audio_path(root, release)
+    promo_track, snippet = _promo_track_audio(root, release)
 
     kit_dir = root / "assets" / "processed" / "promo" / slug
     kit_path = kit_dir / "kit.json"
     if not kit_path.exists():
         raise ValueError("Run Promo kit first so the animated video can attach to its manifest.")
     manifest = json.loads(kit_path.read_text())
+    manifest_track = manifest.get("promo_track") or {}
+    if not manifest_track and release.get("model") == "song":
+        # Old single manifests are unambiguous because a single has only one track.
+        manifest["promo_track"] = promo_track
+        manifest_track = promo_track
+    if manifest_track.get("slug") != promo_track["slug"]:
+        raise ValueError(
+            "The existing video short uses a different or unknown promo track — "
+            "re-run Promo kit before generating the animated cover"
+        )
 
     prompt = nim.animated_cover_prompt(release, artist)
     visual_path = kit_dir / "nim-visual.mp4"
@@ -1020,6 +1048,7 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
         "model": generation.get("model") or nim.DEFAULT_MODEL_NAME,
         "model_id": generation.get("model_id") or nim.DEFAULT_MODEL_ID,
         "prompt": prompt,
+        "promo_track_slug": promo_track["slug"],
     }
     if generation.get("workflow_id"):
         manifest["animated_cover"]["workflow_id"] = generation["workflow_id"]
@@ -1033,6 +1062,7 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
         "kit_dir": str(kit_dir.relative_to(root)),
         "video": "animated-short.mp4",
         "visual": "nim-visual.mp4",
+        "promo_track_slug": promo_track["slug"],
         "model": manifest["animated_cover"]["model"],
     }
 

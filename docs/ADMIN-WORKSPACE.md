@@ -64,6 +64,18 @@ reviews with status `approved` or `publishable`. Critic and promoter
 binaries are invoked via absolute paths under `app/critic/.venv/bin/` —
 they are not on PATH.
 
+Every critic pass is point-in-time scoped to the target `release_date`.
+Same-artist catalog records dated after that cutoff (and undated records) are
+excluded. The mutable artist bio is also excluded because the current schema
+does not retain dated bio revisions; the critic receives a deterministic
+oldest-first catalog timeline through the target release instead. For releases
+before the target, that timeline uses the written critic summary when the
+matching critic record is `approved` or `publishable`; otherwise it falls back
+to the canonical release summary/description. Run Critic oldest-to-newest and
+approve plus write back each release before starting the next one to build a
+natural, evolving critical voice without leaking future catalog knowledge.
+Releases sharing a date use slug order as the deterministic chronology tie-break.
+
 ## Status ladder
 
 Release status advances forward-only with the publish steps
@@ -77,7 +89,11 @@ documented in [Site_Deployment.md](Site_Deployment.md).
 The Promoter stage keeps the static ffmpeg promo video as the default, local
 path. The optional Animated cover video job uses Nim only for a silent vertical
 visual bed from the release cover, then ffmpeg loops/trims that visual and muxes
-the existing sampler snippet audio onto it.
+the selected sampler snippet audio onto it. EPs and albums persist one shared
+selection at `release.promoter.promo_track_slug`; both the static video short
+and animated cover use that track. A missing selection visibly defaults to
+track 1, while a stale slug or missing selected-track snippet fails rather than
+silently switching audio.
 
 Nim's programmable surface is its MCP server (`https://mcp.nim.video/mcp`).
 The admin talks to it directly as an MCP client: OAuth endpoints are

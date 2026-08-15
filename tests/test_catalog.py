@@ -209,3 +209,50 @@ def test_artist_release_list_uses_release_browser_in_center_column():
     assert 'import ReleaseBrowser from "./ReleaseBrowser.astro";' in text
     assert 'class="artist-release-list page-grid centered-page"' in text
     assert "<ReleaseBrowser releases={releases} rich />" in text
+
+
+def test_release_review_ids_match_critic_writeback_for_every_release_type(tmp_path):
+    script = tmp_path / "release-review-id-test.mjs"
+    script.write_text(
+        textwrap.dedent(
+            f"""
+            import {{ pathToFileURL }} from "node:url";
+            import {{ readFileSync, writeFileSync }} from "node:fs";
+            import ts from "{ROOT / "site/node_modules/typescript/lib/typescript.js"}";
+
+            const sourcePath = "{ROOT / "site/src/lib/releaseReviews.ts"}";
+            const output = ts.transpileModule(readFileSync(sourcePath, "utf8"), {{
+              compilerOptions: {{ module: ts.ModuleKind.ES2022, target: ts.ScriptTarget.ES2022 }}
+            }}).outputText;
+            const modulePath = "{tmp_path / "releaseReviews.mjs"}";
+            writeFileSync(modulePath, output);
+            const {{ releaseReviewId }} = await import(pathToFileURL(modulePath).href);
+            console.log(JSON.stringify([
+              releaseReviewId({{ artistId: "artist", slug: "single", releaseType: "single" }}),
+              releaseReviewId({{ artistId: "artist", slug: "ep", releaseType: "ep" }}),
+              releaseReviewId({{ artist_id: "artist", slug: "album", model: "album", release_type: "album" }})
+            ]));
+            """
+        )
+    )
+
+    result = subprocess.run(
+        ["node", str(script)], cwd=ROOT / "site", text=True, capture_output=True, check=False
+    )
+
+    assert result.returncode == 0, result.stderr
+    assert json.loads(result.stdout) == [
+        "artist--single",
+        "album--artist--ep",
+        "album--artist--album",
+    ]
+
+
+def test_release_card_and_landing_share_review_id_resolver():
+    for path in [
+        ROOT / "site/src/components/ReleaseGrid.astro",
+        ROOT / "site/src/components/ReleaseLanding.astro",
+    ]:
+        source = path.read_text()
+        assert 'from "../lib/releaseReviews"' in source
+        assert "releaseReviewId(release)" in source

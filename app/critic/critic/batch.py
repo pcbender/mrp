@@ -88,6 +88,13 @@ def run_batch(
 
     tracker.reset()
     entries = json.loads(Path(manifest_path).read_text())
+    missing_release = [entry.get("track_slug") or "(unknown)" for entry in entries
+                       if not entry.get("release_slug")]
+    if missing_release:
+        raise ValueError(
+            "Every critic batch entry needs release_slug for point-in-time context: "
+            + ", ".join(missing_release)
+        )
     results: list[TrackFinding] = []
 
     for i, entry in enumerate(entries, 1):
@@ -110,7 +117,9 @@ def run_batch(
             finding.lyrics = get_lyrics(track_slug, release_slug=release_slug)
             finding.lyrics_raw = get_lyrics_raw(track_slug, release_slug=release_slug)
             finding.style = get_style(track_slug, release_slug=release_slug)
-            finding.persona = get_persona(artist_slug) if artist_slug else ""
+            finding.persona = (
+                get_persona(artist_slug, release_slug=release_slug) if artist_slug else ""
+            )
             finding.hints = get_hints(track_slug, release_slug=release_slug)
 
             print("  DSP…")

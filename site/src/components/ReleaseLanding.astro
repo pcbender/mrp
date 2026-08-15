@@ -5,6 +5,7 @@ import StreamingLinks from "./StreamingLinks.astro";
 import MusicVideoPlayer from "./MusicVideoPlayer.astro";
 import { releaseCoverUrl, featuredArtists } from "../lib/content.js";
 import { releaseSocialLinks, trackStreamingLinks } from "../lib/catalog";
+import { releaseReviewId } from "../lib/releaseReviews";
 import { getEntry } from "astro:content";
 
 interface Props {
@@ -30,10 +31,7 @@ const songCredits = Object.fromEntries(
 const creditSource = { ...(release.credits || {}), ...songCredits };
 const hasCredits = Boolean(creditSource.songwriter || creditSource.producer || creditSource.mastering);
 
-const reviewId = release.song?.slug
-  ? `${release.artist_id}--${release.song.slug}`          // single: track review
-  : `album--${release.artist_id}--${release.slug}`;       // album / EP: album review
-const reviewEntry = await getEntry("reviews", reviewId).catch(() => null);
+const reviewEntry = await getEntry("reviews", releaseReviewId(release)).catch(() => null);
 const { Content: ReviewContent } = reviewEntry ? await reviewEntry.render() : {};
 
 function releaseCopyBlocks(release: any) {

@@ -20,8 +20,11 @@ from mrp.admin.workspace import (
     artist_artifact_moves,
     artist_record_path,
     bool_field,
+    configured_promo_track_slug,
     effective_master_path,
     migrate_artist_artifacts,
+    promo_track_unit,
+    set_promo_track_slug,
     stage_statuses,
     str_or_none,
     track_completion,
@@ -651,6 +654,39 @@ async def critic_context_save(request: Request, slug: str, track_slug: str):
 
 # --- Promoter save ------------------------------------------------------------
 
+@router.post("/releases/{slug}/promoter/track", response_class=HTMLResponse)
+async def promoter_track_save(request: Request, slug: str):
+    """Persist the one track shared by the static and animated promo videos."""
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.exists():
+        return _not_found(slug)
+
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    form = dict(await request.form())
+    try:
+        set_promo_track_slug(release, str_or_none(form.get("promo_track_slug")))
+    except ValueError as exc:
+        return HTMLResponse(f'<div class="flash flash-error">{exc}</div>', status_code=400)
+
+    errors = validate_release_dict(data)
+    if errors:
+        return _validation_errors(request, errors)
+    path.write_text(serialize_structured_record(path, data))
+
+    effective = promo_track_unit(release)
+    configured = configured_promo_track_slug(release)
+    detail = (
+        f"Promo videos will use {effective['title']}."
+        if configured
+        else f"Selection cleared; promo videos default to track 1, {effective['title']}."
+    )
+    response = HTMLResponse(f'<div class="flash flash-ok">{detail}</div>')
+    response.headers["HX-Trigger"] = "releaseSaved, promoterSaved"
+    return response
+
+
 @router.post("/releases/{slug}/promoter/save", response_class=HTMLResponse)
 async def promoter_save(request: Request, slug: str):
     root = get_repo_root()
@@ -1048,9 +1084,20 @@ def _promoter_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLR
     artist = {}
     if artist_path is not None:
         artist = (load_structured_record(artist_path)).get("artist") or {}
+    promo_units = track_units(release) if release.get("model") == "album" else []
+    promo_track_error = None
+    try:
+        effective_promo_track = promo_track_unit(release) if promo_units else None
+    except ValueError as exc:
+        effective_promo_track = None
+        promo_track_error = str(exc)
     ctx.update({
         "artist": artist,
         "artist_id": artist_id,
+        "promo_track_units": promo_units,
+        "promo_track_slug": configured_promo_track_slug(release),
+        "effective_promo_track": effective_promo_track,
+        "promo_track_error": promo_track_error,
         "blurb_job": db.get_latest_job_by_command(f"{slug}/promoter-blurb"),
         "bio_job": db.get_latest_job_by_command(f"{slug}/promoter-bio"),
         "keywords_job": db.get_latest_job_by_command(f"{slug}/promoter-keywords"),

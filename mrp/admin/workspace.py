@@ -107,6 +107,54 @@ def track_units(release: dict) -> list[dict]:
     return units
 
 
+def configured_promo_track_slug(release: dict) -> str | None:
+    """Return the explicitly saved shared promo-video track slug, if any."""
+    promoter = release.get("promoter") or {}
+    slug = str(promoter.get("promo_track_slug") or "").strip()
+    return slug or None
+
+
+def promo_track_unit(release: dict) -> dict:
+    """Resolve the one track used by every promoter video output.
+
+    Multi-track releases visibly default to track 1 until a selection is saved.
+    A stale saved slug fails instead of silently switching an existing choice.
+    """
+    units = track_units(release)
+    if not units:
+        raise ValueError("This release has no tracks to use for promo video")
+    if release.get("model") == "song":
+        return units[0]
+
+    configured = configured_promo_track_slug(release)
+    if configured is None:
+        return units[0]
+    unit = next((item for item in units if item["slug"] == configured), None)
+    if unit is None:
+        raise ValueError(
+            f"Selected promo track '{configured}' is no longer in this release — choose another track"
+        )
+    return unit
+
+
+def set_promo_track_slug(release: dict, track_slug: str | None) -> None:
+    """Validate and patch the release-level shared promo-video selection."""
+    if release.get("model") != "album":
+        raise ValueError("Promo track selection only applies to EP/album releases")
+
+    selected = str(track_slug or "").strip()
+    if selected and not any(unit["slug"] == selected for unit in track_units(release)):
+        raise ValueError(f"Track not found in this release: {selected}")
+
+    promoter = release.setdefault("promoter", {})
+    if selected:
+        promoter["promo_track_slug"] = selected
+    else:
+        promoter.pop("promo_track_slug", None)
+        if not promoter:
+            release.pop("promoter", None)
+
+
 def effective_master_path(release: dict, index: int, track: dict) -> str | None:
     """Track-level master_path, falling back to legacy automation.master_path."""
     if track.get("master_path"):
