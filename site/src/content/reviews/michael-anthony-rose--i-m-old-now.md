@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--i-m-old-now
-impression: "This track unfolds with an intimate, reflective atmosphere, built around a present and conversational lead vocal. The texture is dynamic, starting sparse and personal before swelling into a full-band arrangement with warm, slightly overdriven electric guitars and a solid, grounded rhythm section. The production is clean and well-balanced, creating a sense of space that allows the emotional weight of the vocal and lyrics to remain the central focus. A defining quality of the track is its gradual, powerful build, which effectively mirrors the lyrical theme of a slow, dawning realization, culminating in a cathartic and melodic guitar solo that feels both resigned and liberated."
+summary: "Rose opens this one with a mumbled false start, like he caught himself mid-thought, and that small gesture sets the tone for everything that follows: what comes next is as unguarded as anything he has put down."
 verdict_rank: 4
 verdict_label: "highlight"
 ---

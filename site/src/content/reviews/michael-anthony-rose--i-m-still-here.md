@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--i-m-still-here
-impression: "This track unfolds with a sparse, intimate texture, featuring a gentle male vocal over a clean, fingerpicked acoustic guitar, which establishes a calm and contemplative emotional atmosphere. The energy is very low and relaxed, building gracefully with the introduction of soft, brushed drums and a simple bassline that creates a warm, indie-folk feel without losing its initial intimacy. The production is clean and spacious, with each element sitting clearly in the mix; the vocals have a gentle reverb that gives them presence in a wide, uncluttered soundscape. A defining quality is the song's patient dynamic arc, where the contrast between the quiet, introspective verses and the fuller, more emotionally resonant choruses quietly underscores a message of resilience."
+summary: "Rose builds this one from the simplest materials: a chipped mug, a bird on a crooked limb, rain against a window, and the line 'mostly it feels local' does more work than a whole album's worth of grand statements."
 verdict_rank: 5
 ---
 

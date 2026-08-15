@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--full-size-person
-impression: "This track features a polished, modern rock texture, establishing an emotional atmosphere of defiant resilience through layers of powerful electric guitars and an earnest male lead vocal. The energy level is highly dynamic, shifting from a restrained, driving feel in the verses to an explosive, anthemic release in the choruses, creating a palpable sense of catharsis. The production is dense yet clear, with a wide stereo image where each instrument, from the tight rhythm section to the soaring guitars, occupies its own space without overwhelming the centrally placed, confident vocal. The song's most defining quality is this sharp dynamic contrast between verses and the massive, full-band choruses, which land with immense impact and encapsulate the track's assertive theme."
+summary: "After a run of songs that have been asking careful, patient questions, 'Full-Size Person' is the moment the album stops asking and starts insisting."
 verdict_rank: 5
 verdict_label: "standout"
 ---

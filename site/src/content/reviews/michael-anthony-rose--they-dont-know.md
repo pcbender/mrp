@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--they-dont-know
-impression: "This song has a warm, thoughtful atmosphere, starting with an intimate texture of acoustic guitar and a clear, narrative-driven male vocal. The energy builds dynamically from restrained, conversational verses into powerful, soaring choruses where a full rock band enters, creating an expansive and anthemic feel. The production is clean and spacious, with each instrument occupying its own sonic space, allowing the track to feel full and powerful without becoming dense or muddy. A distinctive quality is the emotional and dynamic shift into the chorus, where the personal observation transforms into a grand, harmonized statement, which is later mirrored by a poignant, self-reflective lyrical turn in the outro."
+summary: "By track six, the album has spent considerable time turned inward, and 'They Don't Know' earns its place by opening the aperture."
 verdict_rank: 5
 verdict_label: "standout"
 ---

@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--thats-the-question
-impression: "This is an introspective acoustic ballad with a melancholic and reflective atmosphere, centered around a gentle, earnest male vocal that feels very close and personal. The track maintains a low to mid-energy feel, building dynamically from sparse, intimate verses into emotionally resonant choruses that swell with added bass and simple, supportive drums. The production is clean and spacious, prioritizing the clarity of the storyteller's vocal while thoughtfully layering instruments to create depth without feeling dense. A defining quality is the powerful lyrical hook in the chorus, \"Who am I when I'm not needed,\" which serves as the track's emotional and narrative core, underscored by the gentle but impactful dynamic shifts."
+summary: "Sitting at the album's midpoint, 'That's the Question' arrives just as the record has opened up with the wider view of 'They Don't Know,' and it uses that momentum to go somewhere quieter and more inward."
 verdict_rank: 4
 verdict_label: "highlight"
 ---

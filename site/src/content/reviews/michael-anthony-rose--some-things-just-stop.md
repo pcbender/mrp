@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--some-things-just-stop
-impression: "This song presents a sparse and intimate texture, opening with a gentle acoustic guitar and a breathy, close-miked male vocal that creates a deeply reflective and melancholic atmosphere. The energy begins low and contemplative, gradually building in emotional weight with the introduction of piano, a full drum kit, and subtle strings that swell without overwhelming the arrangement. The production is clean and spacious, allowing the elements to sit together cohesively while maintaining the raw vulnerability of the lead vocal at the forefront. A defining quality of the track is its dynamic arc, particularly the transition around 02:21 where the vocalist’s delivery becomes more impassioned, lifting the song to a powerful, cathartic peak before settling back into quiet resignation."
+summary: "This is the album's strongest moment, and it arrives exactly where it needs to: after the opening trio has established the territory, 'Some Things Just Stop' plants a flag in the middle of it."
 verdict_rank: 5
 verdict_label: "standout"
 ---

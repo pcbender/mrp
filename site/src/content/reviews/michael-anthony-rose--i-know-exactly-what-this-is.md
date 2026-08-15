@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--i-know-exactly-what-this-is
-impression: "This is a dynamic country-rock track with a clean, modern production that balances narrative verses with an anthemic, high-energy chorus. The emotional atmosphere is one of weary frustration, driven by an upfront, storytelling vocal that sits clearly on top of the mix. The arrangement masterfully uses space, contrasting the sparse verses against a dense wall of layered, distorted guitars and powerful vocal harmonies in the chorus. A defining quality of the track is this stark dynamic shift, which effectively amplifies the lyrical tension between what is unsaid and what is understood."
+summary: "After two songs content to sit with resignation, 'I Know Exactly What This Is' sharpens into something closer to refusal."
 verdict_rank: 4
 verdict_label: "highlight"
 ---

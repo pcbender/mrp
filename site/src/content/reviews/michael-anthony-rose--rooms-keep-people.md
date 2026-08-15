@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--rooms-keep-people
-impression: "This track creates a deeply intimate and melancholic atmosphere, led by a close, breathy male vocal and a delicate finger-picked acoustic guitar. The production is clean and spacious, allowing the subtle layers of strings, bass, and soft percussion to add emotional weight without cluttering the arrangement. The energy remains low and reflective, with a key dynamic shift occurring in the chorus as the instrumentation gently swells, expanding the sonic landscape. This transition from a sparse verse to a fuller chorus effectively captures a feeling of nostalgia and the lingering presence of memories."
+summary: "Following the album's emotional peak is a genuine structural challenge, and 'Rooms Keep People' meets it by shifting the subject without shifting the register."
 verdict_rank: 5
 verdict_label: "standout"
 ---

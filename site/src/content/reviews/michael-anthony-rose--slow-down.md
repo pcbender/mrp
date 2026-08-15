@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--slow-down
-impression: "This track establishes a dense and urgent modern rock texture, creating an emotional atmosphere of determined frustration. The energy is consistently high and driving, pushed forward by layers of crunchy guitars and a propulsive rhythm section, giving the song a breathless, power-pop feel. The production is polished and full, creating a powerful wall of sound where the punchy drums and clear vocals still manage to cut through the mix without feeling cluttered. A defining quality is its relentless forward momentum, punctuated by an anthemic chorus and a fiery, melodic guitar solo that perfectly captures the feeling of trying to keep pace."
+summary: "The cruel joke of 'Slow Down' is that it runs at a breathless clip while pleading for a breather, and Rose clearly knows it."
 verdict_rank: 4
 verdict_label: "highlight"
 ---

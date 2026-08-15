@@ -130,7 +130,7 @@
     "semantic_hash": "069744773e372dcddec5432e80af6263"
   },
   "mrp/schemas/artist.schema.json": {
-    "mtime": 1786475309.1247897,
+    "mtime": 1786480544.3219018,
     "ast_hash": "f73a920862c78a143ccb55e83e65bf65",
     "semantic_hash": ""
   },
@@ -165,8 +165,8 @@
     "semantic_hash": "b98eb880cc3f91958f947a58c80f9ad9"
   },
   "mrp/schemas/release.schema.json": {
-    "mtime": 1785369546.4186862,
-    "ast_hash": "44cd11c352a5e6007539c79881a09dff",
+    "mtime": 1786818928.3898742,
+    "ast_hash": "ac1605fef345e85dd8642b7a96b41eec",
     "semantic_hash": ""
   },
   "mrp/schemas/site.schema.json": {
@@ -5270,9 +5270,9 @@
     "semantic_hash": "3360b1c36115a8edd8ff6fa6b8910cf7"
   },
   "site/src/components/ReleaseGrid.astro": {
-    "mtime": 1782838765.0451815,
-    "ast_hash": "0920d1e65498ea56a540757c3d3db8f8",
-    "semantic_hash": "0920d1e65498ea56a540757c3d3db8f8"
+    "mtime": 1786818410.6162138,
+    "ast_hash": "e03ac61a83e1f5f6041dea45c049b159",
+    "semantic_hash": ""
   },
   "site/src/components/SEOHead.astro": {
     "mtime": 1785172051.7361608,
@@ -5375,8 +5375,8 @@
     "semantic_hash": ""
   },
   "tests/test_catalog.py": {
-    "mtime": 1783534733.6501448,
-    "ast_hash": "7767c817439858427cd885fcc10d10f9",
+    "mtime": 1786818680.0045216,
+    "ast_hash": "c55c077202d3e50546acf908ead7772f",
     "semantic_hash": ""
   },
   "tests/test_catalog_metadata.py": {
@@ -5405,8 +5405,8 @@
     "semantic_hash": "1812879f2e04366e4ebb29f20a6a72f8"
   },
   "tests/test_clone_render.py": {
-    "mtime": 1783534733.6506972,
-    "ast_hash": "ba5472a622d146bca0ddddb047f58478",
+    "mtime": 1786486516.7606502,
+    "ast_hash": "51198b65f54330354d583a3ee91683a0",
     "semantic_hash": ""
   },
   "tests/test_clone_rewrites.py": {
@@ -5520,18 +5520,18 @@
     "semantic_hash": ""
   },
   "content/artists/4castle.yaml": {
-    "mtime": 1784559520.9850273,
-    "ast_hash": "e5b83614c765d6653593a2dedeaf0000",
+    "mtime": 1786479284.3255055,
+    "ast_hash": "f713025b7dd8b483cb145a1d4b509db0",
     "semantic_hash": ""
   },
   "content/artists/lingua-aeternum.yaml": {
-    "mtime": 1786471644.1886382,
-    "ast_hash": "190b65c6fba66f0c941b458c01bf07a7",
+    "mtime": 1786479471.5688484,
+    "ast_hash": "13ba26dcb7ecd11fe8db617a77adb59f",
     "semantic_hash": ""
   },
   "content/artists/stab.yaml": {
-    "mtime": 1786471746.6384008,
-    "ast_hash": "e2469c0fab5b00bc7971487fa6ee0bac",
+    "mtime": 1786480385.7764702,
+    "ast_hash": "f6c45f4f045eaec542abde8c3547a986",
     "semantic_hash": ""
   },
   "content/assets/manifest.yaml": {
@@ -6235,8 +6235,8 @@
     "semantic_hash": "09db47feb04adf34965f4a3999817a57"
   },
   "docs/CONTENT-MODEL.md": {
-    "mtime": 1784660368.632905,
-    "ast_hash": "d94db94acc7d8dfcc57e15c7d773810a",
+    "mtime": 1786818897.9070952,
+    "ast_hash": "0502b0636b4e2ef7c7cd56561b552e6e",
     "semantic_hash": ""
   },
   "tests/fixtures/content/invalid/page-missing-required.yaml": {
@@ -9155,8 +9155,8 @@
     "semantic_hash": "5c0e9a60c069bb8c59dfddec4201b792"
   },
   "site/src/components/ReleaseLanding.astro": {
-    "mtime": 1784660368.6421711,
-    "ast_hash": "5c1d6433a0383c7a5c820edb8e9e50e8",
+    "mtime": 1786818410.7003863,
+    "ast_hash": "4df73975127fa09f952f3583864e22b6",
     "semantic_hash": ""
   },
   "reports/deployment/20260619T182850Z-local-staging-20260619T182813403363Z-site.json": {
@@ -9205,7 +9205,7 @@
     "semantic_hash": "fcdfee14629f1d9d9de4543cf5ef1dad"
   },
   ".claude/settings.json": {
-    "mtime": 1782067428.4765692,
+    "mtime": 1786736918.6325264,
     "ast_hash": "e1073342e958ac9f00716938c8f165e3",
     "semantic_hash": "e1073342e958ac9f00716938c8f165e3"
   },
@@ -14040,8 +14040,8 @@
     "semantic_hash": ""
   },
   "content/artists/michael-anthony-rose.yaml": {
-    "mtime": 1785338271.820497,
-    "ast_hash": "6f56578ae739cb6c04a61e27f974a476",
+    "mtime": 1786747813.1230025,
+    "ast_hash": "aa3bc9409084f6301a7deeacec2c75d0",
     "semantic_hash": ""
   },
   "content/artists/michael-rose.yaml": {
@@ -14090,7 +14090,7 @@
     "semantic_hash": ""
   },
   "content/releases/aim-for-true.yaml": {
-    "mtime": 1786464202.6586576,
+    "mtime": 1786486861.441764,
     "ast_hash": "f4c3e51afa111b8e8818c7e645275283",
     "semantic_hash": ""
   },
@@ -14250,7 +14250,7 @@
     "semantic_hash": ""
   },
   "content/releases/entraining.yaml": {
-    "mtime": 1786464220.2942634,
+    "mtime": 1786486867.943153,
     "ast_hash": "7cff1455c0120f690eb1a249e80eb392",
     "semantic_hash": ""
   },
@@ -14345,8 +14345,8 @@
     "semantic_hash": ""
   },
   "content/releases/i-m-still-here.yaml": {
-    "mtime": 1786464227.8658152,
-    "ast_hash": "a03d6a5b0a4062d5b60fbafde615fcd9",
+    "mtime": 1786746591.0897436,
+    "ast_hash": "a9f2bcdd23039550522410bc8f7257ba",
     "semantic_hash": ""
   },
   "content/releases/i-will-bloom.yaml": {
@@ -14430,7 +14430,7 @@
     "semantic_hash": ""
   },
   "content/releases/live-forever-or-die-trying.yaml": {
-    "mtime": 1786464228.8313808,
+    "mtime": 1786486872.7738605,
     "ast_hash": "b8e74039ab3f63a5921a37bbe6326c2f",
     "semantic_hash": ""
   },
@@ -14560,7 +14560,7 @@
     "semantic_hash": ""
   },
   "content/releases/ready-almost.yaml": {
-    "mtime": 1786464242.4802833,
+    "mtime": 1786486881.411437,
     "ast_hash": "a1b1d2aa84bc8b3a5997b13c48516631",
     "semantic_hash": ""
   },
@@ -14635,7 +14635,7 @@
     "semantic_hash": ""
   },
   "content/releases/the-only-way-over.yaml": {
-    "mtime": 1786464249.849683,
+    "mtime": 1786486882.0931678,
     "ast_hash": "b0ef4ff0de796770901a960da7597a5c",
     "semantic_hash": ""
   },
@@ -14670,7 +14670,7 @@
     "semantic_hash": ""
   },
   "content/releases/to-be-all.yaml": {
-    "mtime": 1786464259.056575,
+    "mtime": 1786486885.803918,
     "ast_hash": "d07273960b63348cd02fe985137f4fa8",
     "semantic_hash": ""
   },
@@ -15480,13 +15480,13 @@
     "semantic_hash": "ff93334b5785d1739e9461503cba06d2"
   },
   "app/critic/critic/album/features.py": {
-    "mtime": 1782761644.563032,
-    "ast_hash": "554af1dbca07e9d849d54c76d15b59b7",
-    "semantic_hash": "554af1dbca07e9d849d54c76d15b59b7"
+    "mtime": 1786818566.036041,
+    "ast_hash": "44eaca70cb15b4e958c5eb9fcfe1915f",
+    "semantic_hash": ""
   },
   "app/critic/critic/album/recontextualize.py": {
-    "mtime": 1784503597.054891,
-    "ast_hash": "4c5563e3a18e19e04459563c1db0655e",
+    "mtime": 1786818897.6476486,
+    "ast_hash": "3952e4c0a63a7a305c974cb2d34e563c",
     "semantic_hash": ""
   },
   "app/critic/critic/album/record.py": {
@@ -15495,8 +15495,8 @@
     "semantic_hash": "3d3ada2c6c80c9ccaaa3fa00d19c9d4c"
   },
   "app/critic/critic/album/synthesize.py": {
-    "mtime": 1784503597.054891,
-    "ast_hash": "980ebeed750e28034d96fd137f2c674d",
+    "mtime": 1786818566.2110822,
+    "ast_hash": "add0d625b61afaa531c933781a0620d4",
     "semantic_hash": ""
   },
   "app/critic/critic/audit.py": {
@@ -15505,19 +15505,19 @@
     "semantic_hash": "0ebc19a246e36cf8e90984e47886acd3"
   },
   "app/critic/critic/batch.py": {
-    "mtime": 1783190887.0844634,
-    "ast_hash": "8f3adf1411b7477588c80ba1c5b3aa12",
-    "semantic_hash": "8f3adf1411b7477588c80ba1c5b3aa12"
+    "mtime": 1786818565.9485207,
+    "ast_hash": "457d948e35a9f5a5580b3aad3d1d8d03",
+    "semantic_hash": ""
   },
   "app/critic/critic/catalog.py": {
-    "mtime": 1783190887.0844634,
-    "ast_hash": "3db1dd567c11643945db5d276be6bcf5",
-    "semantic_hash": "3db1dd567c11643945db5d276be6bcf5"
+    "mtime": 1786820401.1165202,
+    "ast_hash": "2e9106ac50e0b4dedfdc7898bed7f763",
+    "semantic_hash": ""
   },
   "app/critic/critic/cli.py": {
-    "mtime": 1783190887.0844634,
-    "ast_hash": "cd99fa0af71e1deef0a10d94d1bb9f50",
-    "semantic_hash": "cd99fa0af71e1deef0a10d94d1bb9f50"
+    "mtime": 1786818565.8648055,
+    "ast_hash": "6f88a181d214ecbe5cf2b99db9b57a7f",
+    "semantic_hash": ""
   },
   "app/critic/critic/config.py": {
     "mtime": 1782761644.563032,
@@ -15560,8 +15560,8 @@
     "semantic_hash": "ccd3624adb98ad538519a4a60f22d393"
   },
   "app/critic/critic/synthesize.py": {
-    "mtime": 1784503597.054891,
-    "ast_hash": "f0631009a0b48ce1833edc0258fedd11",
+    "mtime": 1786818566.1235616,
+    "ast_hash": "d27ecd04f8f281a01018dc59bcf1645d",
     "semantic_hash": ""
   },
   "app/critic/critic/tags.py": {
@@ -16635,9 +16635,9 @@
     "semantic_hash": "8674224405b5310dad4989d8c18ea77a"
   },
   "app/critic/README.md": {
-    "mtime": 1782588410.3358576,
-    "ast_hash": "5f90fbed5e046219546cf6eed251cf6b",
-    "semantic_hash": "5f90fbed5e046219546cf6eed251cf6b"
+    "mtime": 1786820401.2940001,
+    "ast_hash": "1e23e7ca4552ce9f8cb595d01bbe42e6",
+    "semantic_hash": ""
   },
   "app/critic/critic/personas/default.md": {
     "mtime": 1782675830.2471883,
@@ -17005,7 +17005,7 @@
     "semantic_hash": "a1e8c9cfc077b5605ce68c20891bb606"
   },
   "site/src/content/reviews/album--michael-anthony-rose--i-m-still-here.md": {
-    "mtime": 1782920826.668613,
+    "mtime": 1786746420.954484,
     "ast_hash": "4a7fcea56592f0eeec88751cc384e4fb",
     "semantic_hash": "4a7fcea56592f0eeec88751cc384e4fb"
   },
@@ -17220,24 +17220,24 @@
     "semantic_hash": "a4c376158ee89621a44f1255105e369b"
   },
   "site/src/content/reviews/michael-anthony-rose--full-size-person.md": {
-    "mtime": 1782919986.0986516,
-    "ast_hash": "1f0326bdc8fcef5d7807e0f28c4dc022",
-    "semantic_hash": "1f0326bdc8fcef5d7807e0f28c4dc022"
+    "mtime": 1786746416.0133882,
+    "ast_hash": "c6cc2c3de747c4f11bafad443d321ef7",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--i-know-exactly-what-this-is.md": {
-    "mtime": 1782919986.0986516,
-    "ast_hash": "8bc4d1cbf18fc141f12931dcfdb26931",
-    "semantic_hash": "8bc4d1cbf18fc141f12931dcfdb26931"
+    "mtime": 1786746411.09186,
+    "ast_hash": "a0113dba4e3757c1fe3a58bace7e30cb",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--i-m-old-now.md": {
-    "mtime": 1782919986.109485,
-    "ast_hash": "fdb6fd64e68f6fcffd2de53e65fbaa8a",
-    "semantic_hash": "fdb6fd64e68f6fcffd2de53e65fbaa8a"
+    "mtime": 1786746409.0196693,
+    "ast_hash": "c5a4f50abc9cde63012e4258c62968fa",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--i-m-still-here.md": {
-    "mtime": 1782920826.668613,
-    "ast_hash": "56356bbe714eb26d577434f0848ce7e6",
-    "semantic_hash": "56356bbe714eb26d577434f0848ce7e6"
+    "mtime": 1786746419.9297233,
+    "ast_hash": "81a40b498cc3667fa16348ed8155722d",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--i-will-bloom.md": {
     "mtime": 1782919986.1203182,
@@ -17245,9 +17245,9 @@
     "semantic_hash": "16a8dfd28122d59f4ec493a4b34562bf"
   },
   "site/src/content/reviews/michael-anthony-rose--its-in-me-too.md": {
-    "mtime": 1782919986.1203182,
-    "ast_hash": "b0097f53438d7958d6931db2d50eab6e",
-    "semantic_hash": "b0097f53438d7958d6931db2d50eab6e"
+    "mtime": 1786746417.9476643,
+    "ast_hash": "2921c3d8d54455e59e63952b2fec1692",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--live-forever-or-die-trying.md": {
     "mtime": 1782919986.141985,
@@ -17270,34 +17270,34 @@
     "semantic_hash": "a9871c94fdd73aa093f80882c50dd2a3"
   },
   "site/src/content/reviews/michael-anthony-rose--rooms-keep-people.md": {
-    "mtime": 1782919986.174485,
-    "ast_hash": "ae60e02cca84bdc406635bf48b833282",
-    "semantic_hash": "ae60e02cca84bdc406635bf48b833282"
+    "mtime": 1786746413.113653,
+    "ast_hash": "748ecc39986d849179013df46c8ce6f8",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--slow-down.md": {
-    "mtime": 1782919986.174485,
-    "ast_hash": "fc998675e223b3ef3dc53204c328e703",
-    "semantic_hash": "fc998675e223b3ef3dc53204c328e703"
+    "mtime": 1786746410.0577397,
+    "ast_hash": "74bb7501c5d89781df84291b13249ff5",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--some-days-still-break-me.md": {
-    "mtime": 1782919986.174485,
-    "ast_hash": "ddb59af4c19e2dab1d5b7ebae6d4339c",
-    "semantic_hash": "ddb59af4c19e2dab1d5b7ebae6d4339c"
+    "mtime": 1786746416.9737728,
+    "ast_hash": "91f4113b66173f30508023ea7954d846",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--some-things-just-stop.md": {
-    "mtime": 1782919986.1853182,
-    "ast_hash": "a71606950bbff889e441f60ad2a715c6",
-    "semantic_hash": "a71606950bbff889e441f60ad2a715c6"
+    "mtime": 1786746412.1164558,
+    "ast_hash": "c20d98e3d424ffdf4781994d5a1459de",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--thats-enough.md": {
-    "mtime": 1782919986.1853182,
-    "ast_hash": "cce8dc7c6585fd5de330992fe655f7a8",
-    "semantic_hash": "cce8dc7c6585fd5de330992fe655f7a8"
+    "mtime": 1786746418.9310043,
+    "ast_hash": "e97f73e6dc0557f9292ee664d8541c76",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--thats-the-question.md": {
-    "mtime": 1782919986.1853182,
-    "ast_hash": "312427414a2064ffa18bce3f51413416",
-    "semantic_hash": "312427414a2064ffa18bce3f51413416"
+    "mtime": 1786746415.0428438,
+    "ast_hash": "b85cf5b04185253106595ae16f6aefba",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--the-bridge-gets-you-over.md": {
     "mtime": 1782919986.1961515,
@@ -17305,9 +17305,9 @@
     "semantic_hash": "9157190fcfa0c09063123391b7b043db"
   },
   "site/src/content/reviews/michael-anthony-rose--they-dont-know.md": {
-    "mtime": 1782919986.206985,
-    "ast_hash": "58427064f596bdb985f39e7ffccda63f",
-    "semantic_hash": "58427064f596bdb985f39e7ffccda63f"
+    "mtime": 1786746414.076363,
+    "ast_hash": "68a00abb3e7cedb2ac2570881f933957",
+    "semantic_hash": ""
   },
   "site/src/content/reviews/michael-anthony-rose--truth-s-empty-promise.md": {
     "mtime": 1782919986.206985,
@@ -19645,12 +19645,12 @@
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "app/promoter/promoter/cli.py": {
-    "mtime": 1786476051.3871691,
+    "mtime": 1786480544.3175685,
     "ast_hash": "84a66286a54c6de7ad0438d1d36fc3eb",
     "semantic_hash": ""
   },
   "app/promoter/promoter/config.py": {
-    "mtime": 1786475809.5845528,
+    "mtime": 1786480544.3175685,
     "ast_hash": "3ee1a3ea99c28c5266283e2db64f1503",
     "semantic_hash": ""
   },
@@ -19660,12 +19660,12 @@
     "semantic_hash": ""
   },
   "app/promoter/promoter/generate.py": {
-    "mtime": 1786476014.8247123,
+    "mtime": 1786480544.3175685,
     "ast_hash": "c653f8ca1c8c6d6b32841e128a95f391",
     "semantic_hash": ""
   },
   "app/promoter/promoter/writeback.py": {
-    "mtime": 1786473004.1929808,
+    "mtime": 1786480544.3175685,
     "ast_hash": "bff48467fb76cb35fb0f1be698726578",
     "semantic_hash": ""
   },
@@ -19775,8 +19775,8 @@
     "semantic_hash": ""
   },
   "mrp/admin/pipeline.py": {
-    "mtime": 1786476196.0955405,
-    "ast_hash": "e6a9c57d3582e6a3f40f2560def8cc1c",
+    "mtime": 1786818494.3547645,
+    "ast_hash": "3ec51c9c37b716e33c915a30842866f1",
     "semantic_hash": ""
   },
   "mrp/admin/routes/__init__.py": {
@@ -19805,8 +19805,8 @@
     "semantic_hash": "320da4778460f660d52d431638b42f9a"
   },
   "mrp/admin/routes/workspace.py": {
-    "mtime": 1786473134.696529,
-    "ast_hash": "a2e4958df3dd50e55dc3da70d03db88d",
+    "mtime": 1786819075.9411051,
+    "ast_hash": "84879c75065b70815f9585713a7435fa",
     "semantic_hash": ""
   },
   "mrp/admin/server.py": {
@@ -19815,8 +19815,8 @@
     "semantic_hash": ""
   },
   "mrp/admin/workspace.py": {
-    "mtime": 1784660368.6339214,
-    "ast_hash": "74384692e2c8a76d2569b83e79a9e485",
+    "mtime": 1786818494.0061307,
+    "ast_hash": "f22c3920c476bf85098ab5ac2dc4e222",
     "semantic_hash": ""
   },
   "mrp/core/enrich_isrc.py": {
@@ -19960,7 +19960,7 @@
     "semantic_hash": "7a9743220f2ffedff1a2a89f328d2297"
   },
   "content/releases/a-distant-memory.yaml": {
-    "mtime": 1786464198.7735898,
+    "mtime": 1786486860.7141235,
     "ast_hash": "7a5063725177eadc2c3bb1006216cb4c",
     "semantic_hash": ""
   },
@@ -20095,8 +20095,8 @@
     "semantic_hash": "8aa84f8f7d939a3f027eb3b3e654193e"
   },
   "mrp/admin/templates/releases/workspace/promoter.html": {
-    "mtime": 1786473139.268195,
-    "ast_hash": "d273b98acbc5653e11d358a7eace38dc",
+    "mtime": 1786818897.7315872,
+    "ast_hash": "c031a4921372f11879735a04fcc707b2",
     "semantic_hash": ""
   },
   "mrp/admin/templates/releases/workspace/publish.html": {
@@ -20245,8 +20245,8 @@
     "semantic_hash": "517c0a53b79fc4dd8af149bcad6ba549"
   },
   "content/artists/pcbender.yaml": {
-    "mtime": 1786468916.7039723,
-    "ast_hash": "3678691e1d901b5ea214f75e7b07babc",
+    "mtime": 1786478770.1384559,
+    "ast_hash": "6ab58a8e4726c4097807061d647a4aab",
     "semantic_hash": ""
   },
   "mrp/admin/templates/releases/workspace/_promoter_profile.html": {
@@ -20400,13 +20400,13 @@
     "semantic_hash": ""
   },
   "content/releases/you-know-enough.yaml": {
-    "mtime": 1786464283.9963179,
+    "mtime": 1786486891.2796667,
     "ast_hash": "51d4cc425f81034e75773797f7d88196",
     "semantic_hash": ""
   },
   "docs/ADMIN-WORKSPACE.md": {
-    "mtime": 1783460052.2568805,
-    "ast_hash": "adb0239c3ea207f5023468af5db6bde6",
+    "mtime": 1786820401.203372,
+    "ast_hash": "6aab4a99bfe2045d8dbf3246e6d13e14",
     "semantic_hash": ""
   },
   "docs/MRP Admin Milestones.md": {
@@ -20665,12 +20665,12 @@
     "semantic_hash": ""
   },
   "content/releases/footsteps-again.yaml": {
-    "mtime": 1786464223.3045776,
+    "mtime": 1786486869.1523385,
     "ast_hash": "24f6347f5c2880fc01e634afc16ad3e4",
     "semantic_hash": ""
   },
   "content/releases/the-singer-behind-the-counter.yaml": {
-    "mtime": 1786464257.8731563,
+    "mtime": 1786486882.766554,
     "ast_hash": "3de056a0fb7725f8616f5e47f36c4112",
     "semantic_hash": ""
   },
@@ -20745,7 +20745,7 @@
     "semantic_hash": ""
   },
   "mrp/admin/routes/artists.py": {
-    "mtime": 1786475356.2420588,
+    "mtime": 1786480544.3175685,
     "ast_hash": "007cd49e656bbeb852f910afb21d1351",
     "semantic_hash": ""
   },
@@ -20760,7 +20760,7 @@
     "semantic_hash": ""
   },
   "mrp/admin/templates/artists/form.html": {
-    "mtime": 1786475490.892696,
+    "mtime": 1786480544.3219018,
     "ast_hash": "53d85c68ccb3211b42ef276f3138edbb",
     "semantic_hash": ""
   },
@@ -20825,8 +20825,8 @@
     "semantic_hash": ""
   },
   "mrp/admin/templates/releases/workspace/_promo_kit.html": {
-    "mtime": 1783460052.2568805,
-    "ast_hash": "3d8ed63ca4df492084489867125c285c",
+    "mtime": 1786818897.8193412,
+    "ast_hash": "70a7c43afd8cdd95c577b564ada60dfe",
     "semantic_hash": ""
   },
   "assets/processed/promo/entraining/cover-square.jpg": {
@@ -21550,7 +21550,7 @@
     "semantic_hash": ""
   },
   "content/releases/you-don-t-say.yaml": {
-    "mtime": 1786464280.707327,
+    "mtime": 1786486886.8096414,
     "ast_hash": "8b10628f509ef12d2f3f994fd86f086b",
     "semantic_hash": ""
   },
@@ -22085,7 +22085,7 @@
     "semantic_hash": ""
   },
   "content/releases/outlandia.yaml": {
-    "mtime": 1786464239.0849717,
+    "mtime": 1786747649.2725601,
     "ast_hash": "04375d12919026f7f9558edf89163109",
     "semantic_hash": ""
   },
@@ -24535,7 +24535,7 @@
     "semantic_hash": ""
   },
   "content/releases/darkness-takes-the-shadows.yaml": {
-    "mtime": 1786464209.8204458,
+    "mtime": 1786486866.3203485,
     "ast_hash": "a2211ca2bf4fa5c708f233c303132fb3",
     "semantic_hash": ""
   },
@@ -24805,7 +24805,7 @@
     "semantic_hash": ""
   },
   "content/releases/make-it-all-fine.yaml": {
-    "mtime": 1786464232.4228468,
+    "mtime": 1786486876.799119,
     "ast_hash": "9363b0adfea3f9a0c9044b4084293941",
     "semantic_hash": ""
   },
@@ -24940,17 +24940,17 @@
     "semantic_hash": ""
   },
   "app/promoter/promoter/evidence.py": {
-    "mtime": 1786475848.6114502,
+    "mtime": 1786480544.3175685,
     "ast_hash": "6da2b594a2f1dffcbb178a3ae32d0050",
     "semantic_hash": ""
   },
   "app/promoter/promoter/keywords.py": {
-    "mtime": 1786475305.0947902,
+    "mtime": 1786480544.3175685,
     "ast_hash": "4f04bd981edc3384bfa5b4e4abdf8ae7",
     "semantic_hash": ""
   },
   "app/promoter/promoter/triumvirate.py": {
-    "mtime": 1786476129.7531505,
+    "mtime": 1786480544.3175685,
     "ast_hash": "7c2b71e0643e797c93c758ee77bb9b46",
     "semantic_hash": ""
   },
@@ -25005,7 +25005,7 @@
     "semantic_hash": ""
   },
   "mrp/admin/static/keyword-blocklist.js": {
-    "mtime": 1786475472.697032,
+    "mtime": 1786480544.3175685,
     "ast_hash": "b2918a0c6b359017c4cbe6ff1f253a56",
     "semantic_hash": ""
   },
@@ -25300,27 +25300,27 @@
     "semantic_hash": ""
   },
   "tests/test_admin_promoter_modes.py": {
-    "mtime": 1786476210.638205,
-    "ast_hash": "97f277760876409e712cefad31a971b9",
+    "mtime": 1786818898.0787878,
+    "ast_hash": "8d5d9e8041f8fd7921fdf584188df8a7",
     "semantic_hash": ""
   },
   "tests/test_artist_keywords.py": {
-    "mtime": 1786476905.5794346,
+    "mtime": 1786480544.3219018,
     "ast_hash": "143b5e6011187411ed7e89a372a481a5",
     "semantic_hash": ""
   },
   "tests/test_keyword_blocklist_js.py": {
-    "mtime": 1786475513.4766715,
+    "mtime": 1786480544.3219018,
     "ast_hash": "dfea53345a8d566454a864c5b5ebca13",
     "semantic_hash": ""
   },
   "tests/test_keyword_evidence.py": {
-    "mtime": 1786476889.4813473,
+    "mtime": 1786480544.3219018,
     "ast_hash": "9d96fc8a5ea45ae35d645485ff625e21",
     "semantic_hash": ""
   },
   "app/promoter/promoter/prompts/ballot_system.md": {
-    "mtime": 1786475907.2423468,
+    "mtime": 1786480544.3175685,
     "ast_hash": "88760a1c0eae0bb9a669e82b296cb595",
     "semantic_hash": ""
   },
@@ -25417,6 +25417,281 @@
   "assets/processed/video/pcbender--make-it-all-fine/renders/full/e023f7b833dd.mp4": {
     "mtime": 1785708234.7693949,
     "ast_hash": "f7d85f32c2d7bc28069cbf18f81b1568",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/aim-for-true/copy.json": {
+    "mtime": 1786479498.9897618,
+    "ast_hash": "863635b525a1eee2debe725f717c29a6",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/aim-for-true/kit.json": {
+    "mtime": 1786479702.554677,
+    "ast_hash": "401b95efb3ee52bc103b6c1c6142ff4e",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/i-m-still-here/copy.json": {
+    "mtime": 1786746920.487809,
+    "ast_hash": "6a9f89edf5efa5a80b3f0079ab6d8dca",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/i-m-still-here/kit.json": {
+    "mtime": 1786747261.6037304,
+    "ast_hash": "b75d28986f9c82da78ca2dc85499c897",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/outlandia/copy.json": {
+    "mtime": 1786747924.7370014,
+    "ast_hash": "912003a9d829b036d14bc11252ed86e2",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/outlandia/kit.json": {
+    "mtime": 1786747944.3490694,
+    "ast_hash": "2121fd5992eedadeff212b679bbcfde0",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/raven-dark/copy.json": {
+    "mtime": 1786480170.5705955,
+    "ast_hash": "6de8f84d28bbae235efa34678e157064",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/raven-dark/kit.json": {
+    "mtime": 1786480320.0440898,
+    "ast_hash": "bbf7c09de590b839907886f2bd6b5a42",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260811T203946Z-remote-staging-20260811T203720048786Z-site.json": {
+    "mtime": 1786480798.1687295,
+    "ast_hash": "26bbac80cef5b7382614d1cbd3ca9bc9",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260811T204035Z-remote-production-20260811T203720048786Z-site.json": {
+    "mtime": 1786480847.1091337,
+    "ast_hash": "8ef0840f7bec92d55e1088b56459e20b",
+    "semantic_hash": ""
+  },
+  "reports/deployment/20260814T224501Z-remote-staging-20260814T224217921643Z-site.json": {
+    "mtime": 1786747512.762547,
+    "ast_hash": "59d2ec5f68753507464a5ee8c0305a3b",
+    "semantic_hash": ""
+  },
+  "reports/prune/20260811T203756735563Z.json": {
+    "mtime": 1786480786.425354,
+    "ast_hash": "49b750c1cd16442600a63dd677a56db2",
+    "semantic_hash": ""
+  },
+  "reports/prune/20260811T204012211819Z.json": {
+    "mtime": 1786480812.2329247,
+    "ast_hash": "ca89b0c7c2ae555d2ee6050c80400fa5",
+    "semantic_hash": ""
+  },
+  "reports/prune/20260811T204143671132Z.json": {
+    "mtime": 1786480903.698422,
+    "ast_hash": "fd0fdbfe80d544056ee0787f02d4b72b",
+    "semantic_hash": ""
+  },
+  "reports/prune/20260811T204253781250Z.json": {
+    "mtime": 1786480973.8053975,
+    "ast_hash": "4070c69f860828af3d9e2a43e3c0f45a",
+    "semantic_hash": ""
+  },
+  "reports/prune/20260811T204552770931Z.json": {
+    "mtime": 1786481152.7955809,
+    "ast_hash": "b97a76fa1e731c26a19747f16dbe2c13",
+    "semantic_hash": ""
+  },
+  "reports/prune/20260814T224254642335Z.json": {
+    "mtime": 1786747501.986969,
+    "ast_hash": "a4436c0bdf656802cf8c6a7fe248b220",
+    "semantic_hash": ""
+  },
+  "reports/prune/20260815T183342030199Z.json": {
+    "mtime": 1786818823.839363,
+    "ast_hash": "fc684968921064fe488a5aa3e1977075",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260811T203705Z.json": {
+    "mtime": 1786480625.2868366,
+    "ast_hash": "3117cd43b723c1e9eb32432457c692d0",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260811T203721Z.json": {
+    "mtime": 1786480641.9442031,
+    "ast_hash": "2d32b1533fbcfa5cbb404341b6f88c88",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260811T203939Z.json": {
+    "mtime": 1786480779.7405229,
+    "ast_hash": "bc451625bc5cf37d5bab53ea641cbda2",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260811T204111Z.json": {
+    "mtime": 1786480871.2638967,
+    "ast_hash": "cc92a2cd98fd8fee3970fcf0809d9a56",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260811T204221Z.json": {
+    "mtime": 1786480941.0022352,
+    "ast_hash": "2a6d796e2610855c8946a0c56026b468",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260811T204435Z.json": {
+    "mtime": 1786481075.477852,
+    "ast_hash": "6fbe11b6e42f341abc3cf99e1d621dea",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260811T204522Z.json": {
+    "mtime": 1786481122.7956023,
+    "ast_hash": "d442f55524007bfb4340d26336dca8fc",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260814T224212Z.json": {
+    "mtime": 1786747332.2842376,
+    "ast_hash": "7c37bbf03119be694581e9479bb49653",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260814T224219Z.json": {
+    "mtime": 1786747339.6831653,
+    "ast_hash": "cbe8b4b7e525c157de0bdc72b162a666",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260815T183257Z.json": {
+    "mtime": 1786818777.0779607,
+    "ast_hash": "9a7037ca21019d8d45b9f2beeedb8460",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260811T203958Z-remote-staging.json": {
+    "mtime": 1786480801.2003484,
+    "ast_hash": "ed9ca0768ac8fa63a3481749d3c40f56",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260811T204047Z-remote-production.json": {
+    "mtime": 1786480850.2107644,
+    "ast_hash": "01ea20a31a3f9ee4f29154621d85de5a",
+    "semantic_hash": ""
+  },
+  "reports/verification/20260814T224512Z-remote-staging.json": {
+    "mtime": 1786747515.5809622,
+    "ast_hash": "0bedf6fe7d5b8a18a4ea4ae2efe48385",
+    "semantic_hash": ""
+  },
+  "site/src/lib/releaseReviews.ts": {
+    "mtime": 1786818410.5320413,
+    "ast_hash": "66793bfa87238fba256944bb51607c63",
+    "semantic_hash": ""
+  },
+  "tests/test_critic_point_in_time.py": {
+    "mtime": 1786820417.0268238,
+    "ast_hash": "648b94091633b25d6a83cd14aaa520a1",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/aim-for-true/cover-square.jpg": {
+    "mtime": 1786479517.92981,
+    "ast_hash": "cbc6c5afcd04d7b2061df5d13c8d3549",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/aim-for-true/cover-story.jpg": {
+    "mtime": 1786479518.0828006,
+    "ast_hash": "abc414fae26a0728de92676e786735f0",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/i-m-still-here/cover-square.jpg": {
+    "mtime": 1786746940.4033556,
+    "ast_hash": "39d5191e3bde566977507853b70cdc7c",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/i-m-still-here/cover-story.jpg": {
+    "mtime": 1786746940.5317628,
+    "ast_hash": "4534eb36f837b0ce87a28dae2671415b",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/outlandia/cover-square.jpg": {
+    "mtime": 1786747944.1973236,
+    "ast_hash": "42c9d97d3754b8ae3c7f89044cc6443a",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/outlandia/cover-story.jpg": {
+    "mtime": 1786747944.3393397,
+    "ast_hash": "8dec8f432450d61c92873d29012de921",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/raven-dark/cover-square.jpg": {
+    "mtime": 1786480188.8265038,
+    "ast_hash": "d4847b48be43f93b793e77013b5e7bfa",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/raven-dark/cover-story.jpg": {
+    "mtime": 1786480188.9698684,
+    "ast_hash": "9c8a0ffeda342dea89448784894ad923",
+    "semantic_hash": ""
+  },
+  "site/public/assets/releases/i-m-still-here/hero.jpg": {
+    "mtime": 1786739068.3056362,
+    "ast_hash": "52d433a666bef554a01a9c2eff2efd1e",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/aim-for-true/animated-short.mp4": {
+    "mtime": 1786479702.4631262,
+    "ast_hash": "c5f02902bb686386ce4fb5929c6cfe96",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/aim-for-true/nim-visual.mp4": {
+    "mtime": 1786479696.1532116,
+    "ast_hash": "818fe025123b293ee94e2abcd1b46022",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/aim-for-true/short.mp4": {
+    "mtime": 1786479517.7781434,
+    "ast_hash": "778a034e061d82bdd8b271ac7890ec28",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/i-m-still-here/animated-short.mp4": {
+    "mtime": 1786747261.505032,
+    "ast_hash": "8c62e5878639166be5d7867ae8783bdb",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/i-m-still-here/nim-visual.mp4": {
+    "mtime": 1786747256.2973483,
+    "ast_hash": "27ce87329cdaf4bf4b7c43911a55307b",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/i-m-still-here/short.mp4": {
+    "mtime": 1786746940.2657697,
+    "ast_hash": "1b41808dfdc5791d9622ff6ef5582041",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/outlandia/short.mp4": {
+    "mtime": 1786747944.0562153,
+    "ast_hash": "8a2d7919b2a6d99c3aca667f035598d0",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/raven-dark/animated-short.mp4": {
+    "mtime": 1786480319.9561958,
+    "ast_hash": "59a3f5b4102857eaed5f3d24f84f67e9",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/raven-dark/nim-visual.mp4": {
+    "mtime": 1786480314.4688427,
+    "ast_hash": "2cfe975f05a25797847aa5e4b9e8ccd9",
+    "semantic_hash": ""
+  },
+  "assets/processed/promo/raven-dark/short.mp4": {
+    "mtime": 1786480188.6780555,
+    "ast_hash": "8f388132595c7de35d4f9c66cc9dd1eb",
+    "semantic_hash": ""
+  },
+  "site/public/samples/michael-anthony-rose--i-m-still-here.mp3": {
+    "mtime": 1786746591.0565395,
+    "ast_hash": "0f7652d5442a8e0119d9e7e3e195b488",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260815T183655Z.json": {
+    "mtime": 1786819015.969173,
+    "ast_hash": "df9aff7affd70c3203cc2f23e8239b2a",
+    "semantic_hash": ""
+  },
+  "reports/validation/20260815T185849Z.json": {
+    "mtime": 1786820329.5808809,
+    "ast_hash": "c913274c3c5fb24bd304f83aff43de81",
     "semantic_hash": ""
   }
 }

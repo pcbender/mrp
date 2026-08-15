@@ -123,7 +123,7 @@
       "Some Things Just Stop",
       "Rooms Keep People"
     ],
-    "status": "pending",
+    "status": "publishable",
     "model": "claude-sonnet-4-6"
   },
   "track_reviews_in_context": [

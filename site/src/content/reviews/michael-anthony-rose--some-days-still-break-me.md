@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--some-days-still-break-me
-impression: "This track creates a warm and intimate atmosphere, featuring a gentle texture of clean electric guitar, soft piano, and a heartfelt, forward-placed male vocal. The energy is consistently low and reflective, maintaining a laid-back, ballad-like feel driven by a simple, steady rhythm section. The production is clean and spacious, with well-balanced elements that create a cohesive and polished sound where every instrument has its own place. A defining quality is its dynamic subtlety, as seen in the transition at 0:40 where the chorus introduces subtle vocal harmonies and a fuller bassline, effectively swelling the emotional weight without disrupting the song's gentle nature."
+summary: "Coming directly after the album's most assertive statement, 'Some Days Still Break Me' is not a retreat but a clarification."
 verdict_rank: 4
 verdict_label: "highlight"
 ---

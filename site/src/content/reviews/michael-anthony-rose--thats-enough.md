@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--thats-enough
-impression: "This track unfolds from a sparse, intimate texture into a full-bodied, earnest arrangement, creating an emotional atmosphere of reflection and quiet resolve. The energy builds dynamically from gentle, introspective verses to a soaring, cathartic chorus, giving the song a feel of hopeful anthem. The production is clean and spacious, with a prominent lead vocal sitting warmly atop a well-balanced mix of piano, layered guitars, and a solid rhythm section. A distinctive feature is the powerful final chorus, which resolves the song's tension with a full, uplifting arrangement that embodies a sense of resilient self-acceptance."
+summary: "After 'It's in Me Too' stripped away the last of the self-protective instincts, 'That's Enough' arrives as the album's earned exhale."
 verdict_rank: 5
 verdict_label: "standout"
 ---

@@ -1,6 +1,6 @@
 ---
 track_id: michael-anthony-rose--its-in-me-too
-impression: "This track establishes a vulnerable and confessional atmosphere with a sparse, intimate texture centered on a clean electric guitar and a close-miked male vocal. It has a dramatic dynamic arc, building from a low-energy, reflective verse into a powerful, anthemic rock chorus that feels cathartic and expansive. The production is clear and spacious, allowing individual elements to breathe in the verses while expertly layering guitars and background vocals for a dense, wide soundscape in the louder sections without losing vocal clarity. The most defining quality is the stark transition into the chorus, where quiet self-analysis erupts into a raw, full-band declaration, a shift that provides the song's primary emotional and structural hook."
+summary: "Rose has written self-examination songs before, but 'It's in Me Too' is the one where the ledger gets read out loud without flinching, and it arrives at exactly the right moment."
 verdict_rank: 5
 verdict_label: "standout"
 ---
