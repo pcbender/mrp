@@ -12,8 +12,8 @@ site/.astro/
 
 builds/
 
-graphify-out/cost.json        # local only
-graphify-out/cache/           # optional: commit for speed, skip to keep repo small
+graphify-out/cost.json
+graphify-out/cache/
 
 reports/**/*.json
 reports/**/*.secret
