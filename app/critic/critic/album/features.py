@@ -43,7 +43,7 @@ def build_features(release_slug: str, out_dir: Path | None = None) -> AlbumRecor
 
     artist_slug = meta["artist_id"]
     artist_name = get_artist_name(artist_slug)
-    persona = get_persona(artist_slug)
+    persona = get_persona(artist_slug, release_slug=release_slug)
     album_id = f"{artist_slug}--{release_slug}"
 
     tracks = get_release_tracks(release_slug)

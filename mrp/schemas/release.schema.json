@@ -72,6 +72,16 @@
           "minItems": 2,
           "items": {"$ref": "#/$defs/track"}
         },
+        "promoter": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "promo_track_slug": {
+              "type": ["string", "null"],
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          }
+        },
         "automation": {
           "type": "object",
           "additionalProperties": false,
@@ -88,7 +98,12 @@
           "then": {
             "required": ["song"],
             "properties": {"release_type": {"const": "single"}},
-            "not": {"required": ["tracks"]}
+            "not": {
+              "anyOf": [
+                {"required": ["tracks"]},
+                {"required": ["promoter"]}
+              ]
+            }
           }
         },
         {

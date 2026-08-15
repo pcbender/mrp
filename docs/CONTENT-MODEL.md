@@ -81,6 +81,18 @@ root. A music video therefore always belongs to exactly one track, regardless
 of whether that track is the single release's `song` or one item in an EP or
 album's `tracks` array.
 
+An EP or album may also store one release-level Promoter choice:
+
+```yaml
+release:
+  promoter:
+    promo_track_slug: aiteo
+```
+
+That slug must identify one of the release's `tracks[]` entries. It is the
+shared audio source for both the static video short and animated cover video;
+when absent, both jobs visibly default to track 1.
+
 Skeleton of the current shape (see any live release for a full example,
 e.g. `content/releases/on-to-potter-s-field.yaml`):
 

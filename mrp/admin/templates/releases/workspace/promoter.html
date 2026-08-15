@@ -11,6 +11,38 @@
       edit below, then Save to mark it human-reviewed.
     </p>
 
+    {% if promo_track_units %}
+    <div class="form-field full" style="margin-bottom:.9rem;padding:.75rem;border:1px solid var(--border);border-radius:6px">
+      <label for="promo-track-slug" style="margin-bottom:.35rem">Promo video track</label>
+      <form hx-post="/releases/{{ slug }}/promoter/track"
+            hx-target="#save-result" hx-swap="innerHTML"
+            style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap">
+        <select id="promo-track-slug" name="promo_track_slug" class="pipeline-select" style="min-width:260px">
+          <option value="" {% if not promo_track_slug %}selected{% endif %}>
+            Not selected — use track 1: {{ promo_track_units[0].title }}
+          </option>
+          {% for unit in promo_track_units %}
+          <option value="{{ unit.slug }}" {% if promo_track_slug == unit.slug %}selected{% endif %}>
+            {{ unit.index + 1 }}. {{ unit.title }}{% if not unit.track.preview_audio %} — no snippet{% endif %}
+          </option>
+          {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary btn-sm">Save Promo Track</button>
+      </form>
+      {% if promo_track_error %}
+      <p style="font-size:12px;color:var(--danger);margin:.4rem 0 0">{{ promo_track_error }}</p>
+      {% elif promo_track_slug %}
+      <p style="font-size:12px;color:var(--muted);margin:.4rem 0 0">
+        Both the video short and animated cover use {{ effective_promo_track.title }}'s sampler snippet.
+      </p>
+      {% else %}
+      <p style="font-size:12px;color:var(--warning, #b45309);margin:.4rem 0 0">
+        No selection is saved. Both video jobs currently default to track 1, {{ effective_promo_track.title }}.
+      </p>
+      {% endif %}
+    </div>
+    {% endif %}
+
     <div id="promoter-settings" style="display:flex;gap:.5rem;margin-bottom:.75rem">
       <select name="promoter_model" class="pipeline-select" title="AI model">
         <option value="default">default — Gemini Pro</option>

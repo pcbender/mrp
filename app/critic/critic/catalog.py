@@ -4,6 +4,9 @@ Single source of truth — no loose files.
 """
 from __future__ import annotations
 
+import json
+import re
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -12,6 +15,9 @@ import yaml
 _MRP_ROOT = Path(__file__).resolve().parents[3]
 _RELEASES_DIR = _MRP_ROOT / "content" / "releases"
 _ARTISTS_DIR = _MRP_ROOT / "content" / "artists"
+_REVIEWS_DIR = _MRP_ROOT / "site" / "src" / "content" / "reviews"
+_CRITIC_OUT_DIR = Path(__file__).resolve().parents[1] / "out"
+_APPROVED_REVIEW_STATUSES = {"approved", "publishable"}
 
 
 def _load_yaml(path: Path) -> dict:
@@ -91,24 +97,184 @@ def get_style(track_slug: str, release_slug: str | None = None) -> str:
     return _find_track(track_slug, release_slug).get("style") or ""
 
 
-def get_persona(artist_slug: str) -> str:
-    """Return artist bio_long (falls back to bio_short) from artist YAML."""
+def _artist_record(artist_slug: str) -> dict:
     for ext in (".yaml", ".json"):
         path = _ARTISTS_DIR / f"{artist_slug}{ext}"
         if path.exists():
             data = _load_yaml(path)
-            artist = data.get("artist", {})
-            return artist.get("bio_long") or artist.get("bio_short") or ""
-    return ""
+            return data.get("artist", {})
+    return {}
+
+
+def _parse_catalog_date(value: object) -> date | None:
+    raw = str(value or "").strip()
+    if not raw:
+        return None
+    try:
+        return date.fromisoformat(raw)
+    except ValueError:
+        return None
+
+
+def _context_excerpt(release: dict) -> str:
+    """Return a compact dated-release excerpt without track-list boilerplate."""
+    value = str(release.get("summary") or release.get("description") or "")
+    value = re.split(r"\n## Tracks\b", value, maxsplit=1, flags=re.IGNORECASE)[0]
+    value = re.sub(r"!\[[^]]*]\([^)]+\)", " ", value)
+    value = re.sub(r"\[([^]]*)]\([^)]+\)", r"\1", value)
+    value = re.sub(r"[*_#]", "", value)
+    value = re.sub(r"\s+", " ", value).strip()
+    if len(value) <= 360:
+        return value
+    return value[:357].rsplit(" ", 1)[0] + "..."
+
+
+def _release_review_id(release: dict) -> str:
+    """Return the critic/writeback id for a catalog release."""
+    artist_id = str(release.get("artist_id") or "")
+    release_slug = str(release.get("slug") or "")
+    release_type = str(release.get("release_type") or "").lower()
+    is_multi_track = (
+        release.get("model") == "album"
+        or release_type in {"album", "ep"}
+        or isinstance(release.get("tracks"), list)
+    )
+    if is_multi_track:
+        return f"album--{artist_id}--{release_slug}"
+    song = release.get("song") or {}
+    return f"{artist_id}--{song.get('slug') or release_slug}"
+
+
+def _review_frontmatter(path: Path) -> dict:
+    """Load YAML frontmatter from a critic review, failing closed."""
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except (OSError, UnicodeError):
+        return {}
+    if not lines or lines[0].strip() != "---":
+        return {}
+    try:
+        end = next(i for i, line in enumerate(lines[1:], start=1) if line.strip() == "---")
+        data = yaml.safe_load("\n".join(lines[1:end])) or {}
+    except (StopIteration, yaml.YAMLError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _approved_review_summary(release: dict) -> str:
+    """Return the written summary only when its critic record is approved."""
+    review_id = _release_review_id(release)
+    record_path = _CRITIC_OUT_DIR / f"{review_id}.json"
+    review_path = _REVIEWS_DIR / f"{review_id}.md"
+    if not record_path.is_file() or not review_path.is_file():
+        return ""
+    try:
+        record = json.loads(record_path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return ""
+    if not isinstance(record, dict):
+        return ""
+    review = record.get("review") or {}
+    if not isinstance(review, dict):
+        return ""
+    status = str(review.get("status") or "")
+    if status not in _APPROVED_REVIEW_STATUSES:
+        return ""
+    frontmatter = _review_frontmatter(review_path)
+    if frontmatter.get("track_id") != review_id:
+        return ""
+    summary = frontmatter.get("summary")
+    return summary.strip() if isinstance(summary, str) else ""
+
+
+def get_releases_as_of(artist_slug: str, cutoff: str) -> list[dict]:
+    """Return this artist's dated catalog on or before cutoff, oldest first.
+
+    Undated or invalidly dated records are excluded because they cannot safely
+    be placed on the target release's timeline.
+    """
+    cutoff_date = _parse_catalog_date(cutoff)
+    if cutoff_date is None:
+        raise ValueError(f"Invalid point-in-time release date: {cutoff or '(missing)'}")
+
+    releases = []
+    for path in sorted(_RELEASES_DIR.glob("*.yaml")):
+        data = _load_yaml(path) or {}
+        release = data.get("release", {})
+        release_date = _parse_catalog_date(release.get("release_date"))
+        if release.get("artist_id") != artist_slug or release_date is None:
+            continue
+        if release_date <= cutoff_date:
+            releases.append({
+                "slug": release.get("slug") or path.stem,
+                "title": release.get("title") or path.stem,
+                "release_type": release.get("release_type") or "release",
+                "release_date": release_date.isoformat(),
+                "excerpt": _context_excerpt(release),
+                "review_summary": _approved_review_summary(release),
+            })
+    return sorted(releases, key=lambda item: (item["release_date"], item["slug"]))
+
+
+def get_point_in_time_context(artist_slug: str, release_slug: str) -> str:
+    """Build deterministic critic context as it existed on the release date.
+
+    Artist bios are mutable and currently have no dated revisions, so the
+    current bio is deliberately not supplied to historical reviews. Career
+    context instead comes from catalog records whose release dates are at or
+    before the target release.
+    """
+    target = get_release_meta(release_slug)
+    if not target:
+        raise ValueError(f"Release not found: {release_slug}")
+    if target.get("artist_id") != artist_slug:
+        raise ValueError(
+            f"Release {release_slug} belongs to {target.get('artist_id')}, not {artist_slug}"
+        )
+    cutoff = str(target.get("release_date") or "")
+    releases = get_releases_as_of(artist_slug, cutoff)
+    artist_name = get_artist_name(artist_slug)
+    target_order = (cutoff, release_slug)
+
+    lines = [
+        "POINT-IN-TIME ARTIST CONTEXT",
+        f"Release-date cutoff: {cutoff}",
+        "Write as though the target release is new on this date.",
+        "Do not mention, infer, or rely on releases or artist developments after this cutoff.",
+        "The current mutable artist biography is excluded because it has no dated revision.",
+        "For prior releases, approved critic summaries take precedence over catalog descriptions.",
+        f"Artist: {artist_name}",
+        "Catalog available at this point (oldest first):",
+    ]
+    for release in releases:
+        target_label = " [target release]" if release["slug"] == release_slug else ""
+        line = (
+            f"- {release['release_date']} — {release['title']} "
+            f"({release['release_type']}){target_label}"
+        )
+        # Avoid feeding the target's existing marketing/review copy back into
+        # the critic. Earlier approved reviews provide continuity; catalog
+        # copy remains the safe fallback when no approved review is available.
+        if release["slug"] != release_slug:
+            release_order = (release["release_date"], release["slug"])
+            if release_order < target_order and release["review_summary"]:
+                line += f"\n  Approved critic summary: {release['review_summary']}"
+            elif release["excerpt"]:
+                line += f"\n  Catalog description: {release['excerpt']}"
+        lines.append(line)
+    return "\n".join(lines)
+
+
+def get_persona(artist_slug: str, release_slug: str | None = None) -> str:
+    """Return PIT artist context for a release, or the current bio for legacy callers."""
+    if release_slug:
+        return get_point_in_time_context(artist_slug, release_slug)
+    artist = _artist_record(artist_slug)
+    return artist.get("bio_long") or artist.get("bio_short") or ""
 
 
 def get_artist_name(artist_slug: str) -> str:
-    for ext in (".yaml", ".json"):
-        path = _ARTISTS_DIR / f"{artist_slug}{ext}"
-        if path.exists():
-            data = _load_yaml(path)
-            return data.get("artist", {}).get("name", artist_slug)
-    return artist_slug
+    return _artist_record(artist_slug).get("name", artist_slug)
 
 
 def get_release_tracks(release_slug: str) -> list[dict]:

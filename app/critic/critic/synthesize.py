@@ -72,7 +72,7 @@ def _build_user_message(
         f"Artist: {artist_name or '(unknown)'}",
         f"Format: {target}",
         tier_line,
-        "=== ARTIST PERSONA ===",
+        "=== ARTIST CONTEXT (POINT IN TIME) ===",
         finding.persona or "(none)",
         "",
         "=== LYRICS (published text — quote from here) ===",

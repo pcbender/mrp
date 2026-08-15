@@ -52,7 +52,7 @@ def cmd_review(args: argparse.Namespace) -> None:
 
     # ── Catalog data ─────────────────────────────────────────────────────────
     lyrics = get_lyrics(args.track_slug, release_slug=args.release_slug)
-    persona = get_persona(artist_slug) if artist_slug else ""
+    persona = get_persona(artist_slug, release_slug=args.release_slug) if artist_slug else ""
     artist_name = get_artist_name(artist_slug) if artist_slug else artist_slug
     finding.lyrics = lyrics
     finding.lyrics_raw = get_lyrics_raw(args.track_slug, release_slug=args.release_slug)

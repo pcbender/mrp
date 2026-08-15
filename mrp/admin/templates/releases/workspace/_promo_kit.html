@@ -13,6 +13,10 @@
       Generated {{ kit.generated_at }} with {{ kit.model }} — files in
       <code>{{ kit.slug }}</code>'s kit folder. Copy is a draft in
       {{ kit.artist_name }}'s voice: review before posting.
+      {% if kit.promo_track %}
+      Promo audio: <strong>{{ kit.promo_track.title }}</strong>
+      ({{ "saved selection" if kit.promo_track.selection == "saved" else "track 1 default" }}).
+      {% endif %}
     </p>
 
     <div class="kit-grid">

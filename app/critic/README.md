@@ -41,3 +41,10 @@ Records are written to `out/<track_id>.json`. Each is a `TrackFinding`
 | 2    | soft_floor | "a grower," "for the faithful"              |
 
 Floor is rank 2. `review.status` is `pending` until explicitly approved.
+
+Point-in-time artist context prefers the written summary of each earlier
+release when its matching critic record is `approved` or `publishable`, then
+falls back to the release's canonical summary/description. To develop a
+consistent critical voice across the catalog, process releases oldest-first
+and approve plus write back each release before moving to the next one. Releases
+on the same date use slug order as the deterministic chronology tie-break.

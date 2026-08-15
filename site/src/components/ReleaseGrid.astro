@@ -1,6 +1,7 @@
 ---
 import ReleaseCard from "./ReleaseCard.astro";
 import type { ReleaseCardModel } from "../lib/catalog";
+import { releaseReviewId } from "../lib/releaseReviews";
 import { getEntry } from "astro:content";
 
 interface Props {
@@ -12,7 +13,7 @@ const { releases, rich = false } = Astro.props;
 
 const summaries = await Promise.all(
   releases.map(async (release) => {
-    const reviewEntry = await getEntry("reviews", `${release.artistId}--${release.slug}`).catch(() => null);
+    const reviewEntry = await getEntry("reviews", releaseReviewId(release)).catch(() => null);
     return reviewEntry?.data.summary || reviewEntry?.data.impression || release.summary || "";
   })
 );
