@@ -14,6 +14,7 @@ from typing import Any
 
 import jsonschema
 
+from mrp.core.release import effective_master_path
 from mrp.core.validate import validate_release_stem_ids
 
 _SCHEMA_PATH = Path(__file__).parent.parent / "schemas" / "release.schema.json"
@@ -155,16 +156,6 @@ def set_promo_track_slug(release: dict, track_slug: str | None) -> None:
             release.pop("promoter", None)
 
 
-def effective_master_path(release: dict, index: int, track: dict) -> str | None:
-    """Track-level master_path, falling back to legacy automation.master_path."""
-    if track.get("master_path"):
-        return track["master_path"]
-    legacy = (release.get("automation") or {}).get("master_path")
-    if isinstance(legacy, list):
-        return legacy[index] if index < len(legacy) else None
-    return legacy or None
-
-
 # Artist change migration ------------------------------------------------------
 #
 # Critic records (app/critic/out/), review markdown (site/src/content/reviews/)
@@ -281,7 +272,7 @@ def track_completion(release: dict, root: Path) -> list[dict]:
         t = unit["track"]
         links = t.get("links") or {}
         fields_filled = sum(1 for k in _TRACK_FIELDS if t.get(k))
-        master = effective_master_path(release, unit["index"], t)
+        master = effective_master_path(release, t, unit["index"])
         rows.append({
             **unit,
             "metadata": fields_filled >= len(_TRACK_FIELDS) - 1,  # lyrics optional for instrumentals

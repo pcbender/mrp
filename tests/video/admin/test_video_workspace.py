@@ -15,7 +15,9 @@ from mrp.admin import db, video_jobs, video_workspace
 from mrp.admin.routes import video as video_routes
 from mrp.admin.routes import workspace as workspace_routes
 from mrp.admin.workspace import STAGES
+from mrp.core import release as release_core
 from mrp.core.migrate_site import load_structured_record
+from mrp.core.release import default_stem_directory
 from mrp.video.worker import EventWriter, ProgressMapper
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -263,6 +265,22 @@ def test_scan_stem_directory_infers_editable_rows(tmp_path: Path):
     assert all(Path(str(stem["path"])).parent == directory for stem in stems)
 
 
+def test_default_stem_directory_follows_single_and_album_conventions(
+    tmp_path: Path, monkeypatch
+):
+    root = tmp_path / "Stems"
+    monkeypatch.setattr(release_core, "DEFAULT_STEM_DIR", root)
+
+    assert default_stem_directory(
+        {"model": "song", "title": "Single Name"},
+        {"title": "Single Track"},
+    ) == f"{root / 'Single Name'}/"
+    assert default_stem_directory(
+        {"model": "album", "title": "Album Name"},
+        {"title": "Track Name"},
+    ) == f"{root / 'Album Name' / 'Track Name'}/"
+
+
 def test_scan_stem_directory_rejects_missing_or_empty_path(tmp_path: Path):
     with pytest.raises(video_workspace.StemImportError, match="Enter a directory"):
         video_workspace.scan_stem_directory(tmp_path, "")
@@ -375,6 +393,40 @@ def test_video_track_page_renders_assets_and_job_controls(tmp_path: Path, monkey
     assert "Run analyze" in body
     assert "Run align" in body
     assert "Open rendering workspace" in body
+
+
+def test_video_track_page_defaults_existing_album_stem_directory_without_importing(
+    tmp_path: Path, monkeypatch
+):
+    db.init(tmp_path / "admin.db")
+    record = yaml.safe_load(ENRICHED.read_text(encoding="utf-8"))
+    track = record["release"]["tracks"][0]
+    track["stems"] = []
+    path = tmp_path / "content" / "releases" / "video-contract.yaml"
+    path.parent.mkdir(parents=True)
+    path.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
+    stem_root = tmp_path / "Stems"
+    expected = stem_root / record["release"]["title"] / track["title"]
+    expected.mkdir(parents=True)
+    (expected / "Bass.wav").write_bytes(b"audio")
+    monkeypatch.setattr(release_core, "DEFAULT_STEM_DIR", stem_root)
+    monkeypatch.setattr(video_routes, "get_repo_root", lambda: tmp_path)
+
+    response = asyncio.run(
+        video_routes.video_track(
+            _get_request("/releases/video-contract/tracks/private-track/video"),
+            "video-contract",
+            "private-track",
+        )
+    )
+    body = response.body.decode()
+
+    assert response.status_code == 200
+    assert 'id="stem-import-directory" type="text"' in body
+    assert f'value="{expected}/"' in body
+    assert "Import from path&hellip;" in body
+    assert "Bass.wav" not in body
+    assert load_structured_record(path)["release"]["tracks"][0]["stems"] == []
 
 
 def test_video_track_page_makes_legacy_master_an_explicit_import(

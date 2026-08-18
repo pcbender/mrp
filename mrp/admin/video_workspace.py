@@ -11,7 +11,7 @@ from typing import Any
 
 from mrp.admin import db, video_jobs
 from mrp.admin.workspace import track_units
-from mrp.core.release import slugify
+from mrp.core.release import effective_master_path, slugify
 
 STEM_ROLES = ("drums", "bass", "vocals", "instruments", "other")
 STEM_AUDIO_SUFFIXES = frozenset({".wav", ".mp3", ".flac", ".aif", ".aiff", ".m4a"})
@@ -243,7 +243,11 @@ def preflight_input_drift(
     key = track_key(release, track)
     aligned = root / "assets" / "source" / "video" / key / "lyrics.aligned.yaml"
     checks: list[tuple[str, str, Path | None]] = [
-        ("audio.master", "the track master", resolve_asset(root, track.get("master_path"))),
+        (
+            "audio.master",
+            "the track master",
+            resolve_asset(root, effective_master_path(release, track)),
+        ),
     ]
     if not audio_only:
         checks.append(
@@ -299,7 +303,7 @@ def video_track_rows(root: Path, release_slug: str, release: dict[str, Any]) -> 
         video = track.get("music_video") if isinstance(track.get("music_video"), dict) else {}
         stems = [stem for stem in (track.get("stems") or []) if isinstance(stem, dict)]
         enabled_stems = [stem for stem in stems if stem.get("enabled", True)]
-        master_value = track.get("master_path")
+        master_value = effective_master_path(release, track, unit["index"])
         master = resolve_asset(root, master_value)
         artwork = resolve_asset(root, release.get("cover_image"))
         validation, validation_detail = _validation_state(
@@ -415,7 +419,7 @@ def validate_assets(
     record("FFmpeg", bool(ffmpeg), ffmpeg or "not on PATH")
     record("ffprobe", bool(ffprobe), ffprobe or "not on PATH")
 
-    master_value = track.get("master_path")
+    master_value = effective_master_path(release, track, unit["index"])
     master = resolve_asset(root, master_value)
     record("Master", bool(master and master.is_file()), str(master_value or "not configured"))
 

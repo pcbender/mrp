@@ -23,6 +23,7 @@ from mrp.admin.video_workspace import (
     resolve_asset,
     track_key,
 )
+from mrp.core.release import effective_master_path
 from mrp.video.casting import resolve_section_composition
 from mrp.video.choreography import choreography_at, scene_settle_seconds
 from mrp.video.presets import get_mapping_preset, get_palette_preset
@@ -374,7 +375,7 @@ def _existing_analysis(
             "Audio-analysis settings changed. Run Prepare and Analyze.",
         )
 
-    current_master = resolve_asset(root, track.get("master_path"))
+    current_master = resolve_asset(root, effective_master_path(release, track))
     runtime_master = (runtime_path.parent / runtime.audio.master).resolve()
     if (
         current_master is None

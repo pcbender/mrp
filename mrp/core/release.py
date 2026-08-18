@@ -9,6 +9,61 @@ import yaml
 
 from mrp.core.validate import validate_repository
 
+DEFAULT_MASTER_DIR = Path("/mnt/c/Masters")
+DEFAULT_STEM_DIR = Path("/mnt/c/Stems")
+
+
+def default_master_path(release: dict, track: dict) -> str | None:
+    """Conventional master path for a track, based on its display title."""
+    title = str(track.get("title") or release.get("title") or "").strip()
+    if not title:
+        return None
+    return str(DEFAULT_MASTER_DIR / f"{title}.wav")
+
+
+def default_stem_directory(release: dict, track: dict) -> str | None:
+    """Conventional stem directory for a single or album/EP track."""
+    release_title = str(release.get("title") or "").strip()
+    if not release_title:
+        return None
+    model = release.get("model")
+    directory = DEFAULT_STEM_DIR / release_title
+    if model == "album":
+        track_title = str(track.get("title") or "").strip()
+        if not track_title:
+            return None
+        directory /= track_title
+    elif model != "song":
+        return None
+    return f"{directory}/"
+
+
+def effective_master_path(
+    release: dict,
+    track: dict,
+    index: int | None = None,
+) -> str | None:
+    """Resolve an explicit override, an existing conventional file, or legacy config."""
+    override = str(track.get("master_path") or "").strip()
+    if override:
+        return override
+    conventional = default_master_path(release, track)
+    if conventional and Path(conventional).is_file():
+        return conventional
+    legacy = (release.get("automation") or {}).get("master_path")
+    if not isinstance(legacy, list):
+        return legacy or None
+    if index is None:
+        if release.get("model") == "song":
+            index = 0
+        else:
+            tracks = release.get("tracks") or []
+            index = next(
+                (i for i, candidate in enumerate(tracks) if candidate is track),
+                None,
+            )
+    return legacy[index] if index is not None and index < len(legacy) else None
+
 
 def create_release(
     repo: str | Path,
