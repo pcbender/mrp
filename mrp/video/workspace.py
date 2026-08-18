@@ -5,10 +5,10 @@ import json
 import os
 import re
 from collections import defaultdict
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from collections.abc import Callable
 from typing import Any
 
 import librosa
@@ -18,6 +18,7 @@ import yaml
 from PIL import Image, ImageDraw, ImageFont
 from pydantic import ValidationError
 
+from mrp.core.release import effective_master_path
 from mrp.video.alignment import SpirophonicAlignmentError, align_project
 from mrp.video.analysis import SpirophonicAnalysisError, analyze_project
 from mrp.video.cards import SpirophonicCardError
@@ -50,12 +51,12 @@ from mrp.video.renderer import (
     render_frame,
     render_frame_file,
 )
-from mrp.video.verification import SpirophonicVerificationError
 from mrp.video.track_project import (
     ADAPTER_VERSION,
     TrackProjectDocument,
     TrackSource,
 )
+from mrp.video.verification import SpirophonicVerificationError
 
 SEMANTIC_ROLES = ("drums", "bass", "vocals", "instruments")
 _SLUG_PATTERN = re.compile(r"^[a-z0-9][a-z0-9-]*$")
@@ -999,7 +1000,7 @@ def prepare_track(
         update_release=False,
     )
 
-    master_value = selection.track.get("master_path")
+    master_value = effective_master_path(selection.release, selection.track)
     if not master_value:
         raise MRPVideoAdapterError("track master_path is required for video work")
     master_path = _resolve_input(selection.repo, str(master_value), "track master")

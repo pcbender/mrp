@@ -8,6 +8,7 @@ import yaml
 from PIL import Image
 from typer.testing import CliRunner
 
+from mrp.core import release as release_core
 from mrp.video.cli import app
 from mrp.video.project import load_project_manifest
 from mrp.video.workspace import (
@@ -139,6 +140,32 @@ def test_prepare_master_only_track_uses_symbolic_tracked_project(tmp_path: Path)
         "status": "draft",
     }
     assert json.loads(prepared.workspace.preflight_path.read_text())["status"] == "passed"
+
+
+def test_prepare_uses_existing_title_named_default_master(
+    tmp_path: Path,
+    monkeypatch,
+) -> None:
+    repo, original_master = _write_repo(tmp_path)
+    masters = tmp_path / "Masters"
+    masters.mkdir()
+    expected = masters / "Fixture Track.wav"
+    original_master.replace(expected)
+    release_path = repo / "content" / "releases" / "fixture-release.yaml"
+    document = yaml.safe_load(release_path.read_text(encoding="utf-8"))
+    document["release"]["song"].pop("master_path")
+    release_path.write_text(
+        yaml.safe_dump(document, sort_keys=False),
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(release_core, "DEFAULT_MASTER_DIR", masters)
+
+    prepared = prepare_track(repo, "fixture-release", font_path=FONT_PATH)
+
+    runtime = load_project_manifest(prepared.runtime_manifest_path)
+    assert (prepared.runtime_manifest_path.parent / runtime.audio.master).resolve() == expected
+    saved = yaml.safe_load(release_path.read_text(encoding="utf-8"))
+    assert "master_path" not in saved["release"]["song"]
 
 
 def test_prepare_resolves_and_fingerprints_background_images(tmp_path: Path) -> None:

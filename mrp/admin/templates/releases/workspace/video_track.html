@@ -99,7 +99,9 @@
       <div class="form-field full" style="margin-top:.85rem">
         <label for="stem-import-directory">Stem directory</label>
         <div class="video-path-import">
-          <input id="stem-import-directory" type="text" placeholder="/path/to/stems">
+          <input id="stem-import-directory" type="text"
+                 value="{{ stem_directory_default or '' }}"
+                 placeholder="{{ stem_directory_convention or '/path/to/stems' }}">
           <button type="button" class="btn btn-secondary btn-sm"
                   data-import-url="/releases/{{ slug }}/tracks/{{ track_slug }}/video/stems/import"
                   onclick="importVideoStems(this)">

@@ -54,10 +54,20 @@
       <div class="form-row">
         <div class="form-field full">
           <label>Master File Path</label>
-          <input type="text" name="track_master_path" value="{{ track.master_path or '' }}"
-                 placeholder="{{ master_fallback or '/mnt/c/Masters/…' }}">
-          {% if not track.master_path and master_fallback %}
-          <span style="font-size:11px;color:var(--muted)">Falling back to release-level master: <code>{{ master_fallback }}</code></span>
+          <input type="text" name="track_master_path"
+                 value="{{ track.master_path or (master_default if master_default_exists else '') }}"
+                 placeholder="{{ master_default or '/mnt/c/Masters/[Track Name].wav' }}">
+          {% if track.master_path %}
+          <span style="font-size:11px;color:var(--muted)">
+            {% if master_override_exists %}Using saved override:{% else %}Saved override not found:{% endif %}
+            <code>{{ track.master_path }}</code>
+          </span>
+          {% elif master_default_exists %}
+          <span style="font-size:11px;color:var(--muted)">Found and using conventional master: <code>{{ master_default }}</code>. Edit the field to override it.</span>
+          {% elif master_fallback %}
+          <span style="font-size:11px;color:var(--muted)">Default master not found at <code>{{ master_default }}</code>. Using legacy release-level master: <code>{{ master_fallback }}</code></span>
+          {% elif master_default %}
+          <span style="font-size:11px;color:var(--muted)">Default master not found at <code>{{ master_default }}</code>. Enter a different full path or filename if needed.</span>
           {% endif %}
         </div>
         <div class="form-field full">

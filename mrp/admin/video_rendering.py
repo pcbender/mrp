@@ -15,6 +15,7 @@ from mrp.admin.video_workspace import (
     stem_selection_drift,
     track_key,
 )
+from mrp.core.release import effective_master_path
 
 
 class VideoRenderingError(Exception):
@@ -96,7 +97,7 @@ def _current_preflight(
     if isinstance(expected_aligned, str):
         if not paths["aligned"].is_file() or _hash_file(paths["aligned"]) != expected_aligned:
             problems.append("aligned timing changed after preflight")
-    master = resolve_asset(root, track.get("master_path"))
+    master = resolve_asset(root, effective_master_path(release, track))
     expected_master = input_hashes.get("audio.master")
     if isinstance(expected_master, str):
         if master is None or not master.is_file() or _hash_file(master) != expected_master:

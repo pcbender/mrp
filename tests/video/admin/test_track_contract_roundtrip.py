@@ -8,11 +8,12 @@ from urllib.parse import urlencode
 import yaml
 from starlette.requests import Request
 
-from mrp.admin.routes.releases import _new_release_skeleton
 from mrp.admin.routes import workspace as workspace_routes
+from mrp.admin.routes.releases import _new_release_skeleton
 from mrp.admin.workspace import validate_release_dict
+from mrp.core import release as release_core
 from mrp.core.migrate_site import load_structured_record
-
+from mrp.core.release import default_master_path, effective_master_path
 
 ROOT = Path(__file__).resolve().parents[3]
 ENRICHED = ROOT / "tests" / "video" / "fixtures" / "releases" / "enriched-album.yaml"
@@ -45,6 +46,25 @@ def _request(path: str, fields: list[tuple[str, str]]) -> Request:
             "server": ("test", 80),
         },
         receive,
+    )
+
+
+def _get_request(path: str) -> Request:
+    return Request(
+        {
+            "type": "http",
+            "asgi": {"version": "3.0"},
+            "http_version": "1.1",
+            "method": "GET",
+            "scheme": "http",
+            "path": path,
+            "raw_path": path.encode(),
+            "query_string": b"",
+            "root_path": "",
+            "headers": [],
+            "client": ("127.0.0.1", 1),
+            "server": ("test", 80),
+        }
     )
 
 
@@ -107,6 +127,71 @@ def test_admin_release_skeletons_match_single_and_multi_track_cardinality():
         assert "song" not in release
         assert [track["slug"] for track in release["tracks"]] == ["track-1", "track-2"]
         assert validate_release_dict({"release": release}) == []
+
+
+def test_existing_title_named_wave_is_the_default_master(tmp_path, monkeypatch):
+    masters = tmp_path / "Masters"
+    masters.mkdir()
+    expected = masters / "Private Track.wav"
+    expected.write_bytes(b"wave")
+    monkeypatch.setattr(release_core, "DEFAULT_MASTER_DIR", masters)
+    release = {
+        "title": "Release Title",
+        "automation": {"master_path": "/legacy/release-master.wav"},
+    }
+    track = {"title": "Private Track"}
+
+    assert default_master_path(release, track) == str(expected)
+    assert effective_master_path(release, track, 0) == str(expected)
+
+
+def test_track_page_shows_and_uses_existing_title_named_wave(tmp_path, monkeypatch):
+    record = _record()
+    track = record["release"]["tracks"][0]
+    track.pop("master_path", None)
+    masters = tmp_path / "Masters"
+    masters.mkdir()
+    expected = masters / f"{track['title']}.wav"
+    expected.write_bytes(b"wave")
+    path = tmp_path / "content" / "releases" / "video-contract.yaml"
+    path.parent.mkdir(parents=True)
+    path.write_text(yaml.safe_dump(record, sort_keys=False), encoding="utf-8")
+    monkeypatch.setattr(release_core, "DEFAULT_MASTER_DIR", masters)
+    monkeypatch.setattr(workspace_routes, "get_repo_root", lambda: tmp_path)
+
+    response = asyncio.run(
+        workspace_routes.track_detail(
+            _get_request("/releases/video-contract/tracks/private-track"),
+            "video-contract",
+            "private-track",
+        )
+    )
+
+    assert response.status_code == 200
+    body = response.body.decode("utf-8")
+    assert f'value="{expected}"' in body
+    assert f'placeholder="{expected}"' in body
+    assert "Found and using conventional master" in body
+    assert "Edit the field to override it" in body
+
+
+def test_track_master_override_wins_over_existing_default(tmp_path, monkeypatch):
+    masters = tmp_path / "Masters"
+    masters.mkdir()
+    (masters / "Private Track.wav").write_bytes(b"wave")
+    monkeypatch.setattr(release_core, "DEFAULT_MASTER_DIR", masters)
+    track = {"title": "Private Track", "master_path": "/custom/name.wav"}
+
+    assert effective_master_path({}, track, 0) == "/custom/name.wav"
+
+
+def test_missing_default_still_uses_legacy_release_master(tmp_path, monkeypatch):
+    monkeypatch.setattr(release_core, "DEFAULT_MASTER_DIR", tmp_path / "Masters")
+    release = {"automation": {"master_path": ["/legacy/track-one.wav"]}}
+
+    assert effective_master_path(release, {"title": "Track One"}, 0) == (
+        "/legacy/track-one.wav"
+    )
 
 
 def _save_lyrics(tmp_path: Path, monkeypatch, *, raw: str, text: str):

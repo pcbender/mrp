@@ -22,14 +22,6 @@ from mrp.admin.video_casting import (
     save_casting,
     save_track_actor,
 )
-from mrp.admin.video_rendering import (
-    VideoRenderingError,
-    approve_render,
-    discard_draft,
-    load_rendering,
-    render_launch_problems,
-    renders_path,
-)
 from mrp.admin.video_live_preview import (
     LivePreviewError,
     background_image_path,
@@ -42,6 +34,14 @@ from mrp.admin.video_publication import (
     plan_publication,
     public_media_available,
     record_opt_in,
+)
+from mrp.admin.video_rendering import (
+    VideoRenderingError,
+    approve_render,
+    discard_draft,
+    load_rendering,
+    render_launch_problems,
+    renders_path,
 )
 from mrp.admin.video_timecode import seconds as _seconds
 from mrp.admin.video_timing import (
@@ -72,6 +72,7 @@ from mrp.admin.workspace import (
     validate_release_dict,
 )
 from mrp.core.migrate_site import load_structured_record, serialize_structured_record
+from mrp.core.release import default_stem_directory
 
 router = APIRouter()
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
@@ -285,6 +286,7 @@ async def video_track(request: Request, slug: str, track_slug: str):
     if unit is None:
         return _not_found(track_slug)
     key = track_key(ctx["release"], unit["track"])
+    stem_directory = default_stem_directory(ctx["release"], unit["track"])
     ctx.update(
         {
             "unit": unit,
@@ -292,7 +294,13 @@ async def video_track(request: Request, slug: str, track_slug: str):
             "track_slug": track_slug,
             "track_key": key,
             "master_fallback": effective_master_path(
-                ctx["release"], unit["index"], unit["track"]
+                ctx["release"], unit["track"], unit["index"]
+            ),
+            "stem_directory_convention": stem_directory,
+            "stem_directory_default": (
+                stem_directory
+                if stem_directory and Path(stem_directory).is_dir()
+                else None
             ),
             "stem_roles": STEM_ROLES,
             "asset_report": validate_assets(root, ctx["release"], unit),
@@ -324,7 +332,10 @@ async def video_timing(request: Request, slug: str, track_slug: str):
     except TimingEditorError as exc:
         timing = None
         timing_error = list(exc.problems)
-    master = resolve_asset(root, unit["track"].get("master_path"))
+    master = resolve_asset(
+        root,
+        effective_master_path(ctx["release"], unit["track"], unit["index"]),
+    )
     ctx.update(
         {
             "unit": unit,
@@ -349,7 +360,10 @@ async def video_audio(slug: str, track_slug: str):
     unit = _unit(ctx["release"], track_slug)
     if unit is None:
         return _not_found(track_slug)
-    master = resolve_asset(root, unit["track"].get("master_path"))
+    master = resolve_asset(
+        root,
+        effective_master_path(ctx["release"], unit["track"], unit["index"]),
+    )
     if master is None or not master.is_file():
         return HTMLResponse("Track master is not available.", status_code=404)
     media_type = _AUDIO_MEDIA_TYPES.get(
@@ -390,7 +404,10 @@ async def video_live_preview(request: Request, slug: str, track_slug: str):
     if unit is None:
         return _not_found(track_slug)
     key = track_key(ctx["release"], unit["track"])
-    master = resolve_asset(root, unit["track"].get("master_path"))
+    master = resolve_asset(
+        root,
+        effective_master_path(ctx["release"], unit["track"], unit["index"]),
+    )
     ctx.update(
         {
             "unit": unit,
@@ -691,7 +708,10 @@ async def video_casting(
         casting = None
         casting_error = list(exc.problems)
     status = str((unit["track"].get("music_video") or {}).get("status") or "draft")
-    master = resolve_asset(root, unit["track"].get("master_path"))
+    master = resolve_asset(
+        root,
+        effective_master_path(ctx["release"], unit["track"], unit["index"]),
+    )
     ctx.update(
         {
             "unit": unit,

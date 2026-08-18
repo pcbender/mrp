@@ -9,13 +9,14 @@ from fastapi import APIRouter, Request
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 
-from mrp.admin import critic_io, db, nim, pipeline as pipe
+from mrp.admin import critic_io, db, nim
 from mrp.admin import jobs as job_runner
+from mrp.admin import pipeline as pipe
 from mrp.admin.deps import get_repo_root
 from mrp.admin.workspace import (
     PLATFORM_KEYS,
-    STAGES,
     STAGE_IDS,
+    STAGES,
     STATUSES,
     artist_artifact_moves,
     artist_record_path,
@@ -33,6 +34,7 @@ from mrp.admin.workspace import (
 )
 from mrp.core.lyrics_text import clean_lyrics, extract_primary_section
 from mrp.core.migrate_site import load_structured_record, serialize_structured_record
+from mrp.core.release import default_master_path
 
 router = APIRouter()
 _templates = Jinja2Templates(directory=str(Path(__file__).parent.parent / "templates"))
@@ -766,7 +768,7 @@ async def master_audio(slug: str, track_slug: str):
     unit = next((u for u in track_units(release) if u["slug"] == track_slug), None)
     if unit is None:
         return HTMLResponse(f"Track <b>{track_slug}</b> not found.", status_code=404)
-    master = effective_master_path(release, unit["index"], unit["track"])
+    master = effective_master_path(release, unit["track"], unit["index"])
     if not master or not Path(master).is_file():
         return HTMLResponse(f"Master not found: {master}", status_code=404)
     media_type = _MASTER_MEDIA_TYPES.get(Path(master).suffix.lower(), "application/octet-stream")
@@ -790,11 +792,25 @@ async def track_detail(request: Request, slug: str, track_slug: str):
     owning_artist = (load_structured_record(owning_path).get("artist") or {}) if owning_path else {}
     member_options = [{"slug": m.get("slug"), "name": m.get("name")}
                       for m in (owning_artist.get("members") or []) if m.get("slug")]
+    track = unit["track"]
+    master_override = str_or_none(track.get("master_path"))
+    master_default = default_master_path(release, track)
+    master_default_exists = bool(master_default and Path(master_default).is_file())
+    master_effective = effective_master_path(release, track, unit["index"])
     ctx.update({
         "unit": unit,
-        "track": unit["track"],
+        "track": track,
         "track_slug": track_slug,
-        "master_fallback": effective_master_path(release, unit["index"], unit["track"]),
+        "master_default": master_default,
+        "master_default_exists": master_default_exists,
+        "master_override_exists": bool(
+            master_override and Path(master_override).is_file()
+        ),
+        "master_fallback": (
+            master_effective
+            if not master_override and not master_default_exists
+            else None
+        ),
         "ws_ctx": _ws_job_ctx,
         "artist_options": _load_artists(root),
         "member_options": member_options,
@@ -1062,7 +1078,7 @@ def _sampler_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLRe
     units = []
     for u in track_units(release):
         t = u["track"]
-        master = effective_master_path(release, u["index"], t)
+        master = effective_master_path(release, t, u["index"])
         units.append({
             **u,
             "master_path": master,

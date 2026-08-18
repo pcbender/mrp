@@ -240,7 +240,7 @@ def run_critic(
             "target": saved.get("target") or target,
             "target_tier": saved.get("target_tier", target_tier),
         }
-        mp = effective_master_path(release, unit["index"], unit["track"])
+        mp = effective_master_path(release, unit["track"], unit["index"])
         if not mp:
             results.append({"track_slug": unit["slug"], "ok": False,
                             "error": "no master_path — set it in the track editor"})
@@ -452,7 +452,7 @@ def run_snip(
     unit = next((u for u in track_units(release) if u["slug"] == track_slug), None)
     if unit is None:
         raise ValueError(f"Track not found: {track_slug}")
-    master = effective_master_path(release, unit["index"], unit["track"])
+    master = effective_master_path(release, unit["track"], unit["index"])
     if not master:
         raise ValueError("No master path on this track — set it on the Tracks tab first")
     if not Path(master).is_file():
