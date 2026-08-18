@@ -12,8 +12,8 @@ site/.astro/
 
 builds/
 
-graphify-out/cost.json
-graphify-out/cache/
+# Generated Graphify knowledge graph and reports.
+graphify-out/
 
 reports/**/*.json
 reports/**/*.secret
