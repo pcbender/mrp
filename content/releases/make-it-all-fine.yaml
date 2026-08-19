@@ -350,6 +350,8 @@ release:
   automation:
     allow_auto_publish: false
     master_path: /mnt/c/Masters/Make It All Fine.wav
+    links_na:
+    - deezer
   hero_image: site/public/assets/releases/make-it-all-fine/hero.jpg
   language: null
   summary: null

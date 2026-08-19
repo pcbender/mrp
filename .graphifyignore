@@ -1,0 +1,17 @@
+.env
+.env.*
+*.secret
+*.pem
+*.key
+deploy/targets.local.yaml
+site/public/contact-config.php
+node_modules/
+site/node_modules/
+site/dist/
+site/.astro/
+builds/
+.venv/
+__pycache__/
+.tmp/
+.cache/
+.claude/settings.local.json
