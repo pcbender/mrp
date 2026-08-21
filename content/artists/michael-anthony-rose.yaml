@@ -5,42 +5,51 @@ artist:
   type: solo
   label: Maricopa Records
   default_publisher: Maricopa Publishing
-  bio_short: Michael Anthony Rose chronicles the dual pressures of time and power
-    with rare lyrical ambition. The Maricopa Records artist pairs unflinching, confessional
-    songs about aging and memory with epic, novelistic narratives that dissect societal
-    corruption. His work is a vital and resonant exploration of what it means to endure
-    when both the self and the state feel like they are coming apart.
-  bio_long: 'Michael Anthony Rose writes songs that live in the space between the
-    personal and the political, the intimate and the epic. A storyteller of remarkable
-    scope, his work confronts the anxieties of a life in progress while dissecting
-    the mechanics of a world in peril. He is an artist preoccupied with time, memory,
-    and the struggle for endurance, whether that struggle takes place within a single
-    human body or an entire nation. His lyrics are direct, observant, and possess
-    a quiet authority, inviting the listener into a world rendered with unflinching
-    clarity.
+  bio_short: Michael Anthony Rose chronicles life’s pivotal moments with unflinching
+    honesty, turning his lyrical lens from the private truths of aging and loss to
+    the public spectacle of power and corruption. A master storyteller on Maricopa
+    Records, his songs are at once intimate confessions and epic narratives. He challenges
+    listeners to confront the unsaid truths in their own lives and the systems that
+    shape them.
+  bio_long: 'Michael Anthony Rose, the latest solo artist from Maricopa Records, writes
+    songs that operate on two startlingly different scales: the deeply personal and
+    the fiercely public. His work chronicles life’s pivotal moments with unflinching
+    honesty, turning a lyrical lens from the quiet truths of aging and memory to the
+    grand, corrupting spectacle of power. A master storyteller, Rose moves seamlessly
+    between intimate, first-person confession and sprawling, third-person narrative,
+    creating a body of work that is as emotionally resonant as it is intellectually
+    challenging. His voice is direct and unadorned, grounded in the concrete details
+    that make a life, yet capable of building entire worlds from the ground up.
 
 
-    Much of Rose’s work is deeply introspective, a clear-eyed account of the passage
-    of years. In songs that feel both specific and universal, he catalogs the subtle
-    erosions of aging, the persistence of memory in empty rooms, and the stark realizations
-    that arrive not with a bang, but with a quiet shift in the light. Using concrete,
-    everyday imagery like a reflection in a dark phone screen or a dent in a hallway
-    carpet, he grounds profound questions about identity and mortality in the tangible
-    stuff of life. The emotional register is not one of despair, but of honest witness,
-    finding a hard-won dignity in acknowledging what has been lost and what remains.
+    At the heart of his music is a profound preoccupation with time. Rose’s lyrics
+    map the terrain of a life lived, charting the line between youthful dreams and
+    present-day reality, the slow fade of memory, and the sudden, quiet arrival of
+    age. He writes with a rare and courageous vulnerability about the physical and
+    emotional landscape of getting older, exploring not just loss and regret but also
+    the dogged search for dignity and purpose. In these songs, there are no easy comforts,
+    only the hard-won peace that comes from looking at one’s life without turning
+    away, and the refusal to become a smaller version of oneself.
 
 
-    This intimate focus exists alongside an astonishingly ambitious narrative project
-    that examines the corrupting nature of power. In a sprawling, multi-song cycle,
-    Rose builds a chillingly detailed world to trace the rise of a ruthless autocrat.
-    Here, the songwriting is analytical and cinematic, exploring how truth is manufactured,
-    how media is weaponized, and how institutions are hollowed out from within. This
-    is not a simple protest song, but a sophisticated, almost novelistic study of
-    systemic decay. These larger critiques are balanced by moments of determined hope
-    and resilience, anthems about creating a legacy that outlasts the self and finding
-    connection in a fractured world. Michael Anthony Rose is a writer for serious
-    times, offering songs that are as emotionally searching as they are intellectually
-    demanding.'
+    This intimate focus exists alongside an ambitious, almost novelistic examination
+    of social and political power. In a sweeping collection of narrative songs, Rose
+    constructs a chilling portrait of a society’s descent into autocracy, detailing
+    the psychological mechanics of manipulation, the commodification of truth, and
+    the human cost of unchecked ambition. This is not protest music in the traditional
+    sense; it is a theatrical and deeply cynical dramatic work that dissects how lies
+    become normalized and how systems of control are built, bought, and sold. His
+    characters are complex, his scenarios are alarmingly familiar, and his critique
+    is razor-sharp.
+
+
+    Whether documenting the inner monologue of a man reckoning with his own mortality
+    or giving voice to the architects of a nation’s downfall, Michael Anthony Rose
+    is an artist in search of what is real. His work asks essential questions about
+    what we build to last, how we find meaning when our purpose changes, and what
+    we owe to one another in a world that encourages us to forget. His songs are an
+    invitation to listen more closely, to embrace complexity, and to recognize the
+    profound stories unfolding both within our own walls and in the halls of power.'
   image: /assets/artists/michael-anthony-rose/michael-anthony-rose.jpg
   links:
     spotify: https://open.spotify.com/artist/1bpeEWD8VsTewFr5FKOKv0
@@ -54,19 +63,17 @@ artist:
     tiktok: null
     website: null
   visibility: public
-  bio_auto_generated: true
-  promo_blurb: Michael Anthony Rose is a songwriter of formidable range, shifting
-    between raw personal confession and ambitious novelistic storytelling. His music
-    serves as both an intimate mirror and a critical lens, confronting the mechanics
-    of power and the passage of time. This dynamic is on full display in his latest
-    work, the sprawling rock opera [*Outlandia*](/releases/outlandia/), which traces
-    a nation’s unraveling. The album anchors its grand narrative in small, potent
-    details, from the courtroom tension of "NDA" to the chilling sincerity of "Dear
-    Leader." In contrast, the preceding single ["You Don't Say"](/releases/you-don-t-say/)
-    builds from a single piano phrase into a cathartic, full-band chorus about unspoken
-    truths. Whether exploring political machinations or personal heartbreak, Rose’s
-    writing invites listeners who believe music can illuminate both the world and
-    the self.
+  bio_auto_generated: false
+  promo_blurb: Michael Anthony Rose chronicles the pressures of time and power, pairing
+    unflinching personal songs with ambitious, novelistic narratives. His work explores
+    what it means to endure when both the self and the state feel as if they are coming
+    apart. This vision is on full display in his recent two-hour rock opera, [*Outlandia*](/releases/outlandia/),
+    a designed descent that dissects a nation’s unraveling through a full cast of
+    characters. Following that epic canvas, the single ["Them Bones"]](/releases/them-bones/)
+    offers a more compressed sound, turning its nautical imagery into a superstitious
+    and electric sea shanty. Across these releases, Rose examines what we build to
+    outlast ourselves, inviting listeners into a vital and resonant musical world
+    where every detail matters.
   reference_image: assets/artists/michael-anthony-rose/reference.jpg
   likeness_notes: Michael Anthony Rose, an older male singer, songwriter, guitarist
     presented candidly and without theatrical disguise, natural age and skin texture,

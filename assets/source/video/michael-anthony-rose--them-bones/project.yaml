@@ -1,0 +1,1183 @@
+version: 1
+adapter_version: 1
+renderer_contract_version: 3
+source_renderer_revision: e3d4b100e026d486ce2c28547e6e8a907b1c621a
+source:
+  release: content/releases/them-bones.yaml
+  track_slug: them-bones
+  track_key: michael-anthony-rose--them-bones
+  artist_id: michael-anthony-rose
+project:
+  version: 1
+  title: Them Bones
+  audio:
+    master: '@mrp/master'
+    stems:
+      bass: '@mrp/stems/bass'
+      drums: '@mrp/stems/drums'
+      instruments: '@mrp/stems/instruments'
+      vocals: '@mrp/stems/vocals'
+    duration_tolerance: 0.05
+  lyrics:
+    source: '@mrp/lyrics'
+    aligned: lyrics.aligned.yaml
+    language: en
+  cards:
+    opening:
+      file: '@mrp/cover'
+      duration: 3.0
+      fit: contain
+      fade: 0.5
+      background: '#101014'
+    closing:
+      file: '@mrp/cover'
+      duration: 4.0
+      fit: contain
+      fade: 0.75
+      background: '#101014'
+  video:
+    width: 1920
+    height: 1080
+    fps: 30.0
+    background:
+      color: '#101014'
+      image: backgrounds/track-15fceaecda40.jpg
+      fit: contain
+      focal_x: 0.5
+      focal_y: 0.5
+      zoom: 2.0
+      opacity: 0.5
+      brightness_response: 0.0
+      opacity_response: 0.0
+      wash_color: '#ffffff'
+      wash_opacity: 0.0
+      wash_response: 0.0
+      beat_zoom: 0.0
+      motion: pan_scan
+      end_focal_x: 1.0
+      end_focal_y: 1.0
+      end_zoom: 3.0
+      easing: smooth
+    seed: 4821
+  encoding:
+    video_codec: libx264
+    pixel_format: yuv420p
+    crf: 18
+    preset: medium
+    threads: 1
+    audio_codec: aac
+    audio_bitrate_kbps: 192
+    audio_sample_rate: 48000
+    audio_channels: 2
+    faststart: true
+    duration_tolerance: 0.15
+  text:
+    font: '@mrp/font'
+    size: 60
+    maximum_width_fraction: 0.82
+    position: bottom
+    active_color: '#ffffff'
+  analysis:
+    sample_rate: 22050
+    frame_length: 2048
+    hop_length: 512
+    low_cutoff_hz: 250.0
+    high_cutoff_hz: 2000.0
+    percentile_low: 5.0
+    percentile_high: 95.0
+    attack_seconds: 0.05
+    release_seconds: 0.25
+    vocal_activity_threshold: 0.15
+    cache_dir: cache/analysis
+  alignment:
+    model: whisper-1
+    cache_dir: cache/alignment
+    min_token_similarity: 0.72
+    matched_confidence: 0.75
+    max_tail_seconds: 0.75
+    activity_threshold: 0.2
+    upload_bitrate_kbps: 128
+  visuals:
+    mapping_preset: balanced
+    palette_preset: layer
+    palette: []
+    layers:
+    - id: instrument-haze
+      role: instruments
+      geometry:
+        family: spirogram
+        fixed_radius: 192.0
+        moving_radius: 48.0
+        pen_offset: 112.0
+        rotation: inside
+        phase: 0.0
+        samples: 1800
+      trace:
+        cycles_per_second: 0.018
+        trail_fraction: 0.54
+        ghost_count: 3
+        ghost_spacing: 0.07
+        head_radius: 0.0
+      color: '#8c5cff'
+      color_locked: false
+      z_index: -100
+      anchor_x: 0.52
+      anchor_y: 0.38
+      base_scale: 1.82
+      opacity: 0.16
+      line_width: 1.2
+      presentation: animated_trace
+      rotation_degrees_per_second: -0.35
+      rotation_wobble_degrees: 0.0
+      hue_shift_degrees: 18.0
+      blend_mode: screen
+      drivers: {}
+    - id: bass-orbit
+      role: bass
+      geometry:
+        family: spirogram
+        fixed_radius: 233.0
+        moving_radius: 89.0
+        pen_offset: 144.0
+        rotation: outside
+        phase: 0.0
+        samples: 1400
+      trace:
+        cycles_per_second: 0.045
+        trail_fraction: 0.18
+        ghost_count: 1
+        ghost_spacing: 0.1
+        head_radius: 3.5
+      color: '#4c78ff'
+      color_locked: false
+      z_index: 0
+      anchor_x: 0.14
+      anchor_y: 0.44
+      base_scale: 0.6
+      opacity: 0.74
+      line_width: 2.2
+      presentation: animated_trace
+      rotation_degrees_per_second: 0.8
+      rotation_wobble_degrees: 0.0
+      hue_shift_degrees: 0.0
+      blend_mode: screen
+      drivers: {}
+    - id: vocal-flower
+      role: vocals
+      geometry:
+        family: spirogram
+        fixed_radius: 180.0
+        moving_radius: 65.0
+        pen_offset: 95.0
+        rotation: inside
+        phase: 0.0
+        samples: 900
+      trace:
+        cycles_per_second: 0.068
+        trail_fraction: 0.28
+        ghost_count: 1
+        ghost_spacing: 0.09
+        head_radius: 4.0
+      color: '#ff5fd2'
+      color_locked: false
+      z_index: 0
+      anchor_x: 0.52
+      anchor_y: 0.34
+      base_scale: 0.48
+      opacity: 0.82
+      line_width: 2.4
+      presentation: animated_trace
+      rotation_degrees_per_second: -1.25
+      rotation_wobble_degrees: 0.0
+      hue_shift_degrees: -12.0
+      blend_mode: screen
+      drivers: {}
+    - id: drum-spark
+      role: drums
+      geometry:
+        family: spirogram
+        fixed_radius: 96.0
+        moving_radius: 32.0
+        pen_offset: 50.0
+        rotation: outside
+        phase: 0.0
+        samples: 720
+      trace:
+        cycles_per_second: 0.12
+        trail_fraction: 0.3
+        ghost_count: 1
+        ghost_spacing: 0.07
+        head_radius: 4.0
+      color: '#ffd166'
+      color_locked: false
+      z_index: 0
+      anchor_x: 0.89
+      anchor_y: 0.46
+      base_scale: 0.54
+      opacity: 0.72
+      line_width: 1.6
+      presentation: animated_trace
+      rotation_degrees_per_second: 2.4
+      rotation_wobble_degrees: 0.0
+      hue_shift_degrees: 10.0
+      blend_mode: screen
+      drivers: {}
+    canvas_margin: 0.08
+    perspective_strength: 0.18
+    transition_seconds: 0.65
+    lyric_fade_seconds: 0.25
+    background_overrides:
+      fade-out:
+        color: '#000000'
+        image: backgrounds/track-15fceaecda40.jpg
+        fit: cover
+        focal_x: 0.5
+        focal_y: 0.5
+        zoom: 3.0
+        opacity: 0.3
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#ffffff'
+        wash_opacity: 0.0
+        wash_response: 0.0
+        beat_zoom: 0.0
+        motion: pan_scan
+        end_focal_x: 1.0
+        end_focal_y: 1.0
+        end_zoom: 1.0
+        easing: smooth
+      verse-2:
+        color: '#101014'
+        image: backgrounds/scene-verse-2-909c776cf873.jpg
+        fit: contain
+        focal_x: 0.0
+        focal_y: 0.0
+        zoom: 1.0
+        opacity: 1.0
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#ffffff'
+        wash_opacity: 0.0
+        wash_response: 0.0
+        beat_zoom: 0.0
+        motion: pan_scan
+        end_focal_x: 0.0
+        end_focal_y: 0.0
+        end_zoom: 3.0
+        easing: smooth
+      verse-1:
+        color: '#101014'
+        image: backgrounds/scene-verse-2-909c776cf873.jpg
+        fit: contain
+        focal_x: 0.0
+        focal_y: 0.0
+        zoom: 1.0
+        opacity: 1.0
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#ffffff'
+        wash_opacity: 0.0
+        wash_response: 0.0
+        beat_zoom: 0.0
+        motion: pan_scan
+        end_focal_x: 0.0
+        end_focal_y: 0.0
+        end_zoom: 3.0
+        easing: smooth
+      outro:
+        color: '#101014'
+        image: backgrounds/scene-outro-c702305a5da2.jpg
+        fit: contain
+        focal_x: 0.5
+        focal_y: 0.5
+        zoom: 2.0
+        opacity: 0.5
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#ffffff'
+        wash_opacity: 0.0
+        wash_response: 0.0
+        beat_zoom: 0.0
+        motion: pan_scan
+        end_focal_x: 1.0
+        end_focal_y: 1.0
+        end_zoom: 3.0
+        easing: smooth
+    section_styles:
+      instrumental:
+        visible_roles:
+        - instruments
+    section_overrides: {}
+    auto_casting: true
+    section_compositions: {}
+    composition_overrides: {}
+    actors:
+      maricopa-records:
+        id: maricopa-records
+        name: 3d-spiro
+        description: 3d-spiro
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape-1
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 180.0
+            moving_radius: 60.0
+            pen_offset: 100.0
+            rotation: inside
+            phase: 0.0
+            samples: 900
+          trace:
+            cycles_per_second: 0.3
+            trail_fraction: 0.8
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#ffbd61'
+          color_locked: false
+          color_flow:
+            source: radius
+            swing_degrees: 90.0
+          spatial:
+            mode: tilted
+            amplitude: 0.52
+            windings: 5
+            phase_degrees: 0.0
+            pitch_degrees: -180.0
+            yaw_degrees: -96.3
+            orientation_mode: circuit_step
+            pitch_degrees_per_second: -7.5
+            yaw_degrees_per_second: 8.2
+            pitch_step_degrees: 0.0
+            yaw_step_degrees: 15.0
+            retained_circuits: 3
+            retention_fade: 0.82
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 1.3
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            color: bass.energy
+            pulse: bass.accent
+        library_source:
+          actor_id: maricopa-records
+          revision: 040a93480c1fc3618846f4090a7b32395211a6ad4fc02068e0a91a70154b9c30
+      song-title:
+        id: song-title
+        name: Them Bones (title)
+        description: Auto-generated title layer for “Them Bones”.
+        kind: spirogram
+        character: vocals
+        components:
+        - id: title
+          role: vocals
+          geometry:
+            family: text
+            rotation: inside
+            phase: 0.0
+            samples: 300
+            path_data: M 10.0,-1493.0 L 1386.0,-1493.0 L 1386.0,-1202.0 L 891.0,-1202.0
+              L 891.0,0.0 L 506.0,0.0 L 506.0,-1202.0 L 10.0,-1202.0 L 10.0,-1493.0
+              M 2695.0,-682.0 L 2695.0,0.0 L 2335.0,0.0 L 2335.0,-111.0 L 2335.0,-520.0
+              Q 2335.0,-667.0 2328.5,-722.0 Q 2322.0,-777.0 2306.0,-803.0 Q 2285.0,-838.0
+              2249.0,-857.5 Q 2213.0,-877.0 2167.0,-877.0 Q 2055.0,-877.0 1991.0,-790.5
+              Q 1927.0,-704.0 1927.0,-551.0 L 1927.0,0.0 L 1569.0,0.0 L 1569.0,-1556.0
+              L 1927.0,-1556.0 L 1927.0,-956.0 Q 2008.0,-1054.0 2099.0,-1100.5 Q 2190.0,-1147.0
+              2300.0,-1147.0 Q 2494.0,-1147.0 2594.5,-1028.0 Q 2695.0,-909.0 2695.0,-682.0
+              M 4145.0,-563.0 L 4145.0,-461.0 L 3308.0,-461.0 Q 3321.0,-335.0 3399.0,-272.0
+              Q 3477.0,-209.0 3617.0,-209.0 Q 3730.0,-209.0 3848.5,-242.5 Q 3967.0,-276.0
+              4092.0,-344.0 L 4092.0,-68.0 Q 3965.0,-20.0 3838.0,4.5 Q 3711.0,29.0
+              3584.0,29.0 Q 3280.0,29.0 3111.5,-125.5 Q 2943.0,-280.0 2943.0,-559.0
+              Q 2943.0,-833.0 3108.5,-990.0 Q 3274.0,-1147.0 3564.0,-1147.0 Q 3828.0,-1147.0
+              3986.5,-988.0 Q 4145.0,-829.0 4145.0,-563.0 M 3777.0,-682.0 Q 3777.0,-784.0
+              3717.5,-846.5 Q 3658.0,-909.0 3562.0,-909.0 Q 3458.0,-909.0 3393.0,-850.5
+              Q 3328.0,-792.0 3312.0,-682.0 L 3777.0,-682.0 M 5454.0,-934.0 Q 5522.0,-1038.0
+              5615.5,-1092.5 Q 5709.0,-1147.0 5821.0,-1147.0 Q 6014.0,-1147.0 6115.0,-1028.0
+              Q 6216.0,-909.0 6216.0,-682.0 L 6216.0,0.0 L 5856.0,0.0 L 5856.0,-584.0
+              Q 5857.0,-597.0 5857.5,-611.0 Q 5858.0,-625.0 5858.0,-651.0 Q 5858.0,-770.0
+              5823.0,-823.5 Q 5788.0,-877.0 5710.0,-877.0 Q 5608.0,-877.0 5552.5,-793.0
+              Q 5497.0,-709.0 5495.0,-550.0 L 5495.0,0.0 L 5135.0,0.0 L 5135.0,-584.0
+              Q 5135.0,-770.0 5103.0,-823.5 Q 5071.0,-877.0 4989.0,-877.0 Q 4886.0,-877.0
+              4830.0,-792.5 Q 4774.0,-708.0 4774.0,-551.0 L 4774.0,0.0 L 4414.0,0.0
+              L 4414.0,-1120.0 L 4774.0,-1120.0 L 4774.0,-956.0 Q 4840.0,-1051.0 4925.5,-1099.0
+              Q 5011.0,-1147.0 5114.0,-1147.0 Q 5230.0,-1147.0 5319.0,-1091.0 Q 5408.0,-1035.0
+              5454.0,-934.0 M 7877.0,-915.0 Q 7968.0,-915.0 8015.0,-955.0 Q 8062.0,-995.0
+              8062.0,-1073.0 Q 8062.0,-1150.0 8015.0,-1190.5 Q 7968.0,-1231.0 7877.0,-1231.0
+              L 7664.0,-1231.0 L 7664.0,-915.0 L 7877.0,-915.0 M 7890.0,-262.0 Q 8006.0,-262.0
+              8064.5,-311.0 Q 8123.0,-360.0 8123.0,-459.0 Q 8123.0,-556.0 8065.0,-604.5
+              Q 8007.0,-653.0 7890.0,-653.0 L 7664.0,-653.0 L 7664.0,-262.0 L 7890.0,-262.0
+              M 8248.0,-799.0 Q 8372.0,-763.0 8440.0,-666.0 Q 8508.0,-569.0 8508.0,-428.0
+              Q 8508.0,-212.0 8362.0,-106.0 Q 8216.0,0.0 7918.0,0.0 L 7279.0,0.0 L
+              7279.0,-1493.0 L 7857.0,-1493.0 Q 8168.0,-1493.0 8307.5,-1399.0 Q 8447.0,-1305.0
+              8447.0,-1098.0 Q 8447.0,-989.0 8396.0,-912.5 Q 8345.0,-836.0 8248.0,-799.0
+              M 9357.0,-891.0 Q 9238.0,-891.0 9175.5,-805.5 Q 9113.0,-720.0 9113.0,-559.0
+              Q 9113.0,-398.0 9175.5,-312.5 Q 9238.0,-227.0 9357.0,-227.0 Q 9474.0,-227.0
+              9536.0,-312.5 Q 9598.0,-398.0 9598.0,-559.0 Q 9598.0,-720.0 9536.0,-805.5
+              Q 9474.0,-891.0 9357.0,-891.0 M 9357.0,-1147.0 Q 9646.0,-1147.0 9808.5,-991.0
+              Q 9971.0,-835.0 9971.0,-559.0 Q 9971.0,-283.0 9808.5,-127.0 Q 9646.0,29.0
+              9357.0,29.0 Q 9067.0,29.0 8903.5,-127.0 Q 8740.0,-283.0 8740.0,-559.0
+              Q 8740.0,-835.0 8903.5,-991.0 Q 9067.0,-1147.0 9357.0,-1147.0 M 11357.0,-682.0
+              L 11357.0,0.0 L 10997.0,0.0 L 10997.0,-111.0 L 10997.0,-522.0 Q 10997.0,-667.0
+              10990.5,-722.0 Q 10984.0,-777.0 10968.0,-803.0 Q 10947.0,-838.0 10911.0,-857.5
+              Q 10875.0,-877.0 10829.0,-877.0 Q 10717.0,-877.0 10653.0,-790.5 Q 10589.0,-704.0
+              10589.0,-551.0 L 10589.0,0.0 L 10231.0,0.0 L 10231.0,-1120.0 L 10589.0,-1120.0
+              L 10589.0,-956.0 Q 10670.0,-1054.0 10761.0,-1100.5 Q 10852.0,-1147.0
+              10962.0,-1147.0 Q 11156.0,-1147.0 11256.5,-1028.0 Q 11357.0,-909.0 11357.0,-682.0
+              M 12807.0,-563.0 L 12807.0,-461.0 L 11970.0,-461.0 Q 11983.0,-335.0
+              12061.0,-272.0 Q 12139.0,-209.0 12279.0,-209.0 Q 12392.0,-209.0 12510.5,-242.5
+              Q 12629.0,-276.0 12754.0,-344.0 L 12754.0,-68.0 Q 12627.0,-20.0 12500.0,4.5
+              Q 12373.0,29.0 12246.0,29.0 Q 11942.0,29.0 11773.5,-125.5 Q 11605.0,-280.0
+              11605.0,-559.0 Q 11605.0,-833.0 11770.5,-990.0 Q 11936.0,-1147.0 12226.0,-1147.0
+              Q 12490.0,-1147.0 12648.5,-988.0 Q 12807.0,-829.0 12807.0,-563.0 M 12439.0,-682.0
+              Q 12439.0,-784.0 12379.5,-846.5 Q 12320.0,-909.0 12224.0,-909.0 Q 12120.0,-909.0
+              12055.0,-850.5 Q 11990.0,-792.0 11974.0,-682.0 L 12439.0,-682.0 M 13953.0,-1085.0
+              L 13953.0,-813.0 Q 13838.0,-861.0 13731.0,-885.0 Q 13624.0,-909.0 13529.0,-909.0
+              Q 13427.0,-909.0 13377.5,-883.5 Q 13328.0,-858.0 13328.0,-805.0 Q 13328.0,-762.0
+              13365.5,-739.0 Q 13403.0,-716.0 13500.0,-705.0 L 13563.0,-696.0 Q 13838.0,-661.0
+              13933.0,-581.0 Q 14028.0,-501.0 14028.0,-330.0 Q 14028.0,-151.0 13896.0,-61.0
+              Q 13764.0,29.0 13502.0,29.0 Q 13391.0,29.0 13272.5,11.5 Q 13154.0,-6.0
+              13029.0,-41.0 L 13029.0,-313.0 Q 13136.0,-261.0 13248.5,-235.0 Q 13361.0,-209.0
+              13477.0,-209.0 Q 13582.0,-209.0 13635.0,-238.0 Q 13688.0,-267.0 13688.0,-324.0
+              Q 13688.0,-372.0 13651.5,-395.5 Q 13615.0,-419.0 13506.0,-432.0 L 13443.0,-440.0
+              Q 13204.0,-470.0 13108.0,-551.0 Q 13012.0,-632.0 13012.0,-797.0 Q 13012.0,-975.0
+              13134.0,-1061.0 Q 13256.0,-1147.0 13508.0,-1147.0 Q 13607.0,-1147.0
+              13716.0,-1132.0 Q 13825.0,-1117.0 13953.0,-1085.0
+          trace:
+            cycles_per_second: 0.3
+            trail_fraction: 0.85
+            ghost_count: 0
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#ffffff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 1.0
+          opacity: 1.0
+          line_width: 2.5
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+      intro-lantern:
+        id: intro-lantern
+        name: Intro Lantern
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 175.0
+            moving_radius: 58.0
+            pen_offset: 101.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.045
+            trail_fraction: 0.38
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.48
+          anchor_y: 0.35
+          base_scale: 0.72
+          opacity: 0.58
+          line_width: 1.8
+          presentation: animated_trace
+          rotation_degrees_per_second: -0.45
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      new-actor:
+        id: new-actor
+        name: Verse Superformula
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: superformula
+            rotation: inside
+            phase: 0.42
+            samples: 1400
+            sf_m: 8
+            sf_n1: 0.5
+            sf_n2: 0.4
+            sf_n3: 0.6
+          trace:
+            cycles_per_second: 0.081
+            trail_fraction: 0.41
+            ghost_count: 1
+            ghost_spacing: 0.09
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          color_flow:
+            source: radius
+            swing_degrees: 90.0
+          spatial:
+            mode: tilted
+            amplitude: 0.67
+            windings: 3
+            phase_degrees: 0.0
+            pitch_degrees: 28.0
+            yaw_degrees: -18.0
+            orientation_mode: continuous
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            pitch_step_degrees: 0.0
+            yaw_step_degrees: 15.0
+            retained_circuits: 0
+            retention_fade: 0.82
+          z_index: 0
+          anchor_x: 0.483
+          anchor_y: 0.48
+          base_scale: 1.06
+          opacity: 0.66
+          line_width: 4.7
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.65
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      new-actor-2:
+        id: new-actor-2
+        name: lissajous-rolling
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape-2
+          role: vocals
+          geometry:
+            family: lissajous
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            liss_freq_x: 9
+            liss_freq_y: 5
+            liss_delta: 1.5708
+          trace:
+            cycles_per_second: 0.08
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#ff5fd2'
+          color_locked: false
+          spatial:
+            mode: tilted
+            amplitude: 0.35
+            windings: 5
+            phase_degrees: 0.0
+            pitch_degrees: 28.0
+            yaw_degrees: -18.0
+            orientation_mode: continuous
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 32.7
+            pitch_step_degrees: 60.3
+            yaw_step_degrees: 15.0
+            retained_circuits: 1
+            retention_fade: 0.82
+          z_index: 0
+          anchor_x: 0.483
+          anchor_y: 0.457
+          base_scale: 1.0
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 25.2
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+      pre-chorus-orbit:
+        id: pre-chorus-orbit
+        name: Pre Chorus Orbit
+        description: ''
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 211.0
+            moving_radius: 68.0
+            pen_offset: 139.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.064
+            trail_fraction: 0.3
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#8c5cff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.27
+          anchor_y: 0.34
+          base_scale: 0.7
+          opacity: 0.72
+          line_width: 2.2
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.9
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      pre-chorus-flower:
+        id: pre-chorus-flower
+        name: Pre Chorus Flower
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 156.0
+            moving_radius: 53.0
+            pen_offset: 114.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.078
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.73
+          anchor_y: 0.33
+          base_scale: 0.56
+          opacity: 0.76
+          line_width: 2.3
+          presentation: animated_trace
+          rotation_degrees_per_second: -1.2
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      chorus-wheel:
+        id: chorus-wheel
+        name: Chorus Wheel
+        description: ''
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 240.0
+            moving_radius: 90.0
+            pen_offset: 150.0
+            rotation: outside
+            phase: 0.0
+            samples: 1500
+          trace:
+            cycles_per_second: 0.052
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.13
+          anchor_y: 0.39
+          base_scale: 0.72
+          opacity: 0.78
+          line_width: 2.5
+          presentation: animated_trace
+          rotation_degrees_per_second: 1.1
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+      chorus-rosette:
+        id: chorus-rosette
+        name: Chorus Rosette
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 200.0
+            moving_radius: 71.0
+            pen_offset: 127.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.082
+            trail_fraction: 0.38
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.29
+          base_scale: 0.66
+          opacity: 0.86
+          line_width: 2.7
+          presentation: animated_trace
+          rotation_degrees_per_second: -1.5
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+      chorus-star:
+        id: chorus-star
+        name: Chorus Star
+        description: ''
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 172.0
+            moving_radius: 51.0
+            pen_offset: 116.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.12
+            trail_fraction: 0.22
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ffd166'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.87
+          anchor_y: 0.38
+          base_scale: 0.57
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 2.25
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+      outro-eclipse:
+        id: outro-eclipse
+        name: Outro Eclipse
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 218.0
+            moving_radius: 81.0
+            pen_offset: 153.0
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.038
+            trail_fraction: 0.48
+            ghost_count: 3
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.62
+          anchor_y: 0.37
+          base_scale: 0.92
+          opacity: 0.64
+          line_width: 2.1
+          presentation: animated_trace
+          rotation_degrees_per_second: -0.42
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+      new-actor-3:
+        id: new-actor-3
+        name: Rotating Rose
+        description: Rotating Rose
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: rose
+            rotation: inside
+            phase: 0.0
+            samples: 1200
+            rose_n: 7
+            rose_d: 2
+          trace:
+            cycles_per_second: 0.038
+            trail_fraction: 0.48
+            ghost_count: 3
+            ghost_spacing: 0.08
+            head_radius: 1.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.464
+          anchor_y: 0.491
+          base_scale: 0.92
+          opacity: 0.64
+          line_width: 2.1
+          presentation: animated_trace
+          rotation_degrees_per_second: 9.08
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: instruments.energy
+            color: instruments.energy
+            pulse: instruments.energy
+    section_casts:
+      intro:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: maricopa-records
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+      instrumental:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: maricopa-records
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+      Fade out:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: maricopa-records
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace:
+              trail_fraction: 1.0
+              ghost_count: 3
+              ghost_spacing: 1.0
+      verse:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: new-actor
+          direction:
+            anchor_x: 0.516
+            anchor_y: 0.469
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+        - id: appearance-2
+          actor: new-actor-2
+          direction:
+            anchor_x: 0.068
+            anchor_y: 0.206
+            scale: 0.4
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 1.0
+            visible: true
+            color: '#ffffff'
+            blend_mode: screen
+            presentation: animated_trace
+            trace: {}
+        - id: appearance-3
+          actor: new-actor-2
+          direction:
+            anchor_x: 0.918
+            anchor_y: 0.244
+            scale: 0.4
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+      pre-chorus:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: pre-chorus-orbit-appearance
+          actor: pre-chorus-orbit
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: pre-chorus-flower-appearance
+          actor: pre-chorus-flower
+          direction:
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+      chorus:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: chorus-wheel-appearance
+          actor: chorus-wheel
+          direction:
+            anchor_x: 0.873
+            anchor_y: 0.469
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: chorus-rosette-appearance
+          actor: chorus-rosette
+          direction:
+            anchor_x: 0.216
+            anchor_y: 0.611
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: chorus-star-appearance
+          actor: chorus-star
+          direction:
+            anchor_x: 0.415
+            anchor_y: 0.458
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+      outro:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: outro-eclipse-appearance
+          actor: outro-eclipse
+          direction:
+            anchor_x: 0.644
+            anchor_y: 0.512
+            scale: 0.7
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            color: '#32406c'
+            line_width: 0.5
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: appearance-2
+          actor: new-actor-3
+          direction:
+            anchor_x: 0.213
+            anchor_y: 0.404
+            scale: 0.7
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            presentation: animated_trace
+            trace: {}
+    cast_overrides: {}
+    section_transitions: {}
+    transition_overrides: {}

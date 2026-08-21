@@ -1,0 +1,256 @@
+release:
+  id: them-bones
+  slug: them-bones
+  title: Them Bones
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: live
+  release_date: '2026-08-20'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048851467'
+  catalog_number: null
+  cover_image: site/public/assets/releases/them-bones/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/0NVowDi9gZDEfCeNTIFGgG
+    apple_music: https://music.apple.com/us/album/6803630089?app=music
+    itunes_store: https://music.apple.com/us/album/6803630089?app=itunes
+    deezer: https://www.deezer.com/album/11127658?app_id=140685&utm_term=prod
+    amazon_music: https://music.amazon.com/albums/B0HFYK57PW?ref=dmm_acq_soc_us_u_lfire_lp_x_da2faad713ec280c85aa7922f300a811
+    tidal: http://www.tidal.com/album/554189161
+  song:
+    number: 1
+    title: Them Bones
+    slug: them-bones
+    isrc: CAGOO2679286
+    duration: '4:24'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--them-bones.mp3
+    links:
+      spotify: https://open.spotify.com/track/0hsvzITk1dWlS1Ee5Z4vJ4
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: Alternative rock track in E major at 60 BPM. The arrangement features clean,
+      arpeggiated electric guitars with light chorus and delay, layered over a steady
+      mid-tempo drum beat. A melodic bass guitar line follows the chord progression
+      with eighth-note pulses. Male vocals transition from a breathy, intimate delivery
+      in the verses to a powerful, belted chest voice in the choruses. The choruses
+      are characterized by layered vocal harmonies and sustained electric guitar power
+      chords with moderate overdrive. A bridge section features a melodic electric
+      guitar solo with a smooth, singing tone and heavy reverb. The track concludes
+      with a sparse outro featuring clean guitar arpeggios and fading vocal ad-libs.
+    lyrics_raw: '[Intro]
+
+      [clean electric guitar arpeggio with chorus, light delay]
+
+      [Verse 1]
+
+      [breathy male vocals]
+
+      Have you run aground?
+
+      Did you miss that sound?
+
+      Is there mist between the sails that spins the cock around?
+
+      [vocal harmonies]
+
+      Have you run aground?
+
+      Did you miss that sound?
+
+      [Pre-chorus]
+
+      You feel it now, don’t you…
+
+      [Chorus]
+
+      [overdriven electric guitar power chords, driving drums]
+
+      Rattle me down them bones
+
+      Rattle me down to sleep
+
+      Rattle me down them bones
+
+      Rattle me down and weep
+
+      [Instrumental Break]
+
+      [clean guitar arpeggio, bass guitar eighth-note pulse]
+
+      [Verse 2]
+
+      Have you run aground?
+
+      Did you miss that sound?
+
+      The waves and dice lie, you know that now
+
+      [vocal harmonies]
+
+      Have you run aground?
+
+      Did you miss that sound?
+
+      [Pre-chorus]
+
+      You feel it now, don’t you…
+
+      [Chorus]
+
+      [full band, belted vocals]
+
+      Rattle me down them bones
+
+      Rattle me down to sleep
+
+      Rattle me down them bones
+
+      Rattle me down and weep
+
+      [Bridge]
+
+      [melodic electric guitar solo, heavy reverb]
+
+      [Outro]
+
+      Did you miss that sound?
+
+      [drums and bass drop out]
+
+      Rattle me down them bones
+
+      [clean guitar arpeggio fades]
+
+      [vocal ad-libs fade]'
+    lyrics_text: 'Have you run aground
+
+      Did you miss that sound
+
+      Is there mist between the sails that spins the cock around
+
+      Have you run aground
+
+      Did you miss that sound
+
+      You feel it now, don’t you…
+
+
+      Rattle me down them bones
+
+      Rattle me down to sleep
+
+      Rattle me down them bones
+
+      Rattle me down and weep
+
+
+      Have you run aground
+
+      Did you miss that sound
+
+      The waves and dice lie, you know that now
+
+      Have you run aground
+
+      Did you miss that sound
+
+      You feel it now, don’t you…
+
+
+      Rattle me down them bones
+
+      Rattle me down to sleep
+
+      Rattle me down them bones
+
+      Rattle me down and weep
+
+
+      Did you miss that sound
+
+      Rattle me down them bones'
+    lyrics_source: null
+    master_path: /mnt/c/Masters/Them Bones.wav
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    hints:
+      Vocals: Male
+      Style: Progressive Rock
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+    music_video:
+      project: assets/source/video/michael-anthony-rose--them-bones/project.yaml
+      status: published
+      opt_in: true
+      public_url: /media/music-videos/michael-anthony-rose--them-bones/8c981eb24140c275ea11903fd959338b5dc6a36d6771a8ed0ade2195d520c9d6/video.mp4
+      poster: /media/music-videos/michael-anthony-rose--them-bones/8c981eb24140c275ea11903fd959338b5dc6a36d6771a8ed0ade2195d520c9d6/poster-7bdf0b116e42909cfab7c70e37e5a08c4516fcff12910c6bd5724670a2311e4f.jpg
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Them Bones/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Them Bones/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Them Bones/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Them Bones/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Them Bones/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Them Bones/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Them Bones/Vocals.wav
+      enabled: true
+      label: Vocals
+  distributor: landr
+  seo:
+    title: Them Bones
+    description: Them Bones on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/Them Bones.wav
+  hero_image: site/public/assets/releases/them-bones/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null

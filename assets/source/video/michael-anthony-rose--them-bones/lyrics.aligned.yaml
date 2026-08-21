@@ -1,0 +1,221 @@
+version: 1
+source: lyrics.yaml
+alignment:
+  algorithm_version: 1
+  model: whisper-1
+  transcription_cache_key: 6651e7fbc4195fe3b460a5bb7e16649c65a608ee41f19d4723dc75d580a02b9c
+  source_hash: a84d152910ce1cea46c22c8de6e1c091749608dff291d7f1931068e24425255a
+  vocals_hash: 2dbc06fb7bf2c781a8c5ce0f6648566fdc3852f307ab6e5ad4a5e7c888c3541f
+  warnings:
+  - normalized Whisper word timestamps (0 negative starts, 0 regressing starts, 2
+    nonpositive durations)
+  - verse-1 line 3 split into 2 sequential display cues
+  - chorus line 4 is uncertain (confidence 0.200)
+  - verse-2 line 1 is unmatched (confidence 0.000)
+sections:
+- id: intro
+  type: intro
+  label: Intro
+  start: 0.0
+  end: 32.56
+  reviewed: true
+  lines: []
+- id: verse-1
+  type: verse
+  label: Verse 1
+  start: 32.56
+  end: 73.86
+  reviewed: true
+  lines:
+  - text: Have you run aground?
+    start: 32.56
+    end: 37.54
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Did you miss that sound?
+    start: 37.54
+    end: 45.36
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Is there mist between the sails
+    start: 45.36
+    end: 52.66
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: that spins the cock around?
+    start: 52.66
+    end: 57.28
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Have you run aground?
+    start: 57.28
+    end: 66.0
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Did you miss that sound?
+    start: 66.0
+    end: 73.86
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: pre-chorus
+  type: pre-chorus
+  label: Pre-chorus
+  start: 73.86
+  end: 80.24
+  reviewed: true
+  lines:
+  - text: You feel it now, don’t you…
+    start: 73.86
+    end: 80.24
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus
+  type: chorus
+  label: Chorus
+  start: 80.24
+  end: 113.0
+  reviewed: true
+  lines:
+  - text: Rattle me down them bones
+    start: 80.24
+    end: 84.9
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Rattle me down to sleep
+    start: 84.9
+    end: 95.2
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Rattle me down them bones
+    start: 95.2
+    end: 104.72
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Rattle me down and weep
+    start: 104.72
+    end: 113.0
+    confidence: 0.2
+    status: uncertain
+    reviewed: true
+- id: instrumental
+  type: instrumental
+  start: 113.0
+  end: 128.0
+  reviewed: true
+  lines: []
+- id: verse-2
+  type: verse
+  label: Verse 2
+  start: 128.0
+  end: 165.86
+  reviewed: true
+  lines:
+  - text: Have you run aground?
+    start: 128.0
+    end: 136.62
+    confidence: 0.0
+    status: unmatched
+    reviewed: true
+  - text: Did you miss that sound?
+    start: 136.62
+    end: 141.58
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: The waves and dice lie, you know that now
+    start: 141.58
+    end: 153.28
+    confidence: 0.888889
+    status: matched
+    reviewed: true
+  - text: Have you run aground?
+    start: 153.28
+    end: 158.163
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Did you miss that sound?
+    start: 160.72
+    end: 165.86
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: pre-chorus-2
+  type: pre-chorus
+  label: Pre-chorus
+  start: 165.86
+  end: 173.7
+  reviewed: true
+  lines:
+  - text: You feel it now, don’t you…
+    start: 165.86
+    end: 173.7
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus-2
+  type: chorus
+  label: Chorus
+  start: 173.7
+  end: 201.07
+  reviewed: true
+  lines:
+  - text: Rattle me down them bones
+    start: 173.7
+    end: 177.08
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Rattle me down to sleep
+    start: 177.08
+    end: 188.9
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Rattle me down them bones
+    start: 188.9
+    end: 197.0
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Rattle me down and weep
+    start: 197.0
+    end: 201.07
+    confidence: 0.8
+    status: matched
+    reviewed: true
+- id: outro
+  type: outro
+  label: Outro
+  start: 201.38
+  end: 243.56
+  reviewed: true
+  lines:
+  - text: Did you miss that sound?
+    start: 201.38
+    end: 213.542
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Rattle me down them bones
+    start: 216.34
+    end: 243.56
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: fade-out
+  type: Fade out
+  start: 243.56
+  end: 264.199
+  reviewed: true
+  lines: []
