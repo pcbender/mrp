@@ -8,10 +8,22 @@ by the MRP CLI.
 
 ## Quick start
 
-Install Python dependencies once per environment:
+Requires Python 3.11+. Create a virtualenv and install dependencies once per
+environment:
 
 ```bash
+python3 -m venv .venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
 python3 -m pip install -r requirements.txt
+```
+
+`requirements.txt` is the base install for the CLI and admin UI. The headless
+music-video renderer needs the heavier, pinned closure in
+`requirements-video.txt` (numpy/opencv/librosa/etc.) — install it only if you
+run video jobs:
+
+```bash
+python3 -m pip install -r requirements-video.txt
 ```
 
 Start the admin UI (the primary way to work a release):
@@ -21,8 +33,10 @@ scripts/mrp admin serve
 # → http://127.0.0.1:8000
 ```
 
-The workspace walks each release through intake → details → links → tracks →
-critic → sampler → promoter → publish. See
+Bind a second instance on another port with `--port` (e.g.
+`scripts/mrp admin serve --port 8001` for dev-testing alongside the main
+instance). The workspace walks each release through intake → details → links →
+tracks → critic → sampler → promoter → publish. See
 [docs/ADMIN-WORKSPACE.md](docs/ADMIN-WORKSPACE.md).
 
 ## CLI
