@@ -1,0 +1,136 @@
+{
+  "track_id": "michael-anthony-rose--them-bones",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Them Bones.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--them-bones.opus"
+  },
+  "lyrics": "Have you run aground\nDid you miss that sound\nIs there mist between the sails that spins the cock around\nHave you run aground?\nDid you miss that sound?\nYou feel it now, don’t you…\nRattle me down them bones \nRattle me down to sleep \nRattle me down them bones \nRattle me down and weep\nHave you run aground\nDid you miss that sound\nThe waves and dice lie, you know that now\nHave you run aground?\nDid you miss that sound?\nYou feel it now, don’t you…\nRattle me down them bones \nRattle me down to sleep \nRattle me down them bones \nRattle me down and weep\nDid you miss that sound?\nRattle me down them bones",
+  "lyrics_raw": "[Intro]\n[clean electric guitar arpeggio with chorus, light delay]\n\n[Verse 1]\n[breathy male vocals]\nHave you run aground\nDid you miss that sound\nIs that mist between the sails that spins the car around\n\n[Chorus]\n[overdriven electric guitar power chords, driving drums]\nHave you run aground [vocal harmonies]\nDid you miss that sound\nYou feel it now, don't you\nRattle me down them bones\nRattle me down to sleep\nRattle me down them bones\nRattle me down and weep\n\n[Instrumental Break]\n[clean guitar arpeggio, bass guitar eighth-note pulse]\n\n[Verse 2]\nHave you run aground\nDid you miss that sound\nThe waves and white light\nWe know that now\n\n[Chorus]\n[full band, belted vocals]\nHave you run aground\nDid you miss that sound\nYou feel it now, don't you\nRattle me down them bones\nRattle me down to sleep\nRattle me down them bones\nRattle me down and weep\n\n[Bridge]\n[melodic electric guitar solo, heavy reverb]\nDid you miss that sound\n\n[Outro]\n[drums and bass drop out]\nRattle me down them bones\n[clean guitar arpeggio fades]\n[vocal ad-libs fade]",
+  "style": "Alternative rock track in E major at 60 BPM. The arrangement features clean, arpeggiated electric guitars with light chorus and delay, layered over a steady mid-tempo drum beat. A melodic bass guitar line follows the chord progression with eighth-note pulses. Male vocals transition from a breathy, intimate delivery in the verses to a powerful, belted chest voice in the choruses. The choruses are characterized by layered vocal harmonies and sustained electric guitar power chords with moderate overdrive. A bridge section features a melodic electric guitar solo with a smooth, singing tone and heavy reverb. The track concludes with a sparse outro featuring clean guitar arpeggios and fading vocal ad-libs.",
+  "persona": "POINT-IN-TIME ARTIST CONTEXT\nRelease-date cutoff: 2026-08-20\nWrite as though the target release is new on this date.\nDo not mention, infer, or rely on releases or artist developments after this cutoff.\nThe current mutable artist biography is excluded because it has no dated revision.\nFor prior releases, approved critic summaries take precedence over catalog descriptions.\nArtist: Michael Anthony Rose\nCatalog available at this point (oldest first):\n- 2026-02-20 — Aletheion (single)\n- 2026-03-08 — Build Me A Lie (single)\n- 2026-03-14 — Nowhere But Up (single)\n- 2026-03-27 — I Will Bloom (single)\n- 2026-04-09 — But That Was Then (single)\n- 2026-04-14 — Avant Suite (single)\n- 2026-04-15 — Never Knowing (single)\n- 2026-04-30 — Prepositions (single)\n- 2026-05-04 — The Bridge Gets You Over (single)\n- 2026-05-10 — Truth's Empty Promise (single)\n- 2026-05-11 — Aroma Of You (single)\n- 2026-05-19 — I'm Still Here (album)\n  Approved critic summary: Rose opens with a mumbled false start on 'I'm Old Now,' and that small, deliberate stumble tells you exactly what kind of record this is: nothing performed, nothing smoothed over, just a man taking honest stock.\n- 2026-05-30 — Entraining (single)\n- 2026-06-16 — Live Forever Or Die Trying (single)\n- 2026-06-25 — A Distant Memory (single)\n  Approved critic summary: \"A Distant Memory\" opens with a counted-off \"one, two, three, four\" that sets a brisk 4/4 in C major, and from there Rose lets a female vocal float above a clean, roomy groove that leans more toward jazzy indie-pop than any straight ballad.\n- 2026-06-25 — You Know Enough (single)\n  Approved critic summary: There's a bat by the bed in this one, his father's before him, and nobody in the family has ever swung it.\n- 2026-07-08 — You Don't Say (single)\n  Approved critic summary: Nearly seven minutes, and Rose earns every one of them here by treating silence itself as the subject.\n- 2026-07-18 — Outlandia (album)\n  Approved critic summary: For a songwriter introduced as a diarist, a philosopher of the ordinary who finds a lifetime in a reflection on a phone screen, \"Outlandia\" is a startling pivot: a two-hour rock opera, twenty-four scenes long, about how a country is bought, broken, and inventoried.\n- 2026-08-20 — Them Bones (single) [target release]",
+  "hints": {
+    "Vocals": "Male",
+    "Style": "Progressive Rock"
+  },
+  "hard_facts": {
+    "bpm": 117.5,
+    "key": "E",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 264.2,
+    "lufs": -14.8,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 23.89,
+        "label": "S1"
+      },
+      {
+        "start": 23.89,
+        "end": 39.15,
+        "label": "S2"
+      },
+      {
+        "start": 39.15,
+        "end": 58.35,
+        "label": "S3"
+      },
+      {
+        "start": 58.35,
+        "end": 79.37,
+        "label": "S4"
+      },
+      {
+        "start": 79.37,
+        "end": 100.38,
+        "label": "S5"
+      },
+      {
+        "start": 100.38,
+        "end": 119.12,
+        "label": "S6"
+      },
+      {
+        "start": 119.12,
+        "end": 134.35,
+        "label": "S7"
+      },
+      {
+        "start": 134.35,
+        "end": 162.33,
+        "label": "S8"
+      },
+      {
+        "start": 162.33,
+        "end": 192.52,
+        "label": "S9"
+      },
+      {
+        "start": 192.52,
+        "end": 215.99,
+        "label": "S10"
+      },
+      {
+        "start": 215.99,
+        "end": 235.73,
+        "label": "S11"
+      },
+      {
+        "start": 235.73,
+        "end": 254.05,
+        "label": "S12"
+      },
+      {
+        "start": 254.05,
+        "end": 264.2,
+        "label": "S13"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.97,
+      "key": 0.832
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "blues rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "uplifting"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track delivers a brooding, atmospheric alternative rock sound that masterfully blends clean, melodic guitar work with a powerful, driving rhythm section. The energy builds dynamically from a spacious, reflective verse into a high-octane chorus characterized by soaring, expressive vocals and thick, distorted guitar chords. The production quality is excellent, featuring a well-balanced mix that leaves plenty of room for the intimate acoustic elements before swelling into a dense, layered rock texture. The seamless transitions and the passionate intensity of the vocal delivery define the track, creating a captivating sense of tension and cathartic release throughout.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "After the two-hour sprawl of \"Outlandia,\" Rose narrows the lens back down to something you can hold in one hand, and \"Them Bones\" benefits from the compression. It opens the way you'd hope: clean arpeggios ringing out with a touch of chorus and delay, a breathy verse that keeps asking \"Have you run aground / Did you miss that sound\" like a man tapping you on the shoulder. Then the chorus arrives around the forty-second mark and the whole thing swells, power chords and layered harmonies pushing \"Rattle me down them bones / Rattle me down to sleep\" from confession into something closer to a sea shanty gone electric. The nautical imagery, mist and sails and dice that lie, gives the whole thing a superstitious pull, and the guitar solo in the bridge sings with enough reverb to feel like it's coming from the next room. If there's a caveat, it's that at 4:24 the two-verse, two-chorus frame leans hard on repetition; the payoff is the mood, not the map, so it rewards a listener already tuned to Rose's wavelength. A grower, and a fine one for the faithful.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 2,
+      "label": "soft_floor"
+    },
+    "anchors_used": [
+      "clean arpeggiated guitar intro with chorus and delay",
+      "\"Have you run aground / Did you miss that sound\"",
+      "chorus swell around 0:42 with power chords and harmonies",
+      "\"Rattle me down them bones / Rattle me down to sleep\"",
+      "reverb-heavy guitar solo in the bridge",
+      "4:24 duration with two-verse/two-chorus structure",
+      "nautical imagery: mist, sails, dice that lie"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

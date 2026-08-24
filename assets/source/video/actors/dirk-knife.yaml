@@ -1,0 +1,208 @@
+version: 1
+actor:
+  id: dirk-knife
+  name: Dirk knife
+  description: ''
+  kind: spirogram
+  components:
+  - id: shape-3
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 256.0,40.0 L 268.0,150.0 L 272.0,278.0 L 240.0,278.0 L 244.0,150.0
+        L 256.0,40.0
+    trace:
+      cycles_per_second: 0.001
+      trail_fraction: 1.0
+      ghost_count: 0
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#616bff'
+    color_locked: false
+    z_index: 0
+    anchor_x: 0.5
+    anchor_y: 0.325
+    base_scale: 0.59
+    opacity: 0.8
+    line_width: 2.0
+    presentation: animated_trace
+    rotation_degrees_per_second: 0.0
+    rotation_wobble_degrees: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-4
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 256.0,54.0 L 256.0,275.0
+    trace:
+      cycles_per_second: 0.001
+      trail_fraction: 1.0
+      ghost_count: 0
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#616bff'
+    color_locked: false
+    z_index: 0
+    anchor_x: 0.5
+    anchor_y: 0.336
+    base_scale: 0.54
+    opacity: 0.8
+    line_width: 2.0
+    presentation: animated_trace
+    rotation_degrees_per_second: 0.0
+    rotation_wobble_degrees: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-5
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 200.0,278.0 L 312.0,278.0 L 312.0,294.0 L 200.0,294.0 L 200.0,278.0
+    trace:
+      cycles_per_second: 0.001
+      trail_fraction: 1.0
+      ghost_count: 0
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#616bff'
+    color_locked: false
+    z_index: 0
+    anchor_x: 0.5
+    anchor_y: 0.586
+    base_scale: 0.28
+    opacity: 0.8
+    line_width: 2.0
+    presentation: animated_trace
+    rotation_degrees_per_second: 0.0
+    rotation_wobble_degrees: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-6
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 242.0,294.0 L 242.0,408.0 Q 242.0,428.0 256.0,428.0 Q 270.0,428.0
+        270.0,408.0 L 270.0,294.0
+    trace:
+      cycles_per_second: 0.001
+      trail_fraction: 1.0
+      ghost_count: 0
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#616bff'
+    color_locked: false
+    z_index: 0
+    anchor_x: 0.5
+    anchor_y: 0.741
+    base_scale: 0.34
+    opacity: 0.8
+    line_width: 2.0
+    presentation: animated_trace
+    rotation_degrees_per_second: 0.0
+    rotation_wobble_degrees: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-7
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 240.0,432.0 A 16.0,16.0 0.0 1,0 272.0,432.0 A 16.0,16.0 0.0 1,0
+        240.0,432.0
+    trace:
+      cycles_per_second: 0.001
+      trail_fraction: 1.0
+      ghost_count: 0
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#616bff'
+    color_locked: false
+    z_index: 0
+    anchor_x: 0.5
+    anchor_y: 0.887
+    base_scale: 0.08
+    opacity: 0.8
+    line_width: 2.0
+    presentation: animated_trace
+    rotation_degrees_per_second: 0.0
+    rotation_wobble_degrees: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-8
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 246.0,308.0 L 266.0,326.0 L 246.0,344.0 L 266.0,362.0 L 246.0,380.0
+        L 266.0,398.0 L 246.0,414.0
+    trace:
+      cycles_per_second: 0.001
+      trail_fraction: 1.0
+      ghost_count: 0
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#616bff'
+    color_locked: false
+    z_index: 0
+    anchor_x: 0.5
+    anchor_y: 0.741
+    base_scale: 0.26
+    opacity: 0.8
+    line_width: 2.0
+    presentation: animated_trace
+    rotation_degrees_per_second: 0.0
+    rotation_wobble_degrees: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
+  - id: shape-9
+    role: vocals
+    geometry:
+      family: path
+      rotation: inside
+      phase: 0.0
+      samples: 900
+      path_data: M 266.0,308.0 L 246.0,326.0 L 266.0,344.0 L 246.0,362.0 L 266.0,380.0
+        L 246.0,398.0 L 266.0,414.0
+    trace:
+      cycles_per_second: 0.001
+      trail_fraction: 1.0
+      ghost_count: 0
+      ghost_spacing: 0.08
+      head_radius: 0.0
+    color: '#616bff'
+    color_locked: false
+    z_index: 0
+    anchor_x: 0.5
+    anchor_y: 0.741
+    base_scale: 0.26
+    opacity: 0.8
+    line_width: 2.0
+    presentation: animated_trace
+    rotation_degrees_per_second: 0.0
+    rotation_wobble_degrees: 0.0
+    hue_shift_degrees: 0.0
+    blend_mode: screen
+    drivers: {}
