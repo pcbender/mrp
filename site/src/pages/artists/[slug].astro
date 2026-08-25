@@ -37,6 +37,10 @@ function isLinkableHref(href: string): boolean {
 
 function renderPromoMarkdown(text: string): string {
   return text
+    // A generated blurb sometimes doubles a bracket ('["Them Bones"]](/releases/...)'),
+    // which stops the link regex below from matching and ships raw markdown.
+    .replace(/\[{2,}/g, "[")
+    .replace(/\]{2,}\(/g, "](")
     .replace(/\*([^*]+)\*/g, "<em>$1</em>")
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, label, href) =>
       isLinkableHref(href) ? `<a href="${href}">${label}</a>` : label
@@ -46,29 +50,33 @@ function renderPromoMarkdown(text: string): string {
     .trim();
 }
 
-const bioBlocks = artist.promo_blurb
-  ? String(artist.promo_blurb)
-      .split(/\n{2,}/)
-      .map((block) => block.trim())
-      .filter(Boolean)
-      .map((block) => ({ tag: "p", html: renderPromoMarkdown(block.replace(/\n+/g, " ")) }))
-  : String(artist.bio_long || "")
-      .split("## Releases")[0]
-      .replace(/!\[[^\]]*\]\([^)]+\)/g, "")
-      .replace(/\[[^\]]*\]\([^)]+\)/g, "")
-      .split(/\n{2,}/)
-      .map((block) => block.trim())
-      .filter(Boolean)
-      .filter((block) => block !== `## ${artist.name}`)
-      .map((block) => {
-        if (block.startsWith("## ")) {
-          return { tag: "h2", text: cleanMarkdownText(block.slice(3)) };
-        }
-        if (block.startsWith("### ")) {
-          return { tag: "h3", text: cleanMarkdownText(block.slice(4)) };
-        }
-        return { tag: "p", text: cleanMarkdownText(block.replace(/\n+/g, " ")) };
-      });
+// Promoter prose reaches us with mixed line endings: some bios separate their
+// paragraphs with "\n\r\n", which a bare /\n{2,}/ split runs together into one
+// wall of text. Normalise first, then split on blank lines.
+function proseBlocks(text: string) {
+  return String(text || "")
+    .replace(/\r\n?/g, "\n")
+    .split("## Releases")[0]
+    .split(/\n{2,}/)
+    .map((block) => block.trim())
+    .filter(Boolean)
+    .filter((block) => block !== `## ${artist.name}`)
+    .map((block) => {
+      if (block.startsWith("## ")) {
+        return { tag: "h2", text: cleanMarkdownText(block.slice(3)) };
+      }
+      if (block.startsWith("### ")) {
+        return { tag: "h3", text: cleanMarkdownText(block.slice(4)) };
+      }
+      return { tag: "p", html: renderPromoMarkdown(block.replace(/\n+/g, " ")) };
+    });
+}
+
+// The blurb is the current pitch, the long bio the evergreen statement. When
+// both exist the blurb leads and the bio becomes the "More..." section at the
+// foot of the page; with no blurb the bio moves up and takes its place.
+const bioBlocks = proseBlocks(artist.promo_blurb || artist.bio_long || "");
+const biographyBlocks = artist.promo_blurb ? proseBlocks(artist.bio_long || "") : [];
 
 function cleanMarkdownText(value: string) {
   return String(value)
@@ -99,7 +107,10 @@ function cleanMarkdownText(value: string) {
       {bioBlocks.map((block) =>
         "html" in block
           ? <p set:html={block.html} />
-          : block.tag === "h2" ? <h2>{block.text}</h2> : block.tag === "h3" ? <h3>{block.text}</h3> : <p>{block.text}</p>
+          : block.tag === "h2" ? <h2>{block.text}</h2> : <h3>{block.text}</h3>
+      )}
+      {biographyBlocks.length > 0 && (
+        <a class="bio-more" href="#biography">More...</a>
       )}
       <StreamingLinks links={links} />
     </div>
@@ -135,6 +146,18 @@ function cleanMarkdownText(value: string) {
   )}
 
   <ArtistReleaseList artistName={artist.name} releases={releases} />
+
+  {biographyBlocks.length > 0 && (
+    <section class="artist-biography" id="biography">
+      <p class="eyebrow">Biography</p>
+      <h2>About {artist.name}</h2>
+      {biographyBlocks.map((block) =>
+        "html" in block
+          ? <p set:html={block.html} />
+          : block.tag === "h2" ? <h3>{block.text}</h3> : <h4>{block.text}</h4>
+      )}
+    </section>
+  )}
 </BaseLayout>
 
 <style>
@@ -235,6 +258,48 @@ function cleanMarkdownText(value: string) {
       justify-items: start;
       text-align: left;
     }
+  }
+
+  /* Matches the "More..." affordance on the release and artist cards. */
+  .bio-more {
+    justify-self: end;
+    color: #455fd6;
+    font-size: 0.86rem;
+    font-style: italic;
+    text-decoration: none;
+  }
+
+  .bio-more:hover {
+    text-decoration: underline;
+  }
+
+  .artist-biography {
+    display: grid;
+    gap: 16px;
+    width: min(100% - clamp(40px, 8vw, 112px), 760px);
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 42px) 0 clamp(42px, 7vw, 84px);
+    scroll-margin-top: 24px;
+  }
+
+  .artist-biography h2 {
+    margin: 0;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    line-height: 1.15;
+  }
+
+  .artist-biography h3,
+  .artist-biography h4 {
+    margin: 8px 0 0;
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  .artist-biography p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
   }
 
   .member-list {

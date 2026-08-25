@@ -10,7 +10,23 @@ Write two outputs separated by the marker `---`:
 
 1. `bio_short` (2-3 sentences): A punchy elevator pitch. Who are they, what do they sound like, why should a listener care.
 
-2. `bio_long` (3-4 paragraphs, plain prose, no markdown headers): A fuller biography that builds from the short intro. Include thematic depth, emotional range, and an inviting close.
+2. `bio_long` (4 paragraphs, plain prose, no markdown headers): The evergreen artist
+   statement. This is the text a reader reaches after the short pitch has already done
+   its work, so it must earn the extra length rather than restate the pitch at greater
+   volume.
+
+   Separate each paragraph with a blank line. A rough arc that works:
+   - What the body of work as a whole is preoccupied with, stated with conviction
+   - The thematic depth: what the recurring subjects are and what the artist does with them
+   - How the voice and craft actually work: register, perspective, how a song is built
+   - What the work asks of a listener, and why it rewards returning to
+
+   Constraints specific to the long bio:
+   - Do NOT reuse the opening sentence, framing, or signature phrases of `bio_short`.
+     A reader sees both; echoing yourself reads as padding.
+   - Stay evergreen. A separate promo blurb covers the current release cycle, so do not
+     chase news, name recent releases, or write anything that goes stale in six months.
+   - No Markdown links, no italics, no quotation-marked song titles. Plain prose only.
 
 Rules:
 - Do NOT invent biographical facts (hometown, age, influences by name) unless they are in the lyrics.
