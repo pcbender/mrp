@@ -254,12 +254,17 @@ def test_both_promo_videos_use_the_same_selected_album_track(tmp_path, monkeypat
         animated_audio.append(audio)
         output.write_bytes(b"animated")
 
+    def fake_canvas(visual, output):
+        output.write_bytes(b"canvas")
+        return 5.0
+
     monkeypatch.setattr(critic_io, "promoter_bin", lambda root: "promoter")
     monkeypatch.setattr(pipeline.subprocess, "run", fake_run)
     monkeypatch.setattr(pipeline, "_render_video_short", fake_static)
     monkeypatch.setattr(pipeline, "_render_image", fake_image)
     monkeypatch.setattr(nim, "generate_animated_cover_visual", fake_generate)
     monkeypatch.setattr(pipeline, "_mux_visual_with_audio", fake_mux)
+    monkeypatch.setattr(pipeline, "_render_spotify_canvas", fake_canvas)
 
     static_result = pipeline.run_promo_kit(tmp_path, "demo")
     animated_result = pipeline.run_promo_kit_animated_cover(tmp_path, "demo")

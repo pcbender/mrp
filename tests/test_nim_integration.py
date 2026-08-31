@@ -1,4 +1,6 @@
 import json
+import shutil
+import subprocess
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
 
@@ -267,19 +269,67 @@ def test_run_promo_kit_animated_cover_updates_manifest(tmp_path, monkeypatch):
         assert audio.read_bytes() == b"audio"
         output.write_bytes(b"muxed")
 
+    def fake_canvas(visual, output):
+        assert visual.read_bytes() == b"nim visual"
+        output.write_bytes(b"canvas")
+        return 5.0
+
     monkeypatch.setattr(nim, "generate_animated_cover_visual", fake_generate_animated_cover_visual)
     monkeypatch.setattr(pipe, "_mux_visual_with_audio", fake_mux)
+    monkeypatch.setattr(pipe, "_render_spotify_canvas", fake_canvas)
 
     result = pipe.run_promo_kit_animated_cover(repo, "demo")
 
     assert result["ok"] is True
     assert result["video"] == "animated-short.mp4"
+    assert result["canvas"] == "spotify-canvas.mp4"
     assert (kit_dir / "animated-short.mp4").read_bytes() == b"muxed"
+    assert (kit_dir / "spotify-canvas.mp4").read_bytes() == b"canvas"
     manifest = json.loads((kit_dir / "kit.json").read_text())
     assert manifest["files"]["animated_video"] == "animated-short.mp4"
     assert manifest["files"]["nim_visual"] == "nim-visual.mp4"
+    assert manifest["files"]["spotify_canvas"] == "spotify-canvas.mp4"
     assert manifest["animated_cover"]["provider"] == "nim"
+    assert manifest["animated_cover"]["canvas_seconds"] == 5.0
     assert "No text overlays" in manifest["animated_cover"]["prompt"]
+
+
+def test_render_spotify_canvas_clamps_into_the_three_to_eight_window(tmp_path):
+    if not (shutil.which("ffmpeg") and shutil.which("ffprobe")):
+        pytest.skip("ffmpeg/ffprobe not on PATH")
+
+    def synth(name: str, seconds: float) -> Path:
+        path = tmp_path / name
+        subprocess.run(
+            ["ffmpeg", "-y", "-f", "lavfi", "-i",
+             f"testsrc=size=720x1280:rate=30:duration={seconds}",
+             "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", str(path)],
+            capture_output=True, check=True,
+        )
+        return path
+
+    # 5s Nim default passes through untouched.
+    out = tmp_path / "canvas-5.mp4"
+    assert pipe._render_spotify_canvas(synth("src-5.mp4", 5), out) == pytest.approx(5.0, abs=0.1)
+    assert pipe._probe_duration(out) == pytest.approx(5.0, abs=0.2)
+
+    # Longer than the Canvas ceiling gets trimmed to 8s.
+    out = tmp_path / "canvas-12.mp4"
+    assert pipe._render_spotify_canvas(synth("src-12.mp4", 12), out) == pytest.approx(8.0, abs=0.1)
+    assert pipe._probe_duration(out) == pytest.approx(8.0, abs=0.2)
+
+    # Shorter than the floor repeats whole loops up past 3s.
+    out = tmp_path / "canvas-2.mp4"
+    assert pipe._render_spotify_canvas(synth("src-2.mp4", 2), out) == pytest.approx(4.0, abs=0.1)
+    assert pipe._probe_duration(out) == pytest.approx(4.0, abs=0.2)
+
+    # Canvas carries no audio track.
+    streams = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "stream=codec_type",
+         "-of", "default=noprint_wrappers=1:nokey=1", str(out)],
+        capture_output=True, text=True,
+    ).stdout.split()
+    assert streams == ["video"]
 
 
 # --- identity image generation ------------------------------------------------

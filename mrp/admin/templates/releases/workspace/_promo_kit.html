@@ -27,6 +27,9 @@
           {% if kit.files.animated_video %}
           <a href="{{ base }}/{{ kit.files.animated_video }}" download>animated</a>
           {% endif %}
+          {% if kit.files.spotify_canvas %}
+          <a href="{{ base }}/{{ kit.files.spotify_canvas }}" download>canvas</a>
+          {% endif %}
           <a href="{{ base }}/{{ kit.files.cover_square }}" download>square</a>
           <a href="{{ base }}/{{ kit.files.cover_story }}" download>story</a>
         </div>
@@ -37,6 +40,16 @@
           {% if kit.animated_cover %}
           <p>{{ kit.animated_cover.model }} via Nim</p>
           {% endif %}
+        </div>
+        {% endif %}
+        {% if kit.files.spotify_canvas %}
+        <div class="kit-animated">
+          <div class="kit-card-head">Spotify Canvas</div>
+          <video controls muted loop preload="metadata" src="{{ base }}/{{ kit.files.spotify_canvas }}"></video>
+          <p>
+            Silent 9:16 loop cut from the Nim visual{% if kit.animated_cover and kit.animated_cover.canvas_seconds %},
+            {{ kit.animated_cover.canvas_seconds | round(1) }}s{% endif %} — upload as-is in Spotify for Artists.
+          </p>
         </div>
         {% endif %}
       </div>
