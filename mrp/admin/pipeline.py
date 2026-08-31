@@ -1,6 +1,7 @@
 """Per-release pipeline step functions — each runs one enrichment step on a single release."""
 from __future__ import annotations
 
+import math
 import subprocess
 import sys
 from pathlib import Path
@@ -876,6 +877,61 @@ def _mux_visual_with_audio(visual: Path, audio: Path, output: Path) -> None:
         raise RuntimeError(f"ffmpeg animated short failed: {result.stderr[-300:]}")
 
 
+# Spotify Canvas: 9:16 looping video, no audio, 3-8 seconds. The Nim visual is
+# already a silent 9:16 bed, so the Canvas is that clip normalised and clamped
+# into the accepted window rather than a second generation.
+CANVAS_MIN_SECONDS = 3.0
+CANVAS_MAX_SECONDS = 8.0
+
+
+def _probe_duration(path: Path) -> float:
+    """Seconds of media at path, or 0.0 when ffprobe cannot tell."""
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", str(path)],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        return 0.0
+    try:
+        return float(result.stdout.strip())
+    except ValueError:
+        return 0.0
+
+
+def _render_spotify_canvas(visual: Path, output: Path) -> float:
+    """Cut the silent Nim visual down to a Canvas-legal loop.
+
+    Longer than 8s is trimmed; shorter than 3s is repeated a whole number of
+    times so the loop point stays where Nim put it. Returns the output length.
+    """
+    source = _probe_duration(visual)
+    loop_args: list[str] = []
+    if source <= 0:
+        target = CANVAS_MAX_SECONDS
+    elif source > CANVAS_MAX_SECONDS:
+        target = CANVAS_MAX_SECONDS
+    elif source < CANVAS_MIN_SECONDS:
+        repeats = math.ceil(CANVAS_MIN_SECONDS / source)
+        target = min(source * repeats, CANVAS_MAX_SECONDS)
+        loop_args = ["-stream_loop", "-1"]
+    else:
+        target = source
+
+    result = subprocess.run(
+        ["ffmpeg", "-y", *loop_args, "-i", str(visual),
+         "-t", f"{target:.3f}",
+         "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,format=yuv420p",
+         "-r", "30", "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+         "-movflags", "+faststart",
+         str(output)],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"ffmpeg canvas render failed: {result.stderr[-300:]}")
+    return round(target, 3)
+
+
 def _render_image(cover: Path, output: Path, composite: bool) -> None:
     if composite:
         args = [*_vertical_composite(cover), "-map", "[v]"]
@@ -1038,9 +1094,18 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
         prompt=prompt,
     )
     _mux_visual_with_audio(visual_path, snippet, output_path)
+    canvas_path = kit_dir / "spotify-canvas.mp4"
+    canvas_seconds = _render_spotify_canvas(visual_path, canvas_path)
 
     manifest.setdefault("files", {})["animated_video"] = "animated-short.mp4"
     manifest.setdefault("files", {})["nim_visual"] = "nim-visual.mp4"
+    manifest.setdefault("files", {})["spotify_canvas"] = "spotify-canvas.mp4"
+    for item in manifest.get("checklist") or []:
+        if item.get("label") == "Spotify — Canvas":
+            item["detail"] = (
+                f"Upload spotify-canvas.mp4 ({canvas_seconds:g}s silent 9:16 loop, "
+                f"cut from the Nim visual) as the Canvas for {manifest.get('title') or slug}."
+            )
     manifest["animated_cover"] = {
         "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "provider": "nim",
@@ -1049,6 +1114,7 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
         "model_id": generation.get("model_id") or nim.DEFAULT_MODEL_ID,
         "prompt": prompt,
         "promo_track_slug": promo_track["slug"],
+        "canvas_seconds": canvas_seconds,
     }
     if generation.get("workflow_id"):
         manifest["animated_cover"]["workflow_id"] = generation["workflow_id"]
@@ -1062,6 +1128,8 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
         "kit_dir": str(kit_dir.relative_to(root)),
         "video": "animated-short.mp4",
         "visual": "nim-visual.mp4",
+        "canvas": "spotify-canvas.mp4",
+        "canvas_seconds": canvas_seconds,
         "promo_track_slug": promo_track["slug"],
         "model": manifest["animated_cover"]["model"],
     }
