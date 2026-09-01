@@ -1,0 +1,151 @@
+{
+  "track_id": "michael-anthony-rose--unreasonably-quiet",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Unreasonably Quiet.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--unreasonably-quiet.opus"
+  },
+  "lyrics": "The talaros, a woven openwork\nHolds what’s thought true\nMisconstrued as you\nAnd what is not falls through\nThe weavers never meant to hold\nSuch weight upon the stakes\nNothing freely escapes\nThe account of our mistakes\n\nEvery choice a new example\nOf the flame or just the candle\n\nA tablet scored, a page impressed\nA vivid description of what works best\nAll mostly meaningless\nNot subject nor object nor truth disavowed\nUnreasonably quiet and silently loud\nOf woven edge and borrowed reeds\nThe talaros serves, then releases\nOnce holding on, then letting go\nOf all the weight it gathers\nBetter still, to let them go\nWhat’s holding and what’s held\nThe talaros never failed\nYou are not what it gathered\n\nEvery choice a new example\nOf the flame or just the candle\nA tablet scored, a page impressed\nA vivid description of what works best\nAll mostly meaningless\nNot subject nor object nor truth disavowed\nUnreasonably quiet and silently loud\n\nEvery choice a new example\nOf the flame or just the candle\nA tablet scored, a page impressed\nA vivid description of what works best\nAll mostly meaningless\nNot subject nor object nor truth disavowed\nUnreasonably quiet and silently loud",
+  "lyrics_raw": "[Verse]\nThe talaros, a woven openwork\nHolds what’s thought true\nMisconstrued as you\nAnd what is not falls through\n\nThe weavers never meant to hold\nSuch weight upon the stakes \nNothing freely escapes\nThe account of our mistakes\n\n[Pre-chorus]\nEvery choice a new example\nOf the flame or just the candle\n\n[Chorus]\nA tablet scored, a page impressed\nA vivid description of what works best\nAll mostly meaningless\nNot subject nor object nor truth disavowed\nUnreasonably quiet and silently loud\n[Verse]\nOf woven edge and borrowed reeds\nThe talaros serves, then releases\nOnce holding on, then letting go\nOf all the weight it gathers\nBetter still, to let them go\nWhat’s holding and what’s held\nThe talaros never failed\nYou are not what it gathered\n\n[Pre-chorus]\nEvery choice a new example\nOf the flame or just the candle\n[Chorus]\nA tablet scored, a page impressed\nA vivid description of what works best\nAll mostly meaningless\nNot subject nor object nor truth disavowed\nUnreasonably quiet and silently loud\n[Instrumental]\n[Pre-chorus]\nEvery choice a new example\nOf the flame or just the candle\n[Chorus]\nA tablet scored, a page impressed\nA vivid description of what works best\nAll mostly meaningless\nNot subject nor object nor truth disavowed\nUnreasonably quiet and silently loud",
+  "style": "The experimental post-rock piece launches with pulsing Hammond B3 grooves and gritty, syncopated guitars, Verses explore intricate rhythmic interplay before spiraling into bold organ and guitar solos, Progressive structures introduce wild key changes, leading to a massive chorus, with dense layers and deep baritone vocals riding swelling, evolving textures that intensify to the finish",
+  "persona": "POINT-IN-TIME ARTIST CONTEXT\nRelease-date cutoff: 2026-08-30\nWrite as though the target release is new on this date.\nDo not mention, infer, or rely on releases or artist developments after this cutoff.\nThe current mutable artist biography is excluded because it has no dated revision.\nFor prior releases, approved critic summaries take precedence over catalog descriptions.\nArtist: Michael Anthony Rose\nCatalog available at this point (oldest first):\n- 2026-02-20 — Aletheion (single)\n- 2026-03-08 — Build Me A Lie (single)\n- 2026-03-14 — Nowhere But Up (single)\n- 2026-03-27 — I Will Bloom (single)\n- 2026-04-09 — But That Was Then (single)\n- 2026-04-14 — Avant Suite (single)\n- 2026-04-15 — Never Knowing (single)\n- 2026-04-30 — Prepositions (single)\n- 2026-05-04 — The Bridge Gets You Over (single)\n- 2026-05-10 — Truth's Empty Promise (single)\n- 2026-05-11 — Aroma Of You (single)\n- 2026-05-19 — I'm Still Here (album)\n  Approved critic summary: Rose opens with a mumbled false start on 'I'm Old Now,' and that small, deliberate stumble tells you exactly what kind of record this is: nothing performed, nothing smoothed over, just a man taking honest stock.\n- 2026-05-30 — Entraining (single)\n- 2026-06-16 — Live Forever Or Die Trying (single)\n- 2026-06-25 — A Distant Memory (single)\n  Approved critic summary: \"A Distant Memory\" opens with a counted-off \"one, two, three, four\" that sets a brisk 4/4 in C major, and from there Rose lets a female vocal float above a clean, roomy groove that leans more toward jazzy indie-pop than any straight ballad.\n- 2026-06-25 — You Know Enough (single)\n  Approved critic summary: There's a bat by the bed in this one, his father's before him, and nobody in the family has ever swung it.\n- 2026-07-08 — You Don't Say (single)\n  Approved critic summary: Nearly seven minutes, and Rose earns every one of them here by treating silence itself as the subject.\n- 2026-07-18 — Outlandia (album)\n  Approved critic summary: For a songwriter introduced as a diarist, a philosopher of the ordinary who finds a lifetime in a reflection on a phone screen, \"Outlandia\" is a startling pivot: a two-hour rock opera, twenty-four scenes long, about how a country is bought, broken, and inventoried.\n- 2026-08-20 — Them Bones (single)\n  Approved critic summary: After the two-hour sprawl of \"Outlandia,\" Rose narrows the lens back down to something you can hold in one hand, and \"Them Bones\" benefits from the compression.\n- 2026-08-30 — Unreasonably Quiet (single) [target release]",
+  "hints": {
+    "Vocals": "Male"
+  },
+  "hard_facts": {
+    "bpm": 123.0,
+    "key": "C",
+    "mode": "major",
+    "time_signature": "3/4",
+    "duration_s": 319.57,
+    "lufs": -14.7,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 26.08,
+        "label": "S1"
+      },
+      {
+        "start": 26.08,
+        "end": 45.05,
+        "label": "S2"
+      },
+      {
+        "start": 45.05,
+        "end": 61.23,
+        "label": "S3"
+      },
+      {
+        "start": 61.23,
+        "end": 82.06,
+        "label": "S4"
+      },
+      {
+        "start": 82.06,
+        "end": 98.13,
+        "label": "S5"
+      },
+      {
+        "start": 98.13,
+        "end": 116.24,
+        "label": "S6"
+      },
+      {
+        "start": 116.24,
+        "end": 131.82,
+        "label": "S7"
+      },
+      {
+        "start": 131.82,
+        "end": 150.14,
+        "label": "S8"
+      },
+      {
+        "start": 150.14,
+        "end": 176.63,
+        "label": "S9"
+      },
+      {
+        "start": 176.63,
+        "end": 200.41,
+        "label": "S10"
+      },
+      {
+        "start": 200.41,
+        "end": 216.43,
+        "label": "S11"
+      },
+      {
+        "start": 216.43,
+        "end": 245.95,
+        "label": "S12"
+      },
+      {
+        "start": 245.95,
+        "end": 266.84,
+        "label": "S13"
+      },
+      {
+        "start": 266.84,
+        "end": 285.49,
+        "label": "S14"
+      },
+      {
+        "start": 285.49,
+        "end": 309.13,
+        "label": "S15"
+      },
+      {
+        "start": 309.13,
+        "end": 319.57,
+        "label": "S16"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.961,
+      "key": 0.911
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "indie rock",
+      "blues rock"
+    ],
+    "mood": [
+      "dark",
+      "emotional",
+      "tender"
+    ],
+    "instruments": [
+      "electric guitar",
+      "drums",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This track offers a powerful blend of modern alternative rock and progressive metal, creating a dynamic, emotionally charged atmosphere that feels both epic and introspective. The energy remains high throughout, driven by a punchy, tight rhythm section, soaring vocal melodies, and rich, distorted guitar riffs. The production quality is exceptionally clean and spacious, allowing the dense layers of synthesizers, heavy guitars, and expressive vocals to coexist harmoniously without sounding cluttered. A standout feature is the smooth transition from the dramatic synth-infused intro to the hard-hitting rock groove, showcasing the track's excellent dynamic range.",
+    "model": "gemini-3.5-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "Rose builds this one on a 3/4 pulse at a brisk clip, which is the first surprise: a waltz that never asks you to sway, driven instead by a Hammond groove and gritty guitar working against the meter rather than settling into it. The lyric is the thorniest he's written since the abstractions of 'Prepositions,' turning a Greek word for a woven basket into a meditation on what we hold and what we let fall through, and when the chorus lands on 'Unreasonably quiet and silently loud,' the paradox pays off in the arrangement itself, dense and swelling one moment, spacious the next. His deep baritone rides the middle of it comfortably, and the instrumental stretch around the four-minute mark, that spiral into organ and guitar before the final chorus returns, gives the five-plus minutes room to breathe rather than sprawl. It asks more of a listener than 'Them Bones' did, and the payoff comes on the second or third pass rather than the first: a grower, but a rewarding one for those willing to sit with it.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 2,
+      "label": "soft_floor"
+    },
+    "anchors_used": [
+      "3/4 time at 123 BPM",
+      "C major",
+      "Hammond organ and guitar interplay from style brief",
+      "quoted lyric 'Unreasonably quiet and silently loud'",
+      "male baritone vocal (hint)",
+      "instrumental break around S12 216s-246s",
+      "5:19 duration",
+      "comparison to prior singles 'Prepositions' and 'Them Bones'"
+    ],
+    "model": "claude-opus-4-8"
+  }
+}

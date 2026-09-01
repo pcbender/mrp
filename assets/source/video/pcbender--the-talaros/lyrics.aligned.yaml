@@ -1,0 +1,310 @@
+version: 1
+source: lyrics.yaml
+alignment:
+  algorithm_version: 1
+  model: whisper-1
+  transcription_cache_key: 84676d8f3b803a4c5fb4d5f5667f68ea4f5ce3744bc0ffc5f35622cde84e8aaa
+  source_hash: 148768d767320944357b4ebeb4460b47b067659e043b2d06d83b185175ee5a4f
+  vocals_hash: f02818bf2fb27ba7a94503edb8a3100bfb9b6cf5a66ef7bc8f889c3e7aacdbcc
+  warnings:
+  - normalized Whisper word timestamps (0 negative starts, 0 regressing starts, 6
+    nonpositive durations)
+  - 'manual section ''outro'' was dropped: alignment now places lyrics across 222.410s–236.087s'
+sections:
+- id: intro
+  type: intro
+  start: 0.0
+  end: 15.47
+  reviewed: true
+  lines: []
+- id: verse
+  type: verse
+  label: Verse
+  start: 15.48
+  end: 54.5
+  reviewed: true
+  lines:
+  - text: The talaros, a woven openwork
+    start: 15.48
+    end: 19.98
+    confidence: 0.793333
+    status: matched
+    reviewed: true
+  - text: Holds what’s thought true
+    start: 19.98
+    end: 24.5
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Misconstrued as you
+    start: 25.22
+    end: 28.1
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: And what is not falls through
+    start: 28.1
+    end: 33.332
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: The weavers never meant to hold
+    start: 34.18
+    end: 37.7
+    confidence: 0.994444
+    status: matched
+    reviewed: true
+  - text: Such weight upon the stakes
+    start: 37.7
+    end: 42.66
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Nothing freely escapes
+    start: 42.66
+    end: 46.9
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: The account of our mistakes
+    start: 46.9
+    end: 52.23
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: pre-chorus
+  type: pre-chorus
+  label: Pre-chorus
+  start: 54.5
+  end: 64.1
+  reviewed: true
+  lines:
+  - text: Every choice a new example
+    start: 54.5
+    end: 58.42
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Of the flame or just the candle
+    start: 58.42
+    end: 63.866
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus
+  type: chorus
+  label: Chorus
+  start: 64.1
+  end: 97.46
+  reviewed: true
+  lines:
+  - text: A tablet scored, a page impressed
+    start: 64.1
+    end: 69.184
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: A vivid description of what works best
+    start: 69.4
+    end: 73.14
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: All mostly meaningless
+    start: 73.14
+    end: 80.329
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Not subject nor object nor truth disavowed
+    start: 82.0
+    end: 86.96
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Unreasonably quiet and silently loud
+    start: 86.96
+    end: 93.1
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: verse-2
+  type: verse
+  label: Verse
+  start: 97.46
+  end: 132.78
+  reviewed: true
+  lines:
+  - text: Of woven edge and borrowed reeds
+    start: 97.46
+    end: 100.72
+    confidence: 0.833333
+    status: matched
+    reviewed: true
+  - text: The talaros serves, then releases
+    start: 100.72
+    end: 106.15
+    confidence: 0.782353
+    status: matched
+    reviewed: true
+  - text: Once holding on, then letting go
+    start: 106.7
+    end: 109.86
+    confidence: 0.833333
+    status: matched
+    reviewed: true
+  - text: Of all the weight it gathers
+    start: 109.86
+    end: 112.56
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Better still, to let them go
+    start: 112.56
+    end: 115.28
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: What’s holding and what’s held
+    start: 115.28
+    end: 119.734
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: The talaros never failed
+    start: 119.76
+    end: 124.2
+    confidence: 0.977941
+    status: matched
+    reviewed: true
+  - text: You are not what it gathered
+    start: 124.2
+    end: 130.41
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: pre-chorus-2
+  type: pre-chorus
+  label: Pre-chorus
+  start: 132.78
+  end: 142.396
+  reviewed: true
+  lines:
+  - text: Every choice a new example
+    start: 132.78
+    end: 136.62
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Of the flame or just the candle
+    start: 136.62
+    end: 142.396
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus-2
+  type: chorus
+  label: Chorus
+  start: 142.4
+  end: 171.55
+  reviewed: true
+  lines:
+  - text: A tablet scored, a page impressed
+    start: 142.4
+    end: 146.994
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: A vivid description of what works best
+    start: 147.0
+    end: 151.46
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: All mostly meaningless
+    start: 151.46
+    end: 158.72
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Not subject nor object nor truth disavowed
+    start: 160.54
+    end: 165.34
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Unreasonably quiet and silently loud
+    start: 165.34
+    end: 171.55
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: instrumental
+  type: instrumental
+  label: Instrumental
+  start: 171.55
+  end: 182.92
+  reviewed: true
+  lines: []
+- id: pre-chorus-3
+  type: pre-chorus
+  label: Pre-chorus
+  start: 182.92
+  end: 193.46
+  reviewed: true
+  lines:
+  - text: Every choice a new example
+    start: 182.92
+    end: 187.54
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Of the flame or just the candle
+    start: 187.54
+    end: 193.41
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: chorus-3
+  type: chorus
+  label: Chorus
+  start: 193.46
+  end: 222.41
+  reviewed: true
+  lines:
+  - text: A tablet scored, a page impressed
+    start: 193.46
+    end: 198.35
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: A vivid description of what works best
+    start: 198.38
+    end: 201.932
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: All mostly meaningless
+    start: 201.94
+    end: 209.63
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Not subject nor object nor truth disavowed
+    start: 211.42
+    end: 216.24
+    confidence: 1.0
+    status: matched
+    reviewed: true
+  - text: Unreasonably quiet and silently loud
+    start: 216.24
+    end: 222.41
+    confidence: 1.0
+    status: matched
+    reviewed: true
+- id: outro
+  type: outro
+  start: 222.41
+  end: 236.087
+  reviewed: true
+  lines: []

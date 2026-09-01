@@ -1,0 +1,168 @@
+release:
+  id: unreasonably-quiet
+  slug: unreasonably-quiet
+  title: Unreasonably Quiet
+  artist_id: michael-anthony-rose
+  model: song
+  release_type: single
+  status: draft
+  release_date: '2026-08-30'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048972124'
+  catalog_number: null
+  cover_image: site/public/assets/releases/unreasonably-quiet/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/2xP7CmSYAYR2166K4S60x1
+    apple_music: https://music.apple.com/us/album/unreasonably-quiet-single/6806874115
+  song:
+    number: 1
+    title: Unreasonably Quiet
+    slug: unreasonably-quiet
+    isrc: CAGOO2698357
+    duration: '5:20'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--unreasonably-quiet.mp3
+    links:
+      spotify: https://open.spotify.com/track/08zU1WqFS4h7JTDzFNm5In
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: The experimental post-rock piece launches with pulsing Hammond B3 grooves
+      and gritty, syncopated guitars, Verses explore intricate rhythmic interplay
+      before spiraling into bold organ and guitar solos, Progressive structures introduce
+      wild key changes, leading to a massive chorus, with dense layers and deep baritone
+      vocals riding swelling, evolving textures that intensify to the finish
+    lyrics_raw: "[Verse]\nThe talaros, a woven openwork\nHolds what’s thought true\n\
+      Misconstrued as you\nAnd what is not falls through\n\nThe weavers never meant\
+      \ to hold\nSuch weight upon the stakes \nNothing freely escapes\nThe account\
+      \ of our mistakes\n\n[Pre-chorus]\nEvery choice a new example\nOf the flame\
+      \ or just the candle\n\n[Chorus]\nA tablet scored, a page impressed\nA vivid\
+      \ description of what works best\nAll mostly meaningless\nNot subject nor object\
+      \ nor truth disavowed\nUnreasonably quiet and silently loud\n[Verse]\nOf woven\
+      \ edge and borrowed reeds\nThe talaros serves, then releases\nOnce holding on,\
+      \ then letting go\nOf all the weight it gathers\nBetter still, to let them go\n\
+      What’s holding and what’s held\nThe talaros never failed\nYou are not what it\
+      \ gathered\n\n[Pre-chorus]\nEvery choice a new example\nOf the flame or just\
+      \ the candle\n[Chorus]\nA tablet scored, a page impressed\nA vivid description\
+      \ of what works best\nAll mostly meaningless\nNot subject nor object nor truth\
+      \ disavowed\nUnreasonably quiet and silently loud\n[Instrumental]\n[Pre-chorus]\n\
+      Every choice a new example\nOf the flame or just the candle\n[Chorus]\nA tablet\
+      \ scored, a page impressed\nA vivid description of what works best\nAll mostly\
+      \ meaningless\nNot subject nor object nor truth disavowed\nUnreasonably quiet\
+      \ and silently loud"
+    lyrics_text: 'The talaros, a woven openwork
+
+      Holds what’s thought true
+
+      Misconstrued as you
+
+      And what is not falls through
+
+      The weavers never meant to hold
+
+      Such weight upon the stakes
+
+      Nothing freely escapes
+
+      The account of our mistakes
+
+
+      Every choice a new example
+
+      Of the flame or just the candle
+
+
+      A tablet scored, a page impressed
+
+      A vivid description of what works best
+
+      All mostly meaningless
+
+      Not subject nor object nor truth disavowed
+
+      Unreasonably quiet and silently loud
+
+      Of woven edge and borrowed reeds
+
+      The talaros serves, then releases
+
+      Once holding on, then letting go
+
+      Of all the weight it gathers
+
+      Better still, to let them go
+
+      What’s holding and what’s held
+
+      The talaros never failed
+
+      You are not what it gathered
+
+
+      Every choice a new example
+
+      Of the flame or just the candle
+
+      A tablet scored, a page impressed
+
+      A vivid description of what works best
+
+      All mostly meaningless
+
+      Not subject nor object nor truth disavowed
+
+      Unreasonably quiet and silently loud
+
+
+      Every choice a new example
+
+      Of the flame or just the candle
+
+      A tablet scored, a page impressed
+
+      A vivid description of what works best
+
+      All mostly meaningless
+
+      Not subject nor object nor truth disavowed
+
+      Unreasonably quiet and silently loud'
+    lyrics_source: null
+    hints:
+      Vocals: Male
+    master_path: /mnt/c/Masters/Unreasonably Quiet.wav
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+  distributor: landr
+  seo:
+    title: Unreasonably Quiet
+    description: Unreasonably Quiet on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/Unreasonably Quiet.wav
+  hero_image: site/public/assets/releases/unreasonably-quiet/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null

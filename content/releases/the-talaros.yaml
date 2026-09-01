@@ -1,0 +1,210 @@
+release:
+  id: the-talaros
+  slug: the-talaros
+  title: The Talaros
+  artist_id: pcbender
+  model: song
+  release_type: single
+  status: live
+  release_date: '2026-08-30'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991048972254'
+  catalog_number: null
+  cover_image: site/public/assets/releases/the-talaros/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/60sif7Xh8xw5dEtHe2sYo9
+    apple_music: https://music.apple.com/us/album/the-talaros-single/6806876062
+  song:
+    number: 1
+    title: The Talaros
+    slug: the-talaros
+    isrc: CAGOO2698364
+    duration: '3:56'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/pcbender--the-talaros.mp3
+    links:
+      spotify: https://open.spotify.com/track/2JrZU8S4BdpShFu6zmvdWS
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: 'Chill wave with ambient features and an odd, warped edge: hazy Juno-106
+      pads, detuned electric piano, tape-wobble synth arps, and a distant MIDI guitar
+      line through chorus and plate reverb, Slow 78 BPM, half-time drum machine, soft
+      sub-bass, granular textures, reverse tails, and unresolved minor-key harmonies
+      suspended in a weightless mix'
+    lyrics_raw: "[Verse]\nThe talaros, a woven openwork\nHolds what’s thought true\n\
+      Misconstrued as you\nAnd what is not falls through\n\nThe weavers never meant\
+      \ to hold\nSuch weight upon the stakes \nNothing freely escapes\nThe account\
+      \ of our mistakes\n\n[Pre-chorus]\nEvery choice a new example\nOf the flame\
+      \ or just the candle\n\n[Chorus]\nA tablet scored, a page impressed\nA vivid\
+      \ description of what works best\nAll mostly meaningless\nNot subject nor object\
+      \ nor truth disavowed\nUnreasonably quiet and silently loud\n[Verse]\nOf woven\
+      \ edge and borrowed reeds\nThe talaros serves, then releases\nOnce holding on,\
+      \ then letting go\nOf all the weight it gathers\nBetter still, to let them go\n\
+      What’s holding and what’s held\nThe talaros never failed\nYou are not what it\
+      \ gathered\n\n[Pre-chorus]\nEvery choice a new example\nOf the flame or just\
+      \ the candle\n[Chorus]\nA tablet scored, a page impressed\nA vivid description\
+      \ of what works best\nAll mostly meaningless\nNot subject nor object nor truth\
+      \ disavowed\nUnreasonably quiet and silently loud\n[Instrumental]\n[Pre-chorus]\n\
+      Every choice a new example\nOf the flame or just the candle\n[Chorus]\nA tablet\
+      \ scored, a page impressed\nA vivid description of what works best\nAll mostly\
+      \ meaningless\nNot subject nor object nor truth disavowed\nUnreasonably quiet\
+      \ and silently loud"
+    lyrics_text: 'The talaros, a woven openwork
+
+      Holds what’s thought true
+
+      Misconstrued as you
+
+      And what is not falls through
+
+      The weavers never meant to hold
+
+      Such weight upon the stakes
+
+      Nothing freely escapes
+
+      The account of our mistakes
+
+
+      Every choice a new example
+
+      Of the flame or just the candle
+
+
+      A tablet scored, a page impressed
+
+      A vivid description of what works best
+
+      All mostly meaningless
+
+      Not subject nor object nor truth disavowed
+
+      Unreasonably quiet and silently loud
+
+      Of woven edge and borrowed reeds
+
+      The talaros serves, then releases
+
+      Once holding on, then letting go
+
+      Of all the weight it gathers
+
+      Better still, to let them go
+
+      What’s holding and what’s held
+
+      The talaros never failed
+
+      You are not what it gathered
+
+
+      Every choice a new example
+
+      Of the flame or just the candle
+
+      A tablet scored, a page impressed
+
+      A vivid description of what works best
+
+      All mostly meaningless
+
+      Not subject nor object nor truth disavowed
+
+      Unreasonably quiet and silently loud
+
+
+      Every choice a new example
+
+      Of the flame or just the candle
+
+      A tablet scored, a page impressed
+
+      A vivid description of what works best
+
+      All mostly meaningless
+
+      Not subject nor object nor truth disavowed
+
+      Unreasonably quiet and silently loud'
+    lyrics_source: null
+    hints:
+      Vocals: Male
+    master_path: /mnt/c/Masters/The Talaros.wav
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    critic:
+      model: hero
+      persona: liner
+      target: liner
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/The Talaros/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/The Talaros/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/The Talaros/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/The Talaros/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/The Talaros/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/The Talaros/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/The Talaros/Vocals.wav
+      enabled: true
+      label: Vocals
+    music_video:
+      project: assets/source/video/pcbender--the-talaros/project.yaml
+      status: published
+      opt_in: true
+      public_url: /media/music-videos/pcbender--the-talaros/00960d8c8f721914807d1773c4cdd9301ef0a630860ab1226285ab6a284b08db/video.mp4
+      poster: /media/music-videos/pcbender--the-talaros/00960d8c8f721914807d1773c4cdd9301ef0a630860ab1226285ab6a284b08db/poster-0816932db8c49d417f6d7ee8ce9516b8be72682e835ec26b91505d9e7da0a8b3.jpg
+  distributor: landr
+  seo:
+    title: The Talaros
+    description: The Talaros on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/The Talaros.wav
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null
+  hero_image: site/public/assets/releases/the-talaros/hero.jpg
