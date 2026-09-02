@@ -1,0 +1,1411 @@
+version: 1
+adapter_version: 1
+renderer_contract_version: 3
+source_renderer_revision: e3d4b100e026d486ce2c28547e6e8a907b1c621a
+source:
+  release: content/releases/unreasonably-quiet.yaml
+  track_slug: unreasonably-quiet
+  track_key: michael-anthony-rose--unreasonably-quiet
+  artist_id: michael-anthony-rose
+project:
+  version: 1
+  title: Unreasonably Quiet
+  audio:
+    master: '@mrp/master'
+    stems:
+      bass: '@mrp/stems/bass'
+      drums: '@mrp/stems/drums'
+      instruments: '@mrp/stems/instruments'
+      vocals: '@mrp/stems/vocals'
+    duration_tolerance: 0.05
+  lyrics:
+    source: '@mrp/lyrics'
+    aligned: lyrics.aligned.yaml
+    language: en
+  cards:
+    opening:
+      file: '@mrp/cover'
+      duration: 3.0
+      fit: contain
+      fade: 0.5
+      background: '#101014'
+    closing:
+      file: '@mrp/cover'
+      duration: 4.0
+      fit: contain
+      fade: 0.75
+      background: '#101014'
+  video:
+    width: 1920
+    height: 1080
+    fps: 30.0
+    background:
+      color: '#171615'
+      image: backgrounds/track-f6a167867f5a.jpg
+      fit: cover
+      focal_x: 0.0
+      focal_y: 0.0
+      zoom: 1.0
+      opacity: 0.5
+      brightness_response: 0.0
+      opacity_response: 0.0
+      wash_color: '#ffbc47'
+      wash_opacity: 0.1
+      wash_response: 0.4
+      beat_zoom: 0.15
+      motion: pan_scan
+      end_focal_x: 1.0
+      end_focal_y: 1.0
+      end_zoom: 2.0
+      easing: linear
+    seed: 4821
+  encoding:
+    video_codec: libx264
+    pixel_format: yuv420p
+    crf: 18
+    preset: medium
+    threads: 1
+    audio_codec: aac
+    audio_bitrate_kbps: 192
+    audio_sample_rate: 48000
+    audio_channels: 2
+    faststart: true
+    duration_tolerance: 0.15
+  text:
+    font: '@mrp/font'
+    size: 60
+    maximum_width_fraction: 0.82
+    position: bottom
+    active_color: '#ffffff'
+  analysis:
+    sample_rate: 22050
+    frame_length: 2048
+    hop_length: 512
+    low_cutoff_hz: 250.0
+    high_cutoff_hz: 2000.0
+    percentile_low: 5.0
+    percentile_high: 95.0
+    attack_seconds: 0.05
+    release_seconds: 0.25
+    vocal_activity_threshold: 0.15
+    cache_dir: cache/analysis
+  alignment:
+    model: whisper-1
+    cache_dir: cache/alignment
+    min_token_similarity: 0.72
+    matched_confidence: 0.75
+    max_tail_seconds: 0.75
+    activity_threshold: 0.2
+    upload_bitrate_kbps: 128
+  visuals:
+    mapping_preset: balanced
+    palette_preset: layer
+    palette: []
+    layers:
+    - id: instrument-haze
+      role: instruments
+      geometry:
+        family: spirogram
+        fixed_radius: 192.0
+        moving_radius: 48.0
+        pen_offset: 112.0
+        rotation: inside
+        phase: 0.0
+        samples: 1800
+      trace:
+        cycles_per_second: 0.018
+        trail_fraction: 0.54
+        ghost_count: 3
+        ghost_spacing: 0.07
+        head_radius: 0.0
+      color: '#8c5cff'
+      color_locked: false
+      z_index: -100
+      anchor_x: 0.52
+      anchor_y: 0.38
+      base_scale: 1.82
+      opacity: 0.16
+      line_width: 1.2
+      presentation: animated_trace
+      rotation_degrees_per_second: -0.35
+      rotation_wobble_degrees: 0.0
+      hue_shift_degrees: 18.0
+      blend_mode: screen
+      drivers: {}
+    - id: bass-orbit
+      role: bass
+      geometry:
+        family: spirogram
+        fixed_radius: 233.0
+        moving_radius: 89.0
+        pen_offset: 144.0
+        rotation: outside
+        phase: 0.0
+        samples: 1400
+      trace:
+        cycles_per_second: 0.045
+        trail_fraction: 0.18
+        ghost_count: 1
+        ghost_spacing: 0.1
+        head_radius: 3.5
+      color: '#4c78ff'
+      color_locked: false
+      z_index: 0
+      anchor_x: 0.14
+      anchor_y: 0.44
+      base_scale: 0.6
+      opacity: 0.74
+      line_width: 2.2
+      presentation: animated_trace
+      rotation_degrees_per_second: 0.8
+      rotation_wobble_degrees: 0.0
+      hue_shift_degrees: 0.0
+      blend_mode: screen
+      drivers: {}
+    - id: vocal-flower
+      role: vocals
+      geometry:
+        family: spirogram
+        fixed_radius: 180.0
+        moving_radius: 65.0
+        pen_offset: 95.0
+        rotation: inside
+        phase: 0.0
+        samples: 900
+      trace:
+        cycles_per_second: 0.068
+        trail_fraction: 0.28
+        ghost_count: 1
+        ghost_spacing: 0.09
+        head_radius: 4.0
+      color: '#ff5fd2'
+      color_locked: false
+      z_index: 0
+      anchor_x: 0.52
+      anchor_y: 0.34
+      base_scale: 0.48
+      opacity: 0.82
+      line_width: 2.4
+      presentation: animated_trace
+      rotation_degrees_per_second: -1.25
+      rotation_wobble_degrees: 0.0
+      hue_shift_degrees: -12.0
+      blend_mode: screen
+      drivers: {}
+    - id: drum-spark
+      role: drums
+      geometry:
+        family: spirogram
+        fixed_radius: 96.0
+        moving_radius: 32.0
+        pen_offset: 50.0
+        rotation: outside
+        phase: 0.0
+        samples: 720
+      trace:
+        cycles_per_second: 0.12
+        trail_fraction: 0.3
+        ghost_count: 1
+        ghost_spacing: 0.07
+        head_radius: 4.0
+      color: '#ffd166'
+      color_locked: false
+      z_index: 0
+      anchor_x: 0.89
+      anchor_y: 0.46
+      base_scale: 0.54
+      opacity: 0.72
+      line_width: 1.6
+      presentation: animated_trace
+      rotation_degrees_per_second: 2.4
+      rotation_wobble_degrees: 0.0
+      hue_shift_degrees: 10.0
+      blend_mode: screen
+      drivers: {}
+    canvas_margin: 0.08
+    perspective_strength: 0.18
+    transition_seconds: 0.65
+    lyric_fade_seconds: 0.25
+    background_overrides:
+      verse:
+        color: '#171615'
+        image: backgrounds/track-f6a167867f5a.jpg
+        fit: contain
+        focal_x: 0.0
+        focal_y: 0.0
+        zoom: 1.0
+        opacity: 0.5
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#ffbc47'
+        wash_opacity: 0.0
+        wash_response: 0.0
+        beat_zoom: 0.0
+        motion: pan_scan
+        end_focal_x: 0.0
+        end_focal_y: 0.0
+        end_zoom: 1.0
+        easing: smooth
+      pre-chorus:
+        color: '#171615'
+        image: backgrounds/track-f6a167867f5a.jpg
+        fit: cover
+        focal_x: 0.0
+        focal_y: 0.0
+        zoom: 1.0
+        opacity: 0.5
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#62f613'
+        wash_opacity: 0.24
+        wash_response: 0.4
+        beat_zoom: 0.08
+        motion: pan_scan
+        end_focal_x: 1.0
+        end_focal_y: 1.0
+        end_zoom: 2.0
+        easing: ease_out
+      instrumental-2:
+        color: '#171615'
+        image: backgrounds/track-f6a167867f5a.jpg
+        fit: cover
+        focal_x: 0.5
+        focal_y: 0.5
+        zoom: 1.0
+        opacity: 0.5
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#fafafa'
+        wash_opacity: 0.0
+        wash_response: 0.0
+        beat_zoom: 0.0
+        motion: still
+        end_focal_x: 1.0
+        end_focal_y: 1.0
+        end_zoom: 2.0
+        easing: ease_in
+      instrumental:
+        color: '#171615'
+        image: backgrounds/track-f6a167867f5a.jpg
+        fit: cover
+        focal_x: 0.0
+        focal_y: 0.0
+        zoom: 1.0
+        opacity: 0.5
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#ffbc47'
+        wash_opacity: 0.1
+        wash_response: 0.1
+        beat_zoom: 0.0
+        motion: pan_scan
+        end_focal_x: 1.0
+        end_focal_y: 1.0
+        end_zoom: 2.0
+        easing: ease_out
+      outro:
+        color: '#171615'
+        image: backgrounds/track-f6a167867f5a.jpg
+        fit: cover
+        focal_x: 0.5
+        focal_y: 0.5
+        zoom: 1.0
+        opacity: 0.5
+        brightness_response: 0.0
+        opacity_response: 0.0
+        wash_color: '#ffffff'
+        wash_opacity: 0.0
+        wash_response: 0.0
+        beat_zoom: 0.0
+        motion: pan_scan
+        end_focal_x: 0.6
+        end_focal_y: 0.6
+        end_zoom: 1.5
+        easing: smooth
+    section_styles: {}
+    section_overrides: {}
+    auto_casting: true
+    section_compositions: {}
+    composition_overrides: {}
+    actors:
+      maricopa-records:
+        id: maricopa-records
+        name: maricopa-records
+        description: Maricopa records
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape-1
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            path_data: M 18.0,0.0 L 110.0,0.0 A 18.0,18.0 0.0 0,1 128.0,18.0 L 128.0,110.0
+              A 18.0,18.0 0.0 0,1 110.0,128.0 L 18.0,128.0 A 18.0,18.0 0.0 0,1 0.0,110.0
+              L 0.0,18.0 A 18.0,18.0 0.0 0,1 18.0,0.0
+          trace:
+            cycles_per_second: 0.3
+            trail_fraction: 0.8
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#ffbd61'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 1.3
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        - id: shape-2
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            path_data: M 22.0,64.0 A 42.0,42.0 0.0 1,0 106.0,64.0 A 42.0,42.0 0.0
+              1,0 22.0,64.0
+          trace:
+            cycles_per_second: 0.3
+            trail_fraction: 0.8
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#1faaef'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 0.66
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        - id: shape-3
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            path_data: M 35.0,74.0 L 35.0,48.0 L 48.0,48.0 L 64.0,67.0 L 80.0,48.0
+              L 93.0,48.0 L 93.0,74.0 L 82.0,74.0 L 82.0,60.0 L 66.0,78.0 L 62.0,78.0
+              L 46.0,60.0 L 46.0,74.0 L 35.0,74.0
+          trace:
+            cycles_per_second: 0.3
+            trail_fraction: 0.8
+            ghost_count: 1
+            ghost_spacing: 0.5
+            head_radius: 0.0
+          color: '#00ff00'
+          color_locked: false
+          color_flow:
+            source: angle
+            swing_degrees: 90.0
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.493
+          base_scale: 0.51
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        - id: shape-4
+          role: vocals
+          geometry:
+            family: path
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            path_data: M 35.0,87.0 L 93.0,87.0 L 93.0,95.0 L 35.0,95.0 L 35.0,87.0
+          trace:
+            cycles_per_second: 0.3
+            trail_fraction: 0.8
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#b861ff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.631
+          base_scale: 0.46
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        library_source:
+          actor_id: maricopa-records
+          revision: 040a93480c1fc3618846f4090a7b32395211a6ad4fc02068e0a91a70154b9c30
+      song-title:
+        id: song-title
+        name: Unreasonably Quiet (title)
+        description: Auto-generated title layer for “Unreasonably Quiet”.
+        kind: spirogram
+        character: vocals
+        components:
+        - id: title
+          role: vocals
+          geometry:
+            family: text
+            rotation: inside
+            phase: 0.0
+            samples: 300
+            path_data: M 188.0,-1493.0 L 573.0,-1493.0 L 573.0,-598.0 Q 573.0,-413.0
+              633.5,-333.5 Q 694.0,-254.0 831.0,-254.0 Q 969.0,-254.0 1029.5,-333.5
+              Q 1090.0,-413.0 1090.0,-598.0 L 1090.0,-1493.0 L 1475.0,-1493.0 L 1475.0,-598.0
+              Q 1475.0,-281.0 1316.0,-126.0 Q 1157.0,29.0 831.0,29.0 Q 506.0,29.0
+              347.0,-126.0 Q 188.0,-281.0 188.0,-598.0 L 188.0,-1493.0 M 2961.0,-682.0
+              L 2961.0,0.0 L 2601.0,0.0 L 2601.0,-111.0 L 2601.0,-522.0 Q 2601.0,-667.0
+              2594.5,-722.0 Q 2588.0,-777.0 2572.0,-803.0 Q 2551.0,-838.0 2515.0,-857.5
+              Q 2479.0,-877.0 2433.0,-877.0 Q 2321.0,-877.0 2257.0,-790.5 Q 2193.0,-704.0
+              2193.0,-551.0 L 2193.0,0.0 L 1835.0,0.0 L 1835.0,-1120.0 L 2193.0,-1120.0
+              L 2193.0,-956.0 Q 2274.0,-1054.0 2365.0,-1100.5 Q 2456.0,-1147.0 2566.0,-1147.0
+              Q 2760.0,-1147.0 2860.5,-1028.0 Q 2961.0,-909.0 2961.0,-682.0 M 4125.0,-815.0
+              Q 4078.0,-837.0 4031.5,-847.5 Q 3985.0,-858.0 3938.0,-858.0 Q 3800.0,-858.0
+              3725.5,-769.5 Q 3651.0,-681.0 3651.0,-516.0 L 3651.0,0.0 L 3293.0,0.0
+              L 3293.0,-1120.0 L 3651.0,-1120.0 L 3651.0,-936.0 Q 3720.0,-1046.0 3809.5,-1096.5
+              Q 3899.0,-1147.0 4024.0,-1147.0 Q 4042.0,-1147.0 4063.0,-1145.5 Q 4084.0,-1144.0
+              4124.0,-1139.0 L 4125.0,-815.0 M 5421.0,-563.0 L 5421.0,-461.0 L 4584.0,-461.0
+              Q 4597.0,-335.0 4675.0,-272.0 Q 4753.0,-209.0 4893.0,-209.0 Q 5006.0,-209.0
+              5124.5,-242.5 Q 5243.0,-276.0 5368.0,-344.0 L 5368.0,-68.0 Q 5241.0,-20.0
+              5114.0,4.5 Q 4987.0,29.0 4860.0,29.0 Q 4556.0,29.0 4387.5,-125.5 Q 4219.0,-280.0
+              4219.0,-559.0 Q 4219.0,-833.0 4384.5,-990.0 Q 4550.0,-1147.0 4840.0,-1147.0
+              Q 5104.0,-1147.0 5262.5,-988.0 Q 5421.0,-829.0 5421.0,-563.0 M 5053.0,-682.0
+              Q 5053.0,-784.0 4993.5,-846.5 Q 4934.0,-909.0 4838.0,-909.0 Q 4734.0,-909.0
+              4669.0,-850.5 Q 4604.0,-792.0 4588.0,-682.0 L 5053.0,-682.0 M 6194.0,-504.0
+              Q 6082.0,-504.0 6025.5,-466.0 Q 5969.0,-428.0 5969.0,-354.0 Q 5969.0,-286.0
+              6014.5,-247.5 Q 6060.0,-209.0 6141.0,-209.0 Q 6242.0,-209.0 6311.0,-281.5
+              Q 6380.0,-354.0 6380.0,-463.0 L 6380.0,-504.0 L 6194.0,-504.0 M 6741.0,-639.0
+              L 6741.0,0.0 L 6380.0,0.0 L 6380.0,-166.0 Q 6308.0,-64.0 6218.0,-17.5
+              Q 6128.0,29.0 5999.0,29.0 Q 5825.0,29.0 5716.5,-72.5 Q 5608.0,-174.0
+              5608.0,-336.0 Q 5608.0,-533.0 5743.5,-625.0 Q 5879.0,-717.0 6169.0,-717.0
+              L 6380.0,-717.0 L 6380.0,-745.0 Q 6380.0,-830.0 6313.0,-869.5 Q 6246.0,-909.0
+              6104.0,-909.0 Q 5989.0,-909.0 5890.0,-886.0 Q 5791.0,-863.0 5706.0,-817.0
+              L 5706.0,-1090.0 Q 5821.0,-1118.0 5937.0,-1132.5 Q 6053.0,-1147.0 6169.0,-1147.0
+              Q 6472.0,-1147.0 6606.5,-1027.5 Q 6741.0,-908.0 6741.0,-639.0 M 7949.0,-1085.0
+              L 7949.0,-813.0 Q 7834.0,-861.0 7727.0,-885.0 Q 7620.0,-909.0 7525.0,-909.0
+              Q 7423.0,-909.0 7373.5,-883.5 Q 7324.0,-858.0 7324.0,-805.0 Q 7324.0,-762.0
+              7361.5,-739.0 Q 7399.0,-716.0 7496.0,-705.0 L 7559.0,-696.0 Q 7834.0,-661.0
+              7929.0,-581.0 Q 8024.0,-501.0 8024.0,-330.0 Q 8024.0,-151.0 7892.0,-61.0
+              Q 7760.0,29.0 7498.0,29.0 Q 7387.0,29.0 7268.5,11.5 Q 7150.0,-6.0 7025.0,-41.0
+              L 7025.0,-313.0 Q 7132.0,-261.0 7244.5,-235.0 Q 7357.0,-209.0 7473.0,-209.0
+              Q 7578.0,-209.0 7631.0,-238.0 Q 7684.0,-267.0 7684.0,-324.0 Q 7684.0,-372.0
+              7647.5,-395.5 Q 7611.0,-419.0 7502.0,-432.0 L 7439.0,-440.0 Q 7200.0,-470.0
+              7104.0,-551.0 Q 7008.0,-632.0 7008.0,-797.0 Q 7008.0,-975.0 7130.0,-1061.0
+              Q 7252.0,-1147.0 7504.0,-1147.0 Q 7603.0,-1147.0 7712.0,-1132.0 Q 7821.0,-1117.0
+              7949.0,-1085.0 M 8826.0,-891.0 Q 8707.0,-891.0 8644.5,-805.5 Q 8582.0,-720.0
+              8582.0,-559.0 Q 8582.0,-398.0 8644.5,-312.5 Q 8707.0,-227.0 8826.0,-227.0
+              Q 8943.0,-227.0 9005.0,-312.5 Q 9067.0,-398.0 9067.0,-559.0 Q 9067.0,-720.0
+              9005.0,-805.5 Q 8943.0,-891.0 8826.0,-891.0 M 8826.0,-1147.0 Q 9115.0,-1147.0
+              9277.5,-991.0 Q 9440.0,-835.0 9440.0,-559.0 Q 9440.0,-283.0 9277.5,-127.0
+              Q 9115.0,29.0 8826.0,29.0 Q 8536.0,29.0 8372.5,-127.0 Q 8209.0,-283.0
+              8209.0,-559.0 Q 8209.0,-835.0 8372.5,-991.0 Q 8536.0,-1147.0 8826.0,-1147.0
+              M 10826.0,-682.0 L 10826.0,0.0 L 10466.0,0.0 L 10466.0,-111.0 L 10466.0,-522.0
+              Q 10466.0,-667.0 10459.5,-722.0 Q 10453.0,-777.0 10437.0,-803.0 Q 10416.0,-838.0
+              10380.0,-857.5 Q 10344.0,-877.0 10298.0,-877.0 Q 10186.0,-877.0 10122.0,-790.5
+              Q 10058.0,-704.0 10058.0,-551.0 L 10058.0,0.0 L 9700.0,0.0 L 9700.0,-1120.0
+              L 10058.0,-1120.0 L 10058.0,-956.0 Q 10139.0,-1054.0 10230.0,-1100.5
+              Q 10321.0,-1147.0 10431.0,-1147.0 Q 10625.0,-1147.0 10725.5,-1028.0
+              Q 10826.0,-909.0 10826.0,-682.0 M 11660.0,-504.0 Q 11548.0,-504.0 11491.5,-466.0
+              Q 11435.0,-428.0 11435.0,-354.0 Q 11435.0,-286.0 11480.5,-247.5 Q 11526.0,-209.0
+              11607.0,-209.0 Q 11708.0,-209.0 11777.0,-281.5 Q 11846.0,-354.0 11846.0,-463.0
+              L 11846.0,-504.0 L 11660.0,-504.0 M 12207.0,-639.0 L 12207.0,0.0 L 11846.0,0.0
+              L 11846.0,-166.0 Q 11774.0,-64.0 11684.0,-17.5 Q 11594.0,29.0 11465.0,29.0
+              Q 11291.0,29.0 11182.5,-72.5 Q 11074.0,-174.0 11074.0,-336.0 Q 11074.0,-533.0
+              11209.5,-625.0 Q 11345.0,-717.0 11635.0,-717.0 L 11846.0,-717.0 L 11846.0,-745.0
+              Q 11846.0,-830.0 11779.0,-869.5 Q 11712.0,-909.0 11570.0,-909.0 Q 11455.0,-909.0
+              11356.0,-886.0 Q 11257.0,-863.0 11172.0,-817.0 L 11172.0,-1090.0 Q 11287.0,-1118.0
+              11403.0,-1132.5 Q 11519.0,-1147.0 11635.0,-1147.0 Q 11938.0,-1147.0
+              12072.5,-1027.5 Q 12207.0,-908.0 12207.0,-639.0 M 13136.0,-231.0 Q 13251.0,-231.0
+              13311.5,-315.0 Q 13372.0,-399.0 13372.0,-559.0 Q 13372.0,-719.0 13311.5,-803.0
+              Q 13251.0,-887.0 13136.0,-887.0 Q 13021.0,-887.0 12959.5,-802.5 Q 12898.0,-718.0
+              12898.0,-559.0 Q 12898.0,-400.0 12959.5,-315.5 Q 13021.0,-231.0 13136.0,-231.0
+              M 12898.0,-956.0 Q 12972.0,-1054.0 13062.0,-1100.5 Q 13152.0,-1147.0
+              13269.0,-1147.0 Q 13476.0,-1147.0 13609.0,-982.5 Q 13742.0,-818.0 13742.0,-559.0
+              Q 13742.0,-300.0 13609.0,-135.5 Q 13476.0,29.0 13269.0,29.0 Q 13152.0,29.0
+              13062.0,-17.5 Q 12972.0,-64.0 12898.0,-162.0 L 12898.0,0.0 L 12540.0,0.0
+              L 12540.0,-1556.0 L 12898.0,-1556.0 L 12898.0,-956.0 M 14006.0,-1556.0
+              L 14364.0,-1556.0 L 14364.0,0.0 L 14006.0,0.0 L 14006.0,-1556.0 M 14561.0,-1120.0
+              L 14919.0,-1120.0 L 15220.0,-360.0 L 15476.0,-1120.0 L 15834.0,-1120.0
+              L 15363.0,106.0 Q 15292.0,293.0 15197.5,367.5 Q 15103.0,442.0 14948.0,442.0
+              L 14741.0,442.0 L 14741.0,207.0 L 14853.0,207.0 Q 14944.0,207.0 14985.5,178.0
+              Q 15027.0,149.0 15050.0,74.0 L 15060.0,43.0 L 14561.0,-1120.0 M 17495.0,27.0
+              L 17465.0,27.0 Q 17096.0,27.0 16891.0,-177.0 Q 16686.0,-381.0 16686.0,-745.0
+              Q 16686.0,-1108.0 16890.5,-1314.0 Q 17095.0,-1520.0 17454.0,-1520.0
+              Q 17817.0,-1520.0 18019.5,-1316.0 Q 18222.0,-1112.0 18222.0,-745.0 Q
+              18222.0,-493.0 18114.5,-311.0 Q 18007.0,-129.0 17805.0,-37.0 L 18106.0,299.0
+              L 17739.0,299.0 L 17495.0,27.0 M 17454.0,-1241.0 Q 17278.0,-1241.0 17181.0,-1111.0
+              Q 17084.0,-981.0 17084.0,-745.0 Q 17084.0,-505.0 17179.0,-377.5 Q 17274.0,-250.0
+              17454.0,-250.0 Q 17631.0,-250.0 17728.0,-380.0 Q 17825.0,-510.0 17825.0,-745.0
+              Q 17825.0,-981.0 17728.0,-1111.0 Q 17631.0,-1241.0 17454.0,-1241.0 M
+              18485.0,-436.0 L 18485.0,-1120.0 L 18845.0,-1120.0 L 18845.0,-1008.0
+              Q 18845.0,-917.0 18844.0,-779.5 Q 18843.0,-642.0 18843.0,-596.0 Q 18843.0,-461.0
+              18850.0,-401.5 Q 18857.0,-342.0 18874.0,-315.0 Q 18896.0,-280.0 18931.5,-261.0
+              Q 18967.0,-242.0 19013.0,-242.0 Q 19125.0,-242.0 19189.0,-328.0 Q 19253.0,-414.0
+              19253.0,-567.0 L 19253.0,-1120.0 L 19611.0,-1120.0 L 19611.0,0.0 L 19253.0,0.0
+              L 19253.0,-162.0 Q 19172.0,-64.0 19081.5,-17.5 Q 18991.0,29.0 18882.0,29.0
+              Q 18688.0,29.0 18586.5,-90.0 Q 18485.0,-209.0 18485.0,-436.0 M 19955.0,-1120.0
+              L 20313.0,-1120.0 L 20313.0,0.0 L 19955.0,0.0 L 19955.0,-1120.0 M 19955.0,-1556.0
+              L 20313.0,-1556.0 L 20313.0,-1264.0 L 19955.0,-1264.0 L 19955.0,-1556.0
+              M 21775.0,-563.0 L 21775.0,-461.0 L 20938.0,-461.0 Q 20951.0,-335.0
+              21029.0,-272.0 Q 21107.0,-209.0 21247.0,-209.0 Q 21360.0,-209.0 21478.5,-242.5
+              Q 21597.0,-276.0 21722.0,-344.0 L 21722.0,-68.0 Q 21595.0,-20.0 21468.0,4.5
+              Q 21341.0,29.0 21214.0,29.0 Q 20910.0,29.0 20741.5,-125.5 Q 20573.0,-280.0
+              20573.0,-559.0 Q 20573.0,-833.0 20738.5,-990.0 Q 20904.0,-1147.0 21194.0,-1147.0
+              Q 21458.0,-1147.0 21616.5,-988.0 Q 21775.0,-829.0 21775.0,-563.0 M 21407.0,-682.0
+              Q 21407.0,-784.0 21347.5,-846.5 Q 21288.0,-909.0 21192.0,-909.0 Q 21088.0,-909.0
+              21023.0,-850.5 Q 20958.0,-792.0 20942.0,-682.0 L 21407.0,-682.0 M 22437.0,-1438.0
+              L 22437.0,-1120.0 L 22806.0,-1120.0 L 22806.0,-864.0 L 22437.0,-864.0
+              L 22437.0,-389.0 Q 22437.0,-311.0 22468.0,-283.5 Q 22499.0,-256.0 22591.0,-256.0
+              L 22775.0,-256.0 L 22775.0,0.0 L 22468.0,0.0 Q 22256.0,0.0 22167.5,-88.5
+              Q 22079.0,-177.0 22079.0,-389.0 L 22079.0,-864.0 L 21901.0,-864.0 L
+              21901.0,-1120.0 L 22079.0,-1120.0 L 22079.0,-1438.0 L 22437.0,-1438.0
+          trace:
+            cycles_per_second: 0.3
+            trail_fraction: 0.85
+            ghost_count: 0
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#ffffff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 1.0
+          opacity: 1.0
+          line_width: 2.5
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+      unreasonably-quiet:
+        id: unreasonably-quiet
+        name: Unreasonably Quiet
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape-2
+          role: vocals
+          geometry:
+            family: text
+            rotation: inside
+            phase: 0.0
+            samples: 300
+            path_data: M 188.0,-1493.0 L 573.0,-1493.0 L 573.0,-598.0 Q 573.0,-413.0
+              633.5,-333.5 Q 694.0,-254.0 831.0,-254.0 Q 969.0,-254.0 1029.5,-333.5
+              Q 1090.0,-413.0 1090.0,-598.0 L 1090.0,-1493.0 L 1475.0,-1493.0 L 1475.0,-598.0
+              Q 1475.0,-281.0 1316.0,-126.0 Q 1157.0,29.0 831.0,29.0 Q 506.0,29.0
+              347.0,-126.0 Q 188.0,-281.0 188.0,-598.0 L 188.0,-1493.0 M 2961.0,-682.0
+              L 2961.0,0.0 L 2601.0,0.0 L 2601.0,-111.0 L 2601.0,-522.0 Q 2601.0,-667.0
+              2594.5,-722.0 Q 2588.0,-777.0 2572.0,-803.0 Q 2551.0,-838.0 2515.0,-857.5
+              Q 2479.0,-877.0 2433.0,-877.0 Q 2321.0,-877.0 2257.0,-790.5 Q 2193.0,-704.0
+              2193.0,-551.0 L 2193.0,0.0 L 1835.0,0.0 L 1835.0,-1120.0 L 2193.0,-1120.0
+              L 2193.0,-956.0 Q 2274.0,-1054.0 2365.0,-1100.5 Q 2456.0,-1147.0 2566.0,-1147.0
+              Q 2760.0,-1147.0 2860.5,-1028.0 Q 2961.0,-909.0 2961.0,-682.0 M 4125.0,-815.0
+              Q 4078.0,-837.0 4031.5,-847.5 Q 3985.0,-858.0 3938.0,-858.0 Q 3800.0,-858.0
+              3725.5,-769.5 Q 3651.0,-681.0 3651.0,-516.0 L 3651.0,0.0 L 3293.0,0.0
+              L 3293.0,-1120.0 L 3651.0,-1120.0 L 3651.0,-936.0 Q 3720.0,-1046.0 3809.5,-1096.5
+              Q 3899.0,-1147.0 4024.0,-1147.0 Q 4042.0,-1147.0 4063.0,-1145.5 Q 4084.0,-1144.0
+              4124.0,-1139.0 L 4125.0,-815.0 M 5421.0,-563.0 L 5421.0,-461.0 L 4584.0,-461.0
+              Q 4597.0,-335.0 4675.0,-272.0 Q 4753.0,-209.0 4893.0,-209.0 Q 5006.0,-209.0
+              5124.5,-242.5 Q 5243.0,-276.0 5368.0,-344.0 L 5368.0,-68.0 Q 5241.0,-20.0
+              5114.0,4.5 Q 4987.0,29.0 4860.0,29.0 Q 4556.0,29.0 4387.5,-125.5 Q 4219.0,-280.0
+              4219.0,-559.0 Q 4219.0,-833.0 4384.5,-990.0 Q 4550.0,-1147.0 4840.0,-1147.0
+              Q 5104.0,-1147.0 5262.5,-988.0 Q 5421.0,-829.0 5421.0,-563.0 M 5053.0,-682.0
+              Q 5053.0,-784.0 4993.5,-846.5 Q 4934.0,-909.0 4838.0,-909.0 Q 4734.0,-909.0
+              4669.0,-850.5 Q 4604.0,-792.0 4588.0,-682.0 L 5053.0,-682.0 M 6194.0,-504.0
+              Q 6082.0,-504.0 6025.5,-466.0 Q 5969.0,-428.0 5969.0,-354.0 Q 5969.0,-286.0
+              6014.5,-247.5 Q 6060.0,-209.0 6141.0,-209.0 Q 6242.0,-209.0 6311.0,-281.5
+              Q 6380.0,-354.0 6380.0,-463.0 L 6380.0,-504.0 L 6194.0,-504.0 M 6741.0,-639.0
+              L 6741.0,0.0 L 6380.0,0.0 L 6380.0,-166.0 Q 6308.0,-64.0 6218.0,-17.5
+              Q 6128.0,29.0 5999.0,29.0 Q 5825.0,29.0 5716.5,-72.5 Q 5608.0,-174.0
+              5608.0,-336.0 Q 5608.0,-533.0 5743.5,-625.0 Q 5879.0,-717.0 6169.0,-717.0
+              L 6380.0,-717.0 L 6380.0,-745.0 Q 6380.0,-830.0 6313.0,-869.5 Q 6246.0,-909.0
+              6104.0,-909.0 Q 5989.0,-909.0 5890.0,-886.0 Q 5791.0,-863.0 5706.0,-817.0
+              L 5706.0,-1090.0 Q 5821.0,-1118.0 5937.0,-1132.5 Q 6053.0,-1147.0 6169.0,-1147.0
+              Q 6472.0,-1147.0 6606.5,-1027.5 Q 6741.0,-908.0 6741.0,-639.0 M 7949.0,-1085.0
+              L 7949.0,-813.0 Q 7834.0,-861.0 7727.0,-885.0 Q 7620.0,-909.0 7525.0,-909.0
+              Q 7423.0,-909.0 7373.5,-883.5 Q 7324.0,-858.0 7324.0,-805.0 Q 7324.0,-762.0
+              7361.5,-739.0 Q 7399.0,-716.0 7496.0,-705.0 L 7559.0,-696.0 Q 7834.0,-661.0
+              7929.0,-581.0 Q 8024.0,-501.0 8024.0,-330.0 Q 8024.0,-151.0 7892.0,-61.0
+              Q 7760.0,29.0 7498.0,29.0 Q 7387.0,29.0 7268.5,11.5 Q 7150.0,-6.0 7025.0,-41.0
+              L 7025.0,-313.0 Q 7132.0,-261.0 7244.5,-235.0 Q 7357.0,-209.0 7473.0,-209.0
+              Q 7578.0,-209.0 7631.0,-238.0 Q 7684.0,-267.0 7684.0,-324.0 Q 7684.0,-372.0
+              7647.5,-395.5 Q 7611.0,-419.0 7502.0,-432.0 L 7439.0,-440.0 Q 7200.0,-470.0
+              7104.0,-551.0 Q 7008.0,-632.0 7008.0,-797.0 Q 7008.0,-975.0 7130.0,-1061.0
+              Q 7252.0,-1147.0 7504.0,-1147.0 Q 7603.0,-1147.0 7712.0,-1132.0 Q 7821.0,-1117.0
+              7949.0,-1085.0 M 8826.0,-891.0 Q 8707.0,-891.0 8644.5,-805.5 Q 8582.0,-720.0
+              8582.0,-559.0 Q 8582.0,-398.0 8644.5,-312.5 Q 8707.0,-227.0 8826.0,-227.0
+              Q 8943.0,-227.0 9005.0,-312.5 Q 9067.0,-398.0 9067.0,-559.0 Q 9067.0,-720.0
+              9005.0,-805.5 Q 8943.0,-891.0 8826.0,-891.0 M 8826.0,-1147.0 Q 9115.0,-1147.0
+              9277.5,-991.0 Q 9440.0,-835.0 9440.0,-559.0 Q 9440.0,-283.0 9277.5,-127.0
+              Q 9115.0,29.0 8826.0,29.0 Q 8536.0,29.0 8372.5,-127.0 Q 8209.0,-283.0
+              8209.0,-559.0 Q 8209.0,-835.0 8372.5,-991.0 Q 8536.0,-1147.0 8826.0,-1147.0
+              M 10826.0,-682.0 L 10826.0,0.0 L 10466.0,0.0 L 10466.0,-111.0 L 10466.0,-522.0
+              Q 10466.0,-667.0 10459.5,-722.0 Q 10453.0,-777.0 10437.0,-803.0 Q 10416.0,-838.0
+              10380.0,-857.5 Q 10344.0,-877.0 10298.0,-877.0 Q 10186.0,-877.0 10122.0,-790.5
+              Q 10058.0,-704.0 10058.0,-551.0 L 10058.0,0.0 L 9700.0,0.0 L 9700.0,-1120.0
+              L 10058.0,-1120.0 L 10058.0,-956.0 Q 10139.0,-1054.0 10230.0,-1100.5
+              Q 10321.0,-1147.0 10431.0,-1147.0 Q 10625.0,-1147.0 10725.5,-1028.0
+              Q 10826.0,-909.0 10826.0,-682.0 M 11660.0,-504.0 Q 11548.0,-504.0 11491.5,-466.0
+              Q 11435.0,-428.0 11435.0,-354.0 Q 11435.0,-286.0 11480.5,-247.5 Q 11526.0,-209.0
+              11607.0,-209.0 Q 11708.0,-209.0 11777.0,-281.5 Q 11846.0,-354.0 11846.0,-463.0
+              L 11846.0,-504.0 L 11660.0,-504.0 M 12207.0,-639.0 L 12207.0,0.0 L 11846.0,0.0
+              L 11846.0,-166.0 Q 11774.0,-64.0 11684.0,-17.5 Q 11594.0,29.0 11465.0,29.0
+              Q 11291.0,29.0 11182.5,-72.5 Q 11074.0,-174.0 11074.0,-336.0 Q 11074.0,-533.0
+              11209.5,-625.0 Q 11345.0,-717.0 11635.0,-717.0 L 11846.0,-717.0 L 11846.0,-745.0
+              Q 11846.0,-830.0 11779.0,-869.5 Q 11712.0,-909.0 11570.0,-909.0 Q 11455.0,-909.0
+              11356.0,-886.0 Q 11257.0,-863.0 11172.0,-817.0 L 11172.0,-1090.0 Q 11287.0,-1118.0
+              11403.0,-1132.5 Q 11519.0,-1147.0 11635.0,-1147.0 Q 11938.0,-1147.0
+              12072.5,-1027.5 Q 12207.0,-908.0 12207.0,-639.0 M 13136.0,-231.0 Q 13251.0,-231.0
+              13311.5,-315.0 Q 13372.0,-399.0 13372.0,-559.0 Q 13372.0,-719.0 13311.5,-803.0
+              Q 13251.0,-887.0 13136.0,-887.0 Q 13021.0,-887.0 12959.5,-802.5 Q 12898.0,-718.0
+              12898.0,-559.0 Q 12898.0,-400.0 12959.5,-315.5 Q 13021.0,-231.0 13136.0,-231.0
+              M 12898.0,-956.0 Q 12972.0,-1054.0 13062.0,-1100.5 Q 13152.0,-1147.0
+              13269.0,-1147.0 Q 13476.0,-1147.0 13609.0,-982.5 Q 13742.0,-818.0 13742.0,-559.0
+              Q 13742.0,-300.0 13609.0,-135.5 Q 13476.0,29.0 13269.0,29.0 Q 13152.0,29.0
+              13062.0,-17.5 Q 12972.0,-64.0 12898.0,-162.0 L 12898.0,0.0 L 12540.0,0.0
+              L 12540.0,-1556.0 L 12898.0,-1556.0 L 12898.0,-956.0 M 14006.0,-1556.0
+              L 14364.0,-1556.0 L 14364.0,0.0 L 14006.0,0.0 L 14006.0,-1556.0 M 14561.0,-1120.0
+              L 14919.0,-1120.0 L 15220.0,-360.0 L 15476.0,-1120.0 L 15834.0,-1120.0
+              L 15363.0,106.0 Q 15292.0,293.0 15197.5,367.5 Q 15103.0,442.0 14948.0,442.0
+              L 14741.0,442.0 L 14741.0,207.0 L 14853.0,207.0 Q 14944.0,207.0 14985.5,178.0
+              Q 15027.0,149.0 15050.0,74.0 L 15060.0,43.0 L 14561.0,-1120.0 M 17495.0,27.0
+              L 17465.0,27.0 Q 17096.0,27.0 16891.0,-177.0 Q 16686.0,-381.0 16686.0,-745.0
+              Q 16686.0,-1108.0 16890.5,-1314.0 Q 17095.0,-1520.0 17454.0,-1520.0
+              Q 17817.0,-1520.0 18019.5,-1316.0 Q 18222.0,-1112.0 18222.0,-745.0 Q
+              18222.0,-493.0 18114.5,-311.0 Q 18007.0,-129.0 17805.0,-37.0 L 18106.0,299.0
+              L 17739.0,299.0 L 17495.0,27.0 M 17454.0,-1241.0 Q 17278.0,-1241.0 17181.0,-1111.0
+              Q 17084.0,-981.0 17084.0,-745.0 Q 17084.0,-505.0 17179.0,-377.5 Q 17274.0,-250.0
+              17454.0,-250.0 Q 17631.0,-250.0 17728.0,-380.0 Q 17825.0,-510.0 17825.0,-745.0
+              Q 17825.0,-981.0 17728.0,-1111.0 Q 17631.0,-1241.0 17454.0,-1241.0 M
+              18485.0,-436.0 L 18485.0,-1120.0 L 18845.0,-1120.0 L 18845.0,-1008.0
+              Q 18845.0,-917.0 18844.0,-779.5 Q 18843.0,-642.0 18843.0,-596.0 Q 18843.0,-461.0
+              18850.0,-401.5 Q 18857.0,-342.0 18874.0,-315.0 Q 18896.0,-280.0 18931.5,-261.0
+              Q 18967.0,-242.0 19013.0,-242.0 Q 19125.0,-242.0 19189.0,-328.0 Q 19253.0,-414.0
+              19253.0,-567.0 L 19253.0,-1120.0 L 19611.0,-1120.0 L 19611.0,0.0 L 19253.0,0.0
+              L 19253.0,-162.0 Q 19172.0,-64.0 19081.5,-17.5 Q 18991.0,29.0 18882.0,29.0
+              Q 18688.0,29.0 18586.5,-90.0 Q 18485.0,-209.0 18485.0,-436.0 M 19955.0,-1120.0
+              L 20313.0,-1120.0 L 20313.0,0.0 L 19955.0,0.0 L 19955.0,-1120.0 M 19955.0,-1556.0
+              L 20313.0,-1556.0 L 20313.0,-1264.0 L 19955.0,-1264.0 L 19955.0,-1556.0
+              M 21775.0,-563.0 L 21775.0,-461.0 L 20938.0,-461.0 Q 20951.0,-335.0
+              21029.0,-272.0 Q 21107.0,-209.0 21247.0,-209.0 Q 21360.0,-209.0 21478.5,-242.5
+              Q 21597.0,-276.0 21722.0,-344.0 L 21722.0,-68.0 Q 21595.0,-20.0 21468.0,4.5
+              Q 21341.0,29.0 21214.0,29.0 Q 20910.0,29.0 20741.5,-125.5 Q 20573.0,-280.0
+              20573.0,-559.0 Q 20573.0,-833.0 20738.5,-990.0 Q 20904.0,-1147.0 21194.0,-1147.0
+              Q 21458.0,-1147.0 21616.5,-988.0 Q 21775.0,-829.0 21775.0,-563.0 M 21407.0,-682.0
+              Q 21407.0,-784.0 21347.5,-846.5 Q 21288.0,-909.0 21192.0,-909.0 Q 21088.0,-909.0
+              21023.0,-850.5 Q 20958.0,-792.0 20942.0,-682.0 L 21407.0,-682.0 M 22437.0,-1438.0
+              L 22437.0,-1120.0 L 22806.0,-1120.0 L 22806.0,-864.0 L 22437.0,-864.0
+              L 22437.0,-389.0 Q 22437.0,-311.0 22468.0,-283.5 Q 22499.0,-256.0 22591.0,-256.0
+              L 22775.0,-256.0 L 22775.0,0.0 L 22468.0,0.0 Q 22256.0,0.0 22167.5,-88.5
+              Q 22079.0,-177.0 22079.0,-389.0 L 22079.0,-864.0 L 21901.0,-864.0 L
+              21901.0,-1120.0 L 22079.0,-1120.0 L 22079.0,-1438.0 L 22437.0,-1438.0
+          trace:
+            cycles_per_second: 0.8
+            trail_fraction: 0.8
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#0704ec'
+          color_locked: false
+          color_flow:
+            source: radius
+            swing_degrees: 90.0
+          spatial:
+            mode: tilted
+            amplitude: 0.35
+            windings: 5
+            phase_degrees: 0.0
+            pitch_degrees: 28.0
+            yaw_degrees: -18.0
+            orientation_mode: continuous
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 56.9
+            pitch_step_degrees: 0.0
+            yaw_step_degrees: 15.0
+            retained_circuits: 0
+            retention_fade: 0.82
+          z_index: 0
+          anchor_x: 0.476
+          anchor_y: 0.47
+          base_scale: 1.0
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: normal
+          drivers: {}
+        library_source:
+          actor_id: unreasonably-quiet
+          revision: b5590ae17870c512920e75ea2fc6dd582df87ae88aa0472529661396b1817773
+      bloom:
+        id: bloom
+        name: Bloom
+        description: Tight inside-rotation bloom with a fast cycle and bright head.
+          Authored for the You Don't Say guitar solo.
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 221.0
+            moving_radius: 64.0
+            pen_offset: 169.0
+            rotation: inside
+            phase: 0.0
+            samples: 1600
+          trace:
+            cycles_per_second: 0.11
+            trail_fraction: 0.34
+            ghost_count: 1
+            ghost_spacing: 0.09
+            head_radius: 5.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.78
+          anchor_y: 0.31
+          base_scale: 0.84
+          opacity: 0.84
+          line_width: 2.8
+          presentation: animated_trace
+          rotation_degrees_per_second: -1.9
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: bloom
+          revision: 4f41c751fa514f194f1bb856e9d3772bde7049cbcecc402cae052c2cae13a31c
+      crown:
+        id: crown
+        name: Crown
+        description: Compact inside-rotation crown with a short trail and no ghost
+          tail. Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: bass
+        components:
+        - id: shape
+          role: bass
+          geometry:
+            family: spirogram
+            fixed_radius: 229.0
+            moving_radius: 76.0
+            pen_offset: 173.0
+            rotation: inside
+            phase: 0.0
+            samples: 1500
+          trace:
+            cycles_per_second: 0.062
+            trail_fraction: 0.28
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 4.0
+          color: '#4c78ff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.08
+          anchor_y: 0.38
+          base_scale: 0.78
+          opacity: 0.8
+          line_width: 2.6
+          presentation: animated_trace
+          rotation_degrees_per_second: 1.2
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: bass.energy
+            opacity: master.energy
+            color: bass.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: crown
+          revision: 0fa9f937087dde9878e3da19902d096bd9c25bbe1d7d0267d0f28004adeb9374
+      halo:
+        id: halo
+        name: Halo
+        description: Oversized, low-opacity background halo with a slow reverse rotation
+          and three ghosts. Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 271.0
+            moving_radius: 93.0
+            pen_offset: 204.0
+            rotation: outside
+            phase: 0.0
+            samples: 1900
+          trace:
+            cycles_per_second: 0.046
+            trail_fraction: 0.5
+            ghost_count: 3
+            ghost_spacing: 0.07
+            head_radius: 0.0
+          color: '#8c5cff'
+          color_locked: false
+          z_index: -100
+          anchor_x: 0.5
+          anchor_y: 0.38
+          base_scale: 1.72
+          opacity: 0.18
+          line_width: 1.4
+          presentation: animated_trace
+          rotation_degrees_per_second: -0.55
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: vocals.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: halo
+          revision: 23c7e449e289b39a999dfefc8f36bc6368934568c5ece4a4e37e8f646732f700
+      ribbon:
+        id: ribbon
+        name: Ribbon
+        description: Wide outside-rotation ribbon with a long trail and paired ghosts.
+          Authored for the You Don't Say guitar solo.
+        kind: spirogram
+        character: instruments
+        components:
+        - id: shape
+          role: instruments
+          geometry:
+            family: spirogram
+            fixed_radius: 257.0
+            moving_radius: 71.0
+            pen_offset: 191.0
+            rotation: outside
+            phase: 0.0
+            samples: 1800
+          trace:
+            cycles_per_second: 0.074
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 4.5
+          color: '#8c5cff'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.16
+          anchor_y: 0.38
+          base_scale: 1.06
+          opacity: 0.8
+          line_width: 2.6
+          presentation: animated_trace
+          rotation_degrees_per_second: 1.4
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: instruments.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: ribbon
+          revision: 41dafa85e44167e795df84b2668dcaa8e2765f6bd3bd1bae4a1af6ffeedbb27a
+      spark:
+        id: spark
+        name: Spark
+        description: Small fast-spinning outside-rotation spark with a clipped trail.
+          Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: drums
+        components:
+        - id: shape
+          role: drums
+          geometry:
+            family: spirogram
+            fixed_radius: 181.0
+            moving_radius: 53.0
+            pen_offset: 137.0
+            rotation: outside
+            phase: 0.0
+            samples: 1200
+          trace:
+            cycles_per_second: 0.15
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.07
+            head_radius: 5.0
+          color: '#ffd166'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.92
+          anchor_y: 0.39
+          base_scale: 0.62
+          opacity: 0.82
+          line_width: 2.2
+          presentation: animated_trace
+          rotation_degrees_per_second: 2.8
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: drums.energy
+            opacity: master.energy
+            color: instruments.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: spark
+          revision: 1abc533efcc13f68df936fd958ed568b36972413543b42e60358c0289fec7807
+      y-axis-flower:
+        id: y-axis-flower
+        name: Y Axis Flower
+        description: ''
+        kind: spirogram
+        character: vocals
+        components:
+        - id: Y Axis Flower
+          role: vocals
+          geometry:
+            family: rose
+            rotation: inside
+            phase: 0.0
+            samples: 900
+            rose_n: 5
+            rose_d: 1
+          trace:
+            cycles_per_second: 0.5
+            trail_fraction: 0.24
+            ghost_count: 1
+            ghost_spacing: 0.08
+            head_radius: 0.0
+          color: '#ff5fd2'
+          color_locked: false
+          color_flow:
+            source: velocity
+            swing_degrees: 90.0
+          spatial:
+            mode: tilted
+            amplitude: 0.35
+            windings: 5
+            phase_degrees: 20.0
+            pitch_degrees: 0.0
+            yaw_degrees: 0.0
+            orientation_mode: circuit_step
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            pitch_step_degrees: 0.0
+            yaw_step_degrees: 15.0
+            retained_circuits: 23
+            retention_fade: 1.0
+          z_index: 0
+          anchor_x: 0.5
+          anchor_y: 0.5
+          base_scale: 1.0
+          opacity: 0.8
+          line_width: 2.0
+          presentation: animated_trace
+          rotation_degrees_per_second: 0.0
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers: {}
+        library_source:
+          actor_id: y-axis-flower
+          revision: 39049e3bf32ee1272e9a8c9a0bc97dc0cfb87bc8060e821b76d2a2c68004b6a9
+      sun:
+        id: sun
+        name: Sun
+        description: Centered high-opacity sun with a heavy line and a wide trail.
+          Authored for the You Don't Say final chorus.
+        kind: spirogram
+        character: vocals
+        components:
+        - id: shape
+          role: vocals
+          geometry:
+            family: spirogram
+            fixed_radius: 217.0
+            moving_radius: 59.0
+            pen_offset: 174.0
+            rotation: inside
+            phase: 0.0
+            samples: 1700
+          trace:
+            cycles_per_second: 0.094
+            trail_fraction: 0.42
+            ghost_count: 2
+            ghost_spacing: 0.08
+            head_radius: 5.0
+          color: '#ff5fd2'
+          color_locked: false
+          z_index: 0
+          anchor_x: 0.51
+          anchor_y: 0.29
+          base_scale: 0.76
+          opacity: 0.88
+          line_width: 3.0
+          presentation: animated_trace
+          rotation_degrees_per_second: -1.7
+          rotation_wobble_degrees: 0.0
+          hue_shift_degrees: 0.0
+          blend_mode: screen
+          drivers:
+            scale: vocals.energy
+            opacity: vocals.energy
+            color: vocals.energy
+            pulse: drums.accent
+        library_source:
+          actor_id: sun
+          revision: 1a8a9d0758f36c8e17836f78aea09e39242cd7234d49465bd64ef47a66341a3c
+    section_casts:
+      intro:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: crown
+          direction:
+            anchor_x: 0.909
+            anchor_y: 0.612
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 2.0
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: appearance-2
+          actor: halo
+          direction:
+            anchor_x: 0.494
+            anchor_y: 0.62
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 3.7
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+      verse:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: halo
+          direction:
+            anchor_x: 0.548
+            anchor_y: 0.604
+            scale: 0.8
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 1.0
+            blend_mode: normal
+            presentation: animated_trace
+            trace:
+              trail_fraction: 0.2
+              ghost_count: 0
+              head_radius: 0.0
+      pre-chorus:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: crown
+          direction:
+            anchor_x: 0.646
+            anchor_y: 0.527
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: appearance-2
+          actor: sun
+          direction:
+            anchor_x: 0.767
+            anchor_y: 0.632
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+      chorus:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: y-axis-flower
+          direction:
+            anchor_x: 0.78
+            anchor_y: 0.364
+            scale: 0.7
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 1.0
+            visible: true
+            color: '#2409f1'
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: appearance-2
+          actor: ribbon
+          direction:
+            anchor_x: 0.537
+            anchor_y: 0.502
+            scale: 0.7
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 1.0
+            visible: true
+            color: '#8c0303'
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              head_radius: 0.0
+        - id: appearance-3
+          actor: unreasonably-quiet
+          direction:
+            anchor_x: 0.58
+            anchor_y: 0.172
+            scale: 1.4
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            z_index: 99
+            visible: true
+            presentation: animated_trace
+            trace: {}
+      instrumental:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: ribbon
+          direction:
+            anchor_x: 0.942
+            anchor_y: 0.651
+            scale: 0.8
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 2.0
+            visible: true
+            color: '#8904f6'
+            line_width: 1.0
+            blend_mode: screen
+            presentation: animated_trace
+            trace:
+              cycles_per_second: 0.4
+              trail_fraction: 0.2
+              head_radius: 0.0
+    cast_overrides:
+      instrumental:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: ribbon
+          direction:
+            anchor_x: 1.027
+            anchor_y: 0.626
+            scale: 0.8
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 2.0
+            visible: true
+            color: '#8904f6'
+            line_width: 1.0
+            blend_mode: screen
+            presentation: animated_trace
+            trace:
+              cycles_per_second: 0.4
+              trail_fraction: 0.2
+              head_radius: 0.0
+        - id: appearance-2
+          actor: spark
+          direction:
+            anchor_x: -0.172
+            anchor_y: 0.479
+            scale: 1.0
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 1.0
+            visible: true
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              ghost_count: 1
+              ghost_spacing: 1.0
+              head_radius: 0.0
+      outro:
+        casting:
+          source: manual
+          seed: 4821
+          generator_version: 1
+        actors:
+        - id: appearance-1
+          actor: ribbon
+          direction:
+            anchor_x: 1.084
+            anchor_y: 0.618
+            scale: 1.1
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            color: '#ffa200'
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              cycles_per_second: 1.0
+              trail_fraction: 1.0
+              ghost_count: 1
+              ghost_spacing: 1.0
+              head_radius: 0.0
+        - id: appearance-2
+          actor: spark
+          direction:
+            anchor_x: -0.203
+            anchor_y: 0.606
+            scale: 1.6
+            opacity: 1.0
+            rotation_offset_degrees_per_second: 0.0
+            rotation_wobble_degrees: 0.0
+            pitch_offset_degrees: 0.0
+            yaw_offset_degrees: 0.0
+            pitch_degrees_per_second: 0.0
+            yaw_degrees_per_second: 0.0
+            hue_shift_degrees: 0.0
+            visible: true
+            color: '#1e01f9'
+            line_width: 1.0
+            presentation: animated_trace
+            trace:
+              cycles_per_second: 1.0
+              trail_fraction: 1.0
+              ghost_count: 1
+              ghost_spacing: 1.0
+              head_radius: 0.0
+    section_transitions: {}
+    transition_overrides: {}

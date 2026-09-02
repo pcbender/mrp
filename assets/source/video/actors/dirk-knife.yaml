@@ -35,7 +35,7 @@ actor:
     blend_mode: screen
     drivers: {}
   - id: shape-4
-    role: vocals
+    role: bass
     geometry:
       family: path
       rotation: inside
@@ -50,6 +50,9 @@ actor:
       head_radius: 0.0
     color: '#616bff'
     color_locked: false
+    color_flow:
+      source: velocity
+      swing_degrees: 90.0
     z_index: 0
     anchor_x: 0.5
     anchor_y: 0.336
@@ -63,7 +66,7 @@ actor:
     blend_mode: screen
     drivers: {}
   - id: shape-5
-    role: vocals
+    role: master
     geometry:
       family: path
       rotation: inside
@@ -91,7 +94,7 @@ actor:
     blend_mode: screen
     drivers: {}
   - id: shape-6
-    role: vocals
+    role: instruments
     geometry:
       family: path
       rotation: inside
@@ -120,7 +123,7 @@ actor:
     blend_mode: screen
     drivers: {}
   - id: shape-7
-    role: vocals
+    role: drums
     geometry:
       family: path
       rotation: inside
@@ -149,7 +152,7 @@ actor:
     blend_mode: screen
     drivers: {}
   - id: shape-8
-    role: vocals
+    role: bass
     geometry:
       family: path
       rotation: inside
@@ -178,7 +181,7 @@ actor:
     blend_mode: screen
     drivers: {}
   - id: shape-9
-    role: vocals
+    role: drums
     geometry:
       family: path
       rotation: inside
@@ -187,7 +190,7 @@ actor:
       path_data: M 266.0,308.0 L 246.0,326.0 L 266.0,344.0 L 246.0,362.0 L 266.0,380.0
         L 246.0,398.0 L 266.0,414.0
     trace:
-      cycles_per_second: 0.001
+      cycles_per_second: 0.5
       trail_fraction: 1.0
       ghost_count: 0
       ghost_spacing: 0.08

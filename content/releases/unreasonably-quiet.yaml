@@ -5,7 +5,7 @@ release:
   artist_id: michael-anthony-rose
   model: song
   release_type: single
-  status: draft
+  status: live
   release_date: '2026-08-30'
   label: Maricopa Records
   publisher: Maricopa Publishing
@@ -150,6 +150,48 @@ release:
       model: hero
       persona: liner
       target: liner
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Unreasonably Quiet/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Unreasonably Quiet/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Unreasonably Quiet/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Unreasonably Quiet/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Unreasonably Quiet/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Unreasonably Quiet/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Unreasonably Quiet/Vocals.wav
+      enabled: true
+      label: Vocals
+    music_video:
+      project: assets/source/video/michael-anthony-rose--unreasonably-quiet/project.yaml
+      status: published
+      opt_in: true
+      public_url: /media/music-videos/michael-anthony-rose--unreasonably-quiet/72bb28417eb7005dfcf61e27ea8ac9fb4c4e963bd13772a9fe4a6acf58cefb3e/video.mp4
+      poster: /media/music-videos/michael-anthony-rose--unreasonably-quiet/72bb28417eb7005dfcf61e27ea8ac9fb4c4e963bd13772a9fe4a6acf58cefb3e/poster-6a93ebddfbde1c2409f831a41c6f5097502dcd87353c570f49a1247a30f6f122.jpg
   distributor: landr
   seo:
     title: Unreasonably Quiet
