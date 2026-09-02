@@ -232,6 +232,19 @@ cover the complete media lifecycle.
   compiler beyond the initial spirogram implementation to imported still,
   vector, or motion assets, with the same pinned-library, private-path, preview,
   and deterministic-render guarantees.
+- Renderer revision in the render fingerprint: fold `source_renderer_revision`
+  (already carried in the manifest) into the preflight input fingerprint so
+  renders and approvals go stale when the renderer itself changes. Today the
+  fingerprint covers inputs only — audio, stems, lyrics, project, actors — so a
+  renderer-code change yields a materially different video under an identical
+  fingerprint. Hit live 2026-09-02 after PRs #144/#145 fixed text-actor glyph
+  drift: the corrected re-render and the superseded one both reported
+  `current` / `stale: false`, and the old `logs/approval.json` still counted as
+  current, so `video_rendering.html`'s `not rendering.approval.current` guard
+  hid the Approve button on every row until that file was deleted by hand.
+  Open decision: whether merging such a change should mark existing renders
+  stale immediately. A "revoke approval" action is the cheap safety valve if
+  the fingerprint change is judged too blunt.
 
 ### General admin follow-ups
 
