@@ -190,8 +190,8 @@ release:
       project: assets/source/video/michael-anthony-rose--unreasonably-quiet/project.yaml
       status: published
       opt_in: true
-      public_url: /media/music-videos/michael-anthony-rose--unreasonably-quiet/72bb28417eb7005dfcf61e27ea8ac9fb4c4e963bd13772a9fe4a6acf58cefb3e/video.mp4
-      poster: /media/music-videos/michael-anthony-rose--unreasonably-quiet/72bb28417eb7005dfcf61e27ea8ac9fb4c4e963bd13772a9fe4a6acf58cefb3e/poster-6a93ebddfbde1c2409f831a41c6f5097502dcd87353c570f49a1247a30f6f122.jpg
+      public_url: /media/music-videos/michael-anthony-rose--unreasonably-quiet/a04070fa35f42cd59242b92341bab0bfc17e715b792e2056d7b2d92af7aad7f8/video.mp4
+      poster: /media/music-videos/michael-anthony-rose--unreasonably-quiet/a04070fa35f42cd59242b92341bab0bfc17e715b792e2056d7b2d92af7aad7f8/poster-6a93ebddfbde1c2409f831a41c6f5097502dcd87353c570f49a1247a30f6f122.jpg
   distributor: landr
   seo:
     title: Unreasonably Quiet
