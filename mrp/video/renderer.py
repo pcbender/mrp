@@ -67,6 +67,16 @@ class LayerCurve:
     phase_offset: float
     hue_values: NDArray[np.float32] | None = None
     """Static per-point color-flow values in [0, 1]; None for solid layers."""
+    anchor_phase: float = 0.0
+    """Phase for the layer's anchor wander, shared by every curve it built.
+
+    A text layer expands into one curve per glyph contour, each with its own
+    phase_offset so the letters trace independently. The anchor wander is a
+    property of the actor rather than of one contour, so it reads from this
+    layer-wide phase instead — otherwise every glyph drifts on its own and
+    the word shears apart. For single-curve families this equals
+    phase_offset.
+    """
 
 
 @dataclass(frozen=True, slots=True)
@@ -185,6 +195,7 @@ def _curve_from_points(
     key: str,
     seed: int,
     normalize: bool,
+    anchor_key: str | None = None,
 ) -> LayerCurve | None:
     points = np.asarray([(point.x, point.y) for point in generated], dtype=np.float32)
     extent = float(np.max(np.linalg.norm(points, axis=1), initial=0))
@@ -215,6 +226,7 @@ def _curve_from_points(
         points=points,
         phase_offset=_phase_offset(seed, key),
         hue_values=hue_values,
+        anchor_phase=_phase_offset(seed, anchor_key if anchor_key else key),
     )
 
 
@@ -240,7 +252,12 @@ def _build_curves(
             for index, contour in enumerate(contours)
             if (
                 curve := _curve_from_points(
-                    layer, contour, key=f"{prefix}:{index}", seed=seed, normalize=False
+                    layer,
+                    contour,
+                    key=f"{prefix}:{index}",
+                    seed=seed,
+                    normalize=False,
+                    anchor_key=prefix,
                 )
             )
             is not None
@@ -671,7 +688,7 @@ def _layer_anchor(
     anchor_drift: float,
 ) -> tuple[float, float]:
     config = curve.config
-    phase = curve.phase_offset
+    phase = curve.anchor_phase
     anchor_x = 0.5 + (config.anchor_x - 0.5) * spatial_spread
     anchor_x += math.sin(time_seconds * 0.11 + phase) * anchor_drift
     anchor_y = config.anchor_y
@@ -771,28 +788,45 @@ def _draw_depth_path(
         return
     depth_levels = 8
     fade_levels = 14 if fade else 1
-    segments: dict[tuple[int, int], list[NDArray[np.int32]]] = {}
     last = len(points) - 1
-    for index in range(1, len(points)):
-        depth = float(np.clip((depths[index - 1] + depths[index]) * 0.5, 0, 1))
-        depth_level = min(depth_levels - 1, int(depth * depth_levels))
-        if fade:
-            amount = index / last
-            fade_level = min(fade_levels - 1, int(amount * fade_levels))
-        else:
-            fade_level = 0
-        segments.setdefault((depth_level, fade_level), []).append(
-            points[index - 1 : index + 1]
+
+    # One bucket assignment for the whole path. Scalar np.clip per point was
+    # the hot spot here: a text actor draws ~50 trails a frame and each point
+    # paid numpy's scalar-dispatch overhead. Levels are truncated, matching
+    # int() on the non-negative values these expressions produce.
+    midpoint = np.clip((depths[:-1] + depths[1:]) * 0.5, 0, 1)
+    depth_level = np.minimum(
+        depth_levels - 1, (midpoint * depth_levels).astype(np.int64)
+    )
+    if fade:
+        amount = np.arange(1, len(points), dtype=np.float64) / last
+        fade_level = np.minimum(
+            fade_levels - 1, (amount * fade_levels).astype(np.int64)
         )
-    for (depth_level, fade_level), lines in sorted(segments.items()):
-        depth = (depth_level + 0.5) / depth_levels
-        amount = (fade_level + 1) / fade_levels if fade else 1
+    else:
+        fade_level = np.zeros(last, dtype=np.int64)
+
+    # Segment i spans points[i:i+2]; a stable sort on the packed bucket key
+    # keeps each bucket's segments in ascending index order, and ascending
+    # key order reproduces sorted() over (depth_level, fade_level).
+    segments = np.stack([points[:-1], points[1:]], axis=1).reshape(last, 2, 2)
+    keys = depth_level * fade_levels + fade_level
+    order = np.argsort(keys, kind="stable")
+    sorted_keys = keys[order]
+    starts = np.flatnonzero(
+        np.concatenate([[True], sorted_keys[1:] != sorted_keys[:-1]])
+    )
+    for position, start in enumerate(starts):
+        stop = starts[position + 1] if position + 1 < len(starts) else last
+        key = int(sorted_keys[start])
+        depth = (key // fade_levels + 0.5) / depth_levels
+        amount = (key % fade_levels + 1) / fade_levels if fade else 1
         trail_cue = 0.12 + 0.88 * amount * amount if fade else 1
         intensity = round(255 * peak * trail_cue * (0.55 + 0.45 * depth))
         thickness = max(1, round(line_width * (0.75 + 0.5 * depth)))
         cv2.polylines(
             mask,
-            lines,
+            segments[order[start:stop]],
             isClosed=False,
             color=max(1, min(255, intensity)),
             thickness=thickness,
