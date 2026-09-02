@@ -15,6 +15,9 @@ release:
   links:
     spotify: https://open.spotify.com/album/2xP7CmSYAYR2166K4S60x1
     apple_music: https://music.apple.com/us/album/unreasonably-quiet-single/6806874115
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mHr6gvbJL7TO8iiIQobf3fmiqYJ5JlkRk&lid=00000000-6a97-5059-2700-000e000380b4&cid=eef267f6-3f51-5d46-a717-711ac12bcf76
+    amazon_music: https://music.amazon.com/albums/B0HH83W6M4?ref=dm_ff_amazonmusic_3p
+    tidal: http://www.tidal.com/album/556961687
   song:
     number: 1
     title: Unreasonably Quiet

@@ -15,6 +15,9 @@ release:
   links:
     spotify: https://open.spotify.com/album/60sif7Xh8xw5dEtHe2sYo9
     apple_music: https://music.apple.com/us/album/the-talaros-single/6806876062
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mIbAx1rm_17xWUyl_UWmrYyTwJPAs1JfM&lid=00000000-6a97-5015-3600-000d0059d291&cid=eef267f6-3f51-5d46-a717-711ac12bcf76
+    amazon_music: https://music.amazon.com/albums/B0HH7ZVLT3?ref=dm_ff_amazonmusic_3p
+    tidal: http://www.tidal.com/album/556963152
   song:
     number: 1
     title: The Talaros
