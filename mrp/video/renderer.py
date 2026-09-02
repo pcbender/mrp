@@ -67,6 +67,16 @@ class LayerCurve:
     phase_offset: float
     hue_values: NDArray[np.float32] | None = None
     """Static per-point color-flow values in [0, 1]; None for solid layers."""
+    anchor_phase: float = 0.0
+    """Phase for the layer's anchor wander, shared by every curve it built.
+
+    A text layer expands into one curve per glyph contour, each with its own
+    phase_offset so the letters trace independently. The anchor wander is a
+    property of the actor rather than of one contour, so it reads from this
+    layer-wide phase instead — otherwise every glyph drifts on its own and
+    the word shears apart. For single-curve families this equals
+    phase_offset.
+    """
 
 
 @dataclass(frozen=True, slots=True)
@@ -185,6 +195,7 @@ def _curve_from_points(
     key: str,
     seed: int,
     normalize: bool,
+    anchor_key: str | None = None,
 ) -> LayerCurve | None:
     points = np.asarray([(point.x, point.y) for point in generated], dtype=np.float32)
     extent = float(np.max(np.linalg.norm(points, axis=1), initial=0))
@@ -215,6 +226,7 @@ def _curve_from_points(
         points=points,
         phase_offset=_phase_offset(seed, key),
         hue_values=hue_values,
+        anchor_phase=_phase_offset(seed, anchor_key if anchor_key else key),
     )
 
 
@@ -240,7 +252,12 @@ def _build_curves(
             for index, contour in enumerate(contours)
             if (
                 curve := _curve_from_points(
-                    layer, contour, key=f"{prefix}:{index}", seed=seed, normalize=False
+                    layer,
+                    contour,
+                    key=f"{prefix}:{index}",
+                    seed=seed,
+                    normalize=False,
+                    anchor_key=prefix,
                 )
             )
             is not None
@@ -671,7 +688,7 @@ def _layer_anchor(
     anchor_drift: float,
 ) -> tuple[float, float]:
     config = curve.config
-    phase = curve.phase_offset
+    phase = curve.anchor_phase
     anchor_x = 0.5 + (config.anchor_x - 0.5) * spatial_spread
     anchor_x += math.sin(time_seconds * 0.11 + phase) * anchor_drift
     anchor_y = config.anchor_y
