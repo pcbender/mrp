@@ -698,19 +698,117 @@ def _amuse_store_links(release: dict[str, Any]) -> tuple[dict[str, str], dict[st
     return seen, extra_links, promo_url
 
 
+def _landr_promo_candidates(upc: str) -> list[str]:
+    """Promo-page URLs to try for a UPC, current scheme first.
+
+    LANDR moved promo links from artists.landr.com to release.landr.com around
+    2026-08 and did not migrate or redirect existing releases, so the two hosts
+    are disjoint: a UPC answers 200 on exactly one and a hard 404 on the other.
+    Everything LANDR mints from now on is release.landr.com, and that is what a
+    promo refresh is usually run against, so try it first and fall back.
+    """
+    return [
+        f"https://release.landr.com/{upc}",
+        f"https://artists.landr.com/{upc}",
+    ]
+
+
+def _landr_promo_page(upc: str):
+    """Fetch a release's LANDR promo page, whichever host still serves it.
+
+    Only a 404 moves on to the next candidate; anything else raises, so a LANDR
+    outage surfaces as itself instead of a misleading "wrong page" message.
+    """
+    import requests
+
+    tried: list[str] = []
+    for url in _landr_promo_candidates(upc):
+        resp = requests.get(url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+        if resp.status_code == 404:
+            tried.append(f"{url} (not found)")
+            continue
+        resp.raise_for_status()
+        return resp, url
+    raise ValueError("LANDR promo page not found — tried: " + "; ".join(tried))
+
+
+def _landr_promo_url(upc: str) -> str | None:
+    """Resolve a UPC's live promo URL, or None if neither host serves it.
+
+    For callers that only want the link and must not fail: a dead promo URL
+    pasted into an outgoing post is worse than an empty field, so an unknown
+    UPC or a network error resolves to None rather than guessing a host.
+
+    Deliberately shares _landr_promo_page's GET rather than probing with HEAD.
+    artists.landr.com answers HEAD below 400 even for a UPC it does not have,
+    so HEAD cannot tell the hosts apart; going through one resolver also keeps
+    this from drifting away from what the link refresh actually scrapes.
+    """
+    import requests
+
+    try:
+        _resp, url = _landr_promo_page(upc)
+    except (ValueError, requests.RequestException):
+        return None
+    return url
+
+
+def _landr_smartlink_targets(page: str) -> list[str]:
+    """Store URLs behind a Feature.fm smart-link page's service buttons.
+
+    release.landr.com renders through Feature.fm, so its buttons are
+    ``<a service="spotify" href="https://api.ffm.to/sl/e/c/{upc}?cd=...">``:
+    the store never appears as an href, which is why the plain href scrape
+    comes back empty on these pages. The real destination rides along in the
+    base64 ``cd`` payload as ``destUrl``, so read it there — the redirector
+    itself refuses to redirect for non-browser clients, and this avoids a
+    request per store either way.
+    """
+    import base64
+    import binascii
+    import html
+    import json
+    import re
+    from urllib.parse import unquote
+
+    targets: list[str] = []
+    tag = re.compile(r"<a\b[^>]*\bservice=[\"'][^\"']+[\"'][^>]*>", re.IGNORECASE)
+    href = re.compile(r"[?&]cd=([^&\"'\s>]+)", re.IGNORECASE)
+    for anchor in tag.finditer(page):
+        blob = href.search(html.unescape(anchor.group(0)))
+        if not blob:
+            continue
+        raw = blob.group(1)
+        # Feature.fm emits these in the URL-safe base64 alphabet, so decode
+        # with urlsafe_b64decode: plain b64decode silently drops '-' and '_'
+        # as non-alphabet, leaving a length that is no longer a multiple of
+        # four ("Incorrect padding") on exactly the buttons that carry them.
+        # It also accepts '+' and '/', so both alphabets go through one path.
+        # unquote (not unquote_plus) guards percent-encoding without turning a
+        # literal '+' — which is base64 data here — into a space.
+        for candidate in (unquote(raw), raw):
+            padded = candidate + "=" * (-len(candidate) % 4)
+            try:
+                payload = json.loads(base64.urlsafe_b64decode(padded))
+            except (ValueError, binascii.Error, UnicodeDecodeError):
+                continue
+            destination = payload.get("destUrl")
+            if isinstance(destination, str) and destination.startswith("http"):
+                targets.append(destination)
+            break
+    return targets
+
+
 def _landr_store_links(release: dict[str, Any]) -> tuple[dict[str, str], dict[str, str], str]:
     import re
     import html
     from urllib.parse import urlparse
-    import requests
 
     upc = release.get("upc") or ""
     if not upc:
         raise ValueError("No UPC on this release — add it in the Info section first")
 
-    landr_url = f"https://artists.landr.com/{upc}"
-    resp = requests.get(landr_url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
-    resp.raise_for_status()
+    resp, landr_url = _landr_promo_page(upc)
 
     # Classify from the raw (un-cleaned) URL so query params are visible.
     # iTunes Store uses music.apple.com?app=itunes — same domain as Apple Music,
@@ -740,9 +838,12 @@ def _landr_store_links(release: dict[str, Any]) -> tuple[dict[str, str], dict[st
     # Platforms LANDR may expose that have no schema key — surfaced as warnings
     KNOWN_EXTRAS: list[tuple[re.Pattern, str]] = []
 
-    # Extract all href values from <a> tags
+    # Extract all href values from <a> tags. artists.landr.com links straight
+    # to the stores; release.landr.com hides them behind a Feature.fm
+    # redirector, so pick those out of the smart-link payload and classify both
+    # shapes through the same patterns.
     href_pattern = re.compile(r'<a[^>]+href=["\']([^"\']+)["\']', re.IGNORECASE)
-    hrefs = href_pattern.findall(resp.text)
+    hrefs = href_pattern.findall(resp.text) + _landr_smartlink_targets(resp.text)
 
     # Strip tracking params but preserve app= (identifies iTunes Store vs Apple Music)
     _TRACKING = frozenset([
@@ -950,7 +1051,10 @@ def _kit_smart_link(release: dict[str, Any]) -> str | None:
 
     distributor = release.get("distributor")
     if distributor == "landr" and release.get("upc"):
-        return f"https://artists.landr.com/{release['upc']}"
+        # Which LANDR host serves a release depends on when it was minted, so
+        # this has to be resolved rather than formatted. See
+        # _landr_promo_candidates.
+        return _landr_promo_url(str(release["upc"]))
     if distributor == "amuse":
         kind = "track" if release.get("model") == "song" else "album"
         title_slug = slugify(str(release.get("title") or "").replace("'", "").replace("’", ""))
