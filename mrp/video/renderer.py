@@ -871,6 +871,56 @@ def _paint_flow_colors(
         )
 
 
+def _composite_bounds(
+    paths: tuple[TracePath, ...],
+    *,
+    line_width: float,
+    head_radius: float,
+    height: int,
+    width: int,
+) -> tuple[int, int, int, int] | None:
+    """Clip rectangle covering every pixel these paths can mark.
+
+    A trace only touches pixels near its own strokes; everywhere else the
+    mask is 0, so the blend returns the original pixel unchanged. Bounding
+    the float conversions to this rectangle is what keeps a text actor
+    affordable — it composites once per glyph contour, and paying for a full
+    1920x1080 frame each time dominated the frame cost.
+
+    The pad covers the widest stroke any drawing path can lay down (the flow
+    painter's ``line_width * 1.25 + 3`` is the widest), the moving head
+    circle at its deepest scale, and a few pixels of antialiasing spread.
+    """
+    minimum = None
+    maximum = None
+    for path in paths:
+        points = _unpack_trace_path(path)[0]
+        if points is None or not len(points):
+            continue
+        flat = points.reshape(-1, 2)
+        low = flat.min(axis=0)
+        high = flat.max(axis=0)
+        minimum = low if minimum is None else np.minimum(minimum, low)
+        maximum = high if maximum is None else np.maximum(maximum, high)
+    if minimum is None:
+        return None
+    stroke = max(1.0, line_width * 1.25) + 3
+    pad = int(math.ceil(stroke / 2 + head_radius * 1.25 + 4))
+    x0 = max(0, int(minimum[0]) - pad)
+    y0 = max(0, int(minimum[1]) - pad)
+    x1 = min(width, int(maximum[0]) + pad + 1)
+    y1 = min(height, int(maximum[1]) + pad + 1)
+    if x1 <= x0 or y1 <= y0:
+        return None
+    return x0, y0, x1, y1
+
+
+def _shift_trace_path(path: TracePath, origin: NDArray[np.int32]) -> TracePath:
+    """Rebase one path onto the composite rectangle's local coordinates."""
+    points, peak, values, depths = _unpack_trace_path(path)
+    return points - origin, peak, values, depths
+
+
 def _composite_trace(
     frame: NDArray[np.uint8],
     paths: tuple[TracePath, ...],
@@ -886,7 +936,21 @@ def _composite_trace(
 ) -> NDArray[np.uint8]:
     if opacity <= 0:
         return frame
-    mask = np.zeros(frame.shape[:2], dtype=np.uint8)
+    height, width = frame.shape[:2]
+    bounds = _composite_bounds(
+        paths,
+        line_width=line_width,
+        head_radius=head_radius,
+        height=height,
+        width=width,
+    )
+    if bounds is None:
+        return frame
+    x0, y0, x1, y1 = bounds
+    origin = np.asarray([x0, y0], dtype=np.int32).reshape(1, 1, 2)
+    paths = tuple(_shift_trace_path(path, origin) for path in paths)
+    region = frame[y0:y1, x0:x1]
+    mask = np.zeros(region.shape[:2], dtype=np.uint8)
     if fill_paths:
         # OpenCV applies an even-odd rule when contours are submitted together,
         # retaining holes in multi-contour SVG/text shapes.
@@ -929,13 +993,13 @@ def _composite_trace(
         )
     alpha = mask.astype(np.float32)[:, :, np.newaxis] / 255
     alpha *= opacity
-    base = frame.astype(np.float32) / 255
+    base = region.astype(np.float32) / 255
     flow = not fill_paths and color_for_value is not None and any(
         values is not None
         for _points, _peak, values, _depths in map(_unpack_trace_path, paths)
     )
     if flow:
-        color_buffer = np.empty_like(frame)
+        color_buffer = np.empty_like(region)
         color_buffer[:, :] = color
         _paint_flow_colors(
             color_buffer,
@@ -951,7 +1015,9 @@ def _composite_trace(
         output = 1 - (1 - base) * (1 - source * alpha)
     else:
         output = base * (1 - alpha) + source * alpha
-    return np.rint(np.clip(output, 0, 1) * 255).astype(np.uint8)
+    composited = frame.copy()
+    composited[y0:y1, x0:x1] = np.rint(np.clip(output, 0, 1) * 255).astype(np.uint8)
+    return composited
 
 
 def _weighted_compositions(
