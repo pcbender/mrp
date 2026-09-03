@@ -14,6 +14,33 @@ API_BASE = "https://www.googleapis.com/youtube/v3"
 MAX_ATTEMPTS = 3
 PAGE_SIZE = 50
 
+# 403 covers both "slow down" and "this key will never work". Only the former
+# is worth retrying; the rest should surface immediately.
+_RETRYABLE_REASONS = frozenset(
+    {"quotaExceeded", "rateLimitExceeded", "userRateLimitExceeded", "backendError"}
+)
+
+
+class YouTubeAPIError(RuntimeError):
+    """A YouTube API call failed for a reason the caller cannot paper over.
+
+    Kept distinct from "no match": a rejected key, an unenabled API or an
+    exhausted quota all used to be swallowed into an empty result, so every
+    enrichment job reported "nothing new" whatever the real cause. An expired
+    or wrong-type credential looks exactly like a release that simply is not
+    on YouTube, which is the opposite of actionable.
+    """
+
+
+def _error_detail(response: requests.Response) -> tuple[str, str]:
+    """(reason, message) from a Google API error body, best effort."""
+    try:
+        error = response.json().get("error") or {}
+    except ValueError:
+        return "", response.text[:200]
+    errors = error.get("errors") or [{}]
+    return str(errors[0].get("reason") or ""), str(error.get("message") or "")
+
 
 def extract_channel_id(channel_url: str) -> str | None:
     segments = [segment for segment in urlsplit(channel_url).path.split("/") if segment]
@@ -39,16 +66,34 @@ class YouTubeClient:
         return cls(api_key=api_key) if api_key else None
 
     def _get(self, path: str, params: dict[str, Any]) -> dict[str, Any]:
+        """GET one endpoint, distinguishing "no match" from "call failed".
+
+        Only 404 means the thing genuinely is not there. Everything else that
+        will not fix itself — a rejected or wrong-type key, the Data API not
+        enabled on the project, a spent quota — raises, so the caller reports
+        the real reason instead of an empty result.
+        """
         request_params = {**params, "key": self._api_key}
+        last_error = ""
         for attempt in range(MAX_ATTEMPTS):
             response = self._session.get(f"{API_BASE}/{path}", params=request_params, timeout=15)
-            if response.status_code in (403, 429) and attempt < MAX_ATTEMPTS - 1:
-                time.sleep(2.0)
-                continue
-            if response.status_code >= 400:
+            if response.status_code == 404:
                 return {}
-            return response.json()
-        return {}
+            if response.status_code < 400:
+                return response.json()
+
+            reason, message = _error_detail(response)
+            last_error = f"HTTP {response.status_code} {reason or ''} {message}".strip()
+            retryable = response.status_code == 429 or (
+                response.status_code == 403 and reason in _RETRYABLE_REASONS
+            )
+            if not retryable:
+                raise YouTubeAPIError(f"YouTube API call to {path} failed: {last_error}")
+            if attempt < MAX_ATTEMPTS - 1:
+                time.sleep(2.0)
+        raise YouTubeAPIError(
+            f"YouTube API call to {path} still failing after {MAX_ATTEMPTS} attempts: {last_error}"
+        )
 
     def search_by_isrc(self, isrc: str) -> dict[str, Any] | None:
         """Return the first music video matching the ISRC, or None if not found."""
