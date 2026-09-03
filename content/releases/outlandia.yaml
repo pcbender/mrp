@@ -18,6 +18,7 @@ release:
     deezer: https://www.deezer.com/album/1032539922
     tidal: https://tidal.com/browse/album/544356149
     pandora: https://www.pandora.com/AL:68357162
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_n4Ni8eIxyzm7MkFtFe59faidt-behbXbE
   tracks:
   - number: 1
     title: Overture
@@ -30,6 +31,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/0VLzk4vx26vflFozB6Syhg
       apple_music: https://music.apple.com/us/album/overture/6792355451?i=6792355453
+      youtube: https://www.youtube.com/watch?v=2vGmWcLXAFk
+      youtube_music: https://music.youtube.com/watch?v=2vGmWcLXAFk
     style: Rock, progressive art-rock overture at 96 BPM, alternating stately 4/4
       with crooked 6/8. Patriotic brass and pipe organ collide with calliope, distorted
       electric guitar, marching snare, low analog synth, and metallic junk percussion.
@@ -167,6 +170,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/7qSya3k6FhXFpSiKUU9kTt
       apple_music: https://music.apple.com/us/album/daddys-little-boy/6792355451?i=6792355454
+      youtube: https://www.youtube.com/watch?v=V_oEbAP4BEc
+      youtube_music: https://music.youtube.com/watch?v=V_oEbAP4BEc
     style: Rock, chamber art-rock lullaby at 72 BPM in uneasy 6/8. Felt piano, bass
       clarinet, muted electric guitar, brushed drums, low cello, and delicate music
       box. High baritone child lead, polished parental tenor-and-mezzo duet, plain
@@ -387,6 +392,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/5Tbr4NvHvCxIC5EZ4oAERe
       apple_music: https://music.apple.com/us/album/man-school/6792355451?i=6792355457
+      youtube: https://www.youtube.com/watch?v=eeFjegZ5t2o
+      youtube_music: https://music.youtube.com/watch?v=eeFjegZ5t2o
     style: Rock, industrial hard rock at 132 BPM with rigid marching toms, baritone
       guitar, distorted bass, metallic dining-hall percussion, low brass, and detuned
       boys’ ensemble. Commanding bass-baritone instructor, anxious high-baritone students,
@@ -662,6 +669,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/54dXwTBT2IBqgRvw9nJ1xF
       apple_music: https://music.apple.com/us/album/doctorate/6792355451?i=6792355458
+      youtube: https://www.youtube.com/watch?v=MdVBhK0jhpY
+      youtube_music: https://music.youtube.com/watch?v=MdVBhK0jhpY
     style: Rock, theatrical cabaret-prog at 148 BPM with manic upright piano, pompous
       pipe organ, angular electric guitar, snare flourishes, tuba accents, and counterfeit
       academic choir, Agile high-baritone Dr, performs both conferring and receiving
@@ -964,6 +973,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/2QKanbSXWWBo4wtE8uI8hS
       apple_music: https://music.apple.com/us/album/king-of-junk/6792355451?i=6792355459
+      youtube: https://www.youtube.com/watch?v=WC6OKdr1x7I
+      youtube_music: https://music.youtube.com/watch?v=WC6OKdr1x7I
     style: Rock, glam-funk commercial rock at 124 BPM with wah guitar, swaggering
       bass, punchy drums, brass stabs, electric piano, hand percussion, and metallic
       trash-can accents, Charismatic high-baritone lead moves from irritation to addicted
@@ -1217,6 +1228,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/1QvZMAS1hOd5Tu0r5O5Ygw
       apple_music: https://music.apple.com/us/album/wheel-of-frustration/6792355451?i=6792355460
+      youtube: https://www.youtube.com/watch?v=yaHXFvkyjTE
+      youtube_music: https://music.youtube.com/watch?v=yaHXFvkyjTE
     style: Rock, game-show funk and theatrical hard rock at 118 BPM, Flashy brass,
       clavinet, disco-leaning bass, tight drums, electric guitar, buzzer percussion,
       spinning-wheel effects, and sudden distorted punishment riffs, Swaggering high-baritone
@@ -1612,6 +1625,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/6S32oZGCepHDUN24JIjBUW
       apple_music: https://music.apple.com/us/album/the-devil-you-know/6792355451?i=6792355461
+      youtube: https://www.youtube.com/watch?v=jQRbg2wdCf0
+      youtube_music: https://music.youtube.com/watch?v=jQRbg2wdCf0
     style: Rock, noir blues and progressive art rock at 88 BPM, Dry drums, upright
       bass, Hammond organ, tremolo electric guitar, bass clarinet, muted brass, and
       restrained analog synth, Calm bass-baritone mentor against an eager high-baritone
@@ -1895,6 +1910,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/1iLOO2Bit80i3AQvh1EVcR
       apple_music: https://music.apple.com/us/album/hot-mic/6792355451?i=6792355462
+      youtube: https://www.youtube.com/watch?v=NOmxJwjY5e8
+      youtube_music: https://music.youtube.com/watch?v=NOmxJwjY5e8
     style: Rock, industrial funk and dark electro-rock at 116 BPM, Distorted synth
       bass, clipped drums, palm-muted guitar, tape edits, metallic clicks, close-miked
       breaths, and sharp brass samples, Swaggering high-baritone lead, calm bass-baritone
@@ -2214,6 +2231,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/37ADmlVrIEB8BWhC7kOr6w
       apple_music: https://music.apple.com/us/album/saperstein-class/6792355451?i=6792355463
+      youtube: https://www.youtube.com/watch?v=GaPdRWqYrQc
+      youtube_music: https://music.youtube.com/watch?v=GaPdRWqYrQc
     style: Rock, decadent orchestral soul and art rock at 92 BPM, Electric piano,
       fretless bass, restrained drums, string quartet, clean electric guitar, vibraphone,
       and soft analog synth, High-baritone lead sings with cultivated restraint; elite
@@ -2476,6 +2495,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/2fOVwWmWDJPwzqHDVqn88C
       apple_music: https://music.apple.com/us/album/nda/6792355451?i=6792355464
+      youtube: https://www.youtube.com/watch?v=SBMoiQcKkgg
+      youtube_music: https://music.youtube.com/watch?v=SBMoiQcKkgg
     style: Rock, minimalist legal funk and angular art rock at 108 BPM, Dry synth
       bass, staccato guitar, typewriter percussion, tight drums, low piano, muted
       trumpet, and paper-and-stamp sound design, High-baritone lead trades rapid lines
@@ -2821,6 +2842,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/4ewN54lpGgy9UHZqAd7bqA
       apple_music: https://music.apple.com/us/album/just-a-trophy/6792355451?i=6792355466
+      youtube: https://www.youtube.com/watch?v=a4prN75bvHE
+      youtube_music: https://music.youtube.com/watch?v=a4prN75bvHE
     style: Rock, cold chamber waltz and orchestral art rock at 78 BPM in 3/4, Prepared
       piano, string quartet, celesta, restrained bass, brushed drums, clean electric
       guitar, and subtle low synth, Possessive high-baritone lead, poised lyric mezzo-soprano
@@ -3152,6 +3175,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/4Q9kTGrjPEE1yS5tC7EL9O
       apple_music: https://music.apple.com/us/album/neo-cons/6792355451?i=6792355467
+      youtube: https://www.youtube.com/watch?v=W-297fzECYU
+      youtube_music: https://music.youtube.com/watch?v=W-297fzECYU
     style: Rock, neoclassical synth-rock and authoritarian art rock at 122 BPM, Sequenced
       analog bass, low strings, harpsichord-like synth, military snare, angular electric
       guitar, brass, and disciplined male ensemble, High-baritone Dr, begins as the
@@ -3483,6 +3508,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/7ni4kCQDNSo7HRjXGCWs1U
       apple_music: https://music.apple.com/us/album/its-just-crazy/6792355451?i=6792355468
+      youtube: https://www.youtube.com/watch?v=4fAPnp7_wPk
+      youtube_music: https://music.youtube.com/watch?v=4fAPnp7_wPk
     style: Rock, garage revival rock and organ-driven soul-rock at 136 BPM, Overdriven
       guitars, punchy drums, driving bass, transistor organ, hand percussion, and
       short brass bursts, Charismatic high-baritone lead shifts between comic timing,
@@ -4165,6 +4192,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/4FilKKIMIIjiRi6LyamGCm
       apple_music: https://music.apple.com/us/album/im-in/6792355451?i=6792355471
+      youtube: https://www.youtube.com/watch?v=Rqb4sc8K6YE
+      youtube_music: https://music.youtube.com/watch?v=Rqb4sc8K6YE
     style: Rock, campaign pop-rock and gospel-inflected theatrical rock at 126 BPM,
       interrupted by a cold chamber interlude, Driving drums, piano, overdriven guitar,
       bright organ, brass, and massed group vocals contrast with celesta, low strings,
@@ -4553,6 +4582,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/6y3PnDkljqQX0MztQkhrMh
       apple_music: https://music.apple.com/us/album/all-means-necessary/6792355451?i=6792355773
+      youtube: https://www.youtube.com/watch?v=YjPmkmHmt2s
+      youtube_music: https://music.youtube.com/watch?v=YjPmkmHmt2s
     style: Rock, spy-rock and orchestral trip-hop at 84 BPM, Deep sub-bass, dry breakbeat,
       icy piano, tremolo guitar, low strings, modular synth, and sparse brass, Long
       silences, restrained choruses, subtle signal interference, wide low-end, cold
@@ -5063,6 +5094,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/3MukSHejhDGupx1gSaJV7f
       apple_music: https://music.apple.com/us/album/you-can-win-by-losing/6792355451?i=6792355774
+      youtube: https://www.youtube.com/watch?v=ff1yPnFHl4s
+      youtube_music: https://music.youtube.com/watch?v=ff1yPnFHl4s
     style: Rock, crooked casino shuffle and militarized art rock at 112 BPM, Upright
       piano, brushed snare, double bass, comic muted brass, and vibraphone gradually
       give way to floor toms, distorted bass, baritone guitar, low synth, and rigid
@@ -5729,6 +5762,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/3q2V7yPI2Dm9zLZpDOb7jq
       apple_music: https://music.apple.com/us/album/past-the-gates/6792355451?i=6792355775
+      youtube: https://www.youtube.com/watch?v=NL4skiNJ77M
+      youtube_music: https://music.youtube.com/watch?v=NL4skiNJ77M
     style: Rock, hardcore punk foundation with industrial percussion and through-composed
       progressive art rock at 154 BPM, Abrasive guitars, distorted bass, pounding
       toms, snare, low brass, alarm tones, shield-and-barrier percussion, and unstable
@@ -6043,6 +6078,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/7AaIT6o7LUNyQ0FLxdcbqx
       apple_music: https://music.apple.com/us/album/turn-it-off/6792355451?i=6792355776
+      youtube: https://www.youtube.com/watch?v=i626U_fYT9I
+      youtube_music: https://music.youtube.com/watch?v=i626U_fYT9I
     style: Rock, dark electronic art rock and industrial minimalism at 104 BPM, Broken
       transmissions, deep synth bass, clipped drums, baritone guitar, relay clicks,
       low piano, siren-like strings, and electrical hum, Every chorus removes instruments
@@ -6460,6 +6497,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/3Cjbju4XRLjhHgbMh3DkiV
       apple_music: https://music.apple.com/us/album/first-things-first/6792355451?i=6792355777
+      youtube: https://www.youtube.com/watch?v=wbo4hxvSpPc
+      youtube_music: https://music.youtube.com/watch?v=wbo4hxvSpPc
     style: Rock, industrial metal and authoritarian mass opera at 78 BPM, Low brass,
       pipe organ pedal, baritone guitar, anvil percussion, marching floor toms, severe
       strings, and synthetic choir, Male high baritone uses a dry low baritone with
@@ -7120,6 +7159,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/07vsJ2jUZNoYRp60u1PqPc
       apple_music: https://music.apple.com/us/album/tech-bros/6792355451?i=6792355780
+      youtube: https://www.youtube.com/watch?v=SVLDhNRt80s
+      youtube_music: https://music.youtube.com/watch?v=SVLDhNRt80s
     style: Rock, cold electro-rock and machine funk at 128 BPM, Modular synth bass,
       glassy percussion, gated drums, processed guitar, granular vocal fragments,
       data-tone arpeggios, and low digital choir, Dr, uses a blunt low baritone; technology
@@ -7920,6 +7961,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/2OQXbBWxA8grtoz2NwDqqx
       apple_music: https://music.apple.com/us/album/division-of-assets/6792355451?i=6792355782
+      youtube: https://www.youtube.com/watch?v=PEvuOG20ho8
+      youtube_music: https://music.youtube.com/watch?v=PEvuOG20ho8
     style: Rock, imperial ballroom art rock with tango and military march elements
       at 102 BPM, Bandoneon, low strings, brass, piano, marching snare, fretless bass,
       baritone guitar, and stamping percussion, Male high baritone uses a broad low
@@ -8694,6 +8737,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/4dp32OVlfbBzB9lmyjb0Qo
       apple_music: https://music.apple.com/us/album/ashes/6792355451?i=6792355784
+      youtube: https://www.youtube.com/watch?v=169WdoiXTaU
+      youtube_music: https://music.youtube.com/watch?v=169WdoiXTaU
     style: Rock, Puerto Rican folk-rock rooted in bomba and plena at 94 BPM, Cuatro,
       nylon-string guitar, barril drums, panderetas, handclaps, upright bass, warm
       piano, and restrained electric guitar, Multigenerational Spanish-English vocals
@@ -9290,6 +9335,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/5XomFImSGNhjUiYfQlq6bU
       apple_music: https://music.apple.com/us/album/dear-leader/6792355451?i=6792355788
+      youtube: https://www.youtube.com/watch?v=L4WJpkG_J7k
+      youtube_music: https://music.youtube.com/watch?v=L4WJpkG_J7k
     style: Rock, children’s art-pop and minimalist chamber rock at 90 BPM, Upright
       piano, recorders, glockenspiel, pizzicato strings, soft snare, small bass, and
       sterile synth pad, Pretty diatonic melody with subtle restricted harmony, precise
@@ -9790,6 +9837,8 @@ release:
     links:
       spotify: https://open.spotify.com/track/4Ho5Bk1qJCYqytMCVxS76o
       apple_music: https://music.apple.com/us/album/coda/6792355451?i=6792355789
+      youtube: https://www.youtube.com/watch?v=LuW3IEe7-IU
+      youtube_music: https://music.youtube.com/watch?v=LuW3IEe7-IU
     style: Rock, chamber-electronic requiem at 62 BPM, Low piano, celesta, restrained
       strings, soft analog synth, distant domestic percussion, paper sounds, and faint
       fragments of earlier motifs, Cool alto Melatonin sings only as internal thought;
