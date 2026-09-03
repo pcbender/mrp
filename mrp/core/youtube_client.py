@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 import time
 from pathlib import Path
 from typing import Any
@@ -13,6 +14,13 @@ from mrp.core.spotify_client import load_dotenv
 API_BASE = "https://www.googleapis.com/youtube/v3"
 MAX_ATTEMPTS = 3
 PAGE_SIZE = 50
+
+# Auto-generated album playlists ("Album - X" / "X" owned by channel YouTube).
+_ALBUM_PLAYLIST_RE = re.compile(r"OLAK5uy_[A-Za-z0-9_-]{10,}")
+_BROWSER_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
+)
 
 # 403 covers both "slow down" and "this key will never work". Only the former
 # is worth retrying; the rest should surface immediately.
@@ -94,6 +102,65 @@ class YouTubeClient:
         raise YouTubeAPIError(
             f"YouTube API call to {path} still failing after {MAX_ATTEMPTS} attempts: {last_error}"
         )
+
+    def get_playlist(self, playlist_id: str) -> dict[str, Any] | None:
+        """Title and item count for a playlist, or None if it does not exist."""
+        data = self._get("playlists", {"part": "snippet,contentDetails", "id": playlist_id})
+        for item in data.get("items") or []:
+            return {
+                "playlistId": playlist_id,
+                "title": (item.get("snippet") or {}).get("title") or "",
+                "itemCount": (item.get("contentDetails") or {}).get("itemCount"),
+            }
+        return None
+
+    def playlist_video_ids(self, playlist_id: str) -> list[str]:
+        """Every video id in a playlist, following pagination."""
+        video_ids: list[str] = []
+        page_token = ""
+        while True:
+            params = {
+                "part": "contentDetails",
+                "playlistId": playlist_id,
+                "maxResults": PAGE_SIZE,
+            }
+            if page_token:
+                params["pageToken"] = page_token
+            data = self._get("playlistItems", params)
+            for item in data.get("items") or []:
+                video_id = (item.get("contentDetails") or {}).get("videoId")
+                if video_id:
+                    video_ids.append(video_id)
+            page_token = data.get("nextPageToken") or ""
+            if not page_token:
+                return video_ids
+
+    def album_playlist_ids(self, video_id: str) -> list[str]:
+        """Candidate album-playlist ids advertised on a track's watch page.
+
+        Auto-generated OLAK album playlists are absent from the Data API:
+        `search?type=playlist` never returns one (verified against Abbey Road,
+        Rumours and Thriller as well as our own catalogue), and they belong to
+        channel "YouTube" rather than the artist's Topic channel, so listing
+        the channel's playlists does not reach them either. They can be read
+        back by id, just never discovered — so recover a candidate id from the
+        watch page and let the caller verify it through the API.
+
+        Scraping a page whose markup Google may change at any time: this
+        returns candidates only, and callers must confirm them.
+        """
+        response = self._session.get(
+            f"https://www.youtube.com/watch?v={video_id}",
+            timeout=20,
+            headers={"User-Agent": _BROWSER_UA},
+        )
+        if response.status_code >= 400:
+            return []
+        seen: list[str] = []
+        for match in _ALBUM_PLAYLIST_RE.finditer(response.text):
+            if match.group(0) not in seen:
+                seen.append(match.group(0))
+        return seen
 
     def search_by_isrc(self, isrc: str) -> dict[str, Any] | None:
         """Return the first music video matching the ISRC, or None if not found."""
