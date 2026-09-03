@@ -159,8 +159,12 @@ def test_enrich_youtube_dry_run_does_not_write(tmp_path):
     assert "report_path" not in report
 
 
-def test_enrich_youtube_fails_cleanly_without_api_key(tmp_path):
+def test_enrich_youtube_fails_cleanly_without_api_key(tmp_path, monkeypatch):
+    # The tmp_path repo has no .env, but YouTubeClient.from_env falls back to
+    # os.environ, so state the no-key precondition instead of assuming it —
+    # a developer with the key exported, or any earlier test that imported a
+    # module calling load_dotenv, would otherwise hand this a live client.
+    monkeypatch.delenv("GOOGLE_SERVICE_API_KEY", raising=False)
     repo = content_repo(tmp_path)
     report = enrich_youtube(repo, delay_seconds=0, client=None)
-    # No client and no GOOGLE_SERVICE_API_KEY in this isolated tmp_path repo.
     assert report["status"] == "failed"
