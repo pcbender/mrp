@@ -158,8 +158,18 @@ const nextTrack = trackIndex < sortedTracks.length - 1 ? sortedTracks[trackIndex
 
   .release-feature > img {
     width: 100%;
+    /* Cover art is square and must stay square. The grid gives this item a
+       definite height (the copy column is taller), which leaves aspect-ratio
+       nothing to compute from, so max-height became the height and the box
+       went portrait — object-fit then cropped the sides off the artwork.
+       height:auto hands the vertical axis back to aspect-ratio, and capping
+       max-width rather than max-height keeps the lid on its size without
+       reintroducing a second definite axis. */
+    height: auto;
+    max-width: 560px;
     aspect-ratio: 1;
-    max-height: 560px;
+    align-self: center;
+    justify-self: center;
     border: 1px solid var(--line);
     border-radius: 8px;
     object-fit: cover;

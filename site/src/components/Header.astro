@@ -155,9 +155,23 @@ const isActive = (href: string) => pathname === href || pathname.startsWith(href
       align-items: center;
     }
 
+    /* The row wraps so the open nav can take a line of its own, but that also
+       let the toggle drop below the logo and sit flush left once the two no
+       longer fit. Flex breaks lines before it shrinks anything, and the logo's
+       min-width resolves to its intrinsic 363px, so the row always chose to
+       wrap. A zero flex-basis makes the brand contribute nothing to that
+       decision — it shrinks instead, keeping the toggle on the header line at
+       any width, while nav still wraps below on its own 100% basis. */
+    .brand {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
     .brand img {
-      height: 120px;
-      width: auto;
+      height: auto;
+      max-height: 120px;
+      max-width: 100%;
+      min-width: 0;
     }
 
     nav {
