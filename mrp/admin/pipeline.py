@@ -152,7 +152,34 @@ def enrich_youtube(root: Path, slug: str) -> dict[str, Any]:
         return _by_title(title)
 
     added: dict[str, str] = {}
+    warnings: list[str] = []
     target_links = release.setdefault("links", {})
+
+    def _verified_album_playlist(track_video_id: str) -> str | None:
+        """The album's own playlist id, confirmed against this release.
+
+        A candidate only counts when its title matches the album (YouTube
+        publishes both "Outlandia" and "Album - Outlandia" for the same
+        record), it holds exactly as many items as we have tracks, and it
+        actually contains the track we looked it up from. The id comes off a
+        scraped page, so nothing is written on the scrape's say-so alone.
+        """
+        expected_key = _title_key(release.get("title") or "")
+        track_count = len([t for t in (release.get("tracks") or []) if isinstance(t, dict)])
+        for candidate in yt.album_playlist_ids(track_video_id):
+            playlist = yt.get_playlist(candidate)
+            if playlist is None:
+                continue
+            title = str(playlist.get("title") or "")
+            title_key = _title_key(title.split(" - ", 1)[1] if title.startswith("Album - ") else title)
+            if title_key != expected_key:
+                continue
+            if track_count and playlist.get("itemCount") != track_count:
+                continue
+            if track_video_id not in yt.playlist_video_ids(candidate):
+                continue
+            return candidate
+        return None
 
     if release.get("model") == "song":
         song = release.get("song") or {}
@@ -169,6 +196,7 @@ def enrich_youtube(root: Path, slug: str) -> dict[str, Any]:
             added["youtube_music"] = target_links["youtube_music"]
 
     tracks = release.get("tracks")
+    first_track_video: str | None = None
     if isinstance(tracks, list):
         for track in tracks:
             if not isinstance(track, dict):
@@ -176,14 +204,34 @@ def enrich_youtube(root: Path, slug: str) -> dict[str, Any]:
             tv = _find_video(track.get("isrc"), track.get("title") or "")
             if not tv:
                 continue
+            first_track_video = first_track_video or tv["videoId"]
             tl = track.setdefault("links", {})
             if not tl.get("youtube"):
                 tl["youtube"] = f"https://www.youtube.com/watch?v={tv['videoId']}"
                 added[f"track:{track.get('slug')}.youtube"] = tl["youtube"]
+            if not tl.get("youtube_music"):
+                tl["youtube_music"] = f"https://music.youtube.com/watch?v={tv['videoId']}"
+                added[f"track:{track.get('slug')}.youtube_music"] = tl["youtube_music"]
+
+    # A multi-track release links to its album playlist, not to a video: the
+    # release-level lookup above searches for a video named after the album and
+    # never finds one, which is why albums came back empty.
+    if first_track_video and not target_links.get("youtube_music"):
+        playlist_id = _verified_album_playlist(first_track_video)
+        if playlist_id:
+            target_links["youtube_music"] = (
+                f"https://music.youtube.com/playlist?list={playlist_id}"
+            )
+            added["youtube_music"] = target_links["youtube_music"]
+        else:
+            warnings.append(
+                "no album playlist on YouTube matched this release "
+                "(title, track count and membership all have to agree)"
+            )
 
     _strip_linked_na(release)
     path.write_text(serialize_structured_record(path, data))
-    return {"added": added, "total": len(added)}
+    return {"added": added, "total": len(added), "warnings": warnings}
 
 
 def run_critic(

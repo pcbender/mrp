@@ -22,6 +22,17 @@ class OdesliRateLimitedError(RuntimeError):
     pass
 
 
+class OdesliAuthError(RuntimeError):
+    """Odesli refused the request outright rather than finding no match.
+
+    Public access is deprecated (401 PUBLIC_API_ACCESS_DEPRECATED), so an
+    unkeyed client now fails every lookup. That used to be swallowed as
+    "nothing found", which reads identically to a release Odesli has never
+    heard of — and quietly took the whole youtube/youtube_music backfill with
+    it. Set ODESLI_API_KEY to restore access.
+    """
+
+
 class OdesliClient:
     def __init__(
         self,
@@ -59,6 +70,20 @@ class OdesliClient:
             if response.status_code == 429:
                 time.sleep(float(response.headers.get("Retry-After", 5)))
                 continue
+            if response.status_code in (401, 403):
+                # Not a missing release: the request was refused. Public API
+                # access is deprecated, so this is what an unkeyed client gets
+                # for every lookup.
+                detail = ""
+                try:
+                    body = response.json()
+                    detail = str(body.get("code") or body.get("message") or "")
+                except ValueError:
+                    detail = response.text[:120]
+                raise OdesliAuthError(
+                    f"Odesli refused the request (HTTP {response.status_code} {detail}); "
+                    "set ODESLI_API_KEY"
+                )
             if response.status_code >= 400:
                 # Most commonly a 404 when Odesli has no match for this release;
                 # treat as "nothing found" rather than a hard failure.

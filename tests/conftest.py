@@ -18,6 +18,27 @@ def _ignore(directory: str, names: list[str]) -> set[str]:
     return {name for name in names if name in skip or name == "__pycache__" or name.endswith(".pyc")}
 
 
+@pytest.fixture(autouse=True)
+def _contain_env_mutations():
+    """Restore os.environ after every test.
+
+    app/critic and app/promoter both call load_dotenv(_MRP_ROOT / ".env") at
+    module import, so merely importing one of them — which several tests do
+    lazily, inside a test body — pushes the repo's real ANTHROPIC_API_KEY,
+    OPENAI_API_KEY, SPOTIFY_* and deploy credentials into os.environ for the
+    rest of the session. Two test modules already snapshot and restore around
+    their own imports; this does it for every test so a lazy import cannot
+    hand live credentials to whatever runs next, which is how
+    test_enrich_youtube's no-key case turned red only in full-suite runs.
+    """
+    before = dict(os.environ)
+    try:
+        yield
+    finally:
+        os.environ.clear()
+        os.environ.update(before)
+
+
 @pytest.fixture
 def isolated_repo(tmp_path: Path) -> Path:
     """A filesystem copy of the real repo for e2e tests that exercise the full

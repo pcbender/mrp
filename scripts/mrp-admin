@@ -2,7 +2,13 @@
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(_ROOT))
+
+# Before importing anything that needs the project's dependencies.
+from mrp.venv_bootstrap import ensure_repo_interpreter
+
+ensure_repo_interpreter(_ROOT)
 
 from mrp.admin.server import run_server
 
