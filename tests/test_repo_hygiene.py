@@ -16,6 +16,18 @@ FORBIDDEN_TRACKED_PREFIXES = (
     "node_modules/",
     "site/node_modules/",
 )
+# graphify publishes these three as committed artifacts, and .gitignore
+# un-ignores exactly them under an otherwise-ignored graphify-out/. The rest of
+# that directory — cache/, manifest.json, the dated snapshots — stays generated,
+# so the prefix ban above still applies to it. Keep this in step with the
+# "!graphify-out/..." lines in .gitignore.
+ALLOWED_TRACKED_PATHS = frozenset(
+    {
+        "graphify-out/GRAPH_REPORT.md",
+        "graphify-out/graph.html",
+        "graphify-out/graph.json",
+    }
+)
 FORBIDDEN_GENERATED_DIRS = (
     "builds",
     "site/dist",
@@ -37,7 +49,12 @@ def test_generated_and_dependency_paths_are_not_tracked():
     offenders = [
         path
         for path in tracked
-        if path == "node_modules" or path == "site/node_modules" or path.startswith(FORBIDDEN_TRACKED_PREFIXES)
+        if path not in ALLOWED_TRACKED_PATHS
+        and (
+            path == "node_modules"
+            or path == "site/node_modules"
+            or path.startswith(FORBIDDEN_TRACKED_PREFIXES)
+        )
     ]
     assert offenders == []
 
