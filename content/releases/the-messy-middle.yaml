@@ -26,6 +26,8 @@ release:
     spotify: https://open.spotify.com/album/1OA7b5kzbB9JsJicyaEBK3
     tidal: https://listen.tidal.com/album/494308869
     apple_music: https://music.apple.com/us/album/the-messy-middle/1873052569
+    deezer: https://www.deezer.com/album/907878212
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_nrHNXGllgwHiBOSwSo8Iu3g8xDUdGTNrk
   seo:
     title: The Messy Middle by STAB
     description: The Messy Middle by STAB on Maricopa Records.
@@ -34,12 +36,10 @@ release:
     links_na:
     - amazon_music
     - bandcamp
-    - deezer
     - itunes_store
     - pandora
     - soundcloud
     - youtube
-    - youtube_music
   tracks:
   - number: 1
     title: I think I'm Losing My Place

@@ -152,6 +152,8 @@ release:
   links:
     spotify: https://open.spotify.com/album/0epxRoEuofP2oJbEXOGC7l?si=ZQKdCReXT6mKwdjc64mEKA
     apple_music: https://music.apple.com/us/album/circuiting/1795534534
+    itunes_store: https://music.apple.com/us/album/1795534534?app=itunes
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mnCEfxUohgTT0DVTHUojtQkHE_Cl4rWyg
   seo:
     title: Circuiting by PCBender
     description: Circuiting by PCBender on Maricopa Records.
@@ -161,12 +163,10 @@ release:
     - amazon_music
     - bandcamp
     - deezer
-    - itunes_store
     - pandora
     - soundcloud
     - tidal
     - youtube
-    - youtube_music
   tracks:
   - number: 1
     title: Conductor
@@ -180,6 +180,7 @@ release:
       spotify: https://open.spotify.com/track/3fijTQfVRF2uy6y9GOu6xv?si=491846cb96f0417a
       youtube: https://www.youtube.com/watch?v=P3c52T_8BZU
       youtube_music: https://music.youtube.com/watch?v=P3c52T_8BZU
+      apple_music: https://music.apple.com/us/album/conductor/1795534534?i=1795534535
     lyrics_text: 'A pulse in the wire… the new wave…
 
 
@@ -267,6 +268,7 @@ release:
       spotify: https://open.spotify.com/track/0Z5JIx6FM55dEkmqlsDqjo?si=b2e4378330d040c4
       youtube: https://www.youtube.com/watch?v=rboJjnZsiMk
       youtube_music: https://music.youtube.com/watch?v=rboJjnZsiMk
+      apple_music: https://music.apple.com/us/album/resistor/1795534534?i=1795534537
     lyrics_text: 'Trading force for heat… once again…
 
 
@@ -359,6 +361,7 @@ release:
       spotify: https://open.spotify.com/track/48NczZNh0VChGoUluufYBY?si=471309afe33a4073
       youtube: https://www.youtube.com/watch?v=yOYSt1ZqSe4
       youtube_music: https://music.youtube.com/watch?v=yOYSt1ZqSe4
+      apple_music: https://music.apple.com/us/album/capacitor/1795534534?i=1795534538
     lyrics_text: 'When inspiration comes, I''ll know…
 
 
@@ -451,6 +454,7 @@ release:
       spotify: https://open.spotify.com/track/2MrvP7bdCMnTqpHiaYhU6w?si=eef45307ee974c39
       youtube: https://www.youtube.com/watch?v=Zy5mWaW7l_E
       youtube_music: https://music.youtube.com/watch?v=Zy5mWaW7l_E
+      apple_music: https://music.apple.com/us/album/inductor/1795534534?i=1795534539
     lyrics_text: 'Deep breath… Now let it out
 
 
@@ -541,6 +545,7 @@ release:
       spotify: https://open.spotify.com/track/5kwzI86xuEKlz14Syaaf47?si=01d20c2e7e6a4a44
       youtube: https://www.youtube.com/watch?v=PtnFtCtMc2E
       youtube_music: https://music.youtube.com/watch?v=PtnFtCtMc2E
+      apple_music: https://music.apple.com/us/album/diode/1795534534?i=1795534540
     lyrics_text: '(Processed robotic voice)
 
       One way out… No return…
@@ -675,6 +680,7 @@ release:
       spotify: https://open.spotify.com/track/6Z7o7gsvcfg4ll6l2WqHhh?si=828f6dede3804961
       youtube: https://www.youtube.com/watch?v=v1M-6vF7sYU
       youtube_music: https://music.youtube.com/watch?v=v1M-6vF7sYU
+      apple_music: https://music.apple.com/us/album/transistor/1795534534?i=1795534541
     lyrics_text: 'Now I see the light, there''s no going back
 
       Transistor voices sing in harmony
@@ -735,6 +741,7 @@ release:
       spotify: https://open.spotify.com/track/0iYMhuso2XNn6U2YCvS3cY?si=c608034226d942c7
       youtube: https://www.youtube.com/watch?v=qKp55WrBbtk
       youtube_music: https://music.youtube.com/watch?v=qKp55WrBbtk
+      apple_music: https://music.apple.com/us/album/relay/1795534534?i=1795534542
     lyrics_text: 'They paint my face in gold dust
 
       Push me into the light
@@ -795,6 +802,7 @@ release:
       spotify: https://open.spotify.com/track/52R7pwCQAqcHx1aDjrCiCV?si=bb5fbaaecb394a06
       youtube: https://www.youtube.com/watch?v=dxPAZ0Cw5P0
       youtube_music: https://music.youtube.com/watch?v=dxPAZ0Cw5P0
+      apple_music: https://music.apple.com/us/album/fuse/1795534534?i=1795534543
     lyrics_text: 'Echo—echo—someone''s there
 
       Turn it up— I can''t hear—
@@ -845,6 +853,7 @@ release:
       spotify: https://open.spotify.com/track/6U6z0EBKHxqFFtkhlIanI3?si=678be27fd7094707
       youtube: https://www.youtube.com/watch?v=Bmh8uQtIPNc
       youtube_music: https://music.youtube.com/watch?v=Bmh8uQtIPNc
+      apple_music: https://music.apple.com/us/album/oscillator/1795534534?i=1795534544
     lyrics_text: 'Ohhh-whoa-whoa-whoa (ayy, ayy)
 
       Yeahhh, yeahhh (skrrt)
@@ -917,6 +926,7 @@ release:
       spotify: https://open.spotify.com/track/4P6oRJ0WhhTbobqDqoy1JB?si=02f02c241b774e2b
       youtube: https://www.youtube.com/watch?v=GePD8ivRY4o
       youtube_music: https://music.youtube.com/watch?v=GePD8ivRY4o
+      apple_music: https://music.apple.com/us/album/circuit/1795534534?i=1795534545
     lyrics_text: 'I thought I was fading, slipping through the wire
 
       Echoes conducting, movements in time

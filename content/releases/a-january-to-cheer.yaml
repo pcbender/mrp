@@ -1,0 +1,320 @@
+release:
+  id: a-january-to-cheer
+  slug: a-january-to-cheer
+  title: A January To Cheer
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: live
+  release_date: '2026-09-11'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991061131713'
+  catalog_number: null
+  cover_image: site/public/assets/releases/a-january-to-cheer/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/5om4pBW9hybJydlyBaXmTm
+    apple_music: https://geo.music.apple.com/us/album/a-january-to-cheer-single/6811162236?app=music
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_nAf6_ZVDWJueg74cBuCmgZTVGBdwJEGK0&lid=00000000-6aac-345e-3000-000d009cda8e&cid=eef267f6-3f51-5d46-a717-711ac12bcf76
+    amazon_music: https://music.amazon.com/albums/B0HJJKCCHF?ref=dm_ff_amazonmusic_3p
+    tidal: http://www.tidal.com/album/560435029
+    youtube: https://www.youtube.com/watch?v=lam6Kk2xRA4
+  song:
+    number: 1
+    title: A January To Cheer
+    slug: a-january-to-cheer
+    isrc: CALVP2627027
+    duration: '5:04'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/4castle--a-january-to-cheer.mp3
+    links:
+      spotify: https://open.spotify.com/track/2BteU3PTH802jnLtzFk0l3
+    style: 'Rock, Progressive Rock with a 1970s psychedelic texture: slow 4/4 measured
+      pulse, clean electric guitar figures through tape delay, warm melodic bass,
+      Hammond organ on rotary speaker, subtle analog synth pads, restrained round
+      drums with dry kick and soft ride; calm, dry, conversational weary male lead,
+      older male spoken mumble, soulful female backing voices and broad harmony stacks;
+      tape saturation, analog warmth, wide stereo image, natural dynamics, fractured
+      slightly out-of-tune verse backdrop, ominous restrained tension'
+    lyrics_raw: '[Intro | clean electric guitar figure | Hammond organ | restrained
+      drums]
+
+      [Verse 1 | calm close vocal | sparse arrangement]
+
+      There''s a mad man in the people''s house
+
+      There''s a mad man in the people''s house
+
+      He has the key. He''s past the gate.
+
+      He only sleeps by mistake
+
+      Cannot keep the mad man in the house
+
+
+      [Verse 2 | bass more present | quiet tension]
+
+      There''s a mad man in a broken pool
+
+      There''s a mad man in a broken pool
+
+      He doesn''t swim. He won''t be told.
+
+      The deep end''s dry. The tiles are cold.
+
+      Cannot keep the mad man in the house
+
+
+      [Chorus | arrangement opens | fuller drums | harmony vocals]
+
+      And when his rage comes thundering through the halls
+
+      And the minders on the hill have gone to ground
+
+      And the shouting is the only thing we hear
+
+      Some day there''ll be a January to cheer
+
+
+      [Interlude | electric guitar motif | Hammond organ]
+
+
+      [Verse 3 | restrained vocal | mounting tension]
+
+      There''s a mad man in the cabinet room
+
+      There''s a mad man in the cabinet room
+
+      He wants a yes. He wants it now.
+
+      One by one they learn to bow.
+
+      Cannot keep the mad man in the house
+
+
+      [Chorus | wider harmonies | fuller organ | stronger drums]
+
+      And when his rage comes thundering through the halls
+
+      And the minders on the hill have gone to ground
+
+      And the shouting is the only thing we hear
+
+      Some day there''ll be a January to cheer
+
+
+      [Bridge | stripped back | voice forward | rising tension]
+
+      We watched the doors swing open
+
+      We watched the guards step aside
+
+      We watched the decent people
+
+      Find somewhere safe to hide
+
+      But every house has windows
+
+      And every lock can turn
+
+
+      [Chorus | stacked harmonies | soulful female backing vocals | bigger drums]
+
+      And when his rage comes thundering through the halls
+
+      And the minders on the hill have gone to ground
+
+      And the shouting is the only thing we hear
+
+      Some day there''ll be a January to cheer
+
+
+      [Interlude | Fractured verse background | slightly out of tune]
+
+      [Older male spoken vocal | mumbling quietly | As if talking to himself]
+
+
+      I think I’m really, if you think about it…
+
+      The best ever
+
+      I mean the best that ever lived
+
+      Maybe even better than that
+
+      I really do…
+
+
+      [Final Chorus | widest arrangement | stacked harmonies | soulful female backing
+      vocals | bigger drums]
+
+      And when his rage goes quiet in the halls
+
+      And the minders on the hill have stood their ground
+
+      And the traffic is the only thing we hear
+
+      That day will be a January to cheer
+
+
+      [Outro | sustained organ and guitar chord | slow decay]
+
+
+      That day will be a January to cheer
+
+
+      [End]'
+    lyrics_text: 'There''s a mad man in the people''s house
+
+      There''s a mad man in the people''s house
+
+      He has the key. He''s past the gate
+
+      He only sleeps by mistake
+
+      Cannot keep the mad man in the house
+
+
+      There''s a mad man in a broken pool
+
+      There''s a mad man in a broken pool
+
+      He doesn''t swim. He won''t be told
+
+      The deep end''s dry. The tiles are cold
+
+      Cannot keep the mad man in the house
+
+
+      And when his rage comes thundering through the halls
+
+      And the minders on the hill have gone to ground
+
+      And the shouting is the only thing we hear
+
+      Some day there''ll be a January to cheer
+
+
+      There''s a mad man in the cabinet room
+
+      There''s a mad man in the cabinet room
+
+      He wants a yes. He wants it now
+
+      One by one they learn to bow
+
+      Cannot keep the mad man in the house
+
+
+      And when his rage comes thundering through the halls
+
+      And the minders on the hill have gone to ground
+
+      And the shouting is the only thing we hear
+
+      Some day there''ll be a January to cheer
+
+
+      We watched the doors swing open
+
+      We watched the guards step aside
+
+      We watched the decent people
+
+      Find somewhere safe to hide
+
+      But every house has windows
+
+      And every lock can turn
+
+
+      And when his rage comes thundering through the halls
+
+      And the minders on the hill have gone to ground
+
+      And the shouting is the only thing we hear
+
+      Some day there''ll be a January to cheer
+
+
+      I think I’m really, if you think about it…
+
+      The best ever
+
+      I mean the best that ever lived
+
+      Maybe even better than that
+
+      I really do…
+
+
+      And when his rage goes quiet in the halls
+
+      And the minders on the hill have stood their ground
+
+      And the traffic is the only thing we hear
+
+      That day will be a January to cheer
+
+
+      That day will be a January to cheer'
+    lyrics_source: null
+    hints: {}
+    master_path: null
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/A January To Cheer/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/A January To Cheer/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/A January To Cheer/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/A January To Cheer/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/A January To Cheer/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/A January To Cheer/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/A January To Cheer/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: default
+      persona: pundit
+      target: blurb
+  distributor: landr
+  seo:
+    title: A January To Cheer
+    description: A January To Cheer on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/A January To Cheer.wav
+  hero_image: site/public/assets/releases/a-january-to-cheer/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null
