@@ -1,0 +1,185 @@
+{
+  "album_id": "michael-anthony-rose--wazoo-in-effigy",
+  "release_slug": "wazoo-in-effigy",
+  "title": "Wazoo In Effigy",
+  "release_type": "album",
+  "artist": "Michael Anthony Rose",
+  "persona": "POINT-IN-TIME ARTIST CONTEXT\nRelease-date cutoff: 2026-09-12\nWrite as though the target release is new on this date.\nDo not mention, infer, or rely on releases or artist developments after this cutoff.\nThe current mutable artist biography is excluded because it has no dated revision.\nFor prior releases, approved critic summaries take precedence over catalog descriptions.\nArtist: Michael Anthony Rose\nCatalog available at this point (oldest first):\n- 2026-02-20 — Aletheion (single)\n- 2026-03-08 — Build Me A Lie (single)\n- 2026-03-14 — Nowhere But Up (single)\n- 2026-03-27 — I Will Bloom (single)\n- 2026-04-09 — But That Was Then (single)\n- 2026-04-14 — Avant Suite (single)\n- 2026-04-15 — Never Knowing (single)\n- 2026-04-30 — Prepositions (single)\n- 2026-05-04 — The Bridge Gets You Over (single)\n- 2026-05-10 — Truth's Empty Promise (single)\n- 2026-05-11 — Aroma Of You (single)\n- 2026-05-19 — I'm Still Here (album)\n  Approved critic summary: Rose opens with a mumbled false start on 'I'm Old Now,' and that small, deliberate stumble tells you exactly what kind of record this is: nothing performed, nothing smoothed over, just a man taking honest stock.\n- 2026-05-30 — Entraining (single)\n- 2026-06-16 — Live Forever Or Die Trying (single)\n- 2026-06-25 — A Distant Memory (single)\n  Approved critic summary: \"A Distant Memory\" opens with a counted-off \"one, two, three, four\" that sets a brisk 4/4 in C major, and from there Rose lets a female vocal float above a clean, roomy groove that leans more toward jazzy indie-pop than any straight ballad.\n- 2026-06-25 — You Know Enough (single)\n  Approved critic summary: There's a bat by the bed in this one, his father's before him, and nobody in the family has ever swung it.\n- 2026-07-08 — You Don't Say (single)\n  Approved critic summary: Nearly seven minutes, and Rose earns every one of them here by treating silence itself as the subject.\n- 2026-07-18 — Outlandia (album)\n  Approved critic summary: For a songwriter introduced as a diarist, a philosopher of the ordinary who finds a lifetime in a reflection on a phone screen, \"Outlandia\" is a startling pivot: a two-hour rock opera, twenty-four scenes long, about how a country is bought, broken, and inventoried.\n- 2026-08-20 — Them Bones (single)\n  Approved critic summary: After the two-hour sprawl of \"Outlandia,\" Rose narrows the lens back down to something you can hold in one hand, and \"Them Bones\" benefits from the compression.\n- 2026-08-30 — Unreasonably Quiet (single)\n  Approved critic summary: Rose builds this one on a 3/4 pulse at a brisk clip, which is the first surprise: a waltz that never asks you to sway, driven instead by a Hammond groove and gritty guitar working against the meter rather than settling into it.\n- 2026-09-12 — Wazoo In Effigy (album) [target release]",
+  "tracklist": [
+    "michael-anthony-rose--knurled-spanner",
+    "michael-anthony-rose--spontaneous-fugue",
+    "michael-anthony-rose--municipal-tongue-clamp",
+    "michael-anthony-rose--hey-boob-shirley",
+    "michael-anthony-rose--free-to-pee",
+    "michael-anthony-rose--message-from-bob",
+    "michael-anthony-rose--waltzing-tilde",
+    "michael-anthony-rose--wazoo-in-effigy"
+  ],
+  "track_records": [
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--knurled-spanner.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--spontaneous-fugue.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--municipal-tongue-clamp.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--hey-boob-shirley.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--free-to-pee.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--message-from-bob.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--waltzing-tilde.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--wazoo-in-effigy.json"
+  ],
+  "album_features": {
+    "total_runtime_s": 2400.4,
+    "bpm_curve": [
+      136.0,
+      89.1,
+      107.7,
+      136.0,
+      136.0,
+      107.7,
+      172.3,
+      143.6
+    ],
+    "key_progression": [
+      "E minor",
+      "E major",
+      "F minor",
+      "C# minor",
+      "C# minor",
+      "C# major",
+      "F minor",
+      "F major"
+    ],
+    "mood_progression": [
+      "tender",
+      "emotional",
+      "tender",
+      "tender",
+      "tender",
+      "emotional",
+      "tender",
+      "tender"
+    ],
+    "rank_distribution": {
+      "2": 2,
+      "3": 1,
+      "4": 5,
+      "5": 0
+    },
+    "peak_track": "michael-anthony-rose--municipal-tongue-clamp",
+    "valley_tracks": [
+      "michael-anthony-rose--spontaneous-fugue",
+      "michael-anthony-rose--waltzing-tilde"
+    ]
+  },
+  "cohesion": {
+    "palette_consistency": 0.825,
+    "theme_threads": [
+      "there",
+      "had",
+      "out",
+      "before",
+      "got",
+      "know",
+      "like",
+      "need"
+    ],
+    "verdict": "varied"
+  },
+  "review": {
+    "target": "album_long",
+    "review_text": "Michael Anthony Rose’s *Wazoo in Effigy* is inspired by Frank Zappa, which is not quite the same thing as being a Zappa tribute. Rose borrows some of the machinery - abrupt meter changes, marimba and percussion ostinatos, jazz-rock ensemble writing, spoken absurdism, ugly-pretty harmonies, doo-wop mutations, instrumental passages that sound dangerously close to coming apart - but he is less interested in reproducing Zappa’s music than in seeing what can still be built with some of the ideas behind it.\n\nThat turns out to be the album’s strongest decision. An imitation of Zappa would have been doomed from the first bar. Instead, *Wazoo in Effigy* treats him almost as a permission slip: permission to let a joke become an argument, to interrupt a song with an instrumental problem, to make virtuosity funny, to make stupidity complicated, and to refuse the assumption that sophisticated music must behave seriously.\n\nAcross the record, Rose repeatedly sets ordinary human foolishness against unnecessarily elaborate musical architecture. Language slips. Symbols refuse to mean exactly what we think they mean. Bodily functions acquire philosophical significance. Tools promise impossible cures. Social rules collide with animal instincts. Musical structures become part of the joke rather than merely accompaniment to it. Some pieces land immediately; others feel deliberately overbuilt, with arrangements that demand more attention than their premises initially seem to deserve. That imbalance is occasionally frustrating, but it also belongs to the record’s character. *Wazoo in Effigy* likes excess too much to pretend otherwise.\n\nWhat holds the album together is curiosity rather than impersonation. Rose seems fascinated by the point where equivalence becomes approximation, dignity becomes ridiculousness, expertise becomes pomposity, and a perfectly defensible idea gets pushed one step beyond where good manners would have stopped it. The humor frequently comes from refusing to stop.\n\nThat makes the title track an important ending, but not because the preceding album has been building toward a demand that Frank Zappa be declared a misunderstood genius. “Wazoo in Effigy” is darker than that. After spending an album exercising some of the freedoms Zappa helped establish, Rose turns toward the price an artist can pay for exercising them.\n\nThe song is structured as an accumulation of judgments. Wazoo is arrogant. Academic. Vulgar. Difficult. Cheap with musicians. Emotionally barren. Perhaps brilliant, but unpleasantly aware of it. Rose does not systematically rebut those charges. Instead, Wazoo answers: “I wrote what I heard. / I said what I saw.” The distinction between explanation and exoneration is crucial. The song asks what becomes of criticism when the qualities being condemned are inseparable from the qualities that produced the work.\n\nEven its historical punch line refuses to resolve the matter. A famous detractor eventually stands onstage honoring the man he once dismissed, yet “no correction was printed.” The point is not that critics were stupid and Zappa was right. It is that judgments harden while the work keeps moving.\n\nThat is a far more interesting place for *Wazoo in Effigy* to end.\n\nRose has made an album clearly indebted to Zappa without turning indebtedness into cosplay. At its best, the record understands that the useful inheritance was never a particular guitar tone, joke, meter or marimba part. It was the larger proposition that popular music could contain almost anything if the composer could make the pieces hold together.\n\nSometimes *Wazoo in Effigy* barely holds together.\n\nThat may be the compliment it was looking for.",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "strong"
+    },
+    "sum_vs_parts": "greater",
+    "persona_delivery": "expands",
+    "anchors_used": [
+      "Knurled Spanner",
+      "Municipal Tongue Clamp",
+      "Hey Boob Shirley",
+      "Free To Pee",
+      "Message From Bob",
+      "Spontaneous Fugue",
+      "Waltzing Tilde",
+      "Wazoo In Effigy",
+      "Clamp it down, citizen, nice and snug",
+      "Meaning is everywhere / once you lower the standard",
+      "Talentless"
+    ],
+    "status": "publishable",
+    "model": "claude-opus-4-8"
+  },
+  "track_reviews_in_context": [
+    {
+      "track_id": "michael-anthony-rose--knurled-spanner",
+      "position": 1,
+      "standalone_rank": 3,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The record opens like a late-night infomercial run through a jazz-fusion band that refuses to sit still: an electric-piano ostinato loops at a brisk clip while clipped brass and two guitars trade angular jabs, and Rose talk-sings the whole con with a straight face. As a first handshake it sets the terms for everything that follows, the dry wit, the odd meters, the satire built from a single absurd object. The joke is right there in the spanner itself, a tool whose knurling is 'mostly there so your hand feels employed while the thing itself does very little,' and Rose builds a whole indictment of useless progress on that one image. Mrs. Vale on Sycamore Close gets her verse and her ruined tumble dryer; the mock-critic bridge lands one of the album's sharpest lines when it accuses us of confusing 'tool' with 'permission.' The deadpan post-chorus, those flat '(Probably help.)' backing vocals with 'no warranty on the mood,' rewards a second pass. It runs a touch long across its five minutes, and the wiry guitar solo repeats its figure a beat past where you want it to move on, so this reads as an entry for listeners already tuned to Rose's humor rather than a crowd-pleaser up front. But the closing turn, the ostinato left alone and that final 'You still don't need it, and you never did,' gives the gag a real spine. A grower, and a smart way to raise the curtain.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--spontaneous-fugue",
+      "position": 2,
+      "standalone_rank": 2,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After the opener's angular pitch, Rose pulls the tempo back to a walking pace and turns inward, though the meter stays every bit as restless: settled but shifting underneath, guitar and fretless bass interlocking and then peeling apart at each of the dozen section seams. The title promises a runaway, and the track treats meter like a moving vehicle. The best writing here is the third verse, where the philosophy comes down to earth: 'On the 6:12 with my bag half-zipped, / Listening to the brakes sigh at the stop.' That's the whole song in two lines, the commuter's quiet reckoning about whether he chose the route or the route chose him, and it lands harder than the more abstract talk of being 'aligned with the cosmos' earlier on. His phrasing stays tightly measured, uniform line lengths clipped to the beat, so when the bridge loosens into 'Maybe the map is all a rumor,' you feel the rail let go for a second. It runs long at four and a half minutes and the chorus leans on repetition more than reinvention, so this one is for the faithful, the listeners who've followed Rose from the diary songs through the angular experiments. But there's real craft in how the stop-start edits keep undercutting the groove without ever losing it. A grower once you stop looking for the map, and the quiet before the record's satirical heart opens up.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--municipal-tongue-clamp",
+      "position": 3,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "This is where the record finds its center of gravity. Two tracks in, Rose zooms his lens down to a single absurd ordinance and holds it there until it's monstrous. He builds it at a laid-back pace in a minor key, then keeps knocking the floor out from under you: the crooked figures in the verses, the full-band choke that swallows the line before 'you're looking at an auxiliary clamp,' the way straight 4/4 keeps getting sabotaged by odd bars in the chorus so you never quite settle. The genius is in the delivery, that dry baritone talk-sing reading bureaucratic nonsense with a straight face while a cheerful civic choir chirps 'Clamp it down, citizen, nice and snug' like it's a jingle you're meant to whistle. The doo-wop bridge is where the joke turns cold: Eddie starts to say the property tax 'seemed,' a metallic snap cuts him off, and the sweet backing hum that answers is the most sinister thing on the record. It runs close to six minutes and the mid-section instrumental break, all angular theme traded around in shifting meter, asks patience of anyone who came for the hook. But the payoff, 'Praise be unto the Municipal Tongue Clamp' over a grotesque pageant that collapses into a tiny lounge combo cooing 'Perfect,' earns it. Randy Newman's satirical bite crossed with the odd-meter mischief of prog-jazz, this is the strongest thing here, and it holds the room.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--hey-boob-shirley",
+      "position": 4,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Coming off the cold civic pageant of the last track, Rose lightens the touch without loosening the craft, and the album settles into a run of comic set-pieces that all pull their weight. The joke here is the arrangement itself: a marimba that opens by miming a woman walking across a room, then keeps that walking motif running through the whole thing like a straight face at a comedy roast. Rose plays anthropologist, dry and deadpan, delivering the verses in a talk-sung mumble that treats a man's caught glance as field research: 'Nothing makes a grown man study grout / Like what he noticed four feet before.' The chorus hook is genuinely sticky, and the brisk pulse keeps everything slightly off its heels, the broken-waltz bridge tipping into that 'three beats for displaying, two beats for the scan' bit that lands the mock-science joke perfectly. What sounds like a minor key gives the whole thing a wry, unsmiling edge rather than a wink. It runs long at five-plus minutes and the spoken outro pushes the conceit a beat past where a tighter edit would have left it, but the payoff line, 'Nice grout, by the way,' earns the wait. Closest cousin might be Frank Zappa in a lecturing mood, or They Might Be Giants writing a nature documentary. For a comic set-piece, it's built with real care, and it lets you laugh right when the record needs you to.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--free-to-pee",
+      "position": 5,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Sitting dead center in the record's comic stretch, this is Rose at his most audacious: a full five-minute argument built around a man who can't find a legal place to relieve himself, and the nerve is half the fun. It opens exactly where it ends, with a muttered 'Damn. Be right back,' and in between he runs a full mock-courtroom at a scrambling clip, the electric-piano ostinato and clipped horn stabs interrupted every few bars by Linda's off-mic one-word verdicts: 'TED!' 'NO!' 'WHAT?!' The best writing here is the mock-legal register played dead straight, 'the pavement didn't file a plea,' 'nature bangs the gavel,' 'nature has seniority,' delivered with the wounded dignity of a man who genuinely believes he's been wronged. The bridge is where it turns from bit to song: the band drops to organ and bass, and Rose lands his one true confession, 'Fifty-eight has humbled better men than me,' a line that would break your heart if he weren't so busy defending himself. It doesn't have the emotional reach of the quieter cuts in his catalog, and the joke, brilliant as it is, only unfolds the one way; this is a comic set piece, not a grower you'll return to for the ache. But as craft it's ruthless, the doo-wop chorus turning martial by the second pass, the whole thing cutting dead into silence before the muttered exit. Proof Rose can build a fully load-bearing song out of the least dignified subject he's ever touched.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--message-from-bob",
+      "position": 6,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The comic run keeps going but the theology deepens here, and the joke stops being a joke somewhere around the second verse. Rose lets his brother's voicemails do the philosophizing over a dry, clipped Rhodes-and-bass vamp that stays close to a deadpan mid-tempo lope, laying out his premise like a proof: 'A message from Bob / is a message from God / if everything is one. / That's not religion. / That's arithmetic.' The band works in a punchy 1970s studio-jazz frame, fuzz guitar answering back after each refrain, the rhythm section snapping shut on the closing lines so the silence lands like a held breath. The bridge is the centerpiece, a flat catalog of household omens ('The refrigerator starts at two thirteen. / Information') that builds to a quiet thesis: 'Meaning is everywhere / once you lower the standard.' It runs long at five and a half minutes, and the last solo pass tests your patience the way any good koan does, but the payoff is the glued-shut window and the phone ringing once before the hard cut, where the whole conceit finally bares its teeth. Closer to Zappa's studio-jazz talking pieces than anything on his diarist records, this is Rose trusting you to sit with a strange idea, and it primes you for the two most ambitious things the record has left.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--waltzing-tilde",
+      "position": 7,
+      "standalone_rank": 2,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After a long stretch of comic set-pieces, this is where the record turns most serious about its craft, and the joke goes fully philosophical. Two voices, a tenor and an alto, trade near-spoken lines over a waltz that keeps threatening to fall apart: piano and marimba lock into a three-note figure at the top, then the marimba quietly refuses to change while everything above it drifts, splinters into 5/4, and finally staggers through a few bars of 7/8 where the meter nearly loses its footing entirely. The whole thing is an argument about sameness that keeps dissolving under its own logic. 'We have the same car,' he offers; 'we don't have the same car,' she answers, and by the closing verse the only thing left that's identical is the pronoun. It's structurally the most ambitious thing in his catalog since 'Outlandia,' and if the payoff lives in the design more than in any single hook, that's the point: the marimba holding one wrong note under a full-ensemble unison is worth the wait. A grower, and the clearest signal that the closer is going to ask you to think rather than to sing along.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--wazoo-in-effigy",
+      "position": 8,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "There's a reason this one closes the record instead of opening it: it's an argument you have to sit inside, and after seven tracks of Rose sharpening his satire, the title cut turns the whole homage back on itself. The album tries and mostly succeeds as a tribute to Frank Zappa, but this is where Rose takes on Zappa's critics and asks why we haven't revisited that body of work in an age of mostly meaningless music as confection. The clipped baritone stays dry and unhurried through the first verse, all posture and no pity, 'Technique, certainly. Feeling? I doubt it,' delivered flat enough that you don't clock the trap until the chorus turns the accusation back around: 'I wrote what I heard. I said what I saw. You wanted approval; I wouldn't applaud.' At a brisk clip in a major key, the marimba pulse and off-kilter brass keep the room off balance, and the abrupt stop-start edits work like a critic's clipped sentences: everything measured, everything cut short before it can bleed. The masterstroke is structural. The spoken bridge, where the 'wild side hero' calls the thinly disguised Wazoo 'the single most untalented person I've heard in my life,' only to induct him into the Hall twenty years later with no correction printed, is the whole thesis in miniature, and it lands with the cold Randy Newman trick of letting a monster narrate his own portrait. It's not the easiest cut in the catalog, more built than felt, and the final bored 'Talentless' aftertaste is deliberate; it leaves you cold on purpose. A grower the faithful will keep coming back to unpack, this is Rose at his most quietly vicious, and it earns the last word. Say what you will about Zappa, but eventually genius gets recognized. Rose aims a small floodlight and asks for a reevaluation.",
+      "model": "claude-opus-4-8"
+    }
+  ]
+}

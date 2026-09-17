@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--knurled-spanner
+summary: "The record opens like a late-night infomercial run through a jazz-fusion band that refuses to sit still: an electric-piano ostinato loops at a brisk clip while clipped brass and two guitars trade angular jabs, and Rose talk-sings the whole con with a straight face."
+verdict_rank: 3
+verdict_label: "dependable"
+---
+
+The record opens like a late-night infomercial run through a jazz-fusion band that refuses to sit still: an electric-piano ostinato loops at a brisk clip while clipped brass and two guitars trade angular jabs, and Rose talk-sings the whole con with a straight face. As a first handshake it sets the terms for everything that follows, the dry wit, the odd meters, the satire built from a single absurd object. The joke is right there in the spanner itself, a tool whose knurling is 'mostly there so your hand feels employed while the thing itself does very little,' and Rose builds a whole indictment of useless progress on that one image. Mrs. Vale on Sycamore Close gets her verse and her ruined tumble dryer; the mock-critic bridge lands one of the album's sharpest lines when it accuses us of confusing 'tool' with 'permission.' The deadpan post-chorus, those flat '(Probably help.)' backing vocals with 'no warranty on the mood,' rewards a second pass. It runs a touch long across its five minutes, and the wiry guitar solo repeats its figure a beat past where you want it to move on, so this reads as an entry for listeners already tuned to Rose's humor rather than a crowd-pleaser up front. But the closing turn, the ostinato left alone and that final 'You still don't need it, and you never did,' gives the gag a real spine. A grower, and a smart way to raise the curtain.

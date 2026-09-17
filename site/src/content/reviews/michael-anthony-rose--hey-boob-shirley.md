@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--hey-boob-shirley
+summary: "Coming off the cold civic pageant of the last track, Rose lightens the touch without loosening the craft, and the album settles into a run of comic set-pieces that all pull their weight."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+Coming off the cold civic pageant of the last track, Rose lightens the touch without loosening the craft, and the album settles into a run of comic set-pieces that all pull their weight. The joke here is the arrangement itself: a marimba that opens by miming a woman walking across a room, then keeps that walking motif running through the whole thing like a straight face at a comedy roast. Rose plays anthropologist, dry and deadpan, delivering the verses in a talk-sung mumble that treats a man's caught glance as field research: 'Nothing makes a grown man study grout / Like what he noticed four feet before.' The chorus hook is genuinely sticky, and the brisk pulse keeps everything slightly off its heels, the broken-waltz bridge tipping into that 'three beats for displaying, two beats for the scan' bit that lands the mock-science joke perfectly. What sounds like a minor key gives the whole thing a wry, unsmiling edge rather than a wink. It runs long at five-plus minutes and the spoken outro pushes the conceit a beat past where a tighter edit would have left it, but the payoff line, 'Nice grout, by the way,' earns the wait. Closest cousin might be Frank Zappa in a lecturing mood, or They Might Be Giants writing a nature documentary. For a comic set-piece, it's built with real care, and it lets you laugh right when the record needs you to.

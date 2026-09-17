@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--spontaneous-fugue
+summary: "After the opener's angular pitch, Rose pulls the tempo back to a walking pace and turns inward, though the meter stays every bit as restless: settled but shifting underneath, guitar and fretless bass interlocking and then peeling apart at each of the dozen section seams."
+verdict_rank: 2
+verdict_label: "soft_floor"
+---
+
+After the opener's angular pitch, Rose pulls the tempo back to a walking pace and turns inward, though the meter stays every bit as restless: settled but shifting underneath, guitar and fretless bass interlocking and then peeling apart at each of the dozen section seams. The title promises a runaway, and the track treats meter like a moving vehicle. The best writing here is the third verse, where the philosophy comes down to earth: 'On the 6:12 with my bag half-zipped, / Listening to the brakes sigh at the stop.' That's the whole song in two lines, the commuter's quiet reckoning about whether he chose the route or the route chose him, and it lands harder than the more abstract talk of being 'aligned with the cosmos' earlier on. His phrasing stays tightly measured, uniform line lengths clipped to the beat, so when the bridge loosens into 'Maybe the map is all a rumor,' you feel the rail let go for a second. It runs long at four and a half minutes and the chorus leans on repetition more than reinvention, so this one is for the faithful, the listeners who've followed Rose from the diary songs through the angular experiments. But there's real craft in how the stop-start edits keep undercutting the groove without ever losing it. A grower once you stop looking for the map, and the quiet before the record's satirical heart opens up.

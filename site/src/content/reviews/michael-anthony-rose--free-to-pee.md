@@ -1,0 +1,8 @@
+---
+track_id: michael-anthony-rose--free-to-pee
+summary: "Sitting dead center in the record's comic stretch, this is Rose at his most audacious: a full five-minute argument built around a man who can't find a legal place to relieve himself, and the nerve is half the fun."
+verdict_rank: 4
+verdict_label: "highlight"
+---
+
+Sitting dead center in the record's comic stretch, this is Rose at his most audacious: a full five-minute argument built around a man who can't find a legal place to relieve himself, and the nerve is half the fun. It opens exactly where it ends, with a muttered 'Damn. Be right back,' and in between he runs a full mock-courtroom at a scrambling clip, the electric-piano ostinato and clipped horn stabs interrupted every few bars by Linda's off-mic one-word verdicts: 'TED!' 'NO!' 'WHAT?!' The best writing here is the mock-legal register played dead straight, 'the pavement didn't file a plea,' 'nature bangs the gavel,' 'nature has seniority,' delivered with the wounded dignity of a man who genuinely believes he's been wronged. The bridge is where it turns from bit to song: the band drops to organ and bass, and Rose lands his one true confession, 'Fifty-eight has humbled better men than me,' a line that would break your heart if he weren't so busy defending himself. It doesn't have the emotional reach of the quieter cuts in his catalog, and the joke, brilliant as it is, only unfolds the one way; this is a comic set piece, not a grower you'll return to for the ache. But as craft it's ruthless, the doo-wop chorus turning martial by the second pass, the whole thing cutting dead into silence before the muttered exit. Proof Rose can build a fully load-bearing song out of the least dignified subject he's ever touched.
