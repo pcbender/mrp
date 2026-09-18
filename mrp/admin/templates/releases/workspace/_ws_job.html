@@ -30,7 +30,11 @@
     <span class="pipeline-step-error" title="{{ parsed.message | e }}">{{ parsed.message }}</span>
     {% endif %}
   {% elif parsed.get('ok_count') is not none and parsed.get('tracks') %}
-    <span style="font-size:11px;color:var(--success)">{{ parsed.ok_count }}/{{ parsed.tracks | length }} ok</span>
+    {% set failed_tracks = parsed.tracks | rejectattr('ok') | list %}
+    <span style="font-size:11px;color:{{ 'var(--success)' if not failed_tracks else 'var(--danger)' }}">{{ parsed.ok_count }}/{{ parsed.tracks | length }} ok</span>
+    {% if failed_tracks %}
+    <span class="pipeline-step-error" title="{{ failed_tracks | map(attribute='error') | join('; ') | e }}">{{ failed_tracks[0].track_slug }}: {{ failed_tracks[0].error }}</span>
+    {% endif %}
   {% elif parsed.get('written') is not none %}
     {% set wb_bad = not parsed.written and (parsed.skipped or parsed.get('failed')) %}
     <span style="font-size:11px;color:{{ 'var(--danger)' if wb_bad else 'var(--success)' }}">{{ parsed.written | length }} written, {{ parsed.skipped | length }} skipped{% if parsed.get('failed') %}, {{ parsed.failed | length }} failed{% endif %}</span>
@@ -53,6 +57,8 @@
   <span class="pipeline-step-error" title="{{ parsed.message | e }}">{{ parsed.message }}</span>
   <a class="btn btn-secondary btn-sm"
      href="/nim/connect?return_to=/releases/{{ slug }}/promoter">Connect Nim</a>
+  {% elif parsed.get('message') %}
+  <span class="pipeline-step-error" title="{{ (parsed.stderr or parsed.stdout or parsed.message) | e }}">{{ parsed.message | e }}</span>
   {% else %}
   <span class="pipeline-step-error" title="{{ job.output | e }}">{{ job.output[:150] | e }}</span>
   {% endif %}

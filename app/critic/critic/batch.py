@@ -39,7 +39,7 @@ from .catalog import (
 from .config import OUT_DIR
 from .usage import tracker
 from .dsp import extract_dsp
-from .impression import get_impression
+from .impression import ImpressionError, get_impression
 from .ingest import ingest
 from .record import TrackFinding
 from .synthesize import synthesize
@@ -152,6 +152,10 @@ def run_batch(
             print(f"  → rank {rank} ({label})  saved: {out_path.name}")
             results.append(finding)
 
+        except ImpressionError:
+            # Gemini being down is not a per-track condition: every remaining
+            # track would fail the same way, so stop here rather than churn.
+            raise
         except Exception:
             print(f"  ✗ failed:")
             traceback.print_exc()

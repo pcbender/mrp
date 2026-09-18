@@ -18,9 +18,10 @@ from typing import Any, Callable
 
 from .config import (
     ANTHROPIC_API_KEY,
-    GOOGLE_API_KEY,
+    GEMINI_API_KEY,
     OPENAI_API_KEY,
     TRIUMVIRATE,
+    gemini_client,
 )
 
 _PROMPTS_DIR = Path(__file__).parent / "prompts"
@@ -71,12 +72,11 @@ def _openapi_subset(schema: Any) -> Any:
 
 
 def _ask_gemini(system: str, user: str, model: str) -> list[dict[str, Any]]:
-    if not GOOGLE_API_KEY:
-        raise BallotError("GOOGLE_SERVICE_API_KEY not set")
-    from google import genai
+    if not GEMINI_API_KEY:
+        raise BallotError("GOOGLE_GEMINI_API_KEY not set")
     from google.genai import types
 
-    client = genai.Client(api_key=GOOGLE_API_KEY)
+    client = gemini_client()
     response = client.models.generate_content(
         model=model,
         config=types.GenerateContentConfig(
