@@ -403,6 +403,7 @@ release:
     master_path: /mnt/c/Masters/You Don't Say.wav
     links_na:
     - deezer
+    - youtube
   hero_image: site/public/assets/releases/you-don-t-say/hero.jpg
   language: null
   summary: null

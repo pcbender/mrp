@@ -352,6 +352,7 @@ release:
     master_path: /mnt/c/Masters/Make It All Fine.wav
     links_na:
     - deezer
+    - youtube
   hero_image: site/public/assets/releases/make-it-all-fine/hero.jpg
   language: null
   summary: null

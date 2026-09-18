@@ -18,6 +18,7 @@ release:
     youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mHr6gvbJL7TO8iiIQobf3fmiqYJ5JlkRk&lid=00000000-6a97-5059-2700-000e000380b4&cid=eef267f6-3f51-5d46-a717-711ac12bcf76
     amazon_music: https://music.amazon.com/albums/B0HH83W6M4?ref=dm_ff_amazonmusic_3p
     tidal: http://www.tidal.com/album/556961687
+    youtube: https://www.youtube.com/watch?v=_o8HR8v1Mho
   song:
     number: 1
     title: Unreasonably Quiet
@@ -202,6 +203,9 @@ release:
   automation:
     allow_auto_publish: false
     master_path: /mnt/c/Masters/Unreasonably Quiet.wav
+    links_na:
+    - deezer
+    - itunes_store
   hero_image: site/public/assets/releases/unreasonably-quiet/hero.jpg
   language: null
   summary: null

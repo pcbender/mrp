@@ -19,6 +19,8 @@ release:
     deezer: https://www.deezer.com/album/11127658?app_id=140685&utm_term=prod
     amazon_music: https://music.amazon.com/albums/B0HFYK57PW?ref=dmm_acq_soc_us_u_lfire_lp_x_da2faad713ec280c85aa7922f300a811
     tidal: http://www.tidal.com/album/554189161
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mEkrkO2S3s0-2le3uNvvFU6YJPQc-iYwg
+    youtube: https://www.youtube.com/watch?v=96VYQSArTT8
   song:
     number: 1
     title: Them Bones
