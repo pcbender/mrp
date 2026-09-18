@@ -36,9 +36,11 @@ the query-first rules). Graphify output is generated, not canonical source:
 
 ## Safety rules
 
-- No credentials in git. `ODESLI_API_KEY`, `GOOGLE_SERVICE_API_KEY`,
-  `SPOTIFY_CLIENT_ID`/`SPOTIFY_CLIENT_SECRET`, and the SSH deploy settings
-  all load from the environment or the untracked `.env` at the repo root.
+- No credentials in git. `ODESLI_API_KEY`, `GOOGLE_SERVICE_API_KEY` (YouTube
+  Data API), `GOOGLE_GEMINI_API_KEY` (Gemini — a dedicated AI Studio key; the
+  shared Cloud key is rejected by Gemini), `SPOTIFY_CLIENT_ID`/
+  `SPOTIFY_CLIENT_SECRET`, and the SSH deploy settings all load from the
+  environment or the untracked `.env` at the repo root.
 - Do not bypass `.allow-deploy` marker checks on deploy targets.
 - Use `--dry-run` when reviewing deployment target changes; use `--yes` only
   after reviewing rollback candidate output.

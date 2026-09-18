@@ -85,8 +85,9 @@ WSL2/Linux and Windows without churn.
 - Approved music-video MP4s use durable storage outside Git under
   `MRP_PUBLIC_MEDIA_ROOT` (default `~/.mrp/public-media/maricoparecords`). Only
   explicitly opted-in published media is copied into immutable site builds.
-- Credentials (`ODESLI_API_KEY`, `GOOGLE_SERVICE_API_KEY`, SSH deploy keys,
-  etc.) live in an untracked `.env` at the repo root — never in git.
+- Credentials (`ODESLI_API_KEY`, `GOOGLE_SERVICE_API_KEY` for YouTube,
+  `GOOGLE_GEMINI_API_KEY` for Gemini, SSH deploy keys, etc.) live in an
+  untracked `.env` at the repo root — never in git.
 
 ## Docs
 

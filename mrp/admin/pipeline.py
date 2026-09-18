@@ -10,6 +10,30 @@ from typing import Any
 from mrp.core.migrate_site import load_structured_record, serialize_structured_record
 
 
+class StepFailure(RuntimeError):
+    """A workspace step failed. str(exc) is the one line the UI badge shows;
+    the captured process output rides along in the job record (jobs._run
+    stores job_output() when present) so the full context is a tooltip away."""
+
+    def __init__(self, message: str, *, stdout: str = "", stderr: str = "", **extra: Any) -> None:
+        super().__init__(message)
+        self.details: dict[str, Any] = {"stdout": stdout, "stderr": stderr, **extra}
+
+    def job_output(self) -> dict[str, Any]:
+        return {"ok": False, "message": str(self), **self.details}
+
+
+def _last_line(text: str, limit: int = 300) -> str:
+    """The last non-empty line of a process's output: for a Python traceback
+    that is the exception itself, which is the part worth showing."""
+    for line in reversed((text or "").splitlines()):
+        if line.strip():
+            # The CLIs prefix their own clean errors ("critic: …"); the step
+            # message already names the tool, so drop it.
+            return line.strip().removeprefix("critic: ").removeprefix("promoter: ")[:limit]
+    return "(no output)"
+
+
 def _load_release(root: Path, slug: str) -> tuple[Path, dict, dict]:
     path = root / "content" / "releases" / f"{slug}.yaml"
     if not path.exists():
@@ -298,10 +322,13 @@ def run_critic(
             _args(mp, unit["slug"], cs),
             capture_output=True, text=True, cwd=str(critic_cwd),
         )
-        entry: dict[str, Any] = {"track_slug": unit["slug"], "ok": r.returncode == 0}
         if r.returncode != 0:
-            entry["error"] = (r.stderr or r.stdout)[-500:]
-        results.append(entry)
+            raise StepFailure(
+                f"critic {unit['slug']}: {_last_line(r.stderr or r.stdout)}",
+                stdout=r.stdout[-2000:], stderr=r.stderr[-2000:],
+                track_slug=unit["slug"], tracks=results,
+            )
+        results.append({"track_slug": unit["slug"], "ok": True})
 
     ok_count = sum(1 for r in results if r["ok"])
     return {
@@ -329,14 +356,19 @@ def run_critic_album(
          "--target", target, "--model", model, "--persona", persona],
         capture_output=True, text=True, cwd=str(root / "app" / "critic"),
     )
-    ok = result.returncode == 0
+    if result.returncode != 0:
+        raise StepFailure(
+            f"critic album: {_last_line(result.stderr or result.stdout)}",
+            stdout=result.stdout[-2000:], stderr=result.stderr[-2000:],
+            target=target, model=model, persona=persona,
+        )
     return {
-        "ok": ok,
+        "ok": True,
         "target": target,
         "model": model,
         "persona": persona,
         "stdout": result.stdout[-2000:],
-        "stderr": result.stderr[-800:] if not ok else "",
+        "stderr": "",
     }
 
 
@@ -948,14 +980,19 @@ def run_promoter(root: Path, slug: str, mode: str = "blurb", model: str = "defau
     result = subprocess.run(
         cmd, capture_output=True, text=True, cwd=str(root / "app" / "promoter"),
     )
-    ok = result.returncode == 0
+    if result.returncode != 0:
+        raise StepFailure(
+            f"promoter {mode}: {_last_line(result.stderr or result.stdout)}",
+            stdout=result.stdout[-3000:], stderr=result.stderr[-2000:],
+            mode=mode, artist_id=artist_id, model=model,
+        )
     return {
-        "ok": ok,
+        "ok": True,
         "mode": mode,
         "artist_id": artist_id,
         "model": model,
         "stdout": result.stdout[-3000:],
-        "stderr": result.stderr[-500:] if not ok else "",
+        "stderr": "",
     }
 
 
@@ -1177,7 +1214,8 @@ def run_promo_kit(root: Path, slug: str, model: str = "default") -> dict[str, An
         "title": title,
         "artist_id": artist_id,
         "artist_name": artist.get("name") or artist_id,
-        "model": meta.get("model") or model,
+        # The concrete model the alias resolved to, when the promoter reports it.
+        "model": meta.get("model_version") or meta.get("model") or model,
         "promo_track": promo_track,
         "copy": copy,
         "hashtags": hashtags,

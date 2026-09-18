@@ -3,21 +3,34 @@ Impression worker: sends the Opus proxy to Gemini and captures a
 texture/feel/production description.
 
 DSP owns BPM, key, time signature — this worker explicitly avoids them.
-Degrades gracefully (returns empty Impression) if GOOGLE_API_KEY is absent
-or the google-genai package is unavailable.
+Fails loudly (ImpressionError) when Gemini is unavailable for any reason: a
+review written without the listening pass is silently thinner, so opting out
+has to be explicit (``critic batch --skip-impression``), never a fallthrough.
 
 Usage:
-    python -m critic.impression <audio_or_proxy_path> [--model gemini-2.5-pro]
+    python -m critic.impression <audio_or_proxy_path> [--model gemini-pro-latest]
 """
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
-from .config import GOOGLE_API_KEY, IMPRESSION_MODEL
+from .config import GEMINI_API_KEY, IMPRESSION_MODEL, gemini_client
 from .record import Impression
 from .usage import record_gemini
 from .utils import scrub_emdash
+
+
+class ImpressionError(RuntimeError):
+    """Gemini could not produce an impression; the critic must not proceed."""
+
+
+def _describe(exc: BaseException) -> str:
+    """One readable line for a google-genai error (str() dumps the whole JSON)."""
+    code = getattr(exc, "code", None)
+    message = getattr(exc, "message", None) or str(exc)
+    message = " ".join(str(message).split())[:300]
+    return f"{code} {message}" if code else message
 
 _PROMPT = """\
 Listen to this audio and describe what you hear in 3-5 sentences as a music \
@@ -36,24 +49,20 @@ Do NOT use em dashes (—); use commas, colons, or rephrase instead.
 
 
 def get_impression(proxy_path: str | Path, model: str | None = None) -> Impression:
-    """
-    Send proxy.opus to Gemini. Returns empty Impression on any failure so the
-    rest of the pipeline continues unaffected.
-    """
-    if not GOOGLE_API_KEY:
-        return Impression(text="", model="")
+    """Send proxy.opus to Gemini. Raises ImpressionError on any failure."""
+    if not GEMINI_API_KEY:
+        raise ImpressionError("GOOGLE_GEMINI_API_KEY not set (environment or .env)")
 
     try:
-        from google import genai
         from google.genai import types
-    except ImportError:
-        return Impression(text="", model="")
+    except ImportError as exc:
+        raise ImpressionError("google-genai package is not installed") from exc
 
     selected = model or IMPRESSION_MODEL
     audio_bytes = Path(proxy_path).read_bytes()
 
     try:
-        client = genai.Client(api_key=GOOGLE_API_KEY)
+        client = gemini_client()
         response = client.models.generate_content(
             model=selected,
             contents=[
@@ -61,11 +70,16 @@ def get_impression(proxy_path: str | Path, model: str | None = None) -> Impressi
                 types.Part.from_text(text=_PROMPT),
             ],
         )
-        record_gemini(response)
-        return Impression(text=scrub_emdash(response.text.strip()), model=selected)
     except Exception as exc:
-        print(f"  ⚠  Gemini impression failed: {exc}")
-        return Impression(text="", model="")
+        raise ImpressionError(f"Gemini impression failed ({selected}): {_describe(exc)}") from exc
+
+    record_gemini(response)
+    text = scrub_emdash((response.text or "").strip())
+    if not text:
+        raise ImpressionError(f"Gemini impression came back empty ({selected})")
+    # Record the concrete model that answered: `selected` may be a `-latest`
+    # alias, which would say nothing useful about this record six months on.
+    return Impression(text=text, model=response.model_version or selected)
 
 
 def _main() -> None:
@@ -82,18 +96,10 @@ def _main() -> None:
         finding, _ = ingest(args.path, track_id=args.track_id)
         proxy_path = finding.source.proxy
 
-    if not GOOGLE_API_KEY:
-        print("GOOGLE_SERVICE_API_KEY not set — skipping.")
-        return
-
     print(f"Sending proxy to {args.model}…")
     impression = get_impression(proxy_path, model=args.model)
-
-    if not impression.text:
-        print("No impression returned.")
-    else:
-        print(f"\nModel : {impression.model}")
-        print(f"\nImpression:\n{impression.text}")
+    print(f"\nModel : {impression.model}")
+    print(f"\nImpression:\n{impression.text}")
 
 
 if __name__ == "__main__":

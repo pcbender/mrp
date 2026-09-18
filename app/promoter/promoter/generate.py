@@ -4,25 +4,38 @@ Gemini-backed generation for artist blurbs and bios.
 from __future__ import annotations
 
 from pathlib import Path
+from typing import NamedTuple
 
-from .config import GOOGLE_API_KEY, MODEL_DEFAULT
+from .config import GEMINI_API_KEY, MODEL_DEFAULT, gemini_client
 
 _PROMPTS_DIR = Path(__file__).parent / "prompts"
 
 
-def _call_gemini(system: str, user: str, model: str) -> str:
-    if not GOOGLE_API_KEY:
-        raise RuntimeError("GOOGLE_SERVICE_API_KEY not set")
-    from google import genai
+class GeminiReply(NamedTuple):
+    text: str
+    model: str  # the concrete model that answered, even when called via a `-latest` alias
+
+
+def _call_gemini(system: str, user: str, model: str) -> GeminiReply:
+    if not GEMINI_API_KEY:
+        raise RuntimeError("GOOGLE_GEMINI_API_KEY not set")
     from google.genai import types
 
-    client = genai.Client(api_key=GOOGLE_API_KEY)
-    response = client.models.generate_content(
-        model=model,
-        config=types.GenerateContentConfig(system_instruction=system),
-        contents=user,
-    )
-    return response.text.strip()
+    client = gemini_client()
+    try:
+        response = client.models.generate_content(
+            model=model,
+            config=types.GenerateContentConfig(system_instruction=system),
+            contents=user,
+        )
+    except Exception as exc:
+        # str() of a google-genai error is the whole JSON body; the admin shows
+        # one line, so make that line the code and message.
+        code = getattr(exc, "code", None)
+        message = " ".join(str(getattr(exc, "message", None) or exc).split())[:300]
+        raise RuntimeError(f"Gemini {model} failed: {code} {message}" if code else
+                           f"Gemini {model} failed: {message}") from exc
+    return GeminiReply((response.text or "").strip(), response.model_version or model)
 
 
 def generate_blurb(
@@ -55,7 +68,7 @@ def generate_blurb(
         "Recent releases:\n" + "\n\n---\n\n".join(release_blocks),
     ])
 
-    return _call_gemini(system, user, model)
+    return _call_gemini(system, user, model).text
 
 
 KIT_COPY_KEYS = [
@@ -101,8 +114,8 @@ def generate_kit(
         release_parts.append("(no critic review yet)")
 
     user = "\n\n".join(voice_parts + release_parts)
-    raw = _call_gemini(system, user, model)
-    kit = _parse_kit_response(raw)
+    reply = _call_gemini(system, user, model)
+    kit = _parse_kit_response(reply.text)
 
     missing = [k for k in KIT_COPY_KEYS if not str(kit.get(k) or "").strip()]
     if missing:
@@ -111,6 +124,7 @@ def generate_kit(
     if not isinstance(tags, list):
         tags = [t for t in str(tags or "").split() if t.startswith("#")]
     kit["hashtags"] = [str(t).strip() for t in tags if str(t).strip()]
+    kit["_meta"] = {"model": model, "model_version": reply.model}
     return kit
 
 
@@ -215,7 +229,7 @@ def generate_bio(
 
     user = "\n\n---\n\n".join(lyric_blocks) if lyric_blocks else "(no lyrics available)"
 
-    raw = _call_gemini(system, user, model)
+    raw = _call_gemini(system, user, model).text
     return _parse_bio_response(raw)
 
 

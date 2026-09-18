@@ -32,7 +32,7 @@ from .catalog import (
 from .config import OUT_DIR, critic_model_for, impression_model_for
 from .writeback import cmd_writeback as _cmd_writeback
 from .dsp import extract_dsp
-from .impression import get_impression
+from .impression import ImpressionError, get_impression
 from .ingest import ingest
 from .synthesize import synthesize
 from .tags import extract_tags
@@ -272,6 +272,14 @@ def main() -> None:
 
     args = parser.parse_args()
 
+    try:
+        _dispatch(args, parser)
+    except ImpressionError as exc:
+        print(f"critic: {exc}", file=sys.stderr)
+        sys.exit(1)
+
+
+def _dispatch(args: argparse.Namespace, parser: argparse.ArgumentParser) -> None:
     if args.command == "review":
         cmd_review(args)
     elif args.command == "batch":

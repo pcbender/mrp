@@ -195,7 +195,8 @@ def cmd_kit(args: argparse.Namespace) -> None:
     model = model_for(args.model)
     print(f"  calling {model}…")
     kit = generate_kit(artist, release, review_text, model=model)
-    kit["_meta"] = {"release": args.release, "artist_id": artist_id, "model": model}
+    kit["_meta"].update({"release": args.release, "artist_id": artist_id})
+    print(f"  model  : {kit['_meta']['model_version']}")
 
     payload = json.dumps(kit, indent=2, ensure_ascii=False)
     if args.out:
