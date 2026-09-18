@@ -49,28 +49,27 @@
     ],
     "mood_progression": [
       "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
       "emotional",
       "tender",
-      "tender",
-      "tender",
-      "emotional",
-      "tender",
-      "tender"
+      "intense"
     ],
     "rank_distribution": {
-      "2": 2,
+      "2": 1,
       "3": 1,
       "4": 5,
-      "5": 0
+      "5": 1
     },
-    "peak_track": "michael-anthony-rose--municipal-tongue-clamp",
+    "peak_track": "michael-anthony-rose--message-from-bob",
     "valley_tracks": [
-      "michael-anthony-rose--spontaneous-fugue",
       "michael-anthony-rose--waltzing-tilde"
     ]
   },
   "cohesion": {
-    "palette_consistency": 0.825,
+    "palette_consistency": 0.7993,
     "theme_threads": [
       "there",
       "had",
@@ -90,20 +89,17 @@
       "rank": 4,
       "label": "strong"
     },
-    "sum_vs_parts": "greater",
+    "sum_vs_parts": "equal",
     "persona_delivery": "expands",
     "anchors_used": [
       "Knurled Spanner",
       "Municipal Tongue Clamp",
-      "Hey Boob Shirley",
       "Free To Pee",
       "Message From Bob",
-      "Spontaneous Fugue",
       "Waltzing Tilde",
       "Wazoo In Effigy",
-      "Clamp it down, citizen, nice and snug",
-      "Meaning is everywhere / once you lower the standard",
-      "Talentless"
+      "Hey Boob Shirley",
+      "Spontaneous Fugue"
     ],
     "status": "publishable",
     "model": "claude-opus-4-8"
@@ -112,19 +108,19 @@
     {
       "track_id": "michael-anthony-rose--knurled-spanner",
       "position": 1,
-      "standalone_rank": 3,
+      "standalone_rank": 4,
       "context_rank": null,
       "context_note": "",
-      "review_text": "The record opens like a late-night infomercial run through a jazz-fusion band that refuses to sit still: an electric-piano ostinato loops at a brisk clip while clipped brass and two guitars trade angular jabs, and Rose talk-sings the whole con with a straight face. As a first handshake it sets the terms for everything that follows, the dry wit, the odd meters, the satire built from a single absurd object. The joke is right there in the spanner itself, a tool whose knurling is 'mostly there so your hand feels employed while the thing itself does very little,' and Rose builds a whole indictment of useless progress on that one image. Mrs. Vale on Sycamore Close gets her verse and her ruined tumble dryer; the mock-critic bridge lands one of the album's sharpest lines when it accuses us of confusing 'tool' with 'permission.' The deadpan post-chorus, those flat '(Probably help.)' backing vocals with 'no warranty on the mood,' rewards a second pass. It runs a touch long across its five minutes, and the wiry guitar solo repeats its figure a beat past where you want it to move on, so this reads as an entry for listeners already tuned to Rose's humor rather than a crowd-pleaser up front. But the closing turn, the ostinato left alone and that final 'You still don't need it, and you never did,' gives the gag a real spine. A grower, and a smart way to raise the curtain.",
+      "review_text": "The record opens the way a con man opens a pitch, and Rose the satirist is in full flower here, selling you a tool that does nothing and knowing you'll buy it anyway. The whole thing turns on the mock-infomercial cadence: a barker's opening address to \"Gentlemen, homeowners, debtors, sufferers\" gives way to a chorus that punches on the title like a brass hit, all riding an electric-piano ostinato in a driving 3/4 that never once lets you waltz. The craft is in the details, and Rose stacks them: Mrs. Vale and her \"three sensible lampshades,\" the deadpan post-chorus muttering \"No warranty on the mood,\" and the show-stealing bridge where he addresses the critics head-on, insisting they've \"confused 'tool' with 'permission.'\" Best of all is the arrangement's cruelty toward its own hype: when the drums stop cold before \"That's where most people get it wrong,\" then the massive brass swells back, you feel the joke land in your chest. The wiry guitar solo, marked to repeat unchanged, is the punchline made instrumental, a thing looking busy while doing very little. If there's a caution, it's that the concept is so airtight that the fourth pass of the hook offers diminishing returns; this is a piece that rewards attention more than the shuffle button, and it sets the terms for everything the album does after it. But the closing gut-punch, \"You still don't need it, and you never did,\" earns the whole runtime, and puts you on notice that this record intends to argue with you. One of the sharpest things he's built since Outlandia.",
       "model": "claude-opus-4-8"
     },
     {
       "track_id": "michael-anthony-rose--spontaneous-fugue",
       "position": 2,
-      "standalone_rank": 2,
+      "standalone_rank": 3,
       "context_rank": null,
       "context_note": "",
-      "review_text": "After the opener's angular pitch, Rose pulls the tempo back to a walking pace and turns inward, though the meter stays every bit as restless: settled but shifting underneath, guitar and fretless bass interlocking and then peeling apart at each of the dozen section seams. The title promises a runaway, and the track treats meter like a moving vehicle. The best writing here is the third verse, where the philosophy comes down to earth: 'On the 6:12 with my bag half-zipped, / Listening to the brakes sigh at the stop.' That's the whole song in two lines, the commuter's quiet reckoning about whether he chose the route or the route chose him, and it lands harder than the more abstract talk of being 'aligned with the cosmos' earlier on. His phrasing stays tightly measured, uniform line lengths clipped to the beat, so when the bridge loosens into 'Maybe the map is all a rumor,' you feel the rail let go for a second. It runs long at four and a half minutes and the chorus leans on repetition more than reinvention, so this one is for the faithful, the listeners who've followed Rose from the diary songs through the angular experiments. But there's real craft in how the stop-start edits keep undercutting the groove without ever losing it. A grower once you stop looking for the map, and the quiet before the record's satirical heart opens up.",
+      "review_text": "After the airtight con of \"Knurled Spanner,\" this is the album exhaling, and the shift in register does it good. The title promises something knottier than what lands, and that gap is the story of this one: an art-rock brief built on shifting meters and clipped sax multiphonics that resolves, in the audio, into a bright and propulsive E-major push at a mid-tempo clip. What survives the translation is Rose's gift for the small confessional image. The best verse puts you on the commute directly: 'On the 6:12 with my bag half-zipped / Listening to the brakes sigh at the stop,' and that sighing brake does more work than any angular riff could. The chorus turns on a nice piece of self-permission, 'If it's a detour, let it be / I'm moving, I'm moving,' and the guitar solo near the four-minute mark gives the final chorus a genuine lift, the same forward tilt Rose reached for on 'Nowhere But Up.' It doesn't earn its experimental framing so much as sidestep it into a clean, hook-forward anthem, and the 'rearranging the furniture' verse leans a touch on the nose next to that train-window sharpness. Placed here, it's the steadying breath before the satire tightens its grip again; the writing keeps its footing and the momentum never sags. A dependable cut that does its job and does it well.",
       "model": "claude-opus-4-8"
     },
     {
@@ -133,7 +129,7 @@
       "standalone_rank": 4,
       "context_rank": null,
       "context_note": "",
-      "review_text": "This is where the record finds its center of gravity. Two tracks in, Rose zooms his lens down to a single absurd ordinance and holds it there until it's monstrous. He builds it at a laid-back pace in a minor key, then keeps knocking the floor out from under you: the crooked figures in the verses, the full-band choke that swallows the line before 'you're looking at an auxiliary clamp,' the way straight 4/4 keeps getting sabotaged by odd bars in the chorus so you never quite settle. The genius is in the delivery, that dry baritone talk-sing reading bureaucratic nonsense with a straight face while a cheerful civic choir chirps 'Clamp it down, citizen, nice and snug' like it's a jingle you're meant to whistle. The doo-wop bridge is where the joke turns cold: Eddie starts to say the property tax 'seemed,' a metallic snap cuts him off, and the sweet backing hum that answers is the most sinister thing on the record. It runs close to six minutes and the mid-section instrumental break, all angular theme traded around in shifting meter, asks patience of anyone who came for the hook. But the payoff, 'Praise be unto the Municipal Tongue Clamp' over a grotesque pageant that collapses into a tiny lounge combo cooing 'Perfect,' earns it. Randy Newman's satirical bite crossed with the odd-meter mischief of prog-jazz, this is the strongest thing here, and it holds the room.",
+      "review_text": "If \"Spontaneous Fugue\" was the album catching its breath, this is Rose walking back into the municipal building, and after the two-hour civic autopsy of \"Outlandia\" he trades the panorama for a single grotesque department, and the compression suits him. The whole thing runs on the joke of that chorus: an absurdly cheerful civic choir singing \"Clamp it down, citizen, nice and snug\" over a bright electric-piano bounce, the kind of hook you catch yourself humming before the horror registers. Built in F minor at a shuffling clip, it lets the crooked meters do the satire, the way the band chokes to silence right before \"and fits you for a tongue clamp,\" or the furious contrapuntal break where guitar, sax, and marimba chase the same angular figure through shifting bars without ever tipping into chaos. The bridge is the payoff, a sinister doo-wop sweetness under the moment Eddie gets cut off mid-sentence: \"Your silence has been entered into the permanent record,\" delivered with the pleasantness of a parking clerk. Then the breakdown drops the mask and lets Rose sound genuinely incredulous: \"nobody knew who ordered the clamp.\" If it has a weakness, it is length; at nearly six minutes the instructional interludes start to feel like they are proving a point already made. But the tiny lounge-combo outro, that final \"Open wide. Perfect,\" lands the knife clean. Closest cousin might be Randy Newman writing for a Kafka pageant, and it starts the run of character comedy the album's middle lives on.",
       "model": "claude-opus-4-8"
     },
     {
@@ -142,7 +138,7 @@
       "standalone_rank": 4,
       "context_rank": null,
       "context_note": "",
-      "review_text": "Coming off the cold civic pageant of the last track, Rose lightens the touch without loosening the craft, and the album settles into a run of comic set-pieces that all pull their weight. The joke here is the arrangement itself: a marimba that opens by miming a woman walking across a room, then keeps that walking motif running through the whole thing like a straight face at a comedy roast. Rose plays anthropologist, dry and deadpan, delivering the verses in a talk-sung mumble that treats a man's caught glance as field research: 'Nothing makes a grown man study grout / Like what he noticed four feet before.' The chorus hook is genuinely sticky, and the brisk pulse keeps everything slightly off its heels, the broken-waltz bridge tipping into that 'three beats for displaying, two beats for the scan' bit that lands the mock-science joke perfectly. What sounds like a minor key gives the whole thing a wry, unsmiling edge rather than a wink. It runs long at five-plus minutes and the spoken outro pushes the conceit a beat past where a tighter edit would have left it, but the payoff line, 'Nice grout, by the way,' earns the wait. Closest cousin might be Frank Zappa in a lecturing mood, or They Might Be Giants writing a nature documentary. For a comic set-piece, it's built with real care, and it lets you laugh right when the record needs you to.",
+      "review_text": "Where \"Municipal Tongue Clamp\" turned its satire on institutions, this one turns it on a single sweaty man, and the comedy here isn't in spite of the craft, it's built from it. Rose sets a marimba walking figure loose over a broken-waltz pulse at a brisk clip, and the arrangement earns its jokes with timing: the stop-start accents on 'Peripheral. Accidental. Purely educational' land like a man caught red-handed, and the whole thing pivots on that guilty deadpan of a grown man who'll 'study grout / Like what he noticed four feet before.' The mock-anthropology of verse two ('First you cover for the weather. Then you decorate the hide') is where the writing sharpens into something Randy Newman would recognize, an unreliable narrator dressing up base instinct as social theory. The 5/4 instrumental break is the record's real flex, marimba restating the motif in a 3+2 stagger while the flute exaggerates the strut and the guitar answers crooked, before the final bar snaps abruptly back to a straight-4/4 chorus. If the bit runs slightly long, the outro's catalog of 'feathers, beads, buckles, buttons' testing your patience before the final 'Nice grout, by the way' pays it off, the way a good closing line pays off a shaggy joke. Proof Rose can make a novelty conceit hold real musical weight, and one more voice in the album's gallery of men caught mid-excuse.",
       "model": "claude-opus-4-8"
     },
     {
@@ -151,16 +147,16 @@
       "standalone_rank": 4,
       "context_rank": null,
       "context_note": "",
-      "review_text": "Sitting dead center in the record's comic stretch, this is Rose at his most audacious: a full five-minute argument built around a man who can't find a legal place to relieve himself, and the nerve is half the fun. It opens exactly where it ends, with a muttered 'Damn. Be right back,' and in between he runs a full mock-courtroom at a scrambling clip, the electric-piano ostinato and clipped horn stabs interrupted every few bars by Linda's off-mic one-word verdicts: 'TED!' 'NO!' 'WHAT?!' The best writing here is the mock-legal register played dead straight, 'the pavement didn't file a plea,' 'nature bangs the gavel,' 'nature has seniority,' delivered with the wounded dignity of a man who genuinely believes he's been wronged. The bridge is where it turns from bit to song: the band drops to organ and bass, and Rose lands his one true confession, 'Fifty-eight has humbled better men than me,' a line that would break your heart if he weren't so busy defending himself. It doesn't have the emotional reach of the quieter cuts in his catalog, and the joke, brilliant as it is, only unfolds the one way; this is a comic set piece, not a grower you'll return to for the ache. But as craft it's ruthless, the doo-wop chorus turning martial by the second pass, the whole thing cutting dead into silence before the muttered exit. Proof Rose can build a fully load-bearing song out of the least dignified subject he's ever touched.",
+      "review_text": "This is the third character sketch in a row, and by now you can feel the album's central comic engine humming: here is Rose the comic who has been hiding inside Rose the diarist all along, and \"Free To Pee\" is a full-blown one-act farce set to a brisk 3/4 that never once invites you to waltz. The whole thing hangs on the tension between Ted's escalating legal defense and Linda, whose entire vocabulary is a barked \"TED!\" landing on a sax-and-synth stab: the negotiation, the physics, the improved trajectory, all delivered with the wounded dignity of a man arguing before a court that does not exist. The doo-wop chorus turning martial by the second pass is the joke doing double duty, and the bridge is where it earns its keep, when the band drops to organ and bass and Ted goes philosopher: \"That's water, patience, gravity, the original authority,\" then \"Fifty-eight has humbled better men than me.\" There is real craft in how the outro cuts everything dead and loops back to that opening \"Damn. Be right back,\" a punchline that reframes the whole five minutes as a bit Ted has clearly run before. It is broad, and coming after two comparably staged farces a few of the stop-start verses run longer than the gag strictly needs, so this is one for the room rather than the headphones; but as a piece of theater it holds the floor and knows exactly what it is.",
       "model": "claude-opus-4-8"
     },
     {
       "track_id": "michael-anthony-rose--message-from-bob",
       "position": 6,
-      "standalone_rank": 4,
+      "standalone_rank": 5,
       "context_rank": null,
       "context_note": "",
-      "review_text": "The comic run keeps going but the theology deepens here, and the joke stops being a joke somewhere around the second verse. Rose lets his brother's voicemails do the philosophizing over a dry, clipped Rhodes-and-bass vamp that stays close to a deadpan mid-tempo lope, laying out his premise like a proof: 'A message from Bob / is a message from God / if everything is one. / That's not religion. / That's arithmetic.' The band works in a punchy 1970s studio-jazz frame, fuzz guitar answering back after each refrain, the rhythm section snapping shut on the closing lines so the silence lands like a held breath. The bridge is the centerpiece, a flat catalog of household omens ('The refrigerator starts at two thirteen. / Information') that builds to a quiet thesis: 'Meaning is everywhere / once you lower the standard.' It runs long at five and a half minutes, and the last solo pass tests your patience the way any good koan does, but the payoff is the glued-shut window and the phone ringing once before the hard cut, where the whole conceit finally bares its teeth. Closer to Zappa's studio-jazz talking pieces than anything on his diarist records, this is Rose trusting you to sit with a strange idea, and it primes you for the two most ambitious things the record has left.",
+      "review_text": "After a run of pure character farce, Rose lets the joke turn into something you can actually believe in, and this is the album's high-water mark. He has always found a lifetime in the ordinary, but here he goes further: he builds a whole theology out of an old friend's rambling voicemails. Over a dry, syncopated Rhodes-and-bass vamp that never quite settles, at a steady clip in a bright major key, the deadpan spoken vocal delivers Bob's misdialed apologies and glued-shut windows as if they were scripture, then the band snaps into a harmonized hook: \"A message from Bob / is a message from God / if everything is one. / That's not religion. / That's arithmetic.\" The joke keeps sharpening into something closer to a real argument, and the bridge's inventory of red lights and falling ice cubes lands the thesis cold: \"Meaning is everywhere / once you lower the standard.\" A single telephone ring near the five-minute mark triggers a hard cut that's the best-placed silence on the record since \"You Don't Say,\" and the fuzz-guitar answers between verses keep the whole thing from tipping into pure sketch. It runs long, and the fourth verse leans more on concept than melody, but this is Rose at his most gleefully committed to a bit that turns out to mean it. Where the comedy stops being a costume and becomes a conviction. Play this one first.",
       "model": "claude-opus-4-8"
     },
     {
@@ -169,7 +165,7 @@
       "standalone_rank": 2,
       "context_rank": null,
       "context_note": "",
-      "review_text": "After a long stretch of comic set-pieces, this is where the record turns most serious about its craft, and the joke goes fully philosophical. Two voices, a tenor and an alto, trade near-spoken lines over a waltz that keeps threatening to fall apart: piano and marimba lock into a three-note figure at the top, then the marimba quietly refuses to change while everything above it drifts, splinters into 5/4, and finally staggers through a few bars of 7/8 where the meter nearly loses its footing entirely. The whole thing is an argument about sameness that keeps dissolving under its own logic. 'We have the same car,' he offers; 'we don't have the same car,' she answers, and by the closing verse the only thing left that's identical is the pronoun. It's structurally the most ambitious thing in his catalog since 'Outlandia,' and if the payoff lives in the design more than in any single hook, that's the point: the marimba holding one wrong note under a full-ensemble unison is worth the wait. A grower, and the clearest signal that the closer is going to ask you to think rather than to sing along.",
+      "review_text": "Coming off the committed sprawl of \"Message From Bob,\" this is the album's most rigorous turn inward, and the whole record hangs on a single joke that Rose refuses to let be funny: two people insisting they're the same, and language quietly proving them wrong every time. It begins with a three-note figure, a rising minor third and a falling semitone, stated in plain octave unison by piano and marimba, and the entire piece is that motif under stress: reversed, inverted, stacked in different meters until the players stop agreeing on where the bar starts. Listen to the third interlude, where guitar walks off in 5/4 while the piano keeps its waltz and the bar lines quietly stop coinciding; by the closing section the ensemble strains toward a 7/8 stumble before snapping back to one last unison, with the marimba holding a single wrong pitch like a held grudge. The dialogue stays near-spoken and dry, the alto landing the killers: 'So we went to the same sign,' and then the whole argument collapsing into 'The pronoun.' It asks patience, and its pleasures are more architectural than immediate, so it plays as a grower more than a first-spin favorite; but for anyone who followed the meter games of 'Unreasonably Quiet' this far, it's a fascinating, rigorous thing, and it earns its late-album placement as the moment the record stops performing and starts thinking. Worthy of a listen.",
       "model": "claude-opus-4-8"
     },
     {
@@ -178,7 +174,7 @@
       "standalone_rank": 4,
       "context_rank": null,
       "context_note": "",
-      "review_text": "There's a reason this one closes the record instead of opening it: it's an argument you have to sit inside, and after seven tracks of Rose sharpening his satire, the title cut turns the whole homage back on itself. The album tries and mostly succeeds as a tribute to Frank Zappa, but this is where Rose takes on Zappa's critics and asks why we haven't revisited that body of work in an age of mostly meaningless music as confection. The clipped baritone stays dry and unhurried through the first verse, all posture and no pity, 'Technique, certainly. Feeling? I doubt it,' delivered flat enough that you don't clock the trap until the chorus turns the accusation back around: 'I wrote what I heard. I said what I saw. You wanted approval; I wouldn't applaud.' At a brisk clip in a major key, the marimba pulse and off-kilter brass keep the room off balance, and the abrupt stop-start edits work like a critic's clipped sentences: everything measured, everything cut short before it can bleed. The masterstroke is structural. The spoken bridge, where the 'wild side hero' calls the thinly disguised Wazoo 'the single most untalented person I've heard in my life,' only to induct him into the Hall twenty years later with no correction printed, is the whole thesis in miniature, and it lands with the cold Randy Newman trick of letting a monster narrate his own portrait. It's not the easiest cut in the catalog, more built than felt, and the final bored 'Talentless' aftertaste is deliberate; it leaves you cold on purpose. A grower the faithful will keep coming back to unpack, this is Rose at his most quietly vicious, and it earns the last word. Say what you will about Zappa, but eventually genius gets recognized. Rose aims a small floodlight and asks for a reevaluation.",
+      "review_text": "The title track waits until the very end, and it makes you glad it did. Rose has spent 2026 pivoting hard, from the diarist of 'I'm Still Here' to the political sprawl of 'Outlandia,' but nothing in the catalog quite prepares you for this: a full electric orchestra deployed as courtroom, with the critic himself in the dock. The marimba pulse and fragmented brass stabs open in a jittery 7/8 before the whole thing lurches into a 4/4 chorus at a driving clip, and the tension between those meters is the point, an ensemble that keeps snapping shut on itself, abrupt stops leaving the baritone exposed. The genius here is structural: the song reads like a demolition of a man ('Technique, certainly. Feeling? I doubt it') until the third verse quietly turns the knife, 'Three hundred dollars to make both the records; ten thousand later for hired-in men,' and you realize the target may deserve some of this and none of it. Then the bridge lands the real gut-punch, the same wild-side hero who called Wazoo 'the single most untalented person I've heard in my life' standing at a podium twenty years later to induct him, and Rose's flat refrain, 'No correction was printed. Corrections are not printed,' says everything about who actually holds power in the room. After an album that put the critic's dismissals in a con man's mouth back on \"Knurled Spanner,\" this closer settles the score directly, and the closing trumpet solo tears through the shifting meters before that dry, bored spoken 'Talentless' cuts it dead, an ending that would feel like a stunt if it hadn't been earned across everything before it. It asks a lot of a listener, and the density means it reveals itself over several passes, but the craft is unmistakable. One of the most daring things he's put his name to.",
       "model": "claude-opus-4-8"
     }
   ]

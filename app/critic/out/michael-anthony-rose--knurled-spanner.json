@@ -81,9 +81,9 @@
   },
   "tags": {
     "genre": [
-      "indie rock",
       "classic rock",
-      "blues rock"
+      "country rock",
+      "blues"
     ],
     "mood": [
       "tender",
@@ -91,33 +91,35 @@
       "uplifting"
     ],
     "instruments": [
+      "mandolin",
       "electric guitar",
-      "harmonica",
-      "bass guitar"
+      "harmonica"
     ],
     "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "",
-    "model": ""
+    "text": "This track bursts with a vibrant, theatrical energy, instantly establishing a playful and bombastic emotional atmosphere. The production is densely orchestrated yet impressively clean, allowing the punchy brass section, sweeping strings, and tight rhythm section to sit perfectly balanced behind the highly expressive lead vocal. Its overall feel is dynamic and driving, capturing the grand essence of a modern musical theater showstopper. A defining quality is the song's masterful use of extreme dynamic shifts, particularly when the massive wall of sound abruptly drops to a sparse, quiet arrangement before swelling rapidly back into a rich, brass-heavy chorus hook.",
+    "model": "gemini-3.1-pro-preview"
   },
   "review": {
     "target": "liner",
-    "review_text": "The pitch arrives like a late-night infomercial run through a jazz-fusion band that refuses to sit still: an electric-piano ostinato loops in 3/4 at a brisk 136 while clipped brass and two guitars trade angular jabs, and Rose talk-sings the whole con with a straight face. The joke is right there in the object itself, a spanner whose knurling is \"mostly there so your hand feels employed while the thing itself does very little,\" and Rose builds an entire satire of useless progress on that one image. Mrs. Vale on Sycamore Close gets her verse and her ruined tumble dryer; the mock-critic bridge lands the sharpest line of the record when it accuses us of confusing \"tool\" with \"permission.\" The deadpan post-chorus, those flat \"(Probably help.)\" backing vocals with \"no warranty on the mood,\" is the kind of detail that rewards a second pass. It runs a touch long across its five minutes, and the wiry guitar solo repeats its figure a beat past where you want it to move on, so this reads as one for listeners already tuned to Rose's dry wit rather than a first handshake. But the closing turn, the ostinato left alone and that final \"You still don't need it, and you never did,\" gives the gag a real spine. A grower, and a smart one.",
+    "review_text": "This is Rose the satirist in full flower, selling you a tool that does nothing and knowing you'll buy it anyway. The whole thing turns on the mock-infomercial cadence: a barker's opening address to \"Gentlemen, homeowners, debtors, sufferers\" gives way to a chorus that punches on the title like a brass hit, all riding an electric-piano ostinato in a driving 3/4 that never once lets you waltz. The craft is in the details, and Rose stacks them: Mrs. Vale and her \"three sensible lampshades,\" the deadpan post-chorus muttering \"No warranty on the mood,\" and the show-stealing bridge where he addresses the critics head-on, insisting they've \"confused 'tool' with 'permission.'\" Best of all is the arrangement's cruelty toward its own hype: when the drums stop cold before \"That's where most people get it wrong,\" then the massive brass swells back, you feel the joke land in your chest. The wiry guitar solo, marked to repeat unchanged, is the punchline made instrumental, a thing looking busy while doing very little. If there's a caution, it's that the concept is so airtight that the fourth pass of the hook offers diminishing returns; this is a piece that rewards attention more than it rewards the shuffle button. But the closing gut-punch, \"You still don't need it, and you never did,\" earns the whole runtime. A highlight, and one of the sharpest things he's built since Outlandia.",
     "status": "publishable",
     "verdict_tier": {
-      "rank": 3,
-      "label": "dependable"
+      "rank": 4,
+      "label": "highlight"
     },
     "anchors_used": [
-      "3/4 at 136 BPM",
+      "3/4 at 136 BPM driving pace, not a sway",
       "electric-piano ostinato",
-      "\"mostly there so your hand feels employed while the thing itself does very little\"",
-      "Mrs. Vale on Sycamore Close",
-      "\"confused tool with permission\"",
-      "\"(Probably help.)\" / \"No warranty on the mood\"",
-      "wiry guitar solo repeating its figure",
-      "\"You still don't need it, and you never did\""
+      "\"Gentlemen, homeowners, debtors, sufferers\" opening address",
+      "chorus punching on the title with brass hits",
+      "\"three sensible lampshades\" / Mrs. Vale testimonial",
+      "post-chorus \"No warranty on the mood\"",
+      "bridge: critics \"confused 'tool' with 'permission'\"",
+      "drums-stop before \"That's where most people get it wrong\"",
+      "guitar solo repeating unchanged",
+      "closing \"You still don't need it, and you never did\""
     ],
     "model": "claude-opus-4-8"
   }

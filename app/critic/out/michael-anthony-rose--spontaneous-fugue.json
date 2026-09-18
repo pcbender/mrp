@@ -86,44 +86,42 @@
   },
   "tags": {
     "genre": [
-      "indie rock",
+      "blues",
       "classic rock",
       "blues rock"
     ],
     "mood": [
-      "emotional",
       "tender",
-      "dark"
+      "emotional",
+      "uplifting"
     ],
     "instruments": [
       "electric guitar",
-      "acoustic guitar",
-      "bass guitar"
+      "bass guitar",
+      "drums"
     ],
     "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "",
-    "model": ""
+    "text": "This upbeat pop-rock anthem establishes a bright, optimistic texture driven by energetic electric guitars and a driving rhythm section. The track maintains a highly propulsive energy level from start to finish, creating an uplifting and motivational feel. Its production is dense but expertly balanced, allowing crisp guitar riffs and vibrant synths to sit comfortably beneath the clear, upfront lead vocals. A defining quality of the song is the soaring guitar solo section, which adds an exciting melodic peak before seamlessly transitioning back into the triumphant, hook-heavy final chorus.",
+    "model": "gemini-3.1-pro-preview"
   },
   "review": {
     "target": "liner",
-    "review_text": "The title promises a runaway, and Rose obliges with a track that treats meter like a moving vehicle: settled in E major at a walking 89 BPM, but restless underneath, guitar and fretless bass interlocking and then peeling apart at each of the dozen section seams. The best writing here is the third verse, where the philosophy comes down to earth: 'On the 6:12 with my bag half-zipped, / Listening to the brakes sigh at the stop.' That's the whole song in two lines, the commuter's quiet reckoning about whether he chose the route or the route chose him, and it lands harder than the more abstract talk of being 'aligned with the cosmos' earlier on. His phrasing stays tightly measured, uniform line lengths clipped to the beat, so when the bridge loosens into 'Maybe the map is all a rumor,' you feel the rail let go for a second. It runs long at four and a half minutes and the chorus leans on repetition more than reinvention, so this is one for the faithful, the listeners who've followed Rose from the diary songs through the angular experiments. But there's real craft in how the stop-start edits keep undercutting the groove without ever losing it. Worthy of a listen, and a grower once you stop looking for the map.",
+    "review_text": "The title promises something knottier than what lands, and that gap is the story of this one: an art-rock brief built on shifting meters and clipped sax multiphonics that resolves, in the audio, into a bright and propulsive E-major push at a mid-tempo 89 BPM. What survives the translation is Rose's gift for the small confessional image. The best verse puts you on the commute directly: 'On the 6:12 with my bag half-zipped / Listening to the brakes sigh at the stop,' and that sighing brake does more work than any angular riff could. The chorus turns on a nice piece of self-permission, 'If it's a detour, let it be / I'm moving, I'm moving,' and the guitar solo near the four-minute mark gives the final chorus a genuine lift, the same forward tilt Rose reached for on 'Nowhere But Up.' It doesn't earn its experimental framing so much as sidestep it into a clean, hook-forward anthem, and the 'rearranging the furniture' verse leans a touch on the nose next to that train-window sharpness. Not his strangest hour despite the name, but the writing keeps its footing and the momentum never sags. A dependable cut that does its job and does it well.",
     "status": "publishable",
     "verdict_tier": {
-      "rank": 2,
-      "label": "soft_floor"
+      "rank": 3,
+      "label": "dependable"
     },
     "anchors_used": [
-      "E major",
       "89.1 BPM",
-      "12 sections",
-      "6:12 with my bag half-zipped / brakes sigh at the stop",
-      "aligned with the cosmos",
-      "Maybe the map is all a rumor",
-      "4:33 duration",
-      "interlocking guitar over fretless bass",
-      "stop-start edits"
+      "E major",
+      "chorus lyric 'If it's a detour, let it be / I'm moving, I'm moving'",
+      "verse lyric 'On the 6:12 with my bag half-zipped / Listening to the brakes sigh at the stop'",
+      "guitar solo near four-minute mark into final chorus",
+      "'rearranging the furniture' verse",
+      "comparison to Nowhere But Up"
     ],
     "model": "claude-opus-4-8"
   }

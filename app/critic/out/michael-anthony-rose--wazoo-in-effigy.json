@@ -81,44 +81,44 @@
   },
   "tags": {
     "genre": [
-      "blues rock",
       "classic rock",
-      "indie rock"
+      "indie rock",
+      "blues rock"
     ],
     "mood": [
-      "tender",
-      "emotional",
-      "uplifting"
+      "intense",
+      "introspective",
+      "energetic"
     ],
     "instruments": [
       "electric guitar",
-      "piano",
-      "background vocals"
+      "bass guitar",
+      "harmonica"
     ],
     "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "",
-    "model": ""
+    "text": "This theatrical jazz arrangement immediately establishes a bombastic and cynical emotional atmosphere, driven by a highly dynamic interplay of bright brass, sweeping strings, and a nimble rhythm section. The energy level is intense and dramatic, marked by driving ensemble grooves that frequently give way to abrupt pauses designed to highlight the mocking vocal delivery. Despite the incredibly dense orchestration, the production remains exceptionally clear with a wide soundstage, allowing the crisp, upfront lead vocal to command the mix without being overshadowed by the complex instrumentation. The track is uniquely defined by its sudden structural shifts and narrative interruptions, peaking with a vibrant trumpet solo before abruptly ending on a starkly exposed spoken-word punchline.",
+    "model": "gemini-3.1-pro-preview"
   },
   "review": {
     "target": "liner",
-    "review_text": "“Wazoo in Effigy” closes the record by putting its subject on trial, though the verdict was apparently reached long before the first note. Rose builds the song almost entirely from accusation: arrogant, academic, vulgar, cruel, pretentious, emotionally sterile, impossible to work for. The clipped baritone of the verses doesn’t defend Wazoo; it reads the charges with the confidence of people who have repeated them often enough to stop examining them.\n\nThat distinction matters, because the chorus belongs to another voice. “I wrote what I heard. / I said what I saw. / You wanted approval; / I wouldn’t applaud.” It isn’t an acquittal and barely qualifies as a defense. Wazoo accepts the evidence and rejects the interpretation. When the question finally comes — “Wazoo in effigy?” — the answer is simply “Guilty.”\n\nMusically, Rose gives the argument an appropriately unstable frame. Marimba figures, brass blocks, woodwind counterpoint and abrupt metric shifts continually reorganize themselves beneath a vocal that refuses to become excited. The arrangement grows increasingly elaborate while the singer grows increasingly matter-of-fact, a reversal that keeps the song from becoming either tribute or courtroom melodrama.\n\nThe strongest section arrives when the song stops arguing altogether. A “wild side hero” dismisses Wazoo as talentless, pretentious and academic; decades later he stands at a podium to induct the same man into the Hall. “No correction was printed. / Corrections are not printed.” Rose wisely leaves the contradiction sitting there. The following image of a dying composer traveling to Germany to conduct supposedly unplayable music pushes the point further without turning it into vindication.\n\nThen comes the smallest and perhaps most revealing line in the song: “Like I invented this?” For the first time Wazoo sounds less like a defendant than a man baffled that being himself has somehow become another charge against him.\n\nThe final “Talentless” is therefore not Rose delivering a verdict on Frank Zappa. It is the old verdict surviving after the evidence around it has changed.\n\nThat makes “Wazoo in Effigy” an unusually appropriate closer: funny in places, hostile in others, technically obsessive, stubbornly unresolved, and unwilling to tell the listener whom to believe. The effigy burns. The work remains.",
+    "review_text": "Rose has spent 2026 pivoting hard, from the diarist of 'I'm Still Here' to the political sprawl of 'Outlandia,' but nothing in the catalog quite prepares you for this: a full electric orchestra deployed as courtroom, with the critic himself in the dock. The marimba pulse and fragmented brass stabs open in a jittery 7/8 before the whole thing lurches into a 4/4 chorus at a driving clip, and the tension between those meters is the point, an ensemble that keeps snapping shut on itself, abrupt stops leaving the baritone exposed. The genius here is structural: the song reads like a demolition of a man ('Technique, certainly. Feeling? I doubt it') until the third verse quietly turns the knife, 'Three hundred dollars to make both the records; ten thousand later for hired-in men,' and you realize the target may deserve some of this and none of it. Then the bridge lands the real gut-punch, the same wild-side hero who called Wazoo 'the single most untalented person I've heard in my life' standing at a podium twenty years later to induct him, and Rose's flat refrain, 'No correction was printed. Corrections are not printed,' says everything about who actually holds power in the room. The closing trumpet solo tears through the shifting meters before that dry, bored spoken 'Talentless' cuts it dead, an ending that would feel like a stunt if it hadn't been earned. It asks a lot of a listener, and the density means it reveals itself over several passes rather than one, but the craft is unmistakable. A highlight, and one of the most daring things he's put his name to.",
     "status": "publishable",
     "verdict_tier": {
       "rank": 4,
       "label": "highlight"
     },
     "anchors_used": [
-      "143.6 BPM",
+      "7/8 intro with marimba pulse and fragmented brass stabs",
+      "4/4 chorus at 143 BPM",
       "F major",
-      "clipped baritone / dry phrasing",
-      "marimba pulse and off-kilter brass",
       "quoted lyric: 'Technique, certainly. Feeling? I doubt it'",
-      "quoted lyric: 'I wrote what I heard. I said what I saw. You wanted approval; I wouldn't applaud'",
-      "spoken bridge / Hall induction with no correction printed",
-      "stop-start edits",
-      "final spoken 'Talentless' outro"
+      "quoted lyric: 'Three hundred dollars to make both the records; ten thousand later for hired-in men'",
+      "spoken bridge: 'the single most untalented person I've heard in my life'",
+      "refrain: 'No correction was printed. Corrections are not printed'",
+      "closing trumpet solo before spoken 'Talentless' punchline",
+      "abrupt stop-start ensemble cuts"
     ],
     "model": "claude-opus-4-8"
   }

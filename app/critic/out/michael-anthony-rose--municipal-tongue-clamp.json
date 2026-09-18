@@ -106,45 +106,44 @@
   },
   "tags": {
     "genre": [
-      "classic rock",
-      "indie rock",
-      "blues rock"
+      "blues rock",
+      "folk rock",
+      "country rock"
     ],
     "mood": [
       "tender",
       "uplifting",
-      "nostalgic"
+      "emotional"
     ],
     "instruments": [
+      "mandolin",
       "electric guitar",
-      "bass guitar",
       "harmonica"
     ],
     "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "",
-    "model": ""
+    "text": "This track opens with a satirical spoken word introduction that immediately establishes a dystopian yet comically theatrical atmosphere. A vibrant big band arrangement quickly takes over, driven by punchy brass, bouncy piano chords, and lively swing rhythms that give the piece a consistently high energy showtune feel. The production is pristine and cleverly mixed, allowing the dense orchestration of horns, walking bass, and bright backing choirs to sit perfectly behind the crooning Broadway style lead vocal. A defining quality of the song is its dark comedic juxtaposition of upbeat jazz pop with sinister lyrical themes, which is brilliantly highlighted by rhythmic clicking sound effects mimicking a municipal tongue clamp.",
+    "model": "gemini-3.1-pro-preview"
   },
   "review": {
     "target": "liner",
-    "review_text": "If \"Outlandia\" was Rose's sprawling map of a country being sold off, \"Municipal Tongue Clamp\" is the fine print, a single ordinance zoomed in until it's absurd. He builds it at a laid-back 108 in F minor, then keeps knocking the floor out from under you: the crooked figures in the verses, the full-band choke that swallows the line before \"you're looking at an auxiliary clamp,\" the way straight 4/4 keeps getting sabotaged by odd bars in the chorus so you never quite settle. The genius is in the delivery, that dry baritone talk-sing reading bureaucratic nonsense with a straight face while a cheerful civic choir chirps \"Clamp it down, citizen, nice and snug\" like it's a jingle you're meant to whistle. The doo-wop bridge is where the joke turns cold: Eddie starts to say the property tax \"seemed,\" a metallic snap cuts him off, and the sweet backing hum that answers is the most sinister thing on the record. It runs close to six minutes and the mid-section instrumental break, all angular theme traded around in shifting meter, asks patience of anyone who came for the hook. But the payoff, \"Praise be unto the Municipal Tongue Clamp\" over a grotesque pageant that collapses into a tiny lounge combo cooing \"Perfect,\" earns it. This is Randy Newman's satirical bite crossed with the odd-meter mischief of prog-jazz, and it holds the room.",
+    "review_text": "After the two-hour civic autopsy of \"Outlandia,\" Rose stays in the municipal building but trades the panorama for a single grotesque department, and the compression suits him. The whole thing runs on the joke of that chorus: an absurdly cheerful civic choir singing \"Clamp it down, citizen, nice and snug\" over a bright electric-piano bounce, the kind of hook you catch yourself humming before the horror registers. Built in F minor at a shuffling 107, it lets the crooked meters do the satire, the way the band chokes to silence right before \"and fits you for a tongue clamp,\" or the furious contrapuntal break where guitar, sax, and marimba chase the same angular figure through shifting bars without ever tipping into chaos. The bridge is the payoff, a sinister doo-wop sweetness under the moment Eddie gets cut off mid-sentence: \"Your silence has been entered into the permanent record,\" delivered with the pleasantness of a parking clerk. Then the breakdown drops the mask and lets Rose sound genuinely incredulous: \"nobody knew who ordered the clamp.\" If it has a weakness, it is length; at nearly six minutes the instructional interludes start to feel like they are proving a point already made. But the tiny lounge-combo outro, that final \"Open wide. Perfect,\" lands the knife clean. Closest cousin might be Randy Newman writing for a Kafka pageant. A highlight, and the sharpest single Rose has cut since narrowing his lens.",
     "status": "publishable",
     "verdict_tier": {
       "rank": 4,
       "label": "highlight"
     },
     "anchors_used": [
-      "107.7 BPM",
-      "F minor",
-      "chorus 'Clamp it down, citizen, nice and snug'",
-      "full-band choke before 'auxiliary clamp'",
-      "Eddie bridge 'seemed' metallic snap",
-      "backing hum",
-      "outro 'Perfect'",
-      "'Praise be unto the Municipal Tongue Clamp'",
-      "odd-meter instrumental break",
-      "5:56 duration"
+      "F minor at 107 BPM",
+      "\"Clamp it down, citizen, nice and snug\"",
+      "band choke before \"and fits you for a tongue clamp\"",
+      "contrapuntal instrumental break with shifting meters",
+      "sinister doo-wop bridge",
+      "\"Your silence has been entered into the permanent record\"",
+      "\"nobody knew who ordered the clamp\"",
+      "lounge-combo outro \"Open wide. Perfect\"",
+      "nearly six-minute runtime"
     ],
     "model": "claude-opus-4-8"
   }

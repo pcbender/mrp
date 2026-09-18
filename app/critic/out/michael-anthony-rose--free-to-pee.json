@@ -96,45 +96,42 @@
   },
   "tags": {
     "genre": [
-      "blues rock",
-      "country rock",
-      "classic rock"
+      "classic rock",
+      "pop rock",
+      "blues rock"
     ],
     "mood": [
       "tender",
-      "emotional",
-      "nostalgic"
+      "uplifting",
+      "emotional"
     ],
     "instruments": [
-      "electric guitar",
+      "harmonica",
       "mandolin",
-      "acoustic guitar"
+      "electric guitar"
     ],
     "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "",
-    "model": ""
+    "text": "This highly energetic track bursts with a theatrical, comedic rock opera atmosphere, characterized by a bombastic arrangement of brass, electric guitars, and driving percussion. The production is exceptionally dense and polished, filling the stereo field with a lush hybrid of orchestral elements and modern rock instrumentation. Within this tightly packed mix, crisp and upfront lead vocals sit clearly above a heavily layered backing choir to ensure the humorous lyrics remain the focal point. Dramatic shifts between conversational narrative interjections and soaring, anthemic choral hooks define the quirky structure of the arrangement. A charismatic male vocal delivers the performance with immense theatricality, culminating in an abrupt spoken outro that perfectly captures the lively, stage-ready essence of the song.",
+    "model": "gemini-3.1-pro-preview"
   },
   "review": {
     "target": "liner",
-    "review_text": "Rose has never lacked for nerve, but this is the first time he's built an entire five-minute argument around a man who can't find a legal place to relieve himself, and the audacity is half the fun. It opens exactly where it ends, with a muttered \"Damn. Be right back,\" and in between he runs a full mock-courtroom in 3/4 at a scrambling 136, the electric-piano ostinato and clipped horn stabs interrupted every few bars by Linda's off-mic one-word verdicts: \"TED!\" \"NO!\" \"WHAT?!\" The best writing here is the mock-legal register played dead straight, \"the pavement didn't file a plea,\" \"nature bangs the gavel,\" \"nature has seniority,\" delivered with the wounded dignity of a man who genuinely believes he's been wronged. The bridge is where it turns from bit to song: the band drops to organ and bass, and Rose lands his one true confession, \"Fifty-eight has humbled better men than me,\" a line that would break your heart if he weren't so busy defending himself. It doesn't have the emotional reach of the quieter cuts in his catalog, and the joke, brilliant as it is, only unfolds the one way; this is a comic set piece, not a grower you'll return to for the ache. But as craft it's ruthless, the doo-wop chorus turning martial by the second pass, the whole thing cutting dead into silence before the muttered exit. A highlight, and proof Rose can build a fully load-bearing song out of the least dignified subject he's ever touched.",
+    "review_text": "Here is Rose the comic who has been hiding inside Rose the diarist all along, and \"Free To Pee\" is a full-blown one-act farce set to a brisk 3/4 that never once invites you to waltz. The whole thing hangs on the tension between Ted's escalating legal defense and Linda, whose entire vocabulary is a barked \"TED!\" landing on a sax-and-synth stab: the negotiation, the physics, the improved trajectory, all delivered with the wounded dignity of a man arguing before a court that does not exist. The doo-wop chorus turning martial by the second pass is the joke doing double duty, and the bridge is where it earns its keep, when the band drops to organ and bass and Ted goes philosopher: \"That's water, patience, gravity, the original authority,\" then \"Fifty-eight has humbled better men than me.\" There is real craft in how the outro cuts everything dead and loops back to that opening \"Damn. Be right back,\" a punchline that reframes the whole five minutes as a bit Ted has clearly run before. It is broad, and a few of the stop-start verses run longer than the gag strictly needs, so this is one for the room rather than the headphones; but as a piece of theater it holds the floor and knows exactly what it is.",
     "status": "publishable",
     "verdict_tier": {
       "rank": 4,
       "label": "highlight"
     },
     "anchors_used": [
-      "Damn. Be right back",
-      "3/4 at 136 BPM",
-      "electric-piano ostinato",
-      "TED! / NO! / WHAT?! female stabs",
-      "the pavement didn't file a plea",
-      "nature has seniority",
-      "Fifty-eight has humbled better men than me",
-      "organ and bass bridge drop",
+      "3/4 time at a brisk 136 BPM",
+      "\"TED!\" female vocal stabs",
       "doo-wop chorus turning martial",
-      "everything cuts dead into silence"
+      "bridge drop to organ and bass",
+      "\"That's water, patience, gravity, the original authority\"",
+      "\"Fifty-eight has humbled better men than me\"",
+      "outro cutting dead into \"Damn. Be right back\""
     ],
     "model": "claude-opus-4-8"
   }

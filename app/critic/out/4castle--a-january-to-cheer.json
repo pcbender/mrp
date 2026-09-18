@@ -93,7 +93,7 @@
     "mood": [
       "tender",
       "emotional",
-      "melancholic"
+      "uplifting"
     ],
     "instruments": [
       "electric guitar",
@@ -103,26 +103,23 @@
     "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "",
-    "model": ""
+    "text": "A brooding, theatrical art-rock arrangement sets an ominous and politically charged atmosphere, built around somber electric piano chords, a steady bassline, and an expressive baritone lead vocal. The energy remains tightly controlled and dramatic, building from restrained verse storytelling into grand, sweeping choruses enriched by soaring backing vocal harmonies. The mix is spacious and cinematic, giving each element distinct breathing room while treating the vocals with deep, evocative hall reverb. A standout moment arrives with a chilling spoken-word interlude of self-aggrandizing vanity around the four-minute mark, bringing the track's biting narrative into sharp focus.",
+    "model": "gemini-3.8-flash"
   },
   "review": {
     "target": "blurb",
-    "review_text": "4Castle has been circling political dread for a while, but this is the first time they've aimed the lens this directly at a specific kind of power, and the restraint makes it hit harder than a screed would. The verses build their case with dry economy: 'He only sleeps by mistake,' 'the deep end's dry, the tiles are cold,' images that feel absurdist and precise at the same time, the way good political writing does when it trusts the audience. The chorus lands in E major at a brisk 136 BPM, the harmony vocals opening up the room right when the lyric needs the feeling of collective exhalation, and the Hammond on rotary pushes it into something that recalls late-period Traffic or the more purposeful end of prog-rock civics. The spoken interlude, a quietly mumbling figure congratulating himself on being 'better than that,' is the sharpest move on the track, unsettling precisely because it sounds bored and sincere rather than theatrical. The final chorus earns its single-word substitution: 'rage goes quiet,' 'stood their ground,' traffic instead of shouting, ordinary life returned. That pivot is the whole argument, and 4Castle makes it without flinching.",
+    "review_text": "4Castle has been circling political anxiety for a while, but here they come right at it: three verses mapping a single figure's occupation of every room in the house, each chorus tightening the screws until the final one swaps 'some day' for 'that day' and the whole song pivots on a single word. The arrangement earns that pivot, building from a spare clean guitar figure and warm bass through widening harmony stacks, and the bridge, 'But every house has windows / And every lock can turn,' lands with the quiet confidence of a line that knows it doesn't need to shout. The spoken interlude, a mumbled 'I think I'm really, if you think about it... the best ever,' is the kind of move that could tip into satire but instead reads as documentary, all the more unsettling for how casually it drops in. A highlight.",
     "status": "publishable",
     "verdict_tier": {
       "rank": 4,
       "label": "highlight"
     },
     "anchors_used": [
-      "lyric: 'He only sleeps by mistake'",
-      "lyric: 'the deep end's dry, the tiles are cold'",
-      "lyric: 'better than that'",
-      "lyric: 'rage goes quiet'",
-      "key: E major",
-      "BPM: 136",
-      "Hammond organ / rotary speaker production choice",
-      "final chorus lyric substitution as structural argument"
+      "lyric: 'some day' to 'that day' final chorus shift",
+      "lyric: 'But every house has windows / And every lock can turn'",
+      "spoken interlude: 'I think I'm really, if you think about it... the best ever'",
+      "arrangement build: clean guitar figure to stacked harmony choruses",
+      "E major, 136 BPM, 4/4"
     ],
     "model": "claude-sonnet-4-6"
   }

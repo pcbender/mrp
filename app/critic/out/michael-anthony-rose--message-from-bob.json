@@ -91,43 +91,41 @@
   },
   "tags": {
     "genre": [
+      "classic rock",
       "blues rock",
-      "indie rock",
-      "classic rock"
+      "indie rock"
     ],
     "mood": [
       "emotional",
-      "tender",
-      "energetic"
+      "energetic",
+      "tender"
     ],
     "instruments": [
       "electric guitar",
       "bass guitar",
-      "synthesizer"
+      "background vocals"
     ],
     "model": "HTSAT-tiny"
   },
   "impression": {
-    "text": "",
-    "model": ""
+    "text": "This track blends surreal spoken-word storytelling with a highly energetic progressive rock arrangement to create an eccentric and theatrical atmosphere. The energy remains consistently driving and intense, propelled by intricate guitar riffs, an active bassline, and tight drum grooves. The mix is heavily dense but meticulously balanced, giving the dry, close-miked narrative vocals enough space to sit clearly above the complex instrumental layers. A truly defining feature of the production is how the dynamic musical shifts perfectly underscore the quirky monologue, especially when the track suddenly erupts into grand, harmonized vocal hooks.",
+    "model": "gemini-3.1-pro-preview"
   },
   "review": {
     "target": "liner",
-    "review_text": "Rose has always found the cosmic in the mundane, but here he lets his brother's voicemails do the philosophizing, and the joke keeps deepening until it stops being a joke. Over a dry, clipped Rhodes-and-bass vamp that stays close to a deadpan mid-tempo lope, he lays out his premise like a proof: \"A message from Bob / is a message from God / if everything is one. / That's not religion. / That's arithmetic.\" The band works in that punchy 1970s studio-jazz frame, fuzz guitar answering back after each refrain, the rhythm section snapping shut on the closing lines so the silence lands like a held breath. The bridge is the centerpiece, a flat catalog of household omens (\"The refrigerator starts at two thirteen. / Information\") that builds to the record's quiet thesis: \"Meaning is everywhere / once you lower the standard.\" It runs long at five and a half minutes, and the last solo pass tests your patience the way any good koan does, but the payoff is the glued-shut window and the phone ringing once before the hard cut, where the whole conceit finally bares its teeth. Closer to Zappa's studio-jazz talking pieces than anything on his diarist records, this is Rose trusting you to sit with a strange idea; a highlight for anyone who likes their jokes with a theology attached.",
+    "review_text": "Rose has always found a lifetime in the ordinary, but here he goes further: he builds a whole theology out of an old friend's rambling voicemails. Over a dry, syncopated Rhodes-and-bass vamp that never quite settles, at a steady clip around 107 BPM in C-sharp major, the deadpan spoken vocal delivers Bob's misdialed apologies and glued-shut windows as if they were scripture, then the band snaps into a harmonized hook: \"A message from Bob / is a message from God / if everything is one. / That's not religion. / That's arithmetic.\" The joke keeps sharpening into something closer to a real argument, and the bridge's inventory of red lights and falling ice cubes lands the thesis cold: \"Meaning is everywhere / once you lower the standard.\" A single telephone ring near the five-minute mark triggers a hard cut that's the best-placed silence on the record since \"You Don't Say,\" and the fuzz-guitar answers between verses keep the whole thing from tipping into pure sketch. It runs long, and the fourth verse leans more on concept than melody, but this is Rose at his most gleefully committed to a bit that turns out to mean it. Play this one first.",
     "status": "publishable",
     "verdict_tier": {
-      "rank": 4,
-      "label": "highlight"
+      "rank": 5,
+      "label": "standout"
     },
     "anchors_used": [
-      "A message from Bob / is a message from God / if everything is one. / That's not religion. / That's arithmetic.",
-      "The refrigerator starts at two thirteen. / Information",
+      "That's not religion. / That's arithmetic.",
       "Meaning is everywhere / once you lower the standard.",
-      "dry Rhodes-and-bass vamp",
-      "fuzz guitar answering after each refrain",
-      "band stops on closing lines",
-      "telephone rings once before the hard cut",
-      "five and a half minute runtime"
+      "107 BPM in C-sharp major",
+      "telephone ring hard cut near 5:00",
+      "Rhodes-and-bass vamp",
+      "fuzz-guitar answers between verses"
     ],
     "model": "claude-opus-4-8"
   }
