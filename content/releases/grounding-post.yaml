@@ -1,0 +1,229 @@
+release:
+  id: grounding-post
+  slug: grounding-post
+  title: Grounding Post
+  artist_id: 4castle
+  model: song
+  release_type: single
+  status: approved
+  release_date: '2026-09-17'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991061210715'
+  catalog_number: null
+  cover_image: site/public/assets/releases/grounding-post/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/3D5cLiDeN8drmwCtMxes6Z
+    apple_music: https://geo.music.apple.com/us/album/grounding-post-single/6813249711?app=music
+    tidal: http://www.tidal.com/album/562034398
+    amazon_music: https://music.amazon.com/albums/B0HK78KW24?ref=dm_ff_amazonmusic_3p
+  song:
+    number: 1
+    title: Grounding Post
+    slug: grounding-post
+    isrc: CALVP2640350
+    duration: '4:25'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/4castle--grounding-post.mp3
+    links:
+      spotify: https://open.spotify.com/track/59upZr5YwypCWa8tGlR5xI
+      apple_music: null
+      itunes_store: null
+      youtube: null
+      youtube_music: null
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: Progressive folk-rock, organic vintage recording character with tape warmth
+      and a spacious but clear mix; intricate fingerpicked acoustic guitar leads,
+      subtle electric guitar counterlines, shifting odd-meter turns and gentle key
+      changes; unhurried folk-rock verse build from intimate verses into a dramatic
+      short bridge and memorable refrain; warm male lead vocal with expressive sustained
+      phrasing, layered English harmonies, close verse delivery and widening chorus
+      doubles
+    lyrics_raw: '[Verse 1]
+
+      The grounding post is written on the day
+
+      When the hands stop shaking and the doubts give way
+
+      A pencil mark beside the borrowed name
+
+      Says what we carry, says what we cannot claim
+
+
+      [Chorus]
+
+      The grounding post is written on the day
+
+      The grounding post is written on the day
+
+
+      [Verse 2]
+
+      A brass key tied to a woven thread
+
+      A folded map lies open by the bed
+
+      You tell me every road has one true bend
+
+      I tell you every start resembles an end
+
+
+      [Chorus]
+
+      The grounding post is written on the day
+
+      The grounding post is written on the day
+
+
+      [Bridge]
+
+      Hold the page up to the window
+
+      Let the winter ink turn blue
+
+      If the line breaks, write it slowly
+
+      I will read it back to you
+
+
+      [Verse 3]
+
+      The morning brought a song I didn’t know
+
+      Some words and a tune. I couldn’t let it go
+
+      I sang it to her half asleep in bed
+
+      Softly, “Thank you for listening,” she said
+
+
+      [Chorus]
+
+      The grounding post is written on the day
+
+      The grounding post is written on the day
+
+
+      [Outro]
+
+      Written on the day
+
+      Written on the day'
+    lyrics_text: 'The grounding post is written on the day
+
+      When the hands stop shaking and the doubts give way
+
+      A pencil mark beside the borrowed name
+
+      Says what we carry, says what we cannot claim
+
+
+      The grounding post is written on the day
+
+      The grounding post is written on the day
+
+
+      A brass key tied to a woven thread
+
+      A folded map lies open by the bed
+
+      You tell me every road has one true bend
+
+      I tell you every start resembles an end
+
+
+      The grounding post is written on the day
+
+      The grounding post is written on the day
+
+
+      Hold the page up to the window
+
+      Let the winter ink turn blue
+
+      If the line breaks, write it slowly
+
+      I will read it back to you
+
+
+      The morning brought a song I didn’t know
+
+      Some words and a tune. I couldn’t let it go
+
+      I sang it to her half asleep in bed
+
+      Softly, “Thank you for listening,” she said
+
+
+      The grounding post is written on the day
+
+      The grounding post is written on the day
+
+
+      Written on the day
+
+      Written on the day'
+    lyrics_source: null
+    hints:
+      Vocals: Male
+    master_path: /mnt/c/Masters/Grounding Post.wav
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Grounding Post/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Grounding Post/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Grounding Post/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Grounding Post/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Grounding Post/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Grounding Post/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Grounding Post/Vocals.wav
+      enabled: true
+      label: Vocals
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    critic:
+      model: default
+      persona: pundit
+      target: liner
+  distributor: landr
+  seo:
+    title: Grounding Post
+    description: Grounding Post on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+    master_path: /mnt/c/Masters/Grounding Post.wav
+  hero_image: site/public/assets/releases/grounding-post/hero.jpg

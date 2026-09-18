@@ -1,0 +1,124 @@
+{
+  "track_id": "michael-anthony-rose--the-grounding-post",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/The Grounding Post.wav",
+    "proxy": "/home/mrose/audio/proxy/michael-anthony-rose--the-grounding-post.opus"
+  },
+  "lyrics": "The grounding post is written on the day\nWhen the hands stop shaking and the doubts give way\nA pencil mark beside the borrowed name\nSays what we carry, says what we cannot claim\n\nThe grounding post is written on the day\nThe grounding post is written on the day\n\nA brass key tied to a woven thread\nA folded map lies open by the bed\nYou tell me every road has one true bend\nI tell you every start resembles an end\n\nThe grounding post is written on the day\nThe grounding post is written on the day\n\nHold the page up to the window\nLet the winter ink turn blue\nIf the line breaks, write it slowly\nI will read it back to you\n\nThe morning brought a song I didn’t know\nSome words and a tune. I couldn’t let it go\nI sang it to her half asleep in bed\nSoftly, “Thank you for listening,” she said\n\nThe grounding post is written on the day\nThe grounding post is written on the day\n\nWritten on the day\nWritten on the day",
+  "lyrics_raw": "[Verse 1]\nThe grounding post is written on the day\nWhen the hands stop shaking and the doubts give way\nA pencil mark beside the borrowed name\nSays what we carry, says what we cannot claim\n\n[Chorus]\nThe grounding post is written on the day\nThe grounding post is written on the day\n\n[Verse 2]\nA brass key tied to a woven thread\nA folded map lies open by the bed\nYou tell me every road has one true bend\nI tell you every start resembles an end\n\n[Chorus]\nThe grounding post is written on the day\nThe grounding post is written on the day\n\n[Bridge]\nHold the page up to the window\nLet the winter ink turn blue\nIf the line breaks, write it slowly\nI will read it back to you\n\n[Verse 3]\nThe morning brought a song I didn’t know\nSome words and a tune. I couldn’t let it go\nI sang it to her half asleep in bed\nSoftly, “Thank you for listening,” she said...\n\n[Chorus]\nThe grounding post is written on the day\nThe grounding post is written on the day\n\n[Outro]\nWritten on the day\nWritten on the day",
+  "style": "Folk with dry close-miked production, fingerpicked acoustic guitar, muted upright bass and sparse brushed percussion, unhurried 6/8 sway with subtle meter shifts and a late key lift, solo male vocalist in an intimate emotional register with restrained double-tracked choruses",
+  "persona": "POINT-IN-TIME ARTIST CONTEXT\nRelease-date cutoff: 2026-09-18\nWrite as though the target release is new on this date.\nDo not mention, infer, or rely on releases or artist developments after this cutoff.\nThe current mutable artist biography is excluded because it has no dated revision.\nFor prior releases, approved critic summaries take precedence over catalog descriptions.\nArtist: Michael Anthony Rose\nCatalog available at this point (oldest first):\n- 2026-02-20 — Aletheion (single)\n- 2026-03-08 — Build Me A Lie (single)\n- 2026-03-14 — Nowhere But Up (single)\n- 2026-03-27 — I Will Bloom (single)\n- 2026-04-09 — But That Was Then (single)\n- 2026-04-14 — Avant Suite (single)\n- 2026-04-15 — Never Knowing (single)\n- 2026-04-30 — Prepositions (single)\n- 2026-05-04 — The Bridge Gets You Over (single)\n- 2026-05-10 — Truth's Empty Promise (single)\n- 2026-05-11 — Aroma Of You (single)\n- 2026-05-19 — I'm Still Here (album)\n  Approved critic summary: Rose opens with a mumbled false start on 'I'm Old Now,' and that small, deliberate stumble tells you exactly what kind of record this is: nothing performed, nothing smoothed over, just a man taking honest stock.\n- 2026-05-30 — Entraining (single)\n- 2026-06-16 — Live Forever Or Die Trying (single)\n- 2026-06-25 — A Distant Memory (single)\n  Approved critic summary: \"A Distant Memory\" opens with a counted-off \"one, two, three, four\" that sets a brisk 4/4 in C major, and from there Rose lets a female vocal float above a clean, roomy groove that leans more toward jazzy indie-pop than any straight ballad.\n- 2026-06-25 — You Know Enough (single)\n  Approved critic summary: There's a bat by the bed in this one, his father's before him, and nobody in the family has ever swung it.\n- 2026-07-08 — You Don't Say (single)\n  Approved critic summary: Nearly seven minutes, and Rose earns every one of them here by treating silence itself as the subject.\n- 2026-07-18 — Outlandia (album)\n  Approved critic summary: For a songwriter introduced as a diarist, a philosopher of the ordinary who finds a lifetime in a reflection on a phone screen, \"Outlandia\" is a startling pivot: a two-hour rock opera, twenty-four scenes long, about how a country is bought, broken, and inventoried.\n- 2026-08-20 — Them Bones (single)\n  Approved critic summary: After the two-hour sprawl of \"Outlandia,\" Rose narrows the lens back down to something you can hold in one hand, and \"Them Bones\" benefits from the compression.\n- 2026-08-30 — Unreasonably Quiet (single)\n  Approved critic summary: Rose builds this one on a 3/4 pulse at a brisk clip, which is the first surprise: a waltz that never asks you to sway, driven instead by a Hammond groove and gritty guitar working against the meter rather than settling into it.\n- 2026-09-12 — Wazoo In Effigy (album)\n  Approved critic summary: Michael Anthony Rose’s *Wazoo in Effigy* is inspired by Frank Zappa, which is not quite the same thing as being a Zappa tribute.\n- 2026-09-18 — The Grounding Post (single) [target release]",
+  "hints": {
+    "Vocals": "Male"
+  },
+  "hard_facts": {
+    "bpm": 136.0,
+    "key": "F#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 209.67,
+    "lufs": -14.2,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 14.74,
+        "label": "S1"
+      },
+      {
+        "start": 14.74,
+        "end": 32.23,
+        "label": "S2"
+      },
+      {
+        "start": 32.23,
+        "end": 55.12,
+        "label": "S3"
+      },
+      {
+        "start": 55.12,
+        "end": 72.84,
+        "label": "S4"
+      },
+      {
+        "start": 72.84,
+        "end": 97.25,
+        "label": "S5"
+      },
+      {
+        "start": 97.25,
+        "end": 119.19,
+        "label": "S6"
+      },
+      {
+        "start": 119.19,
+        "end": 157.8,
+        "label": "S7"
+      },
+      {
+        "start": 157.8,
+        "end": 183.3,
+        "label": "S8"
+      },
+      {
+        "start": 183.3,
+        "end": 199.02,
+        "label": "S9"
+      },
+      {
+        "start": 199.02,
+        "end": 209.67,
+        "label": "S10"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.963,
+      "key": 0.945
+    }
+  },
+  "tags": {
+    "genre": [
+      "classic rock",
+      "country rock",
+      "indie rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "acoustic guitar",
+      "bass guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "Built around delicate fingerpicked acoustic guitar and a rich, intimate baritone lead vocal, the track exudes a hushed, contemplative warmth steeped in quiet vulnerability and poetic nostalgia. The arrangement maintains an airy, uncluttered spatial profile, allowing each articulate fret detail and gentle vocal breath to sit prominently within a soft, warm room ambience. As the piece unfolds, lush layered vocal harmonies swell into the stereo field during the choruses, providing a poignant, choral elevation that lifts the emotional weight without compromising the minimalist feel. The tender storytelling reaches a memorable peak in the later verse with a hushed spoken exchange, resolving into drifting, ethereal vocal echoes and fading acoustic arpeggios.",
+    "model": "gemini-3.8-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "Rose has spent 2026 moving between sprawling ambition and compressed intimacy, and 'The Grounding Post' lands firmly in the second register, closer in spirit to the quiet honesty of 'I'm Still Here' than to the operatic scale of 'Outlandia.' The track runs 3:29 in F# major, built on dry, close-miked fingerpicking and a baritone vocal that has the stillness of someone writing in the early morning before anyone else is awake. The lyric operates through accumulation of small, precise objects: a pencil mark, a brass key tied to a woven thread, a folded map open by the bed. These are not symbols reaching for weight; they are things that already carry it. The bridge is where the song earns its keep: 'Hold the page up to the window / Let the winter ink turn blue' has the same compressed patience you hear in the best Townes Van Zandt couplets, where an image does all the work a full verse might attempt. And then the third verse lands almost casually, the kind of moment that sneaks up on you: 'The morning brought a song I didn't know / Some words and a tune. I couldn't let it go,' resolving into a sleeping woman's half-conscious 'Thank you for listening.' That small exchange does more emotional lifting than a dozen larger gestures. The choruses double the vocal track with restraint rather than volume, which is exactly the right call. At 136 BPM the pace feels brisker than the arrangement signals, but the production keeps everything close and unhurried in feel. This is quiet, assured work from a songwriter who knows when to stop adding.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "F# major",
+      "3:29 duration",
+      "136 BPM",
+      "fingerpicked acoustic guitar close-miked production",
+      "double-tracked chorus vocals",
+      "lyric: 'A brass key tied to a woven thread'",
+      "lyric: 'Hold the page up to the window / Let the winter ink turn blue'",
+      "lyric: 'The morning brought a song I didn't know / Some words and a tune. I couldn't let it go'",
+      "lyric: 'Thank you for listening'",
+      "comparison to Townes Van Zandt",
+      "reference to I'm Still Here and Outlandia"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}

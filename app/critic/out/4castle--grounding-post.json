@@ -1,0 +1,147 @@
+{
+  "track_id": "4castle--grounding-post",
+  "source": {
+    "type": "local_master",
+    "path": "/home/mrose/audio/masters/Grounding Post.wav",
+    "proxy": "/home/mrose/audio/proxy/4castle--grounding-post.opus"
+  },
+  "lyrics": "The grounding post is written on the day\nWhen the hands stop shaking and the doubts give way\nA pencil mark beside the borrowed name\nSays what we carry, says what we cannot claim\n\nThe grounding post is written on the day\nThe grounding post is written on the day\n\nA brass key tied to a woven thread\nA folded map lies open by the bed\nYou tell me every road has one true bend\nI tell you every start resembles an end\n\nThe grounding post is written on the day\nThe grounding post is written on the day\n\nHold the page up to the window\nLet the winter ink turn blue\nIf the line breaks, write it slowly\nI will read it back to you\n\nThe morning brought a song I didn’t know\nSome words and a tune. I couldn’t let it go\nI sang it to her half asleep in bed\nSoftly, “Thank you for listening,” she said\n\nThe grounding post is written on the day\nThe grounding post is written on the day\n\nWritten on the day\nWritten on the day",
+  "lyrics_raw": "[Verse 1]\nThe grounding post is written on the day\nWhen the hands stop shaking and the doubts give way\nA pencil mark beside the borrowed name\nSays what we carry, says what we cannot claim\n\n[Chorus]\nThe grounding post is written on the day\nThe grounding post is written on the day\n\n[Verse 2]\nA brass key tied to a woven thread\nA folded map lies open by the bed\nYou tell me every road has one true bend\nI tell you every start resembles an end\n\n[Chorus]\nThe grounding post is written on the day\nThe grounding post is written on the day\n\n[Bridge]\nHold the page up to the window\nLet the winter ink turn blue\nIf the line breaks, write it slowly\nI will read it back to you\n\n[Verse 3]\nThe morning brought a song I didn’t know\nSome words and a tune. I couldn’t let it go\nI sang it to her half asleep in bed\nSoftly, “Thank you for listening,” she said\n\n[Chorus]\nThe grounding post is written on the day\nThe grounding post is written on the day\n\n[Outro]\nWritten on the day\nWritten on the day",
+  "style": "Progressive folk-rock, organic vintage recording character with tape warmth and a spacious but clear mix; intricate fingerpicked acoustic guitar leads, subtle electric guitar counterlines, shifting odd-meter turns and gentle key changes; unhurried folk-rock verse build from intimate verses into a dramatic short bridge and memorable refrain; warm male lead vocal with expressive sustained phrasing, layered English harmonies, close verse delivery and widening chorus doubles",
+  "persona": "POINT-IN-TIME ARTIST CONTEXT\nRelease-date cutoff: 2026-09-17\nWrite as though the target release is new on this date.\nDo not mention, infer, or rely on releases or artist developments after this cutoff.\nThe current mutable artist biography is excluded because it has no dated revision.\nFor prior releases, approved critic summaries take precedence over catalog descriptions.\nArtist: 4Castle\nCatalog available at this point (oldest first):\n- 2025-03-10 — Distance Not Safety (album)\n  Catalog description: Maricopa Records proudly presents the debut album from 4Castle, Distance Not Safety-a powerful fusion of progressive rock, intricate vocal harmonies, and masterful musicianship. With a lineup that blends fiery guitars, deep bass grooves, commanding drums, and lush keyboards, 4Castle delivers a record that is as emotionally gripping as it is musically...\n- 2025-03-12 — Gone and Forgotten (single)\n  Catalog description: Gone and Forgotten\n- 2025-03-21 — Here Comes the Rain (single)\n- 2025-03-29 — On the Advent of a Dream (album)\n  Catalog description: Maricopa Recordsproudly presents the full-length album from 4Castle, the genre-bending supergroup blending raw rock energy, sophisticated musicianship, and lyrical depth. On the Advent of a Dreamis a twelve-track odyssey through mysticism, memory, resistance, and revelation-crafted with precision, power, and passion.\n- 2025-03-29 — Then She Descends (single)\n  Catalog description: “Then She Descends” is a haunting, sensual descent into the unknown-a song wrapped in moonlight and mystery. 4Castle conjures a powerful feminine presence through cascading melodies, shifting dynamics, and a lyric that blurs the line between devotion and surrender.\n- 2025-03-29 — Umbra Ala (single)\n  Catalog description: With \"Umbra Ala\", 4Castle steps into mythic territory, delivering a powerful, theatrical rock track that feels both ancient and immediate. Told from the perspective of a mysterious gatekeeper between worlds, the song weaves mysticism, temptation, and fate into a sweeping sonic experience.\n- 2025-04-02 — What's Best (single)\n- 2025-04-03 — Bobo's Lair (single)\n- 2025-04-04 — Something Less Would Joy Then Be (single)\n- 2025-04-11 — Echo Primae (single)\n- 2025-04-12 — Attunement (single)\n- 2025-04-15 — Coda Returns (single)\n- 2025-04-16 — Hesitation Denies (single)\n- 2025-05-20 — Crimson Decision (single)\n- 2025-05-22 — Light In Eyes (single)\n- 2025-05-26 — Bent (album)\n- 2025-06-14 — The Distance Between (single)\n- 2025-07-16 — The Turn is Yours (single)\n- 2025-10-23 — Dispirited Santos (single)\n- 2026-01-12 — A Long Hard Road (single)\n- 2026-03-19 — Montradei (single)\n- 2026-05-04 — A Certain Sense (single)\n- 2026-05-13 — Ready Almost (single)\n- 2026-05-18 — To Be All (single)\n- 2026-06-14 — The Only Way Over (single)\n- 2026-06-30 — A Good Day To Be (single)\n  Approved critic summary: This is 4Castle at rest, and it suits them.\n- 2026-09-11 — A January To Cheer (single)\n  Approved critic summary: 4Castle has been circling political anxiety for a while, but here they come right at it: three verses mapping a single figure's occupation of every room in the house, each chorus tightening the screws until the final one swaps 'some day' for 'that day' and the whole song pivots on a single word.\n- 2026-09-17 — Grounding Post (single) [target release]",
+  "hints": {
+    "Vocals": "Male"
+  },
+  "hard_facts": {
+    "bpm": 152.0,
+    "key": "F#",
+    "mode": "major",
+    "time_signature": "4/4",
+    "duration_s": 264.84,
+    "lufs": -15.6,
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 4.71,
+        "label": "S1"
+      },
+      {
+        "start": 4.71,
+        "end": 24.4,
+        "label": "S2"
+      },
+      {
+        "start": 24.4,
+        "end": 43.24,
+        "label": "S3"
+      },
+      {
+        "start": 43.24,
+        "end": 80.55,
+        "label": "S4"
+      },
+      {
+        "start": 80.55,
+        "end": 99.06,
+        "label": "S5"
+      },
+      {
+        "start": 99.06,
+        "end": 121.53,
+        "label": "S6"
+      },
+      {
+        "start": 121.53,
+        "end": 137.16,
+        "label": "S7"
+      },
+      {
+        "start": 137.16,
+        "end": 154.81,
+        "label": "S8"
+      },
+      {
+        "start": 154.81,
+        "end": 170.06,
+        "label": "S9"
+      },
+      {
+        "start": 170.06,
+        "end": 185.04,
+        "label": "S10"
+      },
+      {
+        "start": 185.04,
+        "end": 200.2,
+        "label": "S11"
+      },
+      {
+        "start": 200.2,
+        "end": 219.78,
+        "label": "S12"
+      },
+      {
+        "start": 219.78,
+        "end": 241.95,
+        "label": "S13"
+      },
+      {
+        "start": 241.95,
+        "end": 257.16,
+        "label": "S14"
+      },
+      {
+        "start": 257.16,
+        "end": 264.84,
+        "label": "S15"
+      }
+    ],
+    "confidence": {
+      "bpm": 0.965,
+      "key": 0.918
+    }
+  },
+  "tags": {
+    "genre": [
+      "indie rock",
+      "classic rock",
+      "pop rock"
+    ],
+    "mood": [
+      "tender",
+      "emotional",
+      "melancholic"
+    ],
+    "instruments": [
+      "electric guitar",
+      "bass guitar",
+      "acoustic guitar"
+    ],
+    "model": "HTSAT-tiny"
+  },
+  "impression": {
+    "text": "This art-pop ballad opens with warm keyboard arpeggios and intimate male lead vocals, creating a deeply introspective, poetic atmosphere that feels both tender and theatrical. As the rhythm section enters with a steady, pocketed groove, the energy builds naturally toward soaring choruses enriched by lush vocal harmonies and shimmering melodic counterpoint. The production offers a spacious, pristine mix where acoustic warmth meets modern clarity, balancing close-mic intimacy with wide, resonant reverbs. The graceful dynamic arc between delicate, narrative-driven verses and the expansive, choir-like chorus gives the arrangement a compelling emotional depth and cinematic finish.",
+    "model": "gemini-3.8-flash"
+  },
+  "review": {
+    "target": "liner",
+    "review_text": "The title alone is doing work: a grounding post is the fixed point you write your name beside, the thing that says here is what I own and here is what I don't. 4Castle builds the whole song on that image, and to their credit it never tips into abstraction. The verses accumulate small, specific objects: a brass key, a folded map, a pencil mark beside a borrowed name, and the cumulative weight of them is quiet but real, closer to John Hiatt's plainspoken domesticity than to prog theatrics. The track runs in F# major at a brisk clip that the arrangement wisely refuses to rush, the fingerpicked acoustic guitar holding the center while electric counterlines drift in and out like second thoughts. Where the production earns its keep is in the chorus, which keeps the same line, 'The grounding post is written on the day,' but opens the vocal stack wide enough that the repetition starts to feel ritual rather than lazy. The bridge lands the most compressed image on the album: 'Hold the page up to the window / Let the winter ink turn blue / If the line breaks, write it slowly / I will read it back to you.' That is four lines doing the work of a relationship in miniature, and the arrangement has the good sense to strip back and let them breathe. Verse three pulls it all into something almost unbearably gentle: a half-remembered tune, a half-asleep woman, a whispered 'Thank you for listening,' and then the outro folds back to the title phrase as if the document is being sealed. Coming off 'A January To Cheer' and its coiled political dread, this feels like the exhale on the other side, 4Castle locating steadiness not in resolution but in the act of writing it down. A highlight.",
+    "status": "publishable",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "highlight"
+    },
+    "anchors_used": [
+      "F# major",
+      "brass key / folded map / pencil mark (lyric specifics)",
+      "bridge quatrain quoted",
+      "verse three closing image quoted",
+      "fingerpicked acoustic guitar counterlined by electric",
+      "chorus vocal stack widening",
+      "outro return to title phrase",
+      "contrast with A January To Cheer",
+      "John Hiatt comparison"
+    ],
+    "model": "claude-sonnet-4-6"
+  }
+}
