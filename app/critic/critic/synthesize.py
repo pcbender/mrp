@@ -11,7 +11,6 @@ from __future__ import annotations
 import argparse
 import dataclasses
 import json
-import re
 from pathlib import Path
 
 import anthropic
@@ -19,7 +18,7 @@ import anthropic
 from .config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
 from .usage import call_claude
 from .record import Review, TrackFinding, VerdictTier
-from .utils import scrub_emdash
+from .utils import parse_json_response, scrub_emdash
 from .schema import validate_track_review, warn_issues
 
 _TIER_LABELS = {2: "soft_floor", 3: "dependable", 4: "highlight", 5: "standout"}
@@ -130,26 +129,7 @@ def _build_user_message(
 
 
 def _parse_response(text: str) -> dict:
-    text = text.strip()
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        pass
-    # Strip markdown fences if model added them despite instructions
-    match = re.search(r"```(?:json)?\s*(.*?)\s*```", text, re.DOTALL)
-    if match:
-        try:
-            return json.loads(match.group(1))
-        except json.JSONDecodeError:
-            pass
-    # Last resort: find outermost braces
-    match = re.search(r"\{.*\}", text, re.DOTALL)
-    if match:
-        try:
-            return json.loads(match.group(0))
-        except json.JSONDecodeError:
-            pass
-    raise ValueError(f"Could not parse JSON from model response:\n{text}")
+    return parse_json_response(text, required=("review_text", "verdict_tier"))
 
 
 def _enforce_floor(tier: dict) -> dict:

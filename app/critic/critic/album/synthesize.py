@@ -12,8 +12,6 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import json
-import re
 from pathlib import Path
 
 import anthropic
@@ -21,7 +19,7 @@ import anthropic
 from ..catalog import get_release_tracks, is_release_instrumental
 from ..config import ANTHROPIC_API_KEY, CRITIC_MODEL_DEFAULT, CRITIC_MODEL_DEV, CRITIC_MODEL_HERO
 from ..usage import call_claude
-from ..utils import scrub_emdash
+from ..utils import parse_json_response, scrub_emdash
 from ..schema import validate_album_review, warn_issues
 from .features import build_features
 from .cohesion import build_cohesion
@@ -138,24 +136,7 @@ def _build_user_message(record: AlbumRecord, findings: list[dict], target: str, 
 
 
 def _parse_response(text: str) -> dict:
-    text = text.strip()
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        pass
-    match = re.search(r"```(?:json)?\s*(.*?)\s*```", text, re.DOTALL)
-    if match:
-        try:
-            return json.loads(match.group(1))
-        except json.JSONDecodeError:
-            pass
-    match = re.search(r"\{.*\}", text, re.DOTALL)
-    if match:
-        try:
-            return json.loads(match.group(0))
-        except json.JSONDecodeError:
-            pass
-    raise ValueError(f"Could not parse JSON from model response:\n{text}")
+    return parse_json_response(text, required=("review_text", "verdict_tier"))
 
 
 def _enforce_floor(tier: dict) -> dict:
