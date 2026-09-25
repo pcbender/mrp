@@ -5,7 +5,7 @@ release:
   artist_id: michael-anthony-rose
   model: song
   release_type: single
-  status: approved
+  status: live
   release_date: '2026-09-18'
   label: Maricopa Records
   publisher: Maricopa Publishing
@@ -17,6 +17,8 @@ release:
     apple_music: https://geo.music.apple.com/us/album/the-grounding-post-single/6813266303?app=music
     tidal: http://www.tidal.com/album/562050136
     amazon_music: https://music.amazon.com/albums/B0HK74YYKK?ref=dm_ff_amazonmusic_3p
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mHIEPoN2EYCSfK93Q6dfzHn4To5aU3xE8&lid=00000000-6aad-50b2-3600-00ab0061e109&cid=eef267f6-3f51-5d46-a717-711ac12bcf76
+    youtube: https://www.youtube.com/watch?v=EvC989JVoV8
   song:
     number: 1
     title: The Grounding Post

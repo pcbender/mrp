@@ -5,7 +5,7 @@ release:
   artist_id: 4castle
   model: song
   release_type: single
-  status: approved
+  status: live
   release_date: '2026-09-17'
   label: Maricopa Records
   publisher: Maricopa Publishing
@@ -17,6 +17,8 @@ release:
     apple_music: https://geo.music.apple.com/us/album/grounding-post-single/6813249711?app=music
     tidal: http://www.tidal.com/album/562034398
     amazon_music: https://music.amazon.com/albums/B0HK78KW24?ref=dm_ff_amazonmusic_3p
+    youtube_music: https://music.youtube.com/playlist?list=OLAK5uy_mUFLQprX1Xg1Tauo2TaqduesPLdGKjQm4&lid=00000000-6aad-4756-3000-0015009d5614&cid=eef267f6-3f51-5d46-a717-711ac12bcf76
+    youtube: https://www.youtube.com/watch?v=qaj13kpmTa8
   song:
     number: 1
     title: Grounding Post
@@ -227,3 +229,11 @@ release:
     allow_auto_publish: false
     master_path: /mnt/c/Masters/Grounding Post.wav
   hero_image: site/public/assets/releases/grounding-post/hero.jpg
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null

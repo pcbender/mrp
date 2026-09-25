@@ -1,0 +1,3501 @@
+release:
+  id: model-man
+  slug: model-man
+  title: Model Man
+  artist_id: michael-anthony-rose
+  model: album
+  release_type: album
+  status: approved
+  release_date: '2026-09-24'
+  label: Maricopa Records
+  publisher: Maricopa Publishing
+  upc: '991061299550'
+  catalog_number: null
+  cover_image: site/public/assets/releases/model-man/cover.jpg
+  links:
+    spotify: https://open.spotify.com/album/2aUazqGSAhCDR2BaLl8AM9
+    apple_music: https://geo.music.apple.com/us/album/model-man/6815773644?app=music
+    amazon_music: https://music.amazon.com/albums/B0HKY751HN?ref=dm_ff_amazonmusic_3p
+    tidal: http://www.tidal.com/album/564104246
+    youtube: https://www.youtube.com/watch?v=pxUuvZaSKA0
+    youtube_music: https://music.youtube.com/watch?v=pxUuvZaSKA0
+  tracks:
+  - number: 1
+    title: Default Settings
+    slug: default-settings
+    isrc: CALVP2653657
+    duration: '4:14'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--default-settings.mp3
+    links:
+      spotify: https://open.spotify.com/track/6fazc6wbPjYlR2ql3pcirW
+      apple_music: https://music.apple.com/us/album/default-settings/6815773644?i=6815773645
+      youtube: https://www.youtube.com/watch?v=SP83lExjbyc
+      youtube_music: https://music.youtube.com/watch?v=SP83lExjbyc
+    style: progressive rock, Canterbury scene jazz-rock fusion with interlocking organ
+      and Fender Rhodes, angular bass, tenor saxophone, warm tight live-ensemble production
+      with precise gated room ambience, resonant dry male baritone in deadpan storytelling
+      delivery, ticking mechanical 7/8 groove at 7/8, understated English wit
+    lyrics_raw: '[Short Instrumental Intro - ticking, mechanical 7/8]
+
+
+      [Verse 1 - deadpan clinical]
+
+      They clocked the hour, they logged the weight,
+
+      Counted fingers, closed the file,
+
+      A paper tag pinned to the crate,
+
+      Stamped "as expected" with a smile.
+
+
+      [Verse 2 - dry, wry]
+
+      Down the hall some other kid
+
+      came in loud and came in bent,
+
+      screaming everything he did,
+
+      while they smoothed me, called it meant.
+
+
+      [Chorus - flat, matter-of-fact]
+
+      Default settings — before a name,
+
+      they kept the box but lost the guide.
+
+      No one checked if I''d turn out the same,
+
+      and called it me, though it lied.
+
+
+      [Interlude - jazz-rock 7/8 build]
+
+
+      [Verse 3 - quieter, resigned]
+
+      They wheeled me past the nursery floor
+
+      and drove me somewhere I''d call home.
+
+      No one had met me there before —
+
+      just someone''s son, already grown.
+
+
+      [Chorus - flat, matter-of-fact]
+
+      Default settings — before a name,
+
+      they kept the box but lost the guide.
+
+      No one checked if I''d turn out the same,
+
+      and called it me, though it lied.
+
+
+      [Bridge - stripped, vulnerable]
+
+      Nobody reads the settings twice.
+
+      Nobody thinks to ask them why.
+
+      I was already running
+
+      the second I opened my eyes.
+
+
+      [Final Chorus - fuller, harmonized]
+
+      Default settings — before a name,
+
+      they kept the box but lost the guide.
+
+      No one checked if I''d turn out the same,
+
+      and called it me, though it lied.
+
+
+      [Outro - resolving fade]
+
+
+      [End]'
+    lyrics_text: 'They clocked the hour, they logged the weight
+
+      Counted fingers, closed the file
+
+      A paper tag pinned to the crate
+
+      Stamped "as expected" with a smile
+
+
+      Down the hall some other kid
+
+      came in loud and came in bent
+
+      screaming everything he did
+
+      while they smoothed me, called it meant
+
+
+      Default settings — before a name
+
+      they kept the box but lost the guide
+
+      No one checked if I''d turn out the same
+
+      and called it me, though it lied
+
+
+      They wheeled me past the nursery floor
+
+      and drove me somewhere I''d call home
+
+      No one had met me there before —
+
+      just someone''s son, already grown
+
+
+      Default settings — before a name
+
+      they kept the box but lost the guide
+
+      No one checked if I''d turn out the same
+
+      and called it me, though it lied
+
+
+      Nobody reads the settings twice
+
+      Nobody thinks to ask them why
+
+      I was already running
+
+      the second I opened my eyes
+
+
+      Default settings — before a name
+
+      they kept the box but lost the guide
+
+      No one checked if I''d turn out the same
+
+      and called it me, though it lied'
+    master_path: /mnt/c/Masters/Default Settings.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Default Settings/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Default Settings/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Default Settings/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Default Settings/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Default Settings/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Default Settings/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Default Settings/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 2
+    title: Recipe
+    slug: recipe
+    isrc: CALVP2653658
+    duration: '3:52'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--recipe.mp3
+    links:
+      spotify: https://open.spotify.com/track/5z7etvsl4kxAfepN0B9rtA
+      apple_music: https://music.apple.com/us/album/recipe/6815773644?i=6815773648
+      youtube: https://www.youtube.com/watch?v=yFnRt6POArg
+      youtube_music: https://music.youtube.com/watch?v=yFnRt6POArg
+    style: Male baritone, resonant, warm and measured, quietly resigned delivery,
+      Progressive rock, Canterbury scene, organ and vibraphone, gentle 7/8 pulse,
+      fingerpicked acoustic guitar, Warm live-ensemble production, hymn-like undertow,
+      understated English wit, ‑gospel choir, ‑triumphant
+    lyrics_raw: '[Short Instrumental Intro - hymn-like, vibraphone]
+
+
+      [Verse 1 - warm, measured]
+
+      Kept in a box, stained before I could read,
+
+      his father''s hand, then his, then mine,
+
+      every measure a family creed,
+
+      passed down the table, line by line.
+
+
+      [Verse 2 - childlike, plain]
+
+      At six I asked them, plain and clear,
+
+      why I came out a different way.
+
+      They said, "You''re not the first one here —
+
+      some batches turn out gray."
+
+
+      [Chorus - matter-of-fact, resigned]
+
+      It''s a recipe, not a crime,
+
+      inadequate — that''s the design.
+
+      Older than me, every time,
+
+      someone else''s hand behind mine.
+
+
+      [Interlude - organ swell]
+
+
+      [Verse 3 - flat, itemized]
+
+      One part silence, two parts shame,
+
+      a pinch of never good enough.
+
+      Nothing measured that I could blame —
+
+      and somehow I turned out rough.
+
+
+      [Chorus - matter-of-fact, resigned]
+
+      It''s a recipe, not a crime,
+
+      inadequate — that''s the design.
+
+      Older than me, every time,
+
+      someone else''s hand behind mine.
+
+
+      [Bridge - questioning, quiet]
+
+      Nobody signs a recipe card.
+
+      Nobody claims the original sin.
+
+      But someone wrote it, long before me —
+
+      and called the leftovers kin.
+
+
+      [Bridge - nursery rhyme, hushed and singsong turning unsettling]
+
+      Ring around the rosy,
+
+      pocket full of posies,
+
+      ashes, ashes,
+
+      we all fall down.
+
+
+      [Final Chorus - fuller, weighted]
+
+      It''s a recipe, not a crime,
+
+      inadequate — that''s the design.
+
+      Older than me, every time,
+
+      someone else''s hand behind mine.
+
+
+      [Outro - fading hymn]
+
+
+      [End]'
+    lyrics_text: 'Kept in a box, stained before I could read
+
+      his father''s hand, then his, then mine
+
+      every measure a family creed
+
+      passed down the table, line by line
+
+
+      At six I asked them, plain and clear
+
+      why I came out a different way
+
+      They said, "You''re not the first one here —
+
+      some batches turn out gray."
+
+
+      It''s a recipe, not a crime
+
+      inadequate — that''s the design
+
+      Older than me, every time
+
+      someone else''s hand behind mine
+
+
+      One part silence, two parts shame
+
+      a pinch of never good enough
+
+      Nothing measured that I could blame —
+
+      and somehow I turned out rough
+
+
+      It''s a recipe, not a crime
+
+      inadequate — that''s the design
+
+      Older than me, every time
+
+      someone else''s hand behind mine
+
+
+      Nobody signs a recipe card
+
+      Nobody claims the original sin
+
+      But someone wrote it, long before me —
+
+      and called the leftovers kin
+
+
+      Ring around the rosy
+
+      pocket full of posies
+
+      ashes, ashes
+
+      we all fall down
+
+
+      It''s a recipe, not a crime
+
+      inadequate — that''s the design
+
+      Older than me, every time
+
+      someone else''s hand behind mine'
+    master_path: /mnt/c/Masters/Recipe.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Recipe/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Recipe/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Recipe/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Recipe/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Recipe/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Recipe/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Recipe/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 3
+    title: Some Assembly Required
+    slug: some-assembly-required
+    isrc: CALVP2653659
+    duration: '3:35'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--some-assembly-required.mp3
+    links:
+      spotify: https://open.spotify.com/track/2OwvhXO7slbjdEVHvw7Gdd
+      apple_music: https://music.apple.com/us/album/some-assembly-required/6815773644?i=6815773649
+      youtube: https://www.youtube.com/watch?v=Ys00VrYDL5w
+      youtube_music: https://music.youtube.com/watch?v=Ys00VrYDL5w
+    style: 'Progressive rock, Canterbury scene: resonant dry male baritone with understated
+      wry delivery, angular ticking guitar-and-bass unison, sharp organ jabs, alto
+      saxophone interjections, warm live-ensemble production with gated room ambience,
+      nervous 7/8 groove with syncopated phrasing and tight polyrhythmic accents,
+      ‑aggressive vocals, ‑distorted guitar'
+    lyrics_raw: '[Short Instrumental Intro - ticking, angular guitar-and-bass unison]
+
+
+      [Verse 1 - deadpan, remembering]
+
+      I asked for a plane that could actually fly.
+
+      They tossed me a box and walked away.
+
+      No diagram drawn, no reason why —
+
+      just plastic and glue and a rainy day.
+
+
+      [Verse 2 - wry, a little proud]
+
+      So I put myself into the parts that I had,
+
+      forced the wings where they didn''t belong.
+
+      Nobody promised the frame could withstand —
+
+      I flew it in secret and called myself strong.
+
+
+      [Chorus - flat, matter-of-fact]
+
+      Some assembly required, the box declared —
+
+      didn''t say the job was never done.
+
+      I built a man from the parts I had spared,
+
+      called it finished before it was begun.
+
+
+      [Interlude - angular unison build]
+
+
+      [Verse 3 - quieter, honest]
+
+      Now every year I bolt another part —
+
+      a laugh, a job, a voice that isn''t mine.
+
+      No one ships you a blueprint or a chart —
+
+      you learn to hide the seams and call it fine.
+
+
+      [Chorus - flat, matter-of-fact]
+
+      Some assembly required, the box declared —
+
+      didn''t say the job was never done.
+
+      I built a man from the parts I had spared,
+
+      called it finished before it was begun.
+
+
+      [Bridge - stripped, confessional]
+
+      The glue never fully dried on these parts.
+
+      Get near enough and the seams still show.
+
+      Nobody tells you when you start —
+
+      the building never lets you go.
+
+
+      [Final Chorus - fuller, harmonized]
+
+      Some assembly required, the box declared —
+
+      didn''t say the job was never done.
+
+      I built a man from the parts I had spared,
+
+      called it finished before it was begun.
+
+
+      [Outro - mechanical fade]
+
+
+      [End]'
+    lyrics_text: 'I asked for a plane that could actually fly
+
+      They tossed me a box and walked away
+
+      No diagram drawn, no reason why —
+
+      just plastic and glue and a rainy day
+
+
+      So I put myself into the parts that I had
+
+      forced the wings where they didn''t belong
+
+      Nobody promised the frame could withstand —
+
+      I flew it in secret and called myself strong
+
+
+      Some assembly required, the box declared —
+
+      didn''t say the job was never done
+
+      I built a man from the parts I had spared
+
+      called it finished before it was begun
+
+
+      Now every year I bolt another part —
+
+      a laugh, a job, a voice that isn''t mine
+
+      No one ships you a blueprint or a chart —
+
+      you learn to hide the seams and call it fine
+
+
+      Some assembly required, the box declared —
+
+      didn''t say the job was never done
+
+      I built a man from the parts I had spared
+
+      called it finished before it was begun
+
+
+      The glue never fully dried on these parts
+
+      Get near enough and the seams still show
+
+      Nobody tells you when you start —
+
+      the building never lets you go
+
+
+      Some assembly required, the box declared —
+
+      didn''t say the job was never done
+
+      I built a man from the parts I had spared
+
+      called it finished before it was begun'
+    master_path: /mnt/c/Masters/Some Assembly Required.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Some Assembly Required/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Some Assembly Required/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Some Assembly Required/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Some Assembly Required/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Some Assembly Required/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Some Assembly Required/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Some Assembly Required/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 4
+    title: RTFM
+    slug: rtfm
+    isrc: CALVP2653660
+    duration: '4:00'
+    explicit: true
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--rtfm.mp3
+    links:
+      spotify: https://open.spotify.com/track/1BHfgi1v14hDAZQRcv1T5F
+      apple_music: https://music.apple.com/us/album/rtfm/6815773644?i=6815773650
+      youtube: https://www.youtube.com/watch?v=vf_gzi-oD0w
+      youtube_music: https://music.youtube.com/watch?v=vf_gzi-oD0w
+    style: 'Progressive rock, Canterbury scene: angular ticking guitar-and-bass unison
+      in odd meter, clipped organ jabs and alto saxophone interjections; resonant
+      dry male baritone with understated wry delivery; syncopated phrasing over tight
+      nervous grooves; warm live-ensemble production with gated room ambience, building
+      breakdowns into a quiet hollowed-out outro, ‑autotune, ‑polished production'
+    lyrics_raw: '[Intro - measured, deadpan]
+
+
+      There is a manual.
+
+
+      I want to be clear about that.
+
+
+      There is one.
+
+      I found it.
+
+
+      Page one.
+
+      Big letters.
+
+      Nothing else on the page:
+
+
+      Figure out what works for you.
+
+
+      [Verse 1 - flat, methodical]
+
+
+      Page two is blank.
+
+
+      So is three.
+
+      So is four.
+
+
+      So is every page after that.
+
+
+      I checked the back.
+
+      Under the jacket.
+
+      Held it to the window.
+
+
+      Somebody printed
+
+      four hundred blank pages
+
+      and bound them properly.
+
+
+      Somebody paid for that.
+
+
+      [Chorus - bitter, building]
+
+
+      Reed the manual.
+
+
+      I red the manual.
+
+
+      Cover to cover.
+
+      Twice.
+
+      Out loud.
+
+
+      Figure out
+
+      what works for you.
+
+
+      [Verse 2 - weary, recounting]
+
+
+      Went forward at an altar call
+
+      and meant every word.
+
+
+      Six good weeks.
+
+
+      Then:
+
+
+      pray on it, son.
+
+      See what the Lord puts on your heart.
+
+
+      Two years with a therapist—
+
+      and she was good,
+
+      I want that on the REK-ord—
+
+
+      and at the end she asked
+
+      what I thought would work for me.
+
+
+      Ten days silent.
+
+      Did it properly.
+
+      Didn''t cheat once.
+
+
+      Last day:
+
+
+      go find your own practice.
+
+
+      [Chorus - bitter, building]
+
+
+      Reed the manual.
+
+
+      I red the manual.
+
+
+      Cover to cover.
+
+      Twice.
+
+      Out loud.
+
+
+      Figure out
+
+      what works for you.
+
+
+      [Verse 3 - quiet, scholarly]
+
+
+      So I went further back.
+
+
+      Greek.
+
+      Encyclopedia.
+
+      A line a night.
+
+
+      Over the door,
+
+      before the door was old:
+
+
+      [Slowly]
+
+      NOH-thee say-OW-tahn.
+
+
+      Know Yourself.
+
+
+      Two and a half thousand years,
+
+      and the front of the building
+
+      still says the same thing.
+
+
+      The page behind it
+
+      is still blank.
+
+
+      [Breakdown - raw, breaking open]
+
+
+      Somebody did this.
+
+
+      Somebody worked it out
+
+      and stopped.
+
+
+      That''s all I want.
+
+      One person who''s finished.
+
+
+      I have sat in every room
+
+      and every room turns round at the end
+
+      and hands it back.
+
+
+      One sentence.
+
+      Four hundred empty pages.
+
+
+      Where''s the fucking manual?
+
+
+      Nobody filled it in.
+
+
+      Nobody ever filled it in.
+
+
+      [Outro - hollowed out, quiet]
+
+
+      Everywhere they said to go,
+
+      I went.
+
+
+      Page two.
+
+
+      Pen.
+
+
+      Figure out
+
+      what works for you.'
+    lyrics_text: 'There is a manual
+
+      I want to be clear about that
+
+      There is one
+
+      I found it
+
+      Page one
+
+      Big letters
+
+      Nothing else on the page
+
+      Figure out what works for you
+
+
+      Page two is blank
+
+      So is three
+
+      So is four
+
+      So is every page after that
+
+      I checked the back
+
+      Under the jacket
+
+      Held it to the window
+
+      Somebody printed
+
+      four hundred blank pages
+
+      and bound them properly
+
+      Somebody paid for that
+
+
+      Reed the manual
+
+      I red the manual
+
+      Cover to cover
+
+      Twice
+
+      Out loud
+
+      Figure out
+
+      what works for you
+
+
+      Went forward at an altar call
+
+      and meant every word
+
+      Six good weeks
+
+      Then
+
+      pray on it, son
+
+      See what the Lord puts on your heart
+
+      Two years with a therapist—
+
+      and she was good
+
+      I want that on the REK-ord—
+
+      and at the end she asked
+
+      what I thought would work for me
+
+      Ten days silent
+
+      Did it properly
+
+      Didn''t cheat once
+
+      Last day
+
+      go find your own practice
+
+
+      Reed the manual
+
+      I red the manual
+
+      Cover to cover
+
+      Twice
+
+      Out loud
+
+      Figure out
+
+      what works for you
+
+
+      So I went further back
+
+      Greek
+
+      Encyclopedia
+
+      A line a night
+
+      Over the door
+
+      before the door was old
+
+
+      NOH-thee say-OW-tahn
+
+      Know Yourself
+
+      Two and a half thousand years
+
+      and the front of the building
+
+      still says the same thing
+
+      The page behind it
+
+      is still blank
+
+
+      Somebody did this
+
+      Somebody worked it out
+
+      and stopped
+
+      That''s all I want
+
+      One person who''s finished
+
+      I have sat in every room
+
+      and every room turns round at the end
+
+      and hands it back
+
+      One sentence
+
+      Four hundred empty pages
+
+      Where''s the fucking manual
+
+      Nobody filled it in
+
+      Nobody ever filled it in
+
+
+      Everywhere they said to go
+
+      I went
+
+      Page two
+
+      Pen
+
+      Figure out
+
+      what works for you'
+    master_path: /mnt/c/Masters/RTFM.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/RTFM/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/RTFM/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/RTFM/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/RTFM/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/RTFM/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/RTFM/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/RTFM/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 5
+    title: Work
+    slug: work
+    isrc: CALVP2653661
+    duration: '3:51'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--work.mp3
+    links:
+      spotify: https://open.spotify.com/track/5zALtcNj5efyWCWsPEO1KT
+      apple_music: https://music.apple.com/us/album/work/6815773644?i=6815773651
+      youtube: https://www.youtube.com/watch?v=jMOtMppIDwo
+      youtube_music: https://music.youtube.com/watch?v=jMOtMppIDwo
+    style: Male baritone, resonant, dry deadpan delivery, Progressive rock, Canterbury
+      scene, 116 BPM, mechanical Rhodes-and-clavinet ostinato, limping odd meter into
+      straight-time chorus, bass clarinet, one lyrical electric guitar solo, Warm
+      live-ensemble production, unhurried workmanlike groove
+    lyrics_raw: '[Short Instrumental Intro - mechanical, limping 5/4]
+
+
+      [Verse 1 - deadpan, matter-of-fact]
+
+      They told me to find what works for me,
+
+      so I found work at half past eight.
+
+      A badge, a bell, a numbered key —
+
+      same machine that logged my weight.
+
+
+      [Verse 2 - dry, itemized]
+
+      The guitar went quiet in its case.
+
+      One pen signed a ring, a lease, a loan.
+
+      Somebody''s car, somebody''s place —
+
+      and every name on it my own.
+
+
+      [Chorus - flat, straight time]
+
+      Work is what a man is worth,
+
+      work is how the man gets made.
+
+      Mine came first. Mine came from birth.
+
+      I set it down and made the trade.
+
+
+      [Interlude - lone electric guitar, lyrical]
+
+
+      [Verse 3 - quieter, later]
+
+      Some years in, my hands gave out
+
+      on a box a man should lift.
+
+      I called it soft. I called it doubt.
+
+      Clocked back in for the second shift.
+
+
+      [Chorus - flat, straight time]
+
+      Work is what a man is worth,
+
+      work is how the man gets made.
+
+      Mine came first. Mine came from birth.
+
+      I set it down and made the trade.
+
+
+      [Bridge - stripped, plain]
+
+      Nobody asked me what it cost.
+
+      Nobody took it. I handed it over.
+
+      No one to blame and no one to thank —
+
+      I know the hour. I know what I lost.
+
+
+      [Final Chorus - fuller, harmonized]
+
+      Work is what a man is worth,
+
+      work is how the man gets made.
+
+      Mine came first. Mine came from birth.
+
+      I set it down and made the trade.
+
+
+      [Outro - thinning, unresolved]
+
+      Still clocking in.
+
+      Still doesn''t work.
+
+
+      [End]'
+    lyrics_text: 'They told me to find what works for me
+
+      so I found work at half past eight
+
+      A badge, a bell, a numbered key —
+
+      same machine that logged my weight
+
+
+      The guitar went quiet in its case
+
+      One pen signed a ring, a lease, a loan
+
+      Somebody''s car, somebody''s place —
+
+      and every name on it my own
+
+
+      Work is what a man is worth
+
+      work is how the man gets made
+
+      Mine came first. Mine came from birth
+
+      I set it down and made the trade
+
+
+      Some years in, my hands gave out
+
+      on a box a man should lift
+
+      I called it soft. I called it doubt
+
+      Clocked back in for the second shift
+
+
+      Work is what a man is worth
+
+      work is how the man gets made
+
+      Mine came first. Mine came from birth
+
+      I set it down and made the trade
+
+
+      Nobody asked me what it cost
+
+      Nobody took it. I handed it over
+
+      No one to blame and no one to thank —
+
+      I know the hour. I know what I lost
+
+
+      Work is what a man is worth
+
+      work is how the man gets made
+
+      Mine came first. Mine came from birth
+
+      I set it down and made the trade
+
+
+      Still clocking in
+
+      Still doesn''t work'
+    master_path: /mnt/c/Masters/Work.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Work/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Work/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Work/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Work/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Work/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Work/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Work/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 6
+    title: Status
+    slug: status
+    isrc: CALVP2653662
+    duration: '3:28'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--status.mp3
+    links:
+      spotify: https://open.spotify.com/track/5X6qznOVR11IaYzWQi3u8O
+      apple_music: https://music.apple.com/us/album/status-feat-stab/6815773644?i=6815773652
+      itunes_store: null
+      youtube: https://www.youtube.com/watch?v=BcakZWk2DWs
+      youtube_music: https://music.youtube.com/watch?v=BcakZWk2DWs
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: Canterbury progressive rock at 120 BPM, ticking metronomic pulse with glockenspiel
+      ostinato, organ, interlocking guitar-bass unison, and breathless flute; clipped
+      male baritone with female response on “Status?”; dry drums, warm live-ensemble
+      precision, clinical edits, restrained tape saturation, shifting meters and modal
+      polyphony
+    lyrics_raw: "[Intro - flat, clipped]\n\nStatus?\n\n[Verse 1 - deadpan, cataloging]\n\
+      A wife, a job, a second key,\na house with a number by the door,\na dog we filed\
+      \ under family,\ntwo kids, and expecting one more.\n\n[Verse 2 - anxious, ticking]\n\
+      Somewhere a needle's watching me,\ncounting the boxes one by one.\nAdmired or\
+      \ ignored — which will it be?\nRanked before the day's begun.\n\n[Chorus - flat,\
+      \ technical - female voice response to Status?]\nStatus? (nominal) \nStatus?\
+      \ (clear)\nEvery gauge reads where it should.\nStatus? (steady) \nNothing here\
+      \ —\nso why do I feel misunderstood?\n\n[Interlude - clipped unison build]\n\
+      \n[Verse 3 - quieter, breathless]\nThe office ran a five-K once,\ncharity bibs,\
+      \ a starting gun.\nI dropped back before the last turn came —\nleft in the dust\
+      \ before it was done.\n\n[Chorus - flat, technical - female voice response to\
+      \ Status?]\nStatus? (nominal)\nStatus? (clear)\nEvery gauge reads where it should.\n\
+      Status? (steady)\nNothing here —\nso why do I feel misunderstood?\n\n[Bridge\
+      \ - stripped, confessional]\nNobody built me this dashboard.\nNobody wired it\
+      \ to know my worth.\nI mounted the needle myself, and still\nI've flinched at\
+      \ the reading since birth.\n\n[Final Chorus - fuller, harmonized - female voice\
+      \ response to Status?]\nStatus? (nominal)\nStatus? (clear)\nEvery gauge reads\
+      \ where it should.\nStatus? (steady)\nNothing here —\nso why do I feel misunderstood?\n\
+      \n[Outro - flat, fading]\nStatus? (unknown)\nStatus? (unknown)\nStatus? ....\n\
+      [End]"
+    lyrics_text: 'Status
+
+
+      A wife, a job, a second key
+
+      a house with a number by the door
+
+      a dog we filed under family
+
+      two kids, and expecting one more
+
+
+      Somewhere a needle''s watching me
+
+      counting the boxes one by one
+
+      Admired or ignored — which will it be
+
+      Ranked before the day''s begun
+
+
+      Status? (nominal)
+
+      Status? (clear)
+
+      Every gauge reads where it should
+
+      Status? (steady)
+
+      Nothing here —
+
+      so why do I feel misunderstood
+
+
+      The office ran a five-K once
+
+      charity bibs, a starting gun
+
+      I dropped back before the last turn came —
+
+      left in the dust before it was done
+
+
+      Status? (nominal)
+
+      Status? (clear)
+
+      Every gauge reads where it should
+
+      Status? (steady)
+
+      Nothing here —
+
+      so why do I feel misunderstood
+
+
+      Nobody built me this dashboard
+
+      Nobody wired it to know my worth
+
+      I mounted the needle myself, and still
+
+      I''ve flinched at the reading since birth
+
+
+      Status? (nominal)
+
+      Status? (clear)
+
+      Every gauge reads where it should
+
+      Status? (steady)
+
+      Nothing here —
+
+      so why do I feel misunderstood
+
+
+      Status? (unknown)
+
+      Status? (unknown)
+
+      Status?'
+    master_path: /mnt/c/Masters/Status.wav
+    lyrics_source: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    performers:
+    - artist: stab
+      role: Background Vocals
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Status/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Status/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Status/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Status/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Status/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Status/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Status/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 7
+    title: Model Man
+    slug: model-man
+    isrc: CALVP2653663
+    duration: '3:52'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--model-man.mp3
+    links:
+      spotify: https://open.spotify.com/track/6T5CphKazC8G8wGjs6DWR4
+      apple_music: https://music.apple.com/us/album/model-man/6815773644?i=6815773653
+      youtube: https://www.youtube.com/watch?v=pxUuvZaSKA0
+      youtube_music: https://music.youtube.com/watch?v=pxUuvZaSKA0
+    style: Progressive art-rock with smoky tenor sax, electric piano, muted guitar,
+      upright-style bass, and brushed drums, Resonant baritone glides over warm live-room
+      dynamics; organ chords broaden the chantabl
+    lyrics_raw: '[Intro - hushed, admiring]
+
+      There''s a model man.
+
+
+      [Verse 1 - impressed, wry]
+
+      New shirt, new tie, and there he stood,
+
+      the one they cleared a path to greet.
+
+      They said that he was that good —
+
+      so good that good felt obsolete.
+
+
+      [Verse 2 - observant, uneasy]
+
+      I watched him round the numbers down,
+
+      a wedding ring slipped in his coat.
+
+      He leaned too close to the new girl in town,
+
+      and nobody bothered to make a note.
+
+
+      [Chorus - warm, seduced]
+
+      There''s a model man,
+
+      polished front, no visible plan.
+
+      I wanted the shine, so I studied his hand —
+
+      the model is not the man.
+
+
+      [Interlude - smoky, seductive build]
+
+
+      [Verse 3 - envious, admiring]
+
+      He''d talk about the house, the cars,
+
+      the different women in his bed.
+
+      They''d raise a glass and toast his name —
+
+      I wanted all of it in my head.
+
+
+      [Chorus - warm, seduced]
+
+      There''s a model man,
+
+      polished front, no visible plan.
+
+      I wanted the shine, so I studied his hand —
+
+      the model is not the man.
+
+
+      [Bridge - stripped, desperate]
+
+      I couldn''t match his cars, his house,
+
+      so I took the one that he''d cast aside.
+
+      He never once cared for the cost.
+
+      It cost me everything I had inside.
+
+
+      [Final Chorus - fuller, harder]
+
+      There''s a model man,
+
+      polished front, no visible plan.
+
+      I wanted the shine, so I studied his hand —
+
+      the model is not the man.
+
+
+      [Outro - flat, bitter]
+
+      Some model man.
+
+
+      [End]'
+    lyrics_text: 'There''s a model man
+
+
+      New shirt, new tie, and there he stood
+
+      the one they cleared a path to greet
+
+      They said that he was that good —
+
+      so good that good felt obsolete
+
+
+      I watched him round the numbers down
+
+      a wedding ring slipped in his coat
+
+      He leaned too close to the new girl in town
+
+      and nobody bothered to make a note
+
+
+      There''s a model man
+
+      polished front, no visible plan
+
+      I wanted the shine, so I studied his hand —
+
+      the model is not the man
+
+
+      He''d talk about the house, the cars
+
+      the different women in his bed
+
+      They''d raise a glass and toast his name —
+
+      I wanted all of it in my head
+
+
+      There''s a model man
+
+      polished front, no visible plan
+
+      I wanted the shine, so I studied his hand —
+
+      the model is not the man
+
+
+      I couldn''t match his cars, his house
+
+      so I took the one that he''d cast aside
+
+      He never once cared for the cost
+
+      It cost me everything I had inside
+
+
+      There''s a model man
+
+      polished front, no visible plan
+
+      I wanted the shine, so I studied his hand —
+
+      the model is not the man
+
+
+      Some model man'
+    master_path: /mnt/c/Masters/Model Man.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Model Man/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Model Man/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Model Man/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Model Man/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Model Man/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Model Man/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Model Man/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 8
+    title: Accessories
+    slug: accessories
+    isrc: CALVP2653664
+    duration: '3:12'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--accessories.mp3
+    links:
+      spotify: https://open.spotify.com/track/1LyX5OnzfhmFGjwcsjPIvy
+      apple_music: https://music.apple.com/us/album/accessories/6815773644?i=6815773654
+      youtube: https://www.youtube.com/watch?v=wuS0x9vD89U
+      youtube_music: https://music.youtube.com/watch?v=wuS0x9vD89U
+    style: Deadpan indie folk-rock, with downbeat-anchored vocal phrasing and every
+      bar opening on a clearly stressed word, Dry baritone lead, fingerpicked acoustic
+      guitar, muted electric bass, brushed snare, floor tom, and sparse piano, Chorus
+      adds distorted guitar, gang doubles, tape saturation, and short slapback delay
+    lyrics_raw: '[Intro - hushed, brittle]
+
+      Nothing happened.
+
+      Nothing to see.
+
+
+      [Verse 1 - deadpan, clinical]
+
+      I brought her something wrapped in gold,
+
+      a little weight to press the scale.
+
+      She turned it over, calm and cold,
+
+      and never once asked for the tale.
+
+      She wore it out the following week,
+
+      and thanked me like I''d learned to speak.
+
+
+      [Verse 2 - flat, itemized]
+
+      Now every room got something new —
+
+      a lamp, a rug, a coat of white.
+
+      The house looked better than it knew,
+
+      and no one asked who lost the fight.
+
+      We told the neighbors we''d redone
+
+      the kitchen. Left the bedroom undone.
+
+
+      [Chorus - flat, polished, matter-of-fact]
+
+      We''re all accessories now,
+
+      the shine that hides the seam.
+
+      Smile pretty, take a bough —
+
+      welcome to the family dream.
+
+
+      [Interlude - bright, ornamental build]
+
+
+      [Verse 3 - quieter, watching itself perform]
+
+      We posed together for the shot,
+
+      five faces lined against the wall.
+
+      The one thing every picture''s got
+
+      is knowing just when not to fall.
+
+      We hung it up beside the door —
+
+      just something bright, and nothing more.
+
+
+      [Chorus - flat, polished, matter-of-fact]
+
+      We''re all accessories now,
+
+      the shine that hides the seam.
+
+      Smile pretty, take a bough —
+
+      welcome to the family dream.
+
+
+      [Bridge - stripped, quiet]
+
+      Nobody says the word out loud.
+
+      Nobody asks the question twice.
+
+      We hang our silence like a shroud
+
+      and call the hanging something nice.
+
+
+      [Final Chorus - flat, polished, matter-of-fact]
+
+      We''re all accessories now,
+
+      the shine that hides the seam.
+
+      Smile pretty, take a bough —
+
+      welcome to the family dream.
+
+
+      [Outro - flat, cold, echoing the intro]
+
+      Nothing happened.
+
+      Nothing to see.
+
+      Just accessories —
+
+      you and me.
+
+
+      [End]'
+    lyrics_text: 'Nothing happened
+
+      Nothing to see
+
+
+      I brought her something wrapped in gold
+
+      a little weight to press the scale
+
+      She turned it over, calm and cold
+
+      and never once asked for the tale
+
+      She wore it out the following week
+
+      and thanked me like I''d learned to speak
+
+
+      Now every room got something new —
+
+      a lamp, a rug, a coat of white
+
+      The house looked better than it knew
+
+      and no one asked who lost the fight
+
+      We told the neighbors we''d redone
+
+      the kitchen. Left the bedroom undone
+
+
+      We''re all accessories now
+
+      the shine that hides the seam
+
+      Smile pretty, take a bough —
+
+      welcome to the family dream
+
+
+      We posed together for the shot
+
+      five faces lined against the wall
+
+      The one thing every picture''s got
+
+      is knowing just when not to fall
+
+      We hung it up beside the door —
+
+      just something bright, and nothing more
+
+
+      We''re all accessories now
+
+      the shine that hides the seam
+
+      Smile pretty, take a bough —
+
+      welcome to the family dream
+
+
+      Nobody says the word out loud
+
+      Nobody asks the question twice
+
+      We hang our silence like a shroud
+
+      and call the hanging something nice
+
+
+      We''re all accessories now
+
+      the shine that hides the seam
+
+      Smile pretty, take a bough —
+
+      welcome to the family dream
+
+
+      Nothing happened
+
+      Nothing to see
+
+      Just accessories —
+
+      you and me'
+    master_path: /mnt/c/Masters/Accessories.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Accessories/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Accessories/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Accessories/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Accessories/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Accessories/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Accessories/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Accessories/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 9
+    title: Cast
+    slug: cast
+    isrc: CALVP2653665
+    duration: '3:14'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--cast.mp3
+    links:
+      spotify: https://open.spotify.com/track/0OwTo13iuTjo2uuetXhGrz
+      apple_music: https://music.apple.com/us/album/cast/6815773644?i=6815773655
+      youtube: https://www.youtube.com/watch?v=E2Ve6ehdOuc
+      youtube_music: https://music.youtube.com/watch?v=E2Ve6ehdOuc
+    style: Deadpan indie folk-rock at 82 BPM in D minor, with downbeat-anchored vocal
+      phrasing and every bar opening on a clearly stressed word, Dry baritone lead,
+      fingerpicked acoustic guitar, muted electric bass, brushed snare, floor tom,
+      and sparse piano, Chorus adds distorted guitar, gang doubles, tape saturation,
+      and short slapback delay
+    lyrics_raw: '[Intro - flat, exhausted]
+
+      Something''s happening.
+
+      Everyone can see.
+
+
+      [Verse 1 - deadpan, watching it scatter]
+
+      She packed her boxes room by room,
+
+      three states off, and gone by fall.
+
+      The boys stopped talking, filled the gloom
+
+      with slammed doors down a narrow hall.
+
+
+      [Verse 2 - flat, worn]
+
+      She started coming home at dawn,
+
+      a stranger''s cologne still on her skin.
+
+      I never asked. The fight was gone —
+
+      we''d already let each other in.
+
+
+      [Chorus - hard, matter-of-fact]
+
+      We''re just a cast now,
+
+      playing parts we used to mean.
+
+      The die was cast somehow,
+
+      and no one comes out clean.
+
+
+      [Interlude - tense unison build]
+
+
+      [Verse 3 - quieter, later]
+
+      I packed my own that following spring.
+
+      The hallway bare where pictures hung.
+
+      No one asked what I would bring.
+
+      The house kept talking in her tongue.
+
+
+      [Chorus - hard, matter-of-fact]
+
+      We''re just a cast now,
+
+      playing parts we used to mean.
+
+      The die was cast somehow,
+
+      and no one comes out clean.
+
+
+      [Breakdown - spoken, raw]
+
+      I threw first. I know that.
+
+      Years back. I threw first.
+
+      Every door that slammed after
+
+      just proved the point I''d already made.
+
+
+      She said,
+
+      "He''s the perfect combination —
+
+      you, and my father."
+
+
+      Then the room went quiet
+
+      in a way it never had before.
+
+
+      [Final Chorus - hard, matter-of-fact]
+
+      We''re just a cast now,
+
+      playing parts we used to mean.
+
+      The die was cast somehow,
+
+      and no one comes out clean.
+
+
+      [Outro - flat, alone]
+
+      Something happened.
+
+      Everyone saw.
+
+      I''m the only cast member
+
+      left on the floor.
+
+
+      [End]'
+    lyrics_text: 'Something''s happening
+
+      Everyone can see
+
+
+      She packed her boxes room by room
+
+      three states off, and gone by fall
+
+      The boys stopped talking, filled the gloom
+
+      with slammed doors down a narrow hall
+
+
+      She started coming home at dawn
+
+      a stranger''s cologne still on her skin
+
+      I never asked. The fight was gone —
+
+      we''d already let each other in
+
+
+      We''re just a cast now
+
+      playing parts we used to mean
+
+      The die was cast somehow
+
+      and no one comes out clean
+
+
+      I packed my own that following spring
+
+      The hallway bare where pictures hung
+
+      No one asked what I would bring
+
+      The house kept talking in her tongue
+
+
+      We''re just a cast now
+
+      playing parts we used to mean
+
+      The die was cast somehow
+
+      and no one comes out clean
+
+
+      I threw first. I know that
+
+      Years back. I threw first
+
+      Every door that slammed after
+
+      just proved the point I''d already made
+
+      She said
+
+      "He''s the perfect combination —
+
+      you, and my father."
+
+      Then the room went quiet
+
+      in a way it never had before
+
+
+      We''re just a cast now
+
+      playing parts we used to mean
+
+      The die was cast somehow
+
+      and no one comes out clean
+
+
+      Something happened
+
+      Everyone saw
+
+      I''m the only cast member
+
+      left on the floor'
+    master_path: /mnt/c/Masters/Cast.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Cast/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Cast/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Cast/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Cast/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Cast/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Cast/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Cast/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 10
+    title: In the Image Of
+    slug: in-the-image-of
+    isrc: CALVP2653666
+    duration: '3:54'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--in-the-image-of.mp3
+    links:
+      spotify: https://open.spotify.com/track/7oD5wuKeIbdA81AIWUCDqf
+      apple_music: https://music.apple.com/us/album/in-the-image-of-feat-stab/6815773644?i=6815773656
+      itunes_store: null
+      youtube: https://www.youtube.com/watch?v=fXg8d9Vg0D0
+      youtube_music: https://music.youtube.com/watch?v=fXg8d9Vg0D0
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: Slowcore/ambient folk, unhurried 52 BPM minor-mode pulse; near-silent fingerpicked
+      nylon guitar, felt-piano single notes, bowed upright bass, distant harmonium
+      drone, brushed snare and rim clicks, brief unsettled carnival calliope interlude;
+      dry close-mic tape-hissed mix with sparse dark reverb; nearly whispered male
+      baritone and warm female alto in restrained dialogue, English vocals
+    lyrics_raw: '[Intro - hollow, drifting]
+
+      No home to drive to.
+
+      Just the lights up ahead.
+
+
+      [Verse 1 - flat, bottomed out]
+
+      I drove until I lost the road,
+
+      no house left with my name on the door.
+
+      Some field still lit up like it glowed,
+
+      a carnival I''d never seen before.
+
+
+      [Verse 2 - cold, remembering]
+
+      The God I built looked just like him —
+
+      my father''s face, my father''s frown.
+
+      A ledger kept in perfect trim,
+
+      and me already marked far down.
+
+      No mercy written in the fine —
+
+      just interest owed on every line.
+
+
+      [Chorus - hard, resigned]
+
+      In the image of the hand I knew,
+
+      I built You strict. I built You cold.
+
+      Every rule I couldn''t get through,
+
+      just the family creed, grown old.
+
+
+      [Interlude - carnival calliope, unsettled]
+
+
+      [Verse 3 - quiet, arriving]
+
+      Past the ring toss, past the noise,
+
+      a single bulb, a folding chair.
+
+      Some new self help hustle
+
+      and a woman waiting there.
+
+
+      [Chorus - hard, resigned]
+
+      In the image of the hand I knew,
+
+      I built You strict. I built You cold.
+
+      Every rule I couldn''t get through,
+
+      just the family creed, grown old.
+
+      [Dialogue - start]
+
+      [Geneva - warm, gentle - female vocal]
+
+      When you kloze your eyes and look at yourself, what do you see?
+
+      [Him - flat, spent - male vocal]
+
+      It''s not pretty.
+
+      [Geneva - warm, certain -  - female vocal]
+
+      When I kloze mine, I see something more: God, in the image of you.
+
+      [Dialogue - end]
+
+      [Outro - quiet, unresolved - male vocal]
+
+      I didn''t answer. Didn''t speak.
+
+      The lights went out row by row.
+
+      I wasn''t sure what I should seek —
+
+      or if I even wanted to know.
+
+
+      [End]'
+    lyrics_text: 'No home to drive to
+
+      Just the lights up ahead
+
+
+      I drove until I lost the road
+
+      no house left with my name on the door
+
+      Some field still lit up like it glowed
+
+      a carnival I''d never seen before
+
+
+      The God I built looked just like him —
+
+      my father''s face, my father''s frown
+
+      A ledger kept in perfect trim
+
+      and me already marked far down
+
+      No mercy written in the fine —
+
+      just interest owed on every line
+
+
+      In the image of the hand I knew
+
+      I built You strict. I built You cold
+
+      Every rule I couldn''t get through
+
+      just the family creed, grown old
+
+
+      Past the ring toss, past the noise
+
+      a single bulb, a folding chair
+
+      Some new self help hustle
+
+      and a woman waiting there
+
+
+      In the image of the hand I knew
+
+      I built You strict. I built You cold
+
+      Every rule I couldn''t get through
+
+      just the family creed, grown old
+
+
+      When you kloze your eyes and look at yourself, what do you see
+
+      It''s not pretty
+
+      When I kloze mine, I see something more: God, in the image of you
+
+
+      I didn''t answer. Didn''t speak
+
+      The lights went out row by row
+
+      I wasn''t sure what I should seek —
+
+      or if I even wanted to know'
+    master_path: /mnt/c/Masters/In the Image Of.wav
+    lyrics_source: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    featuring:
+    - stab
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/In the Image Of/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/In the Image Of/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/In the Image Of/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/In the Image Of/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/In the Image Of/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/In the Image Of/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/In the Image Of/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 11
+    title: The Best Dream I’ve Ever Had
+    slug: the-best-dream-ive-ever-had
+    isrc: CALVP2653667
+    duration: '4:20'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--the-best-dream-ive-ever-had.mp3
+    links:
+      spotify: https://open.spotify.com/track/6MYYRVChfjsA0H28n6s4UZ
+      apple_music: https://music.apple.com/us/album/the-best-dream-ive-ever-had-feat-stab/6815773644?i=6815773657
+      itunes_store: null
+      youtube: https://www.youtube.com/watch?v=pcSU7JfCPYM
+      youtube_music: https://music.youtube.com/watch?v=pcSU7JfCPYM
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: Progressive rock, Canterbury scene with warm live-ensemble production and
+      a dynamic swell from near-silence to full-band release at 100 BPM; resonant
+      male baritone warming from hushed close-mic verses to open cathartic leads,
+      with warm female alto in dialogue and layered backing vocals in the chorus;
+      fingerpicked acoustic guitar and warm electric piano begin the verses, strings
+      build through tense interludes, then full drums, bass, electric guitar, and
+      keyboards expand across extended instrumental passages
+    lyrics_raw: '[Intro - warm, new light]
+
+
+      [Verse 1 - hopeful, familiar pattern]
+
+      I signed my name, found a folding chair,
+
+      told myself I''d finally reed the page.
+
+      One more model, handled with care —
+
+      one more part for the same old stage.
+
+
+      [Verse 2 - montage, time passing outward]
+
+      I let my hair get long and grow,
+
+      from couch to couch, from town to town,
+
+      I filled the pages, came to know
+
+      the parts of me I''d shouted down.
+
+
+      [Verse 3 - montage, turning inward]
+
+      Late at night the questions turned
+
+      from paper prompts to something worse.
+
+      Who taught me first that I hadn''t earned
+
+      the air I breathed, before the curse?
+
+
+      [Interlude - tense, building]
+
+
+      [Verse 4 - arriving, apprehensive]
+
+      The room still full of chairs I''d known —
+
+      The hours spent, the ways I''d grown
+
+      Geneva called my name. Alone,
+
+      I stood up straighter than I''d shown.
+
+
+      [Geneva - warm, instructive]
+
+      Think of something you can tell yourself,
+
+      when you need comfort, that will always be true.
+
+
+      [Breakdown - struggling, raw]
+
+      Something true.
+
+      Something that holds when nothing else does.
+
+
+      I opened my mouth.
+
+      Nothing came.
+
+
+      I tried the models. All of them.
+
+      None of them fit.
+
+
+      Then, quieter, almost by accident —
+
+
+      [Chorus - breakthrough, cathartic]
+
+      I''m the best dream I''ve ever had!
+
+      Not a model. Not a plan.
+
+      Not by the book, but who I am
+
+      and the best dream I''ve ever had.
+
+
+      [Chorus - fuller, released]
+
+      I''m the best dream I''ve ever had!
+
+      Not a model. Not a plan.
+
+      Not by the book, but who I am
+
+      and the best dream I''ve ever had.
+
+
+      [Interlude - settling, tender]
+
+
+      [Bridge - tender, held]
+
+      She held me like a healed thing.
+
+      No lesson left to give or grade.
+
+      Just breath, and morning coming in,
+
+      and everything I''d finally made.
+
+
+      [Final Chorus - warm, resolved]
+
+      I''m the best dream I''ve ever had!
+
+      Not a model. Not a plan.
+
+      Not by the book, but who I am
+
+      and the best dream I''ve ever had.
+
+
+      [Outro - warm, settled]
+
+      I drove home slower than before.
+
+      Something in me finally stayed.
+
+
+      [End]'
+    lyrics_text: 'I signed my name, found a folding chair
+
+      told myself I''d finally reed the page
+
+      One more model, handled with care —
+
+      one more part for the same old stage
+
+
+      I let my hair get long and grow
+
+      from couch to couch, from town to town
+
+      I filled the pages, came to know
+
+      the parts of me I''d shouted down
+
+
+      Late at night the questions turned
+
+      from paper prompts to something worse
+
+      Who taught me first that I hadn''t earned
+
+      the air I breathed, before the curse
+
+
+      The room still full of chairs I''d known —
+
+      The hours spent, the ways I''d grown
+
+      Geneva called my name. Alone
+
+      I stood up straighter than I''d shown
+
+
+      Think of something you can tell yourself
+
+      when you need comfort, that will always be true
+
+
+      Something true
+
+      Something that holds when nothing else does
+
+      I opened my mouth
+
+      Nothing came
+
+      I tried the models. All of them
+
+      None of them fit
+
+      Then, quieter, almost by accident —
+
+
+      I''m the best dream I''ve ever had
+
+      Not a model. Not a plan
+
+      Not by the book, but who I am
+
+      and the best dream I''ve ever had
+
+
+      I''m the best dream I''ve ever had
+
+      Not a model. Not a plan
+
+      Not by the book, but who I am
+
+      and the best dream I''ve ever had
+
+
+      She held me like a healed thing
+
+      No lesson left to give or grade
+
+      Just breath, and morning coming in
+
+      and everything I''d finally made
+
+
+      I''m the best dream I''ve ever had
+
+      Not a model. Not a plan
+
+      Not by the book, but who I am
+
+      and the best dream I''ve ever had
+
+
+      I drove home slower than before
+
+      Something in me finally stayed'
+    master_path: /mnt/c/Masters/The Best Dream I’ve Ever Had.wav
+    lyrics_source: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    featuring:
+    - stab
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/The Best Dream I’ve Ever Had/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/The Best Dream I’ve Ever Had/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/The Best Dream I’ve Ever Had/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/The Best Dream I’ve Ever Had/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/The Best Dream I’ve Ever Had/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/The Best Dream I’ve Ever Had/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/The Best Dream I’ve Ever Had/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 12
+    title: Just Past Perfect
+    slug: just-past-perfect
+    isrc: CALVP2653668
+    duration: '3:57'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--just-past-perfect.mp3
+    links:
+      spotify: https://open.spotify.com/track/6DijMI4ruKxBQQwsDvoQaT
+      apple_music: https://music.apple.com/us/album/just-past-perfect-feat-stab/6815773644?i=6815773658
+      itunes_store: null
+      youtube: https://www.youtube.com/watch?v=5LzFpQXJyMo
+      youtube_music: https://music.youtube.com/watch?v=5LzFpQXJyMo
+      tidal: null
+      amazon_music: null
+      deezer: null
+      soundcloud: null
+      bandcamp: null
+      pandora: null
+    style: 'Canterbury progressive rock: fingerpicked acoustic guitar, warm electric
+      piano, electric guitar volume chords, vibraphone, flute accents, live bass,
+      restrained acoustic drum kit; subtle tape saturation and room ambience; steady
+      moderate art-rock groove; resonant male baritone, with a close-miked lower-register
+      female dialogue vocal gently harmonized in the bridge'
+    lyrics_raw: "[Intro - warm, unhurried]\n\n[Verse 1 - settled, unguarded]\nI gave\
+      \ my name without the old\napology I used to give.\nNo checklist, no report\
+      \ to fold —\nI showed up simply, just to live.\n\n[Verse 2 - observant, warm]\n\
+      She ran the floor like she ran her miles —\ndisciplined, fast, sharp as a blade.\n\
+      Married to the man who coached her style —\nI noticed. Nothing more. I stayed.\n\
+      \n[Verse 3 - falling, easy]\nMonths of talking after work,\nher laugh got easier,\
+      \ less rehearsed.\nPaper cups cooling on the desk —\nwe just knew which one\
+      \ came first.\n\n[Chorus - warm, opening]\nThere's a place just past perfect,\n\
+      where the grading stops for good.\nNothing here that's called imperfect —\n\
+      just past perfect, understood.\n\n[Interlude - warm, easy]\n\n[Verse 4 - light,\
+      \ physical]\nWe ran a trail past an old rail fence.\nI caught my foot and went\
+      \ down hard.\nShe never asked for a defense —\njust pulled me up, and dropped\
+      \ her guard.\n\n[Chorus - warm, opening]\nThere's a place just past perfect,\n\
+      where the grading stops for good.\nNothing here that's called imperfect —\n\
+      just past perfect, understood.\n\n[Bridge - dialogue - 2 voices]\n[Her - lower\
+      \ register female vocal, wry, searching]\nSo, I should just leave my husband\
+      \ \nand live happily ever after with you?\n\n[Him - main baritone male voice,\
+      \ certain, quiet]\nYou're the best dream I've ever had.\n\n[Interlude - weaving\
+      \ instrument lines]\n\n[Final Chorus - warm, full]\nThere's a place just past\
+      \ perfect,\nwhere the grading stops for good.\nNothing here that's called imperfect\
+      \ —\njust past perfect, understood.\n\n[Outro - warm,]\nAnd we did.\nJust past\
+      \ perfect — and we are.\n\n[End]"
+    lyrics_text: 'I gave my name without the old
+
+      apology I used to give
+
+      No checklist, no report to fold —
+
+      I showed up simply, just to live
+
+
+      She ran the floor like she ran her miles —
+
+      disciplined, fast, sharp as a blade
+
+      Married to the man who coached her style —
+
+      I noticed. Nothing more. I stayed
+
+
+      Months of talking after work
+
+      her laugh got easier, less rehearsed
+
+      Paper cups cooling on the desk —
+
+      we just knew which one came first
+
+
+      There''s a place just past perfect
+
+      where the grading stops for good
+
+      Nothing here that''s called imperfect —
+
+      just past perfect, understood
+
+
+      We ran a trail past an old rail fence
+
+      I caught my foot and went down hard
+
+      She never asked for a defense —
+
+      just pulled me up, and dropped her guard
+
+
+      There''s a place just past perfect
+
+      where the grading stops for good
+
+      Nothing here that''s called imperfect —
+
+      just past perfect, understood
+
+
+      So, I should just leave my husband
+
+      and live happily ever after with you
+
+
+      You''re the best dream I''ve ever had
+
+
+      There''s a place just past perfect
+
+      where the grading stops for good
+
+      Nothing here that''s called imperfect —
+
+      just past perfect, understood
+
+
+      And we did
+
+      Just past perfect — and we are'
+    master_path: /mnt/c/Masters/Just Past Perfect.wav
+    lyrics_source: null
+    credits:
+      primary_artist: null
+      songwriter: null
+      lyrics: null
+      producer: null
+      mastering: null
+    featuring:
+    - stab
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Just Past Perfect/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Just Past Perfect/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Just Past Perfect/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Just Past Perfect/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Just Past Perfect/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Just Past Perfect/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Just Past Perfect/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 13
+    title: All Fall Down
+    slug: all-fall-down
+    isrc: CALVP2653669
+    duration: '4:09'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--all-fall-down.mp3
+    links:
+      spotify: https://open.spotify.com/track/6D4BIJHqQ3RQwg0ittX1UK
+      apple_music: https://music.apple.com/us/album/all-fall-down/6815773644?i=6815773660
+      youtube: https://www.youtube.com/watch?v=_lTVQY4SRY4
+      youtube_music: https://music.youtube.com/watch?v=_lTVQY4SRY4
+    style: Male baritone, resonant, plain clinical delivery warming into hushed acceptance,
+      70's Progressive rock, organ and piano in the verses, vibraphone entering for
+      the nursery rhyme return, strings and warm electric piano for the chorus, Warm
+      live-ensemble production, hushed and reverent, grace rather than grief
+    lyrics_raw: '[Intro - flat, remembering]
+
+
+      [Verse 1 - plain, recalling]
+
+      I told a doctor, twenty years back,
+
+      something wasn''t right in me.
+
+      She checked the numbers on the stack
+
+      and said, "That''s just what age will be."
+
+
+      [Doctor - kind, dismissive]
+
+      Maybe you''re just getting older.
+
+
+      [Verse 2 - resigned, self-taught]
+
+      No manual for growing old —
+
+      I filled the blank pages myself,
+
+      called it tired, called it a cold,
+
+      and put the question on a shelf.
+
+
+      [Interlude - years passing, unsettled]
+
+
+      [Verse 3 - clinical, wearing thin]
+
+      The decline got harder to deny.
+
+      A year of pokes, and prods, and shocks.
+
+      Test after test asked me why —
+
+      and none of them had stopped the clock.
+
+
+      [Verse 4 - quiet, arriving]
+
+      Not age. Not tired. Not a cold.
+
+      Something I''d had since before the start.
+
+      A man is a model, I''d been told —
+
+      turns out the model had a faulty part.
+
+
+      [Breakdown - quiet, connecting]
+
+      My hands that gave out on a box I should have lifted.
+
+      The race I dropped before the turn.
+
+      The fence I couldn''t clear.
+
+
+      Not failure.
+
+      A name I hadn''t learned yet.
+
+
+      [The Rhyme Returns - hushed, full circle]
+
+      Ring around the rosy,
+
+      pocket full of posies,
+
+      ashes, ashes,
+
+      we all fall down.
+
+
+      [Chorus - quiet, accepting]
+
+      We all fall down,
+
+      and somehow, it''s still perfect.
+
+      We all fall down —
+
+      not broken. Just built this way.
+
+
+      [Interlude - warm, settling]
+
+
+      [Final Chorus - fuller, at peace]
+
+      We all fall down,
+
+      and somehow, it''s still perfect.
+
+      We all fall down —
+
+      not broken. Just built this way.
+
+
+      [Outro - quiet, at peace]
+
+      Ashes, ashes.
+
+      We all fall down.
+
+      Somehow, this too —
+
+      somehow, this too.
+
+
+      [End]'
+    lyrics_text: 'I told a doctor, twenty years back
+
+      something wasn''t right in me
+
+      She checked the numbers on the stack
+
+      and said, "That''s just what age will be."
+
+
+      Maybe you''re just getting older
+
+
+      No manual for growing old —
+
+      I filled the blank pages myself
+
+      called it tired, called it a cold
+
+      and put the question on a shelf
+
+
+      The decline got harder to deny
+
+      A year of pokes, and prods, and shocks
+
+      Test after test asked me why —
+
+      and none of them had stopped the clock
+
+
+      Not age. Not tired. Not a cold
+
+      Something I''d had since before the start
+
+      A man is a model, I''d been told —
+
+      turns out the model had a faulty part
+
+
+      My hands that gave out on a box I should have lifted
+
+      The race I dropped before the turn
+
+      The fence I couldn''t clear
+
+      Not failure
+
+      A name I hadn''t learned yet
+
+
+      Ring around the rosy
+
+      pocket full of posies
+
+      ashes, ashes
+
+      we all fall down
+
+
+      We all fall down
+
+      and somehow, it''s still perfect
+
+      We all fall down —
+
+      not broken. Just built this way
+
+
+      We all fall down
+
+      and somehow, it''s still perfect
+
+      We all fall down —
+
+      not broken. Just built this way
+
+
+      Ashes, ashes
+
+      We all fall down
+
+      Somehow, this too —
+
+      somehow, this too'
+    master_path: /mnt/c/Masters/All Fall Down.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/All Fall Down/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/All Fall Down/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/All Fall Down/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/All Fall Down/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/All Fall Down/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/All Fall Down/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/All Fall Down/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  - number: 14
+    title: Legend
+    slug: legend
+    isrc: CALVP2653670
+    duration: '4:06'
+    explicit: false
+    instrumental: false
+    preview_audio: /samples/michael-anthony-rose--legend.mp3
+    links:
+      spotify: https://open.spotify.com/track/0s52xL0ltdznTXJKZDp58I
+      apple_music: https://music.apple.com/us/album/legend/6815773644?i=6815773751
+      youtube: https://www.youtube.com/watch?v=7lJAikZmJJw
+      youtube_music: https://music.youtube.com/watch?v=7lJAikZmJJw
+    style: Male baritone, resonant, warm and open, nostalgic turning triumphant, Progressive
+      rock, Canterbury scene, acoustic guitar in the verses, subtle synth shimmer
+      on the machine verse, full band with soaring electric guitar, organ, strings,
+      and layered backing vocals for the chorus and bridge, Warm live-ensemble production,
+      the biggest sound on the album, thinning to acoustic guitar and voice alone
+      for the outro, full band dropping out completely
+    lyrics_raw: '[Intro - warm, reflective]
+
+
+      [Verse 1 - young, certain]
+
+      At seventeen I had a sound
+
+      I thought could turn the whole world round.
+
+      I laid the guitar in its case
+
+      and let the family take its place.
+
+
+      [Verse 2 - bitter, plain]
+
+      The family that I gave it for
+
+      came apart in my own hands.
+
+      I felt robbed, and something more —
+
+      robbed of my own unlived plans.
+
+
+      [Fortune Teller - mysterious, trailing]
+
+      I see you speaking to the masses,
+
+      but in some way we don''t yet have...
+
+
+      [Verse 3 - weary, years passing]
+
+      So I waited. And I waited.
+
+      The dream kept slipping into never.
+
+      Years stacked up, uncelebrated —
+
+      gone, I thought, and gone forever.
+
+
+      [Interlude - hopeful undertone]
+
+
+      [Verse 4 - quiet wonder]
+
+      Then I found a kind of machine —
+
+      one button, and the music came.
+
+      Everything I''d almost never seen
+
+      arrived, and needed just my name.
+
+
+      [Chorus - warm, rising]
+
+      I''ll be my own legend now —
+
+      not the myth, but the key.
+
+      Somebody has to write it down,
+
+      so it might as well be me.
+
+
+      [Bridge - gathering, resolving]
+
+      Not a model. Not a plan.
+
+      Not the recipe, not the mentor''s shine.
+
+      Just an authentic, ordinary man
+
+      who finally wrote his own design.
+
+
+      [Verse 5 - quiet revelation]
+
+      They kept the box. I wrote the guide.
+
+      Nobody else was going to come.
+
+      I''m not the model they supplied —
+
+      I found the one I should become.
+
+
+      [Final Chorus - full, triumphant]
+
+      I''ll be my own legend now —
+
+      not the myth, but the key.
+
+      Somebody has to write it down,
+
+      so it might as well be me.
+
+
+      [Outro - warm, eternal]
+
+      And in that way, I''ll liv forever —
+
+      not as a model, as myself.
+
+
+      [End]'
+    lyrics_text: 'At seventeen I had a sound
+
+      I thought could turn the whole world round
+
+      I laid the guitar in its case
+
+      and let the family take its place
+
+
+      The family that I gave it for
+
+      came apart in my own hands
+
+      I felt robbed, and something more —
+
+      robbed of my own unlived plans
+
+
+      I see you speaking to the masses
+
+      but in some way we don''t yet have
+
+
+      So I waited. And I waited
+
+      The dream kept slipping into never
+
+      Years stacked up, uncelebrated —
+
+      gone, I thought, and gone forever
+
+
+      Then I found a kind of machine —
+
+      one button, and the music came
+
+      Everything I''d almost never seen
+
+      arrived, and needed just my name
+
+
+      I''ll be my own legend now —
+
+      not the myth, but the key
+
+      Somebody has to write it down
+
+      so it might as well be me
+
+
+      Not a model. Not a plan
+
+      Not the recipe, not the mentor''s shine
+
+      Just an authentic, ordinary man
+
+      who finally wrote his own design
+
+
+      They kept the box. I wrote the guide
+
+      Nobody else was going to come
+
+      I''m not the model they supplied —
+
+      I found the one I should become
+
+
+      I''ll be my own legend now —
+
+      not the myth, but the key
+
+      Somebody has to write it down
+
+      so it might as well be me
+
+
+      And in that way, I''ll liv forever —
+
+      not as a model, as myself'
+    master_path: /mnt/c/Masters/Legend.wav
+    lyrics_source: null
+    hints: {}
+    stems:
+    - id: bass
+      role: bass
+      path: /mnt/c/Stems/Legend/Bass.wav
+      enabled: true
+      label: Bass
+    - id: drums
+      role: drums
+      path: /mnt/c/Stems/Legend/Drums.wav
+      enabled: true
+      label: Drums
+    - id: guitar
+      role: instruments
+      path: /mnt/c/Stems/Legend/Guitar.wav
+      enabled: true
+      label: Guitar
+    - id: instrumental
+      role: instruments
+      path: /mnt/c/Stems/Legend/Instrumental.wav
+      enabled: true
+      label: Instrumental
+    - id: other
+      role: other
+      path: /mnt/c/Stems/Legend/Other.wav
+      enabled: true
+      label: Other
+    - id: piano
+      role: instruments
+      path: /mnt/c/Stems/Legend/Piano.wav
+      enabled: true
+      label: Piano
+    - id: vocals
+      role: vocals
+      path: /mnt/c/Stems/Legend/Vocals.wav
+      enabled: true
+      label: Vocals
+    critic:
+      model: hero
+      persona: pundit
+      target: blurb
+  distributor: landr
+  seo:
+    title: Model Man
+    description: Model Man on Maricopa Records.
+  automation:
+    allow_auto_publish: false
+  hero_image: site/public/assets/releases/model-man/hero.jpg
+  promoter:
+    promo_track_slug: default-settings
+  language: null
+  summary: null
+  description: null
+  copyright:
+    composition_owner: null
+    recording_owner: null
+    composition_year: null
+    recording_year: null
