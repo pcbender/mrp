@@ -74,6 +74,21 @@
       </div>
       <div class="pipeline-step">
         {{ ws_row('promoter-animated-cover', 'Animated cover video', animated_job) }}
+        <form hx-post="/releases/{{ slug }}/promoter/animated-notes"
+              hx-target="#save-result" hx-swap="innerHTML"
+              style="margin-top:.5rem">
+          <label for="animated-cover-notes" style="font-size:12px;margin-bottom:.25rem">
+            Visual direction (optional)
+          </label>
+          <textarea id="animated-cover-notes" name="animated_cover_notes" rows="2"
+            style="width:100%"
+            placeholder="What on the cover should move, and how. e.g. the figure's joints catch the light; background panels drift slowly">{{ animated_cover_notes }}</textarea>
+          <p style="font-size:12px;color:var(--muted);margin:.25rem 0 .4rem">
+            Added to the Nim prompt with a motion pace set from the promo track's BPM.
+            Artist bios are not sent.
+          </p>
+          <button type="submit" class="btn btn-secondary btn-sm">Save Direction</button>
+        </form>
       </div>
     </div>
   </div>

@@ -79,6 +79,10 @@
             "promo_track_slug": {
               "type": ["string", "null"],
               "pattern": "^[a-z0-9][a-z0-9-]*$"
+            },
+            "animated_cover_notes": {
+              "type": ["string", "null"],
+              "description": "Hand-written visual direction for the Nim animated cover: what on the cover should move, and how."
             }
           }
         },
@@ -101,7 +105,10 @@
             "not": {
               "anyOf": [
                 {"required": ["tracks"]},
-                {"required": ["promoter"]}
+                {
+                  "required": ["promoter"],
+                  "properties": {"promoter": {"required": ["promo_track_slug"]}}
+                }
               ]
             }
           }

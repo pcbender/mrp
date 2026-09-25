@@ -1,16 +1,16 @@
-# Graph Report - mrp  (2026-09-18)
+# Graph Report - mrp  (2026-09-25)
 
 ## Corpus Check
-- 3844 files · ~29,337,451 words
+- 3905 files · ~29,845,808 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 7683 nodes · 16817 edges · 825 communities (806 shown, 19 thin omitted)
-- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 1586 edges (avg confidence: 0.52)
+- 7723 nodes · 16868 edges · 833 communities (815 shown, 18 thin omitted)
+- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 1587 edges (avg confidence: 0.52)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `2cf17675`
+- Built from commit: `3e07796a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -341,7 +341,6 @@
 - [[_COMMUNITY_Community 695|Community 695]]
 - [[_COMMUNITY_Community 696|Community 696]]
 - [[_COMMUNITY_Community 697|Community 697]]
-- [[_COMMUNITY_Community 698|Community 698]]
 - [[_COMMUNITY_Community 699|Community 699]]
 - [[_COMMUNITY_Community 700|Community 700]]
 - [[_COMMUNITY_Community 701|Community 701]]
@@ -376,15 +375,12 @@
 - [[_COMMUNITY_Community 730|Community 730]]
 - [[_COMMUNITY_Community 731|Community 731]]
 - [[_COMMUNITY_Community 732|Community 732]]
-- [[_COMMUNITY_Community 733|Community 733]]
 - [[_COMMUNITY_Community 734|Community 734]]
 - [[_COMMUNITY_Community 735|Community 735]]
 - [[_COMMUNITY_Community 736|Community 736]]
-- [[_COMMUNITY_Community 737|Community 737]]
 - [[_COMMUNITY_Community 740|Community 740]]
 - [[_COMMUNITY_Community 741|Community 741]]
 - [[_COMMUNITY_Community 742|Community 742]]
-- [[_COMMUNITY_Community 743|Community 743]]
 - [[_COMMUNITY_Community 744|Community 744]]
 - [[_COMMUNITY_Community 745|Community 745]]
 - [[_COMMUNITY_Community 746|Community 746]]
@@ -443,20 +439,15 @@
 - [[_COMMUNITY_Community 812|Community 812]]
 - [[_COMMUNITY_Community 813|Community 813]]
 - [[_COMMUNITY_Community 814|Community 814]]
-- [[_COMMUNITY_Community 815|Community 815]]
 - [[_COMMUNITY_Community 816|Community 816]]
 - [[_COMMUNITY_Community 817|Community 817]]
-- [[_COMMUNITY_Community 818|Community 818]]
 - [[_COMMUNITY_Community 819|Community 819]]
-- [[_COMMUNITY_Community 820|Community 820]]
 - [[_COMMUNITY_Community 821|Community 821]]
 - [[_COMMUNITY_Community 822|Community 822]]
-- [[_COMMUNITY_Community 823|Community 823]]
-- [[_COMMUNITY_Community 824|Community 824]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `load_structured_record()` - 111 edges
-2. `get_repo_root()` - 107 edges
+1. `load_structured_record()` - 114 edges
+2. `get_repo_root()` - 108 edges
 3. `AlignedLyrics` - 78 edges
 4. `ProjectManifest` - 75 edges
 5. `CastingEditorError` - 74 edges
@@ -480,17 +471,17 @@
 
 ## Import Cycles
 - 1-file cycle: `mrp/admin/server.py -> mrp/admin/server.py`
-- 2-file cycle: `mrp/admin/routes/catalog.py -> mrp/admin/server.py -> mrp/admin/routes/catalog.py`
-- 2-file cycle: `mrp/admin/routes/actors.py -> mrp/admin/server.py -> mrp/admin/routes/actors.py`
-- 2-file cycle: `mrp/admin/routes/apps.py -> mrp/admin/server.py -> mrp/admin/routes/apps.py`
-- 2-file cycle: `mrp/admin/routes/artists.py -> mrp/admin/server.py -> mrp/admin/routes/artists.py`
 - 2-file cycle: `mrp/admin/routes/changes.py -> mrp/admin/server.py -> mrp/admin/routes/changes.py`
-- 2-file cycle: `mrp/admin/routes/identity.py -> mrp/admin/server.py -> mrp/admin/routes/identity.py`
+- 2-file cycle: `mrp/admin/routes/actors.py -> mrp/admin/server.py -> mrp/admin/routes/actors.py`
 - 2-file cycle: `mrp/admin/routes/jobs.py -> mrp/admin/server.py -> mrp/admin/routes/jobs.py`
-- 2-file cycle: `mrp/admin/routes/metrics.py -> mrp/admin/server.py -> mrp/admin/routes/metrics.py`
+- 2-file cycle: `mrp/admin/routes/apps.py -> mrp/admin/server.py -> mrp/admin/routes/apps.py`
 - 2-file cycle: `mrp/admin/routes/nim.py -> mrp/admin/server.py -> mrp/admin/routes/nim.py`
-- 2-file cycle: `mrp/admin/routes/posts.py -> mrp/admin/server.py -> mrp/admin/routes/posts.py`
+- 2-file cycle: `mrp/admin/routes/metrics.py -> mrp/admin/server.py -> mrp/admin/routes/metrics.py`
 - 2-file cycle: `mrp/admin/routes/releases.py -> mrp/admin/server.py -> mrp/admin/routes/releases.py`
+- 2-file cycle: `mrp/admin/routes/artists.py -> mrp/admin/server.py -> mrp/admin/routes/artists.py`
+- 2-file cycle: `mrp/admin/routes/catalog.py -> mrp/admin/server.py -> mrp/admin/routes/catalog.py`
+- 2-file cycle: `mrp/admin/routes/identity.py -> mrp/admin/server.py -> mrp/admin/routes/identity.py`
+- 2-file cycle: `mrp/admin/routes/posts.py -> mrp/admin/server.py -> mrp/admin/routes/posts.py`
 - 2-file cycle: `mrp/admin/routes/status.py -> mrp/admin/server.py -> mrp/admin/routes/status.py`
 - 2-file cycle: `mrp/admin/routes/video.py -> mrp/admin/server.py -> mrp/admin/routes/video.py`
 - 2-file cycle: `mrp/admin/routes/workspace.py -> mrp/admin/server.py -> mrp/admin/routes/workspace.py`
@@ -500,11 +491,11 @@
 - **Artist-Keyed Downstream Artifact System** — docs_admin_workspace_artifact_keying, docs_admin_workspace_critic_pipeline, docs_admin_workspace_sampler, docs_content_model_artist_record, docs_admin_workspace_artist_change_migration [EXTRACTED 1.00]
 - **MRP Admin Roadmap Milestones** — docs_mrp_admin_milestones_v0_1, docs_mrp_admin_milestones_v0_2, docs_mrp_admin_milestones_near_term_cleanup, docs_mrp_admin_milestones_v0_3, docs_mrp_admin_milestones_v0_4, docs_mrp_admin_milestones_v0_5 [EXTRACTED 1.00]
 
-## Communities (825 total, 19 thin omitted)
+## Communities (833 total, 18 thin omitted)
 
 ### Community 0 - "workspace"
-Cohesion: 0.09
-Nodes (77): artist_artifact_moves(), artist_record_path(), bool_field(), configured_promo_track_slug(), _critic_status(), _details_status(), _links_status(), migrate_artist_artifacts() (+69 more)
+Cohesion: 0.06
+Nodes (99): artist_artifact_moves(), artist_record_path(), bool_field(), configured_promo_track_slug(), _critic_status(), _details_status(), _links_status(), migrate_artist_artifacts() (+91 more)
 
 ### Community 1 - "verify"
 Cohesion: 0.17
@@ -515,12 +506,12 @@ Cohesion: 0.14
 Nodes (38): _designer_fields(), _get_request(), _post_fields(), A multi-shape SVG import made the first shape permanently undeletable.      The, The splitter wiring lives in spiro-preview.js, not copied per page., Designing an actor is a long sitting and the breadcrumb is a plain link., _request(), _save() (+30 more)
 
 ### Community 3 - "import_spotify"
-Cohesion: 0.10
-Nodes (46): artist_url(), candidate_assets(), candidates_from_pages(), date_part(), format_import(), import_site(), load_json(), path_parts() (+38 more)
+Cohesion: 0.26
+Nodes (21): artist_id_from_url(), artist_record_path(), build_artist_candidate(), build_release_candidate(), build_track(), dedupe_albums(), diff_patch(), download_cover() (+13 more)
 
 ### Community 4 - "cohesion"
-Cohesion: 0.06
-Nodes (69): _main(), Album CLI (WP-13) — end-to-end Pass 2 → Pass 3 orchestrator.  Usage:     critic, Full Pass 2 → Pass 3 pipeline for one release. Returns populated AlbumRecord., Write album_qa.md for one album record. Returns the report path., run_album(), write_album_report(), build_cohesion(), _cosine() (+61 more)
+Cohesion: 0.08
+Nodes (62): _main(), Album CLI (WP-13) — end-to-end Pass 2 → Pass 3 orchestrator.  Usage:     critic, Full Pass 2 → Pass 3 pipeline for one release. Returns populated AlbumRecord., Write album_qa.md for one album record. Returns the report path., run_album(), write_album_report(), build_cohesion(), _cosine() (+54 more)
 
 ### Community 5 - "WP Site Migration (frozen)"
 Cohesion: 0.07
@@ -532,11 +523,11 @@ Nodes (20): clone_head(), HeadParser, inline_styles(), is_excluded_dependency(),
 
 ### Community 7 - "test_enrich_links"
 Cohesion: 0.10
-Nodes (42): _prepared_repo(), test_build_title_document_inserts_text_actor(), test_generate_title_actor_end_to_end(), test_generate_title_actor_only_if_missing_skips(), test_generate_title_actor_requires_prepared_project(), test_a_declared_section_tag_opens_a_section_in_the_video_lyrics(), _project_actors(), Suno brackets both song structure and performance notes.      "[breathy male voc (+34 more)
+Nodes (44): _prepared_repo(), test_build_title_document_inserts_text_actor(), test_generate_title_actor_end_to_end(), test_generate_title_actor_only_if_missing_skips(), test_generate_title_actor_requires_prepared_project(), test_a_declared_section_tag_opens_a_section_in_the_video_lyrics(), _project_actors(), Suno brackets both song structure and performance notes.      "[breathy male voc (+36 more)
 
 ### Community 8 - "test_youtube_client"
-Cohesion: 0.09
-Nodes (27): _error_detail(), extract_channel_id(), Title and item count for a playlist, or None if it does not exist., Every video id in a playlist, following pagination., Candidate album-playlist ids advertised on a track's watch page.          Auto-g, Return the first music video matching the ISRC, or None if not found., A YouTube API call failed for a reason the caller cannot paper over.      Kept d, (reason, message) from a Google API error body, best effort. (+19 more)
+Cohesion: 0.06
+Nodes (46): enrich_youtube(), format_enrich_youtube(), _load_records(), now_iso(), _error_detail(), extract_channel_id(), Title and item count for a playlist, or None if it does not exist., Every video id in a playlist, following pagination. (+38 more)
 
 ### Community 9 - "wxr"
 Cohesion: 0.17
@@ -559,24 +550,24 @@ Cohesion: 0.11
 Nodes (30): getAllArtists(), getAllReleases(), getAllTrackRouteParams(), getArtists(), getMigratedPages(), getMigratedRoutes(), getVisibleReleases(), isNonHttpUrl() (+22 more)
 
 ### Community 14 - "gather"
-Cohesion: 0.13
-Nodes (31): Namespace, Path, Path, cmd_bio(), cmd_blurb(), cmd_keywords(), cmd_kit(), main() (+23 more)
+Cohesion: 0.12
+Nodes (33): Namespace, Path, Path, cmd_bio(), cmd_blurb(), cmd_keywords(), cmd_kit(), main() (+25 more)
 
 ### Community 15 - "site.schema"
 Cohesion: 0.05
 Nodes (37): additionalProperties, format, type, format, type, pattern, type, $id (+29 more)
 
 ### Community 16 - "synthesize"
-Cohesion: 0.12
-Nodes (53): Path, TrackFinding, ndarray, ndarray, Path, TrackFinding, TrackFinding, _hydrate() (+45 more)
+Cohesion: 0.10
+Nodes (49): ndarray, ndarray, Path, TrackFinding, TrackFinding, _hydrate(), _detect_bpm(), _detect_key() (+41 more)
 
 ### Community 17 - "pipeline"
 Cohesion: 0.09
-Nodes (64): _advance_release_status(), _amuse_store_links(), enrich_apple_music(), enrich_missing_links(), enrich_odesli(), enrich_promo_links(), enrich_youtube(), _kit_smart_link() (+56 more)
+Nodes (62): _advance_release_status(), _amuse_store_links(), enrich_apple_music(), enrich_missing_links(), enrich_odesli(), enrich_promo_links(), enrich_youtube(), _kit_smart_link() (+54 more)
 
 ### Community 18 - "Admin Workspace Docs"
-Cohesion: 0.22
-Nodes (11): Critic pipeline, Publish Pipeline (build > stage > verify > approve > publish), Sampler Stage, Status ladder, Track Hints (human ground truth), Release YAML Record, Song vs Album Release Models, Near-term Cleanup Items (+3 more)
+Cohesion: 0.29
+Nodes (7): Critic pipeline, Sampler Stage, Track Hints (human ground truth), Near-term Cleanup Items, MRP Admin v0.1 (Complete), MRP Admin v0.2 (Complete), enrich-links (Odesli enrichment)
 
 ### Community 19 - "jquery.min"
 Cohesion: 0.07
@@ -595,8 +586,8 @@ Cohesion: 0.09
 Nodes (32): artists, ../../components/ArtistCard.astro, ../components/ArtistCarousel.astro, items, ../../components/ArtistReleaseList.astro, ./ImageLoop.astro, captionItems, ../../components/ReleaseBrowser.astro (+24 more)
 
 ### Community 23 - "catalog"
-Cohesion: 0.19
-Nodes (23): ArgumentParser, Namespace, Path, cmd_album(), cmd_approve(), cmd_batch(), cmd_calibrate(), cmd_report() (+15 more)
+Cohesion: 0.17
+Nodes (26): ArgumentParser, Namespace, Path, get_style(), Return the Suno style prompt the track was generated with., cmd_album(), cmd_approve(), cmd_batch() (+18 more)
 
 ### Community 24 - "release.schema"
 Cohesion: 0.06
@@ -616,23 +607,23 @@ Nodes (24): Path, _artist_label(), _build_index(), build_manifest(), _enumerate_
 
 ### Community 28 - "test_enrich_apple_music"
 Cohesion: 0.10
-Nodes (53): test_background_transform_supports_pan_scan_and_beat_zoom(), test_draft_and_time_range_share_absolute_song_time(), test_filled_shape_composites_contours_with_even_odd_holes(), test_full_outline_composites_one_solid_complete_path(), test_preview_and_bounded_sequence_outputs_are_safe(), int32, float32, NDArray (+45 more)
+Nodes (48): test_composite_trace_color_flow_varies_hue_deterministically(), test_draft_and_time_range_share_absolute_song_time(), test_filled_shape_composites_contours_with_even_odd_holes(), test_full_outline_composites_one_solid_complete_path(), test_preview_and_bounded_sequence_outputs_are_safe(), int32, float32, NDArray (+40 more)
 
 ### Community 29 - "test_apple_music_client"
-Cohesion: 0.24
-Nodes (29): Any, Path, Request, _artist_path(), assemble_identity_prompt(), _candidate_path(), _cleanup_run(), discard_identity_candidate() (+21 more)
+Cohesion: 0.06
+Nodes (85): _connect(), create_job(), create_video_job(), get_job(), get_latest_job_by_command(), get_latest_video_job(), get_video_job(), init() (+77 more)
 
 ### Community 30 - "posts"
 Cohesion: 0.11
 Nodes (32): ../../components/PostCard.astro, date, excerpt, href, image, ../../lib/posts.js, cloneDescription(), clonePathParam() (+24 more)
 
 ### Community 31 - "dsp"
-Cohesion: 0.12
-Nodes (36): _create_job(), _drift_fixture(), _get_request(), _now(), A missing renderer dependency must fail submission, not the child process., Re-cutting scenes must not force a re-analyse.      Analysis keys its cache on t, Narrowing the question must not stop it detecting a real audio change., Polling swaps only the job card, so pages need telling when a job lands.      A (+28 more)
+Cohesion: 0.14
+Nodes (33): _create_job(), _drift_fixture(), _get_request(), _now(), A missing renderer dependency must fail submission, not the child process., Re-cutting scenes must not force a re-analyse.      Analysis keys its cache on t, Narrowing the question must not stop it detecting a real audio change., Polling swaps only the job card, so pages need telling when a job lands.      A (+25 more)
 
 ### Community 32 - "writeback"
-Cohesion: 0.15
-Nodes (16): Path, BaseException, critic_model_for(), gemini_client(), Gemini client with a retry policy for the 429/503 capacity errors the     Genera, _describe(), get_impression(), ImpressionError (+8 more)
+Cohesion: 0.13
+Nodes (28): Path, TrackFinding, Path, BaseException, Batch runner and QA report generator.  critic batch <manifest.json>   — run full, Read all *.json findings in out_dir and write qa_report.md + qa_report.csv., run_batch(), _write_csv() (+20 more)
 
 ### Community 33 - "post.schema"
 Cohesion: 0.09
@@ -647,8 +638,8 @@ Cohesion: 0.08
 Nodes (27): ../../components/Breadcrumbs.astro, ./Lyrics.astro, ./MusicVideoPlayer.astro, video, ../../components/ReleaseLanding.astro, copyBlocks, coverUrl, creditSource (+19 more)
 
 ### Community 37 - "ReleaseBrowser"
-Cohesion: 0.14
-Nodes (23): enrich_links(), format_enrich_links(), now_iso(), OdesliAuthError, OdesliRateLimitedError, Odesli refused the request outright rather than finding no match.      Public ac, Any, Path (+15 more)
+Cohesion: 0.13
+Nodes (25): enrich_links(), format_enrich_links(), now_iso(), OdesliAuthError, OdesliClient, OdesliRateLimitedError, Odesli refused the request outright rather than finding no match.      Public ac, Any (+17 more)
 
 ### Community 38 - "clone_rewrites"
 Cohesion: 0.06
@@ -659,28 +650,28 @@ Cohesion: 0.10
 Nodes (19): additionalProperties, minLength, type, minLength, type, $id, minLength, type (+11 more)
 
 ### Community 40 - "critic_io"
-Cohesion: 0.11
-Nodes (47): Any, ArgumentParser, Path, Any, Path, _load_repo_env(), main(), _now() (+39 more)
+Cohesion: 0.08
+Nodes (51): test_worker_progress_events_are_structured(), Event, file_okay, Any, Argument, help, Option, Path (+43 more)
 
 ### Community 41 - "clone-record.schema"
 Cohesion: 0.11
 Nodes (19): type, type, format, type, minLength, type, minLength, type (+11 more)
 
 ### Community 42 - "pipeline"
-Cohesion: 0.21
-Nodes (19): Path, _gemini_friendly(), model_label(), gemini-3.8-flash' -> 'Gemini 3.8 Flash'. Records hold whatever concrete     mode, Human-friendly model name with ID in parentheses., _album_doc(), _fmt_duration(), _infer_model() (+11 more)
+Cohesion: 0.19
+Nodes (20): Path, critic_model_for(), _gemini_friendly(), model_label(), gemini-3.8-flash' -> 'Gemini 3.8 Flash'. Records hold whatever concrete     mode, Human-friendly model name with ID in parentheses., _album_doc(), _fmt_duration() (+12 more)
 
 ### Community 43 - "index"
 Cohesion: 0.25
-Nodes (22): _access_token(), _b64url(), begin_oauth(), client_path(), config_dir(), connected(), discover(), _ensure_client() (+14 more)
+Nodes (23): _access_token(), _b64url(), begin_oauth(), client_path(), config_dir(), connected(), credit_balance(), discover() (+15 more)
 
 ### Community 44 - "jquery.mobile.custom.min"
 Cohesion: 0.29
 Nodes (16): a(), b(), c(), d(), f(), g(), h(), l() (+8 more)
 
 ### Community 45 - "clone-record.schema"
-Cohesion: 0.11
-Nodes (18): properties, type, type, minLength, pattern, type, enum, type (+10 more)
+Cohesion: 0.10
+Nodes (21): properties, type, type, minLength, pattern, type, enum, type (+13 more)
 
 ### Community 46 - "page.schema"
 Cohesion: 0.12
@@ -691,8 +682,8 @@ Cohesion: 0.34
 Nodes (16): clone_asset_manifest(), clone_record(), minimal_repo(), CompletedProcess, Path, run_mrp(), test_duplicate_clone_ids_fail_across_clone_pages_and_posts(), test_invalid_clone_record_fails_independent_validation() (+8 more)
 
 ### Community 48 - "usage"
-Cohesion: 0.19
-Nodes (7): Anthropic, Any, call_claude(), API usage tracker — accumulates token counts and rate-limit state across a batch, Drop-in replacement for client.messages.create() that also records     token usa, After each Anthropic call:         - warn_pct  (default 20%): print a warning, UsageTracker
+Cohesion: 0.23
+Nodes (5): Any, call_claude(), Drop-in replacement for client.messages.create() that also records     token usa, After each Anthropic call:         - warn_pct  (default 20%): print a warning, UsageTracker
 
 ### Community 49 - "CloneLayout"
 Cohesion: 0.15
@@ -712,7 +703,7 @@ Nodes (17): absolutePublicUrl(), getArtistById(), getReleaseBySlug(), getTrackBy
 
 ### Community 53 - "release.schema"
 Cohesion: 0.10
-Nodes (22): type, additionalProperties, type, $defs, credits, links, performer, public_media_reference (+14 more)
+Nodes (21): type, additionalProperties, type, $defs, credits, links, public_media_reference, stem (+13 more)
 
 ### Community 54 - "jquery.min"
 Cohesion: 0.26
@@ -743,8 +734,8 @@ Cohesion: 0.15
 Nodes (13): additionalProperties, properties, type, enum, type, type, critic, model (+5 more)
 
 ### Community 61 - "eval"
-Cohesion: 0.17
-Nodes (18): add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), Dispatch the optional renderer without loading it for normal MRP work., run_video_command() (+10 more)
+Cohesion: 0.14
+Nodes (27): add_common_command_options(), add_global_options(), build_parser(), emit(), main(), placeholder_result(), Dispatch the optional renderer without loading it for normal MRP work., run_video_command() (+19 more)
 
 ### Community 62 - "Site_Deployment"
 Cohesion: 0.17
@@ -835,12 +826,12 @@ Cohesion: 0.44
 Nodes (9): content_repo(), CompletedProcess, Path, run_mrp(), test_clone_site_generates_wxr_clone_records(), test_clone_site_is_idempotent_and_preserves_existing_records(), test_clone_site_missing_source_fails_cleanly(), test_clone_site_records_capture_aliases() (+1 more)
 
 ### Community 85 - "tags"
-Cohesion: 0.33
-Nodes (8): Path, extract_tags(), _get_model(), _main(), Tags worker: zero-shot genre/mood/instrument classification via CLAP. Optional —, Run CLAP zero-shot classification. Returns empty Tags if laion-clap     or torch, _zero_shot(), Tags
+Cohesion: 0.36
+Nodes (9): Path, Tags, extract_tags(), _get_model(), _main(), Tags worker: zero-shot genre/mood/instrument classification via CLAP. Optional —, Run CLAP zero-shot classification. Returns empty Tags if laion-clap     or torch, _zero_shot() (+1 more)
 
 ### Community 86 - "[slug]"
-Cohesion: 0.18
-Nodes (47): A local stem directory cannot be scanned safely., StemImportError, track_key(), validate_release_dict(), HTMLResponse, Path, Request, _context() (+39 more)
+Cohesion: 0.17
+Nodes (49): A local stem directory cannot be scanned safely., Describe supported audio files in one local directory as editable stems., scan_stem_directory(), StemImportError, track_key(), validate_release_dict(), HTMLResponse, Path (+41 more)
 
 ### Community 87 - "jquery-migrate.min"
 Cohesion: 0.33
@@ -991,28 +982,28 @@ Cohesion: 0.67
 Nodes (3): CompletedProcess, run_mrp(), test_clone_rewrites_reports_static_url_review_metadata()
 
 ### Community 131 - "schema"
-Cohesion: 0.31
-Nodes (18): add_review_item(), clone_records(), clone_rewrites(), collect_url_references(), dependency_url(), load_record(), mirrored_asset_paths(), normalize_path() (+10 more)
+Cohesion: 0.10
+Nodes (36): _font(), _post(), test_text_outline_feeds_the_text_geometry(), test_text_outline_positions_glyphs_left_to_right(), test_text_outline_rejects_empty(), test_text_outline_rejects_spaces_only_word(), test_text_outline_route_rejects_empty(), test_text_outline_route_returns_path_data() (+28 more)
 
 ### Community 132 - "CLAUDE"
 Cohesion: 0.50
 Nodes (3): Content pipeline — read this first, graphify, Two sites — know which one you're touching
 
 ### Community 137 - "clone-record.schema"
-Cohesion: 0.08
-Nodes (64): _aligned_sections(), _gapped_sections(), The verse ends at 1.5 but the chorus does not start until 2.0., Alignment gaps are the norm, so covering one is the default., A rounding-width hole is not dead air; it must not move the transition., The frame at a butted scene's start still belongs to the scene before., A transition played over the hole has already arrived by the downbeat., Never hand the editor a reset point at the far end of the scene. (+56 more)
+Cohesion: 0.09
+Nodes (59): _aligned_sections(), _gapped_sections(), The verse ends at 1.5 but the chorus does not start until 2.0., Alignment gaps are the norm, so covering one is the default., A rounding-width hole is not dead air; it must not move the transition., The frame at a butted scene's start still belongs to the scene before., A transition played over the hole has already arrived by the downbeat., Never hand the editor a reset point at the far end of the scene. (+51 more)
 
 ### Community 138 - "page.schema"
-Cohesion: 0.22
-Nodes (14): build_title_document(), generate_title_actor(), _load_release_track(), Generate a per-track song-title actor from a real font (deterministic).  Runs af, Outline the track title into the project's ``song-title`` text actor., A draft song-title actor: one text layer with a legible write-on trace., Insert/replace the song-title actor in a raw track-project mapping., _title_actor_payload() (+6 more)
+Cohesion: 0.23
+Nodes (15): build_title_document(), generate_title_actor(), _load_release_track(), Generate a per-track song-title actor from a real font (deterministic).  Runs af, Outline the track title into the project's ``song-title`` text actor., A draft song-title actor: one text layer with a legible write-on trace., Insert/replace the song-title actor in a raw track-project mapping., _title_actor_payload() (+7 more)
 
 ### Community 139 - "release.schema"
 Cohesion: 0.21
 Nodes (18): album_record_id(), critic_bin(), load_record(), out_dir(), promoter_bin(), Read/edit critic output records (app/critic/out/*.json) from the admin UI.  The, Patch review_text and/or status on a track finding or album record., Edit the Pass-3 contextual review for one track inside an album record. (+10 more)
 
 ### Community 140 - "release.schema"
-Cohesion: 0.06
-Nodes (57): apply_blocklist(), format_keyword(), is_blocked(), keyword_field(), merge_keywords(), normalize(), Channel keyword merging and budgeting.  YouTube's channel keywords box (Studio >, Render one keyword the way YouTube expects it in the keywords box. (+49 more)
+Cohesion: 0.05
+Nodes (61): apply_blocklist(), format_keyword(), is_blocked(), keyword_field(), merge_keywords(), normalize(), Channel keyword merging and budgeting.  YouTube's channel keywords box (Studio >, Render one keyword the way YouTube expects it in the keywords box. (+53 more)
 
 ### Community 141 - "executor"
 Cohesion: 0.25
@@ -1020,15 +1011,15 @@ Nodes (6): _load_repo_env(), Merge the repo's .env into the process environment 
 
 ### Community 142 - "orchestrator"
 Cohesion: 0.14
-Nodes (53): test_javascript_mapping_fixture_is_generated_from_canonical_python(), AudioSignal, BackgroundConfig, Rest is the designed look, not a faded version of it.      A trace with no audio, Each shape decides how far its own channels travel with the music., test_component_amounts_override_the_preset_channel_by_channel(), test_percussion_flash_and_background_intensity_have_distinct_controls(), test_rotation_and_explicit_wobble_are_independent_and_default_still() (+45 more)
+Nodes (56): test_javascript_mapping_fixture_is_generated_from_canonical_python(), AudioSignal, BackgroundConfig, Rest is the designed look, not a faded version of it.      A trace with no audio, Each shape decides how far its own channels travel with the music., test_component_amounts_override_the_preset_channel_by_channel(), test_percussion_flash_and_background_intensity_have_distinct_controls(), test_rotation_and_explicit_wobble_are_independent_and_default_still() (+48 more)
 
 ### Community 143 - "shared"
 Cohesion: 0.12
 Nodes (42): _analysis_config(), _pulse_signal(), test_analysis_configuration_rejects_invalid_frequency_bands(), test_project_analysis_caches_and_reports_semantic_fallbacks(), test_robust_normalization_and_smoothing_are_bounded(), test_signal_analysis_produces_shared_normalized_features(), test_silent_audio_produces_finite_zero_controls(), _write_analysis_project() (+34 more)
 
 ### Community 480 - "Community 480"
-Cohesion: 0.25
-Nodes (10): Path, ValidationError, T, _declared_paths(), _format_model_errors(), _load_model(), load_structured_lyrics(), _probe_audio_duration() (+2 more)
+Cohesion: 0.13
+Nodes (28): _anthropic_client(), artist_brief(), _extract_svg(), generate_svg_shapes(), AI generation of raw SVG shapes for the Actor Designer.  The model draws only th, Design brief for an artist name mark, driven by the artist's identity., Generate raw SVG shapes for a brief and split them into subpaths.      Returns `, _response_text() (+20 more)
 
 ### Community 481 - "Community 481"
 Cohesion: 0.15
@@ -1043,8 +1034,8 @@ Cohesion: 0.19
 Nodes (27): base_artist(), base_release(), minimal_repo(), CompletedProcess, Path, Tests for band members, featuring, and track-level performer attribution.  Cover, A member slug resolves only within the release's own artist_id., run_mrp() (+19 more)
 
 ### Community 485 - "Community 485"
-Cohesion: 0.40
-Nodes (11): ContentCounts, count_assets(), count_content(), count_record_files(), detect_site_framework(), inspect_deploy(), inspect_repository(), inspect_warnings() (+3 more)
+Cohesion: 0.36
+Nodes (12): ContentCounts, count_assets(), count_content(), count_record_files(), detect_site_framework(), format_inspection(), inspect_deploy(), inspect_repository() (+4 more)
 
 ### Community 486 - "Community 486"
 Cohesion: 0.07
@@ -1052,55 +1043,55 @@ Nodes (63): _amuse_rows(), default_db_path(), _excel_date(), import_file(), impo
 
 ### Community 487 - "Community 487"
 Cohesion: 0.10
-Nodes (42): CardConfig, _decode_audio(), _signal(), test_cards_preserve_aspect_ratio_and_crossfade(), test_ffmpeg_command_maps_only_raw_video_and_master_audio(), test_full_timeline_includes_cards_and_excerpt_omits_them(), test_render_and_verify_cli_publish_master_only_timeline(), _write_video_project() (+34 more)
+Nodes (40): CardConfig, _decode_audio(), _signal(), test_cards_preserve_aspect_ratio_and_crossfade(), test_ffmpeg_command_maps_only_raw_video_and_master_audio(), test_full_timeline_includes_cards_and_excerpt_omits_them(), test_render_and_verify_cli_publish_master_only_timeline(), _write_video_project() (+32 more)
 
 ### Community 488 - "Community 488"
-Cohesion: 0.15
-Nodes (56): AudioConfig, BaseModel, dir_okay, Exception, ValidationError, TrackProjectDocument, Argument, help (+48 more)
+Cohesion: 0.10
+Nodes (70): AudioConfig, BaseModel, Exception, TrackProjectDocument, Any, Path, ValidationError, Path (+62 more)
 
 ### Community 489 - "Community 489"
-Cohesion: 0.10
-Nodes (61): ActorCastConfig, A character answers "which stem", never "how much".      Every cast actor is req, A directed color is a costume for one scene, not a new identity.      The actor, A scene changes the energy it names and inherits the rest.      The trace overri, No cast, no shapes — whatever else the project carries.      A scene used to fil, test_actor_cast_adds_scene_pitch_yaw_and_tumble_to_spatial_identity(), test_actor_cast_compiles_identity_and_scene_direction_to_traces(), test_an_uncast_scene_draws_nothing() (+53 more)
+Cohesion: 0.14
+Nodes (46): ActorCastConfig, A character answers "which stem", never "how much".      Every cast actor is req, A directed color is a costume for one scene, not a new identity.      The actor, A scene changes the energy it names and inherits the rest.      The trace overri, No cast, no shapes — whatever else the project carries.      A scene used to fil, test_actor_cast_adds_scene_pitch_yaw_and_tumble_to_spatial_identity(), test_actor_cast_compiles_identity_and_scene_direction_to_traces(), test_an_uncast_scene_draws_nothing() (+38 more)
 
 ### Community 490 - "Community 490"
 Cohesion: 0.21
 Nodes (29): _artifact_path(), test_publication_requires_opt_in_and_updates_only_selected_track(), test_rendering_page_offers_publish_only_after_current_approval(), _hash(), _plan_job(), test_approval_rejects_stale_or_tampered_render(), test_discard_removes_only_selected_generated_draft(), test_rendering_history_and_plan_are_fingerprint_scoped() (+21 more)
 
 ### Community 491 - "Community 491"
-Cohesion: 0.11
-Nodes (47): _analysis_bundle(), _preset_context(), test_mapping_and_palette_presets_are_deterministic_and_distinct(), test_preset_catalog_is_stable_and_available_from_cli(), test_long_song_planning_is_constant_memory_and_diagnostic(), _audio_signal(), _auto_composition(), _background_context() (+39 more)
+Cohesion: 0.10
+Nodes (50): _analysis_bundle(), _preset_context(), test_mapping_and_palette_presets_are_deterministic_and_distinct(), test_preset_catalog_is_stable_and_available_from_cli(), test_long_song_planning_is_constant_memory_and_diagnostic(), _audio_signal(), _auto_composition(), _background_context() (+42 more)
 
 ### Community 494 - "Community 494"
-Cohesion: 0.18
-Nodes (21): AppleMusicClient, enrich_apple_music(), format_enrich_apple_music(), _load_records(), now_iso(), _title_key(), slugify(), Any (+13 more)
+Cohesion: 0.22
+Nodes (18): AppleMusicClient, enrich_apple_music(), _load_records(), now_iso(), Any, Path, content_repo(), FakeAppleMusicClient (+10 more)
 
 ### Community 495 - "Community 495"
 Cohesion: 0.08
 Nodes (5): _FakeIdentitySession, _FakeResponse, Stands in for _McpSession in generate_identity_image tests., test_call_tool_falls_back_to_text_json(), test_call_tool_prefers_structured_content()
 
 ### Community 496 - "Community 496"
-Cohesion: 0.21
-Nodes (34): _assert_private_data_absent(), _build(), _get_request(), _isolate_document_memo(), _layer(), Keep the process-wide build memo from leaking between tests., A degenerate leading subpath must not shift every contour's phase.      ``M5 5``, Release YAML durations are whole seconds and must not refuse a preview.      A m (+26 more)
+Cohesion: 0.27
+Nodes (15): Any, Path, _aspect_ratio_matches(), default_render_manifest_path(), expectation_from_render_manifest(), _fraction(), _has_faststart(), _hash_file() (+7 more)
 
 ### Community 498 - "Community 498"
 Cohesion: 0.05
-Nodes (156): test_review_markers_are_backward_compatible_and_structure_tags_are_not_cues(), AlignedLyricSection, AlignmentConfig, _append_manual_section(), _FakeOpenAI, _FakeTranscriptions, An AI vocal take can sing a late line early, stranding the lines between.      T, A long stranded run stays monotonic: the timing editor needs valid spans. (+148 more)
+Nodes (153): test_review_markers_are_backward_compatible_and_structure_tags_are_not_cues(), AlignedLyricSection, AlignmentConfig, _append_manual_section(), _FakeOpenAI, _FakeTranscriptions, An AI vocal take can sing a late line early, stranding the lines between.      T, A long stranded run stays monotonic: the timing editor needs valid spans. (+145 more)
 
 ### Community 499 - "Community 499"
-Cohesion: 0.15
-Nodes (29): _after_prepare_success(), _apply_event(), _cancel_deadline_passed(), _consume_events(), _finish_without_event(), _job_path(), launch(), _monitor() (+21 more)
+Cohesion: 0.29
+Nodes (10): album(), content_repo(), FakeSpotifyClient, Any, Path, test_download_covers_writes_files_with_checksum(), test_known_artist_matches_existing_release_and_proposes_isrc_patch(), test_new_artist_single_and_ep_with_partial_date() (+2 more)
 
 ### Community 500 - "Community 500"
 Cohesion: 0.14
 Nodes (20): test_circuit_step_holds_then_retains_completed_orientations(), test_projection_rotates_then_applies_bounded_perspective_and_depth(), test_tilted_lift_is_planar(), test_wave_lift_uses_closed_whole_windings(), test_yaw_places_positive_x_farther_from_camera(), float32, NDArray, _curve_from_points() (+12 more)
 
 ### Community 501 - "Community 501"
-Cohesion: 0.10
-Nodes (37): Path, run_batch(), _approved_review_summary(), _artist_record(), _context_excerpt(), _find_track(), get_artist_name(), get_hints() (+29 more)
+Cohesion: 0.13
+Nodes (25): Path, _approved_review_summary(), _artist_record(), _context_excerpt(), _find_track(), get_artist_name(), get_hints(), get_persona() (+17 more)
 
 ### Community 502 - "Community 502"
 Cohesion: 0.19
-Nodes (19): animated_cover_prompt(), auth_required_output(), credit_balance(), _download(), _find_media_url(), generate_animated_cover_visual(), generate_identity_image(), _iter_sse_json() (+11 more)
+Nodes (19): auth_required_output(), _candidate_name(), _download(), _find_media_url(), generate_animated_cover_visual(), generate_identity_image(), _iter_sse_json(), _McpSession (+11 more)
 
 ### Community 503 - "Community 503"
 Cohesion: 0.17
@@ -1115,8 +1106,8 @@ Cohesion: 0.06
 Nodes (33): Blockers and open decisions, Completion evidence, Completion evidence, Completion evidence, Completion evidence, Completion evidence, Completion evidence, Current position (+25 more)
 
 ### Community 506 - "Community 506"
-Cohesion: 0.13
-Nodes (15): enrich_isrc(), format_enrich_isrc(), _now_iso(), _title_key(), load_dotenv(), SpotifyAPIError, SpotifyAuthError, SpotifyClient (+7 more)
+Cohesion: 0.12
+Nodes (16): enrich_isrc(), format_enrich_isrc(), _now_iso(), _title_key(), load_dotenv(), SpotifyAPIError, SpotifyAuthError, SpotifyClient (+8 more)
 
 ### Community 507 - "Community 507"
 Cohesion: 0.12
@@ -1132,11 +1123,11 @@ Nodes (12): Design principles (already decided — do not re-litigate), Goals, M
 
 ### Community 510 - "Community 510"
 Cohesion: 0.17
-Nodes (11): additionalProperties, additionalProperties, required, type, $id, properties, artist, required (+3 more)
+Nodes (11): additionalProperties, $defs, member, $id, additionalProperties, required, type, required (+3 more)
 
 ### Community 511 - "Community 511"
-Cohesion: 0.15
-Nodes (13): pattern, type, pattern, type, type, properties, artist, member (+5 more)
+Cohesion: 0.14
+Nodes (14): pattern, type, performer, pattern, type, type, additionalProperties, oneOf (+6 more)
 
 ### Community 512 - "Community 512"
 Cohesion: 0.20
@@ -1159,8 +1150,8 @@ Cohesion: 0.09
 Nodes (48): approve(), current_branch(), data_changes(), discard(), file_diff(), _git(), GitError, is_data_path() (+40 more)
 
 ### Community 517 - "Community 517"
-Cohesion: 0.29
-Nodes (7): Admin Web UI (FastAPI + Jinja2 + HTMX), Admin Workspace, Job mechanism, Nim animated promo shorts, Release workspace, Slice-Save YAML IO, MRP CLI (scripts/mrp)
+Cohesion: 0.24
+Nodes (9): Admin Web UI (FastAPI + Jinja2 + HTMX), Admin Workspace, Job mechanism, Nim animated promo shorts, Publish Pipeline (build > stage > verify > approve > publish), Release workspace, Slice-Save YAML IO, Status ladder (+1 more)
 
 ### Community 518 - "Community 518"
 Cohesion: 0.25
@@ -1171,8 +1162,8 @@ Cohesion: 0.29
 Nodes (6): 4Castle — Band Member Bios, Eli "Fox" Foster (Drums, Vocals), Jonah Vega (Keyboards, Vocals), Malcolm "Mack" Bishop (Bass, Vocals), Raven Cortez (Lead Guitar, Vocals), Skylar "Sky" Monroe (Rhythm Guitar, Vocals)
 
 ### Community 520 - "Community 520"
-Cohesion: 0.25
-Nodes (8): Artifact keying, Artist Change Migration Workflow, Promoter Stage, Artist YAML Record, JSON Schema Validation (mrp/schemas), MRP Admin v0.3 (Planned), enrich-apple-music (iTunes lookup), enrich-youtube (YouTube Data API v3)
+Cohesion: 0.22
+Nodes (10): Artifact keying, Artist Change Migration Workflow, Promoter Stage, Artist YAML Record, Release YAML Record, JSON Schema Validation (mrp/schemas), Song vs Album Release Models, MRP Admin v0.3 (Planned) (+2 more)
 
 ### Community 521 - "Community 521"
 Cohesion: 0.14
@@ -1195,36 +1186,36 @@ Cohesion: 0.67
 Nodes (3): pattern, type, id
 
 ### Community 531 - "Community 531"
-Cohesion: 0.19
-Nodes (19): enrich_youtube(), format_enrich_youtube(), _load_records(), now_iso(), Any, Path, content_repo(), FakeYouTubeClient (+11 more)
+Cohesion: 0.33
+Nodes (14): artist_url(), candidate_assets(), candidates_from_pages(), date_part(), format_import(), import_site(), load_json(), path_parts() (+6 more)
 
 ### Community 532 - "Community 532"
 Cohesion: 0.22
 Nodes (20): classify_artist_release_routes(), classify_asset(), classify_post(), exclusion_summary(), format_migration_inventory(), load_json(), migration_inventory(), normalize_route() (+12 more)
 
 ### Community 533 - "Community 533"
-Cohesion: 0.10
-Nodes (50): CancelCheck, Any, CancelCheck, OutputTimeline, Path, ProgressCallback, RenderContext, Any (+42 more)
+Cohesion: 0.08
+Nodes (64): dir_okay, Argument, help, Option, Path, CancelCheck, Any, CancelCheck (+56 more)
 
 ### Community 534 - "Community 534"
-Cohesion: 0.19
-Nodes (18): _artist_member_slugs(), _build_performers(), _parse_id_list(), Split a comma/newline-separated string into a clean id list., Zip the parallel performer-row arrays into performer objects.      Each row yiel, Member slugs defined on the release's owning artist record., Unit tests for the admin release-editor attribution helpers.  Covers the pure pa, _repo() (+10 more)
+Cohesion: 0.25
+Nodes (10): Path, Output validation for all critic workers (WP-14).  Validates that synthesized re, Validate all records in out_dir. Returns True if all clean., Return list of issues. Empty list = valid., Validate a full record (track or album). Returns a dict mapping     section name, validate_album_review(), validate_context_review(), validate_out_dir() (+2 more)
 
 ### Community 556 - "Community 556"
 Cohesion: 0.07
-Nodes (11): _landr_promo_candidates(), _landr_promo_page(), _landr_promo_url(), Promo-page URLs to try for a UPC, current scheme first.      LANDR moved promo l, Fetch a release's LANDR promo page, whichever host still serves it.      Only a, Resolve a UPC's live promo URL, or None if neither host serves it.      For call, Any, ValueError (+3 more)
+Nodes (13): _landr_promo_candidates(), _landr_promo_page(), _landr_smartlink_targets(), _landr_store_links(), Promo-page URLs to try for a UPC, current scheme first.      LANDR moved promo l, Fetch a release's LANDR promo page, whichever host still serves it.      Only a, Store URLs behind a Feature.fm smart-link page's service buttons.      release.l, ValueError (+5 more)
 
 ### Community 557 - "Community 557"
-Cohesion: 0.25
-Nodes (14): ActorConfig, The admin's pin revision must equal the renderer-side auto-import's., test_admin_and_renderer_revision_hashes_match(), Path, actor_library_path(), actor_revision(), load_library_actor(), load_library_actors() (+6 more)
+Cohesion: 0.29
+Nodes (12): ActorConfig, The admin's pin revision must equal the renderer-side auto-import's., test_admin_and_renderer_revision_hashes_match(), Path, actor_library_path(), actor_revision(), load_library_actor(), load_library_actors() (+4 more)
 
 ### Community 558 - "Community 558"
-Cohesion: 0.15
-Nodes (21): _duplicate_slug_error(), _member_from_form(), _member_rows(), Save a public identity image under site/public/assets/artists/{id}/.      Used f, _store_identity_image(), _FakeUpload, Unit tests for the admin band-members editor helpers.  The admin routes are HTMX, test_duplicate_slug_error_detects_collision() (+13 more)
+Cohesion: 0.24
+Nodes (6): _form_request(), Request, The Nim animated-cover prompt is visual-only.  It must not carry the artist's pr, _song_fixture(), test_notes_route_saves_and_clears_on_a_single(), test_schema_allows_notes_on_singles_but_not_promo_track()
 
 ### Community 559 - "Community 559"
-Cohesion: 0.11
-Nodes (49): _analysis_unavailable(), _AnalysisAvailability, background_image_path(), _build_document(), _build_fingerprint(), _build_in_video_environment(), build_live_preview_document(), _build_live_preview_document_local() (+41 more)
+Cohesion: 0.08
+Nodes (83): _assert_private_data_absent(), _build(), _get_request(), _isolate_document_memo(), _layer(), Keep the process-wide build memo from leaking between tests., A degenerate leading subpath must not shift every contour's phase.      ``M5 5``, Release YAML durations are whole seconds and must not refuse a preview.      A m (+75 more)
 
 ### Community 560 - "Community 560"
 Cohesion: 0.11
@@ -1232,11 +1223,11 @@ Nodes (18): music_video, additionalProperties, allOf, properties, required, type
 
 ### Community 561 - "Community 561"
 Cohesion: 0.13
-Nodes (15): stem, type, pattern, type, type, minLength, type, enabled (+7 more)
+Nodes (15): type, pattern, type, type, minLength, type, enabled, id (+7 more)
 
 ### Community 562 - "Community 562"
-Cohesion: 0.15
-Nodes (27): gated(), name_variants(), Split candidates into (passed, rejected) against both floors., Mechanical spellings of the artist's name.      CLAP cannot hear a spelling, so, consensus(), Tally the ballots.      A term survives on `keep_quorum` keeps. Its wording chan, _candidate(), Evidence gathering and the triumvirate tally.  Both halves are pure: candidates (+19 more)
+Cohesion: 0.12
+Nodes (31): Candidate, gated(), name_variants(), Split candidates into (passed, rejected) against both floors., Mechanical spellings of the artist's name.      CLAP cannot hear a spelling, so, One term plus the evidence that earned it a place on the ballot., The one-line justification shown to the models and in --dry-run., consensus() (+23 more)
 
 ### Community 563 - "Community 563"
 Cohesion: 0.35
@@ -1247,12 +1238,12 @@ Cohesion: 0.16
 Nodes (22): _get_request(), The two fields post independently, so a corrected take used to leave the     pub, A one-off structure name the shared vocabulary should not have to carry., _record(), _request(), _save_lyrics(), test_admin_release_skeletons_match_single_and_multi_track_cardinality(), test_admin_validation_rejects_duplicate_stem_ids() (+14 more)
 
 ### Community 565 - "Community 565"
-Cohesion: 0.16
-Nodes (24): infer_distributor(), Infer distributor from the UPC block (ground-truthed 2026-07-06 against     the, Any, Path, Request, _do_spotify_import(), _filter_releases(), _is_htmx() (+16 more)
+Cohesion: 0.14
+Nodes (27): _stem_role(), _title_key(), infer_distributor(), Infer distributor from the UPC block (ground-truthed 2026-07-06 against     the, slugify(), Any, Path, Request (+19 more)
 
 ### Community 566 - "Community 566"
-Cohesion: 0.19
-Nodes (11): OdesliClient, Path, Session, FakeResponse, FakeSession, Any, Path, test_from_env_reads_odesli_api_key_from_dotenv() (+3 more)
+Cohesion: 0.27
+Nodes (8): FakeResponse, FakeSession, Any, Path, test_from_env_reads_odesli_api_key_from_dotenv(), test_from_env_without_key_is_anonymous(), test_get_links_includes_key_param_when_set(), test_get_links_omits_key_param_when_unset()
 
 ### Community 567 - "Community 567"
 Cohesion: 0.13
@@ -1267,44 +1258,44 @@ Cohesion: 0.11
 Nodes (18): analysis_cache_key, artistic_presets, custom_palette, mapping, palette, performance, encoding_seconds, frames_per_second (+10 more)
 
 ### Community 570 - "Community 570"
-Cohesion: 0.19
-Nodes (19): Any, gemini_client(), Gemini client with a retry policy for the 429/503 capacity errors the     Genera, _ask_claude(), _ask_gemini(), _ask_openai(), BallotError, build_prompt() (+11 more)
+Cohesion: 0.22
+Nodes (17): Any, _ask_claude(), _ask_gemini(), _ask_openai(), BallotError, build_prompt(), collect_ballots(), _openapi_subset() (+9 more)
 
 ### Community 571 - "Community 571"
 Cohesion: 0.12
 Nodes (15): analysis_cache_key, artistic_presets, custom_palette, mapping, palette, project, hash, manifest (+7 more)
 
 ### Community 572 - "Community 572"
-Cohesion: 0.14
-Nodes (33): acquire_prune_lock(), deployed_build_ids(), format_prune(), history_root(), move_to_history(), now_utc(), prune_outputs(), Take an exclusive non-blocking lock on the shared output root.      Returns the (+25 more)
+Cohesion: 0.09
+Nodes (52): add_review_item(), clone_records(), clone_rewrites(), collect_url_references(), dependency_url(), format_clone_rewrites(), load_record(), mirrored_asset_paths() (+44 more)
 
 ### Community 573 - "Community 573"
-Cohesion: 0.16
-Nodes (18): validate_schema(), _FakeUpload, Artist-level identity fields (likeness_notes, reference_image) — schema, save ro, _record(), test_schema_accepts_artist_likeness_notes(), test_schema_accepts_member_reference_image(), test_schema_accepts_null_likeness_notes(), test_schema_accepts_reference_image() (+10 more)
+Cohesion: 0.23
+Nodes (12): validate_schema(), _FakeUpload, Artist-level identity fields (likeness_notes, reference_image) — schema, save ro, _record(), test_schema_accepts_artist_likeness_notes(), test_schema_accepts_member_reference_image(), test_schema_accepts_null_likeness_notes(), test_schema_accepts_reference_image() (+4 more)
 
 ### Community 574 - "Community 574"
-Cohesion: 0.25
-Nodes (21): file_okay, Any, Argument, help, Option, Path, MRPVideoAdapterError, align_command() (+13 more)
+Cohesion: 0.33
+Nodes (6): dependencies, ffmpeg, numpy, opencv, pillow, python
 
 ### Community 575 - "Community 575"
 Cohesion: 0.24
 Nodes (15): FakeClient, Duck-typed Anthropic client returning canned text responses., _request(), test_artist_brief_includes_identity(), test_artist_brief_missing_artist(), test_artist_brief_skips_null_likeness(), test_generate_svg_shapes_enforces_subpath_cap(), test_generate_svg_shapes_fails_after_retry() (+7 more)
 
 ### Community 576 - "Community 576"
-Cohesion: 0.13
-Nodes (30): _anthropic_client(), artist_brief(), _extract_svg(), generate_svg_shapes(), AI generation of raw SVG shapes for the Actor Designer.  The model draws only th, Design brief for an artist name mark, driven by the artist's identity., Generate raw SVG shapes for a brief and split them into subpaths.      Returns `, _response_text() (+22 more)
+Cohesion: 0.16
+Nodes (21): actor_preview_shapes(), list_library_actors(), Public view of the reusable actor library for the Actor Designer., Draw-ready component shapes for the shared canvas helpers., HTMLResponse, Path, Request, actors_designer() (+13 more)
 
 ### Community 577 - "Community 577"
 Cohesion: 0.21
 Nodes (14): _closed_square(), test_trace_progress_is_deterministic_and_wraps(), test_trace_window_preserves_three_dimensional_points(), test_trace_window_rejects_invalid_fraction(), test_trace_window_selects_tail_to_head_without_closing_the_curve(), test_trace_window_wraps_around_curve_start(), float32, NDArray (+6 more)
 
 ### Community 578 - "Community 578"
-Cohesion: 0.06
-Nodes (73): _font(), _post(), test_text_outline_feeds_the_text_geometry(), test_text_outline_positions_glyphs_left_to_right(), test_text_outline_rejects_empty(), test_text_outline_rejects_spaces_only_word(), test_text_outline_route_rejects_empty(), test_text_outline_route_returns_path_data() (+65 more)
+Cohesion: 0.11
+Nodes (43): test_curve_families_close_and_sample_uniformly(), test_greatest_common_divisor_matches_prototype_behavior(), test_harmonograph_pingpongs_closed_with_a_decaying_envelope(), test_hue_flow_values_match_prototype_semantics(), test_lissajous_equal_frequencies_with_quarter_delta_is_a_circle(), test_maricopa_mark_letterform_traces_closed(), test_path_family_phase_rotates_the_start_point(), test_path_family_pingpongs_open_subpaths_into_a_seamless_palindrome() (+35 more)
 
 ### Community 579 - "Community 579"
-Cohesion: 0.09
-Nodes (74): _actor_cast_fields(), _actor_fields(), _get_request(), _image_upload(), _look_fields(), _manual_fields(), _multipart_request(), Blank wardrobe posts must stay absent, not freeze the actor's look in.      The (+66 more)
+Cohesion: 0.10
+Nodes (70): _actor_cast_fields(), _actor_fields(), _get_request(), _image_upload(), _look_fields(), _manual_fields(), _multipart_request(), Blank wardrobe posts must stay absent, not freeze the actor's look in.      The (+62 more)
 
 ### Community 580 - "Community 580"
 Cohesion: 0.25
@@ -1312,23 +1303,23 @@ Nodes (7): FFmpeg baseline, Locked direct dependencies, MRP Music Video Renderer
 
 ### Community 582 - "Community 582"
 Cohesion: 0.20
-Nodes (20): archive_root(), assert_outside_repo(), assert_under_site_out_root(), build_artifact_dir(), display_path(), resolve_output_path(), site_out_root(), add_error() (+12 more)
+Nodes (20): archive_root(), assert_outside_repo(), assert_under_site_out_root(), build_artifact_dir(), path_from_report(), resolve_output_path(), site_out_root(), add_error() (+12 more)
 
 ### Community 583 - "Community 583"
 Cohesion: 0.12
 Nodes (17): audio_channels, audio_codec, audio_profile, audio_sample_rate, display_aspect_ratio, duration, faststart, field_order (+9 more)
 
 ### Community 589 - "Community 589"
-Cohesion: 0.20
-Nodes (19): add_issue(), clone_compare(), comparable_title(), compare_asset_references(), compare_containers(), compare_headings(), compare_markers(), compare_route() (+11 more)
+Cohesion: 0.19
+Nodes (20): add_issue(), clone_compare(), comparable_title(), compare_asset_references(), compare_containers(), compare_headings(), compare_markers(), compare_route() (+12 more)
 
 ### Community 590 - "Community 590"
-Cohesion: 0.22
-Nodes (23): _artifact_state(), _audio_duration(), _default_font(), _hash_file(), preflight_input_drift(), _probe(), Lightweight readiness and asset helpers for the admin Video workspace., Report a stem added, removed, enabled or disabled since preparation.      Hashin (+15 more)
+Cohesion: 0.26
+Nodes (20): _artifact_state(), _audio_duration(), _default_font(), _hash_file(), preflight_input_drift(), _probe(), Lightweight readiness and asset helpers for the admin Video workspace., Report a stem added, removed, enabled or disabled since preparation.      Hashin (+12 more)
 
 ### Community 591 - "Community 591"
-Cohesion: 0.60
-Nodes (4): launch(), _now(), _run(), Any
+Cohesion: 0.40
+Nodes (5): additionalProperties, required, type, properties, artist
 
 ### Community 592 - "Community 592"
 Cohesion: 0.15
@@ -1343,8 +1334,8 @@ Cohesion: 0.67
 Nodes (3): source_url, format, type
 
 ### Community 595 - "Community 595"
-Cohesion: 0.08
-Nodes (69): _actor_assignment_payloads(), _actor_cast_for_scope(), _actor_cast_in(), _actor_from_trace(), actor_library_path(), _actor_payload(), actor_preview_shapes(), _actor_revision() (+61 more)
+Cohesion: 0.10
+Nodes (58): _actor_cast_for_scope(), _actor_cast_in(), _actor_from_trace(), actor_library_path(), _actor_payload(), _actor_revision(), aligned_path(), _analysis_is_current() (+50 more)
 
 ### Community 596 - "Community 596"
 Cohesion: 0.07
@@ -1378,12 +1369,12 @@ Cohesion: 0.12
 Nodes (17): audio_channels, audio_codec, audio_profile, audio_sample_rate, display_aspect_ratio, duration, faststart, field_order (+9 more)
 
 ### Community 599 - "Community 599"
-Cohesion: 0.18
-Nodes (30): Any, HTMLResponse, Path, Request, artist_create(), artist_edit(), artist_new(), _artist_path() (+22 more)
+Cohesion: 0.09
+Nodes (54): serialize_structured_record(), Any, HTMLResponse, Path, Request, _apply_blocklist(), artist_create(), artist_edit() (+46 more)
 
 ### Community 600 - "Community 600"
-Cohesion: 0.26
-Nodes (22): resolve_target(), clean_destination(), copy_build(), copy_plan(), _expand_env(), _expand_target(), failed(), failed_build() (+14 more)
+Cohesion: 0.27
+Nodes (21): clean_destination(), copy_build(), copy_plan(), _expand_env(), _expand_target(), failed(), failed_build(), format_deployment() (+13 more)
 
 ### Community 601 - "Community 601"
 Cohesion: 0.12
@@ -1408,8 +1399,8 @@ Cohesion: 0.12
 Nodes (16): analysis_cache_key, artistic_presets, custom_palette, mapping, palette, dependencies, ffmpeg, numpy (+8 more)
 
 ### Community 605 - "Community 605"
-Cohesion: 0.07
-Nodes (54): get_repo_root(), favicon(), lifespan(), Serve the icon at the root as well as from /static.      Browsers ask for /favic, FastAPI, Path, Request, Path (+46 more)
+Cohesion: 0.06
+Nodes (58): get_repo_root(), launch(), _now(), _run(), favicon(), lifespan(), Serve the icon at the root as well as from /static.      Browsers ask for /favic, FastAPI (+50 more)
 
 ### Community 606 - "Community 606"
 Cohesion: 0.12
@@ -1436,8 +1427,8 @@ Cohesion: 0.25
 Nodes (7): Authority statement, Fidelity comparisons, Intentional renderer differences, MRP Music Video Live Preview Release Gates, Performance measurements, Privacy and lifecycle gates, Result
 
 ### Community 612 - "Community 612"
-Cohesion: 0.12
-Nodes (16): analysis_cache_key, artistic_presets, custom_palette, mapping, palette, dependencies, ffmpeg, numpy (+8 more)
+Cohesion: 0.08
+Nodes (23): analysis_cache_key, artistic_presets, custom_palette, mapping, palette, performance, encoding_seconds, frames_per_second (+15 more)
 
 ### Community 613 - "Community 613"
 Cohesion: 0.12
@@ -1736,8 +1727,8 @@ Cohesion: 0.13
 Nodes (15): audio_channels, audio_codec, audio_profile, audio_sample_rate, duration, duration_tolerance, fps, height (+7 more)
 
 ### Community 690 - "Community 690"
-Cohesion: 0.26
-Nodes (16): _connect(), create_job(), create_video_job(), get_job(), get_latest_job_by_command(), get_latest_video_job(), get_video_job(), init() (+8 more)
+Cohesion: 0.50
+Nodes (4): animated_cover_prompt(), motion_pace(), Map the promo track's measured tempo to a motion-pace instruction., Visual-only prompt: the cover itself, a tempo-derived pace, and the     release'
 
 ### Community 691 - "Community 691"
 Cohesion: 0.13
@@ -1763,10 +1754,6 @@ Nodes (14): encoding, command, settings, audio_bitrate_kbps, audio_channels, aud
 Cohesion: 0.28
 Nodes (18): apply_publication(), _approval_path(), _copy_atomic(), _hash_file(), load_publication(), plan_publication(), public_media_available(), _publication_record() (+10 more)
 
-### Community 698 - "Community 698"
-Cohesion: 0.40
-Nodes (5): $defs, member, additionalProperties, required, type
-
 ### Community 699 - "Community 699"
 Cohesion: 0.42
 Nodes (11): Path, test_album_contextual_pass_receives_the_same_point_in_time_boundary(), test_critic_context_excludes_future_catalog_for_every_release_type(), test_critic_context_orders_catalog_deterministically(), test_critic_context_rejects_missing_or_invalid_target_date(), test_prior_release_prefers_approved_critic_summary_for_every_release_type(), test_same_day_review_continuity_uses_deterministic_slug_order(), test_target_and_future_approved_reviews_never_enter_context() (+3 more)
@@ -1780,8 +1767,8 @@ Cohesion: 0.17
 Nodes (12): inputs, audio.bass, audio.drums, audio.instruments, audio.master, audio.vocals, cards.closing, cards.opening (+4 more)
 
 ### Community 702 - "Community 702"
-Cohesion: 0.29
-Nodes (7): pattern, type, additionalProperties, properties, type, promo_track_slug, promoter
+Cohesion: 0.20
+Nodes (10): description, type, pattern, type, additionalProperties, properties, type, animated_cover_notes (+2 more)
 
 ### Community 703 - "Community 703"
 Cohesion: 0.29
@@ -1899,10 +1886,6 @@ Nodes (3): ./ReleaseCard.astro, cleanSummary, searchText
 Cohesion: 0.40
 Nodes (5): project, hash, manifest, seed, title
 
-### Community 733 - "Community 733"
-Cohesion: 0.67
-Nodes (3): status, enum, type
-
 ### Community 734 - "Community 734"
 Cohesion: 0.14
 Nodes (14): encoding, command, settings, audio_bitrate_kbps, audio_channels, audio_codec, audio_sample_rate, crf (+6 more)
@@ -1926,10 +1909,6 @@ Nodes (14): encoding, command, settings, audio_bitrate_kbps, audio_channels, aud
 ### Community 742 - "Community 742"
 Cohesion: 0.14
 Nodes (14): encoding, command, settings, audio_bitrate_kbps, audio_channels, audio_codec, audio_sample_rate, crf (+6 more)
-
-### Community 743 - "Community 743"
-Cohesion: 0.22
-Nodes (11): _fail_when(), Path, Workspace steps fail fast and loud.  A promoter or critic subprocess that exits, Fake subprocess.run: exit 1 with a traceback when predicate(cmd) holds., _render_badge(), repo(), test_album_critic_failure_raises(), test_critic_stops_at_the_first_failing_track() (+3 more)
 
 ### Community 744 - "Community 744"
 Cohesion: 0.17
@@ -1968,8 +1947,8 @@ Cohesion: 0.29
 Nodes (9): ensure_repo_interpreter(), Path, Re-exec an entry script under the repository's own interpreter.  `scripts/mrp` a, The repo venv's python, or None when there is no venv to use., True when the current interpreter belongs to the repo venv.      Compares sys.pr, Hand off to the repo venv's python, if we are not already using it.      Does no, repo_interpreter(), running_inside() (+1 more)
 
 ### Community 753 - "Community 753"
-Cohesion: 0.16
-Nodes (16): NamedTuple, _call_gemini(), GeminiReply, generate_bio(), generate_blurb(), generate_keywords(), generate_kit(), _parse_bio_response() (+8 more)
+Cohesion: 0.17
+Nodes (16): NamedTuple, gemini_client(), Gemini client with a retry policy for the 429/503 capacity errors the     Genera, _call_gemini(), GeminiReply, generate_bio(), generate_blurb(), generate_kit() (+8 more)
 
 ### Community 754 - "Community 754"
 Cohesion: 0.25
@@ -2163,29 +2142,17 @@ Nodes (10): _assert_build_passed(), _emitted_browser_text(), _page_text(), _site
 Cohesion: 0.47
 Nodes (9): _apply_release_patch(), format_promote_spotify(), _place_artist_image(), _place_release_cover(), promote_spotify(), _read_candidates(), Any, Path (+1 more)
 
-### Community 815 - "Community 815"
-Cohesion: 0.51
-Nodes (9): find_release(), format_status(), latest_report(), release_summary(), report_summary(), rollback_available(), status(), Any (+1 more)
-
 ### Community 816 - "Community 816"
 Cohesion: 0.44
 Nodes (8): Path, cmd_writeback(), _find_contextual_review(), Write critic review output as Astro content collection files., Return the Pass 3 TrackInContext dict for track_id from any album record, or Non, write_all(), write_review(), _yaml_str()
 
 ### Community 817 - "Community 817"
-Cohesion: 0.46
-Nodes (7): create_release(), failed(), format_release_create(), release_record(), track(), Any, Path
-
-### Community 818 - "Community 818"
-Cohesion: 0.25
-Nodes (8): performance, encoding_seconds, frames_per_second, pipeline_seconds, preparation_seconds, raw_stream_bytes, realtime_factor, verification_seconds
+Cohesion: 0.29
+Nodes (10): test_default_stem_directory_follows_single_and_album_conventions(), create_release(), default_stem_directory(), failed(), format_release_create(), Conventional stem directory for a single or album/EP track., release_record(), track() (+2 more)
 
 ### Community 819 - "Community 819"
 Cohesion: 0.25
 Nodes (8): section, type, additionalProperties, properties, required, type, enum, type
-
-### Community 820 - "Community 820"
-Cohesion: 0.40
-Nodes (4): test_worker_progress_events_are_structured(), Event, EventWriter, ProgressMapper
 
 ### Community 821 - "Community 821"
 Cohesion: 0.33
@@ -2195,33 +2162,25 @@ Nodes (6): dependencies, ffmpeg, numpy, opencv, pillow, python
 Cohesion: 0.33
 Nodes (6): verse-1, generator_version, key, seed, source, traces
 
-### Community 823 - "Community 823"
-Cohesion: 0.40
-Nodes (4): Candidate, One term plus the evidence that earned it a place on the ballot., The one-line justification shown to the models and in --dry-run., test_evidence_line_reports_releases_tracks_and_span()
-
-### Community 824 - "Community 824"
-Cohesion: 0.40
-Nodes (5): project, hash, manifest, seed, title
-
 ## Knowledge Gaps
-- **2188 isolated node(s):** `date`, `Path`, `Path`, `analysis_cache_key`, `custom_palette` (+2183 more)
+- **2191 isolated node(s):** `date`, `Path`, `Path`, `analysis_cache_key`, `custom_palette` (+2186 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **19 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `load_structured_record()` connect `workspace` to `Community 515`, `Community 516`, `WP Site Migration (frozen)`, `page.schema`, `test_lyrics_text`, `pipeline`, `Community 786`, `Community 531`, `Community 534`, `test_apple_music_client`, `dsp`, `ReleaseBrowser`, `Community 814`, `Community 559`, `Community 564`, `Community 565`, `test_schemas`, `Community 579`, `Community 708`, `[slug]`, `Community 599`, `Community 605`, `Community 486`, `Community 490`, `Community 494`, `Community 506`?**
-  _High betweenness centrality (0.043) - this node is a cross-community bridge._
-- **Why does `get_repo_root()` connect `Community 605` to `Community 576`, `workspace`, `Community 486`, `Community 565`, `[slug]`, `Community 599`, `test_apple_music_client`?**
+- **Why does `load_structured_record()` connect `workspace` to `Community 515`, `Community 516`, `WP Site Migration (frozen)`, `test_youtube_client`, `page.schema`, `test_lyrics_text`, `pipeline`, `Community 786`, `test_apple_music_client`, `dsp`, `ReleaseBrowser`, `Community 814`, `Community 559`, `Community 558`, `Community 564`, `Community 565`, `test_schemas`, `Community 579`, `Community 708`, `[slug]`, `Community 599`, `Community 605`, `Community 486`, `Community 490`, `Community 494`, `Community 506`?**
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
+- **Why does `import_spotify()` connect `import_spotify` to `Community 556`, `Community 531`, `Community 499`, `Community 565`, `eval`?**
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **Why does `RenderContext` connect `Community 533` to `Community 578`, `Community 487`, `Community 488`, `Community 489`, `Community 491`, `orchestrator`, `Community 496`, `Community 498`, `test_enrich_apple_music`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `serialize_structured_record()` connect `pipeline` to `workspace`, `Community 605`, `ReleaseBrowser`, `WP Site Migration (frozen)`, `test_lyrics_text`, `Community 494`, `Community 814`, `Community 786`, `Community 531`, `Community 565`, `[slug]`, `Community 599`, `Community 506`, `test_apple_music_client`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Are the 80 inferred relationships involving `ValueError` (e.g. with `update_context_review()` and `update_review()`) actually correct?**
-  _`ValueError` has 80 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 81 inferred relationships involving `ValueError` (e.g. with `update_context_review()` and `update_review()`) actually correct?**
+  _`ValueError` has 81 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 64 inferred relationships involving `AlignedLyrics` (e.g. with `TimingEditorError` and `AlignedLyricSection`) actually correct?**
   _`AlignedLyrics` has 64 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 60 inferred relationships involving `ProjectManifest` (e.g. with `AudioConfig` and `BackgroundConfig`) actually correct?**
   _`ProjectManifest` has 60 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Album CLI (WP-13) — end-to-end Pass 2 → Pass 3 orchestrator.  Usage:     critic`, `Full Pass 2 → Pass 3 pipeline for one release. Returns populated AlbumRecord.`, `Write album_qa.md for one album record. Returns the report path.` to the rest of the system?**
-  _2744 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _2753 weakly-connected nodes found - possible documentation gaps or missing edges._
