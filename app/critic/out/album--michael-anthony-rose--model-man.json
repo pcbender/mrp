@@ -1,0 +1,271 @@
+{
+  "album_id": "michael-anthony-rose--model-man",
+  "release_slug": "model-man",
+  "title": "Model Man",
+  "release_type": "album",
+  "artist": "Michael Anthony Rose",
+  "persona": "POINT-IN-TIME ARTIST CONTEXT\nRelease-date cutoff: 2026-09-24\nWrite as though the target release is new on this date.\nDo not mention, infer, or rely on releases or artist developments after this cutoff.\nThe current mutable artist biography is excluded because it has no dated revision.\nFor prior releases, approved critic summaries take precedence over catalog descriptions.\nArtist: Michael Anthony Rose\nCatalog available at this point (oldest first):\n- 2026-02-20 — Aletheion (single)\n- 2026-03-08 — Build Me A Lie (single)\n- 2026-03-14 — Nowhere But Up (single)\n- 2026-03-27 — I Will Bloom (single)\n- 2026-04-09 — But That Was Then (single)\n- 2026-04-14 — Avant Suite (single)\n- 2026-04-15 — Never Knowing (single)\n- 2026-04-30 — Prepositions (single)\n- 2026-05-04 — The Bridge Gets You Over (single)\n- 2026-05-10 — Truth's Empty Promise (single)\n- 2026-05-11 — Aroma Of You (single)\n- 2026-05-19 — I'm Still Here (album)\n  Approved critic summary: Rose opens with a mumbled false start on 'I'm Old Now,' and that small, deliberate stumble tells you exactly what kind of record this is: nothing performed, nothing smoothed over, just a man taking honest stock.\n- 2026-05-30 — Entraining (single)\n- 2026-06-16 — Live Forever Or Die Trying (single)\n- 2026-06-25 — A Distant Memory (single)\n  Approved critic summary: \"A Distant Memory\" opens with a counted-off \"one, two, three, four\" that sets a brisk 4/4 in C major, and from there Rose lets a female vocal float above a clean, roomy groove that leans more toward jazzy indie-pop than any straight ballad.\n- 2026-06-25 — You Know Enough (single)\n  Approved critic summary: There's a bat by the bed in this one, his father's before him, and nobody in the family has ever swung it.\n- 2026-07-08 — You Don't Say (single)\n  Approved critic summary: Nearly seven minutes, and Rose earns every one of them here by treating silence itself as the subject.\n- 2026-07-18 — Outlandia (album)\n  Approved critic summary: For a songwriter introduced as a diarist, a philosopher of the ordinary who finds a lifetime in a reflection on a phone screen, \"Outlandia\" is a startling pivot: a two-hour rock opera, twenty-four scenes long, about how a country is bought, broken, and inventoried.\n- 2026-08-20 — Them Bones (single)\n  Approved critic summary: After the two-hour sprawl of \"Outlandia,\" Rose narrows the lens back down to something you can hold in one hand, and \"Them Bones\" benefits from the compression.\n- 2026-08-30 — Unreasonably Quiet (single)\n  Approved critic summary: Rose builds this one on a 3/4 pulse at a brisk clip, which is the first surprise: a waltz that never asks you to sway, driven instead by a Hammond groove and gritty guitar working against the meter rather than settling into it.\n- 2026-09-12 — Wazoo In Effigy (album)\n  Approved critic summary: Michael Anthony Rose’s *Wazoo in Effigy* is inspired by Frank Zappa, which is not quite the same thing as being a Zappa tribute.\n- 2026-09-18 — The Grounding Post (single)\n  Approved critic summary: Rose has spent 2026 moving between sprawling ambition and compressed intimacy, and 'The Grounding Post' lands firmly in the second register, closer in spirit to the quiet honesty of 'I'm Still Here' than to the operatic scale of 'Outlandia.' The track runs 3:29 in F# major, built on dry, close-miked fingerpicking and a baritone vocal that has the stillness of someone writing in the early morning before anyone else is awake.\n- 2026-09-24 — Model Man (album) [target release]",
+  "tracklist": [
+    "michael-anthony-rose--default-settings",
+    "michael-anthony-rose--recipe",
+    "michael-anthony-rose--some-assembly-required",
+    "michael-anthony-rose--rtfm",
+    "michael-anthony-rose--work",
+    "michael-anthony-rose--status",
+    "michael-anthony-rose--model-man",
+    "michael-anthony-rose--accessories",
+    "michael-anthony-rose--cast",
+    "michael-anthony-rose--in-the-image-of",
+    "michael-anthony-rose--the-best-dream-ive-ever-had",
+    "michael-anthony-rose--just-past-perfect",
+    "michael-anthony-rose--all-fall-down",
+    "michael-anthony-rose--legend"
+  ],
+  "track_records": [
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--default-settings.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--recipe.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--some-assembly-required.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--rtfm.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--work.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--status.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--model-man.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--accessories.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--cast.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--in-the-image-of.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--the-best-dream-ive-ever-had.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--just-past-perfect.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--all-fall-down.json",
+    "/home/mrose/mrp/app/critic/out/michael-anthony-rose--legend.json"
+  ],
+  "album_features": {
+    "total_runtime_s": 3221.9,
+    "bpm_curve": [
+      152.0,
+      143.6,
+      136.0,
+      152.0,
+      117.5,
+      129.2,
+      112.3,
+      129.2,
+      83.4,
+      112.3,
+      129.2,
+      136.0,
+      136.0,
+      136.0
+    ],
+    "key_progression": [
+      "E minor",
+      "B major",
+      "A major",
+      "G# minor",
+      "D major",
+      "E minor",
+      "E minor",
+      "D# major",
+      "D minor",
+      "A# minor",
+      "B major",
+      "D major",
+      "C major",
+      "D major"
+    ],
+    "mood_progression": [
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "tender",
+      "emotional",
+      "tender",
+      "tender",
+      "tender"
+    ],
+    "rank_distribution": {
+      "2": 0,
+      "3": 3,
+      "4": 11,
+      "5": 0
+    },
+    "peak_track": "michael-anthony-rose--default-settings",
+    "valley_tracks": [
+      "michael-anthony-rose--some-assembly-required",
+      "michael-anthony-rose--work",
+      "michael-anthony-rose--status"
+    ]
+  },
+  "cohesion": {
+    "palette_consistency": 0.8512,
+    "theme_threads": [
+      "down",
+      "before",
+      "nobody",
+      "asked",
+      "every",
+      "had",
+      "name",
+      "never"
+    ],
+    "verdict": "cohesive_statement"
+  },
+  "review": {
+    "target": "album_long",
+    "review_text": "After a year of watching Rose swing between the compressed diary entries of 'I'm Still Here' and the two-hour ambition of 'Outlandia,' 'Model Man' does something both of those records only gestured at: it builds a whole life out of a single sustained metaphor and never once lets go of the thread. It opens with a birth logged as a factory intake, 'A paper tag pinned to the crate / Stamped as expected with a smile,' and 'Default Settings' declares the terms immediately, the Canterbury machinery ticking away in odd meter while the baritone stays deadpan and the emotion leaks out sideways. From there the manufacturing conceit accumulates like sediment: the inherited 'Recipe' of 'one part silence, two parts shame,' the self assembled from spare parts in 'Some Assembly Required,' the four hundred blank pages of 'RTFM.' Words recur on purpose, 'nobody,' 'before,' 'name,' 'the model,' until they stop being motifs and start feeling like the walls of the same room.\n\nThe record is patient about where it peaks. The middle stretch is its most quietly devastating, and 'Cast' is the hinge everything turns on: the quiet-to-loud swing that lets 'I threw first. I know that' sit in plain speech, then that quoted knife of a line, 'He's the perfect combination, you, and my father,' before the room goes silent in a way the arrangement actually honors. 'Accessories' does the same trick with a marriage lacquered over like a redone kitchen, Randy Newman's cold eye set to a heartland pulse, and 'In the Image Of' starves the whole thing down to nylon-string fingerpicking and a withheld ending braver than any resolution. The three tracks that ask a little more patience, 'Some Assembly Required,' 'Work,' and 'Status,' aren't weak so much as they lean on the flatness that is the album's governing principle; 'Work' in particular is a grower whose refusal to dramatize is the entire point, even if it costs a first listen.\n\nWhat keeps this from tipping into a concept-album exercise is that the metaphor finally cracks open. 'The Best Dream I've Ever Had' welds the whispered and the operatic Rose into one arc, the narrator opening his mouth for something true and finding 'Nothing came' before the title line arrives almost by accident. 'All Fall Down' pays off the whole design in six words, 'not broken. Just built this way,' turning the nursery-rhyme dread of 'Recipe' into grace. 'Legend' closes big, maybe bigger than its acoustic-and-voice outro quite sets up, but the ambition is honest: a man who laid his guitar in its case at seventeen deciding 'I'll be my own legend now, not the myth, but the key.' The recurring reach for arena scale is the album's one consistent tax; more than once the production keeps the room too full when the writing wants it bare. But this is Rose's most unified statement of the year, a record whose parts are strong and whose sequencing makes them stronger. It holds together, front to back.",
+    "verdict_tier": {
+      "rank": 4,
+      "label": "strong"
+    },
+    "sum_vs_parts": "greater",
+    "persona_delivery": "expands",
+    "anchors_used": [
+      "Default Settings",
+      "Recipe",
+      "Some Assembly Required",
+      "RTFM",
+      "Work",
+      "Status",
+      "Cast",
+      "Accessories",
+      "In the Image Of",
+      "The Best Dream I've Ever Had",
+      "All Fall Down",
+      "Legend"
+    ],
+    "status": "publishable",
+    "model": "claude-opus-4-8"
+  },
+  "track_reviews_in_context": [
+    {
+      "track_id": "michael-anthony-rose--default-settings",
+      "position": 1,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The conceit here is cold-blooded and Rose knows it: a birth described as a factory intake report, \"A paper tag pinned to the crate / Stamped 'as expected' with a smile.\" It's the perfect entry point for a record built around manuals, models, and factory defaults, laying down the metaphor the whole album will keep turning over. The Canterbury-scene machinery does the emotional work the deadpan vocal refuses to, all interlocking organ and Rhodes clicking along at a brisk clip in a minor key, and that mid-song guitar break bursts the clinical spell open just when the wryness starts to calcify. The best line is the quietest one, the bridge admission that \"I was already running / the second I opened my eyes,\" which turns the whole software-metaphor gag into something that actually stings. A clever machine that earns its wit; it lands cleanly and sets the terms.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--recipe",
+      "position": 2,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Following the factory intake of the opener, the manufacturing metaphor gives way to inheritance, and the pivot feels earned: inherited inadequacy rendered as a family recipe, \"one part silence, two parts shame, a pinch of never good enough,\" itemized so flatly it lands harder than any wail would. Rose keeps the baritone quietly resigned through a brisk 4/4 in a major key, letting the arrangement do the arguing as it climbs from fingerpicked hush into something thick and weighted by the final chorus. The masterstroke is that nursery-rhyme bridge, \"ring around the rosy\" turning plague-sick and unsettling right before the last swell, a trick that recalls the way Roger Waters weaponized childhood singsong, and one the album will return to later. If the big finish leans a touch more anthemic than the material's cold clarity strictly needs, that's a small tax on a genuinely sharp idea. A highlight.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--some-assembly-required",
+      "position": 3,
+      "standalone_rank": 3,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Third in a row to run the manufacturing conceit, and Rose keeps it fresh by looser, warmer means: a driving 4/4 in a major key that leans stadium where the earlier tracks leaned angular. No matter, because the conceit carries it: a childhood plane kit becomes the whole architecture of a self, and the flat, deadpan chorus lands the trick, 'called it finished before it was begun,' with the wry stillness of an early morning admission. The best line is the bridge's plain confession, 'get near enough and the seams still show,' and Rose is smart enough not to oversell it. The arrangement doesn't fully commit to the mechanical unwind the ending wants, but the writing does its job and does it well, keeping the through-line taut this early in the sequence.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--rtfm",
+      "position": 4,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The joke is right there in the title, and after three tracks of assembly and inheritance it feels inevitable: a manual with page one printed in big letters, \"Figure out what works for you,\" and \"four hundred blank pages\" bound properly behind it. Rose runs the deadpan through every room that ever handed him back an empty page, altar call, therapist, ten days silent, then the Greek over the temple door, \"Know Yourself,\" and \"the page behind it is still blank.\" At a brisk clip in a minor key the Canterbury machinery does exactly what this kind of song needs, angular guitar-and-bass unison and clipped organ jabs keeping the nervous groove taut while the baritone stays flat and methodical until the breakdown cracks it open on \"Where's the fucking manual.\" The outro hollows out to \"Page two. Pen.\" and nothing else. This holds the room, and it closes off the record's first movement with a clenched fist.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--work",
+      "position": 5,
+      "standalone_rank": 3,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "After the clenched frustration of the manual songs, the tempo eases and the record shifts from self-diagnosis to the daily grind, and the trick here is baked into the meter: a limping intro before the chorus snaps into flat, straight time at a workmanlike pace, the arrangement enacting the very grind the lyrics describe. Rose's deadpan baritone itemizes a life traded away without complaint, and the writing lands because it refuses drama: \"One pen signed a ring, a lease, a loan / Somebody's car, somebody's place, and every name on it my own.\" The lone electric solo midway is the one place the guitar gets to sing before clocking back in, a small mercy that pays off the caged \"guitar went quiet in its case\" line, a caged guitar the album will finally free in its closer. It ends unresolved, \"Still clocking in / Still doesn't work,\" and the flatness that keeps this from being a knockout is also the whole point; a grower that rewards the second listen.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--status",
+      "position": 6,
+      "standalone_rank": 3,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The dashboard framing lands right where the album needs it, a man auditing his life like a readout after 'Work' left him clocking in and still not working. The female voice answers each 'Status?' with clinical readouts, nominal, clear, steady, while the meter ticks along at a brisk clip in a minor key. That deadpan cataloging in verse one, 'a dog we filed under family,' sets up the gut-punch bridge, 'I mounted the needle myself, and still / I've flinched at the reading since birth,' which is Rose at his most quietly self-implicating. The Canterbury machinery works for it, the interlocking unison building and the glockenspiel-flecked pulse selling the anxiety better than any straight rocker could, and the explosive climb out of the bridge before it collapses into that fading 'unknown, unknown' is the arrangement earning its keep. Its repeated chorus wears a touch thin across three passes, but the idea is sharp and it commits all the way.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--model-man",
+      "position": 7,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The title track sits at the pivot point, and it builds its case slow and mean: a mid-tempo 4/4 in a minor key that starts hushed and admiring and ends flat with contempt: \"Some model man.\" Where the earlier songs turned the model metaphor inward as software and assembly, here Rose turns it outward into envy as a slow poison, and the smartest line is the hook's own correction, \"the model is not the man,\" which he lets you believe before pulling it out from under you. The arrangement promises smoky sax and brushed intimacy but reaches for arena scale instead, and the explosive lift into the final chorus lands like Springsteen circa The River, all soaring harmonies and a wall of guitar. That widescreen density is also the catch: the bridge, \"It cost me everything I had inside,\" wants the room stripped bare, and the production keeps it too full to draw blood. A highlight that holds the room even when it overplays its hand.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--accessories",
+      "position": 8,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The title track's outward envy collapses back into the house, and 'Accessories' opens the album's domestic stretch with its coldest eye. Rose delivers a slow-motion domestic collapse in the flattest deadpan he's got, letting the brutality sit in the itemizing. \"We told the neighbors we'd redone / the kitchen. Left the bedroom undone\" is the whole marriage in two lines, and the clinical delivery makes it land harder than any wail would. At a brisk clip in a major key, the arrangement pulls a nice bait-and-switch: brittle, hushed intro into a punchy full-band verse, then choruses that gloss up with distorted guitar and gang doubles so the \"family dream\" sounds exactly as lacquered as it's supposed to. That gap between the shine and the seam, between the anthemic lift and \"nobody says the word out loud,\" is where the song does its best work; it's Randy Newman's cold eye set to a heartland pulse. A highlight, and one of Rose's sharpest pieces of writing this year.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--cast",
+      "position": 9,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Where 'Accessories' kept the marriage lacquered over, 'Cast' finally lets the throw land, and the pun in the title does double duty: a household reduced to a cast playing \"parts we used to mean,\" and the die already thrown. It opens flat and close-miced, at a slow burn in a minor key, a deadpan baritone counting the damage room by room, and then the chorus detonates into a wall of distorted guitar and gang doubles, that quiet-to-loud swing doing the emotional work the vocal refuses to do out loud. The breakdown is where it earns its keep: \"I threw first. I know that,\" spoken plain, followed by that devastating quoted line, \"He's the perfect combination, you, and my father,\" and then the room goes quiet in a way the arrangement actually honors. That returning father, threaded through 'Recipe' and 'Status,' pays off here as a curse handed down. Few of Rose's confessions this year have the structural nerve to let the loudest moment sit next to the most naked one. A highlight, and it lands cleanly.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--in-the-image-of",
+      "position": 10,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "'Cast' names the father as the poison; 'In the Image Of' follows him all the way up to the ceiling, and the theology is the whole game: \"The God I built looked just like him, my father's face, my father's frown,\" a man discovering he inherited a deity along with a ledger and a grudge. After the loud detonation next door, Rose keeps it starved, close-miced fingerpicking in a minor key, a baritone that never rises above the volume of thinking out loud, and a spooked little carnival interlude that arrives right when the road runs out. The masterstroke is the late dialogue, Geneva flipping his self-loathing on its head with \"I see something more: God, in the image of you,\" and Rose refusing to answer: \"I didn't answer. Didn't speak.\" That withheld ending is braver than resolution, and it lands cleanly, the album's quietest room before it starts climbing back toward light.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--the-best-dream-ive-ever-had",
+      "position": 11,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Coming out of the whispered stillness of 'In the Image Of,' this is where the album finally welds the whispered and the operatic into one arc: fingerpicked verses in a major key, close and hushed, that climb across a waltzing pulse toward a chorus that detonates. The trick is the breakdown before the payoff, where Geneva's counsel to 'think of something you can tell yourself' hangs in the air, the narrator opens his mouth and 'Nothing came,' and the title line arrives 'quieter, almost by accident' before the full band swallows it whole. That restraint earns the bombast, which is saying something given how dense the choruses get, brass and strings and choir all crowding the same frequency space until it's more wall than window. The swell-from-silence structure is the ambition here, and it mostly delivers, though the final choruses lean harder on volume than the writing needs. A highlight, and the clearest proof yet that Rose can build a room and blow the roof off it in the same song, arriving right when the album needs the turn toward grace.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--just-past-perfect",
+      "position": 12,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The title line from the previous track becomes the pivot of this one, and that echo is deliberate: Rose catches something most love songs run from, the messiness of falling for a married woman and admitting it plainly. After the domestic wreckage of the album's middle, this is the first unguarded warmth on the record, and the Canterbury dressing works better than you'd think at a moderate clip in a major key, fingerpicked acoustic and warm electric piano keeping the whole thing breathing rather than pushing. The bridge is where it lands: her wry, low-register 'So, I should just leave my husband / and live happily ever after with you?' met by his quiet 'You're the best dream I've ever had,' and Rose lets the exchange sit before the guitar takes over. The teacher's-world conceit, where 'the grading stops for good,' flirts with cute once or twice, but the honesty of the confession pulls it back. A highlight, and one of the more disarming things he's written this year.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--all-fall-down",
+      "position": 13,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "Late in the record, the model metaphor comes home to the body, and the trick here is the diagnosis reframed as a lyric: a doctor who checks \"the numbers on the stack\" and shrugs \"maybe you're just getting older,\" and Rose turning twenty years of misfiling into a slow reveal. The line that pays it off, \"turns out the model had a faulty part,\" lands because he's kept the delivery clinical up to that point, plain baritone over piano and organ, no reach for pity. Then the nursery rhyme returns, \"ring around the rosy\" flipped from the plague-sick unease of 'Recipe' into acceptance, and the chorus arrives at \"not broken. Just built this way,\" which is the whole record's argument in six words. It runs at a brisk clip in a major key, and the build from hushed verse to full-ensemble chorus is more stadium than the material strictly needs; the guitar solo late is the one place grace tips toward grandeur. Reminds me of Warren Zevon staring down his own body without blinking. A highlight, and it holds the room.",
+      "model": "claude-opus-4-8"
+    },
+    {
+      "track_id": "michael-anthony-rose--legend",
+      "position": 14,
+      "standalone_rank": 4,
+      "context_rank": null,
+      "context_note": "",
+      "review_text": "The closer, and Rose builds it as the big swing: an ascent in a major key that starts as acoustic confession and climbs into full stadium regalia, organ, strings, a soaring guitar solo, the biggest sound he's put on tape all year. The story earns the scale, and it finally frees the guitar that went quiet in its case back in 'Work': a man who laid it down at seventeen, let the family take its place, and watched the dream slip 'into never' until a machine put music back in his hands with 'one button.' It's a self-aware conceit, and the payoff line, 'I'll be my own legend now, not the myth, but the key,' resolves it without pretending the victory is clean, answering the model-and-manual arc the album opened with. The turn from bitter plainness to triumph has the shape of a Genesis or Marillion set-piece, and mostly it delivers; the one soft spot is the outro, which thins back to voice and guitar to land on 'I'll live forever, not as a model, as myself,' a quieter exit than the climax quite sets up. The ambition is honest, and it sends the record out on the note it was always reaching for. A highlight.",
+      "model": "claude-opus-4-8"
+    }
+  ]
+}
