@@ -448,17 +448,41 @@ def credit_balance(repo: Path | None = None) -> dict[str, Any]:
 
 # --- Animated cover generation --------------------------------------------------
 
-def animated_cover_prompt(release: dict[str, Any], artist: dict[str, Any]) -> str:
+def motion_pace(bpm: float | None) -> str | None:
+    """Map the promo track's measured tempo to a motion-pace instruction."""
+    if not bpm:
+        return None
+    if bpm < 90:
+        return "Keep the motion gentle and slow, a patient drift."
+    if bpm < 130:
+        return "Keep the motion steady and unhurried, with a relaxed pulse."
+    return "Give the motion a lively, rhythmic pulse while staying smooth."
+
+
+def animated_cover_prompt(
+    release: dict[str, Any],
+    artist: dict[str, Any],
+    bpm: float | None = None,
+) -> str:
+    """Visual-only prompt: the cover itself, a tempo-derived pace, and the
+    release's own hand-written direction. Artist bios/blurbs are left out on
+    purpose — they name other releases and tracks and give the video model
+    nothing it can animate."""
     title = release.get("title") or "the release"
     artist_name = artist.get("name") or release.get("artist_id") or "the artist"
-    blurb = artist.get("promo_blurb") or artist.get("bio_short") or ""
-    return (
+    parts = [
         f"Animate the album cover for {title} by {artist_name} as a tasteful vertical "
         "social music visual. Preserve the cover art identity and composition, add "
         "subtle cinematic depth, slow parallax, light movement, and atmospheric motion. "
-        "No text overlays, no logos, no new people, no lyric subtitles, no hard cuts. "
-        f"Artist voice context: {blurb[:700]}"
-    )
+        "No text overlays, no logos, no new people, no lyric subtitles, no hard cuts."
+    ]
+    pace = motion_pace(bpm)
+    if pace:
+        parts.append(pace)
+    notes = str((release.get("promoter") or {}).get("animated_cover_notes") or "").strip()
+    if notes:
+        parts.append(f"Visual direction: {notes}")
+    return " ".join(parts)
 
 
 _IMAGE_TYPES = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png",

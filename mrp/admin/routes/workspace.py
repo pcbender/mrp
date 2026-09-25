@@ -25,6 +25,7 @@ from mrp.admin.workspace import (
     effective_master_path,
     migrate_artist_artifacts,
     promo_track_unit,
+    set_animated_cover_notes,
     set_promo_track_slug,
     stage_statuses,
     str_or_none,
@@ -689,6 +690,31 @@ async def promoter_track_save(request: Request, slug: str):
     return response
 
 
+@router.post("/releases/{slug}/promoter/animated-notes", response_class=HTMLResponse)
+async def promoter_animated_notes_save(request: Request, slug: str):
+    """Persist the hand-written visual direction for the Nim animated cover."""
+    root = get_repo_root()
+    path = _release_path(root, slug)
+    if not path.exists():
+        return _not_found(slug)
+
+    data = load_structured_record(path)
+    release = data.get("release") or {}
+    form = dict(await request.form())
+    set_animated_cover_notes(release, str_or_none(form.get("animated_cover_notes")))
+
+    errors = validate_release_dict(data)
+    if errors:
+        return _validation_errors(request, errors)
+    path.write_text(serialize_structured_record(path, data))
+
+    saved = (release.get("promoter") or {}).get("animated_cover_notes")
+    detail = "Animated cover direction saved." if saved else "Animated cover direction cleared."
+    response = HTMLResponse(f'<div class="flash flash-ok">{detail}</div>')
+    response.headers["HX-Trigger"] = "releaseSaved"
+    return response
+
+
 @router.post("/releases/{slug}/promoter/save", response_class=HTMLResponse)
 async def promoter_save(request: Request, slug: str):
     root = get_repo_root()
@@ -1114,6 +1140,7 @@ def _promoter_stage(request: Request, root: Path, slug: str, ctx: dict) -> HTMLR
         "promo_track_slug": configured_promo_track_slug(release),
         "effective_promo_track": effective_promo_track,
         "promo_track_error": promo_track_error,
+        "animated_cover_notes": (release.get("promoter") or {}).get("animated_cover_notes") or "",
         "blurb_job": db.get_latest_job_by_command(f"{slug}/promoter-blurb"),
         "bio_job": db.get_latest_job_by_command(f"{slug}/promoter-bio"),
         "keywords_job": db.get_latest_job_by_command(f"{slug}/promoter-keywords"),

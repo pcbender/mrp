@@ -156,6 +156,18 @@ def set_promo_track_slug(release: dict, track_slug: str | None) -> None:
             release.pop("promoter", None)
 
 
+def set_animated_cover_notes(release: dict, notes: str | None) -> None:
+    """Patch the release's hand-written visual direction for the animated cover."""
+    text = str(notes or "").strip()
+    promoter = release.setdefault("promoter", {})
+    if text:
+        promoter["animated_cover_notes"] = text
+    else:
+        promoter.pop("animated_cover_notes", None)
+        if not promoter:
+            release.pop("promoter", None)
+
+
 # Artist change migration ------------------------------------------------------
 #
 # Critic records (app/critic/out/), review markdown (site/src/content/reviews/)

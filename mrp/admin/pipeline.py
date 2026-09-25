@@ -1246,7 +1246,7 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
     import json
     from datetime import UTC, datetime
 
-    from mrp.admin import nim
+    from mrp.admin import critic_io, nim
 
     _path, _data, release = _load_release(root, slug)
     artist = _load_artist(root, release.get("artist_id") or "")
@@ -1274,7 +1274,13 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
             "re-run Promo kit before generating the animated cover"
         )
 
-    prompt = nim.animated_cover_prompt(release, artist)
+    # Tempo comes from the promo track's critic analysis; without one the
+    # prompt simply carries no pace line.
+    finding = critic_io.load_record(
+        root, critic_io.track_record_id(release.get("artist_id") or "", promo_track["slug"])
+    ) or {}
+    bpm = (finding.get("hard_facts") or {}).get("bpm")
+    prompt = nim.animated_cover_prompt(release, artist, bpm=bpm)
     visual_path = kit_dir / "nim-visual.mp4"
     output_path = kit_dir / "animated-short.mp4"
     generation = nim.generate_animated_cover_visual(
@@ -1304,6 +1310,7 @@ def run_promo_kit_animated_cover(root: Path, slug: str) -> dict[str, Any]:
         "model_id": generation.get("model_id") or nim.DEFAULT_MODEL_ID,
         "prompt": prompt,
         "promo_track_slug": promo_track["slug"],
+        "promo_track_bpm": bpm,
         "canvas_seconds": canvas_seconds,
     }
     if generation.get("workflow_id"):
